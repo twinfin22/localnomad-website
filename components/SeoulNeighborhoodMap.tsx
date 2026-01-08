@@ -11,6 +11,7 @@ interface Neighborhood {
   lng: number;
   lat: number;
   color: string;
+  radius: number;
 }
 
 const neighborhoods: Neighborhood[] = [
@@ -22,6 +23,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 126.9784,
     lat: 37.5326,
     color: "#4A90A4",
+    radius: 1000,
   },
   {
     id: "junggu",
@@ -31,6 +33,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 126.9975,
     lat: 37.5636,
     color: "#8B7355",
+    radius: 900,
   },
   {
     id: "gangnam",
@@ -40,6 +43,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 127.0276,
     lat: 37.4979,
     color: "#5C6BC0",
+    radius: 1200,
   },
   {
     id: "itaewon",
@@ -49,6 +53,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 126.9942,
     lat: 37.5345,
     color: "#E57373",
+    radius: 800,
   },
   {
     id: "mapo",
@@ -58,6 +63,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 126.9236,
     lat: 37.5566,
     color: "#FFB74D",
+    radius: 1100,
   },
   {
     id: "jongno",
@@ -67,6 +73,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 126.9920,
     lat: 37.5729,
     color: "#81C784",
+    radius: 950,
   },
   {
     id: "seongsu",
@@ -76,6 +83,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 127.0558,
     lat: 37.5446,
     color: "#BA68C8",
+    radius: 900,
   },
   {
     id: "songpa",
@@ -85,6 +93,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 127.1058,
     lat: 37.5145,
     color: "#4DB6AC",
+    radius: 1100,
   },
   {
     id: "hannam",
@@ -94,6 +103,7 @@ const neighborhoods: Neighborhood[] = [
     lng: 127.0048,
     lat: 37.5340,
     color: "#7986CB",
+    radius: 800,
   },
 ];
 
@@ -101,6 +111,45 @@ const seoulBounds: [[number, number], [number, number]] = [
   [126.75, 37.40],
   [127.20, 37.70],
 ];
+
+function generateCirclePolygon(
+  lng: number,
+  lat: number,
+  radiusMeters: number,
+  points: number = 64
+): [number, number][] {
+  const coords: [number, number][] = [];
+  const earthRadius = 6371000;
+  
+  for (let i = 0; i <= points; i++) {
+    const angle = (i / points) * 2 * Math.PI;
+    const dLat = (radiusMeters / earthRadius) * Math.cos(angle);
+    const dLng = (radiusMeters / (earthRadius * Math.cos((lat * Math.PI) / 180))) * Math.sin(angle);
+    coords.push([lng + (dLng * 180) / Math.PI, lat + (dLat * 180) / Math.PI]);
+  }
+  
+  return coords;
+}
+
+function createGeoJSON(activeId: string | null): GeoJSON.FeatureCollection {
+  return {
+    type: "FeatureCollection",
+    features: neighborhoods.map((n) => ({
+      type: "Feature" as const,
+      id: n.id,
+      properties: {
+        id: n.id,
+        name: n.name,
+        color: n.color,
+        isActive: n.id === activeId,
+      },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [generateCirclePolygon(n.lng, n.lat, n.radius)],
+      },
+    })),
+  };
+}
 
 function StaticMapFallback({ 
   activeNeighborhood, 
@@ -125,24 +174,20 @@ function StaticMapFallback({
             const x = ((n.lng - 126.75) / (127.20 - 126.75)) * 100;
             const y = ((37.70 - n.lat) / (37.70 - 37.40)) * 100;
             const isActive = activeNeighborhood === n.id;
+            const size = (n.radius / 1200) * 60;
             
             return (
               <button
                 key={n.id}
-                className={`
-                  absolute transform -translate-x-1/2 -translate-y-1/2
-                  rounded-full transition-all duration-200 cursor-pointer
-                  focus:outline-none focus:ring-2 focus:ring-primary/50
-                  ${isActive ? "w-6 h-6 z-10" : "w-4 h-4"}
-                `}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-200 cursor-pointer focus:outline-none"
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
-                  backgroundColor: n.color,
-                  boxShadow: isActive
-                    ? `0 0 0 4px ${n.color}40, 0 0 16px ${n.color}60`
-                    : `0 0 0 2px ${n.color}30, 0 2px 4px rgba(0,0,0,0.2)`,
-                  filter: isActive ? "brightness(1.2)" : "brightness(1)",
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  backgroundColor: isActive ? `${n.color}80` : `${n.color}40`,
+                  border: `2px solid ${n.color}`,
+                  boxShadow: isActive ? `0 0 12px ${n.color}60` : "none",
                 }}
                 onMouseEnter={() => onHover(n.id)}
                 onMouseLeave={() => onHover(null)}
@@ -163,7 +208,6 @@ function StaticMapFallback({
 export function SeoulNeighborhoodMap() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const markersRef = useRef<{ [key: string]: mapboxgl.Marker }>({});
   const [activeNeighborhood, setActiveNeighborhood] = useState<string | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapError, setMapError] = useState(false);
@@ -180,11 +224,11 @@ export function SeoulNeighborhoodMap() {
     }
   }, []);
 
-  const handleMarkerHover = useCallback((id: string | null) => {
+  const handleHover = useCallback((id: string | null) => {
     handleNeighborhoodChange(id);
   }, [handleNeighborhoodChange]);
 
-  const handleMarkerClick = useCallback((id: string) => {
+  const handleClick = useCallback((id: string) => {
     handleNeighborhoodChange(id);
   }, [handleNeighborhoodChange]);
 
@@ -197,8 +241,8 @@ export function SeoulNeighborhoodMap() {
       const mapInstance = new mapboxgl.Map({
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/light-v11",
-        center: [126.9780, 37.5665],
-        zoom: 11.5,
+        center: [126.99, 37.54],
+        zoom: 10.8,
         maxBounds: seoulBounds,
         pitchWithRotate: false,
         dragRotate: false,
@@ -211,6 +255,68 @@ export function SeoulNeighborhoodMap() {
       mapInstance.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
       mapInstance.on("load", () => {
+        mapInstance.addSource("neighborhoods", {
+          type: "geojson",
+          data: createGeoJSON(null),
+        });
+
+        mapInstance.addLayer({
+          id: "neighborhoods-fill",
+          type: "fill",
+          source: "neighborhoods",
+          paint: {
+            "fill-color": ["get", "color"],
+            "fill-opacity": [
+              "case",
+              ["boolean", ["get", "isActive"], false],
+              0.5,
+              0.25,
+            ],
+          },
+        });
+
+        mapInstance.addLayer({
+          id: "neighborhoods-outline",
+          type: "line",
+          source: "neighborhoods",
+          paint: {
+            "line-color": ["get", "color"],
+            "line-width": [
+              "case",
+              ["boolean", ["get", "isActive"], false],
+              3,
+              1.5,
+            ],
+            "line-opacity": 0.9,
+          },
+        });
+
+        mapInstance.on("mousemove", "neighborhoods-fill", (e) => {
+          if (e.features && e.features.length > 0) {
+            const feature = e.features[0];
+            const id = feature.properties?.id;
+            if (id) {
+              mapInstance.getCanvas().style.cursor = "pointer";
+              setActiveNeighborhood(id);
+            }
+          }
+        });
+
+        mapInstance.on("mouseleave", "neighborhoods-fill", () => {
+          mapInstance.getCanvas().style.cursor = "";
+          setActiveNeighborhood(null);
+        });
+
+        mapInstance.on("click", "neighborhoods-fill", (e) => {
+          if (e.features && e.features.length > 0) {
+            const feature = e.features[0];
+            const id = feature.properties?.id;
+            if (id) {
+              setActiveNeighborhood(id);
+            }
+          }
+        });
+
         setMapLoaded(true);
       });
 
@@ -224,8 +330,6 @@ export function SeoulNeighborhoodMap() {
     }
 
     return () => {
-      Object.values(markersRef.current).forEach((marker) => marker.remove());
-      markersRef.current = {};
       map.current?.remove();
       map.current = null;
     };
@@ -234,46 +338,11 @@ export function SeoulNeighborhoodMap() {
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
 
-    Object.values(markersRef.current).forEach((marker) => marker.remove());
-    markersRef.current = {};
-
-    neighborhoods.forEach((neighborhood) => {
-      const el = document.createElement("div");
-      el.className = "neighborhood-marker";
-      
-      const root = document.createElement("div");
-      el.appendChild(root);
-
-      const isActive = activeNeighborhood === neighborhood.id;
-      
-      root.style.cssText = `
-        cursor: pointer;
-        transition: all 0.2s ease-out;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: ${isActive ? "24px" : "16px"};
-        height: ${isActive ? "24px" : "16px"};
-        background-color: ${neighborhood.color};
-        box-shadow: ${isActive
-          ? `0 0 0 4px ${neighborhood.color}40, 0 0 16px ${neighborhood.color}60`
-          : `0 0 0 2px ${neighborhood.color}30, 0 2px 4px rgba(0,0,0,0.2)`};
-        filter: ${isActive ? "brightness(1.2)" : "brightness(1)"};
-        transform: ${isActive ? "scale(1.1)" : "scale(1)"};
-      `;
-
-      el.addEventListener("mouseenter", () => handleMarkerHover(neighborhood.id));
-      el.addEventListener("mouseleave", () => handleMarkerHover(null));
-      el.addEventListener("click", () => handleMarkerClick(neighborhood.id));
-
-      const marker = new mapboxgl.Marker({ element: el })
-        .setLngLat([neighborhood.lng, neighborhood.lat])
-        .addTo(map.current!);
-
-      markersRef.current[neighborhood.id] = marker;
-    });
-  }, [mapLoaded, activeNeighborhood, handleMarkerHover, handleMarkerClick]);
+    const source = map.current.getSource("neighborhoods") as mapboxgl.GeoJSONSource;
+    if (source) {
+      source.setData(createGeoJSON(activeNeighborhood));
+    }
+  }, [mapLoaded, activeNeighborhood]);
 
   const activeData = neighborhoods.find((n) => n.id === activeNeighborhood);
   const showStaticFallback = !hasToken || mapError;
@@ -289,13 +358,12 @@ export function SeoulNeighborhoodMap() {
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 rounded-xl overflow-hidden border bg-card shadow-lg">
-          {/* Map container - LEFT on desktop, TOP on mobile */}
           <div className="w-full md:w-2/3 h-[350px] md:h-[520px] relative bg-slate-100 rounded-xl overflow-hidden">
             {showStaticFallback ? (
               <StaticMapFallback
                 activeNeighborhood={activeNeighborhood}
-                onHover={handleMarkerHover}
-                onClick={handleMarkerClick}
+                onHover={handleHover}
+                onClick={handleClick}
               />
             ) : (
               <>
@@ -312,10 +380,9 @@ export function SeoulNeighborhoodMap() {
             )}
           </div>
 
-          {/* Info panel - RIGHT on desktop, BOTTOM on mobile */}
           <div className="w-full md:w-1/3 p-6 flex flex-col">
             <p className="text-xs text-muted-foreground mb-4 italic">
-              Hover over markers on the map to explore neighborhoods.
+              Hover over areas on the map to explore neighborhoods.
             </p>
 
             <div
@@ -342,7 +409,7 @@ export function SeoulNeighborhoodMap() {
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-full text-muted-foreground text-sm">
-                  Hover a marker on the map to see details
+                  Hover an area on the map to see details
                 </div>
               )}
             </div>
@@ -360,7 +427,7 @@ export function SeoulNeighborhoodMap() {
                       : "hover:bg-muted"
                     }
                   `}
-                  onClick={() => handleMarkerClick(n.id)}
+                  onClick={() => handleClick(n.id)}
                 >
                   <span
                     className={`
