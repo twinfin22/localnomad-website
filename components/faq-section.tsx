@@ -4,7 +4,7 @@ export function FaqSection() {
   return (
     <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
       <div className="container mx-auto max-w-3xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-foreground mb-12 sm:mb-16">FAQ</h2>
+        <h2 className="text-fluid-section font-bold text-center text-foreground mb-12 sm:mb-16">FAQ</h2>
 
         <Accordion type="single" collapsible className="space-y-4">
           <AccordionItem value="item-1" className="border rounded-lg px-4 sm:px-6">

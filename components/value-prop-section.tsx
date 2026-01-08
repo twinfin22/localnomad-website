@@ -5,10 +5,10 @@ export function ValuePropSection() {
     <section id="soft-landing" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance px-2">
+          <h2 className="text-fluid-section font-bold text-foreground mb-4 text-balance px-2">
             Remove friction from your first 14 days in Seoul.
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground font-light px-2">Focus on living, not logistics</p>
+          <p className="text-fluid-subhero text-muted-foreground font-light px-2">Focus on living, not logistics</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 sm:gap-12">

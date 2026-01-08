@@ -4,7 +4,7 @@ export function WhatsNextSection() {
   return (
     <section id="popup-residency" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-foreground mb-12 sm:mb-16">
+        <h2 className="text-fluid-section font-bold text-center text-foreground mb-12 sm:mb-16 text-balance">
           What's Next
         </h2>
 

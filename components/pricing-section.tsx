@@ -6,15 +6,15 @@ export function PricingSection() {
   return (
     <section id="boots-on-ground" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-foreground mb-12 sm:mb-16">
+        <h2 className="text-fluid-section font-bold text-center text-foreground mb-12 sm:mb-16 text-balance">
           Choose Your Landing
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
           <Card className="p-6 sm:p-8 bg-card shadow-sm">
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">72 hours</h3>
+            <h3 className="text-fluid-subsection font-bold text-foreground mb-2">72 hours</h3>
             <div className="mb-6">
-              <span className="text-3xl sm:text-4xl font-bold text-primary">$150</span>
+              <span className="text-fluid-price font-bold text-primary">$150</span>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
@@ -42,9 +42,9 @@ export function PricingSection() {
           </Card>
 
           <Card className="p-6 sm:p-8 bg-primary text-primary-foreground shadow-lg border-primary">
-            <h3 className="text-xl sm:text-2xl font-bold mb-2">14 days</h3>
+            <h3 className="text-fluid-subsection font-bold mb-2">14 days</h3>
             <div className="mb-6">
-              <span className="text-3xl sm:text-4xl font-bold">$350</span>
+              <span className="text-fluid-price font-bold">$350</span>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
@@ -73,9 +73,9 @@ export function PricingSection() {
           </Card>
 
           <Card className="p-6 sm:p-8 bg-card shadow-sm">
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Custom Add-on</h3>
+            <h3 className="text-fluid-subsection font-bold text-foreground mb-2">Custom Add-on</h3>
             <div className="mb-6">
-              <span className="text-3xl sm:text-4xl font-bold text-primary">$150</span>
+              <span className="text-fluid-price font-bold text-primary">$150</span>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">

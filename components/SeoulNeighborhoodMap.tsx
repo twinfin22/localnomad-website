@@ -413,10 +413,10 @@ export function SeoulNeighborhoodMap() {
   return (
     <section className="w-full py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+        <h2 className="text-fluid-section font-bold text-center mb-4 text-primary text-balance">
           Choose Your Neighborhood
         </h2>
-        <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+        <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto text-fluid-body">
           Explore Seoul&apos;s diverse neighborhoods and find the perfect place for your soft landing.
         </p>
 

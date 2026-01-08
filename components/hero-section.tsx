@@ -9,11 +9,11 @@ export function HeroSection() {
       />
       <div className="absolute inset-0 bg-black/50" />
       <div className="container mx-auto max-w-4xl text-center relative z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance px-2">
+        <h1 className="text-fluid-hero font-bold text-white mb-6 text-balance px-2">
           Soft Landing, Designed for the Borderless
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-12 font-light px-2">
+        <p className="text-fluid-subhero text-white/80 mb-12 font-light px-2 max-w-2xl mx-auto">
           A landing hack from arrival to daily life
         </p>
 

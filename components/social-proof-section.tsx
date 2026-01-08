@@ -28,7 +28,7 @@ export function SocialProofSection() {
   return (
     <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8 sm:mb-12">
+        <h2 className="text-fluid-section font-bold text-center text-foreground mb-8 sm:mb-12 text-balance">
           From Fellow Nomads
         </h2>
         <div
