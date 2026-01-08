@@ -211,17 +211,12 @@ export function SeoulNeighborhoodMap() {
   const [activeNeighborhood, setActiveNeighborhood] = useState<string | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapError, setMapError] = useState(false);
-  const [highlightPulse, setHighlightPulse] = useState(false);
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
   const hasToken = Boolean(token && token.length > 0);
 
   const handleNeighborhoodChange = useCallback((id: string | null) => {
     setActiveNeighborhood(id);
-    if (id) {
-      setHighlightPulse(true);
-      setTimeout(() => setHighlightPulse(false), 300);
-    }
   }, []);
 
   const handleHover = useCallback((id: string | null) => {
@@ -357,8 +352,8 @@ export function SeoulNeighborhoodMap() {
           Explore Seoul&apos;s diverse neighborhoods and find the perfect place for your soft landing.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 rounded-xl overflow-hidden border bg-card shadow-lg">
-          <div className="w-full md:w-2/3 h-[350px] md:h-[520px] relative bg-slate-100 rounded-xl overflow-hidden">
+        <div className="flex flex-col md:flex-row rounded-xl overflow-hidden border bg-card shadow-lg">
+          <div className="w-full md:w-2/3 h-[320px] md:h-[480px] relative bg-slate-100">
             {showStaticFallback ? (
               <StaticMapFallback
                 activeNeighborhood={activeNeighborhood}
@@ -369,7 +364,7 @@ export function SeoulNeighborhoodMap() {
               <>
                 <div 
                   ref={mapContainer} 
-                  className="w-full h-full rounded-xl overflow-hidden"
+                  className="w-full h-full"
                 />
                 {!mapLoaded && (
                   <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
@@ -380,66 +375,44 @@ export function SeoulNeighborhoodMap() {
             )}
           </div>
 
-          <div className="w-full md:w-1/3 p-6 flex flex-col">
-            <p className="text-xs text-muted-foreground mb-4 italic">
-              Hover over areas on the map to explore neighborhoods.
-            </p>
-
-            <div
-              className={`
-                flex-1 rounded-lg border p-4 mb-4 transition-all duration-300 min-h-[120px]
-                ${highlightPulse ? "ring-2 ring-primary/30 bg-primary/5" : "bg-background"}
-              `}
-              style={{
-                borderTopColor: activeData?.color || "transparent",
-                borderTopWidth: activeData ? "3px" : "1px",
-              }}
-            >
-              {activeData ? (
-                <div className="animate-in fade-in duration-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span
-                      className="w-3 h-3 rounded-full"
-                      style={{ backgroundColor: activeData.color }}
-                    />
-                    <h3 className="text-lg font-semibold">{activeData.name}</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-2">{activeData.intro}</p>
-                  <p className="text-sm">{activeData.description}</p>
-                </div>
-              ) : (
-                <div className="flex items-center justify-center h-full text-muted-foreground text-sm">
-                  Hover an area on the map to see details
-                </div>
-              )}
-            </div>
-
-            <div className="space-y-1">
-              <p className="text-xs font-medium text-muted-foreground mb-2">All neighborhoods:</p>
-              {neighborhoods.map((n) => (
-                <button
-                  key={n.id}
-                  className={`
-                    w-full text-left px-3 py-2 rounded-md text-sm transition-all duration-150
-                    flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary/50
-                    ${activeNeighborhood === n.id 
-                      ? "bg-primary/10 font-medium" 
-                      : "hover:bg-muted"
-                    }
-                  `}
-                  onClick={() => handleClick(n.id)}
-                >
+          <div className="w-full md:w-1/3 h-auto md:h-[480px] p-4 md:p-5 flex flex-col justify-center bg-card">
+            {activeData ? (
+              <div 
+                className="animate-in fade-in duration-200 p-4 rounded-lg"
+                style={{
+                  borderLeft: `4px solid ${activeData.color}`,
+                  backgroundColor: `${activeData.color}10`,
+                }}
+              >
+                <div className="flex items-center gap-3 mb-3">
                   <span
-                    className={`
-                      rounded-full transition-all duration-150
-                      ${activeNeighborhood === n.id ? "w-3 h-3" : "w-2 h-2"}
-                    `}
-                    style={{ backgroundColor: n.color }}
+                    className="w-4 h-4 rounded-full shrink-0"
+                    style={{ backgroundColor: activeData.color }}
                   />
-                  <span>{n.name}</span>
-                </button>
-              ))}
-            </div>
+                  <h3 className="text-xl font-bold">{activeData.name}</h3>
+                </div>
+                <p className="text-sm font-medium text-muted-foreground mb-3">{activeData.intro}</p>
+                <p className="text-sm leading-relaxed">{activeData.description}</p>
+              </div>
+            ) : (
+              <div className="space-y-1">
+                {neighborhoods.map((n) => (
+                  <button
+                    key={n.id}
+                    className="w-full text-left px-3 py-2.5 rounded-md text-sm transition-all duration-150 flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:bg-muted"
+                    onClick={() => handleClick(n.id)}
+                    onMouseEnter={() => handleHover(n.id)}
+                    onMouseLeave={() => handleHover(null)}
+                  >
+                    <span
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ backgroundColor: n.color }}
+                    />
+                    <span>{n.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
