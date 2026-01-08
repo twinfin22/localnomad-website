@@ -102,43 +102,61 @@ const seoulBounds: [[number, number], [number, number]] = [
   [127.20, 37.70],
 ];
 
-function NeighborhoodMarker({
-  neighborhood,
-  isActive,
-  onHover,
-  onClick,
-}: {
-  neighborhood: Neighborhood;
-  isActive: boolean;
+function StaticMapFallback({ 
+  activeNeighborhood, 
+  onHover, 
+  onClick 
+}: { 
+  activeNeighborhood: string | null;
   onHover: (id: string | null) => void;
   onClick: (id: string) => void;
 }) {
   return (
-    <div
-      className={`
-        cursor-pointer transition-all duration-200 ease-out
-        rounded-full flex items-center justify-center
-        ${isActive ? "w-5 h-5 scale-125" : "w-3 h-3"}
-      `}
-      style={{
-        backgroundColor: neighborhood.color,
-        boxShadow: isActive
-          ? `0 0 0 4px ${neighborhood.color}40, 0 0 12px ${neighborhood.color}60`
-          : `0 0 0 2px ${neighborhood.color}30`,
-        filter: isActive ? "brightness(1.2)" : "brightness(1)",
-      }}
-      onMouseEnter={() => onHover(neighborhood.id)}
-      onMouseLeave={() => onHover(null)}
-      onClick={() => onClick(neighborhood.id)}
-      role="button"
-      tabIndex={0}
-      aria-label={`Select ${neighborhood.name}`}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          onClick(neighborhood.id);
-        }
-      }}
-    />
+    <div className="relative w-full h-full bg-slate-100 overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-[90%] h-[90%]">
+          {neighborhoods.map((n) => {
+            const x = ((n.lng - 126.75) / (127.20 - 126.75)) * 100;
+            const y = ((37.70 - n.lat) / (37.70 - 37.40)) * 100;
+            const isActive = activeNeighborhood === n.id;
+            
+            return (
+              <button
+                key={n.id}
+                className={`
+                  absolute transform -translate-x-1/2 -translate-y-1/2
+                  rounded-full transition-all duration-200 cursor-pointer
+                  focus:outline-none focus:ring-2 focus:ring-primary/50
+                  ${isActive ? "w-6 h-6 z-10" : "w-4 h-4"}
+                `}
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  backgroundColor: n.color,
+                  boxShadow: isActive
+                    ? `0 0 0 4px ${n.color}40, 0 0 16px ${n.color}60`
+                    : `0 0 0 2px ${n.color}30, 0 2px 4px rgba(0,0,0,0.2)`,
+                  filter: isActive ? "brightness(1.2)" : "brightness(1)",
+                }}
+                onMouseEnter={() => onHover(n.id)}
+                onMouseLeave={() => onHover(null)}
+                onClick={() => onClick(n.id)}
+                aria-label={`Select ${n.name}`}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="absolute bottom-2 left-2 text-xs text-muted-foreground bg-white/80 px-2 py-1 rounded">
+        Seoul, South Korea
+      </div>
+    </div>
   );
 }
 
@@ -148,9 +166,11 @@ export function SeoulNeighborhoodMap() {
   const markersRef = useRef<{ [key: string]: mapboxgl.Marker }>({});
   const [activeNeighborhood, setActiveNeighborhood] = useState<string | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapError, setMapError] = useState(false);
   const [highlightPulse, setHighlightPulse] = useState(false);
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+  const hasToken = Boolean(token && token.length > 0);
 
   const handleNeighborhoodChange = useCallback((id: string | null) => {
     setActiveNeighborhood(id);
@@ -168,35 +188,40 @@ export function SeoulNeighborhoodMap() {
     handleNeighborhoodChange(id);
   }, [handleNeighborhoodChange]);
 
-  const handleListHover = useCallback((id: string | null) => {
-    handleNeighborhoodChange(id);
-  }, [handleNeighborhoodChange]);
-
-  const handleListClick = useCallback((id: string) => {
-    handleNeighborhoodChange(id);
-  }, [handleNeighborhoodChange]);
-
   useEffect(() => {
-    if (!token || !mapContainer.current || map.current) return;
+    if (!hasToken || !mapContainer.current || map.current) return;
 
-    mapboxgl.accessToken = token;
+    try {
+      mapboxgl.accessToken = token!;
 
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/light-v11",
-      center: [126.9780, 37.5665],
-      zoom: 11.5,
-      maxBounds: seoulBounds,
-      pitchWithRotate: false,
-      dragRotate: false,
-      touchPitch: false,
-    });
+      const mapInstance = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: "mapbox://styles/mapbox/light-v11",
+        center: [126.9780, 37.5665],
+        zoom: 11.5,
+        maxBounds: seoulBounds,
+        pitchWithRotate: false,
+        dragRotate: false,
+        touchPitch: false,
+        failIfMajorPerformanceCaveat: false,
+      });
 
-    map.current.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+      map.current = mapInstance;
 
-    map.current.on("load", () => {
-      setMapLoaded(true);
-    });
+      mapInstance.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+
+      mapInstance.on("load", () => {
+        setMapLoaded(true);
+      });
+
+      mapInstance.on("error", (e) => {
+        console.error("Mapbox error:", e);
+        setMapError(true);
+      });
+    } catch (e) {
+      console.error("Mapbox initialization error:", e);
+      setMapError(true);
+    }
 
     return () => {
       Object.values(markersRef.current).forEach((marker) => marker.remove());
@@ -204,7 +229,7 @@ export function SeoulNeighborhoodMap() {
       map.current?.remove();
       map.current = null;
     };
-  }, [token]);
+  }, [hasToken, token]);
 
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
@@ -221,17 +246,22 @@ export function SeoulNeighborhoodMap() {
 
       const isActive = activeNeighborhood === neighborhood.id;
       
-      root.className = `
-        cursor-pointer transition-all duration-200 ease-out
-        rounded-full flex items-center justify-center
-        ${isActive ? "w-5 h-5" : "w-3 h-3"}
+      root.style.cssText = `
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: ${isActive ? "24px" : "16px"};
+        height: ${isActive ? "24px" : "16px"};
+        background-color: ${neighborhood.color};
+        box-shadow: ${isActive
+          ? `0 0 0 4px ${neighborhood.color}40, 0 0 16px ${neighborhood.color}60`
+          : `0 0 0 2px ${neighborhood.color}30, 0 2px 4px rgba(0,0,0,0.2)`};
+        filter: ${isActive ? "brightness(1.2)" : "brightness(1)"};
+        transform: ${isActive ? "scale(1.1)" : "scale(1)"};
       `;
-      root.style.backgroundColor = neighborhood.color;
-      root.style.boxShadow = isActive
-        ? `0 0 0 4px ${neighborhood.color}40, 0 0 12px ${neighborhood.color}60`
-        : `0 0 0 2px ${neighborhood.color}30`;
-      root.style.filter = isActive ? "brightness(1.2)" : "brightness(1)";
-      root.style.transform = isActive ? "scale(1.25)" : "scale(1)";
 
       el.addEventListener("mouseenter", () => handleMarkerHover(neighborhood.id));
       el.addEventListener("mouseleave", () => handleMarkerHover(null));
@@ -246,34 +276,7 @@ export function SeoulNeighborhoodMap() {
   }, [mapLoaded, activeNeighborhood, handleMarkerHover, handleMarkerClick]);
 
   const activeData = neighborhoods.find((n) => n.id === activeNeighborhood);
-
-  if (!token) {
-    return (
-      <section className="w-full py-16 md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-primary">
-            Choose Your Neighborhood
-          </h2>
-          <div className="rounded-xl border bg-card p-8 text-center shadow-sm max-w-2xl mx-auto">
-            <div className="text-5xl mb-4">🗺️</div>
-            <h3 className="text-xl font-semibold mb-2">Mapbox Token Required</h3>
-            <p className="text-muted-foreground mb-4">
-              To display the interactive Seoul neighborhood map, please add your Mapbox access token.
-            </p>
-            <div className="bg-muted rounded-lg p-4 text-left text-sm">
-              <p className="font-medium mb-2">How to set up in Replit:</p>
-              <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
-                <li>Go to the Secrets tab (lock icon in the sidebar)</li>
-                <li>Add a new secret with key: <code className="bg-background px-1 rounded">NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN</code></li>
-                <li>Set the value to your Mapbox public token</li>
-                <li>Restart the application</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const showStaticFallback = !hasToken || mapError;
 
   return (
     <section className="w-full py-16 md:py-24 bg-secondary/30">
@@ -288,12 +291,12 @@ export function SeoulNeighborhoodMap() {
         <div className="flex flex-col-reverse md:flex-row gap-6 rounded-xl overflow-hidden border bg-card shadow-lg">
           <div className="w-full md:w-1/3 p-6 flex flex-col">
             <p className="text-xs text-muted-foreground mb-4 italic">
-              Hover markers (or tap on mobile) to preview neighborhoods.
+              Hover over markers on the map to explore neighborhoods.
             </p>
 
             <div
               className={`
-                flex-1 rounded-lg border p-4 mb-4 transition-all duration-300
+                flex-1 rounded-lg border p-4 mb-4 transition-all duration-300 min-h-[120px]
                 ${highlightPulse ? "ring-2 ring-primary/30 bg-primary/5" : "bg-background"}
               `}
               style={{
@@ -315,7 +318,7 @@ export function SeoulNeighborhoodMap() {
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-full text-muted-foreground text-sm">
-                  Select a neighborhood to see details
+                  Hover a marker on the map to see details
                 </div>
               )}
             </div>
@@ -333,11 +336,7 @@ export function SeoulNeighborhoodMap() {
                       : "hover:bg-muted"
                     }
                   `}
-                  onMouseEnter={() => handleListHover(n.id)}
-                  onMouseLeave={() => handleListHover(null)}
-                  onFocus={() => handleListHover(n.id)}
-                  onBlur={() => handleListHover(null)}
-                  onClick={() => handleListClick(n.id)}
+                  onClick={() => handleMarkerClick(n.id)}
                 >
                   <span
                     className={`
@@ -353,11 +352,21 @@ export function SeoulNeighborhoodMap() {
           </div>
 
           <div className="w-full md:w-2/3 h-[350px] md:h-[500px] relative">
-            <div ref={mapContainer} className="absolute inset-0" />
-            {!mapLoaded && (
-              <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
-              </div>
+            {showStaticFallback ? (
+              <StaticMapFallback
+                activeNeighborhood={activeNeighborhood}
+                onHover={handleMarkerHover}
+                onClick={handleMarkerClick}
+              />
+            ) : (
+              <>
+                <div ref={mapContainer} className="absolute inset-0" />
+                {!mapLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
