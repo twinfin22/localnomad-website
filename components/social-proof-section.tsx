@@ -1,7 +1,9 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { useRef } from "react"
+import { useCallback, useEffect, useState } from "react"
+import useEmblaCarousel from "embla-carousel-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const testimonials = [
   {
@@ -18,12 +20,54 @@ const testimonials = [
   },
   {
     quote: "Finally, a service that understands what nomads actually need.",
-    author: "Tech Professional",
+    author: "Founder",
   },
 ]
 
 export function SocialProofSection() {
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+    dragFree: false,
+  })
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCanScrollPrev(emblaApi.canScrollPrev())
+    setCanScrollNext(emblaApi.canScrollNext())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on("select", onSelect)
+    emblaApi.on("reInit", onSelect)
+    return () => {
+      emblaApi.off("select", onSelect)
+      emblaApi.off("reInit", onSelect)
+    }
+  }, [emblaApi, onSelect])
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") scrollPrev()
+      if (e.key === "ArrowRight") scrollNext()
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [scrollPrev, scrollNext])
 
   return (
     <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
@@ -31,17 +75,41 @@ export function SocialProofSection() {
         <h2 className="text-fluid-section font-bold text-center text-foreground mb-8 sm:mb-12 text-balance">
           From Fellow Nomads
         </h2>
-        <div
-          ref={scrollRef}
-          className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="flex-shrink-0 w-72 sm:w-80 p-6 sm:p-8 snap-center bg-card border shadow-sm">
-              <p className="text-base sm:text-lg text-foreground mb-4 italic text-pretty">"{testimonial.quote}"</p>
-              <p className="text-sm text-muted-foreground">— {testimonial.author}</p>
-            </Card>
-          ))}
+        
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4 sm:gap-6 select-none">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_85%] sm:flex-[0_0_45%] lg:flex-[0_0_31%] min-w-0"
+                >
+                  <Card className="h-full p-6 sm:p-8 bg-card border shadow-sm">
+                    <p className="text-base sm:text-lg text-foreground mb-4 italic text-pretty">
+                      "{testimonial.quote}"
+                    </p>
+                    <p className="text-sm text-muted-foreground">— {testimonial.author}</p>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={scrollPrev}
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-background border shadow-md text-foreground hover:bg-muted transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={scrollNext}
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-background border shadow-md text-foreground hover:bg-muted transition-colors"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>
