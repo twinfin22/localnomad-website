@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary",
+        default: "bg-[--brand-navy] text-white shadow-sm hover:bg-[--brand-navy-light] hover:shadow-md",
         destructive:
-          "bg-destructive text-white hover:bg-white hover:text-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         outline:
-          "border bg-background shadow-xs hover:bg-foreground hover:text-background hover:border-foreground dark:bg-input/30 dark:border-input",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary",
-        ghost: "hover:bg-foreground hover:text-background dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
-        ctaPrimary: "bg-[#1e3a5f] text-white shadow-md hover:bg-[#152a45] hover:shadow-lg",
+          "border border-[--brand-navy]/30 bg-transparent text-[--brand-navy] shadow-xs hover:bg-[--brand-sky] hover:border-[--brand-navy]/50",
+        secondary: "bg-[--brand-sky] text-[--brand-navy] hover:bg-[--brand-sky]/80",
+        ghost: "text-[--brand-navy] hover:bg-[--brand-sky] hover:text-[--brand-navy]",
+        link: "text-[--brand-navy] underline-offset-4 hover:underline",
+        ctaPrimary: "bg-[--brand-navy] text-white shadow-md hover:bg-[--brand-navy-light] hover:shadow-lg",
         ctaSecondary: "bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20 hover:border-white/50",
       },
       size: {

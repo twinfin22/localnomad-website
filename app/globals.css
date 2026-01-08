@@ -5,6 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --brand-navy: #0B1F3B;
+  --brand-navy-light: #1a3a5c;
+  --brand-sky: #EAF1FF;
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.15 0.02 250);
   --card: oklch(1 0 0);
