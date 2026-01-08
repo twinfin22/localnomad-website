@@ -1,0 +1,69 @@
+Implement an interactive “Choose Your Neighborhood” section for Seoul.
+
+UI goal
+
+Create a full-width section with a 2-column layout:
+	•	Right (2/3 width): an interactive Mapbox map zoomed into Seoul.
+	•	Left (1/3 width): an info panel that displays the hovered/selected neighborhood name + one-line intro + short description.
+	•	The map should show markers for neighborhoods.
+	•	On hover (desktop) or tap/click (mobile), update the left panel with that neighborhood’s info.
+	•	Make it obvious that hovering works:
+	•	The selected/hovered neighborhood marker should change size and color (slightly brighter).
+	•	The left panel should show a subtle hint like “Hover a marker to preview” and animate highlight when the neighborhood changes.
+	•	Each neighborhood should have its own subtle color tone used in the left panel (border/top bar/pill), so the user sees feedback immediately.
+
+Data
+
+Use this neighborhood dataset (include approximate coordinates and distinct colors):
+	•	Yongsan — Central Seoul, where business, transport, and everyday life intersect.
+	•	Jung-gu — Seoul’s historic core — government offices, old streets, and quiet routines.
+	•	Gangnam — Tech, startups, and fast-moving city life with global connections.
+	•	Itaewon — The most international part of Seoul — diverse, flexible, and culturally open.
+	•	Mapo (Hongdae / Yeonnam) — Creative, youthful, and walkable — cafés, freelancers, and late nights.
+	•	Jongno — Traditional Seoul with deep history, markets, and administrative offices.
+	•	Seongsu — Industrial-turned-creative — studios, cafés, and modern urban culture.
+	•	Songpa (Jamsil) — Clean, spacious, and family-oriented with parks and newer housing.
+	•	Hannam — Quiet luxury, embassies, and curated living — discreet and international.
+
+Provide reasonable approximate lng/lat for each (comment that they’re approximate) and give each a unique color.
+
+Implementation requirements
+	•	Use mapbox-gl and import its CSS.
+	•	Install dependency: npm i mapbox-gl.
+	•	Use env var for token: NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN.
+	•	Map must be client-only (avoid SSR issues). Use a client component and initialize Mapbox once.
+	•	Create a new component file: components/SeoulNeighborhoodMap.tsx (client component).
+	•	Add this new section to the homepage in app/page.tsx under an existing section (or near the middle), with heading: “Choose Your Neighborhood”.
+	•	Layout:
+	•	Desktop: left panel 1/3, map 2/3 side-by-side.
+	•	Mobile: stack vertically (map first, then panel), and interaction works via tap.
+	•	Add a keyboard-accessible list of neighborhoods in the left panel:
+	•	Hover/focus a list item updates the selection and highlights the corresponding marker.
+	•	Clicking a list item also selects it.
+	•	Map behavior:
+	•	Center on Seoul and set zoom around city level.
+	•	Constrain bounds roughly to Seoul area (prevent panning far away).
+	•	Disable map rotation (bearing/pitch interactions) for simplicity.
+	•	Marker behavior:
+	•	Render custom HTML markers (divs) so we can color and animate them.
+	•	Default marker: small colored dot with subtle ring.
+	•	On hover/active: slightly bigger, brighter, stronger ring.
+	•	Panel behavior:
+	•	When selection changes, briefly animate the panel (soft highlight pulse) so users notice the connection.
+	•	Show microcopy hint at the top: “Hover markers (or tap on mobile) to preview neighborhoods.”
+	•	Fallback:
+	•	If NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN is missing, render a friendly placeholder that explains how to add it in Replit Secrets.
+	•	Do not crash.
+	•	Styling:
+	•	Use Tailwind classes.
+	•	Rounded corners, subtle shadow, clean borders.
+	•	Keep typography consistent with existing site.
+
+Deliverables
+	1.	Add mapbox-gl dependency.
+	2.	Add Mapbox CSS import in app/layout.tsx (or app/globals.css), whichever is best.
+	3.	Create components/SeoulNeighborhoodMap.tsx.
+	4.	Update app/page.tsx to include the new section and component.
+	5.	Add a short comment in code explaining where to set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in Replit.
+
+Proceed to implement now. After implementation, briefly list which files were created/modified and what to set in Replit Secrets.
