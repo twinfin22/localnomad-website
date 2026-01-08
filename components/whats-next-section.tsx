@@ -17,14 +17,14 @@ export function WhatsNextSection() {
           <Button
             size="lg"
             variant="outline"
-            className="h-auto py-6 sm:py-8 text-base sm:text-lg border-2 bg-transparent"
+            className="h-auto py-6 sm:py-8 text-base sm:text-lg border-2 border-white/70 bg-transparent text-white hover:bg-white/10 hover:border-white"
           >
             Need Boots on the ground?
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="h-auto py-6 sm:py-8 text-base sm:text-lg border-2 bg-transparent"
+            className="h-auto py-6 sm:py-8 text-base sm:text-lg border-2 border-white/70 bg-transparent text-white hover:bg-white/10 hover:border-white"
           >
             Join our Popup Residency
           </Button>
