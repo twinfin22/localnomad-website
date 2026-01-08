@@ -49,6 +49,38 @@ export function FaqSection() {
               accommodation choice). You'll also receive a link to schedule your call.
             </AccordionContent>
           </AccordionItem>
+
+          <AccordionItem value="item-5" className="border rounded-lg px-4 sm:px-6">
+            <AccordionTrigger className="text-left text-base sm:text-lg font-semibold">
+              Can't I just figure this out myself?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="mb-3">You absolutely can.</p>
+              <p className="mb-3">That's why we offer a free curated list of local resources — to help you get started on your own.</p>
+              <p>LocalNomad is for people who don't want to spend their first weeks verifying generated information, comparing options, or learning through trial and error. We help you move forward with clarity and confidence.</p>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-6" className="border rounded-lg px-4 sm:px-6">
+            <AccordionTrigger className="text-left text-base sm:text-lg font-semibold">
+              What's the difference between the 72 hours and 14 days plans?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="mb-3">The 72 hours plan helps you land.<br />The 14 days plan helps you feel settled.</p>
+              <p className="mb-3">The 72 hours plan is designed for immediate needs right after arrival.</p>
+              <p>The 14 days plan is for people who want ongoing guidance — enough time to understand their options, ask questions, and feel confident about where and how they settle in.</p>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-7" className="border rounded-lg px-4 sm:px-6">
+            <AccordionTrigger className="text-left text-base sm:text-lg font-semibold">
+              How do I know your content won't be outdated or incomplete?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="mb-3">Our guidance doesn't stop at static content.</p>
+              <p>Within the scope of what you purchase, you can ask unlimited questions — so we make sure the information stays relevant, complete, and tailored to your situation.</p>
+            </AccordionContent>
+          </AccordionItem>
         </Accordion>
       </div>
     </section>

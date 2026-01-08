@@ -14,14 +14,14 @@ export function HeroSection() {
         </h1>
 
         <p className="text-fluid-subhero text-white/80 mb-12 font-light px-2 max-w-2xl mx-auto">
-          A landing hack from arrival to daily life
+          Soft Landing Hack from arrival to daily life, designed by Local Nomads
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 sm:px-0 max-w-sm sm:max-w-lg mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-2 max-w-sm sm:max-w-none mx-auto">
           <Button
             variant="ctaPrimary"
             size="cta"
-            className="w-full font-semibold"
+            className="w-full sm:w-auto font-semibold"
           >
             Get Curated Local Resources
           </Button>
@@ -29,7 +29,7 @@ export function HeroSection() {
           <Button
             variant="ctaSecondary"
             size="cta"
-            className="w-full font-medium"
+            className="w-full sm:w-auto font-medium"
           >
             Stay in-the-know on Network Societies
           </Button>
