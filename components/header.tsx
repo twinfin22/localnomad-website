@@ -55,12 +55,14 @@ export function Header() {
             >
               Popup Residency
             </button>
-            <button
-              onClick={() => scrollToSection("newsletter")}
+            <a
+              href="https://startofsomethingnew.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Newsletter
-            </button>
+            </a>
           </nav>
 
           <Button className="bg-primary text-primary-foreground text-xs sm:text-sm whitespace-nowrap">
