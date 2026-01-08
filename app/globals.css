@@ -46,38 +46,41 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --brand-navy: #3B6EA8;
+  --brand-navy-light: #5A8AC4;
+  --brand-sky: #1A2A40;
+  --background: #0A1220;
+  --foreground: #E6EBF2;
+  --card: #0F1B2E;
+  --card-foreground: #E6EBF2;
+  --popover: #0F1B2E;
+  --popover-foreground: #E6EBF2;
+  --primary: #3B6EA8;
+  --primary-foreground: #E6EBF2;
+  --secondary: #1A2A40;
+  --secondary-foreground: #E6EBF2;
+  --muted: #162235;
+  --muted-foreground: #AAB4C3;
+  --accent: #3B6EA8;
+  --accent-foreground: #E6EBF2;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --border: #1F3350;
+  --input: #1F3350;
+  --ring: #3B6EA8;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #0F1B2E;
+  --sidebar-foreground: #E6EBF2;
+  --sidebar-primary: #3B6EA8;
+  --sidebar-primary-foreground: #E6EBF2;
+  --sidebar-accent: #1A2A40;
+  --sidebar-accent-foreground: #E6EBF2;
+  --sidebar-border: #1F3350;
+  --sidebar-ring: #3B6EA8;
 }
 
 @theme inline {

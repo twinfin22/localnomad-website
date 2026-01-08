@@ -175,7 +175,7 @@ function StaticMapFallback({
   onClick: (id: string) => void;
 }) {
   return (
-    <div className="relative w-full h-full bg-slate-100 overflow-hidden">
+    <div className="relative w-full h-full bg-muted overflow-hidden">
       <div 
         className="absolute inset-0 opacity-30"
         style={{
@@ -421,7 +421,7 @@ export function SeoulNeighborhoodMap() {
         </p>
 
         <div className="flex flex-col md:flex-row rounded-xl overflow-hidden border bg-card shadow-lg">
-          <div className="w-full md:w-2/3 h-[320px] md:h-[480px] relative bg-slate-100">
+          <div className="w-full md:w-2/3 h-[320px] md:h-[480px] relative bg-muted">
             {showStaticFallback ? (
               <StaticMapFallback
                 activeNeighborhood={activeNeighborhood}

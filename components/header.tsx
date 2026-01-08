@@ -2,9 +2,17 @@
 
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
+import { Sun, Moon } from "lucide-react"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +21,10 @@ export function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark")
+  }
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -65,10 +77,25 @@ export function Header() {
             </a>
           </nav>
 
-          <Button className="bg-primary text-primary-foreground text-xs sm:text-sm whitespace-nowrap">
-            <span className="hidden sm:inline">Get Curated Local Resources</span>
-            <span className="sm:hidden">Get Started</span>
-          </Button>
+          <div className="flex items-center gap-2 sm:gap-4">
+            {mounted && (
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                aria-label={resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {resolvedTheme === "dark" ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
+            )}
+            <Button className="bg-primary text-primary-foreground text-xs sm:text-sm whitespace-nowrap">
+              <span className="hidden sm:inline">Get Curated Local Resources</span>
+              <span className="sm:hidden">Get Started</span>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

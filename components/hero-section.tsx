@@ -7,7 +7,7 @@ export function HeroSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/seoul-hero.png')" }}
       />
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/50 dark:bg-black/60" />
       <div className="container mx-auto max-w-4xl text-center relative z-10">
         <h1 className="text-fluid-hero font-bold text-white mb-6 text-balance px-2">
           Soft Landing, Designed for the Borderless
