@@ -39,16 +39,21 @@ export function Header() {
         isScrolled ? "bg-background/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
         <div className="flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-lg sm:text-xl font-semibold text-foreground hover:text-primary transition-colors"
+            className="flex items-baseline gap-2 sm:gap-3 group"
           >
-            LocalNomad
+            <span className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              LocalNomad
+            </span>
+            <span className="hidden sm:inline text-xs text-muted-foreground font-medium tracking-wide">
+              Soft Landing
+            </span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             <button
               onClick={() => scrollToSection("soft-landing")}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -77,7 +82,7 @@ export function Header() {
             </a>
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             {mounted && (
               <button
                 onClick={toggleTheme}
