@@ -29,3 +29,15 @@ The dev server runs on port 5000 with `npm run dev -- -p 5000 -H 0.0.0.0`
 
 ## Deployment
 Uses Next.js production build with `npm run build` and `npm run start`
+
+## User Preferences
+
+### System Integrity Rules
+- **Prefer shared components**: Always update or extend existing shared components and design tokens
+- **No one-off styles**: Do NOT create one-off styles or components for a single section
+- **Document exceptions**: If an exception is unavoidable, document it explicitly
+
+### Design System
+- **Button variants**: Use standardized variants from `components/ui/button.tsx` (default, outline, secondary, ghost, inverted, ctaPrimary, ctaSecondary)
+- **Theme tokens**: Use semantic color tokens (primary, foreground, muted, etc.) — no hardcoded colors
+- **Consistency**: All changes must work across Desktop/Mobile and Light/Dark mode
