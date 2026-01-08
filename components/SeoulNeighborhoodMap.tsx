@@ -288,7 +288,31 @@ export function SeoulNeighborhoodMap() {
           Explore Seoul&apos;s diverse neighborhoods and find the perfect place for your soft landing.
         </p>
 
-        <div className="flex flex-col-reverse md:flex-row gap-6 rounded-xl overflow-hidden border bg-card shadow-lg">
+        <div className="flex flex-col md:flex-row gap-6 rounded-xl overflow-hidden border bg-card shadow-lg">
+          {/* Map container - LEFT on desktop, TOP on mobile */}
+          <div className="w-full md:w-2/3 h-[350px] md:h-[520px] relative bg-slate-100 rounded-xl overflow-hidden">
+            {showStaticFallback ? (
+              <StaticMapFallback
+                activeNeighborhood={activeNeighborhood}
+                onHover={handleMarkerHover}
+                onClick={handleMarkerClick}
+              />
+            ) : (
+              <>
+                <div 
+                  ref={mapContainer} 
+                  className="w-full h-full rounded-xl overflow-hidden"
+                />
+                {!mapLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+
+          {/* Info panel - RIGHT on desktop, BOTTOM on mobile */}
           <div className="w-full md:w-1/3 p-6 flex flex-col">
             <p className="text-xs text-muted-foreground mb-4 italic">
               Hover over markers on the map to explore neighborhoods.
@@ -349,25 +373,6 @@ export function SeoulNeighborhoodMap() {
                 </button>
               ))}
             </div>
-          </div>
-
-          <div className="w-full md:w-2/3 h-[350px] md:h-[500px] relative">
-            {showStaticFallback ? (
-              <StaticMapFallback
-                activeNeighborhood={activeNeighborhood}
-                onHover={handleMarkerHover}
-                onClick={handleMarkerClick}
-              />
-            ) : (
-              <>
-                <div ref={mapContainer} className="absolute inset-0" />
-                {!mapLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
-                  </div>
-                )}
-              </>
-            )}
           </div>
         </div>
       </div>
