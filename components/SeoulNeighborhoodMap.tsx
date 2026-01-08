@@ -108,9 +108,24 @@ const neighborhoods: Neighborhood[] = [
 ];
 
 const seoulBounds: [[number, number], [number, number]] = [
-  [126.75, 37.40],
-  [127.20, 37.70],
+  [126.76, 37.43],
+  [127.18, 37.70],
 ];
+
+const seoulBoundaryGeoJSON: GeoJSON.Feature = {
+  type: "Feature",
+  properties: {},
+  geometry: {
+    type: "Polygon",
+    coordinates: [[
+      [126.76, 37.43],
+      [126.76, 37.70],
+      [127.18, 37.70],
+      [127.18, 37.43],
+      [126.76, 37.43],
+    ]],
+  },
+};
 
 function generateCirclePolygon(
   lng: number,
@@ -236,9 +251,10 @@ export function SeoulNeighborhoodMap() {
       const mapInstance = new mapboxgl.Map({
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/light-v11",
-        center: [126.99, 37.54],
-        zoom: 10.8,
-        maxBounds: seoulBounds,
+        center: [126.97, 37.56],
+        zoom: 10,
+        minZoom: 9.5,
+        maxZoom: 14,
         pitchWithRotate: false,
         dragRotate: false,
         touchPitch: false,
@@ -250,6 +266,28 @@ export function SeoulNeighborhoodMap() {
       mapInstance.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
       mapInstance.on("load", () => {
+        mapInstance.fitBounds(seoulBounds, {
+          padding: { top: 40, bottom: 40, left: 40, right: 40 },
+          duration: 0,
+        });
+
+        mapInstance.addSource("seoul-boundary", {
+          type: "geojson",
+          data: seoulBoundaryGeoJSON,
+        });
+
+        mapInstance.addLayer({
+          id: "seoul-boundary-line",
+          type: "line",
+          source: "seoul-boundary",
+          paint: {
+            "line-color": "#94a3b8",
+            "line-width": 1.5,
+            "line-dasharray": [4, 2],
+            "line-opacity": 0.5,
+          },
+        });
+
         mapInstance.addSource("neighborhoods", {
           type: "geojson",
           data: createGeoJSON(null),
@@ -265,7 +303,7 @@ export function SeoulNeighborhoodMap() {
               "case",
               ["boolean", ["get", "isActive"], false],
               0.5,
-              0.25,
+              0.2,
             ],
           },
         });
@@ -282,7 +320,7 @@ export function SeoulNeighborhoodMap() {
               3,
               1.5,
             ],
-            "line-opacity": 0.9,
+            "line-opacity": 0.8,
           },
         });
 
