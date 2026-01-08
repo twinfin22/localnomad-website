@@ -1,0 +1,94 @@
+Standardize CTA button placement, sizing, internal density, and color contrast across all sections (especially “Choose Your Landing” and “What’s Next”).
+
+Problems to fix
+	•	CTA buttons are vertically misaligned between cards.
+	•	CTA placement varies by section, causing visual inconsistency.
+	•	Button text feels too loose with excessive internal padding (especially in “What’s Next”).
+	•	Secondary CTAs rely on dimmed backgrounds, which looks dull and unintentional.
+
+Goals
+
+Create a consistent CTA system where:
+	•	CTA buttons align visually across cards.
+	•	Button text feels dense, intentional, and balanced.
+	•	Primary vs Secondary CTAs are differentiated by color and structure, not dimming.
+
+⸻
+
+1) CTA placement (layout rule)
+	•	In all card-based sections (pricing, choose your landing, what’s next):
+	•	CTA buttons must be anchored to the bottom of each card.
+	•	Use a flex column layout with mt-auto on the CTA container.
+	•	All CTAs within the same row must sit on the same visual baseline.
+
+2) Button sizing & internal density
+	•	Increase text presence inside buttons:
+	•	Use slightly larger text (text-base or text-lg consistently).
+	•	Reduce excessive vertical padding.
+	•	Buttons should feel “filled”, not airy:
+	•	Prefer py-3 px-6 (or similar) instead of very tall padding.
+	•	Text should sit comfortably without large empty zones above/below.
+
+3) CTA width & consistency
+	•	Within the same section:
+	•	All CTAs should have the same width (e.g., full width of card footer).
+	•	Avoid mixed button sizes in the same visual group.
+
+⸻
+
+4) Color & contrast system (IMPORTANT)
+
+Do NOT use dimmed backgrounds for secondary CTAs.
+
+Use a clear color system instead:
+	•	Primary CTA:
+	•	Background: Brand Navy #0B1F3B
+	•	Text: White
+	•	Secondary CTA:
+	•	Background: Brand Secondary Blue (define one, e.g. #3F5F8C)
+	•	Text: White
+	•	No opacity dimming
+	•	Tertiary / Outline (if needed):
+	•	Transparent background
+	•	Border in brand navy
+	•	Text in brand navy
+
+All CTA variants must:
+	•	Work in both light and dark mode.
+	•	Use theme-aware tokens (no hardcoded dim opacity tricks).
+
+⸻
+
+5) Section-specific fixes
+	•	Choose Your Landing
+	•	All pricing cards:
+	•	CTA buttons aligned at bottom
+	•	Same height and width
+	•	What’s Next
+	•	Reduce internal padding of CTA buttons
+	•	Increase text size slightly
+	•	Replace dimmed CTA background with the defined secondary brand color
+	•	Ensure buttons feel like “actions”, not muted placeholders
+
+⸻
+
+6) Implementation notes
+	•	Use the shared Button component and variants.
+	•	Avoid one-off button styles per section.
+	•	Update layout in the relevant section components.
+
+⸻
+
+Deliverables
+	•	CTA buttons aligned across cards.
+	•	Denser, more confident button text appearance.
+	•	Clean primary/secondary contrast using color, not dimming.
+	•	Confirm consistency across:
+	•	Desktop + Mobile
+	•	Light mode + Dark mode
+
+Global consistency requirement (MANDATORY):
+	•	Apply changes consistently across Desktop AND Mobile, Light AND Dark modes.
+	•	Fix any discrepancies before finalizing.
+
+Proceed to implement.

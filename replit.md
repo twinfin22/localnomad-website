@@ -38,6 +38,8 @@ Uses Next.js production build with `npm run build` and `npm run start`
 - **Document exceptions**: If an exception is unavoidable, document it explicitly
 
 ### Design System
-- **Button variants**: Use standardized variants from `components/ui/button.tsx` (default, outline, secondary, ghost, inverted, ctaPrimary, ctaSecondary)
+- **Button variants**: Use standardized variants from `components/ui/button.tsx` (default, outline, secondary, ghost, inverted, ctaPrimary, ctaSecondary, ctaOutline)
+- **Button sizes**: Use `size="cta"` for call-to-action buttons (denser py-3 padding)
 - **Theme tokens**: Use semantic color tokens (primary, foreground, muted, etc.) — no hardcoded colors
+- **Brand colors**: ctaSecondary uses #3F5F8C (secondary blue), ctaOutline for white border buttons on dark backgrounds
 - **Consistency**: All changes must work across Desktop/Mobile and Light/Dark mode

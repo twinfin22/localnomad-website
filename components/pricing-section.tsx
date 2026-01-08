@@ -11,12 +11,12 @@ export function PricingSection() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-          <Card className="p-6 sm:p-8 bg-card shadow-sm">
+          <Card className="p-6 sm:p-8 bg-card shadow-sm flex flex-col">
             <h3 className="text-fluid-subsection font-bold text-foreground mb-2">72 hours</h3>
             <div className="mb-6">
               <span className="text-fluid-price font-bold text-primary">$150</span>
             </div>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-sm sm:text-base text-muted-foreground">Pre-arrival cheat sheet & checklist</span>
@@ -38,15 +38,17 @@ export function PricingSection() {
                 </span>
               </li>
             </ul>
-            <Button variant="default" className="w-full">Get Started</Button>
+            <div className="mt-8">
+              <Button variant="default" size="cta" className="w-full">Get Started</Button>
+            </div>
           </Card>
 
-          <Card className="p-6 sm:p-8 bg-primary text-primary-foreground shadow-lg border-primary">
+          <Card className="p-6 sm:p-8 bg-primary text-primary-foreground shadow-lg border-primary flex flex-col">
             <h3 className="text-fluid-subsection font-bold mb-2">14 days</h3>
             <div className="mb-6">
               <span className="text-fluid-price font-bold">$350</span>
             </div>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <span className="text-sm sm:text-base opacity-90">Everything in 72 hours</span>
@@ -69,15 +71,17 @@ export function PricingSection() {
                 <span className="text-sm sm:text-base opacity-90">1:1 check-in call</span>
               </li>
             </ul>
-            <Button variant="inverted" className="w-full">Get Started</Button>
+            <div className="mt-8">
+              <Button variant="inverted" size="cta" className="w-full">Get Started</Button>
+            </div>
           </Card>
 
-          <Card className="p-6 sm:p-8 bg-card shadow-sm">
+          <Card className="p-6 sm:p-8 bg-card shadow-sm flex flex-col">
             <h3 className="text-fluid-subsection font-bold text-foreground mb-2">Custom Add-on</h3>
             <div className="mb-6">
               <span className="text-fluid-price font-bold text-primary">$150</span>
             </div>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-sm sm:text-base text-muted-foreground">
@@ -93,9 +97,11 @@ export function PricingSection() {
                 <span className="text-sm sm:text-base text-muted-foreground">Open to suggestions</span>
               </li>
             </ul>
-            <Button variant="outline" className="w-full border-2">
-              Contact Us
-            </Button>
+            <div className="mt-8">
+              <Button variant="ctaSecondary" size="cta" className="w-full">
+                Contact Us
+              </Button>
+            </div>
           </Card>
         </div>
       </div>
