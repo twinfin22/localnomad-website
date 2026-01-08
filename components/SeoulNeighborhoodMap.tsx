@@ -107,56 +107,24 @@ const neighborhoods: Neighborhood[] = [
   },
 ];
 
-const seoulBounds: [[number, number], [number, number]] = [
+const defaultSeoulBounds: [[number, number], [number, number]] = [
   [126.76, 37.43],
   [127.18, 37.70],
 ];
 
-const seoulBoundaryCoords: [number, number][] = [
-  [126.764, 37.642],
-  [126.822, 37.702],
-  [126.886, 37.698],
-  [126.953, 37.692],
-  [127.004, 37.686],
-  [127.052, 37.689],
-  [127.103, 37.680],
-  [127.140, 37.660],
-  [127.165, 37.620],
-  [127.185, 37.575],
-  [127.180, 37.530],
-  [127.165, 37.490],
-  [127.130, 37.465],
-  [127.080, 37.455],
-  [127.020, 37.462],
-  [126.965, 37.470],
-  [126.905, 37.482],
-  [126.850, 37.495],
-  [126.800, 37.520],
-  [126.770, 37.555],
-  [126.755, 37.595],
-  [126.764, 37.642],
-];
-
-const seoulBoundaryGeoJSON: GeoJSON.Feature = {
-  type: "Feature",
-  properties: {},
-  geometry: {
-    type: "Polygon",
-    coordinates: [seoulBoundaryCoords],
-  },
-};
-
-const worldWithSeoulHole: GeoJSON.Feature = {
-  type: "Feature",
-  properties: {},
-  geometry: {
-    type: "Polygon",
-    coordinates: [
-      [[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]],
-      seoulBoundaryCoords,
-    ],
-  },
-};
+function createWorldMaskWithHole(seoulCoords: [number, number][]): GeoJSON.Feature {
+  return {
+    type: "Feature",
+    properties: {},
+    geometry: {
+      type: "Polygon",
+      coordinates: [
+        [[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]],
+        seoulCoords,
+      ],
+    },
+  };
+}
 
 function generateCirclePolygon(
   lng: number,
@@ -276,136 +244,153 @@ export function SeoulNeighborhoodMap() {
   useEffect(() => {
     if (!hasToken || !mapContainer.current || map.current) return;
 
-    try {
-      mapboxgl.accessToken = token!;
+    const initMap = async () => {
+      try {
+        const seoulResponse = await fetch("/data/seoul-boundary.geojson");
+        const seoulGeoJSON = await seoulResponse.json() as GeoJSON.FeatureCollection;
+        const seoulFeature = seoulGeoJSON.features[0];
+        const seoulGeometry = seoulFeature.geometry as GeoJSON.Polygon;
+        const seoulCoords = seoulGeometry.coordinates[0] as [number, number][];
 
-      const mapInstance = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: "mapbox://styles/mapbox/light-v11",
-        center: [126.97, 37.56],
-        zoom: 10,
-        minZoom: 9.5,
-        maxZoom: 14,
-        pitchWithRotate: false,
-        dragRotate: false,
-        touchPitch: false,
-        failIfMajorPerformanceCaveat: false,
-      });
+        const lngs = seoulCoords.map(c => c[0]);
+        const lats = seoulCoords.map(c => c[1]);
+        const seoulBounds: [[number, number], [number, number]] = [
+          [Math.min(...lngs), Math.min(...lats)],
+          [Math.max(...lngs), Math.max(...lats)],
+        ];
 
-      map.current = mapInstance;
+        mapboxgl.accessToken = token!;
 
-      mapInstance.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
-
-      mapInstance.on("load", () => {
-        mapInstance.fitBounds(seoulBounds, {
-          padding: { top: 40, bottom: 40, left: 40, right: 40 },
-          duration: 0,
+        const mapInstance = new mapboxgl.Map({
+          container: mapContainer.current!,
+          style: "mapbox://styles/mapbox/light-v11",
+          center: [126.97, 37.56],
+          zoom: 10,
+          minZoom: 9.5,
+          maxZoom: 14,
+          pitchWithRotate: false,
+          dragRotate: false,
+          touchPitch: false,
+          failIfMajorPerformanceCaveat: false,
         });
 
-        mapInstance.addSource("seoul-mask", {
-          type: "geojson",
-          data: worldWithSeoulHole,
-        });
+        map.current = mapInstance;
 
-        mapInstance.addLayer({
-          id: "seoul-outside-dim",
-          type: "fill",
-          source: "seoul-mask",
-          paint: {
-            "fill-color": "#1f2937",
-            "fill-opacity": 0.12,
-          },
-        });
+        mapInstance.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
-        mapInstance.addSource("seoul-boundary", {
-          type: "geojson",
-          data: seoulBoundaryGeoJSON,
-        });
+        mapInstance.on("load", () => {
+          mapInstance.fitBounds(seoulBounds, {
+            padding: { top: 40, bottom: 40, left: 40, right: 40 },
+            duration: 0,
+          });
 
-        mapInstance.addLayer({
-          id: "seoul-boundary-line",
-          type: "line",
-          source: "seoul-boundary",
-          paint: {
-            "line-color": "#374151",
-            "line-width": 1.5,
-            "line-opacity": 0.3,
-          },
-        });
+          mapInstance.addSource("seoul-mask", {
+            type: "geojson",
+            data: createWorldMaskWithHole(seoulCoords),
+          });
 
-        mapInstance.addSource("neighborhoods", {
-          type: "geojson",
-          data: createGeoJSON(null),
-        });
+          mapInstance.addLayer({
+            id: "seoul-outside-dim",
+            type: "fill",
+            source: "seoul-mask",
+            paint: {
+              "fill-color": "#1f2937",
+              "fill-opacity": 0.12,
+            },
+          });
 
-        mapInstance.addLayer({
-          id: "neighborhoods-fill",
-          type: "fill",
-          source: "neighborhoods",
-          paint: {
-            "fill-color": ["get", "color"],
-            "fill-opacity": [
-              "case",
-              ["boolean", ["get", "isActive"], false],
-              0.5,
-              0.2,
-            ],
-          },
-        });
+          mapInstance.addSource("seoul-boundary", {
+            type: "geojson",
+            data: seoulFeature,
+          });
 
-        mapInstance.addLayer({
-          id: "neighborhoods-outline",
-          type: "line",
-          source: "neighborhoods",
-          paint: {
-            "line-color": ["get", "color"],
-            "line-width": [
-              "case",
-              ["boolean", ["get", "isActive"], false],
-              3,
-              1.5,
-            ],
-            "line-opacity": 0.8,
-          },
-        });
+          mapInstance.addLayer({
+            id: "seoul-boundary-line",
+            type: "line",
+            source: "seoul-boundary",
+            paint: {
+              "line-color": "#374151",
+              "line-width": 1.5,
+              "line-opacity": 0.3,
+            },
+          });
 
-        mapInstance.on("mousemove", "neighborhoods-fill", (e) => {
-          if (e.features && e.features.length > 0) {
-            const feature = e.features[0];
-            const id = feature.properties?.id;
-            if (id) {
-              mapInstance.getCanvas().style.cursor = "pointer";
-              setActiveNeighborhood(id);
+          mapInstance.addSource("neighborhoods", {
+            type: "geojson",
+            data: createGeoJSON(null),
+          });
+
+          mapInstance.addLayer({
+            id: "neighborhoods-fill",
+            type: "fill",
+            source: "neighborhoods",
+            paint: {
+              "fill-color": ["get", "color"],
+              "fill-opacity": [
+                "case",
+                ["boolean", ["get", "isActive"], false],
+                0.5,
+                0.2,
+              ],
+            },
+          });
+
+          mapInstance.addLayer({
+            id: "neighborhoods-outline",
+            type: "line",
+            source: "neighborhoods",
+            paint: {
+              "line-color": ["get", "color"],
+              "line-width": [
+                "case",
+                ["boolean", ["get", "isActive"], false],
+                3,
+                1.5,
+              ],
+              "line-opacity": 0.8,
+            },
+          });
+
+          mapInstance.on("mousemove", "neighborhoods-fill", (e) => {
+            if (e.features && e.features.length > 0) {
+              const feature = e.features[0];
+              const id = feature.properties?.id;
+              if (id) {
+                mapInstance.getCanvas().style.cursor = "pointer";
+                setActiveNeighborhood(id);
+              }
             }
-          }
-        });
+          });
 
-        mapInstance.on("mouseleave", "neighborhoods-fill", () => {
-          mapInstance.getCanvas().style.cursor = "";
-          setActiveNeighborhood(null);
-        });
+          mapInstance.on("mouseleave", "neighborhoods-fill", () => {
+            mapInstance.getCanvas().style.cursor = "";
+            setActiveNeighborhood(null);
+          });
 
-        mapInstance.on("click", "neighborhoods-fill", (e) => {
-          if (e.features && e.features.length > 0) {
-            const feature = e.features[0];
-            const id = feature.properties?.id;
-            if (id) {
-              setActiveNeighborhood(id);
+          mapInstance.on("click", "neighborhoods-fill", (e) => {
+            if (e.features && e.features.length > 0) {
+              const feature = e.features[0];
+              const id = feature.properties?.id;
+              if (id) {
+                setActiveNeighborhood(id);
+              }
             }
-          }
+          });
+
+          setMapLoaded(true);
         });
 
-        setMapLoaded(true);
-      });
-
-      mapInstance.on("error", (e) => {
-        console.error("Mapbox error:", e);
+        mapInstance.on("error", (e) => {
+          console.error("Mapbox error:", e);
+          setMapError(true);
+        });
+      } catch (e) {
+        console.error("Mapbox initialization error:", e);
         setMapError(true);
-      });
-    } catch (e) {
-      console.error("Mapbox initialization error:", e);
-      setMapError(true);
-    }
+      }
+    };
+
+    initMap();
 
     return () => {
       map.current?.remove();

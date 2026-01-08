@@ -1,0 +1,59 @@
+Improve typography responsiveness across the site so text adapts naturally to screen size and aspect ratio on both mobile and desktop.
+
+Goals
+	•	Text should resize smoothly based on viewport width (not jumpy).
+	•	Line breaks should feel natural and intentional, not awkward.
+	•	Maintain strong readability and hierarchy on all devices.
+	•	Avoid per-line or hacky text sizing.
+
+Requirements
+	1.	Fluid typography using clamp()
+
+	•	For major text elements (hero headline, section titles, body text):
+	•	Use clamp(min, preferred, max) for font sizes.
+	•	Example intent (do not hardcode exact values unless needed):
+	•	Hero heading scales from mobile → desktop
+	•	Section headings scale moderately
+	•	Body text stays stable and readable
+
+	2.	Line length & wrapping
+
+	•	Constrain text width for readability:
+	•	Use max-w-prose, max-w-2xl, or similar utilities.
+	•	Enable natural wrapping:
+	•	text-balance (for headings)
+	•	whitespace-normal
+	•	Avoid forced <br /> for layout purposes.
+
+	3.	Consistent typography per component
+
+	•	Within the same element (button, heading, paragraph):
+	•	Use a single font size rule
+	•	Do NOT mix responsive font sizes inside the same text block (e.g. text-sm md:text-base inside one button).
+	•	Buttons should allow wrapping up to 2 lines without changing font size.
+
+	4.	Viewport-based behavior
+
+	•	Mobile:
+	•	Slightly smaller text, tighter line-height
+	•	More frequent line breaks are acceptable
+	•	Desktop:
+	•	Larger text, more breathing room
+	•	Fewer line breaks, longer lines
+	•	Use spacing (leading-*, tracking-*) instead of font-size jumps where possible.
+
+	5.	Implementation
+
+	•	Apply changes in:
+	•	Hero section (headline, subheadline, CTA text)
+	•	Section headings
+	•	Body copy
+	•	Prefer Tailwind utilities or CSS variables over inline styles.
+	•	If helpful, define reusable typography classes (e.g. .heading-xl, .body-md).
+
+Deliverables
+	•	Update typography so it scales fluidly with screen size.
+	•	Ensure clean wrapping and consistent text size within each component.
+	•	Briefly list which components were updated.
+
+Proceed to implement.
