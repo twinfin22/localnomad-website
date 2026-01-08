@@ -15,21 +15,8 @@ export const metadata: Metadata = {
     "A landing hack from arrival to daily life. Remove friction from your first 14 days in Seoul.",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/favicon-32.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
