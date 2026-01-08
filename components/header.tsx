@@ -41,10 +41,6 @@ export function Header() {
     ? "text-foreground group-hover:text-primary"
     : "text-white group-hover:text-white/80"
 
-  const sublabelClass = isScrolled
-    ? "text-muted-foreground"
-    : "text-white/70"
-
   const toggleClass = isScrolled
     ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -59,19 +55,16 @@ export function Header() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-baseline gap-3 sm:gap-4 group shrink-0"
+            className="group shrink-0"
           >
             <span className={`text-lg sm:text-xl font-semibold transition-colors ${brandClass}`}>
               LocalNomad
-            </span>
-            <span className={`hidden sm:inline text-xs font-medium tracking-wide ${sublabelClass}`}>
-              Soft Landing
             </span>
           </button>
 
           <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 mx-6 lg:mx-8">
             <button
-              onClick={() => scrollToSection("soft-landing")}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className={navLinkClass}
             >
               Soft Landing
