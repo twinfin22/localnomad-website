@@ -1,0 +1,63 @@
+Implement a consistent, site-wide button system with a single primary color palette and unified hover behavior. Right now some buttons turn black on hover; remove that inconsistency.
+
+Color tokens (use these across the whole site)
+	•	Primary Navy: #0B1F3B
+	•	Secondary Tint (Soft Sky): #EAF1FF
+
+Use Primary Navy for primary CTAs and as the default hover/focus accent. Use Secondary Tint for subtle backgrounds/secondary states.
+
+Requirements
+	1.	Create global color tokens
+
+	•	Add CSS variables in app/globals.css (or tailwind config if preferred):
+	•	--brand-navy: #0B1F3B;
+	•	--brand-sky: #EAF1FF;
+	•	Ensure they can be used in Tailwind classes (via bg-[var(--brand-navy)] etc.) OR extend Tailwind theme colors.
+
+	2.	Unify ALL buttons via the shared Button component
+
+	•	Find the shared Button component (likely components/ui/button.tsx).
+	•	Ensure all CTA buttons in the app use this component (replace raw <button> where needed).
+	•	Standardize variants:
+	•	default (primary): navy background, white text, subtle shadow
+	•	outline (secondary): transparent, navy border, navy text
+	•	ghost (tertiary): transparent, navy text, subtle hover tint
+	•	Remove any “hover turns black” styles anywhere (e.g. hover:bg-black, hover:text-black, bg-black on hover). Replace with brand-consistent hover.
+
+	3.	Exact style rules
+
+	•	Primary (default):
+	•	Background: brand navy
+	•	Text: white
+	•	Hover: slightly lighter navy (e.g. #102B52) OR use opacity approach
+	•	Focus ring: brand navy at low opacity
+	•	Secondary (outline):
+	•	Border: brand navy at ~30–50% opacity
+	•	Text: brand navy
+	•	Hover: very subtle brand sky background
+	•	For all buttons:
+	•	Same border radius
+	•	Same typography rules (single text size per button, no per-line scaling)
+	•	Center text (flex)
+	•	Allow wrap up to 2 lines without overflow
+
+	4.	Hero CTA sizing (apply consistently)
+
+	•	In the hero section, both CTAs must:
+	•	Have the same height/padding and text size
+	•	Mobile: stack vertically, full width, primary on top, gap-3/4
+	•	Desktop: horizontal layout
+
+	5.	Audit and fix
+
+	•	Search the codebase for black hover styles and remove/replace:
+	•	hover:bg-black, hover:text-black, bg-black/… for hover states on CTAs
+	•	Ensure buttons across sections (hero, pricing, newsletter, etc.) look consistent.
+
+Deliverables
+	•	Update global tokens + shared Button component styles.
+	•	Update hero CTA group layout and sizing.
+	•	Replace inconsistent button styling across the site.
+	•	List all modified files and briefly describe the changes.
+
+Proceed to implement now.

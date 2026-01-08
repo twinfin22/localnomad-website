@@ -112,18 +112,49 @@ const seoulBounds: [[number, number], [number, number]] = [
   [127.18, 37.70],
 ];
 
+const seoulBoundaryCoords: [number, number][] = [
+  [126.764, 37.642],
+  [126.822, 37.702],
+  [126.886, 37.698],
+  [126.953, 37.692],
+  [127.004, 37.686],
+  [127.052, 37.689],
+  [127.103, 37.680],
+  [127.140, 37.660],
+  [127.165, 37.620],
+  [127.185, 37.575],
+  [127.180, 37.530],
+  [127.165, 37.490],
+  [127.130, 37.465],
+  [127.080, 37.455],
+  [127.020, 37.462],
+  [126.965, 37.470],
+  [126.905, 37.482],
+  [126.850, 37.495],
+  [126.800, 37.520],
+  [126.770, 37.555],
+  [126.755, 37.595],
+  [126.764, 37.642],
+];
+
 const seoulBoundaryGeoJSON: GeoJSON.Feature = {
   type: "Feature",
   properties: {},
   geometry: {
     type: "Polygon",
-    coordinates: [[
-      [126.76, 37.43],
-      [126.76, 37.70],
-      [127.18, 37.70],
-      [127.18, 37.43],
-      [126.76, 37.43],
-    ]],
+    coordinates: [seoulBoundaryCoords],
+  },
+};
+
+const worldWithSeoulHole: GeoJSON.Feature = {
+  type: "Feature",
+  properties: {},
+  geometry: {
+    type: "Polygon",
+    coordinates: [
+      [[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]],
+      seoulBoundaryCoords,
+    ],
   },
 };
 
@@ -271,6 +302,21 @@ export function SeoulNeighborhoodMap() {
           duration: 0,
         });
 
+        mapInstance.addSource("seoul-mask", {
+          type: "geojson",
+          data: worldWithSeoulHole,
+        });
+
+        mapInstance.addLayer({
+          id: "seoul-outside-dim",
+          type: "fill",
+          source: "seoul-mask",
+          paint: {
+            "fill-color": "#1f2937",
+            "fill-opacity": 0.12,
+          },
+        });
+
         mapInstance.addSource("seoul-boundary", {
           type: "geojson",
           data: seoulBoundaryGeoJSON,
@@ -281,10 +327,9 @@ export function SeoulNeighborhoodMap() {
           type: "line",
           source: "seoul-boundary",
           paint: {
-            "line-color": "#94a3b8",
+            "line-color": "#374151",
             "line-width": 1.5,
-            "line-dasharray": [4, 2],
-            "line-opacity": 0.5,
+            "line-opacity": 0.3,
           },
         });
 
