@@ -97,7 +97,7 @@ export function SocialProofSection() {
 
           <button
             onClick={scrollPrev}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-background border shadow-md text-foreground hover:bg-muted transition-colors"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-background border border-border shadow-md text-foreground hover:bg-muted focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors active:scale-95"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -105,7 +105,7 @@ export function SocialProofSection() {
 
           <button
             onClick={scrollNext}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-background border shadow-md text-foreground hover:bg-muted transition-colors"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-background border border-border shadow-md text-foreground hover:bg-muted focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors active:scale-95"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5" />

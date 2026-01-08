@@ -1,0 +1,65 @@
+Audit the entire codebase and standardize every “button-like” UI element (any rectangular/rounded box with text that acts as a button/link) so they are fully consistent in style, color, hover, and theme behavior.
+
+Scope
+	•	Include:
+	•	<button> elements
+	•	<a> tags styled like buttons
+	•	Any clickable div/span styled as a button
+	•	CTA buttons in hero/header/pricing/newsletter/sections
+	•	Exclude plain text links unless they are styled as buttons.
+
+Requirements
+	1.	Single source of truth
+
+	•	Use the shared Button component (components/ui/button.tsx) as the canonical system.
+	•	Convert all button-like elements to use this Button component (or a small wrapper) unless there’s a strong reason not to.
+
+	2.	Variants (standardize)
+Implement and enforce these variants only:
+
+	•	primary (default): brand navy background, white text
+	•	secondary (outline): transparent background, navy border + navy text, subtle tinted hover
+	•	ghost (tertiary): transparent, navy text, subtle hover tint
+	•	Optional: link (text-only)
+
+	3.	Theme-safe styling
+
+	•	Do NOT hardcode black/white hover states.
+	•	No random hover turning black.
+	•	Use theme tokens or CSS variables so styles adapt cleanly to light/dark.
+	•	Use consistent focus ring (accessible) across all buttons.
+
+	4.	Hover / active / disabled rules
+
+	•	Hover: consistent across the site per variant
+	•	Active: subtle press feedback (e.g., slightly darker / translate-y)
+	•	Disabled: consistent reduced opacity + no pointer interactions
+
+	5.	Typography & sizing
+
+	•	Buttons must have consistent:
+	•	padding scale
+	•	border radius
+	•	font size and weight
+	•	alignment (centered)
+	•	Allow wrap up to 2 lines without overflowing.
+
+	6.	Audit task
+
+	•	Search the repo for inconsistent classes and remove/replace:
+	•	hover:bg-black, hover:text-black, bg-black, ad-hoc grays, random shadows
+	•	custom button class blobs that conflict with the system
+	•	Ensure every section uses the same button system.
+
+Deliverables
+	•	A consistent button design system applied everywhere.
+	•	Update all sections to use standardized variants.
+	•	Provide a short summary listing:
+	•	files changed
+	•	what was standardized
+	•	any edge cases
+
+Global consistency requirement (MANDATORY):
+	•	All changes must apply consistently across Desktop AND Mobile, Light mode AND Dark mode.
+	•	Verify: Desktop+Light, Desktop+Dark, Mobile+Light, Mobile+Dark.
+	•	Fix any discrepancies before finalizing.

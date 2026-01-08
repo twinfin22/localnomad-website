@@ -95,7 +95,7 @@ export function Header() {
             {mounted && (
               <button
                 onClick={toggleTheme}
-                className={`p-2 rounded-md transition-colors ${toggleClass}`}
+                className={`p-2 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 ${toggleClass}`}
                 aria-label={resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {resolvedTheme === "dark" ? (
@@ -105,7 +105,7 @@ export function Header() {
                 )}
               </button>
             )}
-            <Button className="bg-primary text-primary-foreground text-xs sm:text-sm whitespace-nowrap">
+            <Button variant="default" size="sm" className="text-xs sm:text-sm whitespace-nowrap">
               <span className="hidden sm:inline">Get Curated Local Resources</span>
               <span className="sm:hidden">Get Started</span>
             </Button>

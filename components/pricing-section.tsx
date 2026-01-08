@@ -38,7 +38,7 @@ export function PricingSection() {
                 </span>
               </li>
             </ul>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-accent">Get Started</Button>
+            <Button variant="default" className="w-full">Get Started</Button>
           </Card>
 
           <Card className="p-6 sm:p-8 bg-primary text-primary-foreground shadow-lg border-primary">
@@ -69,7 +69,7 @@ export function PricingSection() {
                 <span className="text-sm sm:text-base opacity-90">1:1 check-in call</span>
               </li>
             </ul>
-            <Button className="w-full bg-background text-foreground hover:bg-secondary">Get Started</Button>
+            <Button variant="inverted" className="w-full">Get Started</Button>
           </Card>
 
           <Card className="p-6 sm:p-8 bg-card shadow-sm">
@@ -93,7 +93,7 @@ export function PricingSection() {
                 <span className="text-sm sm:text-base text-muted-foreground">Open to suggestions</span>
               </li>
             </ul>
-            <Button variant="outline" className="w-full border-2 bg-transparent">
+            <Button variant="outline" className="w-full border-2">
               Contact Us
             </Button>
           </Card>
