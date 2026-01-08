@@ -17,56 +17,21 @@ export function HeroSection() {
           A landing hack from arrival to daily life
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-2 max-w-md sm:max-w-none mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-2 max-w-sm sm:max-w-none mx-auto">
           <Button
-            size="lg"
-            className="
-              bg-white text-primary
-              hover:bg-primary hover:text-white
-              w-full sm:w-auto
-              px-6 sm:px-8
-              py-5 sm:py-6
-              text-center
-              flex flex-col
-              items-center
-              gap-0.5
-              shadow-lg hover:shadow-xl
-              transition-all duration-200
-              font-semibold
-            "
+            variant="ctaPrimary"
+            size="cta"
+            className="w-full sm:w-auto font-semibold"
           >
-            <span className="text-sm sm:text-base font-semibold leading-snug">
-              Get a Free Curated List
-            </span>
-            <span className="text-xs sm:text-sm font-normal opacity-70 leading-snug">
-              of Local Resources
-            </span>
+            Get a Free Curated List of Local Resources
           </Button>
 
           <Button
-            size="lg"
-            variant="ghost"
-            className="
-              border border-white/40
-              bg-white/10 backdrop-blur-sm
-              text-white
-              hover:bg-white/20 hover:border-white/60
-              w-full sm:w-auto
-              px-6 sm:px-8
-              py-5 sm:py-6
-              text-center
-              flex flex-col
-              items-center
-              gap-0.5
-              transition-all duration-200
-            "
+            variant="ctaSecondary"
+            size="cta"
+            className="w-full sm:w-auto font-medium"
           >
-            <span className="text-sm sm:text-base font-medium leading-snug">
-              Stay in-the-know
-            </span>
-            <span className="text-xs sm:text-sm font-normal opacity-70 leading-snug">
-              on Network Societies
-            </span>
+            Stay in-the-know on Network Societies
           </Button>
         </div>
       </div>
