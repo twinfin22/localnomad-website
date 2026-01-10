@@ -13,12 +13,9 @@ export function WhatsNextSection() {
           What's Next
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
           <Button size="cta" variant="ctaOutline">
             Need Boots on the ground?
-          </Button>
-          <Button size="cta" variant="ctaOutline">
-            Join our Popup Residency
           </Button>
           <Button id="newsletter" size="cta" variant="ctaPrimary">
             Stay in-the-know on Network Societies

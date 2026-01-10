@@ -75,20 +75,6 @@ export function Header() {
             >
               Boots on the Ground
             </button>
-            <button
-              onClick={() => scrollToSection("popup-residency")}
-              className={navLinkClass}
-            >
-              Popup Residency
-            </button>
-            <a
-              href="https://startofsomethingnew.substack.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={navLinkClass}
-            >
-              Newsletter
-            </a>
           </nav>
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">

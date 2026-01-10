@@ -17,21 +17,13 @@ export function HeroSection() {
           Soft Landing Hack from arrival to daily life, designed by Local Nomads
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-2 max-w-sm sm:max-w-none mx-auto">
+        <div className="px-4 sm:px-0 max-w-sm mx-auto">
           <Button
             variant="ctaPrimary"
             size="cta"
-            className="w-full sm:w-auto font-semibold"
+            className="w-full font-semibold"
           >
             Get Curated Local Resources
-          </Button>
-
-          <Button
-            variant="ctaSecondary"
-            size="cta"
-            className="w-full sm:w-auto font-medium"
-          >
-            Stay in-the-know on Network Societies
           </Button>
         </div>
       </div>
