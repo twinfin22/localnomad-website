@@ -1,4 +1,4 @@
-import { Newspaper, Instagram } from "lucide-react"
+import { Newspaper, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,6 +12,15 @@ export function Footer() {
 
         <div className="flex justify-center gap-8">
           <a
+            href="https://www.instagram.com/localnomad.club/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-6 h-6" />
+          </a>
+          <a
             href="https://startofsomethingnew.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -20,17 +29,8 @@ export function Footer() {
           >
             <Newspaper className="w-6 h-6" />
           </a>
-          <a
-            href="https://www.instagram.com/hansamo486/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-6 h-6" />
-          </a>
         </div>
       </div>
     </footer>
-  )
+  );
 }
