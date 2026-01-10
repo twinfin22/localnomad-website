@@ -22,8 +22,11 @@ export function HeroSection() {
             variant="ctaPrimary"
             size="cta"
             className="w-full font-semibold"
+            asChild
           >
-            Get Curated Local Resources
+            <a href="#boots-on-ground">
+              Get Curated Local Resources
+            </a>
           </Button>
         </div>
       </div>

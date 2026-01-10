@@ -39,7 +39,11 @@ export function PricingSection() {
               </li>
             </ul>
             <div className="mt-8">
-              <Button variant="default" size="cta" className="w-full">Get Started</Button>
+              <Button variant="default" size="cta" className="w-full" asChild>
+                <a href="mailto:hello@localnomad.club?subject=72%20Hours%20Soft%20Landing">
+                  Get Started
+                </a>
+              </Button>
             </div>
           </Card>
 
@@ -72,7 +76,11 @@ export function PricingSection() {
               </li>
             </ul>
             <div className="mt-8">
-              <Button variant="inverted" size="cta" className="w-full">Get Started</Button>
+              <Button variant="inverted" size="cta" className="w-full" asChild>
+                <a href="mailto:hello@localnomad.club?subject=14%20Days%20Soft%20Landing">
+                  Get Started
+                </a>
+              </Button>
             </div>
           </Card>
 
@@ -98,8 +106,10 @@ export function PricingSection() {
               </li>
             </ul>
             <div className="mt-8">
-              <Button variant="ctaSecondary" size="cta" className="w-full">
-                Contact Us
+              <Button variant="ctaSecondary" size="cta" className="w-full" asChild>
+                <a href="mailto:hello@localnomad.club?subject=Custom%20Add-on%20Inquiry">
+                  Contact Us
+                </a>
               </Button>
             </div>
           </Card>
