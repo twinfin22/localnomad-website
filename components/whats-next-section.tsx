@@ -21,7 +21,7 @@ export function WhatsNextSection() {
           </Button>
           <Button size="cta" variant="ctaPrimary" asChild>
             <a href="https://www.meetup.com/localnomad/events/" target="_blank" rel="noopener noreferrer">
-              Join our Deep Work Coworking Session
+              Join our Deep Work Session
             </a>
           </Button>
         </div>
