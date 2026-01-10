@@ -14,11 +14,15 @@ export function WhatsNextSection() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
-          <Button size="cta" variant="ctaOutline">
-            Need Boots on the ground?
+          <Button size="cta" variant="ctaOutline" asChild>
+            <a href="#boots-on-ground">
+              Need Boots on the ground?
+            </a>
           </Button>
-          <Button id="newsletter" size="cta" variant="ctaPrimary">
-            Join our Deep Work Coworking Session
+          <Button size="cta" variant="ctaPrimary" asChild>
+            <a href="https://www.meetup.com/localnomad/" target="_blank" rel="noopener noreferrer">
+              Join our Deep Work Sessions
+            </a>
           </Button>
         </div>
       </div>

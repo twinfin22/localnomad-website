@@ -75,6 +75,14 @@ export function Header() {
             >
               Boots on the Ground
             </button>
+            <a
+              href="https://www.meetup.com/localnomad/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={navLinkClass}
+            >
+              Deep Work Sessions
+            </a>
           </nav>
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
