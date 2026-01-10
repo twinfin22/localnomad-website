@@ -18,7 +18,7 @@ export function WhatsNextSection() {
             Need Boots on the ground?
           </Button>
           <Button id="newsletter" size="cta" variant="ctaPrimary">
-            Stay in-the-know on Network Societies
+            Join our Deep Work Coworking Session
           </Button>
         </div>
       </div>
