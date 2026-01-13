@@ -5,8 +5,11 @@ A Next.js 16 landing page application for LocalNomad - a soft landing service fo
 
 ## Project Structure
 - `app/` - Next.js App Router pages and layouts
+  - `/` - Consumer landing page (Soft Landing service)
+  - `/business` - B2B landing page (Market Entry service)
 - `components/` - React components
   - `ui/` - shadcn/ui component library
+  - `business/` - B2B page section components
   - `SeoulNeighborhoodMap.tsx` - Interactive Mapbox map for Seoul neighborhoods
   - Landing page sections (hero, pricing, FAQ, etc.)
 - `hooks/` - Custom React hooks
