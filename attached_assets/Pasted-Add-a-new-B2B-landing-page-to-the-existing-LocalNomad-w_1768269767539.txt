@@ -1,0 +1,107 @@
+Add a new B2B landing page to the existing LocalNomad website.
+
+Context:
+- This page targets businesses and global teams exploring or entering the Korean market.
+- It is NOT for tourists or individual nomads.
+- The tone should be calm, confident, and execution-oriented (no hype, no community language).
+
+Route:
+- Create a new page at /business (or /b2b if /business conflicts).
+- Use the existing site layout, header, footer, typography, color tokens, and button styles.
+
+Page Structure (MANDATORY):
+
+1) Hero Section
+- Headline:
+  "Korea Market Entry, Explained and Represented on the Ground."
+- Subheadline:
+  "We help global teams explore, test, and enter Korea — by thinking clearly, speaking publicly, and executing locally."
+- Primary CTA: "Start with Discovery"
+- Secondary CTA: "See How We Work"
+- CTAs should link to the contact or intro-call flow already used on the site.
+
+2) Problem Section
+- Headline:
+  "Entering Korea fails when no one can explain you properly."
+- Content should explain:
+  - Decks without speakers
+  - Research without real-world answers
+  - Meetings without local context
+  - Events without proper representation
+
+3) Why Us Section
+- Headline:
+  "What We Actually Do"
+- Three pillars:
+  - We clarify your story
+  - We speak on your behalf
+  - We turn reactions into strategy
+- Focus on public speaking, representation, and real-time feedback.
+- Do NOT mention community building.
+
+4) Service Section — Three Offers
+
+A) Discovery
+- Position as the first step.
+- Focus on:
+  - Market reality check
+  - Messaging gaps
+  - Go / No-Go clarity
+- Outcome-driven, not execution-heavy.
+
+B) Entry Sprint (2–4 weeks)
+- Core offer.
+- Emphasize:
+  - Representing the team at events or sessions
+  - Public speaking and facilitated discussions
+  - Hosting or co-hosting focused events
+  - Collecting real audience reactions
+- Deliverables:
+  - Summary of reactions
+  - Objections and signals
+  - Strategic recommendations
+
+C) Execution Partner (Short-term)
+- Extension after Entry Sprint.
+- Emphasize:
+  - Temporary, scoped, on-the-ground representation
+  - Meetings, events, coordination
+- Explicit boundary:
+  - Not a long-term agency
+  - Not outsourcing
+  - Clear scope and timeline only
+
+5) How It Works
+- 4 steps:
+  1. Intro call
+  2. Discovery
+  3. Entry Sprint or Execution Partner
+  4. Clear wrap-up and next decision
+
+6) Who This Is Not For
+- Explicitly list:
+  - Legal/accounting services
+  - Guaranteed outcomes
+  - Long-term outsourced operations
+- This section is required for lead quality.
+
+7) Final CTA Section
+- Copy:
+  "If Korea is on your roadmap, let’s start with a clear conversation."
+- CTA:
+  "Start with Discovery"
+
+Implementation Requirements:
+- Use existing components where possible.
+- Create new components only if necessary (e.g. BusinessHeroSection).
+- Ensure full responsiveness (desktop/mobile).
+- Ensure Light/Dark mode compatibility.
+- Keep spacing, button styles, and typography consistent with the rest of the site.
+- No emojis.
+- No casual or marketing-heavy language.
+
+Deliverables:
+- New B2B page fully integrated into the site.
+- Route added and accessible.
+- Clean, readable component structure.
+- List all new or modified files at the end.
