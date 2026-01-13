@@ -73,12 +73,12 @@ export function Header() {
             >
               Soft Landing
             </button>
-            <button
-              onClick={() => scrollToSection("boots-on-ground")}
+            <a
+              href="/business"
               className={navLinkClass}
             >
               Boots on the Ground
-            </button>
+            </a>
             <a
               href="https://www.meetup.com/localnomad/events/"
               target="_blank"

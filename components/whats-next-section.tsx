@@ -15,7 +15,7 @@ export function WhatsNextSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
           <Button size="cta" variant="ctaOutline" asChild>
-            <a href="#boots-on-ground">
+            <a href="/business">
               Need Boots on the ground?
             </a>
           </Button>
