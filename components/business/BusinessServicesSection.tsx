@@ -34,7 +34,7 @@ export function BusinessServicesSection() {
               </li>
             </ul>
             <div className="mt-8">
-              <Button variant="default" size="cta" className="w-full" asChild>
+              <Button variant="ctaPrimary" size="cta" className="w-full" asChild>
                 <a href="mailto:hello@localnomad.club?subject=Discovery%20Inquiry">
                   Start Discovery
                 </a>
