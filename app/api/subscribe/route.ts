@@ -60,12 +60,14 @@ async function sendWelcomeEmail(email: string, firstName: string): Promise<boole
   try {
     const resend = getResend();
     const greeting = firstName ? `Hey ${firstName},` : "Hey there,";
-    const emailFrom = process.env.EMAIL_FROM || "LocalNomad <hey@localnomad.club>";
+    const emailFrom = process.env.EMAIL_FROM || "LocalNomad <welcome@mail.localnomad.club>";
+    const replyTo = process.env.EMAIL_REPLY_TO || "hey@localnomad.club";
     const resourceUrl = process.env.NOTION_RESOURCE_URL || "https://localnomad.notion.site/local-resource-archive";
 
     const { error } = await resend.emails.send({
       from: emailFrom,
       to: email,
+      replyTo,
       subject: "Your Seoul Local Resource Archive is here",
       html: `
         <!DOCTYPE html>

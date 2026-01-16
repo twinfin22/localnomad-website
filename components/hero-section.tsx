@@ -21,7 +21,7 @@ export function HeroSection() {
           </h1>
 
           <p className="text-fluid-subhero text-white/80 mb-12 font-light px-2 max-w-2xl mx-auto">
-            Soft Landing Hack from arrival to daily life, designed by Local Nomads
+            Soft Landing Hack from arrival to daily life, designed by LocalNomads
           </p>
 
           <div className="px-4 sm:px-0 max-w-sm mx-auto">
