@@ -17,12 +17,11 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black/50 dark:bg-black/60" />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1 className="text-fluid-hero font-bold text-white mb-6 text-balance px-2">
-            A Softer Way to Land in Seoul
+            Don't Waste Your Seoul
           </h1>
 
           <p className="text-fluid-subhero text-white/80 mb-12 font-light px-2 max-w-2xl mx-auto">
-            Soft Landing Hack from arrival to daily life, designed by LocalNomads
-          </p>
+            Don’t waste your trip on AI hallucinations and fragmented SNS tips. Access the LocalNomad-Verified Playbook         </p>
 
           <div className="px-4 sm:px-0 max-w-sm mx-auto">
             <Button
