@@ -16,6 +16,7 @@ interface SubscriberData {
 }
 
 async function addToAirtable({ email, firstName, status }: SubscriberData) {
+  console.log("[Airtable] Saving with email:", email);
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Subscribers";
@@ -139,7 +140,9 @@ async function sendWelcomeEmail(email: string, firstName: string): Promise<boole
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    console.log("[Subscribe] Request body:", JSON.stringify(body));
     const { email, firstName } = body;
+    console.log("[Subscribe] Extracted email:", email);
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
