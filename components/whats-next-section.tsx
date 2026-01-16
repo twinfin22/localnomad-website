@@ -1,9 +1,18 @@
-import { Button } from "@/components/ui/button"
+"use client";
+
+import { Button } from "@/components/ui/button";
 
 export function WhatsNextSection() {
+  const scrollToEmailCapture = () => {
+    const element = document.getElementById("email-capture");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="popup-residency" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/whats-next-bg.png')" }}
       />
@@ -13,7 +22,7 @@ export function WhatsNextSection() {
           What's Next
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
           <Button size="cta" variant="ctaOutline" asChild>
             <a href="/business">
               Need Boots on the ground?
@@ -24,8 +33,11 @@ export function WhatsNextSection() {
               Join our Deep Work Session
             </a>
           </Button>
+          <Button size="cta" variant="ctaOutline" onClick={scrollToEmailCapture}>
+            Get Curated Local Resources
+          </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

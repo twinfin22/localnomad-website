@@ -26,8 +26,8 @@ export function Header() {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const scrollToEmailCapture = () => {
+    const element = document.getElementById("email-capture");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -55,8 +55,8 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
         <div className="flex items-center justify-between">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          <a
+            href="https://localnomad.club/"
             className="group shrink-0"
           >
             <span
@@ -64,15 +64,15 @@ export function Header() {
             >
               LocalNomad
             </span>
-          </button>
+          </a>
 
           <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 mx-6 lg:mx-8">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            <a
+              href="https://localnomad.club/"
               className={navLinkClass}
             >
               Soft Landing
-            </button>
+            </a>
             <a
               href="/business"
               className={navLinkClass}
@@ -111,6 +111,7 @@ export function Header() {
               variant="default"
               size="sm"
               className="text-xs sm:text-sm whitespace-nowrap"
+              onClick={scrollToEmailCapture}
             >
               <span className="hidden sm:inline">
                 Get Curated Local Resources

@@ -42,7 +42,7 @@ export function EmailCaptureSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-primary text-primary-foreground overflow-hidden">
+    <section id="email-capture" className="py-16 sm:py-24 px-4 sm:px-6 bg-primary text-primary-foreground overflow-hidden">
       <div className="container mx-auto max-w-2xl text-center">
         <h2 className="text-fluid-section font-bold mb-4 text-balance">
           Get Free Local Resources
