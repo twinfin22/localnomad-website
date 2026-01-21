@@ -10,7 +10,7 @@ export function ValuePropSection() {
         <AnimatedSection className="text-center mb-12 sm:mb-16">
           <h2 className="text-fluid-section font-bold text-foreground mb-4 text-balance px-2">
             Remove friction from your first{" "}
-            <span className="text-gradient">14 days</span> in Seoul.
+            <span className="text-primary">14 days</span> in Seoul.
           </h2>
           <p className="text-fluid-subhero text-muted-foreground font-light px-2">Focus on living, not logistics</p>
         </AnimatedSection>

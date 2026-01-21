@@ -41,7 +41,7 @@ export function HeroSection() {
             }`}
           >
             <span className="text-white">Don't Waste Your </span>
-            <span className="text-gradient">Seoul</span>
+            <span className="text-primary">Seoul</span>
           </h1>
 
           <p

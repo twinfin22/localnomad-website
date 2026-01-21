@@ -23,7 +23,7 @@ export function WhatsNextSection() {
       <div className="container mx-auto max-w-4xl relative z-10">
         <AnimatedSection>
           <h2 className="text-fluid-section font-bold text-center text-white mb-12 sm:mb-16 text-balance">
-            What's <span className="text-gradient">Next</span>
+            What's <span className="text-primary">Next</span>
           </h2>
         </AnimatedSection>
 

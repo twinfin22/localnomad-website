@@ -14,7 +14,7 @@ export function PricingSection() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <AnimatedSection>
           <h2 className="text-fluid-section font-bold text-center text-foreground mb-12 sm:mb-16 text-balance">
-            Choose Your <span className="text-gradient">Landing</span>
+            Choose Your <span className="text-primary">Landing</span>
           </h2>
         </AnimatedSection>
 

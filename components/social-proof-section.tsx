@@ -85,7 +85,7 @@ export function SocialProofSection() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <AnimatedSection>
           <h2 className="text-fluid-section font-bold text-center text-foreground mb-8 sm:mb-12 text-balance">
-            From Fellow <span className="text-gradient">Nomads</span>
+            From Fellow <span className="text-primary">Nomads</span>
           </h2>
         </AnimatedSection>
 

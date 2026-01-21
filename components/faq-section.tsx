@@ -85,7 +85,7 @@ export function FaqSection() {
       <div className="container mx-auto max-w-3xl relative z-10">
         <AnimatedSection>
           <h2 className="text-fluid-section font-bold text-center text-foreground mb-12 sm:mb-16">
-            <span className="text-gradient">FAQ</span>
+            <span className="text-primary">FAQ</span>
           </h2>
         </AnimatedSection>
 
