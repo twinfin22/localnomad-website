@@ -81,14 +81,10 @@ const faqItems = [
 
 export function FaqSection() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden relative">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#120826]" />
-      <div className="absolute inset-0 bg-gradient-radial opacity-20" />
-
+    <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden relative bg-background">
       <div className="container mx-auto max-w-3xl relative z-10">
         <AnimatedSection>
-          <h2 className="text-fluid-section font-bold text-center text-white mb-12 sm:mb-16">
+          <h2 className="text-fluid-section font-bold text-center text-foreground mb-12 sm:mb-16">
             <span className="text-gradient">FAQ</span>
           </h2>
         </AnimatedSection>
@@ -98,12 +94,12 @@ export function FaqSection() {
             <AnimatedSection key={item.value} delay={index * 75}>
               <AccordionItem
                 value={item.value}
-                className="glass-card rounded-xl px-4 sm:px-6 transition-all duration-300 hover:border-glow-purple border-0"
+                className="bg-card border border-border rounded-xl px-4 sm:px-6 transition-all duration-300 hover:border-primary/30 shadow-card hover:shadow-card-hover"
               >
-                <AccordionTrigger className="text-left text-base sm:text-lg font-semibold text-white hover:text-[#00F5D4] transition-colors">
+                <AccordionTrigger className="text-left text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm sm:text-base text-white/60 leading-relaxed">
+                <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

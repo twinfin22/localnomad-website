@@ -17,9 +17,8 @@ export function WhatsNextSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/whats-next-bg.png')" }}
       />
-      {/* Neon gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0D0221]/80 via-[#1A1033]/70 to-[#0D0221]/90" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FF006E]/10 via-transparent to-[#8338EC]/10" />
+      {/* Soft gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80 dark:from-[#1A1D21]/90 dark:via-[#1A1D21]/80 dark:to-[#1A1D21]/95" />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         <AnimatedSection>
@@ -30,21 +29,21 @@ export function WhatsNextSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
           <AnimatedSection delay={0}>
-            <Button size="cta" className="w-full bg-transparent border border-[#8338EC] text-white hover:bg-[#8338EC]/20 hover:border-[#00F5D4] hover:-translate-y-1 transition-all duration-300" asChild>
+            <Button size="cta" className="w-full bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300" asChild>
               <a href="/business">
                 Need Boots on the ground?
               </a>
             </Button>
           </AnimatedSection>
           <AnimatedSection delay={100}>
-            <Button size="cta" className="w-full bg-gradient-to-r from-[#FF006E] to-[#8338EC] hover:from-[#FF006E] hover:to-[#FF006E] text-white border-0 hover:-translate-y-1 hover:glow-magenta transition-all duration-300" asChild>
+            <Button size="cta" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 hover:-translate-y-1 shadow-soft-md hover:shadow-soft-lg transition-all duration-300" asChild>
               <a href="https://www.meetup.com/localnomad/events/" target="_blank" rel="noopener noreferrer">
                 Join our Deep Work Session
               </a>
             </Button>
           </AnimatedSection>
           <AnimatedSection delay={200}>
-            <Button size="cta" className="w-full bg-transparent border border-[#8338EC] text-white hover:bg-[#8338EC]/20 hover:border-[#00F5D4] hover:-translate-y-1 transition-all duration-300" onClick={scrollToEmailCapture}>
+            <Button size="cta" className="w-full bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300" onClick={scrollToEmailCapture}>
               Get Curated Local Resources
             </Button>
           </AnimatedSection>

@@ -81,14 +81,10 @@ export function SocialProofSection() {
   }, [scrollPrev, scrollNext]);
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden relative">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#120826]" />
-      <div className="absolute inset-0 bg-gradient-radial opacity-30" />
-
+    <section className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden relative bg-background">
       <div className="container mx-auto max-w-6xl relative z-10">
         <AnimatedSection>
-          <h2 className="text-fluid-section font-bold text-center text-white mb-8 sm:mb-12 text-balance">
+          <h2 className="text-fluid-section font-bold text-center text-foreground mb-8 sm:mb-12 text-balance">
             From Fellow <span className="text-gradient">Nomads</span>
           </h2>
         </AnimatedSection>
@@ -102,11 +98,11 @@ export function SocialProofSection() {
                     key={index}
                     className="flex-[0_0_85%] sm:flex-[0_0_45%] lg:flex-[0_0_31%] min-w-0"
                   >
-                    <Card className="h-full p-6 sm:p-8 glass-card hover:border-glow-purple transition-all duration-300">
-                      <p className="text-base sm:text-lg text-white/90 mb-4 italic text-pretty">
+                    <Card className="h-full p-6 sm:p-8 bg-card border border-border hover:border-primary/30 shadow-card hover:shadow-card-hover transition-all duration-300">
+                      <p className="text-base sm:text-lg text-foreground mb-4 italic text-pretty">
                         "{testimonial.quote}"
                       </p>
-                      <p className="text-sm text-[#00F5D4]">— {testimonial.author}</p>
+                      <p className="text-sm text-accent">— {testimonial.author}</p>
                     </Card>
                   </div>
                 ))}
@@ -115,7 +111,7 @@ export function SocialProofSection() {
 
             <button
               onClick={scrollPrev}
-              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 items-center justify-center rounded-full glass border-[#8338EC]/50 text-white hover:border-[#FF006E] hover:glow-magenta-sm focus-visible:ring-2 focus-visible:ring-[#FF006E]/50 transition-all duration-200 active:scale-95"
+              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-card border border-border text-foreground hover:border-primary hover:bg-secondary focus-visible:ring-2 focus-visible:ring-primary/50 transition-all duration-200 active:scale-95"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -123,7 +119,7 @@ export function SocialProofSection() {
 
             <button
               onClick={scrollNext}
-              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 items-center justify-center rounded-full glass border-[#8338EC]/50 text-white hover:border-[#FF006E] hover:glow-magenta-sm focus-visible:ring-2 focus-visible:ring-[#FF006E]/50 transition-all duration-200 active:scale-95"
+              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 items-center justify-center rounded-full bg-card border border-border text-foreground hover:border-primary hover:bg-secondary focus-visible:ring-2 focus-visible:ring-primary/50 transition-all duration-200 active:scale-95"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" />
@@ -139,8 +135,8 @@ export function SocialProofSection() {
                 className={cn(
                   "h-2 rounded-full transition-all duration-300",
                   selectedIndex === index
-                    ? "bg-[#FF006E] w-6 glow-magenta-sm"
-                    : "bg-[#8338EC]/50 w-2 hover:bg-[#8338EC]"
+                    ? "bg-primary w-6"
+                    : "bg-muted w-2 hover:bg-muted-foreground"
                 )}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
