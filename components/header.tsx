@@ -2,17 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +14,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  };
-
   const scrollToEmailCapture = () => {
     const element = document.getElementById("email-capture");
     if (element) {
@@ -33,23 +21,11 @@ export function Header() {
     }
   };
 
-  const navLinkClass = isScrolled
-    ? "text-sm text-muted-foreground hover:text-foreground transition-colors"
-    : "text-sm text-white/80 hover:text-white transition-colors";
-
-  const brandClass = isScrolled
-    ? "text-foreground group-hover:text-primary"
-    : "text-white group-hover:text-white/80";
-
-  const toggleClass = isScrolled
-    ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-    : "text-white/80 hover:text-white hover:bg-white/10";
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-sm"
+          ? "glass-strong shadow-neon"
           : "bg-transparent"
       }`}
     >
@@ -59,9 +35,7 @@ export function Header() {
             href="https://localnomad.club/"
             className="group shrink-0"
           >
-            <span
-              className={`text-lg sm:text-xl font-semibold transition-colors ${brandClass}`}
-            >
+            <span className="text-lg sm:text-xl font-bold text-white group-hover:text-gradient transition-all duration-300">
               LocalNomad
             </span>
           </a>
@@ -69,13 +43,13 @@ export function Header() {
           <nav className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 mx-6 lg:mx-8">
             <a
               href="https://localnomad.club/"
-              className={navLinkClass}
+              className="text-sm text-white/70 hover:text-[#00F5D4] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[#00F5D4] after:transition-all after:duration-300 hover:after:w-full"
             >
               Soft Landing
             </a>
             <a
               href="/business"
-              className={navLinkClass}
+              className="text-sm text-white/70 hover:text-[#00F5D4] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[#00F5D4] after:transition-all after:duration-300 hover:after:w-full"
             >
               Boots on the Ground
             </a>
@@ -83,34 +57,16 @@ export function Header() {
               href="https://www.meetup.com/localnomad/events/"
               target="_blank"
               rel="noopener noreferrer"
-              className={navLinkClass}
+              className="text-sm text-white/70 hover:text-[#00F5D4] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[#00F5D4] after:transition-all after:duration-300 hover:after:w-full"
             >
               Deep Work Sessions
             </a>
           </nav>
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            {mounted && (
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 ${toggleClass}`}
-                aria-label={
-                  resolvedTheme === "dark"
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-                }
-              >
-                {resolvedTheme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </button>
-            )}
             <Button
-              variant="default"
               size="sm"
-              className="text-xs sm:text-sm whitespace-nowrap"
+              className="text-xs sm:text-sm whitespace-nowrap bg-gradient-to-r from-[#FF006E] to-[#8338EC] hover:from-[#FF006E] hover:to-[#FF006E] text-white border-0 hover:-translate-y-0.5 hover:glow-magenta-sm transition-all duration-300"
               onClick={scrollToEmailCapture}
             >
               <span className="hidden sm:inline">
