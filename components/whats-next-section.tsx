@@ -44,7 +44,7 @@ export function WhatsNextSection() {
           </AnimatedSection>
           <AnimatedSection delay={200}>
             <Button size="cta" className="w-full bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300" onClick={scrollToEmailCapture}>
-              Get Curated Local Resources
+              Download the Zero-Friction Checklist
             </Button>
           </AnimatedSection>
         </div>

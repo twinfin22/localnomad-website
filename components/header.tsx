@@ -24,11 +24,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        isScrolled
-          ? "glass shadow-soft-md"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${isScrolled
+        ? "glass shadow-soft-md"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
         <div className="flex items-center justify-between">
@@ -52,7 +51,7 @@ export function Header() {
               href="/business"
               className="text-sm text-muted-foreground hover:text-primary transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
-              Boots on the Ground
+              Find Monthly Housing
             </a>
             <a
               href="https://www.meetup.com/localnomad/events/"
@@ -72,7 +71,7 @@ export function Header() {
               onClick={scrollToEmailCapture}
             >
               <span className="hidden sm:inline">
-                Get Curated Local Resources
+                Download the Zero-Friction Checklist
               </span>
               <span className="sm:hidden">Get Started</span>
             </Button>

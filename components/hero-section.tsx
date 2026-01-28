@@ -36,27 +36,24 @@ export function HeroSection() {
 
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1
-            className={`text-fluid-hero font-bold mb-6 text-balance px-2 transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`text-fluid-hero font-bold mb-6 text-balance px-2 transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
           >
             <span className="text-white">Don't Waste Your </span>
             <span className="text-primary">Seoul</span>
           </h1>
 
           <p
-            className={`text-fluid-subhero text-white/70 mb-12 font-light px-2 max-w-2xl mx-auto transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`text-fluid-subhero text-white/70 mb-12 font-light px-2 max-w-2xl mx-auto transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
             style={{ transitionDelay: "200ms" }}
           >
-            Don't waste your trip on AI hallucinations and fragmented SNS tips. Access the LocalNomad-Verified Playbook
+            Don't waste your trip on AI hallucinations and fragmented SNS tips. <br /> Access the LocalNomad-Verified Playbook
           </p>
 
           <div
-            className={`px-4 sm:px-0 max-w-sm mx-auto transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`px-4 sm:px-0 max-w-sm mx-auto transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
             style={{ transitionDelay: "400ms" }}
           >
             <Button
@@ -64,7 +61,7 @@ export function HeroSection() {
               className="w-full font-semibold bg-primary hover:bg-primary/90 text-primary-foreground border-0 hover:-translate-y-1 shadow-soft-md hover:shadow-soft-lg transition-all duration-300"
               onClick={() => setDialogOpen(true)}
             >
-              Get Curated Local Resources
+              Download the Zero-Friction Checklist
             </Button>
           </div>
         </div>
