@@ -48,7 +48,7 @@ export function HeroSection() {
               }`}
             style={{ transitionDelay: "200ms" }}
           >
-            Don't waste your trip on AI hallucinations and fragmented SNS tips. <br /> Access the LocalNomad-Verified Playbook
+            Stop debugging your trip with broken AI data and messy social media clips <br /> Access the LocalNomad-verified playbook
           </p>
 
           <div
