@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Newspaper, Instagram } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 
@@ -36,6 +37,23 @@ export function Footer() {
             >
               <Newspaper className="w-6 h-6" />
             </a>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-border/50 text-center">
+            <p className="text-sm text-muted-foreground">
+              © 2025 LocalNomad ·{" "}
+              <Link href="/terms" className="hover:text-primary transition-colors">
+                Terms
+              </Link>{" "}
+              ·{" "}
+              <Link href="/privacy" className="hover:text-primary transition-colors">
+                Privacy
+              </Link>{" "}
+              ·{" "}
+              <Link href="/refund" className="hover:text-primary transition-colors">
+                Refund
+              </Link>
+            </p>
           </div>
         </AnimatedSection>
       </div>
