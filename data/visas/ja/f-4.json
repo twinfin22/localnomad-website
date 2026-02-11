@@ -1,0 +1,57 @@
+{
+  "type": "f-4",
+  "name": "在外同胞ビザ",
+  "shortName": "F-4",
+  "category": "ethnic-korean",
+  "description": "F-4ビザは、外国籍を持つ韓国系の方（교포）を対象としています。先祖の故国に戻る、または訪問する在外韓国人に長期居住資格と就労許可を提供します。",
+  "tagline": "在外韓国人として韓国に戻る",
+  "keyRequirement": "韓国系（2世以降）",
+  "isStub": true,
+
+  "targetAudience": [
+    "外国籍を持つ韓国系の方",
+    "韓国系アメリカ人、韓国系カナダ人など",
+    "韓国移民の子孫"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "3年",
+    "extension": "延長1回につき3年",
+    "maxTotal": "上限なし（無期限更新可能）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2〜4週間"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["一部の単純労働は制限あり"],
+    "notes": "ほとんどの専門職・技術職は許可されています"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "出入国管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "在外同胞財団",
+      "url": "https://www.okf.or.kr/"
+    }
+  ]
+}

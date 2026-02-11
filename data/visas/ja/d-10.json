@@ -1,0 +1,208 @@
+{
+  "type": "d-10",
+  "name": "求職ビザ",
+  "shortName": "D-10",
+  "category": "job-seeking",
+  "description": "D-10ビザは、韓国で積極的に就職活動を行う資格のある方を対象としています。韓国の大学を卒業した方や、キャリアの機会を求める専門家に最適です。",
+  "tagline": "韓国でのキャリアへの第一歩",
+  "keyRequirement": "韓国の大学で学士号以上を取得",
+
+  "targetAudience": [
+    "韓国の大学を卒業した方",
+    "関連する実務経験を持つ専門家",
+    "韓国での就職を目指す技術者",
+    "転職活動中の元E-7ビザ保持者"
+  ],
+
+  "eligibility": [
+    {
+      "id": "edu-korean",
+      "label": "韓国の大学を卒業（準学士以上）",
+      "required": false
+    },
+    {
+      "id": "edu-foreign",
+      "label": "認定された外国の大学で学士号以上を取得",
+      "required": false
+    },
+    {
+      "id": "work-exp",
+      "label": "専門分野での実務経験",
+      "required": false
+    },
+    {
+      "id": "topik",
+      "label": "TOPIK 4級以上（あれば有利、必須ではない）",
+      "required": false
+    }
+  ],
+
+  "duration": {
+    "initial": "6ヶ月",
+    "extension": "延長1回につき最大6ヶ月",
+    "maxTotal": "最長2年"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）",
+    "extension": "延長1回につき₩60,000",
+    "notes": "料金は変更される場合があります。最新の料金はハイコリア (HiKorea) でご確認ください"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有効なパスポート（旅券）",
+      "description": "滞在予定期間の6ヶ月以上有効なもの",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "ビザ申請書",
+      "description": "記入済みのビザ申請書（様式34）",
+      "where_to_get": "ハイコリア (HiKorea) からダウンロード、または出入国管理事務所で取得",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "証明写真",
+      "description": "3.5cm x 4.5cm、6ヶ月以内に撮影、白背景",
+      "required": true
+    },
+    {
+      "id": "diploma",
+      "name": "学位証明書",
+      "description": "最終学歴の原本または認証コピー",
+      "tips": ["外国で取得した場合はアポスティーユまたは認証が必要"],
+      "required": true
+    },
+    {
+      "id": "transcript",
+      "name": "成績証明書",
+      "description": "大学からの公式成績証明書",
+      "required": true
+    },
+    {
+      "id": "job-search-plan",
+      "name": "就職活動計画書",
+      "description": "就職活動の戦略と志望企業を記載した書類",
+      "tips": ["応募予定の具体的な企業名を記載", "韓国の就職市場を調査していることを示す"],
+      "required": true
+    },
+    {
+      "id": "bank-statement",
+      "name": "銀行残高証明書",
+      "description": "滞在中の十分な資金を証明",
+      "tips": ["最低$3,000〜5,000 USD相当を推奨", "1ヶ月以内に発行されたもの"],
+      "required": true
+    },
+    {
+      "id": "resume",
+      "name": "履歴書",
+      "description": "関連する経験を詳述した履歴書",
+      "required": true
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "書類の準備",
+      "description": "必要書類をすべて揃えます。外国の書類はアポスティーユまたは認証を取得します。",
+      "duration": "1〜2週間",
+      "tips": ["早めに準備 — アポスティーユには時間がかかります", "すべてのコピーを取っておく"]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "予約",
+      "description": "ハイコリア (HiKorea) で最寄りの出入国管理事務所の予約を取ります。",
+      "duration": "当日〜2週間",
+      "tips": ["早めに予約 — 人気のある事務所はすぐに埋まります"],
+      "links": [
+        {"label": "ハイコリア (HiKorea) 予約", "url": "https://www.hikorea.go.kr"}
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "申請の提出",
+      "description": "出入国管理事務所にすべての書類を持参し、申請を提出して手数料を支払います。",
+      "duration": "2〜3時間",
+      "tips": ["30分前に到着", "原本とコピーの両方を持参"]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "審査を待つ",
+      "description": "申請が審査されます。追加書類を求められる場合があります。",
+      "duration": "7〜14営業日"
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "結果を受け取る",
+      "description": "ビザまたは外国人登録証を受け取るか、結果の通知を受け取ります。",
+      "duration": "承認後1〜3日"
+    }
+  ],
+
+  "processingTime": {
+    "typical": "7〜14営業日",
+    "notes": "出入国管理事務所の混雑状況や申請書類の完成度により異なります"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "パートタイムのみ（週20時間まで）",
+      "出入国管理局の事前承認が必要",
+      "特定の職種カテゴリに限定"
+    ],
+    "notes": "フルタイム就労には適切な就労ビザ（E-7など）への変更が必要です"
+  },
+
+  "faqs": [
+    {
+      "question": "D-10ビザで働けますか？",
+      "answer": "はい。ただしパートタイム（週20時間まで）のみで、出入国管理局の事前承認が必要です。パートタイム就労許可を取得する必要があります。"
+    },
+    {
+      "question": "D-10ビザはどのように延長しますか？",
+      "answer": "有効期限の30日前に、就職活動の証拠（送付した応募書類、参加した面接など）を持って出入国管理事務所を訪問してください。最長2年まで延長できます。"
+    },
+    {
+      "question": "就職が決まったらどうなりますか？",
+      "answer": "適切な就労ビザ（通常E-7）への在留資格変更が必要です。雇用主がこのビザ変更をサポートします。"
+    },
+    {
+      "question": "D-10ビザで韓国語を学べますか？",
+      "answer": "はい、韓国語講座に通うことができます。これは就労時間にはカウントされません。"
+    }
+  ],
+
+  "tips": [
+    "現在のビザが切れる前に就職活動を始める",
+    "積極的にネットワークを構築 — 韓国では多くの求人がコネクションで決まります",
+    "韓国語を学ぶ — 基礎的な語学力でも就職のチャンスが大幅に向上します",
+    "延長申請のために就職活動の詳細な記録をつける",
+    "外国人向けの求人サイトや韓国関連のLinkedInグループに参加する",
+    "外国人人材専門の人材紹介会社を活用することを検討"
+  ],
+
+  "warnings": [
+    "ビザの期限超過は絶対に避けてください — 将来のビザ申請に深刻な影響を与えます",
+    "適切な許可なしでのフルタイム就労は違法です",
+    "外出時は常に外国人登録証を携帯してください"
+  ],
+
+  "relatedVisas": ["e-7", "f-2"],
+
+  "lastUpdated": "2026-02-11",
+  "officialLinks": [
+    {"label": "出入国管理局", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
+    {"label": "ハイコリア (HiKorea)", "url": "https://www.hikorea.go.kr"},
+    {"label": "ビザポータル", "url": "https://www.visa.go.kr"}
+  ]
+}

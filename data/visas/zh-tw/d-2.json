@@ -1,0 +1,252 @@
+{
+  "type": "d-2",
+  "name": "留學簽證",
+  "shortName": "D-2",
+  "category": "study",
+  "description": "D-2簽證適用於在韓國大學或研究所就讀的國際學生。允許全職學習及有限度的兼職工作機會。",
+  "tagline": "在韓國大學就讀，開創您的未來",
+  "keyRequirement": "韓國大學的入學許可",
+
+  "targetAudience": [
+    "大學本科生",
+    "研究生（碩士、博士）",
+    "交換計畫參與者",
+    "從韓語課程轉讀學位課程的學生",
+    "研究生"
+  ],
+
+  "eligibility": [
+    {
+      "id": "admission",
+      "label": "獲得認可韓國大學的入學許可",
+      "description": "必須有認可機構的入學許可函",
+      "required": true
+    },
+    {
+      "id": "education",
+      "label": "完成高中或同等學歷",
+      "description": "本科課程需高中學歷；研究所需學士學位",
+      "required": true
+    },
+    {
+      "id": "language",
+      "label": "語言能力（TOPIK或英文）",
+      "description": "韓語授課課程需TOPIK 3級以上，或英語授課課程需英語能力證明",
+      "required": true
+    },
+    {
+      "id": "finances",
+      "label": "財力證明",
+      "description": "銀行存款證明達$10,000美元以上或獎學金證明",
+      "required": true
+    }
+  ],
+
+  "duration": {
+    "initial": "6個月 - 2年",
+    "extension": "每學期可續簽",
+    "maxTotal": "學程期間"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）",
+    "extension": "每次延期₩60,000",
+    "notes": "學校可能會收取額外處理費用"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有效護照",
+      "description": "效期須超過預計停留期間至少6個月",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "簽證申請表",
+      "description": "已填妥並簽名的簽證申請表",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "護照照片",
+      "description": "3.5公分 x 4.5公分，近期拍攝，白色背景",
+      "required": true
+    },
+    {
+      "id": "admission-letter",
+      "name": "大學入學許可函",
+      "description": "韓國大學的官方入學許可函",
+      "tips": ["申請英文及韓文版本", "確認包含課程日期"],
+      "required": true
+    },
+    {
+      "id": "business-registration",
+      "name": "大學營業登記證",
+      "description": "大學的官方登記證書",
+      "where_to_get": "由大學國際事務處提供",
+      "required": true
+    },
+    {
+      "id": "academic-records",
+      "name": "學業成績單",
+      "description": "前就讀學校的正式成績單",
+      "tips": ["如為國外學歷須經海牙認證", "如非英文或韓文須附翻譯"],
+      "required": true
+    },
+    {
+      "id": "diploma",
+      "name": "畢業證書或學位證書",
+      "description": "本科需高中畢業證書，研究所需學士學位證書",
+      "tips": ["大多數國家需要海牙認證"],
+      "required": true
+    },
+    {
+      "id": "financial-proof",
+      "name": "銀行存款證明",
+      "description": "顯示$10,000美元以上或等值存款",
+      "tips": ["須為30天內開立", "家長帳戶須附親屬關係證明"],
+      "required": true
+    },
+    {
+      "id": "language-certificate",
+      "name": "語言能力證明",
+      "description": "TOPIK成績或英語測驗成績（TOEFL/IELTS）",
+      "required": false
+    },
+    {
+      "id": "study-plan",
+      "name": "讀書計畫／學習計畫",
+      "description": "說明您學習目標和計畫的文章",
+      "tips": ["具體說明為何選擇韓國", "提及職涯目標"],
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "取得大學入學許可",
+      "description": "申請並獲得韓國大學的錄取。",
+      "tips": ["於開學前6個月以上開始準備", "申請多所大學"],
+      "duration": "2-4個月"
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "申請大學文件",
+      "description": "聯繫國際事務處取得簽證輔助文件。",
+      "tips": ["申請營業登記證", "取得英文版入學許可函"],
+      "duration": "1-2週"
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "準備個人文件",
+      "description": "收集成績單、畢業證書、銀行存款證明。如有需要則辦理海牙認證。",
+      "duration": "2-4週"
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "提交簽證申請",
+      "description": "至您所在國家的韓國大使館／領事館申請。",
+      "tips": ["提前預約", "攜帶所有文件正本"],
+      "duration": "1-2小時"
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "等待簽證審查",
+      "description": "大使館審查您的申請。",
+      "duration": "2-4週"
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "領取簽證並前往韓國",
+      "description": "領取貼有簽證的護照，準備出發。",
+      "tips": ["簽證核准後再訂機票", "與大學安排機場接機"],
+      "duration": "1-2週"
+    },
+    {
+      "id": "step-7",
+      "step": 7,
+      "title": "外國人登錄（外國人登錄證）",
+      "description": "抵達後90天內，至出入境管理事務所辦理外國人登錄證。",
+      "tips": ["大學會協助指導", "攜帶護照、照片、住所證明"],
+      "duration": "申請後2-3週"
+    }
+  ],
+
+  "processingTime": {
+    "typical": "2-4週",
+    "expedited": "部分國家可加急（需額外費用）",
+    "notes": "請於開學前至少8週申請"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "僅限兼職（學期中每週20小時）",
+      "須向出入境管理局取得工作許可",
+      "假期期間可全職工作",
+      "僅限核准的工作類別"
+    ],
+    "notes": "工作許可申請需大學核准。入境後6個月內不可工作。"
+  },
+
+  "faqs": [
+    {
+      "question": "留學生可以在韓國工作嗎？",
+      "answer": "可以，但您需要向出入境管理局申請兼職工作許可。學期中每週可工作20小時，假期期間可全職工作。入境韓國後6個月內不可工作。"
+    },
+    {
+      "question": "畢業後怎麼辦？",
+      "answer": "您可以轉換為D-10（求職）簽證找工作，或如已有工作邀約則直接轉換為E-7簽證。許多學生依據積分也符合F-2-7（居留簽證）資格。"
+    },
+    {
+      "question": "可以攜帶家人嗎？",
+      "answer": "配偶可申請F-3（眷屬）簽證。子女可就讀韓國學校。注意：F-3簽證持有人需另外取得許可才能工作。"
+    },
+    {
+      "question": "如果課業不及格怎麼辦？",
+      "answer": "維持良好學業成績對簽證續簽很重要。如果太多科目不及格或低於全職學生標準，簽證可能無法延期。"
+    },
+    {
+      "question": "可以轉學嗎？",
+      "answer": "可以，但須在14天內向出入境管理局報告。新學校必須接受您並支援您的簽證轉移。"
+    },
+    {
+      "question": "在韓國留學需要多少錢？",
+      "answer": "生活費預算每月約₩800,000-1,500,000（依城市而異）。學費因校而異：國立大學每學期₩200-400萬，私立大學每學期₩400-800萬。獎學金機會眾多。"
+    }
+  ],
+
+  "tips": [
+    "申請獎學金——韓國政府獎學金（GKS）及學校獎學金相當優渥",
+    "加入學校的國際學生社團獲得支援",
+    "抵達後儘快開設韓國銀行帳戶（工作許可需要）",
+    "透過學校加入學生健康保險",
+    "即使是英語授課課程也學一些基礎韓語——對日常生活幫助很大",
+    "妥善保管所有文件——簽證延期時會用到"
+  ],
+
+  "warnings": [
+    "維持全職學生身份，否則簽證可能被取消",
+    "未經許可工作屬嚴重違規",
+    "地址變更須於14天內申報",
+    "不要逾期停留——會影響未來簽證申請"
+  ],
+
+  "relatedVisas": ["d-10", "e-7", "f-2"],
+
+  "lastUpdated": "2026-02-11",
+  "officialLinks": [
+    {"label": "韓國出入境管理局", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
+    {"label": "Study in Korea", "url": "https://www.studyinkorea.go.kr/en/main.do"},
+    {"label": "HiKorea", "url": "https://www.hikorea.go.kr"},
+    {"label": "韓國政府獎學金", "url": "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do"}
+  ]
+}

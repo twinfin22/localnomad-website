@@ -1,0 +1,57 @@
+{
+  "type": "f-4",
+  "name": "海外僑胞簽證",
+  "shortName": "F-4",
+  "category": "ethnic-korean",
+  "description": "F-4簽證適用於持有外國國籍的韓裔（교포）。為返回或訪問祖國的海外韓裔提供長期居留及工作許可。",
+  "tagline": "以海外韓裔身份返回韓國",
+  "keyRequirement": "韓國血統（第二代或以後）",
+  "isStub": true,
+
+  "targetAudience": [
+    "持有外國國籍的韓裔",
+    "韓裔美國人、韓裔加拿大人等",
+    "韓國移民後裔"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "3年",
+    "extension": "每次延期3年",
+    "maxTotal": "無上限（可無限期續簽）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4週"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["部分簡單勞動工作受限"],
+    "notes": "大多數專業及技術工作皆可"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "海外韓裔財團",
+      "url": "https://www.okf.or.kr/"
+    }
+  ]
+}

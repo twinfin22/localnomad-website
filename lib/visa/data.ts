@@ -4,14 +4,13 @@ import type { VisaInfo, VisaType, Locale, VisaChecklist } from "./types";
 // Visa Data Loader
 // =============================================================================
 
-// Import visa data statically for now (can be moved to dynamic imports later)
+// English visa data imports
 import d10En from "@/data/visas/en/d-10.json";
 import e7En from "@/data/visas/en/e-7.json";
 import f1dEn from "@/data/visas/en/f-1-d.json";
 import f2En from "@/data/visas/en/f-2.json";
 import d2En from "@/data/visas/en/d-2.json";
 import h1En from "@/data/visas/en/h-1.json";
-// Stub visa imports (coming soon)
 import e2En from "@/data/visas/en/e-2.json";
 import d7En from "@/data/visas/en/d-7.json";
 import d8En from "@/data/visas/en/d-8.json";
@@ -19,7 +18,35 @@ import f6En from "@/data/visas/en/f-6.json";
 import f4En from "@/data/visas/en/f-4.json";
 import d4En from "@/data/visas/en/d-4.json";
 
-// Type the imported JSON
+// Japanese visa data imports
+import d10Ja from "@/data/visas/ja/d-10.json";
+import e7Ja from "@/data/visas/ja/e-7.json";
+import f1dJa from "@/data/visas/ja/f-1-d.json";
+import f2Ja from "@/data/visas/ja/f-2.json";
+import d2Ja from "@/data/visas/ja/d-2.json";
+import h1Ja from "@/data/visas/ja/h-1.json";
+import e2Ja from "@/data/visas/ja/e-2.json";
+import d7Ja from "@/data/visas/ja/d-7.json";
+import d8Ja from "@/data/visas/ja/d-8.json";
+import f6Ja from "@/data/visas/ja/f-6.json";
+import f4Ja from "@/data/visas/ja/f-4.json";
+import d4Ja from "@/data/visas/ja/d-4.json";
+
+// Traditional Chinese visa data imports
+import d10ZhTw from "@/data/visas/zh-tw/d-10.json";
+import e7ZhTw from "@/data/visas/zh-tw/e-7.json";
+import f1dZhTw from "@/data/visas/zh-tw/f-1-d.json";
+import f2ZhTw from "@/data/visas/zh-tw/f-2.json";
+import d2ZhTw from "@/data/visas/zh-tw/d-2.json";
+import h1ZhTw from "@/data/visas/zh-tw/h-1.json";
+import e2ZhTw from "@/data/visas/zh-tw/e-2.json";
+import d7ZhTw from "@/data/visas/zh-tw/d-7.json";
+import d8ZhTw from "@/data/visas/zh-tw/d-8.json";
+import f6ZhTw from "@/data/visas/zh-tw/f-6.json";
+import f4ZhTw from "@/data/visas/zh-tw/f-4.json";
+import d4ZhTw from "@/data/visas/zh-tw/d-4.json";
+
+// Type the imported JSON - English
 const visaDataEn: Record<VisaType, VisaInfo> = {
   "d-10": d10En as unknown as VisaInfo,
   "e-7": e7En as unknown as VisaInfo,
@@ -27,7 +54,6 @@ const visaDataEn: Record<VisaType, VisaInfo> = {
   "f-2": f2En as unknown as VisaInfo,
   "d-2": d2En as unknown as VisaInfo,
   "h-1": h1En as unknown as VisaInfo,
-  // Stub visas
   "e-2": e2En as unknown as VisaInfo,
   "d-7": d7En as unknown as VisaInfo,
   "d-8": d8En as unknown as VisaInfo,
@@ -36,11 +62,43 @@ const visaDataEn: Record<VisaType, VisaInfo> = {
   "d-4": d4En as unknown as VisaInfo,
 };
 
+// Type the imported JSON - Japanese
+const visaDataJa: Record<VisaType, VisaInfo> = {
+  "d-10": d10Ja as unknown as VisaInfo,
+  "e-7": e7Ja as unknown as VisaInfo,
+  "f-1-d": f1dJa as unknown as VisaInfo,
+  "f-2": f2Ja as unknown as VisaInfo,
+  "d-2": d2Ja as unknown as VisaInfo,
+  "h-1": h1Ja as unknown as VisaInfo,
+  "e-2": e2Ja as unknown as VisaInfo,
+  "d-7": d7Ja as unknown as VisaInfo,
+  "d-8": d8Ja as unknown as VisaInfo,
+  "f-6": f6Ja as unknown as VisaInfo,
+  "f-4": f4Ja as unknown as VisaInfo,
+  "d-4": d4Ja as unknown as VisaInfo,
+};
+
+// Type the imported JSON - Traditional Chinese
+const visaDataZhTw: Record<VisaType, VisaInfo> = {
+  "d-10": d10ZhTw as unknown as VisaInfo,
+  "e-7": e7ZhTw as unknown as VisaInfo,
+  "f-1-d": f1dZhTw as unknown as VisaInfo,
+  "f-2": f2ZhTw as unknown as VisaInfo,
+  "d-2": d2ZhTw as unknown as VisaInfo,
+  "h-1": h1ZhTw as unknown as VisaInfo,
+  "e-2": e2ZhTw as unknown as VisaInfo,
+  "d-7": d7ZhTw as unknown as VisaInfo,
+  "d-8": d8ZhTw as unknown as VisaInfo,
+  "f-6": f6ZhTw as unknown as VisaInfo,
+  "f-4": f4ZhTw as unknown as VisaInfo,
+  "d-4": d4ZhTw as unknown as VisaInfo,
+};
+
 // Map of all visa data by locale
 const visaDataByLocale: Record<Locale, Record<VisaType, VisaInfo>> = {
   en: visaDataEn,
-  ja: visaDataEn, // TODO: Add Japanese translations
-  "zh-tw": visaDataEn, // TODO: Add Traditional Chinese translations
+  ja: visaDataJa,
+  "zh-tw": visaDataZhTw,
 };
 
 // =============================================================================

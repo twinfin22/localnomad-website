@@ -1,0 +1,57 @@
+{
+  "type": "d-4",
+  "name": "語言研修簽證",
+  "shortName": "D-4",
+  "category": "language-study",
+  "description": "D-4簽證適用於在大學或認可語言機構就讀韓語課程的外國人。讓學生得以一邊學習韓語，一邊體驗韓國生活。",
+  "tagline": "在韓國學韓語",
+  "keyRequirement": "獲得認可韓語課程的入學許可",
+  "isStub": true,
+
+  "targetAudience": [
+    "想學習韓語的學生",
+    "準備在韓國升學者",
+    "語言愛好者及文化學習者"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "6個月 - 1年",
+    "extension": "每次延期6個月 - 1年",
+    "maxTotal": "最長2年"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4週"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["有限兼職工作（學期中每週20小時）"],
+    "notes": "須維持學生身份及良好出席率"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Study in Korea",
+      "url": "https://www.studyinkorea.go.kr/"
+    }
+  ]
+}

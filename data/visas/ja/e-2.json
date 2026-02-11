@@ -1,0 +1,57 @@
+{
+  "type": "e-2",
+  "name": "英語教育ビザ",
+  "shortName": "E-2",
+  "category": "work",
+  "description": "E-2ビザは、韓国の語学学校、公立学校、私立学院（ハグォン）で働く英語圏出身の資格のある英語教師を対象としています。",
+  "tagline": "韓国で英語を教える",
+  "keyRequirement": "学士号 + 英語圏の国籍",
+  "isStub": true,
+
+  "targetAudience": [
+    "学士号を持つネイティブスピーカー",
+    "英語教師を目指す方",
+    "海外経験を求める新卒者"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1年",
+    "extension": "延長1回につき1年",
+    "maxTotal": "上限なし（就労期間中は更新可能）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2〜4週間"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["スポンサー機関での英語教育のみ"],
+    "notes": "別途許可なく教育職以外の仕事はできません"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "出入国管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "ハイコリア (HiKorea)",
+      "url": "https://www.hikorea.go.kr/"
+    }
+  ]
+}

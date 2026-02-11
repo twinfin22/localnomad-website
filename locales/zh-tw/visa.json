@@ -1,0 +1,93 @@
+{
+  "landing": {
+    "title": "你的情況是？",
+    "subtitle": "選擇您的情況，我們將一步步引導您完成簽證流程。",
+    "showMoreSituations": "顯示更多情況",
+    "showFewerSituations": "收起",
+    "alreadyHaveVisa": "已經持有簽證？",
+    "manageYourVisa": "管理您的簽證",
+    "whichVisaDoYouHave": "您持有哪種簽證？",
+    "compareAllVisaTypes": "比較所有簽證類型"
+  },
+  "situations": {
+    "jobOffer": "我在韓國有工作機會",
+    "study": "我想在韓國留學",
+    "remoteWork": "我想在韓國遠端工作",
+    "jobSeeking": "我想在韓國求職",
+    "workingHoliday": "我想在韓國打工度假",
+    "longTerm": "我想在韓國長期居留",
+    "teachEnglish": "我想在韓國教英語",
+    "companyTransfer": "公司派我到韓國工作",
+    "startBusiness": "我想在韓國創業",
+    "marriedToKorean": "我的配偶是韓國公民",
+    "overseasKorean": "我是海外韓僑（교포）",
+    "languageCourse": "我想在韓國學習語言"
+  },
+  "journey": {
+    "backToVisaGuide": "返回簽證指南",
+    "yourPathTo": "取得{visa}簽證的流程：",
+    "step1": {
+      "title": "確認您的資格",
+      "subtitle": "檢視申請資格"
+    },
+    "step2": {
+      "title": "準備您的文件",
+      "subtitle": "準備必要文件"
+    },
+    "step3": {
+      "title": "提交申請",
+      "subtitle": "透過官方管道申請"
+    },
+    "step4": {
+      "title": "核准後",
+      "subtitle": "取得簽證後的事項"
+    },
+    "commonQuestions": "常見問題",
+    "officialResources": "官方資源"
+  },
+  "detail": {
+    "duration": "居留期間",
+    "cost": "費用",
+    "processingTime": "審查期間",
+    "workPermission": "工作許可",
+    "workPermitted": "允許工作",
+    "workRestricted": "工作受限",
+    "employerTied": "僱主綁定",
+    "requiredDocuments": "必要文件",
+    "optionalDocuments": "選擇性文件",
+    "viewFullChecklist": "查看完整清單",
+    "goToDashboard": "前往儀表板",
+    "trackExpiry": "追蹤到期日",
+    "documentChecklist": "文件清單",
+    "extensionAndRenewal": "延期與續簽",
+    "relatedVisas": "相關簽證",
+    "whatsNext": "下一步",
+    "practicalResources": "實用資源"
+  },
+  "eligibility": {
+    "quickCheck": "快速檢查",
+    "doYouMeetThisRequirement": "您是否符合此要求？",
+    "yes": "是",
+    "no": "否",
+    "incomeRequirement": "收入要求",
+    "perYear": "每年",
+    "perMonth": "每月"
+  },
+  "stub": {
+    "fullGuideComingSoon": "完整指南即將推出",
+    "workingOnGuide": "我們正在編寫{visa}簽證的完整指南。在此期間，請參閱以下官方資源。",
+    "keyRequirement": "主要要求",
+    "officialResources": "官方資源",
+    "notifyMeWhenReady": "準備好時通知我",
+    "notifyMeDescription": "當{visa}簽證完整指南準備好時，我們會通知您。請在首頁訂閱我們的電子報以獲取最新消息。"
+  },
+  "disclaimer": {
+    "title": "重要聲明",
+    "full": "本工具根據韓國公開的簽證規定進行資訊核對，不構成法律建議。簽證核發的最終決定權歸韓國法務部及出入境管理機關所有。",
+    "short": "這是根據公開規定進行的初步檢查。最終資格由韓國出入境管理機關決定。"
+  },
+  "stats": {
+    "visaTypesCovered": "涵蓋{count}種簽證類型",
+    "basedOnOfficial": "依據官方規定"
+  }
+}

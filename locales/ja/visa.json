@@ -1,0 +1,93 @@
+{
+  "landing": {
+    "title": "あなたの状況は？",
+    "subtitle": "状況を選択すると、ビザ取得の手順をステップバイステップでご案内します。",
+    "showMoreSituations": "もっと見る",
+    "showFewerSituations": "閉じる",
+    "alreadyHaveVisa": "すでにビザをお持ちですか？",
+    "manageYourVisa": "ビザを管理する",
+    "whichVisaDoYouHave": "どのビザをお持ちですか？",
+    "compareAllVisaTypes": "全ビザタイプを比較"
+  },
+  "situations": {
+    "jobOffer": "韓国で就職先が決まっている",
+    "study": "韓国で留学したい",
+    "remoteWork": "韓国でリモートワークしたい",
+    "jobSeeking": "韓国で就職活動をしたい",
+    "workingHoliday": "韓国でワーキングホリデーをしたい",
+    "longTerm": "韓国に長期滞在したい",
+    "teachEnglish": "韓国で英語を教えたい",
+    "companyTransfer": "会社の韓国駐在が決まった",
+    "startBusiness": "韓国で起業したい",
+    "marriedToKorean": "韓国人の配偶者です",
+    "overseasKorean": "在外韓国人（교포）です",
+    "languageCourse": "韓国で語学研修をしたい"
+  },
+  "journey": {
+    "backToVisaGuide": "ビザガイドに戻る",
+    "yourPathTo": "{visa}ビザ取得への道：",
+    "step1": {
+      "title": "資格を確認する",
+      "subtitle": "申請資格を確認"
+    },
+    "step2": {
+      "title": "必要書類を準備する",
+      "subtitle": "必要な書類を準備"
+    },
+    "step3": {
+      "title": "申請を提出する",
+      "subtitle": "公式窓口で申請"
+    },
+    "step4": {
+      "title": "承認後",
+      "subtitle": "ビザ取得後にすること"
+    },
+    "commonQuestions": "よくある質問",
+    "officialResources": "公式情報リンク"
+  },
+  "detail": {
+    "duration": "在留期間",
+    "cost": "費用",
+    "processingTime": "審査期間",
+    "workPermission": "就労許可",
+    "workPermitted": "就労可能",
+    "workRestricted": "就労制限あり",
+    "employerTied": "雇用先に紐づく",
+    "requiredDocuments": "必須書類",
+    "optionalDocuments": "任意書類",
+    "viewFullChecklist": "完全なチェックリストを見る",
+    "goToDashboard": "ダッシュボードへ",
+    "trackExpiry": "期限管理",
+    "documentChecklist": "書類チェックリスト",
+    "extensionAndRenewal": "延長・更新",
+    "relatedVisas": "関連ビザ",
+    "whatsNext": "次のステップ",
+    "practicalResources": "実用リソース"
+  },
+  "eligibility": {
+    "quickCheck": "簡易チェック",
+    "doYouMeetThisRequirement": "この要件を満たしていますか？",
+    "yes": "はい",
+    "no": "いいえ",
+    "incomeRequirement": "収入要件",
+    "perYear": "年間",
+    "perMonth": "月間"
+  },
+  "stub": {
+    "fullGuideComingSoon": "完全ガイドは近日公開",
+    "workingOnGuide": "{visa}ビザの詳細ガイドを作成中です。それまでは以下の公式情報をご確認ください。",
+    "keyRequirement": "主な要件",
+    "officialResources": "公式情報リンク",
+    "notifyMeWhenReady": "準備ができたら通知する",
+    "notifyMeDescription": "{visa}ビザの完全ガイドが公開されたらお知らせします。ホームページでニュースレターにご登録ください。"
+  },
+  "disclaimer": {
+    "title": "重要なお知らせ",
+    "full": "このツールは、公開されている韓国のビザ要件に基づいて情報を確認するものです。法的助言を構成するものではありません。ビザ発給に関する最終決定は、韓国法務部および出入国管理当局に帰属します。",
+    "short": "これは公開されている要件に基づく予備的な確認です。最終的な資格判定は、韓国の出入国管理当局が行います。"
+  },
+  "stats": {
+    "visaTypesCovered": "{count}種類のビザに対応",
+    "basedOnOfficial": "公式要件に基づく"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "type": "d-8",
+  "name": "投資簽證",
+  "shortName": "D-8",
+  "category": "business",
+  "description": "D-8簽證適用於在韓國設立或投資企業的外籍創業家及投資者。讓外國人得以創辦公司、投資現有企業或管理韓國營運。",
+  "tagline": "在韓國創業",
+  "keyRequirement": "最低投資₩100,000,000（約$75,000美元）",
+  "isStub": true,
+
+  "targetAudience": [
+    "在韓國創業的外籍創業家",
+    "韓國企業的投資者",
+    "遷移至韓國的新創公司創辦人"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1-2年",
+    "extension": "每次延期1-2年",
+    "maxTotal": "無上限（企業營運期間可續簽）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "4-8週"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["須在自己的企業工作"],
+    "notes": "可自由僱用員工及經營企業"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Invest Korea（KOTRA）",
+      "url": "https://www.investkorea.org/"
+    }
+  ]
+}

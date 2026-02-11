@@ -1,0 +1,57 @@
+{
+  "type": "d-8",
+  "name": "投資ビザ",
+  "shortName": "D-8",
+  "category": "business",
+  "description": "D-8ビザは、韓国でビジネスを設立または投資する外国の起業家や投資家を対象としています。外国籍の方が会社を設立したり、既存のビジネスに投資したり、韓国事業を経営したりすることを可能にします。",
+  "tagline": "韓国でビジネスを始める",
+  "keyRequirement": "最低投資額₩100,000,000（約$75,000）",
+  "isStub": true,
+
+  "targetAudience": [
+    "韓国でビジネスを始める外国の起業家",
+    "韓国企業への投資家",
+    "韓国に移転するスタートアップ創業者"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1〜2年",
+    "extension": "延長1回につき1〜2年",
+    "maxTotal": "上限なし（ビジネス運営中は更新可能）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "4〜8週間"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["自分のビジネスでの就労のみ"],
+    "notes": "従業員を雇用し、自由にビジネスを運営できます"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "出入国管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Invest Korea (KOTRA)",
+      "url": "https://www.investkorea.org/"
+    }
+  ]
+}

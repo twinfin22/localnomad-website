@@ -1,0 +1,57 @@
+{
+  "type": "d-7",
+  "name": "派駐簽證",
+  "shortName": "D-7",
+  "category": "work",
+  "description": "D-7簽證適用於外國企業員工被派駐至韓國分公司、子公司或關係企業。讓跨國企業得以調派重要人員至韓國。",
+  "tagline": "隨公司派駐韓國",
+  "keyRequirement": "在具有韓國分公司的外國企業任職1年以上",
+  "isStub": true,
+
+  "targetAudience": [
+    "跨國企業員工",
+    "被派駐的經理人及主管",
+    "調往韓國營運據點的技術專家"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1-2年",
+    "extension": "每次延期1-2年",
+    "maxTotal": "無上限（在職期間可續簽）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4週"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["僅能在擔保公司工作"],
+    "notes": "更換雇主需變更簽證身份"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "HiKorea",
+      "url": "https://www.hikorea.go.kr/"
+    }
+  ]
+}

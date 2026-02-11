@@ -1,0 +1,57 @@
+{
+  "type": "f-6",
+  "name": "結婚移民簽證",
+  "shortName": "F-6",
+  "category": "family",
+  "description": "F-6簽證適用於與韓國公民結婚的外國人。為韓國國民的配偶提供長期居留身份及工作許可。",
+  "tagline": "與韓國配偶共同生活在韓國",
+  "keyRequirement": "與韓國公民的合法婚姻",
+  "isStub": true,
+
+  "targetAudience": [
+    "韓國公民的外籍配偶",
+    "計畫與韓國國民結婚者",
+    "尋求在韓國團聚的家庭"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1-2年",
+    "extension": "每次延期2-3年",
+    "maxTotal": "至歸化或取得F-5身份"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "4-8週"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [],
+    "notes": "可於任何領域全職工作"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "HiKorea",
+      "url": "https://www.hikorea.go.kr/"
+    }
+  ]
+}

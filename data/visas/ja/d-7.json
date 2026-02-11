@@ -1,0 +1,57 @@
+{
+  "type": "d-7",
+  "name": "駐在ビザ",
+  "shortName": "D-7",
+  "category": "work",
+  "description": "D-7ビザは、韓国支社、子会社、または関連会社に転勤する外国企業の従業員を対象としています。多国籍企業が重要な人材を韓国に異動させることを可能にします。",
+  "tagline": "会社と共に韓国へ転勤",
+  "keyRequirement": "韓国支社を持つ外国企業での1年以上の雇用",
+  "isStub": true,
+
+  "targetAudience": [
+    "多国籍企業の従業員",
+    "転勤する管理職や幹部",
+    "韓国事業に異動する技術専門家"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1〜2年",
+    "extension": "延長1回につき1〜2年",
+    "maxTotal": "上限なし（就労期間中は更新可能）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2〜4週間"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["スポンサー企業での就労のみ"],
+    "notes": "ビザステータスを変更せずに雇用主を変更することはできません"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "出入国管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "ハイコリア (HiKorea)",
+      "url": "https://www.hikorea.go.kr/"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "type": "e-2",
+  "name": "英語教學簽證",
+  "shortName": "E-2",
+  "category": "work",
+  "description": "E-2簽證適用於來自英語系國家、具備資格的英語教師，在韓國語言機構、公立學校或私立補習班（學院）任教。",
+  "tagline": "在韓國教英語",
+  "keyRequirement": "學士學位 + 英語系國家公民",
+  "isStub": true,
+
+  "targetAudience": [
+    "具有學士學位的英語母語人士",
+    "有志成為英語教師者",
+    "尋求國際經驗的應屆畢業生"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1年",
+    "extension": "每次延期1年",
+    "maxTotal": "無上限（在職期間可續簽）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42美元）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4週"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["僅能在擔保機構教授英語"],
+    "notes": "未經另外許可不可從事教學以外的工作"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "HiKorea",
+      "url": "https://www.hikorea.go.kr/"
+    }
+  ]
+}

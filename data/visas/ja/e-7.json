@@ -1,0 +1,223 @@
+{
+  "type": "e-7",
+  "name": "専門職就業ビザ",
+  "shortName": "E-7",
+  "category": "work",
+  "description": "E-7ビザは、韓国企業で働く専門的なスキルを持つ外国人専門職を対象としています。IT、エンジニアリング、経営など幅広い専門分野をカバーしています。",
+  "tagline": "韓国企業からの採用が決まった専門職の方向け",
+  "keyRequirement": "韓国企業からの雇用契約 + 学士号（または実務経験5年以上）",
+
+  "targetAudience": [
+    "ソフトウェアエンジニア・IT専門家",
+    "エンジニア・技術スペシャリスト",
+    "研究者・科学者",
+    "ビジネス専門家・管理職",
+    "デザイナー・クリエイティブ専門家"
+  ],
+
+  "eligibility": [
+    {
+      "id": "job-offer",
+      "label": "韓国企業からの有効な雇用契約",
+      "description": "正式な雇用契約が必要です",
+      "required": true
+    },
+    {
+      "id": "education",
+      "label": "関連分野の学士号以上",
+      "description": "または同等の実務経験（5年以上）",
+      "required": true
+    },
+    {
+      "id": "experience",
+      "label": "関連分野の実務経験",
+      "description": "通常、学位保有者は1年以上、学位なしの場合は5年以上",
+      "required": true
+    },
+    {
+      "id": "salary",
+      "label": "最低給与基準を満たしている",
+      "description": "業界標準以上の給与が必要",
+      "required": true
+    }
+  ],
+
+  "duration": {
+    "initial": "1〜3年",
+    "extension": "延長1回につき1〜3年",
+    "maxTotal": "上限なし（就労期間中は無制限に更新可能）"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）",
+    "extension": "延長1回につき₩60,000",
+    "notes": "マルチプルエントリービザの場合は追加料金がかかる場合があります"
+  },
+
+  "incomeRequirement": {
+    "amount": "職種により異なる",
+    "currency": "KRW",
+    "period": "annual",
+    "notes": "職種カテゴリの平均給与以上が必要です。IT専門家の場合、通常は年間₩40,000,000以上が必要です。"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有効なパスポート（旅券）",
+      "description": "雇用契約期間中有効なもの",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "ビザ申請書",
+      "description": "記入済みのビザ申請書",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "証明写真",
+      "description": "3.5cm x 4.5cm、最近撮影、白背景",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "雇用契約書",
+      "description": "韓国企業との署名入り契約書（職位、給与、期間を記載）",
+      "required": true
+    },
+    {
+      "id": "business-registration",
+      "name": "事業者登録証",
+      "description": "雇用主の公式事業者登録証",
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "学位証明書",
+      "description": "原本または認証コピー、外国で取得した場合はアポスティーユが必要",
+      "tips": ["職種に関連する分野の学位であること"],
+      "required": true
+    },
+    {
+      "id": "career-certificate",
+      "name": "経歴証明書",
+      "description": "過去の職務経験の証明",
+      "tips": ["前職の雇用主から推薦状を取得", "詳細な職務内容を含める"],
+      "required": true
+    },
+    {
+      "id": "tax-documents",
+      "name": "納税証明書（延長申請時）",
+      "description": "韓国での納税証明",
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "就職先を確保",
+      "description": "韓国企業から雇用契約を受け取り、署名します。",
+      "tips": ["給与交渉を行う — 高い給与はビザ取得に有利です", "会社がビザをスポンサーする意思があることを確認"]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "雇用主が書類を準備",
+      "description": "会社が事業者登録証、納税証明書、招請書類を準備します。",
+      "duration": "1〜2週間"
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "個人書類を準備",
+      "description": "学位証明書、経歴証明書を収集し、必要に応じてアポスティーユを取得します。",
+      "duration": "1〜3週間"
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "申請を提出",
+      "description": "韓国大使館/領事館（国外の場合）または出入国管理事務所（国内の場合）で申請します。",
+      "duration": "1〜2時間"
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "ビザ発給認定番号を待つ",
+      "description": "出入国管理局が申請を審査します。雇用主がVINを受け取る場合があります。",
+      "duration": "2〜4週間"
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "ビザを受け取る / 韓国入国",
+      "description": "大使館でビザを受け取るか、すでに韓国にいる場合は外国人登録証を受け取ります。",
+      "duration": "1〜2週間"
+    }
+  ],
+
+  "processingTime": {
+    "typical": "2〜4週間",
+    "expedited": "5〜7営業日（追加料金）",
+    "notes": "審査期間は国籍と職種カテゴリにより異なります"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "スポンサー企業での就労のみ",
+      "転職にはビザ変更・新規雇用主のスポンサーシップが必要"
+    ],
+    "notes": "転職は可能ですが、ビザの変更手続きが必要です"
+  },
+
+  "faqs": [
+    {
+      "question": "E-7ビザで転職できますか？",
+      "answer": "はい、可能です。ただし、出入国管理局に届け出て、新しい雇用主をスポンサーとしてビザを更新する必要があります。手続きが完了するまで新しい会社で働き始めないでください。"
+    },
+    {
+      "question": "会社が倒産したらどうなりますか？",
+      "answer": "新しい就職先を見つけるための猶予期間（通常30日）があります。より多くの時間が必要な場合はD-10（求職）ビザに変更できます。"
+    },
+    {
+      "question": "家族を韓国に呼べますか？",
+      "answer": "はい、配偶者とお子様はF-3（同伴）ビザを申請できます。ただし、別途就労許可を取得しない限り働くことはできません。"
+    },
+    {
+      "question": "永住権を取得できますか？",
+      "answer": "E-7ビザで3年以上滞在後、ポイントに応じてF-2-7（ポイント制居住ビザ）またはF-5（永住権）の資格が得られる可能性があります。"
+    },
+    {
+      "question": "必要な給与水準は？",
+      "answer": "固定の最低額はありませんが、給与は職種の平均を満たすか上回る必要があります。出入国管理局がこれを確認します。IT分野では通常、年間₩4,000〜5,000万が目安です。"
+    }
+  ],
+
+  "tips": [
+    "契約前に給与交渉を — 高い給与はビザ取得に有利です",
+    "大手企業ほどビザ手続きがスムーズです",
+    "雇用関連の書類はすべて保管してください — 延長申請で必要になります",
+    "ビザ期限の2ヶ月前から延長手続きを開始",
+    "人事部と良好な関係を築く — ビザ関連の書類手続きを担当しています",
+    "3年後はより自由度の高いF-2ビザを検討"
+  ],
+
+  "warnings": [
+    "適切なビザなしでの就労は強制退去の対象です",
+    "ビザが承認されるまで就労を開始しないでください",
+    "ビザの変更手続きなしでの転職は法律違反です"
+  ],
+
+  "relatedVisas": ["d-10", "f-2", "f-5"],
+
+  "lastUpdated": "2026-02-11",
+  "officialLinks": [
+    {"label": "出入国管理局", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
+    {"label": "E-7職種リスト", "url": "https://www.immigration.go.kr/immigration_eng/1832/subview.do"},
+    {"label": "ハイコリア (HiKorea)", "url": "https://www.hikorea.go.kr"}
+  ]
+}

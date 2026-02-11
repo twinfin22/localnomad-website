@@ -1,0 +1,40 @@
+{
+  "brand": {
+    "name": "LocalNomad"
+  },
+  "actions": {
+    "viewDetails": "View Details",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "goBack": "Go Back",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "download": "Download"
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "time": {
+    "updated": "Updated",
+    "lastUpdated": "Last updated"
+  },
+  "trust": {
+    "freeToUse": "Free to use",
+    "noAccountRequired": "No account required",
+    "updatedRegularly": "Updated regularly",
+    "basedOnOfficialRequirements": "Based on official requirements"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us"
+  }
+}

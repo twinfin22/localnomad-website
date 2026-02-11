@@ -1,0 +1,57 @@
+{
+  "type": "d-4",
+  "name": "一般研修ビザ",
+  "shortName": "D-4",
+  "category": "language-study",
+  "description": "D-4ビザは、大学や認定語学学校の韓国語プログラムに在籍する外国籍の方を対象としています。韓国での生活を体験しながら韓国語を学ぶことを可能にします。",
+  "tagline": "韓国で韓国語を学ぶ",
+  "keyRequirement": "認定韓国語プログラムへの入学許可",
+  "isStub": true,
+
+  "targetAudience": [
+    "韓国語を学びたい学生",
+    "韓国の大学進学を準備する方",
+    "語学愛好家や文化学習者"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "6ヶ月〜1年",
+    "extension": "延長1回につき6ヶ月〜1年",
+    "maxTotal": "最長2年"
+  },
+
+  "fees": {
+    "application": "₩60,000（約$42）"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2〜4週間"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["限定的なパートタイム就労（学期中は週20時間）"],
+    "notes": "学生ステータスと良好な出席率を維持する必要があります"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "出入国管理局",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Study in Korea",
+      "url": "https://www.studyinkorea.go.kr/"
+    }
+  ]
+}

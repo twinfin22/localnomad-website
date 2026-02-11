@@ -1,0 +1,93 @@
+{
+  "landing": {
+    "title": "What's your situation?",
+    "subtitle": "Select your situation and we'll guide you through the visa process step by step.",
+    "showMoreSituations": "Show more situations",
+    "showFewerSituations": "Show fewer situations",
+    "alreadyHaveVisa": "Already have a visa?",
+    "manageYourVisa": "Manage your visa",
+    "whichVisaDoYouHave": "Which visa do you have?",
+    "compareAllVisaTypes": "or compare all visa types"
+  },
+  "situations": {
+    "jobOffer": "I have a job offer in Korea",
+    "study": "I want to study in Korea",
+    "remoteWork": "I want to work remotely from Korea",
+    "jobSeeking": "I'm looking for a job in Korea",
+    "workingHoliday": "I want a working holiday in Korea",
+    "longTerm": "I want to live long-term in Korea",
+    "teachEnglish": "I want to teach English in Korea",
+    "companyTransfer": "My company is transferring me to Korea",
+    "startBusiness": "I want to start a business in Korea",
+    "marriedToKorean": "I'm married to a Korean citizen",
+    "overseasKorean": "I'm an overseas Korean (교포)",
+    "languageCourse": "I want to take a language course"
+  },
+  "journey": {
+    "backToVisaGuide": "Back to visa guide",
+    "yourPathTo": "Your path to {visa}:",
+    "step1": {
+      "title": "Check if you qualify",
+      "subtitle": "Review eligibility requirements"
+    },
+    "step2": {
+      "title": "Gather your documents",
+      "subtitle": "Prepare required paperwork"
+    },
+    "step3": {
+      "title": "Submit your application",
+      "subtitle": "Apply through official channels"
+    },
+    "step4": {
+      "title": "After approval",
+      "subtitle": "What to do once you have your visa"
+    },
+    "commonQuestions": "Common questions",
+    "officialResources": "Official resources"
+  },
+  "detail": {
+    "duration": "Duration",
+    "cost": "Cost",
+    "processingTime": "Processing time",
+    "workPermission": "Work permission",
+    "workPermitted": "Work permitted",
+    "workRestricted": "Work restricted",
+    "employerTied": "Employer-tied",
+    "requiredDocuments": "Required documents",
+    "optionalDocuments": "Optional documents",
+    "viewFullChecklist": "View Full Checklist",
+    "goToDashboard": "Go to Dashboard",
+    "trackExpiry": "Track Expiry",
+    "documentChecklist": "Document Checklist",
+    "extensionAndRenewal": "Extension & Renewal",
+    "relatedVisas": "Related visas",
+    "whatsNext": "What's next?",
+    "practicalResources": "Practical resources"
+  },
+  "eligibility": {
+    "quickCheck": "Quick check",
+    "doYouMeetThisRequirement": "Do you meet this requirement?",
+    "yes": "Yes",
+    "no": "No",
+    "incomeRequirement": "Income requirement",
+    "perYear": "per year",
+    "perMonth": "per month"
+  },
+  "stub": {
+    "fullGuideComingSoon": "Full guide coming soon",
+    "workingOnGuide": "We're working on a comprehensive guide for the {visa} visa. In the meantime, check out the official resources below.",
+    "keyRequirement": "Key Requirement",
+    "officialResources": "Official Resources",
+    "notifyMeWhenReady": "Want to be notified?",
+    "notifyMeDescription": "We'll let you know when the full {visa} guide is ready. Join our newsletter on the homepage to stay updated."
+  },
+  "disclaimer": {
+    "title": "Important Notice",
+    "full": "This tool checks your information against publicly available Korean visa requirements. It does not constitute legal advice. Final decisions on visa issuance rest solely with the Korean Ministry of Justice and immigration authorities.",
+    "short": "This is a preliminary check based on publicly available requirements. Final eligibility is determined by Korean immigration authorities."
+  },
+  "stats": {
+    "visaTypesCovered": "{count} visa types covered",
+    "basedOnOfficial": "Based on official requirements"
+  }
+}
