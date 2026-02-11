@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -52,6 +53,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <LanguageSwitcher />
             <ThemeToggle />
             <Link href="/bundles" className="hidden sm:block">
               <Button
