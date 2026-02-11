@@ -1,5 +1,7 @@
 # LocalNomad Website - Claude Code Reference
 
+> Last updated: 2025-02
+
 ## Quick Commands
 ```bash
 npm run dev      # Start dev server (localhost:3000)
@@ -88,6 +90,3 @@ AIRTABLE_BASE_ID                 # Airtable base
 7. Types (`import type`)
 8. Data/constants
 
-## See Also
-- `ARCHITECTURE.md` - Comprehensive architecture documentation
-- `SPEC.md` - Product specifications
