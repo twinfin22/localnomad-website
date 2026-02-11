@@ -39,7 +39,7 @@ export function WhySection() {
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-widest mb-4">
               Why Choose Us
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-heading">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Why <span className="text-primary">LocalNomad</span>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ export function WhySection() {
                 <div className={`w-16 h-16 rounded-2xl ${value.accent === "accent" ? "bg-accent/10 group-hover:bg-accent/15" : "bg-primary/10 group-hover:bg-primary/15"} flex items-center justify-center mb-6 mx-auto transition-all duration-300 group-hover:scale-110`}>
                   <value.icon className={`w-8 h-8 ${value.accent === "accent" ? "text-accent" : "text-primary"}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-heading">{value.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </div>
             </AnimatedSection>

@@ -32,7 +32,7 @@ export function ThingsToKnow({
 
   return (
     <div className={cn('space-y-4', className)}>
-      <h2 className="text-xl font-bold text-white flex items-center gap-2">
+      <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
         <Lightbulb className="w-5 h-5 text-amber-400" />
         Things to Know
       </h2>
@@ -48,7 +48,7 @@ export function ThingsToKnow({
               'w-2 h-2 rounded-full mt-1.5 flex-shrink-0',
               item.type === 'warning' ? 'bg-red-500' : 'bg-amber-500'
             )} />
-            <p className="text-sm text-slate-300">{item.text}</p>
+            <p className="text-sm text-muted-foreground">{item.text}</p>
           </div>
         ))}
       </div>
@@ -57,7 +57,7 @@ export function ThingsToKnow({
       {hiddenCount > 0 && !showAll && (
         <button
           onClick={() => setShowAll(true)}
-          className="w-full py-2 px-3 rounded-lg bg-slate-800/30 border border-slate-700/50 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 transition-colors flex items-center justify-center gap-2"
+          className="w-full py-2 px-3 rounded-lg bg-surface/30 border border-border/50 text-sm text-muted-foreground hover:text-foreground hover:bg-surface/50 transition-colors flex items-center justify-center gap-2"
         >
           <ChevronDown className="w-4 h-4" />
           Show {hiddenCount} more

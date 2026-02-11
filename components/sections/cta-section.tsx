@@ -48,7 +48,7 @@ export function CtaSection() {
                 <Download className="w-8 h-8 text-primary" />
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-heading">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Get Your Free Pre-Arrival Checklist
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">

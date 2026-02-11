@@ -4,84 +4,110 @@
 
 @custom-variant dark (&:is(.dark *));
 
-:root {
-  /* Font variables */
-  --font-heading: 'Outfit', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+/* =============================================================================
+   LocalNomad Design System
+   Design philosophy: "Linear's discipline + SafetyWing's warmth"
+   Single font: Geist | Single accent: Cyan #22D3EE | Dark theme only
+   ============================================================================= */
 
-  /* Midnight Seoul - Professional Navy + Coral (Light Mode) */
-  --background: #F8FAFC;
-  --foreground: #0F172A;
-  --card: #FFFFFF;
-  --card-foreground: #0F172A;
-  --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
-  --primary: #1E3A5F;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F1F5F9;
-  --secondary-foreground: #0F172A;
-  --muted: #E2E8F0;
-  --muted-foreground: #64748B;
-  --accent: #E85A4F;
-  --accent-foreground: #FFFFFF;
-  --destructive: #DC2626;
+:root {
+  /* Typography - Geist only */
+  --font-sans: 'Geist', system-ui, sans-serif;
+
+  /* Backgrounds */
+  --bg-primary: #0B1120;
+  --bg-surface: #111B2E;
+  --bg-elevated: #1A2740;
+  --bg-overlay: rgba(17, 27, 46, 0.8);
+
+  /* Text */
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-inverse: #0B1120;
+
+  /* Accent - ONE accent color only */
+  --accent: #22D3EE;
+  --accent-hover: #06B6D4;
+  --accent-muted: rgba(34, 211, 238, 0.1);
+
+  /* Borders */
+  --border-default: #1E3A5F;
+  --border-hover: #2A4A73;
+
+  /* Semantic */
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --error: #F87171;
+  --info: #60A5FA;
+
+  /* Legacy shadcn/ui mappings - mapped to new tokens */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--bg-elevated);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-elevated);
+  --muted-foreground: var(--text-secondary);
+  --accent-color: var(--accent);
+  --accent-foreground: var(--text-inverse);
+  --destructive: var(--error);
   --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #1E3A5F;
-  --chart-1: #1E3A5F;
-  --chart-2: #E85A4F;
-  --chart-3: #3B82F6;
-  --chart-4: #10B981;
-  --chart-5: #F59E0B;
+  --border: var(--border-default);
+  --input: var(--border-default);
+  --ring: var(--accent);
   --radius: 0.75rem;
 
+  /* Charts */
+  --chart-1: var(--accent);
+  --chart-2: var(--success);
+  --chart-3: var(--info);
+  --chart-4: var(--warning);
+  --chart-5: var(--error);
+
   /* Sidebar */
-  --sidebar: #F1F5F9;
-  --sidebar-foreground: #0F172A;
-  --sidebar-primary: #1E3A5F;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E2E8F0;
-  --sidebar-accent-foreground: #0F172A;
-  --sidebar-border: #E2E8F0;
-  --sidebar-ring: #1E3A5F;
+  --sidebar: var(--bg-surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: var(--text-inverse);
+  --sidebar-accent: var(--bg-elevated);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-default);
+  --sidebar-ring: var(--accent);
 }
 
+/* Dark mode uses the same tokens - we're dark-only now */
 .dark {
-  /* Midnight Seoul - Dark Mode */
-  --background: #0B1120;
-  --foreground: #E2E8F0;
-  --card: #151F32;
-  --card-foreground: #E2E8F0;
-  --popover: #151F32;
-  --popover-foreground: #E2E8F0;
-  --primary: #4B7BB5;
-  --primary-foreground: #FFFFFF;
-  --secondary: #1A2744;
-  --secondary-foreground: #E2E8F0;
-  --muted: #1E2D4A;
-  --muted-foreground: #94A3B8;
-  --accent: #FF6B5B;
-  --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  --border: #1E3A5F;
-  --input: #1E3A5F;
-  --ring: #4B7BB5;
-  --sidebar: #151F32;
-  --sidebar-foreground: #E2E8F0;
-  --sidebar-primary: #4B7BB5;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #1A2744;
-  --sidebar-accent-foreground: #E2E8F0;
-  --sidebar-border: #1E3A5F;
-  --sidebar-ring: #4B7BB5;
+  /* All values inherited from :root - dark theme is the default and only theme */
 }
 
 @theme inline {
-  --font-sans: var(--font-sans, "Geist", "Geist Fallback");
-  --font-serif: var(--font-cormorant, "Cormorant Garamond", "Georgia", serif);
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  /* Typography - Geist only */
+  --font-sans: "Geist", "Geist Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+
+  /* New design tokens */
+  --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-default: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+  --color-border-default: var(--border-default);
+  --color-border-hover: var(--border-hover);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Legacy shadcn/ui color mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -94,7 +120,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
+  --color-accent: var(--accent-color);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -106,10 +132,14 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -126,69 +156,53 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
   }
   html,
   body {
     overflow-x: hidden;
     max-width: 100vw;
   }
+  /* All typography uses Geist - no font-family switching */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
+  }
+  /* Heading typography scale */
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-weight: 600;
   }
 }
 
-/* === VisaKorea Dark Theme === */
+/* === Legacy VisaKorea class - now uses global tokens === */
 .visa-dark {
-  --background: #0A0E1A;
-  --foreground: #F8FAFC;
-  --card: #111827;
-  --card-foreground: #F8FAFC;
-  --popover: #111827;
-  --popover-foreground: #F8FAFC;
-  --primary: #22D3EE;
-  --primary-foreground: #0A0E1A;
-  --secondary: #1F2937;
-  --secondary-foreground: #F8FAFC;
-  --muted: #1F2937;
-  --muted-foreground: #94A3B8;
-  --accent: #22D3EE;
-  --accent-foreground: #0A0E1A;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  --border: #1F2937;
-  --input: #1F2937;
-  --ring: #22D3EE;
-
-  /* VisaKorea specific */
-  --vk-navy: #0A0E1A;
-  --vk-navy-light: #111827;
-  --vk-cyan: #22D3EE;
-  --vk-cyan-dark: #0891B2;
-  --vk-slate: #94A3B8;
-  --vk-white: #F8FAFC;
-  --vk-success: #10B981;
-  --vk-warning: #F59E0B;
-  --vk-error: #EF4444;
+  /* All values now inherited from :root tokens - no overrides needed */
 }
 
 @layer utilities {
-  /* Heading font - switches with theme */
+  /* All fonts use Geist - these classes are kept for compatibility but do nothing */
   .font-heading {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
   }
 
-  /* Serif font for headings (legacy) */
   .font-serif {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
   }
 
   /* Fluid typography */
   .text-fluid-hero {
     font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
     line-height: 1.1;
-    letter-spacing: -0.01em;
-    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-family: var(--font-sans);
+    font-weight: 700;
   }
   .text-fluid-subhero {
     font-size: clamp(1.125rem, 2vw + 0.5rem, 1.75rem);

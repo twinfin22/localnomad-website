@@ -32,8 +32,8 @@ const MATCH_LEVEL_CONFIG: Record<
   },
   moderate: {
     label: 'Moderate Match',
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-500/10 border-cyan-500/30',
+    color: 'text-primary',
+    bgColor: 'bg-primary/10 border-primary/30',
     description: 'May meet requirements with some conditions',
   },
   possible: {
@@ -65,10 +65,10 @@ export function QuizResults({
     <div className="w-full max-w-3xl mx-auto">
       {/* Header */}
       <div className="text-center mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
           Your Visa Recommendations
         </h2>
-        <p className="text-slate-400 text-lg">
+        <p className="text-muted-foreground text-lg">
           Based on your answers, here are the visas that may fit your situation
         </p>
       </div>
@@ -76,7 +76,7 @@ export function QuizResults({
       {/* Top Recommendation */}
       {topRecommendation && (
         <div className="mb-6">
-          <div className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">
+          <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
             Best Match
           </div>
           <RecommendationCard
@@ -89,7 +89,7 @@ export function QuizResults({
       {/* Other Recommendations */}
       {otherRecommendations.length > 0 && (
         <div className="mb-8">
-          <div className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">
+          <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
             Other Options
           </div>
           <div className="grid gap-3">
@@ -109,7 +109,7 @@ export function QuizResults({
           <Link href={`/visa/${topRecommendation.visaType}`}>
             <Button
               size="lg"
-              className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-medium px-6 w-full sm:w-auto"
+              className="bg-primary hover:bg-accent-hover text-background font-medium px-6 w-full sm:w-auto"
             >
               Start Preparing
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -122,7 +122,7 @@ export function QuizResults({
             size="lg"
             variant="outline"
             onClick={onSaveResults}
-            className="border-slate-600 text-slate-300 hover:bg-slate-800 w-full sm:w-auto"
+            className="border-border text-muted-foreground hover:bg-surface w-full sm:w-auto"
           >
             <Bookmark className="w-4 h-4 mr-2" />
             Save Results
@@ -133,7 +133,7 @@ export function QuizResults({
           size="lg"
           variant="ghost"
           onClick={onRetakeQuiz}
-          className="text-slate-400 hover:text-white hover:bg-slate-800 w-full sm:w-auto"
+          className="text-muted-foreground hover:text-foreground hover:bg-surface w-full sm:w-auto"
         >
           <RefreshCw className="w-4 h-4 mr-2" />
           Retake Quiz
@@ -162,15 +162,15 @@ function RecommendationCard({
     <div
       className={cn(
         'p-5 rounded-xl border transition-all',
-        isTopPick ? config.bgColor : 'bg-slate-800/50 border-slate-700',
-        'hover:border-slate-600'
+        isTopPick ? config.bgColor : 'bg-surface border-border',
+        'hover:border-border'
       )}
     >
       <div className="flex items-start justify-between gap-4 mb-3">
         {/* Visa info */}
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-lg font-bold text-white uppercase">
+            <span className="text-lg font-bold text-foreground uppercase">
               {recommendation.visaType}
             </span>
             <span
@@ -183,7 +183,7 @@ function RecommendationCard({
               {config.label}
             </span>
           </div>
-          <div className="text-slate-300">{visaName}</div>
+          <div className="text-muted-foreground">{visaName}</div>
         </div>
 
         {/* View button */}
@@ -191,7 +191,7 @@ function RecommendationCard({
           <Button
             variant="ghost"
             size="sm"
-            className="text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/10"
+            className="text-primary hover:text-primary hover:bg-primary/10"
           >
             View
             <ArrowRight className="w-4 h-4 ml-1" />
@@ -205,7 +205,7 @@ function RecommendationCard({
           {recommendation.matchReasons.slice(0, 3).map((reason, index) => (
             <div key={index} className="flex items-start gap-2 text-sm">
               <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-              <span className="text-slate-300">{reason}</span>
+              <span className="text-muted-foreground">{reason}</span>
             </div>
           ))}
         </div>
@@ -217,7 +217,7 @@ function RecommendationCard({
           {recommendation.warningReasons.slice(0, 2).map((reason, index) => (
             <div key={index} className="flex items-start gap-2 text-sm">
               <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-              <span className="text-slate-400">{reason}</span>
+              <span className="text-muted-foreground">{reason}</span>
             </div>
           ))}
         </div>
@@ -225,7 +225,7 @@ function RecommendationCard({
 
       {/* Visa path */}
       {recommendation.path && recommendation.path.length > 1 && (
-        <div className="pt-3 border-t border-slate-700/50">
+        <div className="pt-3 border-t border-border/50">
           <VisaPathInline path={recommendation.path} />
         </div>
       )}

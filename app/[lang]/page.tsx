@@ -24,18 +24,18 @@ export default async function GlobalLandingPage({ params }: GlobalLandingProps) 
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0B1120]">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
 
-        <div className="container mx-auto max-w-5xl relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+        <div className="container mx-auto max-w-3xl relative z-10 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Your Toolkit for Living in Asia
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
             Navigate visas, find neighborhoods, and settle in with confidence.
           </p>
 
@@ -51,7 +51,7 @@ export default async function GlobalLandingPage({ params }: GlobalLandingProps) 
             ))}
           </div>
 
-          <p className="text-sm text-slate-500 mt-12">
+          <p className="text-sm text-muted-foreground mt-12">
             More countries coming soon.
           </p>
         </div>
@@ -93,11 +93,11 @@ function CountryCard({ country, locale, href }: CountryCardProps) {
 
   return (
     <Link href={href}>
-      <div className="group relative rounded-2xl p-6 bg-slate-800/50 border border-slate-700/50 hover:border-cyan-500/30 hover:bg-slate-800/80 transition-all duration-300 cursor-pointer text-left">
+      <div className="group relative rounded-xl p-6 bg-surface border border-border hover:border-border-hover hover:bg-elevated transition-all duration-200 cursor-pointer text-left">
         {/* Flag & Name */}
         <div className="flex items-center gap-4 mb-4">
           <span className="text-4xl">{flag}</span>
-          <h2 className="text-2xl font-bold text-white">{name}</h2>
+          <h2 className="text-2xl font-bold text-foreground">{name}</h2>
         </div>
 
         {/* Services */}
@@ -106,21 +106,21 @@ function CountryCard({ country, locale, href }: CountryCardProps) {
             <li
               key={service.name}
               className={`text-sm ${
-                service.available ? "text-slate-300" : "text-slate-500"
+                service.available ? "text-muted-foreground" : "text-muted-foreground/50"
               }`}
             >
               {service.available ? "✓" : "○"} {service.name}
               {!service.available && (
-                <span className="text-xs text-slate-600 ml-2">Coming Soon</span>
+                <span className="text-xs text-muted-foreground/50 ml-2">Coming Soon</span>
               )}
             </li>
           ))}
         </ul>
 
         {/* CTA */}
-        <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+        <div className="flex items-center text-primary group-hover:text-accent-hover transition-colors duration-200">
           <span className="text-sm font-medium">Explore {name}</span>
-          <span className="ml-2 group-hover:translate-x-1 transition-transform">
+          <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">
             →
           </span>
         </div>

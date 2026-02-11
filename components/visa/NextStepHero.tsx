@@ -102,35 +102,35 @@ const stepConfigs: Record<VisaState, StepConfig> = {
 
 const variantStyles = {
   primary: {
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/30",
-    iconBg: "bg-cyan-500",
-    iconText: "text-[#0A0E1A]",
-    button: "bg-cyan-500 hover:bg-cyan-600 text-[#0A0E1A]",
+    bg: "bg-primary/10",
+    border: "border-primary/30",
+    iconBg: "bg-primary",
+    iconText: "text-background",
+    button: "bg-primary hover:bg-accent-hover text-background",
     glow: "shadow-[0_0_30px_rgba(34,211,238,0.2)]",
   },
   secondary: {
-    bg: "bg-[#1F2937]",
-    border: "border-[#374151]",
-    iconBg: "bg-[#374151]",
-    iconText: "text-cyan-400",
-    button: "bg-[#374151] hover:bg-[#4B5563] text-[#F8FAFC]",
+    bg: "bg-surface",
+    border: "border-elevated",
+    iconBg: "bg-elevated",
+    iconText: "text-primary",
+    button: "bg-elevated hover:bg-surface text-foreground",
     glow: "",
   },
   success: {
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/30",
     iconBg: "bg-emerald-500",
-    iconText: "text-[#0A0E1A]",
-    button: "bg-emerald-500 hover:bg-emerald-600 text-[#0A0E1A]",
+    iconText: "text-background",
+    button: "bg-emerald-500 hover:bg-emerald-600 text-background",
     glow: "shadow-[0_0_30px_rgba(16,185,129,0.2)]",
   },
   warning: {
     bg: "bg-amber-500/10",
     border: "border-amber-500/30",
     iconBg: "bg-amber-500",
-    iconText: "text-[#0A0E1A]",
-    button: "bg-amber-500 hover:bg-amber-600 text-[#0A0E1A]",
+    iconText: "text-background",
+    button: "bg-amber-500 hover:bg-amber-600 text-background",
     glow: "shadow-[0_0_30px_rgba(245,158,11,0.2)]",
   },
 };
@@ -200,10 +200,10 @@ export function NextStepHero({ state, visaType, className }: NextStepHeroProps) 
         </div>
 
         <div className="flex-1 min-w-0">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#F8FAFC] mb-2 font-heading">
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
             {config.title}
           </h2>
-          <p className="text-[#94A3B8] text-sm sm:text-base">
+          <p className="text-muted-foreground text-sm sm:text-base">
             {config.description}
           </p>
         </div>

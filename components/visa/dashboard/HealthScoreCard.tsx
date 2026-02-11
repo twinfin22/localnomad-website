@@ -35,7 +35,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
   return (
     <div className={cn('vk-card p-6', className)}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
           Preparation Score
         </h3>
         <ScoreIcon className={cn('w-5 h-5', interpretation.color)} />
@@ -53,7 +53,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
               fill="none"
               stroke="currentColor"
               strokeWidth="8"
-              className="text-slate-800"
+              className="text-surface"
             />
             {/* Progress circle */}
             <circle
@@ -67,7 +67,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
               className={cn(
                 'transition-all duration-500',
                 score >= 80 && 'text-emerald-400',
-                score >= 60 && score < 80 && 'text-cyan-400',
+                score >= 60 && score < 80 && 'text-primary',
                 score >= 40 && score < 60 && 'text-amber-400',
                 score < 40 && 'text-red-400'
               )}
@@ -79,8 +79,8 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
           </svg>
           {/* Score text in center */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-3xl font-bold text-white">{score}</span>
-            <span className="text-xs text-slate-500">/ 100</span>
+            <span className="text-3xl font-bold text-foreground">{score}</span>
+            <span className="text-xs text-muted-foreground">/ 100</span>
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
             <span className={cn('text-lg font-semibold', interpretation.color)}>
               {interpretation.label}
             </span>
-            <p className="text-sm text-slate-400 mt-1">
+            <p className="text-sm text-muted-foreground mt-1">
               {interpretation.message}
             </p>
           </div>
@@ -120,7 +120,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
       </div>
 
       {/* Legal disclaimer */}
-      <p className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-800">
+      <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border">
         This score reflects your document preparation progress, not approval likelihood.
       </p>
     </div>
@@ -144,19 +144,19 @@ function ScoreFactor({ label, value, total, isTimeline, weight }: ScoreFactorPro
 
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="text-slate-500 w-16">{label}</span>
-      <div className="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+      <span className="text-muted-foreground w-16">{label}</span>
+      <div className="flex-1 h-1.5 bg-surface rounded-full overflow-hidden">
         <div
           className={cn(
             'h-full rounded-full transition-all duration-300',
             percentage >= 80 && 'bg-emerald-500',
-            percentage >= 50 && percentage < 80 && 'bg-cyan-500',
+            percentage >= 50 && percentage < 80 && 'bg-primary',
             percentage < 50 && 'bg-amber-500'
           )}
           style={{ width: `${percentage}%` }}
         />
       </div>
-      <span className="text-slate-600 w-8">{weight}</span>
+      <span className="text-muted-foreground w-8">{weight}</span>
     </div>
   );
 }

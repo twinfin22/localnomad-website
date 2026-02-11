@@ -84,14 +84,14 @@ export function DDayPanel({
     if (state === 'EXPIRED') return 'text-red-400';
     if (isUrgent) return 'text-amber-400';
     if (state === 'APPROVED' || state === 'ACTIVE') return 'text-emerald-400';
-    return 'text-cyan-400';
+    return 'text-primary';
   };
 
   const getStatusBg = () => {
     if (isPast || state === 'EXPIRED') return 'bg-red-500/10';
     if (isUrgent) return 'bg-amber-500/10';
     if (state === 'APPROVED' || state === 'ACTIVE') return 'bg-emerald-500/10';
-    return 'bg-cyan-500/10';
+    return 'bg-primary/10';
   };
 
   const getIcon = () => {
@@ -106,7 +106,7 @@ export function DDayPanel({
   return (
     <div className={cn('vk-card p-6', className)}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
           {label}
         </h3>
         <div className={cn('p-2 rounded-lg', getStatusBg())}>
@@ -125,18 +125,18 @@ export function DDayPanel({
               <span>D-{daysRemaining}</span>
             )}
           </div>
-          <p className="text-sm text-slate-400">{displayDate}</p>
+          <p className="text-sm text-muted-foreground">{displayDate}</p>
 
           {/* Renewal window indicator for active visas */}
           {(state === 'ACTIVE' || state === 'EXPIRING') && daysRemaining !== null && daysRemaining > 0 && (
-            <div className="mt-4 pt-4 border-t border-slate-800">
+            <div className="mt-4 pt-4 border-t border-border">
               {daysRemaining <= renewalWindowDays ? (
                 <div className="flex items-center justify-center gap-2 text-amber-400">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">Renewal window open</span>
                 </div>
               ) : (
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-muted-foreground">
                   Renewal opens in {daysRemaining - renewalWindowDays} days
                 </p>
               )}
@@ -145,7 +145,7 @@ export function DDayPanel({
         </div>
       ) : (
         <div className="text-center py-4">
-          <p className="text-slate-500">Set a target date to track progress</p>
+          <p className="text-muted-foreground">Set a target date to track progress</p>
         </div>
       )}
     </div>

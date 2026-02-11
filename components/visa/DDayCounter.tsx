@@ -35,10 +35,10 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
 
   if (!mounted) {
     return (
-      <div className={cn("vk-card p-6", className)}>
+      <div className={cn("bg-surface border border-border rounded-xl p-6", className)}>
         <div className="animate-pulse">
-          <div className="h-4 w-20 bg-[#1F2937] rounded mb-4" />
-          <div className="h-12 w-32 bg-[#1F2937] rounded" />
+          <div className="h-4 w-20 bg-elevated rounded mb-4" />
+          <div className="h-12 w-32 bg-elevated rounded" />
         </div>
       </div>
     );
@@ -48,30 +48,30 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
 
   const urgencyStyles = {
     critical: {
-      bg: "bg-red-500/10",
-      border: "border-red-500/30",
-      text: "text-red-400",
-      glow: "shadow-[0_0_20px_rgba(239,68,68,0.2)]",
+      bg: "bg-error/10",
+      border: "border-error/30",
+      text: "text-error",
+      glow: "shadow-[0_0_20px_rgba(248,113,113,0.2)]",
       icon: AlertTriangle,
     },
     warning: {
-      bg: "bg-amber-500/10",
-      border: "border-amber-500/30",
-      text: "text-amber-400",
-      glow: "shadow-[0_0_20px_rgba(245,158,11,0.2)]",
+      bg: "bg-warning/10",
+      border: "border-warning/30",
+      text: "text-warning",
+      glow: "shadow-[0_0_20px_rgba(251,191,36,0.2)]",
       icon: AlertTriangle,
     },
     normal: {
-      bg: "bg-cyan-500/10",
-      border: "border-cyan-500/30",
-      text: "text-cyan-400",
-      glow: "glow-cyan-sm",
+      bg: "bg-primary/10",
+      border: "border-primary/30",
+      text: "text-primary",
+      glow: "shadow-[0_0_20px_rgba(34,211,238,0.2)]",
       icon: Calendar,
     },
     none: {
-      bg: "bg-[#1F2937]",
-      border: "border-[#1F2937]",
-      text: "text-[#94A3B8]",
+      bg: "bg-elevated",
+      border: "border-elevated",
+      text: "text-muted-foreground",
       glow: "",
       icon: Calendar,
     },
@@ -82,12 +82,12 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
 
   return (
     <div className={cn(
-      "vk-card p-6 transition-all duration-300",
+      "bg-surface border border-border rounded-xl p-6 transition-all duration-300",
       style.glow,
       className
     )}>
       <div className="flex items-center justify-between mb-4">
-        <span className="text-sm font-medium text-[#94A3B8] uppercase tracking-wider">
+        <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
           {label}
         </span>
         <div className={cn(
@@ -102,22 +102,22 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
         <>
           <div className="flex items-baseline gap-2 mb-2">
             <span className={cn(
-              "text-5xl font-bold font-heading tabular-nums",
+              "text-5xl font-bold tabular-nums",
               style.text
             )}>
               {Math.abs(days)}
             </span>
-            <span className="text-lg text-[#94A3B8]">
+            <span className="text-lg text-muted-foreground">
               {days < 0 ? "days overdue" : "days"}
             </span>
           </div>
-          <p className="text-sm text-[#94A3B8]">
+          <p className="text-sm text-muted-foreground">
             {formatDaysRemaining(days)}
           </p>
 
           {urgency === "critical" && (
-            <div className="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20">
-              <p className="text-xs text-red-400 flex items-center gap-2">
+            <div className="mt-4 p-3 rounded-lg bg-error/10 border border-error/20">
+              <p className="text-xs text-error flex items-center gap-2">
                 <AlertTriangle className="w-3 h-3" />
                 Urgent action required
               </p>
@@ -126,8 +126,8 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
         </>
       ) : (
         <div className="flex items-center gap-3">
-          <CheckCircle className="w-6 h-6 text-emerald-400" />
-          <span className="text-lg text-[#94A3B8]">No deadline set</span>
+          <CheckCircle className="w-6 h-6 text-success" />
+          <span className="text-lg text-muted-foreground">No deadline set</span>
         </div>
       )}
     </div>

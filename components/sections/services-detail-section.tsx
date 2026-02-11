@@ -65,7 +65,7 @@ export function ServicesDetailSection() {
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-widest mb-4">
               Our Services
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-heading">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Everything You Need
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -85,7 +85,7 @@ export function ServicesDetailSection() {
                     <service.icon className={`w-7 h-7 ${service.iconColor}`} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold font-heading">{service.title}</h3>
+                    <h3 className="text-xl font-semibold">{service.title}</h3>
                     <p className="text-sm text-muted-foreground">
                       {service.description}
                     </p>

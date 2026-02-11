@@ -39,32 +39,32 @@ export function StepAfterApproval({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Link
           href={dashboardHref}
-          className="p-4 rounded-lg bg-slate-700/30 border border-slate-700/50 hover:border-cyan-500/30 transition-colors group"
+          className="p-4 rounded-lg bg-elevated border border-border hover:border-primary/30 transition-colors group"
         >
-          <div className="flex items-center gap-2 text-cyan-400 mb-2">
+          <div className="flex items-center gap-2 text-primary mb-2">
             <Calendar className="w-4 h-4" />
             <span className="text-sm font-medium">Track Expiry</span>
           </div>
-          <p className="text-slate-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             Set reminders for 90/60/30 day alerts
           </p>
-          <span className="text-xs text-cyan-400 group-hover:text-cyan-300 mt-2 inline-flex items-center gap-1">
+          <span className="text-xs text-primary group-hover:text-accent-hover mt-2 inline-flex items-center gap-1">
             Go to Dashboard <ArrowRight className="w-3 h-3" />
           </span>
         </Link>
 
         <Link
           href={checklistHref}
-          className="p-4 rounded-lg bg-slate-700/30 border border-slate-700/50 hover:border-cyan-500/30 transition-colors group"
+          className="p-4 rounded-lg bg-elevated border border-border hover:border-primary/30 transition-colors group"
         >
           <div className="flex items-center gap-2 text-emerald-400 mb-2">
             <FileCheck className="w-4 h-4" />
             <span className="text-sm font-medium">Document Checklist</span>
           </div>
-          <p className="text-slate-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             Track what you have and what you need
           </p>
-          <span className="text-xs text-cyan-400 group-hover:text-cyan-300 mt-2 inline-flex items-center gap-1">
+          <span className="text-xs text-primary group-hover:text-accent-hover mt-2 inline-flex items-center gap-1">
             View Checklist <ArrowRight className="w-3 h-3" />
           </span>
         </Link>
@@ -73,14 +73,14 @@ export function StepAfterApproval({
       {/* Important reminders */}
       {holderWarnings.length > 0 && (
         <div>
-          <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
             Important reminders
           </h4>
           <div className="space-y-2">
             {holderWarnings.map((warning, i) => (
               <div key={i} className="flex gap-2 text-sm">
                 <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-300">{warning}</span>
+                <span className="text-muted-foreground">{warning}</span>
               </div>
             ))}
           </div>
@@ -92,26 +92,26 @@ export function StepAfterApproval({
         visa.duration.maxTotal ||
         visa.fees.extension) && (
         <div>
-          <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
             Extension & Renewal
           </h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
             {visa.duration.extension && (
               <div>
-                <span className="text-slate-500 block">Period</span>
-                <p className="text-white">{visa.duration.extension}</p>
+                <span className="text-muted-foreground block">Period</span>
+                <p className="text-foreground">{visa.duration.extension}</p>
               </div>
             )}
             {visa.duration.maxTotal && (
               <div>
-                <span className="text-slate-500 block">Max stay</span>
-                <p className="text-white">{visa.duration.maxTotal}</p>
+                <span className="text-muted-foreground block">Max stay</span>
+                <p className="text-foreground">{visa.duration.maxTotal}</p>
               </div>
             )}
             {visa.fees.extension && (
               <div>
-                <span className="text-slate-500 block">Fee</span>
-                <p className="text-white">{visa.fees.extension}</p>
+                <span className="text-muted-foreground block">Fee</span>
+                <p className="text-foreground">{visa.fees.extension}</p>
               </div>
             )}
           </div>
@@ -121,16 +121,16 @@ export function StepAfterApproval({
       {/* What's next */}
       {visa.relatedVisas && visa.relatedVisas.length > 0 && (
         <div>
-          <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
             What's next?
           </h4>
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-muted-foreground">
             Consider:{" "}
             {visa.relatedVisas.map((v, i) => (
               <span key={v}>
                 <Link
                   href={`/visa/${v}`}
-                  className="text-cyan-400 hover:text-cyan-300"
+                  className="text-primary hover:text-accent-hover"
                 >
                   {v.toUpperCase()}
                 </Link>
@@ -144,7 +144,7 @@ export function StepAfterApproval({
       {/* Practical resources */}
       {visa.officialLinks.length > 0 && (
         <div>
-          <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
             Practical resources
           </h4>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -154,7 +154,7 @@ export function StepAfterApproval({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-cyan-400 hover:text-cyan-300"
+                className="inline-flex items-center gap-1 text-sm text-primary hover:text-accent-hover"
               >
                 {link.label}
                 <ExternalLink className="w-3 h-3" />

@@ -15,7 +15,7 @@ export function VisaPathMap({ path, currentStep = 0, className }: VisaPathMapPro
 
   return (
     <div className={cn('w-full', className)}>
-      <h4 className="text-sm font-medium text-slate-400 mb-4">
+      <h4 className="text-sm font-medium text-muted-foreground mb-4">
         Suggested Visa Path
       </h4>
 
@@ -32,8 +32,8 @@ export function VisaPathMap({ path, currentStep = 0, className }: VisaPathMapPro
                 className={cn(
                   'relative px-4 py-3 rounded-xl border transition-all',
                   isCompleted && 'bg-emerald-500/10 border-emerald-500/30',
-                  isCurrent && 'bg-cyan-500/10 border-cyan-500/50 ring-2 ring-cyan-500/30',
-                  !isCompleted && !isCurrent && 'bg-slate-800/50 border-slate-700'
+                  isCurrent && 'bg-primary/10 border-primary/50 ring-2 ring-primary/30',
+                  !isCompleted && !isCurrent && 'bg-surface border-border'
                 )}
               >
                 {/* Visa code badge */}
@@ -42,8 +42,8 @@ export function VisaPathMap({ path, currentStep = 0, className }: VisaPathMapPro
                     className={cn(
                       'text-sm font-bold uppercase',
                       isCompleted && 'text-emerald-400',
-                      isCurrent && 'text-cyan-400',
-                      !isCompleted && !isCurrent && 'text-slate-400'
+                      isCurrent && 'text-primary',
+                      !isCompleted && !isCurrent && 'text-muted-foreground'
                     )}
                   >
                     {step.visaType.toUpperCase()}
@@ -54,15 +54,15 @@ export function VisaPathMap({ path, currentStep = 0, className }: VisaPathMapPro
                 </div>
 
                 {/* Visa name */}
-                <div className="text-sm text-slate-300">{step.visaName}</div>
+                <div className="text-sm text-muted-foreground">{step.visaName}</div>
 
                 {/* Duration */}
-                <div className="text-xs text-slate-500 mt-1">{step.duration}</div>
+                <div className="text-xs text-muted-foreground mt-1">{step.duration}</div>
               </div>
 
               {/* Arrow between steps */}
               {!isLast && (
-                <ArrowRight className="w-5 h-5 text-slate-600 mx-2 flex-shrink-0" />
+                <ArrowRight className="w-5 h-5 text-muted-foreground mx-2 flex-shrink-0" />
               )}
             </div>
           );
@@ -71,7 +71,7 @@ export function VisaPathMap({ path, currentStep = 0, className }: VisaPathMapPro
 
       {/* Path description */}
       {path.length > 1 && (
-        <p className="text-xs text-slate-500 mt-4">
+        <p className="text-xs text-muted-foreground mt-4">
           This path shows a common progression. Each visa has its own requirements
           that must be met independently.
         </p>
@@ -85,15 +85,15 @@ export function VisaPathInline({ path }: { path: VisaPathStep[] }) {
   if (!path || path.length <= 1) return null;
 
   return (
-    <div className="flex items-center gap-1.5 text-xs text-slate-500">
+    <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
       <span>Path:</span>
       {path.map((step, index) => (
         <span key={step.visaType} className="flex items-center">
-          <span className="font-medium text-slate-400 uppercase">
+          <span className="font-medium text-muted-foreground uppercase">
             {step.visaType}
           </span>
           {index < path.length - 1 && (
-            <ArrowRight className="w-3 h-3 mx-1 text-slate-600" />
+            <ArrowRight className="w-3 h-3 mx-1 text-muted-foreground" />
           )}
         </span>
       ))}

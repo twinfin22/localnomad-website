@@ -18,7 +18,7 @@ export function MoreSituations({ situations }: MoreSituationsProps) {
     <div className="text-center">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2"
+        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors py-2"
       >
         {isOpen ? (
           <>
@@ -34,19 +34,19 @@ export function MoreSituations({ situations }: MoreSituationsProps) {
       </button>
 
       {isOpen && (
-        <div className="mt-6 p-4 rounded-xl border border-slate-700/50 bg-slate-800/20 text-left max-w-2xl mx-auto">
+        <div className="mt-6 p-4 rounded-xl border border-border bg-surface text-left max-w-2xl mx-auto">
           <div className="space-y-1">
             {situations.map((s) => (
               <Link
                 key={s.visa}
                 href={s.href}
-                className="flex items-center justify-between py-3 px-3 -mx-3 hover:bg-slate-800/50 rounded-lg transition-colors"
+                className="flex items-center justify-between py-3 px-3 -mx-3 hover:bg-elevated rounded-lg transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{s.emoji}</span>
-                  <span className="text-slate-300">{s.situation}</span>
+                  <span className="text-muted-foreground">{s.situation}</span>
                 </div>
-                <span className="text-slate-500 text-sm">→ {s.visa}</span>
+                <span className="text-muted-foreground text-sm">→ {s.visa}</span>
               </Link>
             ))}
           </div>

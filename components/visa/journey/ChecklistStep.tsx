@@ -62,8 +62,8 @@ export function ChecklistStep({
       className={cn(
         "rounded-xl border transition-all duration-200",
         isOpen
-          ? "border-cyan-500/30 bg-slate-800/60"
-          : "border-slate-700/50 bg-slate-800/30 hover:border-slate-600/50"
+          ? "border-primary/30 bg-elevated"
+          : "border-border bg-surface hover:border-border"
       )}
     >
       {/* Header - always visible */}
@@ -76,8 +76,8 @@ export function ChecklistStep({
           className={cn(
             "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold",
             isOpen
-              ? "bg-cyan-500 text-slate-900"
-              : "bg-slate-700 text-slate-300"
+              ? "bg-primary text-background"
+              : "bg-elevated text-muted-foreground"
           )}
         >
           {number}
@@ -86,22 +86,22 @@ export function ChecklistStep({
         {/* Title and subtitle */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="font-semibold text-white">{title}</h3>
+            <h3 className="font-semibold text-foreground">{title}</h3>
             {badge && (
-              <span className="text-xs text-slate-400 bg-slate-700/50 px-2 py-0.5 rounded">
+              <span className="text-xs text-muted-foreground bg-elevated px-2 py-0.5 rounded">
                 {badge}
               </span>
             )}
           </div>
           {!isOpen && (
-            <p className="text-sm text-slate-400 mt-1 line-clamp-1">
+            <p className="text-sm text-muted-foreground mt-1 line-clamp-1">
               {subtitle}
             </p>
           )}
         </div>
 
         {/* Chevron */}
-        <div className="flex-shrink-0 text-slate-400 mt-1">
+        <div className="flex-shrink-0 text-muted-foreground mt-1">
           {isOpen ? (
             <ChevronDown className="w-5 h-5" />
           ) : (

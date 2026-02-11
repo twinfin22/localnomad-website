@@ -41,7 +41,7 @@ export function ChecklistItem({
         'rounded-xl border transition-all',
         checked
           ? 'bg-emerald-500/5 border-emerald-500/30'
-          : 'bg-slate-800/50 border-slate-700 hover:border-slate-600'
+          : 'bg-surface/50 border-border hover:border-elevated'
       )}
     >
       {/* Main row */}
@@ -53,7 +53,7 @@ export function ChecklistItem({
             'w-6 h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all',
             checked
               ? 'bg-emerald-500 border-emerald-500'
-              : 'border-slate-600 hover:border-cyan-500'
+              : 'border-border hover:border-primary'
           )}
         >
           {checked && <Check className="w-4 h-4 text-white" />}
@@ -66,12 +66,12 @@ export function ChecklistItem({
               <h4
                 className={cn(
                   'font-medium transition-colors',
-                  checked ? 'text-slate-400 line-through' : 'text-white'
+                  checked ? 'text-muted-foreground line-through' : 'text-foreground'
                 )}
               >
                 {document.name}
               </h4>
-              <p className="text-sm text-slate-500 mt-0.5">
+              <p className="text-sm text-muted-foreground mt-0.5">
                 {document.description}
               </p>
             </div>
@@ -79,7 +79,7 @@ export function ChecklistItem({
             {/* Badges */}
             <div className="flex items-center gap-2 flex-shrink-0">
               {document.processing_time && (
-                <span className="inline-flex items-center gap-1 text-xs text-slate-400">
+                <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                   <Clock className="w-3 h-3" />
                   {document.processing_time}
                 </span>
@@ -93,7 +93,7 @@ export function ChecklistItem({
                 {config.label}
               </span>
               {document.required && (
-                <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                   Required
                 </span>
               )}
@@ -104,7 +104,7 @@ export function ChecklistItem({
           {document.tips && document.tips.length > 0 && (
             <button
               onClick={() => setExpanded(!expanded)}
-              className="flex items-center gap-1 mt-2 text-xs text-slate-500 hover:text-slate-400 transition-colors"
+              className="flex items-center gap-1 mt-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               <ChevronDown
                 className={cn(
@@ -128,23 +128,23 @@ export function ChecklistItem({
                 className="flex items-start gap-2 text-sm"
               >
                 <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">{tip}</span>
+                <span className="text-muted-foreground">{tip}</span>
               </div>
             ))}
           </div>
 
           {document.where_to_get && (
-            <div className="mt-3 p-3 rounded-lg bg-slate-800/50">
-              <span className="text-xs text-slate-500">Where to get: </span>
-              <span className="text-xs text-slate-300">
+            <div className="mt-3 p-3 rounded-lg bg-surface/50">
+              <span className="text-xs text-muted-foreground">Where to get: </span>
+              <span className="text-xs text-foreground">
                 {document.where_to_get}
               </span>
             </div>
           )}
 
           {document.cost && (
-            <div className="mt-2 text-xs text-slate-500">
-              Estimated cost: <span className="text-slate-300">{document.cost}</span>
+            <div className="mt-2 text-xs text-muted-foreground">
+              Estimated cost: <span className="text-foreground">{document.cost}</span>
             </div>
           )}
         </div>

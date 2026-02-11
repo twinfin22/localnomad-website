@@ -50,7 +50,7 @@ export function EligibilitySection({
     <div id="eligibility" className={cn('space-y-6', className)}>
       {/* Header with progress */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-white">
+        <h2 className="text-xl font-bold text-foreground">
           Eligibility & Requirements
         </h2>
         {answeredCount > 0 && (
@@ -66,12 +66,12 @@ export function EligibilitySection({
       </div>
 
       {/* Quick Check Checklist */}
-      <div className="p-4 rounded-xl bg-slate-800/30 border border-slate-700">
+      <div className="p-4 rounded-xl bg-surface/30 border border-border">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
             Quick Check
           </h3>
-          <span className="text-xs text-slate-500">
+          <span className="text-xs text-muted-foreground">
             {answeredCount} of {questions.length} answered
           </span>
         </div>
@@ -89,7 +89,7 @@ export function EligibilitySection({
                   'p-3 rounded-lg border transition-all',
                   isYes && 'bg-emerald-500/10 border-emerald-500/30',
                   isNo && 'bg-red-500/10 border-red-500/30',
-                  answer === undefined && 'bg-slate-800/50 border-slate-700/50'
+                  answer === undefined && 'bg-surface border-border/50'
                 )}
               >
                 <div className="flex items-center justify-between gap-3">
@@ -98,12 +98,12 @@ export function EligibilitySection({
                       'w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0',
                       isYes && 'bg-emerald-500',
                       isNo && 'bg-red-500',
-                      answer === undefined && 'border-2 border-slate-600'
+                      answer === undefined && 'border-2 border-border'
                     )}>
                       {isYes && <Check className="w-3 h-3 text-white" />}
                       {isNo && <X className="w-3 h-3 text-white" />}
                     </div>
-                    <span className="text-sm text-slate-200 truncate">
+                    <span className="text-sm text-foreground truncate">
                       {question.question}
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export function EligibilitySection({
                         'px-3 py-1.5 rounded text-xs font-medium transition-all',
                         isYes
                           ? 'bg-emerald-500 text-white'
-                          : 'bg-slate-700 text-slate-400 hover:bg-emerald-500/20 hover:text-emerald-400'
+                          : 'bg-elevated text-muted-foreground hover:bg-emerald-500/20 hover:text-emerald-400'
                       )}
                     >
                       Yes
@@ -126,7 +126,7 @@ export function EligibilitySection({
                         'px-3 py-1.5 rounded text-xs font-medium transition-all',
                         isNo
                           ? 'bg-red-500 text-white'
-                          : 'bg-slate-700 text-slate-400 hover:bg-red-500/20 hover:text-red-400'
+                          : 'bg-elevated text-muted-foreground hover:bg-red-500/20 hover:text-red-400'
                       )}
                     >
                       No
@@ -173,36 +173,36 @@ export function EligibilitySection({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Income Requirement */}
         {visa.incomeRequirement && (
-          <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700">
+          <div className="p-4 rounded-xl bg-surface border border-border">
             <div className="flex items-center gap-2 mb-2">
-              <DollarSign className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm font-medium text-white">Income</span>
+              <DollarSign className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-foreground">Income</span>
             </div>
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-muted-foreground">
               {visa.incomeRequirement.amount} {visa.incomeRequirement.currency} / {visa.incomeRequirement.period}
             </p>
             {visa.incomeRequirement.notes && (
-              <p className="text-xs text-slate-500 mt-1">{visa.incomeRequirement.notes}</p>
+              <p className="text-xs text-muted-foreground mt-1">{visa.incomeRequirement.notes}</p>
             )}
           </div>
         )}
 
         {/* Work Permission */}
-        <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div className="p-4 rounded-xl bg-surface border border-border">
           <div className="flex items-center gap-2 mb-2">
-            <Briefcase className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-white">Work Permission</span>
+            <Briefcase className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-foreground">Work Permission</span>
           </div>
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-muted-foreground">
             {visa.workPermission.allowed ? 'Work is permitted' : 'Work is not permitted'}
           </p>
           {visa.workPermission.restrictions && visa.workPermission.restrictions.length > 0 && (
-            <ul className="text-xs text-slate-500 mt-1 space-y-0.5">
+            <ul className="text-xs text-muted-foreground mt-1 space-y-0.5">
               {visa.workPermission.restrictions.slice(0, 2).map((r, i) => (
                 <li key={i}>• {r}</li>
               ))}
               {visa.workPermission.restrictions.length > 2 && (
-                <li className="text-slate-600">+{visa.workPermission.restrictions.length - 2} more restrictions</li>
+                <li className="text-muted-foreground">+{visa.workPermission.restrictions.length - 2} more restrictions</li>
               )}
             </ul>
           )}
@@ -210,7 +210,7 @@ export function EligibilitySection({
       </div>
 
       {/* Disclaimer */}
-      <p className="text-xs text-slate-500 flex items-start gap-2">
+      <p className="text-xs text-muted-foreground flex items-start gap-2">
         <HelpCircle className="w-3 h-3 mt-0.5 flex-shrink-0" />
         This is a preliminary check. Final eligibility is determined by Korean immigration authorities.
       </p>

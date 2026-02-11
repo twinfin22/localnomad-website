@@ -44,14 +44,14 @@ export function StepDocuments({ visa, checklistHref }: StepDocumentsProps) {
     <div className="space-y-6">
       {/* Required documents */}
       <div>
-        <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+        <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
           Required
         </h4>
         <div className="space-y-2">
           {displayedRequired.map((doc) => (
             <div key={doc.id} className="flex items-start gap-3">
-              <FileText className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
-              <span className="text-slate-300 text-sm">{doc.name}</span>
+              <FileText className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground text-sm">{doc.name}</span>
             </div>
           ))}
         </div>
@@ -59,7 +59,7 @@ export function StepDocuments({ visa, checklistHref }: StepDocumentsProps) {
         {hasMore && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="mt-3 flex items-center gap-1 text-sm text-cyan-400 hover:text-cyan-300"
+            className="mt-3 flex items-center gap-1 text-sm text-primary hover:text-accent-hover"
           >
             {showAll ? (
               <>
@@ -79,14 +79,14 @@ export function StepDocuments({ visa, checklistHref }: StepDocumentsProps) {
       {/* Optional documents */}
       {optionalDocs.length > 0 && (
         <div>
-          <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
             Optional
           </h4>
           <div className="space-y-2">
             {optionalDocs.map((doc) => (
               <div key={doc.id} className="flex items-start gap-3">
-                <FileText className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">{doc.name}</span>
+                <FileText className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground text-sm">{doc.name}</span>
               </div>
             ))}
           </div>
@@ -99,7 +99,7 @@ export function StepDocuments({ visa, checklistHref }: StepDocumentsProps) {
           {documentTips.map((tip, i) => (
             <div key={i} className="flex gap-2 text-sm">
               <Lightbulb className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-              <span className="text-slate-300">{tip}</span>
+              <span className="text-muted-foreground">{tip}</span>
             </div>
           ))}
         </div>
@@ -108,7 +108,7 @@ export function StepDocuments({ visa, checklistHref }: StepDocumentsProps) {
       {/* View full checklist CTA */}
       <Link
         href={checklistHref}
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-700/50 text-cyan-400 hover:bg-slate-700 transition-colors text-sm"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-elevated text-primary hover:bg-surface transition-colors text-sm"
       >
         View Full Checklist
         <ExternalLink className="w-4 h-4" />

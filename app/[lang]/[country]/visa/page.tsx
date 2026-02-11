@@ -130,18 +130,18 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
   ];
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0B1120]">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-3xl">
           {/* Heading */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
               What's your situation?
             </h1>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Select your situation and we'll guide you through the visa process
               step by step.
             </p>
@@ -158,59 +158,59 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
       </section>
 
       {/* Divider */}
-      <div className="container mx-auto max-w-5xl px-4">
-        <hr className="border-slate-800" />
+      <div className="container mx-auto max-w-3xl px-4">
+        <hr className="border-border" />
       </div>
 
       {/* Already have a visa section */}
       <section className="py-12 px-4 sm:px-6">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-3xl">
           <AlreadyHaveVisa visaOptions={visaOptions} />
         </div>
       </section>
 
       {/* Divider */}
-      <div className="container mx-auto max-w-5xl px-4">
-        <hr className="border-slate-800" />
+      <div className="container mx-auto max-w-3xl px-4">
+        <hr className="border-border" />
       </div>
 
       {/* Compare link + Trust badges */}
       <section className="py-12 px-4 sm:px-6">
-        <div className="container mx-auto max-w-5xl text-center">
+        <div className="container mx-auto max-w-3xl text-center">
           {/* Compare link */}
           <Link
             href={buildHref("/visa/compare")}
-            className="text-cyan-400 hover:text-cyan-300 transition-colors"
+            className="text-primary hover:text-accent-hover transition-colors duration-200"
           >
             or compare all visa types →
           </Link>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-slate-400">
+          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-emerald-400" />
+              <Check className="w-4 h-4 text-success" />
               <span>Free to use</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-emerald-400" />
+              <Check className="w-4 h-4 text-success" />
               <span>No account required</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-emerald-400" />
+              <Check className="w-4 h-4 text-success" />
               <span>Updated regularly</span>
             </div>
           </div>
 
           {/* Stats bar */}
-          <div className="mt-6 text-xs text-slate-500">
+          <div className="mt-6 text-xs text-muted-foreground">
             12 visa types covered · Updated Feb 2026 · Based on official requirements
           </div>
         </div>
       </section>
 
       {/* Legal Disclaimer */}
-      <section className="py-12 px-4 sm:px-6 bg-[#0B1120]">
-        <div className="container mx-auto max-w-4xl">
+      <section className="py-12 px-4 sm:px-6 bg-background">
+        <div className="container mx-auto max-w-3xl">
           <LegalDisclaimer variant="box" />
         </div>
       </section>

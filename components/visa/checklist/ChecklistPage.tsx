@@ -126,31 +126,31 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
   const requiredCompleted = requiredDocs.filter((d) => checkedItems[d.id]).length;
 
   return (
-    <div className="min-h-screen bg-[#0B1120]">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="pt-28 pb-8 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto max-w-4xl relative z-10">
           <AnimatedSection>
             {/* Breadcrumb */}
             <Link
               href={`/visa/${visa.type}`}
-              className="inline-flex items-center text-sm text-slate-400 hover:text-white mb-6 transition-colors"
+              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to {visa.shortName}
             </Link>
 
             <div className="flex items-start gap-4 mb-8">
-              <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-7 h-7 text-cyan-400" />
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Icon className="w-7 h-7 text-primary" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                   {visa.shortName} Document Checklist
                 </h1>
-                <p className="text-slate-400">
+                <p className="text-muted-foreground">
                   Track your document preparation for {visa.name}
                 </p>
               </div>
@@ -176,7 +176,7 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
               variant="outline"
               size="sm"
               onClick={handleExport}
-              className="border-slate-700 text-slate-300 hover:bg-slate-800"
+              className="border-border text-muted-foreground hover:bg-surface"
             >
               <Download className="w-4 h-4 mr-2" />
               Export Checklist
@@ -186,8 +186,8 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
           {/* Required Documents */}
           <AnimatedSection>
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xs">
+              <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">
                   {requiredDocs.length}
                 </span>
                 Required Documents
@@ -209,8 +209,8 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
           {optionalDocs.length > 0 && (
             <AnimatedSection>
               <div className="mb-8">
-                <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-slate-700 text-slate-400 flex items-center justify-center text-xs">
+                <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-surface text-muted-foreground flex items-center justify-center text-xs">
                     {optionalDocs.length}
                   </span>
                   Optional Documents

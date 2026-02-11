@@ -28,18 +28,18 @@ export function ChecklistProgress({
       {/* Main progress bar */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-white">
+          <span className="text-sm font-medium text-foreground">
             {completed} of {total} documents ready
           </span>
-          <span className="text-sm text-slate-400">{percentage}%</span>
+          <span className="text-sm text-muted-foreground">{percentage}%</span>
         </div>
-        <div className="h-3 bg-slate-800 rounded-full overflow-hidden">
+        <div className="h-3 bg-surface rounded-full overflow-hidden">
           <div
             className={cn(
               'h-full transition-all duration-500',
               allRequiredDone
                 ? 'bg-gradient-to-r from-emerald-500 to-emerald-400'
-                : 'bg-gradient-to-r from-cyan-500 to-cyan-400'
+                : 'bg-gradient-to-r from-primary to-primary/80'
             )}
             style={{ width: `${percentage}%` }}
           />
@@ -52,16 +52,16 @@ export function ChecklistProgress({
           <div
             className={cn(
               'w-3 h-3 rounded-full',
-              allRequiredDone ? 'bg-emerald-500' : 'bg-cyan-500'
+              allRequiredDone ? 'bg-emerald-500' : 'bg-primary'
             )}
           />
-          <span className="text-slate-400">
+          <span className="text-muted-foreground">
             Required: {requiredCompleted}/{requiredTotal}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-slate-600" />
-          <span className="text-slate-400">
+          <div className="w-3 h-3 rounded-full bg-surface" />
+          <span className="text-muted-foreground">
             Optional: {completed - requiredCompleted}/{total - requiredTotal}
           </span>
         </div>

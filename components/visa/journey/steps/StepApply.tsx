@@ -27,12 +27,12 @@ export function StepApply({ visa }: StepApplyProps) {
           <div key={step.id} className="flex gap-4 relative">
             {/* Vertical line */}
             {index < visa.applicationSteps.length - 1 && (
-              <div className="absolute left-3 top-8 w-px h-[calc(100%-1rem)] bg-slate-700" />
+              <div className="absolute left-3 top-8 w-px h-[calc(100%-1rem)] bg-border" />
             )}
 
             {/* Step number circle */}
             <div className="flex-shrink-0 relative z-10">
-              <div className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs text-slate-400 font-medium">
+              <div className="w-6 h-6 rounded-full bg-elevated flex items-center justify-center text-xs text-muted-foreground font-medium">
                 {index + 1}
               </div>
             </div>
@@ -40,21 +40,21 @@ export function StepApply({ visa }: StepApplyProps) {
             {/* Step content */}
             <div className="flex-1 pb-6">
               <div className="flex items-center gap-2 flex-wrap">
-                <h4 className="font-medium text-white">{step.title}</h4>
+                <h4 className="font-medium text-foreground">{step.title}</h4>
                 {step.duration && (
-                  <span className="flex items-center gap-1 text-xs text-slate-500">
+                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Clock className="w-3 h-3" />
                     {step.duration}
                   </span>
                 )}
               </div>
-              <p className="text-sm text-slate-400 mt-1">{step.description}</p>
+              <p className="text-sm text-muted-foreground mt-1">{step.description}</p>
 
               {/* Step tips */}
               {step.tips && step.tips.length > 0 && (
                 <ul className="mt-2 space-y-1">
                   {step.tips.map((tip, i) => (
-                    <li key={i} className="text-xs text-slate-500">
+                    <li key={i} className="text-xs text-muted-foreground">
                       • {tip}
                     </li>
                   ))}
@@ -70,7 +70,7 @@ export function StepApply({ visa }: StepApplyProps) {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300"
+                      className="inline-flex items-center gap-1 text-xs text-primary hover:text-accent-hover"
                     >
                       {link.label}
                       <ExternalLink className="w-3 h-3" />
@@ -100,7 +100,7 @@ export function StepApply({ visa }: StepApplyProps) {
 
       {/* Processing time note */}
       {visa.processingTime.notes && (
-        <p className="text-xs text-slate-500">{visa.processingTime.notes}</p>
+        <p className="text-xs text-muted-foreground">{visa.processingTime.notes}</p>
       )}
     </div>
   );

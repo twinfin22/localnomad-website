@@ -170,7 +170,7 @@ export function VisaFinder() {
   if (!currentQuestion) {
     return (
       <div className="text-center py-12">
-        <p className="text-slate-400">Loading question...</p>
+        <p className="text-muted-foreground">Loading question...</p>
       </div>
     );
   }

@@ -40,7 +40,7 @@ export function SocialProofSection() {
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-widest mb-4">
               Testimonials
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-heading">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Trusted by Nomads & Expats
             </h2>
             <p className="text-lg text-muted-foreground">

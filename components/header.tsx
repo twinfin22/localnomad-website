@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -27,15 +26,15 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${isScrolled
-        ? "glass shadow-soft-md"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-surface/95 backdrop-blur-md border-b border-border"
         : "bg-transparent"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
         <div className="flex items-center justify-between">
           <Link href="/" className="group shrink-0">
-            <span className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-all duration-300">
+            <span className="text-lg sm:text-xl font-bold text-foreground opacity-100 group-hover:text-primary transition-colors duration-200">
               LocalNomad
             </span>
           </Link>
@@ -45,7 +44,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 after:ease-out hover:after:w-full"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-200 hover:after:w-full"
               >
                 {link.label}
               </Link>
@@ -54,17 +53,17 @@ export function Header() {
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             <LanguageSwitcher />
-            <ThemeToggle />
             <Link href="/bundles" className="hidden sm:block">
               <Button
                 size="sm"
-                className="text-xs sm:text-sm whitespace-nowrap bg-primary hover:bg-primary/90 text-primary-foreground border-0 hover:-translate-y-0.5 shadow-soft hover:shadow-soft-md transition-all duration-300"
+                variant="primary"
+                className="text-xs sm:text-sm whitespace-nowrap"
               >
                 Get Started
               </Button>
             </Link>
             <button
-              className="md:hidden p-2 text-foreground"
+              className="md:hidden p-2 text-foreground cursor-pointer"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -75,13 +74,13 @@ export function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border/50 pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -90,7 +89,8 @@ export function Header() {
               <Link href="/bundles" onClick={() => setMobileMenuOpen(false)}>
                 <Button
                   size="sm"
-                  className="w-full mt-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+                  variant="primary"
+                  className="w-full mt-2"
                 >
                   Get Started
                 </Button>

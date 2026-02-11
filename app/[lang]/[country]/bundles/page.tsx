@@ -87,47 +87,47 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
   const { lang, country } = await params;
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       <section className="pt-32 pb-20 px-4 sm:px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-16">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 mx-auto">
+            <div className="w-16 h-16 rounded-2xl bg-accent-muted flex items-center justify-center mb-6 mx-auto">
               <FileText className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Info Bundles</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Info Bundles</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Curated guides, checklists, and playbooks to make your Korea
               journey smooth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="space-y-6">
             {bundles.map((bundle, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-2xl p-6 lg:p-8 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-lg flex flex-col"
+                className="bg-surface border border-border rounded-xl p-6 hover:border-border-hover hover:bg-elevated transition-all duration-200 cursor-pointer flex flex-col"
               >
-                <h3 className="text-xl font-semibold mb-2">{bundle.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{bundle.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   {bundle.description}
                 </p>
 
-                <div className="text-3xl font-bold text-primary mb-6">
+                <div className="text-3xl font-bold text-foreground mb-6">
                   {bundle.price}
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-1">
                   {bundle.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span>{feature}</span>
+                      <CheckCircle className="w-4 h-4 text-success mt-0.5 shrink-0" />
+                      <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button variant="primary" className="w-full">
                   <Download className="w-4 h-4 mr-2" />
                   Get Bundle
                 </Button>
@@ -135,12 +135,12 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
             ))}
           </div>
 
-          <div className="mt-16 text-center p-8 bg-secondary rounded-2xl">
-            <h2 className="text-2xl font-semibold mb-2">All-Access Bundle</h2>
+          <div className="mt-16 text-center p-8 bg-surface border border-border rounded-xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-2">All-Access Bundle</h2>
             <p className="text-muted-foreground mb-4">
               Get all three guides at a discounted price
             </p>
-            <div className="text-4xl font-bold text-primary mb-6">
+            <div className="text-4xl font-bold text-foreground mb-6">
               $69{" "}
               <span className="text-lg text-muted-foreground line-through">
                 $87
@@ -148,7 +148,7 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
             </div>
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              variant="primary"
             >
               Get All Bundles
             </Button>

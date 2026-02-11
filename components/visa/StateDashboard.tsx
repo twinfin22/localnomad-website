@@ -32,13 +32,13 @@ function EmptyState() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <div className="text-center mb-8">
-        <div className="w-20 h-20 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
-          <Sparkles className="w-10 h-10 text-cyan-400" />
+        <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+          <Sparkles className="w-10 h-10 text-primary" />
         </div>
-        <h1 className="text-3xl font-bold text-[#F8FAFC] mb-3 font-heading">
+        <h1 className="text-3xl font-bold text-foreground mb-3">
           Start Your Visa Journey
         </h1>
-        <p className="text-[#94A3B8] max-w-md mx-auto">
+        <p className="text-muted-foreground max-w-md mx-auto">
           Take our quick quiz to find the right visa for you, then track your
           progress all the way to approval.
         </p>
@@ -46,7 +46,7 @@ function EmptyState() {
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
         <Link href="/visa/start">
-          <Button className="bg-cyan-500 hover:bg-cyan-600 text-[#0A0E1A] font-semibold px-8 py-6 text-lg">
+          <Button className="bg-primary hover:bg-accent-hover text-background font-semibold px-8 py-6 text-lg">
             <FileText className="w-5 h-5 mr-2" />
             Find My Visa
           </Button>
@@ -54,7 +54,7 @@ function EmptyState() {
         <Link href="/visa">
           <Button
             variant="outline"
-            className="border-[#1F2937] text-[#94A3B8] hover:bg-[#1F2937] hover:text-[#F8FAFC] px-8 py-6 text-lg"
+            className="border-border text-muted-foreground hover:bg-surface hover:text-foreground px-8 py-6 text-lg"
           >
             Browse All Visas
           </Button>
@@ -65,14 +65,14 @@ function EmptyState() {
       <div className="grid sm:grid-cols-2 gap-4">
         <Link href="/visa/e-7" className="vk-card vk-card-hover p-6 group">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-xl font-bold text-cyan-400">E-7</span>
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="text-xl font-bold text-primary">E-7</span>
             </div>
             <div>
-              <h3 className="font-semibold text-[#F8FAFC] group-hover:text-cyan-400 transition-colors">
+              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Professional Work Visa
               </h3>
-              <p className="text-sm text-[#94A3B8]">For skilled workers</p>
+              <p className="text-sm text-muted-foreground">For skilled workers</p>
             </div>
           </div>
         </Link>
@@ -82,10 +82,10 @@ function EmptyState() {
               <span className="text-xl font-bold text-blue-400">D-2</span>
             </div>
             <div>
-              <h3 className="font-semibold text-[#F8FAFC] group-hover:text-cyan-400 transition-colors">
+              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Student Visa
               </h3>
-              <p className="text-sm text-[#94A3B8]">For degree programs</p>
+              <p className="text-sm text-muted-foreground">For degree programs</p>
             </div>
           </div>
         </Link>
@@ -120,16 +120,16 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#1F2937]"
+              className="text-muted-foreground hover:text-foreground hover:bg-surface"
             >
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
           <div>
-            <h1 className="text-2xl font-bold text-[#F8FAFC] font-heading">
+            <h1 className="text-2xl font-bold text-foreground">
               My Journey
             </h1>
-            <p className="text-sm text-[#94A3B8]">
+            <p className="text-sm text-muted-foreground">
               {visa?.shortName || progress.visaType.toUpperCase()} Visa
             </p>
           </div>
@@ -138,7 +138,7 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="text-[#94A3B8] hover:text-red-400 hover:bg-red-500/10"
+            className="text-muted-foreground hover:text-red-400 hover:bg-red-500/10"
             onClick={onReset}
           >
             <Trash2 className="w-4 h-4" />
@@ -146,7 +146,7 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#1F2937]"
+            className="text-muted-foreground hover:text-foreground hover:bg-surface"
           >
             <Settings className="w-5 h-5" />
           </Button>
@@ -173,13 +173,13 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
         {/* Current Status Card */}
         <div className="vk-card p-6 lg:col-span-2">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-medium text-[#94A3B8] uppercase tracking-wider">
+            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               Current Status
             </h3>
             <span
               className={cn(
                 "text-xs font-semibold px-3 py-1 rounded-full",
-                isPreparing && "bg-cyan-500/10 text-cyan-400",
+                isPreparing && "bg-primary/10 text-primary",
                 isWaiting && "bg-amber-500/10 text-amber-400",
                 isActive && "bg-emerald-500/10 text-emerald-400",
                 needsAttention && "bg-red-500/10 text-red-400"
@@ -198,7 +198,7 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
       {/* Timeline (for non-PREPARING states) */}
       {!isPreparing && (
         <div className="vk-card p-6">
-          <h3 className="text-lg font-semibold text-[#F8FAFC] mb-6 font-heading">
+          <h3 className="text-lg font-semibold text-foreground mb-6">
             Your Journey
           </h3>
           <StateTimeline currentState={progress.state} />
@@ -208,19 +208,19 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
       {/* Tips for waiting states */}
       {isWaiting && (
         <div className="vk-card p-6">
-          <h3 className="text-lg font-semibold text-[#F8FAFC] mb-4 font-heading">
+          <h3 className="text-lg font-semibold text-foreground mb-4">
             While You Wait
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-[#1F2937]/50">
-              <h4 className="font-medium text-[#F8FAFC] mb-2">Prepare for Arrival</h4>
-              <p className="text-sm text-[#94A3B8]">
+            <div className="p-4 rounded-xl bg-surface/50">
+              <h4 className="font-medium text-foreground mb-2">Prepare for Arrival</h4>
+              <p className="text-sm text-muted-foreground">
                 Research neighborhoods, housing options, and get familiar with Korean life.
               </p>
             </div>
-            <div className="p-4 rounded-xl bg-[#1F2937]/50">
-              <h4 className="font-medium text-[#F8FAFC] mb-2">Banking & Finance</h4>
-              <p className="text-sm text-[#94A3B8]">
+            <div className="p-4 rounded-xl bg-surface/50">
+              <h4 className="font-medium text-foreground mb-2">Banking & Finance</h4>
+              <p className="text-sm text-muted-foreground">
                 Learn about Korean banks and how to set up accounts as a foreigner.
               </p>
             </div>
@@ -233,7 +233,7 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
         <Link href={`/visa/${progress.visaType}`}>
           <Button
             variant="outline"
-            className="border-[#1F2937] text-[#94A3B8] hover:bg-[#1F2937] hover:text-[#F8FAFC]"
+            className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
           >
             View Visa Details
           </Button>
@@ -241,7 +241,7 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
         <Link href="/visa/compare">
           <Button
             variant="outline"
-            className="border-[#1F2937] text-[#94A3B8] hover:bg-[#1F2937] hover:text-[#F8FAFC]"
+            className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
           >
             Compare Visas
           </Button>
@@ -280,14 +280,14 @@ export function StateDashboard() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen visa-dark bg-[#0A0E1A]">
+      <div className="min-h-screen visa-dark bg-background">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="animate-pulse space-y-6">
-            <div className="h-8 w-48 bg-[#1F2937] rounded" />
-            <div className="h-32 bg-[#1F2937] rounded-2xl" />
+            <div className="h-8 w-48 bg-surface rounded" />
+            <div className="h-32 bg-surface rounded-2xl" />
             <div className="grid lg:grid-cols-3 gap-6">
-              <div className="h-40 bg-[#1F2937] rounded-2xl" />
-              <div className="h-40 bg-[#1F2937] rounded-2xl lg:col-span-2" />
+              <div className="h-40 bg-surface rounded-2xl" />
+              <div className="h-40 bg-surface rounded-2xl lg:col-span-2" />
             </div>
           </div>
         </div>
@@ -296,7 +296,7 @@ export function StateDashboard() {
   }
 
   return (
-    <main className="min-h-screen visa-dark bg-[#0A0E1A]">
+    <main className="min-h-screen visa-dark bg-background">
       {progress ? (
         <ActiveDashboard progress={progress} visa={visa} onReset={handleReset} />
       ) : (

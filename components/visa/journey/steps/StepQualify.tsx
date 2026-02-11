@@ -36,11 +36,11 @@ export function StepQualify({ visa }: StepQualifyProps) {
   return (
     <div className="space-y-6">
       {/* Intro text */}
-      <p className="text-slate-300">{visa.description}</p>
+      <p className="text-muted-foreground">{visa.description}</p>
 
       {/* Quick check */}
       <div>
-        <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+        <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
           Quick check
         </h4>
         <div className="space-y-3">
@@ -49,10 +49,10 @@ export function StepQualify({ visa }: StepQualifyProps) {
               key={req.id}
               className="flex items-center justify-between gap-4 py-2"
             >
-              <span className="text-slate-300 text-sm flex-1">
+              <span className="text-muted-foreground text-sm flex-1">
                 {req.label}
                 {!req.required && (
-                  <span className="text-slate-500 ml-2">(optional)</span>
+                  <span className="text-muted-foreground ml-2">(optional)</span>
                 )}
               </span>
               <div className="flex gap-2">
@@ -62,7 +62,7 @@ export function StepQualify({ visa }: StepQualifyProps) {
                     "px-3 py-1 text-sm rounded-md transition-colors",
                     answers[req.id] === true
                       ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                      : "bg-slate-700/50 text-slate-400 hover:bg-slate-700"
+                      : "bg-elevated text-muted-foreground hover:bg-surface"
                   )}
                 >
                   Yes
@@ -73,7 +73,7 @@ export function StepQualify({ visa }: StepQualifyProps) {
                     "px-3 py-1 text-sm rounded-md transition-colors",
                     answers[req.id] === false
                       ? "bg-red-500/20 text-red-400 border border-red-500/30"
-                      : "bg-slate-700/50 text-slate-400 hover:bg-slate-700"
+                      : "bg-elevated text-muted-foreground hover:bg-surface"
                   )}
                 >
                   No
@@ -103,31 +103,31 @@ export function StepQualify({ visa }: StepQualifyProps) {
       {/* Income & Work Permission cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {visa.incomeRequirement && (
-          <div className="p-4 rounded-lg bg-slate-700/30 border border-slate-700/50">
-            <div className="flex items-center gap-2 text-slate-400 mb-2">
+          <div className="p-4 rounded-lg bg-elevated border border-border">
+            <div className="flex items-center gap-2 text-muted-foreground mb-2">
               <DollarSign className="w-4 h-4" />
               <span className="text-sm font-medium">Income</span>
             </div>
-            <p className="text-white font-medium">
+            <p className="text-foreground font-medium">
               {visa.incomeRequirement.amount} {visa.incomeRequirement.currency}
             </p>
             {visa.incomeRequirement.notes && (
-              <p className="text-slate-400 text-sm mt-1">
+              <p className="text-muted-foreground text-sm mt-1">
                 {visa.incomeRequirement.notes}
               </p>
             )}
           </div>
         )}
-        <div className="p-4 rounded-lg bg-slate-700/30 border border-slate-700/50">
-          <div className="flex items-center gap-2 text-slate-400 mb-2">
+        <div className="p-4 rounded-lg bg-elevated border border-border">
+          <div className="flex items-center gap-2 text-muted-foreground mb-2">
             <Briefcase className="w-4 h-4" />
             <span className="text-sm font-medium">Work Permission</span>
           </div>
-          <p className="text-white font-medium">
+          <p className="text-foreground font-medium">
             {visa.workPermission.allowed ? "Allowed" : "Not allowed"}
           </p>
           {visa.workPermission.notes && (
-            <p className="text-slate-400 text-sm mt-1">
+            <p className="text-muted-foreground text-sm mt-1">
               {visa.workPermission.notes}
             </p>
           )}
@@ -140,14 +140,14 @@ export function StepQualify({ visa }: StepQualifyProps) {
           {eligibilityTips.map((tip, i) => (
             <div key={i} className="flex gap-2 text-sm">
               <Lightbulb className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-              <span className="text-slate-300">{tip}</span>
+              <span className="text-muted-foreground">{tip}</span>
             </div>
           ))}
         </div>
       )}
 
       {/* Disclaimer */}
-      <div className="flex gap-2 text-xs text-slate-500">
+      <div className="flex gap-2 text-xs text-muted-foreground">
         <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />
         <span>
           This is a preliminary check. Final eligibility is determined by Korean

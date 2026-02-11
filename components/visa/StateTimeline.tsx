@@ -55,11 +55,11 @@ export function StateTimeline({ currentState, className, compact = false }: Stat
       <div className={cn("hidden sm:block", compact && "sm:hidden")}>
         <div className="relative">
           {/* Background Line */}
-          <div className="absolute top-6 left-0 right-0 h-0.5 bg-[#1F2937]" />
+          <div className="absolute top-6 left-0 right-0 h-0.5 bg-elevated" />
 
           {/* Progress Line */}
           <div
-            className="absolute top-6 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-cyan-400 transition-all duration-500"
+            className="absolute top-6 left-0 h-0.5 bg-gradient-to-r from-primary to-accent-hover transition-all duration-500"
             style={{
               width: `${(effectiveIndex / (timelineStates.length - 1)) * 100}%`,
             }}
@@ -84,11 +84,11 @@ export function StateTimeline({ currentState, className, compact = false }: Stat
                   <div
                     className={cn(
                       "w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 z-10",
-                      isCompleted && "bg-cyan-500 text-[#0A0E1A]",
-                      isCurrent && "bg-cyan-500 text-[#0A0E1A] glow-cyan animate-cyan-glow",
-                      isPending && "bg-[#1F2937] text-[#94A3B8]",
-                      isExpiring && state === "ACTIVE" && "bg-amber-500 text-[#0A0E1A] shadow-[0_0_20px_rgba(245,158,11,0.3)]",
-                      isExpired && state === "ACTIVE" && "bg-red-500 text-[#F8FAFC]"
+                      isCompleted && "bg-primary text-primary-foreground",
+                      isCurrent && "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(34,211,238,0.3)]",
+                      isPending && "bg-elevated text-muted-foreground",
+                      isExpiring && state === "ACTIVE" && "bg-warning text-primary-foreground shadow-[0_0_20px_rgba(251,191,36,0.3)]",
+                      isExpired && state === "ACTIVE" && "bg-error text-foreground"
                     )}
                   >
                     {isCompleted ? (
@@ -102,11 +102,11 @@ export function StateTimeline({ currentState, className, compact = false }: Stat
                   <span
                     className={cn(
                       "mt-3 text-xs font-medium text-center",
-                      isCompleted && "text-cyan-400",
-                      isCurrent && "text-cyan-400",
-                      isPending && "text-[#94A3B8]",
-                      isExpiring && state === "ACTIVE" && "text-amber-400",
-                      isExpired && state === "ACTIVE" && "text-red-400"
+                      isCompleted && "text-primary",
+                      isCurrent && "text-primary",
+                      isPending && "text-muted-foreground",
+                      isExpiring && state === "ACTIVE" && "text-warning",
+                      isExpired && state === "ACTIVE" && "text-error"
                     )}
                   >
                     {config.label}
@@ -121,21 +121,21 @@ export function StateTimeline({ currentState, className, compact = false }: Stat
         {(isExpiring || isExpired) && (
           <div className={cn(
             "mt-6 p-4 rounded-xl border",
-            isExpiring ? "bg-amber-500/10 border-amber-500/30" : "bg-red-500/10 border-red-500/30"
+            isExpiring ? "bg-warning/10 border-warning/30" : "bg-error/10 border-error/30"
           )}>
             <div className="flex items-center gap-3">
               <AlertTriangle className={cn(
                 "w-5 h-5",
-                isExpiring ? "text-amber-400" : "text-red-400"
+                isExpiring ? "text-warning" : "text-error"
               )} />
               <div>
                 <p className={cn(
                   "text-sm font-medium",
-                  isExpiring ? "text-amber-400" : "text-red-400"
+                  isExpiring ? "text-warning" : "text-error"
                 )}>
                   {isExpiring ? "Visa Expiring Soon" : "Visa Expired"}
                 </p>
-                <p className="text-xs text-[#94A3B8]">
+                <p className="text-xs text-muted-foreground">
                   {isExpiring
                     ? "Start your renewal process to maintain your status."
                     : "Your visa has expired. Start a new application process."}
@@ -163,16 +163,16 @@ export function StateTimeline({ currentState, className, compact = false }: Stat
                 key={state}
                 className={cn(
                   "flex items-center gap-3 p-3 rounded-xl transition-all",
-                  isCurrent && "bg-cyan-500/10 border border-cyan-500/30",
+                  isCurrent && "bg-primary/10 border border-primary/30",
                   isCompleted && "opacity-60"
                 )}
               >
                 <div
                   className={cn(
                     "w-8 h-8 rounded-lg flex items-center justify-center shrink-0",
-                    isCompleted && "bg-cyan-500/20 text-cyan-400",
-                    isCurrent && "bg-cyan-500 text-[#0A0E1A]",
-                    isPending && "bg-[#1F2937] text-[#94A3B8]"
+                    isCompleted && "bg-primary/20 text-primary",
+                    isCurrent && "bg-primary text-primary-foreground",
+                    isPending && "bg-elevated text-muted-foreground"
                   )}
                 >
                   {isCompleted ? (
@@ -185,19 +185,19 @@ export function StateTimeline({ currentState, className, compact = false }: Stat
                   <p
                     className={cn(
                       "text-sm font-medium",
-                      isCompleted && "text-[#94A3B8]",
-                      isCurrent && "text-cyan-400",
-                      isPending && "text-[#94A3B8]"
+                      isCompleted && "text-muted-foreground",
+                      isCurrent && "text-primary",
+                      isPending && "text-muted-foreground"
                     )}
                   >
                     {config.label}
                   </p>
                   {isCurrent && (
-                    <p className="text-xs text-[#94A3B8]">{config.description}</p>
+                    <p className="text-xs text-muted-foreground">{config.description}</p>
                   )}
                 </div>
                 {isCurrent && (
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 )}
               </div>
             );

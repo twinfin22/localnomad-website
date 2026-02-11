@@ -84,7 +84,7 @@ export function HeroSection() {
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 mx-auto group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300">
                   <FileText className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 font-heading">Info Bundles</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Info Bundles</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Checklists, playbooks, and cheatsheets for your Korea journey
                 </p>
@@ -107,7 +107,7 @@ export function HeroSection() {
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 mx-auto group-hover:bg-accent/15 group-hover:scale-110 transition-all duration-300">
                   <MapPin className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 font-heading">Area Guide</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Area Guide</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Neighborhood insights and custom housing reports
                 </p>
@@ -130,7 +130,7 @@ export function HeroSection() {
                 <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-5 mx-auto group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
                   <Stamp className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 font-heading">Visa Dashboard</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Visa Dashboard</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Step-by-step guides and checklists for your visa
                 </p>

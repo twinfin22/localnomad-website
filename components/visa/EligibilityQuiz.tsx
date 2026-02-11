@@ -323,7 +323,7 @@ export function EligibilityQuiz() {
             <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-green-500" />
             </div>
-            <h2 className="text-2xl font-bold font-heading mb-2">
+            <h2 className="text-2xl font-bold  mb-2">
               Your Results
             </h2>
             <p className="text-muted-foreground">

@@ -46,13 +46,13 @@ function EmptyState() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <div className="text-center mb-8">
-        <div className="w-20 h-20 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
-          <Sparkles className="w-10 h-10 text-cyan-400" />
+        <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+          <Sparkles className="w-10 h-10 text-primary" />
         </div>
-        <h1 className="text-3xl font-bold text-white mb-3 font-heading">
+        <h1 className="text-3xl font-bold text-foreground mb-3">
           Start Your Visa Journey
         </h1>
-        <p className="text-slate-400 max-w-md mx-auto">
+        <p className="text-muted-foreground max-w-md mx-auto">
           Take our quick quiz to find the right visa for you, then track your
           progress all the way to approval.
         </p>
@@ -60,7 +60,7 @@ function EmptyState() {
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
         <Link href="/visa/find">
-          <Button className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-semibold px-8 py-6 text-lg">
+          <Button className="bg-primary hover:bg-accent-hover text-background font-semibold px-8 py-6 text-lg">
             <FileText className="w-5 h-5 mr-2" />
             Find My Visa
           </Button>
@@ -68,7 +68,7 @@ function EmptyState() {
         <Link href="/visa">
           <Button
             variant="outline"
-            className="border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white px-8 py-6 text-lg"
+            className="border-border text-muted-foreground hover:bg-surface hover:text-foreground px-8 py-6 text-lg"
           >
             Browse All Visas
           </Button>
@@ -79,14 +79,14 @@ function EmptyState() {
       <div className="grid sm:grid-cols-2 gap-4">
         <Link href="/visa/e-7" className="vk-card vk-card-hover p-6 group">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-xl font-bold text-cyan-400">E-7</span>
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="text-xl font-bold text-primary">E-7</span>
             </div>
             <div>
-              <h3 className="font-semibold text-white group-hover:text-cyan-400 transition-colors">
+              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Professional Work Visa
               </h3>
-              <p className="text-sm text-slate-400">For skilled workers</p>
+              <p className="text-sm text-muted-foreground">For skilled workers</p>
             </div>
           </div>
         </Link>
@@ -96,10 +96,10 @@ function EmptyState() {
               <span className="text-xl font-bold text-emerald-400">F-1-D</span>
             </div>
             <div>
-              <h3 className="font-semibold text-white group-hover:text-cyan-400 transition-colors">
+              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Digital Nomad Visa
               </h3>
-              <p className="text-sm text-slate-400">For remote workers</p>
+              <p className="text-sm text-muted-foreground">For remote workers</p>
             </div>
           </div>
         </Link>
@@ -146,16 +146,16 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
             <Button
               variant="ghost"
               size="icon"
-              className="text-slate-400 hover:text-white hover:bg-slate-800"
+              className="text-muted-foreground hover:text-foreground hover:bg-surface"
             >
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
           <div>
-            <h1 className="text-2xl font-bold text-white font-heading">
+            <h1 className="text-2xl font-bold text-foreground">
               My Dashboard
             </h1>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-muted-foreground">
               {visa?.shortName || data.visaType.toUpperCase()} Visa Journey
             </p>
           </div>
@@ -164,14 +164,14 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
           <Button
             variant="ghost"
             size="icon"
-            className="text-slate-400 hover:text-white hover:bg-slate-800"
+            className="text-muted-foreground hover:text-foreground hover:bg-surface"
           >
             <Settings className="w-5 h-5" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="text-slate-400 hover:text-red-400 hover:bg-red-500/10"
+            className="text-muted-foreground hover:text-red-400 hover:bg-red-500/10"
             onClick={onSignOut}
           >
             <LogOut className="w-4 h-4" />
@@ -202,23 +202,23 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
         {/* Document Progress */}
         <div className="vk-card p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               Document Progress
             </h3>
-            <span className="text-sm text-slate-500">
+            <span className="text-sm text-muted-foreground">
               {completedDocs} / {totalDocs}
             </span>
           </div>
 
           <div className="space-y-3">
-            <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-surface rounded-full overflow-hidden">
               <div
                 className={cn(
                   'h-full rounded-full transition-all duration-300',
                   completedDocs === totalDocs
                     ? 'bg-emerald-500'
                     : completedDocs > totalDocs / 2
-                    ? 'bg-cyan-500'
+                    ? 'bg-primary'
                     : 'bg-amber-500'
                 )}
                 style={{
@@ -230,7 +230,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
             {totalDocs > 0 && completedDocs < totalDocs && (
               <Link
                 href={`/visa/checklist/${data.visaType}`}
-                className="block text-sm text-cyan-400 hover:text-cyan-300"
+                className="block text-sm text-primary hover:text-accent-hover"
               >
                 {totalDocs - completedDocs} document
                 {totalDocs - completedDocs !== 1 ? 's' : ''} remaining →
@@ -248,7 +248,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
         {/* State Info */}
         <div className="vk-card p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               Current Status
             </h3>
             <StatusBadge state={data.state} />
@@ -265,7 +265,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
               <InfoRow label="Entry Date" value={formatDate(data.entryDate)} />
             )}
             {!data.submittedDate && !data.approvedDate && (
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-muted-foreground">
                 No status updates yet. Complete your checklist to proceed.
               </p>
             )}
@@ -278,7 +278,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
         <Link href={`/visa/${data.visaType}`}>
           <Button
             variant="outline"
-            className="border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white"
+            className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
           >
             View Visa Details
           </Button>
@@ -286,7 +286,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
         <Link href={`/visa/checklist/${data.visaType}`}>
           <Button
             variant="outline"
-            className="border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white"
+            className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
           >
             Open Checklist
           </Button>
@@ -298,8 +298,8 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
 
 function StatusBadge({ state }: { state: VisaState }) {
   const config: Record<VisaState, { label: string; className: string }> = {
-    NO_VISA: { label: 'No Visa', className: 'bg-slate-500/10 text-slate-400' },
-    PREPARING: { label: 'Preparing', className: 'bg-cyan-500/10 text-cyan-400' },
+    NO_VISA: { label: 'No Visa', className: 'bg-muted-foreground/10 text-muted-foreground' },
+    PREPARING: { label: 'Preparing', className: 'bg-primary/10 text-primary' },
     SUBMITTED: { label: 'Submitted', className: 'bg-amber-500/10 text-amber-400' },
     UNDER_REVIEW: { label: 'Under Review', className: 'bg-amber-500/10 text-amber-400' },
     APPROVED: { label: 'Approved', className: 'bg-emerald-500/10 text-emerald-400' },
@@ -320,8 +320,8 @@ function StatusBadge({ state }: { state: VisaState }) {
 function InfoRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between items-center">
-      <span className="text-sm text-slate-500">{label}</span>
-      <span className="text-sm text-white">{value}</span>
+      <span className="text-sm text-muted-foreground">{label}</span>
+      <span className="text-sm text-foreground">{value}</span>
     </div>
   );
 }
@@ -439,15 +439,15 @@ export function DashboardClient() {
   // Loading state
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen bg-[#0B1120]">
+      <div className="min-h-screen bg-background">
         <div className="max-w-5xl mx-auto px-4 py-8">
           <div className="animate-pulse space-y-6">
-            <div className="h-8 w-48 bg-slate-800 rounded" />
+            <div className="h-8 w-48 bg-surface rounded" />
             <div className="grid lg:grid-cols-3 gap-6">
-              <div className="h-48 bg-slate-800 rounded-2xl lg:col-span-2" />
-              <div className="h-48 bg-slate-800 rounded-2xl" />
+              <div className="h-48 bg-surface rounded-2xl lg:col-span-2" />
+              <div className="h-48 bg-surface rounded-2xl" />
             </div>
-            <div className="h-32 bg-slate-800 rounded-2xl" />
+            <div className="h-32 bg-surface rounded-2xl" />
           </div>
         </div>
       </div>
@@ -457,23 +457,23 @@ export function DashboardClient() {
   // Not logged in state
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#0B1120] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
-            <User className="w-8 h-8 text-cyan-400" />
+          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <User className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-2xl font-bold text-white mb-2">Sign in to continue</h1>
-          <p className="text-slate-400 mb-6">
+          <h1 className="text-2xl font-bold text-foreground mb-2">Sign in to continue</h1>
+          <p className="text-muted-foreground mb-6">
             Create an account to track your visa progress
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth/login">
-              <Button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900">
+              <Button className="bg-primary hover:bg-accent-hover text-background">
                 Sign In
               </Button>
             </Link>
             <Link href="/auth/signup">
-              <Button variant="outline" className="border-slate-700 text-slate-300">
+              <Button variant="outline" className="border-border text-muted-foreground">
                 Create Account
               </Button>
             </Link>
@@ -484,7 +484,7 @@ export function DashboardClient() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0B1120]">
+    <main className="min-h-screen bg-background">
       {dashboardData ? (
         <ActiveDashboard
           data={dashboardData}

@@ -21,9 +21,9 @@ export function QuizProgress({
   return (
     <div className="w-full max-w-2xl mx-auto mb-8">
       {/* Progress bar */}
-      <div className="relative h-2 bg-slate-800 rounded-full overflow-hidden mb-4">
+      <div className="relative h-2 bg-surface rounded-full overflow-hidden mb-4">
         <div
-          className="absolute left-0 top-0 h-full bg-gradient-to-r from-cyan-500 to-cyan-400 transition-all duration-500 ease-out"
+          className="absolute left-0 top-0 h-full bg-gradient-to-r from-primary to-primary transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -51,9 +51,9 @@ export function QuizProgress({
               <div
                 className={cn(
                   'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all',
-                  isCompleted && 'bg-cyan-500 text-slate-900',
-                  isCurrent && 'bg-cyan-500/20 text-cyan-400 ring-2 ring-cyan-500',
-                  !isCompleted && !isCurrent && 'bg-slate-800 text-slate-500'
+                  isCompleted && 'bg-primary text-background',
+                  isCurrent && 'bg-primary/20 text-primary ring-2 ring-primary',
+                  !isCompleted && !isCurrent && 'bg-surface text-muted-foreground'
                 )}
               >
                 {isCompleted ? (
@@ -67,9 +67,9 @@ export function QuizProgress({
               <span
                 className={cn(
                   'text-xs hidden sm:block transition-colors',
-                  isCurrent && 'text-cyan-400 font-medium',
-                  isCompleted && 'text-slate-400',
-                  !isCompleted && !isCurrent && 'text-slate-600'
+                  isCurrent && 'text-primary font-medium',
+                  isCompleted && 'text-muted-foreground',
+                  !isCompleted && !isCurrent && 'text-muted-foreground'
                 )}
               >
                 {label}

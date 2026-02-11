@@ -296,7 +296,7 @@ export function OnboardingWizard() {
   const daysUntil = getDaysUntil();
 
   return (
-    <div className="min-h-screen visa-dark bg-[#0A0E1A]">
+    <div className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto px-4 py-12">
         {/* Progress Indicator */}
         <div className="flex items-center justify-center gap-2 mb-12">
@@ -305,9 +305,9 @@ export function OnboardingWizard() {
               <div
                 className={cn(
                   "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all",
-                  index < currentStep && "bg-cyan-500 text-[#0A0E1A]",
-                  index === currentStep && "bg-cyan-500 text-[#0A0E1A] ring-4 ring-cyan-500/30",
-                  index > currentStep && "bg-[#1F2937] text-[#94A3B8]"
+                  index < currentStep && "bg-primary text-primary-foreground",
+                  index === currentStep && "bg-primary text-primary-foreground ring-4 ring-primary/30",
+                  index > currentStep && "bg-elevated text-muted-foreground"
                 )}
               >
                 {index < currentStep ? <CheckCircle className="w-4 h-4" /> : index + 1}
@@ -316,7 +316,7 @@ export function OnboardingWizard() {
                 <div
                   className={cn(
                     "w-12 h-0.5 mx-1",
-                    index < currentStep ? "bg-cyan-500" : "bg-[#1F2937]"
+                    index < currentStep ? "bg-primary" : "bg-elevated"
                   )}
                 />
               )}
@@ -326,11 +326,11 @@ export function OnboardingWizard() {
 
         {/* Step Content */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-[#F8FAFC] mb-2 font-heading">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
             {steps[currentStep].title}
           </h1>
           {steps[currentStep].subtitle && (
-            <p className="text-[#94A3B8]">{steps[currentStep].subtitle}</p>
+            <p className="text-muted-foreground">{steps[currentStep].subtitle}</p>
           )}
         </div>
 
@@ -341,19 +341,19 @@ export function OnboardingWizard() {
               <button
                 key={option.id}
                 onClick={() => handleGoalSelect(option)}
-                className="vk-card vk-card-hover p-6 text-left group"
+                className="bg-surface border border-border rounded-xl p-6 text-left group hover:border-border-hover hover:bg-elevated transition-all"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                    <option.icon className="w-7 h-7 text-cyan-400" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <option.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-[#F8FAFC] group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       {option.label}
                     </h3>
-                    <p className="text-sm text-[#94A3B8]">{option.description}</p>
+                    <p className="text-sm text-muted-foreground">{option.description}</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-[#94A3B8] group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </div>
               </button>
             ))}
@@ -368,26 +368,26 @@ export function OnboardingWizard() {
                 <button
                   key={option.id}
                   onClick={() => handleSituationSelect(option)}
-                  className="vk-card vk-card-hover p-6 text-left group"
+                  className="bg-surface border border-border rounded-xl p-6 text-left group hover:border-border-hover hover:bg-elevated transition-all"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                      <option.icon className="w-7 h-7 text-cyan-400" />
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <option.icon className="w-7 h-7 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-[#F8FAFC] group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                         {option.label}
                       </h3>
-                      <p className="text-sm text-[#94A3B8]">{option.description}</p>
+                      <p className="text-sm text-muted-foreground">{option.description}</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-[#94A3B8] group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                   </div>
                 </button>
               ))}
             </div>
             <button
               onClick={() => setCurrentStep(0)}
-              className="flex items-center gap-2 text-[#94A3B8] hover:text-[#F8FAFC] transition-colors mx-auto mt-6"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mx-auto mt-6"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
@@ -406,33 +406,33 @@ export function OnboardingWizard() {
                   setCurrentStep(3);
                 }}
                 className={cn(
-                  "w-full vk-card p-6 text-left transition-all",
-                  index === 0 && "ring-2 ring-cyan-500 bg-cyan-500/5"
+                  "w-full bg-surface border border-border rounded-xl p-6 text-left transition-all",
+                  index === 0 && "ring-2 ring-primary bg-primary/5"
                 )}
               >
                 <div className="flex items-start gap-4">
                   <div className={cn(
                     "w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold",
-                    index === 0 ? "bg-cyan-500 text-[#0A0E1A]" : "bg-[#1F2937] text-[#94A3B8]"
+                    index === 0 ? "bg-primary text-primary-foreground" : "bg-elevated text-muted-foreground"
                   )}>
                     {index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉"}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
-                      <h3 className="text-lg font-semibold text-[#F8FAFC]">
+                      <h3 className="text-lg font-semibold text-foreground">
                         {match.name}
                       </h3>
                       <span className={cn(
                         "text-xs font-medium px-2 py-0.5 rounded-full",
-                        index === 0 ? "bg-cyan-500 text-[#0A0E1A]" : "bg-[#1F2937] text-[#94A3B8]"
+                        index === 0 ? "bg-primary text-primary-foreground" : "bg-elevated text-muted-foreground"
                       )}>
                         {match.score}% match
                       </span>
                     </div>
-                    <p className="text-sm text-[#94A3B8]">{match.tagline}</p>
+                    <p className="text-sm text-muted-foreground">{match.tagline}</p>
                   </div>
                   {index === 0 && (
-                    <div className="flex items-center gap-2 text-cyan-400 font-medium">
+                    <div className="flex items-center gap-2 text-primary font-medium">
                       <span>Start</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -442,7 +442,7 @@ export function OnboardingWizard() {
             ))}
             <button
               onClick={() => setCurrentStep(1)}
-              className="flex items-center gap-2 text-[#94A3B8] hover:text-[#F8FAFC] transition-colors mx-auto mt-6"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mx-auto mt-6"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
@@ -453,22 +453,22 @@ export function OnboardingWizard() {
         {/* Step 4: Setup */}
         {currentStep === 3 && selectedVisa && (
           <div className="space-y-8">
-            <div className="vk-card p-6">
+            <div className="bg-surface border border-border rounded-xl p-6">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center">
-                  <Sparkles className="w-7 h-7 text-cyan-400" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Sparkles className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-[#F8FAFC]">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {visaInfo[selectedVisa].name}
                   </h3>
-                  <p className="text-sm text-[#94A3B8]">{visaInfo[selectedVisa].tagline}</p>
+                  <p className="text-sm text-muted-foreground">{visaInfo[selectedVisa].tagline}</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <label className="block">
-                  <span className="text-sm font-medium text-[#F8FAFC] mb-2 block">
+                  <span className="text-sm font-medium text-foreground mb-2 block">
                     When do you want to be in Korea?
                   </span>
                   <input
@@ -476,19 +476,19 @@ export function OnboardingWizard() {
                     value={targetDate}
                     onChange={(e) => setTargetDate(e.target.value)}
                     min={new Date().toISOString().split("T")[0]}
-                    className="w-full px-4 py-3 rounded-xl bg-[#1F2937] border border-[#374151] text-[#F8FAFC] focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-elevated border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   />
                 </label>
 
                 {daysUntil !== null && daysUntil > 0 && (
-                  <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+                  <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
                     <div className="flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-cyan-400" />
+                      <Calendar className="w-5 h-5 text-primary" />
                       <div>
-                        <p className="text-sm font-medium text-cyan-400">
+                        <p className="text-sm font-medium text-primary">
                           {daysUntil} days to prepare
                         </p>
-                        <p className="text-xs text-[#94A3B8]">
+                        <p className="text-xs text-muted-foreground">
                           We&apos;ll help you track your progress
                         </p>
                       </div>
@@ -501,7 +501,8 @@ export function OnboardingWizard() {
             <Button
               onClick={handleStartJourney}
               disabled={!targetDate}
-              className="w-full bg-cyan-500 hover:bg-cyan-600 text-[#0A0E1A] font-semibold py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              variant="primary"
+              className="w-full py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Start My Journey
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -509,7 +510,7 @@ export function OnboardingWizard() {
 
             <button
               onClick={() => setCurrentStep(2)}
-              className="flex items-center gap-2 text-[#94A3B8] hover:text-[#F8FAFC] transition-colors mx-auto"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mx-auto"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to results</span>

@@ -79,7 +79,7 @@ export default async function VisaChecklistIndexPage({
               <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
                 <CheckSquare className="w-8 h-8 text-green-500" />
               </div>
-              <h1 className="text-3xl sm:text-4xl font-bold font-heading mb-3">
+              <h1 className="text-3xl sm:text-4xl font-bold  mb-3">
                 Document Checklist
               </h1>
               <p className="text-muted-foreground max-w-xl mx-auto">

@@ -81,11 +81,11 @@ export function QuizQuestion({
     <div className="w-full max-w-2xl mx-auto flex flex-col min-h-[60vh]">
       {/* Question */}
       <div className="text-center mb-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
           {title}
         </h2>
         {subtitle && (
-          <p className="text-slate-400">{subtitle}</p>
+          <p className="text-muted-foreground">{subtitle}</p>
         )}
       </div>
 
@@ -104,11 +104,11 @@ export function QuizQuestion({
                 onClick={() => onSelect(option.value)}
                 className={cn(
                   'w-full rounded-xl border-2 text-left transition-all duration-200',
-                  'hover:border-cyan-500/50 hover:bg-cyan-500/5',
+                  'hover:border-primary/50 hover:bg-primary/5',
                   useCompactLayout ? 'p-3' : 'p-4',
                   isSelected
-                    ? 'border-cyan-500 bg-cyan-500/10'
-                    : 'border-slate-700 bg-slate-800/50'
+                    ? 'border-primary bg-primary/10'
+                    : 'border-border bg-surface'
                 )}
               >
                 <div className="flex items-center gap-3">
@@ -118,15 +118,15 @@ export function QuizQuestion({
                       'rounded-lg flex items-center justify-center flex-shrink-0 transition-colors',
                       useCompactLayout ? 'w-8 h-8' : 'w-10 h-10',
                       isSelected
-                        ? 'bg-cyan-500 text-slate-900'
-                        : 'bg-slate-700 text-slate-400'
+                        ? 'bg-primary text-background'
+                        : 'bg-elevated text-muted-foreground'
                     )}
                   >
                     {isSelected ? (
                       <Check className={useCompactLayout ? 'w-4 h-4' : 'w-5 h-5'} />
                     ) : (
                       getIcon(option.icon) || (
-                        <div className="w-2 h-2 rounded-full bg-slate-500" />
+                        <div className="w-2 h-2 rounded-full bg-muted-foreground" />
                       )
                     )}
                   </div>
@@ -137,13 +137,13 @@ export function QuizQuestion({
                       className={cn(
                         'font-medium transition-colors',
                         useCompactLayout ? 'text-sm' : 'text-base',
-                        isSelected ? 'text-white' : 'text-slate-200'
+                        isSelected ? 'text-foreground' : 'text-foreground'
                       )}
                     >
                       {option.label}
                     </div>
                     {option.description && !useCompactLayout && (
-                      <div className="text-sm text-slate-400 mt-0.5">
+                      <div className="text-sm text-muted-foreground mt-0.5">
                         {option.description}
                       </div>
                     )}
@@ -153,10 +153,10 @@ export function QuizQuestion({
                   {isSelected && (
                     <div className="flex-shrink-0">
                       <div className={cn(
-                        'rounded-full bg-cyan-500 flex items-center justify-center',
+                        'rounded-full bg-primary flex items-center justify-center',
                         useCompactLayout ? 'w-5 h-5' : 'w-6 h-6'
                       )}>
-                        <Check className={useCompactLayout ? 'w-3 h-3 text-slate-900' : 'w-4 h-4 text-slate-900'} />
+                        <Check className={useCompactLayout ? 'w-3 h-3 text-background' : 'w-4 h-4 text-background'} />
                       </div>
                     </div>
                   )}
@@ -168,14 +168,14 @@ export function QuizQuestion({
       </div>
 
       {/* Sticky Navigation */}
-      <div className="sticky bottom-0 pt-4 pb-2 bg-gradient-to-t from-[#0B1120] via-[#0B1120] to-transparent">
+      <div className="sticky bottom-0 pt-4 pb-2 bg-gradient-to-t from-background via-background to-transparent">
         <div className="flex justify-between items-center">
           <Button
             variant="ghost"
             onClick={onBack}
             disabled={!canGoBack}
             className={cn(
-              'text-slate-400 hover:text-white hover:bg-slate-800',
+              'text-muted-foreground hover:text-foreground hover:bg-surface',
               !canGoBack && 'opacity-0 pointer-events-none'
             )}
           >
@@ -187,7 +187,7 @@ export function QuizQuestion({
             onClick={onNext}
             disabled={!canGoNext}
             className={cn(
-              'bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-medium px-6',
+              'bg-primary hover:bg-accent-hover text-background font-medium px-6',
               !canGoNext && 'opacity-50 cursor-not-allowed'
             )}
           >

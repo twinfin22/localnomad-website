@@ -47,7 +47,7 @@ export function FaqSection() {
       <div className="container mx-auto max-w-3xl">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-serif">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-bold">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground">

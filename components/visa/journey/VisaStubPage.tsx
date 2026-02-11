@@ -12,12 +12,12 @@ interface VisaStubPageProps {
 
 export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
   return (
-    <main className="min-h-screen bg-[#0B1120]">
+    <main className="min-h-screen bg-background">
       {/* Back link */}
       <div className="container mx-auto max-w-4xl px-4 pt-8">
         <Link
           href={backHref}
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to visa guide
@@ -27,14 +27,14 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
       {/* Header */}
       <header className="container mx-auto max-w-4xl px-4 py-8">
         <div className="flex items-start gap-4">
-          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center">
-            <span className="text-cyan-400 font-bold text-lg">{visa.shortName}</span>
+          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-blue-500/20 border border-primary/30 flex items-center justify-center">
+            <span className="text-primary font-bold text-lg">{visa.shortName}</span>
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
               {visa.name}
             </h1>
-            <p className="text-slate-400 mt-1">{visa.tagline}</p>
+            <p className="text-muted-foreground mt-1">{visa.tagline}</p>
           </div>
         </div>
       </header>
@@ -45,10 +45,10 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
           <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
             <Construction className="w-8 h-8 text-amber-400" />
           </div>
-          <h2 className="text-xl font-semibold text-white mb-2">
+          <h2 className="text-xl font-semibold text-foreground mb-2">
             Full guide coming soon
           </h2>
-          <p className="text-slate-400 max-w-md mx-auto">
+          <p className="text-muted-foreground max-w-md mx-auto">
             We&apos;re working on a comprehensive guide for the {visa.shortName} visa.
             In the meantime, check out the official resources below.
           </p>
@@ -58,11 +58,11 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
       {/* Key Info (if available) */}
       {visa.keyRequirement && (
         <section className="container mx-auto max-w-4xl px-4 py-4">
-          <div className="rounded-xl border border-slate-700/50 bg-slate-800/30 p-6">
-            <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-2">
+          <div className="rounded-xl border border-border bg-surface p-6">
+            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-2">
               Key Requirement
             </h3>
-            <p className="text-white">{visa.keyRequirement}</p>
+            <p className="text-foreground">{visa.keyRequirement}</p>
           </div>
         </section>
       )}
@@ -70,17 +70,17 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
       {/* Quick Stats */}
       <section className="container mx-auto max-w-4xl px-4 py-4">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          <div className="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
-            <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Duration</p>
-            <p className="text-white font-medium">{visa.duration.initial}</p>
+          <div className="rounded-xl border border-border bg-surface p-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Duration</p>
+            <p className="text-foreground font-medium">{visa.duration.initial}</p>
           </div>
-          <div className="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
-            <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Application Fee</p>
-            <p className="text-white font-medium">{visa.fees.application}</p>
+          <div className="rounded-xl border border-border bg-surface p-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Application Fee</p>
+            <p className="text-foreground font-medium">{visa.fees.application}</p>
           </div>
-          <div className="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
-            <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Work Permission</p>
-            <p className="text-white font-medium">
+          <div className="rounded-xl border border-border bg-surface p-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Work Permission</p>
+            <p className="text-foreground font-medium">
               {visa.workPermission.allowed ? "Yes" : "No"}
               {visa.workPermission.restrictions?.length ? " (with restrictions)" : ""}
             </p>
@@ -90,7 +90,7 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
 
       {/* Official Resources */}
       <section className="container mx-auto max-w-4xl px-4 py-8">
-        <h3 className="text-lg font-semibold text-white mb-4">Official Resources</h3>
+        <h3 className="text-lg font-semibold text-foreground mb-4">Official Resources</h3>
         <div className="space-y-3">
           {visa.officialLinks.map((link) => (
             <a
@@ -98,12 +98,12 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-4 rounded-xl border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/50 hover:border-cyan-500/30 transition-colors group"
+              className="flex items-center justify-between p-4 rounded-xl border border-border bg-surface hover:bg-elevated hover:border-primary/30 transition-colors group"
             >
-              <span className="text-slate-300 group-hover:text-white transition-colors">
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
                 {link.label}
               </span>
-              <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+              <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
           ))}
         </div>
@@ -111,14 +111,14 @@ export function VisaStubPage({ visa, backHref }: VisaStubPageProps) {
 
       {/* Notify Me (optional future feature) */}
       <section className="container mx-auto max-w-4xl px-4 py-8">
-        <div className="rounded-xl border border-slate-700/50 bg-slate-800/20 p-6">
+        <div className="rounded-xl border border-border bg-surface p-6">
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center shrink-0">
-              <Bell className="w-5 h-5 text-cyan-400" />
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <Bell className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h3 className="text-white font-medium mb-1">Want to be notified?</h3>
-              <p className="text-slate-400 text-sm">
+              <h3 className="text-foreground font-medium mb-1">Want to be notified?</h3>
+              <p className="text-muted-foreground text-sm">
                 We&apos;ll let you know when the full {visa.shortName} guide is ready.
                 Join our newsletter on the homepage to stay updated.
               </p>

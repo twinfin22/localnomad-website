@@ -12,23 +12,20 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="py-20 px-6 relative overflow-hidden bg-secondary">
+    <footer className="py-16 px-6 relative overflow-hidden bg-surface">
       {/* Gradient line at top */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-dots-navy opacity-30" />
-
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="container mx-auto max-w-3xl relative z-10">
         <AnimatedSection>
           {/* Logo */}
           <div className="text-center mb-6">
-            <span className="text-2xl font-bold font-heading text-primary">LocalNomad</span>
+            <span className="text-2xl font-bold text-foreground">LocalNomad</span>
           </div>
 
           <div className="text-center mb-10">
-            <p className="text-lg text-muted-foreground font-light italic">
-              Where Nomads Become <span className="text-accent font-medium">Local</span>, and Locals Become <span className="text-primary font-medium">Nomads</span>
+            <p className="text-base text-muted-foreground">
+              Where Nomads Become <span className="text-primary font-medium">Local</span>, and Locals Become <span className="text-primary font-medium">Nomads</span>
             </p>
           </div>
 
@@ -38,7 +35,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors link-coral-underline"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -50,7 +47,7 @@ export function Footer() {
               href="https://www.instagram.com/localnomad.club/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -59,25 +56,25 @@ export function Footer() {
               href="https://startofsomethingnew.substack.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-accent hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               aria-label="Newsletter"
             >
               <Newspaper className="w-6 h-6" />
             </a>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-border/50 text-center">
+          <div className="mt-8 pt-6 border-t border-border text-center">
             <p className="text-sm text-muted-foreground">
               © 2026 LocalNomad ·{" "}
-              <Link href="/terms" className="hover:text-primary transition-colors">
+              <Link href="/terms" className="hover:text-foreground transition-colors duration-200">
                 Terms
               </Link>{" "}
               ·{" "}
-              <Link href="/privacy" className="hover:text-primary transition-colors">
+              <Link href="/privacy" className="hover:text-foreground transition-colors duration-200">
                 Privacy
               </Link>{" "}
               ·{" "}
-              <Link href="/refund" className="hover:text-primary transition-colors">
+              <Link href="/refund" className="hover:text-foreground transition-colors duration-200">
                 Refund
               </Link>
             </p>

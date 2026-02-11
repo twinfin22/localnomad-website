@@ -49,10 +49,10 @@ export function QuickEligibilityCheck({
   return (
     <div className={cn('space-y-4', className)}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white">
+        <h3 className="text-lg font-semibold text-foreground">
           Quick Eligibility Check
         </h3>
-        <span className="text-sm text-slate-400">
+        <span className="text-sm text-muted-foreground">
           {answeredCount} of {questions.length} answered
         </span>
       </div>
@@ -70,14 +70,14 @@ export function QuickEligibilityCheck({
                 'p-4 rounded-xl border transition-all',
                 isYes && 'bg-emerald-500/10 border-emerald-500/30',
                 isNo && 'bg-red-500/10 border-red-500/30',
-                answer === undefined && 'bg-slate-800/50 border-slate-700'
+                answer === undefined && 'bg-surface border-border'
               )}
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
-                  <p className="text-sm text-slate-200">{question.question}</p>
+                  <p className="text-sm text-foreground">{question.question}</p>
                   {question.helpText && (
-                    <p className="text-xs text-slate-500 mt-1">
+                    <p className="text-xs text-muted-foreground mt-1">
                       {question.helpText}
                     </p>
                   )}
@@ -90,7 +90,7 @@ export function QuickEligibilityCheck({
                       'w-10 h-10 rounded-lg flex items-center justify-center transition-all',
                       isYes
                         ? 'bg-emerald-500 text-white'
-                        : 'bg-slate-700 text-slate-400 hover:bg-emerald-500/20 hover:text-emerald-400'
+                        : 'bg-elevated text-muted-foreground hover:bg-emerald-500/20 hover:text-emerald-400'
                     )}
                   >
                     <Check className="w-5 h-5" />
@@ -101,7 +101,7 @@ export function QuickEligibilityCheck({
                       'w-10 h-10 rounded-lg flex items-center justify-center transition-all',
                       isNo
                         ? 'bg-red-500 text-white'
-                        : 'bg-slate-700 text-slate-400 hover:bg-red-500/20 hover:text-red-400'
+                        : 'bg-elevated text-muted-foreground hover:bg-red-500/20 hover:text-red-400'
                     )}
                   >
                     <X className="w-5 h-5" />
@@ -131,7 +131,7 @@ export function QuickEligibilityCheck({
                   <p className="text-sm font-medium text-emerald-400">
                     You may be eligible
                   </p>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-muted-foreground">
                     Based on your answers, you appear to meet the basic requirements
                   </p>
                 </div>
@@ -143,7 +143,7 @@ export function QuickEligibilityCheck({
                   <p className="text-sm font-medium text-amber-400">
                     Some requirements may not be met
                   </p>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-muted-foreground">
                     Consider reviewing the requirements or exploring alternative visas
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export function QuickEligibilityCheck({
       )}
 
       {/* Disclaimer */}
-      <p className="text-xs text-slate-500 mt-4">
+      <p className="text-xs text-muted-foreground mt-4">
         This is a preliminary check based on publicly available requirements.
         Final eligibility is determined by Korean immigration authorities.
       </p>

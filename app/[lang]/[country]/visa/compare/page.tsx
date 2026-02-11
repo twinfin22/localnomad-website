@@ -78,7 +78,7 @@ export default async function VisaComparePage({ params }: ComparePageProps) {
                 <BarChart3 className="w-7 h-7 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl sm:text-4xl font-bold font-heading">
+                <h1 className="text-3xl sm:text-4xl font-bold ">
                   Compare Visas
                 </h1>
                 <p className="text-muted-foreground">

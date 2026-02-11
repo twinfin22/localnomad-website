@@ -110,7 +110,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                     {visa.category.replace("-", " ")}
                   </span>
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-bold font-heading mb-2">
+                <h1 className="text-3xl sm:text-4xl font-bold  mb-2">
                   {visa.name}
                 </h1>
                 <p className="text-xl text-primary font-semibold mb-4">
@@ -211,7 +211,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
               <div className="space-y-12">
                 {/* Target Audience */}
                 <div>
-                  <h2 className="text-2xl font-bold font-heading mb-4 flex items-center gap-2">
+                  <h2 className="text-2xl font-bold  mb-4 flex items-center gap-2">
                     <Users className="w-6 h-6 text-primary" />
                     Who Is This Visa For?
                   </h2>
@@ -230,7 +230,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
 
                 {/* Eligibility */}
                 <div>
-                  <h2 className="text-2xl font-bold font-heading mb-4">
+                  <h2 className="text-2xl font-bold  mb-4">
                     Eligibility Requirements
                   </h2>
                   <div className="bg-card border border-border rounded-2xl p-6">
@@ -271,7 +271,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                 {/* Income Requirement */}
                 {visa.incomeRequirement && (
                   <div>
-                    <h2 className="text-2xl font-bold font-heading mb-4">
+                    <h2 className="text-2xl font-bold  mb-4">
                       Income Requirement
                     </h2>
                     <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6">
@@ -299,7 +299,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                 {visa.workPermission.restrictions &&
                   visa.workPermission.restrictions.length > 0 && (
                     <div>
-                      <h2 className="text-2xl font-bold font-heading mb-4">
+                      <h2 className="text-2xl font-bold  mb-4">
                         Work Permission Details
                       </h2>
                       <div className="bg-card border border-border rounded-2xl p-6">
@@ -346,7 +346,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Tips */}
                   <div>
-                    <h2 className="text-xl font-bold font-heading mb-4 flex items-center gap-2">
+                    <h2 className="text-xl font-bold  mb-4 flex items-center gap-2">
                       <Lightbulb className="w-5 h-5 text-accent" />
                       Tips
                     </h2>
@@ -368,7 +368,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                   {/* Warnings */}
                   {visa.warnings && visa.warnings.length > 0 && (
                     <div>
-                      <h2 className="text-xl font-bold font-heading mb-4 flex items-center gap-2">
+                      <h2 className="text-xl font-bold  mb-4 flex items-center gap-2">
                         <AlertCircle className="w-5 h-5 text-red-500" />
                         Warnings
                       </h2>
@@ -398,7 +398,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
           {activeTab === "documents" && (
             <AnimatedSection>
               <div>
-                <h2 className="text-2xl font-bold font-heading mb-6">
+                <h2 className="text-2xl font-bold  mb-6">
                   Required Documents
                 </h2>
                 <div className="space-y-4">
@@ -468,7 +468,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
           {activeTab === "process" && (
             <AnimatedSection>
               <div>
-                <h2 className="text-2xl font-bold font-heading mb-6">
+                <h2 className="text-2xl font-bold  mb-6">
                   Application Process
                 </h2>
                 <div className="relative">
@@ -540,7 +540,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
           {activeTab === "faqs" && (
             <AnimatedSection>
               <div>
-                <h2 className="text-2xl font-bold font-heading mb-6">
+                <h2 className="text-2xl font-bold  mb-6">
                   Frequently Asked Questions
                 </h2>
                 <div className="space-y-3">
@@ -582,7 +582,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
       <section className="py-12 px-4 sm:px-6 bg-secondary">
         <div className="container mx-auto max-w-5xl">
           <AnimatedSection>
-            <h2 className="text-xl font-bold font-heading mb-4">
+            <h2 className="text-xl font-bold  mb-4">
               Official Resources
             </h2>
             <div className="flex flex-wrap gap-3">

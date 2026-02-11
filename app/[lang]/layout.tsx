@@ -4,21 +4,14 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import {
-  Geist,
-  Geist_Mono,
-  Outfit,
-  Inter,
-  Cormorant_Garamond,
-  Crimson_Pro,
-} from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemePreviewProvider } from "@/components/theme-preview";
 import { AuthProvider } from "@/components/providers/auth-provider";
 import { locales, type Locale } from "@/lib/i18n/config";
 
 // =============================================================================
-// Fonts
+// Fonts - Geist only (LocalNomad Design System)
 // =============================================================================
 
 const geist = Geist({
@@ -28,33 +21,7 @@ const geist = Geist({
 
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
-// Midnight Seoul theme fonts
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
-});
-
-// Black Label theme fonts
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["400", "500", "600", "700"],
-});
-
-const crimsonPro = Crimson_Pro({
-  subsets: ["latin"],
-  variable: "--font-crimson",
-  weight: ["400", "500", "600"],
-});
-
-const fontVariables = `${geist.variable} ${outfit.variable} ${inter.variable} ${cormorant.variable} ${crimsonPro.variable}`;
+const fontVariables = geist.variable;
 
 // =============================================================================
 // Static Params
@@ -93,8 +60,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="dark"
+            forcedTheme="dark"
             disableTransitionOnChange
           >
             <ThemePreviewProvider>

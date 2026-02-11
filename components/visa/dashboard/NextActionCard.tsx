@@ -165,28 +165,28 @@ export function NextActionCard({
         <div
           className={cn(
             'w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0',
-            action.urgent ? 'bg-amber-500/10' : 'bg-cyan-500/10'
+            action.urgent ? 'bg-amber-500/10' : 'bg-primary/10'
           )}
         >
           <Icon
             className={cn(
               'w-6 h-6',
-              action.urgent ? 'text-amber-400' : 'text-cyan-400'
+              action.urgent ? 'text-amber-400' : 'text-primary'
             )}
           />
         </div>
 
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-white mb-1">{action.title}</h3>
-          <p className="text-sm text-slate-400 mb-4">{action.description}</p>
+          <h3 className="font-semibold text-foreground mb-1">{action.title}</h3>
+          <p className="text-sm text-muted-foreground mb-4">{action.description}</p>
 
           <Link href={action.href}>
             <Button
               className={cn(
                 'group',
                 action.urgent
-                  ? 'bg-amber-500 hover:bg-amber-400 text-slate-900'
-                  : 'bg-cyan-500 hover:bg-cyan-400 text-slate-900'
+                  ? 'bg-amber-500 hover:bg-amber-400 text-background'
+                  : 'bg-primary hover:bg-accent-hover text-background'
               )}
             >
               {action.cta}

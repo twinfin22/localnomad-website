@@ -68,12 +68,12 @@ export function VisaJourneyPage({
       .join(", ") + (visa.documents.length > 3 ? "..." : "");
 
   return (
-    <div className="min-h-screen bg-[#0B1120]">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto max-w-3xl px-4 py-8">
         {/* Back link */}
         <Link
           href={backHref}
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Visa Guide
@@ -81,27 +81,27 @@ export function VisaJourneyPage({
 
         {/* Compact header */}
         <header className="mb-8">
-          <div className="text-3xl font-bold text-white mb-1">
+          <div className="text-3xl font-bold text-foreground mb-1">
             {visa.shortName}
           </div>
-          <h1 className="text-xl text-slate-300 mb-2">{visa.name}</h1>
-          <p className="text-slate-400 mb-4">{visa.tagline}</p>
+          <h1 className="text-xl text-muted-foreground mb-2">{visa.name}</h1>
+          <p className="text-muted-foreground mb-4">{visa.tagline}</p>
 
           {/* Stats line */}
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
             <span>Duration: {visa.duration.initial}</span>
-            <span className="text-slate-600">·</span>
+            <span className="text-muted-foreground">·</span>
             <span>Cost: {visa.fees.application}</span>
-            <span className="text-slate-600">·</span>
+            <span className="text-muted-foreground">·</span>
             <span>Processing: {visa.processingTime.typical}</span>
           </div>
         </header>
 
         {/* Divider */}
-        <hr className="border-slate-800 mb-8" />
+        <hr className="border-border mb-8" />
 
         {/* Journey heading */}
-        <h2 className="text-lg font-medium text-white mb-6">
+        <h2 className="text-lg font-medium text-foreground mb-6">
           Your path to a {visa.shortName} visa:
         </h2>
 
@@ -164,7 +164,7 @@ export function VisaJourneyPage({
         </div>
 
         {/* Divider */}
-        <hr className="border-slate-800 mb-4" />
+        <hr className="border-border mb-4" />
 
         {/* FAQs row */}
         {visa.faqs && visa.faqs.length > 0 && (
@@ -173,25 +173,25 @@ export function VisaJourneyPage({
               onClick={() => setFaqsOpen(!faqsOpen)}
               className="w-full flex items-center justify-between py-3 text-left"
             >
-              <div className="flex items-center gap-2 text-slate-300">
+              <div className="flex items-center gap-2 text-muted-foreground">
                 <MessageCircle className="w-5 h-5" />
                 <span>Common questions</span>
               </div>
               {faqsOpen ? (
-                <ChevronDown className="w-5 h-5 text-slate-400" />
+                <ChevronDown className="w-5 h-5 text-muted-foreground" />
               ) : (
-                <ChevronRight className="w-5 h-5 text-slate-400" />
+                <ChevronRight className="w-5 h-5 text-muted-foreground" />
               )}
             </button>
             {faqsOpen && (
               <div className="pb-4 space-y-1">
                 {visa.faqs.map((faq, i) => (
                   <details key={i} className="group">
-                    <summary className="cursor-pointer text-sm text-slate-300 hover:text-white py-2 list-none flex items-center gap-2">
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
+                    <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground py-2 list-none flex items-center gap-2">
+                      <ChevronRight className="w-4 h-4 text-muted-foreground group-open:rotate-90 transition-transform" />
                       {faq.question}
                     </summary>
-                    <p className="text-sm text-slate-400 pl-6 pb-2">
+                    <p className="text-sm text-muted-foreground pl-6 pb-2">
                       {faq.answer}
                     </p>
                   </details>
@@ -208,14 +208,14 @@ export function VisaJourneyPage({
               onClick={() => setResourcesOpen(!resourcesOpen)}
               className="w-full flex items-center justify-between py-3 text-left"
             >
-              <div className="flex items-center gap-2 text-slate-300">
+              <div className="flex items-center gap-2 text-muted-foreground">
                 <Link2 className="w-5 h-5" />
                 <span>Official resources</span>
               </div>
               {resourcesOpen ? (
-                <ChevronDown className="w-5 h-5 text-slate-400" />
+                <ChevronDown className="w-5 h-5 text-muted-foreground" />
               ) : (
-                <ChevronRight className="w-5 h-5 text-slate-400" />
+                <ChevronRight className="w-5 h-5 text-muted-foreground" />
               )}
             </button>
             {resourcesOpen && (
@@ -226,7 +226,7 @@ export function VisaJourneyPage({
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-sm text-cyan-400 hover:text-cyan-300 py-1"
+                    className="block text-sm text-primary hover:text-accent-hover py-1"
                   >
                     {link.label} ↗
                   </a>

@@ -23,17 +23,17 @@ export function AlreadyHaveVisa({ visaOptions }: AlreadyHaveVisaProps) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "w-full flex items-center justify-between p-4 rounded-xl bg-slate-800/40 border transition-colors",
+          "w-full flex items-center justify-between p-4 rounded-xl bg-surface border transition-colors",
           isOpen
-            ? "border-cyan-500/30 bg-slate-800/60"
-            : "border-slate-700/50 hover:border-cyan-500/30"
+            ? "border-primary/30 bg-elevated"
+            : "border-border hover:border-primary/30"
         )}
       >
         <div className="flex items-center gap-3">
-          <FileText className="w-5 h-5 text-cyan-400" />
-          <span className="text-slate-300">Already have a visa?</span>
+          <FileText className="w-5 h-5 text-primary" />
+          <span className="text-muted-foreground">Already have a visa?</span>
         </div>
-        <div className="flex items-center gap-2 text-cyan-400">
+        <div className="flex items-center gap-2 text-primary">
           <span className="text-sm">Manage your visa</span>
           <ChevronDown
             className={cn(
@@ -45,8 +45,8 @@ export function AlreadyHaveVisa({ visaOptions }: AlreadyHaveVisaProps) {
       </button>
 
       {isOpen && (
-        <div className="mt-2 p-4 rounded-xl border border-slate-700/50 bg-slate-800/30">
-          <p className="text-sm text-slate-400 mb-4">
+        <div className="mt-2 p-4 rounded-xl border border-border bg-surface">
+          <p className="text-sm text-muted-foreground mb-4">
             Which visa do you have?
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -54,15 +54,15 @@ export function AlreadyHaveVisa({ visaOptions }: AlreadyHaveVisaProps) {
               <Link
                 key={option.visa}
                 href={option.href}
-                className="flex items-center justify-between p-3 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-500/30 transition-colors group"
+                className="flex items-center justify-between p-3 rounded-lg bg-elevated hover:bg-surface border border-border hover:border-primary/30 transition-colors group"
               >
                 <div>
-                  <span className="text-white font-medium">{option.visa}</span>
-                  <span className="text-slate-500 text-xs block">
+                  <span className="text-foreground font-medium">{option.visa}</span>
+                  <span className="text-muted-foreground text-xs block">
                     {option.name}
                   </span>
                 </div>
-                <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </Link>
             ))}
           </div>

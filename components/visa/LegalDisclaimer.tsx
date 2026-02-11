@@ -14,14 +14,14 @@ export function LegalDisclaimer({
 }: LegalDisclaimerProps) {
   if (variant === 'inline') {
     return (
-      <p className={cn('text-sm text-slate-500', className)}>
+      <p className={cn('text-sm text-muted-foreground', className)}>
         This information is for general guidance only. Visa requirements change
         frequently. Always verify current requirements with the{' '}
         <a
           href="https://www.immigration.go.kr/immigration_eng/index.do"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cyan-500 underline hover:text-cyan-400"
+          className="text-primary underline hover:text-accent-hover"
         >
           Korea Immigration Service
         </a>
@@ -34,13 +34,13 @@ export function LegalDisclaimer({
     return (
       <div
         className={cn(
-          'bg-amber-500/10 border-y border-amber-500/20 py-3 px-4',
+          'bg-warning/10 border-y border-warning/20 py-3 px-4',
           className
         )}
       >
-        <div className="container mx-auto max-w-6xl">
-          <p className="text-sm text-amber-200/80 text-center">
-            <span className="font-medium text-amber-300">Note:</span> This tool
+        <div className="container mx-auto max-w-3xl">
+          <p className="text-sm text-warning/80 text-center">
+            <span className="font-medium text-warning">Note:</span> This tool
             provides general guidance only and does not constitute legal advice.
           </p>
         </div>
@@ -48,32 +48,32 @@ export function LegalDisclaimer({
     );
   }
 
-  // Default: box variant
+  // Default: box variant - uses warning color (semantic exception to cyan-only rule)
   return (
     <div
       className={cn(
-        'bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6',
+        'bg-warning/10 border border-warning/20 rounded-xl p-6',
         className
       )}
     >
       <div className="flex items-start gap-4">
         {showIcon && (
           <div className="flex-shrink-0">
-            <AlertTriangle className="w-6 h-6 text-amber-400" />
+            <AlertTriangle className="w-6 h-6 text-warning" />
           </div>
         )}
         <div>
-          <h4 className="text-lg font-semibold text-amber-400 mb-2">
+          <h4 className="text-lg font-semibold text-warning mb-2">
             Important Notice
           </h4>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             This information is for general guidance only. Visa requirements
             change frequently. Always verify current requirements with the{' '}
             <a
               href="https://www.immigration.go.kr/immigration_eng/index.do"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 underline hover:text-cyan-300"
+              className="text-primary underline hover:text-accent-hover"
             >
               Korea Immigration Service
             </a>{' '}
@@ -82,7 +82,7 @@ export function LegalDisclaimer({
               href="https://www.hikorea.go.kr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 underline hover:text-cyan-300"
+              className="text-primary underline hover:text-accent-hover"
             >
               HiKorea
             </a>{' '}
@@ -99,11 +99,11 @@ export function QuizDisclaimer({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'bg-slate-800/50 border border-slate-700 rounded-xl p-4',
+        'bg-surface border border-border rounded-xl p-4',
         className
       )}
     >
-      <p className="text-xs text-slate-400 leading-relaxed">
+      <p className="text-xs text-muted-foreground leading-relaxed">
         This tool checks your information against publicly available Korean visa
         requirements. It does not constitute legal advice. Final decisions on
         visa issuance rest solely with the Korean Ministry of Justice and
@@ -116,7 +116,7 @@ export function QuizDisclaimer({ className }: { className?: string }) {
 // Income calculator disclaimer
 export function IncomeDisclaimer({ className }: { className?: string }) {
   return (
-    <p className={cn('text-xs text-slate-500', className)}>
+    <p className={cn('text-xs text-muted-foreground', className)}>
       Income thresholds are based on publicly available GNI data from the Bank
       of Korea. Actual verification is performed by immigration authorities
       using official documentation.
@@ -129,11 +129,11 @@ export function DayTrackerDisclaimer({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'bg-slate-800/50 border border-slate-700 rounded-lg p-3',
+        'bg-surface border border-border rounded-lg p-3',
         className
       )}
     >
-      <p className="text-xs text-slate-400 leading-relaxed">
+      <p className="text-xs text-muted-foreground leading-relaxed">
         This tracker shows days physically present in Korea for informational
         purposes only. Tax residency status depends on multiple factors
         including your overall circumstances, income sources, and family

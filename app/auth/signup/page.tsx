@@ -55,20 +55,20 @@ export default function SignupPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-[#0B1120] flex items-center justify-center px-4">
-        <div className="w-full max-w-md text-center">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-6">
-            <Check className="w-8 h-8 text-emerald-400" />
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+        <div className="w-full max-w-sm text-center">
+          <div className="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-6">
+            <Check className="w-8 h-8 text-success" />
           </div>
-          <h1 className="text-xl font-semibold text-white mb-2">
+          <h1 className="text-xl font-semibold text-foreground mb-2">
             Check your email
           </h1>
-          <p className="text-slate-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             We&apos;ve sent you a confirmation link to <strong>{email}</strong>. Click
             the link to activate your account.
           </p>
           <Link href="/auth/login">
-            <Button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-medium">
+            <Button variant="primary">
               Back to Sign In
             </Button>
           </Link>
@@ -78,60 +78,60 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0B1120] flex items-center justify-center px-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <Link href="/" className="text-2xl font-bold text-white">
+          <Link href="/" className="text-2xl font-bold text-foreground">
             LocalNomad
           </Link>
-          <h1 className="text-xl font-semibold text-white mt-6 mb-2">
+          <h1 className="text-xl font-semibold text-foreground mt-6 mb-2">
             Create an account
           </h1>
-          <p className="text-slate-400">
+          <p className="text-muted-foreground">
             Start tracking your visa journey today
           </p>
         </div>
 
-        <div className="bg-slate-800/50 rounded-2xl border border-slate-700 p-6">
+        <div className="bg-surface rounded-xl border border-border p-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
-              <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 text-red-400" />
-                <span className="text-sm text-red-400">{error}</span>
+              <div className="p-3 rounded-lg bg-error/10 border border-error/20 flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-error" />
+                <span className="text-sm text-error">{error}</span>
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-slate-300">
+              <Label htmlFor="email" className="text-muted-foreground">
                 Email
               </Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-elevated border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary/30"
                   required
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-slate-300">
+              <Label htmlFor="password" className="text-muted-foreground">
                 Password
               </Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-elevated border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary/30"
                   required
                   minLength={6}
                 />
@@ -139,18 +139,18 @@ export default function SignupPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword" className="text-slate-300">
+              <Label htmlFor="confirmPassword" className="text-muted-foreground">
                 Confirm Password
               </Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   id="confirmPassword"
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-elevated border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary/30"
                   required
                   minLength={6}
                 />
@@ -160,7 +160,8 @@ export default function SignupPage() {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-medium"
+              variant="primary"
+              className="w-full"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -171,19 +172,19 @@ export default function SignupPage() {
 
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-700" />
+              <div className="w-full border-t border-border" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-slate-800/50 px-2 text-slate-500">Or</span>
+              <span className="bg-surface px-2 text-muted-foreground">Or</span>
             </div>
           </div>
 
           <Button
             type="button"
-            variant="outline"
+            variant="secondary"
             onClick={handleGoogleSignIn}
             disabled={loading}
-            className="w-full border-slate-700 text-slate-300 hover:bg-slate-800"
+            className="w-full"
           >
             <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">
               <path
@@ -206,11 +207,11 @@ export default function SignupPage() {
             Continue with Google
           </Button>
 
-          <p className="text-center text-sm text-slate-500 mt-6">
+          <p className="text-center text-sm text-muted-foreground mt-6">
             Already have an account?{' '}
             <Link
               href="/auth/login"
-              className="text-cyan-400 hover:text-cyan-300"
+              className="text-primary hover:text-accent-hover transition-colors duration-200"
             >
               Sign in
             </Link>

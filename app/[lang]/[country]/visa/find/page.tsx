@@ -47,7 +47,7 @@ export default async function FindVisaPage({ params }: FindVisaPageProps) {
   const { lang, country } = await params;
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0B1120]">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       <section className="pt-24 pb-16 px-4 sm:px-6">

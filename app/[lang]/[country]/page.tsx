@@ -30,27 +30,27 @@ export default async function CountryHubPage({ params }: CountryHubProps) {
   const services = getServicesForCountry(country);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0B1120]">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
 
-        <div className="container mx-auto max-w-5xl relative z-10">
+        <div className="container mx-auto max-w-3xl relative z-10">
           {/* Country Header */}
           <div className="text-center mb-12">
             <span className="text-6xl mb-4 block">{flag}</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               {countryName}
             </h1>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Everything you need to live, work, and thrive in {countryName}.
             </p>
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {services.map((service) => (
               <ServiceCard
                 key={service.name}
@@ -99,30 +99,30 @@ function ServiceCard({
 
   const content = (
     <div
-      className={`relative rounded-2xl p-6 h-full flex flex-col transition-all duration-300 ${
+      className={`relative rounded-xl p-6 h-full flex flex-col transition-all duration-200 ${
         available
-          ? "bg-slate-800/50 border border-slate-700/50 hover:border-cyan-500/30 hover:bg-slate-800/80 cursor-pointer"
-          : "bg-slate-800/30 border border-slate-700/30 opacity-60"
+          ? "bg-surface border border-border hover:border-border-hover hover:bg-elevated cursor-pointer"
+          : "bg-surface/50 border border-border/50 opacity-60"
       }`}
     >
       {/* Icon */}
-      <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4">
-        <Icon className="w-6 h-6 text-cyan-400" />
+      <div className="w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center mb-4">
+        <Icon className="w-6 h-6 text-primary" />
       </div>
 
       {/* Name */}
-      <h2 className="text-xl font-bold text-white mb-2">{name}</h2>
+      <h2 className="text-xl font-bold text-foreground mb-2">{name}</h2>
 
       {/* Description */}
-      <p className="text-sm text-slate-400 flex-1">{description}</p>
+      <p className="text-sm text-muted-foreground flex-1">{description}</p>
 
       {/* Status */}
       {!available && (
-        <span className="text-xs text-slate-500 mt-4">Coming Soon</span>
+        <span className="text-xs text-muted-foreground mt-4">Coming Soon</span>
       )}
 
       {available && (
-        <div className="flex items-center text-cyan-400 mt-4">
+        <div className="flex items-center text-primary mt-4">
           <span className="text-sm font-medium">Explore</span>
           <span className="ml-2">→</span>
         </div>

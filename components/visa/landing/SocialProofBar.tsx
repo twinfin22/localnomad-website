@@ -15,20 +15,20 @@ export function SocialProofBar({ className }: SocialProofBarProps) {
   return (
     <div className={className}>
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 py-6 text-sm text-slate-400">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 py-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-slate-300">{visaCount}</span>
+            <span className="font-semibold text-foreground">{visaCount}</span>
             <span>visa types covered</span>
           </div>
-          <div className="hidden sm:block w-px h-4 bg-slate-700" />
+          <div className="hidden sm:block w-px h-4 bg-border" />
           <div className="flex items-center gap-2">
             <span>Updated</span>
-            <span className="font-semibold text-slate-300">{formattedDate}</span>
+            <span className="font-semibold text-foreground">{formattedDate}</span>
           </div>
-          <div className="hidden sm:block w-px h-4 bg-slate-700" />
+          <div className="hidden sm:block w-px h-4 bg-border" />
           <div className="flex items-center gap-2">
             <span>Based on</span>
-            <span className="font-semibold text-slate-300">official requirements</span>
+            <span className="font-semibold text-foreground">official requirements</span>
           </div>
         </div>
       </div>
