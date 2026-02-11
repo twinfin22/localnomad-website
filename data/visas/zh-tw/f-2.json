@@ -6,14 +6,12 @@
   "description": "F-2簽證提供韓國長期居留身份，比就業簽證有更大的自由度。可透過多種子類別取得，包括積分制、配偶及投資者途徑。",
   "tagline": "長期居留，工作彈性",
   "keyRequirement": "積分制評估（80分以上）或與韓國公民的親屬關係",
-
   "targetAudience": [
     "尋求穩定性的長期居留者",
     "韓國公民或居民的配偶",
     "高收入專業人士（F-2-7）",
     "韓國企業的投資者"
   ],
-
   "eligibility": [
     {
       "id": "f2-7-points",
@@ -40,100 +38,116 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1-3年",
     "extension": "每次延期2-3年",
     "maxTotal": "無期限（可續簽）"
   },
-
   "fees": {
     "application": "₩60,000（約$42美元）",
     "extension": "₩60,000",
     "notes": "費用依子類別可能有所不同"
   },
-
   "incomeRequirement": {
     "amount": "依子類別而定",
     "currency": "KRW",
     "period": "annual",
     "notes": "F-2-7要求收入高於GNI平均值（約₩4,000-5,000萬/年）"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "有效護照",
       "description": "效期須涵蓋申請的停留期間",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "簽證申請表",
       "description": "已填妥的申請表",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "護照照片",
       "description": "3.5公分 x 4.5公分，近期拍攝，白色背景",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "arc",
       "name": "現有外國人登錄證",
       "description": "顯示有效簽證狀態的現有外國人登錄證",
-      "required": true
+      "required": true,
+      "nameKorean": "외국인등록증"
     },
     {
       "id": "points-checklist",
       "name": "積分計算表（F-2-7）",
       "description": "各類別積分的自我評估",
-      "tips": ["從出入境管理局下載官方表格", "誠實填寫——他們會核實所有項目"],
-      "required": false
+      "tips": [
+        "從出入境管理局下載官方表格",
+        "誠實填寫——他們會核實所有項目"
+      ],
+      "required": false,
+      "nameKorean": "점수계산표"
     },
     {
       "id": "degree-certificate",
       "name": "學位證書",
       "description": "用於計算教育積分",
-      "required": false
+      "required": false,
+      "nameKorean": "학위증명서"
     },
     {
       "id": "topik-certificate",
       "name": "TOPIK證書",
       "description": "用於計算韓語能力積分",
-      "tips": ["TOPIK等級越高 = 積分越多"],
-      "required": false
+      "tips": [
+        "TOPIK等級越高 = 積分越多"
+      ],
+      "required": false,
+      "nameKorean": "TOPIK 성적증명서"
     },
     {
       "id": "income-proof",
       "name": "所得稅文件",
       "description": "韓國稅務局的納稅證明",
-      "required": true
+      "required": true,
+      "nameKorean": "소득증명서"
     },
     {
       "id": "employment-proof",
       "name": "在職證明",
       "description": "雇主確認職位和薪資的信函",
-      "required": true
+      "required": true,
+      "nameKorean": "재직증명서"
     },
     {
       "id": "marriage-certificate",
       "name": "結婚證書（F-2-1）",
       "description": "經認證的婚姻登記證明",
-      "required": false
+      "required": false,
+      "nameKorean": "혼인관계증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "確認資格並計算積分",
       "description": "確定您符合哪個F-2子類別的資格。F-2-7請計算您的積分。",
-      "tips": ["使用官方積分計算器", "F-2-7需要80分以上"],
+      "tips": [
+        "使用官方積分計算器",
+        "F-2-7需要80分以上"
+      ],
       "links": [
-        {"label": "積分計算器", "url": "https://www.immigration.go.kr"}
+        {
+          "label": "積分計算器",
+          "url": "https://www.immigration.go.kr"
+        }
       ]
     },
     {
@@ -142,7 +156,10 @@
       "title": "收集佐證文件",
       "description": "收集所有證明您積分聲明或資格的文件。",
       "duration": "2-4週",
-      "tips": ["如有需要取得正式TOPIK證書", "向國稅廳索取稅務文件"]
+      "tips": [
+        "如有需要取得正式TOPIK證書",
+        "向國稅廳索取稅務文件"
+      ]
     },
     {
       "id": "step-3",
@@ -173,12 +190,10 @@
       "duration": "申請後2-4週"
     }
   ],
-
   "processingTime": {
     "typical": "2-4週",
     "notes": "如需面試或補件可能耗時較長"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -188,7 +203,6 @@
     ],
     "notes": "F-2比受僱傭綁定的簽證提供更大的工作彈性"
   },
-
   "faqs": [
     {
       "question": "什麼是F-2-7積分制？",
@@ -211,7 +225,6 @@
       "answer": "不同於E-7，失業不會影響您的F-2身份。您可以從容尋找新工作，無須擔心簽證問題。"
     }
   ],
-
   "tips": [
     "提早準備F-2-7——考TOPIK、累積工作經歷",
     "TOPIK 5-6級可獲得顯著的積分加成",
@@ -220,14 +233,14 @@
     "妥善保管所有稅務和僱傭紀錄",
     "考慮申請時機——部分積分類別有年齡限制"
   ],
-
   "warnings": [
     "積分必須可驗證——不要誇大",
     "維持持續居留——長期離境可能影響身份",
     "地址變更仍須向出入境管理局申報"
   ],
-
-  "relatedVisas": ["e-7"],
+  "relatedVisas": [
+    "e-7"
+  ],
   "pathsTo": [],
   "pathsFrom": [
     {
@@ -235,7 +248,14 @@
       "name": "專業就業簽證",
       "requirements": "F-2-7積分制取得80分以上。通常需要E-7三年以上、TOPIK 4級以上、收入高於GNI平均值等。",
       "timeline": "審查期間2至4週",
-      "documents": ["積分計算表", "TOPIK證書", "所得稅文件", "在職證明", "學位證書", "KIIP結業證書（如適用）"],
+      "documents": [
+        "積分計算表",
+        "TOPIK證書",
+        "所得稅文件",
+        "在職證明",
+        "學位證書",
+        "KIIP結業證書（如適用）"
+      ],
       "notes": "通往F-2最常見的途徑。提早累積積分：考TOPIK（5至6級有大幅加分）、維持高收入，並完成KIIP社會融合課程獲得額外積分。"
     },
     {
@@ -243,7 +263,13 @@
       "name": "企業派遣簽證",
       "requirements": "符合F-2-7積分要求（80分以上）。D-7在韓國的長期居留算入經驗積分。",
       "timeline": "審查期間2至4週",
-      "documents": ["積分計算表", "TOPIK證書", "所得稅文件", "在職證明", "學位證書"],
+      "documents": [
+        "積分計算表",
+        "TOPIK證書",
+        "所得稅文件",
+        "在職證明",
+        "學位證書"
+      ],
       "notes": "在韓國長期派遣的D-7持有者可累積足夠的F-2-7積分，特別是如果投資韓語能力。"
     },
     {
@@ -251,7 +277,12 @@
       "name": "企業投資簽證",
       "requirements": "符合F-2-99投資標準或F-2-7積分制（80分以上）。企業須營運中且有盈利。",
       "timeline": "審查期間2至4週",
-      "documents": ["營業登記證", "納稅證明", "投資證明", "積分計算表（F-2-7途徑）"],
+      "documents": [
+        "營業登記證",
+        "納稅證明",
+        "投資證明",
+        "積分計算表（F-2-7途徑）"
+      ],
       "notes": "D-8持有者可通過投資途徑（F-2-99）或標準積分制（F-2-7）取得資格。成功的商業運營將加強您的申請。"
     },
     {
@@ -259,7 +290,11 @@
       "name": "海外同胞簽證",
       "requirements": "以韓國血統身份加上子類別相關的額外條件符合F-2資格。",
       "timeline": "審查期間2至4週",
-      "documents": ["韓國血統證明", "現有F-4外國人登錄證", "積分計算表或關係文件"],
+      "documents": [
+        "韓國血統證明",
+        "現有F-4外國人登錄證",
+        "積分計算表或關係文件"
+      ],
       "notes": "F-4持有者可能為了更穩定的身份或作為F-5永久居留的跳板而轉換至F-2。"
     },
     {
@@ -267,15 +302,28 @@
       "name": "結婚移民簽證",
       "requirements": "符合F-2資格。與韓國公民結婚的F-6持有者可通過婚姻相關子類別取得資格。",
       "timeline": "審查期間2至4週",
-      "documents": ["結婚證書", "配偶身分證", "現有F-6外國人登錄證", "收入證明"],
+      "documents": [
+        "結婚證書",
+        "配偶身分證",
+        "現有F-6外國人登錄證",
+        "收入證明"
+      ],
       "notes": "F-6持有者可能為了更大的自主性而轉換至F-2，特別是在韓國長期居住之後。"
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "F-2-7積分資訊", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "HiKorea", "url": "https://www.hikorea.go.kr"},
-    {"label": "KIIP課程", "url": "https://www.socinet.go.kr"}
+    {
+      "label": "F-2-7積分資訊",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "KIIP課程",
+      "url": "https://www.socinet.go.kr"
+    }
   ]
 }

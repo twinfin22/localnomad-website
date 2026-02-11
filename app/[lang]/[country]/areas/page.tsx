@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { SeoulNeighborhoodMap } from "@/components/SeoulNeighborhoodMap";
 import { MapPin, FileSearch, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getTranslations } from "next-intl/server";
 import {
   locales,
   countries,
@@ -38,15 +39,17 @@ export async function generateMetadata({ params }: AreasPageProps) {
   const { lang, country } = await params;
   const locale = lang as Locale;
   const countryName = countryNames[country as Country][locale];
+  const t = await getTranslations({ locale: lang, namespace: "areas" });
 
   return {
-    title: `Area Guide | LocalNomad`,
-    description: `Explore ${countryName} neighborhoods and find your perfect home base. Interactive maps and local insights.`,
+    title: t("metaTitle"),
+    description: t("metaDescription", { country: countryName }),
   };
 }
 
 export default async function AreasPage({ params }: AreasPageProps) {
   const { lang, country } = await params;
+  const t = await getTranslations({ locale: lang, namespace: "areas" });
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -58,9 +61,9 @@ export default async function AreasPage({ params }: AreasPageProps) {
             <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 mx-auto">
               <MapPin className="w-8 h-8 text-accent" />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Area Guide</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4">{t("pageTitle")}</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore Seoul neighborhoods and find your perfect home base
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -77,16 +80,15 @@ export default async function AreasPage({ params }: AreasPageProps) {
               <FileSearch className="w-8 h-8 text-primary" />
             </div>
             <h2 className="text-3xl font-bold mb-4">
-              Need a Custom Housing Report?
+              {t("customReportTitle")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              Tell us your requirements and we&apos;ll research the best options
-              for you. Get a personalized report delivered within 48 hours.
+              {t("customReportDesc")}
             </p>
 
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
               <Clock className="w-4 h-4" />
-              <span>48-hour turnaround</span>
+              <span>{t("turnaround")}</span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -100,12 +102,12 @@ export default async function AreasPage({ params }: AreasPageProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Request Custom Report
+                  {t("requestReport")}
                 </a>
               </Button>
               <div className="text-sm text-muted-foreground self-center">
-                Starting at{" "}
-                <span className="font-semibold text-foreground">$99</span>
+                {t("startingAt")}{" "}
+                <span className="font-semibold text-foreground">{t("startingPrice")}</span>
               </div>
             </div>
           </div>

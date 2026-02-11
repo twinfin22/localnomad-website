@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -10,6 +11,7 @@ import {
   RefreshCw,
   Bookmark,
 } from 'lucide-react';
+import { parseLocalePath, buildLocalePath } from '@/lib/i18n/config';
 import type { VisaRecommendation, MatchLevel } from '@/lib/visa/types';
 import { VisaPathInline } from './VisaPathMap';
 import { QuizDisclaimer } from '@/components/visa/LegalDisclaimer';
@@ -58,6 +60,10 @@ export function QuizResults({
   onRetakeQuiz,
   onSaveResults,
 }: QuizResultsProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
   const topRecommendation = recommendations[0];
   const otherRecommendations = recommendations.slice(1, 4);
 
@@ -82,6 +88,7 @@ export function QuizResults({
           <RecommendationCard
             recommendation={topRecommendation}
             isTopPick
+            localePath={localePath}
           />
         </div>
       )}
@@ -97,6 +104,7 @@ export function QuizResults({
               <RecommendationCard
                 key={rec.visaType}
                 recommendation={rec}
+                localePath={localePath}
               />
             ))}
           </div>
@@ -106,7 +114,7 @@ export function QuizResults({
       {/* Actions */}
       <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
         {topRecommendation && (
-          <Link href={`/visa/${topRecommendation.visaType}`}>
+          <Link href={localePath(`/visa/${topRecommendation.visaType}`)}>
             <Button
               size="lg"
               className="bg-primary hover:bg-accent-hover text-background font-medium px-6 w-full sm:w-auto"
@@ -149,11 +157,13 @@ export function QuizResults({
 interface RecommendationCardProps {
   recommendation: VisaRecommendation;
   isTopPick?: boolean;
+  localePath: (path: string) => string;
 }
 
 function RecommendationCard({
   recommendation,
   isTopPick = false,
+  localePath,
 }: RecommendationCardProps) {
   const config = MATCH_LEVEL_CONFIG[recommendation.matchLevel];
   const visaName = VISA_NAMES[recommendation.visaType] || recommendation.visaType;
@@ -187,7 +197,7 @@ function RecommendationCard({
         </div>
 
         {/* View button */}
-        <Link href={`/visa/${recommendation.visaType}`}>
+        <Link href={localePath(`/visa/${recommendation.visaType}`)}>
           <Button
             variant="ghost"
             size="sm"

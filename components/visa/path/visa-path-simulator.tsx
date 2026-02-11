@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -74,6 +75,7 @@ export function VisaPathSimulator({
 }: VisaPathSimulatorProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const t = useTranslations("pathSimulator");
 
   const [currentStep, setCurrentStep] =
     useState<SimulatorStep>("select-start");
@@ -211,29 +213,28 @@ export function VisaPathSimulator({
         <div className="flex items-start gap-3">
           <AlertTriangle className="w-4 h-4 text-warning mt-0.5 flex-shrink-0" />
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Paths shown are general information based on published
-            requirements. Actual transitions depend on individual circumstances
-            and immigration officer discretion. Always verify current
-            requirements with the{" "}
-            <a
-              href="https://www.immigration.go.kr/immigration_eng/index.do"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline hover:text-accent-hover"
-            >
-              Korea Immigration Service
-            </a>
-            .
+            {t.rich("disclaimer", {
+              link: (chunks) => (
+                <a
+                  href="https://www.immigration.go.kr/immigration_eng/index.do"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline hover:text-accent-hover"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
           </p>
         </div>
       </div>
 
       {/* Progress indicator */}
-      <ProgressBar currentStep={currentStep} />
+      <ProgressBar currentStep={currentStep} t={t} />
 
       {/* Step 1: Select starting visa */}
       {currentStep === "select-start" && (
-        <StartingPointSelector onSelect={handleStartSelect} />
+        <StartingPointSelector onSelect={handleStartSelect} t={t} />
       )}
 
       {/* Step 2: Select destination */}
@@ -243,6 +244,7 @@ export function VisaPathSimulator({
           destinations={destinations}
           onSelect={handleDestinationSelect}
           onBack={handleBack}
+          t={t}
         />
       )}
 
@@ -255,6 +257,7 @@ export function VisaPathSimulator({
           onBack={handleBack}
           onReset={handleReset}
           buildHref={buildHref}
+          t={t}
         />
       )}
     </div>
@@ -265,11 +268,13 @@ export function VisaPathSimulator({
 // Progress Bar
 // =============================================================================
 
-function ProgressBar({ currentStep }: { currentStep: SimulatorStep }) {
+type TranslationFn = ReturnType<typeof useTranslations>;
+
+function ProgressBar({ currentStep, t }: { currentStep: SimulatorStep; t: TranslationFn }) {
   const steps = [
-    { key: "select-start", label: "Your Visa" },
-    { key: "select-destination", label: "Destination" },
-    { key: "view-path", label: "Path" },
+    { key: "select-start", label: t("stepYourVisa") },
+    { key: "select-destination", label: t("stepDestination") },
+    { key: "view-path", label: t("stepPath") },
   ] as const;
 
   const currentIndex = steps.findIndex((s) => s.key === currentStep);
@@ -326,8 +331,10 @@ function ProgressBar({ currentStep }: { currentStep: SimulatorStep }) {
 
 function StartingPointSelector({
   onSelect,
+  t,
 }: {
   onSelect: (value: string) => void;
+  t: TranslationFn;
 }) {
   return (
     <div>
@@ -336,10 +343,10 @@ function StartingPointSelector({
           <Route className="w-7 h-7 text-primary" />
         </div>
         <h2 className="text-2xl font-bold text-foreground mb-2">
-          What&apos;s your current visa?
+          {t("currentVisaTitle")}
         </h2>
         <p className="text-muted-foreground">
-          Select your current visa status to see where you can go from here.
+          {t("currentVisaDesc")}
         </p>
       </div>
 
@@ -347,7 +354,7 @@ function StartingPointSelector({
       <div className="sm:hidden mb-4">
         <Select onValueChange={onSelect}>
           <SelectTrigger className="w-full h-12 bg-surface border-border text-foreground">
-            <SelectValue placeholder="Select your current visa..." />
+            <SelectValue placeholder={t("selectPlaceholder")} />
           </SelectTrigger>
           <SelectContent>
             {STARTING_POINTS.map((sp) => (
@@ -404,11 +411,13 @@ function DestinationSelector({
   destinations,
   onSelect,
   onBack,
+  t,
 }: {
   selectedStart: VisaType | "none";
   destinations: { visaType: VisaType; visaName: string; pathCount: number }[];
   onSelect: (visaType: VisaType) => void;
   onBack: () => void;
+  t: TranslationFn;
 }) {
   const startInfo = VISA_DISPLAY_INFO[selectedStart];
 
@@ -421,7 +430,7 @@ function DestinationSelector({
         className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4 mr-2" />
-        Change starting visa
+        {t("changeStartingVisa")}
       </button>
 
       {/* Current visa context */}
@@ -433,11 +442,11 @@ function DestinationSelector({
             </div>
             <div>
               <div className="text-xs text-muted-foreground">
-                Starting from
+                {t("startingFrom")}
               </div>
               <div className="font-semibold text-foreground">
                 {selectedStart === "none"
-                  ? "No Visa / Tourist"
+                  ? t("noVisaTourist")
                   : `${selectedStart.toUpperCase()} - ${startInfo.name}`}
               </div>
             </div>
@@ -447,24 +456,23 @@ function DestinationSelector({
 
       <div className="text-center mb-6">
         <h2 className="text-xl font-bold text-foreground mb-2">
-          Where do you want to go?
+          {t("destinationTitle")}
         </h2>
         <p className="text-sm text-muted-foreground">
           {destinations.length > 0
             ? `${destinations.length} visa destination${destinations.length !== 1 ? "s" : ""} reachable from your current status`
-            : "No known transition paths from this visa type yet"}
+            : t("noPathsYet")}
         </p>
       </div>
 
       {destinations.length === 0 ? (
         <Card className="p-8 text-center">
           <p className="text-muted-foreground mb-4">
-            We don&apos;t have transition paths from this visa type yet. The
-            path database is continuously expanding.
+            {t("noPathsDesc")}
           </p>
           <Button variant="secondary" onClick={onBack}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Try a different starting point
+            {t("tryDifferent")}
           </Button>
         </Card>
       ) : (
@@ -502,7 +510,7 @@ function DestinationSelector({
                           {info.shortDescription}
                           {dest.pathCount > 1 && (
                             <span className="ml-2 text-primary">
-                              ({dest.pathCount} paths available)
+                              {t("pathsAvailable", { count: dest.pathCount })}
                             </span>
                           )}
                         </div>
@@ -531,6 +539,7 @@ function PathViewer({
   onBack,
   onReset,
   buildHref,
+  t,
 }: {
   path: SimulatorPath;
   alternativePaths: SimulatorPath[];
@@ -538,6 +547,7 @@ function PathViewer({
   onBack: () => void;
   onReset: () => void;
   buildHref: (path: string) => string;
+  t: TranslationFn;
 }) {
   const difficulty = getDifficultyDisplay(path.difficulty);
   const lastStep = path.steps[path.steps.length - 1];
@@ -552,7 +562,7 @@ function PathViewer({
         className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4 mr-2" />
-        Choose a different destination
+        {t("chooseDifferentDest")}
       </button>
 
       {/* Path header */}
@@ -594,7 +604,7 @@ function PathViewer({
           {path.suitableFor.length > 0 && (
             <div className="mt-4 pt-4 border-t border-primary/10">
               <div className="text-xs text-muted-foreground mb-2">
-                Best suited for:
+                {t("bestSuitedFor")}
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {path.suitableFor.map((audience) => (
@@ -612,7 +622,7 @@ function PathViewer({
       {alternativePaths.length > 1 && (
         <div className="mb-6">
           <div className="text-sm text-muted-foreground mb-2">
-            {alternativePaths.length} paths available to this destination:
+            {t("pathsAvailableLabel", { count: alternativePaths.length })}
           </div>
           <div className="flex flex-wrap gap-2">
             {alternativePaths.map((altPath) => (
@@ -651,8 +661,7 @@ function PathViewer({
           <Link href={buildHref(`/visa/checklist/${targetVisaType}`)}>
             <Button className="w-full" size="cta">
               <FileText className="w-5 h-5 mr-2" />
-              Start this path — View {targetVisaType.toUpperCase()} document
-              checklist
+              {t("startPath", { visa: targetVisaType.toUpperCase() })}
             </Button>
           </Link>
         )}
@@ -661,7 +670,7 @@ function PathViewer({
         {targetVisaType && (
           <Link href={buildHref(`/visa/${targetVisaType}`)}>
             <Button variant="secondary" className="w-full" size="lg">
-              Learn more about {targetVisaType.toUpperCase()}
+              {t("learnMoreAbout", { visa: targetVisaType.toUpperCase() })}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
@@ -674,7 +683,7 @@ function PathViewer({
           size="sm"
           onClick={onReset}
         >
-          Start over with a different visa
+          {t("startOver")}
         </Button>
       </div>
     </div>

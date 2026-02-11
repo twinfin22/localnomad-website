@@ -290,13 +290,13 @@ export function DocumentChecklist() {
                 "REQUIRED DOCUMENTS:",
                 ...requiredDocs.map(
                   (d) =>
-                    `[${checkedItems[d.id] ? "X" : " "}] ${d.name}`
+                    `[${checkedItems[d.id] ? "X" : " "}] ${d.name}${d.nameKorean ? ` (${d.nameKorean})` : ""}`
                 ),
                 "",
                 "OPTIONAL DOCUMENTS:",
                 ...optionalDocs.map(
                   (d) =>
-                    `[${checkedItems[d.id] ? "X" : " "}] ${d.name}`
+                    `[${checkedItems[d.id] ? "X" : " "}] ${d.name}${d.nameKorean ? ` (${d.nameKorean})` : ""}`
                 ),
               ];
 
@@ -367,6 +367,11 @@ function DocumentItem({
                 )}
               >
                 {doc.name}
+                {doc.nameKorean && (
+                  <span className="text-muted-foreground text-sm font-normal ml-1">
+                    ({doc.nameKorean})
+                  </span>
+                )}
               </h4>
               <p className="text-sm text-muted-foreground mt-1">
                 {doc.description}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import {
   ArrowLeft,
   Settings,
@@ -20,6 +20,7 @@ import { getVisaInfo } from '@/lib/visa/data';
 import { HealthScoreCard } from './HealthScoreCard';
 import { DDayPanel } from './DDayPanel';
 import { NextActionCard } from './NextActionCard';
+import { parseLocalePath, buildLocalePath } from '@/lib/i18n/config';
 import type { VisaInfo, VisaState, VisaType } from '@/lib/visa/types';
 import type { HealthScoreFactors } from '@/lib/visa/health-score';
 
@@ -43,7 +44,7 @@ interface ChecklistItem {
 // Empty State (No Progress)
 // =============================================================================
 
-function EmptyState() {
+function EmptyState({ localePath }: { localePath: (path: string) => string }) {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <div className="text-center mb-8">
@@ -60,13 +61,13 @@ function EmptyState() {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <Link href="/visa/find">
+        <Link href={localePath("/visa/find")}>
           <Button className="bg-primary hover:bg-accent-hover text-background font-semibold px-8 py-6 text-lg">
             <FileText className="w-5 h-5 mr-2" />
             Find My Visa
           </Button>
         </Link>
-        <Link href="/visa">
+        <Link href={localePath("/visa")}>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground px-8 py-6 text-lg"
@@ -78,7 +79,7 @@ function EmptyState() {
 
       {/* Quick Access Cards */}
       <div className="grid sm:grid-cols-2 gap-4">
-        <Link href="/visa/e-7" className="vk-card vk-card-hover p-6 group">
+        <Link href={localePath("/visa/e-7")} className="vk-card vk-card-hover p-6 group">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-xl font-bold text-primary">E-7</span>
@@ -91,7 +92,7 @@ function EmptyState() {
             </div>
           </div>
         </Link>
-        <Link href="/visa/f-1-d" className="vk-card vk-card-hover p-6 group">
+        <Link href={localePath("/visa/f-1-d")} className="vk-card vk-card-hover p-6 group">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-xl font-bold text-emerald-400">F-1-D</span>
@@ -118,9 +119,10 @@ interface ActiveDashboardProps {
   visa: VisaInfo | null;
   checklist: ChecklistItem[];
   onSignOut: () => void;
+  localePath: (path: string) => string;
 }
 
-function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardProps) {
+function ActiveDashboard({ data, visa, checklist, onSignOut, localePath }: ActiveDashboardProps) {
   const totalDocs = visa?.documents?.length || 0;
   const completedDocs = checklist.filter((item) => item.completed).length;
 
@@ -143,7 +145,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/visa">
+          <Link href={localePath("/visa")}>
             <Button
               variant="ghost"
               size="icon"
@@ -230,7 +232,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
 
             {totalDocs > 0 && completedDocs < totalDocs && (
               <Link
-                href={`/visa/checklist/${data.visaType}`}
+                href={localePath(`/visa/checklist/${data.visaType}`)}
                 className="block text-sm text-primary hover:text-accent-hover"
               >
                 {totalDocs - completedDocs} document
@@ -285,7 +287,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
 
       {/* Quick Actions */}
       <div className="flex flex-wrap gap-4 justify-center pt-4">
-        <Link href={`/visa/${data.visaType}`}>
+        <Link href={localePath(`/visa/${data.visaType}`)}>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
@@ -293,7 +295,7 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
             View Visa Details
           </Button>
         </Link>
-        <Link href={`/visa/checklist/${data.visaType}`}>
+        <Link href={localePath(`/visa/checklist/${data.visaType}`)}>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
@@ -351,6 +353,10 @@ function formatDate(dateString: string): string {
 export function DashboardClient() {
   const { user, loading: authLoading, signOut } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [checklist, setChecklist] = useState<ChecklistItem[]>([]);
   const [visa, setVisa] = useState<VisaInfo | null>(null);
@@ -433,7 +439,7 @@ export function DashboardClient() {
         }
       }
     } catch (error) {
-      console.error('Error fetching dashboard data:', error);
+      console.error('Error fetching dashboard data');
     } finally {
       setLoading(false);
     }
@@ -447,7 +453,7 @@ export function DashboardClient() {
 
   const handleSignOut = async () => {
     await signOut();
-    router.push('/');
+    router.push(localePath('/'));
   };
 
   // Loading state
@@ -481,12 +487,12 @@ export function DashboardClient() {
             Create an account to track your visa progress
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/login">
+            <Link href={localePath("/auth/login")}>
               <Button className="bg-primary hover:bg-accent-hover text-background">
                 Sign In
               </Button>
             </Link>
-            <Link href="/auth/signup">
+            <Link href={localePath("/auth/signup")}>
               <Button variant="outline" className="border-border text-muted-foreground">
                 Create Account
               </Button>
@@ -505,9 +511,10 @@ export function DashboardClient() {
           visa={visa}
           checklist={checklist}
           onSignOut={handleSignOut}
+          localePath={localePath}
         />
       ) : (
-        <EmptyState />
+        <EmptyState localePath={localePath} />
       )}
     </main>
   );

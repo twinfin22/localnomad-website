@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
@@ -20,6 +21,7 @@ import {
   Flag,
   BookOpen,
 } from 'lucide-react';
+import { parseLocalePath, buildLocalePath } from '@/lib/i18n/config';
 import type { VisaInfo } from '@/lib/visa/types';
 import { ChecklistProgress } from './ChecklistProgress';
 import { ChecklistItem } from './ChecklistItem';
@@ -45,6 +47,10 @@ const categoryIcons = {
 const STORAGE_KEY_PREFIX = 'visa-checklist-';
 
 export function ChecklistPage({ visa }: ChecklistPageProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const [mounted, setMounted] = useState(false);
 
@@ -84,7 +90,10 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
     const requiredDocs = visa.documents.filter((d) => d.required);
     const optionalDocs = visa.documents.filter((d) => !d.required);
 
-    let content = `${visa.name} - Document Checklist\n`;
+    let content = `DISCLAIMER: This checklist is for personal reference only and does not\n`;
+    content += `constitute legal advice. Verify all requirements with Korean immigration\n`;
+    content += `authorities (immigration.go.kr) before applying.\n\n`;
+    content += `${visa.name} - Document Checklist\n`;
     content += `${'='.repeat(50)}\n\n`;
 
     content += `REQUIRED DOCUMENTS\n`;
@@ -135,7 +144,7 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
           <AnimatedSection>
             {/* Breadcrumb */}
             <Link
-              href={`/visa/${visa.type}`}
+              href={localePath(`/visa/${visa.type}`)}
               className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />

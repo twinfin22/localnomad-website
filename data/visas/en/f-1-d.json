@@ -6,14 +6,12 @@
   "description": "Korea's Digital Nomad Visa allows remote workers employed by foreign companies to live and work in Korea. Also known as the 'Workcation' visa, it's designed for location-independent professionals.",
   "tagline": "Work remotely, live in Korea",
   "keyRequirement": "Remote employment with foreign company + income ≥ GNI×2 (~₩88M/year)",
-
   "targetAudience": [
     "Remote workers employed by foreign companies",
     "Freelancers with international clients",
     "Entrepreneurs running foreign-based businesses",
     "Digital professionals working across time zones"
   ],
-
   "eligibility": [
     {
       "id": "remote-work",
@@ -40,89 +38,109 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1 year",
     "extension": "1 additional year",
     "maxTotal": "2 years"
   },
-
   "fees": {
     "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000",
     "notes": "Additional fees may apply at embassy"
   },
-
   "incomeRequirement": {
     "amount": "66,000",
     "currency": "USD",
     "period": "annual",
     "notes": "As of 2025. This is approximately ₩88 million/year (GNI × 2). Updated annually. Proof required for previous 6-12 months."
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "Valid Passport",
       "description": "Must be valid for at least 6 months beyond intended stay",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed application form",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, recent, white background",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "employment-proof",
       "name": "Proof of Remote Employment",
       "description": "Employment contract or letter from employer confirming remote work arrangement",
-      "tips": ["Letter should state you work remotely", "Include job title and employment duration"],
-      "required": true
+      "tips": [
+        "Letter should state you work remotely",
+        "Include job title and employment duration"
+      ],
+      "required": true,
+      "nameKorean": "재직증명서"
     },
     {
       "id": "income-proof",
       "name": "Income Documentation",
       "description": "Bank statements, tax returns, or pay stubs showing ~$66,000+ annual income",
-      "tips": ["Show 6-12 months of income history", "Include tax documents if available"],
-      "required": true
+      "tips": [
+        "Show 6-12 months of income history",
+        "Include tax documents if available"
+      ],
+      "required": true,
+      "nameKorean": "소득증명서"
     },
     {
       "id": "health-insurance",
       "name": "Health Insurance Certificate",
       "description": "Proof of health insurance valid in Korea",
-      "tips": ["Coverage must include Korea", "SafetyWing, Cigna Global, and similar accepted"],
-      "required": true
+      "tips": [
+        "Coverage must include Korea",
+        "SafetyWing, Cigna Global, and similar accepted"
+      ],
+      "required": true,
+      "nameKorean": "보험증서"
     },
     {
       "id": "background-check",
       "name": "Criminal Background Check",
       "description": "Police clearance certificate from your home country",
-      "tips": ["Must be recent (within 6 months)", "May need apostille"],
-      "required": true
+      "tips": [
+        "Must be recent (within 6 months)",
+        "May need apostille"
+      ],
+      "required": true,
+      "nameKorean": "범죄경력증명서"
     },
     {
       "id": "accommodation",
       "name": "Proof of Accommodation",
       "description": "Hotel booking, lease agreement, or Airbnb reservation",
-      "tips": ["At least first 2 weeks of accommodation"],
-      "required": false
+      "tips": [
+        "At least first 2 weeks of accommodation"
+      ],
+      "required": false,
+      "nameKorean": "거주증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "Check Eligibility",
       "description": "Verify you meet income requirement (~$66,000+) and have remote work arrangement.",
-      "tips": ["Calculate your annual income carefully", "Gather 6-12 months of income proof"]
+      "tips": [
+        "Calculate your annual income carefully",
+        "Gather 6-12 months of income proof"
+      ]
     },
     {
       "id": "step-2",
@@ -130,7 +148,10 @@
       "title": "Prepare Documents",
       "description": "Collect all required documents. Get employer letter and income proof.",
       "duration": "1-2 weeks",
-      "tips": ["Get background check apostilled", "Ensure health insurance covers Korea"]
+      "tips": [
+        "Get background check apostilled",
+        "Ensure health insurance covers Korea"
+      ]
     },
     {
       "id": "step-3",
@@ -138,7 +159,10 @@
       "title": "Apply at Korean Embassy",
       "description": "Submit application at Korean embassy/consulate in your country.",
       "duration": "1 day",
-      "tips": ["Book appointment in advance", "Some embassies accept mail applications"]
+      "tips": [
+        "Book appointment in advance",
+        "Some embassies accept mail applications"
+      ]
     },
     {
       "id": "step-4",
@@ -162,12 +186,10 @@
       "duration": "1-2 weeks"
     }
   ],
-
   "processingTime": {
     "typical": "1-3 weeks",
     "notes": "Varies by embassy and nationality. Apply well before travel date."
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -177,7 +199,6 @@
     ],
     "notes": "This visa is specifically for remote work. Working for Korean clients requires different visa."
   },
-
   "faqs": [
     {
       "question": "What counts as 'remote work' for this visa?",
@@ -204,7 +225,6 @@
       "answer": "The maximum stay on F-1-D is 2 years. After that, you'd need to leave Korea or qualify for a different visa type."
     }
   ],
-
   "tips": [
     "Apply well in advance - processing times vary by embassy",
     "Keep detailed income records - you'll need them for extension",
@@ -213,22 +233,29 @@
     "Join digital nomad communities in Seoul for networking",
     "Popular areas: Gangnam (business), Itaewon (international), Hongdae (creative)"
   ],
-
   "warnings": [
     "Income requirement is strict — approximately ₩88M (~$66K) based on GNI × 2",
     "Working for Korean companies is a visa violation",
     "Must maintain valid health insurance throughout stay",
     "Maximum 2-year stay - plan accordingly"
   ],
-
-  "relatedVisas": ["e-7", "d-10", "d-8"],
+  "relatedVisas": [
+    "e-7",
+    "d-10",
+    "d-8"
+  ],
   "pathsTo": [
     {
       "type": "e-7",
       "name": "Professional Employment Visa",
       "requirements": "Secure a job offer from a Korean company. Must meet E-7 qualifications (bachelor's degree or 5+ years experience).",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "For digital nomads who find local Korean employment. This means giving up remote work for foreign companies — a major lifestyle change. Korean employers must sponsor your visa."
     },
     {
@@ -236,7 +263,12 @@
       "name": "Corporate Investment Visa",
       "requirements": "Register a business in Korea with minimum investment of ~₩100,000,000 (~$75,000 USD). Must demonstrate viable business operations.",
       "timeline": "4-8 weeks processing",
-      "documents": ["Business registration certificate", "Investment proof (bank transfer records)", "Business plan", "Office lease agreement"],
+      "documents": [
+        "Business registration certificate",
+        "Investment proof (bank transfer records)",
+        "Business plan",
+        "Office lease agreement"
+      ],
       "notes": "For digital nomads who want to establish a Korean business entity. The investment threshold is significant. Some nomads transition by incorporating their existing remote business in Korea."
     },
     {
@@ -244,7 +276,12 @@
       "name": "Job Seeking Visa",
       "requirements": "Must have bachelor's degree or higher. Apply before F-1-D expires (max 2 years).",
       "timeline": "2-4 weeks processing",
-      "documents": ["Degree certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "documents": [
+        "Degree certificate",
+        "Job search plan",
+        "Bank statement",
+        "Resume/CV"
+      ],
       "notes": "A bridge option if your F-1-D is expiring and you want to stay in Korea to find local employment. D-10 gives you up to 2 years to job search."
     }
   ],
@@ -254,15 +291,28 @@
       "name": "Job Seeking Visa",
       "requirements": "Remote employment with a foreign company and annual income of ~$66,000+ USD (GNI x 2). Must have health insurance covering Korea.",
       "timeline": "1-3 weeks processing",
-      "documents": ["Proof of remote employment", "Income documentation (6-12 months)", "Health insurance certificate", "Criminal background check"],
+      "documents": [
+        "Proof of remote employment",
+        "Income documentation (6-12 months)",
+        "Health insurance certificate",
+        "Criminal background check"
+      ],
       "notes": "For D-10 holders who find remote work with foreign companies. The income requirement is strict (~₩88M/year). This is an alternative to seeking Korean employment."
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "Digital Nomad Visa Info", "url": "https://www.visa.go.kr"},
-    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"}
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "Digital Nomad Visa Info",
+      "url": "https://www.visa.go.kr"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    }
   ]
 }

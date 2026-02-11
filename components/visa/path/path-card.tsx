@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -34,6 +35,7 @@ export function PathCard({
   detailHref,
 }: PathCardProps) {
   const [isExpanded, setIsExpanded] = useState(isFirst);
+  const t = useTranslations("pathSimulator");
 
   return (
     <div className="relative">
@@ -133,12 +135,12 @@ export function PathCard({
               <div>
                 <h5 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  Requirements
+                  {t("requirements")}
                 </h5>
                 <ul className="space-y-1.5">
-                  {step.requirements.map((req, i) => (
+                  {step.requirements.map((req) => (
                     <li
-                      key={i}
+                      key={req}
                       className="flex items-start gap-2 text-sm text-muted-foreground"
                     >
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
@@ -154,12 +156,12 @@ export function PathCard({
               <div>
                 <h5 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2.5">
                   <Lightbulb className="w-4 h-4 text-warning" />
-                  Tips
+                  {t("tips")}
                 </h5>
                 <ul className="space-y-1.5">
-                  {step.tips.map((tip, i) => (
+                  {step.tips.map((tip) => (
                     <li
-                      key={i}
+                      key={tip}
                       className="flex items-start gap-2 text-sm text-muted-foreground"
                     >
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-warning/50 flex-shrink-0" />
@@ -175,12 +177,12 @@ export function PathCard({
               <div>
                 <h5 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2.5">
                   <AlertTriangle className="w-4 h-4 text-error" />
-                  Common Pitfalls
+                  {t("commonPitfalls")}
                 </h5>
                 <ul className="space-y-1.5">
-                  {step.pitfalls.map((pitfall, i) => (
+                  {step.pitfalls.map((pitfall) => (
                     <li
-                      key={i}
+                      key={pitfall}
                       className="flex items-start gap-2 text-sm text-muted-foreground"
                     >
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-error/50 flex-shrink-0" />
@@ -194,7 +196,7 @@ export function PathCard({
             {/* Footer: step indicator + detail link */}
             <div className="flex items-center justify-between pt-2 border-t border-border">
               <span className="text-xs text-muted-foreground">
-                Step {stepNumber} of {totalSteps}
+                {t("stepOf", { current: stepNumber, total: totalSteps })}
               </span>
               {detailHref && (
                 <Link
@@ -202,7 +204,7 @@ export function PathCard({
                   onClick={(e) => e.stopPropagation()}
                   className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-accent-hover transition-colors"
                 >
-                  View full {step.visaType.toUpperCase()} guide
+                  {t("viewFullGuide", { visa: step.visaType.toUpperCase() })}
                   <ExternalLink className="w-3 h-3" />
                 </Link>
               )}

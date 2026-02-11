@@ -6,7 +6,6 @@
   "description": "H-1打工度假簽證允許來自合作國家的18-30歲年輕人在韓國生活、工作和旅行最長一年。此簽證旨在促進文化交流和短期工作體驗，結合旅遊機會與賺取收入。",
   "tagline": "工作、旅行，體驗韓國一整年",
   "keyRequirement": "符合資格國家的公民 + 年齡18-30歲",
-
   "targetAudience": [
     "尋求文化沉浸的年輕旅者（18-30歲）",
     "學業間隙年的學生",
@@ -14,7 +13,6 @@
     "希望體驗韓國生活的文化探索者",
     "邊旅行邊工作的背包客"
   ],
-
   "eligibility": [
     {
       "id": "age",
@@ -65,37 +63,37 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1年",
     "extension": "不可延期",
     "maxTotal": "1年（不可續簽）"
   },
-
   "fees": {
     "application": "₩60,000（約$42美元）",
     "notes": "費用依國家和大使館而異。部分國家有互惠免費協議。"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "有效護照",
       "description": "效期須自申請日起至少18個月",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "簽證申請表",
       "description": "韓國大使館／領事館的簽證申請表",
       "where_to_get": "從您當地韓國大使館網站下載或於大使館索取",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "護照照片",
       "description": "3.5公分 x 4.5公分，6個月內拍攝，白色背景",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "activity-plan",
@@ -110,7 +108,8 @@
         "平衡工作意向（教英文、在旅館工作、滑雪場）與文化探索",
         "至少寫1-2頁，如有可能列出逐月計畫"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "활동계획서"
     },
     {
       "id": "bank-statement",
@@ -121,7 +120,8 @@
         "須為近期開立（1個月內）",
         "應顯示穩定餘額，而非近期大筆存入"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "잔고증명서"
     },
     {
       "id": "health-insurance",
@@ -133,7 +133,8 @@
         "部分大使館要求最低保額（請洽詢您的大使館）",
         "抵達後可考慮加入韓國國民健康保險以獲得額外保障"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "보험증서"
     },
     {
       "id": "residence-proof",
@@ -147,7 +148,8 @@
         "表格須包含房東簽名、地址、電話號碼及住宿期間",
         "部分大使館接受前幾週的飯店預訂作為替代"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "숙소제공확인서"
     },
     {
       "id": "round-trip-ticket",
@@ -158,7 +160,8 @@
         "預訂確認通常即可（不需要已全額付款）",
         "請確認您的大使館具體要求"
       ],
-      "required": false
+      "required": false,
+      "nameKorean": "왕복항공권예약확인서"
     },
     {
       "id": "cv-resume",
@@ -168,7 +171,8 @@
         "保持簡潔（1-2頁）",
         "包含任何相關經驗：教學、接待服務、語言能力"
       ],
-      "required": false
+      "required": false,
+      "nameKorean": "이력서"
     },
     {
       "id": "criminal-check",
@@ -180,10 +184,10 @@
         "部分大使館不要求此文件——請洽詢您當地大使館"
       ],
       "processing_time": "依國家而異2-8週",
-      "required": false
+      "required": false,
+      "nameKorean": "범죄경력증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
@@ -275,16 +279,17 @@
         "開設銀行帳戶和手機方案需要外國人登錄證"
       ],
       "links": [
-        {"label": "HiKorea", "url": "https://www.hikorea.go.kr"}
+        {
+          "label": "HiKorea",
+          "url": "https://www.hikorea.go.kr"
+        }
       ]
     }
   ],
-
   "processingTime": {
     "typical": "2-4週",
     "notes": "審查期間依大使館和季節而異。夏季申請因申請量大可能耗時較長。"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -296,7 +301,6 @@
     ],
     "notes": "抵達並登錄後，可至當地出入境管理事務所申請全職工作許可（每週40小時）。許多H-1持有人在咖啡廳、餐廳、旅館、英語家教、滑雪場（冬季）或農場（季節性）工作。為海外雇主遠端工作屬於灰色地帶——技術上允許，因為並非在韓國就業。"
   },
-
   "faqs": [
     {
       "question": "為什麼我的申請因只規劃首爾的活動計畫而被拒絕？",
@@ -335,7 +339,6 @@
       "answer": "大多數情況下不行。根據各國協議，打工度假簽證通常是一生一次的機會。但部分國家可能有不同規定，請洽詢您當地的韓國大使館。如果您已使用過H-1資格，可考慮其他簽證選項，如D-10（求職）或D-4（語言研修），以便未來再訪。"
     }
   ],
-
   "tips": [
     "撰寫多元化的活動計畫——至少提及3-4個首爾以外的地區，包括安東、全州、慶州、釜山和濟州島",
     "計畫中包含季節性慶典：保寧泥漿節、晉州燈籠節、華川冰魚節、賞櫻季",
@@ -348,7 +351,6 @@
     "如果找到穩定工作，至出入境管理局申請全職工作許可",
     "如果想停留超過一年，約在第9個月開始規劃下一個簽證"
   ],
-
   "warnings": [
     "不要提交只提及首爾的活動計畫——這是常見的拒絕原因",
     "不要逾期停留——會導致罰款、強制出境和未來簽證禁令",
@@ -358,15 +360,24 @@
     "不要在申請中將遠端工作列為主要活動",
     "不要等到最後一刻才辦理外國人登錄證——提早預約"
   ],
-
-  "relatedVisas": ["d-10", "e-7", "d-2", "d-4"],
+  "relatedVisas": [
+    "d-10",
+    "e-7",
+    "d-2",
+    "d-4"
+  ],
   "pathsTo": [
     {
       "type": "d-10",
       "name": "求職簽證",
       "requirements": "須具備學士以上學位。在H-1到期前申請（無法延期）。",
       "timeline": "審查期間2至4週",
-      "documents": ["學位證書", "求職計畫書", "銀行存款證明（$3,000美元以上）", "履歷表"],
+      "documents": [
+        "學位證書",
+        "求職計畫書",
+        "銀行存款證明（$3,000美元以上）",
+        "履歷表"
+      ],
       "notes": "想繼續留在韓國的H-1持有者最常見的下一步。建議在第9至10個月時開始辦理。D-10可提供最長2年的求職時間。"
     },
     {
@@ -374,7 +385,12 @@
       "name": "留學簽證",
       "requirements": "取得韓國大學學位課程的入學許可。在H-1到期前申請。",
       "timeline": "審查期間2至4週",
-      "documents": ["大學入學許可書", "成績單", "財力證明（$10,000美元以上）", "語言能力證明"],
+      "documents": [
+        "大學入學許可書",
+        "成績單",
+        "財力證明（$10,000美元以上）",
+        "語言能力證明"
+      ],
       "notes": "在打工度假期間發現對韓國學習熱情的人適用。大學申請截止日在開學前數月——請提前規劃。"
     },
     {
@@ -382,7 +398,11 @@
       "name": "語言研修簽證",
       "requirements": "入學至認可的韓語課程。在H-1到期前申請。",
       "timeline": "審查期間2至4週",
-      "documents": ["語言學校入學許可書", "財力證明", "學習計畫"],
+      "documents": [
+        "語言學校入學許可書",
+        "財力證明",
+        "學習計畫"
+      ],
       "notes": "想在求職或升學前提升韓語能力的H-1持有者適用。如果還沒有大學入學許可，比D-2更容易取得。"
     },
     {
@@ -390,17 +410,41 @@
       "name": "專業就業簽證",
       "requirements": "取得韓國企業錄用通知。須具備學士學位或相關領域5年以上工作經驗。",
       "timeline": "審查期間2至4週",
-      "documents": ["僱用合約", "公司營業登記證", "學位證書（經認證）", "經歷證明書"],
+      "documents": [
+        "僱用合約",
+        "公司營業登記證",
+        "學位證書（經認證）",
+        "經歷證明書"
+      ],
       "notes": "從H-1直接轉E-7是可能的，但較不常見。大多數人先經D-10過渡。由於H-1無法延期，請儘早開始求職。"
+    },
+    {
+      "type": "e-2",
+      "name": "英語教學簽證",
+      "requirements": "在補習班或公立學校取得英語教學職位。須為指定英語系國家公民並具備學士學位。",
+      "timeline": "審查期間2至4週",
+      "documents": ["僱用合約", "學位證書（經認證）", "良民證（經認證）", "健康檢查證明"],
+      "notes": "英語系國家的H-1持有者想延長停留的熱門轉換選項。教學職位廣泛且提供簽證擔保。請在H-1到期前申請。"
     }
   ],
   "pathsFrom": [],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "韓國出入境管理局", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "HiKorea", "url": "https://www.hikorea.go.kr"},
-    {"label": "簽證入口網站", "url": "https://www.visa.go.kr"},
-    {"label": "打工度假資訊（韓文）", "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10104"}
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "簽證入口網站",
+      "url": "https://www.visa.go.kr"
+    },
+    {
+      "label": "打工度假資訊（韓文）",
+      "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10104"
+    }
   ]
 }

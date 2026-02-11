@@ -6,14 +6,12 @@
   "description": "韓國數位遊牧簽證允許受僱於外國企業的遠端工作者在韓國生活和工作。又稱「工作度假」簽證，專為地點獨立的專業人士設計。",
   "tagline": "遠端工作，韓國生活",
   "keyRequirement": "受僱於外國企業的遠端工作 + 收入 ≥ GNI×2（約₩8,800萬/年）",
-
   "targetAudience": [
     "受僱於外國企業的遠端工作者",
     "服務國際客戶的自由工作者",
     "經營外國註冊企業的創業家",
     "跨時區工作的數位專業人士"
   ],
-
   "eligibility": [
     {
       "id": "remote-work",
@@ -40,89 +38,109 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1年",
     "extension": "可延期1年",
     "maxTotal": "2年"
   },
-
   "fees": {
     "application": "₩60,000（約$42美元）",
     "extension": "₩60,000",
     "notes": "大使館可能收取額外費用"
   },
-
   "incomeRequirement": {
     "amount": "66,000",
     "currency": "USD",
     "period": "annual",
     "notes": "2025年標準。約₩8,800萬/年（GNI × 2）。每年更新。須提供過去6-12個月的收入證明。"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "有效護照",
       "description": "效期須超過預計停留期間至少6個月",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "簽證申請表",
       "description": "已填妥的申請表",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "護照照片",
       "description": "3.5公分 x 4.5公分，近期拍攝，白色背景",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "employment-proof",
       "name": "遠端工作證明",
       "description": "僱傭合約或雇主確認遠端工作安排的信函",
-      "tips": ["信函應說明您是遠端工作", "包含職稱及僱傭期間"],
-      "required": true
+      "tips": [
+        "信函應說明您是遠端工作",
+        "包含職稱及僱傭期間"
+      ],
+      "required": true,
+      "nameKorean": "재직증명서"
     },
     {
       "id": "income-proof",
       "name": "收入證明文件",
       "description": "銀行對帳單、報稅單或薪資單，顯示年收入約$66,000以上",
-      "tips": ["提供6-12個月的收入紀錄", "如有稅務文件請一併附上"],
-      "required": true
+      "tips": [
+        "提供6-12個月的收入紀錄",
+        "如有稅務文件請一併附上"
+      ],
+      "required": true,
+      "nameKorean": "소득증명서"
     },
     {
       "id": "health-insurance",
       "name": "健康保險證明",
       "description": "在韓國有效的健康保險證明",
-      "tips": ["保險須涵蓋韓國", "SafetyWing、Cigna Global等國際保險可接受"],
-      "required": true
+      "tips": [
+        "保險須涵蓋韓國",
+        "SafetyWing、Cigna Global等國際保險可接受"
+      ],
+      "required": true,
+      "nameKorean": "보험증서"
     },
     {
       "id": "background-check",
       "name": "良民證",
       "description": "您母國的警察刑事紀錄證明",
-      "tips": ["須為近期開立（6個月內）", "可能需要海牙認證"],
-      "required": true
+      "tips": [
+        "須為近期開立（6個月內）",
+        "可能需要海牙認證"
+      ],
+      "required": true,
+      "nameKorean": "범죄경력증명서"
     },
     {
       "id": "accommodation",
       "name": "住宿證明",
       "description": "飯店預訂、租賃合約或Airbnb預訂",
-      "tips": ["至少前2週的住宿"],
-      "required": false
+      "tips": [
+        "至少前2週的住宿"
+      ],
+      "required": false,
+      "nameKorean": "거주증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "確認資格",
       "description": "確認您符合收入要求（約$66,000以上）並有遠端工作安排。",
-      "tips": ["仔細計算您的年收入", "收集6-12個月的收入證明"]
+      "tips": [
+        "仔細計算您的年收入",
+        "收集6-12個月的收入證明"
+      ]
     },
     {
       "id": "step-2",
@@ -130,7 +148,10 @@
       "title": "準備文件",
       "description": "收集所有必要文件。取得雇主信函和收入證明。",
       "duration": "1-2週",
-      "tips": ["良民證須辦理海牙認證", "確保健康保險涵蓋韓國"]
+      "tips": [
+        "良民證須辦理海牙認證",
+        "確保健康保險涵蓋韓國"
+      ]
     },
     {
       "id": "step-3",
@@ -138,7 +159,10 @@
       "title": "至韓國大使館申請",
       "description": "至您所在國家的韓國大使館／領事館提交申請。",
       "duration": "1天",
-      "tips": ["提前預約", "部分大使館接受郵寄申請"]
+      "tips": [
+        "提前預約",
+        "部分大使館接受郵寄申請"
+      ]
     },
     {
       "id": "step-4",
@@ -162,12 +186,10 @@
       "duration": "1-2週"
     }
   ],
-
   "processingTime": {
     "typical": "1-3週",
     "notes": "依大使館和國籍而異。請在出發日期前充裕申請。"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -177,7 +199,6 @@
     ],
     "notes": "此簽證專為遠端工作設計。為韓國客戶工作需要不同的簽證。"
   },
-
   "faqs": [
     {
       "question": "此簽證認定的「遠端工作」是什麼？",
@@ -204,7 +225,6 @@
       "answer": "F-1-D最長停留期間為2年。之後您需要離開韓國或申請其他類型的簽證。"
     }
   ],
-
   "tips": [
     "提前申請——審查期間依大使館而異",
     "保留詳細收入紀錄——延期時需要",
@@ -213,22 +233,29 @@
     "加入首爾的數位遊牧社群拓展人脈",
     "熱門地區：江南（商業）、梨泰院（國際化）、弘大（創意）"
   ],
-
   "warnings": [
     "收入要求嚴格——約₩8,800萬（約$66,000美元），基於GNI × 2",
     "為韓國企業工作屬簽證違規",
     "整個停留期間須維持有效健康保險",
     "最長停留2年——請做好規劃"
   ],
-
-  "relatedVisas": ["e-7", "d-10", "d-8"],
+  "relatedVisas": [
+    "e-7",
+    "d-10",
+    "d-8"
+  ],
   "pathsTo": [
     {
       "type": "e-7",
       "name": "專業就業簽證",
       "requirements": "取得韓國企業錄用通知。須符合E-7資格（學士學位或5年以上工作經驗）。",
       "timeline": "審查期間2至4週",
-      "documents": ["僱用合約", "公司營業登記證", "學位證書（經認證）", "經歷證明書"],
+      "documents": [
+        "僱用合約",
+        "公司營業登記證",
+        "學位證書（經認證）",
+        "經歷證明書"
+      ],
       "notes": "找到韓國當地工作的數位遊牧者適用。這意味著放棄為外國企業的遠端工作——是重大的生活方式轉變。韓國雇主須擔保您的簽證。"
     },
     {
@@ -236,7 +263,12 @@
       "name": "企業投資簽證",
       "requirements": "在韓國以最低投資額約₩100,000,000（約$75,000美元）註冊公司。須證明可行的商業運營。",
       "timeline": "審查期間4至8週",
-      "documents": ["營業登記證", "投資證明（銀行轉帳記錄）", "商業計畫書", "辦公室租賃合約"],
+      "documents": [
+        "營業登記證",
+        "投資證明（銀行轉帳記錄）",
+        "商業計畫書",
+        "辦公室租賃合約"
+      ],
       "notes": "想在韓國成立公司的數位遊牧者適用。最低投資門檻很高。部分遊牧者將現有的遠端業務在韓國法人化來完成轉換。"
     },
     {
@@ -244,7 +276,12 @@
       "name": "求職簽證",
       "requirements": "須具備學士以上學位。在F-1-D到期前（最長2年）申請。",
       "timeline": "審查期間2至4週",
-      "documents": ["學位證書", "求職計畫書", "銀行存款證明", "履歷表"],
+      "documents": [
+        "學位證書",
+        "求職計畫書",
+        "銀行存款證明",
+        "履歷表"
+      ],
       "notes": "F-1-D即將到期且想留在韓國找當地工作的過渡選項。D-10可提供最長2年的求職時間。"
     }
   ],
@@ -254,15 +291,28 @@
       "name": "求職簽證",
       "requirements": "受僱於外國企業的遠端工作，年收入約$66,000美元以上（GNI×2）。須有涵蓋韓國的健康保險。",
       "timeline": "審查期間1至3週",
-      "documents": ["遠端僱用證明", "收入證明文件（6至12個月）", "健康保險證明", "無犯罪紀錄證明"],
+      "documents": [
+        "遠端僱用證明",
+        "收入證明文件（6至12個月）",
+        "健康保險證明",
+        "無犯罪紀錄證明"
+      ],
       "notes": "找到與外國企業遠端工作的D-10持有者適用。收入門檻嚴格（約₩8,800萬/年）。這是尋找韓國當地就業的替代方案。"
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "韓國出入境管理局", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "數位遊牧簽證資訊", "url": "https://www.visa.go.kr"},
-    {"label": "HiKorea", "url": "https://www.hikorea.go.kr"}
+    {
+      "label": "韓國出入境管理局",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "數位遊牧簽證資訊",
+      "url": "https://www.visa.go.kr"
+    },
+    {
+      "label": "HiKorea",
+      "url": "https://www.hikorea.go.kr"
+    }
   ]
 }

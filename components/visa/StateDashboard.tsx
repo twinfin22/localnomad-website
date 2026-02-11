@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   ArrowLeft,
   Settings,
@@ -54,6 +55,7 @@ import { NextStepHero } from "./NextStepHero";
 import { DocumentProgress } from "./DocumentProgress";
 import { DDayCounter } from "./DDayCounter";
 import { StateTimeline } from "./StateTimeline";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaInfo, VisaType } from "@/lib/visa/types";
 import type { HealthScoreFactors } from "@/lib/visa/health-score";
 
@@ -61,7 +63,7 @@ import type { HealthScoreFactors } from "@/lib/visa/health-score";
 // Empty State (No Progress)
 // =============================================================================
 
-function EmptyState() {
+function EmptyState({ localePath }: { localePath: (path: string) => string }) {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <div className="text-center mb-8">
@@ -78,13 +80,13 @@ function EmptyState() {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <Link href="/visa/start">
+        <Link href={localePath("/visa")}>
           <Button className="bg-primary hover:bg-accent-hover text-background font-semibold px-8 py-6 text-lg">
             <FileText className="w-5 h-5 mr-2" />
             Find My Visa
           </Button>
         </Link>
-        <Link href="/visa">
+        <Link href={localePath("/visa")}>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground px-8 py-6 text-lg"
@@ -96,7 +98,7 @@ function EmptyState() {
 
       {/* Quick Access Cards */}
       <div className="grid sm:grid-cols-2 gap-4">
-        <Link href="/visa/e-7" className="vk-card vk-card-hover p-6 group">
+        <Link href={localePath("/visa/e-7")} className="vk-card vk-card-hover p-6 group">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-xl font-bold text-primary">E-7</span>
@@ -109,7 +111,7 @@ function EmptyState() {
             </div>
           </div>
         </Link>
-        <Link href="/visa/d-2" className="vk-card vk-card-hover p-6 group">
+        <Link href={localePath("/visa/d-2")} className="vk-card vk-card-hover p-6 group">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-xl font-bold text-blue-400">D-2</span>
@@ -491,6 +493,7 @@ interface ActiveDashboardProps {
   onStateTransition: (newState: VisaState) => void;
   onChangeVisaType: (type: VisaType) => void;
   onChangeTargetDate: (date: Date | undefined) => void;
+  localePath: (path: string) => string;
 }
 
 function ActiveDashboard({
@@ -500,6 +503,7 @@ function ActiveDashboard({
   onStateTransition,
   onChangeVisaType,
   onChangeTargetDate,
+  localePath,
 }: ActiveDashboardProps) {
   const currentStateConfig = stateConfig[progress.state];
   const isPreparing = progress.state === "PREPARING";
@@ -546,7 +550,7 @@ function ActiveDashboard({
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/visa">
+          <Link href={localePath("/visa")}>
             <Button
               variant="ghost"
               size="icon"
@@ -682,7 +686,7 @@ function ActiveDashboard({
 
       {/* Quick Actions */}
       <div className="flex flex-wrap gap-4 justify-center pt-4">
-        <Link href={`/visa/${progress.visaType}`}>
+        <Link href={localePath(`/visa/${progress.visaType}`)}>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
@@ -690,7 +694,7 @@ function ActiveDashboard({
             View Visa Details
           </Button>
         </Link>
-        <Link href="/visa/compare">
+        <Link href={localePath("/visa/compare")}>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
@@ -708,6 +712,10 @@ function ActiveDashboard({
 // =============================================================================
 
 export function StateDashboard() {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
   const [progress, setProgress] = useState<VisaProgress | null>(null);
   const [visa, setVisa] = useState<VisaInfo | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -791,9 +799,10 @@ export function StateDashboard() {
           onStateTransition={handleStateTransition}
           onChangeVisaType={handleChangeVisaType}
           onChangeTargetDate={handleChangeTargetDate}
+          localePath={localePath}
         />
       ) : (
-        <EmptyState />
+        <EmptyState localePath={localePath} />
       )}
     </main>
   );

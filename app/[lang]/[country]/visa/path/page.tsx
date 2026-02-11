@@ -61,8 +61,22 @@ export default async function VisaPathPage({
   // Build locale-aware href
   const buildHref = (path: string) => buildLocalePath(path, locale, country);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Visa Path Simulator",
+    description: "Plan your Korean visa transition path",
+    url: `https://localnomad.club/${lang}/korea/visa/path`,
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "All",
+  };
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       {/* Hero Section */}

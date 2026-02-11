@@ -64,6 +64,7 @@ export interface Requirement {
 export interface Document {
   id: string;
   name: string;
+  nameKorean?: string;
   description: string;
   tips?: string[];
   where_to_get?: string;

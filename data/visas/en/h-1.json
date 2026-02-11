@@ -6,7 +6,6 @@
   "description": "The H-1 Working Holiday visa allows young people aged 18-30 from partner countries to live, work, and travel in Korea for up to one year. It's designed for cultural exchange and short-term work experiences, combining travel opportunities with the chance to earn money along the way.",
   "tagline": "Work, travel, and experience Korea for a year",
   "keyRequirement": "Citizenship from an eligible country + age 18-30",
-
   "targetAudience": [
     "Young travelers (18-30) seeking cultural immersion",
     "Gap year students between studies",
@@ -14,7 +13,6 @@
     "Cultural explorers wanting to experience Korean life",
     "Backpackers looking to work while traveling Asia"
   ],
-
   "eligibility": [
     {
       "id": "age",
@@ -65,37 +63,37 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1 year",
     "extension": "Not extendable",
     "maxTotal": "1 year (non-renewable)"
   },
-
   "fees": {
     "application": "₩60,000 (~$42 USD)",
     "notes": "Fee may vary by country and embassy. Some countries have reciprocal fee waivers."
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "Valid Passport",
       "description": "Must be valid for at least 18 months from the date of application",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed visa application form from Korean embassy/consulate",
       "where_to_get": "Download from your local Korean embassy website or obtain at the embassy",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, taken within last 6 months, white background",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "activity-plan",
@@ -110,7 +108,8 @@
         "Balance work intentions (teaching English, working at hostels, ski resorts) with cultural exploration",
         "Write 1-2 pages minimum with month-by-month breakdown if possible"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "활동계획서"
     },
     {
       "id": "bank-statement",
@@ -121,7 +120,8 @@
         "Statement should be recent (within 1 month)",
         "Should show consistent balance, not just a recent large deposit"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "잔고증명서"
     },
     {
       "id": "health-insurance",
@@ -133,7 +133,8 @@
         "Some embassies require minimum coverage amounts (check your embassy)",
         "Consider Korean NHIS enrollment after arrival for additional coverage"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "보험증서"
     },
     {
       "id": "residence-proof",
@@ -147,7 +148,8 @@
         "The form must include the host's signature, address, phone number, and duration of stay",
         "Some embassies accept hotel reservations for the first few weeks instead"
       ],
-      "required": true
+      "required": true,
+      "nameKorean": "숙소제공확인서"
     },
     {
       "id": "round-trip-ticket",
@@ -158,7 +160,8 @@
         "Booking confirmation is usually sufficient (doesn't need to be fully paid)",
         "Check your specific embassy requirements"
       ],
-      "required": false
+      "required": false,
+      "nameKorean": "왕복항공권예약확인서"
     },
     {
       "id": "cv-resume",
@@ -168,7 +171,8 @@
         "Keep it concise (1-2 pages)",
         "Include any relevant experience: teaching, hospitality, languages"
       ],
-      "required": false
+      "required": false,
+      "nameKorean": "이력서"
     },
     {
       "id": "criminal-check",
@@ -180,10 +184,10 @@
         "Some embassies don't require this - check your local embassy"
       ],
       "processing_time": "2-8 weeks depending on country",
-      "required": false
+      "required": false,
+      "nameKorean": "범죄경력증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
@@ -275,16 +279,17 @@
         "You'll need the ARC to open a bank account and get a phone plan"
       ],
       "links": [
-        {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"}
+        {
+          "label": "HiKorea Portal",
+          "url": "https://www.hikorea.go.kr"
+        }
       ]
     }
   ],
-
   "processingTime": {
     "typical": "2-4 weeks",
     "notes": "Processing time varies by embassy and season. Summer applications may take longer due to higher volume."
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -296,7 +301,6 @@
     ],
     "notes": "After arriving and registering, you can apply for permission to work full-time (40 hours/week) at your local immigration office. Many H-1 holders work at cafes, restaurants, hostels, English tutoring, ski resorts (winter), or farms (seasonal). Remote work for overseas employers is a gray area - technically allowed as it's not Korean employment."
   },
-
   "faqs": [
     {
       "question": "Why was my application rejected for having a Seoul-only Activity Plan?",
@@ -335,7 +339,6 @@
       "answer": "In most cases, no. The Working Holiday visa is typically a once-in-a-lifetime opportunity per country agreement. However, some countries may have different rules, so check with your local Korean embassy. If you've used your H-1 eligibility, consider other visa options like D-10 (job seeking) or D-4 (language study) for future visits."
     }
   ],
-
   "tips": [
     "Write a diverse Activity Plan - mention at least 3-4 regions outside Seoul, including places like Andong, Jeonju, Gyeongju, Busan, and Jeju",
     "Include seasonal festivals in your plan: Boryeong Mud Festival, Jinju Lantern Festival, Hwacheon Ice Fishing Festival, cherry blossom seasons",
@@ -348,7 +351,6 @@
     "Apply for full-time work permit at immigration if you find steady employment",
     "Start planning your next visa around month 9 if you want to stay beyond one year"
   ],
-
   "warnings": [
     "DO NOT submit an Activity Plan that only mentions Seoul - this is a common rejection reason",
     "Do not overstay your visa - it will result in fines, deportation, and future visa bans",
@@ -358,15 +360,24 @@
     "Do not make remote work your primary stated activity in your application",
     "Do not wait until the last minute to register for your ARC - book the appointment early"
   ],
-
-  "relatedVisas": ["d-10", "e-7", "d-2", "d-4"],
+  "relatedVisas": [
+    "d-10",
+    "e-7",
+    "d-2",
+    "d-4"
+  ],
   "pathsTo": [
     {
       "type": "d-10",
       "name": "Job Seeking Visa",
       "requirements": "Must have bachelor's degree or higher. Apply before H-1 expires (non-extendable).",
       "timeline": "2-4 weeks processing",
-      "documents": ["Degree certificate", "Job search plan", "Bank statement ($3,000+ USD)", "Resume/CV"],
+      "documents": [
+        "Degree certificate",
+        "Job search plan",
+        "Bank statement ($3,000+ USD)",
+        "Resume/CV"
+      ],
       "notes": "The most common next step for H-1 holders who want to stay. Start the process around month 9-10. D-10 gives you up to 2 years to find employment."
     },
     {
@@ -374,7 +385,12 @@
       "name": "Student Visa",
       "requirements": "Gain admission to a Korean university degree program. Apply before H-1 expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["University admission letter", "Academic transcripts", "Financial proof ($10,000+ USD)", "Language proficiency certificate"],
+      "documents": [
+        "University admission letter",
+        "Academic transcripts",
+        "Financial proof ($10,000+ USD)",
+        "Language proficiency certificate"
+      ],
       "notes": "For those who discover a passion for studying in Korea during their Working Holiday. University application deadlines are months before semester starts — plan ahead."
     },
     {
@@ -382,7 +398,11 @@
       "name": "Language Training Visa",
       "requirements": "Enroll in an accredited Korean language program. Apply before H-1 expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Language school admission letter", "Financial proof", "Study plan"],
+      "documents": [
+        "Language school admission letter",
+        "Financial proof",
+        "Study plan"
+      ],
       "notes": "For H-1 holders who want to improve their Korean before pursuing employment or further study. A more accessible option than D-2 if you don't have university admission yet."
     },
     {
@@ -390,17 +410,41 @@
       "name": "Professional Employment Visa",
       "requirements": "Secure a job offer from a Korean company. Must have bachelor's degree or 5+ years experience in relevant field.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "Direct H-1 to E-7 transition is possible but less common. Most go through D-10 first. Start job searching early as H-1 cannot be extended."
+    },
+    {
+      "type": "e-2",
+      "name": "English Teaching Visa",
+      "requirements": "Secure an English teaching position at a hagwon or public school. Must be a citizen of a designated English-speaking country with a bachelor's degree.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Degree certificate (apostilled)", "Criminal background check (apostilled)", "Health check certificate"],
+      "notes": "A popular transition for H-1 holders from English-speaking countries who want to stay longer. Teaching positions are widely available and provide visa sponsorship. Apply before your H-1 expires."
     }
   ],
   "pathsFrom": [],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},
-    {"label": "Visa Portal", "url": "https://www.visa.go.kr"},
-    {"label": "Working Holiday Info (Korean)", "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10104"}
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "Visa Portal",
+      "url": "https://www.visa.go.kr"
+    },
+    {
+      "label": "Working Holiday Info (Korean)",
+      "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10104"
+    }
   ]
 }

@@ -6,7 +6,6 @@
   "description": "The D-2 visa is for international students enrolled in Korean universities or graduate programs. It allows full-time study and limited part-time work opportunities.",
   "tagline": "Study at Korean universities and build your future",
   "keyRequirement": "Acceptance letter from a Korean university",
-
   "targetAudience": [
     "University undergraduate students",
     "Graduate students (Master's, PhD)",
@@ -14,7 +13,6 @@
     "Korean language program students transitioning to degree programs",
     "Research students"
   ],
-
   "eligibility": [
     {
       "id": "admission",
@@ -41,95 +39,118 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "6 months - 2 years",
     "extension": "Renewable each semester",
     "maxTotal": "Duration of study program"
   },
-
   "fees": {
     "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000 per extension",
     "notes": "Universities may charge additional processing fees"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "Valid Passport",
       "description": "Must be valid for at least 6 months beyond planned stay",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed and signed visa application form",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, recent, white background",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "admission-letter",
       "name": "University Admission Letter",
       "description": "Official acceptance letter from Korean university",
-      "tips": ["Request it in English and Korean", "Ensure it includes program dates"],
-      "required": true
+      "tips": [
+        "Request it in English and Korean",
+        "Ensure it includes program dates"
+      ],
+      "required": true,
+      "nameKorean": "입학허가서"
     },
     {
       "id": "business-registration",
       "name": "University Business Registration",
       "description": "University's official registration certificate",
       "where_to_get": "Provided by university international office",
-      "required": true
+      "required": true,
+      "nameKorean": "사업자등록증명서"
     },
     {
       "id": "academic-records",
       "name": "Academic Transcripts",
       "description": "Official transcripts from previous institution(s)",
-      "tips": ["Must be apostilled if from abroad", "Include translations if not in English/Korean"],
-      "required": true
+      "tips": [
+        "Must be apostilled if from abroad",
+        "Include translations if not in English/Korean"
+      ],
+      "required": true,
+      "nameKorean": "성적증명서"
     },
     {
       "id": "diploma",
       "name": "Diploma or Degree Certificate",
       "description": "High school diploma for undergrad, Bachelor's for graduate",
-      "tips": ["Apostille required for most countries"],
-      "required": true
+      "tips": [
+        "Apostille required for most countries"
+      ],
+      "required": true,
+      "nameKorean": "학위증명서"
     },
     {
       "id": "financial-proof",
       "name": "Bank Statement",
       "description": "Showing $10,000+ USD or equivalent in savings",
-      "tips": ["Must be within last 30 days", "Parent's account acceptable with relationship proof"],
-      "required": true
+      "tips": [
+        "Must be within last 30 days",
+        "Parent's account acceptable with relationship proof"
+      ],
+      "required": true,
+      "nameKorean": "잔고증명서"
     },
     {
       "id": "language-certificate",
       "name": "Language Proficiency Certificate",
       "description": "TOPIK score or English test results (TOEFL/IELTS)",
-      "required": false
+      "required": false,
+      "nameKorean": "어학능력증명서"
     },
     {
       "id": "study-plan",
       "name": "Statement of Purpose / Study Plan",
       "description": "Essay explaining your study goals and plans",
-      "tips": ["Be specific about why Korea", "Mention career goals"],
-      "required": false
+      "tips": [
+        "Be specific about why Korea",
+        "Mention career goals"
+      ],
+      "required": false,
+      "nameKorean": "학업계획서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "Get University Admission",
       "description": "Apply and receive acceptance from a Korean university.",
-      "tips": ["Start 6+ months before semester", "Apply to multiple universities"],
+      "tips": [
+        "Start 6+ months before semester",
+        "Apply to multiple universities"
+      ],
       "duration": "2-4 months"
     },
     {
@@ -137,7 +158,10 @@
       "step": 2,
       "title": "Request University Documents",
       "description": "Contact international office for visa support documents.",
-      "tips": ["Request business registration", "Get admission letter in English"],
+      "tips": [
+        "Request business registration",
+        "Get admission letter in English"
+      ],
       "duration": "1-2 weeks"
     },
     {
@@ -152,7 +176,10 @@
       "step": 4,
       "title": "Submit Visa Application",
       "description": "Apply at Korean embassy/consulate in your country.",
-      "tips": ["Make appointment in advance", "Bring all original documents"],
+      "tips": [
+        "Make appointment in advance",
+        "Bring all original documents"
+      ],
       "duration": "1-2 hours"
     },
     {
@@ -167,7 +194,10 @@
       "step": 6,
       "title": "Receive Visa & Travel to Korea",
       "description": "Pick up passport with visa stamp and prepare for departure.",
-      "tips": ["Book flights after visa approval", "Arrange airport pickup with university"],
+      "tips": [
+        "Book flights after visa approval",
+        "Arrange airport pickup with university"
+      ],
       "duration": "1-2 weeks"
     },
     {
@@ -175,17 +205,18 @@
       "step": 7,
       "title": "Register as Foreigner (ARC)",
       "description": "Within 90 days of arrival, register at immigration for Alien Registration Card.",
-      "tips": ["University will guide you", "Bring passport, photo, housing proof"],
+      "tips": [
+        "University will guide you",
+        "Bring passport, photo, housing proof"
+      ],
       "duration": "2-3 weeks after application"
     }
   ],
-
   "processingTime": {
     "typical": "2-4 weeks",
     "expedited": "Available in some countries (additional fee)",
     "notes": "Apply at least 8 weeks before semester starts"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -196,7 +227,6 @@
     ],
     "notes": "Work permit application requires university approval. Cannot work first 6 months."
   },
-
   "faqs": [
     {
       "question": "Can I work as a student in Korea?",
@@ -223,7 +253,6 @@
       "answer": "Budget ₩800,000-1,500,000 per month for living expenses (depending on city). Tuition varies: public universities ₩2-4 million/semester, private ₩4-8 million/semester. Scholarships are widely available."
     }
   ],
-
   "tips": [
     "Apply for scholarships - Korean government (GKS) and university scholarships are generous",
     "Join your university's international student club for support",
@@ -232,22 +261,30 @@
     "Learn basic Korean even for English programs - it helps daily life immensely",
     "Keep all documents organized - you'll need them for visa extensions"
   ],
-
   "warnings": [
     "Maintain full-time student status or risk visa cancellation",
     "Working without permit is a serious violation",
     "Report address changes within 14 days",
     "Don't overstay - it affects future visa applications"
   ],
-
-  "relatedVisas": ["d-10", "e-7", "d-4", "f-2"],
+  "relatedVisas": [
+    "d-10",
+    "e-7",
+    "d-4",
+    "f-2"
+  ],
   "pathsTo": [
     {
       "type": "d-10",
       "name": "Job Seeking Visa",
       "requirements": "Graduate from a Korean university or hold a bachelor's degree or higher. Must apply before current visa expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Degree certificate or graduation letter", "Job search plan", "Bank statement ($3,000+ USD)", "Resume/CV"],
+      "documents": [
+        "Degree certificate or graduation letter",
+        "Job search plan",
+        "Bank statement ($3,000+ USD)",
+        "Resume/CV"
+      ],
       "notes": "Most common path after graduation. D-10 gives you up to 2 years to find employment and transition to E-7. Start applying 1-2 months before graduation."
     },
     {
@@ -255,7 +292,12 @@
       "name": "Professional Employment Visa",
       "requirements": "Job offer from a Korean company in your field of study. Bachelor's degree required (or 5+ years experience).",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "Direct transition possible if you secure a job offer before or immediately after graduation. Your employer handles most of the sponsorship paperwork."
     }
   ],
@@ -265,7 +307,12 @@
       "name": "Language Training Visa",
       "requirements": "Complete Korean language program and gain admission to a Korean university degree program.",
       "timeline": "2-4 weeks processing after university admission",
-      "documents": ["University admission letter", "D-4 visa/ARC", "Language program completion certificate", "Financial proof ($10,000+ USD)"],
+      "documents": [
+        "University admission letter",
+        "D-4 visa/ARC",
+        "Language program completion certificate",
+        "Financial proof ($10,000+ USD)"
+      ],
       "notes": "Natural progression for language students who want to pursue a degree. Apply for university during your language program and transition before D-4 expires."
     },
     {
@@ -273,16 +320,32 @@
       "name": "Working Holiday Visa",
       "requirements": "Gain admission to a Korean university while on Working Holiday visa. Must apply before H-1 expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["University admission letter", "H-1 visa/ARC", "Financial proof ($10,000+ USD)", "Academic transcripts"],
+      "documents": [
+        "University admission letter",
+        "H-1 visa/ARC",
+        "Financial proof ($10,000+ USD)",
+        "Academic transcripts"
+      ],
       "notes": "Some Working Holiday visa holders discover they want to study in Korea long-term. Apply to universities early as H-1 cannot be extended."
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "Study in Korea", "url": "https://www.studyinkorea.go.kr/en/main.do"},
-    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},
-    {"label": "Global Korea Scholarship", "url": "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do"}
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "Study in Korea",
+      "url": "https://www.studyinkorea.go.kr/en/main.do"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "Global Korea Scholarship",
+      "url": "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do"
+    }
   ]
 }

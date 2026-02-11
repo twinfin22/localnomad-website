@@ -6,14 +6,12 @@
   "description": "The F-2 visa provides long-term residence status in Korea with greater freedom than employment visas. It's available through various subcategories including points-based, spouse, and investor routes.",
   "tagline": "Long-term residence with work flexibility",
   "keyRequirement": "Points-based assessment (80+) or family ties to Korean citizen",
-
   "targetAudience": [
     "Long-term residents seeking stability",
     "Spouses of Korean citizens or residents",
     "High-income professionals (F-2-7)",
     "Investors in Korean businesses"
   ],
-
   "eligibility": [
     {
       "id": "f2-7-points",
@@ -40,100 +38,116 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1-3 years",
     "extension": "2-3 years per extension",
     "maxTotal": "Indefinite (renewable)"
   },
-
   "fees": {
     "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000",
     "notes": "Fees may vary by subcategory"
   },
-
   "incomeRequirement": {
     "amount": "Varies by subcategory",
     "currency": "KRW",
     "period": "annual",
     "notes": "F-2-7 requires income above GNI average (approximately ₩40-50 million/year)"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "Valid Passport",
       "description": "Must be valid for duration of requested stay",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed application form",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, recent, white background",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "arc",
       "name": "Current Alien Registration Card",
       "description": "Your current ARC showing valid visa status",
-      "required": true
+      "required": true,
+      "nameKorean": "외국인등록증"
     },
     {
       "id": "points-checklist",
       "name": "Points Calculation Worksheet (F-2-7)",
       "description": "Self-assessment of points across all categories",
-      "tips": ["Download official worksheet from immigration", "Be honest - they verify everything"],
-      "required": false
+      "tips": [
+        "Download official worksheet from immigration",
+        "Be honest - they verify everything"
+      ],
+      "required": false,
+      "nameKorean": "점수계산표"
     },
     {
       "id": "degree-certificate",
       "name": "Degree Certificate",
       "description": "For education points calculation",
-      "required": false
+      "required": false,
+      "nameKorean": "학위증명서"
     },
     {
       "id": "topik-certificate",
       "name": "TOPIK Certificate",
       "description": "For Korean language ability points",
-      "tips": ["Higher TOPIK level = more points"],
-      "required": false
+      "tips": [
+        "Higher TOPIK level = more points"
+      ],
+      "required": false,
+      "nameKorean": "TOPIK 성적증명서"
     },
     {
       "id": "income-proof",
       "name": "Income Tax Documents",
       "description": "Tax payment certificates from Korean tax office",
-      "required": true
+      "required": true,
+      "nameKorean": "소득증명서"
     },
     {
       "id": "employment-proof",
       "name": "Employment Certificate",
       "description": "Letter from employer confirming position and salary",
-      "required": true
+      "required": true,
+      "nameKorean": "재직증명서"
     },
     {
       "id": "marriage-certificate",
       "name": "Marriage Certificate (F-2-1)",
       "description": "Certified marriage registration",
-      "required": false
+      "required": false,
+      "nameKorean": "혼인관계증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "Check Eligibility & Calculate Points",
       "description": "Determine which F-2 subcategory fits your situation. For F-2-7, calculate your points.",
-      "tips": ["Use official points calculator", "Need 80+ points for F-2-7"],
+      "tips": [
+        "Use official points calculator",
+        "Need 80+ points for F-2-7"
+      ],
       "links": [
-        {"label": "Points Calculator", "url": "https://www.immigration.go.kr"}
+        {
+          "label": "Points Calculator",
+          "url": "https://www.immigration.go.kr"
+        }
       ]
     },
     {
@@ -142,7 +156,10 @@
       "title": "Gather Supporting Documents",
       "description": "Collect all documents that prove your points claims or eligibility.",
       "duration": "2-4 weeks",
-      "tips": ["Get official TOPIK certificate if needed", "Collect tax documents from NTS"]
+      "tips": [
+        "Get official TOPIK certificate if needed",
+        "Collect tax documents from NTS"
+      ]
     },
     {
       "id": "step-3",
@@ -173,12 +190,10 @@
       "duration": "2-4 weeks after application"
     }
   ],
-
   "processingTime": {
     "typical": "2-4 weeks",
     "notes": "May take longer if interview required or additional documents needed"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -188,7 +203,6 @@
     ],
     "notes": "F-2 provides much more work flexibility than employment-tied visas"
   },
-
   "faqs": [
     {
       "question": "What is the F-2-7 points system?",
@@ -211,7 +225,6 @@
       "answer": "Unlike E-7, losing your job doesn't affect your F-2 status. You can take time to find new employment without visa concerns."
     }
   ],
-
   "tips": [
     "Start preparing for F-2-7 early - take TOPIK, build work history",
     "TOPIK Level 5-6 gives significant points boost",
@@ -220,14 +233,14 @@
     "Keep all tax and employment records organized",
     "Consider timing - some points categories have age limits"
   ],
-
   "warnings": [
     "Points must be verifiable - don't exaggerate",
     "Maintain continuous residence - long absences may affect status",
     "Must still report address changes to immigration"
   ],
-
-  "relatedVisas": ["e-7"],
+  "relatedVisas": [
+    "e-7"
+  ],
   "pathsTo": [],
   "pathsFrom": [
     {
@@ -235,7 +248,14 @@
       "name": "Professional Employment Visa",
       "requirements": "Score 80+ on the F-2-7 points system. Typically need 3+ years on E-7, TOPIK Level 4+, income above GNI average, and other qualifying factors.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Points calculation worksheet", "TOPIK certificate", "Income tax documents", "Employment certificate", "Degree certificate", "KIIP completion certificate (if applicable)"],
+      "documents": [
+        "Points calculation worksheet",
+        "TOPIK certificate",
+        "Income tax documents",
+        "Employment certificate",
+        "Degree certificate",
+        "KIIP completion certificate (if applicable)"
+      ],
       "notes": "The most common path to F-2. Start building your points early: take TOPIK (Level 5-6 gives big boost), maintain high income, and consider completing KIIP social integration courses for bonus points."
     },
     {
@@ -243,7 +263,13 @@
       "name": "Intra-Company Transfer Visa",
       "requirements": "Meet F-2-7 points requirements (80+). Extended residence in Korea on D-7 counts toward experience points.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Points calculation worksheet", "TOPIK certificate", "Income tax documents", "Employment certificate", "Degree certificate"],
+      "documents": [
+        "Points calculation worksheet",
+        "TOPIK certificate",
+        "Income tax documents",
+        "Employment certificate",
+        "Degree certificate"
+      ],
       "notes": "D-7 holders with long tenure in Korea can accumulate enough points for F-2-7, especially if they invest in Korean language skills."
     },
     {
@@ -251,7 +277,12 @@
       "name": "Corporate Investment Visa",
       "requirements": "Meet F-2-99 investment criteria or F-2-7 points system (80+). Business must be operational and profitable.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Business registration", "Tax payment certificates", "Investment proof", "Points worksheet (if F-2-7 route)"],
+      "documents": [
+        "Business registration",
+        "Tax payment certificates",
+        "Investment proof",
+        "Points worksheet (if F-2-7 route)"
+      ],
       "notes": "D-8 holders can qualify through the investment route (F-2-99) or the standard points system (F-2-7). Successful business operations strengthen your application."
     },
     {
@@ -259,7 +290,11 @@
       "name": "Overseas Korean Visa",
       "requirements": "Meet F-2 eligibility through ethnic Korean status plus additional criteria depending on subcategory.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Korean ancestry proof", "Current F-4 ARC", "Points worksheet or relationship documents"],
+      "documents": [
+        "Korean ancestry proof",
+        "Current F-4 ARC",
+        "Points worksheet or relationship documents"
+      ],
       "notes": "F-4 holders may transition to F-2 for additional stability or as a stepping stone to F-5 permanent residence."
     },
     {
@@ -267,15 +302,28 @@
       "name": "Marriage Migration Visa",
       "requirements": "Meet F-2 eligibility. F-6 holders married to Korean citizens may qualify through marriage-based subcategories.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Marriage certificate", "Spouse's ID", "Current F-6 ARC", "Income proof"],
+      "documents": [
+        "Marriage certificate",
+        "Spouse's ID",
+        "Current F-6 ARC",
+        "Income proof"
+      ],
       "notes": "F-6 holders may transition to F-2 for greater independence, especially after extended residence in Korea."
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "F-2-7 Points Information", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},
-    {"label": "KIIP Program", "url": "https://www.socinet.go.kr"}
+    {
+      "label": "F-2-7 Points Information",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "KIIP Program",
+      "url": "https://www.socinet.go.kr"
+    }
   ]
 }

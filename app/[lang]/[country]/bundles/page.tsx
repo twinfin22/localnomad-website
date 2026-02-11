@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FileText, Download, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getTranslations } from "next-intl/server";
 import {
   locales,
   countries,
@@ -37,54 +38,56 @@ export async function generateMetadata({ params }: BundlesPageProps) {
   const { lang, country } = await params;
   const locale = lang as Locale;
   const countryName = countryNames[country as Country][locale];
+  const t = await getTranslations({ locale: lang, namespace: "bundles" });
 
   return {
-    title: `Info Bundles | LocalNomad`,
-    description: `Curated guides, checklists, and playbooks to make your ${countryName} journey smooth.`,
+    title: t("metaTitle"),
+    description: t("metaDescription", { country: countryName }),
   };
 }
 
-const bundles = [
-  {
-    title: "Pre-Arrival Checklist",
-    description: "Everything you need to prepare before landing in Korea",
-    price: "$19",
-    features: [
-      "Visa requirements overview",
-      "Documents to prepare",
-      "Banking setup guide",
-      "Phone & SIM options",
-      "First week essentials",
-    ],
-  },
-  {
-    title: "Seoul Survival Playbook",
-    description: "Your complete guide to navigating daily life in Seoul",
-    price: "$39",
-    features: [
-      "Transportation mastery",
-      "Housing search guide",
-      "Healthcare navigation",
-      "Banking & finances",
-      "Cultural tips & etiquette",
-    ],
-  },
-  {
-    title: "Digital Nomad Cheatsheet",
-    description: "Quick reference for remote workers in Korea",
-    price: "$29",
-    features: [
-      "Best coworking spaces",
-      "Cafe work spots by area",
-      "Fast WiFi locations",
-      "Tax considerations",
-      "Community connections",
-    ],
-  },
-];
-
 export default async function BundlesPage({ params }: BundlesPageProps) {
   const { lang, country } = await params;
+  const t = await getTranslations({ locale: lang, namespace: "bundles" });
+
+  const bundles = [
+    {
+      title: t("preArrivalChecklist"),
+      description: t("preArrivalDesc"),
+      price: t("preArrivalPrice"),
+      features: [
+        t("preArrivalFeature1"),
+        t("preArrivalFeature2"),
+        t("preArrivalFeature3"),
+        t("preArrivalFeature4"),
+        t("preArrivalFeature5"),
+      ],
+    },
+    {
+      title: t("seoulPlaybook"),
+      description: t("seoulPlaybookDesc"),
+      price: t("seoulPlaybookPrice"),
+      features: [
+        t("seoulPlaybookFeature1"),
+        t("seoulPlaybookFeature2"),
+        t("seoulPlaybookFeature3"),
+        t("seoulPlaybookFeature4"),
+        t("seoulPlaybookFeature5"),
+      ],
+    },
+    {
+      title: t("nomadCheatsheet"),
+      description: t("nomadCheatsheetDesc"),
+      price: t("nomadCheatsheetPrice"),
+      features: [
+        t("nomadCheatsheetFeature1"),
+        t("nomadCheatsheetFeature2"),
+        t("nomadCheatsheetFeature3"),
+        t("nomadCheatsheetFeature4"),
+        t("nomadCheatsheetFeature5"),
+      ],
+    },
+  ];
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
@@ -96,10 +99,9 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
             <div className="w-16 h-16 rounded-2xl bg-accent-muted flex items-center justify-center mb-6 mx-auto">
               <FileText className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Info Bundles</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">{t("pageTitle")}</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Curated guides, checklists, and playbooks to make your Korea
-              journey smooth
+              {t("subtitle")}
             </p>
           </div>
 
@@ -129,28 +131,28 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
 
                 <Button variant="primary" className="w-full">
                   <Download className="w-4 h-4 mr-2" />
-                  Get Bundle
+                  {t("getBundle")}
                 </Button>
               </div>
             ))}
           </div>
 
           <div className="mt-16 text-center p-8 bg-surface border border-border rounded-xl">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">All-Access Bundle</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-2">{t("allAccessBundle")}</h2>
             <p className="text-muted-foreground mb-4">
-              Get all three guides at a discounted price
+              {t("allAccessDesc")}
             </p>
             <div className="text-4xl font-bold text-foreground mb-6">
-              $69{" "}
+              {t("allAccessPrice")}{" "}
               <span className="text-lg text-muted-foreground line-through">
-                $87
+                {t("allAccessOriginalPrice")}
               </span>
             </div>
             <Button
               size="lg"
               variant="primary"
             >
-              Get All Bundles
+              {t("getAllBundles")}
             </Button>
           </div>
         </div>

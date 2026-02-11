@@ -93,12 +93,7 @@ export function Footer() {
           {/* Legal disclaimer */}
           <div className="mt-6 pt-4 border-t border-border/50 text-center">
             <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              LocalNomad provides general information about Korean visa
-              requirements for educational purposes only. This information does
-              not constitute legal advice. Visa decisions are made solely by
-              Korean immigration authorities. For personalized legal advice,
-              consult a licensed Korean 행정사 (administrative scrivener) or
-              변호사 (attorney).
+              {t("footer.legalDisclaimer")}
             </p>
           </div>
         </AnimatedSection>

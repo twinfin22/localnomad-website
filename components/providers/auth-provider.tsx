@@ -133,7 +133,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       clearLocalStorage();
     } catch (error) {
-      console.error('Error migrating localStorage data:', error);
+      console.error('Error migrating localStorage data');
     }
   };
 

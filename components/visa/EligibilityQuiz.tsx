@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   ArrowRight,
   ArrowLeft,
@@ -23,6 +24,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
 import { getVisaInfo } from "@/lib/visa/data";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaType, VisaInfo } from "@/lib/visa/types";
 
 const categoryIcons = {
@@ -217,6 +219,10 @@ interface VisaResult {
 }
 
 export function EligibilityQuiz() {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
@@ -473,7 +479,7 @@ export function EligibilityQuiz() {
                         </div>
                       )}
 
-                      <Link href={`/visa/${result.type}`}>
+                      <Link href={localePath(`/visa/${result.type}`)}>
                         <Button
                           variant={isTopMatch ? "default" : "outline"}
                           size="sm"
@@ -496,7 +502,7 @@ export function EligibilityQuiz() {
               <RotateCcw className="w-4 h-4 mr-2" />
               Start Over
             </Button>
-            <Link href="/visa/compare" className="flex-1">
+            <Link href={localePath("/visa/compare")} className="flex-1">
               <Button variant="outline" className="w-full">
                 Compare Visas
               </Button>

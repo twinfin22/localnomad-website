@@ -6,7 +6,6 @@
   "description": "The E-7 visa is designed for foreign professionals with specialized skills working for Korean companies. It covers a wide range of professional categories from IT to engineering to management.",
   "tagline": "For skilled professionals building their career in Korea",
   "keyRequirement": "Job offer from a Korean company + bachelor's degree (or 5+ years experience)",
-
   "targetAudience": [
     "Software engineers and IT professionals",
     "Engineers and technical specialists",
@@ -14,7 +13,6 @@
     "Business professionals and managers",
     "Designers and creative professionals"
   ],
-
   "eligibility": [
     {
       "id": "job-offer",
@@ -41,86 +39,97 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1-3 years",
     "extension": "1-3 years per extension",
     "maxTotal": "No maximum (renewable indefinitely while employed)"
   },
-
   "fees": {
     "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000 per extension",
     "notes": "Multiple entry visa may have additional fees"
   },
-
   "incomeRequirement": {
     "amount": "Varies by occupation",
     "currency": "KRW",
     "period": "annual",
     "notes": "Must meet or exceed the average salary for your occupation category. IT professionals typically need ₩40,000,000+ annually."
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "Valid Passport",
       "description": "Must be valid for duration of employment contract",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed visa application form",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, recent, white background",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "employment-contract",
       "name": "Employment Contract",
       "description": "Signed contract from Korean employer showing position, salary, and duration",
-      "required": true
+      "required": true,
+      "nameKorean": "고용계약서"
     },
     {
       "id": "business-registration",
       "name": "Company Business Registration",
       "description": "Employer's official business registration certificate",
-      "required": true
+      "required": true,
+      "nameKorean": "사업자등록증명서"
     },
     {
       "id": "degree-certificate",
       "name": "Degree Certificate",
       "description": "Original or certified copy, apostilled if from foreign country",
-      "tips": ["Must be in related field to your job"],
-      "required": true
+      "tips": [
+        "Must be in related field to your job"
+      ],
+      "required": true,
+      "nameKorean": "학위증명서"
     },
     {
       "id": "career-certificate",
       "name": "Career Certificate / Employment History",
       "description": "Proof of previous work experience",
-      "tips": ["Get reference letters from previous employers", "Include detailed job descriptions"],
-      "required": true
+      "tips": [
+        "Get reference letters from previous employers",
+        "Include detailed job descriptions"
+      ],
+      "required": true,
+      "nameKorean": "경력증명서"
     },
     {
       "id": "tax-documents",
       "name": "Tax Payment Certificates (for extensions)",
       "description": "Proof of tax payments in Korea",
-      "required": false
+      "required": false,
+      "nameKorean": "세금납부증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "Secure Job Offer",
       "description": "Receive and sign employment contract from Korean company.",
-      "tips": ["Negotiate salary - it affects visa approval", "Ensure company is willing to sponsor visa"]
+      "tips": [
+        "Negotiate salary - it affects visa approval",
+        "Ensure company is willing to sponsor visa"
+      ]
     },
     {
       "id": "step-2",
@@ -158,13 +167,11 @@
       "duration": "1-2 weeks"
     }
   ],
-
   "processingTime": {
     "typical": "2-4 weeks",
     "expedited": "5-7 business days (additional fee)",
     "notes": "Processing times vary by nationality and occupation category"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -173,7 +180,6 @@
     ],
     "notes": "You can change employers, but must update visa accordingly"
   },
-
   "faqs": [
     {
       "question": "Can I change jobs on an E-7 visa?",
@@ -196,7 +202,6 @@
       "answer": "There's no fixed minimum, but your salary should meet or exceed the average for your occupation. Immigration checks this. For IT, expect at least ₩40-50 million annually."
     }
   ],
-
   "tips": [
     "Negotiate salary before signing - higher salary improves visa chances",
     "Large, established companies have smoother visa processes",
@@ -205,21 +210,28 @@
     "Build good relationship with HR - they handle visa paperwork",
     "Consider F-2 visa after 3 years for more flexibility"
   ],
-
   "warnings": [
     "Working without proper visa is grounds for deportation",
     "Don't start working until visa is approved",
     "Changing jobs without updating visa is a violation"
   ],
-
-  "relatedVisas": ["d-10", "f-2"],
+  "relatedVisas": [
+    "d-10",
+    "f-2"
+  ],
   "pathsTo": [
     {
       "type": "f-2",
       "name": "Residence Visa (F-2-7 Points-Based)",
       "requirements": "Score 80+ on the F-2-7 points system. Typically need 3+ years on E-7, income above GNI average, TOPIK score, and other point categories.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Points calculation worksheet", "TOPIK certificate", "Income tax documents", "Employment certificate", "Degree certificate"],
+      "documents": [
+        "Points calculation worksheet",
+        "TOPIK certificate",
+        "Income tax documents",
+        "Employment certificate",
+        "Degree certificate"
+      ],
       "notes": "The most desirable upgrade from E-7. F-2 removes employer-tied restrictions — you can change jobs freely, freelance, or start a business. Start preparing early: take TOPIK, build work history, complete KIIP courses for bonus points."
     },
     {
@@ -227,7 +239,12 @@
       "name": "Job Seeking Visa",
       "requirements": "Between jobs (company closure, contract end, layoff). Apply during the grace period before E-7 expires.",
       "timeline": "1-2 weeks processing",
-      "documents": ["Previous employment certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "documents": [
+        "Previous employment certificate",
+        "Job search plan",
+        "Bank statement",
+        "Resume/CV"
+      ],
       "notes": "A fallback option if you lose your job. Grace period is typically 30 days but varies. Apply immediately — do not wait until the last minute. D-10 gives you up to 2 years to find new employment."
     }
   ],
@@ -237,7 +254,12 @@
       "name": "Student Visa",
       "requirements": "Secure a job offer from a Korean company in your field. Must have completed your degree.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "Can transition directly if you have a job offer, or go through D-10 first. Many Korean university graduates find jobs through campus recruitment events."
     },
     {
@@ -245,7 +267,12 @@
       "name": "Intra-Company Transfer Visa",
       "requirements": "Change from intra-company assignment to direct employment with a Korean entity. New employer must sponsor.",
       "timeline": "2-4 weeks processing",
-      "documents": ["New employment contract", "Company business registration", "Degree certificate", "Career certificate"],
+      "documents": [
+        "New employment contract",
+        "Company business registration",
+        "Degree certificate",
+        "Career certificate"
+      ],
       "notes": "Common for employees who were transferred to Korea and decide to join a local company directly."
     },
     {
@@ -253,7 +280,12 @@
       "name": "Job Seeking Visa",
       "requirements": "Secure a job offer from a Korean company. Employer must be willing to sponsor E-7 visa.",
       "timeline": "2-4 weeks processing after employer submits documents",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "The primary path from D-10 to employment. Your new employer handles most of the sponsorship paperwork. Large companies generally have smoother processes."
     },
     {
@@ -261,7 +293,12 @@
       "name": "English Teaching Visa",
       "requirements": "Secure a professional job offer outside of teaching. Must meet E-7 qualification requirements (degree + experience in relevant field).",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "Common for English teachers who want to transition to professional work. May need additional qualifications or experience depending on the target profession."
     },
     {
@@ -269,7 +306,12 @@
       "name": "Digital Nomad Visa (Workcation)",
       "requirements": "Secure a job offer from a Korean company. Must give up remote work arrangement or maintain it separately.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "For digital nomads who find local employment opportunities. Note: you can no longer work for foreign companies on E-7. This is a significant lifestyle change."
     },
     {
@@ -277,7 +319,12 @@
       "name": "Overseas Korean Visa",
       "requirements": "Secure a job offer from a Korean company. F-4 holders already have work authorization but E-7 may be needed for specific employer sponsorship situations.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate",
+        "Career certificate"
+      ],
       "notes": "F-4 holders already have broad work rights, so this transition is less common. Usually only needed for specific regulatory or company requirements."
     },
     {
@@ -285,15 +332,28 @@
       "name": "Working Holiday Visa",
       "requirements": "Secure a professional job offer before H-1 expires. Must meet E-7 qualification requirements.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate"
+      ],
       "notes": "Possible but less common directly from H-1. Most go through D-10 first. Start job searching early — H-1 cannot be extended."
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "E-7 Occupation List", "url": "https://www.immigration.go.kr/immigration_eng/1832/subview.do"},
-    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"}
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "E-7 Occupation List",
+      "url": "https://www.immigration.go.kr/immigration_eng/1832/subview.do"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    }
   ]
 }

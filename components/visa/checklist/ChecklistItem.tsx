@@ -70,6 +70,11 @@ export function ChecklistItem({
                 )}
               >
                 {document.name}
+                {document.nameKorean && (
+                  <span className="text-muted-foreground text-sm font-normal ml-1">
+                    ({document.nameKorean})
+                  </span>
+                )}
               </h4>
               <p className="text-sm text-muted-foreground mt-0.5">
                 {document.description}

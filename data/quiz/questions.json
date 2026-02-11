@@ -18,6 +18,11 @@
         { "value": "fr", "label": "France", "icon": "Flag" },
         { "value": "jp", "label": "Japan", "icon": "Flag" },
         { "value": "other-eu", "label": "Other EU Country", "icon": "Flag" },
+        { "value": "vietnam", "label": "Vietnam", "icon": "Globe" },
+        { "value": "china", "label": "China", "icon": "Globe" },
+        { "value": "india", "label": "India", "icon": "Globe" },
+        { "value": "philippines", "label": "Philippines", "icon": "Globe" },
+        { "value": "indonesia", "label": "Indonesia", "icon": "Globe" },
         { "value": "other", "label": "Other Country", "icon": "Globe" }
       ]
     },

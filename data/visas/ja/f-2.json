@@ -6,14 +6,12 @@
   "description": "F-2ビザは、就労ビザよりも大きな自由度を持つ長期居住資格を韓国で提供します。ポイント制、配偶者、投資家など、さまざまなサブカテゴリを通じて取得可能です。",
   "tagline": "就労の自由度が高い長期居住",
   "keyRequirement": "ポイント制評価（80点以上）または韓国市民との家族関係",
-
   "targetAudience": [
     "安定を求める長期居住者",
     "韓国市民または居住者の配偶者",
     "高収入の専門家（F-2-7）",
     "韓国ビジネスへの投資家"
   ],
-
   "eligibility": [
     {
       "id": "f2-7-points",
@@ -40,100 +38,116 @@
       "required": true
     }
   ],
-
   "duration": {
     "initial": "1〜3年",
     "extension": "延長1回につき2〜3年",
     "maxTotal": "無期限（更新可能）"
   },
-
   "fees": {
     "application": "₩60,000（約$42）",
     "extension": "₩60,000",
     "notes": "サブカテゴリにより料金が異なる場合があります"
   },
-
   "incomeRequirement": {
     "amount": "サブカテゴリにより異なる",
     "currency": "KRW",
     "period": "annual",
     "notes": "F-2-7にはGNI平均以上の収入が必要（約₩4,000〜5,000万/年）"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "有効なパスポート（旅券）",
       "description": "申請する滞在期間中有効なもの",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "ビザ申請書",
       "description": "記入済みの申請書",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "証明写真",
       "description": "3.5cm x 4.5cm、最近撮影、白背景",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "arc",
       "name": "現在の外国人登録証",
       "description": "有効なビザステータスを示す現在の外国人登録証",
-      "required": true
+      "required": true,
+      "nameKorean": "외국인등록증"
     },
     {
       "id": "points-checklist",
       "name": "ポイント計算表（F-2-7）",
       "description": "全カテゴリのポイントの自己評価",
-      "tips": ["出入国管理局から公式のワークシートをダウンロード", "正直に — すべて確認されます"],
-      "required": false
+      "tips": [
+        "出入国管理局から公式のワークシートをダウンロード",
+        "正直に — すべて確認されます"
+      ],
+      "required": false,
+      "nameKorean": "점수계산표"
     },
     {
       "id": "degree-certificate",
       "name": "学位証明書",
       "description": "学歴ポイント計算用",
-      "required": false
+      "required": false,
+      "nameKorean": "학위증명서"
     },
     {
       "id": "topik-certificate",
       "name": "TOPIK証明書",
       "description": "韓国語能力ポイント用",
-      "tips": ["TOPIKレベルが高いほどポイントが増える"],
-      "required": false
+      "tips": [
+        "TOPIKレベルが高いほどポイントが増える"
+      ],
+      "required": false,
+      "nameKorean": "TOPIK 성적증명서"
     },
     {
       "id": "income-proof",
       "name": "所得税書類",
       "description": "韓国の税務署からの納税証明書",
-      "required": true
+      "required": true,
+      "nameKorean": "소득증명서"
     },
     {
       "id": "employment-proof",
       "name": "在職証明書",
       "description": "役職と給与を確認する雇用主からの書簡",
-      "required": true
+      "required": true,
+      "nameKorean": "재직증명서"
     },
     {
       "id": "marriage-certificate",
       "name": "婚姻証明書（F-2-1）",
       "description": "認証された婚姻届",
-      "required": false
+      "required": false,
+      "nameKorean": "혼인관계증명서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
       "title": "資格確認とポイント計算",
       "description": "どのF-2サブカテゴリの資格があるか判断します。F-2-7の場合はポイントを計算します。",
-      "tips": ["公式のポイント計算機を使用", "F-2-7には80点以上が必要"],
+      "tips": [
+        "公式のポイント計算機を使用",
+        "F-2-7には80点以上が必要"
+      ],
       "links": [
-        {"label": "ポイント計算機", "url": "https://www.immigration.go.kr"}
+        {
+          "label": "ポイント計算機",
+          "url": "https://www.immigration.go.kr"
+        }
       ]
     },
     {
@@ -142,7 +156,10 @@
       "title": "証拠書類の収集",
       "description": "ポイントの主張や資格を証明するすべての書類を収集します。",
       "duration": "2〜4週間",
-      "tips": ["必要に応じて公式TOPIK証明書を取得", "国税庁から税務書類を収集"]
+      "tips": [
+        "必要に応じて公式TOPIK証明書を取得",
+        "国税庁から税務書類を収集"
+      ]
     },
     {
       "id": "step-3",
@@ -173,12 +190,10 @@
       "duration": "申請後2〜4週間"
     }
   ],
-
   "processingTime": {
     "typical": "2〜4週間",
     "notes": "面接が必要な場合や追加書類が必要な場合は時間がかかることがあります"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -188,7 +203,6 @@
     ],
     "notes": "F-2は雇用主に紐づいたビザよりもはるかに大きな就労の自由度を提供します"
   },
-
   "faqs": [
     {
       "question": "F-2-7のポイント制とは何ですか？",
@@ -211,7 +225,6 @@
       "answer": "E-7とは異なり、失業してもF-2ステータスには影響しません。ビザの心配なく新しい仕事を探す時間を取ることができます。"
     }
   ],
-
   "tips": [
     "F-2-7の準備を早めに始める — TOPIKを受験し、職歴を積む",
     "TOPIK 5〜6級は大幅なポイントアップになる",
@@ -220,14 +233,14 @@
     "すべての税務・雇用記録を整理して保管",
     "タイミングを考慮 — 一部のポイントカテゴリには年齢制限あり"
   ],
-
   "warnings": [
     "ポイントは検証可能でなければならない — 誇張しない",
     "継続的な居住を維持 — 長期不在はステータスに影響する可能性あり",
     "住所変更は引き続き出入国管理局に届け出が必要"
   ],
-
-  "relatedVisas": ["e-7"],
+  "relatedVisas": [
+    "e-7"
+  ],
   "pathsTo": [],
   "pathsFrom": [
     {
@@ -235,7 +248,14 @@
       "name": "専門職就業ビザ",
       "requirements": "F-2-7ポイント制で80点以上を取得。通常E-7で3年以上、TOPIK 4級以上、GNI平均以上の収入などが必要。",
       "timeline": "審査期間2〜4週間",
-      "documents": ["ポイント計算表", "TOPIK証明書", "所得税書類", "在職証明書", "学位証明書", "KIIP修了証（該当する場合）"],
+      "documents": [
+        "ポイント計算表",
+        "TOPIK証明書",
+        "所得税書類",
+        "在職証明書",
+        "学位証明書",
+        "KIIP修了証（該当する場合）"
+      ],
       "notes": "F-2への最も一般的な経路。早めにポイントを積み上げましょう：TOPIK（5〜6級で大きなポイントアップ）を受験し、高収入を維持し、KIIPコースでボーナスポイントを獲得してください。"
     },
     {
@@ -243,7 +263,13 @@
       "name": "駐在ビザ",
       "requirements": "F-2-7ポイント要件（80点以上）を満たす。D-7での長期韓国滞在は経験ポイントに算入。",
       "timeline": "審査期間2〜4週間",
-      "documents": ["ポイント計算表", "TOPIK証明書", "所得税書類", "在職証明書", "学位証明書"],
+      "documents": [
+        "ポイント計算表",
+        "TOPIK証明書",
+        "所得税書類",
+        "在職証明書",
+        "学位証明書"
+      ],
       "notes": "韓国での長期駐在経験を持つD-7保持者は、特に韓国語能力に投資すればF-2-7に十分なポイントを積み上げられます。"
     },
     {
@@ -251,7 +277,12 @@
       "name": "投資ビザ",
       "requirements": "F-2-99投資基準またはF-2-7ポイント制（80点以上）を満たす。事業が運営中で収益を上げていること。",
       "timeline": "審査期間2〜4週間",
-      "documents": ["事業者登録証", "納税証明書", "投資証明", "ポイント計算表（F-2-7ルートの場合）"],
+      "documents": [
+        "事業者登録証",
+        "納税証明書",
+        "投資証明",
+        "ポイント計算表（F-2-7ルートの場合）"
+      ],
       "notes": "D-8保持者は投資ルート（F-2-99）または標準ポイント制（F-2-7）で資格取得可能。成功した事業運営が申請を強化します。"
     },
     {
@@ -259,7 +290,11 @@
       "name": "在外同胞ビザ",
       "requirements": "韓国系としてのステータスに加え、サブカテゴリに応じた追加基準でF-2の資格を満たす。",
       "timeline": "審査期間2〜4週間",
-      "documents": ["韓国系証明", "現在のF-4外国人登録証", "ポイント計算表または関係書類"],
+      "documents": [
+        "韓国系証明",
+        "現在のF-4外国人登録証",
+        "ポイント計算表または関係書類"
+      ],
       "notes": "F-4保持者は追加の安定性やF-5永住権への足がかりとしてF-2に移行する場合があります。"
     },
     {
@@ -267,15 +302,28 @@
       "name": "結婚移民ビザ",
       "requirements": "F-2の資格を満たす。韓国市民と結婚しているF-6保持者は婚姻ベースのサブカテゴリで資格取得可能。",
       "timeline": "審査期間2〜4週間",
-      "documents": ["婚姻証明書", "配偶者の身分証明書", "現在のF-6外国人登録証", "所得証明"],
+      "documents": [
+        "婚姻証明書",
+        "配偶者の身分証明書",
+        "現在のF-6外国人登録証",
+        "所得証明"
+      ],
       "notes": "F-6保持者は、特に韓国での長期滞在後、より大きな自立を求めてF-2に移行する場合があります。"
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "F-2-7ポイント情報", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "ハイコリア (HiKorea)", "url": "https://www.hikorea.go.kr"},
-    {"label": "KIIPプログラム", "url": "https://www.socinet.go.kr"}
+    {
+      "label": "F-2-7ポイント情報",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "ハイコリア (HiKorea)",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "KIIPプログラム",
+      "url": "https://www.socinet.go.kr"
+    }
   ]
 }

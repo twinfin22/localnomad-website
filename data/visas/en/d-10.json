@@ -6,14 +6,12 @@
   "description": "The D-10 visa allows qualified individuals to stay in Korea while actively searching for employment. It's ideal for recent graduates from Korean universities or professionals seeking career opportunities.",
   "tagline": "Your gateway to a Korean career",
   "keyRequirement": "Bachelor's degree or higher from a Korean university",
-
   "targetAudience": [
     "Recent graduates from Korean universities",
     "Professionals with relevant work experience",
     "Skilled workers seeking Korean employment",
     "Former E-7 visa holders between jobs"
   ],
-
   "eligibility": [
     {
       "id": "edu-korean",
@@ -36,74 +34,86 @@
       "required": false
     }
   ],
-
   "duration": {
     "initial": "6 months",
     "extension": "Up to 6 months per extension",
     "maxTotal": "2 years maximum"
   },
-
   "fees": {
     "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000 per extension",
     "notes": "Fees may vary; check HiKorea for current rates"
   },
-
   "documents": [
     {
       "id": "passport",
       "name": "Valid Passport",
       "description": "Must be valid for at least 6 months beyond intended stay",
-      "required": true
+      "required": true,
+      "nameKorean": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed visa application form (Form 34)",
       "where_to_get": "Download from HiKorea or get at immigration office",
-      "required": true
+      "required": true,
+      "nameKorean": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, taken within last 6 months, white background",
-      "required": true
+      "required": true,
+      "nameKorean": "여권사진"
     },
     {
       "id": "diploma",
       "name": "Degree Certificate",
       "description": "Original or certified copy of your highest degree",
-      "tips": ["Must be apostilled or authenticated if from foreign country"],
-      "required": true
+      "tips": [
+        "Must be apostilled or authenticated if from foreign country"
+      ],
+      "required": true,
+      "nameKorean": "학위증명서"
     },
     {
       "id": "transcript",
       "name": "Academic Transcript",
       "description": "Official transcript from your university",
-      "required": true
+      "required": true,
+      "nameKorean": "성적증명서"
     },
     {
       "id": "job-search-plan",
       "name": "Job Search Plan",
       "description": "Document outlining your job search strategy and target companies",
-      "tips": ["Include specific companies you plan to apply to", "Show you've researched the Korean job market"],
-      "required": true
+      "tips": [
+        "Include specific companies you plan to apply to",
+        "Show you've researched the Korean job market"
+      ],
+      "required": true,
+      "nameKorean": "구직활동계획서"
     },
     {
       "id": "bank-statement",
       "name": "Bank Statement",
       "description": "Proof of sufficient funds for your stay",
-      "tips": ["Minimum $3,000-5,000 USD recommended", "Statement should be recent (within 1 month)"],
-      "required": true
+      "tips": [
+        "Minimum $3,000-5,000 USD recommended",
+        "Statement should be recent (within 1 month)"
+      ],
+      "required": true,
+      "nameKorean": "잔고증명서"
     },
     {
       "id": "resume",
       "name": "Resume/CV",
       "description": "Detailed resume highlighting relevant experience",
-      "required": true
+      "required": true,
+      "nameKorean": "이력서"
     }
   ],
-
   "applicationSteps": [
     {
       "id": "step-1",
@@ -111,7 +121,10 @@
       "title": "Prepare Documents",
       "description": "Gather all required documents. Get foreign documents apostilled or authenticated.",
       "duration": "1-2 weeks",
-      "tips": ["Start early - apostille can take time", "Make copies of everything"]
+      "tips": [
+        "Start early - apostille can take time",
+        "Make copies of everything"
+      ]
     },
     {
       "id": "step-2",
@@ -119,9 +132,14 @@
       "title": "Book Appointment",
       "description": "Schedule an appointment at your local immigration office via HiKorea.",
       "duration": "Same day to 2 weeks",
-      "tips": ["Book early - popular offices fill up quickly"],
+      "tips": [
+        "Book early - popular offices fill up quickly"
+      ],
       "links": [
-        {"label": "HiKorea Reservation", "url": "https://www.hikorea.go.kr"}
+        {
+          "label": "HiKorea Reservation",
+          "url": "https://www.hikorea.go.kr"
+        }
       ]
     },
     {
@@ -130,7 +148,10 @@
       "title": "Submit Application",
       "description": "Visit the immigration office with all documents. Submit application and pay fee.",
       "duration": "2-3 hours",
-      "tips": ["Arrive 30 minutes early", "Bring original documents AND copies"]
+      "tips": [
+        "Arrive 30 minutes early",
+        "Bring original documents AND copies"
+      ]
     },
     {
       "id": "step-4",
@@ -147,12 +168,10 @@
       "duration": "1-3 days after approval"
     }
   ],
-
   "processingTime": {
     "typical": "7-14 business days",
     "notes": "May vary based on immigration office workload and completeness of application"
   },
-
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -162,7 +181,6 @@
     ],
     "notes": "Full-time work requires changing to appropriate work visa (E-7, etc.)"
   },
-
   "faqs": [
     {
       "question": "Can I work while on a D-10 visa?",
@@ -181,7 +199,6 @@
       "answer": "Yes, you can enroll in Korean language courses. This doesn't count against your work hours."
     }
   ],
-
   "tips": [
     "Start job searching before your current visa expires",
     "Network actively - many Korean jobs are filled through connections",
@@ -190,21 +207,30 @@
     "Join expat job boards and LinkedIn groups focused on Korea",
     "Consider working with a recruitment agency specializing in foreign talent"
   ],
-
   "warnings": [
     "Don't overstay your visa - it severely impacts future visa applications",
     "Working full-time without proper authorization is illegal",
     "Always carry your ARC card when outside"
   ],
-
-  "relatedVisas": ["e-7", "d-8", "f-1-d", "f-2"],
+  "relatedVisas": [
+    "e-7",
+    "d-8",
+    "f-1-d",
+    "f-2"
+  ],
   "pathsTo": [
     {
       "type": "e-7",
       "name": "Professional Employment Visa",
       "requirements": "Secure a job offer from a Korean company willing to sponsor your visa. Must have bachelor's degree or 5+ years experience in your field.",
       "timeline": "2-4 weeks processing after employer submits documents",
-      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate", "Tax payment certificates (if applicable)"],
+      "documents": [
+        "Employment contract",
+        "Company business registration",
+        "Degree certificate (apostilled)",
+        "Career certificate",
+        "Tax payment certificates (if applicable)"
+      ],
       "notes": "The primary goal for most D-10 holders. Your new employer handles the visa sponsorship. Keep detailed records of your job search activities as proof for immigration."
     },
     {
@@ -212,7 +238,12 @@
       "name": "Corporate Investment Visa",
       "requirements": "Register a business in Korea with minimum investment of ~₩100,000,000 (~$75,000 USD). Must have a viable business plan.",
       "timeline": "4-8 weeks processing",
-      "documents": ["Business registration certificate", "Investment proof (bank transfer records)", "Business plan", "Office lease agreement"],
+      "documents": [
+        "Business registration certificate",
+        "Investment proof (bank transfer records)",
+        "Business plan",
+        "Office lease agreement"
+      ],
       "notes": "An option for D-10 holders who want to start their own business in Korea instead of seeking employment. The investment threshold is significant."
     },
     {
@@ -220,7 +251,12 @@
       "name": "Digital Nomad Visa (Workcation)",
       "requirements": "Remote employment with a foreign company and annual income of ~$66,000+ USD (GNI x 2). Must have health insurance covering Korea.",
       "timeline": "1-3 weeks processing",
-      "documents": ["Proof of remote employment", "Income documentation (6-12 months)", "Health insurance certificate", "Criminal background check"],
+      "documents": [
+        "Proof of remote employment",
+        "Income documentation (6-12 months)",
+        "Health insurance certificate",
+        "Criminal background check"
+      ],
       "notes": "Viable if you have remote work with a foreign employer. Note the high income requirement (~₩88M/year). Cannot work for Korean companies on this visa."
     }
   ],
@@ -230,7 +266,12 @@
       "name": "Student Visa",
       "requirements": "Graduate from a Korean university. Apply for D-10 before your D-2 visa expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Graduation certificate", "Degree certificate", "Job search plan", "Bank statement"],
+      "documents": [
+        "Graduation certificate",
+        "Degree certificate",
+        "Job search plan",
+        "Bank statement"
+      ],
       "notes": "Most common path into D-10. Apply 1-2 months before graduation. You get up to 2 years to find employment."
     },
     {
@@ -238,7 +279,12 @@
       "name": "English Teaching Visa",
       "requirements": "Leave or complete your teaching position. Must have bachelor's degree for D-10 eligibility.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Degree certificate", "Previous employment certificate", "Job search plan", "Bank statement"],
+      "documents": [
+        "Degree certificate",
+        "Previous employment certificate",
+        "Job search plan",
+        "Bank statement"
+      ],
       "notes": "Common for English teachers wanting to transition to professional work in Korea. D-10 provides a bridge while you job search."
     },
     {
@@ -246,7 +292,12 @@
       "name": "Professional Employment Visa",
       "requirements": "Between jobs (company closure, contract end, or voluntary departure). Must apply before current visa expires or within grace period.",
       "timeline": "1-2 weeks processing",
-      "documents": ["Previous employment certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "documents": [
+        "Previous employment certificate",
+        "Job search plan",
+        "Bank statement",
+        "Resume/CV"
+      ],
       "notes": "D-10 serves as a safety net for E-7 holders who lose their job. A grace period may be granted (typically 30 days). Apply quickly to avoid overstaying."
     },
     {
@@ -254,7 +305,12 @@
       "name": "Working Holiday Visa",
       "requirements": "Must have bachelor's degree or higher. Apply before H-1 visa expires (it cannot be extended).",
       "timeline": "2-4 weeks processing",
-      "documents": ["Degree certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "documents": [
+        "Degree certificate",
+        "Job search plan",
+        "Bank statement",
+        "Resume/CV"
+      ],
       "notes": "A common next step for Working Holiday visa holders who want to stay in Korea. Start the process around month 9-10 of your H-1 year."
     },
     {
@@ -262,7 +318,12 @@
       "name": "Language Training Visa",
       "requirements": "Complete your language program. Must have bachelor's degree for D-10 eligibility.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Degree certificate", "Language program completion certificate", "Job search plan", "Bank statement"],
+      "documents": [
+        "Degree certificate",
+        "Language program completion certificate",
+        "Job search plan",
+        "Bank statement"
+      ],
       "notes": "For language students who want to transition to job seeking in Korea rather than returning home."
     },
     {
@@ -270,7 +331,12 @@
       "name": "Intra-Company Transfer Visa",
       "requirements": "End of assignment or company restructuring. Apply before current visa expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Previous employment certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "documents": [
+        "Previous employment certificate",
+        "Job search plan",
+        "Bank statement",
+        "Resume/CV"
+      ],
       "notes": "D-10 serves as a fallback for intra-company transferees whose assignment ends but who wish to remain in Korea."
     },
     {
@@ -278,15 +344,35 @@
       "name": "Corporate Investment Visa",
       "requirements": "Business closure or change in business status. Apply before current visa expires.",
       "timeline": "2-4 weeks processing",
-      "documents": ["Business closure documents or status change proof", "Job search plan", "Bank statement"],
+      "documents": [
+        "Business closure documents or status change proof",
+        "Job search plan",
+        "Bank statement"
+      ],
       "notes": "D-10 can serve as a bridge if your business venture ends and you want to seek employment instead."
+    },
+    {
+      "type": "f-1-d",
+      "name": "Digital Nomad Visa (Workcation)",
+      "requirements": "End of remote work arrangement or desire to seek local employment. Must have bachelor's degree for D-10 eligibility.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Degree certificate", "Previous visa documentation", "Job search plan", "Bank statement"],
+      "notes": "For digital nomads who decide to seek local employment in Korea instead of continuing remote work. D-10 provides up to 2 years to find a Korean employer."
     }
   ],
-
   "lastUpdated": "2026-02-11",
   "officialLinks": [
-    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
-    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},
-    {"label": "Visa Portal", "url": "https://www.visa.go.kr"}
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "Visa Portal",
+      "url": "https://www.visa.go.kr"
+    }
   ]
 }
