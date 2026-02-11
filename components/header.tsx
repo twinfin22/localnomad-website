@@ -1,20 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { href: "/bundles", label: "Bundles" },
-  { href: "/areas", label: "Area Guide" },
-  { href: "/visa", label: "Visa" },
-];
-
 export function Header() {
+  const t = useTranslations();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/bundles", label: t("nav.bundles") },
+    { href: "/areas", label: t("nav.areaGuide") },
+    { href: "/visa", label: t("nav.visa") },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +61,7 @@ export function Header() {
                 variant="primary"
                 className="text-xs sm:text-sm whitespace-nowrap"
               >
-                Get Started
+                {t("common.getStarted")}
               </Button>
             </Link>
             <button
@@ -92,7 +94,7 @@ export function Header() {
                   variant="primary"
                   className="w-full mt-2"
                 >
-                  Get Started
+                  {t("common.getStarted")}
                 </Button>
               </Link>
             </div>

@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Newspaper, Instagram } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 
-const footerLinks = [
-  { href: "/bundles", label: "Bundles" },
-  { href: "/areas", label: "Area Guide" },
-  { href: "/visa", label: "Visa" },
-];
-
 export function Footer() {
+  const t = useTranslations();
+
+  const footerLinks = [
+    { href: "/bundles", label: t("nav.bundles") },
+    { href: "/areas", label: t("nav.areaGuide") },
+    { href: "/visa", label: t("nav.visa") },
+  ];
+
   return (
     <footer className="py-16 px-6 relative overflow-hidden bg-surface">
       {/* Gradient line at top */}
@@ -20,12 +23,12 @@ export function Footer() {
         <AnimatedSection>
           {/* Logo */}
           <div className="text-center mb-6">
-            <span className="text-2xl font-bold text-foreground">LocalNomad</span>
+            <span className="text-2xl font-bold text-foreground">{t("common.brand")}</span>
           </div>
 
           <div className="text-center mb-10">
             <p className="text-base text-muted-foreground">
-              Where Nomads Become <span className="text-primary font-medium">Local</span>, and Locals Become <span className="text-primary font-medium">Nomads</span>
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -65,17 +68,17 @@ export function Footer() {
 
           <div className="mt-8 pt-6 border-t border-border text-center">
             <p className="text-sm text-muted-foreground">
-              © 2026 LocalNomad ·{" "}
+              {t("footer.copyright", { year: new Date().getFullYear() })} ·{" "}
               <Link href="/terms" className="hover:text-foreground transition-colors duration-200">
-                Terms
+                {t("footer.terms")}
               </Link>{" "}
               ·{" "}
               <Link href="/privacy" className="hover:text-foreground transition-colors duration-200">
-                Privacy
+                {t("footer.privacy")}
               </Link>{" "}
               ·{" "}
               <Link href="/refund" className="hover:text-foreground transition-colors duration-200">
-                Refund
+                {t("footer.refund")}
               </Link>
             </p>
           </div>

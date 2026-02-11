@@ -143,8 +143,8 @@ function parseUrl(pathname: string): ParsedUrl {
     pathStart = 1;
     needsRewrite = true; // /korea/visa needs rewrite to /en/korea/visa
   }
-  // Check if it's a global route at root
-  else if (segments.length === 0 || globalRoutes.some((r) => pathname === r || pathname.startsWith(r + "/"))) {
+  // Only rewrite root path, not global routes (they're served without locale prefix)
+  else if (segments.length === 0) {
     needsRewrite = true; // / needs rewrite to /en
   }
 

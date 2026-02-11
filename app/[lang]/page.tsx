@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import {
@@ -17,10 +18,19 @@ interface GlobalLandingProps {
 export default async function GlobalLandingPage({ params }: GlobalLandingProps) {
   const { lang } = await params;
   const locale = lang as Locale;
+  const t = await getTranslations();
 
   // Build locale-aware href
   const buildHref = (country: Country) => {
     return locale === defaultLocale ? `/${country}` : `/${locale}/${country}`;
+  };
+
+  // Translated service names
+  const serviceNames = {
+    visaGuide: t("countryHub.visaGuide"),
+    areaGuide: t("countryHub.areaGuide"),
+    bundles: t("countryHub.bundles"),
+    comingSoon: t("common.comingSoon"),
   };
 
   return (
@@ -33,10 +43,10 @@ export default async function GlobalLandingPage({ params }: GlobalLandingProps) 
 
         <div className="container mx-auto max-w-3xl relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Your Toolkit for Living in Asia
+            {t("home.headline")}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-            Navigate visas, find neighborhoods, and settle in with confidence.
+            {t("home.subheadline")}
           </p>
 
           {/* Country Selection */}
@@ -47,12 +57,13 @@ export default async function GlobalLandingPage({ params }: GlobalLandingProps) 
                 country={country}
                 locale={locale}
                 href={buildHref(country)}
+                serviceNames={serviceNames}
               />
             ))}
           </div>
 
           <p className="text-sm text-muted-foreground mt-12">
-            More countries coming soon.
+            {t("home.moreCountries")}
           </p>
         </div>
       </section>
@@ -66,26 +77,34 @@ export default async function GlobalLandingPage({ params }: GlobalLandingProps) 
 // Country Card Component
 // =============================================================================
 
+interface ServiceNames {
+  visaGuide: string;
+  areaGuide: string;
+  bundles: string;
+  comingSoon: string;
+}
+
 interface CountryCardProps {
   country: Country;
   locale: Locale;
   href: string;
+  serviceNames: ServiceNames;
 }
 
-function CountryCard({ country, locale, href }: CountryCardProps) {
+function CountryCard({ country, locale, href, serviceNames }: CountryCardProps) {
   const name = countryNames[country][locale];
   const flag = countryFlags[country];
 
   // Available services per country
   const services: Record<Country, { name: string; available: boolean }[]> = {
     korea: [
-      { name: "Visa Guide", available: true },
-      { name: "Area Guide", available: true },
-      { name: "Bundles", available: true },
+      { name: serviceNames.visaGuide, available: true },
+      { name: serviceNames.areaGuide, available: true },
+      { name: serviceNames.bundles, available: true },
     ],
     taiwan: [
-      { name: "Visa Guide", available: false },
-      { name: "Area Guide", available: false },
+      { name: serviceNames.visaGuide, available: false },
+      { name: serviceNames.areaGuide, available: false },
     ],
   };
 
@@ -111,7 +130,7 @@ function CountryCard({ country, locale, href }: CountryCardProps) {
             >
               {service.available ? "✓" : "○"} {service.name}
               {!service.available && (
-                <span className="text-xs text-muted-foreground/50 ml-2">Coming Soon</span>
+                <span className="text-xs text-muted-foreground/50 ml-2">{serviceNames.comingSoon}</span>
               )}
             </li>
           ))}

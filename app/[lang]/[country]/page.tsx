@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import {
@@ -19,6 +20,7 @@ export default async function CountryHubPage({ params }: CountryHubProps) {
   const { lang, country: countryParam } = await params;
   const locale = lang as Locale;
   const country = countryParam as Country;
+  const t = await getTranslations();
 
   const countryName = countryNames[country][locale];
   const flag = countryFlags[country];
@@ -26,8 +28,21 @@ export default async function CountryHubPage({ params }: CountryHubProps) {
   // Build locale-aware href
   const buildHref = (path: string) => buildLocalePath(path, locale, country);
 
+  // Translated strings for services
+  const translations = {
+    visaGuide: t("countryHub.visaGuide"),
+    visaGuideDesc: t("countryHub.visaGuideDesc"),
+    areaGuide: t("countryHub.areaGuide"),
+    areaGuideDesc: t("countryHub.areaGuideDesc"),
+    bundles: t("countryHub.bundles"),
+    bundlesDesc: t("countryHub.bundlesDesc"),
+    comingSoon: t("common.comingSoon"),
+    explore: t("common.learnMore"),
+    exploreServices: t("countryHub.exploreServices", { country: countryName }),
+  };
+
   // Services available per country
-  const services = getServicesForCountry(country);
+  const services = getServicesForCountry(country, translations);
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
@@ -45,7 +60,7 @@ export default async function CountryHubPage({ params }: CountryHubProps) {
               {countryName}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to live, work, and thrive in {countryName}.
+              {translations.exploreServices}
             </p>
           </div>
 
@@ -59,6 +74,8 @@ export default async function CountryHubPage({ params }: CountryHubProps) {
                 href={service.available ? buildHref(service.path) : undefined}
                 icon={service.icon}
                 available={service.available}
+                comingSoonLabel={translations.comingSoon}
+                exploreLabel={translations.explore}
               />
             ))}
           </div>
@@ -80,6 +97,8 @@ interface ServiceCardProps {
   href?: string;
   icon: "visa" | "area" | "bundles";
   available: boolean;
+  comingSoonLabel: string;
+  exploreLabel: string;
 }
 
 const icons = {
@@ -94,6 +113,8 @@ function ServiceCard({
   href,
   icon,
   available,
+  comingSoonLabel,
+  exploreLabel,
 }: ServiceCardProps) {
   const Icon = icons[icon];
 
@@ -118,12 +139,12 @@ function ServiceCard({
 
       {/* Status */}
       {!available && (
-        <span className="text-xs text-muted-foreground mt-4">Coming Soon</span>
+        <span className="text-xs text-muted-foreground mt-4">{comingSoonLabel}</span>
       )}
 
       {available && (
         <div className="flex items-center text-primary mt-4">
-          <span className="text-sm font-medium">Explore</span>
+          <span className="text-sm font-medium">{exploreLabel}</span>
           <span className="ml-2">→</span>
         </div>
       )}
@@ -149,25 +170,34 @@ interface ServiceConfig {
   available: boolean;
 }
 
-function getServicesForCountry(country: Country): ServiceConfig[] {
+interface ServiceTranslations {
+  visaGuide: string;
+  visaGuideDesc: string;
+  areaGuide: string;
+  areaGuideDesc: string;
+  bundles: string;
+  bundlesDesc: string;
+}
+
+function getServicesForCountry(country: Country, t: ServiceTranslations): ServiceConfig[] {
   const baseServices: ServiceConfig[] = [
     {
-      name: "Visa Guide",
-      description: "Find the right visa for your situation with step-by-step guides.",
+      name: t.visaGuide,
+      description: t.visaGuideDesc,
       path: "/visa",
       icon: "visa",
       available: country === "korea",
     },
     {
-      name: "Area Guide",
-      description: "Discover neighborhoods and find your perfect place to live.",
+      name: t.areaGuide,
+      description: t.areaGuideDesc,
       path: "/areas",
       icon: "area",
       available: country === "korea",
     },
     {
-      name: "Info Bundles",
-      description: "Curated resources to help you settle in quickly.",
+      name: t.bundles,
+      description: t.bundlesDesc,
       path: "/bundles",
       icon: "bundles",
       available: country === "korea",

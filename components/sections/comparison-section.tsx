@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { CheckCircle, Circle } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 
@@ -47,16 +48,18 @@ const comparisons = [
 ];
 
 export function ComparisonSection() {
+  const t = useTranslations();
+
   return (
     <section className="py-20 px-4 sm:px-6 bg-secondary">
       <div className="container mx-auto max-w-4xl">
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-bold">
-              Which Resources Are Right for You?
+              {t("sections.comparisonTitle")}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Different journeys need different guides
+              {t("sections.comparisonSubtitle")}
             </p>
           </div>
         </AnimatedSection>
@@ -64,17 +67,17 @@ export function ComparisonSection() {
         <AnimatedSection>
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
             <div className="grid grid-cols-3 bg-muted/50 p-4 font-semibold text-sm">
-              <div>Resource</div>
+              <div>{t("visa.resource")}</div>
               <div className="text-center">
-                <span className="text-primary">Digital Nomad</span>
+                <span className="text-primary">{t("visa.digitalNomad")}</span>
                 <p className="text-xs font-normal text-muted-foreground">
-                  1-6 months
+                  {t("visa.months1to6")}
                 </p>
               </div>
               <div className="text-center">
-                <span className="text-accent">Long-term Mover</span>
+                <span className="text-accent">{t("visa.longTermMover")}</span>
                 <p className="text-xs font-normal text-muted-foreground">
-                  1+ years
+                  {t("visa.years1plus")}
                 </p>
               </div>
             </div>
