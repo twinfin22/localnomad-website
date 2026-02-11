@@ -354,6 +354,10 @@ export function DashboardClient() {
 
     try {
       const supabase = createClient();
+      if (!supabase) {
+        setLoading(false);
+        return;
+      }
 
       // Define interfaces for Supabase responses
       interface VisaProgressRow {

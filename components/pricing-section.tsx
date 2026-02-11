@@ -83,7 +83,7 @@ export function PricingSection() {
                     <span className="text-xs sm:text-sm text-muted-foreground">• Hotel / coliving / serviced apartment options</span>
                   </li>
                   <li className="flex items-start gap-3 pl-8">
-                    <span className="text-xs sm:text-sm text-muted-foreground">• Help prepare required paperwork</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground">• Checklist of required paperwork</span>
                   </li>
                   <li className="flex items-start gap-3 pl-8">
                     <span className="text-xs sm:text-sm text-muted-foreground">• Check-in support</span>
@@ -114,7 +114,7 @@ export function PricingSection() {
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-sm sm:text-base text-muted-foreground">
-                    In-person accompaniment (bank, government offices, hospital, etc.)
+                    In-person accompaniment (bank, government offices, hospital, etc.) — Logistical and language support only.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

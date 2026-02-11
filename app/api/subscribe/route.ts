@@ -1,6 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+// =============================================================================
+// Rate Limiting (in-memory, per-IP, 5 requests/minute)
+// =============================================================================
+
+const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+const RATE_LIMIT_MAX = 5;
+
+interface RateLimitEntry {
+  count: number;
+  resetAt: number;
+}
+
+const rateLimitMap = new Map<string, RateLimitEntry>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now >= entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  entry.count += 1;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+// Periodically clean up stale entries to prevent unbounded memory growth
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of rateLimitMap) {
+    if (now >= entry.resetAt) {
+      rateLimitMap.delete(ip);
+    }
+  }
+}, RATE_LIMIT_WINDOW_MS);
+
+// =============================================================================
+// Helpers
+// =============================================================================
+
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
@@ -16,13 +57,12 @@ interface SubscriberData {
 }
 
 async function addToAirtable({ email, firstName, status }: SubscriberData) {
-  console.log("[Airtable] Saving with email:", email);
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Subscribers";
 
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-    console.warn("Airtable not configured, skipping...");
+    console.warn("[Airtable] Not configured, skipping save");
     return;
   }
 
@@ -51,8 +91,7 @@ async function addToAirtable({ email, firstName, status }: SubscriberData) {
   );
 
   if (!response.ok) {
-    const error = await response.text();
-    console.error("Airtable error:", error);
+    console.error("[Airtable] Failed to save subscriber record");
     throw new Error("Failed to save to Airtable");
   }
 }
@@ -127,22 +166,38 @@ async function sendWelcomeEmail(email: string, firstName: string): Promise<boole
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("[Subscribe] Email send failed via Resend");
       return false;
     }
     return true;
-  } catch (error) {
-    console.error("Email send error:", error);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("[Subscribe] Email send error:", message);
     return false;
   }
 }
 
+// =============================================================================
+// Route Handler
+// =============================================================================
+
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting by IP
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
-    console.log("[Subscribe] Request body:", JSON.stringify(body));
     const { email, firstName } = body;
-    console.log("[Subscribe] Extracted email:", email);
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
@@ -181,8 +236,9 @@ export async function POST(request: NextRequest) {
       { message: "Successfully subscribed" },
       { status: 200 }
     );
-  } catch (error) {
-    console.error("Subscribe error:", error);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("[Subscribe] Subscription attempt failed:", message);
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }
