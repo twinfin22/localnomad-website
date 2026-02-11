@@ -403,6 +403,13 @@ function getVisaPath(
         description: 'Establish long-term residence',
       },
     ],
+    // Stub visas - no path defined yet
+    'e-2': [],
+    'd-7': [],
+    'd-8': [],
+    'f-6': [],
+    'f-4': [],
+    'd-4': [],
   };
 
   // Only show path if user indicated interest in long-term residence

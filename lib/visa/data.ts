@@ -11,6 +11,13 @@ import f1dEn from "@/data/visas/en/f-1-d.json";
 import f2En from "@/data/visas/en/f-2.json";
 import d2En from "@/data/visas/en/d-2.json";
 import h1En from "@/data/visas/en/h-1.json";
+// Stub visa imports (coming soon)
+import e2En from "@/data/visas/en/e-2.json";
+import d7En from "@/data/visas/en/d-7.json";
+import d8En from "@/data/visas/en/d-8.json";
+import f6En from "@/data/visas/en/f-6.json";
+import f4En from "@/data/visas/en/f-4.json";
+import d4En from "@/data/visas/en/d-4.json";
 
 // Type the imported JSON
 const visaDataEn: Record<VisaType, VisaInfo> = {
@@ -20,13 +27,20 @@ const visaDataEn: Record<VisaType, VisaInfo> = {
   "f-2": f2En as unknown as VisaInfo,
   "d-2": d2En as unknown as VisaInfo,
   "h-1": h1En as unknown as VisaInfo,
+  // Stub visas
+  "e-2": e2En as unknown as VisaInfo,
+  "d-7": d7En as unknown as VisaInfo,
+  "d-8": d8En as unknown as VisaInfo,
+  "f-6": f6En as unknown as VisaInfo,
+  "f-4": f4En as unknown as VisaInfo,
+  "d-4": d4En as unknown as VisaInfo,
 };
 
 // Map of all visa data by locale
 const visaDataByLocale: Record<Locale, Record<VisaType, VisaInfo>> = {
   en: visaDataEn,
-  fr: visaDataEn, // TODO: Add French translations
-  zh: visaDataEn, // TODO: Add Chinese translations
+  ja: visaDataEn, // TODO: Add Japanese translations
+  "zh-tw": visaDataEn, // TODO: Add Traditional Chinese translations
 };
 
 // =============================================================================
@@ -35,10 +49,15 @@ const visaDataByLocale: Record<Locale, Record<VisaType, VisaInfo>> = {
 
 /**
  * Get all available visa types
- * Priority order: E-7 (primary), D-2 (secondary), then others
+ * Priority order: E-7 (primary), D-2 (secondary), then full guides, then stubs
  */
 export function getVisaTypes(): VisaType[] {
-  return ["e-7", "d-2", "d-10", "h-1", "f-1-d", "f-2"];
+  return [
+    // Full guides
+    "e-7", "d-2", "d-10", "h-1", "f-1-d", "f-2",
+    // Stub visas (coming soon)
+    "e-2", "d-7", "d-8", "f-6", "f-4", "d-4",
+  ];
 }
 
 /**
@@ -209,6 +228,11 @@ export function getVisaCategoryIcon(category: VisaInfo["category"]): string {
     residence: "Home",
     "digital-nomad": "Laptop",
     "job-seeking": "Search",
+    "working-holiday": "Plane",
+    business: "Building",
+    family: "Heart",
+    "ethnic-korean": "Flag",
+    "language-study": "BookOpen",
   };
   return icons[category] || "FileText";
 }
@@ -223,6 +247,11 @@ export function getVisaCategoryColor(category: VisaInfo["category"]): string {
     residence: "green",
     "digital-nomad": "accent",
     "job-seeking": "orange",
+    "working-holiday": "yellow",
+    business: "purple",
+    family: "pink",
+    "ethnic-korean": "indigo",
+    "language-study": "teal",
   };
   return colors[category] || "muted";
 }

@@ -1,4 +1,3 @@
-export { VisaCard } from "./VisaCard";
 export { VisaDetailContent } from "./VisaDetailContent";
 export { VisaComparisonTool } from "./VisaComparisonTool";
 export { EligibilityQuiz } from "./EligibilityQuiz";

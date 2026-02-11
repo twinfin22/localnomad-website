@@ -20,6 +20,11 @@ import {
   ChevronRight,
   ArrowLeft,
   Users,
+  Plane,
+  Building,
+  Heart,
+  Flag,
+  BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -36,6 +41,11 @@ const categoryIcons = {
   residence: Home,
   "digital-nomad": Laptop,
   "job-seeking": Search,
+  "working-holiday": Plane,
+  business: Building,
+  family: Heart,
+  "ethnic-korean": Flag,
+  "language-study": BookOpen,
 };
 
 const categoryColors = {
@@ -44,6 +54,11 @@ const categoryColors = {
   residence: "bg-green-500/10 text-green-500",
   "digital-nomad": "bg-accent/10 text-accent",
   "job-seeking": "bg-orange-500/10 text-orange-500",
+  "working-holiday": "bg-yellow-500/10 text-yellow-500",
+  business: "bg-purple-500/10 text-purple-500",
+  family: "bg-pink-500/10 text-pink-500",
+  "ethnic-korean": "bg-indigo-500/10 text-indigo-500",
+  "language-study": "bg-teal-500/10 text-teal-500",
 };
 
 type TabId = "overview" | "documents" | "process" | "faqs";

@@ -1,0 +1,159 @@
+"use client";
+
+import { useState } from "react";
+import type { VisaInfo } from "@/lib/visa/types";
+import { cn } from "@/lib/utils";
+import { Briefcase, DollarSign, Info, Lightbulb } from "lucide-react";
+
+interface StepQualifyProps {
+  visa: VisaInfo;
+}
+
+export function StepQualify({ visa }: StepQualifyProps) {
+  const [answers, setAnswers] = useState<Record<string, boolean | null>>({});
+
+  const handleAnswer = (id: string, value: boolean) => {
+    setAnswers((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const requiredReqs = visa.eligibility.filter((req) => req.required);
+  const allAnswered = requiredReqs.every(
+    (req) => answers[req.id] !== undefined
+  );
+  const allQualify = requiredReqs.every((req) => answers[req.id] === true);
+
+  // Extract tips relevant to eligibility (salary, company size, sponsor)
+  const eligibilityTips =
+    visa.tips?.filter(
+      (tip) =>
+        tip.toLowerCase().includes("salary") ||
+        tip.toLowerCase().includes("company") ||
+        tip.toLowerCase().includes("sponsor") ||
+        tip.toLowerCase().includes("employer") ||
+        tip.toLowerCase().includes("negotiate")
+    ) || [];
+
+  return (
+    <div className="space-y-6">
+      {/* Intro text */}
+      <p className="text-slate-300">{visa.description}</p>
+
+      {/* Quick check */}
+      <div>
+        <h4 className="text-sm font-medium text-slate-400 uppercase tracking-wide mb-3">
+          Quick check
+        </h4>
+        <div className="space-y-3">
+          {visa.eligibility.map((req) => (
+            <div
+              key={req.id}
+              className="flex items-center justify-between gap-4 py-2"
+            >
+              <span className="text-slate-300 text-sm flex-1">
+                {req.label}
+                {!req.required && (
+                  <span className="text-slate-500 ml-2">(optional)</span>
+                )}
+              </span>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handleAnswer(req.id, true)}
+                  className={cn(
+                    "px-3 py-1 text-sm rounded-md transition-colors",
+                    answers[req.id] === true
+                      ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                      : "bg-slate-700/50 text-slate-400 hover:bg-slate-700"
+                  )}
+                >
+                  Yes
+                </button>
+                <button
+                  onClick={() => handleAnswer(req.id, false)}
+                  className={cn(
+                    "px-3 py-1 text-sm rounded-md transition-colors",
+                    answers[req.id] === false
+                      ? "bg-red-500/20 text-red-400 border border-red-500/30"
+                      : "bg-slate-700/50 text-slate-400 hover:bg-slate-700"
+                  )}
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Result message */}
+      {allAnswered && (
+        <div
+          className={cn(
+            "p-3 rounded-lg text-sm",
+            allQualify
+              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+              : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+          )}
+        >
+          {allQualify
+            ? "Based on your answers, you appear to qualify for this visa."
+            : "Based on your answers, you may not meet all requirements. Consider reviewing the criteria or exploring alternative visas."}
+        </div>
+      )}
+
+      {/* Income & Work Permission cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {visa.incomeRequirement && (
+          <div className="p-4 rounded-lg bg-slate-700/30 border border-slate-700/50">
+            <div className="flex items-center gap-2 text-slate-400 mb-2">
+              <DollarSign className="w-4 h-4" />
+              <span className="text-sm font-medium">Income</span>
+            </div>
+            <p className="text-white font-medium">
+              {visa.incomeRequirement.amount} {visa.incomeRequirement.currency}
+            </p>
+            {visa.incomeRequirement.notes && (
+              <p className="text-slate-400 text-sm mt-1">
+                {visa.incomeRequirement.notes}
+              </p>
+            )}
+          </div>
+        )}
+        <div className="p-4 rounded-lg bg-slate-700/30 border border-slate-700/50">
+          <div className="flex items-center gap-2 text-slate-400 mb-2">
+            <Briefcase className="w-4 h-4" />
+            <span className="text-sm font-medium">Work Permission</span>
+          </div>
+          <p className="text-white font-medium">
+            {visa.workPermission.allowed ? "Allowed" : "Not allowed"}
+          </p>
+          {visa.workPermission.notes && (
+            <p className="text-slate-400 text-sm mt-1">
+              {visa.workPermission.notes}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Tips */}
+      {eligibilityTips.length > 0 && (
+        <div className="space-y-2">
+          {eligibilityTips.map((tip, i) => (
+            <div key={i} className="flex gap-2 text-sm">
+              <Lightbulb className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+              <span className="text-slate-300">{tip}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Disclaimer */}
+      <div className="flex gap-2 text-xs text-slate-500">
+        <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />
+        <span>
+          This is a preliminary check. Final eligibility is determined by Korean
+          immigration authorities.
+        </span>
+      </div>
+    </div>
+  );
+}

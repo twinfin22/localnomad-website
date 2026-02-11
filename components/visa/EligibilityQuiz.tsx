@@ -12,12 +12,30 @@ import {
   Laptop,
   Search,
   RotateCcw,
+  Plane,
+  Building,
+  Heart,
+  Flag,
+  BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
 import { getVisaInfo } from "@/lib/visa/data";
 import type { VisaType, VisaInfo } from "@/lib/visa/types";
+
+const categoryIcons = {
+  work: Briefcase,
+  study: GraduationCap,
+  residence: Home,
+  "digital-nomad": Laptop,
+  "job-seeking": Search,
+  "working-holiday": Plane,
+  business: Building,
+  family: Heart,
+  "ethnic-korean": Flag,
+  "language-study": BookOpen,
+};
 
 interface Question {
   id: string;
@@ -188,14 +206,6 @@ const questions: Question[] = [
   },
 ];
 
-const categoryIcons = {
-  work: Briefcase,
-  study: GraduationCap,
-  residence: Home,
-  "digital-nomad": Laptop,
-  "job-seeking": Search,
-};
-
 interface VisaResult {
   type: VisaType;
   visa: VisaInfo;
@@ -242,6 +252,13 @@ export function EligibilityQuiz() {
       "f-1-d": { score: 0, reasons: [] },
       "d-2": { score: 0, reasons: [] },
       "h-1": { score: 0, reasons: [] },
+      // Stub visas (not shown in quiz results yet)
+      "e-2": { score: 0, reasons: [] },
+      "d-7": { score: 0, reasons: [] },
+      "d-8": { score: 0, reasons: [] },
+      "f-6": { score: 0, reasons: [] },
+      "f-4": { score: 0, reasons: [] },
+      "d-4": { score: 0, reasons: [] },
     };
 
     // Calculate scores based on answers

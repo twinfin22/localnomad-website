@@ -197,6 +197,13 @@ const visaInfo: Record<VisaType, { name: string; tagline: string }> = {
   "f-1-d": { name: "F-1-D Digital Nomad Visa", tagline: "Work remotely from Korea" },
   "f-2": { name: "F-2 Long-term Residence", tagline: "For points-based residence" },
   "h-1": { name: "H-1 Working Holiday Visa", tagline: "Work and travel for young adults" },
+  // Stub visas
+  "e-2": { name: "E-2 English Teaching Visa", tagline: "Teach English in Korea" },
+  "d-7": { name: "D-7 Intra-Company Transfer", tagline: "Transfer to Korea with your company" },
+  "d-8": { name: "D-8 Corporate Investment Visa", tagline: "Start a business in Korea" },
+  "f-6": { name: "F-6 Marriage Migration Visa", tagline: "Live with your Korean spouse" },
+  "f-4": { name: "F-4 Overseas Korean Visa", tagline: "For ethnic Koreans abroad" },
+  "d-4": { name: "D-4 Language Training Visa", tagline: "Study Korean in Korea" },
 };
 
 // =============================================================================

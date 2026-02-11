@@ -13,6 +13,11 @@ import {
   Laptop,
   Search,
   ArrowRight,
+  Plane,
+  Building,
+  Heart,
+  Flag,
+  BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -26,6 +31,11 @@ const categoryIcons = {
   residence: Home,
   "digital-nomad": Laptop,
   "job-seeking": Search,
+  "working-holiday": Plane,
+  business: Building,
+  family: Heart,
+  "ethnic-korean": Flag,
+  "language-study": BookOpen,
 };
 
 const categoryColors = {
@@ -34,6 +44,11 @@ const categoryColors = {
   residence: "bg-green-500/10 text-green-500 border-green-500/20",
   "digital-nomad": "bg-accent/10 text-accent border-accent/20",
   "job-seeking": "bg-orange-500/10 text-orange-500 border-orange-500/20",
+  "working-holiday": "bg-yellow-500/10 text-yellow-500 border-yellow-500/20",
+  business: "bg-purple-500/10 text-purple-500 border-purple-500/20",
+  family: "bg-pink-500/10 text-pink-500 border-pink-500/20",
+  "ethnic-korean": "bg-indigo-500/10 text-indigo-500 border-indigo-500/20",
+  "language-study": "bg-teal-500/10 text-teal-500 border-teal-500/20",
 };
 
 interface ComparisonRow {

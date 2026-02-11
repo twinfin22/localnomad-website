@@ -1,0 +1,57 @@
+{
+  "type": "f-4",
+  "name": "Overseas Korean Visa",
+  "shortName": "F-4",
+  "category": "ethnic-korean",
+  "description": "The F-4 visa is for ethnic Koreans (교포) who hold foreign citizenship. It provides long-term residence and work authorization for overseas Koreans returning to or visiting their ancestral homeland.",
+  "tagline": "Return to Korea as an overseas Korean",
+  "keyRequirement": "Korean ancestry (2nd generation or later)",
+  "isStub": true,
+
+  "targetAudience": [
+    "Ethnic Koreans with foreign citizenship",
+    "Korean-Americans, Korean-Canadians, etc.",
+    "Descendants of Korean emigrants"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "3 years",
+    "extension": "3 years per extension",
+    "maxTotal": "No maximum (renewable indefinitely)"
+  },
+
+  "fees": {
+    "application": "₩60,000 (~$42 USD)"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4 weeks"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["Some simple labor jobs restricted"],
+    "notes": "Most professional and skilled work allowed"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Overseas Koreans Foundation",
+      "url": "https://www.okf.or.kr/"
+    }
+  ]
+}

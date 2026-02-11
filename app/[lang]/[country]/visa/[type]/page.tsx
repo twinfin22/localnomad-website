@@ -3,11 +3,12 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { getVisaInfo, getVisaTypes } from "@/lib/visa/data";
 import type { VisaType } from "@/lib/visa/types";
-import { VisaDetailPage } from "@/components/visa/detail";
+import { VisaJourneyPage, VisaStubPage } from "@/components/visa/journey";
 import {
   locales,
   countries,
   isLocaleAvailableForCountry,
+  buildLocalePath,
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
@@ -55,17 +56,41 @@ export async function generateMetadata({ params }: VisaDetailPageProps) {
 }
 
 export default async function VisaTypePage({ params }: VisaDetailPageProps) {
-  const { lang, type } = await params;
-  const visa = getVisaInfo(type as VisaType, lang as Locale);
+  const { lang, country: countryParam, type } = await params;
+  const locale = lang as Locale;
+  const country = countryParam as Country;
+  const visa = getVisaInfo(type as VisaType, locale);
 
   if (!visa) {
     notFound();
   }
 
+  // Build locale-aware hrefs
+  const buildHref = (path: string) => buildLocalePath(path, locale, country);
+
+  // Render stub page for coming-soon visas
+  if (visa.isStub) {
+    return (
+      <main className="min-h-screen overflow-x-hidden">
+        <Header />
+        <VisaStubPage
+          visa={visa}
+          backHref={buildHref("/visa")}
+        />
+        <Footer />
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen overflow-x-hidden">
       <Header />
-      <VisaDetailPage visa={visa} />
+      <VisaJourneyPage
+        visa={visa}
+        backHref={buildHref("/visa")}
+        dashboardHref={buildHref("/visa/dashboard")}
+        checklistHref={buildHref(`/visa/checklist/${type}`)}
+      />
       <Footer />
     </main>
   );

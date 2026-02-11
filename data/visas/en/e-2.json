@@ -1,0 +1,57 @@
+{
+  "type": "e-2",
+  "name": "English Teaching Visa",
+  "shortName": "E-2",
+  "category": "work",
+  "description": "The E-2 visa is for qualified English teachers from English-speaking countries working at Korean language institutes, public schools, or private academies (hagwons).",
+  "tagline": "Teach English in Korea",
+  "keyRequirement": "Bachelor's degree + citizenship from English-speaking country",
+  "isStub": true,
+
+  "targetAudience": [
+    "Native English speakers with bachelor's degrees",
+    "Aspiring English teachers",
+    "Recent graduates seeking international experience"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1 year",
+    "extension": "1 year per extension",
+    "maxTotal": "No maximum (renewable while employed)"
+  },
+
+  "fees": {
+    "application": "₩60,000 (~$42 USD)"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4 weeks"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["Teaching English only at sponsored institution"],
+    "notes": "Cannot work outside of teaching position without separate permission"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "HiKorea e-Government",
+      "url": "https://www.hikorea.go.kr/"
+    }
+  ]
+}

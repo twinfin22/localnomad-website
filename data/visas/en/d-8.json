@@ -1,0 +1,57 @@
+{
+  "type": "d-8",
+  "name": "Corporate Investment Visa",
+  "shortName": "D-8",
+  "category": "business",
+  "description": "The D-8 visa is for foreign entrepreneurs and investors establishing or investing in Korean businesses. It enables foreign nationals to start companies, invest in existing businesses, or manage Korean operations.",
+  "tagline": "Start a business in Korea",
+  "keyRequirement": "Minimum investment of ₩100,000,000 (~$75,000 USD)",
+  "isStub": true,
+
+  "targetAudience": [
+    "Foreign entrepreneurs starting businesses in Korea",
+    "Investors in Korean companies",
+    "Startup founders relocating to Korea"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "1-2 years",
+    "extension": "1-2 years per extension",
+    "maxTotal": "No maximum (renewable while business operates)"
+  },
+
+  "fees": {
+    "application": "₩60,000 (~$42 USD)"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "4-8 weeks"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["Must work at own business"],
+    "notes": "Can hire employees and operate business freely"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Invest Korea (KOTRA)",
+      "url": "https://www.investkorea.org/"
+    }
+  ]
+}

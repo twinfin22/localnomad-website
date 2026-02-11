@@ -14,6 +14,11 @@ import {
   Home,
   Laptop,
   Search,
+  Plane,
+  Building,
+  Heart,
+  Flag,
+  BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -27,6 +32,11 @@ const categoryIcons = {
   residence: Home,
   "digital-nomad": Laptop,
   "job-seeking": Search,
+  "working-holiday": Plane,
+  business: Building,
+  family: Heart,
+  "ethnic-korean": Flag,
+  "language-study": BookOpen,
 };
 
 interface ChecklistState {

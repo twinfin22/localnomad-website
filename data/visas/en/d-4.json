@@ -1,0 +1,57 @@
+{
+  "type": "d-4",
+  "name": "Language Training Visa",
+  "shortName": "D-4",
+  "category": "language-study",
+  "description": "The D-4 visa is for foreign nationals enrolled in Korean language programs at universities or accredited language institutes. It allows students to study Korean while experiencing life in Korea.",
+  "tagline": "Study Korean in Korea",
+  "keyRequirement": "Acceptance to accredited Korean language program",
+  "isStub": true,
+
+  "targetAudience": [
+    "Students wanting to learn Korean language",
+    "Those preparing for university study in Korea",
+    "Language enthusiasts and cultural learners"
+  ],
+
+  "eligibility": [],
+
+  "duration": {
+    "initial": "6 months - 1 year",
+    "extension": "6 months - 1 year per extension",
+    "maxTotal": "2 years maximum"
+  },
+
+  "fees": {
+    "application": "₩60,000 (~$42 USD)"
+  },
+
+  "documents": [],
+
+  "applicationSteps": [],
+
+  "processingTime": {
+    "typical": "2-4 weeks"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": ["Limited part-time work (20 hours/week during semester)"],
+    "notes": "Must maintain student status and good attendance"
+  },
+
+  "faqs": [],
+  "tips": [],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/"
+    },
+    {
+      "label": "Study in Korea",
+      "url": "https://www.studyinkorea.go.kr/"
+    }
+  ]
+}

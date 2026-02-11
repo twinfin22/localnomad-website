@@ -14,6 +14,11 @@ import {
   Home,
   Laptop,
   Search,
+  Plane,
+  Building,
+  Heart,
+  Flag,
+  BookOpen,
 } from 'lucide-react';
 import type { VisaInfo } from '@/lib/visa/types';
 import { ChecklistProgress } from './ChecklistProgress';
@@ -30,6 +35,11 @@ const categoryIcons = {
   residence: Home,
   'digital-nomad': Laptop,
   'job-seeking': Search,
+  'working-holiday': Plane,
+  business: Building,
+  family: Heart,
+  'ethnic-korean': Flag,
+  'language-study': BookOpen,
 };
 
 const STORAGE_KEY_PREFIX = 'visa-checklist-';

@@ -5,12 +5,29 @@
 /**
  * Supported visa types in the system
  */
-export type VisaType = "d-10" | "e-7" | "f-2" | "f-1-d" | "d-2" | "h-1";
+export type VisaType =
+  | "d-10"
+  | "e-7"
+  | "f-2"
+  | "f-1-d"
+  | "d-2"
+  | "h-1"
+  // Stub visa types (coming soon)
+  | "e-2"
+  | "d-7"
+  | "d-8"
+  | "f-6"
+  | "f-4"
+  | "d-4";
+
+// Import Locale from i18n config for consistency
+import type { Locale as I18nLocale } from "@/lib/i18n/config";
 
 /**
- * Supported locales for content
+ * Supported locales for visa content
+ * Re-export from i18n config for consistency
  */
-export type Locale = "en" | "fr" | "zh";
+export type Locale = I18nLocale;
 
 /**
  * Visa category classification
@@ -21,7 +38,11 @@ export type VisaCategory =
   | "residence"
   | "digital-nomad"
   | "job-seeking"
-  | "working-holiday";
+  | "working-holiday"
+  | "business"
+  | "family"
+  | "ethnic-korean"
+  | "language-study";
 
 // =============================================================================
 // Visa Information Types
@@ -87,6 +108,9 @@ export interface VisaInfo {
   description: string;
   tagline: string;
   keyRequirement?: string;
+
+  // Stub indicator for coming-soon pages
+  isStub?: boolean;
 
   // Eligibility
   targetAudience: string[];
