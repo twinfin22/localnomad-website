@@ -39,10 +39,53 @@ const categoryIcons = {
   "language-study": BookOpen,
 };
 
+const STORAGE_KEY_PREFIX = "visa-checklist-";
+
+/**
+ * Flat per-type checklist state: { [docId]: boolean }
+ */
 interface ChecklistState {
-  [visaType: string]: {
-    [docId: string]: boolean;
-  };
+  [docId: string]: boolean;
+}
+
+/**
+ * Migrate from the old nested `visa-checklist` key to per-type keys.
+ * Runs once on mount. Reads the old nested object, writes each visa type
+ * as a separate `visa-checklist-{type}` entry, then removes the old key.
+ */
+function migrateOldChecklistData(): void {
+  try {
+    const oldData = localStorage.getItem("visa-checklist");
+    if (!oldData) return;
+
+    const parsed = JSON.parse(oldData) as Record<string, Record<string, boolean>>;
+    // Only migrate if it looks like the nested format (values are objects)
+    const firstValue = Object.values(parsed)[0];
+    if (typeof firstValue !== "object" || firstValue === null) return;
+
+    for (const [visaType, docs] of Object.entries(parsed)) {
+      const perTypeKey = `${STORAGE_KEY_PREFIX}${visaType}`;
+      const existing = localStorage.getItem(perTypeKey);
+      if (!existing) {
+        // Only write if the per-type key does not already exist
+        localStorage.setItem(perTypeKey, JSON.stringify(docs));
+      } else {
+        // Merge: per-type data wins, but fill in missing keys from old data
+        try {
+          const existingData = JSON.parse(existing) as Record<string, boolean>;
+          const merged = { ...docs, ...existingData };
+          localStorage.setItem(perTypeKey, JSON.stringify(merged));
+        } catch {
+          // Keep existing data if merge fails
+        }
+      }
+    }
+
+    // Remove old key after successful migration
+    localStorage.removeItem("visa-checklist");
+  } catch {
+    // If migration fails, leave everything as-is
+  }
 }
 
 export function DocumentChecklist() {
@@ -50,33 +93,44 @@ export function DocumentChecklist() {
   const [selectedVisa, setSelectedVisa] = useState<VisaType>("d-10");
   const [checkedItems, setCheckedItems] = useState<ChecklistState>({});
   const [expandedDocs, setExpandedDocs] = useState<Set<string>>(new Set());
+  const [mounted, setMounted] = useState(false);
 
   const visa = getVisaInfo(selectedVisa, "en");
 
-  // Load from localStorage on mount
+  // Migrate old data on mount, then load per-type data
   useEffect(() => {
-    const saved = localStorage.getItem("visa-checklist");
-    if (saved) {
-      try {
-        setCheckedItems(JSON.parse(saved));
-      } catch {
-        // Invalid JSON, ignore
-      }
-    }
+    migrateOldChecklistData();
+    setMounted(true);
   }, []);
 
-  // Save to localStorage on change
+  // Load per-type checklist whenever the selected visa changes
   useEffect(() => {
-    localStorage.setItem("visa-checklist", JSON.stringify(checkedItems));
-  }, [checkedItems]);
+    const stored = localStorage.getItem(`${STORAGE_KEY_PREFIX}${selectedVisa}`);
+    if (stored) {
+      try {
+        setCheckedItems(JSON.parse(stored));
+      } catch {
+        setCheckedItems({});
+      }
+    } else {
+      setCheckedItems({});
+    }
+  }, [selectedVisa]);
+
+  // Save to per-type localStorage key on change
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem(
+        `${STORAGE_KEY_PREFIX}${selectedVisa}`,
+        JSON.stringify(checkedItems)
+      );
+    }
+  }, [checkedItems, selectedVisa, mounted]);
 
   const toggleDoc = (docId: string) => {
     setCheckedItems((prev) => ({
       ...prev,
-      [selectedVisa]: {
-        ...prev[selectedVisa],
-        [docId]: !prev[selectedVisa]?.[docId],
-      },
+      [docId]: !prev[docId],
     }));
   };
 
@@ -96,10 +150,10 @@ export function DocumentChecklist() {
   const optionalDocs = visa.documents.filter((d) => !d.required);
 
   const completedRequired = requiredDocs.filter(
-    (d) => checkedItems[selectedVisa]?.[d.id]
+    (d) => checkedItems[d.id]
   ).length;
   const completedOptional = optionalDocs.filter(
-    (d) => checkedItems[selectedVisa]?.[d.id]
+    (d) => checkedItems[d.id]
   ).length;
   const totalCompleted = completedRequired + completedOptional;
   const totalDocs = visa.documents.length;
@@ -187,7 +241,7 @@ export function DocumentChecklist() {
               <DocumentItem
                 key={doc.id}
                 doc={doc}
-                checked={!!checkedItems[selectedVisa]?.[doc.id]}
+                checked={!!checkedItems[doc.id]}
                 expanded={expandedDocs.has(doc.id)}
                 onToggleCheck={() => toggleDoc(doc.id)}
                 onToggleExpand={() => toggleExpand(doc.id)}
@@ -209,7 +263,7 @@ export function DocumentChecklist() {
                 <DocumentItem
                   key={doc.id}
                   doc={doc}
-                  checked={!!checkedItems[selectedVisa]?.[doc.id]}
+                  checked={!!checkedItems[doc.id]}
                   expanded={expandedDocs.has(doc.id)}
                   onToggleCheck={() => toggleDoc(doc.id)}
                   onToggleExpand={() => toggleExpand(doc.id)}
@@ -226,19 +280,23 @@ export function DocumentChecklist() {
             onClick={() => {
               // Create a simple text version of the checklist
               const lines = [
+                "DISCLAIMER: This checklist is for personal reference only and does not",
+                "constitute legal advice. Verify all requirements with Korean immigration",
+                "authorities (immigration.go.kr) before applying.",
+                "",
                 `${visa.name} (${visa.shortName}) - Document Checklist`,
                 `Generated: ${new Date().toLocaleDateString()}`,
                 "",
                 "REQUIRED DOCUMENTS:",
                 ...requiredDocs.map(
                   (d) =>
-                    `[${checkedItems[selectedVisa]?.[d.id] ? "X" : " "}] ${d.name}`
+                    `[${checkedItems[d.id] ? "X" : " "}] ${d.name}`
                 ),
                 "",
                 "OPTIONAL DOCUMENTS:",
                 ...optionalDocs.map(
                   (d) =>
-                    `[${checkedItems[selectedVisa]?.[d.id] ? "X" : " "}] ${d.name}`
+                    `[${checkedItems[d.id] ? "X" : " "}] ${d.name}`
                 ),
               ];
 

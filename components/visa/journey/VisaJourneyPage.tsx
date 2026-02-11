@@ -4,12 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
+  ArrowRight,
   MessageCircle,
   Link2,
   ChevronRight,
   ChevronDown,
+  Info,
+  Route,
+  X,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { VisaInfo } from "@/lib/visa/types";
+import { VISA_DISPLAY_INFO } from "@/lib/visa/path-data";
 import { ChecklistStep } from "./ChecklistStep";
 import {
   StepQualify,
@@ -24,6 +30,7 @@ interface VisaJourneyPageProps {
   backHref: string;
   dashboardHref: string;
   checklistHref: string;
+  pathSimulatorHref?: string;
 }
 
 export function VisaJourneyPage({
@@ -31,6 +38,7 @@ export function VisaJourneyPage({
   backHref,
   dashboardHref,
   checklistHref,
+  pathSimulatorHref,
 }: VisaJourneyPageProps) {
   const [openStep, setOpenStep] = useState<number | null>(null);
   const [faqsOpen, setFaqsOpen] = useState(false);
@@ -58,6 +66,20 @@ export function VisaJourneyPage({
     setOpenStep(isOpen ? stepNumber : null);
   };
 
+  const [bannerDismissed, setBannerDismissed] = useState(true);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem("visa-info-banner-dismissed");
+    if (!dismissed) {
+      setBannerDismissed(false);
+    }
+  }, []);
+
+  const handleDismissBanner = () => {
+    setBannerDismissed(true);
+    localStorage.setItem("visa-info-banner-dismissed", "true");
+  };
+
   const requiredDocsCount = visa.documents.filter((d) => d.required).length;
 
   // Generate subtitle for Step 2 (first 3 doc names)
@@ -69,6 +91,29 @@ export function VisaJourneyPage({
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Dismissible info banner */}
+      {!bannerDismissed && (
+        <div className="bg-blue-500/10 border-b border-blue-500/20">
+          <div className="container mx-auto max-w-3xl px-4 py-3">
+            <div className="flex items-start gap-3">
+              <Info className="w-4 h-4 text-blue-300 mt-0.5 shrink-0" />
+              <p className="text-sm text-blue-300 flex-1">
+                Information shown is based on publicly available requirements
+                and may not reflect recent policy changes. Verify with official
+                sources before making decisions.
+              </p>
+              <button
+                onClick={handleDismissBanner}
+                className="text-blue-300/60 hover:text-blue-300 transition-colors shrink-0"
+                aria-label="Dismiss notice"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="container mx-auto max-w-3xl px-4 py-8">
         {/* Back link */}
         <Link
@@ -109,7 +154,7 @@ export function VisaJourneyPage({
         <div className="space-y-4 mb-8">
           <ChecklistStep
             number={1}
-            title="Check if you qualify"
+            title="Review requirements"
             subtitle={
               visa.keyRequirement ||
               visa.eligibility[0]?.label ||
@@ -233,6 +278,62 @@ export function VisaJourneyPage({
                 ))}
               </div>
             )}
+          </>
+        )}
+
+        {/* Related Visas */}
+        {visa.relatedVisas && visa.relatedVisas.length > 0 && (
+          <>
+            <hr className="border-border my-4" />
+            <div className="py-4">
+              <h3 className="text-sm font-medium text-foreground mb-3">
+                Related visas
+              </h3>
+              <div className="grid gap-2">
+                {visa.relatedVisas.map((relatedType) => {
+                  const info = VISA_DISPLAY_INFO[relatedType];
+                  if (!info) return null;
+
+                  // Derive href from backHref (which is /[lang]/[country]/visa)
+                  const relatedHref = `${backHref.replace(/\/$/, "")}/${relatedType}`;
+
+                  return (
+                    <Link
+                      key={relatedType}
+                      href={relatedHref}
+                      className="flex items-center justify-between p-3 rounded-lg border border-border hover:border-primary/30 bg-surface hover:bg-elevated transition-colors group"
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <span className="font-mono text-sm font-bold text-primary uppercase">
+                          {relatedType}
+                        </span>
+                        <div className="min-w-0">
+                          <span className="text-sm text-foreground font-medium">
+                            {info.name}
+                          </span>
+                          <span className="text-xs text-muted-foreground block">
+                            {info.shortDescription}
+                          </span>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Path simulator link */}
+              {pathSimulatorHref && (
+                <Link
+                  href={`${pathSimulatorHref}?from=${visa.type}`}
+                  className="mt-3 flex items-center gap-2 text-sm text-primary hover:text-accent-hover transition-colors"
+                >
+                  <Route className="w-4 h-4" />
+                  <span>Explore transition paths from {visa.shortName}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              )}
+            </div>
           </>
         )}
 

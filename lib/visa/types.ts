@@ -174,11 +174,11 @@ export interface VisaInfo {
   // NEW: Renewal/extension information
   renewal?: VisaRenewalInfo;
 
-  // NEW: Visa paths this visa can lead to
-  pathsTo?: VisaType[];
+  // NEW: Visa paths this visa can lead to (rich transition details)
+  pathsTo?: VisaTransitionPath[];
 
-  // NEW: Visa paths that can lead to this visa
-  pathsFrom?: VisaType[];
+  // NEW: Visa paths that can lead to this visa (rich transition details)
+  pathsFrom?: VisaTransitionPath[];
 
   // Metadata
   lastUpdated: string;
@@ -295,6 +295,18 @@ export interface FixedIncomeRequirement {
   currency: string;
   period: "annual" | "monthly";
   notes?: string;
+}
+
+/**
+ * Detailed visa transition path with requirements and documents
+ */
+export interface VisaTransitionPath {
+  type: VisaType;
+  name: string;
+  requirements: string;
+  timeline: string;
+  documents: string[];
+  notes: string;
 }
 
 /**

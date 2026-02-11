@@ -44,7 +44,24 @@
   "tips": [],
 
   "relatedVisas": ["e-7", "f-2"],
-  "pathsTo": ["e-7", "f-2"],
+  "pathsTo": [
+    {
+      "type": "e-7",
+      "name": "Professional Employment Visa",
+      "requirements": "Secure a professional job offer from a Korean company. F-4 holders may need E-7 for specific employer sponsorship or regulatory requirements.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate", "Career certificate"],
+      "notes": "F-4 already provides broad work rights, so E-7 transition is less common. Usually only needed for specific corporate or regulatory requirements."
+    },
+    {
+      "type": "f-2",
+      "name": "Residence Visa",
+      "requirements": "Meet F-2 eligibility through ethnic Korean status or points-based system (F-2-7, 80+ points).",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Korean ancestry proof", "Current F-4 ARC", "Points worksheet", "Income documentation"],
+      "notes": "F-4 holders may transition to F-2 as a stepping stone toward F-5 permanent residence. F-2 provides additional stability and broader residence rights."
+    }
+  ],
   "pathsFrom": [],
 
   "lastUpdated": "2026-02-01",

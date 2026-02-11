@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { VisaPathSimulator } from "@/components/visa/path";
@@ -16,6 +17,7 @@ import {
 
 interface PathPageProps {
   params: Promise<{ lang: string; country: string }>;
+  searchParams: Promise<{ from?: string; to?: string }>;
 }
 
 // Generate static params for all locale/country combos
@@ -47,8 +49,12 @@ export async function generateMetadata({ params }: PathPageProps) {
   };
 }
 
-export default async function VisaPathPage({ params }: PathPageProps) {
+export default async function VisaPathPage({
+  params,
+  searchParams,
+}: PathPageProps) {
   const { lang, country: countryParam } = await params;
+  const { from, to } = await searchParams;
   const locale = lang as Locale;
   const country = countryParam as Country;
 
@@ -93,7 +99,22 @@ export default async function VisaPathPage({ params }: PathPageProps) {
       {/* Simulator */}
       <section className="py-12 px-4 sm:px-6">
         <div className="container mx-auto max-w-2xl">
-          <VisaPathSimulator lang={lang} country={countryParam} />
+          <Suspense
+            fallback={
+              <div className="w-full max-w-2xl mx-auto animate-pulse space-y-4">
+                <div className="h-16 bg-elevated rounded-xl" />
+                <div className="h-10 bg-elevated rounded-lg" />
+                <div className="h-40 bg-elevated rounded-xl" />
+              </div>
+            }
+          >
+            <VisaPathSimulator
+              lang={lang}
+              country={countryParam}
+              initialFrom={from ?? null}
+              initialTo={to ?? null}
+            />
+          </Suspense>
         </div>
       </section>
 

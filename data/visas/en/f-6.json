@@ -44,7 +44,16 @@
   "tips": [],
 
   "relatedVisas": ["f-2"],
-  "pathsTo": ["f-2"],
+  "pathsTo": [
+    {
+      "type": "f-2",
+      "name": "Residence Visa",
+      "requirements": "Meet F-2 eligibility through marriage to Korean citizen. Extended residence and integration into Korean society required.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Marriage certificate", "Spouse's family relation certificate", "Current F-6 ARC", "Income proof", "Residence proof"],
+      "notes": "F-6 holders can transition to F-2 for greater independence and as a stepping stone toward F-5 permanent residence or naturalization."
+    }
+  ],
   "pathsFrom": [],
 
   "lastUpdated": "2026-02-01",

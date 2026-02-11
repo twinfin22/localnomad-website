@@ -52,6 +52,10 @@ export async function generateMetadata({ params }: VisaDetailPageProps) {
   return {
     title: `${visa.name} (${visa.shortName}) | LocalNomad Visa Guide`,
     description: visa.description,
+    openGraph: {
+      title: `${visa.name} (${visa.shortName}) | LocalNomad Visa Guide`,
+      description: visa.description,
+    },
   };
 }
 
@@ -68,30 +72,64 @@ export default async function VisaTypePage({ params }: VisaDetailPageProps) {
   // Build locale-aware hrefs
   const buildHref = (path: string) => buildLocalePath(path, locale, country);
 
+  // Build FAQ JSON-LD structured data
+  const faqJsonLd =
+    visa.faqs && visa.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: visa.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   // Render stub page for coming-soon visas
   if (visa.isStub) {
     return (
-      <main className="min-h-screen overflow-x-hidden">
-        <Header />
-        <VisaStubPage
-          visa={visa}
-          backHref={buildHref("/visa")}
-        />
-        <Footer />
-      </main>
+      <>
+        {faqJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        )}
+        <main className="min-h-screen overflow-x-hidden">
+          <Header />
+          <VisaStubPage
+            visa={visa}
+            backHref={buildHref("/visa")}
+          />
+          <Footer />
+        </main>
+      </>
     );
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
-      <Header />
-      <VisaJourneyPage
-        visa={visa}
-        backHref={buildHref("/visa")}
-        dashboardHref={buildHref("/visa/dashboard")}
-        checklistHref={buildHref(`/visa/checklist/${type}`)}
-      />
-      <Footer />
-    </main>
+    <>
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+      <main className="min-h-screen overflow-x-hidden">
+        <Header />
+        <VisaJourneyPage
+          visa={visa}
+          backHref={buildHref("/visa")}
+          dashboardHref={buildHref("/visa/dashboard")}
+          checklistHref={buildHref(`/visa/checklist/${type}`)}
+          pathSimulatorHref={buildHref("/visa/path")}
+        />
+        <Footer />
+      </main>
+    </>
   );
 }

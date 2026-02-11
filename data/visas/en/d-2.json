@@ -240,9 +240,43 @@
     "Don't overstay - it affects future visa applications"
   ],
 
-  "relatedVisas": ["d-10", "e-7", "f-2"],
-  "pathsTo": ["d-10", "e-7"],
-  "pathsFrom": ["d-4", "h-1"],
+  "relatedVisas": ["d-10", "e-7", "d-4", "f-2"],
+  "pathsTo": [
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "Graduate from a Korean university or hold a bachelor's degree or higher. Must apply before current visa expires.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Degree certificate or graduation letter", "Job search plan", "Bank statement ($3,000+ USD)", "Resume/CV"],
+      "notes": "Most common path after graduation. D-10 gives you up to 2 years to find employment and transition to E-7. Start applying 1-2 months before graduation."
+    },
+    {
+      "type": "e-7",
+      "name": "Professional Employment Visa",
+      "requirements": "Job offer from a Korean company in your field of study. Bachelor's degree required (or 5+ years experience).",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "Direct transition possible if you secure a job offer before or immediately after graduation. Your employer handles most of the sponsorship paperwork."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "d-4",
+      "name": "Language Training Visa",
+      "requirements": "Complete Korean language program and gain admission to a Korean university degree program.",
+      "timeline": "2-4 weeks processing after university admission",
+      "documents": ["University admission letter", "D-4 visa/ARC", "Language program completion certificate", "Financial proof ($10,000+ USD)"],
+      "notes": "Natural progression for language students who want to pursue a degree. Apply for university during your language program and transition before D-4 expires."
+    },
+    {
+      "type": "h-1",
+      "name": "Working Holiday Visa",
+      "requirements": "Gain admission to a Korean university while on Working Holiday visa. Must apply before H-1 expires.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["University admission letter", "H-1 visa/ARC", "Financial proof ($10,000+ USD)", "Academic transcripts"],
+      "notes": "Some Working Holiday visa holders discover they want to study in Korea long-term. Apply to universities early as H-1 cannot be extended."
+    }
+  ],
 
   "lastUpdated": "2026-02-11",
   "officialLinks": [

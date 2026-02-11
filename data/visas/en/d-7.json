@@ -43,8 +43,33 @@
   "faqs": [],
   "tips": [],
 
-  "relatedVisas": ["e-7", "f-2"],
-  "pathsTo": ["e-7", "f-2"],
+  "relatedVisas": ["e-7", "f-2", "d-10"],
+  "pathsTo": [
+    {
+      "type": "e-7",
+      "name": "Professional Employment Visa",
+      "requirements": "Secure a job offer from a different Korean company (not through intra-company transfer). New employer must sponsor your visa.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["New employment contract", "Company business registration", "Degree certificate", "Career certificate"],
+      "notes": "For those who want to leave their multinational company and join a Korean employer directly. The new company must be willing to sponsor your E-7 visa."
+    },
+    {
+      "type": "f-2",
+      "name": "Residence Visa (F-2-7 Points-Based)",
+      "requirements": "Score 80+ on the F-2-7 points system. Long D-7 tenure counts toward Korea residence experience points.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Points calculation worksheet", "TOPIK certificate", "Income tax documents", "Employment certificate", "Degree certificate"],
+      "notes": "D-7 holders with long tenure can build enough points for F-2-7. F-2 removes employer restrictions and allows free job changes. Invest in TOPIK and KIIP courses to boost your points."
+    },
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "End of intra-company assignment or desire to seek new employment. Must have bachelor's degree.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Previous employment certificate", "Degree certificate", "Job search plan", "Bank statement"],
+      "notes": "A fallback option if your intra-company assignment ends but you want to remain in Korea. D-10 gives you time to find new employment."
+    }
+  ],
   "pathsFrom": [],
 
   "lastUpdated": "2026-02-01",

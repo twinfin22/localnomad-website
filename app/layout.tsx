@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     icon: "/favicon-32.png",
     apple: "/apple-touch-icon.png",
   },
+  openGraph: {
+    type: "website",
+    siteName: "LocalNomad",
+    title: "LocalNomad — Your Korea Visa Guide",
+    description:
+      "Navigate Korean visa requirements with confidence. Guides, eligibility checks, and document checklists for work, study, and digital nomad visas.",
+    url: "https://localnomad.club",
+    locale: "en_US",
+    alternateLocale: ["ja_JP", "zh_TW"],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 /**

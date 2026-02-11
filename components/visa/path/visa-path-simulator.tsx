@@ -1,18 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { useState, useCallback, useEffect } from "react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 import {
   ArrowLeft,
   ArrowRight,
@@ -22,24 +23,37 @@ import {
   Target,
   AlertTriangle,
   FileText,
-} from 'lucide-react';
-import { PathCard } from './PathCard';
+} from "lucide-react";
+import { PathCard } from "./path-card";
 import {
   STARTING_POINTS,
-  getPathsFromStart,
   getDestinationsFromPaths,
   getPathsToDestination,
   getDifficultyDisplay,
   VISA_DISPLAY_INFO,
   type SimulatorPath,
-} from '@/lib/visa/path-data';
-import type { VisaType } from '@/lib/visa/types';
+} from "@/lib/visa/path-data";
+import type { VisaType } from "@/lib/visa/types";
 
 // =============================================================================
 // Types
 // =============================================================================
 
-type SimulatorStep = 'select-start' | 'select-destination' | 'view-path';
+type SimulatorStep = "select-start" | "select-destination" | "view-path";
+
+// =============================================================================
+// URL State Helpers
+// =============================================================================
+
+const VALID_STARTING_IDS = new Set(STARTING_POINTS.map((sp) => sp.id));
+
+function isValidStartId(value: string): value is VisaType | "none" {
+  return VALID_STARTING_IDS.has(value);
+}
+
+function isValidVisaType(value: string): value is VisaType {
+  return value in VISA_DISPLAY_INFO && value !== "none";
+}
 
 // =============================================================================
 // Main Component
@@ -48,18 +62,34 @@ type SimulatorStep = 'select-start' | 'select-destination' | 'view-path';
 interface VisaPathSimulatorProps {
   lang: string;
   country: string;
+  initialFrom?: string | null;
+  initialTo?: string | null;
 }
 
-export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
-  const [currentStep, setCurrentStep] = useState<SimulatorStep>('select-start');
-  const [selectedStart, setSelectedStart] = useState<VisaType | 'none' | null>(null);
-  const [selectedDestination, setSelectedDestination] = useState<VisaType | null>(null);
-  const [selectedPath, setSelectedPath] = useState<SimulatorPath | null>(null);
+export function VisaPathSimulator({
+  lang,
+  country,
+  initialFrom,
+  initialTo,
+}: VisaPathSimulatorProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const [currentStep, setCurrentStep] =
+    useState<SimulatorStep>("select-start");
+  const [selectedStart, setSelectedStart] = useState<
+    VisaType | "none" | null
+  >(null);
+  const [selectedDestination, setSelectedDestination] =
+    useState<VisaType | null>(null);
+  const [selectedPath, setSelectedPath] = useState<SimulatorPath | null>(
+    null
+  );
 
   // Build locale-aware paths
   const buildHref = useCallback(
     (path: string) => {
-      if (lang === 'en') {
+      if (lang === "en") {
         return `/${country}${path}`;
       }
       return `/${lang}/${country}${path}`;
@@ -67,14 +97,63 @@ export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
     [lang, country]
   );
 
-  // Handlers
-  const handleStartSelect = useCallback((value: string) => {
-    const startType = value === 'none' ? 'none' : (value as VisaType);
-    setSelectedStart(startType);
-    setSelectedDestination(null);
-    setSelectedPath(null);
-    setCurrentStep('select-destination');
+  // Update URL query params without full navigation
+  const updateUrlParams = useCallback(
+    (from: string | null, to: string | null) => {
+      const params = new URLSearchParams(searchParams?.toString() ?? "");
+      if (from) {
+        params.set("from", from);
+      } else {
+        params.delete("from");
+      }
+      if (to) {
+        params.set("to", to);
+      } else {
+        params.delete("to");
+      }
+      const qs = params.toString();
+      const basePath = buildHref("/visa/path");
+      router.replace(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
+    },
+    [router, searchParams, buildHref]
+  );
+
+  // Initialize from URL params on mount
+  useEffect(() => {
+    const from = initialFrom;
+    const to = initialTo;
+
+    if (from && isValidStartId(from)) {
+      setSelectedStart(from);
+
+      if (to && isValidVisaType(to)) {
+        const paths = getPathsToDestination(from, to);
+        if (paths.length > 0 && paths[0]) {
+          setSelectedDestination(to);
+          setSelectedPath(paths[0]);
+          setCurrentStep("view-path");
+          return;
+        }
+      }
+
+      setCurrentStep("select-destination");
+    }
+    // Only run on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Handlers
+  const handleStartSelect = useCallback(
+    (value: string) => {
+      const startType = value === "none" ? "none" : (value as VisaType);
+      setSelectedStart(startType);
+      setSelectedDestination(null);
+      setSelectedPath(null);
+      setCurrentStep("select-destination");
+      updateUrlParams(startType, null);
+    },
+    [updateUrlParams]
+  );
 
   const handleDestinationSelect = useCallback(
     (visaType: VisaType) => {
@@ -82,16 +161,13 @@ export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
       setSelectedDestination(visaType);
 
       const paths = getPathsToDestination(selectedStart, visaType);
-      if (paths.length === 1 && paths[0]) {
+      if (paths.length >= 1 && paths[0]) {
         setSelectedPath(paths[0]);
-        setCurrentStep('view-path');
-      } else if (paths.length > 1) {
-        // If multiple paths, show the first by default (user can switch)
-        setSelectedPath(paths[0] ?? null);
-        setCurrentStep('view-path');
+        setCurrentStep("view-path");
       }
+      updateUrlParams(selectedStart, visaType);
     },
-    [selectedStart]
+    [selectedStart, updateUrlParams]
   );
 
   const handlePathSelect = useCallback((path: SimulatorPath) => {
@@ -99,22 +175,25 @@ export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
   }, []);
 
   const handleBack = useCallback(() => {
-    if (currentStep === 'view-path') {
+    if (currentStep === "view-path") {
       setSelectedPath(null);
       setSelectedDestination(null);
-      setCurrentStep('select-destination');
-    } else if (currentStep === 'select-destination') {
+      setCurrentStep("select-destination");
+      updateUrlParams(selectedStart, null);
+    } else if (currentStep === "select-destination") {
       setSelectedStart(null);
-      setCurrentStep('select-start');
+      setCurrentStep("select-start");
+      updateUrlParams(null, null);
     }
-  }, [currentStep]);
+  }, [currentStep, selectedStart, updateUrlParams]);
 
   const handleReset = useCallback(() => {
     setSelectedStart(null);
     setSelectedDestination(null);
     setSelectedPath(null);
-    setCurrentStep('select-start');
-  }, []);
+    setCurrentStep("select-start");
+    updateUrlParams(null, null);
+  }, [updateUrlParams]);
 
   // Data
   const destinations = selectedStart
@@ -127,45 +206,15 @@ export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      {/* Progress indicator */}
-      <ProgressBar currentStep={currentStep} />
-
-      {/* Step 1: Select starting visa */}
-      {currentStep === 'select-start' && (
-        <StartingPointSelector onSelect={handleStartSelect} />
-      )}
-
-      {/* Step 2: Select destination */}
-      {currentStep === 'select-destination' && selectedStart && (
-        <DestinationSelector
-          selectedStart={selectedStart}
-          destinations={destinations}
-          onSelect={handleDestinationSelect}
-          onBack={handleBack}
-        />
-      )}
-
-      {/* Step 3: View full path */}
-      {currentStep === 'view-path' && selectedPath && selectedStart && (
-        <PathViewer
-          path={selectedPath}
-          alternativePaths={alternativePaths}
-          onSelectPath={handlePathSelect}
-          onBack={handleBack}
-          onReset={handleReset}
-          buildHref={buildHref}
-        />
-      )}
-
-      {/* Disclaimer */}
-      <div className="mt-8 p-4 bg-surface border border-border rounded-xl">
+      {/* Disclaimer — always visible at top */}
+      <div className="mb-8 p-4 bg-surface border border-border rounded-xl">
         <div className="flex items-start gap-3">
           <AlertTriangle className="w-4 h-4 text-warning mt-0.5 flex-shrink-0" />
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Paths shown are general information based on publicly available
+            Paths shown are general information based on published
             requirements. Actual transitions depend on individual circumstances
             and immigration officer discretion. Always verify current
-            requirements with the{' '}
+            requirements with the{" "}
             <a
               href="https://www.immigration.go.kr/immigration_eng/index.do"
               target="_blank"
@@ -178,6 +227,36 @@ export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
           </p>
         </div>
       </div>
+
+      {/* Progress indicator */}
+      <ProgressBar currentStep={currentStep} />
+
+      {/* Step 1: Select starting visa */}
+      {currentStep === "select-start" && (
+        <StartingPointSelector onSelect={handleStartSelect} />
+      )}
+
+      {/* Step 2: Select destination */}
+      {currentStep === "select-destination" && selectedStart && (
+        <DestinationSelector
+          selectedStart={selectedStart}
+          destinations={destinations}
+          onSelect={handleDestinationSelect}
+          onBack={handleBack}
+        />
+      )}
+
+      {/* Step 3: View full path */}
+      {currentStep === "view-path" && selectedPath && selectedStart && (
+        <PathViewer
+          path={selectedPath}
+          alternativePaths={alternativePaths}
+          onSelectPath={handlePathSelect}
+          onBack={handleBack}
+          onReset={handleReset}
+          buildHref={buildHref}
+        />
+      )}
     </div>
   );
 }
@@ -188,9 +267,9 @@ export function VisaPathSimulator({ lang, country }: VisaPathSimulatorProps) {
 
 function ProgressBar({ currentStep }: { currentStep: SimulatorStep }) {
   const steps = [
-    { key: 'select-start', label: 'Your Visa' },
-    { key: 'select-destination', label: 'Destination' },
-    { key: 'view-path', label: 'Path' },
+    { key: "select-start", label: "Your Visa" },
+    { key: "select-destination", label: "Destination" },
+    { key: "view-path", label: "Path" },
   ] as const;
 
   const currentIndex = steps.findIndex((s) => s.key === currentStep);
@@ -206,18 +285,21 @@ function ProgressBar({ currentStep }: { currentStep: SimulatorStep }) {
             <div className="flex items-center gap-2 flex-1">
               <div
                 className={cn(
-                  'w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all',
-                  isCompleted && 'bg-primary text-primary-foreground',
-                  isActive && 'bg-primary/20 text-primary ring-2 ring-primary/40',
-                  !isCompleted && !isActive && 'bg-elevated text-muted-foreground'
+                  "w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all",
+                  isCompleted && "bg-primary text-primary-foreground",
+                  isActive &&
+                    "bg-primary/20 text-primary ring-2 ring-primary/40",
+                  !isCompleted &&
+                    !isActive &&
+                    "bg-elevated text-muted-foreground"
                 )}
               >
                 {index + 1}
               </div>
               <span
                 className={cn(
-                  'text-sm font-medium hidden sm:inline',
-                  isActive ? 'text-foreground' : 'text-muted-foreground'
+                  "text-sm font-medium hidden sm:inline",
+                  isActive ? "text-foreground" : "text-muted-foreground"
                 )}
               >
                 {step.label}
@@ -226,8 +308,8 @@ function ProgressBar({ currentStep }: { currentStep: SimulatorStep }) {
             {index < steps.length - 1 && (
               <div
                 className={cn(
-                  'h-px flex-1 min-w-4',
-                  isCompleted ? 'bg-primary' : 'bg-border'
+                  "h-px flex-1 min-w-4",
+                  isCompleted ? "bg-primary" : "bg-border"
                 )}
               />
             )}
@@ -283,10 +365,10 @@ function StartingPointSelector({
           <Card
             key={sp.id}
             className={cn(
-              'cursor-pointer transition-all duration-200',
-              'hover:border-primary/40 hover:bg-elevated'
+              "cursor-pointer transition-all duration-200",
+              "hover:border-primary/40 hover:bg-elevated"
             )}
-            onClick={() => onSelect(sp.id === 'none' ? 'none' : sp.id)}
+            onClick={() => onSelect(sp.id === "none" ? "none" : sp.id)}
           >
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
@@ -294,7 +376,7 @@ function StartingPointSelector({
                   variant="outline"
                   className="font-mono font-bold uppercase text-primary border-primary/30 flex-shrink-0"
                 >
-                  {sp.visaType === 'none' ? 'N/A' : sp.visaType}
+                  {sp.visaType === "none" ? "N/A" : sp.visaType}
                 </Badge>
                 <div className="min-w-0">
                   <div className="font-semibold text-sm text-foreground truncate">
@@ -323,7 +405,7 @@ function DestinationSelector({
   onSelect,
   onBack,
 }: {
-  selectedStart: VisaType | 'none';
+  selectedStart: VisaType | "none";
   destinations: { visaType: VisaType; visaName: string; pathCount: number }[];
   onSelect: (visaType: VisaType) => void;
   onBack: () => void;
@@ -350,10 +432,12 @@ function DestinationSelector({
               <Sparkles className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-xs text-muted-foreground">Starting from</div>
+              <div className="text-xs text-muted-foreground">
+                Starting from
+              </div>
               <div className="font-semibold text-foreground">
-                {selectedStart === 'none'
-                  ? 'No Visa / Tourist'
+                {selectedStart === "none"
+                  ? "No Visa / Tourist"
                   : `${selectedStart.toUpperCase()} - ${startInfo.name}`}
               </div>
             </div>
@@ -367,8 +451,8 @@ function DestinationSelector({
         </h2>
         <p className="text-sm text-muted-foreground">
           {destinations.length > 0
-            ? `${destinations.length} visa destination${destinations.length !== 1 ? 's' : ''} reachable from your current status`
-            : 'No known transition paths from this visa type yet'}
+            ? `${destinations.length} visa destination${destinations.length !== 1 ? "s" : ""} reachable from your current status`
+            : "No known transition paths from this visa type yet"}
         </p>
       </div>
 
@@ -391,8 +475,8 @@ function DestinationSelector({
               <Card
                 key={dest.visaType}
                 className={cn(
-                  'cursor-pointer transition-all duration-200',
-                  'hover:border-primary/40 hover:bg-elevated'
+                  "cursor-pointer transition-all duration-200",
+                  "hover:border-primary/40 hover:bg-elevated"
                 )}
                 onClick={() => onSelect(dest.visaType)}
               >
@@ -490,11 +574,17 @@ function PathViewer({
                   <Clock className="w-3.5 h-3.5" />
                   <span>{path.totalDuration}</span>
                 </div>
-                <div className={cn('flex items-center gap-1.5', difficulty.colorClass)}>
+                <div
+                  className={cn(
+                    "flex items-center gap-1.5",
+                    difficulty.colorClass
+                  )}
+                >
                   <span className="font-medium">{difficulty.label}</span>
                 </div>
                 <div className="text-muted-foreground">
-                  {path.steps.length} step{path.steps.length !== 1 ? 's' : ''}
+                  {path.steps.length} step
+                  {path.steps.length !== 1 ? "s" : ""}
                 </div>
               </div>
             </div>
@@ -508,11 +598,7 @@ function PathViewer({
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {path.suitableFor.map((audience) => (
-                  <Badge
-                    key={audience}
-                    variant="secondary"
-                    className="text-xs"
-                  >
+                  <Badge key={audience} variant="secondary" className="text-xs">
                     {audience}
                   </Badge>
                 ))}
@@ -532,7 +618,7 @@ function PathViewer({
             {alternativePaths.map((altPath) => (
               <Button
                 key={altPath.id}
-                variant={altPath.id === path.id ? 'default' : 'secondary'}
+                variant={altPath.id === path.id ? "default" : "secondary"}
                 size="sm"
                 onClick={() => onSelectPath(altPath)}
               >
@@ -553,6 +639,7 @@ function PathViewer({
             isLast={index === path.steps.length - 1}
             stepNumber={index + 1}
             totalSteps={path.steps.length}
+            detailHref={buildHref(`/visa/${step.visaType}`)}
           />
         ))}
       </div>
@@ -564,7 +651,8 @@ function PathViewer({
           <Link href={buildHref(`/visa/checklist/${targetVisaType}`)}>
             <Button className="w-full" size="cta">
               <FileText className="w-5 h-5 mr-2" />
-              Start this path — View {targetVisaType.toUpperCase()} document checklist
+              Start this path — View {targetVisaType.toUpperCase()} document
+              checklist
             </Button>
           </Link>
         )}

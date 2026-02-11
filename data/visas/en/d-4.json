@@ -43,9 +43,35 @@
   "faqs": [],
   "tips": [],
 
-  "relatedVisas": ["d-2"],
-  "pathsTo": ["d-2"],
-  "pathsFrom": [],
+  "relatedVisas": ["d-2", "d-10"],
+  "pathsTo": [
+    {
+      "type": "d-2",
+      "name": "Student Visa",
+      "requirements": "Complete Korean language program and gain admission to a Korean university degree program.",
+      "timeline": "2-4 weeks processing after university admission",
+      "documents": ["University admission letter", "Language program completion certificate", "Academic transcripts", "Financial proof ($10,000+ USD)"],
+      "notes": "The natural progression from language study to degree study. Apply to universities while still in your language program. Higher TOPIK scores from D-4 study improve university admission chances."
+    },
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "Must have bachelor's degree from a previous institution. Apply before D-4 expires.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Degree certificate (from previous education)", "Language program completion certificate", "Job search plan", "Bank statement"],
+      "notes": "For language students who already have a degree and want to seek Korean employment. Korean language skills gained from D-4 study are a major advantage in the job market."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "h-1",
+      "name": "Working Holiday Visa",
+      "requirements": "Enroll in an accredited Korean language program. Apply before H-1 expires.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Language school admission letter", "Financial proof", "H-1 ARC"],
+      "notes": "Some Working Holiday visa holders transition to language study to improve their Korean before pursuing employment or university admission."
+    }
+  ],
 
   "lastUpdated": "2026-02-01",
   "officialLinks": [

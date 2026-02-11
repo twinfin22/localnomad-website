@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FileText, MapPin, Stamp, ArrowRight } from "lucide-react";
 import { HeroBackground } from "@/components/theme-preview";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations();
 
   useEffect(() => {
     setMounted(true);
@@ -26,7 +28,7 @@ export function HeroSection() {
           }`}
         >
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-sm font-medium text-primary">Your Korea Journey Starts Here</span>
+          <span className="text-sm font-medium text-primary">{t('hero.badge')}</span>
         </div>
 
         <h1
@@ -35,9 +37,9 @@ export function HeroSection() {
           }`}
           style={{ transitionDelay: "100ms" }}
         >
-          <span className="text-foreground">Your </span>
+          <span className="text-foreground">{t('hero.titlePrefix')}</span>
           <span className="text-primary relative">
-            Seoul
+            {t('hero.titleHighlight')}
             <svg
               className="absolute -bottom-2 left-0 w-full h-3 text-accent/40"
               viewBox="0 0 100 12"
@@ -52,7 +54,7 @@ export function HeroSection() {
               />
             </svg>
           </span>
-          <span className="text-foreground"> Toolkit</span>
+          <span className="text-foreground">{t('hero.titleSuffix')}</span>
         </h1>
 
         <p
@@ -61,9 +63,9 @@ export function HeroSection() {
           }`}
           style={{ transitionDelay: "200ms" }}
         >
-          Everything you need to live, work, and thrive in Korea.
+          {t('hero.subtitle')}
           <br className="hidden sm:block" />
-          <span className="text-foreground/80 font-medium">Curated guides, area insights, and visa support.</span>
+          <span className="text-foreground/80 font-medium">{t('hero.subtitleHighlight')}</span>
         </p>
 
         {/* Service Cards */}
@@ -84,9 +86,9 @@ export function HeroSection() {
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 mx-auto group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300">
                   <FileText className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Info Bundles</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('hero.infoBundles')}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Checklists, playbooks, and cheatsheets for your Korea journey
+                  {t('hero.infoBundlesDesc')}
                 </p>
               </div>
             </div>
@@ -107,9 +109,9 @@ export function HeroSection() {
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 mx-auto group-hover:bg-accent/15 group-hover:scale-110 transition-all duration-300">
                   <MapPin className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Area Guide</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('hero.areaGuide')}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Neighborhood insights and custom housing reports
+                  {t('hero.areaGuideDesc')}
                 </p>
               </div>
             </div>
@@ -130,9 +132,9 @@ export function HeroSection() {
                 <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-5 mx-auto group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
                   <Stamp className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Visa Dashboard</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('hero.visaDashboard')}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Step-by-step guides and checklists for your visa
+                  {t('hero.visaDashboardDesc')}
                 </p>
               </div>
             </div>
@@ -150,7 +152,7 @@ export function HeroSection() {
               size="cta"
               className="group font-semibold btn-gradient-navy text-white border-0 shadow-navy-md hover:shadow-navy-xl transition-all duration-400"
             >
-              Explore All Resources
+              {t('hero.exploreAll')}
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>
@@ -165,15 +167,15 @@ export function HeroSection() {
         >
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>Updated Weekly</span>
+            <span>{t('hero.updatedWeekly')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>Local Experts</span>
+            <span>{t('hero.localExperts')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>Trusted by Nomads</span>
+            <span>{t('hero.trustedByNomads')}</span>
           </div>
         </div>
       </div>

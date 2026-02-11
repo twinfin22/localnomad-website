@@ -1,5 +1,8 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { AlertTriangle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface LegalDisclaimerProps {
   variant?: 'inline' | 'box' | 'banner';
@@ -12,20 +15,23 @@ export function LegalDisclaimer({
   className,
   showIcon = true,
 }: LegalDisclaimerProps) {
+  const t = useTranslations();
+
   if (variant === 'inline') {
     return (
       <p className={cn('text-sm text-muted-foreground', className)}>
-        This information is for general guidance only. Visa requirements change
-        frequently. Always verify current requirements with the{' '}
-        <a
-          href="https://www.immigration.go.kr/immigration_eng/index.do"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary underline hover:text-accent-hover"
-        >
-          Korea Immigration Service
-        </a>
-        .
+        {t.rich('legal.inlineDisclaimer', {
+          kis: (chunks) => (
+            <a
+              href="https://www.immigration.go.kr/immigration_eng/index.do"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline hover:text-accent-hover"
+            >
+              {chunks}
+            </a>
+          ),
+        })}
       </p>
     );
   }
@@ -40,8 +46,8 @@ export function LegalDisclaimer({
       >
         <div className="container mx-auto max-w-3xl">
           <p className="text-sm text-warning/80 text-center">
-            <span className="font-medium text-warning">Note:</span> This tool
-            provides general guidance only and does not constitute legal advice.
+            <span className="font-medium text-warning">{t('legal.bannerNote')}</span>{' '}
+            {t('legal.bannerDisclaimer')}
           </p>
         </div>
       </div>
@@ -64,29 +70,34 @@ export function LegalDisclaimer({
         )}
         <div>
           <h4 className="text-lg font-semibold text-warning mb-2">
-            Important Notice
+            {t('legal.importantNotice')}
           </h4>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+            {t('legal.boxDisclaimerPara1')}
+          </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            This information is for general guidance only. Visa requirements
-            change frequently. Always verify current requirements with the{' '}
-            <a
-              href="https://www.immigration.go.kr/immigration_eng/index.do"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline hover:text-accent-hover"
-            >
-              Korea Immigration Service
-            </a>{' '}
-            or{' '}
-            <a
-              href="https://www.hikorea.go.kr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline hover:text-accent-hover"
-            >
-              HiKorea
-            </a>{' '}
-            before applying.
+            {t.rich('legal.boxDisclaimerPara2', {
+              kis: (chunks) => (
+                <a
+                  href="https://www.immigration.go.kr/immigration_eng/index.do"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline hover:text-accent-hover"
+                >
+                  {chunks}
+                </a>
+              ),
+              hikorea: (chunks) => (
+                <a
+                  href="https://www.hikorea.go.kr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline hover:text-accent-hover"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
           </p>
         </div>
       </div>
@@ -96,6 +107,8 @@ export function LegalDisclaimer({
 
 // Quiz-specific disclaimer
 export function QuizDisclaimer({ className }: { className?: string }) {
+  const t = useTranslations();
+
   return (
     <div
       className={cn(
@@ -104,10 +117,7 @@ export function QuizDisclaimer({ className }: { className?: string }) {
       )}
     >
       <p className="text-xs text-muted-foreground leading-relaxed">
-        This tool checks your information against publicly available Korean visa
-        requirements. It does not constitute legal advice. Final decisions on
-        visa issuance rest solely with the Korean Ministry of Justice and
-        immigration authorities.
+        {t('legal.quizDisclaimer')}
       </p>
     </div>
   );
@@ -115,17 +125,19 @@ export function QuizDisclaimer({ className }: { className?: string }) {
 
 // Income calculator disclaimer
 export function IncomeDisclaimer({ className }: { className?: string }) {
+  const t = useTranslations();
+
   return (
     <p className={cn('text-xs text-muted-foreground', className)}>
-      Income thresholds are based on publicly available GNI data from the Bank
-      of Korea. Actual verification is performed by immigration authorities
-      using official documentation.
+      {t('legal.incomeDisclaimer')}
     </p>
   );
 }
 
 // 183-day tracker disclaimer
 export function DayTrackerDisclaimer({ className }: { className?: string }) {
+  const t = useTranslations();
+
   return (
     <div
       className={cn(
@@ -134,11 +146,7 @@ export function DayTrackerDisclaimer({ className }: { className?: string }) {
       )}
     >
       <p className="text-xs text-muted-foreground leading-relaxed">
-        This tracker shows days physically present in Korea for informational
-        purposes only. Tax residency status depends on multiple factors
-        including your overall circumstances, income sources, and family
-        situation. This is not tax advice. Consult a qualified tax professional
-        for guidance specific to your situation.
+        {t('legal.dayTrackerDisclaimer')}
       </p>
     </div>
   );

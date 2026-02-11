@@ -212,9 +212,83 @@
     "Changing jobs without updating visa is a violation"
   ],
 
-  "relatedVisas": ["d-10", "f-2", "f-5"],
-  "pathsTo": ["f-2"],
-  "pathsFrom": ["d-2", "d-7", "d-10", "e-2", "f-1-d", "f-4"],
+  "relatedVisas": ["d-10", "f-2"],
+  "pathsTo": [
+    {
+      "type": "f-2",
+      "name": "Residence Visa (F-2-7 Points-Based)",
+      "requirements": "Score 80+ on the F-2-7 points system. Typically need 3+ years on E-7, income above GNI average, TOPIK score, and other point categories.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Points calculation worksheet", "TOPIK certificate", "Income tax documents", "Employment certificate", "Degree certificate"],
+      "notes": "The most desirable upgrade from E-7. F-2 removes employer-tied restrictions — you can change jobs freely, freelance, or start a business. Start preparing early: take TOPIK, build work history, complete KIIP courses for bonus points."
+    },
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "Between jobs (company closure, contract end, layoff). Apply during the grace period before E-7 expires.",
+      "timeline": "1-2 weeks processing",
+      "documents": ["Previous employment certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "notes": "A fallback option if you lose your job. Grace period is typically 30 days but varies. Apply immediately — do not wait until the last minute. D-10 gives you up to 2 years to find new employment."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "d-2",
+      "name": "Student Visa",
+      "requirements": "Secure a job offer from a Korean company in your field. Must have completed your degree.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "Can transition directly if you have a job offer, or go through D-10 first. Many Korean university graduates find jobs through campus recruitment events."
+    },
+    {
+      "type": "d-7",
+      "name": "Intra-Company Transfer Visa",
+      "requirements": "Change from intra-company assignment to direct employment with a Korean entity. New employer must sponsor.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["New employment contract", "Company business registration", "Degree certificate", "Career certificate"],
+      "notes": "Common for employees who were transferred to Korea and decide to join a local company directly."
+    },
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "Secure a job offer from a Korean company. Employer must be willing to sponsor E-7 visa.",
+      "timeline": "2-4 weeks processing after employer submits documents",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "The primary path from D-10 to employment. Your new employer handles most of the sponsorship paperwork. Large companies generally have smoother processes."
+    },
+    {
+      "type": "e-2",
+      "name": "English Teaching Visa",
+      "requirements": "Secure a professional job offer outside of teaching. Must meet E-7 qualification requirements (degree + experience in relevant field).",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "Common for English teachers who want to transition to professional work. May need additional qualifications or experience depending on the target profession."
+    },
+    {
+      "type": "f-1-d",
+      "name": "Digital Nomad Visa (Workcation)",
+      "requirements": "Secure a job offer from a Korean company. Must give up remote work arrangement or maintain it separately.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "For digital nomads who find local employment opportunities. Note: you can no longer work for foreign companies on E-7. This is a significant lifestyle change."
+    },
+    {
+      "type": "f-4",
+      "name": "Overseas Korean Visa",
+      "requirements": "Secure a job offer from a Korean company. F-4 holders already have work authorization but E-7 may be needed for specific employer sponsorship situations.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate", "Career certificate"],
+      "notes": "F-4 holders already have broad work rights, so this transition is less common. Usually only needed for specific regulatory or company requirements."
+    },
+    {
+      "type": "h-1",
+      "name": "Working Holiday Visa",
+      "requirements": "Secure a professional job offer before H-1 expires. Must meet E-7 qualification requirements.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "Possible but less common directly from H-1. Most go through D-10 first. Start job searching early — H-1 cannot be extended."
+    }
+  ],
 
   "lastUpdated": "2026-02-11",
   "officialLinks": [

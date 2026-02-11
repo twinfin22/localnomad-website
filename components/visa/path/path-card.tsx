@@ -1,8 +1,10 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { useState } from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   ChevronDown,
   ChevronUp,
@@ -10,9 +12,9 @@ import {
   AlertTriangle,
   Lightbulb,
   CheckCircle2,
-} from 'lucide-react';
-import { useState } from 'react';
-import type { PathStepDetail } from '@/lib/visa/path-data';
+  ExternalLink,
+} from "lucide-react";
+import type { PathStepDetail } from "@/lib/visa/path-data";
 
 interface PathCardProps {
   step: PathStepDetail;
@@ -20,6 +22,7 @@ interface PathCardProps {
   isLast: boolean;
   stepNumber: number;
   totalSteps: number;
+  detailHref?: string;
 }
 
 export function PathCard({
@@ -28,6 +31,7 @@ export function PathCard({
   isLast,
   stepNumber,
   totalSteps,
+  detailHref,
 }: PathCardProps) {
   const [isExpanded, setIsExpanded] = useState(isFirst);
 
@@ -48,9 +52,9 @@ export function PathCard({
 
       <Card
         className={cn(
-          'transition-all duration-200 cursor-pointer overflow-hidden',
-          'hover:border-primary/30',
-          isExpanded && 'border-primary/40 shadow-navy-md'
+          "transition-all duration-200 cursor-pointer overflow-hidden",
+          "hover:border-primary/30",
+          isExpanded && "border-primary/40 shadow-navy-md"
         )}
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -61,12 +65,12 @@ export function PathCard({
               {/* Step number indicator */}
               <div
                 className={cn(
-                  'flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold',
+                  "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold",
                   isFirst
-                    ? 'bg-primary/20 text-primary'
+                    ? "bg-primary/20 text-primary"
                     : isLast
-                      ? 'bg-success/20 text-success'
-                      : 'bg-elevated text-muted-foreground'
+                      ? "bg-success/20 text-success"
+                      : "bg-elevated text-muted-foreground"
                 )}
               >
                 {stepNumber}
@@ -98,7 +102,7 @@ export function PathCard({
             <button
               type="button"
               className="flex-shrink-0 p-1 text-muted-foreground hover:text-foreground transition-colors"
-              aria-label={isExpanded ? 'Collapse details' : 'Expand details'}
+              aria-label={isExpanded ? "Collapse details" : "Expand details"}
             >
               {isExpanded ? (
                 <ChevronUp className="w-5 h-5" />
@@ -117,8 +121,10 @@ export function PathCard({
         {/* Expandable content */}
         <CardContent
           className={cn(
-            'overflow-hidden transition-all duration-300',
-            isExpanded ? 'max-h-[800px] opacity-100 pt-4' : 'max-h-0 opacity-0 pt-0'
+            "overflow-hidden transition-all duration-300",
+            isExpanded
+              ? "max-h-[800px] opacity-100 pt-4"
+              : "max-h-0 opacity-0 pt-0"
           )}
         >
           <div className="pl-11 space-y-5">
@@ -185,9 +191,21 @@ export function PathCard({
               </div>
             )}
 
-            {/* Step position indicator */}
-            <div className="text-xs text-muted-foreground pt-2 border-t border-border">
-              Step {stepNumber} of {totalSteps}
+            {/* Footer: step indicator + detail link */}
+            <div className="flex items-center justify-between pt-2 border-t border-border">
+              <span className="text-xs text-muted-foreground">
+                Step {stepNumber} of {totalSteps}
+              </span>
+              {detailHref && (
+                <Link
+                  href={detailHref}
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-accent-hover transition-colors"
+                >
+                  View full {step.visaType.toUpperCase()} guide
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              )}
             </div>
           </div>
         </CardContent>

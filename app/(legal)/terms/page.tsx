@@ -100,7 +100,13 @@ export default function TermsPage() {
                 <li>
                   <strong>No Professional Advice:</strong> LocalNomad is not a law firm, real estate
                   agency, or financial institution. The information provided does not constitute
-                  legal, tax, or professional financial advice.
+                  legal, tax, or professional financial advice. In accordance with the Korean
+                  행정사법 (Administrative Scrivener Act) and 변호사법 (Attorney Act), LocalNomad
+                  does not file visa applications or immigration documents on behalf of users,
+                  does not provide legal representation before immigration authorities, and does
+                  not broker connections to licensed professionals for a fee. For immigration
+                  legal matters, consult a licensed Korean 행정사 (administrative scrivener) or
+                  변호사 (attorney).
                 </li>
                 <li>
                   <strong>No Guarantee of Results:</strong> While we strive for 100% accuracy, local

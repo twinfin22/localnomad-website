@@ -6,6 +6,7 @@ import {
   ArrowRight,
   ArrowLeft,
   CheckCircle,
+  AlertTriangle,
   Briefcase,
   GraduationCap,
   Home,
@@ -219,6 +220,8 @@ export function EligibilityQuiz() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
+  const [consentGiven, setConsentGiven] = useState(false);
+  const [showConsentGate, setShowConsentGate] = useState(false);
 
   const handleAnswer = (questionId: string, value: string) => {
     setAnswers({ ...answers, [questionId]: value });
@@ -228,7 +231,7 @@ export function EligibilityQuiz() {
     if (currentStep < questions.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      setShowResults(true);
+      setShowConsentGate(true);
     }
   };
 
@@ -242,6 +245,8 @@ export function EligibilityQuiz() {
     setCurrentStep(0);
     setAnswers({});
     setShowResults(false);
+    setConsentGiven(false);
+    setShowConsentGate(false);
   };
 
   const calculateResults = (): VisaResult[] => {
@@ -311,6 +316,58 @@ export function EligibilityQuiz() {
   const currentQuestion = questions[currentStep];
   const progress = ((currentStep + 1) / questions.length) * 100;
   const hasCurrentAnswer = answers[currentQuestion?.id];
+
+  if (showConsentGate && !showResults) {
+    return (
+      <AnimatedSection>
+        <div className="space-y-6">
+          <div className="bg-card border border-border rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
+              <AlertTriangle className="w-8 h-8 text-amber-500" />
+            </div>
+            <h2 className="text-xl font-bold mb-2">Before viewing results</h2>
+            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+              Please acknowledge the following before we show your results.
+            </p>
+
+            <label className="flex items-start gap-3 text-left p-4 rounded-xl border border-border bg-muted/30 cursor-pointer mb-6 max-w-lg mx-auto">
+              <input
+                type="checkbox"
+                checked={consentGiven}
+                onChange={(e) => setConsentGiven(e.target.checked)}
+                className="mt-1 h-4 w-4 shrink-0 accent-primary"
+              />
+              <span className="text-sm text-muted-foreground">
+                I understand this tool matches my answers against published
+                requirements and does not determine my eligibility. Final
+                decisions are made by Korean immigration authorities.
+              </span>
+            </label>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setShowConsentGate(false);
+                  setCurrentStep(questions.length - 1);
+                }}
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Questions
+              </Button>
+              <Button
+                onClick={() => setShowResults(true)}
+                disabled={!consentGiven}
+              >
+                View Results
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+    );
+  }
 
   if (showResults) {
     const results = calculateResults();

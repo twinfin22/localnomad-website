@@ -212,9 +212,9 @@
         "required": true,
         "options": [
           { "value": "under-18", "label": "Under 18", "description": "Not eligible yet" },
-          { "value": "18-25", "label": "18-25", "description": "Eligible for all countries" },
-          { "value": "26-30", "label": "26-30", "description": "Eligible for most countries" },
-          { "value": "over-30", "label": "Over 30", "description": "May not be eligible" }
+          { "value": "18-25", "label": "18-25", "description": "Meets age requirement for all countries" },
+          { "value": "26-30", "label": "26-30", "description": "Meets age requirement for most countries" },
+          { "value": "over-30", "label": "Over 30", "description": "May not meet age requirement" }
         ]
       }
     ],

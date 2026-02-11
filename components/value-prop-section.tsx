@@ -69,7 +69,7 @@ export function ValuePropSection() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1 flex-shrink-0">•</span>
-                  <span>We guarantee completeness through unlimited Q&A during your onboarding call</span>
+                  <span>We provide unlimited Q&A during your onboarding call to cover your questions</span>
                 </li>
               </ul>
             </div>

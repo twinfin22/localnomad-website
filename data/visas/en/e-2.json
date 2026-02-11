@@ -44,8 +44,34 @@
   "tips": [],
 
   "relatedVisas": ["e-7", "d-10"],
-  "pathsTo": ["e-7", "d-10"],
-  "pathsFrom": ["h-1"],
+  "pathsTo": [
+    {
+      "type": "e-7",
+      "name": "Professional Employment Visa",
+      "requirements": "Secure a professional job offer from a Korean company outside of teaching. Must meet E-7 qualifications (degree + relevant experience).",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract", "Company business registration", "Degree certificate (apostilled)", "Career certificate"],
+      "notes": "For English teachers wanting to transition to professional work (IT, business, etc.). May require additional qualifications or experience beyond teaching. A new employer must sponsor your visa."
+    },
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "Must have bachelor's degree. Apply before E-2 visa expires or within the grace period after contract ends.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Degree certificate", "Previous employment certificate", "Job search plan", "Bank statement", "Resume/CV"],
+      "notes": "A bridge option for teachers who want to explore other career paths in Korea. D-10 gives you up to 2 years to find new employment outside teaching."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "h-1",
+      "name": "Working Holiday Visa",
+      "requirements": "Citizenship from an English-speaking country (US, UK, Canada, Australia, NZ, Ireland, South Africa). Bachelor's degree required. Secure a teaching job at a hagwon or school.",
+      "timeline": "2-4 weeks processing",
+      "documents": ["Employment contract from school/hagwon", "Degree certificate (apostilled)", "Criminal background check", "Health check"],
+      "notes": "Some Working Holiday visa holders transition to teaching positions. The E-2 requires citizenship from specific English-speaking countries, not just English fluency."
+    }
+  ],
 
   "lastUpdated": "2026-02-01",
   "officialLinks": [

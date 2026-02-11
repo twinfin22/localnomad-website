@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FileText, ArrowRight, ChevronDown } from "lucide-react";
+import { FileText, ArrowRight, ChevronDown, Route } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface VisaOption {
@@ -13,9 +13,10 @@ interface VisaOption {
 
 interface AlreadyHaveVisaProps {
   visaOptions: VisaOption[];
+  pathSimulatorHref?: string;
 }
 
-export function AlreadyHaveVisa({ visaOptions }: AlreadyHaveVisaProps) {
+export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveVisaProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -66,6 +67,18 @@ export function AlreadyHaveVisa({ visaOptions }: AlreadyHaveVisaProps) {
               </Link>
             ))}
           </div>
+
+          {/* Path simulator link */}
+          {pathSimulatorHref && (
+            <Link
+              href={pathSimulatorHref}
+              className="mt-4 flex items-center gap-2 text-sm text-primary hover:text-accent-hover transition-colors"
+            >
+              <Route className="w-4 h-4" />
+              <span>Explore visa transition paths</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          )}
         </div>
       )}
     </div>

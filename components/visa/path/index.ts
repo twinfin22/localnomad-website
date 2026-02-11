@@ -1,2 +1,2 @@
-export { VisaPathSimulator } from './VisaPathSimulator';
-export { PathCard } from './PathCard';
+export { VisaPathSimulator } from './visa-path-simulator';
+export { PathCard } from './path-card';

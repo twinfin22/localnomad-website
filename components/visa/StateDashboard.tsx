@@ -14,6 +14,7 @@ import {
   Clock,
   CheckCircle,
   Info,
+  AlertTriangle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,14 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
   getStoredProgress,
   clearProgress,
   saveProgress,
@@ -39,12 +48,14 @@ import {
   type VisaProgress,
   type VisaState,
 } from "@/lib/visa/stateMachine";
-import { getVisaInfo } from "@/lib/visa/data";
+import { getVisaInfo, getAllVisas } from "@/lib/visa/data";
+import { HealthScoreCard } from "./dashboard/HealthScoreCard";
 import { NextStepHero } from "./NextStepHero";
 import { DocumentProgress } from "./DocumentProgress";
 import { DDayCounter } from "./DDayCounter";
 import { StateTimeline } from "./StateTimeline";
-import type { VisaInfo } from "@/lib/visa/types";
+import type { VisaInfo, VisaType } from "@/lib/visa/types";
+import type { HealthScoreFactors } from "@/lib/visa/health-score";
 
 // =============================================================================
 // Empty State (No Progress)
@@ -338,6 +349,138 @@ function DashboardDisclaimer() {
 }
 
 // =============================================================================
+// Settings Sheet
+// =============================================================================
+
+interface SettingsSheetProps {
+  progress: VisaProgress;
+  onChangeVisaType: (type: VisaType) => void;
+  onChangeTargetDate: (date: Date | undefined) => void;
+  onReset: () => void;
+}
+
+function SettingsSheet({
+  progress,
+  onChangeVisaType,
+  onChangeTargetDate,
+  onReset,
+}: SettingsSheetProps) {
+  const allVisas = getAllVisas("en");
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [localTargetDate, setLocalTargetDate] = useState(
+    progress.targetDate
+      ? new Date(progress.targetDate).toISOString().split("T")[0]
+      : ""
+  );
+
+  const handleDateChange = (dateStr: string) => {
+    setLocalTargetDate(dateStr);
+    if (dateStr) {
+      onChangeTargetDate(new Date(dateStr));
+    } else {
+      onChangeTargetDate(undefined);
+    }
+  };
+
+  return (
+    <div className="space-y-6 px-4 pb-4">
+      {/* Change Visa Type */}
+      <div>
+        <h4 className="text-sm font-medium text-foreground mb-3">
+          Target Visa Type
+        </h4>
+        <div className="flex flex-wrap gap-2">
+          {allVisas.map((v) => (
+            <button
+              key={v.type}
+              onClick={() => onChangeVisaType(v.type)}
+              className={cn(
+                "px-3 py-1.5 rounded-lg border text-sm font-medium transition-all",
+                progress.visaType === v.type
+                  ? "border-primary bg-primary/10 text-primary"
+                  : "border-border text-muted-foreground hover:border-primary/30 hover:text-foreground"
+              )}
+            >
+              {v.shortName}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Update Target Date */}
+      <div>
+        <h4 className="text-sm font-medium text-foreground mb-3">
+          Target Date
+        </h4>
+        <input
+          type="date"
+          value={localTargetDate}
+          onChange={(e) => handleDateChange(e.target.value)}
+          className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+        />
+        {localTargetDate && (
+          <button
+            onClick={() => handleDateChange("")}
+            className="text-xs text-muted-foreground hover:text-foreground mt-2"
+          >
+            Clear target date
+          </button>
+        )}
+      </div>
+
+      {/* Reset All Progress */}
+      <div className="pt-4 border-t border-border">
+        <h4 className="text-sm font-medium text-foreground mb-3">
+          Danger Zone
+        </h4>
+        {!showResetConfirm ? (
+          <Button
+            variant="outline"
+            className="w-full border-red-500/30 text-red-400 hover:bg-red-500/10 hover:border-red-500/50"
+            onClick={() => setShowResetConfirm(true)}
+          >
+            <Trash2 className="w-4 h-4 mr-2" />
+            Reset All Progress
+          </Button>
+        ) : (
+          <div className="space-y-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-medium text-red-400">
+                  This will permanently delete all your progress
+                </p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Your visa selection, checklist progress, and all settings will
+                  be lost. This cannot be undone.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1 border-border text-muted-foreground hover:bg-surface"
+                onClick={() => setShowResetConfirm(false)}
+              >
+                Cancel
+              </Button>
+              <Button
+                size="sm"
+                className="flex-1 bg-red-500 hover:bg-red-600 text-white"
+                onClick={onReset}
+              >
+                Delete Everything
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// =============================================================================
 // Active Dashboard (Has Progress)
 // =============================================================================
 
@@ -346,14 +489,57 @@ interface ActiveDashboardProps {
   visa: VisaInfo | null;
   onReset: () => void;
   onStateTransition: (newState: VisaState) => void;
+  onChangeVisaType: (type: VisaType) => void;
+  onChangeTargetDate: (date: Date | undefined) => void;
 }
 
-function ActiveDashboard({ progress, visa, onReset, onStateTransition }: ActiveDashboardProps) {
+function ActiveDashboard({
+  progress,
+  visa,
+  onReset,
+  onStateTransition,
+  onChangeVisaType,
+  onChangeTargetDate,
+}: ActiveDashboardProps) {
   const currentStateConfig = stateConfig[progress.state];
   const isPreparing = progress.state === "PREPARING";
   const isWaiting = ["SUBMITTED", "UNDER_REVIEW"].includes(progress.state);
   const isActive = ["APPROVED", "ACTIVE"].includes(progress.state);
   const needsAttention = ["EXPIRING", "EXPIRED"].includes(progress.state);
+
+  // Calculate document completion from per-type localStorage
+  const [docCompleted, setDocCompleted] = useState(0);
+  const [docTotal, setDocTotal] = useState(1);
+
+  useEffect(() => {
+    const storageKey = `visa-checklist-${progress.visaType}`;
+    try {
+      const stored = localStorage.getItem(storageKey);
+      if (stored) {
+        const items: Record<string, boolean> = JSON.parse(stored);
+        setDocCompleted(Object.values(items).filter(Boolean).length);
+      }
+    } catch {
+      // Ignore parse errors
+    }
+    const totalDocs = visa?.documents?.length || 1;
+    setDocTotal(totalDocs);
+  }, [progress.visaType, visa]);
+
+  // Calculate health score factors
+  const healthFactors: HealthScoreFactors = {
+    documentsCompleted: docCompleted,
+    documentsTotal: docTotal,
+    daysUntilTarget: progress.targetDate
+      ? Math.ceil(
+          (new Date(progress.targetDate).getTime() - Date.now()) /
+            (1000 * 60 * 60 * 24)
+        )
+      : null,
+    insuranceValid: true, // TODO: Track insurance status
+    insuranceExpiresInDays: null,
+    state: progress.state,
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
@@ -379,29 +565,42 @@ function ActiveDashboard({ progress, visa, onReset, onStateTransition }: ActiveD
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-muted-foreground hover:text-red-400 hover:bg-red-500/10"
-            onClick={onReset}
-          >
-            <Trash2 className="w-4 h-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-muted-foreground hover:text-foreground hover:bg-surface"
-          >
-            <Settings className="w-5 h-5" />
-          </Button>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-muted-foreground hover:text-foreground hover:bg-surface"
+              >
+                <Settings className="w-5 h-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-background border-border overflow-y-auto">
+              <SheetHeader>
+                <SheetTitle className="text-foreground">Settings</SheetTitle>
+                <SheetDescription>
+                  Manage your visa journey settings
+                </SheetDescription>
+              </SheetHeader>
+              <SettingsSheet
+                progress={progress}
+                onChangeVisaType={onChangeVisaType}
+                onChangeTargetDate={onChangeTargetDate}
+                onReset={onReset}
+              />
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
 
       {/* Next Step Hero */}
       <NextStepHero state={progress.state} visaType={progress.visaType} />
 
-      {/* Main Grid */}
+      {/* Health Score + D-Day Grid */}
       <div className="grid lg:grid-cols-3 gap-6">
+        {/* Health Score Card */}
+        <HealthScoreCard factors={healthFactors} className="lg:col-span-2" />
+
         {/* D-Day Counter */}
         <DDayCounter
           targetDate={progress.targetDate}
@@ -413,27 +612,27 @@ function ActiveDashboard({ progress, visa, onReset, onStateTransition }: ActiveD
               : "Target Date"
           }
         />
+      </div>
 
-        {/* Current Status Card */}
-        <div className="vk-card p-6 lg:col-span-2">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-              Current Status
-            </h3>
-            <span
-              className={cn(
-                "text-xs font-semibold px-3 py-1 rounded-full",
-                isPreparing && "bg-primary/10 text-primary",
-                isWaiting && "bg-amber-500/10 text-amber-400",
-                isActive && "bg-emerald-500/10 text-emerald-400",
-                needsAttention && "bg-red-500/10 text-red-400"
-              )}
-            >
-              {currentStateConfig.label}
-            </span>
-          </div>
-          <StateTimeline currentState={progress.state} compact />
+      {/* Current Status Card */}
+      <div className="vk-card p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+            Current Status
+          </h3>
+          <span
+            className={cn(
+              "text-xs font-semibold px-3 py-1 rounded-full",
+              isPreparing && "bg-primary/10 text-primary",
+              isWaiting && "bg-amber-500/10 text-amber-400",
+              isActive && "bg-emerald-500/10 text-emerald-400",
+              needsAttention && "bg-red-500/10 text-red-400"
+            )}
+          >
+            {currentStateConfig.label}
+          </span>
         </div>
+        <StateTimeline currentState={progress.state} compact />
       </div>
 
       {/* State Advancement Buttons */}
@@ -524,11 +723,13 @@ export function StateDashboard() {
   }, []);
 
   const handleReset = () => {
-    if (confirm("Are you sure you want to reset your progress? This cannot be undone.")) {
-      clearProgress();
-      setProgress(null);
-      setVisa(null);
+    clearProgress();
+    // Also clear per-type checklist data
+    if (progress) {
+      localStorage.removeItem(`visa-checklist-${progress.visaType}`);
     }
+    setProgress(null);
+    setVisa(null);
   };
 
   const handleStateTransition = (newState: VisaState) => {
@@ -538,6 +739,29 @@ export function StateDashboard() {
     const updatedProgress = updateProgressState(progress, newState);
     saveProgress(updatedProgress);
     setProgress(updatedProgress);
+  };
+
+  const handleChangeVisaType = (type: VisaType) => {
+    if (!progress) return;
+    const updated: VisaProgress = {
+      ...progress,
+      visaType: type,
+      updatedAt: new Date(),
+    };
+    saveProgress(updated);
+    setProgress(updated);
+    setVisa(getVisaInfo(type));
+  };
+
+  const handleChangeTargetDate = (date: Date | undefined) => {
+    if (!progress) return;
+    const updated: VisaProgress = {
+      ...progress,
+      targetDate: date,
+      updatedAt: new Date(),
+    };
+    saveProgress(updated);
+    setProgress(updated);
   };
 
   if (!mounted) {
@@ -565,6 +789,8 @@ export function StateDashboard() {
           visa={visa}
           onReset={handleReset}
           onStateTransition={handleStateTransition}
+          onChangeVisaType={handleChangeVisaType}
+          onChangeTargetDate={handleChangeTargetDate}
         />
       ) : (
         <EmptyState />
