@@ -119,8 +119,9 @@ export function ThemePreviewProvider({ children }: { children: React.ReactNode }
   );
 }
 
-export function ThemePreview() {
-  const { theme: currentTheme, setTheme: setCurrentTheme } = useThemePreview();
+// Invisible component that applies theme CSS variables
+export function ThemeApplier() {
+  const { theme: currentTheme } = useThemePreview();
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -142,6 +143,13 @@ export function ThemePreview() {
       document.documentElement.style.setProperty(key, value);
     });
   }, [currentTheme, isDark]);
+
+  return null;
+}
+
+// Theme picker popup (kept for future use if needed)
+export function ThemePreview() {
+  const { theme: currentTheme, setTheme: setCurrentTheme } = useThemePreview();
 
   return (
     <div className="fixed bottom-4 left-4 z-50 bg-card/95 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-2xl max-w-sm">
