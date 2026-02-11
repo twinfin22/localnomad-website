@@ -1,6 +1,7 @@
 import type React from "react";
 import { AuthProvider } from "@/components/providers/auth-provider";
 import { ThemeProvider } from "@/components/theme-provider";
+import { getLocale } from "next-intl/server";
 import { Geist } from "next/font/google";
 
 // =============================================================================
@@ -22,9 +23,11 @@ interface AuthLayoutProps {
   children: React.ReactNode;
 }
 
-export default function AuthLayout({ children }: AuthLayoutProps) {
+export default async function AuthLayout({ children }: AuthLayoutProps) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${fontVariables} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"

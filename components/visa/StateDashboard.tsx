@@ -8,14 +8,36 @@ import {
   Sparkles,
   FileText,
   Trash2,
+  ArrowRight,
+  Undo2,
+  Send,
+  Clock,
+  CheckCircle,
+  Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import {
   getStoredProgress,
   clearProgress,
+  saveProgress,
   stateConfig,
+  getNextStates,
+  canTransition,
+  updateProgressState,
   type VisaProgress,
+  type VisaState,
 } from "@/lib/visa/stateMachine";
 import { getVisaInfo } from "@/lib/visa/data";
 import { NextStepHero } from "./NextStepHero";
@@ -95,6 +117,227 @@ function EmptyState() {
 }
 
 // =============================================================================
+// State Transition Button Configuration
+// =============================================================================
+
+interface TransitionAction {
+  targetState: VisaState;
+  label: string;
+  description: string;
+  confirmTitle: string;
+  confirmDescription: string;
+  icon: typeof Send;
+  variant: "forward" | "backward";
+}
+
+/**
+ * Returns the available transition actions for a given visa state,
+ * with user-friendly labels and confirmation messages.
+ */
+function getTransitionActions(currentState: VisaState): TransitionAction[] {
+  const actions: TransitionAction[] = [];
+  const nextStates = getNextStates(currentState);
+
+  for (const target of nextStates) {
+    switch (target) {
+      case "SUBMITTED":
+        actions.push({
+          targetState: "SUBMITTED",
+          label: "I submitted my application",
+          description: "Mark your application as submitted",
+          confirmTitle: "Confirm Submission",
+          confirmDescription:
+            "Are you sure you have submitted your visa application? This will update your status to Submitted.",
+          icon: Send,
+          variant: "forward",
+        });
+        break;
+      case "UNDER_REVIEW":
+        actions.push({
+          targetState: "UNDER_REVIEW",
+          label: "It's under review",
+          description: "Immigration is reviewing your application",
+          confirmTitle: "Mark as Under Review",
+          confirmDescription:
+            "Confirm that your application is now under review by immigration.",
+          icon: Clock,
+          variant: "forward",
+        });
+        break;
+      case "APPROVED":
+        actions.push({
+          targetState: "APPROVED",
+          label: "I got approved!",
+          description: "Your visa has been approved",
+          confirmTitle: "Congratulations!",
+          confirmDescription:
+            "Confirm that your visa application has been approved. This will update your status to Approved.",
+          icon: CheckCircle,
+          variant: "forward",
+        });
+        break;
+      case "ACTIVE":
+        actions.push({
+          targetState: "ACTIVE",
+          label: "Visa is now active",
+          description: "You have entered Korea with your visa",
+          confirmTitle: "Activate Visa",
+          confirmDescription:
+            "Confirm that your visa is now active and you have entered Korea.",
+          icon: CheckCircle,
+          variant: "forward",
+        });
+        break;
+      case "PREPARING":
+        actions.push({
+          targetState: "PREPARING",
+          label: "Go back to Preparing",
+          description: "Return to the preparation stage",
+          confirmTitle: "Go Back to Preparing?",
+          confirmDescription:
+            "This will revert your status back to Preparing. Are you sure?",
+          icon: Undo2,
+          variant: "backward",
+        });
+        break;
+      case "EXPIRING":
+        actions.push({
+          targetState: "EXPIRING",
+          label: "Visa expiring soon",
+          description: "Mark visa as expiring within 30 days",
+          confirmTitle: "Mark as Expiring",
+          confirmDescription:
+            "This will mark your visa as expiring soon. Make sure to start the renewal process.",
+          icon: Clock,
+          variant: "forward",
+        });
+        break;
+      case "EXPIRED":
+        actions.push({
+          targetState: "EXPIRED",
+          label: "Visa has expired",
+          description: "Mark visa as expired",
+          confirmTitle: "Mark as Expired",
+          confirmDescription:
+            "This will mark your visa as expired. You will need to start a new application.",
+          icon: Clock,
+          variant: "forward",
+        });
+        break;
+    }
+  }
+
+  return actions;
+}
+
+// =============================================================================
+// State Advancement Buttons
+// =============================================================================
+
+interface StateAdvancementButtonsProps {
+  progress: VisaProgress;
+  onTransition: (newState: VisaState) => void;
+}
+
+function StateAdvancementButtons({
+  progress,
+  onTransition,
+}: StateAdvancementButtonsProps) {
+  const actions = getTransitionActions(progress.state);
+
+  if (actions.length === 0) return null;
+
+  return (
+    <div className="vk-card p-6">
+      <h3 className="text-lg font-semibold text-foreground mb-4">
+        Update Your Status
+      </h3>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {actions.map((action) => (
+          <AlertDialog key={action.targetState}>
+            <AlertDialogTrigger asChild>
+              <Button
+                variant="outline"
+                className={cn(
+                  "h-auto py-4 px-4 text-left flex items-start gap-3 border-border hover:bg-surface",
+                  action.variant === "forward" &&
+                    "hover:border-primary/50 hover:text-primary",
+                  action.variant === "backward" &&
+                    "hover:border-amber-500/50 hover:text-amber-400"
+                )}
+              >
+                <action.icon
+                  className={cn(
+                    "w-5 h-5 mt-0.5 flex-shrink-0",
+                    action.variant === "forward"
+                      ? "text-primary"
+                      : "text-amber-400"
+                  )}
+                />
+                <div className="flex-1 min-w-0">
+                  <span className="block font-medium text-sm">
+                    {action.label}
+                  </span>
+                  <span className="block text-xs text-muted-foreground mt-0.5">
+                    {action.description}
+                  </span>
+                </div>
+                {action.variant === "forward" ? (
+                  <ArrowRight className="w-4 h-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
+                ) : (
+                  <Undo2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
+                )}
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent className="bg-background border-border">
+              <AlertDialogHeader>
+                <AlertDialogTitle className="text-foreground">
+                  {action.confirmTitle}
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  {action.confirmDescription}
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel className="border-border text-muted-foreground hover:bg-surface hover:text-foreground">
+                  Cancel
+                </AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={() => onTransition(action.targetState)}
+                  className={cn(
+                    action.variant === "forward"
+                      ? "bg-primary hover:bg-accent-hover text-background"
+                      : "bg-amber-500 hover:bg-amber-600 text-background"
+                  )}
+                >
+                  Confirm
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// =============================================================================
+// Dashboard Disclaimer
+// =============================================================================
+
+function DashboardDisclaimer() {
+  return (
+    <div className="flex items-start gap-3 p-4 rounded-xl bg-surface/50 border border-border">
+      <Info className="w-4 h-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
+      <p className="text-xs text-muted-foreground leading-relaxed">
+        This dashboard tracks your self-reported progress. It is not connected
+        to HiKorea or any government system.
+      </p>
+    </div>
+  );
+}
+
+// =============================================================================
 // Active Dashboard (Has Progress)
 // =============================================================================
 
@@ -102,9 +345,10 @@ interface ActiveDashboardProps {
   progress: VisaProgress;
   visa: VisaInfo | null;
   onReset: () => void;
+  onStateTransition: (newState: VisaState) => void;
 }
 
-function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
+function ActiveDashboard({ progress, visa, onReset, onStateTransition }: ActiveDashboardProps) {
   const currentStateConfig = stateConfig[progress.state];
   const isPreparing = progress.state === "PREPARING";
   const isWaiting = ["SUBMITTED", "UNDER_REVIEW"].includes(progress.state);
@@ -192,6 +436,12 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
         </div>
       </div>
 
+      {/* State Advancement Buttons */}
+      <StateAdvancementButtons
+        progress={progress}
+        onTransition={onStateTransition}
+      />
+
       {/* Document Progress (only show in PREPARING state) */}
       {isPreparing && <DocumentProgress visaType={progress.visaType} />}
 
@@ -227,6 +477,9 @@ function ActiveDashboard({ progress, visa, onReset }: ActiveDashboardProps) {
           </div>
         </div>
       )}
+
+      {/* Disclaimer */}
+      <DashboardDisclaimer />
 
       {/* Quick Actions */}
       <div className="flex flex-wrap gap-4 justify-center pt-4">
@@ -278,6 +531,15 @@ export function StateDashboard() {
     }
   };
 
+  const handleStateTransition = (newState: VisaState) => {
+    if (!progress) return;
+    if (!canTransition(progress.state, newState)) return;
+
+    const updatedProgress = updateProgressState(progress, newState);
+    saveProgress(updatedProgress);
+    setProgress(updatedProgress);
+  };
+
   if (!mounted) {
     return (
       <div className="min-h-screen visa-dark bg-background">
@@ -298,7 +560,12 @@ export function StateDashboard() {
   return (
     <main className="min-h-screen visa-dark bg-background">
       {progress ? (
-        <ActiveDashboard progress={progress} visa={visa} onReset={handleReset} />
+        <ActiveDashboard
+          progress={progress}
+          visa={visa}
+          onReset={handleReset}
+          onStateTransition={handleStateTransition}
+        />
       ) : (
         <EmptyState />
       )}

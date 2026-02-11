@@ -360,6 +360,8 @@
   ],
 
   "relatedVisas": ["d-10", "e-7"],
+  "pathsTo": ["d-2", "d-10", "e-2"],
+  "pathsFrom": [],
 
   "lastUpdated": "2026-02-11",
   "officialLinks": [

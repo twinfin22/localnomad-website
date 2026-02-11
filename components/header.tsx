@@ -1,21 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 
 export function Header() {
   const t = useTranslations();
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
+
   const navLinks = [
-    { href: "/bundles", label: t("nav.bundles") },
-    { href: "/areas", label: t("nav.areaGuide") },
-    { href: "/visa", label: t("nav.visa") },
+    { href: localePath("/bundles"), label: t("nav.bundles") },
+    { href: localePath("/areas"), label: t("nav.areaGuide") },
+    { href: localePath("/visa"), label: t("nav.visa") },
   ];
 
   useEffect(() => {
@@ -35,7 +42,7 @@ export function Header() {
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
         <div className="flex items-center justify-between">
-          <Link href="/" className="group shrink-0">
+          <Link href={localePath("/")} className="group shrink-0">
             <span className="text-lg sm:text-xl font-bold text-foreground opacity-100 group-hover:text-primary transition-colors duration-200">
               LocalNomad
             </span>
@@ -55,7 +62,7 @@ export function Header() {
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             <LanguageSwitcher />
-            <Link href="/bundles" className="hidden sm:block">
+            <Link href={localePath("/bundles")} className="hidden sm:block">
               <Button
                 size="sm"
                 variant="primary"
@@ -88,7 +95,7 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/bundles" onClick={() => setMobileMenuOpen(false)}>
+              <Link href={localePath("/bundles")} onClick={() => setMobileMenuOpen(false)}>
                 <Button
                   size="sm"
                   variant="primary"

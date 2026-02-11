@@ -10,6 +10,7 @@ import {
   FileText,
   LogOut,
   User,
+  Info,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -271,6 +272,15 @@ function ActiveDashboard({ data, visa, checklist, onSignOut }: ActiveDashboardPr
             )}
           </div>
         </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="flex items-start gap-3 p-4 rounded-xl bg-surface/50 border border-border">
+        <Info className="w-4 h-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          This dashboard tracks your self-reported progress. It is not connected
+          to HiKorea or any government system.
+        </p>
       </div>
 
       {/* Quick Actions */}

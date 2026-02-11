@@ -1,17 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Newspaper, Instagram } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 
 export function Footer() {
   const t = useTranslations();
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+
+  const localePath = (path: string) =>
+    buildLocalePath(path, locale, country ?? undefined);
 
   const footerLinks = [
-    { href: "/bundles", label: t("nav.bundles") },
-    { href: "/areas", label: t("nav.areaGuide") },
-    { href: "/visa", label: t("nav.visa") },
+    { href: localePath("/bundles"), label: t("nav.bundles") },
+    { href: localePath("/areas"), label: t("nav.areaGuide") },
+    { href: localePath("/visa"), label: t("nav.visa") },
   ];
 
   return (

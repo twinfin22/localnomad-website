@@ -61,7 +61,7 @@ export function StepQualify({ visa }: StepQualifyProps) {
                   className={cn(
                     "px-3 py-1 text-sm rounded-md transition-colors",
                     answers[req.id] === true
-                      ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                      ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
                       : "bg-elevated text-muted-foreground hover:bg-surface"
                   )}
                 >
@@ -90,12 +90,12 @@ export function StepQualify({ visa }: StepQualifyProps) {
           className={cn(
             "p-3 rounded-lg text-sm",
             allQualify
-              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+              ? "bg-blue-500/10 text-blue-400 border border-blue-500/20"
               : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
           )}
         >
           {allQualify
-            ? "Based on your answers, your profile matches the published requirements for this visa."
+            ? "Your answers match the published requirements for this visa."
             : "Based on your answers, your profile may not match all published requirements. Review the criteria below or explore alternative visa types."}
         </div>
       )}

@@ -57,7 +57,7 @@ export function EligibilitySection({
           <span className={cn(
             'text-sm font-medium px-3 py-1 rounded-full',
             qualifyingCount === answeredCount
-              ? 'bg-emerald-500/10 text-emerald-400'
+              ? 'bg-blue-500/10 text-blue-400'
               : 'bg-amber-500/10 text-amber-400'
           )}>
             {qualifyingCount} of {questions.length} met
@@ -87,7 +87,7 @@ export function EligibilitySection({
                 key={question.id}
                 className={cn(
                   'p-3 rounded-lg border transition-all',
-                  isYes && 'bg-emerald-500/10 border-emerald-500/30',
+                  isYes && 'bg-blue-500/10 border-blue-500/30',
                   isNo && 'bg-red-500/10 border-red-500/30',
                   answer === undefined && 'bg-surface border-border/50'
                 )}
@@ -96,7 +96,7 @@ export function EligibilitySection({
                   <div className="flex items-center gap-3 flex-1 min-w-0">
                     <div className={cn(
                       'w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0',
-                      isYes && 'bg-emerald-500',
+                      isYes && 'bg-blue-500',
                       isNo && 'bg-red-500',
                       answer === undefined && 'border-2 border-border'
                     )}>
@@ -114,8 +114,8 @@ export function EligibilitySection({
                       className={cn(
                         'px-3 py-1.5 rounded text-xs font-medium transition-all',
                         isYes
-                          ? 'bg-emerald-500 text-white'
-                          : 'bg-elevated text-muted-foreground hover:bg-emerald-500/20 hover:text-emerald-400'
+                          ? 'bg-blue-500 text-white'
+                          : 'bg-elevated text-muted-foreground hover:bg-blue-500/20 hover:text-blue-400'
                       )}
                     >
                       Yes
@@ -144,16 +144,16 @@ export function EligibilitySection({
             className={cn(
               'p-3 rounded-lg border mt-3',
               allQualifying
-                ? 'bg-emerald-500/10 border-emerald-500/30'
+                ? 'bg-blue-500/10 border-blue-500/30'
                 : 'bg-amber-500/10 border-amber-500/30'
             )}
           >
             <div className="flex items-center gap-2">
               {allQualifying ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span className="text-sm text-emerald-400">
-                    Your answers align with these published requirements
+                  <HelpCircle className="w-4 h-4 text-blue-400" />
+                  <span className="text-sm text-blue-400">
+                    Your answers align with published requirements
                   </span>
                 </>
               ) : (

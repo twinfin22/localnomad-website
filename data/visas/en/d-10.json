@@ -198,6 +198,8 @@
   ],
 
   "relatedVisas": ["e-7", "f-2"],
+  "pathsTo": ["e-7"],
+  "pathsFrom": ["d-2", "e-2", "h-1"],
 
   "lastUpdated": "2026-02-11",
   "officialLinks": [

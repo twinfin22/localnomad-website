@@ -221,7 +221,9 @@ export function OnboardingWizard() {
   const [targetDate, setTargetDate] = useState<string>("");
 
   // Calculate visa matches
-  const calculateMatches = () => {
+  // Accepts an explicit situation parameter to avoid reading stale React state,
+  // since setState is async and the value may not be available immediately.
+  const calculateMatches = (situation: SituationOption) => {
     const scores: Partial<Record<VisaType, number>> = {};
 
     // Add goal weights
@@ -231,12 +233,10 @@ export function OnboardingWizard() {
       });
     }
 
-    // Add situation weights
-    if (selectedSituation) {
-      Object.entries(selectedSituation.visaWeights).forEach(([visa, weight]) => {
-        scores[visa as VisaType] = (scores[visa as VisaType] || 0) + weight;
-      });
-    }
+    // Add situation weights from the passed-in value (not from state)
+    Object.entries(situation.visaWeights).forEach(([visa, weight]) => {
+      scores[visa as VisaType] = (scores[visa as VisaType] || 0) + weight;
+    });
 
     // Convert to sorted matches
     const maxScore = Math.max(...Object.values(scores), 1);
@@ -267,7 +267,7 @@ export function OnboardingWizard() {
   // Handle situation selection
   const handleSituationSelect = (situation: SituationOption) => {
     setSelectedSituation(situation);
-    calculateMatches();
+    calculateMatches(situation);
     setCurrentStep(2);
   };
 

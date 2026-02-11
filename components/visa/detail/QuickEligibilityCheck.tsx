@@ -68,7 +68,7 @@ export function QuickEligibilityCheck({
               key={question.id}
               className={cn(
                 'p-4 rounded-xl border transition-all',
-                isYes && 'bg-emerald-500/10 border-emerald-500/30',
+                isYes && 'bg-blue-500/10 border-blue-500/30',
                 isNo && 'bg-red-500/10 border-red-500/30',
                 answer === undefined && 'bg-surface border-border'
               )}
@@ -89,8 +89,8 @@ export function QuickEligibilityCheck({
                     className={cn(
                       'w-10 h-10 rounded-lg flex items-center justify-center transition-all',
                       isYes
-                        ? 'bg-emerald-500 text-white'
-                        : 'bg-elevated text-muted-foreground hover:bg-emerald-500/20 hover:text-emerald-400'
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-elevated text-muted-foreground hover:bg-blue-500/20 hover:text-blue-400'
                     )}
                   >
                     <Check className="w-5 h-5" />
@@ -119,17 +119,17 @@ export function QuickEligibilityCheck({
           className={cn(
             'p-4 rounded-xl border mt-4',
             allQualifying
-              ? 'bg-emerald-500/10 border-emerald-500/30'
+              ? 'bg-blue-500/10 border-blue-500/30'
               : 'bg-amber-500/10 border-amber-500/30'
           )}
         >
           <div className="flex items-center gap-3">
             {allQualifying ? (
               <>
-                <Check className="w-6 h-6 text-emerald-400" />
+                <HelpCircle className="w-6 h-6 text-blue-400" />
                 <div>
-                  <p className="text-sm font-medium text-emerald-400">
-                    Requirements appear to match
+                  <p className="text-sm font-medium text-blue-400">
+                    Your answers match published requirements
                   </p>
                   <p className="text-xs text-muted-foreground">
                     Based on your answers, your profile aligns with the published requirements

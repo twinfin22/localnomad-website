@@ -16,6 +16,9 @@ interface RateLimitEntry {
 const rateLimitMap = new Map<string, RateLimitEntry>();
 
 function isRateLimited(ip: string): boolean {
+  // Evict expired entries on each check to bound memory usage
+  evictStaleEntries();
+
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
 
@@ -28,15 +31,16 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT_MAX;
 }
 
-// Periodically clean up stale entries to prevent unbounded memory growth
-setInterval(() => {
+// Lazy cleanup: evict stale entries during rate-limit checks instead of
+// using setInterval, which is unreliable in serverless environments.
+function evictStaleEntries() {
   const now = Date.now();
   for (const [ip, entry] of rateLimitMap) {
     if (now >= entry.resetAt) {
       rateLimitMap.delete(ip);
     }
   }
-}, RATE_LIMIT_WINDOW_MS);
+}
 
 // =============================================================================
 // Helpers
@@ -170,9 +174,8 @@ async function sendWelcomeEmail(email: string, firstName: string): Promise<boole
       return false;
     }
     return true;
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("[Subscribe] Email send error:", message);
+  } catch {
+    console.error("[Subscribe] Email send error");
     return false;
   }
 }
@@ -236,9 +239,8 @@ export async function POST(request: NextRequest) {
       { message: "Successfully subscribed" },
       { status: 200 }
     );
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("[Subscribe] Subscription attempt failed:", message);
+  } catch {
+    console.error("[Subscribe] Subscription attempt failed");
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }

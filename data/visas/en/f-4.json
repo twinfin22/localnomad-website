@@ -43,6 +43,10 @@
   "faqs": [],
   "tips": [],
 
+  "relatedVisas": ["e-7", "f-2"],
+  "pathsTo": ["e-7", "f-2"],
+  "pathsFrom": [],
+
   "lastUpdated": "2026-02-01",
   "officialLinks": [
     {

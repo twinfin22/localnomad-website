@@ -222,6 +222,8 @@
   ],
 
   "relatedVisas": ["e-7", "d-10"],
+  "pathsTo": ["e-7", "d-8"],
+  "pathsFrom": [],
 
   "lastUpdated": "2026-02-11",
   "officialLinks": [

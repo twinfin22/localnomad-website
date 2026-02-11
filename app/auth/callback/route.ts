@@ -4,9 +4,18 @@ import { NextResponse } from 'next/server';
 const DEFAULT_REDIRECT = '/en/korea/visa/dashboard';
 
 /**
+ * Locale prefix pattern: must start with /{lang}/{country}/
+ * e.g. /en/korea/visa/dashboard, /ko/korea/visa/checklist
+ */
+const LOCALE_PREFIX_RE = /^\/[a-z]{2}\/[a-z]+\//;
+
+/**
  * Validates the `next` query parameter to prevent open redirect attacks.
- * Only allows relative paths that start with `/` and do not contain `//`
- * (which could be interpreted as a protocol-relative URL like `//evil.com`).
+ * Only allows relative paths that:
+ *  1. Start with `/` (relative path only)
+ *  2. Do NOT contain `//` (blocks protocol-relative URLs like `//evil.com`)
+ *  3. Do NOT contain `\` (blocks backslash normalization tricks)
+ *  4. Include a valid locale prefix `/{lang}/{country}/`
  */
 function sanitizeRedirect(next: string | null): string {
   if (!next) return DEFAULT_REDIRECT;
@@ -19,6 +28,9 @@ function sanitizeRedirect(next: string | null): string {
 
   // Block backslash tricks (some browsers normalize \ to /)
   if (next.includes('\\')) return DEFAULT_REDIRECT;
+
+  // Must include locale prefix /{lang}/{country}/
+  if (!LOCALE_PREFIX_RE.test(next)) return DEFAULT_REDIRECT;
 
   return next;
 }
