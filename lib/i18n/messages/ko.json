@@ -1,0 +1,142 @@
+{
+  "visa": {
+    "title": "비자 대시보드",
+    "subtitle": "한국 비자 및 이민 가이드",
+    "explore": "비자 옵션 탐색",
+    "compare": "비자 비교",
+    "quiz": "나에게 맞는 비자 찾기",
+    "dashboard": "내 대시보드",
+
+    "branding": {
+      "findYourVisa": "나에게 맞는 비자 찾기",
+      "compareVisas": "비자 비교하기",
+      "documentChecklist": "서류 체크리스트",
+      "visaTypes": "비자 종류",
+      "eligibilityChecker": "자격 확인",
+      "viewDetails": "자세히 보기",
+      "takeQuiz": "퀴즈 시작",
+      "features": "기능",
+      "everythingYouNeed": "필요한 모든 것",
+      "importantNotice": "중요 안내",
+      "workOk": "취업 가능",
+      "noWork": "취업 불가",
+      "daysLeft": "일 남음",
+      "preparing": "준비 중",
+      "submitted": "제출 완료",
+      "underReview": "심사 중",
+      "approved": "승인됨",
+      "active": "유효",
+      "expiring": "만료 임박",
+      "expired": "만료됨"
+    },
+
+    "categories": {
+      "work": "취업",
+      "study": "유학",
+      "residence": "거주",
+      "digital-nomad": "디지털 노마드",
+      "job-seeking": "구직"
+    },
+
+    "sections": {
+      "overview": "개요",
+      "eligibility": "자격 요건",
+      "documents": "필요 서류",
+      "process": "신청 절차",
+      "faqs": "자주 묻는 질문",
+      "tips": "팁 & 조언"
+    },
+
+    "labels": {
+      "duration": "체류 기간",
+      "fee": "수수료",
+      "processingTime": "처리 기간",
+      "workPermission": "취업 허가",
+      "incomeRequirement": "소득 요건",
+      "lastUpdated": "최종 업데이트",
+      "required": "필수",
+      "optional": "선택",
+      "viewDetails": "자세히 보기",
+      "startApplication": "신청 시작",
+      "learnMore": "더 알아보기"
+    },
+
+    "checklist": {
+      "title": "서류 체크리스트",
+      "progress": "{total}개 중 {completed}개 완료",
+      "markComplete": "완료로 표시",
+      "markIncomplete": "미완료로 표시",
+      "allComplete": "모든 서류 준비 완료!",
+      "saveProgress": "진행 상황 저장"
+    },
+
+    "comparison": {
+      "title": "비자 비교",
+      "selectVisas": "비교할 비자 선택",
+      "attribute": "항목",
+      "yes": "예",
+      "no": "아니오",
+      "notApplicable": "해당없음"
+    },
+
+    "quiz": {
+      "title": "나에게 맞는 비자 찾기",
+      "subtitle": "몇 가지 질문에 답하여 최적의 비자를 찾아보세요",
+      "start": "퀴즈 시작",
+      "next": "다음",
+      "back": "이전",
+      "finish": "결과 보기",
+      "restart": "다시 시작",
+      "result": {
+        "title": "추천 비자",
+        "match": "{score}% 일치",
+        "reasons": "추천 이유",
+        "notEligible": "자격 미충족",
+        "viewVisa": "비자 상세 보기"
+      }
+    },
+
+    "dashboard": {
+      "title": "내 비자 대시보드",
+      "welcome": "다시 오셨군요",
+      "noProgress": "비자 신청 추적을 시작하세요",
+      "addVisa": "비자 추적 시작",
+      "currentStep": "현재 단계",
+      "nextAction": "다음 할 일",
+      "daysRemaining": "{days}일 남음",
+      "targetDate": "목표일",
+      "progress": "진행률",
+      "documentsReady": "준비된 서류",
+      "timeline": "타임라인"
+    },
+
+    "auth": {
+      "login": "로그인",
+      "logout": "로그아웃",
+      "email": "이메일 주소",
+      "sendLink": "매직 링크 전송",
+      "checkEmail": "이메일에서 로그인 링크를 확인하세요",
+      "loginRequired": "대시보드에 접근하려면 로그인하세요"
+    }
+  },
+
+  "common": {
+    "loading": "로딩 중...",
+    "error": "문제가 발생했습니다",
+    "retry": "다시 시도",
+    "save": "저장",
+    "cancel": "취소",
+    "close": "닫기",
+    "back": "뒤로",
+    "next": "다음",
+    "continue": "계속",
+    "submit": "제출",
+    "search": "검색",
+    "filter": "필터",
+    "clear": "지우기",
+    "all": "전체",
+    "none": "없음",
+    "yes": "예",
+    "no": "아니오"
+  }
+}

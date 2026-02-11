@@ -1,0 +1,119 @@
+{
+  "visa": {
+    "title": "Tableau de Bord Visa",
+    "subtitle": "Votre guide des visas et de l'immigration en Corée",
+    "explore": "Explorer les Options de Visa",
+    "compare": "Comparer les Visas",
+    "quiz": "Trouver Votre Visa",
+    "dashboard": "Mon Tableau de Bord",
+
+    "categories": {
+      "work": "Travail",
+      "study": "Études",
+      "residence": "Résidence",
+      "digital-nomad": "Nomade Numérique",
+      "job-seeking": "Recherche d'Emploi"
+    },
+
+    "sections": {
+      "overview": "Aperçu",
+      "eligibility": "Conditions d'Éligibilité",
+      "documents": "Documents",
+      "process": "Procédure de Demande",
+      "faqs": "Questions Fréquentes",
+      "tips": "Conseils et Recommandations"
+    },
+
+    "labels": {
+      "duration": "Durée",
+      "fee": "Frais",
+      "processingTime": "Délai de Traitement",
+      "workPermission": "Autorisation de Travail",
+      "incomeRequirement": "Conditions de Revenus",
+      "lastUpdated": "Dernière Mise à Jour",
+      "required": "Obligatoire",
+      "optional": "Facultatif",
+      "viewDetails": "Voir les Détails",
+      "startApplication": "Commencer la Demande",
+      "learnMore": "En Savoir Plus"
+    },
+
+    "checklist": {
+      "title": "Liste des Documents",
+      "progress": "{completed} sur {total} complétés",
+      "markComplete": "Marquer comme Complété",
+      "markIncomplete": "Marquer comme Incomplet",
+      "allComplete": "Tous les documents sont prêts !",
+      "saveProgress": "Enregistrer la Progression"
+    },
+
+    "comparison": {
+      "title": "Comparer les Visas",
+      "selectVisas": "Sélectionnez les visas à comparer",
+      "attribute": "Attribut",
+      "yes": "Oui",
+      "no": "Non",
+      "notApplicable": "N/A"
+    },
+
+    "quiz": {
+      "title": "Trouver Votre Visa",
+      "subtitle": "Répondez à quelques questions pour trouver le visa le plus adapté à votre situation",
+      "start": "Commencer le Quiz",
+      "next": "Suivant",
+      "back": "Retour",
+      "finish": "Voir les Résultats",
+      "restart": "Recommencer",
+      "result": {
+        "title": "Visas Recommandés",
+        "match": "Correspondance de {score}%",
+        "reasons": "Pourquoi ce visa",
+        "notEligible": "Non Éligible",
+        "viewVisa": "Voir les Détails du Visa"
+      }
+    },
+
+    "dashboard": {
+      "title": "Mon Tableau de Bord Visa",
+      "welcome": "Bon retour",
+      "noProgress": "Commencez à suivre votre demande de visa",
+      "addVisa": "Suivre un Visa",
+      "currentStep": "Étape Actuelle",
+      "nextAction": "Prochaine Action",
+      "daysRemaining": "{days} jours restants",
+      "targetDate": "Date Cible",
+      "progress": "Progression",
+      "documentsReady": "Documents Prêts",
+      "timeline": "Chronologie"
+    },
+
+    "auth": {
+      "login": "Se Connecter",
+      "logout": "Se Déconnecter",
+      "email": "Adresse E-mail",
+      "sendLink": "Envoyer le Lien Magique",
+      "checkEmail": "Consultez votre e-mail pour le lien de connexion",
+      "loginRequired": "Veuillez vous connecter pour accéder à votre tableau de bord"
+    }
+  },
+
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "continue": "Continuer",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "clear": "Effacer",
+    "all": "Tous",
+    "none": "Aucun",
+    "yes": "Oui",
+    "no": "Non"
+  }
+}

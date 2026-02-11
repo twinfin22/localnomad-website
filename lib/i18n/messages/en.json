@@ -1,0 +1,119 @@
+{
+  "visa": {
+    "title": "Visa Dashboard",
+    "subtitle": "Your guide to Korean visas and immigration",
+    "explore": "Explore Visa Options",
+    "compare": "Compare Visas",
+    "quiz": "Find Your Visa",
+    "dashboard": "My Dashboard",
+
+    "categories": {
+      "work": "Work",
+      "study": "Study",
+      "residence": "Residence",
+      "digital-nomad": "Digital Nomad",
+      "job-seeking": "Job Seeking"
+    },
+
+    "sections": {
+      "overview": "Overview",
+      "eligibility": "Eligibility",
+      "documents": "Documents",
+      "process": "Application Process",
+      "faqs": "FAQs",
+      "tips": "Tips & Advice"
+    },
+
+    "labels": {
+      "duration": "Duration",
+      "fee": "Fee",
+      "processingTime": "Processing Time",
+      "workPermission": "Work Permission",
+      "incomeRequirement": "Income Requirement",
+      "lastUpdated": "Last Updated",
+      "required": "Required",
+      "optional": "Optional",
+      "viewDetails": "View Details",
+      "startApplication": "Start Application",
+      "learnMore": "Learn More"
+    },
+
+    "checklist": {
+      "title": "Document Checklist",
+      "progress": "{completed} of {total} completed",
+      "markComplete": "Mark as Complete",
+      "markIncomplete": "Mark as Incomplete",
+      "allComplete": "All documents ready!",
+      "saveProgress": "Save Progress"
+    },
+
+    "comparison": {
+      "title": "Compare Visas",
+      "selectVisas": "Select visas to compare",
+      "attribute": "Attribute",
+      "yes": "Yes",
+      "no": "No",
+      "notApplicable": "N/A"
+    },
+
+    "quiz": {
+      "title": "Find Your Visa",
+      "subtitle": "Answer a few questions to find the best visa for your situation",
+      "start": "Start Quiz",
+      "next": "Next",
+      "back": "Back",
+      "finish": "See Results",
+      "restart": "Start Over",
+      "result": {
+        "title": "Recommended Visas",
+        "match": "{score}% match",
+        "reasons": "Why this visa",
+        "notEligible": "Not Eligible",
+        "viewVisa": "View Visa Details"
+      }
+    },
+
+    "dashboard": {
+      "title": "My Visa Dashboard",
+      "welcome": "Welcome back",
+      "noProgress": "Start tracking your visa application",
+      "addVisa": "Track a Visa",
+      "currentStep": "Current Step",
+      "nextAction": "Next Action",
+      "daysRemaining": "{days} days remaining",
+      "targetDate": "Target Date",
+      "progress": "Progress",
+      "documentsReady": "Documents Ready",
+      "timeline": "Timeline"
+    },
+
+    "auth": {
+      "login": "Log In",
+      "logout": "Log Out",
+      "email": "Email Address",
+      "sendLink": "Send Magic Link",
+      "checkEmail": "Check your email for the login link",
+      "loginRequired": "Please log in to access your dashboard"
+    }
+  },
+
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No"
+  }
+}
