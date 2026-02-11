@@ -1,0 +1,207 @@
+{
+  "type": "d-10",
+  "name": "Job Seeking Visa",
+  "shortName": "D-10",
+  "category": "job-seeking",
+  "description": "The D-10 visa allows qualified individuals to stay in Korea while actively searching for employment. It's ideal for recent graduates from Korean universities or professionals seeking career opportunities.",
+  "tagline": "Your gateway to a Korean career",
+
+  "targetAudience": [
+    "Recent graduates from Korean universities",
+    "Professionals with relevant work experience",
+    "Skilled workers seeking Korean employment",
+    "Former E-7 visa holders between jobs"
+  ],
+
+  "eligibility": [
+    {
+      "id": "edu-korean",
+      "label": "Graduated from a Korean university (Associate's degree or higher)",
+      "required": false
+    },
+    {
+      "id": "edu-foreign",
+      "label": "Bachelor's degree or higher from accredited foreign university",
+      "required": false
+    },
+    {
+      "id": "work-exp",
+      "label": "Relevant professional experience in specialized field",
+      "required": false
+    },
+    {
+      "id": "topik",
+      "label": "TOPIK Level 4 or higher (bonus, not required)",
+      "required": false
+    }
+  ],
+
+  "duration": {
+    "initial": "6 months",
+    "extension": "Up to 6 months per extension",
+    "maxTotal": "2 years maximum"
+  },
+
+  "fees": {
+    "application": "₩60,000 (~$45 USD)",
+    "extension": "₩60,000 per extension",
+    "notes": "Fees may vary; check HiKorea for current rates"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Must be valid for at least 6 months beyond intended stay",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Visa Application Form",
+      "description": "Completed visa application form (Form 34)",
+      "where_to_get": "Download from HiKorea or get at immigration office",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "description": "3.5cm x 4.5cm, taken within last 6 months, white background",
+      "required": true
+    },
+    {
+      "id": "diploma",
+      "name": "Degree Certificate",
+      "description": "Original or certified copy of your highest degree",
+      "tips": ["Must be apostilled or authenticated if from foreign country"],
+      "required": true
+    },
+    {
+      "id": "transcript",
+      "name": "Academic Transcript",
+      "description": "Official transcript from your university",
+      "required": true
+    },
+    {
+      "id": "job-search-plan",
+      "name": "Job Search Plan",
+      "description": "Document outlining your job search strategy and target companies",
+      "tips": ["Include specific companies you plan to apply to", "Show you've researched the Korean job market"],
+      "required": true
+    },
+    {
+      "id": "bank-statement",
+      "name": "Bank Statement",
+      "description": "Proof of sufficient funds for your stay",
+      "tips": ["Minimum $3,000-5,000 USD recommended", "Statement should be recent (within 1 month)"],
+      "required": true
+    },
+    {
+      "id": "resume",
+      "name": "Resume/CV",
+      "description": "Detailed resume highlighting relevant experience",
+      "required": true
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Prepare Documents",
+      "description": "Gather all required documents. Get foreign documents apostilled or authenticated.",
+      "duration": "1-2 weeks",
+      "tips": ["Start early - apostille can take time", "Make copies of everything"]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Book Appointment",
+      "description": "Schedule an appointment at your local immigration office via HiKorea.",
+      "duration": "Same day to 2 weeks",
+      "tips": ["Book early - popular offices fill up quickly"],
+      "links": [
+        {"label": "HiKorea Reservation", "url": "https://www.hikorea.go.kr"}
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Submit Application",
+      "description": "Visit the immigration office with all documents. Submit application and pay fee.",
+      "duration": "2-3 hours",
+      "tips": ["Arrive 30 minutes early", "Bring original documents AND copies"]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Wait for Processing",
+      "description": "Application is reviewed. You may be contacted for additional documents.",
+      "duration": "7-14 business days"
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Receive Result",
+      "description": "Pick up your visa or ARC card, or receive notification of result.",
+      "duration": "1-3 days after approval"
+    }
+  ],
+
+  "processingTime": {
+    "typical": "7-14 business days",
+    "notes": "May vary based on immigration office workload and completeness of application"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Part-time work only (up to 20 hours/week)",
+      "Must get prior approval from immigration",
+      "Limited to certain job categories"
+    ],
+    "notes": "Full-time work requires changing to appropriate work visa (E-7, etc.)"
+  },
+
+  "faqs": [
+    {
+      "question": "Can I work while on a D-10 visa?",
+      "answer": "Yes, but only part-time (up to 20 hours per week) with prior approval from immigration. You must obtain a part-time work permit."
+    },
+    {
+      "question": "How do I extend my D-10 visa?",
+      "answer": "Visit immigration 30 days before expiration with proof of active job searching (applications sent, interviews attended, etc.). You can extend up to a maximum of 2 years total."
+    },
+    {
+      "question": "What happens when I find a job?",
+      "answer": "You'll need to change your status to an appropriate work visa (usually E-7). Your employer will help sponsor this visa change."
+    },
+    {
+      "question": "Can I study Korean while on D-10?",
+      "answer": "Yes, you can enroll in Korean language courses. This doesn't count against your work hours."
+    }
+  ],
+
+  "tips": [
+    "Start job searching before your current visa expires",
+    "Network actively - many Korean jobs are filled through connections",
+    "Learn Korean - even basic proficiency greatly improves your chances",
+    "Keep detailed records of your job search activities for extension",
+    "Join expat job boards and LinkedIn groups focused on Korea",
+    "Consider working with a recruitment agency specializing in foreign talent"
+  ],
+
+  "warnings": [
+    "Don't overstay your visa - it severely impacts future visa applications",
+    "Working full-time without proper authorization is illegal",
+    "Always carry your ARC card when outside"
+  ],
+
+  "relatedVisas": ["e-7", "f-2"],
+
+  "lastUpdated": "2024-12-01",
+  "officialLinks": [
+    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
+    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},
+    {"label": "Visa Portal", "url": "https://www.visa.go.kr"}
+  ]
+}

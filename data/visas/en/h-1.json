@@ -1,0 +1,370 @@
+{
+  "type": "h-1",
+  "name": "Working Holiday Visa",
+  "shortName": "H-1",
+  "category": "work",
+  "description": "The H-1 Working Holiday visa allows young people aged 18-30 from partner countries to live, work, and travel in Korea for up to one year. It's designed for cultural exchange and short-term work experiences, combining travel opportunities with the chance to earn money along the way.",
+  "tagline": "Work, travel, and experience Korea for a year",
+
+  "targetAudience": [
+    "Young travelers (18-30) seeking cultural immersion",
+    "Gap year students between studies",
+    "Recent graduates exploring career options",
+    "Cultural explorers wanting to experience Korean life",
+    "Backpackers looking to work while traveling Asia"
+  ],
+
+  "eligibility": [
+    {
+      "id": "age",
+      "label": "Age 18-30 at time of application",
+      "description": "Must be between 18 and 30 years old (some countries allow up to 35)",
+      "required": true
+    },
+    {
+      "id": "nationality",
+      "label": "Citizen of a Working Holiday partner country",
+      "description": "Australia, Canada, France, Germany, UK, Ireland, Japan, Taiwan, Hong Kong, and many others have agreements with Korea",
+      "required": true
+    },
+    {
+      "id": "no-dependents",
+      "label": "No accompanying dependents",
+      "description": "You cannot bring family members on this visa",
+      "required": true
+    },
+    {
+      "id": "first-time",
+      "label": "First-time H-1 applicant (in most cases)",
+      "description": "Most countries only allow one Working Holiday visa to Korea per lifetime",
+      "required": true
+    },
+    {
+      "id": "health",
+      "label": "Good physical and mental health",
+      "description": "Must be in good health with no serious medical conditions",
+      "required": true
+    },
+    {
+      "id": "funds",
+      "label": "Sufficient funds for initial stay",
+      "description": "Approximately $3,000+ USD or equivalent to support yourself initially",
+      "required": true
+    },
+    {
+      "id": "insurance",
+      "label": "Valid travel/health insurance",
+      "description": "Must cover entire duration of stay including medical and repatriation",
+      "required": true
+    },
+    {
+      "id": "no-criminal",
+      "label": "No criminal record",
+      "description": "Clean criminal background required",
+      "required": true
+    }
+  ],
+
+  "duration": {
+    "initial": "1 year",
+    "extension": "Not extendable",
+    "maxTotal": "1 year (non-renewable)"
+  },
+
+  "fees": {
+    "application": "₩60,000 (~$45 USD)",
+    "notes": "Fee may vary by country and embassy. Some countries have reciprocal fee waivers."
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Must be valid for at least 18 months from the date of application",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Visa Application Form",
+      "description": "Completed visa application form from Korean embassy/consulate",
+      "where_to_get": "Download from your local Korean embassy website or obtain at the embassy",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "description": "3.5cm x 4.5cm, taken within last 6 months, white background",
+      "required": true
+    },
+    {
+      "id": "activity-plan",
+      "name": "Activity Plan / Travel Itinerary",
+      "description": "Detailed plan of your intended activities, travels, and work intentions during your stay. THIS IS THE MOST CRITICAL DOCUMENT - many applications are rejected due to Seoul-only plans.",
+      "tips": [
+        "CRITICAL: Must include regional/rural destinations - Seoul-only plans are frequently REJECTED",
+        "Include specific cities outside Seoul: Busan, Andong (Hahoe Folk Village), Jeonju (hanok village, bibimbap), Gyeongju (ancient capital), Jeju Island",
+        "Mention seasonal festivals you plan to attend: Boryeong Mud Festival (July), Jinju Lantern Festival (October), Hwacheon Ice Festival (January)",
+        "Show genuine interest in Korean culture: temple stays, traditional craft workshops, Korean cooking classes",
+        "Include countryside experiences: staying at a hanok guesthouse, visiting a tea plantation in Boseong, hiking at Seoraksan",
+        "Balance work intentions (teaching English, working at hostels, ski resorts) with cultural exploration",
+        "Write 1-2 pages minimum with month-by-month breakdown if possible"
+      ],
+      "required": true
+    },
+    {
+      "id": "bank-statement",
+      "name": "Bank Statement",
+      "description": "Proof of sufficient funds to support yourself during initial months in Korea",
+      "tips": [
+        "Minimum $3,000 USD recommended (some embassies require more)",
+        "Statement should be recent (within 1 month)",
+        "Should show consistent balance, not just a recent large deposit"
+      ],
+      "required": true
+    },
+    {
+      "id": "health-insurance",
+      "name": "Travel/Health Insurance Certificate",
+      "description": "Proof of comprehensive health insurance covering your entire stay",
+      "tips": [
+        "Must cover medical expenses, hospitalization, and repatriation",
+        "Coverage for entire 12-month period",
+        "Some embassies require minimum coverage amounts (check your embassy)",
+        "Consider Korean NHIS enrollment after arrival for additional coverage"
+      ],
+      "required": true
+    },
+    {
+      "id": "residence-proof",
+      "name": "Proof of Accommodation (숙소제공확인서)",
+      "description": "Document showing where you will stay upon arrival in Korea. This is one of the most challenging documents to obtain.",
+      "tips": [
+        "COMMON PROBLEM: Airbnb hosts often refuse to sign accommodation confirmation forms",
+        "WORKAROUND: Book a Goshiwon (고시원) for your first month - they are accustomed to signing these forms for visa applicants",
+        "Goshiwon costs ₩300,000-500,000/month and provides a small private room, often with shared facilities",
+        "Alternative: Some hostels will provide accommodation confirmation if you book an extended stay",
+        "The form must include the host's signature, address, phone number, and duration of stay",
+        "Some embassies accept hotel reservations for the first few weeks instead"
+      ],
+      "required": true
+    },
+    {
+      "id": "round-trip-ticket",
+      "name": "Round-trip Flight Reservation",
+      "description": "Flight itinerary or booking showing return/onward travel",
+      "tips": [
+        "Some embassies only require proof of sufficient funds for return ticket",
+        "Booking confirmation is usually sufficient (doesn't need to be fully paid)",
+        "Check your specific embassy requirements"
+      ],
+      "required": false
+    },
+    {
+      "id": "cv-resume",
+      "name": "Resume/CV",
+      "description": "Your work and education history",
+      "tips": [
+        "Keep it concise (1-2 pages)",
+        "Include any relevant experience: teaching, hospitality, languages"
+      ],
+      "required": false
+    },
+    {
+      "id": "criminal-check",
+      "name": "Criminal Background Check",
+      "description": "Police clearance certificate from your home country",
+      "tips": [
+        "Processing time varies by country (2-8 weeks)",
+        "May need to be apostilled or authenticated",
+        "Some embassies don't require this - check your local embassy"
+      ],
+      "processing_time": "2-8 weeks depending on country",
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Check Eligibility & Gather Documents",
+      "description": "Verify your country has a Working Holiday agreement with Korea and that you meet all eligibility requirements. Start collecting required documents.",
+      "duration": "2-4 weeks",
+      "tips": [
+        "Check your embassy website for country-specific requirements",
+        "Criminal background check can take the longest - start early",
+        "Prepare your Activity Plan carefully - this is often why applications fail"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Write Your Activity Plan",
+      "description": "Create a detailed travel and activity itinerary. This is the most important document for your application.",
+      "duration": "1-2 days",
+      "tips": [
+        "DO NOT write a Seoul-only plan - this is a common rejection reason",
+        "Include at least 3-4 regional destinations outside of Seoul",
+        "Mention specific cultural sites: Gyeongbokgung, Bulguksa Temple, Hahoe Folk Village",
+        "Include seasonal activities: cherry blossom viewing (April), autumn foliage at Naejangsan (November)",
+        "Show interest in rural Korea: Boseong tea fields, Damyang bamboo forest, Suncheon Bay wetlands",
+        "Balance work plans with travel and cultural activities"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Secure Accommodation Confirmation",
+      "description": "Obtain a signed accommodation confirmation from your first place of stay in Korea.",
+      "duration": "1-2 weeks",
+      "tips": [
+        "If Airbnb hosts refuse to sign, use a Goshiwon instead",
+        "Contact Goshiwons directly - many are experienced with visa paperwork",
+        "Popular Goshiwon areas: Hongdae, Sinchon, near universities",
+        "Keep the receipt/confirmation for potential immigration checks later"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Book Embassy Appointment",
+      "description": "Schedule an appointment at your nearest Korean embassy or consulate.",
+      "duration": "Same day to 2 weeks",
+      "tips": [
+        "Some embassies allow walk-ins, others require appointments",
+        "Peak season (spring/summer) may have longer wait times",
+        "Check if your embassy accepts mailed applications"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Submit Application",
+      "description": "Visit the embassy with all documents. Submit your application and pay the visa fee.",
+      "duration": "30 minutes to 2 hours",
+      "tips": [
+        "Bring originals AND photocopies of all documents",
+        "Dress neatly and be prepared for a brief interview",
+        "Have answers ready about your travel plans and intentions"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Wait for Processing",
+      "description": "Your application will be reviewed. You may be contacted for additional documents or an interview.",
+      "duration": "2-4 weeks typically"
+    },
+    {
+      "id": "step-7",
+      "step": 7,
+      "title": "Collect Your Visa",
+      "description": "Pick up your passport with the visa sticker, or receive it by mail.",
+      "duration": "1-3 days after approval"
+    },
+    {
+      "id": "step-8",
+      "step": 8,
+      "title": "Enter Korea & Register for ARC",
+      "description": "After arriving in Korea, register for your Alien Registration Card (ARC) at your local immigration office within 90 days.",
+      "duration": "Within 90 days of arrival",
+      "tips": [
+        "Book immigration appointment via HiKorea as soon as you arrive",
+        "Bring passport, accommodation proof, and application fee",
+        "You'll need the ARC to open a bank account and get a phone plan"
+      ],
+      "links": [
+        {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"}
+      ]
+    }
+  ],
+
+  "processingTime": {
+    "typical": "2-4 weeks",
+    "notes": "Processing time varies by embassy and season. Summer applications may take longer due to higher volume."
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Initially limited to 20 hours per week (part-time only)",
+      "Cannot work in 'entertainment' or 'adult' industries",
+      "Cannot work as professional athletes or entertainers",
+      "Cannot work as language instructors at official hagwons without additional permit",
+      "Can apply for full-time work permit (시간제취업허가) at immigration office"
+    ],
+    "notes": "After arriving and registering, you can apply for permission to work full-time (40 hours/week) at your local immigration office. Many H-1 holders work at cafes, restaurants, hostels, English tutoring, ski resorts (winter), or farms (seasonal). Remote work for overseas employers is a gray area - technically allowed as it's not Korean employment."
+  },
+
+  "faqs": [
+    {
+      "question": "Why was my application rejected for having a Seoul-only Activity Plan?",
+      "answer": "Korean immigration wants to see that Working Holiday participants will experience Korea's diverse regions, not just stay in the capital. Include specific plans to visit Busan, Gyeongju, Jeonju, Andong, Jeju Island, or other regional destinations. Mention cultural festivals, rural experiences, and nature activities outside Seoul."
+    },
+    {
+      "question": "How do I get accommodation proof when Airbnb hosts won't sign the form?",
+      "answer": "This is a very common problem. The most reliable workaround is to book a Goshiwon (고시원) for your first month. Goshiwons are small private rooms (often with shared kitchen/bathroom) that cost ₩300,000-500,000/month. They're experienced with visa paperwork and will readily sign the accommodation confirmation form. You can move out after you arrive and find other accommodation."
+    },
+    {
+      "question": "Can I work full-time on an H-1 visa?",
+      "answer": "Initially, you're limited to 20 hours per week. However, after registering for your ARC in Korea, you can visit your local immigration office and apply for a full-time work permit (시간제취업허가). This allows you to work up to 40 hours per week. Bring your passport, ARC, and a letter from your employer."
+    },
+    {
+      "question": "Can I do remote work for my home country employer on an H-1 visa?",
+      "answer": "This is a gray area in Korean immigration law. Technically, remote work for a foreign employer isn't 'employment in Korea' and many H-1 holders do freelance or remote work. However, this isn't explicitly permitted, so maintain a low profile and don't make it your primary stated activity. Focus your Activity Plan on travel and cultural exchange."
+    },
+    {
+      "question": "How soon should I register for an ARC after arriving?",
+      "answer": "You must register within 90 days of arrival, but it's best to do it within the first 2-3 weeks. You'll need the ARC to open a Korean bank account, get a phone plan, and work legally. Book your appointment on HiKorea as soon as you arrive - popular offices can have 2-3 week wait times."
+    },
+    {
+      "question": "Can I extend my H-1 visa beyond one year?",
+      "answer": "No, the H-1 Working Holiday visa cannot be extended. It's strictly limited to one year. If you want to stay longer, you'll need to change to a different visa type (like D-10 for job seeking, D-4 for language study, or get sponsored for an E-7 work visa). Start planning your next steps around month 9 of your stay."
+    },
+    {
+      "question": "What seasonal jobs are popular for H-1 visa holders?",
+      "answer": "Popular seasonal work includes: ski resort jobs in winter (November-March), English tutoring year-round, working at hostels/guesthouses, cafe and restaurant jobs, farm work during harvest seasons, and teaching at English camps during school breaks. Ski resorts in particular often hire H-1 holders and provide accommodation."
+    },
+    {
+      "question": "Do I need to speak Korean to find work?",
+      "answer": "Not necessarily, but it helps enormously. Jobs at international hostels, English teaching, and some cafe/restaurant jobs in expat areas (Itaewon, Hongdae) may not require Korean. However, for most jobs, basic Korean will significantly expand your options and improve your experience. Consider taking Korean classes during your stay."
+    },
+    {
+      "question": "Can I apply for the H-1 visa more than once?",
+      "answer": "In most cases, no. The Working Holiday visa is typically a once-in-a-lifetime opportunity per country agreement. However, some countries may have different rules, so check with your local Korean embassy. If you've used your H-1 eligibility, consider other visa options like D-10 (job seeking) or D-4 (language study) for future visits."
+    }
+  ],
+
+  "tips": [
+    "Write a diverse Activity Plan - mention at least 3-4 regions outside Seoul, including places like Andong, Jeonju, Gyeongju, Busan, and Jeju",
+    "Include seasonal festivals in your plan: Boryeong Mud Festival, Jinju Lantern Festival, Hwacheon Ice Fishing Festival, cherry blossom seasons",
+    "For accommodation proof, book a Goshiwon if Airbnb hosts won't sign - they're used to helping visa applicants",
+    "Apply in fall or winter for faster processing - spring/summer is peak season with longer wait times",
+    "Get your criminal background check early - it can take 2-8 weeks depending on your country",
+    "Join Facebook groups for H-1 visa holders in Korea - great for job leads and advice",
+    "Consider ski resort work in winter - many provide accommodation and are H-1 friendly",
+    "Register for your ARC immediately after arrival - you'll need it for banking and phone plans",
+    "Apply for full-time work permit at immigration if you find steady employment",
+    "Start planning your next visa around month 9 if you want to stay beyond one year"
+  ],
+
+  "warnings": [
+    "DO NOT submit an Activity Plan that only mentions Seoul - this is a common rejection reason",
+    "Do not overstay your visa - it will result in fines, deportation, and future visa bans",
+    "Do not work more than 20 hours/week without obtaining the full-time work permit",
+    "Do not work in prohibited industries (entertainment, adult services)",
+    "Always carry your ARC card after you receive it - police can ask for ID",
+    "Do not make remote work your primary stated activity in your application",
+    "Do not wait until the last minute to register for your ARC - book the appointment early"
+  ],
+
+  "relatedVisas": ["d-10", "e-7"],
+
+  "lastUpdated": "2024-12-01",
+  "officialLinks": [
+    {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
+    {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},
+    {"label": "Visa Portal", "url": "https://www.visa.go.kr"},
+    {"label": "Working Holiday Info (Korean)", "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10104"}
+  ]
+}
