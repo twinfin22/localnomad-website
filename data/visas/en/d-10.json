@@ -5,6 +5,7 @@
   "category": "job-seeking",
   "description": "The D-10 visa allows qualified individuals to stay in Korea while actively searching for employment. It's ideal for recent graduates from Korean universities or professionals seeking career opportunities.",
   "tagline": "Your gateway to a Korean career",
+  "keyRequirement": "Bachelor's degree or higher from a Korean university",
 
   "targetAudience": [
     "Recent graduates from Korean universities",
@@ -43,7 +44,7 @@
   },
 
   "fees": {
-    "application": "₩60,000 (~$45 USD)",
+    "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000 per extension",
     "notes": "Fees may vary; check HiKorea for current rates"
   },
@@ -198,7 +199,7 @@
 
   "relatedVisas": ["e-7", "f-2"],
 
-  "lastUpdated": "2024-12-01",
+  "lastUpdated": "2026-02-11",
   "officialLinks": [
     {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
     {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},

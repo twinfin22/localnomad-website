@@ -118,13 +118,13 @@ const questions: Question[] = [
         visaPoints: { "f-1-d": 3, "f-2": 2, "e-7": 1 },
       },
       {
-        value: "84k-100k",
-        label: "$84,000 - $100,000",
+        value: "66k-100k",
+        label: "$66,000 - $100,000",
         visaPoints: { "f-1-d": 3, "f-2": 1 },
       },
       {
-        value: "50k-84k",
-        label: "$50,000 - $84,000",
+        value: "50k-66k",
+        label: "$50,000 - $65,999",
         visaPoints: { "e-7": 1, "f-2": 1 },
       },
       {

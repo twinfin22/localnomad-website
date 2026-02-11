@@ -1,0 +1,106 @@
+{
+  "common": {
+    "brand": "LocalNomad",
+    "tagline": "アジアで暮らすためのツールキット",
+    "getStarted": "始める",
+    "learnMore": "詳しく見る",
+    "viewDetails": "詳細を見る",
+    "backTo": "{page}に戻る",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "notFound": "ページが見つかりません",
+    "comingSoon": "近日公開"
+  },
+  "nav": {
+    "visa": "ビザ",
+    "areaGuide": "エリアガイド",
+    "bundles": "バンドル",
+    "about": "概要",
+    "blog": "ブログ",
+    "login": "ログイン",
+    "signup": "新規登録",
+    "dashboard": "ダッシュボード"
+  },
+  "home": {
+    "headline": "アジアで暮らすためのツールキット",
+    "subheadline": "ビザの取得、住む場所探し、新生活のスタートを自信を持って。",
+    "selectCountry": "国を選択してください",
+    "moreCountries": "他の国も近日公開予定"
+  },
+  "countryHub": {
+    "exploreServices": "{country}で利用可能なサービス",
+    "visaGuide": "ビザガイド",
+    "visaGuideDesc": "あなたの状況に合ったビザを見つける",
+    "areaGuide": "エリアガイド",
+    "areaGuideDesc": "街や地域を探索する",
+    "bundles": "情報バンドル",
+    "bundlesDesc": "新生活に役立つリソース集"
+  },
+  "visa": {
+    "pageTitle": "{country}ビザガイド",
+    "findYourVisa": "ビザを探す",
+    "exploreTypes": "ビザの種類を見る",
+    "compareVisas": "ビザを比較する",
+    "requiredDocs": "必要書類",
+    "applicationProcess": "申請プロセス",
+    "eligibility": "資格要件",
+    "processingTime": "処理時間",
+    "fees": "費用",
+    "duration": "期間",
+    "workPermission": "就労許可",
+    "atAGlance": "概要",
+    "thingsToKnow": "知っておくべきこと",
+    "faqs": "よくある質問",
+    "officialResources": "公式リソース",
+    "viewChecklist": "チェックリストを見る",
+    "takeQuiz": "クイズを受ける",
+    "notSure": "どのビザが必要かわからない？",
+    "disclaimer": "この情報はガイダンス目的のみであり、法的助言を構成するものではありません。必ず公式情報源で確認してください。"
+  },
+  "quiz": {
+    "title": "ビザを探す",
+    "subtitle": "いくつかの質問に答えて、最適なビザオプションを見つけましょう",
+    "continue": "続ける",
+    "back": "戻る",
+    "seeResults": "結果を見る",
+    "startOver": "最初からやり直す",
+    "yourResults": "あなたの結果",
+    "bestMatch": "最適なビザ",
+    "alsoConsider": "他の選択肢"
+  },
+  "languageBanner": {
+    "available": "このページは{language}でもご覧いただけます",
+    "switch": "{language}に切り替える",
+    "dismiss": "閉じる",
+    "notAvailable": "このページはまだ{language}では利用できません",
+    "showingEnglish": "英語版を表示しています",
+    "notifyMe": "翻訳完了時に通知する"
+  },
+  "footer": {
+    "tagline": "ノマドがローカルに、ローカルがノマドに",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "refund": "返金ポリシー",
+    "contact": "お問い合わせ",
+    "copyright": "© {year} LocalNomad. All rights reserved."
+  },
+  "auth": {
+    "login": "ログイン",
+    "signup": "新規登録",
+    "logout": "ログアウト",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "hasAccount": "既にアカウントをお持ちですか？",
+    "continueWithGoogle": "Googleで続ける"
+  },
+  "dashboard": {
+    "title": "ビザダッシュボード",
+    "welcome": "おかえりなさい、{name}さん",
+    "progress": "進捗状況",
+    "nextSteps": "次のステップ",
+    "documents": "書類",
+    "timeline": "タイムライン"
+  }
+}

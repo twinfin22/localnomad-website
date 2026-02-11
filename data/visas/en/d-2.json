@@ -5,6 +5,7 @@
   "category": "study",
   "description": "The D-2 visa is for international students enrolled in Korean universities or graduate programs. It allows full-time study and limited part-time work opportunities.",
   "tagline": "Study at Korean universities and build your future",
+  "keyRequirement": "Acceptance letter from a Korean university",
 
   "targetAudience": [
     "University undergraduate students",
@@ -48,7 +49,7 @@
   },
 
   "fees": {
-    "application": "₩60,000 (~$45 USD)",
+    "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000 per extension",
     "notes": "Universities may charge additional processing fees"
   },
@@ -241,7 +242,7 @@
 
   "relatedVisas": ["d-10", "e-7", "f-2"],
 
-  "lastUpdated": "2024-12-01",
+  "lastUpdated": "2026-02-11",
   "officialLinks": [
     {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
     {"label": "Study in Korea", "url": "https://www.studyinkorea.go.kr/en/main.do"},

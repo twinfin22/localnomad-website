@@ -68,7 +68,7 @@ export function Footer() {
 
           <div className="mt-8 pt-6 border-t border-border/50 text-center">
             <p className="text-sm text-muted-foreground">
-              © 2025 LocalNomad ·{" "}
+              © 2026 LocalNomad ·{" "}
               <Link href="/terms" className="hover:text-primary transition-colors">
                 Terms
               </Link>{" "}

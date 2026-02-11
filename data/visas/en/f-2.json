@@ -5,6 +5,7 @@
   "category": "residence",
   "description": "The F-2 visa provides long-term residence status in Korea with greater freedom than employment visas. It's available through various subcategories including points-based, spouse, and investor routes.",
   "tagline": "Long-term residence with work flexibility",
+  "keyRequirement": "Points-based assessment (80+) or family ties to Korean citizen",
 
   "targetAudience": [
     "Long-term residents seeking stability",
@@ -47,7 +48,7 @@
   },
 
   "fees": {
-    "application": "₩60,000 (~$45 USD)",
+    "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000",
     "notes": "Fees may vary by subcategory"
   },
@@ -228,7 +229,7 @@
 
   "relatedVisas": ["e-7", "f-5"],
 
-  "lastUpdated": "2024-12-01",
+  "lastUpdated": "2026-02-11",
   "officialLinks": [
     {"label": "F-2-7 Points Information", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
     {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},

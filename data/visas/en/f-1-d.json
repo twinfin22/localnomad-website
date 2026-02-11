@@ -5,6 +5,7 @@
   "category": "digital-nomad",
   "description": "Korea's Digital Nomad Visa allows remote workers employed by foreign companies to live and work in Korea. Also known as the 'Workcation' visa, it's designed for location-independent professionals.",
   "tagline": "Work remotely, live in Korea",
+  "keyRequirement": "Remote employment with foreign company + income ≥ GNI×2 (~₩88M/year)",
 
   "targetAudience": [
     "Remote workers employed by foreign companies",
@@ -22,8 +23,8 @@
     },
     {
       "id": "income",
-      "label": "Annual income of $84,000+ USD (or equivalent)",
-      "description": "Approximately ₩110,000,000 per year",
+      "label": "Annual income of ~$66,000+ USD (or equivalent)",
+      "description": "Approximately ₩88,000,000 per year (GNI × 2)",
       "required": true
     },
     {
@@ -47,16 +48,16 @@
   },
 
   "fees": {
-    "application": "₩60,000 (~$45 USD)",
+    "application": "₩60,000 (~$42 USD)",
     "extension": "₩60,000",
     "notes": "Additional fees may apply at embassy"
   },
 
   "incomeRequirement": {
-    "amount": "84,000",
+    "amount": "66,000",
     "currency": "USD",
     "period": "annual",
-    "notes": "As of 2024. This is approximately ₩110 million/year. Proof required for previous 6-12 months."
+    "notes": "As of 2025. This is approximately ₩88 million/year (GNI × 2). Updated annually. Proof required for previous 6-12 months."
   },
 
   "documents": [
@@ -88,7 +89,7 @@
     {
       "id": "income-proof",
       "name": "Income Documentation",
-      "description": "Bank statements, tax returns, or pay stubs showing $84,000+ annual income",
+      "description": "Bank statements, tax returns, or pay stubs showing ~$66,000+ annual income",
       "tips": ["Show 6-12 months of income history", "Include tax documents if available"],
       "required": true
     },
@@ -120,7 +121,7 @@
       "id": "step-1",
       "step": 1,
       "title": "Check Eligibility",
-      "description": "Verify you meet income requirement ($84,000+) and have remote work arrangement.",
+      "description": "Verify you meet income requirement (~$66,000+) and have remote work arrangement.",
       "tips": ["Calculate your annual income carefully", "Gather 6-12 months of income proof"]
     },
     {
@@ -188,7 +189,7 @@
     },
     {
       "question": "What if my income varies as a freelancer?",
-      "answer": "You need to demonstrate average annual income of $84,000+. Provide 6-12 months of bank statements and invoices showing consistent income."
+      "answer": "You need to demonstrate average annual income of ~$66,000+ (~₩88M). Provide 6-12 months of bank statements and invoices showing consistent income."
     },
     {
       "question": "Can I bring my family?",
@@ -214,7 +215,7 @@
   ],
 
   "warnings": [
-    "Income requirement is strict - $84,000+ is non-negotiable",
+    "Income requirement is strict — approximately ₩88M (~$66K) based on GNI × 2",
     "Working for Korean companies is a visa violation",
     "Must maintain valid health insurance throughout stay",
     "Maximum 2-year stay - plan accordingly"
@@ -222,7 +223,7 @@
 
   "relatedVisas": ["e-7", "d-10"],
 
-  "lastUpdated": "2024-12-01",
+  "lastUpdated": "2026-02-11",
   "officialLinks": [
     {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
     {"label": "Digital Nomad Visa Info", "url": "https://www.visa.go.kr"},

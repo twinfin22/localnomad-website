@@ -20,7 +20,8 @@ export type VisaCategory =
   | "study"
   | "residence"
   | "digital-nomad"
-  | "job-seeking";
+  | "job-seeking"
+  | "working-holiday";
 
 // =============================================================================
 // Visa Information Types
@@ -85,10 +86,14 @@ export interface VisaInfo {
   category: VisaCategory;
   description: string;
   tagline: string;
+  keyRequirement?: string;
 
   // Eligibility
   targetAudience: string[];
   eligibility: Requirement[];
+
+  // NEW: Interactive eligibility questions for quick check
+  eligibilityQuestions?: EligibilityQuestion[];
 
   // Duration & Fees
   duration: {
@@ -109,6 +114,13 @@ export interface VisaInfo {
     period: string;
     notes?: string;
   };
+
+  // NEW: GNI-based income requirement (for F-2, F-1-D)
+  gniBasedIncome?: GNIBasedIncome;
+
+  // NEW: Fixed USD income requirement (for F-1-D)
+  fixedIncomeRequirement?: FixedIncomeRequirement;
+
   documents: Document[];
 
   // Process
@@ -132,6 +144,18 @@ export interface VisaInfo {
   warnings?: string[];
   relatedVisas?: VisaType[];
 
+  // NEW: Community tips from Discord/Reddit research
+  communityTips?: CommunityTip[];
+
+  // NEW: Renewal/extension information
+  renewal?: VisaRenewalInfo;
+
+  // NEW: Visa paths this visa can lead to
+  pathsTo?: VisaType[];
+
+  // NEW: Visa paths that can lead to this visa
+  pathsFrom?: VisaType[];
+
   // Metadata
   lastUpdated: string;
   officialLinks: {
@@ -143,6 +167,40 @@ export interface VisaInfo {
 // =============================================================================
 // Checklist Types
 // =============================================================================
+
+/**
+ * Document category for grouping in checklists
+ */
+export type DocumentCategory =
+  | "identity"
+  | "financial"
+  | "background"
+  | "employment"
+  | "education"
+  | "insurance"
+  | "accommodation"
+  | "application"
+  | "supplementary";
+
+/**
+ * Difficulty level for document procurement
+ */
+export type DocumentDifficulty = "easy" | "medium" | "hard";
+
+/**
+ * Enhanced document for checklist with additional metadata
+ */
+export interface ChecklistDocument extends Document {
+  nameKorean?: string;
+  category: DocumentCategory;
+  estimatedTime: string;
+  difficulty: DocumentDifficulty;
+  commonMistakes?: string[];
+  validityPeriod?: string;
+  templateUrl?: string;
+  sampleUrl?: string;
+  order: number;
+}
 
 /**
  * Single checklist item
@@ -161,10 +219,13 @@ export interface ChecklistItem {
  * Grouped checklist structure
  */
 export interface ChecklistCategory {
-  id: string;
+  id: DocumentCategory | string; // Allow string for backward compatibility
   name: string;
+  nameKorean?: string;
   description?: string;
+  icon?: string;
   items: ChecklistItem[];
+  order?: number;
 }
 
 /**
@@ -173,6 +234,69 @@ export interface ChecklistCategory {
 export interface VisaChecklist {
   visaType: VisaType;
   categories: ChecklistCategory[];
+}
+
+// =============================================================================
+// Eligibility & Income Requirement Types
+// =============================================================================
+
+/**
+ * Interactive eligibility question for visa detail pages
+ */
+export interface EligibilityQuestion {
+  id: string;
+  question: string;
+  helpText?: string;
+  yesIsQualifying: boolean;
+  disqualifyingMessage?: string;
+}
+
+/**
+ * GNI-based income requirement (for F-2, F-1-D)
+ */
+export interface GNIBasedIncome {
+  year: number;
+  gniPerCapita: number; // in KRW
+  multiplier: number;
+  threshold: number; // calculated: gniPerCapita * multiplier
+  source: string;
+  lastUpdated: string;
+}
+
+/**
+ * Fixed income requirement (for F-1-D USD threshold)
+ */
+export interface FixedIncomeRequirement {
+  amount: number;
+  currency: string;
+  period: "annual" | "monthly";
+  notes?: string;
+}
+
+/**
+ * Community tip from Discord/Reddit research
+ */
+export interface CommunityTip {
+  id: string;
+  tip: string;
+  source: "discord" | "reddit" | "community" | "official";
+  verified: boolean;
+  upvotes?: number;
+  dateAdded?: string;
+}
+
+/**
+ * Renewal/extension information for a visa
+ */
+export interface VisaRenewalInfo {
+  eligible: boolean;
+  maxExtensions?: number;
+  maxTotalStay?: string;
+  requirements: string[];
+  documents: string[]; // Document IDs required for renewal
+  applyBeforeDays: number;
+  processingTime?: string;
+  fees?: string;
 }
 
 // =============================================================================
@@ -230,7 +354,127 @@ export interface NotificationSettings {
 // =============================================================================
 
 /**
- * Single quiz question
+ * Quiz flow steps
+ */
+export type QuizStep =
+  | "nationality"
+  | "current-status"
+  | "goal"
+  | "background"
+  | "results";
+
+/**
+ * Match level for visa recommendations (NOT approval probability)
+ * This indicates how well the user's situation aligns with published requirements
+ */
+export type MatchLevel = "strong" | "moderate" | "possible";
+
+/**
+ * User's current status in Korea
+ */
+export type CurrentStatus =
+  | "outside-korea"
+  | "tourist"
+  | "student"
+  | "worker"
+  | "other-visa";
+
+/**
+ * User's primary goal for visa
+ */
+export type VisaGoal =
+  | "remote-work"
+  | "korean-employment"
+  | "study"
+  | "long-term-residence"
+  | "business"
+  | "working-holiday";
+
+/**
+ * Quiz answers collected from user
+ */
+export interface QuizAnswers {
+  nationality?: string;
+  currentStatus?: CurrentStatus;
+  existingVisa?: VisaType;
+  goal?: VisaGoal;
+  // Conditional background questions
+  annualIncome?: number; // in USD
+  incomeCurrency?: string;
+  hasJobOffer?: boolean;
+  education?: "high-school" | "bachelors" | "masters" | "phd";
+  workExperience?: "0-2" | "2-5" | "5-10" | "10+";
+  koreanLevel?: "none" | "topik-1-2" | "topik-3-4" | "topik-5-6";
+  age?: number;
+  hasHealthInsurance?: boolean;
+  hasCriminalRecord?: boolean;
+}
+
+/**
+ * Single quiz question configuration
+ */
+export interface QuizQuestionConfig {
+  id: string;
+  step: QuizStep;
+  title: string;
+  subtitle?: string;
+  type: "single" | "multiple" | "number" | "text";
+  options?: QuizOption[];
+  conditional?: {
+    dependsOn: keyof QuizAnswers;
+    showWhen: (string | boolean | number)[];
+  };
+  required: boolean;
+}
+
+/**
+ * Option for quiz questions
+ */
+export interface QuizOption {
+  value: string;
+  label: string;
+  description?: string;
+  icon?: string;
+}
+
+/**
+ * Single visa recommendation
+ */
+export interface VisaRecommendation {
+  visaType: VisaType;
+  matchLevel: MatchLevel;
+  matchReasons: string[];
+  warningReasons?: string[];
+  path?: VisaPathStep[];
+}
+
+/**
+ * Step in a multi-visa path (e.g., F-1-D → E-7 → F-2)
+ */
+export interface VisaPathStep {
+  order: number;
+  visaType: VisaType;
+  visaName: string;
+  duration: string;
+  description: string;
+  keyRequirements?: string[];
+}
+
+/**
+ * Complete visa path for long-term planning
+ */
+export interface VisaPath {
+  id: string;
+  name: string;
+  description: string;
+  steps: VisaPathStep[];
+  totalDuration: string;
+  suitableFor: string[];
+}
+
+/**
+ * Legacy quiz question (for compatibility)
+ * @deprecated Use QuizQuestionConfig instead
  */
 export interface QuizQuestion {
   id: string;
@@ -244,7 +488,8 @@ export interface QuizQuestion {
 }
 
 /**
- * Quiz result with recommended visas
+ * Legacy quiz result (for compatibility)
+ * @deprecated Use VisaRecommendation[] instead
  */
 export interface QuizResult {
   recommendedVisas: {
@@ -285,6 +530,40 @@ export interface VisaComparisonData {
 // =============================================================================
 
 /**
+ * Visa lifecycle states
+ */
+export type VisaState =
+  | "NO_VISA"
+  | "PREPARING"
+  | "SUBMITTED"
+  | "UNDER_REVIEW"
+  | "APPROVED"
+  | "ACTIVE"
+  | "EXPIRING"
+  | "EXPIRED";
+
+/**
+ * Health score interpretation
+ */
+export interface HealthScoreInterpretation {
+  label: string;
+  color: "emerald" | "cyan" | "amber" | "slate" | "red";
+  message: string;
+}
+
+/**
+ * Factors used to calculate health score
+ */
+export interface HealthScoreFactors {
+  documentsCompleted: number;
+  documentsTotal: number;
+  daysUntilTarget: number | null;
+  insuranceValid: boolean;
+  insuranceExpiresInDays: number | null;
+  state: VisaState;
+}
+
+/**
  * Dashboard summary card data
  */
 export interface DashboardSummary {
@@ -299,6 +578,8 @@ export interface DashboardSummary {
     title: string;
     description: string;
     deadline?: string;
+    urgency?: "low" | "medium" | "high";
+    link?: string;
   };
 }
 
@@ -312,6 +593,38 @@ export interface TimelineEvent {
   description?: string;
   type: "completed" | "current" | "upcoming" | "warning";
   step?: number;
+}
+
+/**
+ * Deadline entry for tracking
+ */
+export interface DeadlineEntry {
+  id: string;
+  type: "visa_expiry" | "insurance_expiry" | "document_expiry" | "183_day" | "renewal_window" | "custom";
+  title: string;
+  date: string;
+  daysRemaining: number;
+  urgency: "low" | "medium" | "high" | "critical";
+  description?: string;
+  actionUrl?: string;
+}
+
+/**
+ * User's visa progress stored in database
+ */
+export interface VisaProgress {
+  id: string;
+  visaType: VisaType;
+  state: VisaState;
+  targetDate?: Date;
+  submittedDate?: Date;
+  approvedDate?: Date;
+  entryDate?: Date;
+  expiryDate?: Date;
+  notes?: string;
+  healthScore?: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 // =============================================================================

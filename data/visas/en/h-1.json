@@ -2,9 +2,10 @@
   "type": "h-1",
   "name": "Working Holiday Visa",
   "shortName": "H-1",
-  "category": "work",
+  "category": "working-holiday",
   "description": "The H-1 Working Holiday visa allows young people aged 18-30 from partner countries to live, work, and travel in Korea for up to one year. It's designed for cultural exchange and short-term work experiences, combining travel opportunities with the chance to earn money along the way.",
   "tagline": "Work, travel, and experience Korea for a year",
+  "keyRequirement": "Citizenship from an eligible country + age 18-30",
 
   "targetAudience": [
     "Young travelers (18-30) seeking cultural immersion",
@@ -72,7 +73,7 @@
   },
 
   "fees": {
-    "application": "₩60,000 (~$45 USD)",
+    "application": "₩60,000 (~$42 USD)",
     "notes": "Fee may vary by country and embassy. Some countries have reciprocal fee waivers."
   },
 
@@ -360,7 +361,7 @@
 
   "relatedVisas": ["d-10", "e-7"],
 
-  "lastUpdated": "2024-12-01",
+  "lastUpdated": "2026-02-11",
   "officialLinks": [
     {"label": "Korea Immigration Service", "url": "https://www.immigration.go.kr/immigration_eng/index.do"},
     {"label": "HiKorea Portal", "url": "https://www.hikorea.go.kr"},

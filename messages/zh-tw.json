@@ -1,0 +1,106 @@
+{
+  "common": {
+    "brand": "LocalNomad",
+    "tagline": "亞洲生活工具包",
+    "getStarted": "開始",
+    "learnMore": "了解更多",
+    "viewDetails": "查看詳情",
+    "backTo": "返回{page}",
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "notFound": "找不到頁面",
+    "comingSoon": "即將推出"
+  },
+  "nav": {
+    "visa": "簽證",
+    "areaGuide": "地區指南",
+    "bundles": "資訊包",
+    "about": "關於",
+    "blog": "部落格",
+    "login": "登入",
+    "signup": "註冊",
+    "dashboard": "控制台"
+  },
+  "home": {
+    "headline": "亞洲生活工具包",
+    "subheadline": "輕鬆處理簽證、找到理想社區、自信開始新生活。",
+    "selectCountry": "選擇國家開始",
+    "moreCountries": "更多國家即將推出"
+  },
+  "countryHub": {
+    "exploreServices": "探索{country}的服務",
+    "visaGuide": "簽證指南",
+    "visaGuideDesc": "找到適合您情況的簽證",
+    "areaGuide": "地區指南",
+    "areaGuideDesc": "探索城市和社區",
+    "bundles": "資訊包",
+    "bundlesDesc": "精選的安頓資源"
+  },
+  "visa": {
+    "pageTitle": "{country}簽證指南",
+    "findYourVisa": "找到您的簽證",
+    "exploreTypes": "探索簽證類型",
+    "compareVisas": "比較簽證",
+    "requiredDocs": "所需文件",
+    "applicationProcess": "申請流程",
+    "eligibility": "資格要求",
+    "processingTime": "處理時間",
+    "fees": "費用",
+    "duration": "期限",
+    "workPermission": "工作許可",
+    "atAGlance": "概覽",
+    "thingsToKnow": "須知事項",
+    "faqs": "常見問題",
+    "officialResources": "官方資源",
+    "viewChecklist": "查看完整清單",
+    "takeQuiz": "開始測驗",
+    "notSure": "不確定需要哪種簽證？",
+    "disclaimer": "此資訊僅供參考，不構成法律建議。請務必向官方來源確認。"
+  },
+  "quiz": {
+    "title": "找到您的簽證",
+    "subtitle": "回答幾個問題，找到最適合您的簽證選項",
+    "continue": "繼續",
+    "back": "返回",
+    "seeResults": "查看結果",
+    "startOver": "重新開始",
+    "yourResults": "您的結果",
+    "bestMatch": "最佳選擇",
+    "alsoConsider": "其他選項"
+  },
+  "languageBanner": {
+    "available": "此頁面也有{language}版本",
+    "switch": "切換至{language}",
+    "dismiss": "關閉",
+    "notAvailable": "此頁面尚無{language}版本",
+    "showingEnglish": "顯示英文版本",
+    "notifyMe": "翻譯完成時通知我"
+  },
+  "footer": {
+    "tagline": "遊牧者成為本地人，本地人成為遊牧者",
+    "terms": "服務條款",
+    "privacy": "隱私政策",
+    "refund": "退款政策",
+    "contact": "聯繫我們",
+    "copyright": "© {year} LocalNomad. 保留所有權利。"
+  },
+  "auth": {
+    "login": "登入",
+    "signup": "註冊",
+    "logout": "登出",
+    "email": "電子郵件",
+    "password": "密碼",
+    "forgotPassword": "忘記密碼？",
+    "noAccount": "還沒有帳號？",
+    "hasAccount": "已有帳號？",
+    "continueWithGoogle": "使用 Google 繼續"
+  },
+  "dashboard": {
+    "title": "簽證控制台",
+    "welcome": "歡迎回來，{name}",
+    "progress": "您的進度",
+    "nextSteps": "下一步",
+    "documents": "文件",
+    "timeline": "時間線"
+  }
+}

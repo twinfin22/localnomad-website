@@ -9,8 +9,7 @@ import {
   Search,
   Clock,
   ArrowRight,
-  CheckCircle,
-  XCircle
+  Compass,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { VisaInfo } from "@/lib/visa/types";
@@ -27,6 +26,7 @@ const categoryIcons = {
   residence: Home,
   "digital-nomad": Laptop,
   "job-seeking": Search,
+  "working-holiday": Compass,
 };
 
 const categoryColors = {
@@ -35,6 +35,7 @@ const categoryColors = {
   residence: "bg-green-500/10 text-green-500",
   "digital-nomad": "bg-accent/10 text-accent",
   "job-seeking": "bg-orange-500/10 text-orange-500",
+  "working-holiday": "bg-orange-500/10 text-orange-500",
 };
 
 const categoryColorsDark = {
@@ -43,6 +44,16 @@ const categoryColorsDark = {
   residence: "bg-emerald-500/10 text-emerald-400",
   "digital-nomad": "bg-cyan-500/10 text-cyan-400",
   "job-seeking": "bg-amber-500/10 text-amber-400",
+  "working-holiday": "bg-orange-500/10 text-orange-400",
+};
+
+const categoryLabels: Record<string, string> = {
+  work: "work",
+  study: "study",
+  residence: "residence",
+  "digital-nomad": "digital nomad",
+  "job-seeking": "job seeking",
+  "working-holiday": "travel & work",
 };
 
 export function VisaCard({ visa, compact = false, darkMode = false }: VisaCardProps) {
@@ -104,7 +115,7 @@ export function VisaCard({ visa, compact = false, darkMode = false }: VisaCardPr
                 "text-xs font-medium uppercase tracking-wider",
                 darkMode ? "text-[#94A3B8]" : "text-muted-foreground"
               )}>
-                {visa.category.replace("-", " ")}
+                {categoryLabels[visa.category] || visa.category.replace("-", " ")}
               </span>
             </div>
             <h3 className={cn(
@@ -128,48 +139,10 @@ export function VisaCard({ visa, compact = false, darkMode = false }: VisaCardPr
           {visa.tagline}
         </p>
 
-        {/* Quick Info */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Clock className={cn("w-4 h-4", darkMode ? "text-[#94A3B8]" : "text-muted-foreground")} />
-            <span className={darkMode ? "text-[#94A3B8]" : "text-muted-foreground"}>{visa.duration.initial}</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            {visa.workPermission.allowed ? (
-              <>
-                <CheckCircle className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-400">Work OK</span>
-              </>
-            ) : (
-              <>
-                <XCircle className="w-4 h-4 text-red-400" />
-                <span className="text-red-400">No Work</span>
-              </>
-            )}
-          </div>
-        </div>
-
-        {/* Target Audience Preview */}
-        <div className="flex flex-wrap gap-1 mb-4">
-          {visa.targetAudience.slice(0, 2).map((target, i) => (
-            <span
-              key={i}
-              className={cn(
-                "text-xs px-2 py-1 rounded-full",
-                darkMode ? "bg-[#1F2937] text-[#94A3B8]" : "bg-muted text-muted-foreground"
-              )}
-            >
-              {target}
-            </span>
-          ))}
-          {visa.targetAudience.length > 2 && (
-            <span className={cn(
-              "text-xs px-2 py-1 rounded-full",
-              darkMode ? "bg-[#1F2937] text-[#94A3B8]" : "bg-muted text-muted-foreground"
-            )}>
-              +{visa.targetAudience.length - 2} more
-            </span>
-          )}
+        {/* Quick Info - Duration only */}
+        <div className="flex items-center gap-2 text-sm mb-4">
+          <Clock className={cn("w-4 h-4", darkMode ? "text-[#94A3B8]" : "text-muted-foreground")} />
+          <span className={darkMode ? "text-[#94A3B8]" : "text-muted-foreground"}>{visa.duration.initial}</span>
         </div>
 
         {/* CTA */}
