@@ -325,8 +325,8 @@ export function VisaComparisonTool() {
         <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6">
           <h3 className="font-semibold mb-2">Not sure which visa is right?</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Take our eligibility quiz to get personalized recommendations based
-            on your situation.
+            Take our eligibility quiz to find visas with requirements matching
+            your situation.
           </p>
           <Link href="/visa/quiz">
             <Button>

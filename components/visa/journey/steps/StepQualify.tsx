@@ -95,8 +95,8 @@ export function StepQualify({ visa }: StepQualifyProps) {
           )}
         >
           {allQualify
-            ? "Based on your answers, you appear to qualify for this visa."
-            : "Based on your answers, you may not meet all requirements. Consider reviewing the criteria or exploring alternative visas."}
+            ? "Based on your answers, your profile matches the published requirements for this visa."
+            : "Based on your answers, your profile may not match all published requirements. Review the criteria below or explore alternative visa types."}
         </div>
       )}
 

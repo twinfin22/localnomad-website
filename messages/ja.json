@@ -80,7 +80,7 @@
     "months1to6": "1〜6ヶ月",
     "years1plus": "1年以上",
     "visaTypesCovered": "種類のビザに対応",
-    "officialRequirements": "公式要件"
+    "officialRequirements": "公開要件"
   },
   "quiz": {
     "title": "ビザを探す",
@@ -90,7 +90,7 @@
     "seeResults": "結果を見る",
     "startOver": "最初からやり直す",
     "yourResults": "あなたの結果",
-    "bestMatch": "最適なビザ",
+    "bestMatch": "最も近い条件",
     "alsoConsider": "他の選択肢",
     "strongMatch": "高い適合度",
     "moderateMatch": "中程度の適合度",
@@ -105,7 +105,7 @@
     "goalSubtitle": "最適なビザを見つけましょう",
     "situationTitle": "詳しく教えてください",
     "situationSubtitle": "選択肢を絞り込むのに役立ちます",
-    "resultTitle": "最適なビザ",
+    "resultTitle": "最も近い条件",
     "resultSubtitle": "あなたの回答に基づいて",
     "setupTitle": "目標を設定",
     "setupSubtitle": "いつ韓国に行きたいですか？",

@@ -80,7 +80,7 @@
     "months1to6": "1-6 months",
     "years1plus": "1+ years",
     "visaTypesCovered": "visa types covered",
-    "officialRequirements": "official requirements"
+    "officialRequirements": "publicly available requirements"
   },
   "quiz": {
     "title": "Find Your Visa",
@@ -90,7 +90,7 @@
     "seeResults": "See Results",
     "startOver": "Start Over",
     "yourResults": "Your Results",
-    "bestMatch": "Best Match",
+    "bestMatch": "Closest Match",
     "alsoConsider": "Also Consider",
     "strongMatch": "Strong Match",
     "moderateMatch": "Moderate Match",
@@ -105,7 +105,7 @@
     "goalSubtitle": "Let's find the right visa for you",
     "situationTitle": "Tell us more",
     "situationSubtitle": "This helps us narrow down your options",
-    "resultTitle": "Your Best Match",
+    "resultTitle": "Your Closest Match",
     "resultSubtitle": "Based on your answers",
     "setupTitle": "Set Your Target",
     "setupSubtitle": "When do you want to be in Korea?",

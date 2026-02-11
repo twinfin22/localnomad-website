@@ -173,7 +173,7 @@ export function HeroSection() {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>500+ Nomads Helped</span>
+            <span>Trusted by Nomads</span>
           </div>
         </div>
       </div>

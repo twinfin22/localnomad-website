@@ -77,7 +77,7 @@ export function QuizResults({
       {topRecommendation && (
         <div className="mb-6">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
-            Best Match
+            Closest Match
           </div>
           <RecommendationCard
             recommendation={topRecommendation}

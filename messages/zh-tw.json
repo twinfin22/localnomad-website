@@ -80,7 +80,7 @@
     "months1to6": "1-6個月",
     "years1plus": "1年以上",
     "visaTypesCovered": "種簽證類型涵蓋",
-    "officialRequirements": "官方規定"
+    "officialRequirements": "公開規定"
   },
   "quiz": {
     "title": "尋找您的簽證",
@@ -90,7 +90,7 @@
     "seeResults": "查看結果",
     "startOver": "重新開始",
     "yourResults": "您的結果",
-    "bestMatch": "最佳選擇",
+    "bestMatch": "最接近的選擇",
     "alsoConsider": "其他選項",
     "strongMatch": "高度匹配",
     "moderateMatch": "中度匹配",
@@ -105,7 +105,7 @@
     "goalSubtitle": "讓我們找到適合您的簽證",
     "situationTitle": "請告訴我們更多",
     "situationSubtitle": "這有助於縮小您的選項範圍",
-    "resultTitle": "最佳選擇",
+    "resultTitle": "最接近的選擇",
     "resultSubtitle": "根據您的回答",
     "setupTitle": "設定您的目標",
     "setupSubtitle": "您想什麼時候到韓國？",

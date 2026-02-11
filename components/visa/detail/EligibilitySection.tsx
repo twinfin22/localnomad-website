@@ -153,7 +153,7 @@ export function EligibilitySection({
                 <>
                   <Check className="w-4 h-4 text-emerald-400" />
                   <span className="text-sm text-emerald-400">
-                    You may be eligible based on these criteria
+                    Your answers align with these published requirements
                   </span>
                 </>
               ) : (

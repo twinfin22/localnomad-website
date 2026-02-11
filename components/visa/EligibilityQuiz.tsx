@@ -327,7 +327,7 @@ export function EligibilityQuiz() {
               Your Results
             </h2>
             <p className="text-muted-foreground">
-              Based on your answers, here are your recommended visas
+              Based on your answers, these visas have matching requirements
             </p>
           </div>
 
@@ -366,7 +366,7 @@ export function EligibilityQuiz() {
                         </h3>
                         {isTopMatch && (
                           <span className="text-xs px-2 py-0.5 bg-primary text-primary-foreground rounded-full">
-                            Best Match
+                            Closest Match
                           </span>
                         )}
                       </div>

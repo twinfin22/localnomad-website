@@ -129,10 +129,10 @@ export function QuickEligibilityCheck({
                 <Check className="w-6 h-6 text-emerald-400" />
                 <div>
                   <p className="text-sm font-medium text-emerald-400">
-                    You may be eligible
+                    Requirements appear to match
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    Based on your answers, you appear to meet the basic requirements
+                    Based on your answers, your profile aligns with the published requirements
                   </p>
                 </div>
               </>

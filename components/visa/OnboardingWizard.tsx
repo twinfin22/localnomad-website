@@ -63,7 +63,7 @@ interface VisaMatch {
 const steps: WizardStep[] = [
   { id: "goal", title: "What brings you to Korea?", subtitle: "Let's find the right visa for you" },
   { id: "situation", title: "Tell us more", subtitle: "This helps us narrow down your options" },
-  { id: "result", title: "Your Best Match", subtitle: "Based on your answers" },
+  { id: "result", title: "Your Closest Match", subtitle: "Based on your answers" },
   { id: "setup", title: "Set Your Target", subtitle: "When do you want to be in Korea?" },
 ];
 

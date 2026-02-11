@@ -203,7 +203,7 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
 
           {/* Stats bar */}
           <div className="mt-6 text-xs text-muted-foreground">
-            12 visa types covered · Updated Feb 2026 · Based on official requirements
+            6 visa guides + 6 coming soon · Based on publicly available requirements
           </div>
         </div>
       </section>
