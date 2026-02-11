@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, Inter, Cormorant_Garamond, Crimson_Pro } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemePreviewProvider } from "@/components/theme-preview";
+import { ThemePreviewProvider, ThemePreview } from "@/components/theme-preview";
 import "./globals.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -65,6 +65,7 @@ export default function RootLayout({
         >
           <ThemePreviewProvider>
             {children}
+            <ThemePreview />
           </ThemePreviewProvider>
         </ThemeProvider>
         <SpeedInsights />
