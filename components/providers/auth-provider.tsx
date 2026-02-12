@@ -88,8 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       // Migrate progress data
-      // Database types may not include visa_progress table yet — safe to cast
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- @supabase/ssr generic inference resolves to never; Database types are correct
       await (supabase.from('visa_progress') as any).insert({
         user_id: userId,
         visa_type: progress.visaType,
@@ -122,8 +121,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           }));
 
         if (items.length > 0) {
-          // Database types may not include checklist_items table yet — safe to cast
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any -- @supabase/ssr generic inference resolves to never
           await (supabase.from('checklist_items') as any).insert(items);
         }
       }

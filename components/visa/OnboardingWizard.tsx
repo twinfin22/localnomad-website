@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { createProgress, saveProgress } from "@/lib/visa/stateMachine";
 import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaType } from "@/lib/visa/types";
+import { QuizDisclaimer } from "@/components/visa/LegalDisclaimer";
 
 // =============================================================================
 // Types
@@ -448,11 +449,7 @@ export function OnboardingWizard() {
               </button>
             ))}
             {/* Disclaimer */}
-            <div className="text-xs text-muted-foreground text-center mt-4 px-4">
-              This tool provides general guidance only and does not constitute legal advice.
-              Final decisions on visa issuance rest solely with the Korean Ministry of Justice
-              and immigration authorities.
-            </div>
+            <QuizDisclaimer className="mt-4" />
 
             <button
               onClick={() => setCurrentStep(1)}

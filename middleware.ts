@@ -226,6 +226,7 @@ function detectPreferredLocale(request: NextRequest): Locale | null {
   for (const { code } of languages) {
     if (code === "ja") return "ja";
     if (code === "zh") return "zh-tw";
+    if (code === "vi") return "vi";
     if (code === "en") return "en";
   }
 

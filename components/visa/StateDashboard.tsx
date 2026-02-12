@@ -106,9 +106,9 @@ function EmptyState({ localePath }: { localePath: (path: string) => string }) {
             </div>
             <div>
               <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                Professional Work Visa
+                {t("dashboard.professionalWorkVisa")}
               </h3>
-              <p className="text-sm text-muted-foreground">For skilled workers</p>
+              <p className="text-sm text-muted-foreground">{t("dashboard.forSkilledWorkers")}</p>
             </div>
           </div>
         </Link>
@@ -119,9 +119,9 @@ function EmptyState({ localePath }: { localePath: (path: string) => string }) {
             </div>
             <div>
               <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                Student Visa
+                {t("dashboard.studentVisa")}
               </h3>
-              <p className="text-sm text-muted-foreground">For degree programs</p>
+              <p className="text-sm text-muted-foreground">{t("dashboard.forDegreePrograms")}</p>
             </div>
           </div>
         </Link>
@@ -136,108 +136,85 @@ function EmptyState({ localePath }: { localePath: (path: string) => string }) {
 
 interface TransitionAction {
   targetState: VisaState;
-  label: string;
-  description: string;
-  confirmTitle: string;
-  confirmDescription: string;
+  labelKey: string;
+  descriptionKey: string;
+  confirmTitleKey: string;
+  confirmDescriptionKey: string;
   icon: typeof Send;
   variant: "forward" | "backward";
 }
 
 /**
  * Returns the available transition actions for a given visa state,
- * with user-friendly labels and confirmation messages.
+ * with i18n key names for labels and confirmation messages.
  */
 function getTransitionActions(currentState: VisaState): TransitionAction[] {
   const actions: TransitionAction[] = [];
   const nextStates = getNextStates(currentState);
 
+  const actionMap: Record<string, Omit<TransitionAction, "targetState">> = {
+    SUBMITTED: {
+      labelKey: "dashboard.transitionSubmittedLabel",
+      descriptionKey: "dashboard.transitionSubmittedDesc",
+      confirmTitleKey: "dashboard.transitionSubmittedConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionSubmittedConfirmDesc",
+      icon: Send,
+      variant: "forward",
+    },
+    UNDER_REVIEW: {
+      labelKey: "dashboard.transitionUnderReviewLabel",
+      descriptionKey: "dashboard.transitionUnderReviewDesc",
+      confirmTitleKey: "dashboard.transitionUnderReviewConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionUnderReviewConfirmDesc",
+      icon: Clock,
+      variant: "forward",
+    },
+    APPROVED: {
+      labelKey: "dashboard.transitionApprovedLabel",
+      descriptionKey: "dashboard.transitionApprovedDesc",
+      confirmTitleKey: "dashboard.transitionApprovedConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionApprovedConfirmDesc",
+      icon: CheckCircle,
+      variant: "forward",
+    },
+    ACTIVE: {
+      labelKey: "dashboard.transitionActiveLabel",
+      descriptionKey: "dashboard.transitionActiveDesc",
+      confirmTitleKey: "dashboard.transitionActiveConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionActiveConfirmDesc",
+      icon: CheckCircle,
+      variant: "forward",
+    },
+    PREPARING: {
+      labelKey: "dashboard.transitionPreparingLabel",
+      descriptionKey: "dashboard.transitionPreparingDesc",
+      confirmTitleKey: "dashboard.transitionPreparingConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionPreparingConfirmDesc",
+      icon: Undo2,
+      variant: "backward",
+    },
+    EXPIRING: {
+      labelKey: "dashboard.transitionExpiringLabel",
+      descriptionKey: "dashboard.transitionExpiringDesc",
+      confirmTitleKey: "dashboard.transitionExpiringConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionExpiringConfirmDesc",
+      icon: Clock,
+      variant: "forward",
+    },
+    EXPIRED: {
+      labelKey: "dashboard.transitionExpiredLabel",
+      descriptionKey: "dashboard.transitionExpiredDesc",
+      confirmTitleKey: "dashboard.transitionExpiredConfirmTitle",
+      confirmDescriptionKey: "dashboard.transitionExpiredConfirmDesc",
+      icon: Clock,
+      variant: "forward",
+    },
+  };
+
   for (const target of nextStates) {
-    switch (target) {
-      case "SUBMITTED":
-        actions.push({
-          targetState: "SUBMITTED",
-          label: "I submitted my application",
-          description: "Mark your application as submitted",
-          confirmTitle: "Confirm Submission",
-          confirmDescription:
-            "Are you sure you have submitted your visa application? This will update your status to Submitted.",
-          icon: Send,
-          variant: "forward",
-        });
-        break;
-      case "UNDER_REVIEW":
-        actions.push({
-          targetState: "UNDER_REVIEW",
-          label: "It's under review",
-          description: "Immigration is reviewing your application",
-          confirmTitle: "Mark as Under Review",
-          confirmDescription:
-            "Confirm that your application is now under review by immigration.",
-          icon: Clock,
-          variant: "forward",
-        });
-        break;
-      case "APPROVED":
-        actions.push({
-          targetState: "APPROVED",
-          label: "I got approved!",
-          description: "Your visa has been approved",
-          confirmTitle: "Congratulations!",
-          confirmDescription:
-            "Confirm that your visa application has been approved. This will update your status to Approved.",
-          icon: CheckCircle,
-          variant: "forward",
-        });
-        break;
-      case "ACTIVE":
-        actions.push({
-          targetState: "ACTIVE",
-          label: "Visa is now active",
-          description: "You have entered Korea with your visa",
-          confirmTitle: "Activate Visa",
-          confirmDescription:
-            "Confirm that your visa is now active and you have entered Korea.",
-          icon: CheckCircle,
-          variant: "forward",
-        });
-        break;
-      case "PREPARING":
-        actions.push({
-          targetState: "PREPARING",
-          label: "Go back to Preparing",
-          description: "Return to the preparation stage",
-          confirmTitle: "Go Back to Preparing?",
-          confirmDescription:
-            "This will revert your status back to Preparing. Are you sure?",
-          icon: Undo2,
-          variant: "backward",
-        });
-        break;
-      case "EXPIRING":
-        actions.push({
-          targetState: "EXPIRING",
-          label: "Visa expiring soon",
-          description: "Mark visa as expiring within 30 days",
-          confirmTitle: "Mark as Expiring",
-          confirmDescription:
-            "This will mark your visa as expiring soon. Make sure to start the renewal process.",
-          icon: Clock,
-          variant: "forward",
-        });
-        break;
-      case "EXPIRED":
-        actions.push({
-          targetState: "EXPIRED",
-          label: "Visa has expired",
-          description: "Mark visa as expired",
-          confirmTitle: "Mark as Expired",
-          confirmDescription:
-            "This will mark your visa as expired. You will need to start a new application.",
-          icon: Clock,
-          variant: "forward",
-        });
-        break;
+    const config = actionMap[target];
+    if (config) {
+      actions.push({ targetState: target, ...config });
     }
   }
 
@@ -291,10 +268,10 @@ function StateAdvancementButtons({
                 />
                 <div className="flex-1 min-w-0">
                   <span className="block font-medium text-sm">
-                    {action.label}
+                    {t(action.labelKey)}
                   </span>
                   <span className="block text-xs text-muted-foreground mt-0.5">
-                    {action.description}
+                    {t(action.descriptionKey)}
                   </span>
                 </div>
                 {action.variant === "forward" ? (
@@ -307,10 +284,10 @@ function StateAdvancementButtons({
             <AlertDialogContent className="bg-background border-border">
               <AlertDialogHeader>
                 <AlertDialogTitle className="text-foreground">
-                  {action.confirmTitle}
+                  {t(action.confirmTitleKey)}
                 </AlertDialogTitle>
                 <AlertDialogDescription>
-                  {action.confirmDescription}
+                  {t(action.confirmDescriptionKey)}
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
@@ -568,7 +545,7 @@ function ActiveDashboard({
               {t("dashboard.myJourney")}
             </h1>
             <p className="text-sm text-muted-foreground">
-              {visa?.shortName || progress.visaType.toUpperCase()} Visa
+              {t("dashboard.visaJourney", { visa: visa?.shortName || progress.visaType.toUpperCase() })}
             </p>
           </div>
         </div>

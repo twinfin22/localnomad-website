@@ -10,19 +10,19 @@ import { cn } from "@/lib/utils";
 const testimonials = [
   {
     quote: "I stopped stressing about the basics and focused on my work.",
-    author: "Digital Nomad",
+    author: "Digital Nomad from Canada",
   },
   {
     quote: "The area orientation guide saved me hours of research and confusion.",
-    author: "Remote Worker",
+    author: "Remote Worker from Germany",
   },
   {
     quote: "Having a local present made all the difference when dealing with paperwork.",
-    author: "Slowmad",
+    author: "E-7 Visa Holder",
   },
   {
     quote: "Finally, a service that understands what nomads actually need.",
-    author: "Founder",
+    author: "Tech Founder from Singapore",
   },
 ];
 

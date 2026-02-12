@@ -86,10 +86,10 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
   return (
     <>
       {/* Legal Disclaimer Banner */}
-      <div className="bg-amber-500/10 border-b border-amber-500/20">
+      <div className="bg-warning/10 border-b border-warning/20">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 py-3">
           <div className="flex items-start gap-2">
-            <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+            <AlertCircle className="w-4 h-4 text-warning mt-0.5 shrink-0" />
             <p className="text-xs text-muted-foreground">
               This information is for general guidance only and does not constitute legal advice.
               Requirements may change. Always verify with the{" "}
@@ -349,7 +349,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                                 key={`restriction-${i}`}
                                 className="flex items-start gap-2 text-sm text-muted-foreground"
                               >
-                                <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+                                <AlertCircle className="w-4 h-4 text-warning mt-0.5 shrink-0" />
                                 {restriction}
                               </li>
                             )

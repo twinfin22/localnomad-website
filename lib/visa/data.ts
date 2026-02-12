@@ -99,6 +99,7 @@ const visaDataByLocale: Record<Locale, Record<VisaType, VisaInfo>> = {
   en: visaDataEn,
   ja: visaDataJa,
   "zh-tw": visaDataZhTw,
+  vi: visaDataEn, // Vietnamese falls back to English visa data until translated
 };
 
 // =============================================================================

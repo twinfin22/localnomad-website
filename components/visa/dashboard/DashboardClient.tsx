@@ -15,6 +15,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import type { Database } from '@/lib/supabase/database.types';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -466,22 +467,6 @@ export function DashboardClient() {
         return;
       }
 
-      // Define interfaces for Supabase responses
-      interface VisaProgressRow {
-        visa_type: string;
-        state: string;
-        target_date: string | null;
-        submitted_date: string | null;
-        approved_date: string | null;
-        entry_date: string | null;
-        expiry_date: string | null;
-        notes: string | null;
-      }
-
-      interface ChecklistItemRow {
-        document_id: string;
-        completed: boolean;
-      }
 
       // Fetch visa progress
       const progressResult = await supabase
@@ -490,8 +475,8 @@ export function DashboardClient() {
         .eq('user_id', user.id)
         .single();
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const progressData = progressResult.data as VisaProgressRow | null;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- @supabase/ssr generic inference resolves to never
+      const progressData = progressResult.data as any as Database['public']['Tables']['visa_progress']['Row'] | null;
 
       if (progressData) {
         const data: DashboardData = {
@@ -517,8 +502,8 @@ export function DashboardClient() {
           .eq('user_id', user.id)
           .eq('visa_type', data.visaType);
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const checklistData = checklistResult.data as ChecklistItemRow[] | null;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- @supabase/ssr generic inference resolves to never
+        const checklistData = checklistResult.data as any as Pick<Database['public']['Tables']['checklist_items']['Row'], 'document_id' | 'completed'>[] | null;
 
         if (checklistData) {
           setChecklist(

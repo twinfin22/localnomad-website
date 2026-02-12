@@ -7,8 +7,9 @@
  * - en: English (default, no URL prefix)
  * - ja: Japanese
  * - zh-tw: Traditional Chinese
+ * - vi: Vietnamese
  */
-export const locales = ["en", "ja", "zh-tw"] as const;
+export const locales = ["en", "ja", "zh-tw", "vi"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
 
@@ -25,8 +26,8 @@ export const defaultCountry: Country = "korea";
  * Which languages are available for each country
  */
 export const countryLocales: Record<Country, readonly Locale[]> = {
-  korea: ["en", "ja", "zh-tw"],
-  taiwan: ["en", "zh-tw"], // No Japanese for Taiwan
+  korea: ["en", "ja", "zh-tw", "vi"],
+  taiwan: ["en", "zh-tw"], // No Japanese or Vietnamese for Taiwan
 };
 
 /**
@@ -36,6 +37,7 @@ export const localeNames: Record<Locale, string> = {
   en: "English",
   ja: "日本語",
   "zh-tw": "繁體中文",
+  vi: "Tiếng Việt",
 };
 
 /**
@@ -46,11 +48,13 @@ export const countryNames: Record<Country, Record<Locale, string>> = {
     en: "South Korea",
     ja: "韓国",
     "zh-tw": "韓國",
+    vi: "Hàn Quốc",
   },
   taiwan: {
     en: "Taiwan",
     ja: "台湾",
     "zh-tw": "台灣",
+    vi: "Đài Loan",
   },
 };
 
@@ -70,6 +74,7 @@ export const localeHreflang: Record<Locale, string> = {
   en: "en",
   ja: "ja",
   "zh-tw": "zh-Hant-TW",
+  vi: "vi",
 };
 
 // =============================================================================
@@ -184,6 +189,7 @@ export const dateLocaleMap: Record<Locale, string> = {
   en: 'en-US',
   ja: 'ja-JP',
   'zh-tw': 'zh-TW',
+  vi: 'vi-VN',
 };
 
 export function toDateLocale(locale: Locale): string {
