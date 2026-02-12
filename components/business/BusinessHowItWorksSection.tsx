@@ -30,9 +30,9 @@ export function BusinessHowItWorksSection() {
         </h2>
 
         <div className="space-y-8">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div 
-              key={index}
+              key={step.number}
               className="flex gap-6 items-start"
             >
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center">

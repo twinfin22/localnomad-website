@@ -213,7 +213,7 @@ function RecommendationCard({
       {recommendation.matchReasons.length > 0 && (
         <div className="space-y-1.5 mb-3">
           {recommendation.matchReasons.slice(0, 3).map((reason, index) => (
-            <div key={index} className="flex items-start gap-2 text-sm">
+            <div key={`match-${index}`} className="flex items-start gap-2 text-sm">
               <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
               <span className="text-muted-foreground">{reason}</span>
             </div>
@@ -225,7 +225,7 @@ function RecommendationCard({
       {recommendation.warningReasons && recommendation.warningReasons.length > 0 && (
         <div className="space-y-1.5 mb-3">
           {recommendation.warningReasons.slice(0, 2).map((reason, index) => (
-            <div key={index} className="flex items-start gap-2 text-sm">
+            <div key={`warning-${index}`} className="flex items-start gap-2 text-sm">
               <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
               <span className="text-muted-foreground">{reason}</span>
             </div>

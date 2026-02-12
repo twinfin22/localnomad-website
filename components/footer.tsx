@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           <div className="text-center mb-10">
-            <p className="text-base text-muted-foreground">
+            <p className="text-base text-foreground/70">
               {t("footer.tagline")}
             </p>
           </div>
@@ -45,7 +45,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -57,7 +57,7 @@ export function Footer() {
               href="https://www.instagram.com/localnomad.club/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-foreground/50 hover:text-foreground transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -66,7 +66,7 @@ export function Footer() {
               href="https://startofsomethingnew.substack.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-foreground/50 hover:text-foreground transition-colors duration-200"
               aria-label="Newsletter"
             >
               <Newspaper className="w-6 h-6" />
@@ -74,7 +74,7 @@ export function Footer() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-border text-center">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-foreground/50">
               {t("footer.copyright", { year: new Date().getFullYear() })} ·{" "}
               <Link href={localePath("/terms")} className="hover:text-foreground transition-colors duration-200">
                 {t("footer.terms")}
@@ -92,7 +92,7 @@ export function Footer() {
 
           {/* Legal disclaimer */}
           <div className="mt-6 pt-4 border-t border-border/50 text-center">
-            <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xs text-foreground/40 leading-relaxed max-w-2xl mx-auto">
               {t("footer.legalDisclaimer")}
             </p>
           </div>

@@ -92,36 +92,36 @@ export function getScoreInterpretation(
 ): HealthScoreInterpretation {
   if (score >= 80) {
     return {
-      label: 'Excellent',
+      labelKey: 'scoreExcellent',
       color: 'emerald',
-      message: 'Your preparation is on track!',
+      messageKey: 'scoreExcellentMsg',
     };
   }
   if (score >= 60) {
     return {
-      label: 'Good',
+      labelKey: 'scoreGood',
       color: 'cyan',
-      message: 'A few items need attention.',
+      messageKey: 'scoreGoodMsg',
     };
   }
   if (score >= 40) {
     return {
-      label: 'Needs Work',
+      labelKey: 'scoreNeedsWork',
       color: 'amber',
-      message: 'Focus on completing your checklist.',
+      messageKey: 'scoreNeedsWorkMsg',
     };
   }
   if (score >= 20) {
     return {
-      label: 'Getting Started',
+      labelKey: 'scoreGettingStarted',
       color: 'slate',
-      message: 'Start gathering your documents.',
+      messageKey: 'scoreGettingStartedMsg',
     };
   }
   return {
-    label: 'Not Started',
+    labelKey: 'scoreNotStarted',
     color: 'red',
-    message: 'Begin your visa preparation journey.',
+    messageKey: 'scoreNotStartedMsg',
   };
 }
 

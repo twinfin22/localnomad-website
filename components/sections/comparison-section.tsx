@@ -83,9 +83,9 @@ export function ComparisonSection() {
             </div>
 
             <div className="divide-y divide-border">
-              {comparisons.map((item, index) => (
+              {comparisons.map((item) => (
                 <div
-                  key={index}
+                  key={item.feature}
                   className="grid grid-cols-3 p-4 text-sm hover:bg-muted/30 transition-colors"
                 >
                   <div>{item.feature}</div>

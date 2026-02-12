@@ -1,9 +1,12 @@
 'use client';
 
 import { useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { Calendar, Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { toDateLocale } from '@/lib/i18n/config';
 
+import type { Locale } from '@/lib/i18n/config';
 import type { VisaState } from '@/lib/visa/types';
 
 interface DDayPanelProps {
@@ -11,6 +14,7 @@ interface DDayPanelProps {
   expiryDate?: string;
   renewalWindowDays?: number;
   state: VisaState;
+  locale?: Locale;
   className?: string;
 }
 
@@ -19,9 +23,11 @@ export function DDayPanel({
   expiryDate,
   renewalWindowDays = 60,
   state,
+  locale,
   className,
 }: DDayPanelProps) {
-  const { daysRemaining, label, isUrgent, isPast, displayDate } = useMemo(() => {
+  const t = useTranslations('dashboard');
+  const { daysRemaining, labelKey, isUrgent, isPast, displayDate } = useMemo(() => {
     const now = new Date();
     now.setHours(0, 0, 0, 0);
 
@@ -33,7 +39,7 @@ export function DDayPanel({
     if (state === 'NO_VISA') {
       return {
         daysRemaining: null,
-        label: 'Get Started',
+        labelKey: 'getStartedLabel',
         isUrgent: false,
         isPast: false,
         displayDate: null,
@@ -43,7 +49,7 @@ export function DDayPanel({
     if (!dateToUse) {
       return {
         daysRemaining: null,
-        label: 'No date set',
+        labelKey: 'noDateSet',
         isUrgent: false,
         isPast: false,
         displayDate: null,
@@ -55,29 +61,29 @@ export function DDayPanel({
     const diffTime = date.getTime() - now.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    let label = '';
+    let labelKey = '';
     if (state === 'ACTIVE' || state === 'EXPIRING') {
-      label = 'Visa Expires';
+      labelKey = 'visaExpires';
     } else if (state === 'EXPIRED') {
-      label = 'Expired';
+      labelKey = 'expired';
     } else if (state === 'SUBMITTED' || state === 'UNDER_REVIEW') {
-      label = 'Expected Decision';
+      labelKey = 'expectedDecision';
     } else {
-      label = 'Target Date';
+      labelKey = 'targetDate';
     }
 
     return {
       daysRemaining: diffDays,
-      label,
+      labelKey,
       isUrgent: diffDays <= renewalWindowDays && diffDays > 0,
       isPast: diffDays < 0,
-      displayDate: date.toLocaleDateString('en-US', {
+      displayDate: date.toLocaleDateString(toDateLocale(locale ?? 'en'), {
         month: 'short',
         day: 'numeric',
         year: 'numeric',
       }),
     };
-  }, [targetDate, expiryDate, state, renewalWindowDays]);
+  }, [targetDate, expiryDate, state, renewalWindowDays, locale]);
 
   const getStatusColor = () => {
     if (isPast) return 'text-red-400';
@@ -107,7 +113,7 @@ export function DDayPanel({
     <div className={cn('vk-card p-6', className)}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-          {label}
+          {t(labelKey)}
         </h3>
         <div className={cn('p-2 rounded-lg', getStatusBg())}>
           <Icon className={cn('w-4 h-4', getStatusColor())} />
@@ -120,7 +126,7 @@ export function DDayPanel({
             {isPast ? (
               <span>D+{Math.abs(daysRemaining)}</span>
             ) : daysRemaining === 0 ? (
-              <span>D-Day</span>
+              <span>{t('dDay')}</span>
             ) : (
               <span>D-{daysRemaining}</span>
             )}
@@ -133,11 +139,11 @@ export function DDayPanel({
               {daysRemaining <= renewalWindowDays ? (
                 <div className="flex items-center justify-center gap-2 text-amber-400">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">Renewal window open</span>
+                  <span className="text-sm">{t('renewalWindowOpen')}</span>
                 </div>
               ) : (
                 <p className="text-xs text-muted-foreground">
-                  Renewal opens in {daysRemaining - renewalWindowDays} days
+                  {t('renewalOpensIn', { days: daysRemaining - renewalWindowDays })}
                 </p>
               )}
             </div>
@@ -145,7 +151,7 @@ export function DDayPanel({
         </div>
       ) : (
         <div className="text-center py-4">
-          <p className="text-muted-foreground">Set a target date to track progress</p>
+          <p className="text-muted-foreground">{t('setTargetDate')}</p>
         </div>
       )}
     </div>

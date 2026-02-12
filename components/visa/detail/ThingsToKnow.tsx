@@ -40,7 +40,7 @@ export function ThingsToKnow({
       <div className="space-y-2">
         {displayedItems.map((item, index) => (
           <div
-            key={index}
+            key={`${item.type}-${index}`}
             className="flex items-start gap-3 py-2"
           >
             {/* Indicator dot */}

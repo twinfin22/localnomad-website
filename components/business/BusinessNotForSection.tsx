@@ -27,9 +27,9 @@ export function BusinessNotForSection() {
         </p>
 
         <div className="space-y-6">
-          {exclusions.map((item, index) => (
+          {exclusions.map((item) => (
             <div 
-              key={index}
+              key={item.title}
               className="flex gap-4 items-start bg-card p-6 rounded-lg border"
             >
               <div className="flex-shrink-0 w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center">

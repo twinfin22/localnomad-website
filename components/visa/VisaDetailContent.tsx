@@ -240,7 +240,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {visa.targetAudience.map((target, i) => (
                       <div
-                        key={i}
+                        key={`target-${i}`}
                         className="flex items-center gap-3 p-4 bg-card border border-border rounded-xl"
                       >
                         <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
@@ -346,7 +346,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                           {visa.workPermission.restrictions.map(
                             (restriction, i) => (
                               <li
-                                key={i}
+                                key={`restriction-${i}`}
                                 className="flex items-start gap-2 text-sm text-muted-foreground"
                               >
                                 <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
@@ -376,7 +376,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                       <ul className="space-y-3">
                         {visa.tips.map((tip, i) => (
                           <li
-                            key={i}
+                            key={`tip-${i}`}
                             className="flex items-start gap-2 text-sm"
                           >
                             <CheckCircle className="w-4 h-4 text-accent mt-0.5 shrink-0" />
@@ -398,7 +398,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                         <ul className="space-y-3">
                           {visa.warnings.map((warning, i) => (
                             <li
-                              key={i}
+                              key={`warning-${i}`}
                               className="flex items-start gap-2 text-sm"
                             >
                               <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
@@ -463,7 +463,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                               </p>
                               <ul className="text-xs text-muted-foreground space-y-1">
                                 {doc.tips.map((tip, i) => (
-                                  <li key={i} className="flex items-start gap-1">
+                                  <li key={`doc-tip-${i}`} className="flex items-start gap-1">
                                     <span className="text-accent">•</span>
                                     {tip}
                                   </li>
@@ -525,7 +525,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                             <div className="bg-accent/5 rounded-lg p-3 mb-3">
                               <ul className="text-xs text-muted-foreground space-y-1">
                                 {step.tips.map((tip, i) => (
-                                  <li key={i} className="flex items-start gap-1">
+                                  <li key={`step-tip-${i}`} className="flex items-start gap-1">
                                     <Lightbulb className="w-3 h-3 text-accent mt-0.5 shrink-0" />
                                     {tip}
                                   </li>
@@ -535,9 +535,9 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                           )}
                           {step.links && step.links.length > 0 && (
                             <div className="flex flex-wrap gap-2">
-                              {step.links.map((link, i) => (
+                              {step.links.map((link) => (
                                 <a
-                                  key={i}
+                                  key={link.url}
                                   href={link.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
@@ -568,7 +568,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
                 <div className="space-y-3">
                   {visa.faqs.map((faq, index) => (
                     <div
-                      key={index}
+                      key={`faq-${index}`}
                       className="bg-card border border-border rounded-xl overflow-hidden"
                     >
                       <button
@@ -608,9 +608,9 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
               Official Resources
             </h2>
             <div className="flex flex-wrap gap-3">
-              {visa.officialLinks.map((link, i) => (
+              {visa.officialLinks.map((link) => (
                 <a
-                  key={i}
+                  key={link.url}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"

@@ -66,7 +66,7 @@ export function StepApply({ visa }: StepApplyProps) {
                 <div className="flex flex-wrap gap-3 mt-2">
                   {step.links.map((link, i) => (
                     <a
-                      key={i}
+                      key={link.url}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"

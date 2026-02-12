@@ -114,7 +114,7 @@ export function VisaJourneyPage({
         </div>
       )}
 
-      <div className="container mx-auto max-w-3xl px-4 py-8">
+      <div className="container mx-auto max-w-3xl px-4 pt-24 pb-8">
         {/* Back link */}
         <Link
           href={backHref}
@@ -230,8 +230,8 @@ export function VisaJourneyPage({
             </button>
             {faqsOpen && (
               <div className="pb-4 space-y-1">
-                {visa.faqs.map((faq, i) => (
-                  <details key={i} className="group">
+                {visa.faqs.map((faq) => (
+                  <details key={faq.question} className="group">
                     <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground py-2 list-none flex items-center gap-2">
                       <ChevronRight className="w-4 h-4 text-muted-foreground group-open:rotate-90 transition-transform" />
                       {faq.question}

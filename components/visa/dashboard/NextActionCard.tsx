@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { ArrowRight, FileText, Upload, Calendar, RefreshCw, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { parseLocalePath, buildLocalePath } from '@/lib/i18n/config';
+import { parseLocalePath, buildLocalePath, toDateLocale } from '@/lib/i18n/config';
+import type { Locale } from '@/lib/i18n/config';
 import type { VisaState } from '@/lib/visa/types';
 
 interface NextActionCardProps {
@@ -22,9 +24,14 @@ interface NextActionCardProps {
 
 interface ActionConfig {
   icon: typeof FileText;
-  title: string;
-  description: string;
-  cta: string;
+  title?: string;
+  titleKey?: string;
+  titleParams?: Record<string, string | number>;
+  description?: string;
+  descriptionKey?: string;
+  descriptionParams?: Record<string, string>;
+  cta?: string;
+  ctaKey?: string;
   href: string;
   urgent?: boolean;
 }
@@ -34,6 +41,7 @@ function getNextAction(
   visaType: string,
   documentsComplete: number,
   documentsTotal: number,
+  locale: Locale,
   nextDeadline?: { title: string; date: string }
 ): ActionConfig {
   const allDocumentsReady = documentsComplete === documentsTotal;
@@ -43,9 +51,9 @@ function getNextAction(
       if (documentsComplete === 0) {
         return {
           icon: FileText,
-          title: 'Start Document Collection',
-          description: 'Begin gathering required documents for your application.',
-          cta: 'View Checklist',
+          titleKey: 'startDocCollection',
+          descriptionKey: 'startDocCollectionDesc',
+          ctaKey: 'viewChecklist',
           href: `/visa/checklist/${visaType}`,
         };
       }
@@ -53,26 +61,27 @@ function getNextAction(
         const remaining = documentsTotal - documentsComplete;
         return {
           icon: Upload,
-          title: `${remaining} Document${remaining > 1 ? 's' : ''} Remaining`,
-          description: `Complete your checklist to proceed with submission.`,
-          cta: 'Continue Checklist',
+          titleKey: 'docsRemainingTitle',
+          titleParams: { count: remaining },
+          descriptionKey: 'completeChecklistDesc',
+          ctaKey: 'continueChecklist',
           href: `/visa/checklist/${visaType}`,
         };
       }
       return {
         icon: Calendar,
-        title: 'Ready to Submit',
-        description: 'All documents prepared. Book your appointment or submit online.',
-        cta: 'View Submission Guide',
+        titleKey: 'readyToSubmit',
+        descriptionKey: 'readyToSubmitDesc',
+        ctaKey: 'viewSubmissionGuide',
         href: `/visa/${visaType}#process`,
       };
 
     case 'SUBMITTED':
       return {
         icon: Calendar,
-        title: 'Application Submitted',
-        description: 'Your application is being processed. Check status regularly.',
-        cta: 'Track Status',
+        titleKey: 'applicationSubmitted',
+        descriptionKey: 'applicationSubmittedDesc',
+        ctaKey: 'trackStatus',
         href: `/visa/dashboard`,
       };
 
@@ -81,44 +90,45 @@ function getNextAction(
         return {
           icon: AlertTriangle,
           title: nextDeadline.title,
-          description: `Due by ${new Date(nextDeadline.date).toLocaleDateString()}`,
-          cta: 'View Details',
+          descriptionKey: 'dueBy',
+          descriptionParams: { date: new Date(nextDeadline.date).toLocaleDateString(toDateLocale(locale)) },
+          ctaKey: 'viewDetails',
           href: `/visa/dashboard`,
           urgent: true,
         };
       }
       return {
         icon: FileText,
-        title: 'Under Review',
-        description: 'Immigration is reviewing your application.',
-        cta: 'Check Updates',
+        titleKey: 'underReviewTitle',
+        descriptionKey: 'underReviewDesc',
+        ctaKey: 'checkUpdates',
         href: `/visa/dashboard`,
       };
 
     case 'APPROVED':
       return {
         icon: Calendar,
-        title: 'Visa Approved',
-        description: 'Prepare for your move to Korea.',
-        cta: 'View Entry Guide',
+        titleKey: 'visaApproved',
+        descriptionKey: 'visaApprovedDesc',
+        ctaKey: 'viewEntryGuide',
         href: `/visa/${visaType}`,
       };
 
     case 'ACTIVE':
       return {
         icon: RefreshCw,
-        title: 'Maintain Your Visa',
-        description: 'Track requirements and renewal deadlines.',
-        cta: 'View Requirements',
+        titleKey: 'maintainVisa',
+        descriptionKey: 'maintainVisaDesc',
+        ctaKey: 'viewRequirements',
         href: `/visa/${visaType}`,
       };
 
     case 'EXPIRING':
       return {
         icon: AlertTriangle,
-        title: 'Renewal Required',
-        description: 'Your visa is expiring soon. Start renewal process.',
-        cta: 'Start Renewal',
+        titleKey: 'renewalRequired',
+        descriptionKey: 'renewalRequiredDesc',
+        ctaKey: 'startRenewal',
         href: `/visa/${visaType}#renewal`,
         urgent: true,
       };
@@ -126,9 +136,9 @@ function getNextAction(
     case 'EXPIRED':
       return {
         icon: AlertTriangle,
-        title: 'Visa Expired',
-        description: 'Contact immigration for options.',
-        cta: 'Get Help',
+        titleKey: 'visaExpired',
+        descriptionKey: 'visaExpiredDesc',
+        ctaKey: 'getHelp',
         href: `/visa/${visaType}`,
         urgent: true,
       };
@@ -136,9 +146,9 @@ function getNextAction(
     default:
       return {
         icon: FileText,
-        title: 'Get Started',
-        description: 'Begin your visa journey.',
-        cta: 'Find Your Visa',
+        titleKey: 'getStartedTitle',
+        descriptionKey: 'getStartedDesc',
+        ctaKey: 'findMyVisa',
         href: '/visa/find',
       };
   }
@@ -152,12 +162,17 @@ export function NextActionCard({
   nextDeadline,
   className,
 }: NextActionCardProps) {
+  const t = useTranslations('dashboard');
   const pathname = usePathname();
   const { locale, country } = parseLocalePath(pathname);
   const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
 
-  const action = getNextAction(state, visaType, documentsComplete, documentsTotal, nextDeadline);
+  const action = getNextAction(state, visaType, documentsComplete, documentsTotal, locale as Locale, nextDeadline);
   const Icon = action.icon;
+
+  const resolvedTitle = action.titleKey ? t(action.titleKey, action.titleParams) : action.title;
+  const resolvedDescription = action.descriptionKey ? t(action.descriptionKey, action.descriptionParams) : action.description;
+  const resolvedCta = action.ctaKey ? t(action.ctaKey) : action.cta;
 
   return (
     <div
@@ -183,8 +198,8 @@ export function NextActionCard({
         </div>
 
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-foreground mb-1">{action.title}</h3>
-          <p className="text-sm text-muted-foreground mb-4">{action.description}</p>
+          <h3 className="font-semibold text-foreground mb-1">{resolvedTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-4">{resolvedDescription}</p>
 
           <Link href={localePath(action.href)}>
             <Button
@@ -195,7 +210,7 @@ export function NextActionCard({
                   : 'bg-primary hover:bg-accent-hover text-background'
               )}
             >
-              {action.cta}
+              {resolvedCta}
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

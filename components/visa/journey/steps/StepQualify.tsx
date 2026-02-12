@@ -54,12 +54,18 @@ export function StepQualify({ visa }: StepQualifyProps) {
                 {!req.required && (
                   <span className="text-muted-foreground ml-2">(optional)</span>
                 )}
+                {req.id === "salary" && visa.incomeRequirement && (
+                  <span className="block text-xs text-muted-foreground/80 mt-0.5">
+                    {visa.incomeRequirement.amount} {visa.incomeRequirement.currency}
+                    {visa.incomeRequirement.notes && ` — ${visa.incomeRequirement.notes}`}
+                  </span>
+                )}
               </span>
               <div className="flex gap-2">
                 <button
                   onClick={() => handleAnswer(req.id, true)}
                   className={cn(
-                    "px-3 py-1 text-sm rounded-md transition-colors",
+                    "px-3 py-1 min-h-[44px] text-sm rounded-md transition-colors",
                     answers[req.id] === true
                       ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
                       : "bg-elevated text-muted-foreground hover:bg-surface"
@@ -70,7 +76,7 @@ export function StepQualify({ visa }: StepQualifyProps) {
                 <button
                   onClick={() => handleAnswer(req.id, false)}
                   className={cn(
-                    "px-3 py-1 text-sm rounded-md transition-colors",
+                    "px-3 py-1 min-h-[44px] text-sm rounded-md transition-colors",
                     answers[req.id] === false
                       ? "bg-red-500/20 text-red-400 border border-red-500/30"
                       : "bg-elevated text-muted-foreground hover:bg-surface"

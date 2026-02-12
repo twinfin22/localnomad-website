@@ -110,10 +110,10 @@ const comparisonRows: ComparisonRow[] = [
     render: (visa) => (
       <ul className="text-xs space-y-1">
         {visa.targetAudience.slice(0, 2).map((t, i) => (
-          <li key={i}>• {t}</li>
+          <li key={`audience-${i}`}>• {t}</li>
         ))}
         {visa.targetAudience.length > 2 && (
-          <li className="text-muted-foreground">
+          <li key="audience-more" className="text-muted-foreground">
             +{visa.targetAudience.length - 2} more
           </li>
         )}
@@ -129,7 +129,7 @@ const comparisonRows: ComparisonRow[] = [
           .filter((e) => e.required)
           .slice(0, 3)
           .map((req, i) => (
-            <li key={i}>• {req.label}</li>
+            <li key={req.id}>• {req.label}</li>
           ))}
       </ul>
     ),

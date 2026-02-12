@@ -106,9 +106,9 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
           </div>
 
           <div className="space-y-6">
-            {bundles.map((bundle, index) => (
+            {bundles.map((bundle) => (
               <div
-                key={index}
+                key={bundle.title}
                 className="bg-surface border border-border rounded-xl p-6 hover:border-border-hover hover:bg-elevated transition-all duration-200 cursor-pointer flex flex-col"
               >
                 <h3 className="text-xl font-semibold text-foreground mb-2">{bundle.title}</h3>

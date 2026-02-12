@@ -57,6 +57,12 @@ export default async function LocaleLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body className={`${fontVariables} font-sans antialiased`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:text-sm focus:font-medium"
+        >
+          Skip to content
+        </a>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
@@ -67,7 +73,9 @@ export default async function LocaleLayout({
             <ThemePreviewProvider>
               <AuthProvider>
                 <Suspense fallback={null}>
-                  {children}
+                  <div id="main-content">
+                    {children}
+                  </div>
                 </Suspense>
               </AuthProvider>
             </ThemePreviewProvider>

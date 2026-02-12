@@ -27,9 +27,9 @@ export function BusinessWhyUsSection() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {pillars.map((pillar, index) => (
+          {pillars.map((pillar) => (
             <div 
-              key={index}
+              key={pillar.title}
               className="text-center"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">

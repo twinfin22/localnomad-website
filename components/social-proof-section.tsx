@@ -93,9 +93,9 @@ export function SocialProofSection() {
           <div className="relative">
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-4 sm:gap-6 select-none">
-                {testimonials.map((testimonial, index) => (
+                {testimonials.map((testimonial) => (
                   <div
-                    key={index}
+                    key={testimonial.author}
                     className="flex-[0_0_85%] sm:flex-[0_0_45%] lg:flex-[0_0_31%] min-w-0"
                   >
                     <Card className="h-full p-6 sm:p-8 bg-card border border-border hover:border-primary/30 shadow-card hover:shadow-card-hover transition-all duration-300">

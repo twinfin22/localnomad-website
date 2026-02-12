@@ -470,7 +470,7 @@ export function EligibilityQuiz() {
                           </p>
                           <ul className="text-xs text-muted-foreground space-y-0.5">
                             {result.matchReasons.slice(0, 3).map((reason, i) => (
-                              <li key={i} className="flex items-start gap-1">
+                              <li key={`reason-${i}`} className="flex items-start gap-1">
                                 <CheckCircle className="w-3 h-3 text-green-500 mt-0.5 shrink-0" />
                                 <span className="line-clamp-1">{reason}</span>
                               </li>

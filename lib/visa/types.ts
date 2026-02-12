@@ -583,9 +583,9 @@ export type VisaState =
  * Health score interpretation
  */
 export interface HealthScoreInterpretation {
-  label: string;
+  labelKey: string;
   color: "emerald" | "cyan" | "amber" | "slate" | "red";
-  message: string;
+  messageKey: string;
 }
 
 /**

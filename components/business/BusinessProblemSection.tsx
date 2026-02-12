@@ -35,9 +35,9 @@ export function BusinessProblemSection() {
         </p>
 
         <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
-          {problems.map((problem, index) => (
+          {problems.map((problem) => (
             <div 
-              key={index}
+              key={problem.title}
               className="bg-card p-6 sm:p-8 rounded-lg border shadow-sm"
             >
               <problem.icon className="w-8 h-8 text-primary mb-4" />

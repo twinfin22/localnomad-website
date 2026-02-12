@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FileText, ArrowRight, ChevronDown, Route } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { FileText, ArrowRight, ChevronDown, Route, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 
 interface VisaOption {
   visa: string;
@@ -18,6 +21,10 @@ interface AlreadyHaveVisaProps {
 
 export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveVisaProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("visa");
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const dashboardHref = buildLocalePath("/visa/dashboard", locale, country ?? undefined);
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -32,10 +39,10 @@ export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveV
       >
         <div className="flex items-center gap-3">
           <FileText className="w-5 h-5 text-primary" />
-          <span className="text-muted-foreground">Already have a visa?</span>
+          <span className="text-muted-foreground">{t("alreadyHaveVisa")}</span>
         </div>
         <div className="flex items-center gap-2 text-primary">
-          <span className="text-sm">Manage your visa</span>
+          <span className="text-sm">{t("seeYourOptions")}</span>
           <ChevronDown
             className={cn(
               "w-4 h-4 transition-transform",
@@ -47,8 +54,20 @@ export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveV
 
       {isOpen && (
         <div className="mt-2 p-4 rounded-xl border border-border bg-surface">
+          {/* Dashboard CTA */}
+          <Link
+            href={dashboardHref}
+            className="flex items-center justify-between p-3 mb-4 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/15 transition-colors group"
+          >
+            <div className="flex items-center gap-3">
+              <BarChart3 className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium text-primary">{t("trackMyProgress")}</span>
+            </div>
+            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+
           <p className="text-sm text-muted-foreground mb-4">
-            Which visa do you have?
+            {t("whichVisaDoYouHave")}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {visaOptions.map((option) => (
@@ -75,7 +94,7 @@ export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveV
               className="mt-4 flex items-center gap-2 text-sm text-primary hover:text-accent-hover transition-colors"
             >
               <Route className="w-4 h-4" />
-              <span>Explore visa transition paths</span>
+              <span>{t("exploreTransitionPaths")}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           )}

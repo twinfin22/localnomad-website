@@ -75,8 +75,8 @@ export function ServicesDetailSection() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service, index) => (
-            <AnimatedSection key={index}>
+          {services.map((service) => (
+            <AnimatedSection key={service.href}>
               <div className="group bg-card border border-border rounded-2xl p-6 lg:p-8 h-full flex flex-col card-lift shadow-navy hover:shadow-navy-lg hover:border-primary/30 transition-all duration-300 card-accent-left overflow-hidden cursor-pointer">
                 <div className="flex items-center gap-4 mb-5">
                   <div

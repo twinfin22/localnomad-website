@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { Activity, TrendingUp, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import {
@@ -14,6 +15,7 @@ interface HealthScoreCardProps {
 }
 
 export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
+  const t = useTranslations('dashboard');
   const score = calculateHealthScore(factors);
   const interpretation = getScoreInterpretation(score);
 
@@ -36,7 +38,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
     <div className={cn('vk-card p-6', className)}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-          Preparation Score
+          {t('preparationScore')}
         </h3>
         <ScoreIcon className={cn('w-5 h-5', interpretation.color)} />
       </div>
@@ -80,7 +82,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
           {/* Score text in center */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-3xl font-bold text-foreground">{score}</span>
-            <span className="text-xs text-muted-foreground">/ 100</span>
+            <span className="text-xs text-muted-foreground">{t('outOf100')}</span>
           </div>
         </div>
 
@@ -88,29 +90,29 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
         <div className="flex-1 space-y-3">
           <div>
             <span className={cn('text-lg font-semibold', interpretation.color)}>
-              {interpretation.label}
+              {t(interpretation.labelKey)}
             </span>
             <p className="text-sm text-muted-foreground mt-1">
-              {interpretation.message}
+              {t(interpretation.messageKey)}
             </p>
           </div>
 
           {/* Factor breakdown */}
           <div className="space-y-2 pt-2">
             <ScoreFactor
-              label="Documents"
+              label={t('documentsLabel')}
               value={factors.documentsCompleted}
               total={factors.documentsTotal}
               weight="50%"
             />
             <ScoreFactor
-              label="Timeline"
+              label={t('timelineLabel')}
               value={factors.daysUntilTarget ?? 0}
               isTimeline
               weight="25%"
             />
             <ScoreFactor
-              label="Insurance"
+              label={t('insuranceLabel')}
               value={factors.insuranceValid ? 1 : 0}
               total={1}
               weight="15%"
@@ -121,7 +123,7 @@ export function HealthScoreCard({ factors, className }: HealthScoreCardProps) {
 
       {/* Legal disclaimer */}
       <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border">
-        This score reflects your document preparation progress, not approval likelihood.
+        {t('scoreDisclaimer')}
       </p>
     </div>
   );

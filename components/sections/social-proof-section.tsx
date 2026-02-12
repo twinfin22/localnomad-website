@@ -50,8 +50,8 @@ export function SocialProofSection() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((testimonial, index) => (
-            <AnimatedSection key={index}>
+          {testimonials.map((testimonial) => (
+            <AnimatedSection key={testimonial.name}>
               <div className="group bg-card border border-border rounded-2xl p-6 lg:p-8 h-full flex flex-col card-lift shadow-navy hover:shadow-navy-lg transition-all duration-300">
                 <div className="flex gap-1 mb-5">
                   {[...Array(testimonial.rating)].map((_, i) => (

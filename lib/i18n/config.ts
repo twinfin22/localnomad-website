@@ -172,3 +172,20 @@ export function parseLocalePath(pathname: string): {
 
   return { locale, country, path };
 }
+
+// =============================================================================
+// Date Locale Helpers
+// =============================================================================
+
+/**
+ * Map app locale to BCP 47 date locale string
+ */
+export const dateLocaleMap: Record<Locale, string> = {
+  en: 'en-US',
+  ja: 'ja-JP',
+  'zh-tw': 'zh-TW',
+};
+
+export function toDateLocale(locale: Locale): string {
+  return dateLocaleMap[locale] ?? 'en-US';
+}
