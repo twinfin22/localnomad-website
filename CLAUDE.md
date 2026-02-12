@@ -1,6 +1,11 @@
 # LocalNomad Website - Claude Code Reference
 
-> Last updated: 2025-02
+> Last updated: 2026-02
+
+## Documentation
+- All `.md` files (audits, prompts, reports, specs) go in `docs/`
+- Only `CLAUDE.md` stays in the project root
+- When creating new `.md` files, always put them in `docs/`
 
 ## Quick Commands
 ```bash
