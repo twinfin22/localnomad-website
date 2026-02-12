@@ -614,10 +614,10 @@ function ActiveDashboard({
           targetDate={progress.targetDate}
           label={
             progress.state === "ACTIVE"
-              ? "Visa Expires"
+              ? t("dashboard.visaExpires")
               : progress.state === "EXPIRING"
-              ? "Expires In"
-              : "Target Date"
+              ? t("dashboard.expiresIn")
+              : t("dashboard.targetDate")
           }
         />
       </div>
