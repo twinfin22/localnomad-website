@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ArrowRight, FileText, Upload, Calendar, RefreshCw, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { parseLocalePath, buildLocalePath } from '@/lib/i18n/config';
 import type { VisaState } from '@/lib/visa/types';
 
 interface NextActionCardProps {
@@ -150,6 +152,10 @@ export function NextActionCard({
   nextDeadline,
   className,
 }: NextActionCardProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
+
   const action = getNextAction(state, visaType, documentsComplete, documentsTotal, nextDeadline);
   const Icon = action.icon;
 
@@ -180,7 +186,7 @@ export function NextActionCard({
           <h3 className="font-semibold text-foreground mb-1">{action.title}</h3>
           <p className="text-sm text-muted-foreground mb-4">{action.description}</p>
 
-          <Link href={action.href}>
+          <Link href={localePath(action.href)}>
             <Button
               className={cn(
                 'group',

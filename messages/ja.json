@@ -182,7 +182,12 @@
     "interestedStudying": "留学に興味がある",
     "interestedStudyingDesc": "教育オプションを検討中",
     "longTermResidence": "長期滞在",
-    "longTermResidenceDesc": "韓国に住みたい"
+    "longTermResidenceDesc": "韓国に住みたい",
+    "startMyJourney": "旅を始める",
+    "daysToPrepare": "準備期間 {count} 日",
+    "trackProgress": "進捗を一緒に追跡しましょう",
+    "match": "{score}% 一致",
+    "backToResults": "結果に戻る"
   },
   "eligibilityQuiz": {
     "workRemotelyForeign": "外国企業でリモートワーク",
@@ -242,7 +247,37 @@
     "visaExpired": "ビザ期限切れ",
     "visaExpiredDesc": "入国管理局にオプションについて問い合わせてください。",
     "getStartedTitle": "始めましょう",
-    "getStartedDesc": "ビザの旅を始めましょう。"
+    "getStartedDesc": "ビザの旅を始めましょう。",
+    "startYourJourney": "ビザの旅を始めましょう",
+    "takeQuizDesc": "簡単なクイズであなたに合ったビザを見つけ、承認までの進捗を追跡しましょう。",
+    "findMyVisa": "ビザを探す",
+    "browseAllVisas": "すべてのビザを見る",
+    "myJourney": "マイジャーニー",
+    "currentStatus": "現在のステータス",
+    "updateStatus": "ステータスを更新",
+    "documentChecklist": "書類チェックリスト",
+    "yourJourney": "あなたのジャーニー",
+    "whileYouWait": "待っている間に",
+    "prepareForArrival": "渡航準備",
+    "prepareForArrivalDesc": "地域、住居オプションを調べ、韓国の生活に慣れましょう。",
+    "bankingFinance": "銀行・金融",
+    "bankingFinanceDesc": "韓国の銀行と外国人としての口座開設方法について学びましょう。",
+    "viewVisaDetails": "ビザの詳細を見る",
+    "confirm": "確認",
+    "cancel": "キャンセル",
+    "settings": "設定",
+    "manageSettings": "ビザジャーニーの設定を管理",
+    "targetVisaType": "対象ビザタイプ",
+    "targetDate": "目標日",
+    "clearTargetDate": "目標日をクリア",
+    "dangerZone": "危険ゾーン",
+    "resetAllProgress": "すべての進捗をリセット",
+    "resetWarningTitle": "すべての進捗が完全に削除されます",
+    "resetWarningDesc": "ビザの選択、チェックリストの進捗、すべての設定が失われます。この操作は取り消せません。",
+    "deleteEverything": "すべて削除",
+    "dashboardDisclaimer": "このダッシュボードは自己申告の進捗を追跡します。HiKoreaや政府システムとは接続されていません。",
+    "visaExpires": "ビザ有効期限",
+    "expiresIn": "期限まで"
   },
   "nextStepHero": {
     "findYourVisa": "ビザを探す",
@@ -383,6 +418,11 @@
     "welcomeBack": "おかえりなさい",
     "signInSubtitle": "ビザの進捗を確認するにはログインしてください"
   },
+  "error": {
+    "title": "エラーが発生しました",
+    "description": "予期しないエラーが発生しました。もう一度お試しください。",
+    "retryButton": "もう一度試す"
+  },
   "sections": {
     "whyTitle": "なぜLocalNomad？",
     "whySubtitle": "私たちがあなたの代わりに大変な作業をしました",
@@ -391,7 +431,7 @@
     "verifiedInfoDesc": "古いブログ記事やAIの幻覚はもうありません。すべてのガイドは実際にここに住んでいる人が個人的に調査し、定期的に更新しています。",
     "localExperience": "現地経験",
     "localExperienceDesc": "外国人として韓国を経験した人が作りました。私たちは問題点を知っています、なぜなら実際に経験したからです。",
-    "save40Hours": "40時間以上の節約",
+    "save40Hours": "大幅な時間節約",
     "save40HoursDesc": "終わりのない調査の迷路をスキップ。厳選された実用的なガイドで直接答えにたどり着きます。",
     "ourServices": "サービス",
     "everythingYouNeed": "必要なものすべて",

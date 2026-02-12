@@ -406,8 +406,8 @@ export function saveProgress(progress: VisaProgress): void {
 
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  } catch {
-    console.error("Failed to save visa progress");
+  } catch (error: unknown) {
+    console.error("Failed to save visa progress:", error instanceof Error ? error.message : String(error));
   }
 }
 

@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { FileText, ArrowRight, ChevronDown } from 'lucide-react';
+import { parseLocalePath, buildLocalePath } from '@/lib/i18n/config';
 import type { Document, VisaType } from '@/lib/visa/types';
 
 interface DocumentPreviewProps {
@@ -20,6 +22,10 @@ export function DocumentPreview({
   visaType,
   className,
 }: DocumentPreviewProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
+
   const [showAll, setShowAll] = useState(false);
   const requiredDocs = documents.filter((d) => d.required);
   const optionalDocs = documents.filter((d) => !d.required);
@@ -64,7 +70,7 @@ export function DocumentPreview({
       )}
 
       {/* CTA */}
-      <Link href={`/visa/checklist/${visaType}`}>
+      <Link href={localePath(`/visa/checklist/${visaType}`)}>
         <Button className="w-full bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30">
           View Full Checklist
           <ArrowRight className="w-4 h-4 ml-2" />

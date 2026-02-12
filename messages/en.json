@@ -182,7 +182,12 @@
     "interestedStudying": "Interested in studying",
     "interestedStudyingDesc": "Considering education options",
     "longTermResidence": "Long-term residence",
-    "longTermResidenceDesc": "Want to live in Korea"
+    "longTermResidenceDesc": "Want to live in Korea",
+    "startMyJourney": "Start My Journey",
+    "daysToPrepare": "{count} days to prepare",
+    "trackProgress": "We'll help you track your progress",
+    "match": "{score}% match",
+    "backToResults": "Back to results"
   },
   "eligibilityQuiz": {
     "workRemotelyForeign": "Work remotely for a foreign company",
@@ -242,7 +247,37 @@
     "visaExpired": "Visa Expired",
     "visaExpiredDesc": "Contact immigration for options.",
     "getStartedTitle": "Get Started",
-    "getStartedDesc": "Begin your visa journey."
+    "getStartedDesc": "Begin your visa journey.",
+    "startYourJourney": "Start Your Visa Journey",
+    "takeQuizDesc": "Take our quick quiz to find the right visa for you, then track your progress all the way to approval.",
+    "findMyVisa": "Find My Visa",
+    "browseAllVisas": "Browse All Visas",
+    "myJourney": "My Journey",
+    "currentStatus": "Current Status",
+    "updateStatus": "Update Your Status",
+    "documentChecklist": "Document Checklist",
+    "yourJourney": "Your Journey",
+    "whileYouWait": "While You Wait",
+    "prepareForArrival": "Prepare for Arrival",
+    "prepareForArrivalDesc": "Research neighborhoods, housing options, and get familiar with Korean life.",
+    "bankingFinance": "Banking & Finance",
+    "bankingFinanceDesc": "Learn about Korean banks and how to set up accounts as a foreigner.",
+    "viewVisaDetails": "View Visa Details",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "settings": "Settings",
+    "manageSettings": "Manage your visa journey settings",
+    "targetVisaType": "Target Visa Type",
+    "targetDate": "Target Date",
+    "clearTargetDate": "Clear target date",
+    "dangerZone": "Danger Zone",
+    "resetAllProgress": "Reset All Progress",
+    "resetWarningTitle": "This will permanently delete all your progress",
+    "resetWarningDesc": "Your visa selection, checklist progress, and all settings will be lost. This cannot be undone.",
+    "deleteEverything": "Delete Everything",
+    "dashboardDisclaimer": "This dashboard tracks your self-reported progress. It is not connected to HiKorea or any government system.",
+    "visaExpires": "Visa Expires",
+    "expiresIn": "Expires In"
   },
   "nextStepHero": {
     "findYourVisa": "Find Your Visa",
@@ -383,6 +418,11 @@
     "welcomeBack": "Welcome back",
     "signInSubtitle": "Sign in to track your visa progress"
   },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retryButton": "Try again"
+  },
   "sections": {
     "whyTitle": "Why LocalNomad?",
     "whySubtitle": "We've done the hard work so you don't have to",
@@ -391,7 +431,7 @@
     "verifiedInfoDesc": "No more outdated blog posts or AI hallucinations. Every guide is personally researched and regularly updated by locals who actually live here.",
     "localExperience": "Local Experience",
     "localExperienceDesc": "Built by someone who navigated Korea as a foreigner. We know the pain points because we've lived them.",
-    "save40Hours": "Save 40+ Hours",
+    "save40Hours": "Save Significant Time",
     "save40HoursDesc": "Skip the endless research rabbit holes. Get straight to the answers with our curated, actionable guides.",
     "ourServices": "Our Services",
     "everythingYouNeed": "Everything You Need",

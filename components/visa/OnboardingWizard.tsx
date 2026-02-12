@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   Briefcase,
   GraduationCap,
@@ -20,6 +21,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { createProgress, saveProgress } from "@/lib/visa/stateMachine";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaType } from "@/lib/visa/types";
 
 // =============================================================================
@@ -212,6 +214,11 @@ const visaInfo: Record<VisaType, { name: string; tagline: string }> = {
 
 export function OnboardingWizard() {
   const router = useRouter();
+  const pathname = usePathname();
+  const t = useTranslations();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
+
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedGoal, setSelectedGoal] = useState<GoalOption | null>(null);
   const [situationStep, setSituationStep] = useState<string | null>(null);
@@ -281,7 +288,7 @@ export function OnboardingWizard() {
     saveProgress(progress);
 
     // Navigate to dashboard
-    router.push("/visa/dashboard");
+    router.push(localePath("/visa/dashboard"));
   };
 
   // Calculate days until target
@@ -426,7 +433,7 @@ export function OnboardingWizard() {
                         "text-xs font-medium px-2 py-0.5 rounded-full",
                         index === 0 ? "bg-primary text-primary-foreground" : "bg-elevated text-muted-foreground"
                       )}>
-                        {match.score}% match
+                        {t("onboarding.match", { score: match.score })}
                       </span>
                     </div>
                     <p className="text-sm text-muted-foreground">{match.tagline}</p>
@@ -440,6 +447,13 @@ export function OnboardingWizard() {
                 </div>
               </button>
             ))}
+            {/* Disclaimer */}
+            <div className="text-xs text-muted-foreground text-center mt-4 px-4">
+              This tool provides general guidance only and does not constitute legal advice.
+              Final decisions on visa issuance rest solely with the Korean Ministry of Justice
+              and immigration authorities.
+            </div>
+
             <button
               onClick={() => setCurrentStep(1)}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mx-auto mt-6"
@@ -486,10 +500,10 @@ export function OnboardingWizard() {
                       <Calendar className="w-5 h-5 text-primary" />
                       <div>
                         <p className="text-sm font-medium text-primary">
-                          {daysUntil} days to prepare
+                          {t("onboarding.daysToPrepare", { count: daysUntil })}
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          We&apos;ll help you track your progress
+                          {t("onboarding.trackProgress")}
                         </p>
                       </div>
                     </div>
@@ -504,7 +518,7 @@ export function OnboardingWizard() {
               variant="primary"
               className="w-full py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Start My Journey
+              {t("onboarding.startMyJourney")}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
 
@@ -513,7 +527,7 @@ export function OnboardingWizard() {
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mx-auto"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Back to results</span>
+              <span>{t("onboarding.backToResults")}</span>
             </button>
           </div>
         )}

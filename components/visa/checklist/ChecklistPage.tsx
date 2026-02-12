@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -52,7 +52,7 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
   const localePath = (path: string) =>
     buildLocalePath(path, locale, country ?? undefined);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-  const [mounted, setMounted] = useState(false);
+  const hasHydrated = useRef(false);
 
   const Icon = categoryIcons[visa.category] || FileText;
 
@@ -66,18 +66,17 @@ export function ChecklistPage({ visa }: ChecklistPageProps) {
         // Invalid JSON, ignore
       }
     }
-    setMounted(true);
+    hasHydrated.current = true;
   }, [visa.type]);
 
   // Save to localStorage on change
   useEffect(() => {
-    if (mounted) {
-      localStorage.setItem(
-        `${STORAGE_KEY_PREFIX}${visa.type}`,
-        JSON.stringify(checkedItems)
-      );
-    }
-  }, [checkedItems, visa.type, mounted]);
+    if (!hasHydrated.current) return;
+    localStorage.setItem(
+      `${STORAGE_KEY_PREFIX}${visa.type}`,
+      JSON.stringify(checkedItems)
+    );
+  }, [checkedItems, visa.type]);
 
   const handleToggle = (docId: string) => {
     setCheckedItems((prev) => ({

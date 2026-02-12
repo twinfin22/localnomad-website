@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   CheckCircle,
   Circle,
@@ -93,14 +93,13 @@ export function DocumentChecklist() {
   const [selectedVisa, setSelectedVisa] = useState<VisaType>("d-10");
   const [checkedItems, setCheckedItems] = useState<ChecklistState>({});
   const [expandedDocs, setExpandedDocs] = useState<Set<string>>(new Set());
-  const [mounted, setMounted] = useState(false);
+  const hasHydrated = useRef(false);
 
   const visa = getVisaInfo(selectedVisa, "en");
 
-  // Migrate old data on mount, then load per-type data
+  // Migrate old data on mount
   useEffect(() => {
     migrateOldChecklistData();
-    setMounted(true);
   }, []);
 
   // Load per-type checklist whenever the selected visa changes
@@ -115,17 +114,17 @@ export function DocumentChecklist() {
     } else {
       setCheckedItems({});
     }
+    hasHydrated.current = true;
   }, [selectedVisa]);
 
   // Save to per-type localStorage key on change
   useEffect(() => {
-    if (mounted) {
-      localStorage.setItem(
-        `${STORAGE_KEY_PREFIX}${selectedVisa}`,
-        JSON.stringify(checkedItems)
-      );
-    }
-  }, [checkedItems, selectedVisa, mounted]);
+    if (!hasHydrated.current) return;
+    localStorage.setItem(
+      `${STORAGE_KEY_PREFIX}${selectedVisa}`,
+      JSON.stringify(checkedItems)
+    );
+  }, [checkedItems, selectedVisa]);
 
   const toggleDoc = (docId: string) => {
     setCheckedItems((prev) => ({

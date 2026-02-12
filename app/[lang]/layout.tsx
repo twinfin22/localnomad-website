@@ -1,10 +1,11 @@
 import type React from "react";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemePreviewProvider } from "@/components/theme-preview";
 import { AuthProvider } from "@/components/providers/auth-provider";
@@ -17,9 +18,8 @@ import { locales, type Locale } from "@/lib/i18n/config";
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
-
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 const fontVariables = geist.variable;
 
@@ -65,7 +65,11 @@ export default async function LocaleLayout({
             disableTransitionOnChange
           >
             <ThemePreviewProvider>
-              <AuthProvider>{children}</AuthProvider>
+              <AuthProvider>
+                <Suspense fallback={null}>
+                  {children}
+                </Suspense>
+              </AuthProvider>
             </ThemePreviewProvider>
           </ThemeProvider>
         </NextIntlClientProvider>

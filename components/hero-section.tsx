@@ -1,19 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FileText, MapPin, Stamp, ArrowRight } from "lucide-react";
 import { HeroBackground } from "@/components/theme-preview";
 import { useTranslations } from "next-intl";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 
 export function HeroSection() {
-  const [mounted, setMounted] = useState(false);
   const t = useTranslations();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24 pb-16 overflow-hidden relative">
@@ -23,19 +22,14 @@ export function HeroSection() {
       <div className="container mx-auto max-w-5xl text-center relative z-10">
         {/* Badge */}
         <div
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 transition-all duration-700 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-up"
         >
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
           <span className="text-sm font-medium text-primary">{t('hero.badge')}</span>
         </div>
 
         <h1
-          className={`text-fluid-hero font-bold mb-6 text-balance px-2 tracking-tight transition-all duration-700 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: "100ms" }}
+          className="text-fluid-hero font-bold mb-6 text-balance px-2 tracking-tight animate-fade-up stagger-1"
         >
           <span className="text-foreground">{t('hero.titlePrefix')}</span>
           <span className="text-primary relative">
@@ -58,10 +52,7 @@ export function HeroSection() {
         </h1>
 
         <p
-          className={`text-fluid-subhero text-muted-foreground mb-14 font-normal px-2 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: "200ms" }}
+          className="text-fluid-subhero text-muted-foreground mb-14 font-normal px-2 max-w-2xl mx-auto leading-relaxed animate-fade-up stagger-2"
         >
           {t('hero.subtitle')}
           <br className="hidden sm:block" />
@@ -72,11 +63,8 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 px-4 sm:px-0">
           {/* Bundles Card */}
           <Link
-            href="/bundles"
-            className={`group transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-            style={{ transitionDelay: "300ms" }}
+            href={localePath("/bundles")}
+            className="group animate-fade-up stagger-3"
           >
             <div className="relative bg-card p-7 sm:p-8 rounded-2xl border border-border hover:border-primary/40 card-lift shadow-navy hover:shadow-navy-lg h-full card-accent-left overflow-hidden cursor-pointer">
               {/* Subtle gradient overlay on hover */}
@@ -96,11 +84,8 @@ export function HeroSection() {
 
           {/* Areas Card */}
           <Link
-            href="/areas"
-            className={`group transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-            style={{ transitionDelay: "400ms" }}
+            href={localePath("/areas")}
+            className="group animate-fade-up stagger-4"
           >
             <div className="relative bg-card p-7 sm:p-8 rounded-2xl border border-border hover:border-accent/40 card-lift shadow-navy hover:shadow-coral h-full card-accent-left overflow-hidden cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -119,11 +104,8 @@ export function HeroSection() {
 
           {/* Visa Card */}
           <Link
-            href="/visa"
-            className={`group transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-            style={{ transitionDelay: "500ms" }}
+            href={localePath("/visa")}
+            className="group animate-fade-up stagger-5"
           >
             <div className="relative bg-card p-7 sm:p-8 rounded-2xl border border-border hover:border-accent/40 card-lift shadow-navy hover:shadow-coral h-full card-accent-left overflow-hidden cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -142,12 +124,9 @@ export function HeroSection() {
         </div>
 
         <div
-          className={`mt-12 transition-all duration-700 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: "600ms" }}
+          className="mt-12 animate-fade-up stagger-6"
         >
-          <Link href="/bundles">
+          <Link href={localePath("/bundles")}>
             <Button
               size="cta"
               className="group font-semibold btn-gradient-navy text-white border-0 shadow-navy-md hover:shadow-navy-xl transition-all duration-400"
@@ -160,10 +139,7 @@ export function HeroSection() {
 
         {/* Trust indicators */}
         <div
-          className={`mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground transition-all duration-700 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: "700ms" }}
+          className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground animate-fade-up stagger-7"
         >
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-accent" />

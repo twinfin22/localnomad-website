@@ -182,7 +182,12 @@
     "interestedStudying": "有興趣留學",
     "interestedStudyingDesc": "考慮教育選項",
     "longTermResidence": "長期居留",
-    "longTermResidenceDesc": "想在韓國生活"
+    "longTermResidenceDesc": "想在韓國生活",
+    "startMyJourney": "開始我的旅程",
+    "daysToPrepare": "{count} 天準備時間",
+    "trackProgress": "我們將幫助您追蹤進度",
+    "match": "{score}% 匹配",
+    "backToResults": "返回結果"
   },
   "eligibilityQuiz": {
     "workRemotelyForeign": "為外國公司遠距工作",
@@ -242,7 +247,35 @@
     "visaExpired": "簽證已過期",
     "visaExpiredDesc": "請聯繫移民局了解選項。",
     "getStartedTitle": "開始",
-    "getStartedDesc": "開始您的簽證之旅。"
+    "getStartedDesc": "開始您的簽證之旅。",
+    "startYourJourney": "開始您的簽證之旅",
+    "takeQuizDesc": "參加快速測驗找到適合您的簽證，然後追蹤您的進度直到獲得批准。",
+    "findMyVisa": "尋找我的簽證",
+    "browseAllVisas": "瀏覽所有簽證",
+    "myJourney": "我的旅程",
+    "currentStatus": "目前狀態",
+    "updateStatus": "更新狀態",
+    "documentChecklist": "文件清單",
+    "yourJourney": "您的旅程",
+    "whileYouWait": "等待期間",
+    "prepareForArrival": "抵達準備",
+    "prepareForArrivalDesc": "研究社區、住房選項，熟悉韓國生活。",
+    "bankingFinance": "銀行與金融",
+    "bankingFinanceDesc": "了解韓國銀行以及外國人如何開設帳戶。",
+    "viewVisaDetails": "查看簽證詳情",
+    "confirm": "確認",
+    "cancel": "取消",
+    "settings": "設定",
+    "manageSettings": "管理您的簽證旅程設定",
+    "targetVisaType": "目標簽證類型",
+    "targetDate": "目標日期",
+    "clearTargetDate": "清除目標日期",
+    "dangerZone": "危險區域",
+    "resetAllProgress": "重置所有進度",
+    "resetWarningTitle": "這將永久刪除您的所有進度",
+    "resetWarningDesc": "您的簽證選擇、清單進度和所有設定將會遺失。此操作無法復原。",
+    "deleteEverything": "刪除所有",
+    "dashboardDisclaimer": "此儀表板追蹤您自行申報的進度，未與HiKorea或任何政府系統連接。"
   },
   "nextStepHero": {
     "findYourVisa": "尋找您的簽證",
@@ -383,6 +416,11 @@
     "welcomeBack": "歡迎回來",
     "signInSubtitle": "登入以追蹤您的簽證進度"
   },
+  "error": {
+    "title": "發生錯誤",
+    "description": "發生了意外錯誤。請再試一次。",
+    "retryButton": "再試一次"
+  },
   "sections": {
     "whyTitle": "為什麼選擇 LocalNomad？",
     "whySubtitle": "我們已經為您完成了繁重的工作",
@@ -391,7 +429,7 @@
     "verifiedInfoDesc": "不再有過時的部落格文章或AI幻覺。所有指南都是由實際住在這裡的人親自研究並定期更新。",
     "localExperience": "在地經驗",
     "localExperienceDesc": "由親身經歷過韓國外國人生活的人打造。我們了解痛點，因為我們親身經歷過。",
-    "save40Hours": "節省40+小時",
+    "save40Hours": "節省大量時間",
     "save40HoursDesc": "跳過無止盡的研究迷宮。透過我們精選的實用指南直接獲得答案。",
     "ourServices": "我們的服務",
     "everythingYouNeed": "您需要的一切",

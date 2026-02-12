@@ -1,6 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SeoulNeighborhoodMap } from "@/components/SeoulNeighborhoodMap";
+import { LazySeoulNeighborhoodMap } from "@/components/lazy-map";
 import { MapPin, FileSearch, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getTranslations } from "next-intl/server";
@@ -70,7 +70,7 @@ export default async function AreasPage({ params }: AreasPageProps) {
       </section>
 
       {/* Interactive Map */}
-      <SeoulNeighborhoodMap />
+      <LazySeoulNeighborhoodMap />
 
       {/* Custom Report CTA */}
       <section className="py-20 px-4 sm:px-6 bg-secondary">

@@ -95,7 +95,7 @@ async function addToAirtable({ email, firstName, status }: SubscriberData) {
   );
 
   if (!response.ok) {
-    console.error("[Airtable] Failed to save subscriber record");
+    console.error("[Airtable] Failed to save subscriber record:", response.status, response.statusText);
     throw new Error("Failed to save to Airtable");
   }
 }
@@ -170,12 +170,12 @@ async function sendWelcomeEmail(email: string, firstName: string): Promise<boole
     });
 
     if (error) {
-      console.error("[Subscribe] Email send failed via Resend");
+      console.error("[Subscribe] Email send failed via Resend:", error.message);
       return false;
     }
     return true;
-  } catch {
-    console.error("[Subscribe] Email send error");
+  } catch (error: unknown) {
+    console.error("[Subscribe] Email send error:", error instanceof Error ? error.message : String(error));
     return false;
   }
 }
@@ -239,8 +239,8 @@ export async function POST(request: NextRequest) {
       { message: "Successfully subscribed" },
       { status: 200 }
     );
-  } catch {
-    console.error("[Subscribe] Subscription attempt failed");
+  } catch (error: unknown) {
+    console.error("[Subscribe] Subscription attempt failed:", error instanceof Error ? error.message : String(error));
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }

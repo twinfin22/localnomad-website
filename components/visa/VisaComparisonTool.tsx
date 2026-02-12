@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   CheckCircle,
   XCircle,
@@ -23,6 +24,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
 import { getAllVisas, getVisaInfo } from "@/lib/visa/data";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaType, VisaInfo } from "@/lib/visa/types";
 
 const categoryIcons = {
@@ -135,6 +137,10 @@ const comparisonRows: ComparisonRow[] = [
 ];
 
 export function VisaComparisonTool() {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
+
   const allVisas = getAllVisas("en");
   const [selectedTypes, setSelectedTypes] = useState<VisaType[]>([
     "d-10",
@@ -307,7 +313,7 @@ export function VisaComparisonTool() {
                   </td>
                   {selectedVisas.map((visa) => (
                     <td key={visa.type} className="p-4 text-center">
-                      <Link href={`/visa/${visa.type}`}>
+                      <Link href={localePath(`/visa/${visa.type}`)}>
                         <Button variant="outline" size="sm" className="w-full">
                           View Details
                           <ArrowRight className="w-3 h-3 ml-1" />
@@ -328,7 +334,7 @@ export function VisaComparisonTool() {
             Take our eligibility quiz to find visas with requirements matching
             your situation.
           </p>
-          <Link href="/visa/quiz">
+          <Link href={localePath("/visa/quiz")}>
             <Button>
               Take the Quiz
               <ArrowRight className="w-4 h-4 ml-2" />

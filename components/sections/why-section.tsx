@@ -20,7 +20,7 @@ const values = [
   },
   {
     icon: Clock,
-    title: "Save 40+ Hours",
+    title: "Save Significant Time",
     description:
       "Skip the endless research rabbit holes. Get straight to the answers with our curated, actionable guides.",
     accent: "primary",

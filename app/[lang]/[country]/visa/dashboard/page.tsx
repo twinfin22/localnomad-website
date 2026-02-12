@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DashboardClient } from "@/components/visa/dashboard";
@@ -49,7 +50,18 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   return (
     <main className="min-h-screen overflow-x-hidden">
       <Header />
-      <DashboardClient />
+      <Suspense fallback={
+        <div className="min-h-screen bg-background">
+          <div className="max-w-4xl mx-auto px-4 py-8">
+            <div className="animate-pulse space-y-6">
+              <div className="h-8 w-48 bg-surface rounded" />
+              <div className="h-32 bg-surface rounded-2xl" />
+            </div>
+          </div>
+        </div>
+      }>
+        <DashboardClient />
+      </Suspense>
       <Footer />
     </main>
   );

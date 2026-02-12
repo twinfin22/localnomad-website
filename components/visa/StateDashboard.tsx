@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   ArrowLeft,
   Settings,
@@ -64,6 +65,7 @@ import type { HealthScoreFactors } from "@/lib/visa/health-score";
 // =============================================================================
 
 function EmptyState({ localePath }: { localePath: (path: string) => string }) {
+  const t = useTranslations();
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <div className="text-center mb-8">
@@ -71,11 +73,10 @@ function EmptyState({ localePath }: { localePath: (path: string) => string }) {
           <Sparkles className="w-10 h-10 text-primary" />
         </div>
         <h1 className="text-3xl font-bold text-foreground mb-3">
-          Start Your Visa Journey
+          {t("dashboard.startYourJourney")}
         </h1>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Take our quick quiz to find the right visa for you, then track your
-          progress all the way to approval.
+          {t("dashboard.takeQuizDesc")}
         </p>
       </div>
 
@@ -83,7 +84,7 @@ function EmptyState({ localePath }: { localePath: (path: string) => string }) {
         <Link href={localePath("/visa")}>
           <Button className="bg-primary hover:bg-accent-hover text-background font-semibold px-8 py-6 text-lg">
             <FileText className="w-5 h-5 mr-2" />
-            Find My Visa
+            {t("dashboard.findMyVisa")}
           </Button>
         </Link>
         <Link href={localePath("/visa")}>
@@ -91,7 +92,7 @@ function EmptyState({ localePath }: { localePath: (path: string) => string }) {
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground px-8 py-6 text-lg"
           >
-            Browse All Visas
+            {t("dashboard.browseAllVisas")}
           </Button>
         </Link>
       </div>
@@ -256,6 +257,7 @@ function StateAdvancementButtons({
   progress,
   onTransition,
 }: StateAdvancementButtonsProps) {
+  const t = useTranslations();
   const actions = getTransitionActions(progress.state);
 
   if (actions.length === 0) return null;
@@ -263,7 +265,7 @@ function StateAdvancementButtons({
   return (
     <div className="vk-card p-6">
       <h3 className="text-lg font-semibold text-foreground mb-4">
-        Update Your Status
+        {t("dashboard.updateStatus")}
       </h3>
       <div className="grid gap-3 sm:grid-cols-2">
         {actions.map((action) => (
@@ -313,7 +315,7 @@ function StateAdvancementButtons({
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel className="border-border text-muted-foreground hover:bg-surface hover:text-foreground">
-                  Cancel
+                  {t("dashboard.cancel")}
                 </AlertDialogCancel>
                 <AlertDialogAction
                   onClick={() => onTransition(action.targetState)}
@@ -323,7 +325,7 @@ function StateAdvancementButtons({
                       : "bg-amber-500 hover:bg-amber-600 text-background"
                   )}
                 >
-                  Confirm
+                  {t("dashboard.confirm")}
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
@@ -339,12 +341,12 @@ function StateAdvancementButtons({
 // =============================================================================
 
 function DashboardDisclaimer() {
+  const t = useTranslations();
   return (
     <div className="flex items-start gap-3 p-4 rounded-xl bg-surface/50 border border-border">
       <Info className="w-4 h-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
       <p className="text-xs text-muted-foreground leading-relaxed">
-        This dashboard tracks your self-reported progress. It is not connected
-        to HiKorea or any government system.
+        {t("dashboard.dashboardDisclaimer")}
       </p>
     </div>
   );
@@ -384,12 +386,14 @@ function SettingsSheet({
     }
   };
 
+  const t = useTranslations();
+
   return (
     <div className="space-y-6 px-4 pb-4">
       {/* Change Visa Type */}
       <div>
         <h4 className="text-sm font-medium text-foreground mb-3">
-          Target Visa Type
+          {t("dashboard.targetVisaType")}
         </h4>
         <div className="flex flex-wrap gap-2">
           {allVisas.map((v) => (
@@ -412,7 +416,7 @@ function SettingsSheet({
       {/* Update Target Date */}
       <div>
         <h4 className="text-sm font-medium text-foreground mb-3">
-          Target Date
+          {t("dashboard.targetDate")}
         </h4>
         <input
           type="date"
@@ -425,7 +429,7 @@ function SettingsSheet({
             onClick={() => handleDateChange("")}
             className="text-xs text-muted-foreground hover:text-foreground mt-2"
           >
-            Clear target date
+            {t("dashboard.clearTargetDate")}
           </button>
         )}
       </div>
@@ -433,7 +437,7 @@ function SettingsSheet({
       {/* Reset All Progress */}
       <div className="pt-4 border-t border-border">
         <h4 className="text-sm font-medium text-foreground mb-3">
-          Danger Zone
+          {t("dashboard.dangerZone")}
         </h4>
         {!showResetConfirm ? (
           <Button
@@ -442,7 +446,7 @@ function SettingsSheet({
             onClick={() => setShowResetConfirm(true)}
           >
             <Trash2 className="w-4 h-4 mr-2" />
-            Reset All Progress
+            {t("dashboard.resetAllProgress")}
           </Button>
         ) : (
           <div className="space-y-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
@@ -450,11 +454,10 @@ function SettingsSheet({
               <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-red-400">
-                  This will permanently delete all your progress
+                  {t("dashboard.resetWarningTitle")}
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Your visa selection, checklist progress, and all settings will
-                  be lost. This cannot be undone.
+                  {t("dashboard.resetWarningDesc")}
                 </p>
               </div>
             </div>
@@ -465,14 +468,14 @@ function SettingsSheet({
                 className="flex-1 border-border text-muted-foreground hover:bg-surface"
                 onClick={() => setShowResetConfirm(false)}
               >
-                Cancel
+                {t("dashboard.cancel")}
               </Button>
               <Button
                 size="sm"
                 className="flex-1 bg-red-500 hover:bg-red-600 text-white"
                 onClick={onReset}
               >
-                Delete Everything
+                {t("dashboard.deleteEverything")}
               </Button>
             </div>
           </div>
@@ -505,6 +508,7 @@ function ActiveDashboard({
   onChangeTargetDate,
   localePath,
 }: ActiveDashboardProps) {
+  const t = useTranslations();
   const currentStateConfig = stateConfig[progress.state];
   const isPreparing = progress.state === "PREPARING";
   const isWaiting = ["SUBMITTED", "UNDER_REVIEW"].includes(progress.state);
@@ -561,7 +565,7 @@ function ActiveDashboard({
           </Link>
           <div>
             <h1 className="text-2xl font-bold text-foreground">
-              My Journey
+              {t("dashboard.myJourney")}
             </h1>
             <p className="text-sm text-muted-foreground">
               {visa?.shortName || progress.visaType.toUpperCase()} Visa
@@ -581,9 +585,9 @@ function ActiveDashboard({
             </SheetTrigger>
             <SheetContent side="right" className="bg-background border-border overflow-y-auto">
               <SheetHeader>
-                <SheetTitle className="text-foreground">Settings</SheetTitle>
+                <SheetTitle className="text-foreground">{t("dashboard.settings")}</SheetTitle>
                 <SheetDescription>
-                  Manage your visa journey settings
+                  {t("dashboard.manageSettings")}
                 </SheetDescription>
               </SheetHeader>
               <SettingsSheet
@@ -622,7 +626,7 @@ function ActiveDashboard({
       <div className="vk-card p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-            Current Status
+            {t("dashboard.currentStatus")}
           </h3>
           <span
             className={cn(
@@ -652,7 +656,7 @@ function ActiveDashboard({
       {!isPreparing && (
         <div className="vk-card p-6">
           <h3 className="text-lg font-semibold text-foreground mb-6">
-            Your Journey
+            {t("dashboard.yourJourney")}
           </h3>
           <StateTimeline currentState={progress.state} />
         </div>
@@ -662,19 +666,19 @@ function ActiveDashboard({
       {isWaiting && (
         <div className="vk-card p-6">
           <h3 className="text-lg font-semibold text-foreground mb-4">
-            While You Wait
+            {t("dashboard.whileYouWait")}
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-surface/50">
-              <h4 className="font-medium text-foreground mb-2">Prepare for Arrival</h4>
+              <h4 className="font-medium text-foreground mb-2">{t("dashboard.prepareForArrival")}</h4>
               <p className="text-sm text-muted-foreground">
-                Research neighborhoods, housing options, and get familiar with Korean life.
+                {t("dashboard.prepareForArrivalDesc")}
               </p>
             </div>
             <div className="p-4 rounded-xl bg-surface/50">
-              <h4 className="font-medium text-foreground mb-2">Banking & Finance</h4>
+              <h4 className="font-medium text-foreground mb-2">{t("dashboard.bankingFinance")}</h4>
               <p className="text-sm text-muted-foreground">
-                Learn about Korean banks and how to set up accounts as a foreigner.
+                {t("dashboard.bankingFinanceDesc")}
               </p>
             </div>
           </div>
@@ -691,7 +695,7 @@ function ActiveDashboard({
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
           >
-            View Visa Details
+            {t("dashboard.viewVisaDetails")}
           </Button>
         </Link>
         <Link href={localePath("/visa/compare")}>
@@ -699,7 +703,7 @@ function ActiveDashboard({
             variant="outline"
             className="border-border text-muted-foreground hover:bg-surface hover:text-foreground"
           >
-            Compare Visas
+            {t("visa.compareVisas")}
           </Button>
         </Link>
       </div>
@@ -718,10 +722,7 @@ export function StateDashboard() {
     buildLocalePath(path, locale, country ?? undefined);
   const [progress, setProgress] = useState<VisaProgress | null>(null);
   const [visa, setVisa] = useState<VisaInfo | null>(null);
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
     const stored = getStoredProgress();
     if (stored) {
       setProgress(stored);
@@ -771,23 +772,6 @@ export function StateDashboard() {
     saveProgress(updated);
     setProgress(updated);
   };
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen visa-dark bg-background">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <div className="animate-pulse space-y-6">
-            <div className="h-8 w-48 bg-surface rounded" />
-            <div className="h-32 bg-surface rounded-2xl" />
-            <div className="grid lg:grid-cols-3 gap-6">
-              <div className="h-40 bg-surface rounded-2xl" />
-              <div className="h-40 bg-surface rounded-2xl lg:col-span-2" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <main className="min-h-screen visa-dark bg-background">

@@ -5,21 +5,21 @@ import { AnimatedSection } from "@/components/animated-section";
 
 const testimonials = [
   {
-    name: "Sarah M.",
+    name: "E-7 visa holder, 2024",
     role: "UX Designer, Remote",
     content:
       "The neighborhood guide saved me weeks of research. I found my perfect spot in Yeonnam-dong within days of arriving.",
     rating: 5,
   },
   {
-    name: "James K.",
+    name: "D-2 student, Seoul",
     role: "Software Engineer",
     content:
       "The visa dashboard was a lifesaver. Step-by-step checklists made the D-10 application process so much less stressful.",
     rating: 5,
   },
   {
-    name: "Maria L.",
+    name: "Digital nomad, Yeonnam-dong",
     role: "Content Creator",
     content:
       "Finally, accurate information about Korea! No more conflicting blog posts from 2019. Everything was up-to-date and actionable.",

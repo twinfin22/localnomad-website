@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   CheckCircle,
   Circle,
@@ -11,6 +13,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import { getVisaInfo } from "@/lib/visa/data";
 import type { VisaType } from "@/lib/visa/types";
 
@@ -27,9 +30,13 @@ interface ChecklistState {
 const STORAGE_KEY_PREFIX = "visa-checklist-";
 
 export function DocumentProgress({ visaType, className, compact = false }: DocumentProgressProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
+
   const [checklist, setChecklist] = useState<ChecklistState>({});
   const [expanded, setExpanded] = useState(!compact);
-  const [mounted, setMounted] = useState(false);
+  const hasHydrated = useRef(false);
 
   const visa = getVisaInfo(visaType);
   const documents = visa?.documents || [];
@@ -38,7 +45,6 @@ export function DocumentProgress({ visaType, className, compact = false }: Docum
 
   // Load from localStorage
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem(`${STORAGE_KEY_PREFIX}${visaType}`);
     if (stored) {
       try {
@@ -47,14 +53,14 @@ export function DocumentProgress({ visaType, className, compact = false }: Docum
         // Ignore parse errors
       }
     }
+    hasHydrated.current = true;
   }, [visaType]);
 
   // Save to localStorage
   useEffect(() => {
-    if (mounted) {
-      localStorage.setItem(`${STORAGE_KEY_PREFIX}${visaType}`, JSON.stringify(checklist));
-    }
-  }, [checklist, visaType, mounted]);
+    if (!hasHydrated.current) return;
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}${visaType}`, JSON.stringify(checklist));
+  }, [checklist, visaType]);
 
   const toggleDocument = (docId: string) => {
     setChecklist((prev) => ({
@@ -66,17 +72,6 @@ export function DocumentProgress({ visaType, className, compact = false }: Docum
   const completedCount = Object.values(checklist).filter(Boolean).length;
   const totalRequired = requiredDocs.length;
   const progress = totalRequired > 0 ? (completedCount / totalRequired) * 100 : 0;
-
-  if (!mounted) {
-    return (
-      <div className={cn("vk-card p-6", className)}>
-        <div className="animate-pulse">
-          <div className="h-4 w-32 bg-surface rounded mb-4" />
-          <div className="h-2 bg-surface rounded" />
-        </div>
-      </div>
-    );
-  }
 
   if (!visa) return null;
 
@@ -246,13 +241,13 @@ export function DocumentProgress({ visaType, className, compact = false }: Docum
           </div>
 
           {/* View Full Details Link */}
-          <a
-            href={`/visa/${visaType}`}
+          <Link
+            href={localePath(`/visa/${visaType}`)}
             className="flex items-center justify-center gap-2 text-sm text-primary hover:text-accent-hover transition-colors"
           >
             <span>View full visa requirements</span>
             <ExternalLink className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       )}
     </div>

@@ -11,6 +11,10 @@ import {
   type Country,
 } from "@/lib/i18n/config";
 
+// TODO: Next.js 16 deprecates middleware.ts in favor of proxy.ts
+// See: https://nextjs.org/docs/messages/middleware-to-proxy
+// Migration should be done when the proxy API stabilizes
+
 // =============================================================================
 // Route Configuration
 // =============================================================================

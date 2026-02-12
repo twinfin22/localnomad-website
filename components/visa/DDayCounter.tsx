@@ -13,10 +13,8 @@ interface DDayCounterProps {
 
 export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCounterProps) {
   const [days, setDays] = useState<number | null>(null);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     if (targetDate) {
       setDays(getDaysUntil(targetDate));
     }
@@ -32,17 +30,6 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
 
     return () => clearInterval(interval);
   }, [targetDate]);
-
-  if (!mounted) {
-    return (
-      <div className={cn("bg-surface border border-border rounded-xl p-6", className)}>
-        <div className="animate-pulse">
-          <div className="h-4 w-20 bg-elevated rounded mb-4" />
-          <div className="h-12 w-32 bg-elevated rounded" />
-        </div>
-      </div>
-    );
-  }
 
   const urgency = getUrgency(days);
 

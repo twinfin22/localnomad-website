@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { VisaInfo } from "@/lib/visa/types";
 import {
   Calendar,
@@ -9,6 +10,7 @@ import {
   ExternalLink,
   ArrowRight,
 } from "lucide-react";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 
 interface StepAfterApprovalProps {
   visa: VisaInfo;
@@ -21,6 +23,9 @@ export function StepAfterApproval({
   dashboardHref,
   checklistHref,
 }: StepAfterApprovalProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
   // Warnings relevant to visa holders (job change, address, tax, extension)
   const holderWarnings =
     visa.warnings?.filter(
@@ -129,7 +134,7 @@ export function StepAfterApproval({
             {visa.relatedVisas.map((v, i) => (
               <span key={v}>
                 <Link
-                  href={`/visa/${v}`}
+                  href={localePath(`/visa/${v}`)}
                   className="text-primary hover:text-accent-hover"
                 >
                   {v.toUpperCase()}

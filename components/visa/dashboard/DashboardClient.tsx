@@ -438,8 +438,8 @@ export function DashboardClient() {
           );
         }
       }
-    } catch (error) {
-      console.error('Error fetching dashboard data');
+    } catch (error: unknown) {
+      console.error('Error fetching dashboard data:', error instanceof Error ? error.message : String(error));
     } finally {
       setLoading(false);
     }

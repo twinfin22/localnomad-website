@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Briefcase,
   GraduationCap,
@@ -29,6 +30,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
+import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaInfo } from "@/lib/visa/types";
 
 interface VisaDetailContentProps {
@@ -64,6 +66,10 @@ const categoryColors = {
 type TabId = "overview" | "documents" | "process" | "faqs";
 
 export function VisaDetailContent({ visa }: VisaDetailContentProps) {
+  const pathname = usePathname();
+  const { locale, country } = parseLocalePath(pathname);
+  const localePath = (path: string) => buildLocalePath(path, locale, country ?? undefined);
+
   const [activeTab, setActiveTab] = useState<TabId>("overview");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
@@ -79,6 +85,22 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
 
   return (
     <>
+      {/* Legal Disclaimer Banner */}
+      <div className="bg-amber-500/10 border-b border-amber-500/20">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 py-3">
+          <div className="flex items-start gap-2">
+            <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+            <p className="text-xs text-muted-foreground">
+              This information is for general guidance only and does not constitute legal advice.
+              Requirements may change. Always verify with the{" "}
+              <a href="https://www.immigration.go.kr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                Korea Immigration Service
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="pt-28 pb-12 px-4 sm:px-6 relative overflow-hidden bg-secondary">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
@@ -87,7 +109,7 @@ export function VisaDetailContent({ visa }: VisaDetailContentProps) {
           <AnimatedSection>
             {/* Breadcrumb */}
             <Link
-              href="/visa"
+              href={localePath("/visa")}
               className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />

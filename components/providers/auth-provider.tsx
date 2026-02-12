@@ -29,16 +29,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const [mounted, setMounted] = useState(false);
 
   // Only create Supabase client on client side
   const supabase = useMemo<SupabaseClient<Database> | null>(() => {
     if (typeof window === 'undefined') return null;
     return createClient();
-  }, []);
-
-  useEffect(() => {
-    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -93,6 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       // Migrate progress data
+      // Database types may not include visa_progress table yet — safe to cast
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await (supabase.from('visa_progress') as any).insert({
         user_id: userId,
@@ -126,14 +122,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           }));
 
         if (items.length > 0) {
+          // Database types may not include checklist_items table yet — safe to cast
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           await (supabase.from('checklist_items') as any).insert(items);
         }
       }
 
       clearLocalStorage();
-    } catch (error) {
-      console.error('Error migrating localStorage data');
+    } catch (error: unknown) {
+      console.error('Error migrating localStorage data:', error instanceof Error ? error.message : String(error));
     }
   };
 
