@@ -99,12 +99,12 @@ export default async function VisaTypePage({ params }: VisaDetailPageProps) {
           />
         )}
         <main className="min-h-screen overflow-x-hidden">
-          <Header />
+          <Header locale={locale} country={country} />
           <VisaStubPage
             visa={visa}
             backHref={buildHref("/visa")}
           />
-          <Footer />
+          <Footer locale={locale} country={country} />
         </main>
       </>
     );
@@ -119,7 +119,7 @@ export default async function VisaTypePage({ params }: VisaDetailPageProps) {
         />
       )}
       <main className="min-h-screen overflow-x-hidden">
-        <Header />
+        <Header locale={locale} country={country} />
         <VisaJourneyPage
           visa={visa}
           backHref={buildHref("/visa")}
@@ -127,7 +127,7 @@ export default async function VisaTypePage({ params }: VisaDetailPageProps) {
           checklistHref={buildHref(`/visa/checklist/${type}`)}
           pathSimulatorHref={buildHref("/visa/path")}
         />
-        <Footer />
+        <Footer locale={locale} country={country} />
       </main>
     </>
   );

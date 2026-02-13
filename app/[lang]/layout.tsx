@@ -6,7 +6,6 @@ import { getMessages } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import { ThemePreviewProvider } from "@/components/theme-preview";
 import { AuthProvider } from "@/components/providers/auth-provider";
 import { locales, type Locale } from "@/lib/i18n/config";
@@ -55,7 +54,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} className="dark">
       <body className={`${fontVariables} font-sans antialiased`}>
         <a
           href="#main-content"
@@ -64,22 +63,15 @@ export default async function LocaleLayout({
           Skip to content
         </a>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            forcedTheme="dark"
-            disableTransitionOnChange
-          >
-            <ThemePreviewProvider>
-              <AuthProvider>
-                <Suspense fallback={null}>
-                  <div id="main-content">
-                    {children}
-                  </div>
-                </Suspense>
-              </AuthProvider>
-            </ThemePreviewProvider>
-          </ThemeProvider>
+          <ThemePreviewProvider>
+            <AuthProvider>
+              <Suspense fallback={null}>
+                <div id="main-content">
+                  {children}
+                </div>
+              </Suspense>
+            </AuthProvider>
+          </ThemePreviewProvider>
         </NextIntlClientProvider>
         <SpeedInsights />
         <Analytics />

@@ -2,8 +2,6 @@ import type React from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getLocale } from "next-intl/server";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -22,17 +20,10 @@ export default async function GlobalLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className="dark">
       <body className={`${geist.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            forcedTheme="dark"
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

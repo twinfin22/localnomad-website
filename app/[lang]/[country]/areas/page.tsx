@@ -53,7 +53,7 @@ export default async function AreasPage({ params }: AreasPageProps) {
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Header />
+      <Header locale={lang as Locale} country={country as Country} />
 
       <section className="pt-32 pb-12 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
@@ -114,7 +114,7 @@ export default async function AreasPage({ params }: AreasPageProps) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={lang as Locale} country={country as Country} />
     </main>
   );
 }

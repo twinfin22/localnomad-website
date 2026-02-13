@@ -41,10 +41,12 @@ export async function generateMetadata({ params }: DashboardPageProps) {
 
 export default async function DashboardPage({ params }: DashboardPageProps) {
   const { lang, country } = await params;
+  const locale = lang as Locale;
+  const countryTyped = country as Country;
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Header />
+      <Header locale={locale} country={countryTyped} />
       <Suspense fallback={
         <div className="min-h-screen bg-background">
           <div className="max-w-4xl mx-auto px-4 py-8">
@@ -57,7 +59,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       }>
         <DashboardClient />
       </Suspense>
-      <Footer />
+      <Footer locale={locale} country={countryTyped} />
     </main>
   );
 }

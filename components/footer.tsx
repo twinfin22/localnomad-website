@@ -1,23 +1,25 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Newspaper, Instagram } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
-import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
+import {
+  buildLocalePath,
+  type Locale,
+  type Country,
+} from "@/lib/i18n/config";
 
-export function Footer() {
-  const t = useTranslations();
-  const pathname = usePathname();
-  const { locale, country } = parseLocalePath(pathname);
+interface FooterProps {
+  locale: Locale;
+  country?: Country;
+}
+
+export async function Footer({ locale, country }: FooterProps) {
+  const t = await getTranslations();
 
   const localePath = (path: string) =>
-    buildLocalePath(path, locale, country ?? undefined);
+    buildLocalePath(path, locale, country);
 
   const footerLinks = [
-    { href: localePath("/bundles"), label: t("nav.bundles") },
-    { href: localePath("/areas"), label: t("nav.areaGuide") },
     { href: localePath("/visa"), label: t("nav.visa") },
   ];
 

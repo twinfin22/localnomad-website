@@ -52,7 +52,7 @@ export default async function VisaComparePage({ params }: ComparePageProps) {
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Header />
+      <Header locale={locale} country={country} />
 
       {/* Hero Section */}
       <section className="pt-28 pb-12 px-4 sm:px-6 relative overflow-hidden bg-secondary">
@@ -92,7 +92,7 @@ export default async function VisaComparePage({ params }: ComparePageProps) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={locale} country={country} />
     </main>
   );
 }

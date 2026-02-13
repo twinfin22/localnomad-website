@@ -119,30 +119,16 @@ export function ThemePreviewProvider({ children }: { children: React.ReactNode }
   );
 }
 
-// Invisible component that applies theme CSS variables
+// Invisible component that applies theme CSS variables (always dark)
 export function ThemeApplier() {
   const { theme: currentTheme } = useThemePreview();
-  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains("dark"));
-
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains("dark"));
-    });
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const theme = themes[currentTheme];
-    const vars = isDark ? theme.dark : theme.light;
-
+    const vars = themes[currentTheme].dark;
     Object.entries(vars).forEach(([key, value]) => {
       document.documentElement.style.setProperty(key, value);
     });
-  }, [currentTheme, isDark]);
+  }, [currentTheme]);
 
   return null;
 }

@@ -54,7 +54,7 @@ export default async function VisaChecklistIndexPage({
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Header />
+      <Header locale={locale} country={country} />
 
       {/* Hero Section */}
       <section className="pt-28 pb-8 px-4 sm:px-6 relative overflow-hidden bg-secondary">
@@ -93,7 +93,7 @@ export default async function VisaChecklistIndexPage({
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={locale} country={country} />
     </main>
   );
 }

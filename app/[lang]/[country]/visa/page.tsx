@@ -273,7 +273,7 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(landingJsonLd) }}
       />
       <main className="min-h-screen overflow-x-hidden bg-background">
-        <Header />
+        <Header locale={locale} country={country} />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6">
@@ -390,7 +390,7 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={locale} country={country} />
     </main>
     </>
   );

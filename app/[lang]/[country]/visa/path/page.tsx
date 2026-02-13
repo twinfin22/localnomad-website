@@ -72,7 +72,7 @@ export default async function VisaPathPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
+      <Header locale={locale} country={country} />
 
       {/* Hero Section */}
       <section className="pt-28 pb-12 px-4 sm:px-6 relative overflow-hidden bg-secondary">
@@ -127,7 +127,7 @@ export default async function VisaPathPage({
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={locale} country={country} />
     </main>
   );
 }

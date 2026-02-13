@@ -91,7 +91,7 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
-      <Header />
+      <Header locale={lang as Locale} country={country as Country} />
 
       <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-3xl">
@@ -158,7 +158,7 @@ export default async function BundlesPage({ params }: BundlesPageProps) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={lang as Locale} country={country as Country} />
     </main>
   );
 }

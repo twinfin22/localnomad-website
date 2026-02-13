@@ -65,9 +65,9 @@ export default async function VisaChecklistTypePage({
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Header />
+      <Header locale={locale} country={country} />
       <ChecklistPage visa={visa} />
-      <Footer />
+      <Footer locale={locale} country={country} />
     </main>
   );
 }

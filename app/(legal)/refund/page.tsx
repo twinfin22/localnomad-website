@@ -1,10 +1,13 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { getLocale } from "next-intl/server";
+import type { Locale } from "@/lib/i18n/config";
 
-export default function RefundPage() {
+export default async function RefundPage() {
+  const locale = await getLocale() as Locale;
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Header />
+      <Header locale={locale} />
       <article className="py-24 px-6 bg-background">
         <div className="container mx-auto max-w-3xl">
           <h1 className="text-fluid-section font-bold mb-4">Refund Policy</h1>
@@ -127,7 +130,7 @@ export default function RefundPage() {
           </div>
         </div>
       </article>
-      <Footer />
+      <Footer locale={locale} />
     </main>
   );
 }

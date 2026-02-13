@@ -51,7 +51,7 @@ export default async function FindVisaPage({ params }: FindVisaPageProps) {
   if (country === "taiwan") {
     return (
       <main className="min-h-screen overflow-x-hidden bg-background">
-        <Header />
+        <Header locale={locale} country={country} />
 
         <section className="pt-28 pb-16 px-4 sm:px-6">
           <div className="container mx-auto max-w-4xl">
@@ -81,14 +81,14 @@ export default async function FindVisaPage({ params }: FindVisaPageProps) {
           </div>
         </section>
 
-        <Footer />
+        <Footer locale={locale} country={country} />
       </main>
     );
   }
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
-      <Header />
+      <Header locale={locale} country={country} />
 
       <section className="pt-24 pb-16 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl">
@@ -96,7 +96,7 @@ export default async function FindVisaPage({ params }: FindVisaPageProps) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={locale} country={country} />
     </main>
   );
 }
