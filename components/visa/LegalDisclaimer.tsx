@@ -3,23 +3,32 @@
 import { cn } from '@/lib/utils';
 import { AlertTriangle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useCountryOptional } from '@/components/providers/country-provider';
 
-type Country = 'kr' | 'tw';
+type DisclaimerCountry = 'kr' | 'tw';
+
+function useResolvedCountry(propCountry?: DisclaimerCountry): DisclaimerCountry {
+  const contextCountry = useCountryOptional();
+  if (propCountry) return propCountry;
+  if (contextCountry === 'taiwan') return 'tw';
+  return 'kr';
+}
 
 interface LegalDisclaimerProps {
   variant?: 'inline' | 'box' | 'banner';
-  country?: Country;
+  country?: DisclaimerCountry;
   className?: string;
   showIcon?: boolean;
 }
 
 export function LegalDisclaimer({
   variant = 'box',
-  country = 'kr',
+  country: propCountry,
   className,
   showIcon = true,
 }: LegalDisclaimerProps) {
   const t = useTranslations();
+  const country = useResolvedCountry(propCountry);
 
   if (variant === 'inline') {
     if (country === 'tw') {
@@ -193,12 +202,13 @@ export function LegalDisclaimer({
 
 // Quiz-specific disclaimer
 interface QuizDisclaimerProps {
-  country?: Country;
+  country?: DisclaimerCountry;
   className?: string;
 }
 
-export function QuizDisclaimer({ country = 'kr', className }: QuizDisclaimerProps) {
+export function QuizDisclaimer({ country: propCountry, className }: QuizDisclaimerProps) {
   const t = useTranslations();
+  const country = useResolvedCountry(propCountry);
 
   if (country === 'tw') {
     return (

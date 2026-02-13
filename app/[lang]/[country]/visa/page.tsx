@@ -386,7 +386,7 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
       {/* Legal Disclaimer */}
       <section className="py-12 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-3xl">
-          <LegalDisclaimer variant="box" />
+          <LegalDisclaimer variant="box" country={isTaiwan ? 'tw' : 'kr'} />
         </div>
       </section>
 
