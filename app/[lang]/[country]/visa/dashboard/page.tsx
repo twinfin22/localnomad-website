@@ -3,9 +3,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DashboardClient } from "@/components/visa/dashboard";
 import {
-  locales,
   countries,
-  isLocaleAvailableForCountry,
+  countryLocales,
   countryNames,
   type Locale,
   type Country,
@@ -20,13 +19,9 @@ export async function generateStaticParams() {
   const params: { lang: string; country: string }[] = [];
 
   for (const country of countries) {
-    for (const lang of locales) {
-      if (isLocaleAvailableForCountry(lang, country)) {
-        // Currently only Korea has visa data
-        if (country === "korea") {
-          params.push({ lang, country });
-        }
-      }
+    const availableLocales = countryLocales[country];
+    for (const lang of availableLocales) {
+      params.push({ lang, country });
     }
   }
 

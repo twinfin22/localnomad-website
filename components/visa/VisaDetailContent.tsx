@@ -37,7 +37,7 @@ interface VisaDetailContentProps {
   visa: VisaInfo;
 }
 
-const categoryIcons = {
+const categoryIcons: Record<string, typeof Briefcase> = {
   work: Briefcase,
   study: GraduationCap,
   residence: Home,
@@ -50,7 +50,7 @@ const categoryIcons = {
   "language-study": BookOpen,
 };
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
   work: "bg-primary/10 text-primary",
   study: "bg-blue-500/10 text-blue-500",
   residence: "bg-green-500/10 text-green-500",

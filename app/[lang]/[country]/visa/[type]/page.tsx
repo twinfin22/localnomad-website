@@ -1,13 +1,12 @@
 import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { getVisaInfo, getVisaTypes } from "@/lib/visa/data";
+import { getVisaTypes, getVisaInfoAsync } from "@/lib/visa/data";
 import type { VisaType } from "@/lib/visa/types";
 import { VisaJourneyPage, VisaStubPage } from "@/components/visa/journey";
 import {
-  locales,
   countries,
-  isLocaleAvailableForCountry,
+  countryLocales,
   buildLocalePath,
   type Locale,
   type Country,
@@ -19,18 +18,14 @@ interface VisaDetailPageProps {
 
 // Generate static params for all visa types across all locale/country combos
 export async function generateStaticParams() {
-  const types = getVisaTypes();
   const params: { lang: string; country: string; type: string }[] = [];
 
   for (const country of countries) {
-    for (const lang of locales) {
-      if (isLocaleAvailableForCountry(lang, country)) {
-        // Currently only Korea has visa data
-        if (country === "korea") {
-          for (const type of types) {
-            params.push({ lang, country, type });
-          }
-        }
+    const availableLocales = countryLocales[country];
+    for (const lang of availableLocales) {
+      const types = getVisaTypes(country);
+      for (const type of types) {
+        params.push({ lang, country, type });
       }
     }
   }
@@ -40,8 +35,10 @@ export async function generateStaticParams() {
 
 // Generate metadata
 export async function generateMetadata({ params }: VisaDetailPageProps) {
-  const { lang, type } = await params;
-  const visa = getVisaInfo(type as VisaType, lang as Locale);
+  const { lang, country: countryParam, type } = await params;
+  const locale = lang as Locale;
+  const country = countryParam as Country;
+  const visa = await getVisaInfoAsync(type as VisaType, locale, country);
 
   if (!visa) {
     return {
@@ -63,7 +60,9 @@ export default async function VisaTypePage({ params }: VisaDetailPageProps) {
   const { lang, country: countryParam, type } = await params;
   const locale = lang as Locale;
   const country = countryParam as Country;
-  const visa = getVisaInfo(type as VisaType, locale);
+
+  // Use async loader (works for both Korea and Taiwan)
+  const visa = await getVisaInfoAsync(type as VisaType, locale, country);
 
   if (!visa) {
     notFound();

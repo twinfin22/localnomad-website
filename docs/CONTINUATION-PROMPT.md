@@ -1,77 +1,62 @@
-# LocalNomad Continuation Prompt v2 — UX Polish + Remaining Fixes
+# LocalNomad — Cycle 6-7 Prompt (Agent Team v2)
 
-2 cycles: UX/Performance fixes + Remaining audit items
-Expected time: 3-5 hours
+2 cycles using CTO/CPO/UXR/Legal agent team.
+Expected time: 4-6 hours.
 
 ---
 
 ## How to Run
 
-cat docs/CONTINUATION-PROMPT.md | claude --dangerously-skip-permissions -p -
-
-Or, if you want to monitor and answer questions interactively:
+```bash
 cat docs/CONTINUATION-PROMPT.md | claude -p -
+```
 
 IMPORTANT: Use pipe, not $(cat ...), to avoid shell backtick corruption.
 
-Below is the full prompt.
-
 ---
 
-You are the lead engineer for LocalNomad, a Next.js 16 visa guidance platform deployed at localnomad.club. 5 cycles of development have been completed (Cycles 1-3 original, Cycles 4-5 perf/i18n). Current scores: User 74/100, Technical 80/100, Legal YELLOW.
+You are the ORCHESTRATOR for LocalNomad, a Next.js 16 visa guidance platform at localnomad.club.
 
-Your job: run 2 final cycles to fix UX bugs found during dog-fooding and close remaining audit issues.
+5 cycles completed. Current scores: User 74/100, Technical 80/100, Legal YELLOW.
+Your job: run 2 cycles using the agent team defined in docs/AGENT-TEAM.md.
 
 ## EXECUTION MODE: SUPERVISED
 
-The user may or may not be present. You should:
-
 ASK the user when:
-- A decision has significant trade-offs (e.g., aggressive vs conservative refactoring)
-- Multiple valid approaches exist and the choice affects UX or architecture
+- A decision has significant trade-offs
+- Multiple valid approaches exist affecting UX or architecture
 - Something seems risky or could break existing functionality
-- You discover an unexpected issue that changes scope
 
-DO NOT ask the user for:
-- Trivial decisions (variable naming, formatting, import order)
-- File permission prompts — --dangerously-skip-permissions handles those
-- Build error fixes — just fix them yourself
+DO NOT ask for:
+- Trivial decisions, file permissions, build error fixes
 - Whether to proceed to the next cycle — always proceed
 
-If the user does not respond within a reasonable time, make the safer/simpler choice and document it in the commit message.
-
-ALWAYS complete ALL cycles. Do not stop early unless the user explicitly asks you to.
+If no response, choose the safer option and document in the commit message.
+ALWAYS complete ALL cycles.
 
 ## HOW TO USE AGENTS
 
-You are the ORCHESTRATOR. You dispatch work via the Task tool.
-
-When the prompt says "IN PARALLEL", send ONE message with MULTIPLE Task tool calls:
-
-Task(description="fix-ux", subagent_type="general-purpose", prompt="...")
-Task(description="fix-links", subagent_type="general-purpose", prompt="...")
-
-ALL agents use subagent_type="general-purpose".
-
-After all agents return, run the GATE (build + lint), fix errors yourself, then commit.
+You are the ORCHESTRATOR. Dispatch work via the Task tool.
+"IN PARALLEL" = ONE message with MULTIPLE Task calls.
+ALL agents use `subagent_type="general-purpose"`.
+Max 3-4 agents per parallel batch (prevents SIGKILL).
 
 ## BEFORE YOU START
 
-Read these files to understand context:
-- CLAUDE.md (conventions, tech stack, naming rules)
-- docs/FINAL-AUDIT-REPORT.md (17 remaining issues, score history)
-
-Tech: Next.js 16 (App Router), React 19, TypeScript 5, Tailwind CSS 4, shadcn/ui, Supabase, next-intl, Mapbox GL.
+Read these files:
+- `CLAUDE.md` — conventions, legal bright lines, agent team summary
+- `docs/AGENT-TEAM.md` — role definitions and prompt templates
+- `docs/FINAL-AUDIT-REPORT.md` — 17 remaining issues, score history
+- `docs/research-*.md` — market research (if any exist)
 
 ALREADY DONE (do NOT redo):
-- hero-section.tsx: mounted/setMounted pattern already removed, uses CSS-only animate-fade-up
-- mapbox-gl CSS: already moved out of root layout into SeoulNeighborhoodMap.tsx
-- lazy-map.tsx: already exists with dynamic() import
-- Geist_Mono: already removed from layout
-- Font display: "swap" already set
-- Suspense: already imported in layout
-- 15 loading.tsx + 15 error.tsx: already created
-- Legal disclaimers: footer, quiz consent gate, path simulator, dashboard all done
+- hero-section.tsx: mounted/setMounted removed, CSS-only animate-fade-up
+- mapbox-gl CSS: moved to SeoulNeighborhoodMap.tsx
+- lazy-map.tsx: exists with dynamic() import
+- Geist_Mono: removed from layout
+- Font display: "swap" set
+- 15 loading.tsx + 15 error.tsx: created
+- Legal disclaimers: footer, quiz consent gate, path simulator, dashboard
 - Visa Path Simulator: fully built (30+ paths, 3-step wizard, URL state, 3 languages)
 
 IMPORTANT: next.config.mjs is clean. Do NOT add ignoreBuildErrors.
@@ -79,364 +64,428 @@ IMPORTANT: next.config.mjs is clean. Do NOT add ignoreBuildErrors.
 ---
 
 # ============================================================
-# CYCLE 6: UX BUGS + VISUAL POLISH
-# Goal: Fix bugs found during real user testing (dog-fooding)
-# Expected time: ~2 hours
+# CYCLE 6: AUDIT → IMPLEMENT → GATE → UXR VERIFY
+# Goal: Fix UX bugs from dog-fooding + close critical audit issues
 # ============================================================
 
-## CYCLE 6 -- IMPLEMENT
+## CYCLE 6 — PHASE 1: AUDIT
 
-Spawn these 4 agents IN PARALLEL (single message, 4 Task calls):
+Spawn 3 agents IN PARALLEL:
 
-### Agent 1: "ux-bugs"
-Prompt for this agent:
+### Agent 1: "cto-audit"
 
-You are fixing UX bugs found during dog-fooding of a Next.js 16 visa guidance app. Read CLAUDE.md first.
+```
+You are the CTO of LocalNomad. Read CLAUDE.md for conventions.
 
-BUG 1 — "Back to Visa Guide" link overlaps with logo on visa detail pages:
+Audit the current codebase:
+1. Run npm run build — 0 errors?
+2. Run npm run lint — warnings?
+3. Grep for "as any" (exclude node_modules) — count
+4. Grep for console.log (exclude node_modules) — PII risk?
+5. Check next.config.mjs — no ignoreBuildErrors?
+6. Count "use client" directives — any unnecessary?
+7. Check Supabase client/server — null-safe? env guards?
+8. Check auth callback — open redirect fixed? locale-aware?
+9. Grep for bare links: href="/visa, href="/bundles, href="/areas without locale prefix — count all
+10. Check i18n coverage: grep useTranslations vs hardcoded English in components/visa/dashboard/
+11. Check package.json — name still "my-v0-project"?
+12. Check if Puppeteer is in devDependencies (needed for UXR)
+
+Score 0-100. Write to docs/cycle6-audit-tech.md.
+```
+
+### Agent 2: "cpo-audit"
+
+```
+You are the CPO of LocalNomad, a visa guidance platform for foreign professionals in South Korea. Read CLAUDE.md.
+
+Evaluate the product:
+
+1. USER JOURNEYS — walk through by reading code:
+   a) Linh — Vietnamese, E-7 holder, 4mo to expiry, wants employer change
+   b) James — American, E-2 teacher, wants to switch to E-7
+   For each: Can they find what they need? Any dead ends?
+
+2. DOG-FOODING BUGS (found in real browser testing):
+   - "Back to Visa Guide" overlaps logo on detail pages (VisaJourneyPage.tsx)
+   - Footer text nearly invisible (low contrast)
+   - Mobile: situation cards single-column, excessive scrolling
+   - "Already have a visa?" button intent unclear
+   - Quick Check salary threshold shows no actual number
+
+3. FEATURE GAPS:
+   - Is Settings button on dashboard functional?
+   - Are testimonials using real or fabricated names?
+   - Is "Save 40+ Hours" claim substantiated?
+   - Are error.tsx files translated?
+   - How much of dashboard is still hardcoded English?
+
+4. INFORMATION ARCHITECTURE:
+   - Is navigation intuitive?
+   - Can users find Path Simulator easily?
+   - Is the CTA hierarchy logical?
+
+Score: Product Readiness 0-100. Write to docs/cycle6-audit-product.md.
+```
+
+### Agent 3: "legal-audit"
+
+```
+You are a legal compliance reviewer for LocalNomad. Read CLAUDE.md for legal bright lines.
+
+Korean law: 행정사법 (Admin Scrivener Act), 변호사법 (Attorney Act), 표시광고법 (Fair Labeling Act).
+
+AUDIT:
+1. Grep entire codebase (exclude node_modules) for:
+   "you qualify", "you are eligible", "eligible for", "recommended visa", "Best Match",
+   "official requirements", "guaranteed", "100%", "we will file", "we handle", "500+"
+   Report ALL instances with file:line.
+
+2. Check critical files:
+   - components/visa/EligibilityQuiz.tsx — consent gate?
+   - components/visa/VisaComparisonTool.tsx — "explore options" not "recommendations"?
+   - components/visa/path/visa-path-simulator.tsx — disclaimer at top?
+   - components/visa/OnboardingWizard.tsx — disclaimer after match scores?
+
+3. Check disclaimers present:
+   - Footer, Dashboard, Path Simulator, Quiz, Checklist export, Terms page
+
+4. Marketing claims:
+   - components/sections/social-proof-section.tsx — fabricated names? ("Sarah M.", "James K.")
+   - components/sections/why-section.tsx — "Save 40+ Hours" without data?
+
+Score: GREEN / YELLOW / RED. Write to docs/cycle6-audit-legal.md.
+```
+
+---
+
+## CYCLE 6 — PHASE 2: SYNTHESIS
+
+Read all 3 audit reports yourself:
+- docs/cycle6-audit-tech.md
+- docs/cycle6-audit-product.md
+- docs/cycle6-audit-legal.md
+
+Prioritize: Legal RED > UX Blocking > Product Gaps > Tech Debt > Polish.
+Write docs/cycle6-synthesis.md with a numbered list of issues to fix.
+
+---
+
+## CYCLE 6 — PHASE 3: IMPLEMENT
+
+Based on synthesis, spawn 3 agents IN PARALLEL:
+
+### Agent 1: "ux-fixes"
+
+```
+You are fixing UX bugs found during dog-fooding. Read CLAUDE.md first.
+
+BUG 1 — "Back to Visa Guide" overlaps logo:
 - Read components/visa/journey/VisaJourneyPage.tsx
-- Find the "Back to Visa Guide" link near the top
-- It renders on the same line as the header/logo, causing visual overlap
-- Fix: Add sufficient top margin or padding so the back link sits BELOW the fixed header. Use pt-20 or mt-16 on the page container, or add a spacer div.
-- Also check: the link text position should be clearly separated from the LocalNomad logo in the header
+- Add pt-20 or mt-16 to page container so back link sits below fixed header
 
-BUG 2 — Footer text has extremely low contrast (nearly invisible):
+BUG 2 — Footer text invisible:
 - Read components/footer.tsx
-- The tagline "Where Nomads Become Local, and Locals Become Nomads" and nav links are barely visible against the dark background
-- Fix: Change text color from text-muted-foreground (or whatever dim color) to text-foreground/60 or text-foreground/70 for better readability
-- The footer links (Bundles, Area Guide, Visa) also need higher contrast
-- Copyright line and Terms/Privacy links should be at least text-foreground/50
+- Change dim text colors to text-foreground/60 or text-foreground/70
+- Copyright and links at least text-foreground/50
 
-BUG 3 — Mobile: situation cards use single-column layout, causing excessive scrolling:
-- Read app/[lang]/[country]/visa/page.tsx — find the situation card grid
-- Currently: grid-cols-1 on mobile, grid-cols-2 on sm+
-- Fix: Change to grid-cols-2 on mobile too. Cards should show emoji + short text, which fits in 2-column even on 320px screens.
-- Reduce card padding on mobile: p-4 instead of p-6 or p-8
-- This reduces scroll from 6 full-width cards to 3 rows of 2
+BUG 3 — Mobile situation cards single-column:
+- Read app/[lang]/[country]/visa/page.tsx
+- Change grid to grid-cols-2 on mobile too. Reduce card padding to p-4.
 
-BUG 4 — "Already have a visa?" button intent is unclear:
+BUG 4 — "Already have a visa?" unclear:
 - Read components/visa/landing/AlreadyHaveVisa.tsx
-- The label "Already have a visa? | Manage your visa" is ambiguous — does it mean track progress? transition to new visa? read about current visa?
-- Fix: Change the label to "Already have a visa? See your options" or "Already in Korea? Find your next step"
-- When expanded, show two clear CTAs:
-  a) "Track my visa progress" -> links to /dashboard
-  b) "Explore visa transitions" -> links to /visa/path
+- Change to "Already in Korea? Find your next step"
+- Show two CTAs: "Track my visa progress" → dashboard, "Explore visa transitions" → /visa/path
 
-BUG 5 — Quick Check "Salary meeting minimum threshold" has no actual number:
+BUG 5 — Salary threshold missing numbers:
 - Read components/visa/journey/steps/StepQualify.tsx
-- The eligibility check asks "Salary meeting minimum threshold?" but the user has no idea what the threshold IS
-- Fix: For E-7 specifically, change to "Annual salary of 30M+ KRW (or GNI equivalent)"
-- The salary data should come from the visa JSON. Read data/visas/en/e-7.json to find the actual threshold mentioned in eligibility criteria.
-- If the visa JSON has salary info, use it. If not, add a generic note: "Meets the salary requirement for your occupation category"
-- Do the same for other visa types where applicable
+- Read data/visas/en/e-7.json for actual threshold
+- Show "Annual salary of 30M+ KRW (or GNI equivalent)" for E-7
 
-After all changes, run: npm run build
+After all changes: npm run build
+```
 
-### Agent 2: "locale-links-fix"
-Prompt for this agent:
+### Agent 2: "locale-and-i18n"
 
-You are fixing locale-awareness issues across the codebase. Read CLAUDE.md first.
+```
+You are fixing locale links and i18n gaps. Read CLAUDE.md first.
 
-The app uses [lang]/[country] route structure. ALL internal links must include the locale prefix. The locale comes from next-intl useLocale() (client) or route params (server).
+PART A — LOCALE LINKS:
+Grep for: href="/visa, href="/bundles, href="/areas, href="/auth (without locale prefix).
+Fix ALL bare links in:
+- components/visa/VisaComparisonTool.tsx
+- components/visa/DocumentProgress.tsx
+- components/visa/journey/steps/StepAfterApproval.tsx
+- components/visa/dashboard/NextActionCard.tsx (6+ bare links)
+- Any others found by grep
 
-IMPORTANT: Read the CURRENT code first. Some of these may have been fixed in previous cycles. Only fix what is still broken.
+Pattern (client): useLocale() → href={`/${locale}/korea/visa/...`}
+Pattern (server): params.lang → href={`/${lang}/${country}/visa/...`}
 
-Check and fix ALL bare links in these files:
+PART B — DASHBOARD i18n:
+Check CURRENT state first. Only extract strings still hardcoded.
+- components/visa/StateDashboard.tsx
+- components/visa/dashboard/DashboardClient.tsx
+- components/visa/VisaComparisonTool.tsx
+- components/visa/dashboard/NextActionCard.tsx
 
-1. components/visa/VisaComparisonTool.tsx — Any href like "/visa/..." needs locale prefix
-2. components/visa/DocumentProgress.tsx — Same
-3. components/visa/journey/steps/StepAfterApproval.tsx — Same
-4. components/visa/dashboard/NextActionCard.tsx — Fix ALL bare links (quiz, checklist, dashboard, etc.)
-5. Grep the entire codebase for: href="/visa, href="/bundles, href="/areas, href="/auth (without locale prefix). Fix any remaining.
+Add keys to messages/en.json, messages/ja.json, messages/zh-tw.json.
+Replace with useTranslations(). Japanese: polite form. Chinese: Taiwan-standard.
 
-Pattern for client components:
-import { useLocale } from "next-intl"
-const locale = useLocale()
-Then: href={/${locale}/korea/visa/quiz}
+After all changes: npm run build
+```
 
-Pattern for server components that have params:
-const { lang, country } = params
-Then: href={/${lang}/${country}/visa/quiz}
+### Agent 3: "legal-fixes"
 
-After all changes, run: npm run build
+```
+You are doing legal cleanup. Read CLAUDE.md for bright lines.
 
-### Agent 3: "dashboard-i18n"
-Prompt for this agent:
+1. TESTIMONIALS: Read components/sections/social-proof-section.tsx.
+   Replace "Sarah M.", "James K.", "Maria L." with anonymous:
+   "E-7 visa holder, Seoul" / "D-2 student, Busan"
+   Add note: "Testimonials reflect real user experiences. Names omitted for privacy."
 
-You are extracting hardcoded English strings from dashboard components into the i18n system. Read CLAUDE.md first. Read messages/en.json for existing key patterns.
+2. "SAVE 40+ HOURS": Read components/sections/why-section.tsx.
+   Replace with "Save significant time" — no unsubstantiated numbers.
 
-IMPORTANT: Check the CURRENT state of each file. Some strings may already be translated from Cycle 3-5 work. Only extract strings that are STILL hardcoded.
+3. OnboardingWizard DISCLAIMER: Read components/visa/OnboardingWizard.tsx.
+   After match scores, add: "These matches compare your answers against published requirements. They do not determine eligibility."
 
-Components to check and i18n:
-1. components/visa/StateDashboard.tsx
-2. components/visa/dashboard/DashboardClient.tsx
-3. components/visa/VisaComparisonTool.tsx
-4. components/visa/dashboard/NextActionCard.tsx
-5. components/visa/OnboardingWizard.tsx
+4. SETTINGS BUTTON: Read components/visa/dashboard/DashboardClient.tsx.
+   Wire Settings button to open a sheet/dialog. Check if StateDashboard.tsx has one to reuse.
 
-For each file:
-- Read it first
-- Identify all remaining hardcoded English strings
-- Add translation keys to messages/en.json, messages/ja.json, messages/zh-tw.json
-- Replace strings with useTranslations() calls
-- Use existing namespace patterns (check what namespaces already exist in en.json)
+5. ERROR PAGE i18n: Check error.tsx files for hardcoded English.
+   Add error.title and error.retry keys to all 3 message files.
 
-Japanese: polite form. Traditional Chinese: Taiwan-standard.
+6. PACKAGE.JSON: Change name from "my-v0-project" to "localnomad-website" if not already done.
 
-Also: Add disclaimer to OnboardingWizard after match scores:
-"These matches compare your answers against published visa requirements. They do not determine eligibility. Consult Korean immigration authorities for official guidance."
-
-After all changes, run: npm run build
-
-### Agent 4: "legal-cleanup"
-Prompt for this agent:
-
-You are doing final legal cleanup. Read CLAUDE.md first.
-
-1. TESTIMONIALS: Read components/social-proof-section.tsx (root level) AND components/sections/social-proof-section.tsx (sections folder). Check BOTH files for fabricated names like "Sarah M.", "James K.", "Maria L.". Replace with anonymous attribution:
-   - "E-7 visa holder, Seoul" instead of "Sarah M."
-   - "D-2 student, Busan" instead of "James K."
-   - Add note at bottom: "Testimonials reflect real user experiences. Names omitted for privacy."
-
-2. "SAVE 40+ HOURS": Read components/sections/why-section.tsx. Find the "Save 40+ Hours" claim. Replace with "Save significant time" or "Cut your research time" — no specific numbers without data.
-
-3. VISA DETAIL DISCLAIMER: Read components/visa/VisaDetailContent.tsx. If this file exists and is used, add a disclaimer banner at the top.
-
-4. SETTINGS BUTTON: Read components/visa/dashboard/DashboardClient.tsx. Find the Settings button/icon. If it has no onClick handler, wire it to open a settings sheet/dialog. Check if StateDashboard.tsx already has a Settings Sheet that can be reused.
-
-5. ERROR PAGE i18n: Check a few error.tsx files. If they have hardcoded "Something went wrong" / "Try again", add useTranslations with simple keys. Add error.title and error.retry keys to all 3 message files (en/ja/zh-tw).
-
-After all changes, run: npm run build
+After all changes: npm run build
+```
 
 ---
 
-### CYCLE 6 -- GATE
+## CYCLE 6 — PHASE 4: GATE
 
-After all 4 agents return, run (Bash):
+After all 3 agents return:
+```bash
 npm run build && npm run lint
+```
 Fix errors yourself. Commit:
-git add -A && git commit -m "fix: UX bugs (logo overlap, footer contrast, mobile grid, salary threshold), locale links, dashboard i18n, legal cleanup"
+```bash
+git add -A && git commit -m "fix: UX bugs, locale links, dashboard i18n, legal cleanup (cycle 6)"
+```
 
 ---
 
-## CYCLE 6 -- AUDIT
+## CYCLE 6 — PHASE 5: UXR VERIFY
 
-Spawn 2 audit agents IN PARALLEL:
+Spawn 1 agent:
 
-### Audit Agent 1: "ux-auditor"
-Prompt:
+### Agent: "uxr-puppeteer"
 
-Dog-food the codebase as Linh (Vietnamese, 29, E-7 holder). Read the CURRENT code for each page in order:
+```
+You are the UXR agent for LocalNomad. Test the site using Puppeteer.
 
-1. app/[lang]/[country]/visa/page.tsx — Is the situation grid 2-column on mobile? Are cards compact?
-2. components/visa/landing/AlreadyHaveVisa.tsx — Is the label clear? Does it show dashboard + path simulator links?
-3. components/visa/journey/VisaJourneyPage.tsx — Does "Back to Visa Guide" still overlap with the header?
-4. components/visa/journey/steps/StepQualify.tsx — Does the salary check show actual numbers?
-5. components/footer.tsx — Is the text visible? Good contrast?
-6. Check 5 random components for bare /visa/ links without locale prefix
-7. Check DashboardClient.tsx — Is the Settings button functional?
-8. Check error.tsx files — Are they translated?
-9. Check social-proof-section.tsx — Are testimonials anonymous?
+SETUP:
+1. npm install puppeteer --save-dev (if not installed)
+2. npm run dev & (background, wait for localhost:3000)
 
-For each: PASS/FAIL with evidence. Score /100. Write to docs/cycle6-audit-ux.md.
+WRITE AND RUN a Puppeteer script:
 
-### Audit Agent 2: "completeness-check"
-Prompt:
+DESKTOP (1280x800):
+- Navigate: localhost:3000 → /en/korea → /en/korea/visa → /en/korea/visa/e-7 → /en/korea/visa/path → /en/korea/visa/compare
+- Screenshot each → docs/screenshots/desktop-{page}.png
+- Check: "Back to Visa Guide" no longer overlaps header
+- Check: footer text is visible (not invisible contrast)
 
-Check ALL 17 remaining issues from FINAL-AUDIT-REPORT.md against the CURRENT code.
+MOBILE (390x844):
+- Set viewport 390x844
+- Navigate same journey
+- Screenshot → docs/screenshots/mobile-{page}.png
+- Check: situation grid is 2-column
+- Check: no horizontal overflow (scrollWidth > clientWidth)
 
-For each of the 17 issues, read the relevant file and report:
-- FIXED (with file path evidence)
-- NOT FIXED (what remains)
-- PARTIAL (what is done vs missing)
+AUTOMATED:
+- Collect all <a href> on each page, flag 404s
+- Check for console errors
+- Measure page load times
 
-Also check these new issues found during dog-fooding:
-18. "Back to Visa Guide" overlaps logo — components/visa/journey/VisaJourneyPage.tsx
-19. Footer text nearly invisible — components/footer.tsx
-20. Mobile grid single-column — app/[lang]/[country]/visa/page.tsx
-21. "Already have a visa?" unclear — components/visa/landing/AlreadyHaveVisa.tsx
-22. Salary threshold missing numbers — components/visa/journey/steps/StepQualify.tsx
+READ the screenshots and analyze visually.
+Write findings to docs/cycle6-audit-ux.md.
+Kill dev server when done.
+```
 
-Write to docs/cycle6-audit-completeness.md.
-
----
-
-### CYCLE 6 -- SYNTHESIS
-
-Read both reports yourself. Write cycle6-synthesis.md: UX score, completeness %, top priorities for Cycle 7.
+If UXR finds critical bugs: fix them yourself (mini patch), rebuild, recommit.
 
 ---
 
 # ============================================================
-# CYCLE 7: FINAL POLISH + TYPE SAFETY
-# Goal: Close every remaining issue, clean code, final quality
-# Expected time: ~1.5 hours
+# CYCLE 7: FINAL POLISH + QUALITY GATE
+# Goal: Close every remaining issue. Reach 88+ user, 92+ tech, GREEN legal.
 # ============================================================
 
-## CYCLE 7 -- IMPLEMENT
+## CYCLE 7 — PHASE 1: AUDIT
 
-Read docs/cycle6-synthesis.md and docs/cycle6-audit-completeness.md. Then spawn these 3 agents IN PARALLEL:
+Spawn 3 agents IN PARALLEL:
 
-### Agent 1: "cycle6-fixes"
-Prompt for this agent:
+### Agent 1: "cto-final"
 
-Read docs/cycle6-audit-ux.md and docs/cycle6-audit-completeness.md. Fix every issue marked as FAIL or NOT FIXED.
+```
+Final CTO audit. Be thorough.
 
-For each specific finding, make the fix. Prioritize:
-1. Any remaining bare locale links
-2. Any remaining hardcoded English strings in visible UI
-3. Any visual bugs (overlap, contrast, spacing)
+1. npm run build — 0 errors?
+2. Grep "as any" — target 0-2
+3. Grep bare /visa/ links without locale — target 0
+4. Dashboard hardcoded English — target 0
+5. package.json name = "localnomad-website"?
+6. error.tsx files translated?
+7. Is mobile grid 2-column?
+8. Footer contrast adequate?
+9. Settings button functional?
+10. Count all 22 issues (17 original + 5 dog-fooding) — how many fixed?
 
-After all fixes, run: npm run build
+Score 0-100. Write to docs/cycle7-audit-tech.md.
+```
 
-### Agent 2: "type-safety-polish"
-Prompt for this agent:
+### Agent 2: "cpo-final"
 
-Final code quality pass. Read CLAUDE.md first.
+```
+Final CPO audit. Walk through Linh's full journey:
 
-1. AS-ANY CASTS: Grep for "as any" (exclude node_modules). Replace with proper types or add eslint-disable comment with explanation.
+1. Landing → Korea hub → Visa landing → "What's your situation?" grid
+   - Is it 2-column on mobile? Cards compact?
+2. Select E-7 → detail page
+   - Back link below header? Salary numbers visible?
+3. Path Simulator → select E-7 → see options
+   - Disclaimer visible?
+4. Dashboard → state advancement → settings
+   - All translated? Settings works?
+5. Footer
+   - Text readable? Disclaimer present?
+6. "Already have a visa?" section
+   - Label clear? Links work?
 
-2. KEY={INDEX}: Grep for key={index} or key={i}. For static arrays, acceptable. For dynamic/filtered arrays, add unique keys.
+Score 0-100. Write to docs/cycle7-audit-product.md.
+```
 
-3. CONSOLE.ERROR: Grep for console.error. Ensure error objects are serialized: console.error("msg", error instanceof Error ? error.message : String(error))
+### Agent 3: "legal-final"
 
-4. QUIZ NATIONALITIES: Read data/quiz/questions.json. Add Thailand, Brazil, Russia if missing.
+```
+Final legal sweep.
 
-5. PACKAGE.JSON: Read package.json. If name is "my-v0-project", change to "localnomad-website".
+1. Grep for: "you qualify", "you are eligible", "eligible for", "recommended visa",
+   "Best Match", "official requirements", "guaranteed", "500+", "Save 40+"
+   Target: 0 instances.
 
-After all changes, run: npm run build
+2. Check all disclaimers still present (footer, quiz, path simulator, dashboard, checklist, terms)
+3. Testimonials anonymous?
+4. OnboardingWizard has disclaimer after scores?
+5. B2B/pricing descriptions safe?
 
-### Agent 3: "accessibility-polish"
-Prompt for this agent:
-
-You are doing an accessibility pass on the LocalNomad website. Read CLAUDE.md first.
-
-1. FOOTER CONTRAST: Re-verify components/footer.tsx has adequate text contrast. All text should be at least text-foreground/60. Links should have visible hover states.
-
-2. BUTTON TOUCH TARGETS: Read components/visa/journey/steps/StepQualify.tsx. The Yes/No buttons should have minimum 44px touch targets on mobile. If padding is less than py-2 px-4, increase it.
-
-3. ARIA LABELS: Check the main interactive components for missing aria-labels:
-   - header.tsx: mobile menu button needs aria-label="Open menu"
-   - language-switcher.tsx: needs aria-label="Select language"
-   - visa-path-simulator.tsx: step indicators need aria-current="step"
-
-4. FOCUS INDICATORS: Check globals.css for :focus-visible styles. If missing, add:
-   :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-
-5. SKIP NAVIGATION: Add a skip-to-content link as the first element in the layout:
-   <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded">Skip to content</a>
-   And add id="main-content" to the main content wrapper.
-
-After all changes, run: npm run build
+Score: GREEN / YELLOW / RED. Write to docs/cycle7-audit-legal.md.
+```
 
 ---
 
-### CYCLE 7 -- GATE
+## CYCLE 7 — PHASE 2: SYNTHESIS
 
-After all 3 agents return, run (Bash):
+Read all 3 reports + docs/cycle6-audit-ux.md (UXR from Cycle 6).
+Write docs/cycle7-synthesis.md.
+
+---
+
+## CYCLE 7 — PHASE 3: IMPLEMENT
+
+Spawn 2-3 agents based on synthesis. Fix everything remaining.
+
+### Agent 1: "remaining-fixes"
+```
+Read docs/cycle7-synthesis.md. Fix every issue marked as NOT FIXED or FAIL.
+Prioritize: legal > UX > i18n > code quality.
+After all fixes: npm run build
+```
+
+### Agent 2: "accessibility"
+```
+Accessibility pass. Read CLAUDE.md.
+
+1. Footer contrast: all text at least text-foreground/60
+2. Button touch targets: minimum 44px (py-2 px-4 minimum)
+3. Aria labels: header menu, language switcher, path simulator steps
+4. Focus indicators: :focus-visible in globals.css
+5. Skip navigation: add skip-to-content link in layout
+
+After all changes: npm run build
+```
+
+---
+
+## CYCLE 7 — PHASE 4: GATE
+
+```bash
 npm run build && npm run lint
-Fix errors yourself. Commit:
-git add -A && git commit -m "fix: remaining audit issues, type safety, accessibility, final polish"
+```
+Fix errors. Commit:
+```bash
+git add -A && git commit -m "fix: final polish, accessibility, remaining issues (cycle 7)"
+```
 
 ---
 
-## CYCLE 7 -- FINAL AUDIT
+## CYCLE 7 — PHASE 5: UXR VERIFY + FINAL REPORT
 
-Spawn 2 audit agents IN PARALLEL:
+Spawn 1 agent for final UXR:
 
-### Final Audit 1: "final-user"
-Prompt:
+### Agent: "uxr-final"
+```
+Final Puppeteer QA. Same setup as Cycle 6 UXR.
+Test all pages desktop + mobile. Check all 5 dog-fooding bugs are fixed.
+Write to docs/cycle7-audit-ux.md.
+Kill dev server when done.
+```
 
-You are Linh. Vietnamese, 29, E-7-1 holder, 4 months to expiry. This is the ABSOLUTE FINAL quality gate. Be ruthless.
+Then write docs/CYCLE6-7-FINAL-REPORT.md yourself:
 
-Walk through every page in the codebase:
-1. Landing page (app/[lang]/page.tsx) — clear, inviting?
-2. Country hub — obvious next step?
-3. Visa landing — situation grid intuitive? Mobile layout good? "Already have visa" clear?
-4. E-7 detail page — no logo overlap? Salary numbers visible? Accordion smooth?
-5. Path simulator — works? Disclaimer visible?
-6. Dashboard — settings functional? i18n complete? Disclaimer present?
-7. Compare — works smoothly?
-8. Footer — text visible? Disclaimer present?
-9. Error pages — translated?
-10. Check 5 random links for locale awareness
-
-Score /100 (5 x 20). Target: 88+.
-Write to docs/FINAL-UX-AUDIT.md.
-
-### Final Audit 2: "final-tech"
-Prompt:
-
-Final technical audit. Check everything.
-
-1. npm run build — passes with 0 errors?
-2. Count "use client" directives
-3. Grep for "as any" — target 0-2
-4. Grep for bare /visa/ links without locale prefix — target 0
-5. Grep for hardcoded English in dashboard components — target: all translated
-6. Check all 22 issues (17 original + 5 dog-fooding) — count fixed
-7. Is package.json name "localnomad-website"?
-8. Do error.tsx files have i18n?
-9. Are testimonials anonymous?
-10. Is "Save 40+ Hours" claim removed?
-11. Is footer text contrast adequate?
-12. Is mobile grid 2-column?
-
-Score 0-100. Target: 92+.
-Write to docs/FINAL-TECH-AUDIT.md.
-
----
-
-### FINAL SYNTHESIS
-
-Read both final audit reports. Write docs/FINAL-CONTINUATION-REPORT.md:
-
-# LocalNomad Final Continuation Report
+```markdown
+# LocalNomad Cycle 6-7 Report (Agent Team v2)
 
 ## Score History
-| Metric | Baseline | After Cycle 3 | After Cycle 5 | After Cycle 7 | Target |
-|--------|----------|---------------|---------------|---------------|--------|
-| User | 32/100 | 74/100 | [if known] | [cycle7] | 88+ |
-| Technical | 38/100 | 80/100 | [if known] | [cycle7] | 92+ |
-| Legal | RED | YELLOW | [if known] | [cycle7] | GREEN |
+| Metric | Baseline | Cycle 3 | Cycle 5 | Cycle 7 | Target |
+|--------|----------|---------|---------|---------|--------|
+| User | 32/100 | 74/100 | ~74 | [score] | 88+ |
+| Technical | 38/100 | 80/100 | ~80 | [score] | 92+ |
+| Legal | RED | YELLOW | YELLOW | [score] | GREEN |
 
-## What Shipped
-[Complete list]
+## What Shipped (Cycle 6-7)
+[list]
 
 ## Remaining Issues
-[Honest list — if any]
+[honest list, if any]
 
-## Recommended Next Steps
-[Top items for future]
-
-## Dog-Fooding Bugs Fixed
-[List of 5 bugs found during live testing]
-
-Output a final summary confirming all cycles complete.
+## Dog-Fooding Bugs Status
+1. Logo overlap — [FIXED/NOT]
+2. Footer contrast — [FIXED/NOT]
+3. Mobile grid — [FIXED/NOT]
+4. "Already have visa" unclear — [FIXED/NOT]
+5. Salary threshold — [FIXED/NOT]
+```
 
 ---
 
 ## GLOBAL RULES
 
 ### Files You Must Not Modify
-- components/ui/* (shadcn/ui managed)
-- node_modules/*
-- .env.local (secrets)
-
-### Conventions
-- Files: kebab-case.tsx
-- Components: PascalCase
-- cn() from @/lib/utils for conditional classes
-- @/ path alias for imports
-- Server components by default
-- Barrel exports (index.ts) for feature folders
+- `components/ui/*` — shadcn/ui managed
+- `node_modules/*`
+- `.env.local`
 
 ### Legal Bright Lines
-CAN: Display requirements, matching quizzes, date calculators, sell info products
-MUST NEVER: Say "you are eligible", file for users, store HiKorea creds, broker for fee
+- ✅ CAN: Display requirements, matching quizzes, calculators, checklists
+- ❌ NEVER: "you are eligible", file for users, store HiKorea creds, broker for fee
 
 ### Error Recovery
-- Agent fails? Retry ONCE. Fails again? Log it, move on.
-- Build fails at GATE? Fix it yourself. No re-spawning.
-- File conflicts? Prefer later-numbered agent, reconcile manually.
+- Agent fails → retry ONCE. Fails again → log it, move on.
+- Build fails at GATE → fix yourself. No re-spawning.
+- File conflicts → prefer later-numbered agent, reconcile manually.
 - NEVER stop. Complete ALL cycles.

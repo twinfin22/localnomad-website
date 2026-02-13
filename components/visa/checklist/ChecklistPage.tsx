@@ -31,7 +31,7 @@ interface ChecklistPageProps {
   visa: VisaInfo;
 }
 
-const categoryIcons = {
+const categoryIcons: Record<string, typeof Briefcase> = {
   work: Briefcase,
   study: GraduationCap,
   residence: Home,

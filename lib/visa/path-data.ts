@@ -1178,7 +1178,7 @@ export function getDestinationsFromPaths(
  * Get display info for a visa type
  */
 export const VISA_DISPLAY_INFO: Record<
-  VisaType | 'none',
+  string,
   { name: string; shortDescription: string; category: string }
 > = {
   none: {

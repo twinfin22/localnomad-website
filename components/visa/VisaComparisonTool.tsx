@@ -27,7 +27,7 @@ import { getAllVisas, getVisaInfo } from "@/lib/visa/data";
 import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaType, VisaInfo } from "@/lib/visa/types";
 
-const categoryIcons = {
+const categoryIcons: Record<string, typeof Briefcase> = {
   work: Briefcase,
   study: GraduationCap,
   residence: Home,
@@ -40,7 +40,7 @@ const categoryIcons = {
   "language-study": BookOpen,
 };
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
   work: "bg-primary/10 text-primary border-primary/20",
   study: "bg-blue-500/10 text-blue-500 border-blue-500/20",
   residence: "bg-green-500/10 text-green-500 border-green-500/20",

@@ -1,0 +1,228 @@
+{
+  "type": "visitor",
+  "country": "tw",
+  "name": "Visitor Visa / Visa-Exempt Entry",
+  "shortName": "Visitor",
+  "category": "visitor",
+  "description": "Taiwan offers visa-exempt entry and visitor visas for short-term stays covering tourism, business visits, and other non-employment activities. The published duration varies from 14 to 90 days depending on nationality and entry type.",
+  "tagline": "Short-term entry for tourism, business visits, and transit",
+  "keyRequirement": "Valid passport from a visa-exempt country (30-90 days) or visitor visa from TECO",
+  "isStub": false,
+
+  "targetAudience": [
+    "Tourists visiting Taiwan",
+    "Business visitors attending meetings, conferences, or trade fairs",
+    "Individuals exploring Taiwan before committing to a longer stay",
+    "Transit passengers"
+  ],
+
+  "eligibility": [
+    {
+      "id": "valid-passport",
+      "label": "Valid passport with at least 6 months remaining validity",
+      "description": "Published requirements specify that the passport must be valid for at least 6 months from the date of entry.",
+      "required": true
+    },
+    {
+      "id": "visa-exempt-or-visa",
+      "label": "Visa-exempt nationality or visitor visa from TECO",
+      "description": "Nationals of visa-exempt countries may enter without a visa for the published duration (30-90 days depending on nationality). Others must obtain a visitor visa from a TECO office before travel.",
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "label": "Return or onward ticket",
+      "description": "A confirmed return or onward ticket may be required at the point of entry. Published requirements vary by nationality.",
+      "required": false
+    },
+    {
+      "id": "sufficient-funds",
+      "label": "Proof of sufficient funds",
+      "description": "Immigration officers may request proof of financial means to support the intended stay. There is no single published minimum, but community members report that having the equivalent of TWD 20,000-30,000 is generally sufficient.",
+      "required": false
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "passport-check",
+      "question": "Is your passport valid for at least 6 months from your planned entry date?",
+      "helpText": "Published requirements specify at least 6 months of passport validity.",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "Published entry requirements include a passport valid for at least 6 months."
+    },
+    {
+      "id": "visa-exempt-check",
+      "question": "Is your nationality on the published list of visa-exempt countries for Taiwan?",
+      "helpText": "Check the Bureau of Consular Affairs (BOCA) website for the current visa-exempt country list.",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "Nationals not on the visa-exempt list must obtain a visitor visa from a TECO office before travel."
+    }
+  ],
+
+  "duration": {
+    "initial": "30-90 days depending on nationality (visa-exempt) or as specified on visitor visa",
+    "extension": "Extensions may be possible at NIA for up to 180 days total in some cases",
+    "maxTotal": "Varies by nationality and visa type. Published maximum for visa-exempt stays is typically 90 days."
+  },
+
+  "fees": {
+    "application": "Visa-exempt: free. Visitor visa: varies by nationality and TECO office (typically USD 50-160)",
+    "notes": "Visa-exempt entry has no fee. Visitor visa fees are published by each TECO office."
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Valid for at least 6 months from date of entry, with at least one blank page for entry stamps",
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "name": "Return or Onward Ticket",
+      "description": "Confirmed booking showing departure from Taiwan within the allowed stay period",
+      "tips": [
+        "Immigration officers may check for this at the port of entry",
+        "A flexible booking is acceptable"
+      ],
+      "required": false
+    },
+    {
+      "id": "accommodation-proof",
+      "name": "Proof of Accommodation",
+      "description": "Hotel reservation or letter of invitation from a host in Taiwan",
+      "required": false
+    },
+    {
+      "id": "financial-proof",
+      "name": "Proof of Sufficient Funds",
+      "description": "Bank statement, credit card, or cash equivalent to support the intended stay",
+      "required": false
+    },
+    {
+      "id": "visa-application",
+      "name": "Visitor Visa Application (if not visa-exempt)",
+      "description": "Completed visa application form submitted to a TECO office",
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "check-exemption",
+      "step": 1,
+      "title": "Check Visa-Exempt Status",
+      "description": "Verify whether your nationality is on the published visa-exempt list for Taiwan. The list is maintained by the Bureau of Consular Affairs (BOCA).",
+      "links": [
+        { "label": "BOCA Visa-Exempt Country List", "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html" }
+      ]
+    },
+    {
+      "id": "apply-visa",
+      "step": 2,
+      "title": "Apply for Visitor Visa (if required)",
+      "description": "If not visa-exempt, apply at the TECO office with jurisdiction over your location. Submit the application form, passport, photo, and any required supporting documents.",
+      "duration": "3-7 business days",
+      "links": [
+        { "label": "Find Your TECO Office", "url": "https://www.boca.gov.tw" }
+      ]
+    },
+    {
+      "id": "enter-taiwan",
+      "step": 3,
+      "title": "Enter Taiwan",
+      "description": "Present your passport (and visa if applicable) at immigration. The immigration officer determines the length of stay granted upon entry.",
+      "tips": [
+        "Have your return ticket and accommodation proof readily available",
+        "Entry decisions are at the discretion of the immigration officer at the port of entry"
+      ]
+    },
+    {
+      "id": "register-if-needed",
+      "step": 4,
+      "title": "Register if Staying Over 90 Days",
+      "description": "If granted a stay exceeding 90 days (e.g., through a visitor visa extension), registration with NIA may be required.",
+      "links": [
+        { "label": "National Immigration Agency", "url": "https://www.immigration.gov.tw" }
+      ]
+    }
+  ],
+
+  "processingTime": {
+    "typical": "Visa-exempt: immediate upon arrival. Visitor visa: 3-7 business days at TECO.",
+    "notes": "Visa-exempt entry requires no advance processing. Visitor visa processing times vary by TECO office."
+  },
+
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "No work of any kind is permitted on a visitor visa or visa-exempt entry",
+      "Remote work for a foreign employer is a gray area — the Digital Nomad Visa is designed for that purpose",
+      "Business activities are limited to meetings, conferences, and non-employment activities"
+    ],
+    "notes": "Working in Taiwan without a valid work permit is prohibited under published regulations. Violations may result in fines, deportation, and entry bans."
+  },
+
+  "faqs": [
+    {
+      "question": "How long can visa-exempt visitors stay in Taiwan?",
+      "answer": "Published durations vary by nationality: most Western countries receive 90 days visa-exempt, some countries receive 30 or 14 days. Check the BOCA visa-exempt list for the specific duration for your nationality."
+    },
+    {
+      "question": "Can the visa-exempt stay be extended?",
+      "answer": "Published rules generally allow extensions in limited circumstances. An extension application may be submitted at a local NIA service center before the current stay expires. Extensions are not guaranteed and are at the discretion of NIA."
+    },
+    {
+      "question": "What is a 'visa run' and is it advisable?",
+      "answer": "A visa run involves leaving Taiwan and re-entering to obtain a new entry period. While not prohibited, published regulations do not guarantee re-entry. Immigration officers have discretion and may deny entry to individuals with patterns of repeated short exits and re-entries."
+    },
+    {
+      "question": "Does time on a visitor visa count toward APRC?",
+      "answer": "No. Published APRC requirements specify that only time spent on qualifying residence permits (such as ARC or Gold Card) counts toward the continuous residency requirement."
+    },
+    {
+      "question": "Can a visitor visa be converted to a work visa in Taiwan?",
+      "answer": "Generally, a change of status from visitor to a work-based residence permit requires departing Taiwan and applying for the appropriate visa at a TECO office abroad. Some exceptions may apply — verify with NIA for the specific situation."
+    }
+  ],
+
+  "tips": [
+    "Check the published visa-exempt duration for your specific nationality on the BOCA website before travel",
+    "Have a return ticket and proof of accommodation ready — immigration officers may request these at the port of entry",
+    "Carry sufficient funds or a bank statement, as proof of financial means may be requested",
+    "Overstaying the permitted duration results in fines and potential entry bans under published regulations",
+    "If planning to work in Taiwan, apply for the appropriate work visa (Gold Card, Work ARC, or DNV) instead"
+  ],
+
+  "warnings": [
+    "No work is permitted on a visitor visa or visa-exempt entry",
+    "Overstaying carries published penalties including fines and entry bans",
+    "Re-entry is not guaranteed — immigration officers have discretion at the border",
+    "Time on a visitor visa does NOT count toward APRC residency"
+  ],
+
+  "communityTips": [
+    {
+      "id": "visitor-community-1",
+      "tip": "Community members report that having a return ticket ready is the most commonly checked item at immigration",
+      "source": "community",
+      "verified": false
+    },
+    {
+      "id": "visitor-community-2",
+      "tip": "Frequent visa runs may attract additional scrutiny from immigration officers according to community reports",
+      "source": "reddit",
+      "verified": false
+    }
+  ],
+
+  "relatedVisas": ["dnv", "gold-card", "work-arc"],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "Bureau of Consular Affairs (BOCA) — Visa Information", "url": "https://www.boca.gov.tw" },
+    { "label": "Visa-Exempt Country List", "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html" },
+    { "label": "National Immigration Agency (NIA)", "url": "https://www.immigration.gov.tw" }
+  ]
+}

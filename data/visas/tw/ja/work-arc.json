@@ -1,0 +1,372 @@
+{
+  "type": "work-arc",
+  "country": "tw",
+  "name": "ワークARC（就労許可）",
+  "shortName": "ワークARC",
+  "category": "work",
+  "description": "台湾の雇用主のもとで働く外国人のための標準的な就労許可です。申請プロセスは2段階で、まず労働省（MOL）から就労許可を取得し、次に内政部入出国管理署（NIA）から外国人居留証（ARC）を取得します。ARCはスポンサー雇用主に紐付けされます。",
+  "tagline": "台湾で働く外国人専門家のための標準就労許可",
+  "keyRequirement": "MOLスポンサー要件を満たす台湾の雇用主からのジョブオファー",
+  "isStub": false,
+
+  "targetAudience": [
+    "台湾企業からジョブオファーを受けた外国人専門家",
+    "台湾の教育機関で教える英語教師・教育者",
+    "台湾企業に雇用されるエンジニア・技術専門家",
+    "台湾拠点に異動するビジネスプロフェッショナル"
+  ],
+
+  "eligibility": [
+    {
+      "id": "job-offer",
+      "label": "台湾の雇用主からのジョブオファー",
+      "description": "台湾の企業または機関との確定した雇用契約。雇用主は就労許可申請のスポンサーとなる意思と能力が必要です。",
+      "required": true
+    },
+    {
+      "id": "employer-requirements",
+      "label": "雇用主がMOLスポンサー要件を満たしていること",
+      "description": "公表されている要件には、最低資本金、売上高、または納税額の基準が含まれ、業種および企業規模により異なります。",
+      "required": true
+    },
+    {
+      "id": "education-experience",
+      "label": "学士号以上、または同等の実務経験",
+      "description": "公表されている要件では通常、関連分野の学士号と2年以上の実務経験が求められます。職業カテゴリにより要件は異なります。",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "犯罪歴なし",
+      "description": "母国の無犯罪証明書。TECOによる認証が必要です。",
+      "required": true
+    },
+    {
+      "id": "health-check",
+      "label": "健康診断証明書",
+      "description": "ARC申請前3ヶ月以内に指定病院で受けた健康診断が必要です。",
+      "required": true
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "job-offer-check",
+      "question": "台湾の企業または機関からジョブオファーを受けていますか？",
+      "helpText": "雇用主が労働省への就労許可申請を開始します。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "ワークARCの公表されている要件には、台湾の雇用主との雇用契約が含まれます。"
+    },
+    {
+      "id": "education-check",
+      "question": "学士号以上の学位、または同等の専門経験（通常2年以上）をお持ちですか？",
+      "helpText": "公表されている要件は職業カテゴリにより異なります。一部のカテゴリでは、豊富な実務経験を学位の代わりとして認めています。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公表されている要件には通常、学歴または同等の経験資格が含まれます。"
+    }
+  ],
+
+  "duration": {
+    "initial": "1〜3年（雇用契約期間に連動）",
+    "extension": "雇用が継続する限り更新可能",
+    "maxTotal": "雇用中は公表されている上限なし"
+  },
+
+  "fees": {
+    "application": "就労許可：TWD 500（MOL）+ ARC：TWD 1,000（NIA）",
+    "extension": "TWD 500（就労許可更新）+ TWD 1,000（ARC更新）",
+    "notes": "就労許可申請費は通常雇用主が負担。ARC手数料は通常従業員の負担。"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有効なパスポート",
+      "description": "雇用契約期間をカバーする有効期間",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "パスポート写真",
+      "description": "2インチ、白背景、6ヶ月以内に撮影",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "雇用契約",
+      "description": "役職、給与、期間、雇用主情報を記載した署名済み契約",
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "学位証明書",
+      "description": "最終学位証明書。海外で発行された場合はTECO認証が必要",
+      "tips": [
+        "応募する職位に関連していること",
+        "発行機関の管轄TECO事務所で認証"
+      ],
+      "required": true
+    },
+    {
+      "id": "experience-proof",
+      "name": "職務経験証明",
+      "description": "前の雇用主からの証明書。関連する実務経験（通常2年以上）を確認するもの",
+      "required": true
+    },
+    {
+      "id": "criminal-record",
+      "name": "無犯罪証明書",
+      "description": "母国発行。TECOまたはハーグ認証による認証",
+      "required": true
+    },
+    {
+      "id": "health-certificate",
+      "name": "健康診断証明書",
+      "description": "台湾の指定病院または認定された海外機関で発行。ARC申請前3ヶ月以内に完了していること。",
+      "required": true
+    },
+    {
+      "id": "employer-docs",
+      "name": "雇用主の証明書類",
+      "description": "企業登記、納税記録、財務諸表。雇用主がMOLスポンサー要件を満たしていることを証明。雇用主が提出。",
+      "required": true
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "secure-offer",
+      "step": 1,
+      "title": "ジョブオファーと契約の確保",
+      "description": "台湾の雇用主と雇用契約を締結。雇用主が就労許可プロセスを開始。",
+      "tips": [
+        "雇用主が就労許可のスポンサーとなる意思を確認",
+        "給与が該当する職業カテゴリの公表されている最低基準を満たしていることを確認"
+      ]
+    },
+    {
+      "id": "mol-work-permit",
+      "step": 2,
+      "title": "雇用主がMOL就労許可を申請",
+      "description": "雇用主が労働省に就労許可を申請。これは雇用主の責任であり、従業員がビザを取得する前に完了する必要があります。",
+      "duration": "2〜4週間",
+      "links": [
+        { "label": "労働省（MOL）", "url": "https://www.mol.gov.tw" }
+      ]
+    },
+    {
+      "id": "entry-visa",
+      "step": 3,
+      "title": "入国ビザの取得（海外にいる場合）",
+      "description": "就労許可が承認された後、現在地を管轄するTECO事務所で居留ビザを申請。就労許可承認書を提示。",
+      "duration": "1〜2週間",
+      "links": [
+        { "label": "外交部領事事務局（BOCA）", "url": "https://www.boca.gov.tw" }
+      ]
+    },
+    {
+      "id": "enter-taiwan",
+      "step": 4,
+      "title": "台湾に入国",
+      "description": "居留ビザで台湾に入国。スポンサー雇用主のもとで就労開始。"
+    },
+    {
+      "id": "apply-arc",
+      "step": 5,
+      "title": "NIAでARCを申請",
+      "description": "到着後15日以内に、最寄りのNIAサービスセンターでARC（外国人居留証）を申請。ARCは実物の居留カードです。",
+      "duration": "処理に1〜2週間",
+      "tips": [
+        "すべてのオリジナル書類を持参",
+        "健康診断はARC申請前に完了しておくこと"
+      ],
+      "links": [
+        { "label": "内政部入出国管理署（NIA）", "url": "https://www.immigration.gov.tw" }
+      ]
+    },
+    {
+      "id": "collect-arc",
+      "step": 6,
+      "title": "ARCの受取",
+      "description": "NIAサービスセンターでARCの実物カードを受け取ります。ARCは日常の取引で国民IDとして機能します。",
+      "duration": "申請後1〜2週間"
+    }
+  ],
+
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "MOL",
+      "agencyFullName": "労働省（MOL）",
+      "action": "就労許可申請（雇用主が提出）",
+      "description": "雇用主が外国人従業員の就労許可を申請。MOLが雇用主の適格性と職位要件を審査。",
+      "url": "https://www.mol.gov.tw",
+      "processingDays": 14,
+      "documentsRequired": [
+        "雇用契約",
+        "雇用主登記書類",
+        "従業員資格証明"
+      ]
+    },
+    {
+      "order": 2,
+      "agency": "BOCA",
+      "agencyFullName": "外交部領事事務局（BOCA）/ TECO",
+      "action": "居留ビザ発行（海外から申請の場合）",
+      "description": "就労許可承認後、申請者は最寄りのTECO事務所で居留ビザを申請。",
+      "url": "https://www.boca.gov.tw",
+      "processingDays": 10,
+      "dependsOn": 1
+    },
+    {
+      "order": 3,
+      "agency": "NIA",
+      "agencyFullName": "内政部入出国管理署",
+      "action": "ARC発行",
+      "description": "台湾入国後、申請者は最寄りのNIAサービスセンターで登録しARCを申請。",
+      "url": "https://www.immigration.gov.tw",
+      "processingDays": 10,
+      "dependsOn": 2
+    }
+  ],
+
+  "processingTime": {
+    "typical": "合計4〜8週間（就労許可 + ビザ + ARC）",
+    "notes": "2段階プロセス（MOL就労許可 + NIA ARC）のため、単一ステップのビザより合計処理時間が長くなります。雇用主側の就労許可申請は通常2〜4週間。コミュニティメンバーの報告では合計6〜12週間。"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "スポンサー雇用主に紐付け — 雇用主の変更には新しい就労許可が必要",
+      "業務内容は就労許可に記載された職位に一致すること",
+      "副業や他の雇用主での就労には別途許可が必要"
+    ],
+    "notes": "ワークARCは雇用主に特定されています。転職には新しい雇用主が新たな就労許可を申請する必要があります。公表されている規定では、雇用終了時にMOLおよびNIAへの届出が必要です。"
+  },
+
+  "faqs": [
+    {
+      "question": "ワークARCをスポンサーする雇用主の公表されている要件は？",
+      "answer": "MOLの公表要件には、最低資本金、売上高、納税額の基準が含まれ、業種により異なります。一般的に雇用主は財務的安定性と外国人専門人材の正当な必要性を証明する必要があります。具体的な基準はMOLのウェブサイトで確認できます。"
+    },
+    {
+      "question": "ワークARC保持者は雇用主を変更できますか？",
+      "answer": "はい。ただし、新しい雇用主がMOLに新しい就労許可を申請する必要があります。前の就労許可は雇用終了時に取り消されます。公表されている規定では、新しい就労許可が承認されるまで新しい雇用主での就労を開始すべきではありません。"
+    },
+    {
+      "question": "ワークARCでの滞在期間はAPRC（永住権）にカウントされますか？",
+      "answer": "はい。公表されている規定では、ワークARCでの台湾における継続的な合法居住は、APRCの5年間の連続居住要件にカウントされます。年間183日の在台要件も適用されます。"
+    },
+    {
+      "question": "雇用が終了した場合はどうなりますか？",
+      "answer": "公表されている規定では、雇用主は規定の期間内にMOLに届出する必要があります。就労許可は取り消されます。元従業員は新しい雇用主を見つける、ビザステータスを変更する、または台湾を出国するための限られた期間がある場合があります。具体的な状況についてはNIAにお問い合わせください。"
+    },
+    {
+      "question": "家族はワークARC保持者に同行できますか？",
+      "answer": "はい。公表されている規定では、配偶者と未成年の子供は扶養者ARCを申請できます。扶養者ARC保持者は通常、別途許可を得ない限り就労できません。"
+    }
+  ],
+
+  "tips": [
+    "就労許可は雇用主がMOLに申請 — 契約前に雇用主の意思と能力を確認",
+    "TECO書類認証プロセスを早めに開始 — 数週間かかる場合がある",
+    "健康診断は指定病院で受ける必要がある — NIAウェブサイトでリストを確認",
+    "すべての雇用書類を安全に保管 — ARC更新と将来のAPRC申請に必要",
+    "公表されている要件に従い、到着後15日以内にARCを申請"
+  ],
+
+  "communityTips": [
+    {
+      "id": "arc-community-1",
+      "tip": "コミュニティ報告によると、大企業や学校は小規模企業よりスポンサーシッププロセスがスムーズな傾向",
+      "source": "community",
+      "verified": false
+    },
+    {
+      "id": "arc-community-2",
+      "tip": "TECO書類認証プロセスがボトルネックになりがち — できるだけ早く開始",
+      "source": "reddit",
+      "verified": false
+    }
+  ],
+
+  "warnings": [
+    "ワークARCはスポンサー雇用主に紐付け — 雇用主を変更する場合は新たな就労許可が必要",
+    "ワークARCの超過滞在には罰金や入国禁止を含む罰則が公表されている",
+    "雇用主が就労許可を申請する必要がある — 申請者自身ではスポンサーになれない",
+    "TECO事務所での学歴書類認証には数週間かかることがある"
+  ],
+
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": -1,
+    "maxTotalStay": "雇用継続中は公表された上限なし",
+    "requirements": [
+      "スポンサー雇用主での継続雇用",
+      "MOLが就労許可更新を承認",
+      "ARC期間中の税務コンプライアンス"
+    ],
+    "documents": [
+      "employment-contract",
+      "employer-docs"
+    ],
+    "applyBeforeDays": 60,
+    "processingTime": "2〜4週間",
+    "fees": "TWD 500（就労許可）+ TWD 1,000（ARC）"
+  },
+
+  "relatedVisas": ["gold-card", "aprc"],
+
+  "pathsTo": [
+    {
+      "type": "aprc",
+      "name": "APRC（永住権）",
+      "requirements": "公表された要件：台湾での5年間の連続合法居住、年間183日の在台平均要件を満たすこと、財務・税務コンプライアンスの要件。",
+      "timeline": "申請処理：30〜60日",
+      "documents": [
+        "ARC",
+        "5年分の納税記録",
+        "年間183日の在台証明",
+        "無犯罪証明書",
+        "財務書類"
+      ],
+      "notes": "APRCへの標準ルートは5年間の連続居住が必要（ゴールドカード保持者は3年）。関連規定は入出国管理法に記載。"
+    },
+    {
+      "type": "gold-card",
+      "name": "就業ゴールドカード",
+      "requirements": "公表されている専門資格と収入要件を満たす場合、別途ゴールドカードに申請可能。ゴールドカードはワークARCに代わり、オープンワークパーミットを提供。",
+      "timeline": "処理に30〜60日",
+      "documents": [
+        "専門資格証明",
+        "収入証明",
+        "無犯罪証明書"
+      ],
+      "notes": "ゴールドカードへの移行により、オープンワークパーミット（雇用主に縛られない）と特別税制優遇が得られます。"
+    }
+  ],
+
+  "pathsFrom": [
+    {
+      "type": "visitor",
+      "name": "短期滞在 / ビザ免除入国",
+      "requirements": "台湾の雇用主からジョブオファーを確保。雇用主が就労許可を申請。台湾を出国してTECO事務所で居留ビザを申請する必要がある場合も。",
+      "timeline": "合計4〜8週間の処理",
+      "documents": [
+        "雇用契約",
+        "学位証明書（TECO認証済み）",
+        "職務経験証明",
+        "無犯罪証明書"
+      ],
+      "notes": "台湾に滞在中の訪問者は一部のケースで国内でステータスを変更できますが、多くの申請者は海外のTECO事務所で申請する必要があります。"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "労働省（MOL）— 就労許可", "url": "https://www.mol.gov.tw" },
+    { "label": "内政部入出国管理署（NIA）", "url": "https://www.immigration.gov.tw" },
+    { "label": "外交部領事事務局（BOCA）", "url": "https://www.boca.gov.tw" }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "type": "gold-card",
+  "country": "tw",
+  "name": "就業金卡",
+  "shortName": "就業金卡",
+  "category": "gold-card",
+  "description": "台灣就業金卡是一張四合一卡片，結合工作許可、居留簽證、外僑居留證（ARC）及重入國許可為一體。依據國家發展委員會公布之規定，適用於八大專業領域之外國專業人才。",
+  "tagline": "四合一卡片：工作、居留、停留、重入國",
+  "keyRequirement": "具備特定專業領域資格，月薪達新台幣16萬元以上或具同等專業資歷",
+  "isStub": false,
+
+  "targetAudience": [
+    "資深科技專業人士（軟體工程師、資料科學家、硬體工程師）",
+    "企業家與高階主管",
+    "學術研究人員與教授",
+    "金融與法律專業人士",
+    "文化藝術專業人士"
+  ],
+
+  "eligibility": [
+    {
+      "id": "professional-field",
+      "label": "具備八大公告專業領域之一的專業資格",
+      "description": "科技、經濟、教育、文化藝術、體育、金融、法律、建築。各領域由國家發展委員會定義。",
+      "required": true
+    },
+    {
+      "id": "salary-or-experience",
+      "label": "月薪達新台幣160,000元以上（約美金5,300元）或具同等專業資歷",
+      "description": "公告之薪資門檻因領域而異。部分領域接受以專利、獎項或學術著作等替代薪資條件。",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "無犯罪紀錄",
+      "description": "需提供母國之良民證，並經相關駐外辦事處（TECO）認證或經海牙認證。",
+      "required": true
+    },
+    {
+      "id": "valid-passport",
+      "label": "有效護照",
+      "description": "護照有效期需涵蓋所申請之金卡效期。",
+      "required": true
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "field-check",
+      "question": "您的專業經驗是否屬於八大公告類別之一（科技、經濟、教育、文化藝術、體育、金融、法律、建築）？",
+      "helpText": "多數科技專業人士以「科技」類別申請。公告之類別定義請參閱 goldcard.nat.gov.tw。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公告要求申請人須具備八大領域之一的專業資歷。"
+    },
+    {
+      "id": "salary-check",
+      "question": "您目前或最近的月薪是否達新台幣160,000元（約美金5,300元）以上？",
+      "helpText": "公告之薪資門檻因類別而異。部分類別接受以專利、著作或獎項等方式替代薪資要求。來源：goldcard.nat.gov.tw。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "部分類別提供薪資以外的替代資格途徑，建議查閱金卡入口網站上各類別的具體要求。"
+    },
+    {
+      "id": "criminal-check",
+      "question": "您是否能取得母國之良民證（無犯罪紀錄證明）？",
+      "helpText": "公告要求包含無犯罪紀錄。良民證須經駐外辦事處（TECO）認證或經海牙認證。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "良民證為公告之必要申請文件。"
+    }
+  ],
+
+  "duration": {
+    "initial": "1年、2年或3年（申請人自行選擇）",
+    "extension": "可續期，每次1至3年",
+    "maxTotal": "無公告之最長期限（可無限次續期）"
+  },
+
+  "fees": {
+    "application": "新台幣3,700元（約美金120元）（1年期）",
+    "notes": "公告費用表：1年 3,700元、2年 5,200元、3年 6,700元。來源：goldcard.nat.gov.tw"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有效護照",
+      "description": "護照效期須涵蓋金卡申請之期限",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "數位護照照片",
+      "description": "2吋照片，白色背景，6個月內拍攝。於線上申請時上傳。",
+      "required": true
+    },
+    {
+      "id": "cv",
+      "name": "履歷表",
+      "description": "詳細之專業經歷，與申請類別相關",
+      "tips": [
+        "突出與申請類別直接相關的經驗",
+        "如適用，附上著作、專利或獲獎紀錄"
+      ],
+      "required": true
+    },
+    {
+      "id": "proof-of-expertise",
+      "name": "專業資格證明",
+      "description": "薪資證明、雇主信函、專利、著作或獎項等，證明所申請類別之專業能力",
+      "tips": [
+        "薪資證明是最常見的方式——近期薪資單或雇主出具之月薪證明信",
+        "社群成員反映通常提供3個月的薪資單即可"
+      ],
+      "required": true
+    },
+    {
+      "id": "criminal-record",
+      "name": "良民證（無犯罪紀錄證明）",
+      "description": "母國或居住國核發，須經對應之駐外辦事處（TECO）認證，或經海牙認證",
+      "tips": [
+        "各國處理時間不同——預留2至8週",
+        "TECO認證需額外處理時間"
+      ],
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "學歷證明（如適用）",
+      "description": "最高學歷證書，如該類別要求則須經認證",
+      "tips": [
+        "非所有類別皆要求——視所選擇之資格途徑而定",
+        "學歷可能須經TECO認證"
+      ],
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "online-apply",
+      "step": 1,
+      "title": "線上提交申請",
+      "description": "透過金卡申請入口網站（goldcard.nat.gov.tw）提交申請。入口網站會自動將申請轉送至相關審查部會。",
+      "duration": "30至60分鐘",
+      "tips": [
+        "入口網站為唯一公告之申請管道",
+        "開始前請備妥所有文件掃描檔"
+      ],
+      "links": [
+        { "label": "就業金卡申請入口", "url": "https://goldcard.nat.gov.tw" }
+      ]
+    },
+    {
+      "id": "ministry-review",
+      "step": 2,
+      "title": "部會審查",
+      "description": "相關部會審查專業資格。例如，科技部審查科技類申請。",
+      "duration": "2至4週（公告），社群回報3至6週"
+    },
+    {
+      "id": "nia-review",
+      "step": 3,
+      "title": "移民署處理",
+      "description": "部會審查通過後，內政部移民署處理居留簽證及外僑居留證部分。",
+      "duration": "1至2週"
+    },
+    {
+      "id": "pickup",
+      "step": 4,
+      "title": "領取金卡",
+      "description": "至台灣移民署或指定之駐外辦事處（TECO）領取實體卡片。卡片亦可在台灣境內郵寄。",
+      "duration": "1週",
+      "tips": [
+        "如在海外領取，請先洽詢當地駐外辦事處確認可行性",
+        "攜帶護照及核准通知副本"
+      ]
+    }
+  ],
+
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "GoldCardOffice",
+      "agencyFullName": "就業金卡入口網站（跨部會）",
+      "action": "線上提交申請",
+      "description": "統一入口網站依據所選專業類別，將申請轉送至相關審查部會。",
+      "url": "https://goldcard.nat.gov.tw",
+      "processingDays": 1
+    },
+    {
+      "order": 2,
+      "agency": "MOL",
+      "agencyFullName": "相關部會（如科技部、勞動部等）",
+      "action": "專業資格審查",
+      "description": "負責所選類別的部會審查專業資歷及資格證明。",
+      "processingDays": 21,
+      "tips": [
+        "依社群回報，科技類處理速度通常最快",
+        "審查期間可能被要求補件"
+      ]
+    },
+    {
+      "order": 3,
+      "agency": "NIA",
+      "agencyFullName": "內政部移民署",
+      "action": "居留簽證及居留證處理",
+      "description": "部會核准後，移民署處理居留簽證及外僑居留證部分。",
+      "url": "https://www.immigration.gov.tw",
+      "processingDays": 10,
+      "dependsOn": 2
+    }
+  ],
+
+  "processingTime": {
+    "typical": "共計30至60天",
+    "notes": "公告之處理目標為30個工作天。社群回報依部會及是否需補件而異，約30至90天。科技類通常處理最快。"
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "notes": "就業金卡包含開放式工作許可。持卡人可為任何雇主工作、接案、自雇或在台灣創業，無需另行申請工作許可。"
+  },
+
+  "goldCardFields": {
+    "categories": [
+      "科技",
+      "經濟",
+      "教育",
+      "文化藝術",
+      "體育",
+      "金融",
+      "法律",
+      "建築"
+    ],
+    "openWorkPermit": true,
+    "taxBenefit": "公告之租稅優惠：非曾為台灣稅務居民之個人，持有金卡前5年，年薪超過新台幣300萬元之部分可享50%免稅。（來源：外國專業人才延攬及僱用法第9條）"
+  },
+
+  "faqs": [
+    {
+      "question": "就業金卡可以從台灣境外申請嗎？",
+      "answer": "可以。公告之申請流程完全透過 goldcard.nat.gov.tw 線上辦理。實體卡片可至海外駐外辦事處（TECO）或抵台後至移民署領取。"
+    },
+    {
+      "question": "申請金卡需要有台灣的工作邀約嗎？",
+      "answer": "不需要。就業金卡包含開放式工作許可，持卡人不受特定雇主約束。持卡人可在台灣接案、創業或為任何雇主工作。"
+    },
+    {
+      "question": "「科技」類別涵蓋哪些範圍？",
+      "answer": "依公告之指引，涵蓋軟體工程、資料科學、硬體工程、生物技術、AI/ML及相關技術領域。審查部會將判定申請人之資歷是否屬於該類別。"
+    },
+    {
+      "question": "就業金卡的公告租稅優惠為何？",
+      "answer": "依《外國專業人才延攬及僱用法》第9條，首次成為台灣稅務居民之金卡持有者，前5年年薪超過新台幣300萬元部分可享50%免稅。具體情形請諮詢合格之稅務專業人士（會計師）。"
+    },
+    {
+      "question": "金卡持有者可以申請永久居留（APRC）嗎？",
+      "answer": "可以。依公告規定，金卡持有者在滿足連續居留要求後可申請永久居留——標準為3年，經指定為「資深專業人才」者為1年。每年須符合183天居留要求。"
+    },
+    {
+      "question": "金卡到期後怎麼辦？",
+      "answer": "依公告之續期程序，持卡人可在現有金卡到期前申請新卡。持卡人亦可轉換至其他居留許可類型，如永久居留（APRC）或雇主擔保之居留證。"
+    }
+  ],
+
+  "tips": [
+    "goldcard.nat.gov.tw 金卡入口網站是唯一公告之申請管道",
+    "以專業資歷最強的類別申請，不一定要與現職頭銜完全一致",
+    "社群回報科技類通常在3至4週內處理完成",
+    "如薪資接近門檻，依社群回報，補充專利、著作或獎項可能有助於申請",
+    "就業金卡可續期——公告中無續期次數上限"
+  ],
+
+  "communityTips": [
+    {
+      "id": "gc-community-1",
+      "tip": "薪資接近新台幣16萬元門檻時，補充專利、著作或獎項可能有幫助——來自社群論壇回報",
+      "source": "reddit",
+      "verified": false
+    },
+    {
+      "id": "gc-community-2",
+      "tip": "Facebook「Taiwan Gold Card」社團是一個活躍的資源，可查看處理時間回報及申請建議",
+      "source": "community",
+      "verified": true
+    },
+    {
+      "id": "gc-community-3",
+      "tip": "依社群追蹤資料，科技類的處理時間通常比其他類別更快",
+      "source": "community",
+      "verified": false
+    }
+  ],
+
+  "warnings": [
+    "金卡之收入及資格要求因專業類別而異",
+    "特殊租稅優惠僅適用於首次合格期間——請向稅務專業人士確認現行規定",
+    "處理時間因專業類別差異顯著",
+    "持有金卡不免除台灣之稅務義務"
+  ],
+
+  "relatedVisas": ["work-arc", "dnv", "visitor"],
+
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": -1,
+    "maxTotalStay": "無公告之上限（可無限次續期）",
+    "requirements": [
+      "在現有金卡到期前提交續期申請",
+      "持續符合所選類別之專業資格要求"
+    ],
+    "documents": [
+      "passport",
+      "proof-of-expertise"
+    ],
+    "applyBeforeDays": 60,
+    "processingTime": "與初次申請相近（社群回報30至60天）",
+    "fees": "與初次申請費用相同"
+  },
+
+  "pathsTo": [
+    {
+      "type": "aprc",
+      "name": "永久居留（APRC）",
+      "requirements": "公告要求：在台灣連續居留3年（標準）或1年（資深專業人才），並符合每年183天居留平均要求。",
+      "timeline": "申請處理：30至60天",
+      "documents": [
+        "就業金卡",
+        "稅務紀錄",
+        "每年183天居留證明",
+        "良民證"
+      ],
+      "notes": "就業金卡提供較標準工作居留證更短的永久居留途徑（3年 vs. 5年）。相關規定見入出國及移民法及外國專業人才延攬及僱用法。"
+    }
+  ],
+
+  "pathsFrom": [
+    {
+      "type": "visitor",
+      "name": "短期停留 / 免簽入境",
+      "requirements": "可從任何地點線上申請金卡。不需要既有之台灣簽證。公告之申請流程完全線上辦理。",
+      "timeline": "處理時間30至60天",
+      "documents": [
+        "護照",
+        "專業資格證明",
+        "良民證"
+      ],
+      "notes": "可從台灣境外申請就業金卡，無需持有任何既有之簽證身分。"
+    },
+    {
+      "type": "work-arc",
+      "name": "工作居留證",
+      "requirements": "持有工作居留證期間申請金卡。如獲核准，金卡取代工作居留證並提供開放式工作許可。",
+      "timeline": "處理時間30至60天",
+      "documents": [
+        "現有居留證",
+        "專業資格證明",
+        "良民證"
+      ],
+      "notes": "從工作居留證轉換至金卡可解除雇主綁定限制，並取得開放式工作許可。"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "就業金卡申請入口", "url": "https://goldcard.nat.gov.tw" },
+    { "label": "內政部移民署", "url": "https://www.immigration.gov.tw" },
+    { "label": "外國專業人才延攬及僱用法", "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030295" }
+  ]
+}

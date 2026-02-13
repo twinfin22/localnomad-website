@@ -6,9 +6,8 @@ import { AnimatedSection } from "@/components/animated-section";
 import { Route, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import {
-  locales,
   countries,
-  isLocaleAvailableForCountry,
+  countryLocales,
   countryNames,
   buildLocalePath,
   type Locale,
@@ -25,13 +24,9 @@ export async function generateStaticParams() {
   const params: { lang: string; country: string }[] = [];
 
   for (const country of countries) {
-    for (const lang of locales) {
-      if (isLocaleAvailableForCountry(lang, country)) {
-        // Currently only Korea has visa data
-        if (country === "korea") {
-          params.push({ lang, country });
-        }
-      }
+    const availableLocales = countryLocales[country];
+    for (const lang of availableLocales) {
+      params.push({ lang, country });
     }
   }
 
@@ -65,8 +60,8 @@ export default async function VisaPathPage({
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Visa Path Simulator",
-    description: "Plan your Korean visa transition path",
-    url: `https://localnomad.club/${lang}/korea/visa/path`,
+    description: `Plan your ${countryNames[country][locale]} visa transition path`,
+    url: `https://localnomad.club/${lang}/${countryParam}/visa/path`,
     applicationCategory: "UtilityApplication",
     operatingSystem: "All",
   };

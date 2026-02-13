@@ -2,10 +2,17 @@
 // Visa Dashboard - Type Definitions
 // =============================================================================
 
+import type { Locale as I18nLocale, Country } from "@/lib/i18n/config";
+import type { AgencyStep, TECOAuthenticationInfo } from "./tw-types";
+
+// =============================================================================
+// Country-Scoped Visa Types
+// =============================================================================
+
 /**
- * Supported visa types in the system
+ * Korea visa type slugs (unchanged from original)
  */
-export type VisaType =
+export type KoreaVisaType =
   | "d-10"
   | "e-7"
   | "f-2"
@@ -20,8 +27,61 @@ export type VisaType =
   | "f-4"
   | "d-4";
 
-// Import Locale from i18n config for consistency
-import type { Locale as I18nLocale } from "@/lib/i18n/config";
+/**
+ * Taiwan visa type slugs
+ */
+export type TaiwanVisaType =
+  // Phase 1 (full guides)
+  | "gold-card"
+  | "dnv"
+  | "work-arc"
+  | "visitor"
+  // Phase 2 (full guides)
+  | "entrepreneur"
+  | "student"
+  | "aprc"
+  // Stubs (coming soon)
+  | "plum-blossom"
+  | "dependent-arc"
+  | "seeking-employment"
+  | "working-holiday-tw";
+
+/**
+ * Union of all visa types across all countries
+ */
+export type VisaType = KoreaVisaType | TaiwanVisaType;
+
+// =============================================================================
+// Visa Type Registries & Type Guards
+// =============================================================================
+
+export const KOREA_VISA_TYPES: KoreaVisaType[] = [
+  "d-10", "e-7", "f-2", "f-1-d", "d-2", "h-1",
+  "e-2", "d-7", "d-8", "f-6", "f-4", "d-4",
+];
+
+export const TAIWAN_VISA_TYPES: TaiwanVisaType[] = [
+  "gold-card", "dnv", "work-arc", "visitor",
+  "entrepreneur", "student", "aprc",
+  "plum-blossom", "dependent-arc", "seeking-employment",
+  "working-holiday-tw",
+];
+
+export function isKoreaVisa(type: VisaType): type is KoreaVisaType {
+  return (KOREA_VISA_TYPES as string[]).includes(type);
+}
+
+export function isTaiwanVisa(type: VisaType): type is TaiwanVisaType {
+  return (TAIWAN_VISA_TYPES as string[]).includes(type);
+}
+
+/**
+ * Country-scoped visa identifier (for APIs, DB, routing)
+ */
+export interface CountryScopedVisa {
+  country: Country;
+  type: VisaType;
+}
 
 /**
  * Supported locales for visa content
@@ -42,7 +102,11 @@ export type VisaCategory =
   | "business"
   | "family"
   | "ethnic-korean"
-  | "language-study";
+  | "language-study"
+  // Taiwan categories
+  | "gold-card"
+  | "investment"
+  | "visitor";
 
 // =============================================================================
 // Visa Information Types
@@ -180,6 +244,18 @@ export interface VisaInfo {
 
   // NEW: Visa paths that can lead to this visa (rich transition details)
   pathsFrom?: VisaTransitionPath[];
+
+  // === Country identifier (optional for backward compat; Korea data may omit) ===
+  country?: string;
+
+  // === Taiwan-specific optional fields ===
+  agencySteps?: AgencyStep[];
+  tecoInfo?: TECOAuthenticationInfo;
+  goldCardFields?: {
+    categories: string[];
+    openWorkPermit: boolean;
+    taxBenefit?: string;
+  };
 
   // Metadata
   lastUpdated: string;

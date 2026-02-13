@@ -1,0 +1,285 @@
+{
+  "type": "dnv",
+  "country": "tw",
+  "name": "數位遊牧簽證",
+  "shortName": "數位遊牧簽證",
+  "category": "digital-nomad",
+  "description": "台灣數位遊牧簽證允許外國人在台灣居住，同時為台灣境外之雇主或客戶遠距工作。公告之簽證期間為6個月，可延長至1年。",
+  "tagline": "居住台灣，為境外雇主遠距工作",
+  "keyRequirement": "為境外公司遠距工作，年收入達美金20,000元以上（30歲以下）或美金40,000元以上（30歲以上）",
+  "isStub": false,
+
+  "targetAudience": [
+    "受僱於台灣境外公司之遠距工作者",
+    "與境外客戶合作之自由接案者與獨立承包商",
+    "尋求亞洲據點之數位遊牧族群"
+  ],
+
+  "eligibility": [
+    {
+      "id": "foreign-employment",
+      "label": "受僱於或與台灣境外公司簽約工作",
+      "description": "申請人須證明其雇主或主要客戶位於台灣境外。此簽證不允許在台灣本地就業。",
+      "required": true
+    },
+    {
+      "id": "income-threshold",
+      "label": "年收入達美金20,000元以上（30歲以下）或美金40,000元以上（30歲以上）",
+      "description": "公告之收入門檻依年齡而異。需提供前一年之收入證明或載明薪資之現行僱用合約。",
+      "required": true
+    },
+    {
+      "id": "visa-exempt-nationality",
+      "label": "持免簽國家護照",
+      "description": "公告要求申請人須持有可免簽入境台灣之國家護照。",
+      "required": true
+    },
+    {
+      "id": "health-insurance",
+      "label": "涵蓋在台停留期間之有效健康保險",
+      "description": "需具備涵蓋停留期間之私人健康保險或旅行醫療保險。",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "無犯罪紀錄",
+      "description": "需提供母國之良民證。",
+      "required": true
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "employment-check",
+      "question": "您目前是否受僱於或與台灣境外之公司簽約工作？",
+      "helpText": "公告要求為境外雇主或客戶遠距工作。此簽證不允許在台灣本地就業。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公告要求數位遊牧簽證適用於受僱於台灣境外之遠距工作者。"
+    },
+    {
+      "id": "income-check",
+      "question": "您的年收入是否達到公告門檻（30歲以下為美金20,000元，30歲以上為美金40,000元）？",
+      "helpText": "收入門檻依據移民署公告之要求。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "須符合公告之收入門檻。門檻依申請人年齡而異。"
+    },
+    {
+      "id": "nationality-check",
+      "question": "您是否持有可免簽入境台灣之國家護照？",
+      "helpText": "請至外交部領事事務局（BOCA）網站查詢公告之免簽國家名單。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公告要求申請人須來自免簽國家。"
+    }
+  ],
+
+  "duration": {
+    "initial": "6個月",
+    "extension": "可延長一次，再加6個月（共1年）",
+    "maxTotal": "1年（公告之最長期限）"
+  },
+
+  "fees": {
+    "application": "依國籍及駐外辦事處而異（通常為美金50至160元）",
+    "extension": "延長另需繳費",
+    "notes": "公告之費用表可向核發之駐外辦事處或BOCA網站查詢。"
+  },
+
+  "incomeRequirement": {
+    "amount": "美金20,000元（30歲以下）/ 美金40,000元（30歲以上）",
+    "currency": "USD",
+    "period": "annual",
+    "notes": "依公告要求。來自境外僱用或自由接案之收入。證明方式包括僱用合約、銀行對帳單或報稅紀錄。"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有效護照",
+      "description": "來自免簽國家，效期須超過預計停留期間至少6個月",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "護照照片",
+      "description": "2吋照片，白色背景，6個月內拍攝",
+      "required": true
+    },
+    {
+      "id": "employment-proof",
+      "name": "遠距工作證明",
+      "description": "僱用合約、客戶合約或雇主信函，確認與台灣境外公司之遠距工作安排",
+      "tips": [
+        "信函應明確載明工作為遠距方式",
+        "附上公司登記資料以證明為境外公司"
+      ],
+      "required": true
+    },
+    {
+      "id": "income-proof",
+      "name": "收入證明",
+      "description": "銀行對帳單、報稅紀錄或僱用合約，顯示年收入達公告門檻",
+      "tips": [
+        "3至6個月之銀行對帳單顯示定期入帳通常可被接受",
+        "前一年之報稅紀錄亦可"
+      ],
+      "required": true
+    },
+    {
+      "id": "health-insurance",
+      "name": "健康保險證明",
+      "description": "涵蓋在台預計停留期間之私人健康保險或旅行保險",
+      "required": true
+    },
+    {
+      "id": "criminal-record",
+      "name": "良民證",
+      "description": "母國核發，經駐外辦事處（TECO）認證或經海牙認證",
+      "required": true
+    },
+    {
+      "id": "travel-itinerary",
+      "name": "旅行行程 / 住宿證明",
+      "description": "回程機票或後續行程預訂，及在台住宿證明",
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "gather-docs",
+      "step": 1,
+      "title": "備齊所需文件",
+      "description": "準備所有必要文件，包括遠距工作證明、收入驗證及經駐外辦事處認證之良民證。",
+      "duration": "2至4週"
+    },
+    {
+      "id": "apply-teco",
+      "step": 2,
+      "title": "向駐外辦事處（TECO）提出申請",
+      "description": "至所在地區管轄之駐外辦事處提交申請。部分辦事處接受郵寄申請。",
+      "duration": "親自辦理1至2小時",
+      "links": [
+        { "label": "查詢駐外辦事處（BOCA）", "url": "https://www.boca.gov.tw" }
+      ]
+    },
+    {
+      "id": "processing",
+      "step": 3,
+      "title": "申請審查",
+      "description": "駐外辦事處轉送申請進行審查。處理時間依辦事處而異。",
+      "duration": "2至4週"
+    },
+    {
+      "id": "receive-visa",
+      "step": 4,
+      "title": "領取簽證並入境台灣",
+      "description": "至駐外辦事處領取護照中之簽證貼紙。在簽證上載明之效期內入境台灣。",
+      "duration": "1週"
+    },
+    {
+      "id": "register-nia",
+      "step": 5,
+      "title": "向移民署登記（抵台後）",
+      "description": "抵達台灣後，依簽證上載明之期限內向內政部移民署登記。停留超過90天者須辦理此步驟。",
+      "duration": "1至2小時",
+      "links": [
+        { "label": "內政部移民署", "url": "https://www.immigration.gov.tw" }
+      ]
+    }
+  ],
+
+  "processingTime": {
+    "typical": "2至4週",
+    "notes": "處理時間依駐外辦事處而異。社群回報依地點及文件完整性，約2至6週。"
+  },
+
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "不允許在台灣本地就業",
+      "工作須為台灣境外之雇主或客戶",
+      "此簽證不允許在台灣創業"
+    ],
+    "notes": "數位遊牧簽證僅允許為境外雇主遠距工作。任何台灣本地就業需申請其他簽證類型（如工作居留證或就業金卡）。"
+  },
+
+  "faqs": [
+    {
+      "question": "持數位遊牧簽證在台灣的時間是否計入永久居留（APRC）要求？",
+      "answer": "依公告規定，數位遊牧簽證不計入永久居留之連續居留要求。這是與就業金卡及工作居留證的關鍵差異，後二者的居留時間可計入永久居留。"
+    },
+    {
+      "question": "數位遊牧簽證持有者可以加入台灣全民健保嗎？",
+      "answer": "公告之健保加入規定通常要求持有居留證且連續居住6個月。數位遊牧簽證持有者通常不會取得居留證，應維持私人健康保險。請向衛生福利部中央健康保險署確認最新規定。"
+    },
+    {
+      "question": "數位遊牧簽證可以轉換為金卡或工作居留證嗎？",
+      "answer": "數位遊牧簽證本身不直接轉換。但持有者可另行申請就業金卡（線上申請）或工作居留證（透過雇主）。變更簽證身分可能需要出境後重新入境台灣。"
+    },
+    {
+      "question": "如果境外雇主終止遠距工作安排怎麼辦？",
+      "answer": "公告之簽證條件要求持續受僱於境外雇主之遠距工作。如僱用關係終止，可能不再符合簽證條件。請聯繫內政部移民署諮詢具體情況。"
+    },
+    {
+      "question": "擁有多位境外客戶的自由接案者是否適用？",
+      "answer": "依公告要求，為台灣境外客戶工作之自由接案者通常可適用，前提是須符合收入門檻並能證明所有工作均為境外客戶。"
+    }
+  ],
+
+  "tips": [
+    "數位遊牧簽證不計入永久居留（APRC）——此為重要之公告限制",
+    "全程維持私人健康保險，因全民健保可能無法加入",
+    "保持僱用合約及收入證明的最新狀態——延長時需重新驗證",
+    "社群建議準備6個月的銀行對帳單作為收入驗證",
+    "如以在台灣長期居留為目標，建議考慮就業金卡，因其可計入永久居留資格"
+  ],
+
+  "warnings": [
+    "此簽證不允許在台灣本地就業",
+    "持此簽證在台時間不計入永久居留（APRC）",
+    "此簽證僅適用於免簽國家之國民"
+  ],
+
+  "communityTips": [
+    {
+      "id": "dnv-community-1",
+      "tip": "各駐外辦事處之處理速度不同——可查詢社群論壇上最近的處理時間回報",
+      "source": "community",
+      "verified": false
+    },
+    {
+      "id": "dnv-community-2",
+      "tip": "依社群回報，提供共享辦公空間會籍或住宿證明可能有助於強化申請",
+      "source": "reddit",
+      "verified": false
+    }
+  ],
+
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": 1,
+    "maxTotalStay": "1年（6個月+6個月延長）",
+    "requirements": [
+      "持續符合收入門檻",
+      "維持與境外雇主之遠距僱用關係",
+      "維持有效健康保險"
+    ],
+    "documents": [
+      "employment-proof",
+      "income-proof",
+      "health-insurance"
+    ],
+    "applyBeforeDays": 30,
+    "processingTime": "2至4週",
+    "fees": "延長另需繳費"
+  },
+
+  "relatedVisas": ["gold-card", "visitor", "work-arc"],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "外交部領事事務局（BOCA）", "url": "https://www.boca.gov.tw" },
+    { "label": "內政部移民署", "url": "https://www.immigration.gov.tw" },
+    { "label": "免簽國家名單", "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html" }
+  ]
+}

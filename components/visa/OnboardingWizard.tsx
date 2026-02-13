@@ -193,7 +193,7 @@ const situationOptions: Record<string, SituationOption[]> = {
   ],
 };
 
-const visaInfo: Record<VisaType, { name: string; tagline: string }> = {
+const visaInfo: Record<string, { name: string; tagline: string }> = {
   "e-7": { name: "E-7 Professional Work Visa", tagline: "For skilled workers with job offers" },
   "d-2": { name: "D-2 Student Visa", tagline: "For degree and language programs" },
   "d-10": { name: "D-10 Job Seeker Visa", tagline: "Find a job while in Korea" },

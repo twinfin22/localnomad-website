@@ -10,15 +10,31 @@ import {
 import { LegalDisclaimer } from "@/components/visa/LegalDisclaimer";
 import {
   countryNames,
+  countryLocales,
   buildLocalePath,
   type Locale,
   type Country,
+  countries,
 } from "@/lib/i18n/config";
 import { Check, Route, ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 interface VisaLandingProps {
   params: Promise<{ lang: string; country: string }>;
+}
+
+// Generate static params for all locale/country combos
+export async function generateStaticParams() {
+  const params: { lang: string; country: string }[] = [];
+
+  for (const country of countries) {
+    const availableLocales = countryLocales[country];
+    for (const lang of availableLocales) {
+      params.push({ lang, country });
+    }
+  }
+
+  return params;
 }
 
 export async function generateMetadata({ params }: VisaLandingProps) {
@@ -37,17 +53,88 @@ export async function generateMetadata({ params }: VisaLandingProps) {
   };
 }
 
-export default async function VisaLandingPage({ params }: VisaLandingProps) {
-  const { lang, country: countryParam } = await params;
-  const locale = lang as Locale;
-  const country = countryParam as Country;
-  const t = await getTranslations();
+// =============================================================================
+// Taiwan Situation Data
+// =============================================================================
 
-  // Build locale-aware href
-  const buildHref = (path: string) => buildLocalePath(path, locale, country);
+function getTaiwanSituations(
+  t: Awaited<ReturnType<typeof getTranslations>>,
+  buildHref: (path: string) => string
+): { primary: Situation[]; more: Situation[] } {
+  const primary: Situation[] = [
+    {
+      emoji: "\u{1F3C6}",
+      situation: t.has('visa.tw.situationGoldCard')
+        ? t('visa.tw.situationGoldCard')
+        : "I'm a senior professional (tech, finance, etc.)",
+      visa: "Gold Card",
+      href: buildHref("/visa/gold-card"),
+    },
+    {
+      emoji: "\u{1F4BB}",
+      situation: t.has('visa.tw.situationDNV')
+        ? t('visa.tw.situationDNV')
+        : "I want to work remotely from Taiwan",
+      visa: "DNV",
+      href: buildHref("/visa/dnv"),
+    },
+    {
+      emoji: "\u{1F4BC}",
+      situation: t.has('visa.tw.situationWorkARC')
+        ? t('visa.tw.situationWorkARC')
+        : "I have a job offer in Taiwan",
+      visa: "Work ARC",
+      href: buildHref("/visa/work-arc"),
+    },
+    {
+      emoji: "\u2708\uFE0F",
+      situation: t.has('visa.tw.situationVisitor')
+        ? t('visa.tw.situationVisitor')
+        : "I'm visiting Taiwan short-term",
+      visa: "Visitor",
+      href: buildHref("/visa/visitor"),
+    },
+  ];
 
-  // Primary situations (always visible) - 6 most common
-  const primarySituations: Situation[] = [
+  const more: Situation[] = [
+    {
+      emoji: "\u{1F680}",
+      situation: t.has('visa.tw.situationEntrepreneur')
+        ? t('visa.tw.situationEntrepreneur')
+        : "I want to start a business in Taiwan",
+      visa: "Entrepreneur",
+      href: buildHref("/visa/entrepreneur"),
+    },
+    {
+      emoji: "\u{1F393}",
+      situation: t.has('visa.tw.situationStudent')
+        ? t('visa.tw.situationStudent')
+        : "I want to study in Taiwan",
+      visa: "Student",
+      href: buildHref("/visa/student"),
+    },
+    {
+      emoji: "\u{1F3E0}",
+      situation: t.has('visa.tw.situationAPRC')
+        ? t('visa.tw.situationAPRC')
+        : "I want permanent residence (APRC)",
+      visa: "APRC",
+      href: buildHref("/visa/aprc"),
+    },
+  ];
+
+  return { primary, more };
+}
+
+// =============================================================================
+// Korea Situation Data (extracted from original page)
+// =============================================================================
+
+function getKoreaSituations(
+  t: Awaited<ReturnType<typeof getTranslations>>,
+  buildHref: (path: string) => string
+): { primary: Situation[]; more: Situation[] } {
+  const primary: Situation[] = [
     {
       emoji: "\u{1F4BC}",
       situation: t('visa.situationJobOffer'),
@@ -86,8 +173,7 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
     },
   ];
 
-  // Additional situations (behind "Show more")
-  const moreSituations: Situation[] = [
+  const more: Situation[] = [
     {
       emoji: "\u{1F469}\u200D\u{1F3EB}",
       situation: t('visa.situationTeachEnglish'),
@@ -126,15 +212,41 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
     },
   ];
 
+  return { primary, more };
+}
+
+export default async function VisaLandingPage({ params }: VisaLandingProps) {
+  const { lang, country: countryParam } = await params;
+  const locale = lang as Locale;
+  const country = countryParam as Country;
+  const t = await getTranslations();
+
+  // Build locale-aware href
+  const buildHref = (path: string) => buildLocalePath(path, locale, country);
+
+  const isTaiwan = country === "taiwan";
+
+  // Get country-specific situations
+  const { primary: primarySituations, more: moreSituations } = isTaiwan
+    ? getTaiwanSituations(t, buildHref)
+    : getKoreaSituations(t, buildHref);
+
   // Visa options for "Already have a visa?" picker
-  const visaOptions = [
-    { visa: "E-7", name: t('visa.visaNameEmployment'), href: buildHref("/visa/e-7#after-approval") },
-    { visa: "D-2", name: t('visa.visaNameStudy'), href: buildHref("/visa/d-2#after-approval") },
-    { visa: "F-1-D", name: t('visa.visaNameDigitalNomad'), href: buildHref("/visa/f-1-d#after-approval") },
-    { visa: "D-10", name: t('visa.visaNameJobSeeking'), href: buildHref("/visa/d-10#after-approval") },
-    { visa: "H-1", name: t('visa.visaNameWorkingHoliday'), href: buildHref("/visa/h-1#after-approval") },
-    { visa: "F-2", name: t('visa.visaNameResidence'), href: buildHref("/visa/f-2#after-approval") },
-  ];
+  const visaOptions = isTaiwan
+    ? [
+        { visa: "Gold Card", name: "Employment Gold Card", href: buildHref("/visa/gold-card#after-approval") },
+        { visa: "DNV", name: "Digital Nomad Visa", href: buildHref("/visa/dnv#after-approval") },
+        { visa: "Work ARC", name: "Work ARC", href: buildHref("/visa/work-arc#after-approval") },
+        { visa: "Visitor", name: "Visitor Visa", href: buildHref("/visa/visitor#after-approval") },
+      ]
+    : [
+        { visa: "E-7", name: t('visa.visaNameEmployment'), href: buildHref("/visa/e-7#after-approval") },
+        { visa: "D-2", name: t('visa.visaNameStudy'), href: buildHref("/visa/d-2#after-approval") },
+        { visa: "F-1-D", name: t('visa.visaNameDigitalNomad'), href: buildHref("/visa/f-1-d#after-approval") },
+        { visa: "D-10", name: t('visa.visaNameJobSeeking'), href: buildHref("/visa/d-10#after-approval") },
+        { visa: "H-1", name: t('visa.visaNameWorkingHoliday'), href: buildHref("/visa/h-1#after-approval") },
+        { visa: "F-2", name: t('visa.visaNameResidence'), href: buildHref("/visa/f-2#after-approval") },
+      ];
 
   // Build JSON-LD structured data for the visa landing page
   const allSituations = [...primarySituations, ...moreSituations];
@@ -180,9 +292,11 @@ export default async function VisaLandingPage({ params }: VisaLandingProps) {
           <SituationGrid situations={primarySituations} />
 
           {/* Show more situations */}
-          <div className="mt-8">
-            <MoreSituations situations={moreSituations} />
-          </div>
+          {moreSituations.length > 0 && (
+            <div className="mt-8">
+              <MoreSituations situations={moreSituations} />
+            </div>
+          )}
         </div>
       </section>
 

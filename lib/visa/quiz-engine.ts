@@ -313,7 +313,7 @@ function getVisaPath(
   answers: QuizAnswers
 ): VisaPathStep[] | undefined {
   // Define common paths
-  const paths: Record<VisaType, VisaPathStep[]> = {
+  const paths: Record<string, VisaPathStep[]> = {
     'f-1-d': [
       {
         order: 1,

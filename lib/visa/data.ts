@@ -1,7 +1,16 @@
-import type { VisaInfo, VisaType, Locale, VisaChecklist } from "./types";
+import type {
+  VisaInfo,
+  VisaType,
+  KoreaVisaType,
+  TaiwanVisaType,
+  Locale,
+  VisaChecklist,
+} from "./types";
+import { KOREA_VISA_TYPES, TAIWAN_VISA_TYPES } from "./types";
+import type { Country } from "@/lib/i18n/config";
 
 // =============================================================================
-// Visa Data Loader
+// Visa Data Loader — Korea (Synchronous, Static Imports)
 // =============================================================================
 
 // English visa data imports
@@ -47,7 +56,7 @@ import f4ZhTw from "@/data/visas/zh-tw/f-4.json";
 import d4ZhTw from "@/data/visas/zh-tw/d-4.json";
 
 // Type the imported JSON - English
-const visaDataEn: Record<VisaType, VisaInfo> = {
+const visaDataEn: Record<KoreaVisaType, VisaInfo> = {
   "d-10": d10En as unknown as VisaInfo,
   "e-7": e7En as unknown as VisaInfo,
   "f-1-d": f1dEn as unknown as VisaInfo,
@@ -63,7 +72,7 @@ const visaDataEn: Record<VisaType, VisaInfo> = {
 };
 
 // Type the imported JSON - Japanese
-const visaDataJa: Record<VisaType, VisaInfo> = {
+const visaDataJa: Record<KoreaVisaType, VisaInfo> = {
   "d-10": d10Ja as unknown as VisaInfo,
   "e-7": e7Ja as unknown as VisaInfo,
   "f-1-d": f1dJa as unknown as VisaInfo,
@@ -79,7 +88,7 @@ const visaDataJa: Record<VisaType, VisaInfo> = {
 };
 
 // Type the imported JSON - Traditional Chinese
-const visaDataZhTw: Record<VisaType, VisaInfo> = {
+const visaDataZhTw: Record<KoreaVisaType, VisaInfo> = {
   "d-10": d10ZhTw as unknown as VisaInfo,
   "e-7": e7ZhTw as unknown as VisaInfo,
   "f-1-d": f1dZhTw as unknown as VisaInfo,
@@ -94,8 +103,8 @@ const visaDataZhTw: Record<VisaType, VisaInfo> = {
   "d-4": d4ZhTw as unknown as VisaInfo,
 };
 
-// Map of all visa data by locale
-const visaDataByLocale: Record<Locale, Record<VisaType, VisaInfo>> = {
+// Map of all Korea visa data by locale
+const koreaVisaDataByLocale: Record<Locale, Record<KoreaVisaType, VisaInfo>> = {
   en: visaDataEn,
   ja: visaDataJa,
   "zh-tw": visaDataZhTw,
@@ -103,14 +112,50 @@ const visaDataByLocale: Record<Locale, Record<VisaType, VisaInfo>> = {
 };
 
 // =============================================================================
-// Data Access Functions
+// Taiwan Async Data Loader (Dynamic Imports — zero bundle impact on Korea)
+// =============================================================================
+
+const twCache = new Map<string, VisaInfo>();
+
+function twCacheKey(locale: Locale, type: TaiwanVisaType): string {
+  return `tw:${locale}:${type}`;
+}
+
+/**
+ * Dynamically import a single Taiwan visa JSON file.
+ * Returns null if the file does not exist (stub visa, missing locale).
+ */
+async function loadTaiwanVisaJson(
+  locale: Locale,
+  type: TaiwanVisaType
+): Promise<VisaInfo | null> {
+  const key = twCacheKey(locale, type);
+  if (twCache.has(key)) return twCache.get(key)!;
+
+  try {
+    const mod = await import(`@/data/visas/tw/${locale}/${type}.json`);
+    const data = mod.default as unknown as VisaInfo;
+    twCache.set(key, data);
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+// =============================================================================
+// Data Access Functions — Korea (synchronous, backward-compatible)
 // =============================================================================
 
 /**
- * Get all available visa types
- * Priority order: E-7 (primary), D-2 (secondary), then full guides, then stubs
+ * Get Korea visa types (synchronous, backward-compatible).
+ * When called with no arguments, returns Korea visa types only.
+ * When called with a country, returns visa types for that country.
  */
-export function getVisaTypes(): VisaType[] {
+export function getVisaTypes(country?: Country): VisaType[] {
+  if (country === "taiwan") {
+    return [...TAIWAN_VISA_TYPES];
+  }
+  // Default: Korea (backward-compatible)
   return [
     // Full guides
     "e-7", "d-2", "d-10", "h-1", "f-1-d", "f-2",
@@ -120,18 +165,19 @@ export function getVisaTypes(): VisaType[] {
 }
 
 /**
- * Get visa info by type and locale
+ * Get visa info by type and locale (synchronous, Korea-only).
+ * Unchanged from original — used throughout Korea pages.
  */
 export function getVisaInfo(
   type: VisaType,
   locale: Locale = "en"
 ): VisaInfo | null {
-  const data = visaDataByLocale[locale];
-  return data?.[type] ?? null;
+  const data = koreaVisaDataByLocale[locale];
+  return data?.[type as KoreaVisaType] ?? null;
 }
 
 /**
- * Get all visa info for a locale
+ * Get all visa info for a locale (synchronous, Korea-only).
  */
 export function getAllVisas(locale: Locale = "en"): VisaInfo[] {
   const types = getVisaTypes();
@@ -139,6 +185,52 @@ export function getAllVisas(locale: Locale = "en"): VisaInfo[] {
     .map((type) => getVisaInfo(type, locale))
     .filter((visa): visa is VisaInfo => visa !== null);
 }
+
+// =============================================================================
+// Data Access Functions — Country-Aware (async, for Taiwan + future countries)
+// =============================================================================
+
+/**
+ * Get visa info by type, locale, and country (async).
+ * For Korea, delegates to the sync loader.
+ * For Taiwan, uses dynamic imports.
+ */
+export async function getVisaInfoAsync(
+  type: VisaType,
+  locale: Locale = "en",
+  country: Country = "korea"
+): Promise<VisaInfo | null> {
+  if (country === "korea") {
+    return getVisaInfo(type, locale);
+  }
+  if (country === "taiwan") {
+    return loadTaiwanVisaJson(locale, type as TaiwanVisaType);
+  }
+  return null;
+}
+
+/**
+ * Get all visas for a country/locale combo (async).
+ */
+export async function getAllVisasAsync(
+  country: Country = "korea",
+  locale: Locale = "en"
+): Promise<VisaInfo[]> {
+  if (country === "korea") {
+    return getAllVisas(locale);
+  }
+  const types = getVisaTypes(country);
+  const results = await Promise.all(
+    types.map((type) =>
+      loadTaiwanVisaJson(locale, type as TaiwanVisaType)
+    )
+  );
+  return results.filter((v): v is VisaInfo => v !== null);
+}
+
+// =============================================================================
+// Existing Helpers (unchanged)
+// =============================================================================
 
 /**
  * Get visa summary for list displays
@@ -281,7 +373,7 @@ export function formatVisaType(type: VisaType): string {
  * Get icon name for visa category
  */
 export function getVisaCategoryIcon(category: VisaInfo["category"]): string {
-  const icons: Record<VisaInfo["category"], string> = {
+  const icons: Record<string, string> = {
     work: "Briefcase",
     study: "GraduationCap",
     residence: "Home",
@@ -292,6 +384,10 @@ export function getVisaCategoryIcon(category: VisaInfo["category"]): string {
     family: "Heart",
     "ethnic-korean": "Flag",
     "language-study": "BookOpen",
+    // Taiwan categories
+    "gold-card": "Award",
+    investment: "TrendingUp",
+    visitor: "Globe",
   };
   return icons[category] || "FileText";
 }
@@ -300,7 +396,7 @@ export function getVisaCategoryIcon(category: VisaInfo["category"]): string {
  * Get color for visa category
  */
 export function getVisaCategoryColor(category: VisaInfo["category"]): string {
-  const colors: Record<VisaInfo["category"], string> = {
+  const colors: Record<string, string> = {
     work: "primary",
     study: "blue",
     residence: "green",
@@ -311,6 +407,10 @@ export function getVisaCategoryColor(category: VisaInfo["category"]): string {
     family: "pink",
     "ethnic-korean": "indigo",
     "language-study": "teal",
+    // Taiwan categories
+    "gold-card": "amber",
+    investment: "emerald",
+    visitor: "sky",
   };
   return colors[category] || "muted";
 }

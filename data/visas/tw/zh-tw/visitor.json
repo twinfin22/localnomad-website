@@ -1,0 +1,228 @@
+{
+  "type": "visitor",
+  "country": "tw",
+  "name": "觀光簽證 / 免簽入境",
+  "shortName": "觀光",
+  "category": "visitor",
+  "description": "台灣提供免簽入境及觀光簽證，適用於觀光、商務拜訪及其他非就業性質之短期停留。公告之停留期間依國籍及入境方式為14至90天不等。",
+  "tagline": "觀光、商務拜訪及過境之短期入境",
+  "keyRequirement": "持免簽國家之有效護照（30至90天）或由駐外辦事處核發之觀光簽證",
+  "isStub": false,
+
+  "targetAudience": [
+    "來台觀光之旅客",
+    "參加會議、研討會或商展之商務訪客",
+    "在決定長期居留前先行探索台灣者",
+    "過境旅客"
+  ],
+
+  "eligibility": [
+    {
+      "id": "valid-passport",
+      "label": "護照效期至少剩餘6個月",
+      "description": "公告要求護照效期自入境日起至少6個月以上。",
+      "required": true
+    },
+    {
+      "id": "visa-exempt-or-visa",
+      "label": "免簽國家國籍或持有駐外辦事處核發之觀光簽證",
+      "description": "免簽國家之國民可依公告之期限（依國籍為30至90天不等）免簽入境。其他國籍須於旅行前向駐外辦事處申請觀光簽證。",
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "label": "回程或續程機票",
+      "description": "入境時可能被要求出示已確認之回程或續程機票。公告要求因國籍而異。",
+      "required": false
+    },
+    {
+      "id": "sufficient-funds",
+      "label": "足夠之財力證明",
+      "description": "移民官可能要求出示支持預計停留之財力證明。無單一公告之最低金額，但社群回報持有約新台幣2萬至3萬元通常即足夠。",
+      "required": false
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "passport-check",
+      "question": "您的護照效期自預計入境日起是否至少還有6個月？",
+      "helpText": "公告入境要求包含護照效期至少6個月。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公告之入境要求包含護照效期至少6個月。"
+    },
+    {
+      "id": "visa-exempt-check",
+      "question": "您的國籍是否在台灣公告之免簽國家名單上？",
+      "helpText": "請至外交部領事事務局（BOCA）網站查詢最新免簽國家名單。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "非免簽國家之國民須於旅行前向駐外辦事處申請觀光簽證。"
+    }
+  ],
+
+  "duration": {
+    "initial": "依國籍為30至90天（免簽）或觀光簽證上載明之期限",
+    "extension": "部分情況下可向移民署申請延長，最多可達180天",
+    "maxTotal": "依國籍及簽證類型而異。免簽停留之公告最長期限通常為90天。"
+  },
+
+  "fees": {
+    "application": "免簽：免費。觀光簽證：依國籍及駐外辦事處而異（通常為美金50至160元）",
+    "notes": "免簽入境無需費用。觀光簽證費用由各駐外辦事處公告。"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有效護照",
+      "description": "自入境日起效期至少6個月，且至少有一頁空白頁供入境章",
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "name": "回程或續程機票",
+      "description": "已確認之訂位，顯示於許可停留期間內離境台灣",
+      "tips": [
+        "入境時移民官可能查驗",
+        "彈性訂位亦可接受"
+      ],
+      "required": false
+    },
+    {
+      "id": "accommodation-proof",
+      "name": "住宿證明",
+      "description": "飯店訂房或在台灣主人之邀請函",
+      "required": false
+    },
+    {
+      "id": "financial-proof",
+      "name": "財力證明",
+      "description": "銀行對帳單、信用卡或等值現金，足以支持預計之停留",
+      "required": false
+    },
+    {
+      "id": "visa-application",
+      "name": "觀光簽證申請（如非免簽國家）",
+      "description": "填妥之簽證申請表，向駐外辦事處提交",
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "check-exemption",
+      "step": 1,
+      "title": "確認免簽資格",
+      "description": "確認您的國籍是否在台灣公告之免簽名單上。該名單由外交部領事事務局（BOCA）維護。",
+      "links": [
+        { "label": "BOCA免簽國家名單", "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html" }
+      ]
+    },
+    {
+      "id": "apply-visa",
+      "step": 2,
+      "title": "申請觀光簽證（如有需要）",
+      "description": "如非免簽國家，向所在地區管轄之駐外辦事處申請。提交申請表、護照、照片及所需之佐證文件。",
+      "duration": "3至7個工作天",
+      "links": [
+        { "label": "查詢駐外辦事處", "url": "https://www.boca.gov.tw" }
+      ]
+    },
+    {
+      "id": "enter-taiwan",
+      "step": 3,
+      "title": "入境台灣",
+      "description": "於移民關卡出示護照（及簽證，如適用）。移民官於入境時決定准許之停留期間。",
+      "tips": [
+        "備妥回程機票及住宿證明",
+        "入境決定由移民官現場裁量"
+      ]
+    },
+    {
+      "id": "register-if-needed",
+      "step": 4,
+      "title": "如停留超過90天須向移民署登記",
+      "description": "如獲准超過90天之停留（例如透過觀光簽證延長），可能需要向移民署登記。",
+      "links": [
+        { "label": "內政部移民署", "url": "https://www.immigration.gov.tw" }
+      ]
+    }
+  ],
+
+  "processingTime": {
+    "typical": "免簽：入境時即時。觀光簽證：駐外辦事處3至7個工作天。",
+    "notes": "免簽入境無需事前處理。觀光簽證之處理時間因駐外辦事處而異。"
+  },
+
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "觀光簽證或免簽入境不允許任何形式之工作",
+      "為境外雇主遠距工作屬灰色地帶——數位遊牧簽證專為此設計",
+      "商務活動限於會議、研討會及非就業性質之活動"
+    ],
+    "notes": "在台灣未持有效工作許可而工作，依公告規定將受處罰。違規可能導致罰款、驅逐出境及入境禁止。"
+  },
+
+  "faqs": [
+    {
+      "question": "免簽入境者可在台灣停留多久？",
+      "answer": "公告之停留期間依國籍而異：多數西方國家為90天免簽，部分國家為30天或14天。請至BOCA免簽名單查詢您國籍之具體期限。"
+    },
+    {
+      "question": "免簽停留可以延長嗎？",
+      "answer": "公告規定在有限情況下允許延長。可於目前停留到期前至當地移民署服務站提出延長申請。延長不保證獲准，由移民署裁量決定。"
+    },
+    {
+      "question": "什麼是「簽證跑」（visa run）？是否建議？",
+      "answer": "簽證跑是指離開台灣後重新入境以取得新的停留期間。雖未被明文禁止，但公告規定不保證重新入境。移民官有裁量權，對於反覆短期出入境之模式可能拒絕入境。"
+    },
+    {
+      "question": "觀光簽證時間是否計入永久居留（APRC）要求？",
+      "answer": "不計入。永久居留之公告要求指定僅持有合格之居留許可（如居留證或金卡）之時間方計入連續居留要求。"
+    },
+    {
+      "question": "觀光簽證可以在台灣境內轉換為工作簽證嗎？",
+      "answer": "一般而言，從觀光身分轉換至工作類居留許可需離開台灣，至境外駐外辦事處申請相應簽證。部分例外情況可能適用——請向移民署確認具體情形。"
+    }
+  ],
+
+  "tips": [
+    "旅行前請至BOCA網站查詢您特定國籍之公告免簽停留期限",
+    "備妥回程機票及住宿證明——入境時移民官可能要求查驗",
+    "攜帶足夠資金或銀行對帳單，因可能被要求出示財力證明",
+    "逾期停留依公告規定將受罰款及入境禁止處分",
+    "如計劃在台灣工作，請申請適當之工作簽證（就業金卡、工作居留證或數位遊牧簽證）"
+  ],
+
+  "warnings": [
+    "觀光簽證或免簽入境不允許工作",
+    "逾期停留之公告處罰包括罰款及入境禁止",
+    "重新入境不保證獲准——移民官於邊境有裁量權",
+    "觀光簽證時間不計入永久居留（APRC）"
+  ],
+
+  "communityTips": [
+    {
+      "id": "visitor-community-1",
+      "tip": "社群回報入境時最常被查驗的項目是回程機票",
+      "source": "community",
+      "verified": false
+    },
+    {
+      "id": "visitor-community-2",
+      "tip": "依社群回報，頻繁簽證跑可能引起移民官額外關注",
+      "source": "reddit",
+      "verified": false
+    }
+  ],
+
+  "relatedVisas": ["dnv", "gold-card", "work-arc"],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "外交部領事事務局（BOCA）——簽證資訊", "url": "https://www.boca.gov.tw" },
+    { "label": "免簽國家名單", "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html" },
+    { "label": "內政部移民署", "url": "https://www.immigration.gov.tw" }
+  ]
+}

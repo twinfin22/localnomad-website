@@ -1,0 +1,372 @@
+{
+  "type": "work-arc",
+  "country": "tw",
+  "name": "Work ARC (Employment Permit)",
+  "shortName": "Work ARC",
+  "category": "work",
+  "description": "Taiwan's standard employment permit for foreign nationals working for a Taiwanese employer. The process involves two steps: obtaining a work permit from the Ministry of Labor (MOL), followed by an Alien Resident Certificate (ARC) from the National Immigration Agency (NIA). The ARC is tied to the sponsoring employer.",
+  "tagline": "Standard employment permit for foreign professionals working in Taiwan",
+  "keyRequirement": "Job offer from a Taiwanese employer who meets MOL sponsorship requirements",
+  "isStub": false,
+
+  "targetAudience": [
+    "Foreign professionals with job offers from Taiwanese companies",
+    "English teachers and educators at Taiwanese institutions",
+    "Engineers and technical specialists hired by Taiwanese firms",
+    "Business professionals transferring to Taiwan operations"
+  ],
+
+  "eligibility": [
+    {
+      "id": "job-offer",
+      "label": "Job offer from a Taiwanese employer",
+      "description": "A confirmed employment contract with a company or institution in Taiwan. The employer must be willing and able to sponsor the work permit application.",
+      "required": true
+    },
+    {
+      "id": "employer-requirements",
+      "label": "Employer meets MOL sponsorship requirements",
+      "description": "Published requirements include minimum capital, revenue, or tax payment thresholds for the sponsoring employer. Requirements vary by industry and company size.",
+      "required": true
+    },
+    {
+      "id": "education-experience",
+      "label": "Bachelor's degree or higher, or equivalent work experience",
+      "description": "Published requirements typically specify a bachelor's degree in a relevant field and 2+ years of work experience. Requirements vary by occupation category.",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "No criminal record",
+      "description": "A criminal background check from the applicant's home country, authenticated by TECO.",
+      "required": true
+    },
+    {
+      "id": "health-check",
+      "label": "Health examination certificate",
+      "description": "A health examination from a designated hospital is required within 3 months of ARC application.",
+      "required": true
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "job-offer-check",
+      "question": "Do you have a job offer from a company or institution in Taiwan?",
+      "helpText": "The employer initiates the work permit application with the Ministry of Labor.",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "The published requirements for a Work ARC include an employment contract with a Taiwanese employer."
+    },
+    {
+      "id": "education-check",
+      "question": "Do you have a bachelor's degree or higher, or equivalent professional experience (typically 2+ years)?",
+      "helpText": "Published requirements vary by occupation category. Some categories accept extensive work experience in lieu of a degree.",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "The published requirements typically include education or equivalent experience qualifications."
+    }
+  ],
+
+  "duration": {
+    "initial": "1-3 years (tied to employment contract duration)",
+    "extension": "Renewable as long as employment continues",
+    "maxTotal": "No published maximum (renewable while employed)"
+  },
+
+  "fees": {
+    "application": "Work permit: TWD 500 (MOL) + ARC: TWD 1,000 (NIA)",
+    "extension": "TWD 500 (work permit renewal) + TWD 1,000 (ARC renewal)",
+    "notes": "The employer typically handles the work permit application fee. ARC fees are usually the employee's responsibility."
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Must be valid for the duration of the employment contract",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photos",
+      "description": "2-inch photos, white background, taken within 6 months",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract",
+      "description": "Signed contract showing position, salary, duration, and employer details",
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Degree Certificate",
+      "description": "Highest degree certificate, authenticated by TECO if issued abroad",
+      "tips": [
+        "Must be relevant to the position being offered",
+        "Authentication by the TECO office with jurisdiction over the issuing institution"
+      ],
+      "required": true
+    },
+    {
+      "id": "experience-proof",
+      "name": "Work Experience Certificate",
+      "description": "Letters from previous employers confirming relevant work experience (typically 2+ years required)",
+      "required": true
+    },
+    {
+      "id": "criminal-record",
+      "name": "Criminal Record Check",
+      "description": "From home country, authenticated by TECO or via Hague Apostille",
+      "required": true
+    },
+    {
+      "id": "health-certificate",
+      "name": "Health Examination Certificate",
+      "description": "From a designated hospital in Taiwan or a recognized institution abroad. Must be completed within 3 months of ARC application.",
+      "required": true
+    },
+    {
+      "id": "employer-docs",
+      "name": "Employer Supporting Documents",
+      "description": "Company registration, tax records, and financial statements demonstrating the employer meets MOL sponsorship requirements. These are submitted by the employer.",
+      "required": true
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "secure-offer",
+      "step": 1,
+      "title": "Secure Job Offer and Contract",
+      "description": "Receive and sign an employment contract with a Taiwanese employer. The employer initiates the work permit process.",
+      "tips": [
+        "Confirm that the employer is willing to sponsor the work permit",
+        "Ensure salary meets the published minimum for the occupation category"
+      ]
+    },
+    {
+      "id": "mol-work-permit",
+      "step": 2,
+      "title": "Employer Applies for MOL Work Permit",
+      "description": "The employer submits a work permit application to the Ministry of Labor. This is the employer's responsibility and must be completed before the employee can obtain a visa.",
+      "duration": "2-4 weeks",
+      "links": [
+        { "label": "Ministry of Labor (MOL)", "url": "https://www.mol.gov.tw" }
+      ]
+    },
+    {
+      "id": "entry-visa",
+      "step": 3,
+      "title": "Obtain Entry Visa (if abroad)",
+      "description": "After the work permit is approved, apply for a resident visa at the TECO office with jurisdiction over your current location. Present the work permit approval letter.",
+      "duration": "1-2 weeks",
+      "links": [
+        { "label": "Bureau of Consular Affairs (BOCA)", "url": "https://www.boca.gov.tw" }
+      ]
+    },
+    {
+      "id": "enter-taiwan",
+      "step": 4,
+      "title": "Enter Taiwan",
+      "description": "Enter Taiwan on the resident visa. Begin employment with the sponsoring employer."
+    },
+    {
+      "id": "apply-arc",
+      "step": 5,
+      "title": "Apply for ARC at NIA",
+      "description": "Within 15 days of arrival, apply for the Alien Resident Certificate (ARC) at the local NIA service center. The ARC is the physical residency card.",
+      "duration": "1-2 weeks processing",
+      "tips": [
+        "Bring all original documents",
+        "The health examination must be completed before the ARC application"
+      ],
+      "links": [
+        { "label": "National Immigration Agency (NIA)", "url": "https://www.immigration.gov.tw" }
+      ]
+    },
+    {
+      "id": "collect-arc",
+      "step": 6,
+      "title": "Collect ARC",
+      "description": "Pick up the physical ARC card at the NIA service center. The ARC serves as a national ID for daily transactions.",
+      "duration": "1-2 weeks after application"
+    }
+  ],
+
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "MOL",
+      "agencyFullName": "Ministry of Labor (MOL)",
+      "action": "Work permit application (submitted by employer)",
+      "description": "The employer applies for a work permit on behalf of the foreign employee. MOL reviews the employer's eligibility and the position requirements.",
+      "url": "https://www.mol.gov.tw",
+      "processingDays": 14,
+      "documentsRequired": [
+        "Employment contract",
+        "Employer registration documents",
+        "Employee qualifications"
+      ]
+    },
+    {
+      "order": 2,
+      "agency": "BOCA",
+      "agencyFullName": "Bureau of Consular Affairs (BOCA) / TECO",
+      "action": "Resident visa issuance (if applying from abroad)",
+      "description": "After the work permit is approved, the applicant applies for a resident visa at the nearest TECO office.",
+      "url": "https://www.boca.gov.tw",
+      "processingDays": 10,
+      "dependsOn": 1
+    },
+    {
+      "order": 3,
+      "agency": "NIA",
+      "agencyFullName": "National Immigration Agency (NIA)",
+      "action": "ARC issuance",
+      "description": "After entering Taiwan, the applicant registers and applies for the ARC at the local NIA service center.",
+      "url": "https://www.immigration.gov.tw",
+      "processingDays": 10,
+      "dependsOn": 2
+    }
+  ],
+
+  "processingTime": {
+    "typical": "4-8 weeks total (work permit + visa + ARC)",
+    "notes": "The two-step process (MOL work permit + NIA ARC) means total processing is longer than a single-step visa. The employer-side work permit application typically takes 2-4 weeks. Community members report total timelines of 6-12 weeks."
+  },
+
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Tied to the sponsoring employer — changing employers requires a new work permit",
+      "The type of work must match the position specified in the work permit",
+      "Moonlighting or working for other employers generally requires separate authorization"
+    ],
+    "notes": "The Work ARC is employer-specific. Changing jobs requires the new employer to apply for a new work permit. Published regulations require notification to MOL and NIA when employment ends."
+  },
+
+  "faqs": [
+    {
+      "question": "What are the published employer requirements for sponsoring a Work ARC?",
+      "answer": "Published MOL requirements include minimum capital, revenue, and tax payment thresholds that vary by industry. Generally, the employer must demonstrate financial stability and a legitimate need for foreign expertise. The exact thresholds are available on the MOL website."
+    },
+    {
+      "question": "Can a Work ARC holder change employers?",
+      "answer": "Yes, but the new employer must apply for a new work permit with MOL. The previous work permit is canceled when employment ends. Published regulations specify that the worker should not begin employment with the new employer until the new work permit is approved."
+    },
+    {
+      "question": "Does time on a Work ARC count toward APRC?",
+      "answer": "Yes. Published regulations indicate that continuous legal residence in Taiwan on a Work ARC counts toward the 5-year continuous residency requirement for APRC. The 183-day annual presence requirement also applies."
+    },
+    {
+      "question": "What happens if employment is terminated?",
+      "answer": "Published regulations require the employer to notify MOL within a specified period. The work permit is canceled. The former employee may have a limited period to find a new employer, change visa status, or depart Taiwan. Contact NIA for guidance on the specific situation."
+    },
+    {
+      "question": "Can family members accompany a Work ARC holder?",
+      "answer": "Yes. Published regulations allow the spouse and minor children to apply for dependent ARCs. Dependent ARC holders generally cannot work without separate authorization."
+    }
+  ],
+
+  "tips": [
+    "The employer handles the MOL work permit application — confirm their willingness and capability before signing the contract",
+    "Start the TECO document authentication process early, as it can add weeks to the timeline",
+    "The health examination must be completed at a designated hospital — check the list on the NIA website",
+    "Keep all employment documents safe — they are needed for ARC renewals and any future APRC application",
+    "Apply for ARC within 15 days of arrival as specified in published requirements"
+  ],
+
+  "communityTips": [
+    {
+      "id": "arc-community-1",
+      "tip": "Large companies and schools typically have smoother sponsorship processes than small businesses, according to community reports",
+      "source": "community",
+      "verified": false
+    },
+    {
+      "id": "arc-community-2",
+      "tip": "The TECO authentication process can be the bottleneck — start it as early as possible",
+      "source": "reddit",
+      "verified": false
+    }
+  ],
+
+  "warnings": [
+    "The Work ARC is tied to the sponsoring employer — changing employers requires a new work permit",
+    "Overstaying a Work ARC carries published penalties including fines and entry bans",
+    "The employer must apply for the work permit — the applicant cannot self-sponsor",
+    "TECO authentication of educational documents can take several weeks"
+  ],
+
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": -1,
+    "maxTotalStay": "No published limit while employment continues",
+    "requirements": [
+      "Continued employment with the sponsoring employer",
+      "Work permit renewal approved by MOL",
+      "Tax compliance during the ARC period"
+    ],
+    "documents": [
+      "employment-contract",
+      "employer-docs"
+    ],
+    "applyBeforeDays": 60,
+    "processingTime": "2-4 weeks",
+    "fees": "TWD 500 (work permit) + TWD 1,000 (ARC)"
+  },
+
+  "relatedVisas": ["gold-card", "aprc"],
+
+  "pathsTo": [
+    {
+      "type": "aprc",
+      "name": "APRC (Permanent Residence)",
+      "requirements": "Published requirements: 5 years of continuous legal residence in Taiwan, meeting the 183-day annual presence average, and meeting financial and tax compliance requirements.",
+      "timeline": "Application processing: 30-60 days",
+      "documents": [
+        "ARC",
+        "Tax records for 5 years",
+        "Proof of 183-day annual presence",
+        "Criminal background check",
+        "Financial documentation"
+      ],
+      "notes": "The standard path to APRC requires 5 years of continuous residence (compared to 3 years for Gold Card holders). Published requirements are in the Immigration Act."
+    },
+    {
+      "type": "gold-card",
+      "name": "Employment Gold Card",
+      "requirements": "Apply separately for the Gold Card if meeting the published professional qualification and income requirements. The Gold Card replaces the Work ARC with an open work permit.",
+      "timeline": "30-60 days processing",
+      "documents": [
+        "Professional qualification evidence",
+        "Income proof",
+        "Criminal background check"
+      ],
+      "notes": "Transitioning to a Gold Card provides an open work permit (not tied to any employer) and access to the special tax benefit."
+    }
+  ],
+
+  "pathsFrom": [
+    {
+      "type": "visitor",
+      "name": "Visitor / Visa-Exempt Entry",
+      "requirements": "Secure a job offer from a Taiwanese employer. The employer applies for the work permit. Some applicants may need to exit Taiwan to obtain the resident visa at a TECO office.",
+      "timeline": "4-8 weeks total processing",
+      "documents": [
+        "Employment contract",
+        "Degree certificate (TECO authenticated)",
+        "Work experience certificates",
+        "Criminal background check"
+      ],
+      "notes": "Visitors in Taiwan may be able to change status domestically in some cases, but many applicants need to apply at a TECO office abroad."
+    }
+  ],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "Ministry of Labor (MOL) — Work Permits", "url": "https://www.mol.gov.tw" },
+    { "label": "National Immigration Agency (NIA)", "url": "https://www.immigration.gov.tw" },
+    { "label": "Bureau of Consular Affairs (BOCA)", "url": "https://www.boca.gov.tw" }
+  ]
+}

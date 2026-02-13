@@ -27,7 +27,7 @@ import { getVisaInfo } from "@/lib/visa/data";
 import { parseLocalePath, buildLocalePath } from "@/lib/i18n/config";
 import type { VisaType, VisaInfo } from "@/lib/visa/types";
 
-const categoryIcons = {
+const categoryIcons: Record<string, typeof Briefcase> = {
   work: Briefcase,
   study: GraduationCap,
   residence: Home,
@@ -256,7 +256,7 @@ export function EligibilityQuiz() {
   };
 
   const calculateResults = (): VisaResult[] => {
-    const visaScores: Record<VisaType, { score: number; reasons: string[] }> = {
+    const visaScores: Record<string, { score: number; reasons: string[] }> = {
       "d-10": { score: 0, reasons: [] },
       "e-7": { score: 0, reasons: [] },
       "f-2": { score: 0, reasons: [] },

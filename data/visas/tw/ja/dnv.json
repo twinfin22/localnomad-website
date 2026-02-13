@@ -1,0 +1,285 @@
+{
+  "type": "dnv",
+  "country": "tw",
+  "name": "デジタルノマドビザ",
+  "shortName": "DNV",
+  "category": "digital-nomad",
+  "description": "台湾のデジタルノマドビザは、台湾国外の雇用主やクライアントのためにリモートワークしながら台湾に居住することを可能にします。公表されているビザ期間は6ヶ月で、1年まで延長可能です。",
+  "tagline": "台湾に住みながら、海外雇用主のためにリモートワーク",
+  "keyRequirement": "海外企業での リモート雇用、年収USD 20,000以上（30歳未満）またはUSD 40,000以上（30歳以上）",
+  "isStub": false,
+
+  "targetAudience": [
+    "台湾国外の企業に雇用されているリモートワーカー",
+    "海外クライアントと協力するフリーランサーおよび独立請負業者",
+    "アジアの拠点を探しているデジタルノマド"
+  ],
+
+  "eligibility": [
+    {
+      "id": "foreign-employment",
+      "label": "台湾国外の企業への雇用または契約",
+      "description": "申請者は雇用主または主要クライアントが台湾国外にあることを証明する必要があります。このビザでは台湾国内での雇用は認められていません。",
+      "required": true
+    },
+    {
+      "id": "income-threshold",
+      "label": "年収USD 20,000以上（30歳未満）またはUSD 40,000以上（30歳以上）",
+      "description": "公表されている収入基準は年齢により異なります。前年の収入証明または給与を記載した現在の雇用契約が必要です。",
+      "required": true
+    },
+    {
+      "id": "visa-exempt-nationality",
+      "label": "ビザ免除国の国籍",
+      "description": "公表されている要件では、申請者は台湾へのビザ免除入国が認められている国のパスポートを保持している必要があります。",
+      "required": true
+    },
+    {
+      "id": "health-insurance",
+      "label": "台湾滞在期間をカバーする有効な健康保険",
+      "description": "滞在期間中の医療をカバーする民間健康保険または旅行保険が必要です。",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "犯罪歴なし",
+      "description": "母国の無犯罪証明書が必要です。",
+      "required": true
+    }
+  ],
+
+  "eligibilityQuestions": [
+    {
+      "id": "employment-check",
+      "question": "現在、台湾国外の企業に雇用されているか、契約していますか？",
+      "helpText": "公表されている要件では、海外雇用主またはクライアントのためのリモートワークが指定されています。このビザでは台湾国内での雇用は認められていません。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公表されている要件では、DNVは台湾国外で雇用されているリモートワーカーを対象としています。"
+    },
+    {
+      "id": "income-check",
+      "question": "年収が公表されている基準（30歳未満はUSD 20,000、30歳以上はUSD 40,000）を満たしていますか？",
+      "helpText": "収入基準は入出国管理署の公表要件に基づいています。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公表されている収入要件を満たす必要があります。基準は申請者の年齢によって異なります。"
+    },
+    {
+      "id": "nationality-check",
+      "question": "台湾へのビザ免除入国が認められている国のパスポートをお持ちですか？",
+      "helpText": "外交部領事事務局（BOCA）のウェブサイトで公表されているビザ免除国リストをご確認ください。",
+      "yesIsQualifying": true,
+      "disqualifyingMessage": "公表されている要件では、申請者はビザ免除国の国籍が必要です。"
+    }
+  ],
+
+  "duration": {
+    "initial": "6ヶ月",
+    "extension": "1回のみ6ヶ月の延長が可能（合計1年）",
+    "maxTotal": "1年（公表されている最大期間）"
+  },
+
+  "fees": {
+    "application": "国籍およびTECO事務所により異なる（通常USD 50〜160）",
+    "extension": "延長には手数料がかかります",
+    "notes": "公表されている手数料体系は、発行するTECO事務所またはBOCAウェブサイトで確認できます。"
+  },
+
+  "incomeRequirement": {
+    "amount": "USD 20,000（30歳未満）/ USD 40,000（30歳以上）",
+    "currency": "USD",
+    "period": "annual",
+    "notes": "公表された要件に基づく。海外雇用またはフリーランス契約からの収入。証明方法には雇用契約、銀行明細書、または確定申告書が含まれます。"
+  },
+
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有効なパスポート",
+      "description": "ビザ免除国のもので、滞在予定期間の6ヶ月以上の有効期間",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "パスポート写真",
+      "description": "2インチ、白背景、6ヶ月以内に撮影",
+      "required": true
+    },
+    {
+      "id": "employment-proof",
+      "name": "リモート雇用証明",
+      "description": "台湾国外の企業とのリモートワーク体制を確認する雇用契約、クライアント契約、または雇用主の証明書",
+      "tips": [
+        "レターには仕事がリモートで行われることを明記",
+        "海外法人であることを示す会社登記情報を含める"
+      ],
+      "required": true
+    },
+    {
+      "id": "income-proof",
+      "name": "収入証明",
+      "description": "銀行明細書、確定申告書、または公表されている基準を満たす年収を示す雇用契約",
+      "tips": [
+        "定期的な入金を示す3〜6ヶ月の銀行明細書が一般的に受け入れられる",
+        "前年の確定申告書も受け付けられる"
+      ],
+      "required": true
+    },
+    {
+      "id": "health-insurance",
+      "name": "健康保険証明書",
+      "description": "台湾での滞在予定期間をカバーする民間健康保険または旅行保険",
+      "required": true
+    },
+    {
+      "id": "criminal-record",
+      "name": "無犯罪証明書",
+      "description": "母国発行。TECOまたはハーグ認証による認証",
+      "required": true
+    },
+    {
+      "id": "travel-itinerary",
+      "name": "旅行日程 / 宿泊証明",
+      "description": "帰国便または次の旅程の予約、および台湾での宿泊証明",
+      "required": false
+    }
+  ],
+
+  "applicationSteps": [
+    {
+      "id": "gather-docs",
+      "step": 1,
+      "title": "必要書類の準備",
+      "description": "リモート雇用証明、収入確認、TECO認証済みの無犯罪証明書を含むすべての必要書類を準備します。",
+      "duration": "2〜4週間"
+    },
+    {
+      "id": "apply-teco",
+      "step": 2,
+      "title": "TECO事務所に申請",
+      "description": "現在地を管轄するTECO事務所に申請を提出します。郵送申請を受け付けるTECO事務所もあります。",
+      "duration": "対面で1〜2時間",
+      "links": [
+        { "label": "TECO事務所を探す（BOCA）", "url": "https://www.boca.gov.tw" }
+      ]
+    },
+    {
+      "id": "processing",
+      "step": 3,
+      "title": "申請処理",
+      "description": "TECOが申請を転送して審査されます。処理時間はTECO事務所により異なります。",
+      "duration": "2〜4週間"
+    },
+    {
+      "id": "receive-visa",
+      "step": 4,
+      "title": "ビザの受取と台湾入国",
+      "description": "TECOでパスポートに貼付されたビザステッカーを受け取ります。ビザに記載された有効期間内に台湾に入国します。",
+      "duration": "1週間"
+    },
+    {
+      "id": "register-nia",
+      "step": 5,
+      "title": "入出国管理署に登録（到着後）",
+      "description": "台湾到着後、ビザに指定された期間内に入出国管理署に登録します。90日を超える滞在にはこの手続きが必要です。",
+      "duration": "1〜2時間",
+      "links": [
+        { "label": "内政部入出国管理署", "url": "https://www.immigration.gov.tw" }
+      ]
+    }
+  ],
+
+  "processingTime": {
+    "typical": "2〜4週間",
+    "notes": "処理時間はTECO事務所により異なります。コミュニティメンバーの報告では、場所と書類の完全性により2〜6週間。"
+  },
+
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "台湾国内での雇用は認められていない",
+      "仕事は台湾国外の雇用主またはクライアントに限定",
+      "このビザでは台湾での起業は認められていない"
+    ],
+    "notes": "DNVは海外雇用主のためのリモートワークのみを許可しています。台湾国内での雇用には、別のビザタイプ（ワークARCまたはゴールドカードなど）が必要です。"
+  },
+
+  "faqs": [
+    {
+      "question": "DNVで台湾に滞在した期間はAPRC（永住権）にカウントされますか？",
+      "answer": "公表されている規定に基づくと、デジタルノマドビザはAPRCの連続居住要件にカウントされません。これは、ゴールドカードやワークARCがAPRCの居住要件にカウントされるのとの重要な違いです。"
+    },
+    {
+      "question": "DNV保持者は台湾の全民健康保険（NHI）に加入できますか？",
+      "answer": "公表されているNHI加入規則では、一般的にARCと6ヶ月の連続居住が必要です。DNV保持者は通常ARCを取得しないため、民間健康保険を維持する必要があります。最新の規則は全民健康保険署でご確認ください。"
+    },
+    {
+      "question": "DNVをゴールドカードやワークARCに変更できますか？",
+      "answer": "DNV自体は直接変更されません。ただし、DNV保持者は別途ゴールドカード（オンライン）やワークARC（雇用主を通じて）に申請できます。ビザステータスの変更には、台湾を出国して再入国する必要がある場合があります。"
+    },
+    {
+      "question": "海外雇用主がリモートワーク契約を終了した場合はどうなりますか？",
+      "answer": "公表されているビザ条件では、海外雇用主との継続的なリモート雇用が必要です。雇用が終了した場合、ビザ条件を満たさなくなる可能性があります。具体的な状況については入出国管理署にお問い合わせください。"
+    },
+    {
+      "question": "複数の海外クライアントを持つフリーランサーは対象ですか？",
+      "answer": "公表されている要件に基づくと、台湾国外のクライアントのために働くフリーランサーは一般的に対象となります。ただし、収入基準を満たし、すべての仕事が海外の企業向けであることを証明できることが条件です。"
+    }
+  ],
+
+  "tips": [
+    "DNVはAPRCの居住要件にカウントされません — これは公表されている重要な制限事項",
+    "NHIに加入できない可能性があるため、滞在期間全体をカバーする民間健康保険を維持",
+    "雇用契約と収入証明を最新の状態に保つ — 延長時に再確認が必要",
+    "コミュニティメンバーは収入確認用に6ヶ月分の銀行明細書を準備することを推奨",
+    "台湾での長期居住が目標の場合、APRC資格のあるゴールドカードの検討を"
+  ],
+
+  "warnings": [
+    "このビザでは台湾国内での雇用は認められていない",
+    "DNVでの滞在期間はAPRC永住権にカウントされない",
+    "DNVはビザ免除国の国民のみが対象"
+  ],
+
+  "communityTips": [
+    {
+      "id": "dnv-community-1",
+      "tip": "TECO事務所によって処理速度が異なる — コミュニティフォーラムで最近の処理時間報告を確認",
+      "source": "community",
+      "verified": false
+    },
+    {
+      "id": "dnv-community-2",
+      "tip": "コワーキングスペースの会員証や宿泊証明があると申請が強化される可能性がある（コミュニティ報告）",
+      "source": "reddit",
+      "verified": false
+    }
+  ],
+
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": 1,
+    "maxTotalStay": "1年（6ヶ月 + 6ヶ月延長）",
+    "requirements": [
+      "収入基準を引き続き満たすこと",
+      "海外雇用主とのリモート雇用を維持",
+      "有効な健康保険を維持"
+    ],
+    "documents": [
+      "employment-proof",
+      "income-proof",
+      "health-insurance"
+    ],
+    "applyBeforeDays": 30,
+    "processingTime": "2〜4週間",
+    "fees": "延長手数料がかかります"
+  },
+
+  "relatedVisas": ["gold-card", "visitor", "work-arc"],
+
+  "lastUpdated": "2026-02-01",
+  "officialLinks": [
+    { "label": "外交部領事事務局（BOCA）", "url": "https://www.boca.gov.tw" },
+    { "label": "内政部入出国管理署", "url": "https://www.immigration.gov.tw" },
+    { "label": "ビザ免除国リスト", "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html" }
+  ]
+}

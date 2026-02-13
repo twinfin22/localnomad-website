@@ -37,7 +37,7 @@ const categoryIcons = {
   family: Heart,
   "ethnic-korean": Flag,
   "language-study": BookOpen,
-};
+} as Record<string, typeof Briefcase>;
 
 const STORAGE_KEY_PREFIX = "visa-checklist-";
 
