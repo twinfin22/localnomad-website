@@ -12,6 +12,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 
 interface ComparePageProps {
   params: Promise<{ lang: string; country: string }>;
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: ComparePageProps) {
   return {
     title: `Compare Visas | LocalNomad Visa Guide`,
     description: `Compare ${countryName} visa types side-by-side. See differences in duration, requirements, work permissions, and more.`,
+    alternates: generateAlternates({ path: "/visa/compare", locale, country: country as Country }),
   };
 }
 

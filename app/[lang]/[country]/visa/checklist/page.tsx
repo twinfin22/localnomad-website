@@ -12,6 +12,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 
 interface ChecklistIndexPageProps {
   params: Promise<{ lang: string; country: string }>;
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: ChecklistIndexPageProps) {
   return {
     title: `Document Checklist | LocalNomad Visa Guide`,
     description: `Track your ${countryName} visa document preparation with interactive checklists. Never miss a required document.`,
+    alternates: generateAlternates({ path: "/visa/checklist", locale, country: country as Country }),
   };
 }
 

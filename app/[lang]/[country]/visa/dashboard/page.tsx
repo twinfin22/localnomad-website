@@ -9,6 +9,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 
 interface DashboardPageProps {
   params: Promise<{ lang: string; country: string }>;
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: DashboardPageProps) {
   return {
     title: `Visa Dashboard | LocalNomad`,
     description: `Track your ${countryName} visa application progress with real-time status updates.`,
+    alternates: generateAlternates({ path: "/visa/dashboard", locale, country: country as Country }),
   };
 }
 

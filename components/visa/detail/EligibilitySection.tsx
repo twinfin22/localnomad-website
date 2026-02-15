@@ -198,8 +198,8 @@ export function EligibilitySection({
           </p>
           {visa.workPermission.restrictions && visa.workPermission.restrictions.length > 0 && (
             <ul className="text-xs text-muted-foreground mt-1 space-y-0.5">
-              {visa.workPermission.restrictions.slice(0, 2).map((r, i) => (
-                <li key={i}>• {r}</li>
+              {visa.workPermission.restrictions.slice(0, 2).map((r) => (
+                <li key={r}>• {r}</li>
               ))}
               {visa.workPermission.restrictions.length > 2 && (
                 <li className="text-muted-foreground">+{visa.workPermission.restrictions.length - 2} more restrictions</li>

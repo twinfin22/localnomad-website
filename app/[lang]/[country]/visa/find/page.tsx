@@ -9,6 +9,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: FindVisaPageProps) {
   return {
     title: `Find Your Visa | LocalNomad`,
     description: `Answer a few questions to find the best ${countryName} visa for your situation. Get personalized visa recommendations in 2 minutes.`,
+    alternates: generateAlternates({ path: "/visa/find", locale, country: country as Country }),
   };
 }
 

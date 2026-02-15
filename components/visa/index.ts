@@ -8,7 +8,6 @@ export { StateTimeline } from "./StateTimeline";
 export { OnboardingWizard } from "./OnboardingWizard";
 export { NextStepHero } from "./NextStepHero";
 export { DocumentProgress } from "./DocumentProgress";
-export { StateDashboard } from "./StateDashboard";
 export {
   LegalDisclaimer,
   QuizDisclaimer,

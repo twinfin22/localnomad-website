@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://localnomad.club"),
   title: "LocalNomad — Your Asia Toolkit",
   description:
     "Everything you need to live, work, and thrive in Asia. Curated guides, area insights, and visa support.",
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "LocalNomad",
-    title: "LocalNomad — Your Korea Visa Guide",
+    title: "LocalNomad — Your Asia Visa Guide",
     description:
-      "Navigate Korean visa requirements with confidence. Guides, eligibility checks, and document checklists for work, study, and digital nomad visas.",
+      "Navigate visa requirements across Asia with confidence. Guides, eligibility checks, and document checklists for work, study, and digital nomad visas.",
     url: "https://localnomad.club",
     locale: "en_US",
-    alternateLocale: ["ja_JP", "zh_TW"],
+    alternateLocale: ["ja_JP", "zh_TW", "vi_VN"],
   },
   twitter: {
     card: "summary_large_image",

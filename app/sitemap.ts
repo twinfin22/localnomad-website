@@ -1,106 +1,104 @@
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
+import {
+  countries,
+  countryLocales,
+  buildLocalePath,
+  type Locale,
+  type Country,
+} from "@/lib/i18n/config";
 
-const BASE_URL = 'https://localnomad.club';
+const BASE_URL = "https://localnomad.club";
 
-const locales = ['en', 'ja', 'zh-tw'] as const;
-const country = 'korea';
-
-const visaTypes = [
-  'e-7', 'f-1-d', 'd-2', 'd-10', 'h-1', 'f-2',
-  'd-4', 'd-7', 'd-8', 'e-2', 'f-4', 'f-6',
-] as const;
-
-const buildUrl = (locale: string, path: string): string => {
-  const countrySegment = `/${country}`;
-  const pathSegment = path.startsWith('/') ? path : `/${path}`;
-
-  if (locale === 'en') {
-    return `${BASE_URL}${countrySegment}${pathSegment}`;
-  }
-  return `${BASE_URL}/${locale}${countrySegment}${pathSegment}`;
+/**
+ * Data-backed visa types per country.
+ * Only include types that have actual JSON data files (not stubs).
+ */
+const SITEMAP_VISA_TYPES: Record<Country, string[]> = {
+  korea: [
+    "e-7", "f-1-d", "d-2", "d-10", "h-1", "f-2",
+    "e-2", "d-7", "d-8", "f-6", "f-4", "d-4",
+  ],
+  taiwan: ["dnv", "gold-card", "work-arc", "visitor"],
 };
 
-const buildLocaleHomeUrl = (locale: string): string => {
-  if (locale === 'en') {
-    return `${BASE_URL}/${country}`;
-  }
+const buildUrl = (path: string, locale: Locale, country: Country): string =>
+  `${BASE_URL}${buildLocalePath(path, locale, country)}`;
+
+const buildCountryHomeUrl = (locale: Locale, country: Country): string => {
+  if (locale === "en") return `${BASE_URL}/${country}`;
   return `${BASE_URL}/${locale}/${country}`;
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  // Home pages for each locale: /en/korea, /ja/korea, /zh-tw/korea
-  for (const locale of locales) {
-    entries.push({
-      url: buildLocaleHomeUrl(locale),
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    });
-  }
-
-  // Visa landing page for each locale
-  for (const locale of locales) {
-    entries.push({
-      url: buildUrl(locale, '/visa'),
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    });
-  }
-
-  // Visa detail pages: 12 types x 3 locales = 36 URLs
-  for (const locale of locales) {
-    for (const visaType of visaTypes) {
+  // ─── Country home pages ───
+  for (const country of countries) {
+    for (const locale of countryLocales[country]) {
       entries.push({
-        url: buildUrl(locale, `/visa/${visaType}`),
+        url: buildCountryHomeUrl(locale, country),
         lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8,
+        changeFrequency: "weekly",
+        priority: 1.0,
       });
     }
   }
 
-  // Visa tools for each locale: find, compare, path
-  const visaTools = ['find', 'compare', 'path'] as const;
-  for (const locale of locales) {
-    for (const tool of visaTools) {
+  // ─── Visa landing pages ───
+  for (const country of countries) {
+    for (const locale of countryLocales[country]) {
       entries.push({
-        url: buildUrl(locale, `/visa/${tool}`),
+        url: buildUrl("/visa", locale, country),
         lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.7,
+        changeFrequency: "weekly",
+        priority: 1.0,
       });
     }
   }
 
-  // Areas and bundles for each locale
-  const localeSections = ['areas', 'bundles'] as const;
-  for (const locale of locales) {
-    for (const section of localeSections) {
-      entries.push({
-        url: buildUrl(locale, `/${section}`),
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      });
+  // ─── Visa detail pages ───
+  for (const country of countries) {
+    const visaTypes = SITEMAP_VISA_TYPES[country];
+    for (const locale of countryLocales[country]) {
+      for (const type of visaTypes) {
+        entries.push({
+          url: buildUrl(`/visa/${type}`, locale, country),
+          lastModified: new Date(),
+          changeFrequency: "weekly",
+          priority: 0.8,
+        });
+      }
     }
   }
 
-  // Static pages (not locale-prefixed)
+  // ─── Visa tools (find, compare, path, checklist, dashboard) ───
+  const visaTools = ["find", "compare", "path", "checklist", "dashboard"];
+  for (const country of countries) {
+    for (const locale of countryLocales[country]) {
+      for (const tool of visaTools) {
+        entries.push({
+          url: buildUrl(`/visa/${tool}`, locale, country),
+          lastModified: new Date(),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
+    }
+  }
+
+  // ─── Static pages (not locale-prefixed) ───
   const staticPages = [
-    { path: '/business', priority: 0.5 },
-    { path: '/privacy', priority: 0.3 },
-    { path: '/terms', priority: 0.3 },
-    { path: '/refund', priority: 0.3 },
-  ] as const;
+    { path: "/business", priority: 0.5 as const },
+    { path: "/privacy", priority: 0.3 as const },
+    { path: "/terms", priority: 0.3 as const },
+    { path: "/refund", priority: 0.3 as const },
+  ];
 
   for (const page of staticPages) {
     entries.push({
       url: `${BASE_URL}${page.path}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: page.priority,
     });
   }

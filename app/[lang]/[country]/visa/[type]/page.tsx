@@ -11,6 +11,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 
 interface VisaDetailPageProps {
   params: Promise<{ lang: string; country: string; type: string }>;
@@ -49,6 +50,7 @@ export async function generateMetadata({ params }: VisaDetailPageProps) {
   return {
     title: `${visa.name} (${visa.shortName}) | LocalNomad Visa Guide`,
     description: visa.description,
+    alternates: generateAlternates({ path: `/visa/${type}`, locale, country }),
     openGraph: {
       title: `${visa.name} (${visa.shortName}) | LocalNomad Visa Guide`,
       description: visa.description,

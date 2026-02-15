@@ -96,8 +96,8 @@ export function StepDocuments({ visa, checklistHref }: StepDocumentsProps) {
       {/* Tips */}
       {documentTips.length > 0 && (
         <div className="space-y-2">
-          {documentTips.map((tip, i) => (
-            <div key={i} className="flex gap-2 text-sm">
+          {documentTips.map((tip) => (
+            <div key={tip} className="flex gap-2 text-sm">
               <Lightbulb className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
               <span className="text-muted-foreground">{tip}</span>
             </div>

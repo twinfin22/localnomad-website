@@ -13,6 +13,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 
 interface PathPageProps {
   params: Promise<{ lang: string; country: string }>;
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }: PathPageProps) {
   return {
     title: `Visa Path Simulator | LocalNomad`,
     description: `Explore visa transition paths for ${countryName}. See how to go from your current visa to your goal — with requirements, timelines, and tips at each step.`,
+    alternates: generateAlternates({ path: "/visa/path", locale, country: country as Country }),
   };
 }
 

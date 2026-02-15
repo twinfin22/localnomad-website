@@ -403,8 +403,8 @@ function DocumentItem({
                 Tips
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
-                {doc.tips.map((tip, i) => (
-                  <li key={i}>• {tip}</li>
+                {doc.tips.map((tip) => (
+                  <li key={tip}>• {tip}</li>
                 ))}
               </ul>
             </div>

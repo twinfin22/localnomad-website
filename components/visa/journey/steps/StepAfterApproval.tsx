@@ -82,8 +82,8 @@ export function StepAfterApproval({
             Important reminders
           </h4>
           <div className="space-y-2">
-            {holderWarnings.map((warning, i) => (
-              <div key={i} className="flex gap-2 text-sm">
+            {holderWarnings.map((warning) => (
+              <div key={warning} className="flex gap-2 text-sm">
                 <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">{warning}</span>
               </div>

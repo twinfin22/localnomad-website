@@ -10,6 +10,7 @@ import {
   type Locale,
   type Country,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 
 interface ChecklistTypePageProps {
   params: Promise<{ lang: string; country: string; type: string }>;
@@ -48,6 +49,7 @@ export async function generateMetadata({ params }: ChecklistTypePageProps) {
   return {
     title: `${visa.shortName} Document Checklist | LocalNomad`,
     description: `Complete document checklist for ${visa.name} application. Track your progress and never miss a required document.`,
+    alternates: generateAlternates({ path: `/visa/checklist/${type}`, locale, country }),
   };
 }
 

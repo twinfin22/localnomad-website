@@ -53,8 +53,8 @@ export function StepApply({ visa }: StepApplyProps) {
               {/* Step tips */}
               {step.tips && step.tips.length > 0 && (
                 <ul className="mt-2 space-y-1">
-                  {step.tips.map((tip, i) => (
-                    <li key={i} className="text-xs text-muted-foreground">
+                  {step.tips.map((tip) => (
+                    <li key={tip} className="text-xs text-muted-foreground">
                       • {tip}
                     </li>
                   ))}
@@ -86,9 +86,9 @@ export function StepApply({ visa }: StepApplyProps) {
       {/* Warnings */}
       {processWarnings.length > 0 && (
         <div className="space-y-2">
-          {processWarnings.map((warning, i) => (
+          {processWarnings.map((warning) => (
             <div
-              key={i}
+              key={warning}
               className="flex gap-2 text-sm p-3 rounded-lg bg-red-500/10 border border-red-500/20"
             >
               <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />

@@ -16,6 +16,7 @@ import {
   type Country,
   countries,
 } from "@/lib/i18n/config";
+import { generateAlternates } from "@/lib/seo/metadata";
 import { Check, Route, ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }: VisaLandingProps) {
   return {
     title: `${t('visa.pageTitle', { country: countryName })} | LocalNomad`,
     description: t('visa.pageDescription', { country: countryName }),
+    alternates: generateAlternates({ path: "/visa", locale, country: country as Country }),
     openGraph: {
       title: `${t('visa.pageTitle', { country: countryName })} | LocalNomad`,
       description: t('visa.pageDescription', { country: countryName }),
