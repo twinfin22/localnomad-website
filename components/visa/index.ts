@@ -3,7 +3,6 @@ export { VisaComparisonTool } from "./VisaComparisonTool";
 export { EligibilityQuiz } from "./EligibilityQuiz";
 export { DocumentChecklist } from "./DocumentChecklist";
 export { DDayCounter } from "./DDayCounter";
-export { NextActionCard, NextActionsList } from "./NextActionCard";
 export { StateTimeline } from "./StateTimeline";
 export { OnboardingWizard } from "./OnboardingWizard";
 export { NextStepHero } from "./NextStepHero";
@@ -15,10 +14,10 @@ export {
   DayTrackerDisclaimer,
 } from "./LegalDisclaimer";
 
-// New dashboard components
+// Dashboard components
 export {
   HealthScoreCard,
   DDayPanel,
-  NextActionCard as DashboardNextAction,
+  NextActionCard,
   DashboardClient,
 } from "./dashboard";
