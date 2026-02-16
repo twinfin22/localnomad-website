@@ -53,22 +53,22 @@
       "id": "employment-check",
       "question": "您目前是否受僱於或與台灣境外之公司簽約工作？",
       "helpText": "公告要求為境外雇主或客戶遠距工作。此簽證不允許在台灣本地就業。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公告要求數位遊牧簽證適用於受僱於台灣境外之遠距工作者。"
+      "mismatchNote": "公告要求數位遊牧簽證適用於受僱於台灣境外之遠距工作者。",
+      "publishedRequirement": "資料來源：內政部移民署 (NIA)"
     },
     {
       "id": "income-check",
       "question": "您的年收入是否達到公告門檻（30歲以下為美金20,000元，30歲以上為美金40,000元）？",
       "helpText": "收入門檻依據移民署公告之要求。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "須符合公告之收入門檻。門檻依申請人年齡而異。"
+      "mismatchNote": "須符合公告之收入門檻。門檻依申請人年齡而異。",
+      "publishedRequirement": "資料來源：內政部移民署 (NIA)"
     },
     {
       "id": "nationality-check",
       "question": "您是否持有可免簽入境台灣之國家護照？",
       "helpText": "請至外交部領事事務局（BOCA）網站查詢公告之免簽國家名單。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公告要求申請人須來自免簽國家。"
+      "mismatchNote": "公告要求申請人須來自免簽國家。",
+      "publishedRequirement": "資料來源：內政部移民署 (NIA)"
     }
   ],
 

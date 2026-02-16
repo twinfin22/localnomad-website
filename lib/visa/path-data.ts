@@ -893,7 +893,7 @@ const ALL_PATHS: SimulatorPath[] = [
           'May need to leave Korea briefly and re-enter on E-7',
         ],
         pitfalls: [
-          'Direct H-1 to E-7 change is possible but not guaranteed — depends on immigration office',
+          'Direct H-1 to E-7 status change is subject to immigration office discretion and published requirements at the time of application',
           'Must have relevant qualifications for the E-7 category',
         ],
       },

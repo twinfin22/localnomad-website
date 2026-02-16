@@ -179,12 +179,6 @@
     "yourResults": "あなたの結果",
     "bestMatch": "最も近い条件",
     "alsoConsider": "他の選択肢",
-    "strongMatch": "高い適合度",
-    "moderateMatch": "中程度の適合度",
-    "possibleOption": "可能性のある選択肢",
-    "strongMatchDesc": "公開されている要件を満たしているようです",
-    "moderateMatchDesc": "いくつかの条件付きで要件を満たす可能性があります",
-    "possibleOptionDesc": "検討の価値がありますが、最適ではない可能性があります",
     "backToResults": "結果に戻る"
   },
   "onboarding": {
@@ -229,7 +223,6 @@
     "startMyJourney": "旅を始める",
     "daysToPrepare": "準備期間 {count} 日",
     "trackProgress": "進捗を一緒に追跡しましょう",
-    "match": "{score}% 一致",
     "backToResults": "結果に戻る"
   },
   "eligibilityQuiz": {

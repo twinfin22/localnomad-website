@@ -48,15 +48,15 @@
       "id": "passport-check",
       "question": "Is your passport valid for at least 6 months from your planned entry date?",
       "helpText": "Published requirements specify at least 6 months of passport validity.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "Published entry requirements include a passport valid for at least 6 months."
+      "mismatchNote": "Published entry requirements include a passport valid for at least 6 months.",
+      "publishedRequirement": "Source: Bureau of Consular Affairs (BOCA)"
     },
     {
       "id": "visa-exempt-check",
       "question": "Is your nationality on the published list of visa-exempt countries for Taiwan?",
       "helpText": "Check the Bureau of Consular Affairs (BOCA) website for the current visa-exempt country list.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "Nationals not on the visa-exempt list must obtain a visitor visa from a TECO office before travel."
+      "mismatchNote": "Nationals not on the visa-exempt list must obtain a visitor visa from a TECO office before travel.",
+      "publishedRequirement": "Source: Bureau of Consular Affairs (BOCA)"
     }
   ],
 

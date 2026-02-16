@@ -48,15 +48,15 @@
       "id": "passport-check",
       "question": "パスポートの有効期間は、入国予定日から少なくとも6ヶ月ありますか？",
       "helpText": "公表されている入国要件にはパスポートの有効期間6ヶ月以上が含まれます。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公表されている入国要件にはパスポートの有効期間6ヶ月以上が含まれます。"
+      "mismatchNote": "公表されている入国要件にはパスポートの有効期間6ヶ月以上が含まれます。",
+      "publishedRequirement": "出典：外交部領事事務局 (BOCA)"
     },
     {
       "id": "visa-exempt-check",
       "question": "あなたの国籍は台湾の公表されているビザ免除国リストに含まれていますか？",
       "helpText": "外交部領事事務局（BOCA）のウェブサイトで最新のビザ免除国リストをご確認ください。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "ビザ免除リストにない国籍の方は、旅行前にTECO事務所でビジタービザを取得する必要があります。"
+      "mismatchNote": "ビザ免除リストにない国籍の方は、旅行前にTECO事務所でビジタービザを取得する必要があります。",
+      "publishedRequirement": "出典：外交部領事事務局 (BOCA)"
     }
   ],
 

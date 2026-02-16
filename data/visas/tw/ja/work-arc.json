@@ -54,15 +54,15 @@
       "id": "job-offer-check",
       "question": "台湾の企業または機関からジョブオファーを受けていますか？",
       "helpText": "雇用主が労働省への就労許可申請を開始します。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "ワークARCの公表されている要件には、台湾の雇用主との雇用契約が含まれます。"
+      "mismatchNote": "ワークARCの公表されている要件には、台湾の雇用主との雇用契約が含まれます。",
+      "publishedRequirement": "出典：労働部 (MOL)"
     },
     {
       "id": "education-check",
       "question": "学士号以上の学位、または同等の専門経験（通常2年以上）をお持ちですか？",
       "helpText": "公表されている要件は職業カテゴリにより異なります。一部のカテゴリでは、豊富な実務経験を学位の代わりとして認めています。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公表されている要件には通常、学歴または同等の経験資格が含まれます。"
+      "mismatchNote": "公表されている要件には通常、学歴または同等の経験資格が含まれます。",
+      "publishedRequirement": "出典：労働部 (MOL)"
     }
   ],
 

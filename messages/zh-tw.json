@@ -179,12 +179,6 @@
     "yourResults": "您的結果",
     "bestMatch": "最接近的選擇",
     "alsoConsider": "其他選項",
-    "strongMatch": "高度匹配",
-    "moderateMatch": "中度匹配",
-    "possibleOption": "可能的選項",
-    "strongMatchDesc": "似乎符合公開的要求",
-    "moderateMatchDesc": "可能在某些條件下符合要求",
-    "possibleOptionDesc": "值得探索，但可能不是最理想的",
     "backToResults": "返回結果"
   },
   "onboarding": {
@@ -229,7 +223,6 @@
     "startMyJourney": "開始我的旅程",
     "daysToPrepare": "{count} 天準備時間",
     "trackProgress": "我們將幫助您追蹤進度",
-    "match": "{score}% 匹配",
     "backToResults": "返回結果"
   },
   "eligibilityQuiz": {

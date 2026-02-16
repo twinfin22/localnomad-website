@@ -27,19 +27,19 @@ const MATCH_LEVEL_CONFIG: Record<
   { label: string; color: string; bgColor: string; description: string }
 > = {
   strong: {
-    label: 'Strong Match',
+    label: 'Closely Aligns',
     color: 'text-emerald-400',
     bgColor: 'bg-emerald-500/10 border-emerald-500/30',
     description: 'Appears to meet published requirements',
   },
   moderate: {
-    label: 'Moderate Match',
+    label: 'Partially Aligns',
     color: 'text-primary',
     bgColor: 'bg-primary/10 border-primary/30',
     description: 'May meet requirements with some conditions',
   },
   possible: {
-    label: 'Possible Option',
+    label: 'Worth Exploring',
     color: 'text-amber-400',
     bgColor: 'bg-amber-500/10 border-amber-500/30',
     description: 'Worth exploring, but may not be ideal',
@@ -79,11 +79,13 @@ export function QuizResults({
         </p>
       </div>
 
+      <QuizDisclaimer className="mb-6" />
+
       {/* Top Recommendation */}
       {topRecommendation && (
         <div className="mb-6">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
-            Closest Match
+            Most Requirements Met
           </div>
           <RecommendationCard
             recommendation={topRecommendation}

@@ -179,12 +179,6 @@
     "yourResults": "Your Results",
     "bestMatch": "Closest Match",
     "alsoConsider": "Also Consider",
-    "strongMatch": "Strong Match",
-    "moderateMatch": "Moderate Match",
-    "possibleOption": "Possible Option",
-    "strongMatchDesc": "Appears to meet published requirements",
-    "moderateMatchDesc": "May meet requirements with some conditions",
-    "possibleOptionDesc": "Worth exploring, but may not be ideal",
     "backToResults": "Back to results"
   },
   "onboarding": {
@@ -229,7 +223,6 @@
     "startMyJourney": "Start My Journey",
     "daysToPrepare": "{count} days to prepare",
     "trackProgress": "We'll help you track your progress",
-    "match": "{score}% match",
     "backToResults": "Back to results"
   },
   "eligibilityQuiz": {

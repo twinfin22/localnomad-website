@@ -49,22 +49,22 @@
       "id": "field-check",
       "question": "あなたの専門経験は、公表されている8つのゴールドカード分野（科学技術、経済、教育、文化芸術、スポーツ、金融、法律、建築）のいずれかに該当しますか？",
       "helpText": "テクノロジー専門家の多くは「科学技術」分野で申請しています。公表されている分野の定義はgoldcard.nat.gov.twで確認できます。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公表された要件では、申請者は8つの対象分野のいずれかの専門性を証明する必要があります。"
+      "mismatchNote": "公表された要件では、申請者は8つの対象分野のいずれかの専門性を証明する必要があります。",
+      "publishedRequirement": "出典：ゴールドカード申請ポータル"
     },
     {
       "id": "salary-check",
       "question": "現在または直近の月収はTWD 160,000（約USD 5,300）以上ですか？",
       "helpText": "公表されている給与基準は分野により異なります。一部の分野では、特許、論文、受賞歴などの代替資格も受け付けています。出典：goldcard.nat.gov.tw",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "一部の分野では給与以外の代替資格ルートがあります。ゴールドカードポータルで各分野の具体的な要件をご確認ください。"
+      "mismatchNote": "一部の分野では給与以外の代替資格ルートがあります。ゴールドカードポータルで各分野の具体的な要件をご確認ください。",
+      "publishedRequirement": "出典：ゴールドカード申請ポータル"
     },
     {
       "id": "criminal-check",
       "question": "母国の無犯罪証明書を取得できますか？",
       "helpText": "公表された要件には犯罪歴がないことが含まれます。無犯罪証明書はTECO事務所またはハーグ認証による認証が必要です。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "無犯罪証明書は公表されている必要書類に含まれています。"
+      "mismatchNote": "無犯罪証明書は公表されている必要書類に含まれています。",
+      "publishedRequirement": "出典：ゴールドカード申請ポータル"
     }
   ],
 

@@ -53,22 +53,22 @@
       "id": "employment-check",
       "question": "現在、台湾国外の企業に雇用されているか、契約していますか？",
       "helpText": "公表されている要件では、海外雇用主またはクライアントのためのリモートワークが指定されています。このビザでは台湾国内での雇用は認められていません。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公表されている要件では、DNVは台湾国外で雇用されているリモートワーカーを対象としています。"
+      "mismatchNote": "公表されている要件では、DNVは台湾国外で雇用されているリモートワーカーを対象としています。",
+      "publishedRequirement": "出典：内政部移民署 (NIA)"
     },
     {
       "id": "income-check",
       "question": "年収が公表されている基準（30歳未満はUSD 20,000、30歳以上はUSD 40,000）を満たしていますか？",
       "helpText": "収入基準は入出国管理署の公表要件に基づいています。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公表されている収入要件を満たす必要があります。基準は申請者の年齢によって異なります。"
+      "mismatchNote": "公表されている収入要件を満たす必要があります。基準は申請者の年齢によって異なります。",
+      "publishedRequirement": "出典：内政部移民署 (NIA)"
     },
     {
       "id": "nationality-check",
       "question": "台湾へのビザ免除入国が認められている国のパスポートをお持ちですか？",
       "helpText": "外交部領事事務局（BOCA）のウェブサイトで公表されているビザ免除国リストをご確認ください。",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "公表されている要件では、申請者はビザ免除国の国籍が必要です。"
+      "mismatchNote": "公表されている要件では、申請者はビザ免除国の国籍が必要です。",
+      "publishedRequirement": "出典：内政部移民署 (NIA)"
     }
   ],
 

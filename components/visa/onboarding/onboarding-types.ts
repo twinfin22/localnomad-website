@@ -26,7 +26,6 @@ export interface SituationOption {
 
 export interface VisaMatch {
   type: VisaType;
-  score: number;
   name: string;
   tagline: string;
 }

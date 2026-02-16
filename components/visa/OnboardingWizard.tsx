@@ -42,16 +42,13 @@ export function OnboardingWizard() {
       scores[visa as VisaType] = (scores[visa as VisaType] || 0) + weight;
     });
 
-    const maxScore = Math.max(...Object.values(scores), 1);
     const matchList: VisaMatch[] = Object.entries(scores)
       .filter(([, score]) => score > 0)
-      .map(([type, score]) => ({
+      .map(([type]) => ({
         type: type as VisaType,
-        score: Math.round((score / maxScore) * 100),
         name: visaInfo[type as VisaType].name,
         tagline: visaInfo[type as VisaType].tagline,
       }))
-      .sort((a, b) => b.score - a.score)
       .slice(0, 3);
 
     setMatches(matchList);

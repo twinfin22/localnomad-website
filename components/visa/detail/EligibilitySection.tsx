@@ -212,7 +212,7 @@ export function EligibilitySection({
       {/* Disclaimer */}
       <p className="text-xs text-muted-foreground flex items-start gap-2">
         <HelpCircle className="w-3 h-3 mt-0.5 flex-shrink-0" />
-        This is a preliminary check. Final eligibility is determined by Korean immigration authorities.
+        This is a preliminary check. Final eligibility is determined by the relevant immigration authorities.
       </p>
     </div>
   );

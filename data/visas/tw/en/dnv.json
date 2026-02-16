@@ -53,22 +53,22 @@
       "id": "employment-check",
       "question": "Are you currently employed by or contracted with a company based outside Taiwan?",
       "helpText": "The published requirements specify remote work for a foreign employer or client. Local employment in Taiwan is not permitted under this visa.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "The published requirements specify that the DNV is for remote workers employed outside Taiwan."
+      "mismatchNote": "The published requirements specify that the DNV is for remote workers employed outside Taiwan.",
+      "publishedRequirement": "Source: National Immigration Agency (NIA)"
     },
     {
       "id": "income-check",
       "question": "Does your annual income meet the published threshold (USD 20,000 if under 30, or USD 40,000 if 30 or over)?",
       "helpText": "Income thresholds are based on published requirements from the National Immigration Agency.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "The published income requirements must be met. The threshold depends on the applicant's age."
+      "mismatchNote": "The published income requirements must be met. The threshold depends on the applicant's age.",
+      "publishedRequirement": "Source: National Immigration Agency (NIA)"
     },
     {
       "id": "nationality-check",
       "question": "Do you hold a passport from a country that has visa-exempt entry to Taiwan?",
       "helpText": "Check the published visa-exempt country list on the Bureau of Consular Affairs (BOCA) website.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "The published requirements specify that applicants must be from a visa-exempt country."
+      "mismatchNote": "The published requirements specify that applicants must be from a visa-exempt country.",
+      "publishedRequirement": "Source: National Immigration Agency (NIA)"
     }
   ],
 

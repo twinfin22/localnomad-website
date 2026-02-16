@@ -54,15 +54,15 @@
       "id": "job-offer-check",
       "question": "Do you have a job offer from a company or institution in Taiwan?",
       "helpText": "The employer initiates the work permit application with the Ministry of Labor.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "The published requirements for a Work ARC include an employment contract with a Taiwanese employer."
+      "mismatchNote": "The published requirements for a Work ARC include an employment contract with a Taiwanese employer.",
+      "publishedRequirement": "Source: Ministry of Labor (MOL)"
     },
     {
       "id": "education-check",
       "question": "Do you have a bachelor's degree or higher, or equivalent professional experience (typically 2+ years)?",
       "helpText": "Published requirements vary by occupation category. Some categories accept extensive work experience in lieu of a degree.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "The published requirements typically include education or equivalent experience qualifications."
+      "mismatchNote": "The published requirements typically include education or equivalent experience qualifications.",
+      "publishedRequirement": "Source: Ministry of Labor (MOL)"
     }
   ],
 

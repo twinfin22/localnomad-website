@@ -49,22 +49,22 @@
       "id": "field-check",
       "question": "Does your professional experience fall within one of the 8 published Gold Card categories (Science & Technology, Economy, Education, Culture & Arts, Sport, Finance, Law, Architecture)?",
       "helpText": "Most technology professionals apply under 'Science and Technology'. The published category definitions are available on goldcard.nat.gov.tw.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "The published requirements specify that applicants must demonstrate expertise in one of the 8 qualifying fields."
+      "mismatchNote": "The published requirements specify that applicants must demonstrate expertise in one of the 8 qualifying fields.",
+      "publishedRequirement": "Source: Gold Card Application Portal"
     },
     {
       "id": "salary-check",
       "question": "Is your current or most recent monthly salary equivalent to TWD 160,000 (~USD 5,300) or higher?",
       "helpText": "Published salary thresholds vary by category. Some categories accept alternative qualifications (patents, publications, awards) in lieu of salary. Source: goldcard.nat.gov.tw.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "Some categories have alternative qualification paths beyond salary. Review the specific category requirements on the Gold Card portal."
+      "mismatchNote": "Some categories have alternative qualification paths beyond salary. Review the specific category requirements on the Gold Card portal.",
+      "publishedRequirement": "Source: Gold Card Application Portal"
     },
     {
       "id": "criminal-check",
       "question": "Can you obtain a criminal background check from your home country?",
       "helpText": "The published requirements include a clean criminal record. The background check must be authenticated by a TECO office or via Hague Apostille.",
-      "yesIsQualifying": true,
-      "disqualifyingMessage": "A criminal background check is listed as a required document in the published application requirements."
+      "mismatchNote": "A criminal background check is listed as a required document in the published application requirements.",
+      "publishedRequirement": "Source: Gold Card Application Portal"
     }
   ],
 

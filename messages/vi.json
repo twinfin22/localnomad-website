@@ -141,12 +141,6 @@
     "yourResults": "Kết quả của bạn",
     "bestMatch": "Phù hợp nhất",
     "alsoConsider": "Cũng nên cân nhắc",
-    "strongMatch": "Rất phù hợp",
-    "moderateMatch": "Khá phù hợp",
-    "possibleOption": "Lựa chọn khả thi",
-    "strongMatchDesc": "Có vẻ đáp ứng các yêu cầu đã công bố",
-    "moderateMatchDesc": "Có thể đáp ứng yêu cầu với một số điều kiện",
-    "possibleOptionDesc": "Đáng tìm hiểu, nhưng có thể không lý tưởng",
     "backToResults": "Quay lại kết quả"
   },
   "onboarding": {
@@ -191,7 +185,6 @@
     "startMyJourney": "Bắt đầu hành trình",
     "daysToPrepare": "{count} ngày để chuẩn bị",
     "trackProgress": "Chúng tôi sẽ giúp bạn theo dõi tiến độ",
-    "match": "Phù hợp {score}%",
     "backToResults": "Quay lại kết quả"
   },
   "eligibilityQuiz": {

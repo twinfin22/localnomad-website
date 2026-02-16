@@ -22,42 +22,35 @@ interface ResultsStepProps {
 export function ResultsStep({ matches, onSelectVisa, onBack, t }: ResultsStepProps) {
   return (
     <div className="space-y-6">
+      <QuizDisclaimer className="mb-4" />
       {matches.map((match, index) => (
         <button
           key={match.type}
           onClick={() => onSelectVisa(match.type)}
           className={cn(
             "w-full bg-surface border border-border rounded-xl p-6 text-left transition-all",
-            index === 0 && "ring-2 ring-primary bg-primary/5"
+            ""
           )}
         >
           <div className="flex items-start gap-4">
             <div className={cn(
               "w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold",
-              index === 0 ? "bg-primary text-primary-foreground" : "bg-elevated text-muted-foreground"
+              "bg-elevated text-muted-foreground"
             )}>
-              {index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉"}
+              {index + 1}
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-1">
                 <h3 className="text-lg font-semibold text-foreground">
                   {match.name}
                 </h3>
-                <span className={cn(
-                  "text-xs font-medium px-2 py-0.5 rounded-full",
-                  index === 0 ? "bg-primary text-primary-foreground" : "bg-elevated text-muted-foreground"
-                )}>
-                  {t("onboarding.match", { score: match.score })}
-                </span>
               </div>
               <p className="text-sm text-muted-foreground">{match.tagline}</p>
             </div>
-            {index === 0 && (
-              <div className="flex items-center gap-2 text-primary font-medium">
-                <span>Start</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            )}
+            <div className="flex items-center gap-2 text-primary font-medium">
+              <span>View</span>
+              <ArrowRight className="w-4 h-4" />
+            </div>
           </div>
         </button>
       ))}

@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
+import { QuizDisclaimer } from "@/components/visa/LegalDisclaimer";
 import { categoryIcons, type VisaResult } from "./eligibility-quiz-data";
 
 interface ConsentGateProps {
@@ -42,7 +43,7 @@ export function ConsentGate({ consentGiven, onConsentChange, onBack, onViewResul
             <span className="text-sm text-muted-foreground">
               I understand this tool matches my answers against published
               requirements and does not determine my eligibility. Final
-              decisions are made by Korean immigration authorities.
+              decisions are made by the relevant immigration authorities.
             </span>
           </label>
 
@@ -85,11 +86,13 @@ export function EligibilityQuizResults({ results, localePath, onRestart }: Eligi
           </p>
         </div>
 
+        <QuizDisclaimer className="mb-4" />
+
         {/* Results List */}
         <div className="space-y-4">
           {results.map((result, index) => {
             const Icon = categoryIcons[result.visa.category] || Briefcase;
-            const isTopMatch = index === 0;
+            const isTopMatch = false;
 
             return (
               <div
@@ -120,38 +123,13 @@ export function EligibilityQuizResults({ results, localePath, onRestart }: Eligi
                       </h3>
                       {isTopMatch && (
                         <span className="text-xs px-2 py-0.5 bg-primary text-primary-foreground rounded-full">
-                          Closest requirement match
+                          Most requirements listed
                         </span>
                       )}
                     </div>
                     <p className="text-sm text-muted-foreground mb-3">
                       {result.visa.name}
                     </p>
-
-                    {/* Match Bar */}
-                    <div className="mb-3">
-                      <div className="flex items-center justify-between text-xs mb-1">
-                        <span className="text-muted-foreground">
-                          Match Score
-                        </span>
-                        <span className="font-semibold">
-                          {result.percentage}%
-                        </span>
-                      </div>
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <div
-                          className={cn(
-                            "h-full rounded-full transition-all duration-500",
-                            result.percentage >= 70
-                              ? "bg-green-500"
-                              : result.percentage >= 40
-                                ? "bg-amber-500"
-                                : "bg-red-500"
-                          )}
-                          style={{ width: `${result.percentage}%` }}
-                        />
-                      </div>
-                    </div>
 
                     {/* Match Reasons */}
                     {result.matchReasons.length > 0 && (
@@ -186,6 +164,8 @@ export function EligibilityQuizResults({ results, localePath, onRestart }: Eligi
             );
           })}
         </div>
+
+        <QuizDisclaimer className="mt-4" />
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-3 pt-4">

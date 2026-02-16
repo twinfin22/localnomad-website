@@ -348,8 +348,8 @@ export interface EligibilityQuestion {
   id: string;
   question: string;
   helpText?: string;
-  yesIsQualifying: boolean;
-  disqualifyingMessage?: string;
+  mismatchNote?: string;
+  publishedRequirement?: string;
 }
 
 /**
