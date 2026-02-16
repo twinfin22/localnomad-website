@@ -1,9 +1,9 @@
 {
   "type": "f-1-d",
-  "name": "Digital Nomad Visa (Workcation)",
+  "name": "Korea Digital Nomad Visa (F-1-D) — Complete 2026 Guide",
   "shortName": "F-1-D",
   "category": "digital-nomad",
-  "description": "Korea's Digital Nomad Visa allows remote workers employed by foreign companies to live and work in Korea. Also known as the 'Workcation' visa, it's designed for location-independent professionals.",
+  "description": "Everything about Korea's F-1-D Workation Visa: $66K income requirement, insurance, documents, step-by-step application, and FAQ. Updated for 2026.",
   "tagline": "Work remotely, live in Korea",
   "keyRequirement": "Remote employment with foreign company + income ≥ GNI×2 (~₩88M/year)",
   "targetAudience": [
@@ -28,7 +28,7 @@
     {
       "id": "insurance",
       "label": "Health insurance with Korea coverage",
-      "description": "Must have valid health insurance covering your stay",
+      "description": "Private health insurance with minimum coverage of approximately ₩100,000,000 (~$75,000 USD). F-1-D holders are generally not eligible for Korea's National Health Insurance (국민건강보험) as workplace subscribers. Maintain private coverage for the entire duration of stay.",
       "required": true
     },
     {
@@ -52,7 +52,25 @@
     "amount": "66,000",
     "currency": "USD",
     "period": "annual",
-    "notes": "As of 2025. This is approximately ₩88 million/year (GNI × 2). Updated annually. Proof required for previous 6-12 months."
+    "notes": "As of 2026. Approximately ₩88,102,000/year (GNI × 2, based on 2024 per-capita GNI of ₩44,051,000). Updated annually by the Ministry of Justice (법무부). Proof required for previous 6-12 months.",
+    "proofMethods": [
+      "Employment contract showing annual salary",
+      "Pay stubs or salary statements from the past 6-12 months",
+      "Tax return or income tax certificate from home country",
+      "Bank statements showing regular income deposits",
+      "For freelancers: invoices and contracts totaling the required amount over the past 12 months"
+    ]
+  },
+  "insuranceRequirement": {
+    "minimumCoverage": "₩100,000,000 (~$75,000 USD)",
+    "type": "Private health insurance",
+    "notes": "Published requirements specify private health insurance with minimum coverage of ₩100,000,000. F-1-D holders are generally not eligible for Korea's National Health Insurance (NHI) as they are not employed by a Korean entity. International plans such as SafetyWing, Cigna Global, and World Nomads are commonly used. Insurance must cover the entire duration of stay.",
+    "source": "Ministry of Justice, Immigration Service"
+  },
+  "taxImplications": {
+    "threshold": "183 days",
+    "notes": "According to Korean tax law, individuals who stay in Korea for 183 days or more in a calendar year may be classified as tax residents. Tax residents may be subject to Korean income tax on worldwide income. The tax rate is progressive (6-45%). Double tax treaties may apply depending on nationality. Consult a licensed tax professional (세무사) for specific guidance.",
+    "source": "National Tax Service (NTS)"
   },
   "documents": [
     {
@@ -157,7 +175,7 @@
       "id": "step-3",
       "step": 3,
       "title": "Apply at Korean Embassy",
-      "description": "Submit application at Korean embassy/consulate in your country.",
+      "description": "Submit application at Korean embassy/consulate in your country. Alternatively, if you are currently in Korea on a valid visa status (e.g., B-1, B-2, D-10), you may apply for a change of status at the local immigration office.",
       "duration": "1 day",
       "tips": [
         "Book appointment in advance",
@@ -187,8 +205,8 @@
     }
   ],
   "processingTime": {
-    "typical": "1-3 weeks",
-    "notes": "Varies by embassy and nationality. Apply well before travel date."
+    "typical": "2-4 weeks",
+    "notes": "Processing times vary by embassy, nationality, and season. According to published guidelines, apply at least 4-6 weeks before your intended travel date. Some embassies may offer expedited processing for additional fees."
   },
   "workPermission": {
     "allowed": true,
@@ -223,6 +241,34 @@
     {
       "question": "Can I extend beyond 2 years?",
       "answer": "The maximum stay on F-1-D is 2 years. After that, you'd need to leave Korea or qualify for a different visa type."
+    },
+    {
+      "question": "What are the tax implications of staying in Korea on an F-1-D visa?",
+      "answer": "According to Korean tax law, individuals who maintain a domicile in Korea or reside for 183 days or more during a tax year may be considered tax residents. Tax residents may be subject to Korean income tax on worldwide income. Tax treaty provisions between Korea and your home country may apply. Consult a licensed tax professional for specific guidance."
+    },
+    {
+      "question": "Can I switch from F-1-D to an employment visa (E-7)?",
+      "answer": "According to published immigration guidelines, a change of visa status from F-1-D to E-7 is possible if you secure a job offer from a Korean company that meets E-7 sponsorship requirements. You would need to apply for a change of status at your local immigration office before the F-1-D expires. Note that E-7 requires working exclusively for the sponsoring Korean employer."
+    },
+    {
+      "question": "Can I start a business in Korea on an F-1-D visa?",
+      "answer": "The F-1-D visa does not authorize business operations in Korea. To start a business, you would typically need to transition to a D-8 (Corporate Investment) visa, which requires a minimum investment of approximately ₩100,000,000 (~$75,000 USD) and a registered Korean business entity."
+    },
+    {
+      "question": "Is it possible to change status within Korea, or must I leave the country?",
+      "answer": "According to published immigration procedures, change of visa status within Korea is generally possible at the local immigration office (출입국·외국인청). However, certain transitions may require exiting and re-entering Korea. Check with the Korea Immigration Service or HiKorea portal for current requirements."
+    },
+    {
+      "question": "How does the income requirement work for freelancers?",
+      "answer": "Freelancers must demonstrate average annual income of approximately $66,000 USD (~₩88M) from foreign clients. Published requirements indicate that acceptable proof includes: invoices and contracts from the previous 12 months, bank statements showing deposits, and tax returns from the home country. Income must be from work performed for entities outside of Korea."
+    },
+    {
+      "question": "Can my family accompany me to Korea?",
+      "answer": "According to published requirements, spouses and children of F-1-D holders may apply for F-3 (dependent) visas. F-3 holders cannot work in Korea without separate work authorization. The dependent visa application requires proof of relationship (marriage certificate, birth certificates) and the primary visa holder's documentation."
+    },
+    {
+      "question": "What happens when my F-1-D visa expires after 2 years?",
+      "answer": "The F-1-D visa has a published maximum duration of 2 years (1 year initial + 1 year extension). After expiration, holders must either leave Korea or transition to a different visa type. Published transition options include: E-7 (if employed by a Korean company), D-8 (if investing in a Korean business), or D-10 (job-seeking visa, if holding a bachelor's degree or higher)."
     }
   ],
   "tips": [
@@ -300,7 +346,7 @@
       "notes": "For D-10 holders who find remote work with foreign companies. The income requirement is strict (~₩88M/year). This is an alternative to seeking Korean employment."
     }
   ],
-  "lastUpdated": "2026-02-11",
+  "lastUpdated": "2026-02-16",
   "officialLinks": [
     {
       "label": "Korea Immigration Service",
