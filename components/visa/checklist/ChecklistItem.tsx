@@ -127,9 +127,9 @@ export function ChecklistItem({
       {expanded && document.tips && document.tips.length > 0 && (
         <div className="px-4 pb-4 pt-0 ml-10">
           <div className="space-y-2">
-            {document.tips.map((tip, index) => (
+            {document.tips.map((tip, tipIdx) => (
               <div
-                key={index}
+                key={`tip-${tipIdx}`}
                 className="flex items-start gap-2 text-sm"
               >
                 <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
