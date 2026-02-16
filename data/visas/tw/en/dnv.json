@@ -1,10 +1,10 @@
 {
   "type": "dnv",
   "country": "tw",
-  "name": "Digital Nomad Visa",
+  "name": "Taiwan Digital Nomad Visa (DNV) — Complete 2026 Guide",
   "shortName": "DNV",
   "category": "digital-nomad",
-  "description": "Taiwan's Digital Nomad Visa (Employment Gold Card for Remote Workers / Special Entry Permit for Remote Work) allows foreign nationals to live in Taiwan while working remotely for employers or clients outside of Taiwan. Published duration is 6 months, extendable to 1 year.",
+  "description": "Complete guide to Taiwan's Digital Nomad Visa: income requirements by age, application via TECO, documents, Gold Card comparison, and FAQ. Updated for 2026.",
   "tagline": "Live in Taiwan, work remotely for a foreign employer",
   "keyRequirement": "Remote employment with a foreign company and annual income of USD 20,000+ (under 30) or USD 40,000+ (30 and over)",
   "isStub": false,
@@ -156,7 +156,7 @@
       "id": "apply-teco",
       "step": 2,
       "title": "Apply at TECO Office",
-      "description": "Submit the application at the TECO office with jurisdiction over your current location. Some TECO offices accept mail-in applications.",
+      "description": "Submit the application at the TECO (Taipei Economic and Cultural Office) with jurisdiction over your current location. TECO offices are organized by geographic region — check the BOCA website to find the office serving your area. Some TECO offices accept mail-in applications; processing times vary by location.",
       "duration": "1-2 hours in person",
       "links": [
         { "label": "Find Your TECO Office (BOCA)", "url": "https://www.boca.gov.tw" }
@@ -223,6 +223,22 @@
     {
       "question": "Are freelancers with multiple foreign clients permitted?",
       "answer": "Based on published requirements, freelancers working for clients outside Taiwan are generally covered, provided they meet the income threshold and can demonstrate that all work is for foreign entities."
+    },
+    {
+      "question": "How does the DNV compare to the Gold Card?",
+      "answer": "The DNV and Gold Card serve different purposes. The DNV is for remote workers employed by foreign companies (no local work allowed), valid for up to 1 year, and does NOT count toward permanent residency. The Gold Card is for professionals with specialized skills, allows local employment and business creation, is valid for 1-3 years, and counts toward APRC residency. The Gold Card also provides potential tax benefits for qualifying salary. Refer to the published comparison for full details."
+    },
+    {
+      "question": "What are the tax implications of staying in Taiwan on the DNV?",
+      "answer": "According to published Taiwan tax law, individuals staying 183 days or more in a tax year are generally classified as tax residents. Tax residents pay income tax on Taiwan-sourced income. Whether remote work income from a foreign employer constitutes Taiwan-sourced income is a nuanced question — consult a licensed tax professional for specific guidance."
+    },
+    {
+      "question": "Can I open a bank account in Taiwan on the DNV?",
+      "answer": "Opening a bank account in Taiwan generally requires an ARC (Alien Resident Certificate) or a Taiwan phone number. Since DNV holders may not receive an ARC, banking options may be limited. Community members report that some banks accept passport-based accounts with proof of local address. Online banking alternatives are commonly used by digital nomads."
+    },
+    {
+      "question": "Is the DNV renewable beyond 1 year?",
+      "answer": "Based on published requirements, the DNV has a maximum duration of 1 year (6 months initial + 6-month extension). After the maximum period, holders must leave Taiwan or apply for a different visa type. The Gold Card may be an option for those seeking longer-term residence."
     }
   ],
 
@@ -239,6 +255,80 @@
     "Time on the DNV does NOT count toward APRC permanent residency",
     "The DNV is only available to nationals of visa-exempt countries"
   ],
+
+  "goldCardComparison": {
+    "disclaimer": "Factual comparison based on published requirements from NIA and NDC. Not a recommendation or eligibility assessment. LocalNomad is not a licensed immigration service (移民業務機構).",
+    "comparisonTable": [
+      {
+        "criterion": "Target Applicant",
+        "dnv": "Remote workers employed by foreign companies",
+        "goldCard": "Professionals with specialized skills or achievements in designated fields"
+      },
+      {
+        "criterion": "Income Requirement",
+        "dnv": "USD 20,000/year (under 30) or USD 40,000/year (30+)",
+        "goldCard": "No fixed income threshold; assessed by field-specific criteria (some fields require monthly salary of NTD 160,000+)"
+      },
+      {
+        "criterion": "Duration",
+        "dnv": "6 months + 6-month extension (max 1 year)",
+        "goldCard": "1–3 years (selected at application)"
+      },
+      {
+        "criterion": "Work Permission",
+        "dnv": "Remote work for foreign employers ONLY — no local employment",
+        "goldCard": "Open work permit — may work for any Taiwan employer, freelance, or start a business"
+      },
+      {
+        "criterion": "APRC Eligibility",
+        "dnv": "Does NOT count toward APRC residency requirement",
+        "goldCard": "Counts toward APRC continuous residency requirement"
+      },
+      {
+        "criterion": "NHI Enrollment",
+        "dnv": "Typically not eligible (no ARC issued)",
+        "goldCard": "Eligible for NHI after 6 months of continuous residence"
+      },
+      {
+        "criterion": "Tax Benefits",
+        "dnv": "No special tax treatment",
+        "goldCard": "Published tax benefit: first-time tax residents with salary ≥ NTD 3M/year may be eligible for 50% tax reduction on salary above NTD 3M for up to 5 years (subject to conditions)"
+      },
+      {
+        "criterion": "Application Method",
+        "dnv": "In person at TECO office abroad",
+        "goldCard": "Online application via the Gold Card portal (can apply from anywhere)"
+      },
+      {
+        "criterion": "Dependents",
+        "dnv": "Published requirements do not specify dependent visa provisions",
+        "goldCard": "Spouse and children may apply for dependent ARC"
+      },
+      {
+        "criterion": "Typical Processing Time",
+        "dnv": "2–4 weeks via TECO",
+        "goldCard": "Approximately 4–8 weeks (online review by multiple agencies)"
+      }
+    ]
+  },
+
+  "tecoRouting": {
+    "description": "The Digital Nomad Visa must be applied for at the TECO (Taipei Economic and Cultural Office) with jurisdiction over the applicant's location. TECO offices are organized by geographic region.",
+    "notes": "Each TECO has jurisdiction over a specific geographic area. Apply at the TECO serving your current country or region of residence. Some TECO offices accept mail-in applications. Processing times vary by office.",
+    "officialLink": { "label": "Find Your TECO Office (BOCA)", "url": "https://www.boca.gov.tw" },
+    "exampleRegions": [
+      { "region": "United States — West Coast", "office": "TECO Los Angeles / TECO San Francisco" },
+      { "region": "United States — East Coast", "office": "TECO New York / TECO Washington D.C." },
+      { "region": "Japan", "office": "Taiwan–Japan Relations Association (Taipei Office in Japan)" },
+      { "region": "United Kingdom", "office": "TECO London" },
+      { "region": "Southeast Asia", "office": "Check BOCA for country-specific TECO office" }
+    ]
+  },
+
+  "taxImplications": {
+    "notes": "According to published Taiwan tax law, individuals who stay in Taiwan for 183 days or more in a tax year are generally classified as tax residents. Tax residents are subject to Taiwan income tax on Taiwan-sourced income. Foreign-sourced income may also be subject to the Basic Income Tax (最低稅負制) for residents with overseas income exceeding NTD 1M. DNV holders working remotely for foreign employers should determine whether their income constitutes Taiwan-sourced income. Consult a licensed tax professional for specific guidance.",
+    "source": "Ministry of Finance, National Taxation Bureau"
+  },
 
   "communityTips": [
     {
@@ -276,7 +366,7 @@
 
   "relatedVisas": ["gold-card", "visitor", "work-arc"],
 
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-16",
   "officialLinks": [
     { "label": "Bureau of Consular Affairs (BOCA)", "url": "https://www.boca.gov.tw" },
     { "label": "National Immigration Agency (NIA)", "url": "https://www.immigration.gov.tw" },
