@@ -337,6 +337,14 @@
     {
       "question": "Can I apply for the H-1 visa more than once?",
       "answer": "In most cases, no. The Working Holiday visa is typically a once-in-a-lifetime opportunity per country agreement. However, some countries may have different rules, so check with your local Korean embassy. If you've used your H-1 eligibility, consider other visa options like D-10 (job seeking) or D-4 (language study) for future visits."
+    },
+    {
+      "question": "Which countries have Working Holiday agreements with Korea?",
+      "answer": "As of 2026, Korea has published Working Holiday agreements with approximately 25+ countries including Australia, Canada, Japan, France, Germany, United Kingdom, Ireland, Taiwan, Hong Kong, New Zealand, Netherlands, Sweden, Austria, Denmark, and others. The full list of partner countries is published on the Korea Immigration Service website. Each agreement has different quotas and conditions."
+    },
+    {
+      "question": "When do Working Holiday visa quotas open each year?",
+      "answer": "Based on published patterns, most country quotas open in January for the calendar year. Countries with limited quotas (such as UK with ~1,000 and Ireland with ~400) tend to fill quickly, sometimes within days or weeks. Countries like Australia and Germany have no published annual quota limits. Check with the Korean embassy in your country starting in December for specific opening dates."
     }
   ],
   "tips": [
@@ -360,6 +368,153 @@
     "Do not make remote work your primary stated activity in your application",
     "Do not wait until the last minute to register for your ARC - book the appointment early"
   ],
+  "nationalitySpecific": {
+    "disclaimer": "Based on published bilateral agreements as of 2026. Quotas, age limits, and conditions are subject to change. Verify with the Korean embassy in your country.",
+    "countries": [
+      {
+        "country": "Australia",
+        "ageLimit": "18-30",
+        "quotaLimit": "No published annual limit",
+        "quotaOpenMonth": "Year-round (rolling applications)",
+        "duration": "1 year",
+        "specialConditions": "One of the most popular routes. No quota restrictions published."
+      },
+      {
+        "country": "Canada",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 4,000/year",
+        "quotaOpenMonth": "January (typically fills within weeks)",
+        "duration": "1 year",
+        "specialConditions": "High demand — quotas fill quickly. Monitor embassy announcements starting December."
+      },
+      {
+        "country": "Japan",
+        "ageLimit": "18-25 (some sources indicate up to 30)",
+        "quotaLimit": "Approximately 10,000/year",
+        "quotaOpenMonth": "April and October (biannual intake)",
+        "duration": "1 year",
+        "specialConditions": "Lower age limit than most countries. Biannual application periods."
+      },
+      {
+        "country": "France",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 2,000/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Relatively generous quota for European applicants."
+      },
+      {
+        "country": "Germany",
+        "ageLimit": "18-30",
+        "quotaLimit": "No published annual limit",
+        "quotaOpenMonth": "Year-round",
+        "duration": "1 year",
+        "specialConditions": "Open quota — no published cap."
+      },
+      {
+        "country": "United Kingdom",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 1,000/year",
+        "quotaOpenMonth": "January (fills within days)",
+        "duration": "1 year",
+        "specialConditions": "Very limited quota — fills extremely fast. Apply immediately when announced."
+      },
+      {
+        "country": "Ireland",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 400/year",
+        "quotaOpenMonth": "January (fills within days)",
+        "duration": "1 year",
+        "specialConditions": "Smallest quota among English-speaking countries. Apply the moment it opens."
+      },
+      {
+        "country": "New Zealand",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 3,000/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Moderate quota, usually available for several weeks."
+      },
+      {
+        "country": "Taiwan",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 400/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Limited quota. Popular with Taiwanese youth."
+      },
+      {
+        "country": "Hong Kong",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 500/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Popular route for Hong Kong youth interested in Korean culture."
+      },
+      {
+        "country": "Netherlands",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 100/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Small quota — apply early."
+      },
+      {
+        "country": "Sweden",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 200/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Limited quota."
+      },
+      {
+        "country": "Austria",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 200/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Limited quota."
+      },
+      {
+        "country": "Denmark",
+        "ageLimit": "18-30",
+        "quotaLimit": "Approximately 200/year",
+        "quotaOpenMonth": "January",
+        "duration": "1 year",
+        "specialConditions": "Limited quota."
+      }
+    ]
+  },
+
+  "quotaCalendar": {
+    "disclaimer": "Approximate quota opening periods based on published patterns. Exact dates vary each year. Monitor your country's Korean embassy website starting December for announcements.",
+    "generalPattern": "Most country quotas open in January for the calendar year. Some countries with unlimited quotas accept applications year-round.",
+    "months": [
+      {
+        "month": "January",
+        "events": "Most country quotas open. UK and Ireland fill within days. Canada fills within weeks."
+      },
+      {
+        "month": "April",
+        "events": "Japan biannual intake period opens."
+      },
+      {
+        "month": "October",
+        "events": "Japan second biannual intake period opens."
+      },
+      {
+        "month": "December",
+        "events": "Monitor embassy websites for next year's quota opening announcements."
+      }
+    ],
+    "tips": [
+      "Set calendar reminders for December to check embassy announcements",
+      "For limited-quota countries (UK, Ireland, Netherlands), prepare all documents before quota opens",
+      "Some embassies announce exact opening dates on social media",
+      "Australia and Germany have no published quota limits — apply anytime"
+    ]
+  },
+
   "relatedVisas": [
     "d-10",
     "e-7",
@@ -416,7 +571,7 @@
         "Degree certificate (apostilled)",
         "Career certificate"
       ],
-      "notes": "Direct H-1 to E-7 transition is possible but less common. Most go through D-10 first. Start job searching early as H-1 cannot be extended."
+      "notes": "Direct H-1 to E-7 transition is possible but less common. Most H-1 holders transition through D-10 first. According to published guidelines, the employer must sponsor the E-7 application. Start job searching early (by month 8-9) as H-1 cannot be extended. Important: You must apply for the status change before your H-1 expires."
     },
     {
       "type": "e-2",
@@ -428,7 +583,7 @@
     }
   ],
   "pathsFrom": [],
-  "lastUpdated": "2026-02-11",
+  "lastUpdated": "2026-02-16",
   "officialLinks": [
     {
       "label": "Korea Immigration Service",
