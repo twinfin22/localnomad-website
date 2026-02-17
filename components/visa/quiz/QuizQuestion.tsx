@@ -52,7 +52,7 @@ interface QuizQuestionProps {
   onNext: () => void;
   canGoBack: boolean;
   canGoNext: boolean;
-  isLastQuestion?: boolean;
+  nextLabel?: string;
 }
 
 export function QuizQuestion({
@@ -65,7 +65,7 @@ export function QuizQuestion({
   onNext,
   canGoBack,
   canGoNext,
-  isLastQuestion = false,
+  nextLabel = 'Continue',
 }: QuizQuestionProps) {
   // Dynamic icon component
   const getIcon = (iconName?: string) => {
@@ -191,7 +191,7 @@ export function QuizQuestion({
               !canGoNext && 'opacity-50 cursor-not-allowed'
             )}
           >
-            {isLastQuestion ? 'See Results' : 'Continue'}
+            {nextLabel}
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

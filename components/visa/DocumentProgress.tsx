@@ -76,7 +76,7 @@ export function DocumentProgress({ visaType, className, compact = false }: Docum
   if (!visa) return null;
 
   return (
-    <div className={cn("vk-card overflow-hidden", className)}>
+    <div className={cn("bg-card border border-border rounded-2xl overflow-hidden", className)}>
       {/* Header */}
       <button
         onClick={() => setExpanded(!expanded)}

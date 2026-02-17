@@ -62,7 +62,7 @@ export function EmptyState({ localePath, t }: { localePath: (path: string) => st
 
       {/* Quick Access Cards */}
       <div className="grid sm:grid-cols-2 gap-4">
-        <Link href={localePath("/visa/e-7")} className="vk-card vk-card-hover p-6 group">
+        <Link href={localePath("/visa/e-7")} className="bg-card border border-border rounded-2xl hover:border-primary/30 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] p-6 group">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-xl font-bold text-primary">E-7</span>
@@ -75,7 +75,7 @@ export function EmptyState({ localePath, t }: { localePath: (path: string) => st
             </div>
           </div>
         </Link>
-        <Link href={localePath("/visa/f-1-d")} className="vk-card vk-card-hover p-6 group">
+        <Link href={localePath("/visa/f-1-d")} className="bg-card border border-border rounded-2xl hover:border-primary/30 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] p-6 group">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="text-xl font-bold text-emerald-400">F-1-D</span>
@@ -202,7 +202,7 @@ export function ActiveDashboard({ data, visa, checklist, onSignOut, localePath, 
       {/* Context Layer - Progress Details */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Document Progress */}
-        <div className="vk-card p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               {t('documentProgress')}
@@ -247,7 +247,7 @@ export function ActiveDashboard({ data, visa, checklist, onSignOut, localePath, 
         </div>
 
         {/* State Info */}
-        <div className="vk-card p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               {t('currentStatus')}

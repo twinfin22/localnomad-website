@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import type { Situation } from "./SituationGrid";
@@ -11,13 +11,14 @@ interface MoreSituationsProps {
 
 export function MoreSituations({ situations }: MoreSituationsProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = useCallback(() => setIsOpen((prev) => !prev), []);
 
   if (situations.length === 0) return null;
 
   return (
     <div className="text-center">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleOpen}
         className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors py-2"
       >
         {isOpen ? (

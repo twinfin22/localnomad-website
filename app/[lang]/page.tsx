@@ -16,9 +16,8 @@ interface GlobalLandingProps {
 }
 
 export default async function GlobalLandingPage({ params }: GlobalLandingProps) {
-  const { lang } = await params;
+  const [{ lang }, t] = await Promise.all([params, getTranslations()]);
   const locale = lang as Locale;
-  const t = await getTranslations();
 
   // Country click → redirect to visa dashboard directly
   const buildHref = (country: Country) => {

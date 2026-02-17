@@ -38,13 +38,13 @@ export function CtaSection() {
     <section className="py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-4xl">
         <AnimatedSection>
-          <div className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 rounded-3xl p-8 sm:p-14 text-center overflow-hidden shadow-navy-lg">
+          <div className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 rounded-3xl p-8 sm:p-14 text-center overflow-hidden shadow-xl">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-primary/15 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/4" />
 
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center mb-6 mx-auto shadow-navy">
+              <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center mb-6 mx-auto shadow-md">
                 <Download className="w-8 h-8 text-primary" />
               </div>
 

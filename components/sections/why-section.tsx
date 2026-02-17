@@ -31,7 +31,7 @@ export function WhySection() {
   return (
     <section className="py-24 px-4 sm:px-6 bg-secondary relative overflow-hidden">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-dots-navy opacity-50" />
+      <div className="absolute inset-0 opacity-50 [background-image:radial-gradient(circle,rgba(30,58,95,0.15)_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <AnimatedSection>
@@ -51,7 +51,7 @@ export function WhySection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {values.map((value) => (
             <AnimatedSection key={value.title}>
-              <div className="group text-center p-6 rounded-2xl transition-all duration-300 hover:bg-card hover:shadow-navy-md cursor-default">
+              <div className="group text-center p-6 rounded-2xl transition-all duration-300 hover:bg-card hover:shadow-lg cursor-default">
                 <div className={`w-16 h-16 rounded-2xl ${value.accent === "accent" ? "bg-accent/10 group-hover:bg-accent/15" : "bg-primary/10 group-hover:bg-primary/15"} flex items-center justify-center mb-6 mx-auto transition-all duration-300 group-hover:scale-110`}>
                   <value.icon className={`w-8 h-8 ${value.accent === "accent" ? "text-accent" : "text-primary"}`} />
                 </div>

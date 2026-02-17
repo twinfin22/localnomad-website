@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type {
   VisaInfo,
   VisaType,
@@ -195,7 +196,7 @@ export function getAllVisas(locale: Locale = "en"): VisaInfo[] {
  * For Korea, delegates to the sync loader.
  * For Taiwan, uses dynamic imports.
  */
-export async function getVisaInfoAsync(
+export const getVisaInfoAsync = cache(async function getVisaInfoAsync(
   type: VisaType,
   locale: Locale = "en",
   country: Country = "korea"
@@ -207,7 +208,7 @@ export async function getVisaInfoAsync(
     return loadTaiwanVisaJson(locale, type as TaiwanVisaType);
   }
   return null;
-}
+});
 
 /**
  * Get all visas for a country/locale combo (async).

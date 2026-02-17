@@ -177,7 +177,7 @@ export function NextActionCard({
   return (
     <div
       className={cn(
-        'vk-card p-6',
+        'bg-card border border-border rounded-2xl p-6',
         action.urgent && 'border-amber-500/30 bg-amber-500/5',
         className
       )}

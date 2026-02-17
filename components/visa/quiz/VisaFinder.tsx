@@ -196,7 +196,7 @@ export function VisaFinder() {
         onNext={handleNext}
         canGoBack={state.currentStep > 1}
         canGoNext={canGoNext}
-        isLastQuestion={isLastQuestion}
+        nextLabel={isLastQuestion ? 'See Results' : 'Continue'}
       />
     </div>
   );

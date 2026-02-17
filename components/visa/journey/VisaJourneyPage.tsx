@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -61,10 +61,13 @@ export function VisaJourneyPage({
     }
   }, []);
 
-  const handleStepToggle = (stepNumber: number) => (isOpen: boolean) => {
-    // Accordion behavior: only one step open at a time
-    setOpenStep(isOpen ? stepNumber : null);
-  };
+  const handleStepToggle = useCallback(
+    (stepNumber: number) => (isOpen: boolean) => {
+      // Accordion behavior: only one step open at a time
+      setOpenStep(isOpen ? stepNumber : null);
+    },
+    []
+  );
 
   const [bannerDismissed, setBannerDismissed] = useState(true);
 
@@ -75,10 +78,10 @@ export function VisaJourneyPage({
     }
   }, []);
 
-  const handleDismissBanner = () => {
+  const handleDismissBanner = useCallback(() => {
     setBannerDismissed(true);
     localStorage.setItem("visa-info-banner-dismissed", "true");
-  };
+  }, []);
 
   const requiredDocsCount = visa.documents.filter((d) => d.required).length;
 

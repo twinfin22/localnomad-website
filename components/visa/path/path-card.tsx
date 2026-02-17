@@ -19,8 +19,7 @@ import type { PathStepDetail } from "@/lib/visa/path-data";
 
 interface PathCardProps {
   step: PathStepDetail;
-  isFirst: boolean;
-  isLast: boolean;
+  position: 'first' | 'middle' | 'last';
   stepNumber: number;
   totalSteps: number;
   detailHref?: string;
@@ -28,19 +27,18 @@ interface PathCardProps {
 
 export function PathCard({
   step,
-  isFirst,
-  isLast,
+  position,
   stepNumber,
   totalSteps,
   detailHref,
 }: PathCardProps) {
-  const [isExpanded, setIsExpanded] = useState(isFirst);
+  const [isExpanded, setIsExpanded] = useState(position === 'first');
   const t = useTranslations("pathSimulator");
 
   return (
     <div className="relative">
       {/* Connecting line between cards */}
-      {!isFirst && (
+      {position !== 'first' && (
         <div className="flex justify-center mb-3">
           <div className="flex flex-col items-center">
             <div className="w-px h-6 bg-border" />
@@ -56,7 +54,7 @@ export function PathCard({
         className={cn(
           "transition-all duration-200 cursor-pointer overflow-hidden",
           "hover:border-primary/30",
-          isExpanded && "border-primary/40 shadow-navy-md"
+          isExpanded && "border-primary/40 shadow-lg"
         )}
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -68,9 +66,9 @@ export function PathCard({
               <div
                 className={cn(
                   "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold",
-                  isFirst
+                  position === 'first'
                     ? "bg-primary/20 text-primary"
-                    : isLast
+                    : position === 'last'
                       ? "bg-success/20 text-success"
                       : "bg-elevated text-muted-foreground"
                 )}

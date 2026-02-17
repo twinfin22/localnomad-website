@@ -110,7 +110,7 @@ export function DDayPanel({
   const Icon = getIcon();
 
   return (
-    <div className={cn('vk-card p-6', className)}>
+    <div className={cn('bg-card border border-border rounded-2xl p-6', className)}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
           {t(labelKey)}

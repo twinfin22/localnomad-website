@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -21,6 +21,7 @@ interface AlreadyHaveVisaProps {
 
 export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveVisaProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = useCallback(() => setIsOpen((prev) => !prev), []);
   const t = useTranslations("visa");
   const pathname = usePathname();
   const { locale, country } = parseLocalePath(pathname);
@@ -29,7 +30,7 @@ export function AlreadyHaveVisa({ visaOptions, pathSimulatorHref }: AlreadyHaveV
   return (
     <div className="max-w-2xl mx-auto">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleOpen}
         className={cn(
           "w-full flex items-center justify-between p-4 rounded-xl bg-surface border transition-colors",
           isOpen

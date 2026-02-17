@@ -127,8 +127,7 @@ export function PathViewer({
           <PathCard
             key={`${step.visaType}-${step.order}`}
             step={step}
-            isFirst={index === 0}
-            isLast={index === path.steps.length - 1}
+            position={index === 0 ? 'first' : index === path.steps.length - 1 ? 'last' : 'middle'}
             stepNumber={index + 1}
             totalSteps={path.steps.length}
             detailHref={buildHref(`/visa/${step.visaType}`)}

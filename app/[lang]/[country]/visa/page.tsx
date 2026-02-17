@@ -39,10 +39,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: VisaLandingProps) {
-  const { lang, country } = await params;
+  const [{ lang, country }, t] = await Promise.all([params, getTranslations()]);
   const locale = lang as Locale;
   const countryName = countryNames[country as Country][locale];
-  const t = await getTranslations();
 
   return {
     title: `${t('visa.pageTitle', { country: countryName })} | LocalNomad`,
@@ -218,10 +217,9 @@ function getKoreaSituations(
 }
 
 export default async function VisaLandingPage({ params }: VisaLandingProps) {
-  const { lang, country: countryParam } = await params;
+  const [{ lang, country: countryParam }, t] = await Promise.all([params, getTranslations()]);
   const locale = lang as Locale;
   const country = countryParam as Country;
-  const t = await getTranslations();
 
   // Build locale-aware href
   const buildHref = (path: string) => buildLocalePath(path, locale, country);
