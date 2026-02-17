@@ -45,6 +45,16 @@ export function LegalDisclaimer({
                 {chunks}
               </a>
             ),
+            boca: (chunks) => (
+              <a
+                href="https://www.boca.gov.tw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline hover:text-accent-hover"
+              >
+                {chunks}
+              </a>
+            ),
           })}
         </p>
       );
@@ -126,14 +136,31 @@ export function LegalDisclaimer({
             <p className="text-sm text-muted-foreground leading-relaxed mb-2">
               {t('legal.tw.boxDisclaimerPara1')}
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-2">
-              {t('legal.tw.boxDisclaimerPara2')}
-            </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {t.rich('legal.tw.boxDisclaimerPara3', {
+              {t.rich('legal.tw.boxDisclaimerPara2', {
                 nia: (chunks) => (
                   <a
                     href="https://www.immigration.gov.tw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline hover:text-accent-hover"
+                  >
+                    {chunks}
+                  </a>
+                ),
+                boca: (chunks) => (
+                  <a
+                    href="https://www.boca.gov.tw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline hover:text-accent-hover"
+                  >
+                    {chunks}
+                  </a>
+                ),
+                mol: (chunks) => (
+                  <a
+                    href="https://www.mol.gov.tw"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary underline hover:text-accent-hover"
