@@ -3,6 +3,10 @@
 ## Branding
 - **"LocalNomad"** — Always one word. Never "Local Nomad" or "Local Nomad Club"
 - Plural: "LocalNomads". Domain: `localnomad.club`
+- **Brand Color**: Deep Teal Navy `#1B4965` — Primary brand color for logo, headings, CTAs
+- **Logo**: Wordmark "LocalNomad" — "Local" in serif, "Nomad" in sans-serif, same weight
+- **Favicon**: Half-circle compass / tilted diamond (brand color)
+- See `docs/BRAND-GUIDE.md` for full design specs
 
 ## Commands
 ```bash
@@ -27,7 +31,11 @@ hooks/                  # Custom hooks
 lib/                    # Utilities, Supabase client, visa data loaders
 data/visas/{lang}/      # Visa JSON data per locale
 messages/{lang}.json    # i18n translation files
-docs/                   # All .md files go here (audits, prompts, reports)
+docs/
+  governance/           # Gen이 직접 읽고 쓰는 문서 (checklist, decision log, tech debt, architecture)
+  prompts/              # AI 실행용 프롬프트
+  reports/              # AI 생성 감사/분석 보고서
+  reference/            # 참고 자료 (스펙, 리서치, 계획)
 ```
 
 ## Critical Rules
@@ -89,6 +97,43 @@ legal consulting. Penalties: NT$200K-1M per violation.
 - Never transmit personal immigration data to backend for Taiwan features
 - No server-side storage of Taiwan user visa status, documents, or application data
 
+## Ownership Workflow (MANDATORY)
+
+Claude MUST follow this workflow for every task. No exceptions.
+Governance docs: `docs/governance/WORKFLOW-CHECKLIST.md` (Gen's gate), `docs/governance/TECH-DEBT.md`, `docs/governance/DECISION-LOG.md`, `docs/governance/ARCHITECTURE-MAP.md`
+
+### 1. Before ANY Code Change
+- **Impact map first**: Show which files will be affected and how they connect, BEFORE writing code. Reference `docs/governance/ARCHITECTURE-MAP.md` Section 8 (변경 영향도 맵) for risk levels
+- **Options, not recommendations**: Present 2-3 approaches with trade-offs. Do NOT recommend. Let Gen decide
+- **Explain WHY**: For each option, explain why this approach solves the problem. Gen will ask "왜?" — be ready
+- **Success criteria from Gen**: Ask Gen to define what "done" looks like before starting. Do not self-define success criteria
+- **Rollback criteria**: Agree on "if X happens, we revert everything" before starting
+- **Tech debt gate**: Check `docs/governance/TECH-DEBT.md` — if OPEN items ≥ 5, block new features. Resolve debt first
+
+### 2. During Execution
+- **Execution flow first**: Before implementing any feature, explain the runtime flow in ≤5 steps (server → browser → useEffect → user sees what)
+- **Prompt review**: If creating an execution prompt, show Gen the file list + summary of changes per file. Wait for approval before executing
+- **git diff check**: After changes, show `git diff --stat` so Gen can verify file count and change scope match expectations
+- **No silent suppressions**: Never use suppressHydrationWarning, eslint-disable, or @ts-ignore without explicit Gen approval and logging to TECH-DEBT.md
+
+### 3. After Execution
+- **Gen verifies, not Claude**: Claude tells Gen WHERE to look and WHAT to check. Gen does the actual verification in browser
+- **Tech debt log**: Append any temporary fixes, skipped tests, or known issues to `docs/governance/TECH-DEBT.md`
+- **Decision log**: Record what was decided and why in `docs/governance/DECISION-LOG.md`. Include 📘 배경지식 footnotes for technical concepts
+- **Architecture update**: If system structure changed, update `docs/governance/ARCHITECTURE-MAP.md`
+
+### 4. Weekly Review Triggers
+- If `docs/governance/TECH-DEBT.md` has ≥5 unresolved items → block new features until resolved
+- Review `docs/governance/DECISION-LOG.md` for patterns
+- Architecture walkthrough: Gen should be able to explain any page's data flow from memory
+- Use `docs/governance/WORKFLOW-CHECKLIST.md` Phase 6 for review template
+
+### 5. Learning Points
+- When Gen asks a technical question, explain the concept clearly without jargon first
+- When a decision requires technical context Gen hasn't encountered before, flag it: "이건 새로운 개념이에요: [concept]. 설명드릴까요?"
+- Use footnotes (📘) in all documents for technical terms — Gen has PM experience but SQL-level coding background
+- Use ASCII diagrams and visual flows whenever possible — prefer diagrams over paragraphs of explanation
+
 ## Agent Team (Agentic Development)
 See `docs/AGENT-TEAM.md` for detailed role definitions, prompts, and workflow.
 
@@ -103,5 +148,5 @@ See `docs/AGENT-TEAM.md` for detailed role definitions, prompts, and workflow.
 ### Constraints
 - Max **3-4 agents** per parallel batch (prevents SIGKILL from memory)
 - UXR agent uses **Puppeteer** (headless, `npm install puppeteer`) in Claude Code CLI, or **mcp__Claude_in_Chrome** in Cowork mode
-- Market research is a **separate pre-step** — save results to `docs/research-*.md` before running agent cycles
-- All audit outputs go in `docs/`
+- Market research is a **separate pre-step** — save results to `docs/reference/research-*.md` before running agent cycles
+- All audit outputs go in `docs/reports/`

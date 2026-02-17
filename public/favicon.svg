@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- 45-degree tilted diamond, left half filled, right half outline only -->
+  <g transform="translate(16,16) rotate(45)">
+    <!-- Left half filled -->
+    <clipPath id="left">
+      <rect x="-11" y="-11" width="11" height="22"/>
+    </clipPath>
+    <rect x="-11" y="-11" width="22" height="22" fill="#1a1a1a" clip-path="url(#left)"/>
+    <!-- Full diamond outline -->
+    <rect x="-11" y="-11" width="22" height="22" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+</svg>

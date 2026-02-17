@@ -27,7 +27,7 @@ export const defaultCountry: Country = "korea";
  */
 export const countryLocales: Record<Country, readonly Locale[]> = {
   korea: ["en", "ja", "zh-tw", "vi"],
-  taiwan: ["en", "zh-tw"], // No Japanese or Vietnamese for Taiwan
+  taiwan: ["en"], // Taiwan visa info targets foreigners coming TO Taiwan — zh-tw unnecessary
 };
 
 /**
