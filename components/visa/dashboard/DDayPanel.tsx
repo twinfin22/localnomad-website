@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { Calendar, Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
@@ -27,33 +27,41 @@ export function DDayPanel({
   className,
 }: DDayPanelProps) {
   const t = useTranslations('dashboard');
-  const { daysRemaining, labelKey, isUrgent, isPast, displayDate } = useMemo(() => {
+  const [computed, setComputed] = useState({
+    daysRemaining: null as number | null,
+    labelKey: 'noDateSet',
+    isUrgent: false,
+    isPast: false,
+    displayDate: null as string | null,
+  });
+
+  useEffect(() => {
     const now = new Date();
     now.setHours(0, 0, 0, 0);
 
-    // Use expiry date for active states, target date for others
     const isActiveState = ['ACTIVE', 'EXPIRING', 'EXPIRED'].includes(state);
     const dateToUse = isActiveState ? expiryDate : targetDate;
 
-    // Handle NO_VISA state
     if (state === 'NO_VISA') {
-      return {
+      setComputed({
         daysRemaining: null,
         labelKey: 'getStartedLabel',
         isUrgent: false,
         isPast: false,
         displayDate: null,
-      };
+      });
+      return;
     }
 
     if (!dateToUse) {
-      return {
+      setComputed({
         daysRemaining: null,
         labelKey: 'noDateSet',
         isUrgent: false,
         isPast: false,
         displayDate: null,
-      };
+      });
+      return;
     }
 
     const date = new Date(dateToUse);
@@ -61,20 +69,20 @@ export function DDayPanel({
     const diffTime = date.getTime() - now.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    let labelKey = '';
+    let lk = '';
     if (state === 'ACTIVE' || state === 'EXPIRING') {
-      labelKey = 'visaExpires';
+      lk = 'visaExpires';
     } else if (state === 'EXPIRED') {
-      labelKey = 'expired';
+      lk = 'expired';
     } else if (state === 'SUBMITTED' || state === 'UNDER_REVIEW') {
-      labelKey = 'expectedDecision';
+      lk = 'expectedDecision';
     } else {
-      labelKey = 'targetDate';
+      lk = 'targetDate';
     }
 
-    return {
+    setComputed({
       daysRemaining: diffDays,
-      labelKey,
+      labelKey: lk,
       isUrgent: diffDays <= renewalWindowDays && diffDays > 0,
       isPast: diffDays < 0,
       displayDate: date.toLocaleDateString(toDateLocale(locale ?? 'en'), {
@@ -82,8 +90,10 @@ export function DDayPanel({
         day: 'numeric',
         year: 'numeric',
       }),
-    };
+    });
   }, [targetDate, expiryDate, state, renewalWindowDays, locale]);
+
+  const { daysRemaining, labelKey, isUrgent, isPast, displayDate } = computed;
 
   const getStatusColor = () => {
     if (isPast) return 'text-red-400';

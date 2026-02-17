@@ -126,6 +126,22 @@
 - **이유**: 남색의 신뢰감 + 초록기가 살짝 섞여 여행/탐험 뉘앙스. 비자 정보 플랫폼의 신뢰감과 노마드의 자유로움 균형
 - **영향 범위**: `CLAUDE.md`, `docs/BRAND-GUIDE.md`, 향후 모든 UI 컬러
 
+### [2025-02-17] Flickering 기술 부채 일괄 해소 (TD#1~TD#5)
+- **맥락**: TECH-DEBT.md OPEN 5개로 blocking threshold 도달. 모두 hydration flickering 관련
+- **선택지**: 개별 수정 vs 일괄 스프린트
+- **결정**: 일괄 스프린트 — 4개 Task 동시 실행
+- **실행 내용**:
+  - **TD#1**: `use-mobile.ts`, `use-mobile.tsx`, `sidebar.tsx` 삭제 (import 0건 확인 후 dead code 제거)
+  - **TD#2**: `DDayCounter.tsx` → Server Component 전환. `"use client"`, useState, useEffect, setInterval 모두 제거. 서버에서 직접 날짜 계산
+  - **TD#3**: `VisaJourneyPage.tsx` 배너 초기값 `useState(true)` → `useState(false)` + useEffect 조건 반전. flickering 방향을 "없다가 나타남(눈에 띔)" → "있다가 사라짐(덜 눈에 띔)"으로 변경
+  - **TD#4**: `ChecklistStep.tsx` 중복 hash deep link useEffect 삭제. 부모(VisaJourneyPage)가 이미 동일 기능 처리
+  - **TD#5**: Skip — percentage/matchScore 코드 이미 정리 완료 (grep 0건)
+- **이유**: OPEN 5개 = 새 기능 차단 기준. 모두 독립적 수정이라 병렬 실행 가능. 레이아웃/라우팅 변경 없어 위험도 낮음
+- **영향 범위**: 3개 파일 삭제 + 3개 파일 수정. 레이아웃/라우팅 변경 없음
+- **검증**: `tsc --noEmit` + `npm run build` 통과
+- **📘 배경지식**:
+  > **Hydration flickering**: 서버에서 만든 HTML(초기 상태)과 브라우저에서 JavaScript가 실행된 후 상태가 다르면, 화면이 깜빡이는 현상. 해결법: (1) 서버에서 계산 가능한 것은 Server Component로 전환, (2) 초기값과 최종값의 "방향"을 일치시켜 시각적 변화 최소화, (3) 중복 로직 제거로 불필요한 상태 변경 방지.
+
 ### [2025-02-17] 오너십 워크플로우 도입
 - **맥락**: AI에게 실행을 과도하게 위임 → 기술적 판단력과 프로젝트 통제력 상실. flickering 반복 실패(검증 오판), 법률 위반 코드 미감지 등이 증거.
 - **선택지**: (A) 현행 유지 (B) 워크플로우 규칙 추가

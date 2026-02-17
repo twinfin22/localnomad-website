@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { Calendar, AlertTriangle, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getDaysUntil, formatDaysRemaining, getUrgency } from "@/lib/visa/stateMachine";
@@ -12,25 +9,7 @@ interface DDayCounterProps {
 }
 
 export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCounterProps) {
-  const [days, setDays] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (targetDate) {
-      setDays(getDaysUntil(targetDate));
-    }
-  }, [targetDate]);
-
-  // Update daily
-  useEffect(() => {
-    if (!targetDate) return;
-
-    const interval = setInterval(() => {
-      setDays(getDaysUntil(targetDate));
-    }, 1000 * 60 * 60); // Update every hour
-
-    return () => clearInterval(interval);
-  }, [targetDate]);
-
+  const days = targetDate ? getDaysUntil(targetDate) : null;
   const urgency = getUrgency(days);
 
   const urgencyStyles = {

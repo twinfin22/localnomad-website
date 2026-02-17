@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -109,19 +109,28 @@ interface ActiveDashboardProps {
 
 export function ActiveDashboard({ data, visa, checklist, onSignOut, localePath, t, locale }: ActiveDashboardProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [daysUntilTarget, setDaysUntilTarget] = useState<number | null>(null);
   const totalDocs = visa?.documents?.length || 0;
   const completedDocs = checklist.filter((item) => item.completed).length;
   const dateLocale = toDateLocale(locale);
+
+  useEffect(() => {
+    if (data.targetDate) {
+      setDaysUntilTarget(
+        Math.ceil(
+          (new Date(data.targetDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24)
+        )
+      );
+    } else {
+      setDaysUntilTarget(null);
+    }
+  }, [data.targetDate]);
 
   // Calculate health score factors
   const healthFactors: HealthScoreFactors = {
     documentsCompleted: completedDocs,
     documentsTotal: totalDocs || 1, // Prevent division by zero
-    daysUntilTarget: data.targetDate
-      ? Math.ceil(
-          (new Date(data.targetDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24)
-        )
-      : null,
+    daysUntilTarget,
     insuranceValid: true, // TODO: Track insurance status
     insuranceExpiresInDays: null,
     state: data.state,

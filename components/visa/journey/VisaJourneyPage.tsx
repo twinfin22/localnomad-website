@@ -69,12 +69,12 @@ export function VisaJourneyPage({
     []
   );
 
-  const [bannerDismissed, setBannerDismissed] = useState(true);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
 
   useEffect(() => {
     const dismissed = localStorage.getItem("visa-info-banner-dismissed");
-    if (!dismissed) {
-      setBannerDismissed(false);
+    if (dismissed) {
+      setBannerDismissed(true);
     }
   }, []);
 

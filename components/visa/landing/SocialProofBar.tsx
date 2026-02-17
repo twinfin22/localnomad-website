@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { getVisaTypes } from '@/lib/visa/data';
 
@@ -10,11 +11,16 @@ interface SocialProofBarProps {
 export function SocialProofBar({ className }: SocialProofBarProps) {
   const t = useTranslations();
   const visaCount = getVisaTypes().length;
-  const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString('en-US', {
-    month: 'short',
-    year: 'numeric',
-  });
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    setFormattedDate(
+      new Date().toLocaleDateString('en-US', {
+        month: 'short',
+        year: 'numeric',
+      })
+    );
+  }, []);
 
   return (
     <div className={className}>

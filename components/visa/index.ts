@@ -2,7 +2,6 @@ export { VisaDetailContent } from "./VisaDetailContent";
 export { VisaComparisonTool } from "./VisaComparisonTool";
 export { EligibilityQuiz } from "./EligibilityQuiz";
 export { DocumentChecklist } from "./DocumentChecklist";
-export { DDayCounter } from "./DDayCounter";
 export { StateTimeline } from "./StateTimeline";
 export { OnboardingWizard } from "./OnboardingWizard";
 export { NextStepHero } from "./NextStepHero";

@@ -33,23 +33,6 @@ export function ChecklistStep({
     setIsOpen(defaultOpen);
   }, [defaultOpen]);
 
-  // Handle hash-based deep linking
-  useEffect(() => {
-    if (id && typeof window !== "undefined") {
-      const hash = window.location.hash.slice(1);
-      if (hash === id) {
-        setIsOpen(true);
-        // Scroll into view after render
-        setTimeout(() => {
-          contentRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }, 100);
-      }
-    }
-  }, [id]);
-
   const handleToggle = () => {
     const newState = !isOpen;
     setIsOpen(newState);

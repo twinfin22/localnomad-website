@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import { useTranslations } from "next-intl";
 import {
   Sparkles,
@@ -85,9 +88,20 @@ export function SetupStep({
   onBack,
   t,
 }: SetupStepProps) {
-  const daysUntil = targetDate
-    ? Math.ceil((new Date(targetDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))
-    : null;
+  const [daysUntil, setDaysUntil] = useState<number | null>(null);
+  const [minDate, setMinDate] = useState('');
+
+  useEffect(() => {
+    const now = new Date();
+    setMinDate(now.toISOString().split('T')[0]);
+    if (targetDate) {
+      setDaysUntil(
+        Math.ceil((new Date(targetDate).getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+      );
+    } else {
+      setDaysUntil(null);
+    }
+  }, [targetDate]);
 
   return (
     <div className="space-y-8">
@@ -113,7 +127,7 @@ export function SetupStep({
               type="date"
               value={targetDate}
               onChange={(e) => onTargetDateChange(e.target.value)}
-              min={new Date().toISOString().split("T")[0]}
+              min={minDate}
               className="w-full px-4 py-3 rounded-xl bg-elevated border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
             />
           </label>
