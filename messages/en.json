@@ -25,5 +25,15 @@
     "backToCountry": "Back to {country}",
     "learnMore": "Learn more",
     "disclaimer": "Based on published requirements. Not legal advice."
+  },
+  "Footer": {
+    "tagline": "Visa clarity for nomads, by nomads.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "copyright": "© {year} LocalNomad",
+    "legalDisclaimer": "LocalNomad provides general information about visa requirements for educational purposes only. This information does not constitute legal advice. Visa decisions are made solely by immigration authorities. For personalized legal advice, consult a licensed professional.",
+    "instagram": "Instagram",
+    "newsletter": "Newsletter"
   }
 }

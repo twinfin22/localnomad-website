@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Inter, Lora } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { routing } from '@/i18n/routing';
+import { Footer } from '@/components/footer';
 import '../globals.css';
 
 const inter = Inter({
@@ -53,6 +54,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="font-sans antialiased">
         <NextIntlClientProvider>
           {children}
+          <Footer />
         </NextIntlClientProvider>
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
