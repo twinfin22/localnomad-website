@@ -1,0 +1,29 @@
+{
+  "Landing": {
+    "headline": "Visa clarity, finally.",
+    "subtitle": "Everything you need to know about visas in one place — requirements, timelines, and real-world tips from people who've been through the process.",
+    "countryKorea": "South Korea",
+    "countryTaiwan": "Taiwan",
+    "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
+    "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
+    "exploreVisas": "Explore visas"
+  },
+  "Country": {
+    "title": "{country} Visa Guide",
+    "subtitle": "Comprehensive visa information for {country}",
+    "comingSoon": "Coming soon"
+  },
+  "VisaDetail": {
+    "title": "{type} Visa",
+    "requirements": "Requirements",
+    "timeline": "Timeline",
+    "documents": "Documents",
+    "comingSoon": "Detailed visa information coming soon."
+  },
+  "Common": {
+    "backToHome": "Back to home",
+    "backToCountry": "Back to {country}",
+    "learnMore": "Learn more",
+    "disclaimer": "Based on published requirements. Not legal advice."
+  }
+}

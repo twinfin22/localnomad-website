@@ -59,6 +59,55 @@
 - **결정**: HiKorea Visa Navigator PDF를 Single Source of Truth로 지정
 - **이유**: 정부 공식 자료. 블로그/커뮤니티 정보는 부정확할 수 있음.
 
+### Tech Stack: Next.js 16 + RSC 규율
+
+- **맥락**: v1 flickering 미해결로 Astro가 대안으로 떠올랐으나, RSC를 제대로 쓰면 같은 효과를 낼 수 있다는 판단
+- **선택지**: (A) Next.js 16 + RSC 규율 (B) Astro + React island
+- **결정**: A — Next.js 16 + App Router + RSC 규율
+- **이유**: v1 실패 원인은 Next.js가 아니라 "use client" 남용. Server Component를 기본으로 하고 상호작용 필요한 조각만 Client로 분리하면 Astro의 island 패턴과 동일한 효과. 러닝커브 없음, next-intl/shadcn/ui 생태계 성숙, AI 도구 지원도 더 좋음. 한국/대만 4G 환경에서 React 런타임(~85KB)은 체감 불가 수준.
+- **📘 배경지식**: RSC(React Server Component)는 서버에서 HTML을 완성해서 보내는 컴포넌트. JS가 브라우저에 전송되지 않아 빠름. "use client"를 붙여야만 브라우저에서 JS가 실행됨. v2의 핵심 규율: Client Component 비율 20% 이하 유지.
+
+### Google Analytics (GA4) 확정
+
+- **맥락**: MAU 100 유료화 기준을 측정할 Analytics 도구 선택
+- **선택지**: (A) Vercel Analytics (간편) (B) Google Analytics (무료, 상세) (C) Plausible (프라이버시 친화, 유료)
+- **결정**: B — Google Analytics (GA4)
+- **이유**: 무료이면서 상세한 이벤트 트래킹 가능. MAU 대시보드 바로 확인 가능.
+
+### 랜딩 페이지 히어로 확정
+
+- **맥락**: localnomad.club 첫 화면 구성
+- **결정**: 옵션 B (가치 제안 + CTA). Stripe/Linear/Notion 스타일 — 솔리드 배경(`#1B4965`) + 강한 타이포그래피, 이미지 없음.
+- **헤드라인**: "Visa clarity, finally."
+- **부제**: "Everything you need to know about your Korea or Taiwan visa, organized so you don't have to be."
+- **CTA**: 한국/대만 카드 2개
+- **이유**: 타이포그래피 + 컬러만으로 "clarity" 메시지 전달. 이미지 없음 = LCP 최소화 + Mobile First.
+
+### Core Web Vitals 목표 확정
+
+- **맥락**: Mobile First 제품의 성능 목표치 설정
+- **결정**: Google "좋음" 구간 — LCP ≤ 2.5s, CLS ≤ 0.1, INP ≤ 200ms
+- **📘 배경지식**: CWV = Google이 사이트 UX를 측정하는 3지표. LCP(로딩 체감), CLS(레이아웃 밀림), INP(터치 반응). 검색 순위에 영향.
+
+### shadcn/ui 설정 확정
+
+- **맥락**: shadcn/ui 초기화 시 선택 필요한 설정값
+- **결정**: Style = New York, Base color = Slate, CSS variables = Yes
+- **이유**: New York은 각지고 밀도 높은 UI — Linear/Stripe 레퍼런스와 톤 일치. Slate는 브랜드 컬러(`#1B4965` 딥 틸)와 푸른 톤 매칭. CSS variables는 추후 다크 모드 대비.
+- **📘 배경지식**: shadcn/ui는 컴포넌트를 프로젝트에 직접 복사하는 방식. `components.json`에 스타일 설정 저장. New York vs Default = 각진 밀도 높은 UI vs 둥근 여유 있는 UI.
+
+### 릴리즈 전략: main 직접 배포
+
+- **맥락**: Vercel auto-deploy 기반 배포 프로세스
+- **결정**: main 브랜치 직접 배포 (옵션 A). 큰 기능은 PR → Vercel Preview → 확인 → 머지.
+- **이유**: 솔로 개발에 staging 브랜치나 feature flag는 과한 복잡도. Vercel Preview가 실질적 staging 역할.
+
+### 런칭 시점: Phase 1 소프트 런칭
+
+- **맥락**: 언제 공개할지
+- **결정**: Phase 1 완료 시 소프트 런칭 (F-1-D 하나만으로). 런칭 채널/방법은 Phase 1 완료 시 별도 논의.
+- **이유**: 빠른 피드백 확보. 완성도보다 속도 우선.
+
 ---
 
 *마지막 업데이트: 2025-02-19*
