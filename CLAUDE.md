@@ -6,7 +6,7 @@
 - **Brand Color**: Deep Teal Navy `#1B4965` — Primary brand color for logo, headings, CTAs
 - **Logo**: Wordmark "LocalNomad" — "Local" in serif, "Nomad" in sans-serif, same weight
 - **Favicon**: Half-circle compass / tilted diamond (brand color)
-- See `docs/BRAND-GUIDE.md` for full design specs
+- See `docs/human/브랜드-가이드.md` for full design specs
 
 ## Commands
 ```bash
@@ -32,10 +32,11 @@ lib/                    # Utilities, Supabase client, visa data loaders
 data/visas/{lang}/      # Visa JSON data per locale
 messages/{lang}.json    # i18n translation files
 docs/
-  governance/           # Gen이 직접 읽고 쓰는 문서 (checklist, decision log, tech debt, architecture)
-  prompts/              # AI 실행용 프롬프트
-  reports/              # AI 생성 감사/분석 보고서
-  reference/            # 참고 자료 (스펙, 리서치, 계획)
+  human/                # Gen님용 문서 (한글) — 리추얼, 거버넌스, 브랜드
+  agent/                # 에이전트용 문서 (영어) — 프롬프트, 리포트, 레퍼런스
+    prompts/            # AI 실행용 프롬프트
+    reports/            # AI 생성 감사/분석 보고서
+    reference/          # 참고 자료 (스펙, 리서치, 계획)
 ```
 
 ## Critical Rules
@@ -100,15 +101,15 @@ legal consulting. Penalties: NT$200K-1M per violation.
 ## Ownership Workflow (MANDATORY)
 
 Claude MUST follow this workflow for every task. No exceptions.
-Governance docs: `docs/governance/WORKFLOW-CHECKLIST.md` (Gen's gate), `docs/governance/TECH-DEBT.md`, `docs/governance/DECISION-LOG.md`, `docs/governance/ARCHITECTURE-MAP.md`
+Human docs: `docs/human/` | Agent docs: `docs/agent/`
 
 ### 1. Before ANY Code Change
-- **Impact map first**: Show which files will be affected and how they connect, BEFORE writing code. Reference `docs/governance/ARCHITECTURE-MAP.md` Section 8 (변경 영향도 맵) for risk levels
+- **Impact map first**: Show which files will be affected and how they connect, BEFORE writing code. Reference `docs/human/[WEEKLY] 아키텍처-지도.md` Section 8 (변경 영향도 맵) for risk levels
 - **Options, not recommendations**: Present 2-3 approaches with trade-offs. Do NOT recommend. Let Gen decide
 - **Explain WHY**: For each option, explain why this approach solves the problem. Gen will ask "왜?" — be ready
 - **Success criteria from Gen**: Ask Gen to define what "done" looks like before starting. Do not self-define success criteria
 - **Rollback criteria**: Agree on "if X happens, we revert everything" before starting
-- **Tech debt gate**: Check `docs/governance/TECH-DEBT.md` — if OPEN items ≥ 5, block new features. Resolve debt first
+- **Tech debt gate**: Check `docs/human/[DAILY] 기술부채-현황.md` — if OPEN items ≥ 5, block new features. Resolve debt first
 
 ### 2. During Execution
 - **Execution flow first**: Before implementing any feature, explain the runtime flow in ≤5 steps (server → browser → useEffect → user sees what)
@@ -118,24 +119,34 @@ Governance docs: `docs/governance/WORKFLOW-CHECKLIST.md` (Gen's gate), `docs/gov
 
 ### 3. After Execution
 - **Gen verifies, not Claude**: Claude tells Gen WHERE to look and WHAT to check. Gen does the actual verification in browser
-- **Tech debt log**: Append any temporary fixes, skipped tests, or known issues to `docs/governance/TECH-DEBT.md`
-- **Decision log**: Record what was decided and why in `docs/governance/DECISION-LOG.md`. Include 📘 배경지식 footnotes for technical concepts
-- **Architecture update**: If system structure changed, update `docs/governance/ARCHITECTURE-MAP.md`
+- **Tech debt log**: Append any temporary fixes, skipped tests, or known issues to `docs/human/[DAILY] 기술부채-현황.md`
+- **Decision log**: Record what was decided and why in `docs/human/[WEEKLY] 의사결정-일지.md`. Include 📘 배경지식 footnotes for technical concepts
+- **Architecture update**: If system structure changed, update `docs/human/[WEEKLY] 아키텍처-지도.md`
 
-### 4. Weekly Review Triggers
-- If `docs/governance/TECH-DEBT.md` has ≥5 unresolved items → block new features until resolved
-- Review `docs/governance/DECISION-LOG.md` for patterns
-- Architecture walkthrough: Gen should be able to explain any page's data flow from memory
-- Use `docs/governance/WORKFLOW-CHECKLIST.md` Phase 6 for review template
+### 4. Session Start Auto-Check (MANDATORY)
+Every new Cowork/Claude Code session, Claude MUST check BEFORE doing any work:
+1. Read `docs/human/[DAILY] 기술부채-현황.md` → OPEN 항목 수 확인. 5개 이상이면 ⛔ 알림
+2. Read `docs/human/[WEEKLY] 워크플로우-체크리스트.md` Phase 6 하단의 `last_review` 날짜 확인
+3. 마지막 리뷰로부터 7일 이상 경과했으면 → "주간 리뷰가 밀려있습니다. 지금 진행할까요?" 알림
+4. Gen이 승인하면 `.claude/shortcuts/weekly-review.md`의 프롬프트대로 실행
 
-### 5. Learning Points
+### 5. Weekly Review Rituals
+매주 1회 (자동 트리거 또는 Gen이 `/weekly-review` 실행):
+- **기술 부채 리뷰**: TECH-DEBT.md OPEN 항목 리뷰, 우선순위 재조정
+- **Mental Model Check**: MENTAL-MODEL-CHECK.md에서 질문 1개 → Gen이 답변 → Claude 교정
+- **Architecture Walkthrough**: 랜덤 페이지 경로 → Gen이 데이터 흐름 설명
+- **Self-Demo**: `npm run build` + Gen이 주요 페이지 직접 확인
+- **DECISION-LOG 패턴 리뷰**: 같은 실수 반복 패턴 확인
+- Use `docs/human/[WEEKLY] 워크플로우-체크리스트.md` Phase 6 for review template
+
+### 6. Learning Points
 - When Gen asks a technical question, explain the concept clearly without jargon first
-- When a decision requires technical context Gen hasn't encountered before, flag it: "이건 새로운 개념이에요: [concept]. 설명드릴까요?"
+- When a decision requires technical context Gen hasn't encountered before, flag it: "이건 새로운 개념입니다: [concept]. 설명드릴까요?"
 - Use footnotes (📘) in all documents for technical terms — Gen has PM experience but SQL-level coding background
 - Use ASCII diagrams and visual flows whenever possible — prefer diagrams over paragraphs of explanation
 
 ## Agent Team (Agentic Development)
-See `docs/AGENT-TEAM.md` for detailed role definitions, prompts, and workflow.
+See `docs/agent/prompts/AGENT-TEAM.md` for detailed role definitions, prompts, and workflow.
 
 | Role | Focus | Agent Type |
 |------|-------|------------|
@@ -148,5 +159,5 @@ See `docs/AGENT-TEAM.md` for detailed role definitions, prompts, and workflow.
 ### Constraints
 - Max **3-4 agents** per parallel batch (prevents SIGKILL from memory)
 - UXR agent uses **Puppeteer** (headless, `npm install puppeteer`) in Claude Code CLI, or **mcp__Claude_in_Chrome** in Cowork mode
-- Market research is a **separate pre-step** — save results to `docs/reference/research-*.md` before running agent cycles
-- All audit outputs go in `docs/reports/`
+- Market research is a **separate pre-step** — save results to `docs/agent/reference/research-*.md` before running agent cycles
+- All audit outputs go in `docs/agent/reports/`

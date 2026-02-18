@@ -1,7 +1,0 @@
-export { BusinessHeroSection } from './BusinessHeroSection'
-export { BusinessProblemSection } from './BusinessProblemSection'
-export { BusinessWhyUsSection } from './BusinessWhyUsSection'
-export { BusinessServicesSection } from './BusinessServicesSection'
-export { BusinessHowItWorksSection } from './BusinessHowItWorksSection'
-export { BusinessNotForSection } from './BusinessNotForSection'
-export { BusinessCtaSection } from './BusinessCtaSection'
