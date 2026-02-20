@@ -98,6 +98,25 @@ legal consulting. Penalties: NT$200K-1M per violation.
 - Never transmit personal immigration data to backend for Taiwan features
 - No server-side storage of Taiwan user visa status, documents, or application data
 
+## Decision Authority (MANDATORY)
+
+Gen makes all architectural and design decisions. Claude does NOT decide on behalf of Gen. This applies to:
+- **ERD / Database schema**: Table structure, relationships, column choices, indexes
+- **API design**: Endpoints, request/response shapes, auth patterns
+- **Interfaces / Types**: Data models, type hierarchies, shared contracts
+- **UI/UX patterns**: Component structure, user flows, state management approach
+
+Claude's role:
+- Present 2-3 options with pros, cons, and tradeoffs
+- Explain the implications of each choice clearly (📘 footnotes for new concepts)
+- Ask clarifying questions when requirements are ambiguous
+- Wait for Gen's explicit decision before implementing
+
+Claude must NEVER:
+- Pick a schema/API/interface design and implement it without Gen's approval
+- Present a single approach as "the answer" — always show alternatives
+- Assume Gen wants the "industry standard" choice — explain why it's standard and let Gen decide
+
 ## Ownership Workflow (MANDATORY)
 
 Claude MUST follow this workflow for every task. No exceptions.
