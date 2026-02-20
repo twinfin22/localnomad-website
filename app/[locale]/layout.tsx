@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Inter, Lora } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { routing } from '@/i18n/routing';
+import { AuthNav } from '@/components/auth';
 import { Footer } from '@/components/footer';
 import '../globals.css';
 
@@ -53,6 +54,9 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`${inter.variable} ${lora.variable}`}>
       <body className="font-sans antialiased">
         <NextIntlClientProvider>
+          <nav className="flex items-center justify-end gap-4 px-6 py-3 text-sm">
+            <AuthNav />
+          </nav>
           {children}
           <Footer />
         </NextIntlClientProvider>

@@ -4,13 +4,13 @@
 - **"LocalNomad"** — Always one word. Never "Local Nomad" or "Local Nomad Club"
 - Plural: "LocalNomads". Domain: `localnomad.club`
 - **Brand Color**: Deep Teal Navy `#1B4965` — Primary brand color for logo, headings, CTAs
-- **Logo**: Wordmark "LocalNomad" — "Local" in serif, "Nomad" in sans-serif, same weight
+- **Logo**: Wordmark "LocalNomad" — all in Lora Bold
 - **Favicon**: Half-circle compass / tilted diamond (brand color)
 - See `docs/human/브랜드-가이드.md` for full design specs
 
 ## Commands
 ```bash
-npm run dev      # localhost:3000
+npm run dev      # localhost:1004
 npm run build    # Production build
 npm run lint     # ESLint
 ```

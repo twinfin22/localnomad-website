@@ -1,11 +1,24 @@
+import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
-import { getTranslations } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
-import { getVisaData } from '@/lib/visa-data';
+import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
+import { getSession } from '@/lib/actions/auth';
+import { getActiveVisa, getChecklist } from '@/lib/actions/dashboard';
 import type { Country } from '@/lib/types/visa';
+import {
+  GlanceableZone,
+  ActionZone,
+  ContextZone,
+  VisaDisclaimer,
+} from '@/components/visa';
+
+const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
+  korea: 'kr',
+  taiwan: 'tw',
+};
 
 const VALID_COUNTRIES = ['korea', 'taiwan'] as const;
 
@@ -13,57 +26,174 @@ interface Props {
   params: Promise<{ locale: string; country: string; type: string }>;
 }
 
+export async function generateStaticParams() {
+  const params: { locale: string; country: string; type: string }[] = [];
+
+  for (const locale of routing.locales) {
+    for (const country of VALID_COUNTRIES) {
+      const visas = await getAvailableVisas(country, locale);
+      for (const visa of visas) {
+        params.push({ locale, country, type: visa.type });
+      }
+    }
+  }
+
+  return params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, country, type } = await params;
+  const visa = await getVisaData(country as Country, locale, type);
+
+  if (!visa) {
+    return { title: `${type.toUpperCase()} Visa | LocalNomad` };
+  }
+
+  const year = new Date().getFullYear();
+  const title = `${visa.name} | LocalNomad`;
+  const description = visa.description.length > 155
+    ? visa.description.slice(0, 152) + '...'
+    : visa.description;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title: `${visa.shortName} Visa — Requirements & Guide ${year} | LocalNomad`,
+      description,
+      type: 'article',
+      siteName: 'LocalNomad',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${visa.shortName} Visa — Requirements & Guide ${year} | LocalNomad`,
+      description,
+    },
+  };
+}
+
 export default async function VisaDetailPage({ params }: Props) {
   const { locale, country, type } = await params;
   if (!hasLocale(routing.locales, locale)) return null;
   setRequestLocale(locale);
 
-  if (!VALID_COUNTRIES.includes(country as (typeof VALID_COUNTRIES)[number])) {
+  if (
+    !VALID_COUNTRIES.includes(country as (typeof VALID_COUNTRIES)[number])
+  ) {
     notFound();
   }
 
   const visa = await getVisaData(country as Country, locale, type);
-  const t = await getTranslations('VisaDetail');
   const tc = await getTranslations('Common');
+  const t = await getTranslations('VisaDetail');
   const displayCountry = country === 'korea' ? 'South Korea' : 'Taiwan';
 
+  if (!visa) {
+    return (
+      <main id="main-content" className="min-h-svh bg-neutral-50">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <Link
+            href={`/${country}`}
+            className="text-sm text-primary hover:underline"
+          >
+            &larr; {tc('backToCountry', { country: displayCountry })}
+          </Link>
+          <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
+            {t('title', { type: type.toUpperCase() })}
+          </h1>
+          <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
+            {t('comingSoon')}
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Auth: optionally load session + checklist for logged-in users
+  const user = await getSession();
+  let userVisaId: string | undefined;
+  let serverChecklist: { id: string; user_visa_id: string; document_id: string; checked: boolean; checked_at: string | null }[] | undefined;
+
+  if (user) {
+    const activeVisa = await getActiveVisa();
+    if (
+      activeVisa &&
+      activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
+      activeVisa.visa_type === type
+    ) {
+      userVisaId = activeVisa.id;
+      serverChecklist = await getChecklist(activeVisa.id);
+    }
+  }
+
+  // Schema.org JSON-LD: FAQPage
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: visa.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  // Schema.org JSON-LD: HowTo
+  const howToJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Apply for ${visa.name}`,
+    step: visa.applicationSteps.map((step) => ({
+      '@type': 'HowToStep',
+      name: step.title,
+      text: step.description,
+    })),
+  };
+
   return (
-    <main id="main-content" className="min-h-svh bg-neutral-50">
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <Link
-          href={`/${country}`}
-          className="text-sm text-primary hover:underline"
-        >
-          &larr; {tc('backToCountry', { country: displayCountry })}
-        </Link>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(howToJsonLd),
+        }}
+      />
+      <main id="main-content" className="min-h-svh bg-neutral-50">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <Link
+            href={`/${country}`}
+            className="inline-flex min-h-[44px] items-center text-sm text-primary hover:underline"
+          >
+            &larr; {tc('backToCountry', { country: displayCountry })}
+          </Link>
 
-        {visa ? (
-          <>
-            <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
-              {visa.name}
-            </h1>
-            <p className="mt-2 text-lg text-muted-foreground">
-              {visa.tagline}
-            </p>
-            <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
-              {t('comingSoon')}
-            </div>
-          </>
-        ) : (
-          <>
-            <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
-              {t('title', { type: type.toUpperCase() })}
-            </h1>
-            <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
-              {t('comingSoon')}
-            </div>
-          </>
-        )}
+          {/* Layer 1: Glanceable */}
+          <GlanceableZone visa={visa} />
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          {tc('disclaimer')}
-        </p>
-      </div>
-    </main>
+          {/* Layer 2: Action */}
+          <ActionZone
+            visa={visa}
+            country={country}
+            isLoggedIn={!!user}
+            userVisaId={userVisaId}
+            serverChecklist={serverChecklist}
+          />
+
+          {/* Layer 3: Context */}
+          <ContextZone visa={visa} country={country} />
+
+          {/* Legal Disclaimer */}
+          <VisaDisclaimer country={country} />
+        </div>
+      </main>
+    </>
   );
 }
