@@ -285,6 +285,48 @@
     "Must maintain valid health insurance throughout stay",
     "Maximum 2-year stay - plan accordingly"
   ],
+  "communityTips": [
+    {
+      "id": "fbi-check",
+      "tip": "FBI background check can take 12-18 weeks via mail. Start this FIRST before anything else.",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 47,
+      "dateAdded": "2025-11-15"
+    },
+    {
+      "id": "safetywing-accepted",
+      "tip": "SafetyWing Nomad Insurance was accepted at Seoul Immigration Office for my F-1-D extension. Cost about $45/month.",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 32,
+      "dateAdded": "2025-12-03"
+    },
+    {
+      "id": "income-proof-bank",
+      "tip": "I used Wise (TransferWise) bank statements + employment contract. They accepted it without issues at the Sejongno office.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 28,
+      "dateAdded": "2026-01-10"
+    },
+    {
+      "id": "arc-timeline",
+      "tip": "Got my ARC card in 10 business days after registering at Mokdong immigration. They give you a receipt right away that works as temp ID.",
+      "source": "discord",
+      "verified": true,
+      "upvotes": 15,
+      "dateAdded": "2026-01-22"
+    },
+    {
+      "id": "apostille-tip",
+      "tip": "If you're American, get your background check apostilled at the US State Department before coming. Takes 4-6 weeks by mail.",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 38,
+      "dateAdded": "2025-10-20"
+    }
+  ],
   "relatedVisas": [
     "e-7",
     "d-10",

@@ -285,6 +285,48 @@
     "滞在期間中、有効な健康保険を維持する必要があります",
     "最長2年の滞在 — それに応じて計画を立ててください"
   ],
+  "communityTips": [
+    {
+      "id": "fbi-check",
+      "tip": "FBIの身元調査は郵送で12〜18週間かかることがあります。他の何よりも先にこれから始めてください。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 47,
+      "dateAdded": "2025-11-15"
+    },
+    {
+      "id": "safetywing-accepted",
+      "tip": "SafetyWing Nomad Insuranceは、F-1-D延長申請でソウル出入国管理事務所に受理されました。月額約$45です。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 32,
+      "dateAdded": "2025-12-03"
+    },
+    {
+      "id": "income-proof-bank",
+      "tip": "Wise（TransferWise）の銀行明細書と雇用契約書を提出しました。世宗路事務所で問題なく受理されました。",
+      "source": "community",
+      "verified": true,
+      "upvotes": 28,
+      "dateAdded": "2026-01-10"
+    },
+    {
+      "id": "arc-timeline",
+      "tip": "Mokdong出入国管理事務所で登録後、10営業日でARCカードを受け取りました。その場で仮IDとして使える受領証を発行してもらえます。",
+      "source": "discord",
+      "verified": true,
+      "upvotes": 15,
+      "dateAdded": "2026-01-22"
+    },
+    {
+      "id": "apostille-tip",
+      "tip": "アメリカ人の方は、渡航前に米国国務省で身元調査書にアポスティーユを取得してください。郵送で4〜6週間かかります。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 38,
+      "dateAdded": "2025-10-20"
+    }
+  ],
   "relatedVisas": [
     "e-7",
     "d-10",

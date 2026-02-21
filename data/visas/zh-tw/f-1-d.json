@@ -285,6 +285,48 @@
     "整個停留期間須維持有效健康保險",
     "最長停留2年——請做好規劃"
   ],
+  "communityTips": [
+    {
+      "id": "fbi-check",
+      "tip": "FBI 無犯罪紀錄證明透過郵寄申請需要 12 至 18 週。請優先處理這項，在其他所有事項之前就開始申請。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 47,
+      "dateAdded": "2025-11-15"
+    },
+    {
+      "id": "safetywing-accepted",
+      "tip": "SafetyWing Nomad Insurance 在我辦理 F-1-D 延期時，已被首爾出入境管理事務所接受。費用約每月 $45 美元。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 32,
+      "dateAdded": "2025-12-03"
+    },
+    {
+      "id": "income-proof-bank",
+      "tip": "我使用 Wise（TransferWise）銀行對帳單加上僱傭合約，在世宗路事務所辦理時順利通過，沒有任何問題。",
+      "source": "community",
+      "verified": true,
+      "upvotes": 28,
+      "dateAdded": "2026-01-10"
+    },
+    {
+      "id": "arc-timeline",
+      "tip": "在木洞出入境管理事務所完成登錄後，10 個工作天就拿到了 ARC 卡。辦理當下會先給收據，可作為臨時身分證明使用。",
+      "source": "discord",
+      "verified": true,
+      "upvotes": 15,
+      "dateAdded": "2026-01-22"
+    },
+    {
+      "id": "apostille-tip",
+      "tip": "如果您是美國人，建議在來韓國之前透過美國國務院辦理無犯罪紀錄證明的海牙認證，郵寄申請約需 4 至 6 週。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 38,
+      "dateAdded": "2025-10-20"
+    }
+  ],
   "relatedVisas": [
     "e-7",
     "d-10",
