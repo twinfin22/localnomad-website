@@ -42,5 +42,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# agent / session artifacts
+.agent/
+.agents/
+SESSION-SUMMARY.md
+phase-1-4-claude-code-prompt.md
+
 # external repos
 subinium-agentic-workflow-config/
