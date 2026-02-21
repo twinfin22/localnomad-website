@@ -11,12 +11,8 @@ export async function Footer() {
         {/* Brand */}
         <div className="text-center">
           <span className="font-lora text-2xl font-bold text-primary">
-            <span className="font-lora">Local</span>
-            <span className="font-sans">Nomad</span>
+            LocalNomad
           </span>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {t('tagline')}
-          </p>
         </div>
 
         {/* Social links */}
