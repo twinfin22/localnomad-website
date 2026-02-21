@@ -23,9 +23,7 @@ Deep Teal Navy (`#1B4965`) — 남색에 초록기가 살짝 섞여 "여행/탐�
 ## Logo
 
 ### Wordmark
-- **"Local"**: Serif typeface (Playfair Display, Lora, DM Serif Display, or Source Serif 4)
-- **"Nomad"**: Sans-serif typeface (DM Sans, Inter, Poppins, Montserrat, or Outfit)
-- 두 파트의 굵기(weight)는 동일 — 대비는 serif vs sans-serif 글자 형태에서만
+- **"LocalNomad"**: All in Lora Bold — no serif/sans-serif split
 - Color: `#1B4965` on white, or white on `#1B4965`
 - No icons, no tagline in logo lockup
 

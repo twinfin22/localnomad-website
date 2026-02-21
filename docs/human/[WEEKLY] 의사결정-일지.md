@@ -108,6 +108,68 @@
 - **결정**: Phase 1 완료 시 소프트 런칭 (F-1-D 하나만으로). 런칭 채널/방법은 Phase 1 완료 시 별도 논의.
 - **이유**: 빠른 피드백 확보. 완성도보다 속도 우선.
 
+### JSON 스키마: 공통 베이스 + 국가별 확장 (Option B)
+
+- **맥락**: 한국/대만 비자 데이터 타입을 어떻게 설계할지
+- **선택지**: (A) 완전 분리 (`visa-korea.ts` + `visa-taiwan.ts` + `visa-common.ts`) (B) 공통 베이스 + 국가별 확장 (`VisaBase` → `KoreaVisa` / `TaiwanVisa`)
+- **결정**: B — 공통 베이스 + 국가별 확장
+- **이유**: 전체 필드의 ~80%가 공통 (documents, faqs, applicationSteps 등). 완전 분리하면 같은 코드가 두 벌이 됨. 한국 전용 3개 (insuranceRequirement, gniBasedIncome, fixedIncomeRequirement), 대만 전용 5개 (agencySteps, tecoInfo, goldCardFields, goldCardComparison, tecoRouting)만 확장.
+- **📘 배경지식**: TypeScript의 `extends`를 사용. `KoreaVisa extends VisaBase`는 "VisaBase의 모든 필드를 포함하고, 한국 전용 필드를 추가한 타입"이라는 뜻.
+
+### 타입 파일 단계별 분리
+
+- **맥락**: v1은 `types.ts` 한 파일에 400줄 (비자+대시보드+퀴즈+비교+API 전부)
+- **결정**: 용도별 분리 — `visa.ts` (Phase 1-2), `dashboard.ts` (Phase 1-4), `comparison.ts` (Phase 2)
+- **이유**: 해당 Phase에서 필요한 파일만 만듦. 코드 가독성 향상. 성능 차이는 없음 (트리쉐이킹이 미사용 코드 자동 제거).
+- **📘 배경지식**: 트리쉐이킹 = 빌드 시 실제 사용되는 코드만 최종 파일에 포함. 안 쓰는 타입/함수는 자동 제거됨.
+
+### 법적 페이지 v2 업데이트
+
+- **맥락**: v1 법적 페이지가 "Soft Landing" 컨설팅 서비스 기준 → v2는 비자 정보 플랫폼
+- **결정**: Terms/Privacy는 v2 서비스에 맞게 수정, Refund는 "현재 무료 서비스" 한 줄로 교체
+- **주요 변경**: 서비스 설명(Playbook/컨설팅 → 비자 정보 플랫폼), 제3자 서비스(LemonSqueezy/Calendly → Supabase/GA4), 결제 조항(유료 → 현재 무료)
+- **유지**: 행정사법/변호사법 면책 조항 (Section 4) — v2에서도 법적으로 필수
+
+### F-1-D 데이터: v1 그대로 사용
+
+- **맥락**: Visa Navigator PDF와 대조하려 했으나 PDF가 2023.05 버전 → F-1-D (2024.01 도입) 정보 없음
+- **결정**: v1 JSON 데이터 그대로 사용. `eligibilityQuestions` 필드만 제거 (v2에서 eligibility quiz 안 함)
+- **이유**: v1 데이터가 HiKorea/출입국관리사무소 기반으로 작성됨. `lastUpdated: 2026-02-16`으로 최신.
+
+### GA4 설정 방식
+
+- **맥락**: GA4 Measurement ID를 코드에 어떻게 포함할지
+- **결정**: `.env.local` 환경변수 (`NEXT_PUBLIC_GA_ID`). `@next/third-parties` 패키지 사용.
+- **이유**: `.env.local`은 `.gitignore`에 포함되어 GitHub에 안 올라감. 단, GA4 Measurement ID 자체는 민감정보가 아님 — 웹사이트 소스코드에 공개적으로 노출되는 값.
+- **📘 배경지식**: `NEXT_PUBLIC_` 접두사가 붙은 환경변수는 브라우저에서도 접근 가능 (클라이언트 번들에 포함). GA4 스크립트가 브라우저에서 실행되어야 하므로 이 접두사 필요.
+
 ---
 
-*마지막 업데이트: 2025-02-19*
+## 2025-02-20
+
+### 비자 상세 페이지 컴포넌트 구조: Zone별 분리 (Option B)
+
+- **맥락**: Phase 1-3 F-1-D 비자 상세 페이지 구현 시 컴포넌트를 어떻게 나눌지
+- **선택지**: (A) 단일 파일 — page.tsx 하나에 전부 (B) Zone별 분리 — 3개 Zone 각각 별도 컴포넌트 (C) 세부까지 분리 — Zone + 내부 요소별 컴포넌트 10개+
+- **결정**: B — Zone별 분리
+- **이유**: A는 Action Zone의 "use client"가 페이지 전체를 Client로 만들어 RSC 규율 위반. C는 Phase 1에서 과한 추상화. B가 RSC 규율 준수(Client는 ActionZone 하나만) + Phase 2 복제 용이성의 균형점.
+- **📘 배경지식**: page.tsx(Server)가 orchestrator 역할, GlanceableZone(Server) + ActionZone(Client) + ContextZone(Server) + VisaDisclaimer(Server)로 구성. "use client"는 ActionZone 하나에만 존재.
+
+### 체크리스트 인터랙션: localStorage (로컬 저장)
+
+- **맥락**: 서류 체크리스트를 클릭했을 때 저장 방식. Supabase(서버 DB)는 Phase 1-4에서 추가 예정.
+- **선택지**: (A) 읽기 전용 — 보기만, Phase 1-4에서 클릭 추가 (B) localStorage — 브라우저 임시 저장, 로그인 없이 작동
+- **결정**: B — localStorage
+- **이유**: 사용자가 비자 상세 페이지에서 바로 체크리스트를 사용할 수 있어 UX가 좋음. Phase 1-4에서 Supabase 연결 시 서버 저장으로 전환 예정.
+- **📘 배경지식**: localStorage는 브라우저에 데이터를 저장하는 Web API. 키: `localnomad:checklist:{country}:{visaType}`, 값: `{ documentId: boolean }`. 같은 브라우저에서는 새로고침 후에도 유지되지만, 다른 기기에서는 안 보임. hydration mismatch 방지를 위해 useEffect에서 읽기.
+
+### FAQ 구현: HTML details/summary (네이티브)
+
+- **맥락**: FAQ 접기/펼치기 구현 방식 선택
+- **선택지**: (A) shadcn Accordion — 부드러운 애니메이션, Client Component (~3-5KB JS) (B) HTML details/summary — 브라우저 네이티브, JS 0바이트, Server Component 유지
+- **결정**: B — HTML details/summary
+- **이유**: FAQ는 Context Zone(페이지 하단)에 위치하여 성능 체감 차이 없음. JS 0바이트로 Server Component를 유지하면 RSC 비율 목표 달성에 유리. CSS `group-open:rotate-180`으로 chevron 회전 애니메이션 가능.
+
+---
+
+*마지막 업데이트: 2025-02-20*
