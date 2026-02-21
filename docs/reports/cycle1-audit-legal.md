@@ -3,7 +3,7 @@
 **Auditor:** Legal Compliance Reviewer
 **Date:** 2026-02-12
 **Scope:** Korean law compliance (행정사법, 변호사법, 표시광고법)
-**Codebase:** `/Users/leegen/localnomad/localnomad-website`
+**Codebase:** `/Users/leegen/localnomad/b2c-website`
 
 ---
 

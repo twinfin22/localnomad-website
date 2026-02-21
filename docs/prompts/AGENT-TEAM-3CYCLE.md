@@ -649,7 +649,7 @@ Final navigation fixes and polish. Read CLAUDE.md.
 
 6. Move @types/mapbox-gl from dependencies to devDependencies in package.json.
 
-7. Fix package name in package.json from "my-v0-project" to "localnomad-website".
+7. Fix package name in package.json from "my-v0-project" to "b2c-website".
 
 After changes, run: npm run build
 ```
@@ -715,7 +715,7 @@ Comprehensive technical audit. Be thorough.
 13. Check communityTips in data/visas/en/e-7.json — populated?
 14. Check public/robots.txt exists. Check app/sitemap.ts exists.
 15. Read components/footer.tsx — global disclaimer present?
-16. Read package.json — name is "localnomad-website"? @types/mapbox-gl in devDeps?
+16. Read package.json — name is "b2c-website"? @types/mapbox-gl in devDeps?
 
 Score 0-100. Compare to baseline 38/100.
 Write to `final-audit-tech.md`.

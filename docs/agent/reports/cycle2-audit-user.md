@@ -252,26 +252,26 @@ The discovery and information phases are strong, but the tracking and preparatio
 ## Top 5 Issues Ranked by Impact
 
 ### 1. Dashboard Auth Wall Blocks Entire Tracking Flow (Blocker)
-- **Files**: `/Users/leegen/localnomad/localnomad-website/components/visa/dashboard/DashboardClient.tsx` (lines 472-498), `/Users/leegen/localnomad/localnomad-website/components/visa/StateDashboard.tsx` (orphaned)
+- **Files**: `/Users/leegen/localnomad/b2c-website/components/visa/dashboard/DashboardClient.tsx` (lines 472-498), `/Users/leegen/localnomad/b2c-website/components/visa/StateDashboard.tsx` (orphaned)
 - **Impact**: Users cannot track visa progress without creating an account. The localStorage-based `StateDashboard` component exists and works but is not mounted on any route. The dashboard page only renders the auth-gated `DashboardClient`.
 - **Fix**: Either wire `StateDashboard` as a fallback for unauthenticated users, or show a meaningful preview/onboarding on the dashboard page before requiring auth.
 
 ### 2. Non-Locale-Aware Links Throughout Quiz and Dashboard (Critical)
-- **Files**: `/Users/leegen/localnomad/localnomad-website/components/visa/EligibilityQuiz.tsx` (line 476, 499), `/Users/leegen/localnomad/localnomad-website/components/visa/quiz/QuizResults.tsx` (line 109, 190), `/Users/leegen/localnomad/localnomad-website/components/visa/StateDashboard.tsx` (lines 81, 87, 99, 112, 549, 685, 694), `/Users/leegen/localnomad/localnomad-website/components/visa/dashboard/DashboardClient.tsx` (lines 63, 69, 81, 94, 146, 234, 288, 296), `/Users/leegen/localnomad/localnomad-website/components/visa/checklist/ChecklistPage.tsx` (line 139)
+- **Files**: `/Users/leegen/localnomad/b2c-website/components/visa/EligibilityQuiz.tsx` (line 476, 499), `/Users/leegen/localnomad/b2c-website/components/visa/quiz/QuizResults.tsx` (line 109, 190), `/Users/leegen/localnomad/b2c-website/components/visa/StateDashboard.tsx` (lines 81, 87, 99, 112, 549, 685, 694), `/Users/leegen/localnomad/b2c-website/components/visa/dashboard/DashboardClient.tsx` (lines 63, 69, 81, 94, 146, 234, 288, 296), `/Users/leegen/localnomad/b2c-website/components/visa/checklist/ChecklistPage.tsx` (line 139)
 - **Impact**: Links using bare `/visa/...` paths will break or redirect incorrectly for Japanese and Chinese users. Affects quiz results, dashboard navigation, and checklist breadcrumbs.
 - **Fix**: Pass `lang` and `country` params to all client components and use `buildLocalePath` for all internal links.
 
 ### 3. Missing Korean Document Names in Checklist Data (Warning)
-- **Files**: All files in `/Users/leegen/localnomad/localnomad-website/data/visas/en/*.json`
+- **Files**: All files in `/Users/leegen/localnomad/b2c-website/data/visas/en/*.json`
 - **Impact**: The `nameKorean` field exists in the type system (`ChecklistDocument` in types.ts line 219) but is never populated. Users with TOPIK 3+ who visit immigration offices need to know Korean names for documents like "Employment Contract" (고용계약서), "Degree Certificate" (학위증명서), "Career Certificate" (경력증명서).
 - **Fix**: Add `nameKorean` field to all documents in visa JSON files. Render it in `ChecklistItem.tsx` alongside the English name.
 
 ### 4. Vietnam and Other Key Nationalities Missing from Quiz (Warning)
-- **Files**: `/Users/leegen/localnomad/localnomad-website/data/quiz/questions.json` (lines 11-22)
+- **Files**: `/Users/leegen/localnomad/b2c-website/data/quiz/questions.json` (lines 11-22)
 - **Impact**: Vietnam, China, India, Philippines, Indonesia -- the top source countries for Korean immigration -- are not listed. These users must select "Other Country" which feels impersonal and may produce less accurate results.
 - **Fix**: Add Vietnam, China, India, Philippines, and Indonesia to the nationality list. Consider using a searchable dropdown for comprehensive coverage.
 
 ### 5. Hardcoded English Strings in Quiz and Path Components (Warning)
-- **Files**: `/Users/leegen/localnomad/localnomad-website/components/visa/EligibilityQuiz.tsx` (all question text), `/Users/leegen/localnomad/localnomad-website/lib/visa/path-data.ts` (all path names/descriptions/requirements/tips), `/Users/leegen/localnomad/localnomad-website/components/visa/path/visa-path-simulator.tsx` (UI labels)
+- **Files**: `/Users/leegen/localnomad/b2c-website/components/visa/EligibilityQuiz.tsx` (all question text), `/Users/leegen/localnomad/b2c-website/lib/visa/path-data.ts` (all path names/descriptions/requirements/tips), `/Users/leegen/localnomad/b2c-website/components/visa/path/visa-path-simulator.tsx` (UI labels)
 - **Impact**: The quiz and path simulator are completely English-only. Even though the landing page uses i18n keys, these interactive components would need a complete rewrite to support translation.
 - **Fix**: Extract all strings to translation files. For path data, consider a locale-indexed data structure similar to visa JSON files.

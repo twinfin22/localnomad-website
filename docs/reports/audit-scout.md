@@ -337,16 +337,16 @@ LOW EFFORT ------------|------------ HIGH EFFORT
 
 | File | Purpose |
 |---|---|
-| `/Users/leegen/localnomad/localnomad-website/lib/visa/data.ts` | Visa data loader with 12 visa types, 3 locales |
-| `/Users/leegen/localnomad/localnomad-website/lib/visa/quiz-engine.ts` | Quiz scoring logic with visa path support |
-| `/Users/leegen/localnomad/localnomad-website/lib/visa/types.ts` | Type definitions including `VisaPathStep`, `pathsTo`, `pathsFrom`, `communityTips` |
-| `/Users/leegen/localnomad/localnomad-website/lib/visa/stateMachine.ts` | Visa state machine (NO_VISA > ACTIVE > EXPIRING) |
-| `/Users/leegen/localnomad/localnomad-website/lib/visa/health-score.ts` | Health score calculation (4-factor weighted) |
-| `/Users/leegen/localnomad/localnomad-website/components/visa/dashboard/DashboardClient.tsx` | Dashboard with Supabase integration |
-| `/Users/leegen/localnomad/localnomad-website/components/visa/quiz/VisaFinder.tsx` | Quiz flow with recommendations |
-| `/Users/leegen/localnomad/localnomad-website/components/visa/VisaComparisonTool.tsx` | Side-by-side visa comparison |
-| `/Users/leegen/localnomad/localnomad-website/components/visa/journey/VisaJourneyPage.tsx` | Visa detail page with 4-step journey |
-| `/Users/leegen/localnomad/localnomad-website/data/visas/en/` | 12 visa data JSON files (English) |
-| `/Users/leegen/localnomad/localnomad-website/lib/i18n/config.ts` | i18n config: 3 locales, 2 countries |
-| `/Users/leegen/localnomad/localnomad-website/public/data/seoul-boundary.geojson` | Seoul map data |
-| `/Users/leegen/localnomad/localnomad-website/비자 대시보드 관련 조사 결과.txt` | Primary research document (301+ Discord threads, Reddit, competitor analysis) |
+| `/Users/leegen/localnomad/b2c-website/lib/visa/data.ts` | Visa data loader with 12 visa types, 3 locales |
+| `/Users/leegen/localnomad/b2c-website/lib/visa/quiz-engine.ts` | Quiz scoring logic with visa path support |
+| `/Users/leegen/localnomad/b2c-website/lib/visa/types.ts` | Type definitions including `VisaPathStep`, `pathsTo`, `pathsFrom`, `communityTips` |
+| `/Users/leegen/localnomad/b2c-website/lib/visa/stateMachine.ts` | Visa state machine (NO_VISA > ACTIVE > EXPIRING) |
+| `/Users/leegen/localnomad/b2c-website/lib/visa/health-score.ts` | Health score calculation (4-factor weighted) |
+| `/Users/leegen/localnomad/b2c-website/components/visa/dashboard/DashboardClient.tsx` | Dashboard with Supabase integration |
+| `/Users/leegen/localnomad/b2c-website/components/visa/quiz/VisaFinder.tsx` | Quiz flow with recommendations |
+| `/Users/leegen/localnomad/b2c-website/components/visa/VisaComparisonTool.tsx` | Side-by-side visa comparison |
+| `/Users/leegen/localnomad/b2c-website/components/visa/journey/VisaJourneyPage.tsx` | Visa detail page with 4-step journey |
+| `/Users/leegen/localnomad/b2c-website/data/visas/en/` | 12 visa data JSON files (English) |
+| `/Users/leegen/localnomad/b2c-website/lib/i18n/config.ts` | i18n config: 3 locales, 2 countries |
+| `/Users/leegen/localnomad/b2c-website/public/data/seoul-boundary.geojson` | Seoul map data |
+| `/Users/leegen/localnomad/b2c-website/비자 대시보드 관련 조사 결과.txt` | Primary research document (301+ Discord threads, Reddit, competitor analysis) |

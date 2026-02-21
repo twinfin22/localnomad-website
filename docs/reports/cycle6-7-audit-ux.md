@@ -11,7 +11,7 @@
 ### 1. Header overlap fix — VisaJourneyPage.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/journey/VisaJourneyPage.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/journey/VisaJourneyPage.tsx`
 
 Line 117 confirms the container uses `pt-24 pb-8` instead of the old `py-8`:
 ```tsx
@@ -24,7 +24,7 @@ The "Back to Visa Guide" link at line 119 now sits well below the fixed header (
 ### 2. Mobile grid fix — SituationGrid.tsx + SituationTile.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/landing/SituationGrid.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/landing/SituationGrid.tsx`
 
 Line 16 confirms the responsive grid:
 ```tsx
@@ -32,7 +32,7 @@ Line 16 confirms the responsive grid:
 ```
 2 columns on mobile, 3 columns on large screens, with tighter gap on small screens.
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/landing/SituationTile.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/landing/SituationTile.tsx`
 
 Line 12 confirms mobile-responsive padding:
 ```tsx
@@ -45,7 +45,7 @@ p-4 on mobile, p-6 on sm+. Emoji and text sizing is also responsive (`text-2xl s
 ### 3. Footer contrast fix — footer.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/footer.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/footer.tsx`
 
 Graded opacity hierarchy verified:
 - **Tagline** (line 37): `text-foreground/70`
@@ -61,7 +61,7 @@ Hierarchy is correct: tagline > nav links > social icons = copyright > legal dis
 ### 4. AlreadyHaveVisa clarity
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/landing/AlreadyHaveVisa.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/landing/AlreadyHaveVisa.tsx`
 
 All requirements verified:
 - Line 45: CTA text is `t("seeYourOptions")` which resolves to "See your options" (not "Manage your visa")
@@ -76,7 +76,7 @@ All requirements verified:
 ### 5. Salary numbers + touch targets — StepQualify.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/journey/steps/StepQualify.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/journey/steps/StepQualify.tsx`
 
 Salary inline display (lines 57-62):
 ```tsx
@@ -100,7 +100,7 @@ Yes/No buttons (lines 68, 79): Both have `min-h-[44px]`:
 ### 6. Settings button — DashboardClient.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/dashboard/DashboardClient.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/dashboard/DashboardClient.tsx`
 
 Sheet component is imported (lines 18-24) and used (lines 194-268). The Settings button at line 176-183 opens the sheet via `onClick={() => setSettingsOpen(true)}`. The sheet contents include:
 - **Current visa type** (lines 203-225): Shows `visa.shortName` and `visa.name` with link to visa detail page
@@ -112,11 +112,11 @@ Sheet component is imported (lines 18-24) and used (lines 194-268). The Settings
 ### 7. package.json name
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/package.json`
+File: `/Users/leegen/localnomad/b2c-website/package.json`
 
 Line 2:
 ```json
-"name": "localnomad-website",
+"name": "b2c-website",
 ```
 No longer "my-v0-project".
 
@@ -127,7 +127,7 @@ No longer "my-v0-project".
 ### 8. Focus-visible — globals.css
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/app/globals.css`
+File: `/Users/leegen/localnomad/b2c-website/app/globals.css`
 
 Lines 156-159 in `@layer base`:
 ```css
@@ -143,7 +143,7 @@ Matches the specification exactly.
 ### 9. Skip-to-content — [lang]/layout.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/app/[lang]/layout.tsx`
+File: `/Users/leegen/localnomad/b2c-website/app/[lang]/layout.tsx`
 
 Skip link at lines 60-65 is the first child of `<body>`:
 ```tsx
@@ -167,7 +167,7 @@ Children wrapped in `<div id="main-content">` at line 76:
 ### 10. Language switcher — language-switcher.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/language-switcher.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/language-switcher.tsx`
 
 Line 36: `aria-label="Switch language"` is present on the Button.
 No `<span className="sr-only">` found in the file (grep confirmed no matches). No redundant screen-reader text.
@@ -177,7 +177,7 @@ No `<span className="sr-only">` found in the file (grep confirmed no matches). N
 ### 11. Header mobile menu — header.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/header.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/header.tsx`
 
 Line 77 has dynamic aria-label:
 ```tsx
@@ -190,8 +190,8 @@ Correctly toggles based on `mobileMenuOpen` state.
 ### 12. Stable keys — VisaDetailContent.tsx + VisaComparisonTool.tsx
 **PASS**
 
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/VisaDetailContent.tsx`
-File: `/Users/leegen/localnomad/localnomad-website/components/visa/VisaComparisonTool.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/VisaDetailContent.tsx`
+File: `/Users/leegen/localnomad/b2c-website/components/visa/VisaComparisonTool.tsx`
 
 Grep for `key={i}` and `key={index}` in both files returned **no matches**. All keys use stable identifiers:
 - `VisaDetailContent.tsx`: Uses `key={tab.id}`, `key={\`target-${i}\`}`, `key={req.id}`, `key={\`restriction-${i}\`}`, `key={\`tip-${i}\`}`, `key={\`warning-${i}\`}`, `key={doc.id}`, `key={step.id}`, `key={\`step-tip-${i}\`}`, `key={\`doc-tip-${i}\`}`, `key={\`faq-${index}\`}`, `key={link.url}`

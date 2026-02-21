@@ -219,7 +219,7 @@ Translation files are 100% complete, but only ~25% of the UI actually uses them.
 | Q1 | **36 `as unknown as` casts** | `lib/visa/data.ts` | Every visa JSON import cast to `as unknown as VisaInfo`. No runtime validation. |
 | Q2 | **`as any` casts** | `lib/supabase/client.ts`, `components/providers/auth-provider.tsx` | Type safety bypassed. 3 instances found. |
 | Q3 | **Duplicate types** | `lib/visa/stateMachine.ts` vs `lib/visa/types.ts` | VisaState, VisaProgress, getDaysUntil, formatDaysRemaining duplicated. |
-| Q4 | **Package name `my-v0-project`** | `package.json` | Default v0 project name not updated to `localnomad-website`. |
+| Q4 | **Package name `my-v0-project`** | `package.json` | Default v0 project name not updated to `b2c-website`. |
 | Q5 | **`ignoreBuildErrors: true`** | `next.config.mjs` | TypeScript errors invisible in builds. |
 | Q6 | **No ESLint config** | Root directory | No `.eslintrc` or `eslint.config.js` found. `npm run lint` may use Next.js defaults only. |
 | Q7 | **No test files** | Entire codebase | Zero test files (`*.test.ts`, `*.spec.ts`). No test framework installed. |
@@ -336,7 +336,7 @@ Translation files are 100% complete, but only ~25% of the UI actually uses them.
 | 27 | Add `prefers-reduced-motion` support | Accessibility | 2 hours | A11y |
 | 28 | Add Content Security Policy headers | Security hardening | 4 hours | S7 |
 | 29 | Create `.env.example` | Developer experience | 30 min | Q10, B5 |
-| 30 | Fix package name to `localnomad-website` | Professionalism | 5 min | Q4 |
+| 30 | Fix package name to `b2c-website` | Professionalism | 5 min | Q4 |
 
 ---
 

@@ -18,7 +18,7 @@ The LocalNomad website has **multiple structural sources of UI flickering**, pri
 ## Root Causes (Detailed Analysis)
 
 ### 1. DARK MODE HARDCODED TO SERVER
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/app/[lang]/layout.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/app/[lang]/layout.tsx`
 **Lines**: 55
 
 ```tsx
@@ -37,7 +37,7 @@ The LocalNomad website has **multiple structural sources of UI flickering**, pri
 - Risk: Future theme toggle implementations will cause instant flash
 
 **CSS Root Cause**:
-`/sessions/cool-nifty-knuth/mnt/localnomad-website/styles/globals.css` lines 42-75:
+`/sessions/cool-nifty-knuth/mnt/b2c-website/styles/globals.css` lines 42-75:
 ```css
 .dark {
   --background: oklch(0.145 0 0);
@@ -49,7 +49,7 @@ The LocalNomad website has **multiple structural sources of UI flickering**, pri
 ---
 
 ### 2. useIsMobile HOOK - HYDRATION MISMATCH
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/use-mobile.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/use-mobile.tsx`
 **Lines**: 6-19
 
 ```tsx
@@ -78,7 +78,7 @@ export function useIsMobile() {
 - Initial server render (mobile layout = false) != initial client render before hydration completes
 
 **Used In**:
-- `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/sidebar.tsx` line 69: `const isMobile = useIsMobile()`
+- `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/sidebar.tsx` line 69: `const isMobile = useIsMobile()`
 - Sidebar responds to mobile/desktop state differently
 
 **Visible Impact**:
@@ -87,7 +87,7 @@ export function useIsMobile() {
 ---
 
 ### 3. DDayCounter - STATE INITIALIZED TO NULL
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/DDayCounter.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/DDayCounter.tsx`
 **Lines**: 15-21
 
 ```tsx
@@ -114,7 +114,7 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
 ---
 
 ### 4. VisaJourneyPage - DEEP LINK SCROLL + BANNER STATE
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/VisaJourneyPage.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/VisaJourneyPage.tsx`
 **Lines**: 48-76
 
 ```tsx
@@ -170,7 +170,7 @@ useEffect(() => {
 ---
 
 ### 5. ChecklistStep - HASH-BASED DEEP LINKING
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/ChecklistStep.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/ChecklistStep.tsx`
 **Lines**: 36-51
 
 ```tsx
@@ -205,7 +205,7 @@ useEffect(() => {
 ---
 
 ### 6. SeoulNeighborhoodMap - DYNAMIC IMPORT WITH ssr: false
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/lazy-map.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/lazy-map.tsx`
 **Lines**: 5-42
 
 ```tsx
@@ -244,7 +244,7 @@ const SeoulNeighborhoodMap = dynamic(
 ---
 
 ### 7. MIDDLEWARE i18n REWRITES
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/middleware.ts`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/middleware.ts`
 **Lines**: 72-80
 
 ```tsx
@@ -270,7 +270,7 @@ if (parsed.needsRewrite) {
 - Locale cookie set (line 83): `NEXT_LOCALE = "en"`
 
 **i18n Locale Resolution**:
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/i18n/request.ts`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/i18n/request.ts`
 **Lines**: 6-12
 
 ```tsx
@@ -296,7 +296,7 @@ export default getRequestConfig(async () => {
 ---
 
 ### 8. AuthProvider - CLIENT-ONLY SUPABASE
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/providers/auth-provider.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/providers/auth-provider.tsx`
 **Lines**: 33-67
 
 ```tsx
@@ -332,7 +332,7 @@ useEffect(() => {
 ---
 
 ### 9. SIDEBAR - STATE PERSISTENCE & MOBILE DETECTION
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/sidebar.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/sidebar.tsx`
 **Lines**: 69-94
 
 ```tsx
@@ -371,7 +371,7 @@ const setOpen = React.useCallback(
 ---
 
 ### 10. HEADER MOBILE MENU - STATE MISMATCH
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/header-mobile-menu.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/header-mobile-menu.tsx`
 **Lines**: 24-41
 
 ```tsx
@@ -405,9 +405,9 @@ return (
 
 ### 11. LOADING SKELETON COMPONENTS
 **Files**:
-- `/sessions/cool-nifty-knuth/mnt/localnomad-website/app/loading.tsx`
-- `/sessions/cool-nifty-knuth/mnt/localnomad-website/app/[lang]/loading.tsx`
-- `/sessions/cool-nifty-knuth/mnt/localnomad-website/app/[lang]/[country]/loading.tsx`
+- `/sessions/cool-nifty-knuth/mnt/b2c-website/app/loading.tsx`
+- `/sessions/cool-nifty-knuth/mnt/b2c-website/app/[lang]/loading.tsx`
+- `/sessions/cool-nifty-knuth/mnt/b2c-website/app/[lang]/[country]/loading.tsx`
 
 **Example** (`app/loading.tsx` lines 1-32):
 ```tsx
@@ -441,7 +441,7 @@ export default function Loading() {
 ---
 
 ### 12. CONDITIONAL RENDERING IN PAGES
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/app/[lang]/page.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/app/[lang]/page.tsx`
 **Lines**: 18-65
 
 ```tsx
@@ -488,7 +488,7 @@ export default async function GlobalLandingPage({ params }: GlobalLandingProps) 
 ## High-Priority Fixes
 
 ### Fix #1: useIsMobile Hook
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/use-mobile.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/use-mobile.tsx`
 
 **Current**:
 ```tsx
@@ -519,7 +519,7 @@ export function useIsMobile() {
 ---
 
 ### Fix #2: DDayCounter Hydration
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/DDayCounter.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/DDayCounter.tsx`
 
 **Current**:
 ```tsx
@@ -559,7 +559,7 @@ Or better: Mark component with `suppressHydrationWarning` if safe:
 ---
 
 ### Fix #3: VisaJourneyPage localStorage/Window
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/VisaJourneyPage.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/VisaJourneyPage.tsx`
 
 **Current** (Lines 48-76):
 ```tsx
@@ -600,7 +600,7 @@ Or prevent banner flash entirely by reading localStorage server-side via cookies
 ---
 
 ### Fix #4: AuthProvider Loading State
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/providers/auth-provider.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/providers/auth-provider.tsx`
 
 **Current** (Lines 29-50):
 ```tsx
@@ -630,7 +630,7 @@ Or use a proper loading boundary with Suspense (more complex refactor).
 ---
 
 ### Fix #5: Sidebar Mobile State
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/sidebar.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/sidebar.tsx`
 
 **Current** (Line 69):
 ```tsx
@@ -642,7 +642,7 @@ const isMobile = useIsMobile()  // Hydration mismatch!
 ---
 
 ### Fix #6: Deep Linking Scroll Jump
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/ChecklistStep.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/ChecklistStep.tsx`
 
 **Current** (Lines 36-51):
 ```tsx
@@ -682,7 +682,7 @@ Or better: Use `scroll-margin-top` CSS and skip scroll altogether.
 
 ## CSS Observations
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/styles/globals.css`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/styles/globals.css`
 
 - **Line 1-2**: Imports Tailwind v4 via `@import 'tailwindcss'` and custom animations
 - **Lines 6-75**: CSS custom properties (vars) for light/dark themes
@@ -696,7 +696,7 @@ Or better: Use `scroll-margin-top` CSS and skip scroll altogether.
 
 ## Middleware & Routing
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/middleware.ts`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/middleware.ts`
 
 **Rewrite Logic** (Lines 72-80):
 - `/korea/visa` → internally rewrites to `/en/korea/visa`
@@ -710,7 +710,7 @@ Or better: Use `scroll-margin-top` CSS and skip scroll altogether.
 
 ## Font Loading
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/app/[lang]/layout.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/app/[lang]/layout.tsx`
 **Lines**: 7, 15-21
 
 ```tsx
@@ -778,13 +778,13 @@ const geist = Geist({
 
 ## Files to Modify (Priority Order)
 
-1. `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/use-mobile.tsx` - High impact
-2. `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/DDayCounter.tsx` - Medium impact
-3. `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/VisaJourneyPage.tsx` - High impact
-4. `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/ChecklistStep.tsx` - High impact
-5. `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/sidebar.tsx` - Will be fixed by #1
-6. `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/providers/auth-provider.tsx` - Medium impact
-7. `/sessions/cool-nifty-knuth/mnt/localnomad-website/styles/globals.css` - Low impact (doc only)
+1. `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/use-mobile.tsx` - High impact
+2. `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/DDayCounter.tsx` - Medium impact
+3. `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/VisaJourneyPage.tsx` - High impact
+4. `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/ChecklistStep.tsx` - High impact
+5. `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/sidebar.tsx` - Will be fixed by #1
+6. `/sessions/cool-nifty-knuth/mnt/b2c-website/components/providers/auth-provider.tsx` - Medium impact
+7. `/sessions/cool-nifty-knuth/mnt/b2c-website/styles/globals.css` - Low impact (doc only)
 
 ---
 

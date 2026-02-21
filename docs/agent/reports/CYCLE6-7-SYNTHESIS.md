@@ -27,7 +27,7 @@
 
 ### Functional Fixes
 8. **Settings Sheet** — `DashboardClient.tsx`: Settings button opens shadcn Sheet with visa type, quick links, sign-out
-9. **Package name** — `package.json`: `"my-v0-project"` → `"localnomad-website"`
+9. **Package name** — `package.json`: `"my-v0-project"` → `"b2c-website"`
 
 ---
 
@@ -55,7 +55,7 @@
 | `components/visa/landing/AlreadyHaveVisa.tsx` | Clear CTAs, dashboard link, i18n |
 | `components/visa/journey/steps/StepQualify.tsx` | Salary inline, touch targets |
 | `components/visa/dashboard/DashboardClient.tsx` | Settings Sheet |
-| `package.json` | name: "localnomad-website" |
+| `package.json` | name: "b2c-website" |
 | `messages/en.json` | 5 new visa keys |
 | `messages/ja.json` | 5 new visa keys |
 | `messages/zh-tw.json` | 5 new visa keys |

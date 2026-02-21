@@ -166,7 +166,7 @@ Related key `visa.trackProgress` also verified across all 3 locales.
 
 **Result: PASS**
 
-`package.json` line 2: `"name": "localnomad-website"` -- correct.
+`package.json` line 2: `"name": "b2c-website"` -- correct.
 
 ---
 

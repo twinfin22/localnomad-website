@@ -3,7 +3,7 @@
 **Auditor**: completeness-checker
 **Date**: 2026-02-12
 **Scope**: Full feature coverage verification after Cycle 2 implementation
-**Codebase**: `/Users/leegen/localnomad/localnomad-website`
+**Codebase**: `/Users/leegen/localnomad/b2c-website`
 
 ---
 
@@ -13,7 +13,7 @@
 
 | # | Item | Status | Evidence |
 |---|------|--------|----------|
-| 1.1 | `app/[lang]/[country]/visa/path/page.tsx` exists and renders | **PASS** | File exists at `/Users/leegen/localnomad/localnomad-website/app/[lang]/[country]/visa/path/page.tsx` (124 lines). Renders Header, hero section with back link, Suspense-wrapped `VisaPathSimulator`, and Footer. |
+| 1.1 | `app/[lang]/[country]/visa/path/page.tsx` exists and renders | **PASS** | File exists at `/Users/leegen/localnomad/b2c-website/app/[lang]/[country]/visa/path/page.tsx` (124 lines). Renders Header, hero section with back link, Suspense-wrapped `VisaPathSimulator`, and Footer. |
 | 1.2 | `components/visa/path/visa-path-simulator.tsx` exists with working UI | **PASS** | File exists (682 lines). Full 3-step flow: StartingPointSelector -> DestinationSelector -> PathViewer. Includes progress bar, URL state sync, mobile-responsive Select + desktop Card grid. |
 | 1.3 | Reads pathsTo/pathsFrom from visa JSON data | **FAIL** | The simulator does **not** read from visa JSON files. It uses a **hardcoded** path data module at `lib/visa/path-data.ts` (ALL_PATHS array, 1060+ lines). The JSON files have `pathsTo`/`pathsFrom` fields but the simulator ignores them entirely. |
 | 1.4 | ALL 12 visa types populated with pathsTo/pathsFrom in EN | **PASS** | All 12 JSON files in `data/visas/en/` contain `pathsTo` and `pathsFrom` arrays. Non-stub visas have rich object entries; stub visas (e-2, d-4, d-7, d-8, f-4, f-6) also have populated pathsTo/pathsFrom with objects containing type, name, requirements, timeline, documents, notes. Only F-2 has `pathsTo: []` (correct -- it's the terminal residence visa). |

@@ -33,7 +33,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 1. Marketing Claims
 
 **1.1 YELLOW -- Unverifiable testimonials**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/sections/social-proof-section.tsx`, lines 6-28
+- **File**: `/Users/leegen/localnomad/b2c-website/components/sections/social-proof-section.tsx`, lines 6-28
 - **Exact text**:
   - `"Sarah M." / "UX Designer, Remote"` -- "The neighborhood guide saved me weeks of research..."
   - `"James K." / "Software Engineer"` -- "The visa dashboard was a lifesaver..."
@@ -43,20 +43,20 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 - **Suggested fix**: Either (a) use real testimonials with verifiable attribution (full names with consent, or linked social profiles), or (b) remove testimonials entirely, or (c) add a qualifier such as "Names have been changed for privacy" if based on real feedback.
 
 **1.2 YELLOW -- "Save 40+ Hours" claim**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/sections/why-section.tsx`, line 24
+- **File**: `/Users/leegen/localnomad/b2c-website/components/sections/why-section.tsx`, line 24
 - **Exact text**: `"Save 40+ Hours"` and `"Skip the endless research rabbit holes. Get straight to the answers with our curated, actionable guides."`
 - **Issue**: The "40+ hours" claim is unsubstantiated. Under 표시광고법, quantitative marketing claims should be backed by reasonable evidence.
 - **Risk**: Low-moderate. This is a common marketing pattern, but without any basis or qualifier (e.g., "based on user surveys" or "estimated"), it could be challenged.
 - **Suggested fix**: Either substantiate the claim or soften to "Save dozens of hours" or add "estimated" qualifier.
 
 **1.3 GREEN -- FAQ refund claim**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/sections/faq-section.tsx`, line 35
+- **File**: `/Users/leegen/localnomad/b2c-website/components/sections/faq-section.tsx`, line 35
 - **Exact text**: `"We offer a 7-day money-back guarantee on all digital products."`
 - **Issue**: This is a factual business claim, not a legal claim. Acceptable as long as the actual refund policy matches. The footer links to a refund policy page.
 - **No action needed** as long as the refund policy page matches this claim.
 
 **1.4 GREEN -- Service descriptions**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/sections/services-detail-section.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/sections/services-detail-section.tsx`
 - The Visa Dashboard service card (line 46) uses language "Navigate Korean visa requirements" and "Step-by-step checklists" / "Document requirements" -- all informational, not claiming to provide filing or legal services.
 - **No action needed.**
 
@@ -70,21 +70,21 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 2. Quiz & Results Language
 
 **2.1 GREEN -- EligibilityQuiz consent gate**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/EligibilityQuiz.tsx`, lines 326-376
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/EligibilityQuiz.tsx`, lines 326-376
 - **Implementation**: A consent gate (`showConsentGate`) is triggered after the last question. The checkbox text reads:
   > "I understand this tool matches my answers against published requirements and does not determine my eligibility. Final decisions are made by Korean immigration authorities."
 - Results are only shown when `consentGiven` is true (line 366: `disabled={!consentGiven}`).
 - **No action needed.**
 
 **2.2 GREEN -- EligibilityQuiz results language**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/EligibilityQuiz.tsx`, lines 392-394
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/EligibilityQuiz.tsx`, lines 392-394
 - **Results header**: `"Your Results"` with subtitle `"Visas with matching requirements include..."`
 - **Match badge**: Line 432: `"Closest requirement match"` (not "you qualify" or "you are eligible")
 - **Match bar label**: Line 443: `"Match Score"` (not "eligibility score")
 - **No action needed.**
 
 **2.3 GREEN -- VisaFinder / QuizResults**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/quiz/QuizResults.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/quiz/QuizResults.tsx`
 - Header text (line 78): `"Based on your answers, here are the visas that may fit your situation"` -- uses "may fit," not "you qualify."
 - Match levels use: `"Strong Match" / "Moderate Match" / "Possible Option"` with descriptions like `"Appears to meet published requirements"` and `"May meet requirements with some conditions"` (lines 29-47).
 - Top pick label: `"Closest Match"` (line 86).
@@ -92,16 +92,16 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 - **No action needed.**
 
 **2.4 GREEN -- EligibilitySection and QuickEligibilityCheck**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/detail/EligibilitySection.tsx`, line 156
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/detail/EligibilitySection.tsx`, line 156
   - Result text: `"Your answers align with published requirements"` (not "you qualify").
   - Disclaimer: `"This is a preliminary check. Final eligibility is determined by Korean immigration authorities."`
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/detail/QuickEligibilityCheck.tsx`, line 132
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/detail/QuickEligibilityCheck.tsx`, line 132
   - Result text: `"Your answers match published requirements"` (not "you are eligible").
   - Disclaimer (line 158): `"This is a preliminary check based on publicly available requirements. Final eligibility is determined by Korean immigration authorities."`
 - **No action needed.**
 
 **2.5 GREEN -- StepQualify (Journey page)**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/journey/steps/StepQualify.tsx`, line 98
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/journey/steps/StepQualify.tsx`, line 98
 - Result text: `"Your answers match the published requirements for this visa."` (match language, not eligibility determination).
 - Negative result (line 99): `"Based on your answers, your profile may not match all published requirements."`
 - Disclaimer (lines 150-156): `"This is a preliminary check. Final eligibility is determined by Korean immigration authorities."`
@@ -112,7 +112,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 3. Footer Disclaimer
 
 **3.1 GREEN -- Global footer disclaimer present**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/footer.tsx`, lines 93-98
+- **File**: `/Users/leegen/localnomad/b2c-website/components/footer.tsx`, lines 93-98
 - Renders `{t("footer.legalDisclaimer")}` inside a dedicated disclaimer section.
 - **English text** (from `messages/en.json`, line 371):
   > "LocalNomad provides general information about Korean visa requirements for educational purposes only. This information does not constitute legal advice. Visa decisions are made solely by Korean immigration authorities. For personalized legal advice, consult a licensed Korean 행정사 (administrative scrivener) or 변호사 (attorney)."
@@ -132,14 +132,14 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 4. Document Checklist Disclaimer
 
 **4.1 GREEN -- DocumentChecklist export disclaimer**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/DocumentChecklist.tsx`, lines 282-285
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/DocumentChecklist.tsx`, lines 282-285
 - Export text begins with:
   > "DISCLAIMER: This checklist is for personal reference only and does not constitute legal advice. Verify all requirements with Korean immigration authorities (immigration.go.kr) before applying."
 - This appears as the first lines of the exported text file.
 - **No action needed.**
 
 **4.2 GREEN -- ChecklistPage export disclaimer**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/checklist/ChecklistPage.tsx`, lines 93-95
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/checklist/ChecklistPage.tsx`, lines 93-95
 - Export text begins with identical disclaimer language.
 - Additionally, a `LegalDisclaimer` component (box variant) is rendered at the bottom of the page (line 243).
 - **No action needed.**
@@ -149,7 +149,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 5. Legal Pages
 
 **5.1 GREEN -- Terms of Service references Korean law**
-- **File**: `/Users/leegen/localnomad/localnomad-website/app/(legal)/terms/page.tsx`, lines 100-109
+- **File**: `/Users/leegen/localnomad/b2c-website/app/(legal)/terms/page.tsx`, lines 100-109
 - Section 4 "Limitation of Liability & Disclaimer" explicitly states:
   > "In accordance with the Korean 행정사법 (Administrative Scrivener Act) and 변호사법 (Attorney Act), LocalNomad does not file visa applications or immigration documents on behalf of users, does not provide legal representation before immigration authorities, and does not broker connections to licensed professionals for a fee."
 - This directly addresses all three key prohibitions:
@@ -167,7 +167,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 - **No action needed.**
 
 **5.4 GREEN -- Privacy Policy**
-- **File**: `/Users/leegen/localnomad/localnomad-website/app/(legal)/privacy/page.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/app/(legal)/privacy/page.tsx`
 - GDPR and PIPA compliant. References Korean law for data retention (line 111: "3 years for transaction records under Korean law"). International data transfer consent clause present. Contact information provided.
 - **No action needed.**
 
@@ -180,7 +180,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 6. Statistics & Social Proof
 
 **6.1 GREEN -- SocialProofBar**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/landing/SocialProofBar.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/landing/SocialProofBar.tsx`
 - Displays three metrics:
   1. **Visa count**: Dynamically computed from `getVisaTypes().length` (line 12) -- accurate and verifiable.
   2. **Updated date**: Dynamically computed from `new Date()` (lines 13-17) -- always shows current month/year.
@@ -197,14 +197,14 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 7. Path Simulator & Dashboard
 
 **7.1 GREEN -- Path Simulator disclaimer**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/path/visa-path-simulator.tsx`, lines 211-230
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/path/visa-path-simulator.tsx`, lines 211-230
 - A disclaimer is rendered at the top of the simulator, always visible:
   > "Paths shown are general information based on published requirements. Actual transitions depend on individual circumstances and immigration officer discretion. Always verify current requirements with the Korea Immigration Service."
 - Includes a hyperlink to the official Korea Immigration Service website.
 - **No action needed.**
 
 **7.2 GREEN -- Dashboard disclaimer**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/StateDashboard.tsx`, lines 341-351
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/StateDashboard.tsx`, lines 341-351
 - `DashboardDisclaimer` component renders:
   > "This dashboard tracks your self-reported progress. It is not connected to HiKorea or any government system."
 - This is critical because it prevents users from thinking the dashboard has official status tracking capability, which would cross into 행정사 territory.
@@ -212,7 +212,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 - **No action needed.**
 
 **7.3 GREEN -- Journey page disclaimers**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/journey/VisaJourneyPage.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/journey/VisaJourneyPage.tsx`
 - Dismissible info banner at top (lines 95-115): `"Information shown is based on publicly available requirements and may not reflect recent policy changes. Verify with official sources before making decisions."`
 - `LegalDisclaimer` component rendered at bottom (line 342, inline variant).
 - **No action needed.**
@@ -222,7 +222,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 #### 8. Additional Findings
 
 **8.1 YELLOW -- OnboardingWizard has no legal disclaimer**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/OnboardingWizard.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/OnboardingWizard.tsx`
 - This is a standalone wizard that collects user goals and situations, calculates visa matches (with percentage scores like "85% match"), and then creates a VisaProgress record with `createProgress()` (line 279).
 - **Missing**: No consent gate or legal disclaimer anywhere in the flow. The results page (step 3, lines 399-450) shows visa matches with percentage scores but no qualifying language.
 - **Problematic text**: Line 429: `"{match.score}% match"` displayed as a badge -- this could imply a confidence level about eligibility.
@@ -231,7 +231,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 - **Suggested fix**: Add a `QuizDisclaimer` component to the results step (step 3) and a consent acknowledgment before creating progress in step 4.
 
 **8.2 YELLOW -- Legacy VisaDetailContent has no legal disclaimer**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/VisaDetailContent.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/VisaDetailContent.tsx`
 - This is a tabbed visa detail page with Overview, Documents, Process, and FAQs tabs.
 - **Missing**: No legal disclaimer anywhere in the component (610 lines). No `LegalDisclaimer` import or render.
 - The newer `VisaJourneyPage.tsx` has disclaimers, but if `VisaDetailContent` is still rendered on any route, users see visa detail information without any legal qualifier.
@@ -239,7 +239,7 @@ The codebase has made significant progress since Cycle 1. Most critical legal ri
 - **Suggested fix**: Add `LegalDisclaimer` (inline or box variant) at the bottom of the component, after the Official Resources section.
 
 **8.3 GREEN -- LegalDisclaimer component is well-structured**
-- **File**: `/Users/leegen/localnomad/localnomad-website/components/visa/LegalDisclaimer.tsx`
+- **File**: `/Users/leegen/localnomad/b2c-website/components/visa/LegalDisclaimer.tsx`
 - Provides three variants (inline, box, banner) plus specialized `QuizDisclaimer`, `IncomeDisclaimer`, and `DayTrackerDisclaimer` components.
 - All use translated strings from `messages/*.json`.
 - The box variant (default) prominently displays a warning icon and references both the Korea Immigration Service and HiKorea with hyperlinks.

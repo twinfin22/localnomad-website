@@ -258,7 +258,7 @@ You are doing legal cleanup. Read CLAUDE.md for bright lines.
 5. ERROR PAGE i18n: Check error.tsx files for hardcoded English.
    Add error.title and error.retry keys to all 3 message files.
 
-6. PACKAGE.JSON: Change name from "my-v0-project" to "localnomad-website" if not already done.
+6. PACKAGE.JSON: Change name from "my-v0-project" to "b2c-website" if not already done.
 
 After all changes: npm run build
 ```
@@ -338,7 +338,7 @@ Final CTO audit. Be thorough.
 2. Grep "as any" — target 0-2
 3. Grep bare /visa/ links without locale — target 0
 4. Dashboard hardcoded English — target 0
-5. package.json name = "localnomad-website"?
+5. package.json name = "b2c-website"?
 6. error.tsx files translated?
 7. Is mobile grid 2-column?
 8. Footer contrast adequate?

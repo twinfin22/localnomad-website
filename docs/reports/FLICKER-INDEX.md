@@ -288,7 +288,7 @@ const [mobile, setMobile] = useState<boolean>(() => {
 
 ## File Locations
 
-All documentation in `/sessions/cool-nifty-knuth/mnt/localnomad-website/docs/`:
+All documentation in `/sessions/cool-nifty-knuth/mnt/b2c-website/docs/`:
 
 ```
 docs/

@@ -6,7 +6,7 @@ This document provides ready-to-implement fixes for the flickering issues identi
 
 ## Fix #1: useIsMobile Hook (HIGH PRIORITY)
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/ui/use-mobile.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/ui/use-mobile.tsx`
 
 **Current (Broken)**:
 ```tsx
@@ -70,7 +70,7 @@ export function useIsMobile() {
 
 ## Fix #2: DDayCounter Hydration
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/DDayCounter.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/DDayCounter.tsx`
 
 **Current (Broken)**:
 ```tsx
@@ -282,7 +282,7 @@ export function DDayCounter({ targetDate, label = "D-Day", className }: DDayCoun
 
 ## Fix #3: VisaJourneyPage Banner & Accordion
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/VisaJourneyPage.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/VisaJourneyPage.tsx`
 
 **Current (Broken)**:
 ```tsx
@@ -452,7 +452,7 @@ export function VisaJourneyPage({
 
 ## Fix #4: ChecklistStep Deep Linking
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/visa/journey/ChecklistStep.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/visa/journey/ChecklistStep.tsx`
 
 **Current (Broken)**:
 ```tsx
@@ -660,7 +660,7 @@ export function ChecklistStep({
 
 ## Fix #5: AuthProvider Loading State
 
-**File**: `/sessions/cool-nifty-knuth/mnt/localnomad-website/components/providers/auth-provider.tsx`
+**File**: `/sessions/cool-nifty-knuth/mnt/b2c-website/components/providers/auth-provider.tsx`
 
 **Current (Broken)**:
 ```tsx
