@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import { Loader2 } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
 export function LoginForm() {
@@ -65,7 +66,11 @@ export function LoginForm() {
         disabled={loading}
         className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
       >
-        {loading ? t('sending') : t('sendMagicLink')}
+        {loading ? (
+          <Loader2 className="h-4 w-4 animate-spin" />
+        ) : (
+          t('sendMagicLink')
+        )}
       </button>
     </form>
   );

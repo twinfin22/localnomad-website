@@ -16,6 +16,8 @@ export function AuthNav() {
     supabase.auth.getUser().then(({ data }) => {
       setUser(data.user);
       setLoaded(true);
+    }).catch(() => {
+      setLoaded(true);
     });
   }, []);
 

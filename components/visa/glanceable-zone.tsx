@@ -26,7 +26,7 @@ export async function GlanceableZone({ visa }: GlanceableZoneProps) {
   return (
     <div>
       {/* Title area */}
-      <h1 className="font-lora text-3xl font-bold text-primary">
+      <h1 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
         {visa.name}
       </h1>
       <p className="mt-2 text-lg text-muted-foreground">{visa.tagline}</p>

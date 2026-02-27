@@ -11,7 +11,7 @@
 ## 현황 요약
 
 ```
-OPEN:  0개  ← ✅ 새 기능 진행 가능
+OPEN:  1개  ← ✅ 새 기능 진행 가능
 해결됨: 0개
 ```
 
@@ -19,7 +19,11 @@ OPEN:  0개  ← ✅ 새 기능 진행 가능
 
 ## Open Items
 
-(없음 — v2 시작 시점)
+### TD#1 — B4: Supabase 타입 자동생성 (LOW)
+- **등록일**: 2026-02-27
+- **파일**: `lib/types/database.ts` (미생성), `lib/actions/dashboard.ts` (수동 `as` 캐스트 7개 잔존)
+- **설명**: Supabase CLI가 프로젝트에 설정되어 있지 않아 `npx supabase gen types` 실행 불가. CLI 연결 후 타입 생성 → dashboard.ts의 수동 캐스트 제거 필요
+- **📘**: `supabase gen types`는 DB 스키마에서 TypeScript 타입을 자동 생성. 수동 `as` 캐스트 대신 타입 안전성 확보
 
 ---
 

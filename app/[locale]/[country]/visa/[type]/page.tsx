@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
@@ -5,20 +6,13 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
-import { getSession } from '@/lib/actions/auth';
-import { getActiveVisa, getChecklist } from '@/lib/actions/dashboard';
 import type { Country } from '@/lib/types/visa';
 import {
   GlanceableZone,
-  ActionZone,
+  AuthActionZone,
   ContextZone,
   VisaDisclaimer,
 } from '@/components/visa';
-
-const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
-  korea: 'kr',
-  taiwan: 'tw',
-};
 
 const VALID_COUNTRIES = ['korea', 'taiwan'] as const;
 
@@ -83,9 +77,11 @@ export default async function VisaDetailPage({ params }: Props) {
     notFound();
   }
 
-  const visa = await getVisaData(country as Country, locale, type);
-  const tc = await getTranslations('Common');
-  const t = await getTranslations('VisaDetail');
+  const [visa, tc, t] = await Promise.all([
+    getVisaData(country as Country, locale, type),
+    getTranslations('Common'),
+    getTranslations('VisaDetail'),
+  ]);
   const displayCountry = country === 'korea' ? 'South Korea' : 'Taiwan';
 
   if (!visa) {
@@ -107,23 +103,6 @@ export default async function VisaDetailPage({ params }: Props) {
         </div>
       </main>
     );
-  }
-
-  // Auth: optionally load session + checklist for logged-in users
-  const user = await getSession();
-  let userVisaId: string | undefined;
-  let serverChecklist: { id: string; user_visa_id: string; document_id: string; checked: boolean; checked_at: string | null }[] | undefined;
-
-  if (user) {
-    const activeVisa = await getActiveVisa();
-    if (
-      activeVisa &&
-      activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
-      activeVisa.visa_type === type
-    ) {
-      userVisaId = activeVisa.id;
-      serverChecklist = await getChecklist(activeVisa.id);
-    }
   }
 
   // Schema.org JSON-LD: FAQPage
@@ -175,19 +154,29 @@ export default async function VisaDetailPage({ params }: Props) {
             &larr; {tc('backToCountry', { country: displayCountry })}
           </Link>
 
-          {/* Layer 1: Glanceable */}
+          {/* Layer 1: Glanceable — streams immediately */}
           <GlanceableZone visa={visa} />
 
-          {/* Layer 2: Action */}
-          <ActionZone
-            visa={visa}
-            country={country}
-            isLoggedIn={!!user}
-            userVisaId={userVisaId}
-            serverChecklist={serverChecklist}
-          />
+          {/* Layer 2: Action — auth-gated, loads in Suspense */}
+          <Suspense
+            fallback={
+              <div className="mt-12 space-y-2">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex h-14 animate-pulse items-center gap-3 rounded-lg border bg-white px-4"
+                  >
+                    <div className="h-5 w-5 rounded bg-neutral-200" />
+                    <div className="h-4 flex-1 rounded bg-neutral-200" />
+                  </div>
+                ))}
+              </div>
+            }
+          >
+            <AuthActionZone visa={visa} country={country} />
+          </Suspense>
 
-          {/* Layer 3: Context */}
+          {/* Layer 3: Context — streams immediately */}
           <ContextZone visa={visa} country={country} />
 
           {/* Legal Disclaimer */}

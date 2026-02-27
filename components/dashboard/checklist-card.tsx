@@ -139,17 +139,12 @@ function DashboardDocRow({
               className="h-5 w-5 cursor-pointer accent-primary disabled:opacity-50"
             />
           </label>
-          <div className="flex-1">
-            <span
-              className={cn(
-                'text-sm font-medium',
-                isChecked && 'text-muted-foreground line-through'
-              )}
-            >
+          <div className={cn('flex-1', isChecked && 'text-muted-foreground line-through')}>
+            <span className="text-sm font-medium">
               {doc.name}
             </span>
             {doc.nameKorean && (
-              <span className="ml-2 text-xs text-muted-foreground">
+              <span className="ml-2 text-xs">
                 ({doc.nameKorean})
               </span>
             )}

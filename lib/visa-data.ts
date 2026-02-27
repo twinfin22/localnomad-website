@@ -64,22 +64,19 @@ export const getVisaData = cache(
 export const getAvailableVisas = cache(
   async (country: Country, locale: string): Promise<VisaSummary[]> => {
     const types = AVAILABLE_VISAS[country] ?? [];
-    const summaries: VisaSummary[] = [];
+    const visas = await Promise.all(
+      types.map((type) => loadVisaJson(country, locale, type))
+    );
 
-    for (const type of types) {
-      const visa = await loadVisaJson(country, locale, type);
-      if (visa) {
-        summaries.push({
-          type: visa.type,
-          name: visa.name,
-          shortName: visa.shortName,
-          category: visa.category,
-          tagline: visa.tagline,
-          country: COUNTRY_CODE_MAP[country],
-        });
-      }
-    }
-
-    return summaries;
+    return visas
+      .filter((visa): visa is Visa => visa !== null)
+      .map((visa) => ({
+        type: visa.type,
+        name: visa.name,
+        shortName: visa.shortName,
+        category: visa.category,
+        tagline: visa.tagline,
+        country: COUNTRY_CODE_MAP[country],
+      }));
   },
 );

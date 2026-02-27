@@ -13,11 +13,16 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toggleChecklistItem } from '@/lib/actions/dashboard';
-import type { Visa, Document as VisaDocument } from '@/lib/types/visa';
+import type {
+  Document as VisaDocument,
+  ApplicationStep,
+} from '@/lib/types/visa';
 import type { ChecklistItem } from '@/lib/types/dashboard';
 
 interface ActionZoneProps {
-  visa: Visa;
+  documents: VisaDocument[];
+  applicationSteps: ApplicationStep[];
+  visaType: string;
   country: string;
   /** If provided, user is logged in */
   isLoggedIn?: boolean;
@@ -38,21 +43,18 @@ function readChecklist(key: string): Record<string, boolean> {
     }
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.warn('Failed to read checklist from localStorage:', error.message);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Failed to read checklist from localStorage:', error.message);
+      }
     }
   }
   return {};
 }
 
 function useChecklist(storageKey: string) {
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const [initialized, setInitialized] = useState(false);
-
-  // Load from localStorage after mount (avoids SSR mismatch)
-  if (!initialized && typeof window !== 'undefined') {
-    setChecked(readChecklist(storageKey));
-    setInitialized(true);
-  }
+  const [checked, setChecked] = useState<Record<string, boolean>>(() =>
+    typeof window !== 'undefined' ? readChecklist(storageKey) : {}
+  );
 
   useEffect(() => {
     const handler = (e: StorageEvent) => {
@@ -72,7 +74,9 @@ function useChecklist(storageKey: string) {
           localStorage.setItem(storageKey, JSON.stringify(next));
         } catch (error: unknown) {
           if (error instanceof Error) {
-            console.warn('Failed to save checklist to localStorage:', error.message);
+            if (process.env.NODE_ENV === 'development') {
+        console.warn('Failed to save checklist to localStorage:', error.message);
+      }
           }
         }
         return next;
@@ -117,7 +121,9 @@ function useSupabaseChecklist(
 }
 
 export function ActionZone({
-  visa,
+  documents,
+  applicationSteps,
+  visaType,
   country,
   isLoggedIn,
   userVisaId,
@@ -129,7 +135,7 @@ export function ActionZone({
   // Use Supabase checklist for logged-in users with tracked visa, localStorage otherwise
   const useServer = isLoggedIn && userVisaId && serverChecklist;
 
-  const storageKey = `localnomad:checklist:${country}:${visa.type}`;
+  const storageKey = `localnomad:checklist:${country}:${visaType}`;
   const localChecklist = useChecklist(storageKey);
   const supabaseChecklist = useSupabaseChecklist(
     userVisaId ?? '',
@@ -141,12 +147,12 @@ export function ActionZone({
     ? supabaseChecklist.toggle
     : localChecklist.toggle;
 
-  const requiredDocs = visa.documents.filter((doc) => doc.required);
-  const optionalDocs = visa.documents.filter((doc) => !doc.required);
-  const completedCount = visa.documents.filter(
+  const requiredDocs = documents.filter((doc) => doc.required);
+  const optionalDocs = documents.filter((doc) => !doc.required);
+  const completedCount = documents.filter(
     (doc) => checked[doc.id]
   ).length;
-  const totalCount = visa.documents.length;
+  const totalCount = documents.length;
 
   return (
     <div>
@@ -229,7 +235,7 @@ export function ActionZone({
         </div>
 
         <div className="mt-6 space-y-4">
-          {visa.applicationSteps.map((step) => (
+          {applicationSteps.map((step) => (
             <div
               key={step.id}
               className="rounded-lg border bg-white p-5"
@@ -324,17 +330,12 @@ function DocumentRow({
               className="h-5 w-5 cursor-pointer accent-primary"
             />
           </label>
-          <div className="flex-1">
-            <span
-              className={cn(
-                'text-sm font-medium',
-                isChecked && 'text-muted-foreground line-through'
-              )}
-            >
+          <div className={cn('flex-1', isChecked && 'text-muted-foreground line-through')}>
+            <span className="text-sm font-medium">
               {doc.name}
             </span>
             {doc.nameKorean && (
-              <span className="ml-2 text-xs text-muted-foreground">
+              <span className="ml-2 text-xs">
                 ({doc.nameKorean})
               </span>
             )}

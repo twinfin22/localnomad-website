@@ -28,11 +28,13 @@ export default async function DashboardPage({ params }: Props) {
     redirect(`/${locale}/onboarding`);
   }
 
-  const t = await getTranslations('Dashboard');
-
   const countrySlug = COUNTRY_CODE_TO_SLUG[activeVisa.country] ?? 'korea';
-  const visa = await getVisaData(countrySlug, locale, activeVisa.visa_type);
-  const checklist = await getChecklist(activeVisa.id);
+
+  const [t, visa, checklist] = await Promise.all([
+    getTranslations('Dashboard'),
+    getVisaData(countrySlug, locale, activeVisa.visa_type),
+    getChecklist(activeVisa.id),
+  ]);
 
   return (
     <main id="main-content" className="min-h-svh bg-neutral-50">

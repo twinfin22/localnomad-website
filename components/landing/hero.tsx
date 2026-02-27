@@ -5,7 +5,7 @@ export const Hero = () => {
   const t = useTranslations('Landing');
 
   return (
-    <section className="flex min-h-svh flex-col items-center justify-center bg-primary px-6 py-16">
+    <section className="flex min-h-svh flex-col items-center justify-center bg-primary px-6 py-8 sm:py-16">
       <div className="mx-auto w-full max-w-2xl text-center">
         <h1 className="font-lora text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
           {t('headline')}

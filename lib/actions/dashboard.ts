@@ -20,7 +20,10 @@ export const getProfile = async (): Promise<Profile | null> => {
     .eq('id', user.id)
     .single();
 
-  if (error) return null;
+  if (error) {
+    console.error('[getProfile] Failed to fetch profile:', error.message, { userId: user.id });
+    return null;
+  }
   return data as Profile;
 };
 
@@ -59,7 +62,10 @@ export const getActiveVisa = async (): Promise<UserVisa | null> => {
     .eq('is_active', true)
     .single();
 
-  if (error) return null;
+  if (error) {
+    console.error('[getActiveVisa] Failed to fetch active visa:', error.message, { userId: user.id });
+    return null;
+  }
   return data as UserVisa;
 };
 
@@ -134,7 +140,10 @@ export const getChecklist = async (
     .select('*')
     .eq('user_visa_id', userVisaId);
 
-  if (error) return [];
+  if (error) {
+    console.error('[getChecklist] Failed to fetch checklist:', error.message, { userVisaId });
+    return [];
+  }
   return data as ChecklistItem[];
 };
 
@@ -165,6 +174,5 @@ export const toggleChecklistItem = async (
 
   if (error)
     throw new Error('Failed to toggle checklist item', { cause: error });
-  revalidatePath('/dashboard');
   return data as ChecklistItem;
 };

@@ -17,15 +17,15 @@ alter table public.profiles enable row level security;
 
 create policy "Users can read own profile"
   on public.profiles for select
-  using (auth.uid() = id);
+  using ((select auth.uid()) = id);
 
 create policy "Users can update own profile"
   on public.profiles for update
-  using (auth.uid() = id);
+  using ((select auth.uid()) = id);
 
 create policy "Users can insert own profile"
   on public.profiles for insert
-  with check (auth.uid() = id);
+  with check ((select auth.uid()) = id);
 
 -- 2. User Visas
 -- Tracks which visa a user is monitoring. is_active = true for the current one.
@@ -44,19 +44,19 @@ alter table public.user_visas enable row level security;
 
 create policy "Users can read own visas"
   on public.user_visas for select
-  using (auth.uid() = user_id);
+  using ((select auth.uid()) = user_id);
 
 create policy "Users can insert own visas"
   on public.user_visas for insert
-  with check (auth.uid() = user_id);
+  with check ((select auth.uid()) = user_id);
 
 create policy "Users can update own visas"
   on public.user_visas for update
-  using (auth.uid() = user_id);
+  using ((select auth.uid()) = user_id);
 
 create policy "Users can delete own visas"
   on public.user_visas for delete
-  using (auth.uid() = user_id);
+  using ((select auth.uid()) = user_id);
 
 create index idx_user_visas_user_active on public.user_visas(user_id, is_active)
   where is_active = true;
@@ -80,7 +80,7 @@ create policy "Users can read own checklist items"
     exists (
       select 1 from public.user_visas
       where user_visas.id = checklist_items.user_visa_id
-        and user_visas.user_id = auth.uid()
+        and user_visas.user_id = (select auth.uid())
     )
   );
 
@@ -90,7 +90,7 @@ create policy "Users can insert own checklist items"
     exists (
       select 1 from public.user_visas
       where user_visas.id = checklist_items.user_visa_id
-        and user_visas.user_id = auth.uid()
+        and user_visas.user_id = (select auth.uid())
     )
   );
 
@@ -100,7 +100,7 @@ create policy "Users can update own checklist items"
     exists (
       select 1 from public.user_visas
       where user_visas.id = checklist_items.user_visa_id
-        and user_visas.user_id = auth.uid()
+        and user_visas.user_id = (select auth.uid())
     )
   );
 

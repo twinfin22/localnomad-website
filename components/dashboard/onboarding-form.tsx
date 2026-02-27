@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import { Loader2 } from 'lucide-react';
 import { createVisa } from '@/lib/actions/dashboard';
 
 type Step = 'country' | 'visa' | 'date';
@@ -143,6 +144,7 @@ export function OnboardingForm() {
           </h2>
           <div className="mt-4 space-y-3">
             <input
+              id="expiry-date"
               type="date"
               value={expiryDate}
               onChange={(e) => {
@@ -154,8 +156,9 @@ export function OnboardingForm() {
               style={{ fontSize: '16px', minHeight: '44px' }}
             />
 
-            <label className="flex min-h-[44px] items-center gap-2 text-sm">
+            <label htmlFor="skip-date" className="flex min-h-[44px] items-center gap-2 text-sm">
               <input
+                id="skip-date"
                 type="checkbox"
                 checked={skipDate}
                 onChange={(e) => setSkipDate(e.target.checked)}
@@ -176,7 +179,11 @@ export function OnboardingForm() {
             disabled={loading}
             className="mt-4 flex min-h-[44px] w-full items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
           >
-            {loading ? t('saving') : t('goToDashboard')}
+            {loading ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              t('goToDashboard')
+            )}
           </button>
 
           <button
