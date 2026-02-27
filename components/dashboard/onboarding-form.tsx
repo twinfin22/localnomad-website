@@ -57,7 +57,14 @@ export function OnboardingForm() {
       router.push(`/${locale}/dashboard`);
     } catch (err: unknown) {
       if (err instanceof Error) {
-        setError(err.message);
+        if (
+          err.message.includes('fetch') ||
+          err.message.includes('network')
+        ) {
+          setError(t('errorNetwork'));
+        } else {
+          setError(err.message);
+        }
       } else {
         setError(t('error'));
       }
@@ -145,6 +152,7 @@ export function OnboardingForm() {
           <div className="mt-4 space-y-3">
             <input
               id="expiry-date"
+              name="expiry-date"
               type="date"
               value={expiryDate}
               onChange={(e) => {
@@ -159,6 +167,7 @@ export function OnboardingForm() {
             <label htmlFor="skip-date" className="flex min-h-[44px] items-center gap-2 text-sm">
               <input
                 id="skip-date"
+                name="skip-date"
                 type="checkbox"
                 checked={skipDate}
                 onChange={(e) => setSkipDate(e.target.checked)}

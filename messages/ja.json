@@ -66,6 +66,9 @@
     "sendMagicLink": "マジックリンクを送信",
     "sending": "送信中...",
     "error": "エラーが発生しました。もう一度お試しください。",
+    "errorInvalidEmail": "有効なメールアドレスを入力してください。",
+    "errorTooManyAttempts": "試行回数が多すぎます。数分お待ちいただいてから再度お試しください。",
+    "errorNetwork": "ネットワークエラーです。接続を確認して再度お試しください。",
     "checkEmail": "メールを確認してください",
     "confirmMessage": "{email} にマジックリンクを送信しました。リンクをクリックしてログインしてください。",
     "backToLogin": "ログインに戻る",
@@ -84,6 +87,7 @@
     "goToDashboard": "ダッシュボードへ",
     "saving": "保存中...",
     "error": "エラーが発生しました。もう一度お試しください。",
+    "errorNetwork": "ネットワークエラーです。接続を確認して再度お試しください。",
     "back": "戻る"
   },
   "Dashboard": {
@@ -98,6 +102,7 @@
   "Common": {
     "backToHome": "ホームに戻る",
     "backToCountry": "{country}に戻る",
+    "home": "ホーム",
     "learnMore": "詳しく見る",
     "disclaimer": "公開されている要件に基づきます。法的アドバイスではありません。"
   },

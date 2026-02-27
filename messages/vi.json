@@ -66,6 +66,9 @@
     "sendMagicLink": "Gửi liên kết đăng nhập",
     "sending": "Đang gửi...",
     "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "errorInvalidEmail": "Please enter a valid email address.",
+    "errorTooManyAttempts": "Too many attempts. Please wait a few minutes and try again.",
+    "errorNetwork": "Network error. Please check your connection and try again.",
     "checkEmail": "Kiểm tra email của bạn",
     "confirmMessage": "Chúng tôi đã gửi liên kết đăng nhập đến {email}. Nhấp vào liên kết để đăng nhập.",
     "backToLogin": "Quay lại đăng nhập",
@@ -84,6 +87,7 @@
     "goToDashboard": "Đến bảng điều khiển",
     "saving": "Đang lưu...",
     "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "errorNetwork": "Network error. Please check your connection and try again.",
     "back": "Quay lại"
   },
   "Dashboard": {
@@ -98,6 +102,7 @@
   "Common": {
     "backToHome": "Quay lại trang chủ",
     "backToCountry": "Quay lại {country}",
+    "home": "Trang chủ",
     "learnMore": "Tìm hiểu thêm",
     "disclaimer": "Dựa trên các yêu cầu đã công bố. Không phải tư vấn pháp lý."
   },

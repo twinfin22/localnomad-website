@@ -4,7 +4,6 @@ import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { Link } from '@/i18n/navigation';
 import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
 import type { Country } from '@/lib/types/visa';
 import {
@@ -13,6 +12,7 @@ import {
   ContextZone,
   VisaDisclaimer,
 } from '@/components/visa';
+import { Breadcrumb } from '@/components/navigation/breadcrumb';
 
 const VALID_COUNTRIES = ['korea', 'taiwan'] as const;
 
@@ -87,14 +87,16 @@ export default async function VisaDetailPage({ params }: Props) {
   if (!visa) {
     return (
       <main id="main-content" className="min-h-svh bg-neutral-50">
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <Link
-            href={`/${country}`}
-            className="text-sm text-primary hover:underline"
-          >
-            &larr; {tc('backToCountry', { country: displayCountry })}
-          </Link>
-          <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
+        <Breadcrumb
+          variant="band"
+          items={[
+            { label: tc('home'), href: '/' },
+            { label: displayCountry, href: `/${country}` },
+            { label: type.toUpperCase() },
+          ]}
+        />
+        <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
+          <h1 className="font-lora text-4xl font-bold text-primary">
             {t('title', { type: type.toUpperCase() })}
           </h1>
           <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
@@ -131,6 +133,31 @@ export default async function VisaDetailPage({ params }: Props) {
     })),
   };
 
+  // Schema.org JSON-LD: BreadcrumbList
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: tc('home'),
+        item: `https://localnomad.club/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: displayCountry,
+        item: `https://localnomad.club/${locale}/${country}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: visa.shortName,
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -145,15 +172,22 @@ export default async function VisaDetailPage({ params }: Props) {
           __html: JSON.stringify(howToJsonLd),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
       <main id="main-content" className="min-h-svh bg-neutral-50">
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <Link
-            href={`/${country}`}
-            className="inline-flex min-h-[44px] items-center text-sm text-primary hover:underline"
-          >
-            &larr; {tc('backToCountry', { country: displayCountry })}
-          </Link>
-
+        <Breadcrumb
+          variant="band"
+          items={[
+            { label: tc('home'), href: '/' },
+            { label: displayCountry, href: `/${country}` },
+            { label: visa.shortName },
+          ]}
+        />
+        <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
           {/* Layer 1: Glanceable — streams immediately */}
           <GlanceableZone visa={visa} />
 

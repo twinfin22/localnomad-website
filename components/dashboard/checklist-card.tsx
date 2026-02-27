@@ -123,22 +123,28 @@ function DashboardDocRow({
   isPending: boolean;
   t: ReturnType<typeof useTranslations<'VisaDetail'>>;
 }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="rounded-lg border bg-white">
-      <details>
-        <summary className="flex min-h-[52px] cursor-pointer list-none items-center gap-3 px-4 py-3 [&::-webkit-details-marker]:hidden">
-          <label
-            className="flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <input
-              type="checkbox"
-              checked={isChecked}
-              onChange={() => onToggle(doc.id)}
-              disabled={isPending}
-              className="h-5 w-5 cursor-pointer accent-primary disabled:opacity-50"
-            />
-          </label>
+      <div className="flex min-h-[52px] items-center gap-3 px-4 py-3">
+        <label className="flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center">
+          <input
+            id={`doc-${doc.id}`}
+            name={`doc-${doc.id}`}
+            type="checkbox"
+            checked={isChecked}
+            onChange={() => onToggle(doc.id)}
+            disabled={isPending}
+            className="h-5 w-5 cursor-pointer accent-primary disabled:opacity-50"
+          />
+        </label>
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          className="flex flex-1 items-center gap-3 text-left"
+        >
           <div className={cn('flex-1', isChecked && 'text-muted-foreground line-through')}>
             <span className="text-sm font-medium">
               {doc.name}
@@ -149,8 +155,10 @@ function DashboardDocRow({
               </span>
             )}
           </div>
-          <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 [details[open]>summary>&]:rotate-180" />
-        </summary>
+          <ChevronDown className={cn('h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200', open && 'rotate-180')} />
+        </button>
+      </div>
+      {open && (
         <div className="border-t px-4 py-3 pl-[72px]">
           <p className="text-sm text-muted-foreground">{doc.description}</p>
 
@@ -209,7 +217,7 @@ function DashboardDocRow({
             </div>
           )}
         </div>
-      </details>
+      )}
     </div>
   );
 }

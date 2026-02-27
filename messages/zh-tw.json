@@ -66,6 +66,9 @@
     "sendMagicLink": "傳送登入連結",
     "sending": "傳送中...",
     "error": "發生錯誤，請重試。",
+    "errorInvalidEmail": "請輸入有效的電子郵件地址。",
+    "errorTooManyAttempts": "嘗試次數過多，請稍後幾分鐘再試。",
+    "errorNetwork": "網路錯誤，請確認您的網路連線後再試。",
     "checkEmail": "請查收您的信箱",
     "confirmMessage": "我們已將登入連結寄至 {email}，請點擊連結登入。",
     "backToLogin": "返回登入",
@@ -84,6 +87,7 @@
     "goToDashboard": "前往控制台",
     "saving": "儲存中...",
     "error": "發生錯誤，請重試。",
+    "errorNetwork": "網路錯誤，請確認您的網路連線後再試。",
     "back": "返回"
   },
   "Dashboard": {
@@ -98,6 +102,7 @@
   "Common": {
     "backToHome": "返回首頁",
     "backToCountry": "返回 {country}",
+    "home": "首頁",
     "learnMore": "了解更多",
     "disclaimer": "依據公開要求整理，不構成法律建議。"
   },

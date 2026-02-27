@@ -59,6 +59,7 @@
   "Common": {
     "backToHome": "Back to home",
     "backToCountry": "Back to {country}",
+    "home": "Home",
     "learnMore": "Learn more",
     "disclaimer": "Based on published requirements. Not legal advice."
   },
@@ -72,6 +73,9 @@
     "sendMagicLink": "Send Magic Link",
     "sending": "Sending...",
     "error": "Something went wrong. Please try again.",
+    "errorInvalidEmail": "Please enter a valid email address.",
+    "errorTooManyAttempts": "Too many attempts. Please wait a few minutes and try again.",
+    "errorNetwork": "Network error. Please check your connection and try again.",
     "checkEmail": "Check your email",
     "confirmMessage": "We sent a magic link to {email}. Click the link to sign in.",
     "backToLogin": "Back to login",
@@ -90,6 +94,7 @@
     "goToDashboard": "Go to Dashboard",
     "saving": "Saving...",
     "error": "Something went wrong. Please try again.",
+    "errorNetwork": "Network error. Please check your connection and try again.",
     "back": "Back"
   },
   "Dashboard": {

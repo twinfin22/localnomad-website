@@ -28,7 +28,17 @@ export function LoginForm() {
     });
 
     if (signInError) {
-      setError(t('error'));
+      const msg = signInError.message?.toLowerCase() ?? '';
+      if (signInError.status === 429) {
+        setError(t('errorTooManyAttempts'));
+      } else if (msg.includes('email') && msg.includes('invalid') || msg.includes('validate')) {
+        setError(t('errorInvalidEmail'));
+      } else if (msg.includes('fetch') || msg.includes('network')) {
+        setError(t('errorNetwork'));
+      } else {
+        console.error('[AuthError]', signInError.status, signInError.message);
+        setError(t('error'));
+      }
       setLoading(false);
       return;
     }
@@ -44,7 +54,9 @@ export function LoginForm() {
         </label>
         <input
           id="email"
+          name="email"
           type="email"
+          autoComplete="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
