@@ -1,20 +1,26 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
+import { getSession } from '@/lib/actions/auth';
+import { getActiveVisa, getChecklist } from '@/lib/actions/dashboard';
 import type { Country } from '@/lib/types/visa';
+import type { ChecklistItem } from '@/lib/types/dashboard';
 import {
-  GlanceableZone,
-  AuthActionZone,
-  ContextZone,
+  VisaHero,
+  VisaAccordionLayout,
   VisaDisclaimer,
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
 
 const VALID_COUNTRIES = ['korea', 'taiwan'] as const;
+
+const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
+  korea: 'kr',
+  taiwan: 'tw',
+};
 
 interface Props {
   params: Promise<{ locale: string; country: string; type: string }>;
@@ -77,16 +83,18 @@ export default async function VisaDetailPage({ params }: Props) {
     notFound();
   }
 
-  const [visa, tc, t] = await Promise.all([
+  const [visa, tc, t, user, activeVisa] = await Promise.all([
     getVisaData(country as Country, locale, type),
     getTranslations('Common'),
     getTranslations('VisaDetail'),
+    getSession(),
+    getActiveVisa(),
   ]);
   const displayCountry = country === 'korea' ? 'South Korea' : 'Taiwan';
 
   if (!visa) {
     return (
-      <main id="main-content" className="min-h-svh bg-neutral-50">
+      <main id="main-content" className="min-h-svh overflow-x-clip bg-neutral-50">
         <Breadcrumb
           variant="band"
           items={[
@@ -105,6 +113,20 @@ export default async function VisaDetailPage({ params }: Props) {
         </div>
       </main>
     );
+  }
+
+  // Resolve auth state for document checklist
+  let userVisaId: string | undefined;
+  let serverChecklist: ChecklistItem[] | undefined;
+
+  if (
+    user &&
+    activeVisa &&
+    activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
+    activeVisa.visa_type === visa.type
+  ) {
+    userVisaId = activeVisa.id;
+    serverChecklist = await getChecklist(activeVisa.id);
   }
 
   // Schema.org JSON-LD: FAQPage
@@ -178,7 +200,7 @@ export default async function VisaDetailPage({ params }: Props) {
           __html: JSON.stringify(breadcrumbJsonLd),
         }}
       />
-      <main id="main-content" className="min-h-svh bg-neutral-50">
+      <main id="main-content" className="min-h-svh overflow-x-clip bg-neutral-50">
         <Breadcrumb
           variant="band"
           items={[
@@ -188,32 +210,16 @@ export default async function VisaDetailPage({ params }: Props) {
           ]}
         />
         <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
-          {/* Layer 1: Glanceable — streams immediately */}
-          <GlanceableZone visa={visa} />
+          <VisaHero visa={visa} />
 
-          {/* Layer 2: Action — auth-gated, loads in Suspense */}
-          <Suspense
-            fallback={
-              <div className="mt-12 space-y-2">
-                {Array.from({ length: 3 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="flex h-14 animate-pulse items-center gap-3 rounded-lg border bg-white px-4"
-                  >
-                    <div className="h-5 w-5 rounded bg-neutral-200" />
-                    <div className="h-4 flex-1 rounded bg-neutral-200" />
-                  </div>
-                ))}
-              </div>
-            }
-          >
-            <AuthActionZone visa={visa} country={country} />
-          </Suspense>
+          <VisaAccordionLayout
+            visa={visa}
+            country={country}
+            isLoggedIn={!!user}
+            userVisaId={userVisaId}
+            serverChecklist={serverChecklist}
+          />
 
-          {/* Layer 3: Context — streams immediately */}
-          <ContextZone visa={visa} country={country} />
-
-          {/* Legal Disclaimer */}
           <VisaDisclaimer country={country} />
         </div>
       </main>
