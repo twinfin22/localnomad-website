@@ -6,12 +6,33 @@
     "countryTaiwan": "台灣",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "探索簽證"
+    "countryKoreaDesc": "D-8 · E-7 · F-1-D · F-2 · H-1",
+    "countryTaiwanDesc": "就業金卡 · 數位遊牧簽證",
+    "legalNote": "依據公開要求整理，不構成法律建議。",
+    "exploreVisas": "探索簽證",
+    "howItWorksTitle": "LocalNomad 如何運作",
+    "step1Title": "選擇國家",
+    "step1Desc": "選擇目的地 — 韓國或台灣 — 並瀏覽可用的簽證類型。",
+    "step2Title": "查看要求",
+    "step2Desc": "了解每種簽證需要的文件、資格和時程。",
+    "step3Title": "準備文件",
+    "step3Desc": "使用我們的檢查清單，逐步整理申請材料。",
+    "feat1Title": "一目了然的要求",
+    "feat1Desc": "清晰、結構化的簽證要求整理 — 沒有法律術語。",
+    "feat2Title": "文件檢查清單",
+    "feat2Desc": "使用可儲存的互動式檢查清單追蹤準備進度。",
+    "feat3Title": "社群經驗",
+    "feat3Desc": "來自成功申辦簽證者的實際經驗分享。",
+    "statVisas": "7 種簽證",
+    "statCountries": "2 個國家",
+    "statFree": "完全免費",
+    "scrollHint": "滾動探索更多"
   },
   "Country": {
     "title": "{country}簽證指南",
-    "subtitle": "{country}完整簽證資訊",
-    "comingSoon": "即將推出"
+    "subtitle": "找到適合您在{country}停留的簽證。比較申請條件、所需文件和辦理時程。",
+    "comingSoon": "此國家的簽證資訊即將推出。",
+    "visaCount": "共 {count} 種簽證類型"
   },
   "VisaDetail": {
     "title": "{type} 簽證",

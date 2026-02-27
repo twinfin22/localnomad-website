@@ -13,10 +13,18 @@ const COUNTRY_OPTIONS = [
   { slug: 'taiwan', code: 'tw' as const, emoji: '🇹🇼', label: 'taiwan' as const },
 ];
 
-// Phase 1-4: only F-1-D for Korea, no Taiwan visas yet
 const VISA_OPTIONS: Record<string, { type: string; label: string }[]> = {
-  kr: [{ type: 'f-1-d', label: 'F-1-D (Accompanying Family)' }],
-  tw: [],
+  kr: [
+    { type: 'f-1-d', label: 'F-1-D — Digital Nomad Visa' },
+    { type: 'e-7', label: 'E-7 — Professional Employment' },
+    { type: 'd-8', label: 'D-8 — Corporate Investment' },
+    { type: 'f-2', label: 'F-2 — Points-Based Resident' },
+    { type: 'h-1', label: 'H-1 — Working Holiday' },
+  ],
+  tw: [
+    { type: 'gold-card', label: 'Gold Card — Employment Gold Card' },
+    { type: 'dnv', label: 'DNV — Digital Nomad Visa' },
+  ],
 };
 
 export function OnboardingForm() {

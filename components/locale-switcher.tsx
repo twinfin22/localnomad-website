@@ -8,6 +8,7 @@ import { routing } from '@/i18n/routing';
 const localeLabels: Record<string, string> = {
   en: 'English',
   ja: '日本語',
+  'zh-cn': '简体中文',
   'zh-tw': '繁體中文',
   vi: 'Tiếng Việt',
 };

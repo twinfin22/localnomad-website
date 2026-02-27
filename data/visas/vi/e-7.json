@@ -1,0 +1,475 @@
+{
+  "type": "e-7",
+  "name": "Visa hoạt động đặc biệt Hàn Quốc (E-7) — Hướng dẫn đầy đủ 2026",
+  "shortName": "E-7",
+  "category": "work",
+  "description": "Tất cả về Visa hoạt động đặc biệt E-7 của Hàn Quốc: bảo lãnh của nhà tuyển dụng, yêu cầu lương, các phân loại phụ (E-7-1 đến E-7-4), hồ sơ cần thiết, quy trình nộp đơn từng bước và câu hỏi thường gặp. Cập nhật năm 2026.",
+  "tagline": "Làm việc tại Hàn Quốc với sự bảo lãnh của nhà tuyển dụng",
+  "keyRequirement": "Bảo lãnh của nhà tuyển dụng + bằng cử nhân kèm 1 năm kinh nghiệm (hoặc thạc sĩ, hoặc hơn 5 năm kinh nghiệm)",
+  "targetAudience": [
+    "Chuyên gia nước ngoài được nhà tuyển dụng Hàn Quốc bảo lãnh",
+    "Lập trình viên, kỹ sư và chuyên gia kỹ thuật CNTT",
+    "Chuyên gia marketing, nhân sự và kinh doanh quốc tế",
+    "Lao động tay nghề cao trong ngành sản xuất và đóng tàu",
+    "Sinh viên tốt nghiệp đại học Hàn Quốc tìm việc làm tại địa phương"
+  ],
+  "eligibility": [
+    {
+      "id": "employer-sponsorship",
+      "label": "Bảo lãnh từ nhà tuyển dụng Hàn Quốc",
+      "description": "Một công ty Hàn Quốc phải bảo lãnh visa cho bạn. Không được phép tự nộp đơn. Nhà tuyển dụng phải nộp hồ sơ thay mặt bạn.",
+      "required": true
+    },
+    {
+      "id": "education-masters",
+      "label": "Bằng thạc sĩ trở lên (không yêu cầu kinh nghiệm làm việc)",
+      "description": "Theo yêu cầu công bố, người sở hữu bằng thạc sĩ trở lên trong lĩnh vực liên quan không bắt buộc phải chứng minh kinh nghiệm làm việc.",
+      "required": false
+    },
+    {
+      "id": "education-bachelors",
+      "label": "Bằng cử nhân + 1 năm kinh nghiệm làm việc liên quan",
+      "description": "Theo hướng dẫn xuất nhập cảnh, người có bằng cử nhân phải chứng minh ít nhất 1 năm kinh nghiệm làm việc trong lĩnh vực liên quan.",
+      "required": false
+    },
+    {
+      "id": "experience-only",
+      "label": "Hơn 5 năm kinh nghiệm nghề nghiệp (không yêu cầu bằng cấp)",
+      "description": "Theo yêu cầu công bố, cá nhân có từ 5 năm kinh nghiệm chuyên môn trở lên trong nghề nghiệp liên quan có thể nộp đơn mà không cần bằng cấp chính quy.",
+      "required": false
+    },
+    {
+      "id": "korean-university",
+      "label": "Sinh viên tốt nghiệp đại học Hàn Quốc — miễn yêu cầu kinh nghiệm",
+      "description": "Sinh viên tốt nghiệp các trường đại học Hàn Quốc được miễn yêu cầu kinh nghiệm nghề nghiệp bất kể chuyên ngành, theo hướng dẫn xuất nhập cảnh công bố.",
+      "required": false
+    },
+    {
+      "id": "top-university",
+      "label": "Sinh viên tốt nghiệp đại học QS 500 hoặc THE 200 — miễn yêu cầu kinh nghiệm",
+      "description": "Sinh viên tốt nghiệp các trường đại học xếp hạng QS World Top 500 hoặc THE World Top 200 được miễn yêu cầu kinh nghiệm nghề nghiệp.",
+      "required": false
+    },
+    {
+      "id": "salary-requirement",
+      "label": "Đáp ứng mức lương tối thiểu cho phân loại E-7 phụ của bạn",
+      "description": "Tính đến tháng 2 năm 2026: E-7-1 (Chuyên gia) ≥ ₩31,120,000/năm, E-7-2 (Bán chuyên nghiệp) ≥ ₩25,890,000/năm, E-7-3 (Lao động tay nghề) ≥ ₩25,890,000/năm, E-7-4 (Theo điểm) ≥ ₩26,000,000/năm. Đây là mức lương hàng năm trước thuế.",
+      "required": true
+    },
+    {
+      "id": "employer-size",
+      "label": "Nhà tuyển dụng phải có từ 5 nhân viên Hàn Quốc trở lên",
+      "description": "Công ty bảo lãnh phải tuyển dụng ít nhất 5 công dân Hàn Quốc. Lao động nước ngoài bị giới hạn ở mức 20% tổng lực lượng lao động.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "Lên đến 3 năm (thường là 1 năm)",
+    "extension": "Có thể gia hạn, lên đến 5 năm trong trường hợp đặc biệt",
+    "maxTotal": "Không có giới hạn cố định — có thể gia hạn miễn là còn đang làm việc"
+  },
+  "fees": {
+    "application": "~60-100 USD (tùy đại sứ quán và quốc tịch)",
+    "extension": "₩60,000",
+    "notes": "Phí xử lý Giấy chứng nhận chấp thuận cấp visa (CCVI) được tính riêng. Phí khác nhau tùy theo đại sứ quán/lãnh sự quán Hàn Quốc."
+  },
+  "incomeRequirement": {
+    "amount": "31,120,000",
+    "currency": "KRW",
+    "period": "annual",
+    "notes": "Mức lương tối thiểu năm 2026 (có hiệu lực từ 01/02/2026): E-7-1 (Chuyên gia) ≥ ₩31,120,000/năm, E-7-2 (Bán chuyên nghiệp) ≥ ₩25,890,000/năm, E-7-3 (Lao động tay nghề) ≥ ₩25,890,000/năm, E-7-4 (Theo điểm) ≥ ₩26,000,000/năm. Tất cả là mức lương hàng năm trước thuế. Từ tháng 4 năm 2025, cùng một tiêu chuẩn lương áp dụng cho tất cả công ty bất kể quy mô."
+  },
+  "taxImplications": {
+    "threshold": "183 days",
+    "notes": "Theo luật thuế Hàn Quốc, cá nhân lưu trú tại Hàn Quốc từ 183 ngày trở lên trong một năm dương lịch có thể được phân loại là đối tượng cư trú thuế. Đối tượng cư trú thuế phải chịu thuế thu nhập Hàn Quốc trên thu nhập toàn cầu theo thuế suất lũy tiến (6-45%). Người sở hữu visa E-7 thường là đối tượng cư trú thuế vì làm việc toàn thời gian tại Hàn Quốc. Nhà tuyển dụng khấu trừ thuế thu nhập hàng tháng. Hiệp định tránh đánh thuế hai lần có thể áp dụng tùy theo quốc tịch. Tham khảo ý kiến chuyên gia thuế được cấp phép (세무사) để được hướng dẫn cụ thể.",
+    "source": "National Tax Service (NTS)"
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Hộ chiếu còn hiệu lực",
+      "nameKorean": "여권",
+      "description": "Phải còn hiệu lực ít nhất 6 tháng kể từ ngày dự kiến lưu trú",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Tờ khai xin cấp visa",
+      "nameKorean": "사증발급신청서",
+      "description": "Tờ khai xin cấp visa đã điền đầy đủ (Mẫu số 34)",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Ảnh hộ chiếu",
+      "nameKorean": "여권사진",
+      "description": "3,5cm x 4,5cm, chụp gần đây, nền trắng",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Hợp đồng lao động",
+      "nameKorean": "고용계약서",
+      "description": "Hợp đồng lao động đã ký với công ty Hàn Quốc bảo lãnh. Phải ghi rõ chức danh, mức lương (đáp ứng mức tối thiểu E-7) và thời gian làm việc.",
+      "tips": [
+        "Mức lương phải đạt hoặc vượt mức tối thiểu năm 2026 cho phân loại E-7 phụ của bạn",
+        "Chức danh phải phù hợp với mã nghề nghiệp được phê duyệt",
+        "Ghi rõ ngày bắt đầu và thời hạn hợp đồng"
+      ],
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Bằng cấp",
+      "nameKorean": "학위증명서",
+      "description": "Bằng cấp chính thức (cử nhân, thạc sĩ hoặc tiến sĩ). Phải được Apostille hoặc chứng thực bởi đại sứ quán Hàn Quốc tại nước cấp bằng.",
+      "tips": [
+        "Yêu cầu Apostille cho các nước trong Công ước Apostille La Haye",
+        "Các nước ngoài Công ước cần xác thực tại đại sứ quán",
+        "Nếu bằng cấp không bằng tiếng Anh hoặc tiếng Hàn, cần bản dịch công chứng"
+      ],
+      "required": true
+    },
+    {
+      "id": "career-certificate",
+      "name": "Giấy chứng nhận kinh nghiệm / Chứng minh kinh nghiệm làm việc",
+      "nameKorean": "경력증명서",
+      "description": "Giấy chứng nhận kinh nghiệm chính thức từ (các) nhà tuyển dụng trước đó chứng minh kinh nghiệm làm việc liên quan. Bắt buộc đối với người có bằng cử nhân (1 năm) hoặc chỉ có kinh nghiệm (5 năm).",
+      "tips": [
+        "Phải trên giấy có tiêu đề công ty với con dấu hoặc chữ ký chính thức",
+        "Ghi rõ chức danh, thời gian làm việc và mô tả công việc",
+        "Sinh viên tốt nghiệp đại học Hàn Quốc và QS 500/THE 200 được miễn"
+      ],
+      "required": true
+    },
+    {
+      "id": "background-check",
+      "name": "Lý lịch tư pháp",
+      "nameKorean": "범죄경력증명서",
+      "description": "Giấy xác nhận không tiền án từ cơ quan cảnh sát nước sở tại. Phải là bản mới (thường trong vòng 6 tháng) và có Apostille.",
+      "tips": [
+        "Kiểm tra lý lịch FBI cho công dân Hoa Kỳ có thể mất 12-18 tuần — hãy bắt đầu sớm",
+        "Phải có Apostille hoặc xác thực tại đại sứ quán",
+        "Một số quốc tịch có thể cần kiểm tra từ nhiều quốc gia"
+      ],
+      "required": true
+    },
+    {
+      "id": "business-registration",
+      "name": "Giấy đăng ký kinh doanh (Nhà tuyển dụng)",
+      "nameKorean": "사업자등록증",
+      "description": "Giấy đăng ký kinh doanh chính thức của công ty bảo lãnh do cơ quan thuế Hàn Quốc cấp.",
+      "required": true
+    },
+    {
+      "id": "foreigner-utilization-plan",
+      "name": "Kế hoạch sử dụng lao động nước ngoài / Thư mời (Nhà tuyển dụng)",
+      "nameKorean": "외국인고용사유서",
+      "description": "Bản giải trình chi tiết từ nhà tuyển dụng giải thích lý do cần tuyển chuyên gia nước ngoài thay vì công dân Hàn Quốc. Tài liệu này rất quan trọng cho việc phê duyệt.",
+      "tips": [
+        "Phải giải thích kỹ năng hoặc trình độ cụ thể mà người nước ngoài mang lại",
+        "Các lý do chung chung thường bị từ chối — cần chi tiết và cụ thể",
+        "Nêu rõ vị trí liên quan đến nhu cầu kinh doanh của công ty như thế nào"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-recommendation",
+      "name": "Thư giới thiệu việc làm",
+      "nameKorean": "고용추천서",
+      "description": "Thư giới thiệu từ bộ hoặc cơ quan chính phủ liên quan cho nghề nghiệp. Bắt buộc đối với một số mã nghề nghiệp E-7.",
+      "tips": [
+        "Cơ quan yêu cầu khác nhau tùy theo nghề nghiệp — kiểm tra mã nghề cụ thể",
+        "Vị trí CNTT/phần mềm: có thể cần thư giới thiệu từ KITA hoặc bộ liên quan",
+        "Thời gian xử lý thư giới thiệu khác nhau tùy cơ quan"
+      ],
+      "required": true
+    },
+    {
+      "id": "statement-of-employment",
+      "name": "Giấy xác nhận việc làm (Nhà tuyển dụng)",
+      "nameKorean": "재직증명서",
+      "description": "Giấy xác nhận chính thức từ công ty bảo lãnh xác nhận lời mời làm việc, vị trí và điều khoản.",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Nhận lời mời làm việc từ công ty Hàn Quốc",
+      "description": "Tìm việc làm tại công ty Hàn Quốc sẵn sàng bảo lãnh visa E-7 cho bạn. Nhà tuyển dụng phải đáp ứng yêu cầu quy mô tối thiểu (từ 5 nhân viên Hàn Quốc trở lên) và có thể giải trình lý do tuyển dụng chuyên gia nước ngoài.",
+      "tips": [
+        "Trang tuyển dụng: Saramin, JobKorea, LinkedIn Korea, Wanted",
+        "Các vị trí công nghệ tại Pangyo/Bundang có nhu cầu cao đối với chuyên gia nước ngoài",
+        "Xác nhận mã nghề phù hợp với mã nghề E-7 được phê duyệt trước khi ký hợp đồng"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Nhà tuyển dụng nộp đơn xin CCVI tại Cục xuất nhập cảnh",
+      "description": "Nhà tuyển dụng Hàn Quốc của bạn nộp đơn xin Giấy chứng nhận chấp thuận cấp visa (CCVI, 사증발급인정서) tại Cục Quản lý xuất nhập cảnh địa phương tại Hàn Quốc. Đây là trách nhiệm của nhà tuyển dụng.",
+      "duration": "2-4 tuần",
+      "tips": [
+        "Nhà tuyển dụng chuẩn bị và nộp tất cả hồ sơ phía công ty",
+        "Cục xuất nhập cảnh xem xét giải trình của nhà tuyển dụng về việc tuyển người nước ngoài",
+        "Mã số CCVI được cấp cho nhà tuyển dụng khi được phê duyệt"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Nhận mã số CCVI",
+      "description": "Khi được phê duyệt, nhà tuyển dụng nhận mã số xác nhận CCVI và chuyển cho bạn. Mã số này là bắt buộc để nộp đơn xin visa tại đại sứ quán.",
+      "duration": "1-3 ngày"
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Nộp đơn xin visa tại Đại sứ quán/Lãnh sự quán Hàn Quốc",
+      "description": "Nộp hồ sơ xin visa tại đại sứ quán hoặc lãnh sự quán Hàn Quốc tại nước bạn, sử dụng mã số CCVI do nhà tuyển dụng cung cấp. Mang theo tất cả hồ sơ phía ứng viên.",
+      "duration": "5-10 ngày làm việc",
+      "tips": [
+        "Đặt lịch hẹn trước — một số đại sứ quán có thời gian chờ lâu",
+        "Mang cả bản gốc và bản sao tất cả hồ sơ",
+        "Một số đại sứ quán chấp nhận nộp qua đường bưu điện"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Nhận visa và nhập cảnh Hàn Quốc",
+      "description": "Nhận visa E-7 tại đại sứ quán và đến Hàn Quốc. Visa cho phép nhập cảnh trong thời gian quy định.",
+      "duration": "1-5 ngày"
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Đăng ký Thẻ cư trú (ARC)",
+      "description": "Trong vòng 90 ngày kể từ khi đến Hàn Quốc, đến Cục Quản lý xuất nhập cảnh địa phương để đăng ký và nhận Thẻ cư trú (외국인등록증). Thẻ cư trú là giấy tờ tùy thân chính thức tại Hàn Quốc.",
+      "duration": "2-3 tuần để cấp thẻ",
+      "tips": [
+        "Đặt lịch hẹn trên HiKorea (www.hikorea.go.kr) trước",
+        "Mang theo hộ chiếu, hợp đồng lao động và ảnh hộ chiếu",
+        "Bạn sẽ nhận biên nhận ngay lập tức có thể dùng làm giấy tờ tạm thời"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "Tổng cộng 3-6 tuần",
+    "notes": "Xem xét CCVI tại Cục xuất nhập cảnh: 2-4 tuần. Xử lý visa tại đại sứ quán sau CCVI: 5-10 ngày làm việc. Tổng thời gian từ khi nhà tuyển dụng nộp hồ sơ đến khi nhận visa thường là 3-6 tuần. Thời gian xử lý khác nhau tùy theo quốc tịch, khối lượng công việc của đại sứ quán và mùa. Theo hướng dẫn công bố, nộp đơn CCVI ít nhất 6-8 tuần trước ngày bắt đầu dự kiến."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Phải làm việc độc quyền cho nhà tuyển dụng bảo lãnh",
+      "Nhiệm vụ công việc phải phù hợp với mã nghề nghiệp trên visa",
+      "Đổi nhà tuyển dụng yêu cầu CCVI mới và thay đổi visa",
+      "Không được phép làm thêm hoặc freelance nếu không có giấy phép riêng"
+    ],
+    "notes": "Visa E-7 gắn liền với một nhà tuyển dụng và mã nghề cụ thể. Nếu bạn đổi việc, nhà tuyển dụng mới phải nộp đơn CCVI mới và bạn phải đăng ký thay đổi nơi làm việc tại Cục xuất nhập cảnh. Làm việc ngoài mã nghề được phê duyệt có thể dẫn đến hủy visa."
+  },
+  "faqs": [
+    {
+      "question": "Các phân loại phụ E-7 (E-7-1, E-7-2, E-7-3, E-7-4) là gì?",
+      "answer": "Visa E-7 có bốn phân loại phụ dựa trên loại nghề nghiệp. E-7-1 (Chuyên gia) bao gồm 67 nghề bao gồm lập trình viên CNTT, kỹ sư, marketing và nhân sự. E-7-2 (Bán chuyên nghiệp) bao gồm 10 nghề như điều phối viên y tế và lễ tân khách sạn. E-7-3 (Lao động tay nghề) bao gồm 10 nghề trong ngành sản xuất và đóng tàu. E-7-4 (Theo điểm) bao gồm 3 nghề cho lao động tay nghề đạt ngưỡng điểm. Phân loại phụ của bạn quyết định yêu cầu lương tối thiểu và mã nghề nghiệp được phép."
+    },
+    {
+      "question": "Yêu cầu lương năm 2026 cho từng phân loại E-7 phụ là bao nhiêu?",
+      "answer": "Tính đến ngày 01/02/2026, mức lương tối thiểu hàng năm trước thuế là: E-7-1 (Chuyên gia) ≥ ₩31,120,000/năm, E-7-2 (Bán chuyên nghiệp) ≥ ₩25,890,000/năm, E-7-3 (Lao động tay nghề) ≥ ₩25,890,000/năm, E-7-4 (Theo điểm) ≥ ₩26,000,000/năm. Từ tháng 4 năm 2025, cùng một yêu cầu lương áp dụng cho tất cả công ty bất kể quy mô. Nếu mức lương trong hợp đồng lao động thấp hơn các ngưỡng này, đơn xin visa có thể bị từ chối."
+    },
+    {
+      "question": "Tại sao việc phù hợp mã nghề nghiệp lại quan trọng?",
+      "answer": "Mỗi phân loại phụ E-7 có danh sách các mã nghề nghiệp được phê duyệt (직종코드). Nhiệm vụ công việc thực tế của bạn phải phù hợp với mã ghi trên visa. Cán bộ xuất nhập cảnh xác minh điều này trong quá trình nộp đơn và gia hạn. Sự không phù hợp giữa công việc thực tế và mã đã đăng ký có thể dẫn đến từ chối visa, hủy visa hoặc bị xử phạt. Làm việc với bộ phận nhân sự của nhà tuyển dụng để chọn đúng mã trước khi nộp đơn."
+    },
+    {
+      "question": "Sinh viên tốt nghiệp đại học Hàn Quốc có lợi thế gì?",
+      "answer": "Có. Theo hướng dẫn xuất nhập cảnh công bố, sinh viên tốt nghiệp các trường đại học Hàn Quốc được miễn yêu cầu kinh nghiệm nghề nghiệp bất kể chuyên ngành. Điều này có nghĩa là sinh viên tốt nghiệp đại học Hàn Quốc có bằng cử nhân có thể nộp đơn xin E-7 mà không cần chứng minh 1 năm kinh nghiệm. Đây thường được coi là con đường tiếp cận bảo lãnh E-7 dễ dàng nhất."
+    },
+    {
+      "question": "Còn về miễn trừ tuổi cho người 18-24 tuổi (từ tháng 4 năm 2025)?",
+      "answer": "Từ tháng 4 năm 2025, cá nhân từ 18-24 tuổi có lịch sử lưu trú dài hạn tại Hàn Quốc có thể nộp đơn xin E-7 mà không cần đáp ứng yêu cầu học vấn hoặc kinh nghiệm tiêu chuẩn. Chính sách này nhằm hỗ trợ cư dân nước ngoài trẻ tuổi đã học tập hoặc sinh sống lâu dài tại Hàn Quốc. Điều kiện cụ thể và yêu cầu hồ sơ có thể khác nhau — kiểm tra với Cục Quản lý xuất nhập cảnh địa phương để biết chi tiết hiện hành."
+    },
+    {
+      "question": "Sinh viên tốt nghiệp từ các trường đại học xếp hạng cao có được đãi ngộ đặc biệt không?",
+      "answer": "Có. Theo hướng dẫn xuất nhập cảnh công bố, sinh viên tốt nghiệp từ các trường đại học QS World Top 500 hoặc THE (Times Higher Education) World Top 200 được miễn yêu cầu kinh nghiệm nghề nghiệp. Điều này có nghĩa họ có thể nộp đơn chỉ với bằng cử nhân, tương tự như sinh viên tốt nghiệp đại học Hàn Quốc."
+    },
+    {
+      "question": "Làm thế nào để đổi nhà tuyển dụng khi đang sở hữu visa E-7?",
+      "answer": "Đổi nhà tuyển dụng trên visa E-7 yêu cầu nhà tuyển dụng mới nộp đơn CCVI mới tại Cục xuất nhập cảnh và bạn phải nộp đơn thay đổi nơi làm việc (근무처변경). Bạn không được bắt đầu làm việc cho nhà tuyển dụng mới cho đến khi việc thay đổi được phê duyệt. Quá trình thường mất 2-4 tuần. Nếu bạn rời nhà tuyển dụng hiện tại trước khi thay đổi được phê duyệt, bạn có thể vi phạm điều kiện visa."
+    },
+    {
+      "question": "Làm thế nào để gia hạn visa E-7?",
+      "answer": "Nộp đơn gia hạn tại Cục Quản lý xuất nhập cảnh địa phương ít nhất 30 ngày trước khi visa hết hạn. Bạn cần hợp đồng lao động hiện tại, bằng chứng tiếp tục làm việc, hồ sơ nộp thuế và Thẻ cư trú. Nhà tuyển dụng vẫn phải đáp ứng yêu cầu bảo lãnh (từ 5 nhân viên Hàn Quốc trở lên, giới hạn 20% người nước ngoài). Ngưỡng lương năm 2026 cũng áp dụng cho gia hạn — mức lương phải đạt mức tối thiểu hiện hành."
+    },
+    {
+      "question": "Tôi có thể xin thường trú (F-5) thông qua E-7 không?",
+      "answer": "Có. Có hai con đường phổ biến. Thứ nhất, bạn có thể chuyển từ E-7 sang F-2 (Visa cư trú theo điểm) sau khi đạt ngưỡng 80 điểm (dựa trên tuổi, thu nhập, khả năng tiếng Hàn, lịch sử nộp thuế, v.v.), thường sau hơn 3 năm trên visa E-7. Từ F-2, bạn có thể nộp đơn xin F-5 (Visa thường trú). Thứ hai, trong một số trường hợp, bạn có thể nộp đơn F-5 trực tiếp sau thời gian dài trên visa E-7 nếu đáp ứng các yêu cầu của Bộ Tư pháp."
+    },
+    {
+      "question": "Yêu cầu về quy mô nhà tuyển dụng và tỷ lệ người nước ngoài là gì?",
+      "answer": "Công ty bảo lãnh phải tuyển dụng ít nhất 5 công dân Hàn Quốc. Nhân viên nước ngoài thường bị giới hạn ở mức 20% tổng lực lượng lao động (nhân viên là công dân Hàn Quốc). Các công ty nhỏ hoặc startup không đáp ứng các ngưỡng này có thể gặp khó khăn trong việc bảo lãnh visa E-7. Một số ngành và khu kinh tế đặc biệt có thể có ngoại lệ — kiểm tra với Cục xuất nhập cảnh về quy định hiện hành."
+    },
+    {
+      "question": "Điều gì xảy ra nếu tôi bị sa thải hoặc công ty đóng cửa?",
+      "answer": "Nếu công việc kết thúc, bạn thường phải báo cáo thay đổi cho Cục xuất nhập cảnh trong vòng 15 ngày. Bạn có thể được cấp thời gian ân hạn (thường 30-90 ngày) để tìm nhà tuyển dụng mới sẵn sàng bảo lãnh visa. Nếu không tìm được nhà bảo lãnh mới trong thời gian ân hạn, bạn có thể cần chuyển đổi tư cách lưu trú (ví dụ: Visa tìm việc D-10 nếu đủ điều kiện) hoặc rời Hàn Quốc. Quá hạn lưu trú không có tư cách hợp lệ bị phạt khoảng ₩100,000 mỗi ngày."
+    },
+    {
+      "question": "Thời gian điển hình từ lời mời làm việc đến bắt đầu làm việc tại Hàn Quốc là bao lâu?",
+      "answer": "Tổng thời gian thường là 3-6 tuần nhưng có thể thay đổi. Bước 1: Nhà tuyển dụng nộp CCVI tại Cục xuất nhập cảnh (2-4 tuần xem xét). Bước 2: Bạn nộp đơn xin visa tại đại sứ quán Hàn Quốc với mã số CCVI (5-10 ngày làm việc). Bước 3: Nhập cảnh Hàn Quốc và bắt đầu làm việc. Bước 4: Đăng ký Thẻ cư trú trong vòng 90 ngày. Hãy dự trù ít nhất 6-8 tuần từ khi nhà tuyển dụng bắt đầu quy trình đến khi bạn có thể bắt đầu làm việc tại Hàn Quốc."
+    }
+  ],
+  "tips": [
+    "Bắt đầu quy trình CCVI sớm — chỉ riêng việc xem xét tại Cục xuất nhập cảnh đã mất 2-4 tuần",
+    "Xác minh mã nghề nghiệp phù hợp với nhiệm vụ công việc thực tế trước khi nộp đơn",
+    "Giữ tất cả bằng cấp và chứng nhận kinh nghiệm đã Apostille — bạn cũng cần chúng khi gia hạn",
+    "Tham gia cộng đồng người nước ngoài tại Seoul (nhóm Facebook, Reddit r/korea) để tìm đánh giá nhà tuyển dụng và cơ hội việc làm",
+    "Pangyo/Bundang (trung tâm công nghệ của Hàn Quốc) và Songdo có nhu cầu cao nhất đối với chuyên gia công nghệ nước ngoài",
+    "Học tiếng Hàn cơ bản — ngay cả TOPIK cấp 2 cũng giúp ích cho cuộc sống hàng ngày và tích điểm hướng đến visa cư trú F-2"
+  ],
+  "warnings": [
+    "Visa lao động cạnh tranh nhất Hàn Quốc — nhà tuyển dụng phải giải trình lý do tuyển người nước ngoài thay vì công dân Hàn Quốc",
+    "Phạt quá hạn lưu trú: khoảng ₩100,000 mỗi ngày quá hạn",
+    "Nộp đơn gia hạn ít nhất 30 ngày trước khi visa hết hạn để tránh phạt",
+    "Mã nghề không phù hợp giữa công việc thực tế và loại visa có thể dẫn đến hủy visa",
+    "Làm việc cho bất kỳ nhà tuyển dụng nào khác ngoài nhà bảo lãnh mà không có giấy phép là vi phạm visa"
+  ],
+  "communityTips": [
+    {
+      "id": "job-code-critical",
+      "tip": "Chọn sai mã nghề nghiệp là một trong những lý do lớn nhất dẫn đến bị từ chối E-7. Làm việc với bộ phận nhân sự của nhà tuyển dụng hoặc chuyên gia xuất nhập cảnh để chọn đúng mã cho vị trí của bạn.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "employment-reason-statement",
+      "tip": "Công ty phải giải thích lý do cần người nước ngoài thay vì công dân Hàn Quốc. Lý do chung chung sẽ bị từ chối. Hãy cụ thể về kỹ năng và trình độ đặc biệt của bạn.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "korean-university-advantage",
+      "tip": "Nếu bạn tốt nghiệp đại học Hàn Quốc, bạn được miễn yêu cầu kinh nghiệm bất kể chuyên ngành. Đây thường được coi là con đường dễ nhất đến E-7.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "pangyo-startups",
+      "tip": "Khu vực Thung lũng Silicon của Hàn Quốc (Pangyo, Bundang) có nhiều startup thoải mái với đội ngũ nói tiếng Anh. Các lĩnh vực AI, blockchain và an ninh mạng có nhu cầu cao nhất đối với chuyên gia nước ngoài.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "start-before-expiry",
+      "tip": "Quá trình xem xét CCVI thường mất 1,5 đến 2 tháng. Ngay cả khi visa hết hạn trong quá trình xem xét, ngày hết hạn thường được gia hạn. Nhưng hãy nộp ít nhất 30 ngày trước khi hết hạn để tránh bị phạt.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    }
+  ],
+  "relatedVisas": [
+    "d-10",
+    "f-2",
+    "d-2",
+    "f-1-d",
+    "h-1"
+  ],
+  "pathsTo": [
+    {
+      "type": "f-2",
+      "name": "Visa cư trú theo điểm (F-2-7)",
+      "requirements": "Đạt 80 điểm trở lên trên hệ thống tính điểm F-2 (dựa trên tuổi, thu nhập, khả năng tiếng Hàn, lịch sử nộp thuế, v.v.). Thường yêu cầu hơn 3 năm trên visa E-7 với việc làm và hồ sơ thuế ổn định.",
+      "timeline": "Xử lý 4-8 tuần",
+      "documents": [
+        "Bảng tính điểm",
+        "Chứng chỉ TOPIK",
+        "Bằng chứng nộp thuế thu nhập",
+        "Hợp đồng lao động",
+        "Thẻ cư trú (ARC)"
+      ],
+      "notes": "Con đường cư trú dài hạn phổ biến nhất từ E-7. Visa F-2 loại bỏ hạn chế một nhà tuyển dụng, cho phép bạn làm việc cho bất kỳ công ty Hàn Quốc nào. Từ F-2, bạn có thể nộp đơn xin Visa thường trú F-5, cấp quyền làm việc không hạn chế và ổn định lâu dài tại Hàn Quốc."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "d-10",
+      "name": "Visa tìm việc (D-10)",
+      "requirements": "Nhận được việc làm tại công ty Hàn Quốc đáp ứng yêu cầu bảo lãnh E-7. Phải đáp ứng tiêu chí học vấn hoặc kinh nghiệm cho E-7.",
+      "timeline": "3-6 tuần (CCVI + xử lý tại đại sứ quán)",
+      "documents": [
+        "Hợp đồng lao động",
+        "Bằng cấp (có Apostille)",
+        "Giấy chứng nhận kinh nghiệm",
+        "Giấy đăng ký kinh doanh của nhà tuyển dụng",
+        "Kế hoạch sử dụng lao động nước ngoài"
+      ],
+      "notes": "Người sở hữu visa D-10 tìm được việc làm tại Hàn Quốc có thể chuyển sang E-7. Visa D-10 được thiết kế đặc biệt như cầu nối tìm việc. Nộp đơn chuyển đổi tư cách lưu trú tại Cục Quản lý xuất nhập cảnh địa phương trước khi visa D-10 hết hạn."
+    },
+    {
+      "type": "d-2",
+      "name": "Visa du học (D-2)",
+      "requirements": "Tốt nghiệp đại học Hàn Quốc và nhận được việc làm. Sinh viên tốt nghiệp đại học Hàn Quốc được miễn yêu cầu kinh nghiệm.",
+      "timeline": "3-6 tuần (CCVI + xử lý chuyển đổi tư cách)",
+      "documents": [
+        "Bằng tốt nghiệp",
+        "Hợp đồng lao động",
+        "Giấy đăng ký kinh doanh của nhà tuyển dụng",
+        "Kế hoạch sử dụng lao động nước ngoài"
+      ],
+      "notes": "Một trong những con đường E-7 phổ biến nhất. Sinh viên tốt nghiệp đại học Hàn Quốc có lợi thế lớn — không yêu cầu kinh nghiệm. Nộp đơn chuyển đổi tư cách trước khi visa D-2 hoặc D-10 sau tốt nghiệp hết hạn."
+    },
+    {
+      "type": "f-1-d",
+      "name": "Visa du mục kỹ thuật số (F-1-D)",
+      "requirements": "Nhận được việc làm tại công ty Hàn Quốc đáp ứng yêu cầu bảo lãnh E-7. Phải đáp ứng tiêu chí học vấn hoặc kinh nghiệm.",
+      "timeline": "3-6 tuần (CCVI + xử lý chuyển đổi tư cách)",
+      "documents": [
+        "Hợp đồng lao động",
+        "Bằng cấp (có Apostille)",
+        "Giấy chứng nhận kinh nghiệm",
+        "Giấy đăng ký kinh doanh của nhà tuyển dụng",
+        "Kế hoạch sử dụng lao động nước ngoài"
+      ],
+      "notes": "Dành cho người du mục kỹ thuật số quyết định chuyển sang làm việc tại Hàn Quốc. Điều này có nghĩa là từ bỏ công việc từ xa cho công ty nước ngoài. Nộp đơn chuyển đổi tư cách tại Cục xuất nhập cảnh trước khi visa F-1-D hết hạn."
+    },
+    {
+      "type": "h-1",
+      "name": "Visa kỳ nghỉ làm việc (H-1)",
+      "requirements": "Tìm nhà tuyển dụng Hàn Quốc sẵn sàng bảo lãnh E-7 trong hoặc sau thời gian kỳ nghỉ làm việc. Phải đáp ứng tiêu chí học vấn hoặc kinh nghiệm E-7.",
+      "timeline": "3-6 tuần (CCVI + xử lý chuyển đổi tư cách)",
+      "documents": [
+        "Hợp đồng lao động",
+        "Bằng cấp (có Apostille)",
+        "Giấy chứng nhận kinh nghiệm",
+        "Giấy đăng ký kinh doanh của nhà tuyển dụng",
+        "Kế hoạch sử dụng lao động nước ngoài"
+      ],
+      "notes": "Người tham gia kỳ nghỉ làm việc tìm được việc làm lâu dài tại Hàn Quốc có thể chuyển sang E-7. Nhà tuyển dụng phải nộp CCVI trước khi visa H-1 hết hạn. Hãy lên kế hoạch trước vì quá trình xem xét CCVI mất vài tuần."
+    }
+  ],
+  "lastUpdated": "2026-02-27",
+  "officialLinks": [
+    {
+      "label": "Cục Quản lý xuất nhập cảnh Hàn Quốc",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "Hướng dẫn E-7 trên KOWORK",
+      "url": "https://kowork.kr/en/visa/E-7"
+    },
+    {
+      "label": "Cổng thông tin HiKorea",
+      "url": "https://www.hikorea.go.kr"
+    }
+  ]
+}

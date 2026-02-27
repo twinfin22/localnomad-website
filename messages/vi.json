@@ -6,12 +6,33 @@
     "countryTaiwan": "Đài Loan",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "Tìm hiểu thị thực"
+    "countryKoreaDesc": "D-8 · E-7 · F-1-D · F-2 · H-1",
+    "countryTaiwanDesc": "Gold Card · Visa du mục kỹ thuật số",
+    "legalNote": "Dựa trên các yêu cầu đã công bố. Không phải tư vấn pháp lý.",
+    "exploreVisas": "Tìm hiểu thị thực",
+    "howItWorksTitle": "LocalNomad hoạt động như thế nào",
+    "step1Title": "Chọn quốc gia",
+    "step1Desc": "Chọn điểm đến — Hàn Quốc hoặc Đài Loan — và tìm hiểu các loại thị thực.",
+    "step2Title": "Xem yêu cầu",
+    "step2Desc": "Xem giấy tờ, điều kiện và thời gian cần thiết cho mỗi loại thị thực.",
+    "step3Title": "Chuẩn bị hồ sơ",
+    "step3Desc": "Sử dụng danh sách kiểm tra để sắp xếp hồ sơ nộp đơn từng bước.",
+    "feat1Title": "Yêu cầu rõ ràng",
+    "feat1Desc": "Tổng hợp yêu cầu thị thực rõ ràng, có cấu trúc — không thuật ngữ pháp lý.",
+    "feat2Title": "Danh sách kiểm tra hồ sơ",
+    "feat2Desc": "Theo dõi tiến trình chuẩn bị với danh sách kiểm tra tương tác có thể lưu lại.",
+    "feat3Title": "Kinh nghiệm cộng đồng",
+    "feat3Desc": "Chia sẻ thực tế từ những người đã thành công trong quá trình xin thị thực.",
+    "statVisas": "7 loại thị thực",
+    "statCountries": "2 quốc gia",
+    "statFree": "Miễn phí 100%",
+    "scrollHint": "Cuộn để khám phá"
   },
   "Country": {
     "title": "Hướng dẫn thị thực {country}",
-    "subtitle": "Thông tin thị thực đầy đủ cho {country}",
-    "comingSoon": "Sắp ra mắt"
+    "subtitle": "Tìm loại thị thực phù hợp cho kỳ lưu trú tại {country}. So sánh yêu cầu, hồ sơ và thời gian xử lý.",
+    "comingSoon": "Thông tin thị thực cho quốc gia này sắp được cập nhật.",
+    "visaCount": "{count} loại thị thực"
   },
   "VisaDetail": {
     "title": "Thị thực {type}",

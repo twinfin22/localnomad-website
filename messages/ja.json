@@ -6,12 +6,33 @@
     "countryTaiwan": "台湾",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "ビザを見る"
+    "countryKoreaDesc": "D-8 · E-7 · F-1-D · F-2 · H-1",
+    "countryTaiwanDesc": "Gold Card · デジタルノマドビザ",
+    "legalNote": "公開された要件に基づいています。法的助言ではありません。",
+    "exploreVisas": "ビザを見る",
+    "howItWorksTitle": "LocalNomadの使い方",
+    "step1Title": "国を選ぶ",
+    "step1Desc": "渡航先（韓国または台湾）を選んで、利用可能なビザタイプを確認できます。",
+    "step2Title": "要件を確認",
+    "step2Desc": "各ビザに必要な書類、資格、スケジュールを確認できます。",
+    "step3Title": "書類を準備",
+    "step3Desc": "チェックリストで申請書類を一つずつ整理できます。",
+    "feat1Title": "要件が一目でわかる",
+    "feat1Desc": "各ビザの要件を明確に構造化 — 法律用語なしで理解できます。",
+    "feat2Title": "書類チェックリスト",
+    "feat2Desc": "保存できるインタラクティブなチェックリストで準備状況を管理。",
+    "feat3Title": "コミュニティの声",
+    "feat3Desc": "ビザ取得に成功した人々からのリアルな体験談。",
+    "statVisas": "7種類のビザ",
+    "statCountries": "2か国",
+    "statFree": "完全無料",
+    "scrollHint": "スクロールして詳しく見る"
   },
   "Country": {
     "title": "{country}ビザガイド",
-    "subtitle": "{country}の包括的なビザ情報",
-    "comingSoon": "近日公開"
+    "subtitle": "{country}滞在に合ったビザを見つけましょう。要件・必要書類・スケジュールを比較できます。",
+    "comingSoon": "この国のビザ情報は近日公開予定です。",
+    "visaCount": "{count}種類のビザがあります"
   },
   "VisaDetail": {
     "title": "{type}ビザ",

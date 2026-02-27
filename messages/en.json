@@ -6,12 +6,33 @@
     "countryTaiwan": "Taiwan",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "Explore visas"
+    "countryKoreaDesc": "D-8 · E-7 · F-1-D · F-2 · H-1",
+    "countryTaiwanDesc": "Gold Card · Digital Nomad Visa",
+    "legalNote": "Based on published requirements. Not legal advice.",
+    "exploreVisas": "Explore visas",
+    "howItWorksTitle": "How LocalNomad works",
+    "step1Title": "Choose a country",
+    "step1Desc": "Pick your destination — South Korea or Taiwan — and explore available visa types.",
+    "step2Title": "Review requirements",
+    "step2Desc": "See what documents, qualifications, and timelines each visa requires.",
+    "step3Title": "Prepare your docs",
+    "step3Desc": "Use our checklists to organize your application materials step by step.",
+    "feat1Title": "Requirements at a glance",
+    "feat1Desc": "Clear, structured breakdowns of what each visa requires — no legal jargon.",
+    "feat2Title": "Document checklists",
+    "feat2Desc": "Track your preparation progress with interactive checklists you can save.",
+    "feat3Title": "Community tips",
+    "feat3Desc": "Real insights from people who've successfully navigated the visa process.",
+    "statVisas": "7 visa types",
+    "statCountries": "2 countries",
+    "statFree": "100% free",
+    "scrollHint": "Scroll to explore"
   },
   "Country": {
     "title": "{country} Visa Guide",
-    "subtitle": "Comprehensive visa information for {country}",
-    "comingSoon": "Coming soon"
+    "subtitle": "Find the right visa for your stay in {country}. Compare requirements, documents, and timelines.",
+    "comingSoon": "Visa information for this country is coming soon.",
+    "visaCount": "{count} visa types available"
   },
   "VisaDetail": {
     "title": "{type} Visa",

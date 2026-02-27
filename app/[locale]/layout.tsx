@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { routing } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 import { AuthNav } from '@/components/auth';
 import { LocaleSwitcher } from '@/components/locale-switcher';
 import { Footer } from '@/components/footer';
@@ -42,10 +43,17 @@ export default async function LocaleLayout({ children, params }: Props) {
         >
           {t('skipToContent')}
         </a>
-        <nav aria-label={t('mainNavigation')} className="flex items-center justify-end gap-4 px-6 py-3 text-sm">
-          <LocaleSwitcher />
-          <AuthNav />
-        </nav>
+        <header className="sticky top-0 z-40 border-b border-border/60 bg-white/80 backdrop-blur-lg">
+          <nav aria-label={t('mainNavigation')} className="mx-auto flex items-center justify-between gap-4 px-6 py-3 text-sm">
+            <Link href="/" className="font-lora text-xl font-bold text-primary transition-opacity hover:opacity-80">
+              LocalNomad
+            </Link>
+            <div className="flex items-center gap-4">
+              <LocaleSwitcher />
+              <AuthNav />
+            </div>
+          </nav>
+        </header>
         {children}
         <Footer />
       </NextIntlClientProvider>

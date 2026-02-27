@@ -1,0 +1,406 @@
+{
+  "type": "f-1-d",
+  "name": "Visa du mục kỹ thuật số Hàn Quốc (F-1-D) — Hướng dẫn đầy đủ 2026",
+  "shortName": "F-1-D",
+  "category": "digital-nomad",
+  "description": "Tất cả về Visa du mục kỹ thuật số F-1-D của Hàn Quốc: yêu cầu thu nhập $66K, bảo hiểm, hồ sơ, quy trình nộp đơn từng bước và câu hỏi thường gặp. Cập nhật năm 2026.",
+  "tagline": "Làm việc từ xa, sống tại Hàn Quốc",
+  "keyRequirement": "Làm việc từ xa cho công ty nước ngoài + thu nhập ≥ GNI×2 (~₩88 triệu/năm)",
+  "targetAudience": [
+    "Người làm việc từ xa cho công ty nước ngoài",
+    "Freelancer có khách hàng quốc tế",
+    "Doanh nhân điều hành doanh nghiệp đăng ký tại nước ngoài",
+    "Chuyên gia kỹ thuật số làm việc xuyên múi giờ"
+  ],
+  "eligibility": [
+    {
+      "id": "remote-work",
+      "label": "Đang làm việc từ xa cho nhà tuyển dụng nước ngoài",
+      "description": "Công việc phải thuộc về công ty bên ngoài Hàn Quốc",
+      "required": true
+    },
+    {
+      "id": "income",
+      "label": "Thu nhập hàng năm khoảng $66,000 USD trở lên (hoặc tương đương)",
+      "description": "Khoảng ₩88,000,000 mỗi năm (GNI × 2)",
+      "required": true
+    },
+    {
+      "id": "insurance",
+      "label": "Bảo hiểm y tế có phạm vi bảo hiểm tại Hàn Quốc",
+      "description": "Bảo hiểm y tế tư nhân với mức bảo hiểm tối thiểu khoảng ₩100,000,000 (~$75,000 USD). Người sở hữu visa F-1-D thường không đủ điều kiện tham gia Bảo hiểm y tế quốc gia Hàn Quốc (국민건강보험) với tư cách người lao động. Duy trì bảo hiểm tư nhân trong suốt thời gian lưu trú.",
+      "required": true
+    },
+    {
+      "id": "no-korean-work",
+      "label": "Không làm việc cho công ty Hàn Quốc",
+      "description": "Không được làm việc cho khách hàng/công ty Hàn Quốc với loại visa này",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "1 năm",
+    "extension": "Gia hạn thêm 1 năm",
+    "maxTotal": "2 năm"
+  },
+  "fees": {
+    "application": "₩60,000 (~$42 USD)",
+    "extension": "₩60,000",
+    "notes": "Có thể phát sinh phí bổ sung tại đại sứ quán"
+  },
+  "incomeRequirement": {
+    "amount": "66,000",
+    "currency": "USD",
+    "period": "annual",
+    "notes": "Tính đến năm 2026. Khoảng ₩88,102,000/năm (GNI × 2, dựa trên GNI bình quân đầu người năm 2024 là ₩44,051,000). Được Bộ Tư pháp (법무부) cập nhật hàng năm. Cần chứng minh thu nhập trong 6-12 tháng gần nhất.",
+    "proofMethods": [
+      "Hợp đồng lao động ghi rõ mức lương hàng năm",
+      "Phiếu lương hoặc bảng lương của 6-12 tháng gần nhất",
+      "Khai thuế thu nhập hoặc giấy chứng nhận thuế thu nhập từ nước sở tại",
+      "Sao kê ngân hàng cho thấy các khoản thu nhập đều đặn",
+      "Đối với freelancer: hóa đơn và hợp đồng đạt tổng mức yêu cầu trong 12 tháng qua"
+    ]
+  },
+  "insuranceRequirement": {
+    "minimumCoverage": "₩100,000,000 (~$75,000 USD)",
+    "type": "Bảo hiểm y tế tư nhân",
+    "notes": "Yêu cầu công bố quy định bảo hiểm y tế tư nhân với mức bảo hiểm tối thiểu ₩100,000,000. Người sở hữu visa F-1-D thường không đủ điều kiện tham gia Bảo hiểm y tế quốc gia (NHI) vì không được tuyển dụng bởi tổ chức Hàn Quốc. Các gói bảo hiểm quốc tế như SafetyWing, Cigna Global và World Nomads được sử dụng phổ biến. Bảo hiểm phải có hiệu lực trong toàn bộ thời gian lưu trú.",
+    "source": "Ministry of Justice, Immigration Service"
+  },
+  "taxImplications": {
+    "threshold": "183 days",
+    "notes": "Theo luật thuế Hàn Quốc, cá nhân lưu trú tại Hàn Quốc từ 183 ngày trở lên trong một năm dương lịch có thể được phân loại là đối tượng cư trú thuế. Đối tượng cư trú thuế có thể phải chịu thuế thu nhập Hàn Quốc trên thu nhập toàn cầu. Thuế suất lũy tiến (6-45%). Hiệp định tránh đánh thuế hai lần có thể áp dụng tùy theo quốc tịch. Tham khảo ý kiến chuyên gia thuế được cấp phép (세무사) để được hướng dẫn cụ thể.",
+    "source": "National Tax Service (NTS)"
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Hộ chiếu còn hiệu lực",
+      "description": "Phải còn hiệu lực ít nhất 6 tháng kể từ ngày dự kiến lưu trú",
+      "required": true,
+      "nameKorean": "여권"
+    },
+    {
+      "id": "application-form",
+      "name": "Tờ khai xin cấp visa",
+      "description": "Tờ khai đã điền đầy đủ thông tin",
+      "required": true,
+      "nameKorean": "사증발급신청서"
+    },
+    {
+      "id": "photo",
+      "name": "Ảnh hộ chiếu",
+      "description": "3,5cm x 4,5cm, chụp gần đây, nền trắng",
+      "required": true,
+      "nameKorean": "여권사진"
+    },
+    {
+      "id": "employment-proof",
+      "name": "Chứng minh công việc từ xa",
+      "description": "Hợp đồng lao động hoặc thư xác nhận từ nhà tuyển dụng về việc sắp xếp làm việc từ xa",
+      "tips": [
+        "Thư cần ghi rõ bạn làm việc từ xa",
+        "Bao gồm chức danh và thời gian làm việc"
+      ],
+      "required": true,
+      "nameKorean": "재직증명서"
+    },
+    {
+      "id": "income-proof",
+      "name": "Giấy chứng nhận thu nhập",
+      "description": "Sao kê ngân hàng, khai thuế thu nhập hoặc phiếu lương cho thấy thu nhập hàng năm từ ~$66,000 trở lên",
+      "tips": [
+        "Cung cấp lịch sử thu nhập 6-12 tháng",
+        "Bao gồm hồ sơ thuế nếu có"
+      ],
+      "required": true,
+      "nameKorean": "소득증명서"
+    },
+    {
+      "id": "health-insurance",
+      "name": "Giấy chứng nhận bảo hiểm y tế",
+      "description": "Chứng nhận bảo hiểm y tế có hiệu lực tại Hàn Quốc",
+      "tips": [
+        "Phạm vi bảo hiểm phải bao gồm Hàn Quốc",
+        "SafetyWing, Cigna Global và các gói tương tự được chấp nhận"
+      ],
+      "required": true,
+      "nameKorean": "보험증서"
+    },
+    {
+      "id": "background-check",
+      "name": "Lý lịch tư pháp",
+      "description": "Giấy xác nhận không tiền án từ cơ quan cảnh sát nước sở tại",
+      "tips": [
+        "Phải là bản mới (trong vòng 6 tháng)",
+        "Có thể cần Apostille"
+      ],
+      "required": true,
+      "nameKorean": "범죄경력증명서"
+    },
+    {
+      "id": "accommodation",
+      "name": "Giấy xác nhận nơi ở",
+      "description": "Xác nhận đặt phòng khách sạn, hợp đồng thuê nhà hoặc đặt phòng Airbnb",
+      "tips": [
+        "Ít nhất 2 tuần đầu tiên về nơi ở"
+      ],
+      "required": false,
+      "nameKorean": "거주증명서"
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Kiểm tra điều kiện",
+      "description": "Xác nhận bạn đáp ứng yêu cầu thu nhập (~$66,000 trở lên) và có sắp xếp làm việc từ xa.",
+      "tips": [
+        "Tính toán thu nhập hàng năm cẩn thận",
+        "Chuẩn bị chứng minh thu nhập 6-12 tháng"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Chuẩn bị hồ sơ",
+      "description": "Thu thập tất cả hồ sơ cần thiết. Lấy thư xác nhận từ nhà tuyển dụng và chứng minh thu nhập.",
+      "duration": "1-2 tuần",
+      "tips": [
+        "Xin Apostille cho lý lịch tư pháp",
+        "Đảm bảo bảo hiểm y tế có phạm vi tại Hàn Quốc"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Nộp đơn tại Đại sứ quán Hàn Quốc",
+      "description": "Nộp hồ sơ tại đại sứ quán/lãnh sự quán Hàn Quốc tại nước bạn. Ngoài ra, nếu bạn đang ở Hàn Quốc với tư cách lưu trú hợp lệ (ví dụ: B-1, B-2, D-10), bạn có thể nộp đơn chuyển đổi tư cách lưu trú tại Cục Quản lý xuất nhập cảnh địa phương.",
+      "duration": "1 ngày",
+      "tips": [
+        "Đặt lịch hẹn trước",
+        "Một số đại sứ quán chấp nhận nộp qua đường bưu điện"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Chờ xử lý hồ sơ",
+      "description": "Đại sứ quán xem xét hồ sơ của bạn.",
+      "duration": "1-3 tuần"
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Nhận visa và nhập cảnh Hàn Quốc",
+      "description": "Nhận visa và nhập cảnh Hàn Quốc.",
+      "duration": "1-5 ngày"
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Đăng ký tại Cục Quản lý xuất nhập cảnh",
+      "description": "Trong vòng 90 ngày kể từ khi đến, đăng ký tại Cục Quản lý xuất nhập cảnh địa phương để nhận Thẻ cư trú (ARC).",
+      "duration": "1-2 tuần"
+    }
+  ],
+  "processingTime": {
+    "typical": "2-4 tuần",
+    "notes": "Thời gian xử lý khác nhau tùy theo đại sứ quán, quốc tịch và mùa. Theo hướng dẫn công bố, hãy nộp đơn ít nhất 4-6 tuần trước ngày dự kiến khởi hành. Một số đại sứ quán có thể cung cấp dịch vụ xử lý nhanh với phí bổ sung."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Chỉ dành cho nhà tuyển dụng/khách hàng nước ngoài",
+      "Không được làm việc cho công ty Hàn Quốc",
+      "Không được tuyển dụng bởi tổ chức Hàn Quốc"
+    ],
+    "notes": "Visa này dành riêng cho công việc từ xa. Làm việc cho khách hàng Hàn Quốc yêu cầu loại visa khác."
+  },
+  "faqs": [
+    {
+      "question": "Thế nào là 'làm việc từ xa' theo visa này?",
+      "answer": "Bạn phải được tuyển dụng hoặc ký hợp đồng với các công ty bên ngoài Hàn Quốc. Điều này bao gồm nhân viên làm việc từ xa, freelancer có khách hàng nước ngoài và doanh nhân có doanh nghiệp đăng ký ở nước ngoài."
+    },
+    {
+      "question": "Tôi có thể làm việc cho khách hàng Hàn Quốc với visa này không?",
+      "answer": "Không. Visa F-1-D dành riêng cho công việc với công ty nước ngoài. Làm việc cho khách hàng Hàn Quốc yêu cầu giấy phép lao động khác."
+    },
+    {
+      "question": "Nếu thu nhập của tôi biến động vì là freelancer thì sao?",
+      "answer": "Bạn cần chứng minh thu nhập trung bình hàng năm từ ~$66,000 trở lên (~₩88 triệu). Cung cấp sao kê ngân hàng và hóa đơn 6-12 tháng cho thấy thu nhập ổn định."
+    },
+    {
+      "question": "Tôi có thể đưa gia đình đi cùng không?",
+      "answer": "Có, vợ/chồng và con cái có thể nộp đơn xin Visa người phụ thuộc (F-3). Người sở hữu visa phụ thuộc không được làm việc nếu không có giấy phép riêng."
+    },
+    {
+      "question": "Loại bảo hiểm y tế nào được chấp nhận?",
+      "answer": "Các gói bảo hiểm y tế quốc tế có phạm vi tại Hàn Quốc được chấp nhận. Các lựa chọn phổ biến bao gồm SafetyWing, Cigna Global và Allianz. Hợp đồng bảo hiểm phải có hiệu lực trong suốt thời gian lưu trú."
+    },
+    {
+      "question": "Tôi có thể gia hạn quá 2 năm không?",
+      "answer": "Thời gian lưu trú tối đa trên visa F-1-D là 2 năm. Sau đó, bạn cần rời Hàn Quốc hoặc đủ điều kiện cho loại visa khác."
+    },
+    {
+      "question": "Hệ quả thuế khi ở Hàn Quốc với visa F-1-D là gì?",
+      "answer": "Theo luật thuế Hàn Quốc, cá nhân duy trì nơi cư trú tại Hàn Quốc hoặc lưu trú từ 183 ngày trở lên trong một năm thuế có thể được coi là đối tượng cư trú thuế. Đối tượng cư trú thuế có thể phải chịu thuế thu nhập Hàn Quốc trên thu nhập toàn cầu. Các điều khoản hiệp định thuế giữa Hàn Quốc và nước sở tại của bạn có thể được áp dụng. Tham khảo ý kiến chuyên gia thuế được cấp phép để được hướng dẫn cụ thể."
+    },
+    {
+      "question": "Tôi có thể chuyển từ F-1-D sang visa lao động (E-7) không?",
+      "answer": "Theo hướng dẫn xuất nhập cảnh công bố, việc chuyển đổi tư cách lưu trú từ F-1-D sang E-7 là khả thi nếu bạn nhận được lời mời làm việc từ một công ty Hàn Quốc đáp ứng yêu cầu bảo lãnh E-7. Bạn cần nộp đơn chuyển đổi tư cách lưu trú tại Cục Quản lý xuất nhập cảnh địa phương trước khi visa F-1-D hết hạn. Lưu ý rằng E-7 yêu cầu làm việc độc quyền cho nhà tuyển dụng Hàn Quốc bảo lãnh."
+    },
+    {
+      "question": "Tôi có thể khởi nghiệp tại Hàn Quốc với visa F-1-D không?",
+      "answer": "Visa F-1-D không cho phép hoạt động kinh doanh tại Hàn Quốc. Để khởi nghiệp, bạn thường cần chuyển sang Visa đầu tư doanh nghiệp (D-8), yêu cầu đầu tư tối thiểu khoảng ₩100,000,000 (~$75,000 USD) và đăng ký pháp nhân tại Hàn Quốc."
+    },
+    {
+      "question": "Có thể chuyển đổi tư cách lưu trú trong nước Hàn Quốc, hay phải xuất cảnh?",
+      "answer": "Theo thủ tục xuất nhập cảnh công bố, chuyển đổi tư cách lưu trú trong nước Hàn Quốc thường có thể thực hiện tại Cục Quản lý xuất nhập cảnh địa phương (출입국·외국인청). Tuy nhiên, một số trường hợp chuyển đổi có thể yêu cầu xuất cảnh và tái nhập cảnh. Kiểm tra yêu cầu hiện hành tại Cục Quản lý xuất nhập cảnh Hàn Quốc hoặc cổng thông tin HiKorea."
+    },
+    {
+      "question": "Yêu cầu thu nhập áp dụng cho freelancer như thế nào?",
+      "answer": "Freelancer phải chứng minh thu nhập trung bình hàng năm khoảng $66,000 USD (~₩88 triệu) từ khách hàng nước ngoài. Theo yêu cầu công bố, các bằng chứng được chấp nhận bao gồm: hóa đơn và hợp đồng 12 tháng qua, sao kê ngân hàng thể hiện các khoản nhận, và khai thuế thu nhập từ nước sở tại. Thu nhập phải từ công việc thực hiện cho các tổ chức bên ngoài Hàn Quốc."
+    },
+    {
+      "question": "Gia đình tôi có thể đi cùng tôi đến Hàn Quốc không?",
+      "answer": "Theo yêu cầu công bố, vợ/chồng và con cái của người sở hữu visa F-1-D có thể nộp đơn xin Visa người phụ thuộc (F-3). Người sở hữu visa F-3 không được làm việc tại Hàn Quốc nếu không có giấy phép lao động riêng. Hồ sơ xin visa phụ thuộc yêu cầu bằng chứng quan hệ gia đình (giấy đăng ký kết hôn, giấy khai sinh) và hồ sơ của người sở hữu visa chính."
+    },
+    {
+      "question": "Điều gì xảy ra khi visa F-1-D hết hạn sau 2 năm?",
+      "answer": "Visa F-1-D có thời hạn tối đa công bố là 2 năm (1 năm ban đầu + 1 năm gia hạn). Sau khi hết hạn, người sở hữu phải rời Hàn Quốc hoặc chuyển sang loại visa khác. Các lộ trình chuyển đổi công bố bao gồm: E-7 (nếu được tuyển dụng bởi công ty Hàn Quốc), D-8 (nếu đầu tư vào doanh nghiệp Hàn Quốc), hoặc Visa tìm việc D-10 (nếu có bằng cử nhân trở lên)."
+    }
+  ],
+  "tips": [
+    "Nộp đơn sớm — thời gian xử lý khác nhau tùy theo đại sứ quán",
+    "Lưu giữ hồ sơ thu nhập chi tiết — bạn sẽ cần khi gia hạn",
+    "Mua bảo hiểm y tế quốc tế trước khi nộp đơn",
+    "Lưu ý múi giờ — Hàn Quốc là GMT+9",
+    "Tham gia cộng đồng du mục kỹ thuật số tại Seoul để kết nối",
+    "Các khu vực phổ biến: Gangnam (kinh doanh), Itaewon (quốc tế), Hongdae (sáng tạo)"
+  ],
+  "warnings": [
+    "Yêu cầu thu nhập nghiêm ngặt — khoảng ₩88 triệu (~$66K) dựa trên GNI × 2",
+    "Làm việc cho công ty Hàn Quốc là vi phạm visa",
+    "Phải duy trì bảo hiểm y tế hợp lệ trong suốt thời gian lưu trú",
+    "Tối đa 2 năm lưu trú — hãy lên kế hoạch phù hợp"
+  ],
+  "communityTips": [
+    {
+      "id": "fbi-check",
+      "tip": "Kiểm tra lý lịch tư pháp FBI qua đường bưu điện có thể mất 12-18 tuần. Hãy bắt đầu việc này TRƯỚC mọi thứ khác.",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 47,
+      "dateAdded": "2025-11-15"
+    },
+    {
+      "id": "safetywing-accepted",
+      "tip": "Bảo hiểm SafetyWing Nomad Insurance đã được chấp nhận tại Cục Quản lý xuất nhập cảnh Seoul cho gia hạn visa F-1-D của tôi. Chi phí khoảng $45/tháng.",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 32,
+      "dateAdded": "2025-12-03"
+    },
+    {
+      "id": "income-proof-bank",
+      "tip": "Tôi đã sử dụng sao kê ngân hàng Wise (TransferWise) + hợp đồng lao động. Họ đã chấp nhận mà không có vấn đề gì tại văn phòng Sejongno.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 28,
+      "dateAdded": "2026-01-10"
+    },
+    {
+      "id": "arc-timeline",
+      "tip": "Tôi đã nhận được Thẻ cư trú ARC trong 10 ngày làm việc sau khi đăng ký tại Cục xuất nhập cảnh Mokdong. Họ cấp biên nhận ngay lập tức có thể dùng làm giấy tờ tạm thời.",
+      "source": "discord",
+      "verified": true,
+      "upvotes": 15,
+      "dateAdded": "2026-01-22"
+    },
+    {
+      "id": "apostille-tip",
+      "tip": "Nếu bạn là công dân Mỹ, hãy xin Apostille cho lý lịch tư pháp tại Bộ Ngoại giao Hoa Kỳ trước khi đến. Mất 4-6 tuần qua đường bưu điện.",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 38,
+      "dateAdded": "2025-10-20"
+    }
+  ],
+  "relatedVisas": [
+    "e-7",
+    "d-10",
+    "d-8"
+  ],
+  "pathsTo": [
+    {
+      "type": "e-7",
+      "name": "Visa hoạt động đặc biệt (E-7)",
+      "requirements": "Nhận được lời mời làm việc từ công ty Hàn Quốc. Phải đáp ứng yêu cầu E-7 (bằng cử nhân hoặc hơn 5 năm kinh nghiệm).",
+      "timeline": "Xử lý 2-4 tuần",
+      "documents": [
+        "Hợp đồng lao động",
+        "Giấy đăng ký kinh doanh của công ty",
+        "Bằng cấp (có Apostille)",
+        "Giấy chứng nhận kinh nghiệm"
+      ],
+      "notes": "Dành cho người du mục kỹ thuật số tìm được việc làm tại Hàn Quốc. Điều này có nghĩa là từ bỏ công việc từ xa cho công ty nước ngoài — một thay đổi lớn về lối sống. Nhà tuyển dụng Hàn Quốc phải bảo lãnh visa cho bạn."
+    },
+    {
+      "type": "d-8",
+      "name": "Visa đầu tư doanh nghiệp (D-8)",
+      "requirements": "Đăng ký kinh doanh tại Hàn Quốc với đầu tư tối thiểu ~₩100,000,000 (~$75,000 USD). Phải chứng minh hoạt động kinh doanh khả thi.",
+      "timeline": "Xử lý 4-8 tuần",
+      "documents": [
+        "Giấy đăng ký kinh doanh",
+        "Bằng chứng đầu tư (hồ sơ chuyển khoản ngân hàng)",
+        "Kế hoạch kinh doanh",
+        "Hợp đồng thuê văn phòng"
+      ],
+      "notes": "Dành cho người du mục kỹ thuật số muốn thành lập pháp nhân tại Hàn Quốc. Mức đầu tư tối thiểu khá lớn. Một số người chuyển đổi bằng cách đăng ký doanh nghiệp từ xa hiện tại tại Hàn Quốc."
+    },
+    {
+      "type": "d-10",
+      "name": "Visa tìm việc (D-10)",
+      "requirements": "Phải có bằng cử nhân trở lên. Nộp đơn trước khi visa F-1-D hết hạn (tối đa 2 năm).",
+      "timeline": "Xử lý 2-4 tuần",
+      "documents": [
+        "Bằng cấp",
+        "Kế hoạch tìm việc",
+        "Sao kê ngân hàng",
+        "Sơ yếu lý lịch"
+      ],
+      "notes": "Lựa chọn tạm thời nếu visa F-1-D sắp hết hạn và bạn muốn ở lại Hàn Quốc để tìm việc. Visa D-10 cho phép tìm việc trong tối đa 2 năm."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "d-10",
+      "name": "Visa tìm việc (D-10)",
+      "requirements": "Làm việc từ xa cho công ty nước ngoài và thu nhập hàng năm từ ~$66,000 USD trở lên (GNI x 2). Phải có bảo hiểm y tế có phạm vi tại Hàn Quốc.",
+      "timeline": "Xử lý 1-3 tuần",
+      "documents": [
+        "Chứng minh công việc từ xa",
+        "Giấy chứng nhận thu nhập (6-12 tháng)",
+        "Giấy chứng nhận bảo hiểm y tế",
+        "Lý lịch tư pháp"
+      ],
+      "notes": "Dành cho người sở hữu visa D-10 tìm được công việc từ xa với công ty nước ngoài. Yêu cầu thu nhập nghiêm ngặt (~₩88 triệu/năm). Đây là lựa chọn thay thế cho việc tìm việc tại Hàn Quốc."
+    }
+  ],
+  "lastUpdated": "2026-02-16",
+  "officialLinks": [
+    {
+      "label": "Cục Quản lý xuất nhập cảnh Hàn Quốc",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "Thông tin Visa du mục kỹ thuật số",
+      "url": "https://www.visa.go.kr"
+    },
+    {
+      "label": "Cổng thông tin HiKorea",
+      "url": "https://www.hikorea.go.kr"
+    }
+  ]
+}
