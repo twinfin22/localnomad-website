@@ -253,7 +253,7 @@ export function ActionZone({
                   <details className="mt-2">
                     <summary className="flex min-h-[44px] cursor-pointer items-center gap-1 text-sm text-primary hover:underline">
                       <ChevronDown className="chevron h-4 w-4 transition-transform duration-200 [details[open]>summary>&]:rotate-180" />
-                      Details
+                      {t('details')}
                     </summary>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {step.description}
@@ -320,6 +320,7 @@ function DocumentRow({
               type="checkbox"
               checked={isChecked}
               onChange={() => onToggle(doc.id)}
+              aria-label={doc.name}
               className="h-5 w-5 cursor-pointer accent-primary"
             />
           </label>

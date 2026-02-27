@@ -48,7 +48,13 @@
     "documentTips": "Tips",
     "whereToGet": "Where to get",
     "estimatedTime": "Estimated time",
-    "cost": "Cost"
+    "cost": "Cost",
+    "details": "Details",
+    "workAllowed": "Allowed (with restrictions)",
+    "workNotAllowed": "Not allowed",
+    "minimumCoverage": "Minimum Coverage",
+    "insuranceType": "Type",
+    "taxThreshold": "Threshold"
   },
   "Common": {
     "backToHome": "Back to home",
@@ -94,6 +100,10 @@
     "expiredDays": "Expired {days} days ago",
     "setExpiryDate": "Set your visa expiry date to see the countdown.",
     "viewGuide": "View full visa guide"
+  },
+  "Nav": {
+    "skipToContent": "Skip to content",
+    "mainNavigation": "Main navigation"
   },
   "Footer": {
     "tagline": "Visa clarity for nomads, by nomads.",

@@ -183,8 +183,8 @@ export async function GlanceableZone({ visa }: GlanceableZoneProps) {
                 )}
               >
                 {visa.workPermission.allowed
-                  ? 'Allowed (with restrictions)'
-                  : 'Not allowed'}
+                  ? t('workAllowed')
+                  : t('workNotAllowed')}
               </p>
               {visa.workPermission.restrictions &&
                 visa.workPermission.restrictions.length > 0 && (
@@ -223,12 +223,12 @@ export async function GlanceableZone({ visa }: GlanceableZoneProps) {
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>
                 <span className="font-medium text-foreground">
-                  Minimum Coverage:
+                  {t('minimumCoverage')}:
                 </span>{' '}
                 {koreaVisa.insuranceRequirement.minimumCoverage}
               </p>
               <p>
-                <span className="font-medium text-foreground">Type:</span>{' '}
+                <span className="font-medium text-foreground">{t('insuranceType')}:</span>{' '}
                 {koreaVisa.insuranceRequirement.type}
               </p>
               <p>{koreaVisa.insuranceRequirement.notes}</p>
@@ -252,7 +252,7 @@ export async function GlanceableZone({ visa }: GlanceableZoneProps) {
             </summary>
             <div className="mt-3 space-y-2 text-sm text-amber-900">
               <p>
-                <span className="font-medium">Threshold:</span>{' '}
+                <span className="font-medium">{t('taxThreshold')}:</span>{' '}
                 {
                   (visa as { taxImplications: { threshold: string } })
                     .taxImplications.threshold

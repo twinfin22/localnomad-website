@@ -1,17 +1,17 @@
 {
   "Landing": {
-    "headline": "Visa clarity, finally.",
-    "subtitle": "Everything you need to know about visas in one place — requirements, timelines, and real-world tips from people who've been through the process.",
-    "countryKorea": "South Korea",
-    "countryTaiwan": "Taiwan",
+    "headline": "Thông tin thị thực, cuối cùng cũng rõ ràng.",
+    "subtitle": "Tất cả những gì bạn cần biết về thị thực ở một nơi — yêu cầu, lịch trình và kinh nghiệm thực tế từ những người đã trải qua.",
+    "countryKorea": "Hàn Quốc",
+    "countryTaiwan": "Đài Loan",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "Explore visas"
+    "exploreVisas": "Tìm hiểu thị thực"
   },
   "Country": {
-    "title": "{country} Visa Guide",
-    "subtitle": "Comprehensive visa information for {country}",
-    "comingSoon": "Coming soon"
+    "title": "Hướng dẫn thị thực {country}",
+    "subtitle": "Thông tin thị thực đầy đủ cho {country}",
+    "comingSoon": "Sắp ra mắt"
   },
   "VisaDetail": {
     "title": "Thị thực {type}",
@@ -48,7 +48,13 @@
     "documentTips": "Lưu ý",
     "whereToGet": "Nơi lấy giấy tờ",
     "estimatedTime": "Thời gian ước tính",
-    "cost": "Chi phí"
+    "cost": "Chi phí",
+    "details": "Chi tiết",
+    "workAllowed": "Được phép (có hạn chế)",
+    "workNotAllowed": "Không được phép",
+    "minimumCoverage": "Mức bảo hiểm tối thiểu",
+    "insuranceType": "Loại",
+    "taxThreshold": "Ngưỡng"
   },
   "Auth": {
     "logIn": "Đăng nhập",
@@ -90,18 +96,22 @@
     "viewGuide": "Xem hướng dẫn thị thực đầy đủ"
   },
   "Common": {
-    "backToHome": "Back to home",
-    "backToCountry": "Back to {country}",
-    "learnMore": "Learn more",
-    "disclaimer": "Based on published requirements. Not legal advice."
+    "backToHome": "Quay lại trang chủ",
+    "backToCountry": "Quay lại {country}",
+    "learnMore": "Tìm hiểu thêm",
+    "disclaimer": "Dựa trên các yêu cầu đã công bố. Không phải tư vấn pháp lý."
+  },
+  "Nav": {
+    "skipToContent": "Chuyển đến nội dung",
+    "mainNavigation": "Điều hướng chính"
   },
   "Footer": {
-    "tagline": "Visa clarity for nomads, by nomads.",
-    "terms": "Terms of Service",
-    "privacy": "Privacy Policy",
-    "refund": "Refund Policy",
+    "tagline": "Thông tin thị thực bởi dân du mục, dành cho dân du mục.",
+    "terms": "Điều khoản sử dụng",
+    "privacy": "Chính sách bảo mật",
+    "refund": "Chính sách hoàn tiền",
     "copyright": "© {year} LocalNomad",
-    "legalDisclaimer": "LocalNomad provides general information about visa requirements for educational purposes only. This information does not constitute legal advice. Visa decisions are made solely by immigration authorities. For personalized legal advice, consult a licensed professional.",
+    "legalDisclaimer": "LocalNomad cung cấp thông tin chung về yêu cầu thị thực chỉ nhằm mục đích giáo dục. Thông tin này không cấu thành tư vấn pháp lý. Quyết định về thị thực do cơ quan xuất nhập cảnh đưa ra. Để được tư vấn pháp lý cá nhân, vui lòng liên hệ chuyên gia có giấy phép.",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
   }

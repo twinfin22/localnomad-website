@@ -1,17 +1,17 @@
 {
   "Landing": {
-    "headline": "Visa clarity, finally.",
-    "subtitle": "Everything you need to know about visas in one place — requirements, timelines, and real-world tips from people who've been through the process.",
-    "countryKorea": "South Korea",
-    "countryTaiwan": "Taiwan",
+    "headline": "ビザ情報、やっとクリアに。",
+    "subtitle": "ビザに関するすべての情報を一か所に — 要件、スケジュール、そして経験者からのリアルなヒント。",
+    "countryKorea": "韓国",
+    "countryTaiwan": "台湾",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "Explore visas"
+    "exploreVisas": "ビザを見る"
   },
   "Country": {
-    "title": "{country} Visa Guide",
-    "subtitle": "Comprehensive visa information for {country}",
-    "comingSoon": "Coming soon"
+    "title": "{country}ビザガイド",
+    "subtitle": "{country}の包括的なビザ情報",
+    "comingSoon": "近日公開"
   },
   "VisaDetail": {
     "title": "{type}ビザ",
@@ -48,7 +48,13 @@
     "documentTips": "ヒント",
     "whereToGet": "入手先",
     "estimatedTime": "目安の期間",
-    "cost": "費用"
+    "cost": "費用",
+    "details": "詳細",
+    "workAllowed": "許可（制限あり）",
+    "workNotAllowed": "不許可",
+    "minimumCoverage": "最低補償額",
+    "insuranceType": "種類",
+    "taxThreshold": "基準"
   },
   "Auth": {
     "logIn": "ログイン",
@@ -90,18 +96,22 @@
     "viewGuide": "ビザガイドを見る"
   },
   "Common": {
-    "backToHome": "Back to home",
-    "backToCountry": "Back to {country}",
-    "learnMore": "Learn more",
-    "disclaimer": "Based on published requirements. Not legal advice."
+    "backToHome": "ホームに戻る",
+    "backToCountry": "{country}に戻る",
+    "learnMore": "詳しく見る",
+    "disclaimer": "公開されている要件に基づきます。法的アドバイスではありません。"
+  },
+  "Nav": {
+    "skipToContent": "コンテンツへスキップ",
+    "mainNavigation": "メインナビゲーション"
   },
   "Footer": {
-    "tagline": "Visa clarity for nomads, by nomads.",
-    "terms": "Terms of Service",
-    "privacy": "Privacy Policy",
-    "refund": "Refund Policy",
+    "tagline": "ノマドによる、ノマドのためのビザ情報。",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "refund": "返金ポリシー",
     "copyright": "© {year} LocalNomad",
-    "legalDisclaimer": "LocalNomad provides general information about visa requirements for educational purposes only. This information does not constitute legal advice. Visa decisions are made solely by immigration authorities. For personalized legal advice, consult a licensed professional.",
+    "legalDisclaimer": "LocalNomadは教育目的でビザ要件に関する一般的な情報を提供しています。この情報は法的アドバイスを構成するものではありません。ビザに関する決定は入国管理当局のみが行います。個別の法的アドバイスについては、資格を持つ専門家にご相談ください。",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
   }

@@ -1,17 +1,17 @@
 {
   "Landing": {
-    "headline": "Visa clarity, finally.",
-    "subtitle": "Everything you need to know about visas in one place — requirements, timelines, and real-world tips from people who've been through the process.",
-    "countryKorea": "South Korea",
-    "countryTaiwan": "Taiwan",
+    "headline": "簽證資訊，終於清楚了。",
+    "subtitle": "所有簽證資訊一站匯整 — 申請條件、時程，以及過來人的實用建議。",
+    "countryKorea": "韓國",
+    "countryTaiwan": "台灣",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
-    "exploreVisas": "Explore visas"
+    "exploreVisas": "探索簽證"
   },
   "Country": {
-    "title": "{country} Visa Guide",
-    "subtitle": "Comprehensive visa information for {country}",
-    "comingSoon": "Coming soon"
+    "title": "{country}簽證指南",
+    "subtitle": "{country}完整簽證資訊",
+    "comingSoon": "即將推出"
   },
   "VisaDetail": {
     "title": "{type} 簽證",
@@ -48,7 +48,13 @@
     "documentTips": "文件提示",
     "whereToGet": "取得方式",
     "estimatedTime": "預估時間",
-    "cost": "金額"
+    "cost": "金額",
+    "details": "詳情",
+    "workAllowed": "允許（有限制）",
+    "workNotAllowed": "不允許",
+    "minimumCoverage": "最低保障額度",
+    "insuranceType": "類型",
+    "taxThreshold": "門檻"
   },
   "Auth": {
     "logIn": "登入",
@@ -90,18 +96,22 @@
     "viewGuide": "查看完整簽證指南"
   },
   "Common": {
-    "backToHome": "Back to home",
-    "backToCountry": "Back to {country}",
-    "learnMore": "Learn more",
-    "disclaimer": "Based on published requirements. Not legal advice."
+    "backToHome": "返回首頁",
+    "backToCountry": "返回 {country}",
+    "learnMore": "了解更多",
+    "disclaimer": "依據公開要求整理，不構成法律建議。"
+  },
+  "Nav": {
+    "skipToContent": "跳至主要內容",
+    "mainNavigation": "主要導覽"
   },
   "Footer": {
-    "tagline": "Visa clarity for nomads, by nomads.",
-    "terms": "Terms of Service",
-    "privacy": "Privacy Policy",
-    "refund": "Refund Policy",
+    "tagline": "由遊牧者打造，為遊牧者服務的簽證資訊。",
+    "terms": "服務條款",
+    "privacy": "隱私權政策",
+    "refund": "退款政策",
     "copyright": "© {year} LocalNomad",
-    "legalDisclaimer": "LocalNomad provides general information about visa requirements for educational purposes only. This information does not constitute legal advice. Visa decisions are made solely by immigration authorities. For personalized legal advice, consult a licensed professional.",
+    "legalDisclaimer": "LocalNomad 僅提供簽證要求的一般性資訊，僅供教育參考。本資訊不構成法律建議。簽證決定由移民主管機關做出。如需個人化法律建議，請諮詢合格專業人士。",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
   }
