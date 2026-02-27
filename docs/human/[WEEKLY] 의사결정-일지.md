@@ -172,4 +172,113 @@
 
 ---
 
-*마지막 업데이트: 2025-02-20*
+## 2025-02-20 (Phase 1-4)
+
+### ERD: 정규화 3테이블 (Option B)
+
+- **맥락**: 인증 + 대시보드 구현을 위한 DB 설계. profiles, user_visas, checklist 데이터를 어떻게 저장할지
+- **선택지**: (A) 최소 2테이블 — profiles + user_visas에 checklist를 JSONB로 포함 (B) 정규화 3테이블 — profiles + user_visas + checklist_items 분리 (C) JSONB 2테이블 — profiles + user_visas에 checklist를 JSON 배열로 저장
+- **결정**: B — 정규화 3테이블
+- **이유**: 체크 1개 토글 시 A/C는 JSONB 전체를 읽고-수정하고-덮어쓰는 반면, B는 해당 행 1개만 UPDATE. 유저 경험이 더 빠름. RLS도 테이블 단위로 적용되므로 보안 설계가 깔끔함.
+- **📘 배경지식**: 정규화 = 데이터를 작은 테이블로 분리하여 중복 방지. JSONB = 하나의 컬럼에 JSON 형태로 여러 데이터를 저장. 정규화가 읽기/쓰기 단위가 작아서 성능 유리, JSONB는 유연하지만 부분 업데이트가 비효율적.
+
+### 인터페이스: Server Action 래핑 (Option Y)
+
+- **맥락**: 프론트엔드에서 Supabase DB를 어떻게 호출할지
+- **선택지**: (X) 직접 호출 — 컴포넌트에서 Supabase 클라이언트 직접 사용 (Y) Server Action 래핑 — `lib/actions/`에 함수를 만들어 Supabase 호출을 감싸기
+- **결정**: Y — Server Action 래핑
+- **이유**: 비즈니스 로직(인증 확인, 에러 처리 등)이 한 곳에 모여서 유지보수 용이. 타입 안전성도 높아짐. 속도 차이는 없음 — 둘 다 서버에서 실행됨.
+- **📘 배경지식**: Server Action = Next.js가 제공하는 서버 함수. "use server" 선언 후 클라이언트에서 일반 함수처럼 호출하면 자동으로 서버에서 실행됨.
+
+### localStorage ↔ Supabase 마이그레이션: 없음
+
+- **맥락**: Phase 1-3에서 localStorage로 저장한 체크리스트를 로그인 후 Supabase로 옮길지
+- **선택지**: (A) 자동 마이그레이션 — 로그인 시 localStorage → Supabase 동기화 (B) 없음 — 로그인 후 새로 시작
+- **결정**: 없음 (B)
+- **이유**: 마이그레이션 로직이 복잡하고 (비자 종류 불일치, 중복 데이터 등) 에지 케이스가 많음. 체크리스트 항목이 5~10개 수준이라 다시 체크해도 30초면 됨.
+
+### 온보딩: 온보딩 플로우
+
+- **맥락**: 첫 로그인 후 비자 정보를 어떻게 수집할지
+- **선택지**: (A) 온보딩 위저드 — 국가 → 비자 → 만료일 단계별 입력 (B) 대시보드에서 직접 설정
+- **결정**: 온보딩 위저드 (A)
+- **이유**: 단계별 UI가 "다음에 뭘 해야 하지?" 부담을 줄여줌. 대시보드 직접 설정은 빈 화면에서 시작해야 해서 첫 경험이 나쁨.
+
+### preferred_locale 필드: 미리 추가
+
+- **맥락**: profiles 테이블에 사용자 선호 언어 필드를 언제 추가할지
+- **결정**: 테이블 생성 시 미리 추가
+- **이유**: 나중에 ALTER TABLE 하는 것보다 처음부터 포함하는 게 마이그레이션 부담 없음. 사용은 Phase 2에서.
+
+### user_visas UNIQUE 제거: 재신청 고려
+
+- **맥락**: 한 유저가 같은 비자를 여러 번 신청할 수 있는지
+- **결정**: (user_id, visa_type) UNIQUE 제약 없음. is_active 플래그로 현재 활성 비자만 관리.
+- **이유**: 비자 재신청, 만료 후 재취득 등 현실적 시나리오 대응. UNIQUE가 있으면 이전 기록을 삭제해야 하는 문제.
+
+---
+
+## 2026-02-27 (수리 작업 Phase A/B/C)
+
+### Backend Stack: Supabase 유지, Prisma 도입 보류
+
+- **맥락**: 백엔드 감사 결과 Prisma ORM / Prisma Postgres 도입 여부 검토
+- **결정**: Supabase Postgres + Supabase Auth 유지. Prisma 도입 안 함.
+- **이유**: RLS 기반 보안 모델이 Prisma와 호환 불가 (Prisma는 service-role key로 RLS 우회). 3개 테이블 규모에서 ORM 도입은 오버엔지니어링. Type-safety는 `supabase gen types`로 해결 가능.
+- **📘 배경지식**: RLS(Row Level Security) = DB 레벨에서 "이 행은 이 유저만 읽기/쓰기 가능" 규칙 강제. Prisma = Node.js용 ORM(Object-Relational Mapping) — DB를 코드로 조작하는 도구인데 RLS를 우회함.
+
+### RLS 성능 최적화: `(select auth.uid())` 래핑
+
+- **맥락**: 감사에서 RLS 정책 10개가 매 행마다 auth.uid()를 재평가하는 문제 발견
+- **결정**: 모든 RLS 정책에서 `auth.uid()` → `(select auth.uid())`로 변경
+- **이유**: Postgres 플래너가 한 번만 평가하게 만드는 최적화. 대규모 테이블에서 10-100배 성능 향상. 위험도 제로.
+
+### AuthNav: Server Component로 전환
+
+- **맥락**: UI/UX 감사에서 AuthNav가 60KB Supabase SDK를 모든 페이지에 전송하는 문제 발견
+- **결정**: AuthNav를 Client → Server Component로 전환. 로그아웃 버튼만 작은 Client Component(logout-button.tsx)로 분리.
+- **이유**: 60KB 번들 절감. 서버에서 인증 상태를 확인하고 HTML만 보내므로 로딩 깜빡임도 사라짐.
+
+### Breadcrumb 위치: `components/navigation/`
+
+- **맥락**: Breadcrumb 컴포넌트를 어디에 둘지. CLAUDE.md에서 components/ui/ 수정 금지 규칙
+- **선택지**: (1) components/ui/ (2) components/navigation/ (3) components/ 루트
+- **결정**: components/navigation/breadcrumb.tsx
+- **이유**: components/ui/는 shadcn 전용으로 유지. 기존 기능별 폴더 패턴(visa/, auth/, dashboard/)과 일관성. Phase 2에서 네비게이션 관련 컴포넌트 추가 가능성.
+
+### 다크모드: 보류
+
+- **맥락**: UI/UX 감사에서 다크모드 관련 3개 항목 발견
+- **결정**: 지금은 안 함
+- **이유**: Phase 2 콘텐츠 확장이 우선. 다크모드는 Post-MVP에서 재검토.
+
+### 에러 토스트 (sonner): 보류
+
+- **맥락**: 체크리스트 저장 실패 시 토스트 알림 도입 여부
+- **결정**: 보류. 현재 silent revert(실패 시 조용히 되돌림) 유지.
+- **이유**: Phase 2에서 기능이 더 많아지면 재검토.
+
+---
+
+---
+
+## 2026-02-27 (언어 지원 결정)
+
+### 국가별 언어 지원: 국가 타겟 분리
+
+- **맥락**: Phase 2 콘텐츠 확장 전에 지원 언어 범위를 확정. 기존에는 글로벌 로케일(en, ja, zh-tw, vi)이었으나, 국가별 타겟 유저가 다름
+- **선택지**: (A) 글로벌 로케일 유지 — 모든 언어를 모든 국가에 동일 적용 (B) 국가별 분리 — 한국/대만 각각 타겟 언어 지정
+- **결정**: B — 국가별 분리
+  - 🇰🇷 **한국 타겟**: 영어(en), 중국어 간체(zh-cn), 베트남어(vi), 일본어(ja)
+  - 🇹🇼 **대만 타겟**: 영어(en), 중국어 번체(zh-tw), 베트남어(vi)
+- **이유**: 한국 체류 외국인 주요 국적은 중국(간체)·베트남·일본. 대만 체류 외국인 주요 국적은 동남아·중국(번체 사용). 일본어는 대만에서 수요 낮음.
+- **구현 영향**:
+  - `zh-cn` 로케일 신규 추가 필요 (i18n/routing.ts, messages/zh-cn.json, data/visas/zh-cn/)
+  - `messages/` 전체: en, ja, zh-tw, zh-cn, vi (5개 파일)
+  - `data/visas/`: 한국 비자 → en, zh-cn, vi, ja / 대만 비자 → en, zh-tw, vi
+  - UI/라우팅 자체는 모든 로케일에서 작동 (국가별 제한은 콘텐츠 레벨에서 관리)
+- **📘 배경지식**: zh-cn = 중국어 간체(简体中文, Simplified Chinese) — 중국 대륙에서 사용. zh-tw = 중국어 번체(繁體中文, Traditional Chinese) — 대만·홍콩에서 사용. 같은 중국어지만 글자 모양이 다르고, 표현도 일부 다름.
+
+---
+
+*마지막 업데이트: 2026-02-27*

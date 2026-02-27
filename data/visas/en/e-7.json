@@ -1,0 +1,475 @@
+{
+  "type": "e-7",
+  "name": "Korea Professional Employment Visa (E-7) — Complete 2026 Guide",
+  "shortName": "E-7",
+  "category": "work",
+  "description": "Everything about Korea's E-7 Professional Employment Visa: employer sponsorship, salary requirements, sub-categories (E-7-1 through E-7-4), required documents, step-by-step application, and FAQ. Updated for 2026.",
+  "tagline": "Work in Korea with employer sponsorship",
+  "keyRequirement": "Employer sponsorship + bachelor's degree with 1 year experience (or master's, or 5+ years experience)",
+  "targetAudience": [
+    "Foreign professionals with employer sponsorship in Korea",
+    "IT developers, engineers, and technical specialists",
+    "Marketing, HR, and overseas sales professionals",
+    "Skilled workers in manufacturing and shipbuilding",
+    "Korean university graduates seeking local employment"
+  ],
+  "eligibility": [
+    {
+      "id": "employer-sponsorship",
+      "label": "Sponsorship from a Korean employer",
+      "description": "A Korean company must sponsor your visa. Self-application is not permitted. The employer must file on your behalf.",
+      "required": true
+    },
+    {
+      "id": "education-masters",
+      "label": "Master's degree or higher (no work experience needed)",
+      "description": "Published requirements indicate that holders of a master's degree or higher in a relevant field are not required to demonstrate work experience.",
+      "required": false
+    },
+    {
+      "id": "education-bachelors",
+      "label": "Bachelor's degree + 1 year of related work experience",
+      "description": "According to immigration guidelines, a bachelor's degree holder must demonstrate at least 1 year of work experience in the relevant field.",
+      "required": false
+    },
+    {
+      "id": "experience-only",
+      "label": "5+ years of career experience (no degree needed)",
+      "description": "Published requirements indicate that individuals with 5 or more years of professional experience in the relevant occupation may apply without a formal degree.",
+      "required": false
+    },
+    {
+      "id": "korean-university",
+      "label": "Korean university graduates — career requirement exemption",
+      "description": "Graduates of Korean universities are exempt from the career experience requirement regardless of major, according to published immigration guidelines.",
+      "required": false
+    },
+    {
+      "id": "top-university",
+      "label": "QS 500 or THE 200 university graduates — career requirement exemption",
+      "description": "Graduates of universities ranked in the QS World Top 500 or THE World Top 200 are exempt from the career experience requirement.",
+      "required": false
+    },
+    {
+      "id": "salary-requirement",
+      "label": "Meet minimum salary threshold for your E-7 sub-category",
+      "description": "As of February 2026: E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. These are pretax annual salary thresholds.",
+      "required": true
+    },
+    {
+      "id": "employer-size",
+      "label": "Employer must have 5+ Korean national employees",
+      "description": "The sponsoring company must employ at least 5 Korean nationals. Foreign workers are limited to 20% of the total workforce.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "Up to 3 years (typically 1 year)",
+    "extension": "Renewable, up to 5 years in special cases",
+    "maxTotal": "No fixed maximum — extensions possible as long as employment continues"
+  },
+  "fees": {
+    "application": "~USD 60-100 (varies by embassy and nationality)",
+    "extension": "₩60,000",
+    "notes": "CCVI (Certificate of Confirmation of Visa Issuance) processing fee applies separately. Fees vary by Korean embassy/consulate."
+  },
+  "incomeRequirement": {
+    "amount": "31,120,000",
+    "currency": "KRW",
+    "period": "annual",
+    "notes": "2026 minimum salary thresholds (effective Feb 1, 2026): E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. All amounts are pretax annual salary. The same wage standard applies to all companies regardless of size since April 2025."
+  },
+  "taxImplications": {
+    "threshold": "183 days",
+    "notes": "According to Korean tax law, individuals who stay in Korea for 183 days or more in a calendar year may be classified as tax residents. Tax residents are subject to Korean income tax on worldwide income at progressive rates (6-45%). E-7 holders are typically tax residents as they work full-time in Korea. Employers withhold income tax monthly. Double tax treaties may apply depending on nationality. Consult a licensed tax professional (세무사) for specific guidance.",
+    "source": "National Tax Service (NTS)"
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameKorean": "여권",
+      "description": "Must be valid for at least 6 months beyond intended stay",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Visa Application Form",
+      "nameKorean": "사증발급신청서",
+      "description": "Completed visa application form (Form No. 34)",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "nameKorean": "여권사진",
+      "description": "3.5cm x 4.5cm, recent, white background",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract",
+      "nameKorean": "고용계약서",
+      "description": "Signed employment contract with the Korean sponsoring company. Must specify job title, salary (meeting E-7 minimum thresholds), and employment period.",
+      "tips": [
+        "Salary must meet or exceed the 2026 minimum for your E-7 sub-category",
+        "Job title must match the approved occupational code",
+        "Include start date and contract duration"
+      ],
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Degree Certificate",
+      "nameKorean": "학위증명서",
+      "description": "Official degree certificate (bachelor's, master's, or doctorate). Must be apostilled or authenticated by the Korean embassy in the issuing country.",
+      "tips": [
+        "Apostille required for countries in the Hague Apostille Convention",
+        "Non-Hague countries require embassy authentication",
+        "If degree is not in English or Korean, include a notarized translation"
+      ],
+      "required": true
+    },
+    {
+      "id": "career-certificate",
+      "name": "Career Certificate / Work Experience Proof",
+      "nameKorean": "경력증명서",
+      "description": "Official career certificate from previous employer(s) proving relevant work experience. Required for bachelor's degree holders (1 year) or experience-only applicants (5 years).",
+      "tips": [
+        "Must be on company letterhead with official stamp or signature",
+        "Include job title, employment dates, and description of duties",
+        "Korean university graduates and QS 500/THE 200 graduates are exempt"
+      ],
+      "required": true
+    },
+    {
+      "id": "background-check",
+      "name": "Criminal Background Check",
+      "nameKorean": "범죄경력증명서",
+      "description": "Police clearance certificate from your home country. Must be recent (typically within 6 months) and apostilled.",
+      "tips": [
+        "FBI check for US citizens can take 12-18 weeks — start early",
+        "Must be apostilled or embassy-authenticated",
+        "Some nationalities may need checks from multiple countries"
+      ],
+      "required": true
+    },
+    {
+      "id": "business-registration",
+      "name": "Business Registration Certificate (Employer)",
+      "nameKorean": "사업자등록증",
+      "description": "The sponsoring company's official business registration certificate issued by the Korean tax authority.",
+      "required": true
+    },
+    {
+      "id": "foreigner-utilization-plan",
+      "name": "Foreigner Employment Justification / Invitation Letter (Employer)",
+      "nameKorean": "외국인고용사유서",
+      "description": "Detailed statement from the employer explaining why a foreign professional is needed instead of a Korean national. This document is critical for approval.",
+      "tips": [
+        "Must explain specific skills or qualifications the foreigner brings",
+        "Generic statements are commonly rejected — be detailed and specific",
+        "Include how the position relates to the company's business needs"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-recommendation",
+      "name": "Employment Recommendation Letter",
+      "nameKorean": "고용추천서",
+      "description": "Recommendation letter from the relevant government ministry or agency for the occupation. Required for certain E-7 occupational codes.",
+      "tips": [
+        "Required agency varies by occupation — check the specific job code",
+        "IT/software positions: may require recommendation from KITA or relevant ministry",
+        "Processing time for recommendation varies by agency"
+      ],
+      "required": true
+    },
+    {
+      "id": "statement-of-employment",
+      "name": "Statement of Employment (Employer)",
+      "nameKorean": "재직증명서",
+      "description": "Official statement from the sponsoring company confirming the employment offer, position, and terms.",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Secure a Job Offer from a Korean Company",
+      "description": "Find employment with a Korean company willing to sponsor your E-7 visa. The employer must meet the minimum size requirement (5+ Korean national employees) and be able to justify hiring a foreign professional.",
+      "tips": [
+        "Job portals: Saramin, JobKorea, LinkedIn Korea, Wanted",
+        "Tech positions in Pangyo/Bundang have high demand for foreign professionals",
+        "Confirm the job code matches an approved E-7 occupational code before signing"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Employer Applies for CCVI at Immigration",
+      "description": "Your Korean employer submits an application for a Certificate of Confirmation of Visa Issuance (CCVI, 사증발급인정서) at the local immigration office in Korea. This is the employer's responsibility.",
+      "duration": "2-4 weeks",
+      "tips": [
+        "The employer prepares and submits all company-side documents",
+        "Immigration reviews the employer's justification for hiring a foreigner",
+        "The CCVI number is issued to the employer upon approval"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Receive CCVI Number",
+      "description": "Once approved, your employer receives the CCVI confirmation number and forwards it to you. This number is required for the embassy visa application.",
+      "duration": "1-3 days"
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Apply for Visa at Korean Embassy/Consulate",
+      "description": "Submit your visa application at the Korean embassy or consulate in your country, using the CCVI number provided by your employer. Bring all applicant-side documents.",
+      "duration": "5-10 business days",
+      "tips": [
+        "Book an appointment in advance — some embassies have long wait times",
+        "Bring both originals and copies of all documents",
+        "Some embassies accept mail-in applications"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Receive Visa and Enter Korea",
+      "description": "Pick up your E-7 visa from the embassy and travel to Korea. Your visa allows entry for the period specified.",
+      "duration": "1-5 days"
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Register for Alien Registration Card (ARC)",
+      "description": "Within 90 days of arrival in Korea, visit your local immigration office to register and receive your Alien Registration Card (외국인등록증). The ARC serves as your official ID in Korea.",
+      "duration": "2-3 weeks for card issuance",
+      "tips": [
+        "Book an appointment on HiKorea (www.hikorea.go.kr) in advance",
+        "Bring your passport, employment contract, and a passport photo",
+        "You receive a receipt immediately that serves as a temporary ID"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "3-6 weeks total",
+    "notes": "CCVI review at immigration: 2-4 weeks. Embassy visa processing after CCVI: 5-10 business days. Total timeline from employer filing to visa in hand is typically 3-6 weeks. Processing times vary by nationality, embassy workload, and season. According to published guidelines, submit the CCVI application at least 6-8 weeks before your intended start date."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Must work exclusively for the sponsoring employer",
+      "Job duties must match the approved occupational code on your visa",
+      "Changing employers requires a new CCVI and visa modification",
+      "Side employment or freelancing is not permitted without separate authorization"
+    ],
+    "notes": "E-7 is tied to a specific employer and occupational code. If you change jobs, your new employer must file a new CCVI application and you must apply for a change of workplace at immigration. Working outside your approved job code may result in visa cancellation."
+  },
+  "faqs": [
+    {
+      "question": "What are the E-7 sub-categories (E-7-1, E-7-2, E-7-3, E-7-4)?",
+      "answer": "The E-7 visa has four sub-categories based on occupation type. E-7-1 (Professional) covers 67 occupations including IT developers, engineers, marketers, and HR professionals. E-7-2 (Semi-professional) covers 10 occupations such as medical coordinators and hotel receptionists. E-7-3 (Skilled Labor) covers 10 occupations in manufacturing and shipbuilding. E-7-4 (Point-based) covers 3 occupations for skilled workers who meet a points threshold. Your sub-category determines your minimum salary requirement and eligible occupational codes."
+    },
+    {
+      "question": "What are the 2026 salary requirements for each E-7 sub-category?",
+      "answer": "As of February 1, 2026, the minimum pretax annual salary requirements are: E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. Since April 2025, the same wage requirement applies to all companies regardless of size. If the salary in your employment contract falls below these thresholds, the visa application may be denied."
+    },
+    {
+      "question": "Why is occupational code matching important?",
+      "answer": "Each E-7 sub-category has a list of approved occupational codes (직종코드). Your actual job duties must match the code listed on your visa. Immigration officers verify this during applications and extensions. A mismatch between your actual work and the registered code can result in visa denial, cancellation, or penalties. Work with your employer's HR team to select the correct code before applying."
+    },
+    {
+      "question": "Do Korean university graduates have an advantage?",
+      "answer": "Yes. According to published immigration guidelines, graduates of Korean universities are exempt from the career experience requirement regardless of their major. This means a Korean university graduate with a bachelor's degree can apply for E-7 without demonstrating 1 year of work experience. This is often described as one of the most accessible paths to E-7 sponsorship."
+    },
+    {
+      "question": "What about the age exemption for 18-24 year olds (since April 2025)?",
+      "answer": "Since April 2025, individuals aged 18-24 with a long-term stay history in Korea may apply for E-7 without meeting the standard education or career requirements. This policy aims to support young foreign residents who have studied or lived in Korea long-term. Specific conditions and documentation requirements may vary — check with your local immigration office for current details."
+    },
+    {
+      "question": "Do graduates from top-ranked universities get special treatment?",
+      "answer": "Yes. Published immigration guidelines indicate that graduates of QS World Top 500 or THE (Times Higher Education) World Top 200 universities are exempt from the career experience requirement. This means they can apply with a bachelor's degree alone, similar to Korean university graduates."
+    },
+    {
+      "question": "How do I change employers while on an E-7 visa?",
+      "answer": "Changing employers on E-7 requires your new employer to file a new CCVI application at immigration and you must apply for a change of workplace (근무처변경). You cannot start working for the new employer until the change is approved. The process typically takes 2-4 weeks. If you leave your current employer before the change is approved, you may be in violation of your visa conditions."
+    },
+    {
+      "question": "How do I extend my E-7 visa?",
+      "answer": "Submit an extension application at your local immigration office at least 30 days before your visa expires. You need your current employment contract, proof of continued employment, tax payment records, and your ARC. Your employer must still meet the sponsorship requirements (5+ Korean employees, 20% foreigner limit). The 2026 salary thresholds apply to extensions as well — your salary must meet the current minimums."
+    },
+    {
+      "question": "Can I eventually get permanent residency (F-5) through E-7?",
+      "answer": "Yes. There are two common paths. First, you can transition from E-7 to F-2 (Points-based Resident Visa) after meeting the 80-point threshold (based on age, income, Korean language ability, tax payment, etc.), typically after 3+ years on E-7. From F-2, you can then apply for F-5 (Permanent Resident). Second, in certain cases, you may apply for F-5 directly after an extended period on E-7 if you meet the requirements set by the Ministry of Justice."
+    },
+    {
+      "question": "What are the employer size and foreigner ratio requirements?",
+      "answer": "The sponsoring company must employ at least 5 Korean nationals. Foreign employees are generally limited to 20% of the company's total workforce (Korean national employees). Small companies or startups that do not meet these thresholds may face difficulties sponsoring E-7 visas. Certain industries and special economic zones may have exceptions — check with immigration for current rules."
+    },
+    {
+      "question": "What happens if I am terminated or my company closes?",
+      "answer": "If your employment ends, you are generally required to report the change to immigration within 15 days. You may be granted a grace period (typically 30-90 days) to find a new employer willing to sponsor your visa. If you cannot find a new sponsor within the grace period, you may need to change your visa status (e.g., to D-10 job-seeking visa if eligible) or leave Korea. Overstaying without valid status incurs penalties of approximately ₩100,000 per day."
+    },
+    {
+      "question": "What is the typical timeline from job offer to starting work in Korea?",
+      "answer": "The overall timeline is typically 3-6 weeks but can vary. Step 1: Employer files CCVI at immigration (2-4 weeks review). Step 2: You apply for visa at Korean embassy with CCVI number (5-10 business days). Step 3: Enter Korea and begin work. Step 4: Register for ARC within 90 days. Plan for at least 6-8 weeks from when your employer starts the process to when you can begin working in Korea."
+    }
+  ],
+  "tips": [
+    "Start the CCVI process early — the immigration review alone takes 2-4 weeks",
+    "Verify your occupational code matches your actual job duties before applying",
+    "Keep all apostilled degree certificates and career certificates — you need them for extensions too",
+    "Join expat communities in Seoul (Facebook groups, Reddit r/korea) for employer reviews and job leads",
+    "Pangyo/Bundang (Korea's tech hub) and Songdo have the highest demand for foreign tech professionals",
+    "Learn basic Korean — even TOPIK Level 2 helps with daily life and scores points toward F-2 residency"
+  ],
+  "warnings": [
+    "Most competitive Korean work visa — the employer must justify hiring a foreigner over a Korean national",
+    "Overstay penalty: approximately ₩100,000 per day of overstay",
+    "Submit extension application at least 30 days before visa expiry to avoid potential fines",
+    "Job code mismatch between actual work and visa category can result in visa cancellation",
+    "Working for any employer other than your sponsor without authorization is a visa violation"
+  ],
+  "communityTips": [
+    {
+      "id": "job-code-critical",
+      "tip": "Choosing the wrong occupational code is one of the biggest reasons for E-7 rejections. Work with your employer's HR or an immigration specialist to match the exact code for your position.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "employment-reason-statement",
+      "tip": "Your company must explain why they need a foreigner instead of a Korean national. Generic reasons get rejected. Be specific about your unique skills and qualifications.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "korean-university-advantage",
+      "tip": "If you graduated from a Korean university, you're exempt from career requirements regardless of your major. This is often described as the easiest path to E-7.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "pangyo-startups",
+      "tip": "Korea's Silicon Valley area (Pangyo, Bundang) has many startups comfortable with English-speaking teams. AI, blockchain, and cybersecurity sectors have among the highest demand for foreign professionals.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "start-before-expiry",
+      "tip": "The CCVI review usually takes 1.5 to 2 months. Even if your visa expires during review, the expiration date is typically extended. But submit at least 30 days before expiry to avoid potential fines.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    }
+  ],
+  "relatedVisas": [
+    "d-10",
+    "f-2",
+    "d-2",
+    "f-1-d",
+    "h-1"
+  ],
+  "pathsTo": [
+    {
+      "type": "f-2",
+      "name": "Points-based Resident Visa",
+      "requirements": "Score 80+ points on the F-2 points system (based on age, income, Korean language ability, tax payment history, etc.). Typically requires 3+ years on E-7 with consistent employment and tax records.",
+      "timeline": "4-8 weeks processing",
+      "documents": [
+        "Points calculation worksheet",
+        "TOPIK score certificate",
+        "Income tax payment proof",
+        "Employment contract",
+        "ARC"
+      ],
+      "notes": "The most common long-term residency pathway from E-7. The F-2 visa removes the single-employer restriction, allowing you to work for any Korean company. From F-2, you can eventually apply for F-5 (Permanent Resident), which grants unrestricted work rights and long-term stability in Korea."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "d-10",
+      "name": "Job Seeking Visa",
+      "requirements": "Secure employment with a Korean company that meets E-7 sponsorship requirements. Must meet education or experience criteria for E-7.",
+      "timeline": "3-6 weeks (CCVI + embassy processing)",
+      "documents": [
+        "Employment contract",
+        "Degree certificate (apostilled)",
+        "Career certificate",
+        "Employer's business registration",
+        "Foreigner employment justification"
+      ],
+      "notes": "D-10 holders who find Korean employment can transition to E-7. The D-10 visa is specifically designed as a job-seeking bridge. Apply for change of status at the local immigration office before D-10 expires."
+    },
+    {
+      "type": "d-2",
+      "name": "Student Visa",
+      "requirements": "Graduate from a Korean university and secure employment. Korean university graduates are exempt from the career experience requirement.",
+      "timeline": "3-6 weeks (CCVI + status change processing)",
+      "documents": [
+        "Graduation certificate",
+        "Employment contract",
+        "Employer's business registration",
+        "Foreigner employment justification"
+      ],
+      "notes": "One of the most common E-7 pathways. Korean university graduates have a significant advantage — no career experience required. Apply for change of status before your D-2 or D-10 post-graduation visa expires."
+    },
+    {
+      "type": "f-1-d",
+      "name": "Digital Nomad Visa",
+      "requirements": "Secure employment with a Korean company that meets E-7 sponsorship requirements. Must meet education or experience criteria.",
+      "timeline": "3-6 weeks (CCVI + status change processing)",
+      "documents": [
+        "Employment contract",
+        "Degree certificate (apostilled)",
+        "Career certificate",
+        "Employer's business registration",
+        "Foreigner employment justification"
+      ],
+      "notes": "For digital nomads who decide to transition to local Korean employment. This means giving up remote work for foreign companies. Apply for change of status at immigration before F-1-D expires."
+    },
+    {
+      "type": "h-1",
+      "name": "Working Holiday Visa",
+      "requirements": "Find a Korean employer willing to sponsor E-7 during or after working holiday period. Must meet E-7 education or experience criteria.",
+      "timeline": "3-6 weeks (CCVI + status change processing)",
+      "documents": [
+        "Employment contract",
+        "Degree certificate (apostilled)",
+        "Career certificate",
+        "Employer's business registration",
+        "Foreigner employment justification"
+      ],
+      "notes": "Working holiday participants who find long-term employment in Korea can transition to E-7. The employer must file a CCVI before the H-1 visa expires. Plan ahead as the CCVI review takes several weeks."
+    }
+  ],
+  "lastUpdated": "2026-02-27",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "KOWORK E-7 Guide",
+      "url": "https://kowork.kr/en/visa/E-7"
+    },
+    {
+      "label": "HiKorea Portal",
+      "url": "https://www.hikorea.go.kr"
+    }
+  ]
+}

@@ -1,0 +1,547 @@
+{
+  "type": "gold-card",
+  "name": "Taiwan Employment Gold Card — Complete 2026 Guide",
+  "shortName": "Gold Card",
+  "category": "gold-card",
+  "description": "Everything about Taiwan's Employment Gold Card: 12 professional fields, 4-in-1 work + residence permit, 50% tax exemption, NHI access, and APRC fast-track. Updated for 2026.",
+  "tagline": "4-in-1 work, reside, and thrive in Taiwan",
+  "keyRequirement": "Qualifying expertise in one of 12 professional fields OR monthly salary ≥ NT$160,000",
+  "targetAudience": [
+    "Senior professionals in tech, finance, education, biotech, and other qualifying fields",
+    "Entrepreneurs and startup founders seeking open work permission",
+    "High-income professionals (monthly salary ≥ NT$160,000 / ~USD $5,000)",
+    "International talent seeking long-term Taiwan residency with tax benefits"
+  ],
+  "eligibility": [
+    {
+      "id": "professional-field",
+      "label": "Expertise in one of 12 designated professional fields",
+      "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Practitioners of Ancestor Rites",
+      "required": true
+    },
+    {
+      "id": "field-qualification",
+      "label": "Meet specific qualification criteria for chosen field",
+      "description": "E.g., salary ≥ NT$160,000/month, 8+ years experience, PhD from top-500 university, international awards, etc. Each field has distinct sub-tracks.",
+      "required": true
+    },
+    {
+      "id": "valid-passport",
+      "label": "Valid passport with at least 6 months remaining",
+      "description": "Color copy required for application upload",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "Clean criminal background",
+      "description": "NIA conducts background check during processing",
+      "required": true
+    },
+    {
+      "id": "no-ineligible-status",
+      "label": "Not currently holding ineligible visa status in Taiwan",
+      "description": "Cannot convert from blue-collar work visa, APEC Business Travel Card, Chinese language study visa, or Working Holiday visa. Must exit Taiwan and re-apply from overseas.",
+      "required": true
+    },
+    {
+      "id": "document-attestation",
+      "label": "ROC diplomatic post attestation for designated-country documents",
+      "description": "Documents from Afghanistan, Philippines, Vietnam, Indonesia, China, and other designated countries must have attestation from ROC representative office before upload.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "1, 2, or 3 years (applicant chooses at application)",
+    "extension": "Renewable before expiration (apply within 4 months)",
+    "maxTotal": "Renewable indefinitely; APRC eligible after 1-3 years"
+  },
+  "fees": {
+    "application": "NT$3,700 – NT$9,790 (varies by nationality, location, and duration)",
+    "extension": "NT$1,500 – NT$3,500 (ARC renewal)",
+    "notes": "US passport holders applying overseas pay higher fees (NT$7,790-9,790). Non-US and domestic applicants: NT$3,700-5,700. HK/Macau: flat NT$3,100. Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). Non-refundable."
+  },
+  "incomeRequirement": {
+    "amount": "160,000",
+    "currency": "NTD",
+    "period": "monthly",
+    "notes": "NT$160,000/month (~USD $5,000) is the salary-track threshold across most fields. Other qualification tracks (experience, PhD, awards) may not require income proof. Applicants may choose any 1 year within the past 3 years for tax return evidence."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Must be valid for 6+ months, color copy of photo page required for upload",
+      "tips": [
+        "Ensure name matches exactly as on application account"
+      ],
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "description": "2-inch passport photo, white background, taken within 6 months",
+      "required": true
+    },
+    {
+      "id": "field-qualification-docs",
+      "name": "Field-Specific Qualification Evidence",
+      "description": "Documents proving expertise in chosen professional field (employment certificates, publications, patents, awards, etc.)",
+      "tips": [
+        "Employment certificates must include: full name, company name, title, employment period, and official seal/signature",
+        "Offer letters are NEVER accepted — only employment certificates with seals"
+      ],
+      "required": true
+    },
+    {
+      "id": "tax-certificate",
+      "name": "Tax Documents / Income Proof",
+      "description": "Tax return or salary certificate proving income for salary-track applicants",
+      "tips": [
+        "W-2 (US), P60 (UK), T4 (Canada), PAYG (Australia), PIT-11 (Poland)",
+        "If tax docs unavailable, employer salary certificate may substitute",
+        "Choose any 1 year within past 3 years — pick your best year"
+      ],
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Academic Degree Certificates",
+      "description": "Relevant academic degrees (for experience/academic tracks)",
+      "tips": [
+        "PhD from world top-500 university qualifies for multiple fields"
+      ],
+      "required": false
+    },
+    {
+      "id": "employment-certificates",
+      "name": "Employment Certificates",
+      "description": "Formal employment certificates proving work history",
+      "tips": [
+        "Must include: full name, company name, position title, actual employment period, official seal or signature",
+        "Generic reference letters or offer letters are NOT accepted"
+      ],
+      "required": true
+    },
+    {
+      "id": "patents-publications",
+      "name": "Patents, Publications, and Awards",
+      "description": "Evidence of professional achievements for research/tech tracks",
+      "tips": [
+        "Include DOIs for publications",
+        "Patent certificates should show inventor name"
+      ],
+      "required": false
+    },
+    {
+      "id": "certified-translations",
+      "name": "Certified Translations",
+      "description": "Certified Chinese or English translations for documents in other languages",
+      "tips": [
+        "All non-Chinese, non-English documents require certified translation"
+      ],
+      "required": true
+    },
+    {
+      "id": "attestation-docs",
+      "name": "ROC Attestation Documents",
+      "description": "Documents from designated countries (Afghanistan, Philippines, Vietnam, Indonesia, China, etc.) must be authenticated by ROC diplomatic post",
+      "tips": [
+        "Contact your local TECO for attestation procedures",
+        "Processing may take additional time — plan ahead"
+      ],
+      "required": true
+    },
+    {
+      "id": "professional-certifications",
+      "name": "Professional Certifications",
+      "description": "Industry-recognized certifications (CFA, CFP, FRM, etc.) for relevant tracks",
+      "tips": [
+        "For finance field: CFA, CFP, FRM, CIIA, CIA, PRM, or Actuary certifications"
+      ],
+      "required": false
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Choose Industry Field",
+      "description": "Select 1 of 12 professional fields and 1 sub-track within it. Research which field best matches your qualifications and documentation.",
+      "tips": [
+        "Review all 12 fields before choosing — some have overlapping criteria",
+        "Science & Technology and Digital fields are most popular among tech workers"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Create Online Account",
+      "description": "Register at Foreign Professionals Online Application Platform. Your name must match passport exactly.",
+      "tips": [
+        "No Mainland Chinese email services allowed",
+        "Password must be changed every 3 months",
+        "Use exactly the name as it appears on your passport — letter-perfect"
+      ],
+      "links": [
+        {
+          "label": "Application Platform",
+          "url": "https://coa.immigration.gov.tw/coa-frontend/four-in-one/entry/golden-card"
+        }
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Prepare & Upload Documents",
+      "description": "Gather all field-specific documents, certified translations, and attestations. Upload via the online platform.",
+      "duration": "1-4 weeks",
+      "tips": [
+        "Employment certificates must have official seals — no offer letters",
+        "Non-Chinese/English docs need certified translation",
+        "Documents from designated countries need ROC attestation"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Multi-Agency Review",
+      "description": "3-stage review process: (1) Relevant ministry reviews professional qualification (1-2 weeks), (2) MOFA passport inspection for overseas applicants (1 week), (3) NIA final background check and card processing (1-2 weeks).",
+      "duration": "30-60 business days",
+      "tips": [
+        "Document supplement deadline: 3 days domestic, up to 6 months overseas",
+        "Failure to supplement = rejection without refund"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Pay Fees & Receive Approval",
+      "description": "Pay application fee via credit card (JCB/VISA/MasterCard only — no AMEX/UnionPay). Overseas applicants: print Resident Authorization Certificate in color from the portal.",
+      "tips": [
+        "Print the certificate in COLOR — black and white may not be accepted at the airport",
+        "Fee is non-refundable regardless of outcome"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Collect Physical Card",
+      "description": "Overseas applicants: enter Taiwan with the printed Resident Authorization Certificate, then visit an NIA service center within 30 days to collect the physical Gold Card. Domestic applicants: card is mailed or available for pickup at NIA.",
+      "duration": "1-30 days after entry",
+      "tips": [
+        "Overseas: you MUST visit NIA within 30 days of entry",
+        "Bring your certificate, passport, and a recent photo"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "30-60 business days",
+    "notes": "Assumes complete documentation. Document supplement: 3 days (domestic), up to 6 months (overseas). Failure to supplement within deadline = rejection without refund."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [],
+    "notes": "Open Work Permit included. No employer tie — free to freelance, work for multiple employers, change jobs, or start businesses. Covers all legal employment in Taiwan."
+  },
+  "goldCardFields": {
+    "categories": [
+      "Science & Technology",
+      "Digital",
+      "Finance",
+      "Education",
+      "Architecture",
+      "Culture and Arts",
+      "Sports",
+      "Biotechnology",
+      "Economy",
+      "National Defense",
+      "Law",
+      "Practitioners of Ancestor Rites"
+    ],
+    "openWorkPermit": true,
+    "taxBenefit": "50% income tax exemption on annual salary exceeding NT$3,000,000 for first 5 years (conditions apply: first-time employment in Taiwan, 183+ days/year residency, no Taiwan household registration in prior 5 years)"
+  },
+  "goldCardComparison": {
+    "disclaimer": "This comparison shows published requirements only. It is not a recommendation or eligibility assessment. 本比較表僅列出公開要件，非推薦或資格評估。",
+    "comparisonTable": [
+      { "criterion": "Work in Taiwan", "dnv": "Not allowed — overseas clients only", "goldCard": "Open work permit — any employer" },
+      { "criterion": "Duration", "dnv": "6 months, extendable to 2 years", "goldCard": "1-3 years, renewable" },
+      { "criterion": "Health Insurance", "dnv": "Private insurance required (no NHI)", "goldCard": "NHI access from Day 1" },
+      { "criterion": "Family", "dnv": "No dependents", "goldCard": "Spouse, children, parents/grandparents" },
+      { "criterion": "Tax Benefit", "dnv": "None", "goldCard": "50% exemption on income >NT$3M (5 years)" },
+      { "criterion": "Permanent Residency", "dnv": "No path", "goldCard": "APRC after 1-3 years" },
+      { "criterion": "Income Requirement", "dnv": "USD $20K-40K/year", "goldCard": "NT$160K/month (salary track)" },
+      { "criterion": "Processing Time", "dnv": "5-15 working days", "goldCard": "30-60 business days" }
+    ]
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "other",
+      "agencyFullName": "Relevant Ministry (e.g., MOST, MOE, MOEA)",
+      "action": "Qualification Review",
+      "description": "The ministry governing your chosen industry field reviews your professional qualifications and supporting documents.",
+      "processingDays": 14,
+      "tips": [
+        "Different ministries handle different fields — Science & Technology goes to MOST, Education to MOE, Economy to MOEA, etc."
+      ]
+    },
+    {
+      "order": 2,
+      "agency": "MOFA",
+      "agencyFullName": "Ministry of Foreign Affairs (Overseas Representative Office)",
+      "action": "Passport Inspection",
+      "description": "For overseas applicants only: the ROC representative office inspects your original passport.",
+      "processingDays": 7,
+      "tips": [
+        "Only required for overseas applicants. Domestic applicants skip this step."
+      ],
+      "dependsOn": 1
+    },
+    {
+      "order": 3,
+      "agency": "NIA",
+      "agencyFullName": "National Immigration Agency (內政部移民署)",
+      "action": "Final Review & Card Issuance",
+      "description": "NIA conducts background check, finalizes approval, and prints the physical Gold Card.",
+      "url": "https://www.immigration.gov.tw",
+      "processingDays": 14,
+      "tips": [
+        "Overseas applicants: enter Taiwan with printed Resident Authorization Certificate, collect card at NIA within 30 days"
+      ],
+      "dependsOn": 2
+    }
+  ],
+  "tecoRouting": {
+    "description": "Overseas applicants submit documents through their jurisdictional TECO (Taipei Economic and Cultural Office) or ROC representative office.",
+    "notes": "TECO handles passport inspection for overseas applicants. Documents from designated countries require TECO attestation before upload.",
+    "officialLink": {
+      "label": "TECO Office Locator",
+      "url": "https://www.mofa.gov.tw/en/OverseasOfficeLink.aspx"
+    },
+    "exampleRegions": [
+      { "region": "US East Coast", "office": "TECO Washington D.C. / New York / Boston / Atlanta" },
+      { "region": "US West Coast", "office": "TECO Los Angeles / San Francisco / Seattle" },
+      { "region": "Japan", "office": "Taipei Economic and Cultural Representative Office in Japan (Tokyo)" },
+      { "region": "Southeast Asia", "office": "Various — Manila, Hanoi, Bangkok, Singapore, Jakarta" },
+      { "region": "Europe", "office": "TECO London / Berlin / Paris / Amsterdam" }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What is the 4-in-1 mechanism of the Gold Card?",
+      "answer": "The Employment Gold Card combines four permits into a single physical card: (1) Open Work Permit — work for any employer without sponsorship, (2) Resident Visa — legal entry into Taiwan, (3) Alien Resident Certificate (ARC) — proof of legal residency, and (4) Re-entry Permit — leave and re-enter Taiwan freely. This eliminates the need for separate applications to multiple agencies."
+    },
+    {
+      "question": "Do I need an employer to sponsor my Gold Card application?",
+      "answer": "No. The Gold Card is entirely self-sponsored. You apply directly through the Foreign Professionals Online Application Platform. No employer, company, or institution needs to sponsor or submit paperwork on your behalf. This is one of the key differences from a standard Work ARC."
+    },
+    {
+      "question": "What are the 12 industry fields for Gold Card qualification?",
+      "answer": "The 12 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law, (12) Practitioners of Ancestor Rites. Each field has its own set of sub-tracks with specific qualification criteria."
+    },
+    {
+      "question": "How does the salary track work (NT$160,000/month)?",
+      "answer": "The salary track is available across most professional fields. Applicants must demonstrate a monthly salary of at least NT$160,000 (~USD $5,000) using tax returns or employer salary certificates. You may choose any 1 year within the past 3 years for evidence — pick the year with the highest documented income. Acceptable documents include W-2 (US), P60 (UK), T4 (Canada), PAYG (Australia), or PIT-11 (Poland)."
+    },
+    {
+      "question": "Can I switch professional fields after receiving the Gold Card?",
+      "answer": "The Gold Card is tied to the professional field approved during the application. You cannot change the field on an active Gold Card. However, when applying for renewal, you may specify a different professional field, provided you meet that field's qualification criteria with supporting documentation."
+    },
+    {
+      "question": "How does the 50% tax exemption work?",
+      "answer": "Gold Card holders who meet all of the following conditions receive a 50% income tax exemption on annual salary exceeding NT$3,000,000 for their first 5 years: (1) first-time employment in Taiwan (no prior Taiwan employment history), (2) physically present in Taiwan for 183+ days per calendar year, and (3) no Taiwan household registration in the prior 5 years. The exemption applies only to the portion of salary above NT$3M — income below that threshold is taxed at normal rates."
+    },
+    {
+      "question": "Can my family join me in Taiwan with the Gold Card?",
+      "answer": "Yes. Spouses and minor children may apply for Dependent ARC status, which provides legal residency in Taiwan. Parents and grandparents may apply for multiple-entry Visitor Visas valid for up to 1 year. As of 2026, spouses of Gold Card holders can also apply for open work permits, allowing them to work for any employer in Taiwan without separate sponsorship."
+    },
+    {
+      "question": "How long does the APRC fast-track take for Gold Card holders?",
+      "answer": "Gold Card holders are eligible for an Alien Permanent Resident Certificate (APRC) after 3 years of continuous residency, compared to 5 years for regular foreign residents. High-income earners (annual salary NT$6,000,000 or above) may apply after only 1 year. Holders of a PhD from a Taiwan institution receive an additional 2-year reduction. Holders of a Master's degree from a Taiwan institution receive a 1-year reduction."
+    },
+    {
+      "question": "What happens if my Gold Card application is rejected?",
+      "answer": "The application fee is non-refundable regardless of the outcome. You may re-apply after addressing the reasons for rejection. Common rejection reasons include: currently holding an ineligible visa status (Working Holiday, blue-collar work visa, APEC card, language study visa), insufficient or unverifiable documentation, missing official seals on employment certificates, and failure to provide supplementary documents within the required deadline."
+    },
+    {
+      "question": "Can I renew my Gold Card?",
+      "answer": "Yes. Apply for renewal within 4 months before the expiration date via the same online application platform. You must still meet the original eligibility criteria for your professional field at the time of renewal. Renewal processing typically takes 2-4 weeks and costs NT$1,500-3,500 depending on the duration chosen."
+    },
+    {
+      "question": "What documents are strictly required for employment certificates?",
+      "answer": "Employment certificates submitted for the Gold Card must include all of the following: (1) your full legal name, (2) company name, (3) your position title, (4) actual employment period (start and end dates), and (5) an official company seal or authorized signature. Offer letters, generic reference letters, and certificates without seals are NOT accepted and will result in a request for supplementary documents or rejection."
+    },
+    {
+      "question": "Can I convert from a Working Holiday or language study visa to a Gold Card?",
+      "answer": "No. Holders of Working Holiday visas, APEC Business Travel Cards, blue-collar work visas, and Chinese language study visas cannot convert to a Gold Card while in Taiwan. You must exit Taiwan and re-apply from overseas through the online platform. This restriction applies regardless of whether you meet the professional field qualification criteria."
+    }
+  ],
+  "tips": [
+    "Review all 12 professional fields carefully before choosing — some have overlapping criteria and different documentation requirements",
+    "Employment certificates must include full name, company name, position, employment period, and official seal — offer letters are never accepted",
+    "For the salary track, choose your best year within the past 3 years for tax documentation",
+    "Print the Resident Authorization Certificate in COLOR after approval — needed for Taiwan entry before physical card is ready",
+    "Join taiwangoldcard.com community for field-specific application advice and networking with 8,300+ active holders",
+    "Architecture field uses AND logic — all conditions must be met simultaneously, unlike other fields which use OR logic"
+  ],
+  "warnings": [
+    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。",
+    "Cannot convert from: blue-collar work visa, APEC Business Travel Card, Working Holiday visa, or Chinese language study visa — must exit Taiwan and re-apply from overseas",
+    "Architecture field uses AND logic — all conditions (licensed architect or 5+ years experience AND monthly salary ≥ NT$160,000) must be met simultaneously",
+    "Application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline results in automatic rejection.",
+    "Employment certificates must include: full name, company name, position title, employment period, and official seal or signature. Offer letters, generic reference letters, and unsigned certificates are NOT accepted."
+  ],
+  "communityTips": [
+    {
+      "id": "document-narrative",
+      "tip": "Create a 'story' with your documents — explain your expertise as if to someone unfamiliar with your field. A cover letter highlighting your uniqueness can help, even though it's not officially required.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "salary-track-tip",
+      "tip": "For the salary track, you can choose any 1 year within the past 3 years for your tax return evidence — pick your best year. W-2, P60, T4, PAYG, or PIT-11 accepted.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "resident-auth-cert",
+      "tip": "Don't wait for the physical card — download and print your Resident Authorization Certificate in color to enter Taiwan immediately after approval.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "banking-prep",
+      "tip": "Get a Taiwan phone number first (needed for OTP verification). Open a bank account near your registered address. Community CPAs are available for tax filing to maintain the 50% exemption benefit.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    },
+    {
+      "id": "gold-card-community",
+      "tip": "Join the taiwangoldcard.com community — Slack and LINE groups, monthly networking events, holders from 100+ countries. Great resource for field-specific application advice.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-02-27"
+    }
+  ],
+  "relatedVisas": [
+    "dnv",
+    "work-arc",
+    "aprc"
+  ],
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": null,
+    "maxTotalStay": "Renewable indefinitely; APRC eligible after 1-3 years",
+    "requirements": [
+      "Still meet original field qualification criteria",
+      "No criminal record during current Gold Card period",
+      "Apply within 4 months before expiration"
+    ],
+    "documents": [
+      "Current passport (6+ months validity)",
+      "Recent passport photo (within 6 months)",
+      "Current Gold Card",
+      "Updated qualification documents (if field/category changed)"
+    ],
+    "applyBeforeDays": 120,
+    "processingTime": "2-4 weeks",
+    "fees": "NT$1,500-3,500 depending on duration"
+  },
+  "pathsTo": [
+    {
+      "type": "aprc",
+      "name": "Alien Permanent Resident Certificate",
+      "requirements": "Gold Card holders: 3 years continuous residency (vs 5 years for normal foreigners). High earners (NT$6M+/year): only 1 year. Taiwan PhD: additional 2-year reduction. Taiwan Master's: 1-year reduction.",
+      "timeline": "1-3 years residency + 2-4 weeks processing",
+      "documents": [
+        "Current Gold Card",
+        "Tax records proving Taiwan residence",
+        "Police clearance certificate",
+        "Proof of financial means"
+      ],
+      "notes": "The most common long-term path for Gold Card holders. APRC provides permanent residency without renewal requirements."
+    },
+    {
+      "type": "seeking-employment",
+      "name": "Job-Seeking ARC",
+      "requirements": "Gold Card holders who are unable to find work may apply for a 6+6 month job-seeking ARC within 3 months before Gold Card expiry.",
+      "timeline": "Apply within 3 months of Gold Card expiry, 2-4 weeks processing",
+      "documents": [
+        "Current Gold Card",
+        "Passport",
+        "Job search plan"
+      ],
+      "notes": "A bridge option for Gold Card holders who cannot renew but want to remain in Taiwan to seek employment."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "dnv",
+      "name": "Digital Nomad Visa",
+      "requirements": "DNV holders who meet Gold Card qualification criteria in any of the 12 professional fields may apply while on active DNV status in Taiwan.",
+      "timeline": "30-60 business days processing",
+      "documents": [
+        "Current passport",
+        "DNV status proof",
+        "Field-specific qualification documents",
+        "Tax/income proof (for salary track)"
+      ],
+      "notes": "Common upgrade path for digital nomads who want Taiwan work permission, NHI access, and tax benefits. Can apply domestically while on DNV."
+    },
+    {
+      "type": "work-arc",
+      "name": "Work ARC (Employment-Sponsored)",
+      "requirements": "Existing Work ARC holders may apply for Gold Card upgrade if they meet qualification criteria. Previous ARC will be cancelled upon Gold Card issuance.",
+      "timeline": "30-60 business days processing",
+      "documents": [
+        "Current passport",
+        "Current ARC",
+        "Field-specific qualification documents",
+        "Employment certificates with seals"
+      ],
+      "notes": "For ARC holders seeking open work permission and tax benefits. Gold Card removes employer tie."
+    },
+    {
+      "type": "visitor",
+      "name": "Visa-Exempt Entry / Visitor Visa",
+      "requirements": "Applicants in Taiwan on visa-exempt entry or visitor visa may apply domestically. Most common entry path for first-time applicants.",
+      "timeline": "30-60 business days processing",
+      "documents": [
+        "Current passport",
+        "Field-specific qualification documents",
+        "Tax/income proof (for salary track)"
+      ],
+      "notes": "The most common pathway. Enter Taiwan visa-exempt, apply online while in-country. Ensure you select the correct application category for your current status."
+    }
+  ],
+  "lastUpdated": "2026-02-27",
+  "officialLinks": [
+    {
+      "label": "Gold Card Official Portal",
+      "url": "https://goldcard.nat.gov.tw/"
+    },
+    {
+      "label": "Application Platform",
+      "url": "https://coa.immigration.gov.tw/coa-frontend/four-in-one/entry/golden-card"
+    },
+    {
+      "label": "National Immigration Agency",
+      "url": "https://www.immigration.gov.tw"
+    },
+    {
+      "label": "Gold Card Community (unofficial)",
+      "url": "https://taiwangoldcard.com/"
+    }
+  ]
+}

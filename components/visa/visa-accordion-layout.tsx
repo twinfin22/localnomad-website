@@ -57,9 +57,7 @@ export function VisaAccordionLayout({
   serverChecklist,
 }: VisaAccordionLayoutProps) {
   const t = useTranslations('VisaDetail');
-  const [openSections, setOpenSections] = useState<string[]>([
-    SECTION_IDS.KEY_REQUIREMENTS,
-  ]);
+  const [openSections, setOpenSections] = useState<string[]>([]);
   const [activeSection, setActiveSection] = useState<string>(
     SECTION_IDS.KEY_REQUIREMENTS
   );
@@ -180,7 +178,7 @@ export function VisaAccordionLayout({
           id={SECTION_IDS.KEY_REQUIREMENTS}
           className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
         >
-          <AccordionTrigger className="text-base font-semibold">
+          <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
               <Check className="h-5 w-5 text-primary" />
               {t('keyRequirements')}
@@ -197,7 +195,7 @@ export function VisaAccordionLayout({
           id={SECTION_IDS.TIMELINE_FEES}
           className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
         >
-          <AccordionTrigger className="text-base font-semibold">
+          <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-primary" />
               {t('timelineFees')}
@@ -214,7 +212,7 @@ export function VisaAccordionLayout({
           id={SECTION_IDS.DOCUMENTS}
           className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
         >
-          <AccordionTrigger className="text-base font-semibold">
+          <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-primary" />
               {t('documents')}
@@ -238,7 +236,7 @@ export function VisaAccordionLayout({
           id={SECTION_IDS.APPLICATION_STEPS}
           className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
         >
-          <AccordionTrigger className="text-base font-semibold">
+          <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
               <ListChecks className="h-5 w-5 text-primary" />
               {t('applicationSteps')}
@@ -256,7 +254,7 @@ export function VisaAccordionLayout({
             id={SECTION_IDS.FAQ}
             className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
           >
-            <AccordionTrigger className="text-base font-semibold">
+            <AccordionTrigger className="py-5 text-lg font-semibold">
               <span className="flex items-center gap-2">
                 <MessageCircle className="h-5 w-5 text-primary" />
                 {t('faq')}
@@ -275,7 +273,7 @@ export function VisaAccordionLayout({
             id={SECTION_IDS.TIPS_COMMUNITY}
             className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
           >
-            <AccordionTrigger className="text-base font-semibold">
+            <AccordionTrigger className="py-5 text-lg font-semibold">
               <span className="flex items-center gap-2">
                 <Lightbulb className="h-5 w-5 text-primary" />
                 {t('tipsCommunity')}
@@ -296,7 +294,7 @@ export function VisaAccordionLayout({
           id={SECTION_IDS.SOURCES_RELATED}
           className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
         >
-          <AccordionTrigger className="text-base font-semibold">
+          <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
               <ExternalLink className="h-5 w-5 text-primary" />
               {t('sourcesRelated')}

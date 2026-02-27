@@ -1,0 +1,121 @@
+한국 및 대만 비자 대시보드 다국어(i18n) 공식 용어집
+
+================================================================================
+1. 대한민국 비자 대시보드 (South Korea Visa Dashboard)
+================================================================================
+지원 언어: 영어, 중국어(간체), 베트남어, 일본어
+
+--- 일반 비자 용어 (General Visa Terms) ---
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)	日本語 (Japanese)
+
+Visa Navigator 	비자 내비게이터	签证导航	Trình điều hướng Visa	ビザナビゲーター
+e-Form (Visa Application) 	전자비자발급신청서	电子签证申请表 	Tờ khai xin cấp visa 	電子査証発給申請書
+Visa Grant Notice 	비자발급확인서	签证发放确认书	Giấy xác nhận cấp visa 	査証発給許可書
+Check Application Status	진행상황 조회 / 결과 조회	申请进度查询	Tra cứu kết quả Visa	審査状況照会
+Status of Stay 	체류자격	滞留资格 	Tư cách lưu trú / Loại visa	在留資格
+Period of Stay 	체류기간	滞留期间 	Thời gian lưu trú 	滞在期間
+Extension of Stay 	체류기간 연장	滞留期间延长 	Gia hạn thời gian lưu trú	滞在期間延長
+Change of Status of Stay 	체류자격 변경	滞留资格变更 	Chuyển đổi tư cách lưu trú 	在留資格変更
+Residence Card 	외국인등록증	外国人登陆证 	Thẻ cư trú 	在留カード
+Alien Registration 	외국인 등록	外国人登录 	Đăng ký ngoại kiều	外国人登録
+Part-time Employment 	시간제 취업	时间制就业 (打工) 	Làm thêm	パートタイム就業 (時間制就業)
+Certificate of Admission 	표준입학허가서	标准入学许可书	Giấy báo nhập học	標準入学許可書
+Proof of Financial Support 	재정입증서류	财务证明	Hồ sơ chứng minh năng lực tài chính 	財政立証書類
+Immigration Office	출입국·외국인청	出入境·外国人厅	Cục Quản lý xuất nhập cảnh	出入国・外国人庁
+Overstay	불법체류 / 초과체류	非法滞留 / 超期滞留	Quá hạn lưu trú	不法滞在 / 超過滞在
+Re-entry Permit	재입국허가	再入国许可	Giấy phép tái nhập cảnh	再入国許可
+Apostille	아포스티유	海牙认证	Apostille / Hợp pháp hóa	アポスティーユ
+Criminal Background Check	범죄경력증명서	无犯罪记录证明	Lý lịch tư pháp	犯罪経歴証明書
+Health Insurance	건강보험	健康保险	Bảo hiểm y tế	健康保険
+National Health Insurance (NHI)	국민건강보험	国民健康保险	Bảo hiểm y tế quốc gia	国民健康保険
+Employment Contract	근로계약서	劳动合同	Hợp đồng lao động	雇用契約書
+Income Certificate	소득증명서	收入证明	Giấy chứng nhận thu nhập	所得証明書
+Tax Return	종합소득세 신고	个人所得税申报	Khai thuế thu nhập	確定申告
+Passport Photo	여권사진	护照照片	Ảnh hộ chiếu	パスポート写真
+Proof of Accommodation	거주증명서	住宿证明	Giấy xác nhận nơi ở	住居証明書
+
+--- 비자 유형 (Visa Type Names) ---
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)	日本語 (Japanese)
+
+Digital Nomad Visa (F-1-D)	워케이션 비자 (F-1-D)	数字游民签证 (F-1-D)	Visa du mục kỹ thuật số (F-1-D)	デジタルノマドビザ (F-1-D)
+Professional Employment Visa (E-7)	특정활동 비자 (E-7)	特定活动签证 (E-7)	Visa hoạt động đặc biệt (E-7)	特定活動ビザ (E-7)
+Corporate Investment Visa (D-8)	기업투자 비자 (D-8)	企业投资签证 (D-8)	Visa đầu tư doanh nghiệp (D-8)	企業投資ビザ (D-8)
+Points-Based Resident Visa (F-2-7)	점수제 거주 비자 (F-2-7)	积分制居留签证 (F-2-7)	Visa cư trú theo điểm (F-2-7)	ポイント制居住ビザ (F-2-7)
+Working Holiday Visa (H-1)	워킹홀리데이 비자 (H-1)	打工度假签证 (H-1)	Visa kỳ nghỉ làm việc (H-1)	ワーキングホリデービザ (H-1)
+Job Seeking Visa (D-10)	구직 비자 (D-10)	求职签证 (D-10)	Visa tìm việc (D-10)	求職ビザ (D-10)
+Permanent Residency (F-5)	영주 비자 (F-5)	永久居留签证 (F-5)	Visa thường trú (F-5)	永住ビザ (F-5)
+Dependent Visa (F-3)	동반 비자 (F-3)	随行签证 (F-3)	Visa người phụ thuộc (F-3)	同伴ビザ (F-3)
+
+--- E-7 전용 용어 (E-7 Specific Terms) ---
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)	日本語 (Japanese)
+
+Employer Sponsorship	고용주 스폰서십	雇主担保	Bảo lãnh của nhà tuyển dụng	雇用主スポンサーシップ
+Certificate of Confirmation of Visa Issuance (CCVI)	사증발급인정서	签证发放认定书	Giấy chứng nhận chấp thuận cấp visa	査証発給認定書
+Foreigner Utilization Plan	외국인 고용 활용 계획서	外国人雇佣利用计划书	Kế hoạch sử dụng lao động nước ngoài	外国人雇用活用計画書
+Employment Recommendation Letter	고용추천서	雇佣推荐书	Thư giới thiệu việc làm	雇用推薦書
+Business Registration Certificate	사업자등록증	营业执照	Giấy đăng ký kinh doanh	事業者登録証
+Salary Requirement	급여 기준	工资标准	Yêu cầu lương tối thiểu	給与基準
+Occupational Code	직업코드	职业代码	Mã nghề nghiệp	職業コード
+
+--- D-8 전용 용어 (D-8 Specific Terms) ---
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)	日本語 (Japanese)
+
+Foreign Direct Investment (FDI)	외국인직접투자	外国直接投资	Đầu tư trực tiếp nước ngoài	外国直接投資
+Foreign Currency Purchase Certificate	외국환매입증명서	外汇购入证明书	Giấy chứng nhận mua ngoại hối	外国為替買入証明書
+Articles of Incorporation	법인 정관	公司章程	Điều lệ công ty	定款
+Securities Subscription Deposit Certificate	주금납입증명서	股款缴纳证明书	Giấy chứng nhận nộp tiền cổ phần	株金払込証明書
+Investment Registration	투자 신고	投资申报	Đăng ký đầu tư	投資届出
+Startup Visa (D-8-4S)	창업 비자 (D-8-4S)	创业签证 (D-8-4S)	Visa khởi nghiệp (D-8-4S)	スタートアップビザ (D-8-4S)
+
+--- F-2 전용 용어 (F-2 Specific Terms) ---
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)	日本語 (Japanese)
+
+Points System	점수제	积分制	Hệ thống tính điểm	ポイント制度
+TOPIK (Test of Proficiency in Korean)	한국어능력시험 (TOPIK)	韩国语能力考试 (TOPIK)	Kỳ thi năng lực tiếng Hàn (TOPIK)	韓国語能力試験 (TOPIK)
+KIIP (Korea Immigration & Integration Program)	사회통합프로그램 (KIIP)	社会融合项目 (KIIP)	Chương trình hội nhập xã hội (KIIP)	社会統合プログラム (KIIP)
+Annual Income	연간 소득	年收入	Thu nhập hàng năm	年間所得
+Bonus Points	가산점	加分项	Điểm thưởng	加算点
+Volunteering Hours	봉사활동 시간	志愿服务时间	Giờ tình nguyện	ボランティア時間
+Tuberculosis Screening	결핵검사	结核病检查	Xét nghiệm lao phổi	結核検査
+
+--- H-1 전용 용어 (H-1 Specific Terms) ---
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)	日本語 (Japanese)
+
+Working Holiday Agreement	워킹홀리데이 협정	打工度假协定	Hiệp định kỳ nghỉ làm việc	ワーキングホリデー協定
+National Quota	국가별 쿼터	国家配额	Hạn ngạch quốc gia	国別クォータ
+Work Hour Limit (25hrs/week)	근로시간 제한 (주 25시간)	工作时间限制 (每周25小时)	Giới hạn giờ làm (25 giờ/tuần)	労働時間制限 (週25時間)
+Return Flight Ticket	왕복 항공권	往返机票	Vé máy bay khứ hồi	往復航空券
+Proof of Funds	잔고증명서	资金证明	Chứng minh tài chính	残高証明書
+
+================================================================================
+2. 대만 비자 대시보드 (Taiwan Visa Dashboard)
+================================================================================
+지원 언어: 영어, 중국어(번체), 베트남어
+
+--- 일반 비자 용어 (General Visa Terms) ---
+
+English (기준 명칭)	繁體中文 (Traditional Chinese)	Tiếng Việt (Vietnamese)
+
+Visitor Visa	停留簽證 	Visa ngắn hạn / Visa du lịch
+Resident Visa	居留簽證 	Visa cư trú
+eVisa 	電子簽證 	Visa điện tử
+Taiwan Arrival Card 	入國登記表 	Thẻ nhập cảnh Đài Loan
+Alien Resident Certificate (ARC) 	外僑居留證 	Thẻ cư trú
+Uniform Identification Number (UI No.) 	統一證號 	Số thẻ cư trú / Số ID định danh
+Work Permit 	工作許可 	Giấy phép làm việc
+Employment Gold Card 	就業金卡 	Thẻ vàng việc làm
+Check Application Status 	案件進度查詢 	Tra cứu tình trạng hồ sơ
+Rectification 	補正 	Bổ sung hồ sơ
+Document Authentication 	文件證明 	Xác thực tài liệu
+Duration of Stay 	停留期限	Thời gian lưu trú
+Immigration Office	移民署 (NIA)	Cục Di trú
+Overseas Community Affairs Council (OCAC)	僑務委員會	Hội đồng Kiều vụ
+TECO (Taipei Economic and Cultural Office)	駐外辦事處	Văn phòng Kinh tế và Văn hóa Đài Bắc
+Digital Nomad Visa (Taiwan)	數位遊牧簽證	Visa du mục kỹ thuật số
+Permanent Resident Certificate (APRC)	永久居留證	Thẻ thường trú

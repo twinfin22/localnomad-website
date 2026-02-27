@@ -9,8 +9,8 @@ const COUNTRY_CODE_MAP: Record<Country, CountryCode> = {
 };
 
 const AVAILABLE_VISAS: Record<Country, string[]> = {
-  korea: ['f-1-d'],
-  taiwan: [],
+  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1'],
+  taiwan: ['gold-card', 'dnv'],
 };
 
 async function loadVisaJson(

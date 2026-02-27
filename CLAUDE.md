@@ -17,7 +17,7 @@ npm run lint     # ESLint
 Deploy: `git push origin main` → Vercel auto-deploys.
 
 ## Tech Stack
-Next.js 16 (App Router) + React 19 + TypeScript 5 + Tailwind CSS 4 + shadcn/ui (New York) + Supabase (auth) + next-intl (i18n: en, ja, zh-tw) + Mapbox GL
+Next.js 16 (App Router) + React 19 + TypeScript 5 + Tailwind CSS 4 + shadcn/ui (New York) + Supabase (auth) + next-intl (i18n: en, ja, zh-cn, zh-tw, vi — Korea: en, zh-cn, vi, ja / Taiwan: en, zh-tw, vi) + Mapbox GL
 
 ## Project Structure
 ```
