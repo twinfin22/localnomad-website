@@ -36,10 +36,11 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
 
+  const t = await getTranslations({ locale, namespace: 'Meta' });
+
   return {
-    title: 'LocalNomad — Visa clarity, finally.',
-    description:
-      'Requirements, documents, and community tips. All in one place.',
+    title: t('landingTitle'),
+    description: t('landingDescription'),
     openGraph: {
       siteName: 'LocalNomad',
       type: 'website',

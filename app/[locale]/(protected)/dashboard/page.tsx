@@ -7,7 +7,12 @@ import { Link } from '@/i18n/navigation';
 import { getActiveVisa, getChecklist } from '@/lib/actions/dashboard';
 import { getVisaData } from '@/lib/visa-data';
 import { DashboardHeader, DDayCountdown, ChecklistCard } from '@/components/dashboard';
+import type { Metadata } from 'next';
 import type { Country } from '@/lib/types/visa';
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 const COUNTRY_CODE_TO_SLUG: Record<string, Country> = {
   kr: 'korea',

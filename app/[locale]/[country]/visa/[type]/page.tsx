@@ -190,6 +190,7 @@ export default async function VisaDetailPage({ params }: Props) {
         '@type': 'ListItem',
         position: 3,
         name: filteredVisa.shortName,
+        item: `https://localnomad.club/${locale}/${country}/visa/${type}`,
       },
     ],
   };

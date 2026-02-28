@@ -12,6 +12,8 @@ const COUNTRY_VISAS: Record<string, string[]> = {
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
 
+const LAST_MODIFIED = new Date('2026-02-28');
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
@@ -19,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Landing page
     entries.push({
       url: `${BASE_URL}/${locale}`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 1,
     });
@@ -28,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const country of COUNTRIES) {
       entries.push({
         url: `${BASE_URL}/${locale}/${country}`,
-        lastModified: new Date(),
+        lastModified: LAST_MODIFIED,
         changeFrequency: 'weekly',
         priority: 0.9,
       });
@@ -38,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       for (const type of visaTypes) {
         entries.push({
           url: `${BASE_URL}/${locale}/${country}/visa/${type}`,
-          lastModified: new Date(),
+          lastModified: LAST_MODIFIED,
           changeFrequency: 'weekly',
           priority: 0.8,
         });
@@ -47,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // Compare page
       entries.push({
         url: `${BASE_URL}/${locale}/${country}/compare`,
-        lastModified: new Date(),
+        lastModified: LAST_MODIFIED,
         changeFrequency: 'monthly',
         priority: 0.6,
       });
@@ -57,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const page of LEGAL_PAGES) {
       entries.push({
         url: `${BASE_URL}/${locale}/${page}`,
-        lastModified: new Date(),
+        lastModified: LAST_MODIFIED,
         changeFrequency: 'yearly',
         priority: 0.3,
       });

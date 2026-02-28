@@ -5,6 +5,11 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getActiveVisa } from '@/lib/actions/dashboard';
 import { OnboardingForm } from '@/components/dashboard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 interface Props {
   params: Promise<{ locale: string }>;
