@@ -54,7 +54,8 @@
     "restricted": "制限あり",
     "notAllowed": "不許可",
     "emptySlot": "比較するビザを選択してください",
-    "disclaimer": "この比較は公開されている要件のみを表示しています。推薦、ランキング、または資格の評価ではありません。法的アドバイスではありません。"
+    "disclaimer": "この比較は公開されている要件のみを表示しています。推薦、ランキング、または資格の評価ではありません。法的アドバイスではありません。",
+    "metaDescription": "{country}のビザ要件を並べて比較 — 滞在期間、費用、必要書類、資格条件。各ビザタイプの違いを確認して、最適なビザを見つけましょう。"
   },
   "VisaDetail": {
     "title": "{type}ビザ",
@@ -178,5 +179,18 @@
     "legalDisclaimer": "LocalNomadは教育目的でビザ要件に関する一般的な情報を提供しています。この情報は法的アドバイスを構成するものではありません。ビザに関する決定は入国管理当局のみが行います。個別の法的アドバイスについては、資格を持つ専門家にご相談ください。",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
+  },
+  "Meta": {
+    "landingTitle": "LocalNomad — ビザ情報、やっとクリアに。",
+    "landingDescription": "韓国・台湾のビザ要件、必要書類チェックリスト、コミュニティの体験談 — デジタルノマドのビザ申請準備に必要な情報をすべてまとめました。",
+    "countryDescription": "{country}のビザを並べて比較 — 要件、必要書類、費用、スケジュール。明確で体系的なガイドとチェックリストで最適なビザを見つけましょう。",
+    "loginTitle": "ログイン — LocalNomad",
+    "loginDescription": "LocalNomadにログインして、ビザのチェックリスト進捗を保存し、締め切りを管理し、すべてのデバイスで準備状況を同期しましょう。",
+    "termsTitle": "利用規約 — LocalNomad",
+    "termsDescription": "LocalNomadの利用規約 — 使用権、知的財産、責任の制限、準拠法など、ビザ情報プラットフォームの利用条件をご確認ください。",
+    "privacyTitle": "プライバシーポリシー — LocalNomad",
+    "privacyDescription": "LocalNomadが個人情報をどのように収集・使用・保護するか — 認証、アナリティクス、GDPRおよび韓国個人情報保護法に基づく権利について。",
+    "refundTitle": "返金ポリシー — LocalNomad",
+    "refundDescription": "LocalNomadの有料機能・サービスに関する返金ポリシー。現在は無料プラットフォームです — 有料機能の開始時に詳細な返金規定を公開します。"
   }
 }

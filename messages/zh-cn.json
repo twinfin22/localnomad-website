@@ -54,7 +54,8 @@
     "restricted": "有限制",
     "notAllowed": "不允许",
     "emptySlot": "选择签证进行比较",
-    "disclaimer": "此比较仅显示已公布的申请条件，不构成推荐、排名或资格评估。不构成法律建议。"
+    "disclaimer": "此比较仅显示已公布的申请条件，不构成推荐、排名或资格评估。不构成法律建议。",
+    "metaDescription": "并排比较{country}签证要求 — 有效期、费用、所需材料和申请条件。对比各签证类型，找到最适合您居留的签证。"
   },
   "VisaDetail": {
     "title": "{type} 签证",
@@ -178,5 +179,18 @@
     "legalDisclaimer": "LocalNomad 仅出于教育目的提供签证要求的一般信息，不构成法律建议。签证决定由移民机构独立做出。如需个人法律建议，请咨询持牌专业人士。",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
+  },
+  "Meta": {
+    "landingTitle": "LocalNomad — 签证信息，一目了然。",
+    "landingDescription": "韩国和台湾的签证要求、材料清单和社区经验 — 数字游民准备签证申请所需的一切信息，全部汇集于此。",
+    "countryDescription": "并排比较{country}签证类型 — 申请条件、所需材料、费用和时间。通过清晰、结构化的指南和清单，找到适合您的签证。",
+    "loginTitle": "登录 — LocalNomad",
+    "loginDescription": "登录 LocalNomad，保存签证清单进度、追踪截止日期，并在所有设备间同步您的准备状态。",
+    "termsTitle": "服务条款 — LocalNomad",
+    "termsDescription": "查阅 LocalNomad 的服务条款，涵盖使用权限、知识产权、责任限制以及签证信息平台的适用法律。",
+    "privacyTitle": "隐私政策 — LocalNomad",
+    "privacyDescription": "了解 LocalNomad 如何收集、使用和保护您的个人数据 — 包括身份验证、数据分析以及您在 GDPR 和韩国隐私法下的权利。",
+    "refundTitle": "退款政策 — LocalNomad",
+    "refundDescription": "LocalNomad 付费功能和服务的退款政策。目前为免费平台 — 付费功能上线时将发布详细退款条款。"
   }
 }

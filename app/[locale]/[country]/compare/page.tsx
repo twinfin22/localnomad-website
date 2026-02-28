@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getAvailableVisas, getVisaData } from '@/lib/visa-data';
+import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country, Visa } from '@/lib/types/visa';
 import { ComparisonTool } from '@/components/visa';
 
@@ -31,15 +32,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const displayName = COUNTRY_DISPLAY[country] ?? country;
 
   const title = `${t('title')} — ${displayName} | LocalNomad`;
-  const description = `Compare ${displayName} visa requirements side by side — duration, fees, documents, and more.`;
+  const description = t('metaDescription', { country: displayName });
+  const alternates = getAlternates(locale, `/${country}/compare`);
 
   return {
     title,
     description,
+    alternates,
     openGraph: {
       title,
       description,
       url: `https://localnomad.club/${locale}/${country}/compare`,
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og-default.png'],
     },
   };
 }

@@ -54,7 +54,8 @@
     "restricted": "Có hạn chế",
     "notAllowed": "Không được phép",
     "emptySlot": "Chọn thị thực để so sánh",
-    "disclaimer": "So sánh này chỉ hiển thị các yêu cầu đã công bố. Không phải khuyến nghị, xếp hạng hay đánh giá tư cách. Không phải tư vấn pháp lý."
+    "disclaimer": "So sánh này chỉ hiển thị các yêu cầu đã công bố. Không phải khuyến nghị, xếp hạng hay đánh giá tư cách. Không phải tư vấn pháp lý.",
+    "metaDescription": "So sánh yêu cầu thị thực {country} song song — thời hạn, lệ phí, hồ sơ và điều kiện. Xem sự khác biệt giữa các loại thị thực để tìm lựa chọn phù hợp nhất."
   },
   "VisaDetail": {
     "title": "Thị thực {type}",
@@ -178,5 +179,18 @@
     "legalDisclaimer": "LocalNomad cung cấp thông tin chung về yêu cầu thị thực chỉ nhằm mục đích giáo dục. Thông tin này không cấu thành tư vấn pháp lý. Quyết định về thị thực do cơ quan xuất nhập cảnh đưa ra. Để được tư vấn pháp lý cá nhân, vui lòng liên hệ chuyên gia có giấy phép.",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
+  },
+  "Meta": {
+    "landingTitle": "LocalNomad — Thông tin thị thực, cuối cùng cũng rõ ràng.",
+    "landingDescription": "Yêu cầu thị thực, danh sách hồ sơ và kinh nghiệm cộng đồng cho Hàn Quốc và Đài Loan — mọi thứ dân du mục kỹ thuật số cần để chuẩn bị hồ sơ xin thị thực, tất cả ở một nơi.",
+    "countryDescription": "So sánh các loại thị thực {country} song song — yêu cầu, hồ sơ, lệ phí và thời gian. Tìm loại thị thực phù hợp với hướng dẫn rõ ràng và danh sách kiểm tra chi tiết.",
+    "loginTitle": "Đăng nhập — LocalNomad",
+    "loginDescription": "Đăng nhập LocalNomad để lưu tiến trình danh sách kiểm tra thị thực, theo dõi thời hạn và đồng bộ quá trình chuẩn bị trên tất cả thiết bị.",
+    "termsTitle": "Điều khoản sử dụng — LocalNomad",
+    "termsDescription": "Đọc điều khoản sử dụng của LocalNomad bao gồm quyền sử dụng, sở hữu trí tuệ, giới hạn trách nhiệm và luật áp dụng cho nền tảng thông tin thị thực.",
+    "privacyTitle": "Chính sách bảo mật — LocalNomad",
+    "privacyDescription": "Tìm hiểu cách LocalNomad thu thập, sử dụng và bảo vệ dữ liệu cá nhân — bao gồm xác thực, phân tích và quyền của bạn theo GDPR và luật bảo mật Hàn Quốc.",
+    "refundTitle": "Chính sách hoàn tiền — LocalNomad",
+    "refundDescription": "Chính sách hoàn tiền của LocalNomad cho các tính năng và dịch vụ trả phí. Hiện tại là nền tảng miễn phí — điều khoản hoàn tiền chi tiết sẽ được công bố khi tính năng trả phí ra mắt."
   }
 }

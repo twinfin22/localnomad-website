@@ -1,10 +1,36 @@
+import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
+import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale, namespace: 'Meta' });
+  const alternates = getAlternates(locale, '/terms');
+
+  return {
+    title: t('termsTitle'),
+    description: t('termsDescription'),
+    alternates,
+    openGraph: {
+      title: t('termsTitle'),
+      description: t('termsDescription'),
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('termsTitle'),
+      description: t('termsDescription'),
+      images: ['/og-default.png'],
+    },
+  };
 }
 
 export default async function TermsPage({ params }: Props) {

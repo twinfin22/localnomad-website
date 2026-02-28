@@ -1,11 +1,38 @@
+import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { LoginForm } from '@/components/auth';
+import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale, namespace: 'Meta' });
+  const alternates = getAlternates(locale, '/login');
+
+  return {
+    title: t('loginTitle'),
+    description: t('loginDescription'),
+    robots: { index: false },
+    alternates,
+    openGraph: {
+      title: t('loginTitle'),
+      description: t('loginDescription'),
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('loginTitle'),
+      description: t('loginDescription'),
+      images: ['/og-default.png'],
+    },
+  };
 }
 
 export default async function LoginPage({ params }: Props) {

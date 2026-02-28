@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getAvailableVisas } from '@/lib/visa-data';
+import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country } from '@/lib/types/visa';
 
 const VALID_COUNTRIES = ['korea', 'taiwan'] as const;
@@ -34,20 +35,32 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const t = await getTranslations({ locale, namespace: 'Country' });
+  const [t, tm] = await Promise.all([
+    getTranslations({ locale, namespace: 'Country' }),
+    getTranslations({ locale, namespace: 'Meta' }),
+  ]);
   const displayName = COUNTRY_DISPLAY[country] ?? country;
 
   const title = `${t('title', { country: displayName })} | LocalNomad`;
-  const description = t('subtitle', { country: displayName });
+  const description = tm('countryDescription', { country: displayName });
+  const alternates = getAlternates(locale, `/${country}`);
 
   return {
     title,
     description,
+    alternates,
     openGraph: {
       title,
       description,
       type: 'website',
       url: `https://localnomad.club/${locale}/${country}`,
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og-default.png'],
     },
   };
 }

@@ -54,7 +54,8 @@
     "restricted": "有限制",
     "notAllowed": "不允許",
     "emptySlot": "選擇簽證進行比較",
-    "disclaimer": "此比較僅顯示公開要求，不構成推薦、排名或資格評估。不構成法律建議。"
+    "disclaimer": "此比較僅顯示公開要求，不構成推薦、排名或資格評估。不構成法律建議。",
+    "metaDescription": "並排比較{country}簽證要求 — 效期、費用、所需文件和申請條件。對比各簽證類型，找到最適合您停留的簽證。"
   },
   "VisaDetail": {
     "title": "{type} 簽證",
@@ -178,5 +179,18 @@
     "legalDisclaimer": "LocalNomad 僅提供簽證要求的一般性資訊，僅供教育參考。本資訊不構成法律建議。簽證決定由移民主管機關做出。如需個人化法律建議，請諮詢合格專業人士。",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
+  },
+  "Meta": {
+    "landingTitle": "LocalNomad — 簽證資訊，終於清楚了。",
+    "landingDescription": "韓國和台灣的簽證要求、文件清單和社群經驗 — 數位遊牧者準備簽證申請所需的一切資訊，全部匯整於此。",
+    "countryDescription": "並排比較{country}簽證類型 — 申請條件、所需文件、費用和時程。透過清晰、結構化的指南和清單，找到適合您的簽證。",
+    "loginTitle": "登入 — LocalNomad",
+    "loginDescription": "登入 LocalNomad，儲存簽證清單進度、追蹤截止日期，並在所有裝置間同步您的準備狀態。",
+    "termsTitle": "服務條款 — LocalNomad",
+    "termsDescription": "查閱 LocalNomad 的服務條款，涵蓋使用權限、智慧財產權、責任限制以及簽證資訊平台的準據法。",
+    "privacyTitle": "隱私權政策 — LocalNomad",
+    "privacyDescription": "了解 LocalNomad 如何蒐集、使用和保護您的個人資料 — 包括身分驗證、數據分析以及您在 GDPR 和韓國隱私法下的權利。",
+    "refundTitle": "退款政策 — LocalNomad",
+    "refundDescription": "LocalNomad 付費功能和服務的退款政策。目前為免費平台 — 付費功能上線時將發布詳細退款條款。"
   }
 }

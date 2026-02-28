@@ -54,7 +54,8 @@
     "restricted": "Restricted",
     "notAllowed": "Not allowed",
     "emptySlot": "Select a visa to compare",
-    "disclaimer": "This comparison shows published requirements only. It is not a recommendation, ranking, or eligibility assessment. Not legal advice."
+    "disclaimer": "This comparison shows published requirements only. It is not a recommendation, ranking, or eligibility assessment. Not legal advice.",
+    "metaDescription": "Compare {country} visa requirements side by side — duration, fees, documents, and eligibility. See how visa types differ to find the best fit for your stay."
   },
   "VisaDetail": {
     "title": "{type} Visa",
@@ -178,5 +179,18 @@
     "legalDisclaimer": "LocalNomad provides general information about visa requirements for educational purposes only. This information does not constitute legal advice. Visa decisions are made solely by immigration authorities. For personalized legal advice, consult a licensed professional.",
     "instagram": "Instagram",
     "newsletter": "Newsletter"
+  },
+  "Meta": {
+    "landingTitle": "LocalNomad — Visa clarity, finally.",
+    "landingDescription": "Visa requirements, document checklists, and community tips for South Korea and Taiwan — everything digital nomads need to prepare their visa application, all in one place.",
+    "countryDescription": "Compare {country} visa types side by side — requirements, documents, fees, and timelines. Find the right visa for your stay with clear, structured guides and checklists.",
+    "loginTitle": "Log In — LocalNomad",
+    "loginDescription": "Sign in to LocalNomad to save your visa checklist progress, track deadlines, and sync your preparation across all your devices.",
+    "termsTitle": "Terms of Service — LocalNomad",
+    "termsDescription": "Read LocalNomad's terms of service covering usage rights, intellectual property, liability limitations, and governing law for our visa information platform.",
+    "privacyTitle": "Privacy Policy — LocalNomad",
+    "privacyDescription": "Learn how LocalNomad collects, uses, and protects your personal data — including authentication, analytics, and your rights under GDPR and Korean privacy law.",
+    "refundTitle": "Refund Policy — LocalNomad",
+    "refundDescription": "LocalNomad's refund policy for paid features and services. Currently a free platform — detailed refund terms will be published when paid features launch."
   }
 }
