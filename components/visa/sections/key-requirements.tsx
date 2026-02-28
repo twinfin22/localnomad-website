@@ -77,18 +77,13 @@ export function KeyRequirements({ visa }: KeyRequirementsProps) {
                     {visa.incomeRequirement.notes}
                   </p>
                 )}
-                {/* Proof methods (runtime check — not in TS types) */}
-                {'proofMethods' in visa.incomeRequirement && (
+                {visa.incomeRequirement.proofMethods && visa.incomeRequirement.proofMethods.length > 0 && (
                   <details className="mt-3">
                     <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm font-medium text-primary hover:underline">
                       {t('howToProveIncome')}
                     </summary>
                     <ul className="mt-2 space-y-1.5 pl-4">
-                      {(
-                        visa.incomeRequirement as {
-                          proofMethods: string[];
-                        }
-                      ).proofMethods.map((method, index) => (
+                      {visa.incomeRequirement.proofMethods.map((method, index) => (
                         <li
                           key={index}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
@@ -179,8 +174,8 @@ export function KeyRequirements({ visa }: KeyRequirementsProps) {
         </div>
       )}
 
-      {/* Tax implications (runtime check — not in TS types) */}
-      {'taxImplications' in visa && (
+      {/* Tax implications (Korea only) */}
+      {koreaVisa?.taxImplications && (
         <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
           <div className="flex items-center gap-2">
             <AlertTriangle className="h-5 w-5 text-amber-600" />
@@ -191,23 +186,12 @@ export function KeyRequirements({ visa }: KeyRequirementsProps) {
           <div className="mt-3 space-y-2 text-sm text-amber-900">
             <p>
               <span className="font-medium">{t('taxThreshold')}:</span>{' '}
-              {
-                (visa as { taxImplications: { threshold: string } })
-                  .taxImplications.threshold
-              }
+              {koreaVisa.taxImplications.threshold}
             </p>
-            <p>
-              {
-                (visa as { taxImplications: { notes: string } })
-                  .taxImplications.notes
-              }
-            </p>
+            <p>{koreaVisa.taxImplications.notes}</p>
             <p className="text-xs text-amber-700">
               {t('source')}:{' '}
-              {
-                (visa as { taxImplications: { source: string } })
-                  .taxImplications.source
-              }
+              {koreaVisa.taxImplications.source}
             </p>
           </div>
         </div>

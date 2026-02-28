@@ -231,6 +231,7 @@ export interface VisaBase {
     currency: string;
     period: string;
     notes?: string;
+    proofMethods?: string[];
   };
   documents: Document[];
   applicationSteps: ApplicationStep[];
@@ -266,6 +267,11 @@ export interface KoreaVisa extends VisaBase {
   };
   gniBasedIncome?: GNIBasedIncome;
   fixedIncomeRequirement?: FixedIncomeRequirement;
+  taxImplications?: {
+    threshold: string;
+    notes: string;
+    source: string;
+  };
 }
 
 export interface TaiwanVisa extends VisaBase {

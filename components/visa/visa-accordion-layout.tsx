@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import {
   Check,
@@ -68,7 +68,7 @@ export function VisaAccordionLayout({
     (visa.communityTips !== undefined && visa.communityTips.length > 0);
 
   // All visible section IDs (for IntersectionObserver)
-  const visibleSectionIds = [
+  const visibleSectionIds = useMemo(() => [
     SECTION_IDS.KEY_REQUIREMENTS,
     SECTION_IDS.TIMELINE_FEES,
     SECTION_IDS.DOCUMENTS,
@@ -76,7 +76,7 @@ export function VisaAccordionLayout({
     ...(hasFaqs ? [SECTION_IDS.FAQ] : []),
     ...(hasTips ? [SECTION_IDS.TIPS_COMMUNITY] : []),
     SECTION_IDS.SOURCES_RELATED,
-  ];
+  ], [hasFaqs, hasTips]);
 
   const tocSections: TocSection[] = [
     {
@@ -143,8 +143,7 @@ export function VisaAccordionLayout({
     });
 
     return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [visibleSectionIds]);
 
   const handleNavigate = useCallback((sectionId: string) => {
     setOpenSections((prev) =>
