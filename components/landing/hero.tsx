@@ -90,7 +90,7 @@ export const Hero = () => {
       </p>
 
       {/* Gradient fade to white */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[2] h-32 bg-gradient-to-b from-transparent to-white" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[2] h-1 bg-gradient-to-b from-transparent to-white" />
     </section>
   );
 };

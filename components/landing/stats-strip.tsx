@@ -26,7 +26,6 @@ export const StatsStrip = () => {
                 <div className="hidden h-12 w-px bg-white/20 sm:block" aria-hidden="true" />
               )}
               <div className="flex flex-col items-center gap-1">
-                <div className="mb-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
                 <span className="font-lora text-4xl font-bold text-white sm:text-5xl">
                   {stat.count}
                 </span>
