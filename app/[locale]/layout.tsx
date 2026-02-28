@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -45,8 +46,15 @@ export default async function LocaleLayout({ children, params }: Props) {
         </a>
         <header className="sticky top-0 z-40 border-b border-border/60 bg-white/80 backdrop-blur-lg">
           <nav aria-label={t('mainNavigation')} className="mx-auto flex items-center justify-between gap-4 px-6 py-3 text-sm">
-            <Link href="/" className="font-lora text-xl font-bold text-primary transition-opacity hover:opacity-80">
-              LocalNomad
+            <Link href="/" className="transition-opacity hover:opacity-80">
+              <Image
+                src="/logo_new_all-blue.png"
+                alt="LocalNomad"
+                width={140}
+                height={20}
+                priority
+                unoptimized
+              />
             </Link>
             <div className="flex items-center gap-4">
               <LocaleSwitcher />

@@ -37,9 +37,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'Country' });
   const displayName = COUNTRY_DISPLAY[country] ?? country;
 
+  const title = `${t('title', { country: displayName })} | LocalNomad`;
+  const description = t('subtitle', { country: displayName });
+
   return {
-    title: `${t('title', { country: displayName })} | LocalNomad`,
-    description: t('subtitle', { country: displayName }),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `https://localnomad.club/${locale}/${country}`,
+    },
   };
 }
 
@@ -60,8 +69,34 @@ export default async function CountryPage({ params }: Props) {
 
   const displayName = COUNTRY_DISPLAY[country] ?? country;
 
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: t('title', { country: displayName }),
+    description: t('subtitle', { country: displayName }),
+    url: `https://localnomad.club/${locale}/${country}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: visas.length,
+      itemListElement: visas.map((visa, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: visa.shortName,
+        description: visa.tagline,
+        url: `https://localnomad.club/${locale}/${country}/visa/${visa.type}`,
+      })),
+    },
+  };
+
   return (
-    <main id="main-content" className="min-h-svh bg-neutral-50">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionJsonLd),
+        }}
+      />
+      <main id="main-content" className="min-h-svh bg-neutral-50">
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Link
           href="/"
@@ -112,10 +147,20 @@ export default async function CountryPage({ params }: Props) {
           </div>
         )}
 
+        {visas.length > 1 && (
+          <Link
+            href={`/${country}/compare`}
+            className="mt-6 inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+          >
+            {t('compareVisas')}
+          </Link>
+        )}
+
         <p className="mt-10 text-xs text-muted-foreground">
           {tc('disclaimer')}
         </p>
       </div>
     </main>
+    </>
   );
 }

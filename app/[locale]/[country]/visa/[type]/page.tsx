@@ -63,6 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'article',
       siteName: 'LocalNomad',
+      url: `https://localnomad.club/${locale}/${country}/visa/${type}`,
     },
     twitter: {
       card: 'summary_large_image',

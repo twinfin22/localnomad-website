@@ -1,7 +1,7 @@
 {
   "Landing": {
     "headline": "签证信息，一目了然。",
-    "subtitle": "关于签证你需要了解的一切——申请条件、办理时间，以及过来人的实用经验，全部汇集于此。",
+    "subtitle": "申请条件、所需材料和社区经验，全部汇集于此。",
     "countryKorea": "韩国",
     "countryTaiwan": "台湾",
     "countryKoreaEmoji": "🇰🇷",
@@ -32,7 +32,29 @@
     "title": "{country}签证指南",
     "subtitle": "找到适合你在{country}居留的签证。比较申请条件、所需材料和办理时间。",
     "comingSoon": "该国家的签证信息即将上线。",
-    "visaCount": "共 {count} 种签证类型"
+    "visaCount": "共 {count} 种签证类型",
+    "compareVisas": "并排比较签证"
+  },
+  "Comparison": {
+    "title": "签证比较",
+    "selectVisa": "选择签证",
+    "addVisa": "添加签证",
+    "removeVisa": "移除",
+    "overview": "概览",
+    "duration": "有效期",
+    "fees": "费用",
+    "income": "收入要求",
+    "processing": "审批时间",
+    "work": "工作许可",
+    "documents": "材料",
+    "keyRequirement": "核心条件",
+    "viewDetails": "查看完整指南",
+    "noIncome": "无收入要求",
+    "allowed": "允许",
+    "restricted": "有限制",
+    "notAllowed": "不允许",
+    "emptySlot": "选择签证进行比较",
+    "disclaimer": "此比较仅显示已公布的申请条件，不构成推荐、排名或资格评估。不构成法律建议。"
   },
   "VisaDetail": {
     "title": "{type} 签证",

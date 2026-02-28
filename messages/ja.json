@@ -1,7 +1,7 @@
 {
   "Landing": {
     "headline": "ビザ情報、やっとクリアに。",
-    "subtitle": "ビザに関するすべての情報を一か所に — 要件、スケジュール、そして経験者からのリアルなヒント。",
+    "subtitle": "要件、書類、コミュニティからのヒント。すべてを一か所に。",
     "countryKorea": "韓国",
     "countryTaiwan": "台湾",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
@@ -32,7 +32,29 @@
     "title": "{country}ビザガイド",
     "subtitle": "{country}滞在に合ったビザを見つけましょう。要件・必要書類・スケジュールを比較できます。",
     "comingSoon": "この国のビザ情報は近日公開予定です。",
-    "visaCount": "{count}種類のビザがあります"
+    "visaCount": "{count}種類のビザがあります",
+    "compareVisas": "ビザを並べて比較"
+  },
+  "Comparison": {
+    "title": "ビザ比較",
+    "selectVisa": "ビザを選択",
+    "addVisa": "ビザを追加",
+    "removeVisa": "削除",
+    "overview": "概要",
+    "duration": "滞在期間",
+    "fees": "手数料",
+    "income": "収入要件",
+    "processing": "審査期間",
+    "work": "就労許可",
+    "documents": "書類",
+    "keyRequirement": "主な要件",
+    "viewDetails": "詳しいガイドを見る",
+    "noIncome": "収入要件なし",
+    "allowed": "許可",
+    "restricted": "制限あり",
+    "notAllowed": "不許可",
+    "emptySlot": "比較するビザを選択してください",
+    "disclaimer": "この比較は公開されている要件のみを表示しています。推薦、ランキング、または資格の評価ではありません。法的アドバイスではありません。"
   },
   "VisaDetail": {
     "title": "{type}ビザ",

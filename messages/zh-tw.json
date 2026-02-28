@@ -1,7 +1,7 @@
 {
   "Landing": {
     "headline": "簽證資訊，終於清楚了。",
-    "subtitle": "所有簽證資訊一站匯整 — 申請條件、時程，以及過來人的實用建議。",
+    "subtitle": "申請條件、所需文件和社群經驗，全部匯整於此。",
     "countryKorea": "韓國",
     "countryTaiwan": "台灣",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
@@ -32,7 +32,29 @@
     "title": "{country}簽證指南",
     "subtitle": "找到適合您在{country}停留的簽證。比較申請條件、所需文件和辦理時程。",
     "comingSoon": "此國家的簽證資訊即將推出。",
-    "visaCount": "共 {count} 種簽證類型"
+    "visaCount": "共 {count} 種簽證類型",
+    "compareVisas": "並排比較簽證"
+  },
+  "Comparison": {
+    "title": "簽證比較",
+    "selectVisa": "選擇簽證",
+    "addVisa": "新增簽證",
+    "removeVisa": "移除",
+    "overview": "概覽",
+    "duration": "效期",
+    "fees": "費用",
+    "income": "收入要求",
+    "processing": "審查期間",
+    "work": "工作許可",
+    "documents": "文件",
+    "keyRequirement": "主要條件",
+    "viewDetails": "查看完整指南",
+    "noIncome": "無收入要求",
+    "allowed": "允許",
+    "restricted": "有限制",
+    "notAllowed": "不允許",
+    "emptySlot": "選擇簽證進行比較",
+    "disclaimer": "此比較僅顯示公開要求，不構成推薦、排名或資格評估。不構成法律建議。"
   },
   "VisaDetail": {
     "title": "{type} 簽證",

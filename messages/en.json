@@ -1,7 +1,7 @@
 {
   "Landing": {
     "headline": "Visa clarity, finally.",
-    "subtitle": "Everything you need to know about visas in one place — requirements, timelines, and real-world tips from people who've been through the process.",
+    "subtitle": "Requirements, documents, and community tips. All in one place.",
     "countryKorea": "South Korea",
     "countryTaiwan": "Taiwan",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
@@ -32,7 +32,29 @@
     "title": "{country} Visa Guide",
     "subtitle": "Find the right visa for your stay in {country}. Compare requirements, documents, and timelines.",
     "comingSoon": "Visa information for this country is coming soon.",
-    "visaCount": "{count} visa types available"
+    "visaCount": "{count} visa types available",
+    "compareVisas": "Compare visas side by side"
+  },
+  "Comparison": {
+    "title": "Compare Visas",
+    "selectVisa": "Select a visa",
+    "addVisa": "Add visa",
+    "removeVisa": "Remove",
+    "overview": "Overview",
+    "duration": "Duration",
+    "fees": "Fees",
+    "income": "Income Requirement",
+    "processing": "Processing Time",
+    "work": "Work Permission",
+    "documents": "Documents",
+    "keyRequirement": "Key Requirement",
+    "viewDetails": "View full guide",
+    "noIncome": "No income requirement",
+    "allowed": "Allowed",
+    "restricted": "Restricted",
+    "notAllowed": "Not allowed",
+    "emptySlot": "Select a visa to compare",
+    "disclaimer": "This comparison shows published requirements only. It is not a recommendation, ranking, or eligibility assessment. Not legal advice."
   },
   "VisaDetail": {
     "title": "{type} Visa",

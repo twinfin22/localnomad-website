@@ -1,7 +1,7 @@
 {
   "Landing": {
     "headline": "Thông tin thị thực, cuối cùng cũng rõ ràng.",
-    "subtitle": "Tất cả những gì bạn cần biết về thị thực ở một nơi — yêu cầu, lịch trình và kinh nghiệm thực tế từ những người đã trải qua.",
+    "subtitle": "Yêu cầu, hồ sơ và kinh nghiệm cộng đồng. Tất cả ở một nơi.",
     "countryKorea": "Hàn Quốc",
     "countryTaiwan": "Đài Loan",
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
@@ -32,7 +32,29 @@
     "title": "Hướng dẫn thị thực {country}",
     "subtitle": "Tìm loại thị thực phù hợp cho kỳ lưu trú tại {country}. So sánh yêu cầu, hồ sơ và thời gian xử lý.",
     "comingSoon": "Thông tin thị thực cho quốc gia này sắp được cập nhật.",
-    "visaCount": "{count} loại thị thực"
+    "visaCount": "{count} loại thị thực",
+    "compareVisas": "So sánh thị thực song song"
+  },
+  "Comparison": {
+    "title": "So sánh thị thực",
+    "selectVisa": "Chọn thị thực",
+    "addVisa": "Thêm thị thực",
+    "removeVisa": "Xóa",
+    "overview": "Tổng quan",
+    "duration": "Thời hạn",
+    "fees": "Lệ phí",
+    "income": "Yêu cầu thu nhập",
+    "processing": "Thời gian xử lý",
+    "work": "Quyền làm việc",
+    "documents": "Hồ sơ",
+    "keyRequirement": "Yêu cầu chính",
+    "viewDetails": "Xem hướng dẫn đầy đủ",
+    "noIncome": "Không yêu cầu thu nhập",
+    "allowed": "Được phép",
+    "restricted": "Có hạn chế",
+    "notAllowed": "Không được phép",
+    "emptySlot": "Chọn thị thực để so sánh",
+    "disclaimer": "So sánh này chỉ hiển thị các yêu cầu đã công bố. Không phải khuyến nghị, xếp hạng hay đánh giá tư cách. Không phải tư vấn pháp lý."
   },
   "VisaDetail": {
     "title": "Thị thực {type}",

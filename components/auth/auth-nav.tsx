@@ -22,7 +22,7 @@ export async function AuthNav() {
 
   return (
     <Link href="/login" className="text-primary hover:underline">
-      {t('logIn')}
+      {t('dashboard')}
     </Link>
   );
 }

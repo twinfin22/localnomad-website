@@ -16,12 +16,19 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://localnomad.club'),
   title: 'LocalNomad — Visa clarity, finally.',
   description:
-    'Everything you need to know about visas in one place — requirements, timelines, and real-world tips.',
+    'Requirements, documents, and community tips. All in one place.',
   icons: {
-    icon: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
+  openGraph: {
+    siteName: 'LocalNomad',
+    type: 'website',
+    description: 'Requirements, documents, and community tips. All in one place.',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
 };
 
