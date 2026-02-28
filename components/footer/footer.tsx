@@ -21,7 +21,7 @@ export async function Footer() {
             href="https://www.instagram.com/localnomad.club/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground/60 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] rounded-md outline-none"
+            className="rounded-full p-2 text-muted-foreground/60 transition-colors hover:bg-primary/10 hover:text-primary focus-visible:text-primary focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
             aria-label={t('instagram')}
           >
             <Instagram className="h-5 w-5" />
@@ -30,7 +30,7 @@ export async function Footer() {
             href="https://startofsomethingnew.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground/60 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] rounded-md outline-none"
+            className="rounded-full p-2 text-muted-foreground/60 transition-colors hover:bg-primary/10 hover:text-primary focus-visible:text-primary focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
             aria-label={t('newsletter')}
           >
             <Newspaper className="h-5 w-5" />

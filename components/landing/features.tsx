@@ -12,17 +12,21 @@ export const Features = () => {
   ];
 
   return (
-    <section className="bg-neutral-50 px-6 py-24">
+    <section className="bg-neutral-50 px-6 pt-16 pb-24">
       <div className="mx-auto max-w-4xl">
         <div className="grid gap-8 sm:grid-cols-3">
           {features.map((feat, i) => (
             <ScrollReveal key={i} delay={i * 150}>
-              <div className="flex flex-col items-center gap-3 text-center">
-                <feat.icon className="h-10 w-10 text-primary" aria-hidden="true" />
-                <h3 className="text-lg font-semibold text-wrap-balance text-foreground">
-                  {feat.title}
-                </h3>
-                <p className="text-muted-foreground">{feat.desc}</p>
+              <div className="group flex items-start gap-4 text-left">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <feat.icon className="h-6 w-6 text-primary transition-colors group-hover:text-primary-light" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-wrap-balance text-foreground">
+                    {feat.title}
+                  </h3>
+                  <p className="mt-1 text-muted-foreground">{feat.desc}</p>
+                </div>
               </div>
             </ScrollReveal>
           ))}

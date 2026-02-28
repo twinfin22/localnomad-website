@@ -23,9 +23,12 @@
     "feat2Desc": "Track your preparation progress with interactive checklists you can save.",
     "feat3Title": "Community tips",
     "feat3Desc": "Real insights from people who've successfully navigated the visa process.",
-    "statVisas": "7 visa types",
-    "statCountries": "2 countries",
-    "statFree": "100% free",
+    "statVisasCount": "7",
+    "statVisasLabel": "visa types",
+    "statCountriesCount": "2",
+    "statCountriesLabel": "countries",
+    "statFreeCount": "100%",
+    "statFreeLabel": "free",
     "scrollHint": "Scroll to explore"
   },
   "Country": {

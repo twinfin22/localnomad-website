@@ -23,9 +23,12 @@
     "feat2Desc": "使用可儲存的互動式檢查清單追蹤準備進度。",
     "feat3Title": "社群經驗",
     "feat3Desc": "來自成功申辦簽證者的實際經驗分享。",
-    "statVisas": "7 種簽證",
-    "statCountries": "2 個國家",
-    "statFree": "完全免費",
+    "statVisasCount": "7",
+    "statVisasLabel": "種簽證",
+    "statCountriesCount": "2",
+    "statCountriesLabel": "個國家",
+    "statFreeCount": "100%",
+    "statFreeLabel": "免費",
     "scrollHint": "滾動探索更多"
   },
   "Country": {

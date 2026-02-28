@@ -23,9 +23,12 @@
     "feat2Desc": "通过可保存的交互式清单，追踪你的准备进度。",
     "feat3Title": "社区经验",
     "feat3Desc": "来自成功办理签证的人们分享的真实经验。",
-    "statVisas": "7 种签证类型",
-    "statCountries": "2 个国家",
-    "statFree": "完全免费",
+    "statVisasCount": "7",
+    "statVisasLabel": "种签证",
+    "statCountriesCount": "2",
+    "statCountriesLabel": "个国家",
+    "statFreeCount": "100%",
+    "statFreeLabel": "免费",
     "scrollHint": "向下滚动探索"
   },
   "Country": {

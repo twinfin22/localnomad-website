@@ -23,9 +23,12 @@
     "feat2Desc": "保存できるインタラクティブなチェックリストで準備状況を管理。",
     "feat3Title": "コミュニティの声",
     "feat3Desc": "ビザ取得に成功した人々からのリアルな体験談。",
-    "statVisas": "7種類のビザ",
-    "statCountries": "2か国",
-    "statFree": "完全無料",
+    "statVisasCount": "7",
+    "statVisasLabel": "種類のビザ",
+    "statCountriesCount": "2",
+    "statCountriesLabel": "か国",
+    "statFreeCount": "100%",
+    "statFreeLabel": "無料",
     "scrollHint": "スクロールして詳しく見る"
   },
   "Country": {

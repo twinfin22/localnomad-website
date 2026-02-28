@@ -23,9 +23,12 @@
     "feat2Desc": "Theo dõi tiến trình chuẩn bị với danh sách kiểm tra tương tác có thể lưu lại.",
     "feat3Title": "Kinh nghiệm cộng đồng",
     "feat3Desc": "Chia sẻ thực tế từ những người đã thành công trong quá trình xin thị thực.",
-    "statVisas": "7 loại thị thực",
-    "statCountries": "2 quốc gia",
-    "statFree": "Miễn phí 100%",
+    "statVisasCount": "7",
+    "statVisasLabel": "loại thị thực",
+    "statCountriesCount": "2",
+    "statCountriesLabel": "quốc gia",
+    "statFreeCount": "100%",
+    "statFreeLabel": "miễn phí",
     "scrollHint": "Cuộn để khám phá"
   },
   "Country": {
