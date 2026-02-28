@@ -14,6 +14,12 @@ export const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
     const el = ref.current;
     if (!el) return;
 
+    // Skip animations for users who prefer reduced motion
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.classList.add('scroll-reveal-visible');
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

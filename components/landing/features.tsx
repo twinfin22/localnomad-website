@@ -18,8 +18,8 @@ export const Features = () => {
           {features.map((feat, i) => (
             <ScrollReveal key={i} delay={i * 150}>
               <div className="flex flex-col items-center gap-3 text-center">
-                <feat.icon className="h-10 w-10 text-primary" />
-                <h3 className="text-lg font-semibold text-foreground">
+                <feat.icon className="h-10 w-10 text-primary" aria-hidden="true" />
+                <h3 className="text-lg font-semibold text-wrap-balance text-foreground">
                   {feat.title}
                 </h3>
                 <p className="text-muted-foreground">{feat.desc}</p>

@@ -16,7 +16,7 @@ export const CountryCard = ({
   return (
     <Link
       href={href}
-      className="group flex min-h-[88px] items-center gap-4 rounded-xl border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-sm transition-all hover:bg-white/20 hover:shadow-lg"
+      className="group flex min-h-[88px] items-center gap-4 rounded-xl border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-sm transition-all hover:bg-white/20 hover:shadow-lg focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
     >
       <span className="text-4xl" role="img" aria-label={name}>
         {emoji}
@@ -35,6 +35,7 @@ export const CountryCard = ({
         viewBox="0 0 24 24"
         strokeWidth={2}
         stroke="currentColor"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"

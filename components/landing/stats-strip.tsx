@@ -11,7 +11,7 @@ export const StatsStrip = () => {
       <ScrollReveal>
         <div className="mx-auto flex max-w-3xl flex-col items-center justify-center gap-8 text-center sm:flex-row sm:gap-16">
           {stats.map((stat, i) => (
-            <p key={i} className="text-xl font-bold text-white sm:text-2xl">
+            <p key={i} className="text-xl font-bold tabular-nums text-white sm:text-2xl">
               {stat}
             </p>
           ))}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
@@ -27,6 +27,7 @@ export const LocaleSwitcher = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const menuItemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -38,11 +39,62 @@ export const LocaleSwitcher = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleTriggerKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === 'Escape' && open) {
+        e.preventDefault();
+        setOpen(false);
+      } else if (e.key === 'ArrowDown' && !open) {
+        e.preventDefault();
+        setOpen(true);
+        // Focus first menu item after dropdown opens
+        requestAnimationFrame(() => {
+          menuItemRefs.current[0]?.focus();
+        });
+      }
+    },
+    [open]
+  );
+
+  const handleMenuKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      const items = menuItemRefs.current.filter(Boolean);
+      const currentIndex = items.findIndex(
+        (item) => item === document.activeElement
+      );
+
+      switch (e.key) {
+        case 'Escape':
+          e.preventDefault();
+          setOpen(false);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          if (currentIndex < items.length - 1) {
+            items[currentIndex + 1]?.focus();
+          } else {
+            items[0]?.focus();
+          }
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          if (currentIndex > 0) {
+            items[currentIndex - 1]?.focus();
+          } else {
+            items[items.length - 1]?.focus();
+          }
+          break;
+      }
+    },
+    []
+  );
+
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 rounded-md px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        onKeyDown={handleTriggerKeyDown}
+        className="flex items-center gap-1 rounded-md px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -81,12 +133,20 @@ export const LocaleSwitcher = () => {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-1 min-w-[140px] rounded-md border bg-white py-1 shadow-md">
-          {routing.locales.map((loc) => (
+        <div
+          role="menu"
+          onKeyDown={handleMenuKeyDown}
+          className="absolute right-0 top-full z-50 mt-1 min-w-[140px] rounded-md border bg-white py-1 shadow-md"
+        >
+          {routing.locales.map((loc, index) => (
             <Link
               key={loc}
+              ref={(el) => {
+                menuItemRefs.current[index] = el;
+              }}
               href={pathname}
               locale={loc}
+              role="menuitem"
               onClick={() => setOpen(false)}
               className={cn(
                 'block px-3 py-1.5 text-sm transition-colors',

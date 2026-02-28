@@ -21,7 +21,7 @@ export async function Footer() {
             href="https://www.instagram.com/localnomad.club/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground/60 transition-colors hover:text-foreground"
+            className="text-muted-foreground/60 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] rounded-md outline-none"
             aria-label={t('instagram')}
           >
             <Instagram className="h-5 w-5" />
@@ -30,7 +30,7 @@ export async function Footer() {
             href="https://startofsomethingnew.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground/60 transition-colors hover:text-foreground"
+            className="text-muted-foreground/60 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] rounded-md outline-none"
             aria-label={t('newsletter')}
           >
             <Newspaper className="h-5 w-5" />
@@ -42,15 +42,15 @@ export async function Footer() {
           <p className="text-sm text-muted-foreground">
             {t('copyright', { year: new Date().getFullYear() })}
             {' · '}
-            <Link href="/terms" className="hover:text-foreground transition-colors">
+            <Link href="/terms" className="hover:text-foreground transition-colors focus-visible:text-foreground focus-visible:underline outline-none">
               {t('terms')}
             </Link>
             {' · '}
-            <Link href="/privacy" className="hover:text-foreground transition-colors">
+            <Link href="/privacy" className="hover:text-foreground transition-colors focus-visible:text-foreground focus-visible:underline outline-none">
               {t('privacy')}
             </Link>
             {' · '}
-            <Link href="/refund" className="hover:text-foreground transition-colors">
+            <Link href="/refund" className="hover:text-foreground transition-colors focus-visible:text-foreground focus-visible:underline outline-none">
               {t('refund')}
             </Link>
           </p>

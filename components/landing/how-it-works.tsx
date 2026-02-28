@@ -15,7 +15,7 @@ export const HowItWorks = () => {
     <section className="bg-white px-6 py-24">
       <div className="mx-auto max-w-4xl text-center">
         <ScrollReveal>
-          <h2 className="font-lora text-3xl font-bold text-primary sm:text-4xl">
+          <h2 className="font-lora text-3xl font-bold text-wrap-balance text-primary sm:text-4xl">
             {t('howItWorksTitle')}
           </h2>
         </ScrollReveal>
@@ -25,9 +25,9 @@ export const HowItWorks = () => {
             <ScrollReveal key={i} delay={i * 150}>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
-                  <step.icon className="h-8 w-8 text-primary" />
+                  <step.icon className="h-8 w-8 text-primary" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="text-lg font-semibold text-wrap-balance text-foreground">
                   {step.title}
                 </h3>
                 <p className="text-muted-foreground">{step.desc}</p>

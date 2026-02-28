@@ -151,3 +151,20 @@
 .animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
 }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-bounce-subtle {
+    animation: none;
+  }
+
+  .animate-in {
+    animation: none;
+  }
+}

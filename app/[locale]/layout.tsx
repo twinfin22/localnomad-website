@@ -49,6 +49,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       images: ['/og-default.png'],
     },
+    other: { 'theme-color': '#1B4965' },
   };
 }
 

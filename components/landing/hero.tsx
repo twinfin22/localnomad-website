@@ -23,7 +23,7 @@ export const Hero = () => {
 
       <div className="relative mx-auto w-full max-w-2xl text-center">
         <h1
-          className="animate-in fade-in slide-in-from-bottom-4 duration-700 font-lora text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl"
+          className="animate-in fade-in slide-in-from-bottom-4 duration-700 font-lora text-4xl font-bold leading-tight text-wrap-balance text-white sm:text-5xl md:text-6xl"
           style={{ animationFillMode: 'backwards' }}
         >
           {t('headline')}
