@@ -95,7 +95,7 @@ export default async function VisaDetailPage({ params }: Props) {
 
   if (!visa) {
     return (
-      <main id="main-content" className="min-h-svh overflow-x-clip bg-neutral-50">
+      <main id="main-content" className="min-h-svh bg-neutral-50">
         <Breadcrumb
           variant="band"
           items={[
@@ -201,7 +201,7 @@ export default async function VisaDetailPage({ params }: Props) {
           __html: JSON.stringify(breadcrumbJsonLd),
         }}
       />
-      <main id="main-content" className="min-h-svh overflow-x-clip bg-neutral-50">
+      <main id="main-content" className="min-h-svh bg-neutral-50">
         <Breadcrumb
           variant="band"
           items={[
