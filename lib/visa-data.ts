@@ -23,14 +23,9 @@ async function loadVisaJson(
   type: string,
 ): Promise<Visa | null> {
   try {
-    // Korea: data/visas/{locale}/{type}.json
-    // Taiwan: data/visas/tw/{locale}/{type}.json
-    let data: Record<string, unknown>;
-    if (country === 'korea') {
-      data = (await import(`@/data/visas/${locale}/${type}.json`)).default;
-    } else {
-      data = (await import(`@/data/visas/tw/${locale}/${type}.json`)).default;
-    }
+    const data = (
+      await import(`@/data/visas/${country}/${locale}/${type}.json`)
+    ).default as Record<string, unknown>;
     return {
       ...data,
       country: COUNTRY_CODE_MAP[country],
