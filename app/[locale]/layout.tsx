@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { Inter, Lora } from 'next/font/google';
+import { Inter, Lora, Noto_Sans_JP, Noto_Sans_SC, Noto_Sans_TC } from 'next/font/google';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -12,16 +12,40 @@ import { LocaleSwitcher } from '@/components/locale-switcher';
 import { Footer } from '@/components/footer';
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ['latin', 'vietnamese'],
   variable: '--font-inter',
   display: 'swap',
 });
 
 const lora = Lora({
-  subsets: ['latin'],
+  subsets: ['latin', 'vietnamese'],
   weight: ['400', '700'],
   variable: '--font-lora',
   display: 'swap',
+});
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ['latin'],
+  variable: '--font-noto-sans-jp',
+  display: 'swap',
+  preload: false,
+  adjustFontFallback: false,
+});
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
+  variable: '--font-noto-sans-sc',
+  display: 'swap',
+  preload: false,
+  adjustFontFallback: false,
+});
+
+const notoSansTC = Noto_Sans_TC({
+  subsets: ['latin'],
+  variable: '--font-noto-sans-tc',
+  display: 'swap',
+  preload: false,
+  adjustFontFallback: false,
 });
 
 export function generateStaticParams() {
@@ -71,7 +95,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = await getTranslations('Nav');
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${lora.variable}`}>
+    <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${lora.variable} ${notoSansJP.variable} ${notoSansSC.variable} ${notoSansTC.variable}`}>
       <body className="font-sans antialiased">
         <NextIntlClientProvider>
           <a
