@@ -8,8 +8,8 @@
 // Country Types
 // =============================================================================
 
-export type Country = 'korea' | 'taiwan';
-export type CountryCode = 'kr' | 'tw';
+export type Country = 'korea' | 'taiwan' | 'japan' | 'china' | 'southeast-asia';
+export type CountryCode = 'kr' | 'tw' | 'jp' | 'cn' | 'sea';
 
 // =============================================================================
 // Country-Scoped Visa Types
@@ -42,7 +42,22 @@ export type TaiwanVisaType =
   | 'seeking-employment'
   | 'working-holiday-tw';
 
-export type VisaType = KoreaVisaType | TaiwanVisaType;
+export type JapanVisaType =
+  | 'engineer-specialist'
+  | 'hsw'
+  | 'specified-skilled-1'
+  | 'specified-skilled-2'
+  | 'digital-nomad-jp'
+  | 'business-manager';
+
+export type ChinaVisaType =
+  | 'z-visa'
+  | 'r-visa'
+  | 'k-visa'
+  | 'x1-visa'
+  | 'permanent-cn';
+
+export type VisaType = KoreaVisaType | TaiwanVisaType | JapanVisaType | ChinaVisaType;
 
 // =============================================================================
 // Type Registries & Guards
@@ -66,6 +81,23 @@ export function isKoreaVisa(type: VisaType): type is KoreaVisaType {
 
 export function isTaiwanVisa(type: VisaType): type is TaiwanVisaType {
   return (TAIWAN_VISA_TYPES as string[]).includes(type);
+}
+
+export const JAPAN_VISA_TYPES: JapanVisaType[] = [
+  'engineer-specialist', 'hsw', 'specified-skilled-1',
+  'specified-skilled-2', 'digital-nomad-jp', 'business-manager',
+];
+
+export function isJapanVisa(type: VisaType): type is JapanVisaType {
+  return (JAPAN_VISA_TYPES as string[]).includes(type);
+}
+
+export const CHINA_VISA_TYPES: ChinaVisaType[] = [
+  'z-visa', 'r-visa', 'k-visa', 'x1-visa', 'permanent-cn',
+];
+
+export function isChinaVisa(type: VisaType): type is ChinaVisaType {
+  return (CHINA_VISA_TYPES as string[]).includes(type);
 }
 
 // =============================================================================
@@ -245,6 +277,7 @@ export interface VisaBase {
     restrictions?: string[];
     notes?: string;
   };
+  familyAllowed?: boolean;
   faqs: FAQ[];
   tips: string[];
   warnings?: string[];
@@ -295,7 +328,62 @@ export interface TaiwanVisa extends VisaBase {
   };
 }
 
-export type Visa = KoreaVisa | TaiwanVisa;
+// =============================================================================
+// Japan-Specific Types
+// =============================================================================
+
+export interface JapanPointsSystem {
+  minimumPoints: number;
+  categories: string[];
+  incomeFloor?: string;
+  calculatorUrl?: string;
+}
+
+export interface JapanLanguageRequirement {
+  required: boolean;
+  minimumLevel?: string;
+  notes?: string;
+}
+
+export interface JapanVisa extends VisaBase {
+  country: 'jp';
+  residenceStatus: string;
+  sponsorRequired: boolean;
+  coeRequired: boolean;
+  pointsSystem?: JapanPointsSystem;
+  japaneseLanguage?: JapanLanguageRequirement;
+  designatedSectors?: string[];
+  reentryGap?: string;
+}
+
+// =============================================================================
+// China-Specific Types
+// =============================================================================
+
+export interface ChinaPSBRegistration {
+  required: boolean;
+  deadlineHours: number;
+  notes?: string;
+}
+
+export interface ChinaTalentCertification {
+  required: boolean;
+  agencies?: string[];
+}
+
+export interface ChinaVisa extends VisaBase {
+  country: 'cn';
+  workPermitCategory?: 'A' | 'B' | 'C';
+  puLetterRequired?: boolean;
+  psbRegistration?: ChinaPSBRegistration;
+  residencePermitDeadline?: number;
+  invitationRequired?: boolean;
+  talentCertification?: ChinaTalentCertification;
+  covaOnline?: boolean;
+  stemFields?: string[];
+}
+
+export type Visa = KoreaVisa | TaiwanVisa | JapanVisa | ChinaVisa;
 
 // =============================================================================
 // Summary type for listings
