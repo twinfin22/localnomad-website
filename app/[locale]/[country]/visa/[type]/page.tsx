@@ -5,10 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
-import { getSession } from '@/lib/actions/auth';
-import { getActiveVisa, getChecklist } from '@/lib/actions/dashboard';
 import type { Country } from '@/lib/types/visa';
-import type { ChecklistItem } from '@/lib/types/dashboard';
 import {
   VisaHero,
   VisaAccordionLayout,
@@ -17,13 +14,6 @@ import {
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
 
 const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china'] as const;
-
-const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
-  korea: 'kr',
-  taiwan: 'tw',
-  japan: 'jp',
-  china: 'cn',
-};
 
 interface Props {
   params: Promise<{ locale: string; country: string; type: string }>;
@@ -91,12 +81,10 @@ export default async function VisaDetailPage({ params }: Props) {
     notFound();
   }
 
-  const [visa, tc, t, user, activeVisa, availableVisas] = await Promise.all([
+  const [visa, tc, t, availableVisas] = await Promise.all([
     getVisaData(country as Country, locale, type),
     getTranslations('Common'),
     getTranslations('VisaDetail'),
-    getSession(),
-    getActiveVisa(),
     getAvailableVisas(country as Country, locale),
   ]);
   const displayCountry = country === 'korea' ? 'South Korea' : 'Taiwan';
@@ -130,20 +118,6 @@ export default async function VisaDetailPage({ params }: Props) {
     ...visa,
     relatedVisas: visa.relatedVisas?.filter((v) => availableTypes.includes(v)),
   };
-
-  // Resolve auth state for document checklist
-  let userVisaId: string | undefined;
-  let serverChecklist: ChecklistItem[] | undefined;
-
-  if (
-    user &&
-    activeVisa &&
-    activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
-    activeVisa.visa_type === filteredVisa.type
-  ) {
-    userVisaId = activeVisa.id;
-    serverChecklist = await getChecklist(activeVisa.id);
-  }
 
   // Schema.org JSON-LD: FAQPage
   const faqJsonLd = {
@@ -232,9 +206,6 @@ export default async function VisaDetailPage({ params }: Props) {
           <VisaAccordionLayout
             visa={filteredVisa}
             country={country}
-            isLoggedIn={!!user}
-            userVisaId={userVisaId}
-            serverChecklist={serverChecklist}
           />
 
           <VisaDisclaimer country={country} />

@@ -7,7 +7,16 @@
     "countryKoreaEmoji": "🇰🇷",
     "countryTaiwanEmoji": "🇹🇼",
     "countryKoreaDesc": "D‑8 · E‑7 · F‑1‑D · F‑2 · H‑1",
-    "countryTaiwanDesc": "Gold Card · Digital Nomad Visa",
+    "countryTaiwanDesc": "Gold Card \u00b7 Digital Nomad Visa",
+    "countryJapan": "\u65e5\u672c",
+    "countryJapanEmoji": "\ud83c\uddef\ud83c\uddf5",
+    "countryJapanDesc": "\u6570\u5b57\u6e38\u6c11 \u00b7 \u7ecf\u8425\u7ba1\u7406 \u00b7 \u6280\u672f\u4eba\u6587\u77e5\u8bc6",
+    "countryChina": "\u4e2d\u56fd",
+    "countryChinaEmoji": "\ud83c\udde8\ud83c\uddf3",
+    "countryChinaDesc": "Z\u7b7e\u8bc1 \u00b7 R\u7b7e\u8bc1 \u00b7 X1\u7b7e\u8bc1",
+    "countrySEA": "\u4e1c\u5357\u4e9a",
+    "countrySEAEmoji": "\ud83c\udf0f",
+    "countrySEADesc": "\u6570\u5b57\u6e38\u6c11\u7b7e\u8bc1\u5bf9\u6bd4",
     "legalNote": "基于已公布的申请条件，不构成法律建议。",
     "exploreVisas": "探索签证类型",
     "howItWorksTitle": "LocalNomad 如何使用",
@@ -170,8 +179,37 @@
     "viewGuide": "查看完整签证指南"
   },
   "Nav": {
-    "skipToContent": "跳转到内容",
-    "mainNavigation": "主导航"
+    "skipToContent": "\u8df3\u8f6c\u5230\u5185\u5bb9",
+    "mainNavigation": "\u4e3b\u5bfc\u822a",
+    "blog": "\u535a\u5ba2"
+  },
+  "Blog": {
+    "title": "\u535a\u5ba2",
+    "allPosts": "\u6240\u6709\u6587\u7ae0",
+    "readMore": "\u9605\u8bfb\u66f4\u591a",
+    "minuteRead": "\u5206\u949f\u9605\u8bfb",
+    "publishedOn": "\u53d1\u5e03\u4e8e",
+    "updatedOn": "\u66f4\u65b0\u4e8e",
+    "filterByCategory": "\u6309\u5206\u7c7b\u7b5b\u9009",
+    "filterByCountry": "\u6309\u56fd\u5bb6\u7b5b\u9009",
+    "noPosts": "\u672a\u627e\u5230\u6587\u7ae0",
+    "all": "\u5168\u90e8",
+    "categories": {
+      "guides": "\u6307\u5357",
+      "updates": "\u66f4\u65b0",
+      "tips": "\u5c0f\u8d34\u58eb",
+      "comparisons": "\u5bf9\u6bd4",
+      "news": "\u65b0\u95fb",
+      "stories": "\u6545\u4e8b"
+    },
+    "countries": {
+      "korea": "\u97e9\u56fd",
+      "japan": "\u65e5\u672c",
+      "china": "\u4e2d\u56fd",
+      "taiwan": "\u53f0\u6e7e",
+      "sea": "\u4e1c\u5357\u4e9a",
+      "global": "\u5168\u7403"
+    }
   },
   "Footer": {
     "tagline": "由数字游民打造，为数字游民服务的签证信息平台。",

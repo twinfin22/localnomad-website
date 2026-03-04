@@ -47,6 +47,7 @@ docs/
 5. **Path alias** — Use `@/` for all imports
 6. **Files**: `kebab-case.tsx` / **Components**: PascalCase / **Hooks**: `use-[name].ts`
 7. **Docs** — All `.md` files go in `docs/`. Only `CLAUDE.md` stays in root
+8. **Never force push** — `git push --force`, `git reset --hard`, `git branch -D` 금지. 히스토리 손실 위험. 실수 시 새 커밋으로 revert
 
 ## Legal Bright Lines (IMPORTANT)
 This is a visa **information** platform. Korean law (행정사법, 변호사법, 표시광고법) prohibits:

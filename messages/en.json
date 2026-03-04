@@ -8,6 +8,15 @@
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
     "countryKoreaDesc": "D‑8 · E‑7 · F‑1‑D · F‑2 · H‑1",
     "countryTaiwanDesc": "Gold Card · Digital Nomad Visa",
+    "countryJapan": "Japan",
+    "countryJapanEmoji": "\ud83c\uddef\ud83c\uddf5",
+    "countryJapanDesc": "Digital Nomad \u00b7 Business Manager \u00b7 Engineer",
+    "countryChina": "China",
+    "countryChinaEmoji": "\ud83c\udde8\ud83c\uddf3",
+    "countryChinaDesc": "Z\u2011Visa \u00b7 R\u2011Visa \u00b7 X1\u2011Visa",
+    "countrySEA": "Southeast Asia",
+    "countrySEAEmoji": "\ud83c\udf0f",
+    "countrySEADesc": "Compare Digital Nomad Visas",
     "legalNote": "Based on published requirements. Not legal advice.",
     "exploreVisas": "Explore visas",
     "howItWorksTitle": "How LocalNomad works",
@@ -171,7 +180,36 @@
   },
   "Nav": {
     "skipToContent": "Skip to content",
-    "mainNavigation": "Main navigation"
+    "mainNavigation": "Main navigation",
+    "blog": "Blog"
+  },
+  "Blog": {
+    "title": "Blog",
+    "allPosts": "All Posts",
+    "readMore": "Read more",
+    "minuteRead": "min read",
+    "publishedOn": "Published on",
+    "updatedOn": "Updated on",
+    "filterByCategory": "Filter by category",
+    "filterByCountry": "Filter by country",
+    "noPosts": "No posts found",
+    "all": "All",
+    "categories": {
+      "guides": "Guides",
+      "updates": "Updates",
+      "tips": "Tips",
+      "comparisons": "Comparisons",
+      "news": "News",
+      "stories": "Stories"
+    },
+    "countries": {
+      "korea": "Korea",
+      "japan": "Japan",
+      "china": "China",
+      "taiwan": "Taiwan",
+      "sea": "Southeast Asia",
+      "global": "Global"
+    }
   },
   "Footer": {
     "tagline": "Visa clarity for nomads, by nomads.",

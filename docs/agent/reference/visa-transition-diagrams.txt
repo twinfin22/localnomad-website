@@ -1,0 +1,207 @@
+VISA TRANSITION NETWORK DIAGRAMS
+=================================
+
+JAPAN VISA TRANSITIONS
+═══════════════════════════════════════════════════════════════════
+
+PATHWAY 1: Graduate → Work Professional → Permanent Residence (Fast-track)
+───────────────────────────────────────────────────────────────────────────
+
+  Student (D-2)
+      ↓
+  Engineer/Specialist ──→ ┌─────────────────────────┐
+      ↓                   │  HSW (Points-based)     │
+      │                   │  80+ pts = 1 year       │
+      │                   │  70+ pts = 3 years      │
+      │                   └────────────┬────────────┘
+      └──────────────────────────────→ ↓
+                              Permanent Residence
+                                (PR Terminal)
+
+  Time to PR: 1-4 years (if HSP fast-track achievable)
+
+───────────────────────────────────────────────────────────────────────────
+
+PATHWAY 2: Skilled Worker Progression
+───────────────────────────────────────
+
+  Student (D-2)
+      ↓
+  SSW1 (Specified Skilled Worker 1)
+   5 years max
+      ↓ (after 3+ years)
+  SSW2 (Specified Skilled Worker 2)
+   Unlimited stay
+      ↓
+  Permanent Residence
+   (pathway under development)
+
+  Time to PR: 5+ years minimum, path still formalizing
+
+───────────────────────────────────────────────────────────────────────────
+
+PATHWAY 3: Business Creation
+────────────────────────────
+
+  Engineer/Specialist
+      ↓ (must leave current employer)
+  Business Manager
+   (requires ¥30M capital + 1 employee, as of Oct 2025)
+      ↓
+  Permanent Residence (10-year standard route)
+
+  Time to PR: 10+ years standard route
+
+───────────────────────────────────────────────────────────────────────────
+
+PATHWAY 4: Isolated / Dead End
+────────────────────────────────
+
+  Digital Nomad Visa
+   (6 months, non-renewable)
+      ↓
+  EXIT JAPAN
+   Must reapply for any other visa from abroad
+
+  [NO TRANSITIONS PUBLISHED]
+
+───────────────────────────────────────────────────────────────────────────
+
+JAPAN TRANSITION GRID (All Possible Transitions)
+═════════════════════════════════════════════════
+
+From \\ To          | Engineer | HSW | SSW1 | SSW2 | Business | PR | Digital | Student
+─────────────────────────────────────────────────────────────────────────────────────
+Student             |    ✅    |     |      |      |          |    |         |
+Engineer/Specialist |          | ✅  |      |      |    ✅    | ✅  |         |
+HSW                 |    ✅    |     |  ✅  |      |          | ✅  |         |
+SSW1                |    ✅    |     |      |  ✅  |          | ✅  |         |    ✅
+SSW2                |          |     |  ✅  |      |          | ✅  |         |
+Business Manager    |    ✅    |     |      |      |          | ✅  |         |
+Digital Nomad       |          |     |      |      |          |    |         |
+Permanent Res.      |          |     |      |      |          |    |         |
+
+═════════════════════════════════════════════════════════════════════════════════════
+
+CHINA VISA TRANSITIONS
+═══════════════════════════════════════════════════════════════════
+
+PATHWAY 1: Graduate → Talent → Permanent Residence (Preferred)
+──────────────────────────────────────────────────────────────
+
+  Student (X1)
+   180+ days study
+      ↓ (with job offer)
+  Z Visa (Work)
+   90 days - 5 years
+      ↓ (if recognized as high-level talent)
+  R Visa (Talent)
+   5-10 years, 180 days per entry
+      ↓
+  Permanent Residence
+   (criteria vary by province)
+
+  Time to PR: 3-8 years typical, unclear official timeline
+
+───────────────────────────────────────────────────────────────────────────
+
+PATHWAY 2: Direct Talent Recognition
+───────────────────────────────────────
+
+  Skilled Specialist
+      ↓ (with government talent confirmation)
+  R Visa (Talent)
+   5-10 years, 180 days per entry
+      ↓
+  Permanent Residence
+   (preferred pathway for high-value contributors)
+
+  Characteristics: Faster than Z → PR, government-backed status
+
+───────────────────────────────────────────────────────────────────────────
+
+CRITICAL CONSTRAINT: Cannot change visa status while in China
+─────────────────────────────────────────────────────────────
+
+  On X1 Student?
+      ↓ (Must exit China)
+  Apply for Z Visa abroad
+
+  On Z Visa?
+      ↓ (Must exit China)
+  Apply for R Visa abroad
+
+  No in-country status changes allowed
+
+───────────────────────────────────────────────────────────────────────────
+
+CHINA TRANSITION GRID (All Possible Transitions)
+════════════════════════════════════════════════
+
+From \\ To  | Z Visa | R Visa | X1 Student | PR
+────────────────────────────────────────────────
+X1 Student  |   ✅   |        |            |
+Z Visa      |        |   ✅   |            | ✅
+R Visa      |        |        |            | ✅
+Permanent   |        |        |            |
+────────────────────────────────────────────────
+
+Constraint: ALL transitions require exiting China first
+
+═════════════════════════════════════════════════════════════════════════════
+
+CROSS-COUNTRY COMPARISON
+═════════════════════════════════════════════════════════════════════
+
+Dimension          | Japan                      | China
+────────────────────────────────────────────────────────────────────────
+In-Country Transitions | ✅ Yes (status change) | ❌ No (exit required)
+Fast-Track to PR   | ✅ Yes (HSP 1-3 years)     | ⚠️ Unclear (varies by province)
+Student → Work     | ✅ Yes (common)            | ✅ Yes (X1 → Z with job)
+Work → Talent      | ⚠️ Limited (not typical)   | ✅ Yes (Z → R if qualified)
+Talent → PR        | ✅ Yes (via points)        | ✅ Yes (preferred path)
+PR Path Duration   | 1-10 years (variable)     | 3-8 years (unclear)
+Renewable Work     | ✅ Yes (most visas)        | ✅ Yes (5-year TRP)
+Family Options     | ✅ Dependent visas         | ⚠️ Limited (R visa only)
+
+═════════════════════════════════════════════════════════════════════════════
+
+KEY POLICY DATES TO REMEMBER
+═════════════════════════════════════════════════════════════════════════════
+
+JAPAN:
+  • October 16, 2025 → Business Manager visa requirements increased
+    (¥30M capital, 1+ employee mandatory)
+  • October 16, 2028 → Transitional protection ends for existing holders
+  • April 2027 → 3-year engineer visas no longer qualify for PR
+    (must hold 5-year visa instead)
+
+CHINA:
+  • 2025 → New K visa introduced for foreign talent (not included in scope)
+  • 2024 → X1/X2 student visa rules updated
+  • Current → Provincial variation in PR requirements
+
+═════════════════════════════════════════════════════════════════════════════
+
+IMPLEMENTATION NOTES
+═════════════════════════════════════════════════════════════════════════════
+
+Each visa JSON file contains:
+  - type: visa identifier (e.g., "engineer-specialist")
+  - pathsTo[]: array of visas reachable FROM this visa
+  - pathsFrom[]: array of visas that can transition TO this visa
+
+Example:
+  {
+    "type": "engineer-specialist",
+    "pathsTo": ["student-visa"],
+    "pathsFrom": ["hsw", "business-manager", "permanent-jp"]
+  }
+
+This structure enables:
+  1. Forward navigation: "What can I transition to from Engineer visa?"
+  2. Reverse navigation: "What visas can I use to reach this visa?"
+  3. Path building: Chain multiple transitions together
+  4. UI visualization: Draw transition graphs/flowcharts
+
+═════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,371 @@
+{
+  "type": "visitor",
+  "name": "Taiwan Visitor Visa & Visa-Exempt Entry — Complete 2026 Guide",
+  "shortName": "Visitor",
+  "category": "tourist",
+  "description": "Everything about visiting Taiwan: visa-exempt entry for 64 jurisdictions, visitor visa applications, duration by nationality, required documents, and transition options. Updated for 2026.",
+  "tagline": "Short-term stays for tourism, business, and exploration",
+  "keyRequirement": "Valid passport from visa-exempt country (14-90 days) or visitor visa application",
+  "targetAudience": [
+    "Tourists and travelers exploring Taiwan",
+    "Digital nomads scouting Taiwan as a potential base",
+    "Short-term business visitors attending meetings or conferences",
+    "People visiting family or friends in Taiwan"
+  ],
+  "eligibility": [
+    {
+      "id": "visa-exempt-90",
+      "label": "90-day visa-free entry (64 jurisdictions)",
+      "description": "Citizens of the US, UK, Canada, Australia, Japan, Korea, New Zealand, and most EU/Schengen countries receive 90-day visa-free entry. No application required — just arrive with a valid passport.",
+      "required": false
+    },
+    {
+      "id": "visa-exempt-30",
+      "label": "30-day visa-free entry (select countries)",
+      "description": "Citizens of select countries including Malaysia, Singapore, and others receive 30-day visa-free entry. Check BOCA's official list for your nationality.",
+      "required": false
+    },
+    {
+      "id": "visa-exempt-14",
+      "label": "14-day visa-free entry (extended program)",
+      "description": "Citizens of Thailand, Brunei, and the Philippines receive 14-day visa-free entry under an extended trial program (valid through July 31, 2026).",
+      "required": false
+    },
+    {
+      "id": "visitor-visa-eligible",
+      "label": "Visitor visa for non-exempt nationalities",
+      "description": "Citizens of countries not on the visa-exempt list must apply for a visitor visa at a TECO or ROC representative office before travel.",
+      "required": false
+    },
+    {
+      "id": "valid-passport",
+      "label": "Valid passport with 6+ months remaining validity",
+      "description": "Passport must have at least 6 months validity from the date of entry. Japan and US passport holders only need validity for the duration of stay.",
+      "required": true
+    },
+    {
+      "id": "no-local-employment",
+      "label": "No local employment permitted",
+      "description": "Visitor visa and visa-exempt entry do not grant work authorization. Any form of employment in Taiwan requires a separate work permit.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "14-90 days depending on nationality",
+    "extension": "Not available for visa-exempt entry. Visitor visa holders may apply for extension at NIA in limited circumstances.",
+    "maxTotal": "90 days for most visa-exempt nationalities"
+  },
+  "fees": {
+    "application": "Free for visa-exempt entry. Visitor visa: NT$1,600 (single entry) / NT$3,200 (multiple entry).",
+    "extension": "Not applicable for visa-exempt entry",
+    "notes": "US citizens: NT$7,090 reciprocity surcharge for visitor visa. All visa fees are non-refundable regardless of outcome."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Must have 6+ months validity and blank pages. Japan and US passport holders only need passport valid for duration of stay.",
+      "tips": [
+        "Temporary and emergency passports are NOT accepted for visa-exempt entry",
+        "Ensure at least 2 blank pages for entry stamps"
+      ],
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "name": "Return or Onward Ticket",
+      "description": "Proof of a confirmed return or onward flight departing Taiwan within your permitted stay period.",
+      "tips": [
+        "Immigration officers may ask to see your departure ticket at the airport",
+        "One-way tickets without onward travel proof may result in denied entry"
+      ],
+      "required": true
+    },
+    {
+      "id": "accommodation-proof",
+      "name": "Accommodation Proof",
+      "description": "Hotel reservation, Airbnb booking, or invitation letter from a host in Taiwan showing your accommodation arrangements.",
+      "tips": [
+        "Not always checked at immigration, but recommended to have ready",
+        "An invitation letter should include the host's name, address, and contact information"
+      ],
+      "required": false
+    },
+    {
+      "id": "financial-proof",
+      "name": "Financial Proof",
+      "description": "Evidence of sufficient funds for your stay. Bank statement, credit card statement, or cash equivalent. No official minimum stated, but approximately NT$25,000-50,000 (USD $750-1,500) per trip is a common reference.",
+      "tips": [
+        "Immigration officers rarely ask for financial proof, but it is recommended",
+        "Having a credit card with sufficient limit is generally acceptable"
+      ],
+      "required": false
+    },
+    {
+      "id": "visa-application-form",
+      "name": "Visitor Visa Application Form (visa applicants only)",
+      "description": "Completed online application from visawebapp.boca.gov.tw, printed and signed. Only required for those applying for a visitor visa (not visa-exempt travelers).",
+      "tips": [
+        "Fill out completely online, then print and sign before submission",
+        "Double-check all information matches your passport exactly"
+      ],
+      "required": false
+    },
+    {
+      "id": "photos",
+      "name": "Passport Photos (visa applicants only)",
+      "description": "2 photos, 45x35mm, white background, taken within 6 months. Only required for visitor visa applicants.",
+      "required": false
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Check Your Visa-Exempt Status",
+      "description": "Verify whether your nationality is on Taiwan's visa-exempt list and for how many days (14, 30, or 90 days). Check the BOCA website for the current list.",
+      "tips": [
+        "The visa-exempt list changes periodically — always check the latest version",
+        "Some nationalities have conditional visa-exempt entry (e.g., must hold ePassport)"
+      ],
+      "links": [
+        {
+          "label": "BOCA Visa-Exempt Entry Information",
+          "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html"
+        }
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Prepare Travel Documents",
+      "description": "Ensure your passport has 6+ months validity, book your return/onward flight, and arrange accommodation.",
+      "duration": "1-2 weeks",
+      "tips": [
+        "Book a refundable return ticket if your plans are flexible",
+        "Have accommodation details ready for your immigration landing card"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Apply for Visitor Visa (if not visa-exempt)",
+      "description": "If your nationality is not visa-exempt, apply at your local TECO or ROC representative office. Submit the application form, passport, photos, and supporting documents.",
+      "duration": "3-5 business days processing",
+      "tips": [
+        "Apply well in advance of your travel date",
+        "Some TECO offices require appointments — check their website first"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Arrive in Taiwan",
+      "description": "Present your passport at immigration. Fill out the arrival card (available on the plane or at the airport). Visa-exempt travelers receive an entry stamp with the permitted stay duration.",
+      "tips": [
+        "Have your return ticket and accommodation proof accessible",
+        "The arrival card asks for your Taiwan address — have your hotel or Airbnb address ready",
+        "Immigration processing is typically quick (15-30 minutes)"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "Instant for visa-exempt entry. 3-5 business days for visitor visa applications.",
+    "notes": "Visitor visa processing times vary by TECO office. Some offices may take longer during peak travel seasons."
+  },
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "No employment of any kind is permitted on visitor visa or visa-exempt entry",
+      "Remote work for overseas employers occupies a legal gray area — there is no explicit prohibition in the visa-exempt rules, but it is not formally authorized either",
+      "Any work for a Taiwan-based employer requires a separate work permit",
+      "Violation of work restrictions may result in fines and deportation"
+    ],
+    "notes": "Visitor status is strictly for tourism, business meetings, family visits, and short-term stays. For remote work, consider the Digital Nomad Visa (DNV). For Taiwan employment, a Work ARC or Gold Card is required."
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "BOCA",
+      "agencyFullName": "Bureau of Consular Affairs (外交部領事事務局)",
+      "action": "Visitor Visa Processing",
+      "description": "BOCA and its overseas offices (TECO) process visitor visa applications for non-exempt nationalities.",
+      "url": "https://www.boca.gov.tw",
+      "processingDays": 5,
+      "tips": [
+        "Overseas applicants: submit at your jurisdictional TECO or ROC representative office",
+        "Visa-exempt travelers do not need to interact with BOCA"
+      ]
+    },
+    {
+      "order": 2,
+      "agency": "NIA",
+      "agencyFullName": "National Immigration Agency (內政部移民署)",
+      "action": "Entry Processing & Stay Management",
+      "description": "NIA processes entry at the airport and manages stay duration. For visitor visa holders seeking extensions, applications are submitted at NIA service centers.",
+      "url": "https://www.immigration.gov.tw",
+      "processingDays": 1,
+      "tips": [
+        "Extensions for visitor visas are granted only in exceptional circumstances (illness, natural disaster, etc.)",
+        "Visa-exempt stays cannot be extended — you must depart before your stamp expires"
+      ],
+      "dependsOn": 1
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I do remote work for my overseas employer while visiting Taiwan on visa-exempt entry?",
+      "answer": "This is a legal gray area. Taiwan's visa-exempt entry rules do not explicitly prohibit remote work for overseas employers, but they also do not formally authorize it. Many digital nomads work remotely during short visits, but for stays longer than 90 days or for formal authorization, the Digital Nomad Visa (DNV) is the published pathway."
+    },
+    {
+      "question": "Can I extend my visa-exempt stay beyond 90 days?",
+      "answer": "No. Visa-exempt stays cannot be extended. You must depart Taiwan before your permitted stay expires. To stay longer, consider applying for a Digital Nomad Visa (DNV), Gold Card, or other appropriate visa while still within your visa-exempt period."
+    },
+    {
+      "question": "Can I switch from visitor status to a Digital Nomad Visa (DNV) while in Taiwan?",
+      "answer": "Yes. You can apply for a DNV conversion at a BOCA office while on visa-exempt status. You must apply at least 10 business days before your current stay expires. This is the most common pathway to obtain a DNV."
+    },
+    {
+      "question": "What happens if I overstay my visa-exempt period?",
+      "answer": "Overstaying is a serious violation. Penalties may include fines (NT$2,000-10,000 per day), detention, deportation, and a future entry ban. Always depart before your permitted stay expires."
+    },
+    {
+      "question": "Do I need travel insurance for visa-exempt entry?",
+      "answer": "Travel insurance is not a published entry requirement for most visa-exempt nationalities, but it is strongly recommended. Taiwan does not provide NHI coverage to short-term visitors, so medical expenses would be entirely out-of-pocket without insurance."
+    },
+    {
+      "question": "Can I do a visa run (leave and re-enter) to reset my 90-day stay?",
+      "answer": "While there is no published rule explicitly prohibiting re-entry, immigration officers have discretion to deny entry if they suspect someone is using visa-exempt entry to live in Taiwan long-term. Repeated visa runs may trigger additional questioning or denial of entry."
+    },
+    {
+      "question": "What is the reciprocity surcharge for US citizens?",
+      "answer": "US citizens pay NT$7,090 (domestic) or USD $185 (overseas) for visitor visas due to a reciprocity surcharge. This is based on the fees the US charges Taiwan nationals for similar visas. Visa-exempt entry remains free for US citizens."
+    }
+  ],
+  "tips": [
+    "Check the BOCA website for the latest visa-exempt country list before booking flights",
+    "Have your return ticket and accommodation details ready for immigration — officers may ask to see them",
+    "Fill out the arrival card on the plane to save time at immigration",
+    "Consider applying for a Digital Nomad Visa (DNV) if you plan to stay longer than 90 days",
+    "Get an EasyCard (悠遊卡) at the airport for convenient public transit, convenience store payments, and more",
+    "Taiwan uses 110V electricity (same as US/Japan) — EU/UK travelers need a voltage converter"
+  ],
+  "warnings": [
+    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。",
+    "Visa-exempt stays CANNOT be extended — you must depart before your permitted period expires or apply for a different visa status",
+    "No employment of any kind is permitted on visitor visa or visa-exempt entry — working for a Taiwan employer requires a separate work permit",
+    "Overstaying may result in fines, detention, deportation, and future entry bans",
+    "The 14-day visa-free program for Thailand, Brunei, and Philippines is a trial program — check BOCA for the latest extension status"
+  ],
+  "communityTips": [
+    {
+      "id": "arrival-card-tip",
+      "tip": "Fill out the arrival card on the plane. You'll need your Taiwan accommodation address, so screenshot your hotel/Airbnb booking before you lose WiFi on landing.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "easycard-tip",
+      "tip": "Get an EasyCard (悠遊卡) or iPASS at the airport convenience store. It works on MRT, buses, trains, convenience stores, and many restaurants. You can top it up at any convenience store.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "sim-card-tip",
+      "tip": "Buy a tourist SIM card at the airport (Chunghwa Telecom, Taiwan Mobile, or FarEasTone counters just past immigration). 30-day unlimited data plans cost approximately NT$500-1,000 (USD $15-30).",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "dnv-scout-tip",
+      "tip": "If you're scouting Taiwan as a digital nomad base, use your 90-day visa-exempt stay to explore different cities. Taipei has the best infrastructure, but Taichung and Kaohsiung are cheaper. Apply for DNV at BOCA before day 80.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "visa-run-warning",
+      "tip": "Don't rely on visa runs to live in Taiwan long-term. Immigration officers track entry patterns and may deny re-entry if they suspect you're using visa-exempt entry as a long-term residency workaround.",
+      "source": "community",
+      "verified": true,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "dnv",
+    "gold-card",
+    "work-arc"
+  ],
+  "pathsTo": [
+    {
+      "type": "dnv",
+      "name": "Taiwan Digital Nomad Visa (DNV)",
+      "requirements": "Passport from a visa-exempt country, remote employment with overseas employer/clients, age-tiered income threshold (USD $20K-40K/year), bank balance ≥ USD $10K average, international health insurance.",
+      "timeline": "5-15 working days processing",
+      "documents": [
+        "Online application form (printed and signed)",
+        "Current passport",
+        "Employment contract or project contracts",
+        "Income proof / tax certificates",
+        "Bank statement (6-month average ≥ USD $10K)",
+        "Insurance certificate",
+        "Activity plan"
+      ],
+      "notes": "The most common transition for digital nomads. Apply at BOCA at least 10 business days before your visa-exempt stay expires. Allows up to 2 years total stay."
+    },
+    {
+      "type": "gold-card",
+      "name": "Taiwan Employment Gold Card",
+      "requirements": "Meet qualification criteria in one of 12 professional fields (salary ≥ NT$160,000/month, relevant experience, PhD, awards, etc.).",
+      "timeline": "30-60 business days processing",
+      "documents": [
+        "Current passport",
+        "Field-specific qualification documents",
+        "Tax/income proof",
+        "Professional certifications (if applicable)"
+      ],
+      "notes": "For highly skilled professionals. Provides open work permit, NHI access, and 50% tax exemption on salary above NT$3M for the first 5 years. Can apply while on visitor status in Taiwan."
+    },
+    {
+      "type": "work-arc",
+      "name": "Work ARC (Employment-Sponsored)",
+      "requirements": "Job offer from a Taiwan-registered company. Employer must apply for work permit at the Ministry of Labor.",
+      "timeline": "2-6 weeks processing",
+      "documents": [
+        "Employment contract with Taiwan employer",
+        "Employer's work permit application",
+        "Current passport",
+        "Degree certificates (authenticated)"
+      ],
+      "notes": "For those who find employment with a Taiwan company. The employer initiates the work permit process. Requires a bachelor's degree + 2 years experience (or master's + 0 years)."
+    }
+  ],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "BOCA Visa Information",
+      "url": "https://www.boca.gov.tw"
+    },
+    {
+      "label": "BOCA Visa-Exempt Entry Information",
+      "url": "https://www.boca.gov.tw/cp-149-4486-7785a-2.html"
+    },
+    {
+      "label": "BOCA Visa Web Application",
+      "url": "https://visawebapp.boca.gov.tw"
+    },
+    {
+      "label": "National Immigration Agency",
+      "url": "https://www.immigration.gov.tw"
+    }
+  ]
+}

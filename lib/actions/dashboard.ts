@@ -60,13 +60,13 @@ export const getActiveVisa = async (): Promise<UserVisa | null> => {
     .select('*')
     .eq('user_id', user.id)
     .eq('is_active', true)
-    .single();
+    .maybeSingle();
 
   if (error) {
     console.error('[getActiveVisa] Failed to fetch active visa:', error.message, { userId: user.id });
     return null;
   }
-  return data as UserVisa;
+  return data as UserVisa | null;
 };
 
 export const createVisa = async (input: {

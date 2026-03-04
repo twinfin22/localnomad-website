@@ -29,14 +29,10 @@ import {
   SourcesRelated,
 } from './sections';
 import type { Visa } from '@/lib/types/visa';
-import type { ChecklistItem } from '@/lib/types/dashboard';
 
 interface VisaAccordionLayoutProps {
   visa: Visa;
   country: string;
-  isLoggedIn: boolean;
-  userVisaId?: string;
-  serverChecklist?: ChecklistItem[];
 }
 
 const SECTION_IDS = {
@@ -52,9 +48,6 @@ const SECTION_IDS = {
 export function VisaAccordionLayout({
   visa,
   country,
-  isLoggedIn,
-  userVisaId,
-  serverChecklist,
 }: VisaAccordionLayoutProps) {
   const t = useTranslations('VisaDetail');
   const [openSections, setOpenSections] = useState<string[]>([]);
@@ -222,9 +215,6 @@ export function VisaAccordionLayout({
               documents={visa.documents}
               visaType={visa.type}
               country={country}
-              isLoggedIn={isLoggedIn}
-              userVisaId={userVisaId}
-              serverChecklist={serverChecklist}
             />
           </AccordionContent>
         </AccordionItem>

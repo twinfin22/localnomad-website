@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { getAllPosts } from '@/lib/blog';
+import { BLOG_CATEGORIES } from '@/lib/blog/schema';
 
 const BASE_URL = 'https://localnomad.club';
 
@@ -67,6 +69,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: LAST_MODIFIED,
         changeFrequency: 'yearly',
         priority: 0.3,
+      });
+    }
+  }
+
+  // Blog pages
+  const blogPosts = getAllPosts();
+
+  for (const locale of LOCALES) {
+    // Blog listing
+    entries.push({
+      url: `${BASE_URL}/${locale}/blog`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+
+    // Category pages
+    for (const category of BLOG_CATEGORIES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/${category}`,
+        lastModified: LAST_MODIFIED,
+        changeFrequency: 'weekly',
+        priority: 0.6,
+      });
+    }
+
+    // Individual posts
+    for (const post of blogPosts) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/${post.category}/${post.slug}`,
+        lastModified: new Date(
+          post.frontmatter.updatedAt ?? post.frontmatter.date,
+        ),
+        changeFrequency: 'monthly',
+        priority: 0.7,
       });
     }
   }

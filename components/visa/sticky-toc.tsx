@@ -33,7 +33,7 @@ export function MobileTocBar({
   }, [activeSection]);
 
   return (
-    <div className="sticky top-[41px] z-[9] -mx-6 overflow-x-auto border-b bg-white/95 px-6 py-2 backdrop-blur-sm xl:hidden">
+    <div className="sticky top-[41px] z-[9] -mx-6 overflow-x-auto border-b bg-white/95 px-6 py-2 backdrop-blur-sm md:hidden">
       <div className="flex gap-2">
         {sections.map((section) => (
           <button
@@ -65,7 +65,7 @@ export function DesktopTocSidebar({
   return (
     <nav
       aria-label="Table of contents"
-      className="fixed left-6 top-1/2 z-10 hidden w-[180px] -translate-y-1/2 xl:block"
+      className="fixed left-6 top-1/2 z-10 hidden w-[180px] -translate-y-1/2 md:block"
     >
       <ul className="space-y-0.5">
         {sections.map((section) => (

@@ -106,16 +106,21 @@ export default async function LocaleLayout({ children, params }: Props) {
           </a>
           <header className="sticky top-0 z-40 border-b border-border/60 bg-white/80 backdrop-blur-lg">
             <nav aria-label={t('mainNavigation')} className="mx-auto flex items-center justify-between gap-4 px-6 py-3 text-sm">
-              <Link href="/" className="transition-opacity hover:opacity-80">
-                <Image
-                  src="/logo_new_all-blue.png"
-                  alt="LocalNomad"
-                  width={140}
-                  height={20}
-                  priority
-                  unoptimized
-                />
-              </Link>
+              <div className="flex items-center gap-6">
+                <Link href="/" className="transition-opacity hover:opacity-80">
+                  <Image
+                    src="/logo_new_all-blue.png"
+                    alt="LocalNomad"
+                    width={140}
+                    height={20}
+                    priority
+                    unoptimized
+                  />
+                </Link>
+                <Link href="/blog" className="font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  {t('blog')}
+                </Link>
+              </div>
               <div className="flex items-center gap-4">
                 <LocaleSwitcher />
                 <AuthNav />

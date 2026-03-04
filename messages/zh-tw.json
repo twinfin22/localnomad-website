@@ -7,7 +7,16 @@
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
     "countryKoreaDesc": "D‑8 · E‑7 · F‑1‑D · F‑2 · H‑1",
-    "countryTaiwanDesc": "就業金卡 · 數位遊牧簽證",
+    "countryTaiwanDesc": "\u5c31\u696d\u91d1\u5361 \u00b7 \u6578\u4f4d\u904a\u7267\u7c3d\u8b49",
+    "countryJapan": "\u65e5\u672c",
+    "countryJapanEmoji": "\ud83c\uddef\ud83c\uddf5",
+    "countryJapanDesc": "\u6578\u4f4d\u904a\u7267 \u00b7 \u7d93\u71df\u7ba1\u7406 \u00b7 \u6280\u8853\u4eba\u6587\u77e5\u8b58",
+    "countryChina": "\u4e2d\u570b",
+    "countryChinaEmoji": "\ud83c\udde8\ud83c\uddf3",
+    "countryChinaDesc": "Z\u7c3d\u8b49 \u00b7 R\u7c3d\u8b49 \u00b7 X1\u7c3d\u8b49",
+    "countrySEA": "\u6771\u5357\u4e9e",
+    "countrySEAEmoji": "\ud83c\udf0f",
+    "countrySEADesc": "\u6578\u4f4d\u904a\u7267\u7c3d\u8b49\u6bd4\u8f03",
     "legalNote": "依據公開要求整理，不構成法律建議。",
     "exploreVisas": "探索簽證",
     "howItWorksTitle": "LocalNomad 如何運作",
@@ -170,8 +179,37 @@
     "disclaimer": "依據公開要求整理，不構成法律建議。"
   },
   "Nav": {
-    "skipToContent": "跳至主要內容",
-    "mainNavigation": "主要導覽"
+    "skipToContent": "\u8df3\u81f3\u4e3b\u8981\u5167\u5bb9",
+    "mainNavigation": "\u4e3b\u8981\u5c0e\u89bd",
+    "blog": "\u90e8\u843d\u683c"
+  },
+  "Blog": {
+    "title": "\u90e8\u843d\u683c",
+    "allPosts": "\u6240\u6709\u6587\u7ae0",
+    "readMore": "\u95b1\u8b80\u66f4\u591a",
+    "minuteRead": "\u5206\u9418\u95b1\u8b80",
+    "publishedOn": "\u767c\u4f48\u65bc",
+    "updatedOn": "\u66f4\u65b0\u65bc",
+    "filterByCategory": "\u4f9d\u5206\u985e\u7be9\u9078",
+    "filterByCountry": "\u4f9d\u570b\u5bb6\u7be9\u9078",
+    "noPosts": "\u672a\u627e\u5230\u6587\u7ae0",
+    "all": "\u5168\u90e8",
+    "categories": {
+      "guides": "\u6307\u5357",
+      "updates": "\u66f4\u65b0",
+      "tips": "\u5be6\u7528\u63d0\u793a",
+      "comparisons": "\u6bd4\u8f03",
+      "news": "\u65b0\u805e",
+      "stories": "\u6545\u4e8b"
+    },
+    "countries": {
+      "korea": "\u97d3\u570b",
+      "japan": "\u65e5\u672c",
+      "china": "\u4e2d\u570b",
+      "taiwan": "\u53f0\u7063",
+      "sea": "\u6771\u5357\u4e9e",
+      "global": "\u5168\u7403"
+    }
   },
   "Footer": {
     "tagline": "由遊牧者打造，為遊牧者服務的簽證資訊。",

@@ -1,28 +1,20 @@
-import { getTranslations } from 'next-intl/server';
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { getSession } from '@/lib/actions/auth';
+import { useUser } from '@/hooks/use-user';
 import { LogoutButton } from './logout-button';
 
-export async function AuthNav() {
-  const [user, t] = await Promise.all([
-    getSession(),
-    getTranslations('Auth'),
-  ]);
-
-  if (user) {
-    return (
-      <>
-        <Link href="/dashboard" className="text-primary hover:underline">
-          {t('dashboard')}
-        </Link>
-        <LogoutButton label={t('logOut')} />
-      </>
-    );
-  }
+export function AuthNav() {
+  const { user, loading } = useUser();
+  const t = useTranslations('Auth');
 
   return (
-    <Link href="/login" className="text-primary hover:underline">
-      {t('dashboard')}
-    </Link>
+    <>
+      <Link href="/dashboard" className="text-primary hover:underline">
+        {t('dashboard')}
+      </Link>
+      {!loading && user && <LogoutButton label={t('logOut')} />}
+    </>
   );
 }

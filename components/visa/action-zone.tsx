@@ -3,21 +3,23 @@
 import { useState, useEffect, useCallback, useTransition } from 'react';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
-import { toggleChecklistItem } from '@/lib/actions/dashboard';
+import { useUser } from '@/hooks/use-user';
+import { getActiveVisa, getChecklist, toggleChecklistItem } from '@/lib/actions/dashboard';
 import type { Document as VisaDocument } from '@/lib/types/visa';
 import { DocumentRow } from './document-row';
 import type { ChecklistItem } from '@/lib/types/dashboard';
+
+const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
+  korea: 'kr',
+  taiwan: 'tw',
+  japan: 'jp',
+  china: 'cn',
+};
 
 interface DocumentChecklistProps {
   documents: VisaDocument[];
   visaType: string;
   country: string;
-  /** If provided, user is logged in */
-  isLoggedIn?: boolean;
-  /** If provided, user has this visa tracked in Supabase */
-  userVisaId?: string;
-  /** Pre-loaded checklist from Supabase for logged-in users */
-  serverChecklist?: ChecklistItem[];
 }
 
 function readChecklist(key: string): Record<string, boolean> {
@@ -39,7 +41,7 @@ function readChecklist(key: string): Record<string, boolean> {
   return {};
 }
 
-function useChecklist(storageKey: string) {
+function useLocalChecklist(storageKey: string) {
   const [checked, setChecked] = useState<Record<string, boolean>>(() =>
     typeof window !== 'undefined' ? readChecklist(storageKey) : {}
   );
@@ -63,8 +65,8 @@ function useChecklist(storageKey: string) {
         } catch (error: unknown) {
           if (error instanceof Error) {
             if (process.env.NODE_ENV === 'development') {
-        console.warn('Failed to save checklist to localStorage:', error.message);
-      }
+              console.warn('Failed to save checklist to localStorage:', error.message);
+            }
           }
         }
         return next;
@@ -112,21 +114,53 @@ export function DocumentChecklist({
   documents,
   visaType,
   country,
-  isLoggedIn,
-  userVisaId,
-  serverChecklist,
 }: DocumentChecklistProps) {
   const t = useTranslations('VisaDetail');
   const tAuth = useTranslations('Auth');
+  const { user, loading: authLoading } = useUser();
 
-  // Use Supabase checklist for logged-in users with tracked visa, localStorage otherwise
-  const useServer = isLoggedIn && userVisaId && serverChecklist;
+  const [userVisaId, setUserVisaId] = useState<string | undefined>();
+  const [serverChecklist, setServerChecklist] = useState<ChecklistItem[]>([]);
+  const [authResolved, setAuthResolved] = useState(false);
+
+  // Fetch active visa + checklist when user is authenticated
+  useEffect(() => {
+    if (authLoading) return;
+    if (!user) {
+      setAuthResolved(true);
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      const activeVisa = await getActiveVisa();
+      if (cancelled) return;
+
+      if (
+        activeVisa &&
+        activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
+        activeVisa.visa_type === visaType
+      ) {
+        const checklist = await getChecklist(activeVisa.id);
+        if (cancelled) return;
+        setUserVisaId(activeVisa.id);
+        setServerChecklist(checklist);
+      }
+      setAuthResolved(true);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user, authLoading, country, visaType]);
+
+  const useServer = authResolved && !!user && !!userVisaId;
 
   const storageKey = `localnomad:checklist:${country}:${visaType}`;
-  const localChecklist = useChecklist(storageKey);
+  const localChecklist = useLocalChecklist(storageKey);
   const supabaseChecklist = useSupabaseChecklist(
     userVisaId ?? '',
-    serverChecklist ?? []
+    serverChecklist
   );
 
   const checked = useServer ? supabaseChecklist.checked : localChecklist.checked;
@@ -200,7 +234,7 @@ export function DocumentChecklist({
       </section>
 
       {/* Save progress CTA for anonymous users */}
-      {!isLoggedIn && (
+      {authResolved && !user && (
         <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-center">
           <p className="text-sm text-muted-foreground">
             {tAuth('saveProgress')}{' '}

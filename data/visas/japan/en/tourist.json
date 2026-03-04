@@ -1,0 +1,309 @@
+{
+  "type": "tourist",
+  "name": "Japan Tourist Visa & Visa Waiver — Complete 2026 Guide",
+  "shortName": "Tourist",
+  "category": "tourist",
+  "description": "Comprehensive guide covering Japan's visa waiver program (68+ countries), tourist visa application, 30-90 day stays, and practical information for short-term visitors including digital nomads exploring Japan before committing to the Digital Nomad Visa. Japan offers visa-free entry to nationals of 68+ countries for stays of 15 to 90 days depending on nationality. Visitors from non-waiver countries must apply for a tourist visa (短期滞在) at a Japanese embassy or consulate. The tourist visa and visa waiver cover activities including sightseeing, visiting friends and relatives, attending conferences, and short-term business meetings — but no paid work of any kind is permitted, including remote work. This guide covers eligibility, required documents, entry procedures, and practical tips for making the most of your short-term stay in Japan. Updated for 2026.",
+  "tagline": "Short-term stays for tourism, business meetings, and exploration",
+  "keyRequirement": "Valid passport from visa-waiver country (15-90 days) or tourist visa application",
+  "targetAudience": [
+    "Tourists planning short-term visits to Japan for sightseeing and cultural experiences",
+    "Digital nomads scouting Japan as a potential base before applying for the Digital Nomad Visa",
+    "Business travelers attending meetings, conferences, or trade shows in Japan",
+    "People visiting friends or relatives in Japan",
+    "Travelers exploring Japan as a stopover or part of a multi-country Asia trip"
+  ],
+  "eligibility": [
+    {
+      "id": "visa-waiver-passport",
+      "label": "Passport from a visa-waiver eligible country (68+ countries)",
+      "description": "Japan offers visa-free entry to nationals of 68+ countries. Stay duration varies by nationality: 90 days for most Western countries (USA, UK, Canada, Australia, most EU), 30 days for some countries (UAE, Brunei), and 15 days for others (Indonesia, Thailand under certain conditions). Check the MOFA website for the current visa-waiver country list and permitted stay durations.",
+      "required": false
+    },
+    {
+      "id": "tourist-visa-application",
+      "label": "Tourist visa application for non-waiver countries",
+      "description": "Nationals of countries not on the visa-waiver list must apply for a short-term stay visa (短期滞在) at a Japanese embassy or consulate before traveling. This includes nationals of China, India, the Philippines, Vietnam, and many other countries. The visa is typically issued as single-entry or multiple-entry depending on the applicant's travel history.",
+      "required": false
+    },
+    {
+      "id": "sufficient-funds",
+      "label": "Sufficient funds to cover the duration of stay",
+      "description": "Immigration officers may ask for proof of financial means to support your stay. There is no published minimum amount, but having access to funds equivalent to ¥20,000–30,000 per day of stay is generally considered sufficient. Credit cards, bank statements, and cash are all accepted as evidence.",
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "label": "Return or onward ticket",
+      "description": "Immigration officers typically require evidence of a confirmed departure from Japan. A return flight ticket, onward ticket to another country, or evidence of a planned departure is expected. One-way ticket holders may be questioned more closely at immigration.",
+      "required": true
+    },
+    {
+      "id": "no-work-activities",
+      "label": "No work of any kind permitted (including remote work — technically)",
+      "description": "The tourist visa and visa waiver explicitly prohibit all forms of paid employment and income-generating work in Japan. This technically includes remote work for a foreign employer, although enforcement on remote work is minimal. For legal remote work in Japan, the Digital Nomad Visa is the proper authorization.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "15-90 days (varies by nationality)",
+    "maxTotal": "90 days — extensions are generally not granted except in exceptional circumstances"
+  },
+  "fees": {
+    "application": "¥0 for visa-waiver entry; ¥3,000 (single entry) or ¥6,000 (multiple entry) for tourist visa",
+    "notes": "Visa-waiver entry is completely free — no fee is charged at any point. For tourist visa applicants, fees are paid at the embassy or consulate upon visa issuance (not at application submission). Fee amounts may vary slightly by embassy. Some countries have bilateral fee waiver agreements with Japan."
+  },
+  "residenceStatus": "短期滞在 (Temporary Visitor)",
+  "sponsorRequired": false,
+  "coeRequired": false,
+  "japaneseLanguage": {
+    "required": false,
+    "notes": "Japanese language proficiency is not required. Immigration forms and procedures are available in English at all major airports. Basic English is understood at major tourist destinations, though less so in rural areas."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "パスポート",
+      "description": "Must be valid for the duration of your stay (though 6+ months validity is recommended). Must have at least one blank page for the entry stamp. Passport must be from a visa-waiver country for visa-free entry.",
+      "required": true
+    },
+    {
+      "id": "return-onward-ticket",
+      "name": "Return or Onward Ticket",
+      "nameLocal": "帰国便航空券",
+      "description": "Confirmed flight ticket showing departure from Japan within the permitted stay period. E-tickets and digital booking confirmations are accepted. Immigration officers may deny entry to travelers without a confirmed departure plan.",
+      "required": true
+    },
+    {
+      "id": "accommodation-proof",
+      "name": "Proof of Accommodation",
+      "nameLocal": "宿泊先証明",
+      "description": "Hotel reservations, hostel bookings, Airbnb confirmations, or a letter of invitation from a host in Japan with their address and contact information. Immigration may ask where you are staying — having documentation ready speeds up the entry process.",
+      "required": true
+    },
+    {
+      "id": "financial-proof",
+      "name": "Proof of Financial Means",
+      "nameLocal": "資金証明",
+      "description": "Evidence of sufficient funds to cover your stay. Bank statements, credit cards, cash, or a combination. There is no published minimum, but immigration officers may question travelers who appear unable to support themselves for the duration of their stay.",
+      "tips": [
+        "Carry at least some Japanese yen in cash for initial expenses — many places in Japan still do not accept cards",
+        "Having a credit card with a visible credit limit can serve as supplementary proof"
+      ],
+      "required": false
+    },
+    {
+      "id": "visa-application-form",
+      "name": "Visa Application Form (for non-waiver countries only)",
+      "nameLocal": "査証申請書",
+      "description": "Standard short-term stay visa application form. Download from the official MOFA website or your local Japanese embassy. Required only for nationals of countries not on the visa-waiver list.",
+      "tips": [
+        "Download the latest version from the MOFA website — outdated forms may be rejected",
+        "Complete all fields — incomplete applications are returned without processing"
+      ],
+      "required": false
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photograph (for visa applicants)",
+      "nameLocal": "証明写真",
+      "description": "4.5cm x 3.5cm (or 4cm x 3cm depending on embassy) photograph, taken within the last 6 months, white background. Required only for tourist visa applicants, not for visa-waiver entry.",
+      "required": false
+    },
+    {
+      "id": "itinerary",
+      "name": "Travel Itinerary (for visa applicants)",
+      "nameLocal": "旅行日程表",
+      "description": "Day-by-day itinerary showing planned activities and destinations in Japan. Required for tourist visa applications. Does not need to be followed exactly, but should demonstrate a genuine tourism purpose.",
+      "required": false
+    },
+    {
+      "id": "invitation-letter",
+      "name": "Letter of Invitation (if applicable)",
+      "nameLocal": "招へい理由書",
+      "description": "If visiting friends or relatives in Japan, a letter of invitation (招へい理由書) from the host, along with copies of their residence card, passport, and tax certificate. This significantly strengthens tourist visa applications for non-waiver countries.",
+      "required": false
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Check Visa Waiver Eligibility",
+      "description": "Determine whether your passport qualifies for visa-free entry to Japan and the permitted stay duration (15, 30, or 90 days). Check the MOFA website for the current visa-waiver country list. If your country is on the list, you do not need to apply for a visa — proceed directly to Step 3.",
+      "duration": "Same day",
+      "tips": [
+        "The visa-waiver list is updated periodically — always verify with the current MOFA list before traveling",
+        "Some countries have visa-waiver agreements with specific conditions (e.g., e-passport required) — check the details for your nationality"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Apply for Tourist Visa (Non-Waiver Countries Only)",
+      "description": "If your country is not on the visa-waiver list, apply for a short-term stay visa (短期滞在) at the Japanese embassy or consulate in your country of residence. Submit the application form, passport, photographs, itinerary, accommodation proof, and financial documentation. Processing typically takes 5-7 business days.",
+      "duration": "5-7 business days",
+      "tips": [
+        "Apply well in advance of your planned travel dates — do not rely on expedited processing",
+        "Some embassies require applicants to use a designated travel agency for visa submission — check your local embassy's procedures",
+        "Having a Japanese host provide an invitation letter significantly improves approval chances for applicants from non-waiver countries"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Prepare for Entry to Japan",
+      "description": "Before traveling, ensure you have your passport, return ticket, accommodation details, and sufficient funds accessible. Complete the Visit Japan Web registration online to speed up immigration, customs, and quarantine procedures at arrival.",
+      "duration": "1-2 days",
+      "tips": [
+        "Register on Visit Japan Web (https://vjw-lp.digital.go.jp/) before departure — it significantly reduces waiting time at immigration",
+        "Download offline maps, a translation app, and a transit app (Google Maps or Navitime) before arrival",
+        "Purchase a Japan Rail Pass online before departure if planning extensive train travel — it cannot be purchased in Japan"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Enter Japan and Respect Stay Duration",
+      "description": "Present your passport at immigration upon arrival. For visa-waiver entry, you will receive a landing stamp with your permitted stay duration. For visa holders, your visa will be verified and stamped. Keep track of your permitted stay dates — there is no automatic reminder system, and overstaying has severe consequences.",
+      "duration": "N/A",
+      "tips": [
+        "Immigration processing at Narita, Haneda, and Kansai airports typically takes 15-45 minutes depending on queue length",
+        "Note the date written in your passport stamp — this is your departure deadline",
+        "Extensions are rarely granted — plan your trip within the permitted stay period from the start"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "Instant for visa-waiver entry; 5-7 business days for tourist visa applications",
+    "notes": "Visa-waiver nationals receive their entry permission instantly at the airport upon arrival. Tourist visa applicants should allow 5-7 business days for standard processing at the embassy, though some locations may take longer during peak travel seasons (cherry blossom season, Golden Week, New Year). Expedited processing is generally not available."
+  },
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "No employment of any kind — paid or unpaid work for any Japanese entity is prohibited",
+      "No remote work — technically, working remotely for a foreign employer is not permitted under the tourist visa or visa waiver",
+      "No business activities beyond attending meetings, conferences, or trade shows as a visitor",
+      "No freelance or contract work during the stay",
+      "Violation of work restrictions can result in deportation, entry ban, and criminal charges"
+    ],
+    "notes": "The tourist visa and visa waiver strictly prohibit all forms of work. Many digital nomads do work remotely during tourist stays in practice, but this is a legal gray area with no explicit enforcement mechanism for remote work performed privately. Japan's Digital Nomad Visa, launched in April 2024, is the proper legal framework for remote work. Anyone planning to work remotely for an extended period should consider applying for the Digital Nomad Visa instead."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "Can I do remote work on a tourist visa?",
+      "answer": "Technically no. The visa waiver and tourist visa prohibit all work activity, including remote work for a foreign employer. In practice, many digital nomads do work remotely during short tourist stays, and there is no practical enforcement mechanism for private remote work done from a hotel or apartment. However, this remains a legal gray area. If you plan to work remotely in Japan for an extended period, the Digital Nomad Visa (特定活動 デジタルノマド) is the proper legal authorization — it requires annual income of ¥10 million and allows 6 months of legal remote work."
+    },
+    {
+      "question": "Can I extend my tourist stay beyond 90 days?",
+      "answer": "Generally no. Extensions of the short-term stay status are granted only in truly exceptional circumstances such as hospitalization, natural disasters, or other emergencies beyond the traveler's control. Wanting to stay longer for tourism or personal reasons is not considered an exceptional circumstance. If you need more than 90 days, you should plan to leave Japan and re-enter (though immigration may question frequent entries) or apply for a different visa category."
+    },
+    {
+      "question": "Can I switch from a tourist visa to a Digital Nomad Visa while in Japan?",
+      "answer": "No. Published guidelines do not permit changes of status from short-term stay (tourist) to other visa categories while in Japan. You must leave Japan and apply for the Digital Nomad Visa at a Japanese embassy or consulate in your country of residence. Plan your tourist visit as a scouting trip, then apply for the Digital Nomad Visa from abroad if you decide Japan is the right fit."
+    },
+    {
+      "question": "How many times can I enter Japan per year on a visa waiver?",
+      "answer": "There is no published limit on the number of visa-waiver entries per year. However, immigration officers have broad discretion and may question travelers who appear to be using repeated short stays to live in Japan without proper long-term visa authorization. Frequent entries with stays close to the maximum 90 days, especially with short gaps between visits, may result in additional questioning, reduced permitted stay, or denial of entry. Maintain documentation of your ties to your home country and genuine tourism purpose."
+    },
+    {
+      "question": "Do I need a visa if I'm just transiting through Japan?",
+      "answer": "If you are staying in the international transit area and departing within 24 hours, you generally do not need a visa. However, if you plan to leave the airport (even briefly to visit a nearby area), you will need visa-waiver eligibility or a tourist visa. Japan does not offer a dedicated transit visa — entry to the country requires full immigration clearance."
+    },
+    {
+      "question": "What happens if I overstay my permitted period?",
+      "answer": "Overstaying is treated as a serious immigration violation in Japan. Consequences include arrest and detention, deportation at your own expense, a criminal record in Japan, and an entry ban of 1 to 10 years (or permanently in severe cases). Even overstaying by one day triggers these consequences. If you realize you cannot leave by your deadline due to genuine emergency (medical, natural disaster), contact the nearest immigration office immediately — voluntary reporting before discovery is treated more leniently."
+    },
+    {
+      "question": "Is the Japan Rail Pass worth it for tourists?",
+      "answer": "The Japan Rail Pass (JR Pass) covers unlimited travel on most JR trains including the Shinkansen (bullet train). As of 2026, the 7-day pass costs ¥50,000 (ordinary) or ¥70,000 (Green/first class). It is worth it if you plan to travel between multiple cities — a single Tokyo-Kyoto-Tokyo round trip on the Shinkansen costs approximately ¥27,000, making the 7-day pass economical for multi-city trips. Note: the JR Pass must be purchased online before arriving in Japan."
+    },
+    {
+      "question": "Can I use the tourist visa for business meetings?",
+      "answer": "Yes. Published guidelines permit short-term business activities under the tourist visa and visa waiver, including attending meetings, conferences, trade shows, factory visits, and contract signing ceremonies. However, any activity that constitutes actual work — such as providing services, performing consulting, or participating in the day-to-day operations of a Japanese business — requires a work visa. The line between permitted business meetings and prohibited work activity is based on whether you are performing labor or merely conducting discussions."
+    }
+  ],
+  "tips": [
+    "Register on Visit Japan Web before departure — it streamlines immigration, customs, and tax-free shopping procedures",
+    "Get a Suica or Pasmo IC card at the airport for seamless public transit payments across Japan — they work on trains, buses, and at convenience stores",
+    "Japan is still significantly cash-dependent outside of major cities — carry ¥10,000-20,000 in cash as backup, withdrawable at 7-Eleven and Japan Post ATMs",
+    "Pocket Wi-Fi rental or an eSIM (providers like Ubigi, Airalo) is essential — free Wi-Fi coverage in Japan is limited outside of trains and major stations",
+    "Download Google Translate with the Japanese language pack for offline camera translation — useful for menus, signs, and notices",
+    "Convenience stores (7-Eleven, Lawson, FamilyMart) are lifelines for affordable food, ATM access, Wi-Fi, and printing services",
+    "Book accommodations in advance during peak seasons: cherry blossom season (late March-April), Golden Week (late April-early May), autumn foliage (November), and New Year"
+  ],
+  "warnings": [
+    "No work of any kind is permitted — including remote work for a foreign employer. The Digital Nomad Visa is required for legal remote work in Japan.",
+    "Extensions are almost never granted — plan your trip within the permitted stay duration from the beginning",
+    "Immigration officers may question travelers with one-way tickets, minimal luggage, or patterns suggesting residence rather than tourism",
+    "Overstaying even by one day results in arrest, deportation, criminal record, and a multi-year entry ban from Japan",
+    "You cannot switch from tourist status to any other visa category while inside Japan — you must leave the country and apply from abroad",
+    "Frequent entries on visa waivers may attract scrutiny — immigration officers may reduce your permitted stay or deny entry if they suspect you are living in Japan on tourist entries"
+  ],
+  "communityTips": [
+    {
+      "id": "dn-scouting-tip",
+      "tip": "Use your tourist visa stay as a scouting trip before committing to the Digital Nomad Visa. Spend time in Tokyo, Osaka, Fukuoka, and smaller cities to find the best fit for your lifestyle and budget. Many digital nomads discover that cities outside Tokyo (especially Fukuoka and Kyoto) offer better quality of life at lower cost.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "transit-tip",
+      "tip": "Get a Suica or Pasmo card at the airport on arrival and load at least ¥3,000. These IC cards work on virtually all public transit in Japan and can be used for contactless payments at convenience stores, vending machines, and many restaurants. Apple Pay and Google Pay users can add a virtual Suica directly to their phone.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "accommodation-tip",
+      "tip": "For stays longer than a week, monthly apartments and guesthouses are significantly cheaper than hotels. Platforms like Monthly-Mansion, Sakura House, and OYO Life offer furnished rooms without requiring a Japanese guarantor. Airbnb is also widely available but subject to Japan's minpaku (vacation rental) laws — legal listings display a registration number.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "coworking-tourist-tip",
+      "tip": "Even if you are officially on a tourist visa and not supposed to work, knowing where the coworking spaces and laptop-friendly cafes are is useful for planning. Starbucks and Tully's Coffee have reliable Wi-Fi. Dedicated coworking spaces like BIZcomfort and Regus offer day passes. Many public libraries also have free Wi-Fi and work-friendly environments.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "digital-nomad-jp",
+    "engineer-specialist",
+    "business-manager"
+  ],
+  "pathsTo": [],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Ministry of Foreign Affairs — Visa Information",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    },
+    {
+      "label": "Ministry of Foreign Affairs — Visa-Waiver Country List",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html"
+    },
+    {
+      "label": "Immigration Services Agency (ISA)",
+      "url": "https://www.moj.go.jp/isa/"
+    },
+    {
+      "label": "Visit Japan Web (Pre-registration)",
+      "url": "https://vjw-lp.digital.go.jp/"
+    },
+    {
+      "label": "Ministry of Foreign Affairs — Embassy/Consulate Finder",
+      "url": "https://www.mofa.go.jp/about/emb_cons/over/index.html"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ export const Hero = () => {
         }}
       />
 
-      <div className="relative z-[2] mx-auto w-full max-w-2xl text-center">
+      <div className="relative z-[2] mx-auto w-full max-w-4xl text-center">
         {/* Decorative accent line */}
         <div
           className="animate-in fade-in slide-in-from-bottom-4 duration-700 mx-auto mb-6 h-px w-12 bg-gradient-to-r from-transparent via-white/40 to-transparent"
@@ -49,7 +49,7 @@ export const Hero = () => {
         </p>
 
         <div
-          className="animate-in fade-in zoom-in-95 duration-500 mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center"
+          className="animate-in fade-in zoom-in-95 duration-500 mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           style={{ animationDelay: '400ms', animationFillMode: 'backwards' }}
         >
           <CountryCard
@@ -59,10 +59,28 @@ export const Hero = () => {
             description={t('countryKoreaDesc')}
           />
           <CountryCard
+            href="/japan"
+            emoji={t('countryJapanEmoji')}
+            name={t('countryJapan')}
+            description={t('countryJapanDesc')}
+          />
+          <CountryCard
+            href="/china"
+            emoji={t('countryChinaEmoji')}
+            name={t('countryChina')}
+            description={t('countryChinaDesc')}
+          />
+          <CountryCard
             href="/taiwan"
             emoji={t('countryTaiwanEmoji')}
             name={t('countryTaiwan')}
             description={t('countryTaiwanDesc')}
+          />
+          <CountryCard
+            href="/southeast-asia"
+            emoji={t('countrySEAEmoji')}
+            name={t('countrySEA')}
+            description={t('countrySEADesc')}
           />
         </div>
       </div>

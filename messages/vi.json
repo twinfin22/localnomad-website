@@ -7,7 +7,16 @@
     "countryKoreaEmoji": "\ud83c\uddf0\ud83c\uddf7",
     "countryTaiwanEmoji": "\ud83c\uddf9\ud83c\uddfc",
     "countryKoreaDesc": "D‑8 · E‑7 · F‑1‑D · F‑2 · H‑1",
-    "countryTaiwanDesc": "Gold Card · Visa du mục kỹ thuật số",
+    "countryTaiwanDesc": "Gold Card \u00b7 Visa du m\u1ee5c k\u1ef9 thu\u1eadt s\u1ed1",
+    "countryJapan": "Nh\u1eadt B\u1ea3n",
+    "countryJapanEmoji": "\ud83c\uddef\ud83c\uddf5",
+    "countryJapanDesc": "Digital Nomad \u00b7 Qu\u1ea3n l\u00fd kinh doanh \u00b7 K\u1ef9 s\u01b0",
+    "countryChina": "Trung Qu\u1ed1c",
+    "countryChinaEmoji": "\ud83c\udde8\ud83c\uddf3",
+    "countryChinaDesc": "Visa Z \u00b7 Visa R \u00b7 Visa X1",
+    "countrySEA": "\u0110\u00f4ng Nam \u00c1",
+    "countrySEAEmoji": "\ud83c\udf0f",
+    "countrySEADesc": "So s\u00e1nh Visa Digital Nomad",
     "legalNote": "Dựa trên các yêu cầu đã công bố. Không phải tư vấn pháp lý.",
     "exploreVisas": "Tìm hiểu thị thực",
     "howItWorksTitle": "LocalNomad hoạt động như thế nào",
@@ -170,8 +179,37 @@
     "disclaimer": "Dựa trên các yêu cầu đã công bố. Không phải tư vấn pháp lý."
   },
   "Nav": {
-    "skipToContent": "Chuyển đến nội dung",
-    "mainNavigation": "Điều hướng chính"
+    "skipToContent": "Chuy\u1ec3n \u0111\u1ebfn n\u1ed9i dung",
+    "mainNavigation": "\u0110i\u1ec1u h\u01b0\u1edbng ch\u00ednh",
+    "blog": "Blog"
+  },
+  "Blog": {
+    "title": "Blog",
+    "allPosts": "T\u1ea5t c\u1ea3 b\u00e0i vi\u1ebft",
+    "readMore": "\u0110\u1ecdc th\u00eam",
+    "minuteRead": "ph\u00fat \u0111\u1ecdc",
+    "publishedOn": "\u0110\u0103ng ng\u00e0y",
+    "updatedOn": "C\u1eadp nh\u1eadt ng\u00e0y",
+    "filterByCategory": "L\u1ecdc theo danh m\u1ee5c",
+    "filterByCountry": "L\u1ecdc theo qu\u1ed1c gia",
+    "noPosts": "Kh\u00f4ng t\u00ecm th\u1ea5y b\u00e0i vi\u1ebft",
+    "all": "T\u1ea5t c\u1ea3",
+    "categories": {
+      "guides": "H\u01b0\u1edbng d\u1eabn",
+      "updates": "C\u1eadp nh\u1eadt",
+      "tips": "M\u1eb9o",
+      "comparisons": "So s\u00e1nh",
+      "news": "Tin t\u1ee9c",
+      "stories": "C\u00e2u chuy\u1ec7n"
+    },
+    "countries": {
+      "korea": "H\u00e0n Qu\u1ed1c",
+      "japan": "Nh\u1eadt B\u1ea3n",
+      "china": "Trung Qu\u1ed1c",
+      "taiwan": "\u0110\u00e0i Loan",
+      "sea": "\u0110\u00f4ng Nam \u00c1",
+      "global": "To\u00e0n c\u1ea7u"
+    }
   },
   "Footer": {
     "tagline": "Thông tin thị thực bởi dân du mục, dành cho dân du mục.",
