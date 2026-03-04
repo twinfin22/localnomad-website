@@ -5,3 +5,4 @@ export { DocumentChecklist } from './action-zone';
 export { DocumentRow } from './document-row';
 export { ComparisonTool } from './comparison-tool';
 export { ComparisonCard } from './comparison-card';
+export { SEAComparisonTable } from './sea-comparison-table';

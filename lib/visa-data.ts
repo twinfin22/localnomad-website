@@ -58,6 +58,15 @@ export const getVisaData = cache(
 );
 
 /**
+ * Load comparison data by ID.
+ */
+export async function getComparisonData(comparisonId: string) {
+  const data = (await import(`@/data/comparisons/${comparisonId}.json`))
+    .default;
+  return data;
+}
+
+/**
  * List available visas for a country/locale as summaries.
  */
 export const getAvailableVisas = cache(

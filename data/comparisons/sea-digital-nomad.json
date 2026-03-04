@@ -1,0 +1,123 @@
+{
+  "id": "sea-digital-nomad",
+  "title": "Southeast Asia Digital Nomad Visa Comparison",
+  "description": "Compare digital nomad and remote worker visa options across Southeast Asia. Each country offers different requirements, durations, and benefits for location-independent professionals.",
+  "lastUpdated": "2026-03-04",
+  "disclaimer": "This comparison is compiled from publicly available sources for general reference only. Visa requirements change frequently. Always verify current requirements directly with each country's immigration authority before applying. This is not immigration consulting or legal advice.",
+  "countries": ["Thailand", "Indonesia", "Malaysia", "Philippines"],
+  "columns": [
+    { "id": "officialName", "displayName": "Official Name", "dataType": "string" },
+    { "id": "visaCategory", "displayName": "Visa Category", "dataType": "string" },
+    { "id": "duration", "displayName": "Validity Period", "dataType": "string" },
+    { "id": "maxStay", "displayName": "Maximum Stay", "dataType": "string" },
+    { "id": "extensionRules", "displayName": "Extension Rules", "dataType": "string" },
+    { "id": "financialRequirement", "displayName": "Financial Requirement", "dataType": "string" },
+    { "id": "incomeProof", "displayName": "Income Proof", "dataType": "string" },
+    { "id": "healthInsurance", "displayName": "Health Insurance", "dataType": "string" },
+    { "id": "remoteWorkAllowed", "displayName": "Remote Work Allowed", "dataType": "boolean-text" },
+    { "id": "localWorkAllowed", "displayName": "Local Work Allowed", "dataType": "boolean-text" },
+    { "id": "applicationFee", "displayName": "Application Fee", "dataType": "string" },
+    { "id": "processingTime", "displayName": "Processing Time", "dataType": "string" },
+    { "id": "dependents", "displayName": "Dependents", "dataType": "boolean-text" },
+    { "id": "taxImplications", "displayName": "Tax Implications", "dataType": "string" },
+    { "id": "multipleEntry", "displayName": "Multiple Entry", "dataType": "boolean-text" },
+    { "id": "recentChanges", "displayName": "Recent Changes", "dataType": "string" }
+  ],
+  "visas": [
+    {
+      "country": "Thailand",
+      "visaName": "Destination Thailand Visa (DTV)",
+      "data": {
+        "officialName": "Destination Thailand Visa (DTV)",
+        "visaCategory": "Multiple-entry tourist visa with workcation permissions",
+        "duration": "5 years",
+        "maxStay": "180 days per entry",
+        "extensionRules": "Multiple entries permitted within 5-year validity. More than 2 visa runs per year may result in entry denial.",
+        "financialRequirement": "THB 500,000 (~USD 15,340) in savings, or proof of foreign income",
+        "incomeProof": "Bank statements or payslips showing foreign income",
+        "healthInsurance": "Travel insurance typically required for application",
+        "remoteWorkAllowed": "Yes — can work for foreign companies and freelance for non-Thai clients",
+        "localWorkAllowed": "No — cannot work for Thai companies or obtain Thai work permit",
+        "applicationFee": "USD 50–100 via e-visa system",
+        "processingTime": "1–3 business days (online e-visa)",
+        "dependents": "Yes — spouses and unmarried children under 20",
+        "taxImplications": "Tax resident if staying >180 days/year. Foreign income taxed only if remitted to Thailand in same calendar year.",
+        "multipleEntry": "Yes — multiple entries within 5-year validity",
+        "recentChanges": "Launched July 2024. Full e-visa system from January 2025. Visa run enforcement tightened November 2025."
+      }
+    },
+    {
+      "country": "Indonesia",
+      "visaName": "E33G Remote Worker Visa",
+      "data": {
+        "officialName": "E33G Remote Worker Visa",
+        "visaCategory": "Single-entry work visa for remote workers",
+        "duration": "1 year",
+        "maxStay": "1 year (renewable)",
+        "extensionRules": "Renewable for additional years. Must apply for renewal before expiry without leaving Indonesia.",
+        "financialRequirement": "USD 60,000 minimum annual income from foreign employer, plus USD 2,000 savings in last 3 months",
+        "incomeProof": "Employment contract with foreign company and bank statements",
+        "healthInsurance": "Not formally required but recommended; private healthcare available",
+        "remoteWorkAllowed": "Yes — must work for foreign employer (mandatory requirement)",
+        "localWorkAllowed": "No — cannot work for Indonesian companies or accept local employment",
+        "applicationFee": "IDR 7,000,000 (~USD 450)",
+        "processingTime": "7–10 working days",
+        "dependents": "No — individual visa only",
+        "taxImplications": "Foreign-source income generally not taxed. Tax residency rules still evolving for E33G holders.",
+        "multipleEntry": "No — single entry. Must renew for continued stay.",
+        "recentChanges": "Launched 2024. Policy refinements ongoing. Growing acceptance among immigration authorities."
+      }
+    },
+    {
+      "country": "Malaysia",
+      "visaName": "DE Rantau Nomad Pass",
+      "data": {
+        "officialName": "DE Rantau Nomad Pass",
+        "visaCategory": "Long-term digital nomad residence pass",
+        "duration": "12 months",
+        "maxStay": "12 months (renewable)",
+        "extensionRules": "Renewable for additional 12 months online without leaving Malaysia. Processing takes 6–8 weeks.",
+        "financialRequirement": "USD 24,000/year (tech/IT professionals) or USD 60,000/year (non-tech professionals)",
+        "incomeProof": "Proof of foreign income source and employment/freelance documentation",
+        "healthInsurance": "Not formally required; private healthcare widely available and affordable",
+        "remoteWorkAllowed": "Yes — can work remotely for foreign employers and freelance for foreign clients",
+        "localWorkAllowed": "No — cannot work for Malaysian companies",
+        "applicationFee": "MYR 1,000 (~USD 220) main applicant; MYR 500 (~USD 110) per dependent",
+        "processingTime": "6–8 weeks",
+        "dependents": "Yes — spouse and children can accompany",
+        "taxImplications": "Reduced tax rate on Malaysian-source income for first 182 days. Foreign income not taxed if stay under 60 days.",
+        "multipleEntry": "Yes — multiple-entry privileges included",
+        "recentChanges": "Eligibility expanded 2025 to include non-tech professionals. Income thresholds vary by field."
+      }
+    },
+    {
+      "country": "Philippines",
+      "visaName": "Digital Nomad Visa",
+      "data": {
+        "officialName": "Philippine Digital Nomad Visa (Executive Order No. 86)",
+        "visaCategory": "Remote worker long-term visa",
+        "duration": "12 months",
+        "maxStay": "12 months, renewable once (24 months maximum total)",
+        "extensionRules": "Renewable for one additional 12-month period in-country. Maximum 2-year total stay.",
+        "financialRequirement": "USD 24,000 minimum annual income from foreign sources",
+        "incomeProof": "Proof of remote employment or freelance contracts with foreign clients",
+        "healthInsurance": "Yes — valid international health insurance required throughout entire stay",
+        "remoteWorkAllowed": "Yes — can work for foreign employers and freelance for overseas clients",
+        "localWorkAllowed": "No — cannot work for Philippines-based companies or clients",
+        "applicationFee": "Estimated USD 50–200 (fees being finalized)",
+        "processingTime": "4–6 weeks",
+        "dependents": "No — details not yet confirmed for initial program",
+        "taxImplications": "Tax-free on foreign-source income. DN visa holders not considered Philippine tax residents.",
+        "multipleEntry": "Yes — expected to include multiple-entry privileges",
+        "recentChanges": "Launched June 2025. Still in pilot phase. Procedures being refined based on initial applications."
+      }
+    }
+  ],
+  "sources": [
+    { "label": "Thailand DTV Official", "url": "https://dtv.in.th/" },
+    { "label": "Thailand E-Visa Portal", "url": "https://thaievisa.go.th/" },
+    { "label": "Indonesia Immigration", "url": "https://www.imigrasi.go.id/" },
+    { "label": "Malaysia DE Rantau", "url": "https://www.mdec.my/derantau" },
+    { "label": "Philippine Bureau of Immigration", "url": "https://immigration.gov.ph/" }
+  ]
+}

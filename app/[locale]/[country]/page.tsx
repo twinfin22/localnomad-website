@@ -4,17 +4,20 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
-import { getAvailableVisas } from '@/lib/visa-data';
+import { getAvailableVisas, getComparisonData } from '@/lib/visa-data';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { SEAComparisonTable } from '@/components/visa/sea-comparison-table';
 import type { Country } from '@/lib/types/visa';
+import type { SEAComparisonData } from '@/lib/types/sea';
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china'] as const;
+const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china', 'southeast-asia'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',
   taiwan: 'Taiwan',
   japan: 'Japan',
   china: 'China',
+  'southeast-asia': 'Southeast Asia',
 };
 
 const CATEGORY_ICONS: Record<string, string> = {
@@ -81,6 +84,11 @@ export default async function CountryPage({ params }: Props) {
     getTranslations('Common'),
     getAvailableVisas(country as Country, locale),
   ]);
+
+  const comparisonData =
+    country === 'southeast-asia'
+      ? ((await getComparisonData('sea-digital-nomad')) as SEAComparisonData)
+      : null;
 
   const displayName = COUNTRY_DISPLAY[country] ?? country;
 
@@ -156,6 +164,10 @@ export default async function CountryPage({ params }: Props) {
               ))}
             </div>
           </>
+        ) : comparisonData ? (
+          <div className="mt-8">
+            <SEAComparisonTable data={comparisonData} />
+          </div>
         ) : (
           <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
             {t('comingSoon')}

@@ -1,24 +1,28 @@
 // =============================================================================
 // SEA Digital Nomad Visa Comparison Types
-// Flat comparison format — not VisaBase-based.
+// Flat comparison format for the SEA comparison table.
 // =============================================================================
 
-export interface SEAVisaComparison {
+export interface SEAComparisonColumn {
+  id: string;
+  displayName: string;
+  dataType: 'string' | 'boolean-text';
+}
+
+export interface SEAComparisonVisa {
   country: string;
-  flag: string;
   visaName: string;
-  visaValidity: string;
-  singleStayDuration: string;
-  maxStayDuration: string;
-  incomeRequirement: string;
-  applicationFee: string;
-  processingTime: string;
-  workPermission: string;
-  tax: string;
-  familyAccompaniment: string;
-  healthInsurance: string;
-  renewalPossible: boolean;
-  pros: string[];
-  cons: string[];
-  officialLink: string;
+  data: Record<string, string>;
+}
+
+export interface SEAComparisonData {
+  id: string;
+  title: string;
+  description: string;
+  lastUpdated: string;
+  disclaimer: string;
+  countries: string[];
+  columns: SEAComparisonColumn[];
+  visas: SEAComparisonVisa[];
+  sources: { label: string; url: string }[];
 }
