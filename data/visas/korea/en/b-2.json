@@ -27,8 +27,8 @@
     },
     {
       "id": "valid-passport",
-      "label": "Valid passport with at least 6 months remaining",
-      "description": "Passport must be valid for at least 6 months beyond the intended date of entry.",
+      "label": "Valid passport for the duration of stay",
+      "description": "Passport must be valid for the duration of your intended stay. While there is no official 6-month rule for Korea, some airlines may enforce their own validity requirements — check with your carrier before travel.",
       "required": true
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": "passport",
       "name": "Valid Passport",
-      "description": "Must be valid for at least 6 months beyond intended stay with at least 2 blank pages",
+      "description": "Must be valid for the duration of your stay with at least 2 blank pages. Some airlines may require 6+ months validity — check with your carrier.",
       "required": true,
       "nameKorean": "여권"
     },
@@ -157,7 +157,7 @@
       "step": 5,
       "title": "Register if Staying 90+ Days",
       "description": "If you plan to stay for 90 days or receive an extension, you must register at the local immigration office within 90 days of arrival to obtain an Alien Registration Card (ARC).",
-      "duration": "1-2 weeks for ARC processing",
+      "duration": "2-4 weeks for ARC processing",
       "tips": [
         "ARC is required for opening a bank account, getting a phone plan, etc.",
         "Book an appointment on HiKorea before visiting the immigration office"
@@ -189,7 +189,7 @@
     },
     {
       "question": "Can I switch from B-2 to F-1-D (Digital Nomad Visa) while in Korea?",
-      "answer": "According to published immigration procedures, a change of status from B-2 to F-1-D may be possible at the local immigration office, provided you meet all F-1-D requirements (income ~$66,000+, remote employment, health insurance). However, not all status changes are guaranteed — check with the immigration office or HiKorea portal for current procedures."
+      "answer": "According to published immigration procedures, a change of status from B-2 to F-1-D may be possible at the local immigration office, provided you meet all F-1-D requirements (income ~$70,000+, remote employment, health insurance). However, not all status changes are guaranteed — check with the immigration office or HiKorea portal for current procedures."
     },
     {
       "question": "What happens if I overstay my B-2 visa?",
@@ -265,7 +265,7 @@
     {
       "type": "f-1-d",
       "name": "Digital Nomad Visa",
-      "requirements": "Remote employment with a foreign company and annual income of ~$66,000+ USD (GNI x 2). Must have health insurance covering Korea.",
+      "requirements": "Remote employment with a foreign company and annual income of ~$70,000+ USD (GNI x 2). Must have health insurance covering Korea.",
       "timeline": "1-3 weeks processing at immigration office",
       "documents": [
         "Proof of remote employment",

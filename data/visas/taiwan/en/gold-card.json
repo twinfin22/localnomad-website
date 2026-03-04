@@ -3,9 +3,9 @@
   "name": "Taiwan Employment Gold Card — Complete 2026 Guide",
   "shortName": "Gold Card",
   "category": "gold-card",
-  "description": "Everything about Taiwan's Employment Gold Card: 12 professional fields, 4-in-1 work + residence permit, 50% tax exemption, NHI access, and APRC fast-track. Updated for 2026.",
+  "description": "Everything about Taiwan's Employment Gold Card: 11 professional fields, 4-in-1 work + residence permit, 50% tax exemption, NHI access, and APRC fast-track. Updated for 2026.",
   "tagline": "4-in-1 work, reside, and thrive in Taiwan",
-  "keyRequirement": "Qualifying expertise in one of 12 professional fields OR monthly salary ≥ NT$160,000",
+  "keyRequirement": "Qualifying expertise in one of 11 professional fields OR monthly salary ≥ NT$160,000",
   "targetAudience": [
     "Senior professionals in tech, finance, education, biotech, and other qualifying fields",
     "Entrepreneurs and startup founders seeking open work permission",
@@ -15,7 +15,7 @@
   "eligibility": [
     {
       "id": "professional-field",
-      "label": "Expertise in one of 12 designated professional fields",
+      "label": "Expertise in one of 11 designated professional fields",
       "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Practitioners of Ancestor Rites",
       "required": true
     },
@@ -166,9 +166,9 @@
       "id": "step-1",
       "step": 1,
       "title": "Choose Industry Field",
-      "description": "Select 1 of 12 professional fields and 1 sub-track within it. Research which field best matches your qualifications and documentation.",
+      "description": "Select 1 of 11 professional fields and 1 sub-track within it. Research which field best matches your qualifications and documentation.",
       "tips": [
-        "Review all 12 fields before choosing — some have overlapping criteria",
+        "Review all 11 fields before choosing — some have overlapping criteria",
         "Science & Technology and Digital fields are most popular among tech workers"
       ]
     },
@@ -255,8 +255,7 @@
       "Biotechnology",
       "Economy",
       "National Defense",
-      "Law",
-      "Practitioners of Ancestor Rites"
+      "Law"
     ],
     "openWorkPermit": true,
     "taxBenefit": "50% income tax exemption on annual salary exceeding NT$3,000,000 for first 5 years (conditions apply: first-time employment in Taiwan, 183+ days/year residency, no Taiwan household registration in prior 5 years)"
@@ -337,8 +336,8 @@
       "answer": "No. The Gold Card is entirely self-sponsored. You apply directly through the Foreign Professionals Online Application Platform. No employer, company, or institution needs to sponsor or submit paperwork on your behalf. This is one of the key differences from a standard Work ARC."
     },
     {
-      "question": "What are the 12 industry fields for Gold Card qualification?",
-      "answer": "The 12 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law, (12) Practitioners of Ancestor Rites. Each field has its own set of sub-tracks with specific qualification criteria."
+      "question": "What are the industry fields for Gold Card qualification?",
+      "answer": "The 11 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
     },
     {
       "question": "How does the salary track work (NT$160,000/month)?",
@@ -378,7 +377,7 @@
     }
   ],
   "tips": [
-    "Review all 12 professional fields carefully before choosing — some have overlapping criteria and different documentation requirements",
+    "Review all 11 professional fields carefully before choosing — some have overlapping criteria and different documentation requirements",
     "Employment certificates must include full name, company name, position, employment period, and official seal — offer letters are never accepted",
     "For the salary track, choose your best year within the past 3 years for tax documentation",
     "Print the Resident Authorization Certificate in COLOR after approval — needed for Taiwan entry before physical card is ready",
@@ -489,7 +488,7 @@
     {
       "type": "dnv",
       "name": "Digital Nomad Visa",
-      "requirements": "DNV holders who meet Gold Card qualification criteria in any of the 12 professional fields may apply while on active DNV status in Taiwan.",
+      "requirements": "DNV holders who meet Gold Card qualification criteria in any of the 11 professional fields may apply while on active DNV status in Taiwan.",
       "timeline": "30-60 business days processing",
       "documents": [
         "Current passport",

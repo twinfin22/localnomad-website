@@ -3,7 +3,7 @@
   "name": "Japan Tourist Visa & Visa Waiver — Complete 2026 Guide",
   "shortName": "Tourist",
   "category": "tourist",
-  "description": "Comprehensive guide covering Japan's visa waiver program (68+ countries), tourist visa application, 30-90 day stays, and practical information for short-term visitors including digital nomads exploring Japan before committing to the Digital Nomad Visa. Japan offers visa-free entry to nationals of 68+ countries for stays of 15 to 90 days depending on nationality. Visitors from non-waiver countries must apply for a tourist visa (短期滞在) at a Japanese embassy or consulate. The tourist visa and visa waiver cover activities including sightseeing, visiting friends and relatives, attending conferences, and short-term business meetings — but no paid work of any kind is permitted, including remote work. This guide covers eligibility, required documents, entry procedures, and practical tips for making the most of your short-term stay in Japan. Updated for 2026.",
+  "description": "Comprehensive guide covering Japan's visa waiver program (74 countries), tourist visa application, 30-90 day stays, and practical information for short-term visitors including digital nomads exploring Japan before committing to the Digital Nomad Visa. Japan offers visa-free entry to nationals of 74 countries for stays of 15 to 90 days depending on nationality. Visitors from non-waiver countries must apply for a tourist visa (短期滞在) at a Japanese embassy or consulate. The tourist visa and visa waiver cover activities including sightseeing, visiting friends and relatives, attending conferences, and short-term business meetings — but no paid work of any kind is permitted, including remote work. This guide covers eligibility, required documents, entry procedures, and practical tips for making the most of your short-term stay in Japan. Updated for 2026.",
   "tagline": "Short-term stays for tourism, business meetings, and exploration",
   "keyRequirement": "Valid passport from visa-waiver country (15-90 days) or tourist visa application",
   "targetAudience": [
@@ -16,8 +16,8 @@
   "eligibility": [
     {
       "id": "visa-waiver-passport",
-      "label": "Passport from a visa-waiver eligible country (68+ countries)",
-      "description": "Japan offers visa-free entry to nationals of 68+ countries. Stay duration varies by nationality: 90 days for most Western countries (USA, UK, Canada, Australia, most EU), 30 days for some countries (UAE, Brunei), and 15 days for others (Indonesia, Thailand under certain conditions). Check the MOFA website for the current visa-waiver country list and permitted stay durations.",
+      "label": "Passport from a visa-waiver eligible country (74 countries)",
+      "description": "Japan offers visa-free entry to nationals of 74 countries as of 2025. Stay duration varies by nationality: 90 days for most Western countries (USA, UK, Canada, Australia, most EU), 30 days for some countries (UAE, Brunei), and 15 days for others (Indonesia, Thailand under certain conditions). Check the MOFA website for the current visa-waiver country list and permitted stay durations.",
       "required": false
     },
     {
@@ -50,8 +50,8 @@
     "maxTotal": "90 days — extensions are generally not granted except in exceptional circumstances"
   },
   "fees": {
-    "application": "¥0 for visa-waiver entry; ¥3,000 (single entry) or ¥6,000 (multiple entry) for tourist visa",
-    "notes": "Visa-waiver entry is completely free — no fee is charged at any point. For tourist visa applicants, fees are paid at the embassy or consulate upon visa issuance (not at application submission). Fee amounts may vary slightly by embassy. Some countries have bilateral fee waiver agreements with Japan."
+    "application": "¥0 for visa-waiver entry; ¥3,000 (single entry) or ¥6,000 (multiple entry) for tourist visa — current as of March 2026",
+    "notes": "Visa-waiver entry is completely free — no fee is charged at any point. For tourist visa applicants, fees are paid at the embassy or consulate upon visa issuance (not at application submission). Fee amounts may vary slightly by embassy. Some countries have bilateral fee waiver agreements with Japan. IMPORTANT: Japan's government has proposed increasing visa fees significantly (single entry to ¥15,000) as part of fiscal year 2026 immigration reforms. The bill is pending Diet approval — check MOFA for the latest fee schedule before applying."
   },
   "residenceStatus": "短期滞在 (Temporary Visitor)",
   "sponsorRequired": false,
@@ -131,7 +131,7 @@
       "id": "step-1",
       "step": 1,
       "title": "Check Visa Waiver Eligibility",
-      "description": "Determine whether your passport qualifies for visa-free entry to Japan and the permitted stay duration (15, 30, or 90 days). Check the MOFA website for the current visa-waiver country list. If your country is on the list, you do not need to apply for a visa — proceed directly to Step 3.",
+      "description": "Determine whether your passport qualifies for visa-free entry to Japan and the permitted stay duration (15, 30, or 90 days). Check the MOFA website for the current visa-waiver country list (74 countries as of 2025). If your country is on the list, you do not need to apply for a visa — proceed directly to Step 3.",
       "duration": "Same day",
       "tips": [
         "The visa-waiver list is updated periodically — always verify with the current MOFA list before traveling",
@@ -157,7 +157,7 @@
       "description": "Before traveling, ensure you have your passport, return ticket, accommodation details, and sufficient funds accessible. Complete the Visit Japan Web registration online to speed up immigration, customs, and quarantine procedures at arrival.",
       "duration": "1-2 days",
       "tips": [
-        "Register on Visit Japan Web (https://vjw-lp.digital.go.jp/) before departure — it significantly reduces waiting time at immigration",
+        "Register on Visit Japan Web (https://www.vjw.digital.go.jp/) before departure — it significantly reduces waiting time at immigration",
         "Download offline maps, a translation app, and a transit app (Google Maps or Navitime) before arrival",
         "Purchase a Japan Rail Pass online before departure if planning extensive train travel — it cannot be purchased in Japan"
       ]
@@ -299,7 +299,7 @@
     },
     {
       "label": "Visit Japan Web (Pre-registration)",
-      "url": "https://vjw-lp.digital.go.jp/"
+      "url": "https://www.vjw.digital.go.jp/"
     },
     {
       "label": "Ministry of Foreign Affairs — Embassy/Consulate Finder",
