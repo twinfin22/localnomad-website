@@ -45,8 +45,8 @@ export type TaiwanVisaType =
 export type JapanVisaType =
   | 'engineer-specialist'
   | 'hsw'
-  | 'specified-skilled-1'
-  | 'specified-skilled-2'
+  | 'ssw1'
+  | 'ssw2'
   | 'digital-nomad-jp'
   | 'business-manager';
 
@@ -84,8 +84,8 @@ export function isTaiwanVisa(type: VisaType): type is TaiwanVisaType {
 }
 
 export const JAPAN_VISA_TYPES: JapanVisaType[] = [
-  'engineer-specialist', 'hsw', 'specified-skilled-1',
-  'specified-skilled-2', 'digital-nomad-jp', 'business-manager',
+  'engineer-specialist', 'hsw', 'ssw1',
+  'ssw2', 'digital-nomad-jp', 'business-manager',
 ];
 
 export function isJapanVisa(type: VisaType): type is JapanVisaType {
