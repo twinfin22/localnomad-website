@@ -1,0 +1,192 @@
+{
+  "country": "korea",
+  "cities": [
+    {
+      "name": "Seoul",
+      "coordinates": [37.5665, 126.9780],
+      "neighborhoods": [
+        {
+          "name": "Hongdae (弘大)",
+          "city": "Seoul",
+          "coordinates": [37.5563, 126.9236],
+          "rent": "₩600K–₩950K",
+          "vibe": "Young professionals, artists, indie shops, late-night cafes",
+          "pros": ["Affordable", "Vibrant", "Cafe culture"],
+          "cons": ["Noise", "Touristy parts"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["budget", "cafe", "nightlife"],
+          "imageUrl": null
+        },
+        {
+          "name": "Itaewon (이태원)",
+          "city": "Seoul",
+          "coordinates": [37.5345, 126.9946],
+          "rent": "₩1.0M–₩1.7M",
+          "vibe": "International, English-friendly, nightlife",
+          "pros": ["English spoken", "Expat community", "Coworking"],
+          "cons": ["Most expensive area in Seoul", "Touristy"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["expat", "international", "nightlife"],
+          "imageUrl": null
+        },
+        {
+          "name": "Gangnam (강남)",
+          "city": "Seoul",
+          "coordinates": [37.4979, 127.0276],
+          "rent": "₩900K–₩1.5M",
+          "vibe": "Fast-paced, corporate, luxury",
+          "pros": ["Premium amenities", "Networking", "Safe"],
+          "cons": ["Expensive", "Less authentic feel"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["luxury", "corporate", "networking"],
+          "imageUrl": null
+        },
+        {
+          "name": "Yeonnam-dong (연남동)",
+          "city": "Seoul",
+          "coordinates": [37.5660, 126.9218],
+          "rent": "₩700K–₩1.2M",
+          "vibe": "Indie shops, emerging arts scene, trendy, gentrifying",
+          "pros": ["Hipster cafes", "Safe", "Less crowded", "Walkable"],
+          "cons": ["Fewer English speakers", "Rising rents due to gentrification"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["hipster", "cafe", "trendy"],
+          "imageUrl": null
+        },
+        {
+          "name": "Mapo-gu (마포구)",
+          "city": "Seoul",
+          "coordinates": [37.5538, 126.9084],
+          "rent": "₩700K–₩1.0M",
+          "vibe": "Local, cafes, central, student-friendly",
+          "pros": ["Central location", "Coworking accessible", "Good transit"],
+          "cons": ["Less tourist infrastructure", "Rising rents"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["local", "central", "mid-range"],
+          "imageUrl": null
+        },
+        {
+          "name": "Seongsu-dong (성수동)",
+          "city": "Seoul",
+          "coordinates": [37.5448, 127.0591],
+          "rent": "₩800K–₩1.2M",
+          "vibe": "Creative hub, highest cafe density in Seoul, Brooklyn of Seoul",
+          "pros": ["Best cafe culture in Seoul", "Young creatives", "Great transit (Line 2)", "Trendy pop-up scene"],
+          "cons": ["Rapidly gentrifying", "Losing indie feel", "Crowded with tourists on weekends"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["cafe", "creative", "trendy"],
+          "imageUrl": null
+        },
+        {
+          "name": "Hannam-dong (한남동)",
+          "city": "Seoul",
+          "coordinates": [37.5356, 126.9980],
+          "rent": "₩1.0M–₩1.5M",
+          "vibe": "Upscale, refined, galleries, quieter than Itaewon",
+          "pros": ["Museums and galleries", "Premium cafes", "Walkable tree-lined streets", "Han River access"],
+          "cons": ["Expensive", "Fewer international shops", "Can feel overly curated"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["luxury", "gallery", "cafe"],
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "name": "Busan",
+      "coordinates": [35.1796, 129.0756],
+      "neighborhoods": [
+        {
+          "name": "Haeundae (해운대)",
+          "city": "Busan",
+          "coordinates": [35.1587, 129.1604],
+          "rent": "₩900K–₩1.3M",
+          "vibe": "Beach, nomad hub, coliving scene",
+          "pros": ["Beach access", "NOMAD LIVE coliving", "Nomad community"],
+          "cons": ["Expensive for Busan", "Crowded in summer"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["beach", "coliving", "community"],
+          "imageUrl": null
+        },
+        {
+          "name": "Gwangalli (광안리)",
+          "city": "Busan",
+          "coordinates": [35.1532, 129.1189],
+          "rent": "₩700K–₩1.1M",
+          "vibe": "Beach, hipster cafes, nightlife",
+          "pros": ["Affordable beach access", "Cafe scene", "Gwangan Bridge views"],
+          "cons": ["Fewer nomad facilities", "Less English spoken"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["beach", "cafe", "mid-range"],
+          "imageUrl": null
+        },
+        {
+          "name": "Seomyeon (서면)",
+          "city": "Busan",
+          "coordinates": [35.1580, 129.0588],
+          "rent": "₩500K–₩900K",
+          "vibe": "Downtown hub, transit center, food and shopping",
+          "pros": ["Central transit hub (Lines 1 & 2)", "Affordable", "Best food and nightlife variety"],
+          "cons": ["No beach access", "Urban and busy", "Less scenic"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["central", "food", "nightlife"],
+          "imageUrl": null
+        },
+        {
+          "name": "Sasang-gu (사상구)",
+          "city": "Busan",
+          "coordinates": [35.1508, 128.9918],
+          "rent": "₩385K–₩500K",
+          "vibe": "Local, residential, minimal tourism",
+          "pros": ["Very affordable", "Real Korean experience"],
+          "cons": ["Few English speakers", "Fewer amenities"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["budget", "local", "quiet"],
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "name": "Jeju",
+      "coordinates": [33.4996, 126.5312],
+      "neighborhoods": [
+        {
+          "name": "Jeju City (제주시)",
+          "city": "Jeju",
+          "coordinates": [33.5104, 126.5219],
+          "rent": "₩500K–₩950K",
+          "vibe": "Island escape, relaxed, growing nomad scene",
+          "pros": ["15–20% cheaper than Seoul", "Nature", "Visa-free entry", "Growing coworking scene (40+ spaces)"],
+          "cons": ["Typhoon season (Aug–Sep)", "Car recommended for exploring"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["island", "nature", "budget"],
+          "imageUrl": null
+        },
+        {
+          "name": "Seogwipo (서귀포시)",
+          "city": "Jeju",
+          "coordinates": [33.2541, 126.5600],
+          "rent": "₩380K–₩650K",
+          "vibe": "Quiet southern coast, nature-focused, scenic waterfalls",
+          "pros": ["Cheapest option on Jeju", "Best natural scenery", "Quieter than Jeju City"],
+          "cons": ["Very limited nightlife", "Fewer cafes and coworking", "Car essential"],
+          "walkability": null,
+          "safety": null,
+          "tags": ["budget", "nature", "quiet"],
+          "imageUrl": null
+        }
+      ]
+    }
+  ]
+}
