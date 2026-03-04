@@ -1,0 +1,272 @@
+{
+  "type": "k-visa",
+  "name": "China K Visa — STEM Talent Visa (2026 Guide)",
+  "shortName": "K Visa",
+  "category": "work",
+  "description": "Everything about China's K Visa for young STEM talent: no employer sponsorship required, eligibility for graduates and researchers, permitted activities (work, research, entrepreneurship), and comparison with the Z Visa. The K Visa launched October 1, 2025, as China's 13th visa category — the first new category added since 2013. It targets young foreign professionals (aged 18–45) with STEM backgrounds from recognized universities or research institutions worldwide. Unlike the Z Visa, the K Visa does not require a job offer or employer sponsorship, allowing holders to enter China independently and pursue employment, research, entrepreneurship, or business activities. Updated for 2026.",
+  "tagline": "No-sponsorship visa for young STEM professionals",
+  "keyRequirement": "Bachelor's degree or higher in STEM from a recognized university, aged 18–45",
+  "targetAudience": [
+    "Recent STEM graduates from recognized universities worldwide seeking opportunities in China",
+    "Early-career researchers and scientists exploring positions at Chinese institutions",
+    "STEM entrepreneurs wanting to start businesses in China without an existing employer",
+    "Foreign tech professionals considering relocation to China's innovation hubs",
+    "Postdoctoral researchers and PhD candidates in science and technology fields"
+  ],
+  "eligibility": [
+    {
+      "id": "stem-degree",
+      "label": "Bachelor's degree or higher in a STEM field from a recognized university or research institution",
+      "description": "Published guidelines require at least a bachelor's degree in science, technology, engineering, or mathematics from an accredited university or research institution worldwide. The degree must be certified/authenticated by the applicant's home country authorities. Non-English degrees must be professionally translated into Chinese.",
+      "required": true
+    },
+    {
+      "id": "age-requirement",
+      "label": "Aged 18–45 at time of application",
+      "description": "The K Visa targets 'young' science and technology talent. Published guidelines indicate an age range of 18–45, though the exact upper limit has not been rigidly defined in all official sources. Applicants with strong credentials and affiliations with respected institutions may receive favorable consideration.",
+      "required": true
+    },
+    {
+      "id": "stem-field",
+      "label": "Professional background in eligible STEM or cutting-edge technology fields",
+      "description": "Applicants must demonstrate a professional background in science, technology, engineering, mathematics, or cutting-edge technology fields. This includes those currently engaged in education, research, or related professional work at recognized institutions.",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "Clean criminal record",
+      "description": "Applicants must provide a criminal background check from their home country. Previous immigration violations in China or other countries may result in denial.",
+      "required": true
+    },
+    {
+      "id": "no-employer-needed",
+      "label": "No employer sponsorship or job offer required",
+      "description": "Unlike the Z Visa, the K Visa does not require a job offer, employer sponsorship, or an invitation letter from a Chinese entity. Applicants can enter China independently and pursue employment, research, or entrepreneurship after arrival.",
+      "required": false
+    }
+  ],
+  "duration": {
+    "initial": "Multiple entries; exact validity period and duration of stay per entry to be confirmed by individual embassies",
+    "extension": "Must apply for residence permit within 30 days of arrival for stays exceeding visa validity",
+    "maxTotal": "Published guidelines indicate K Visa holders receive more generous terms than standard visa categories — check with your local Chinese embassy for current validity periods"
+  },
+  "fees": {
+    "application": "$23–$140 USD (varies by nationality and processing speed)",
+    "extension": "Expedited processing: additional $25 USD",
+    "notes": "China has extended reduced visa fee rates through December 31, 2026. Fee amounts vary by nationality due to reciprocity agreements. Check your local Chinese embassy or consulate for exact fees. Fees are paid at the time of visa issuance."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "description": "Must be valid for at least 6 months beyond intended stay with at least 2 blank pages",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Visa Application Form (Form V.2013)",
+      "description": "Completed and signed Chinese visa application form. Can be submitted online through Chinese embassy platforms.",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "description": "Recent passport-sized photograph (48mm × 33mm), white background, taken within 6 months",
+      "required": true
+    },
+    {
+      "id": "stem-degree-certificate",
+      "name": "STEM Degree Certificate (authenticated)",
+      "description": "Bachelor's degree or higher in a STEM field. Must be authenticated/apostilled by the issuing country's authorities. Non-English certificates must include certified Chinese translations.",
+      "tips": [
+        "Prepare authentication well in advance — the process can take weeks in some countries",
+        "WES or similar credential evaluation services may be required depending on the embassy"
+      ],
+      "required": true
+    },
+    {
+      "id": "academic-transcripts",
+      "name": "Academic Transcripts",
+      "description": "Official transcripts showing STEM coursework and degree completion. Translated into Chinese if not in English.",
+      "required": true
+    },
+    {
+      "id": "cv-resume",
+      "name": "Curriculum Vitae / Resume",
+      "description": "Detailed CV highlighting STEM qualifications, research experience, publications, patents, and professional achievements.",
+      "required": true
+    },
+    {
+      "id": "activity-plan",
+      "name": "Activity Plan in China",
+      "description": "Brief description of planned activities in China (research, employment search, entrepreneurship, etc.). Does not require employer confirmation.",
+      "required": true
+    },
+    {
+      "id": "criminal-background",
+      "name": "Criminal Background Check",
+      "description": "Police clearance certificate from applicant's home country, issued within the last 6 months. Must be notarized and authenticated.",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Verify Eligibility",
+      "description": "Confirm you meet the K Visa requirements: aged 18–45, bachelor's degree or higher in a STEM field from a recognized institution, or relevant professional experience in STEM education/research. Check the Chinese embassy website in your country for the latest eligibility criteria.",
+      "tips": [
+        "The K Visa is new (October 2025) — specific requirements may be updated as embassies refine their processes",
+        "If you don't meet K Visa criteria, consider the Z Visa (with employer sponsorship) as an alternative"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Prepare and Authenticate Documents",
+      "description": "Gather all required documents. Authenticate your degree certificate through your country's designated authority (apostille or embassy authentication). Have non-English documents translated into Chinese by a certified translator.",
+      "duration": "2–4 weeks (authentication can take time)",
+      "tips": [
+        "Start document authentication early — it's often the longest step",
+        "Some embassies accept digital submissions through new online platforms"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Submit Application at Chinese Embassy or Consulate",
+      "description": "Submit your K Visa application at the Chinese embassy or consulate in your country of residence. Some locations use the Chinese Visa Application Service Center (CVASC) as a processing intermediary. Applications may also be submitted through new online platforms being introduced for the K Visa.",
+      "duration": "Standard processing: 4–5 business days; Express: 2–3 days",
+      "tips": [
+        "Book an appointment in advance — walk-ins may not be accepted",
+        "Bring original documents plus one set of copies"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Enter China and Apply for Residence Permit",
+      "description": "After arriving in China, apply for a residence permit at the local Public Security Bureau (PSB) Exit-Entry Administration within 30 days of entry. The residence permit allows longer-term stay and access to domestic services (bank accounts, phone plans, etc.).",
+      "duration": "Residence permit processing: 7–15 business days",
+      "tips": [
+        "Register your accommodation at the local police station within 24 hours of arrival",
+        "The PSB office in your city will guide you on residence permit duration and renewal"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "Standard: 4–5 business days; Express: 2–3 business days; Rush: 1 business day (where available)",
+    "notes": "Processing times vary by embassy and nationality. Peak seasons (September–October, January–February) may result in longer wait times. The K Visa uses a simplified application process compared to the Z Visa — no employer-issued documents or work permit pre-approval needed."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Permitted activities include employment, research, entrepreneurship, and business activities in STEM fields",
+      "Must obtain a residence permit within 30 days of arrival for extended stays",
+      "Work should be related to the applicant's STEM qualifications",
+      "May need to apply for a work permit after securing employment (specific post-entry requirements being clarified by authorities)"
+    ],
+    "notes": "The K Visa is a significant departure from the Z Visa model. It allows entry without a pre-arranged job offer, giving holders flexibility to explore opportunities, conduct research, start businesses, or seek employment after arrival. This makes it functionally similar to job-seeker visas offered by countries like Germany. However, post-entry work permit requirements may still apply depending on the type of employment — consult with local PSB and MOHRSS offices."
+  },
+  "faqs": [
+    {
+      "question": "How is the K Visa different from the Z Visa (work visa)?",
+      "answer": "The Z Visa requires a confirmed job offer and employer sponsorship (Notification Letter of Foreigner's Work Permit) before entry. The K Visa does not require any employer or inviter — applicants can enter China independently based on their STEM qualifications alone. The K Visa is designed for younger professionals (18–45) while the Z Visa has no age limit. The K Visa allows job-seeking, research, and entrepreneurship upon arrival."
+    },
+    {
+      "question": "How is the K Visa different from the R Visa (high-level talent)?",
+      "answer": "The R Visa targets established senior professionals who have already been certified as 'high-level talent' by Chinese government agencies — this typically requires years of achievements, awards, and publications. The K Visa targets early-career STEM professionals and recent graduates who may not yet have extensive track records. The R Visa requires employer/institutional sponsorship; the K Visa does not."
+    },
+    {
+      "question": "Do I need a job offer to apply for the K Visa?",
+      "answer": "No. The K Visa waives the job offer and employer sponsorship requirements. You can enter China independently and pursue employment, research, or entrepreneurship after arrival. This is one of the K Visa's most significant advantages over traditional Chinese work visas."
+    },
+    {
+      "question": "Can I bring my family on the K Visa?",
+      "answer": "Published guidelines have not yet fully clarified family dependent provisions for K Visa holders. Family members may need to apply for S1 (long-term) or S2 (short-term) dependent visas separately once the primary holder has established residence in China. Check with your local embassy for the latest family reunion policies."
+    },
+    {
+      "question": "What STEM fields qualify for the K Visa?",
+      "answer": "The K Visa covers science, technology, engineering, and mathematics broadly. Published guidelines indicate focus areas include artificial intelligence, biotechnology, semiconductor technology, new energy, advanced manufacturing, and other cutting-edge technology fields. The exact scope of eligible fields is being further defined by authorities — check with your embassy for the latest list."
+    },
+    {
+      "question": "Is there a minimum salary requirement?",
+      "answer": "No. Unlike many other countries' talent visas (e.g., Singapore EP at $60K/year, UK Skilled Worker at £38.7K), the K Visa has no published minimum salary requirement. Eligibility is based on educational qualifications and STEM background, not income level."
+    },
+    {
+      "question": "Can I start a business on the K Visa?",
+      "answer": "Yes. Published guidelines indicate that the K Visa permits entrepreneurship activities. This makes it attractive for STEM professionals who want to explore startup opportunities in China's tech ecosystem without first securing traditional employment."
+    },
+    {
+      "question": "What happens after my K Visa expires?",
+      "answer": "After arrival, you must apply for a residence permit within 30 days at the local PSB. The residence permit provides longer-term legal stay. Renewal procedures and transition to other visa categories (Z Visa for employment, R Visa for recognized talent) are available depending on your situation. Specific renewal terms for K Visa holders are being further clarified by authorities."
+    }
+  ],
+  "tips": [
+    "The K Visa launched October 1, 2025 — procedures are still being refined at many embassies. Check your local embassy's website for the latest requirements",
+    "Start degree authentication early — it's often the most time-consuming step in the process",
+    "No employer sponsorship needed, but having an activity plan (research proposal, startup plan, or institution of interest) strengthens your application",
+    "Register your accommodation at the local police station within 24 hours of arrival — this is required for all foreigners in China",
+    "Apply for residence permit at PSB within 30 days of arrival to stay longer-term",
+    "WeChat and Alipay are essential for daily life in China — set up your accounts as soon as you arrive",
+    "VPN is necessary to access Western services (Google, WhatsApp, etc.) — install before arriving in China"
+  ],
+  "warnings": [
+    "The K Visa is very new (October 2025) — specific implementation details may vary between embassies and are subject to change as authorities refine the program",
+    "While the K Visa allows entry without a job offer, you may still need to obtain a work permit after arrival to engage in formal employment — consult with local authorities",
+    "The Great Firewall blocks many Western services. VPN use is widespread but technically regulated",
+    "China requires accommodation registration with local police within 24 hours of arrival — failure to comply can result in fines",
+    "Remote work for a foreign company while in China on a K Visa occupies a legal gray area similar to other visa categories"
+  ],
+  "communityTips": [
+    {
+      "id": "k-visa-new-tip",
+      "tip": "The K Visa is brand new as of October 2025. Embassy staff may not be fully familiar with it yet. Bring printed copies of the official State Council announcement and be patient with the process.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "z-visa-comparison-tip",
+      "tip": "If you already have a job offer from a Chinese company, the Z Visa may still be a better option — it has a more established process and clearer post-entry procedures. The K Visa is best for those who want to explore opportunities before committing to an employer.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "z-visa",
+    "x1-visa"
+  ],
+  "pathsTo": [],
+  "pathsFrom": [
+    {
+      "type": "z-visa",
+      "name": "Z Visa (Work Visa)",
+      "requirements": "Job offer and employer sponsorship from a registered Chinese company. Notification Letter of Foreigner's Work Permit required.",
+      "timeline": "2–4 weeks processing (employer-side + visa application)",
+      "notes": "K Visa holders who secure employment in China may transition to Z Visa / work residence permit status. The Z Visa provides clearer employment authorization for those with confirmed positions."
+    }
+  ],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Chinese Visa Application Service Center",
+      "url": "https://www.visaforchina.cn"
+    },
+    {
+      "label": "Ministry of Foreign Affairs — Visa Information",
+      "url": "https://www.mfa.gov.cn/eng/"
+    },
+    {
+      "label": "State Council Announcement — K Visa",
+      "url": "https://english.www.gov.cn/policies/latestreleases/202508/14/content_WS689dd0d3c6d0868f4e8f4d1e.html"
+    },
+    {
+      "label": "National Immigration Administration",
+      "url": "https://www.nia.gov.cn/n897453/index.html"
+    }
+  ]
+}

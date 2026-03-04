@@ -125,8 +125,18 @@
     "renewalRequirements": "Yêu cầu gia hạn",
     "renewalFees": "Phí gia hạn",
     "tipsCommunity": "Lưu ý & Cộng đồng",
-    "sourcesRelated": "Nguồn & Liên quan",
-    "tableOfContents": "Mục lục"
+    "sourcesRelated": "Nguồn & Visa liên quan",
+    "tableOfContents": "Mục lục",
+    "atAGlance": "Tổng quan",
+    "seeFullRequirements": "Xem đầy đủ yêu cầu",
+    "process": "Quy trình",
+    "showMoreRequirements": "Hiển thị thêm {count} yêu cầu",
+    "showLess": "Ẩn bớt",
+    "visaStatus": "Tình trạng visa",
+    "pointsSystem": "Hệ thống điểm",
+    "tabSubItems": "{count} mục",
+    "tabSubDocs": "{count} hồ sơ",
+    "tabSubSteps": "{count} bước"
   },
   "Auth": {
     "logIn": "Đăng nhập",

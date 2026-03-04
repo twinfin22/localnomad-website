@@ -125,8 +125,18 @@
     "renewalRequirements": "Renewal Requirements",
     "renewalFees": "Renewal Fee",
     "tipsCommunity": "Tips & Community",
-    "sourcesRelated": "Sources & Related",
-    "tableOfContents": "Table of Contents"
+    "sourcesRelated": "Sources & Related Visas",
+    "tableOfContents": "Table of Contents",
+    "atAGlance": "At a Glance",
+    "seeFullRequirements": "See Full Requirements",
+    "process": "Process",
+    "showMoreRequirements": "Show {count} more requirements",
+    "showLess": "Show less",
+    "visaStatus": "Visa Status",
+    "pointsSystem": "Points System",
+    "tabSubItems": "{count} items",
+    "tabSubDocs": "{count} docs",
+    "tabSubSteps": "{count} steps"
   },
   "Common": {
     "backToHome": "Back to home",

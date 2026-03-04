@@ -10,9 +10,10 @@ import type { Visa } from '@/lib/types/visa';
 
 interface VisaHeroProps {
   visa: Visa;
+  hideSummaryCards?: boolean;
 }
 
-export async function VisaHero({ visa }: VisaHeroProps) {
+export async function VisaHero({ visa, hideSummaryCards }: VisaHeroProps) {
   const t = await getTranslations('VisaDetail');
 
   return (
@@ -47,6 +48,7 @@ export async function VisaHero({ visa }: VisaHeroProps) {
       )}
 
       {/* Summary cards grid */}
+      {!hideSummaryCards && (
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <SummaryCard
           icon={<Calendar className="h-5 w-5 text-primary" />}
@@ -69,6 +71,7 @@ export async function VisaHero({ visa }: VisaHeroProps) {
           value={visa.duration.maxTotal ?? '-'}
         />
       </div>
+      )}
     </div>
   );
 }

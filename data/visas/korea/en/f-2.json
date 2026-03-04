@@ -1,6 +1,6 @@
 {
   "type": "f-2",
-  "name": "Korea Points-Based Resident Visa (F-2-7) — Complete 2026 Guide",
+  "name": "Korea Points-Based Resident Visa (F-2-7)",
   "shortName": "F-2",
   "category": "residence",
   "description": "Everything about Korea's F-2-7 Points-Based Resident Visa: score ≥80 out of 170, points breakdown by age, education, income, Korean language, and bonus categories, path to permanent residency, and unrestricted work authorization. The F-2-7 is Korea's premier long-term residence visa for talented professionals. Applicants accumulate points across five categories — Age (max 25 pts), Education (max 25 pts), Korean Language via TOPIK or KIIP (max 20 pts), Annual Income (max 60 pts), and Bonus Points (max 40 pts) — and must reach a combined score of 80 or higher. The visa duration ranges from 1 to 5 years depending on your total score, and holders enjoy full work freedom: change employers, start a business, or hold multiple jobs. After 3 years on F-2-7, published guidelines indicate a path to F-5 permanent residency. Updated for 2026.",
@@ -16,39 +16,54 @@
   "eligibility": [
     {
       "id": "qualifying-visa",
+      "priority": "essential",
+      "category": "visaStatus",
       "label": "Hold a qualifying visa (E-1~E-7, D-5~D-9) for 3+ consecutive years",
       "description": "Must have legally resided in Korea on an eligible visa status for at least 3 consecutive years. This requirement is waived for applicants with annual income ≥₩40M or Korean university graduates.",
-      "required": true
+      "required": true,
+      "warnings": ["Points are strictly verified — immigration officers may request additional documentation for each claim"]
     },
     {
       "id": "points-threshold",
+      "priority": "essential",
+      "category": "pointsSystem",
       "label": "Score ≥80 points out of 170 total",
       "description": "Points are evaluated across five categories: Age (max 25), Education (max 25), Korean Language TOPIK/KIIP (max 20), Annual Income (max 60), and Bonus Points (max 40). Immigration officers verify each claimed point with supporting documents.",
-      "required": true
+      "required": true,
+      "warnings": ["Score must remain ≥80 at each renewal — losing a job, salary decrease, or aging can drop your score below the threshold"],
+      "tips": ["Use koreaprcalculator.com to estimate your score before applying — it follows the official scoring table", "Track your projected score at renewal time — aging and job changes can affect your total"]
     },
     {
       "id": "income-fast-track",
+      "priority": "essential",
+      "category": "income",
       "label": "Annual salary ≥₩40M allows immediate application (no 3-year wait)",
       "description": "According to published guidelines, applicants earning ₩40,000,000 or more per year can apply immediately regardless of length of stay in Korea.",
-      "required": false
+      "required": false,
+      "tips": ["Income is the highest-weighted category (60 points) — focus on salary growth and ensure all compensation appears on tax records"]
     },
     {
       "id": "korean-graduate-track",
+      "category": "visaStatus",
       "label": "Korean master's/doctoral graduate employed within 5 years of degree",
       "description": "Graduates of Korean universities with a master's or doctoral degree who are employed or have a confirmed job offer may apply without the 3-year consecutive stay requirement, provided application is within 5 years of graduation.",
       "required": false
     },
     {
       "id": "no-criminal-record",
+      "category": "visaStatus",
       "label": "No criminal record or immigration violations during stay",
       "description": "Criminal acts, immigration violations, or negligent traffic offenses may result in point deductions or disqualification from F-2-7 eligibility.",
-      "required": true
+      "required": true,
+      "warnings": ["Criminal record or immigration violations during stay can result in point deductions or visa revocation"]
     }
   ],
   "duration": {
-    "initial": "1–5 years (score-dependent: 80–109 pts = 1 yr, 110–119 pts = 2 yr, 120–129 pts = 3 yr, 130+ pts = 5 yr)",
+    "initial": "1–5 years",
+    "initialDetail": "Score-based: 80–109 pts = 1 yr, 110–119 = 2 yr, 120–129 = 3 yr, 130+ = 5 yr",
     "extension": "Renewable at same or different tier based on score at renewal",
-    "maxTotal": "Renewable indefinitely (path to F-5 permanent residency after 3 years)"
+    "maxTotal": "Renewable indefinitely",
+    "maxTotalDetail": "Path to F-5 permanent residency after 3 years"
   },
   "fees": {
     "application": "₩85,000 (~$63 USD)",
@@ -69,6 +84,7 @@
     },
     {
       "id": "passport",
+      "priority": "essential",
       "name": "Valid Passport",
       "nameKorean": "여권",
       "description": "Must be valid for at least 6 months beyond intended stay period",
@@ -76,6 +92,7 @@
     },
     {
       "id": "arc",
+      "priority": "essential",
       "name": "Alien Registration Card",
       "nameKorean": "외국인등록증",
       "description": "Current ARC showing your existing visa status (E-series, D-series, etc.)",
@@ -97,17 +114,20 @@
     },
     {
       "id": "employment-proof",
+      "priority": "essential",
       "name": "Employment Contract or Business Registration",
       "nameKorean": "고용계약서 / 사업자등록증",
       "description": "Current employment contract from Korean employer, or business registration certificate if self-employed",
       "tips": [
         "Contract should clearly show job title, salary, and employment period",
-        "For business owners, include the 사업자등록증 and recent tax filings"
+        "For business owners, include the 사업자등록증 and recent tax filings",
+        "Keep all employment contracts and pay stubs organized — you will need them to prove income at each renewal"
       ],
       "required": true
     },
     {
       "id": "income-certificate",
+      "priority": "essential",
       "name": "Income Certificate / Tax Return",
       "nameKorean": "근로소득증명서",
       "description": "Official income certificate from the National Tax Service (NTS) or employer-issued withholding tax receipt (원천징수영수증). Must show annual gross income.",
@@ -119,6 +139,7 @@
     },
     {
       "id": "degree-certificates",
+      "priority": "essential",
       "name": "Degree Certificates",
       "nameKorean": "학위증명서",
       "description": "Original or certified copies of all degree certificates (bachelor's, master's, doctoral). Foreign degrees must be translated into Korean or English and apostilled or notarized.",
@@ -126,7 +147,8 @@
         "Apostille or notarization is required for all foreign-issued degrees",
         "Science and engineering degrees score higher than other fields — bring transcripts to prove your major"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["Foreign degree certificates must be apostilled or notarized and translated — untranslated documents will not be accepted"]
     },
     {
       "id": "topik-kiip",
@@ -135,9 +157,11 @@
       "description": "Test of Proficiency in Korean (TOPIK) score report or Social Integration Program (KIIP) completion certificate. Not mandatory for application, but contributes up to 20 points.",
       "tips": [
         "KIIP Level 5 completion grants 10 additional bonus points on top of the 20 language points",
-        "TOPIK scores are valid for 2 years from the test date"
+        "TOPIK scores are valid for 2 years from the test date",
+        "Start KIIP early — it is a free government program and takes 6+ months to complete all levels"
       ],
-      "required": false
+      "required": false,
+      "warnings": ["TOPIK score reports expire after 2 years — ensure yours is valid at the time of application"]
     },
     {
       "id": "tb-screening",
@@ -173,6 +197,7 @@
   "applicationSteps": [
     {
       "id": "step-1",
+      "priority": "essential",
       "step": 1,
       "title": "Calculate Your Points",
       "description": "Use the official scoring table or an online calculator (such as koreaprcalculator.com) to estimate your total score. You need at least 80 points across all categories to apply.",
@@ -183,6 +208,7 @@
     },
     {
       "id": "step-2",
+      "priority": "essential",
       "step": 2,
       "title": "Gather Supporting Documents",
       "description": "Collect all documents that prove your claimed points: degree certificates (apostilled), TOPIK/KIIP certificates, income certificates from Hometax, employment contract, and criminal background check.",
@@ -195,6 +221,7 @@
     },
     {
       "id": "step-3",
+      "priority": "essential",
       "step": 3,
       "title": "Book Immigration Office Appointment",
       "description": "Schedule an appointment at your local immigration office (출입국·외국인청) through the HiKorea portal. F-2-7 applications must be submitted in person.",
@@ -206,6 +233,7 @@
     },
     {
       "id": "step-4",
+      "priority": "essential",
       "step": 4,
       "title": "Submit Application at Immigration Office",
       "description": "Attend your appointment and submit the complete application with all supporting documents. The immigration officer will review your point claims and may ask clarifying questions.",
@@ -213,10 +241,12 @@
       "tips": [
         "Arrive early — offices can be crowded",
         "Have all documents organized by category (age, education, income, language, bonus)"
-      ]
+      ],
+      "warnings": ["Must apply in person at a Korean immigration office — applications cannot be submitted from abroad"]
     },
     {
       "id": "step-5",
+      "priority": "essential",
       "step": 5,
       "title": "Wait for Processing and Review",
       "description": "Immigration reviews your application, verifies point claims, and may request additional documentation. Processing times vary by office and application volume.",
@@ -224,6 +254,7 @@
     },
     {
       "id": "step-6",
+      "priority": "essential",
       "step": 6,
       "title": "Receive F-2-7 Status",
       "description": "Once approved, your Alien Registration Card (ARC) is updated to F-2-7 status. The visa duration (1–5 years) depends on your total score.",
@@ -244,14 +275,17 @@
   },
   "faqs": [
     {
+      "priority": "essential",
       "question": "How does the F-2-7 points calculation work?",
       "answer": "The F-2-7 uses a 170-point scoring system across five categories. Age (max 25 pts): peaks at 25–29 years old (25 pts), decreases with age. Education (max 25 pts): PhD in science/engineering scores highest (25 pts). Korean Language (max 20 pts): TOPIK Level 5–6 or KIIP Level 5 earns 20 pts. Annual Income (max 60 pts): ≥₩100M earns the maximum. Bonus Points (max 40 pts): KIIP completion, Korean university degrees, QS Top 500 graduation, community service, and government recommendations. You need a combined score of at least 80 to apply."
     },
     {
+      "priority": "essential",
       "question": "Income seems heavily weighted — how can I maximize income points?",
       "answer": "Income is the single largest category at 60 out of 170 total points. Annual income of ≥₩100M earns 60 points, ₩90–100M earns 58, ₩80–90M earns 56, and so on down to minimum wage–₩30M at 10 points. According to published guidelines, income is calculated from your National Tax Service records (근로소득증명서). Negotiate your total compensation to appear on your tax return — housing allowances and bonuses that show on your payslip count toward your reported income."
     },
     {
+      "priority": "essential",
       "question": "KIIP vs TOPIK — which is more valuable for F-2-7 points?",
       "answer": "For the Korean Language category (max 20 pts), KIIP and TOPIK score identically at each level. However, KIIP has a significant bonus advantage: completing KIIP Level 5 grants an additional 10 bonus points on top of the 20 language points, for a potential total of 30 points from Korean language alone. KIIP is also free and government-run, while TOPIK has exam fees. For F-2-7 applicants, KIIP is generally the more valuable path."
     },
@@ -292,64 +326,38 @@
       "answer": "At each renewal, immigration officers re-evaluate your total score based on current circumstances. If your score falls below 80 — for example, due to aging out of a higher age bracket, job loss, or income decrease — published guidelines indicate your F-2-7 renewal may be denied. You would need to revert to your previous visa type or find another qualifying status. Plan ahead: track your projected score at renewal time, and consider increasing points in categories you can control (income, language, community service)."
     }
   ],
-  "tips": [
-    "Use koreaprcalculator.com to estimate your score before applying — it follows the official scoring table",
-    "Start KIIP early — it is a free government program and takes 6+ months to complete all levels",
-    "Income is the highest-weighted category (60 points) — focus on salary growth and ensure all compensation appears on tax records",
-    "Get your criminal background check apostilled well in advance — processing can take 4–18 weeks depending on country",
-    "Keep all employment contracts and pay stubs organized — you will need them to prove income at each renewal",
-    "Book your immigration office appointment 2–3 weeks in advance through HiKorea — slots fill quickly",
-    "Organize documents by scoring category (age, education, income, language, bonus) for a smooth submission",
-    "Track your projected score at renewal time — aging and job changes can affect your total"
-  ],
-  "warnings": [
-    "Points are strictly verified — immigration officers may request additional documentation for each claim",
-    "Score must remain ≥80 at each renewal — losing a job, salary decrease, or aging can drop your score below the threshold",
-    "Criminal record or immigration violations during stay can result in point deductions or visa revocation",
-    "Must apply in person at a Korean immigration office — applications cannot be submitted from abroad",
-    "Foreign degree certificates must be apostilled or notarized and translated — untranslated documents will not be accepted",
-    "TOPIK score reports expire after 2 years — ensure yours is valid at the time of application"
-  ],
+  "tips": [],
+  "warnings": [],
   "communityTips": [
     {
       "id": "income-lever",
       "tip": "Income scores make up 60 out of 170 total points. If your annual salary exceeds ₩40M, published guidelines indicate you can apply immediately without the 3-year stay requirement. Focus on getting your salary as high as possible on paper.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "salary-negotiation",
       "tip": "Instead of accepting a split like '2.5M salary + 0.5M housing allowance,' negotiate a flat 3M salary. Your tax return reflects higher income, which translates directly to more F-2-7 points. The income certificate from Hometax only shows taxable income.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "kiip-bonus",
       "tip": "KIIP (사회통합프로그램) Level 5 completion gives you 10 extra bonus points on top of the 20 language points — a total of 30 points from Korean language alone. It is free, government-run, and the most point-efficient investment of your time.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "blood-donation",
       "tip": "Blood donation at Korean Red Cross counts as community service hours toward the volunteering bonus points. You need documented activity over multiple occasions to build up credit. Register your volunteer hours on the 1365 portal.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "start-early",
       "tip": "Start preparing 2–3 years before you need the F-2-7. TOPIK study, KIIP enrollment, salary negotiations, and community service hours all take time. Many professionals realize too late that they are short on points and cannot catch up quickly.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     }
   ],
   "relatedVisas": [

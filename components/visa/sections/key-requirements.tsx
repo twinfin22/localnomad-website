@@ -1,10 +1,12 @@
 import {
   Check,
   X,
+  Zap,
   DollarSign,
   Briefcase,
   Shield,
   AlertTriangle,
+  TriangleAlert,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
@@ -29,8 +31,10 @@ export function KeyRequirements({ visa }: KeyRequirementsProps) {
             <li key={item.id} className="flex items-start gap-3">
               {isNegative ? (
                 <X className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />
-              ) : (
+              ) : item.required ? (
                 <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+              ) : (
+                <Zap className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
               )}
               <div>
                 <span
@@ -45,6 +49,16 @@ export function KeyRequirements({ visa }: KeyRequirementsProps) {
                   <p className="mt-0.5 text-sm text-muted-foreground">
                     {item.description}
                   </p>
+                )}
+                {item.warnings && item.warnings.length > 0 && (
+                  <div className="mt-2 flex items-start gap-2 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
+                    <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                    <div className="space-y-1">
+                      {item.warnings.map((warning, i) => (
+                        <p key={i}>{warning}</p>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
             </li>

@@ -126,7 +126,17 @@
     "renewalFees": "續簽費用",
     "tipsCommunity": "提示與社群",
     "sourcesRelated": "資訊來源與相關簽證",
-    "tableOfContents": "目錄"
+    "tableOfContents": "目錄",
+    "atAGlance": "概覽",
+    "seeFullRequirements": "查看完整要求",
+    "process": "流程",
+    "showMoreRequirements": "顯示其餘{count}項要求",
+    "showLess": "收起",
+    "visaStatus": "簽證資格",
+    "pointsSystem": "積分制度",
+    "tabSubItems": "{count}項",
+    "tabSubDocs": "{count}份文件",
+    "tabSubSteps": "{count}個步驟"
   },
   "Auth": {
     "logIn": "登入",

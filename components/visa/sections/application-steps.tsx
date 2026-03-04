@@ -2,8 +2,10 @@ import {
   ChevronDown,
   Info,
   Clock,
+  TriangleAlert,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { linkifyText } from '@/lib/linkify-text';
 import type { ApplicationStep } from '@/lib/types/visa';
 
 interface ApplicationStepsProps {
@@ -42,7 +44,7 @@ export function ApplicationSteps({ steps }: ApplicationStepsProps) {
                   {t('details')}
                 </summary>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {step.description}
+                  {linkifyText(step.description)}
                 </p>
                 {step.tips && step.tips.length > 0 && (
                   <ul className="mt-3 space-y-1">
@@ -52,7 +54,7 @@ export function ApplicationSteps({ steps }: ApplicationStepsProps) {
                         className="flex items-start gap-2 text-sm text-muted-foreground"
                       >
                         <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary/60" />
-                        {tip}
+                        {linkifyText(tip)}
                       </li>
                     ))}
                   </ul>
@@ -70,6 +72,16 @@ export function ApplicationSteps({ steps }: ApplicationStepsProps) {
                         {link.label}
                       </a>
                     ))}
+                  </div>
+                )}
+                {step.warnings && step.warnings.length > 0 && (
+                  <div className="mt-3 flex items-start gap-2 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
+                    <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                    <div className="space-y-1">
+                      {step.warnings.map((warning, i) => (
+                        <p key={i}>{warning}</p>
+                      ))}
+                    </div>
                   </div>
                 )}
               </details>

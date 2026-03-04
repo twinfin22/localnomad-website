@@ -128,6 +128,10 @@ export interface Requirement {
   label: string;
   description?: string;
   required: boolean;
+  priority?: 'essential' | 'detail';
+  warnings?: string[];
+  tips?: string[];
+  category?: string;
 }
 
 export interface Document {
@@ -140,6 +144,8 @@ export interface Document {
   processing_time?: string;
   cost?: string;
   required: boolean;
+  priority?: 'essential' | 'detail';
+  warnings?: string[];
 }
 
 export interface ApplicationStep {
@@ -150,11 +156,14 @@ export interface ApplicationStep {
   duration?: string;
   tips?: string[];
   links?: { label: string; url: string }[];
+  priority?: 'essential' | 'detail';
+  warnings?: string[];
 }
 
 export interface FAQ {
   question: string;
   answer: string;
+  priority?: 'essential' | 'detail';
 }
 
 export interface VisaTransitionPath {
@@ -250,8 +259,10 @@ export interface VisaBase {
   eligibility: Requirement[];
   duration: {
     initial: string;
+    initialDetail?: string;
     extension?: string;
     maxTotal?: string;
+    maxTotalDetail?: string;
   };
   fees: {
     application: string;

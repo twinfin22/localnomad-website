@@ -125,8 +125,18 @@
     "renewalRequirements": "更新要件",
     "renewalFees": "更新料金",
     "tipsCommunity": "ヒント・コミュニティ",
-    "sourcesRelated": "情報源・関連ビザ",
-    "tableOfContents": "目次"
+    "sourcesRelated": "情報源・関連ビザ一覧",
+    "tableOfContents": "目次",
+    "atAGlance": "概要",
+    "seeFullRequirements": "すべての要件を見る",
+    "process": "手続き",
+    "showMoreRequirements": "他{count}件の要件を表示",
+    "showLess": "閉じる",
+    "visaStatus": "ビザ資格",
+    "pointsSystem": "ポイント制度",
+    "tabSubItems": "{count}項目",
+    "tabSubDocs": "{count}件の書類",
+    "tabSubSteps": "{count}ステップ"
   },
   "Auth": {
     "logIn": "ログイン",

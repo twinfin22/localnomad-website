@@ -1,0 +1,236 @@
+================================================================================
+              BLOG CONTENT ANALYSIS SUMMARY - March 4, 2026
+================================================================================
+
+OVERVIEW
+--------
+Analyzed 7 blog posts (4 guides + 3 tips) across LocalNomad content.
+Total: 6,637 lines / 40,550 words
+
+KEY METRICS
+-----------
+                                    Lines      Words      Status
+Korea Ultimate Guide                1,149      7,559      ⚠️ Verbose (-26%)
+Japan Ultimate Guide                1,440      8,328      ⚠️ Verbose (-25%)
+Taiwan Ultimate Guide               1,132      6,867      ⚠️ Verbose (-20%)
+China Ultimate Guide                1,973     11,324      🔴 CRITICAL (-26%)
+  
+China Alipay/WeChat Tips              305      2,342      ✅ Good (no cuts)
+China VPN Guide Tips                  395      2,615      ✅ Good (no cuts)
+Korea Cards Comparison Tips           243      1,515      ✅ Good (no cuts)
+
+TOTAL                               6,637     40,550      20% reduction possible
+
+
+THE BIG ISSUES (In Priority Order)
+-----------------------------------
+
+1. CHINA GUIDE: CRITICAL REDUNDANCY [462 LINES / 26% REDUCTION]
+   
+   ❌ VPN duplication:
+      - "Digital Life: Great Firewall" section in Ultimate Guide: 196 lines
+      - Dedicated "China VPN Guide" tips article: 395 lines
+      - SAME CONTENT TWICE
+      
+   ❌ Alipay/WeChat duplication:
+      - "Money Matters: Alipay/WeChat" in Ultimate Guide: 155 lines
+      - Dedicated "China Alipay" tips article: 305 lines
+      - SAME CONTENT TWICE
+      
+   ✅ SOLUTION: Delete 80% from guide; link to tips articles
+   💾 SAVES: ~311 lines immediately
+
+
+2. CITY GUIDES ACROSS ALL 4 GUIDES [795 LINES / 20% OF GUIDES]
+   
+   ❌ Pattern: Every guide has 150-230 lines describing cities
+      - Seoul, Tokyo, Taipei, Shanghai, etc.
+      - Neighborhood vibe descriptions (~50-70 lines per city)
+      - Pricing details (become stale monthly)
+      - Nomad notes
+      
+   ❌ Why it's wrong:
+      - Prose descriptions become outdated quickly
+      - Belongs in interactive maps, not static blog text
+      - Repetitive structure across all guides
+      
+   ✅ SOLUTION: Reduce each city to 1-2 sentences + link to city guide
+   💾 SAVES: ~630 lines
+
+
+3. HEALTHCARE SECTIONS [426 LINES / 64% REDUCTION OPPORTUNITY]
+   
+   ❌ Pattern: All 4 guides have 100-140 lines on healthcare
+      - Over-explain NHIS/NHI enrollment (~30 lines per guide)
+      - List provider tiers and details
+      - Repeat emergency numbers, pharmacy hacks
+      
+   ❌ Why it's wrong:
+      - Bureaucratic process belongs on official health ministry sites
+      - Too detailed for general guide
+      - Takes up ~20% of each guide's content
+      
+   ✅ SOLUTION: Reduce to key info (cost, eligibility) + link to official guide
+   💾 SAVES: ~236 lines
+
+
+4. BANKING SECTIONS [467 LINES / 48% REDUCTION OPPORTUNITY]
+   
+   ❌ Pattern: All guides explain bank account opening
+      - Duplicates ARC/ID process (already in visa guides)
+      - Repeats remittance methods
+      - Over-explains card setup
+      
+   ❌ Why it's wrong:
+      - Creates cross-guide redundancy
+      - Visa guides already cover residency requirements
+      
+   ✅ SOLUTION: Link to visa guide for ARC; keep only card/payment info
+   💾 SAVES: ~222 lines
+
+
+5. TAX & LEGAL SECTIONS [240 LINES / KOREA & JAPAN]
+   
+   ❌ Pattern: Deep tax bracket explanations, filing procedures
+      - Tax residency rule: 25-30 lines each
+      - Detailed bracket explanations
+      - Double taxation treaty info
+      
+   ❌ Why it's wrong:
+      - Too specialized for general guide
+      - Becomes outdated when tax laws change
+      
+   ✅ SOLUTION: Mention 183-day rule; link to tax-specific guide
+   💾 SAVES: ~160 lines
+
+
+REDUNDANCY BY TYPE
+-------------------
+
+Intra-Guide (Same info in one file):
+  └─ China guide: VPN info repeated in 2 sections
+  └─ All guides: ARC/ID process repeated in multiple sections
+
+Cross-Guide (Same info in multiple files):
+  └─ City descriptions: Seoul, Tokyo, Taipei, etc. (4 files each)
+  └─ Healthcare enrollment: NHIS/NHI processes (4 files)
+  └─ Banking requirements: ARC/ID process (4 files)
+  └─ Tax residency: 183-day rule (2 files)
+
+Blog vs. Structured Data (Prose vs. Reference Pages):
+  └─ City guide vs. Interactive map
+  └─ Healthcare guide vs. Official NHI/NHIS pages
+  └─ Visa requirements vs. Visa detail pages (GOOD - only linked, not duplicated)
+
+Duplicate Articles:
+  ✅ CRITICAL: China Ultimate Guide contains full copy of VPN guide (196 lines)
+  ✅ CRITICAL: China Ultimate Guide contains full copy of Alipay guide (155 lines)
+
+
+RECOMMENDED CUTS BY FILE
+-------------------------
+
+                    Current    Target    Savings    % Reduction
+Korea Guide         1,149      849       300        -26%
+Japan Guide         1,440     1,085      355        -25%
+Taiwan Guide        1,132      902       230        -20%
+China Guide         1,973     1,511      462        -23%
+                    -----     -----     -----       -----
+SUBTOTAL (Guides)   5,694     4,347     1,347       -24%
+
+Tips Articles       943        943        0          0%  (Keep as-is)
+                    -----     -----     -----       -----
+TOTAL               6,637     5,290     1,347       -20%
+
+
+IMPLEMENTATION APPROACH
+------------------------
+
+PHASE 1: High ROI Cuts (Save ~700 lines in 2-3 hours)
+  1. China: Remove VPN duplication (196 lines)
+  2. China: Remove Alipay duplication (155 lines)
+  3. All guides: Reduce city guides by 60% (~380 lines)
+  
+PHASE 2: Medium ROI Cuts (Save ~400 lines in 2-3 hours)
+  4. All guides: Reduce healthcare by 40% (~236 lines)
+  5. All guides: Reduce banking by 45% (~222 lines)
+  
+PHASE 3: Structural Improvements (Create ~3-4 weeks)
+  6. Create interactive city/neighborhood maps
+  7. Create dedicated healthcare guides per country
+  8. Create dedicated banking/residency guides
+
+
+APPROVAL DECISION MATRIX
+------------------------
+
+DECISION            | TIME | CONTENT LOSS | RESULT
+────────────────────┼──────┼──────────────┼─────────────────────
+Path A (Full cuts)  | 5-7h | None; linked | 1,347 lines saved
+Path B (Phase 1)    | 2-3h | None; linked | 700 lines saved
+Path C (Structural) | 3-4w | Extensive    | Major redesign
+Do nothing          | 0h   | None         | Current state
+
+
+QUESTIONS FOR GEN
+-----------------
+
+1. Content Strategy: Full encyclopedia guides or focused entry points?
+   → Current state = trying to be everything (encyclopedia)
+   → Proposed = landing pages + deep links (focused)
+
+2. City Guides: Can we build interactive city maps?
+   → If YES: Retire prose descriptions; use data + UI
+   → If NO: Reduce prose to 1-2 sentences per city
+
+3. Cross-Linking: OK to link heavily from guides → tips?
+   → This shifts user journey (guides become funnels to tips)
+   → Reduces scroll burden on guides
+
+4. Timeline: Do this in 1 week or 4 weeks with new pages?
+   → 1 week: Execute cuts only
+   → 4 weeks: Build new pages, then cut guides
+
+
+IMPACT SUMMARY
+--------------
+
+Before:  6,637 lines total
+         ↳ Guides: 5,694 lines (85% of content)
+         ↳ Tips: 942 lines (15% of content)
+         
+After:   5,290 lines total  (-20%)
+         ↳ Guides: 4,347 lines (82% of content)
+         ↳ Tips: 942 lines (18% of content)
+         
+Benefit: More focused guides that link to specialized tips articles
+         Easier to maintain (one source of truth)
+         Faster load times (less content per page)
+
+
+NEXT STEP
+---------
+
+Gen: Review blog-cuts-quick-reference.md (10 min)
+     ↓
+     Decide on implementation path (A, B, or C)
+     ↓
+     Approve specific cuts or request modifications
+
+
+Reports Generated
+-----------------
+✅ blog-content-analysis-2026.md        (Detailed analysis - 2,500 words)
+✅ blog-cuts-quick-reference.md          (Decision document - 800 words)
+✅ blog-edit-targets.md                  (Execution guide - 1,500 words)
+✅ README.md                             (Navigation guide)
+✅ ANALYSIS_SUMMARY.txt                  (This file - quick reference)
+
+
+================================================================================
+Analysis Date: March 4, 2026
+Analyst: Claude (Agent)
+Status: Awaiting Gen approval
+Risk Level: LOW (content consolidated, not deleted)
+Rollback: Easy (one git revert)
+================================================================================

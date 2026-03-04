@@ -1,5 +1,6 @@
 export { VisaHero } from './visa-hero';
 export { VisaAccordionLayout } from './visa-accordion-layout';
+export { VisaTabLayout } from './visa-tab-layout';
 export { VisaDisclaimer } from './visa-disclaimer';
 export { DocumentChecklist } from './action-zone';
 export { DocumentRow } from './document-row';

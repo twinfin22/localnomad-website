@@ -125,8 +125,18 @@
     "renewalRequirements": "续签条件",
     "renewalFees": "续签费用",
     "tipsCommunity": "经验与社区",
-    "sourcesRelated": "来源与相关",
-    "tableOfContents": "目录"
+    "sourcesRelated": "来源与相关签证",
+    "tableOfContents": "目录",
+    "atAGlance": "概览",
+    "seeFullRequirements": "查看完整要求",
+    "process": "流程",
+    "showMoreRequirements": "显示其余{count}项要求",
+    "showLess": "收起",
+    "visaStatus": "签证资格",
+    "pointsSystem": "积分制度",
+    "tabSubItems": "{count}项",
+    "tabSubDocs": "{count}份材料",
+    "tabSubSteps": "{count}个步骤"
   },
   "Common": {
     "backToHome": "返回首页",

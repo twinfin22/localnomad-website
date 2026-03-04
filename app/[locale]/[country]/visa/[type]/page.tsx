@@ -9,6 +9,7 @@ import type { Country } from '@/lib/types/visa';
 import {
   VisaHero,
   VisaAccordionLayout,
+  VisaTabLayout,
   VisaDisclaimer,
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
@@ -171,7 +172,7 @@ export default async function VisaDetailPage({ params }: Props) {
     ],
   };
 
-  return (
+  const jsonLdScripts = (
     <>
       <script
         type="application/ld+json"
@@ -191,24 +192,53 @@ export default async function VisaDetailPage({ params }: Props) {
           __html: JSON.stringify(breadcrumbJsonLd),
         }}
       />
+    </>
+  );
+
+  const breadcrumbItems = [
+    { label: tc('home'), href: '/' },
+    { label: displayCountry, href: `/${country}` },
+    { label: filteredVisa.shortName },
+  ];
+
+  // F-2 uses the new 3-layer tab layout; all other visas use the accordion layout.
+  // Separate return paths preserve identical React tree structure for non-F-2 pages,
+  // preventing Radix useId() hydration mismatches.
+  if (filteredVisa.type === 'f-2') {
+    return (
+      <>
+        {jsonLdScripts}
+        <main id="main-content" className="min-h-svh bg-neutral-50">
+          <Breadcrumb variant="band" items={breadcrumbItems} />
+          <div className="md:pl-[220px]">
+            <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
+              <VisaHero visa={filteredVisa} hideSummaryCards />
+              <VisaTabLayout
+                visa={filteredVisa}
+                country={country}
+              />
+              <VisaDisclaimer country={country} />
+            </div>
+          </div>
+        </main>
+      </>
+    );
+  }
+
+  return (
+    <>
+      {jsonLdScripts}
       <main id="main-content" className="min-h-svh bg-neutral-50">
-        <Breadcrumb
-          variant="band"
-          items={[
-            { label: tc('home'), href: '/' },
-            { label: displayCountry, href: `/${country}` },
-            { label: filteredVisa.shortName },
-          ]}
-        />
-        <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
-          <VisaHero visa={filteredVisa} />
-
-          <VisaAccordionLayout
-            visa={filteredVisa}
-            country={country}
-          />
-
-          <VisaDisclaimer country={country} />
+        <Breadcrumb variant="band" items={breadcrumbItems} />
+        <div className="md:pl-[220px]">
+          <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
+            <VisaHero visa={filteredVisa} />
+            <VisaAccordionLayout
+              visa={filteredVisa}
+              country={country}
+            />
+            <VisaDisclaimer country={country} />
+          </div>
         </div>
       </main>
     </>

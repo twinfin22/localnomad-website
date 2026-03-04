@@ -27,7 +27,7 @@ export function SourcesRelated({
             <ExternalLink className="h-5 w-5 text-primary" />
             <h3 className="text-base font-semibold">{t('officialSources')}</h3>
           </div>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-2 pl-7">
             {officialLinks.map((link, index) => (
               <li key={index}>
                 <a
@@ -52,7 +52,7 @@ export function SourcesRelated({
             <ArrowRight className="h-5 w-5 text-primary" />
             <h3 className="text-base font-semibold">{t('relatedVisas')}</h3>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 pl-7">
             {relatedVisas.map((visaType) => (
               <Link
                 key={visaType}

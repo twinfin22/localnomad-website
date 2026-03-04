@@ -62,6 +62,7 @@ function useLocalChecklist(storageKey: string) {
         const next = { ...prev, [docId]: !prev[docId] };
         try {
           localStorage.setItem(storageKey, JSON.stringify(next));
+          window.dispatchEvent(new CustomEvent('checklist-update'));
         } catch (error: unknown) {
           if (error instanceof Error) {
             if (process.env.NODE_ENV === 'development') {

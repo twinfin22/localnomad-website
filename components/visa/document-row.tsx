@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, Info, MapPin, Clock, DollarSign } from 'lucide-react';
+import { ChevronDown, Info, MapPin, Clock, DollarSign, TriangleAlert } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Document as VisaDocument } from '@/lib/types/visa';
 import type { useTranslations } from 'next-intl';
@@ -113,6 +113,17 @@ export function DocumentRow({
                 </span>{' '}
                 {doc.cost}
               </span>
+            </div>
+          )}
+
+          {doc.warnings && doc.warnings.length > 0 && (
+            <div className="mt-3 flex items-start gap-2 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
+              <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+              <div className="space-y-1">
+                {doc.warnings.map((warning, i) => (
+                  <p key={i}>{warning}</p>
+                ))}
+              </div>
             </div>
           )}
         </div>
