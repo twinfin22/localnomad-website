@@ -16,11 +16,13 @@ import {
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
 
-const VALID_COUNTRIES = ['korea', 'taiwan'] as const;
+const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china'] as const;
 
 const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
   korea: 'kr',
   taiwan: 'tw',
+  japan: 'jp',
+  china: 'cn',
 };
 
 interface Props {
