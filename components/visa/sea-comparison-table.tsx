@@ -33,15 +33,15 @@ export function SEAComparisonTable({ data }: SEAComparisonTableProps) {
           <thead>
             <tr>
               <th className="sticky left-0 z-10 min-w-[160px] border-b border-r bg-[#1B4965] px-4 py-3 text-left text-xs font-semibold text-white">
-                Attribute
+                Country
               </th>
               {data.visas.map((visa) => (
                 <th
                   key={visa.country}
                   className="min-w-[200px] border-b bg-[#1B4965] px-4 py-3 text-left text-xs font-semibold text-white"
                 >
-                  <span className="mr-1.5">{FLAG_MAP[visa.country]}</span>
-                  {visa.visaName}
+                  <span className="mr-1.5 text-base">{FLAG_MAP[visa.country]}</span>
+                  {visa.country}
                 </th>
               ))}
             </tr>
