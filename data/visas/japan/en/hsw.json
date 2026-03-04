@@ -1,0 +1,396 @@
+{
+  "type": "hsw",
+  "name": "Highly Skilled Professional (HSP) Visa — Complete 2026 Guide",
+  "shortName": "HSW / HSP",
+  "category": "work",
+  "description": "Everything about Japan's Highly Skilled Professional (高度専門職) visa: the points-based fast-track to permanent residence. This status of residence recognizes top-tier talent across three activity categories — Advanced Academic Research, Advanced Specialized/Technical, and Advanced Business Management. Applicants must accumulate at least 70 points based on academic background, professional career, annual salary, age, research achievements, and other contributions. The HSP visa offers Japan's most accelerated permanent residence pathway: 80+ points grants eligibility after just 1 year, and 70-79 points after 3 years — compared to the standard 10-year requirement. Additional benefits include up to 5 years initial stay, flexible work authorization, permission to engage in multiple activities, and dependent family inclusion. Annual income must be at least ¥3,000,000 for the specialized/technical and business management categories. Published guidelines indicate that even Engineer/Specialist visa holders can apply for permanent residence under HSP criteria without first switching to HSP status. Updated for 2026.",
+  "tagline": "Points-based fast-track to permanent residence for top talent",
+  "keyRequirement": "70+ points on HSP points system (income, education, age, experience, achievements)",
+  "targetAudience": [
+    "Experienced professionals on Engineer/Specialist visas seeking accelerated permanent residence",
+    "Researchers and academics with strong publication records and advanced degrees",
+    "High-income professionals earning ¥5,000,000+ annually with master's or doctoral degrees",
+    "Business managers and executives qualifying under the Advanced Business Management category",
+    "Foreign professionals seeking flexible work authorization and multiple activity permissions in Japan"
+  ],
+  "eligibility": [
+    {
+      "id": "points-threshold",
+      "label": "Accumulate at least 70 points on the HSP points system",
+      "description": "Points are calculated across multiple categories including academic background (degree level and field), professional career (years of experience), annual salary, age, research achievements (publications, patents), and bonus factors (Japanese language, graduation from specific universities, etc.). The calculation differs by activity category. Applicants must complete a points calculation worksheet.",
+      "required": true
+    },
+    {
+      "id": "income-floor",
+      "label": "Annual income of at least ¥3,000,000 for categories (i)(b) and (i)(c)",
+      "description": "For the Advanced Specialized/Technical and Advanced Business Management categories, published guidelines impose a ¥3,000,000 annual income floor. Even if total points reach 70+, applicants below this income threshold are not recognized as Highly Skilled Professionals. The Advanced Academic Research category (i)(a) does not have this income floor.",
+      "required": true
+    },
+    {
+      "id": "activity-category",
+      "label": "Qualify under one of three HSP activity categories",
+      "description": "Category (i)(a): Advanced Academic Research — research, teaching, and guidance at academic or research institutions. Category (i)(b): Advanced Specialized/Technical — technical or specialized work in natural sciences or humanities for a Japanese organization. Category (i)(c): Advanced Business Management — operation or management of a business in Japan. Each category has its own points criteria.",
+      "required": true
+    },
+    {
+      "id": "employer-sponsorship",
+      "label": "Employment contract or research appointment with a Japanese organization",
+      "description": "Like other work visas, the HSP visa requires sponsorship from a Japanese employer or institution. The organization must apply for the Certificate of Eligibility (COE) or support the status change application.",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "No criminal record or immigration violations",
+      "description": "Applicants must have a clean criminal record and no history of immigration violations. Published guidelines indicate that any past violations — including overstays in other countries — may result in denial.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "Up to 5 years",
+    "extension": "Renewable indefinitely — reapplication required before expiration",
+    "maxTotal": "No cumulative limit (fast-track to permanent residence: 1 year at 80+ points, 3 years at 70-79 points)"
+  },
+  "fees": {
+    "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
+    "extension": "¥4,000 for extension of stay or change of status",
+    "notes": "Fees are subject to change. FY2026 fee increases have been announced — the change of status fee may rise to approximately ¥40,000. Check the Immigration Services Agency website for the current schedule."
+  },
+  "incomeRequirement": {
+    "amount": "3,000,000",
+    "currency": "JPY",
+    "period": "annual",
+    "notes": "Income floor of ¥3,000,000/year applies to categories (i)(b) Advanced Specialized/Technical and (i)(c) Advanced Business Management. Below this threshold, points are not counted and HSP status is not recognized. Category (i)(a) Advanced Academic Research has no income floor.",
+    "proofMethods": [
+      "Employment contract showing annual salary",
+      "Tax certificates (源泉徴収票 or 確定申告書)",
+      "Income certificate from employer"
+    ]
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "旅券",
+      "description": "Must be valid for at least 6 months beyond the intended period of stay",
+      "required": true
+    },
+    {
+      "id": "coe",
+      "name": "Certificate of Eligibility (COE)",
+      "nameLocal": "在留資格認定証明書",
+      "description": "Issued by the regional immigration bureau after the employer or institution submits an application. For status changes from within Japan, a change of status application replaces the COE.",
+      "tips": [
+        "If already in Japan on another visa (e.g., Engineer/Specialist), apply for change of status instead of COE",
+        "Processing time is typically 2-3 months — start early"
+      ],
+      "required": true
+    },
+    {
+      "id": "points-worksheet",
+      "name": "Points Calculation Worksheet",
+      "nameLocal": "ポイント計算表",
+      "description": "Official points calculation form completed by the applicant, showing how the 70+ point threshold is met. Each claimed point must be supported by documentary evidence. Immigration officers verify every claim.",
+      "tips": [
+        "Use the official calculator on the Immigration Services Agency website",
+        "Be conservative — overclaiming points without supporting documents leads to rejection",
+        "Keep a copy of all supporting documents organized by points category"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract or Research Appointment Letter",
+      "nameLocal": "雇用契約書・研究委嘱状",
+      "description": "Full employment contract or formal research appointment showing position, duties, salary, and duration. Must clearly indicate the activity category that aligns with the HSP application.",
+      "required": true
+    },
+    {
+      "id": "degree-certificates",
+      "name": "University Degree Certificates and Transcripts",
+      "nameLocal": "卒業証明書・成績証明書",
+      "description": "Certified copies of all degree certificates (bachelor's, master's, doctoral). Transcripts showing field of study. Higher degrees earn more points. All foreign-language documents require certified Japanese translations.",
+      "tips": [
+        "A doctoral degree significantly boosts points — include all advanced degrees",
+        "Degrees from QS Top 300 universities may earn bonus points"
+      ],
+      "required": true
+    },
+    {
+      "id": "income-proof",
+      "name": "Income Documentation",
+      "nameLocal": "収入証明書",
+      "description": "Tax certificates (源泉徴収票), tax returns (確定申告書), or employer-issued income certificates proving annual income. Must demonstrate the ¥3,000,000 floor for categories (i)(b) and (i)(c), and support the income-based points claimed.",
+      "required": true
+    },
+    {
+      "id": "experience-proof",
+      "name": "Professional Experience Documentation",
+      "nameLocal": "職歴証明書",
+      "description": "Employment certificates from current and previous employers showing job titles, duties, and duration. Professional experience contributes points based on total years in the field.",
+      "required": true
+    },
+    {
+      "id": "research-publications",
+      "name": "Research Publications, Patents, or Awards (if applicable)",
+      "nameLocal": "研究業績証明書",
+      "description": "List of published research papers, registered patents, or professional awards. These contribute bonus points particularly for category (i)(a) Academic Research. Include publication records, patent certificates, or award documentation.",
+      "required": false
+    },
+    {
+      "id": "japanese-language",
+      "name": "Japanese Language Proficiency Certificate (if applicable)",
+      "nameLocal": "日本語能力証明書",
+      "description": "JLPT certificate or other recognized Japanese language proficiency documentation. N1 or N2 level earns bonus points on the HSP points system. Not required for the visa itself, but valuable for points accumulation.",
+      "required": false
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photo",
+      "nameLocal": "証明写真",
+      "description": "4cm x 3cm, taken within the last 6 months, white background",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Calculate Your Points Using the Official Worksheet",
+      "description": "Complete the official HSP points calculation worksheet available on the Immigration Services Agency website. Calculate your score across all applicable categories: academic background, professional experience, annual salary, age, and achievements. You need at least 70 points. At 80+ points, published guidelines indicate eligibility for the 1-year permanent residence fast-track.",
+      "tips": [
+        "Use the official online calculator at the ISA website for accuracy",
+        "Be conservative in your self-assessment — immigration officers verify every claimed point",
+        "If you are close to 70 points, consider whether a salary increase, additional certification, or Japanese language study could push you over the threshold"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Gather Supporting Documents for Each Claimed Point",
+      "description": "For every point claimed on the worksheet, prepare the supporting document: degree certificates for education points, employment certificates for experience points, tax records for income points, publication records for research points, and JLPT certificates for language points. All foreign-language documents must have certified Japanese translations.",
+      "duration": "2-8 weeks depending on document availability",
+      "tips": [
+        "Foreign degrees may need apostille or consular authentication — start this early",
+        "Request income certificates from your current employer or download from the tax authority"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Employer Files COE Application (or Applicant Files Status Change)",
+      "description": "If applying from outside Japan, the employer or institution files the COE application at the regional immigration bureau. If already in Japan on another visa (e.g., Engineer/Specialist), file a change of status application directly. Include the completed points worksheet and all supporting documents.",
+      "duration": "2-3 months for processing",
+      "tips": [
+        "Status change applications from within Japan may process faster than new COE applications",
+        "Organize documents by points category for easier verification by immigration officers"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Receive Approval and Obtain HSP Visa or Updated Residence Card",
+      "description": "If applying from abroad: receive the COE, then apply for the visa at your local Japanese embassy or consulate. If changing status in Japan: receive your updated Residence Card showing Highly Skilled Professional status with the designated activity category.",
+      "duration": "Visa processing: 5-10 working days (from abroad) | Status update: 1-2 weeks (in Japan)",
+      "tips": [
+        "Verify that your Residence Card correctly shows the HSP category and the 5-year validity period",
+        "You can now pursue permanent residence on the accelerated timeline"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Begin Permanent Residence Clock",
+      "description": "From the date your HSP status is recognized, the permanent residence eligibility clock starts. At 80+ points: eligible after 1 year. At 70-79 points: eligible after 3 years. Maintain your points above the threshold throughout this period — a drop below 70 points could reset the clock.",
+      "tips": [
+        "Track your points annually — salary changes, aging, and other factors can shift your score",
+        "Keep records of continuous residence and employment for the PR application"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "3-5 months total (COE: 2-3 months + visa processing: 5-10 working days) for new applications; 2-4 weeks for status change within Japan",
+    "notes": "HSP applications may receive higher processing priority compared to standard work visas, according to published guidelines. However, the points verification process can add time if documentation is incomplete. Immigration officers verify each claimed point against supporting documents."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Primary work must be in the designated activity category (research, specialized/technical, or business management)",
+      "Activities outside the primary category require separate permission, though HSP holders have broader flexibility than standard work visa holders"
+    ],
+    "notes": "HSP holders enjoy significantly broader work authorization than standard work visa holders. Published guidelines indicate that HSP holders can engage in multiple activities — for example, a researcher can also manage a business — without separate permission in many cases. This flexibility is one of the key benefits of HSP status."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "How does the HSP points system work?",
+      "answer": "The points system evaluates applicants across multiple categories with different weights depending on the activity category. Key factors include: academic background (doctoral degree earns the most points), professional experience (years in the field), annual salary (higher salary = more points), age (younger applicants earn more points), and achievements (publications, patents, awards). Bonus points are available for Japanese language proficiency (JLPT N1/N2), graduation from specific universities, and government-designated research projects. The minimum threshold is 70 points."
+    },
+    {
+      "question": "What is the difference between 70+ points and 80+ points?",
+      "answer": "The points score determines the speed of permanent residence eligibility. At 70-79 points, published guidelines indicate eligibility for permanent residence after 3 years of HSP status. At 80+ points (classified as 'especially highly skilled'), eligibility drops to just 1 year — making it the fastest permanent residence pathway in Japan. Compare this to the standard 10-year requirement for regular work visa holders."
+    },
+    {
+      "question": "Can I apply for permanent residence under HSP criteria without switching to HSP visa?",
+      "answer": "Yes. According to published guidelines, holders of other work visas (such as Engineer/Specialist) can apply for permanent residence using the HSP points criteria. If you demonstrate 70+ points at the time of your PR application and have maintained those points for the required period (1 or 3 years), you can apply without first changing to HSP visa status. This is a significant advantage for those who meet the points threshold but have not formally switched their visa category."
+    },
+    {
+      "question": "What are the three activity categories and how do they differ?",
+      "answer": "Category (i)(a) Advanced Academic Research is for researchers, professors, and academics at universities or research institutions. Category (i)(b) Advanced Specialized/Technical is for professionals in natural sciences, engineering, humanities, or social sciences working at Japanese companies or organizations. Category (i)(c) Advanced Business Management is for executives and managers operating or managing businesses in Japan. Each category has different points criteria — for example, publications matter more for (i)(a), while salary weight differs across categories. Categories (i)(b) and (i)(c) have a ¥3,000,000 income floor."
+    },
+    {
+      "question": "What happens if my points drop below 70 after I receive HSP status?",
+      "answer": "If your points drop below 70 (due to salary decrease, aging, job change, etc.), published guidelines indicate that you may not be able to renew your HSP status. Your permanent residence eligibility clock may also be affected. It is critical to monitor your points score throughout the required period. If you anticipate a drop, consider whether achieving a higher score in controllable categories (language, certifications) can offset the loss."
+    },
+    {
+      "question": "Is the ¥3,000,000 income floor a hard requirement?",
+      "answer": "Yes, for categories (i)(b) and (i)(c). Published guidelines are explicit: if your annual income is below ¥3,000,000, you are not recognized as a Highly Skilled Professional in these categories regardless of your total points score. This floor does not apply to category (i)(a) Advanced Academic Research, where income is weighted differently. Income includes salary, bonuses, and other regular compensation but typically excludes one-time payments."
+    },
+    {
+      "question": "What benefits does HSP status offer beyond permanent residence fast-track?",
+      "answer": "HSP status provides several advantages: (1) up to 5-year initial stay period — longer than standard work visas; (2) permission to engage in multiple activities (e.g., work + business management) without separate authorization; (3) spouse can work without the standard 28-hour weekly limit; (4) ability to bring parents to Japan under certain conditions (e.g., childcare support); (5) ability to bring domestic workers under certain conditions; (6) higher priority in immigration processing. These benefits make HSP the most privileged work visa category in Japan."
+    },
+    {
+      "question": "Do JLPT scores contribute to HSP points?",
+      "answer": "Yes. Published guidelines award bonus points for Japanese language proficiency. JLPT N1 (highest level) and N2 (advanced) earn bonus points on the HSP worksheet. The exact number of points depends on the activity category. For applicants close to the 70-point threshold, investing in Japanese language study can provide the boost needed to qualify."
+    },
+    {
+      "question": "How do the April 2027 permanent residence rule changes affect HSP holders?",
+      "answer": "Starting April 2027, published guidelines require permanent residence applicants to hold the longest available visa period under their current status — typically 5 years. For HSP holders, the 5-year initial stay is already the longest period available, so this change may be less impactful. However, applicants who previously received shorter HSP periods (1 or 3 years) may need to renew to a 5-year period first. Additionally, tax and insurance payment history is now scrutinized more strictly — even past unpaid amounts that have been settled can negatively affect the application."
+    }
+  ],
+  "tips": [
+    "Use the official ISA points calculator before applying — self-assessment errors are a common reason for wasted time and application fees",
+    "Focus on controllable factors: Japanese language study (JLPT N1/N2), professional certifications, and salary negotiation can all increase your score",
+    "A doctoral degree provides a significant points advantage — if you are a master's degree holder close to the threshold, consider whether a PhD program makes strategic sense",
+    "Keep all supporting documents organized by points category — immigration officers systematically verify each claimed point",
+    "If you are already on an Engineer/Specialist visa, you can apply for PR using HSP criteria without first changing to HSP visa status",
+    "Track your points annually — salary changes, aging, and job changes can shift your score above or below the threshold",
+    "The ¥3,000,000 income floor for categories (i)(b) and (i)(c) is a hard cutoff — ensure your documented income clears this threshold",
+    "Consider the timing of your PR application carefully: from April 2027, you must hold the longest available visa period before applying"
+  ],
+  "warnings": [
+    "The ¥3,000,000 annual income floor for categories (i)(b) and (i)(c) is absolute — below this threshold, HSP status is not recognized regardless of total points",
+    "Immigration officers verify every point claimed on the worksheet — overclaiming without supporting documents leads to rejection and potential credibility issues in future applications",
+    "If your points drop below 70 during the permanent residence eligibility period, the clock may reset — monitor your score continuously",
+    "Significant fee increases are expected in FY2026 — the permanent residency application fee may rise to approximately ¥100,000",
+    "From April 2027, PR applicants must hold the longest available visa period (typically 5 years) and demonstrate perfect tax and insurance payment history"
+  ],
+  "communityTips": [
+    {
+      "id": "engineer-to-hsp-shortcut",
+      "tip": "Many Engineer/Specialist visa holders do not realize they can apply for permanent residence using HSP points criteria without first switching to HSP visa. If you have a master's degree, 5+ years experience, and earn ¥5,000,000+, you may already have enough points. Check the calculator before assuming you need to change your visa status.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "salary-negotiation-for-points",
+      "tip": "Income is a major points factor. If you are close to a higher salary bracket on the points worksheet, negotiating a salary increase of even ¥500,000 can push you into the next tier. Some applicants time their HSP application to coincide with annual salary reviews or job changes that come with higher compensation.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "jlpt-as-point-booster",
+      "tip": "JLPT N1 or N2 certification is one of the most accessible ways to boost your points score. Unlike salary or degree level, which may take years to change, Japanese language proficiency can be improved through focused study. The JLPT test is offered twice a year (July and December) worldwide.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "spouse-work-benefit",
+      "tip": "One often-overlooked benefit of HSP status: your spouse on a Dependent visa gains broader work permissions than under a standard work visa. This can significantly impact household income and quality of life in Japan.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "tax-insurance-warning",
+      "tip": "If you are planning to apply for permanent residence through the HSP fast-track, start paying all taxes and insurance premiums on time immediately. The February 2026 rule change means that even past unpaid amounts — even if subsequently paid — are now a negative factor. A perfect payment history is effectively mandatory.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "engineer-specialist",
+    "business-manager",
+    "ssw1",
+    "digital-nomad-jp"
+  ],
+  "pathsTo": [
+    {
+      "type": "engineer-specialist",
+      "name": "Engineer/Specialist in Humanities/International Services Visa",
+      "requirements": "Hold Engineer/Specialist status and accumulate 70+ points on the HSP points system. Annual income must be at least ¥3,000,000 for categories (i)(b) and (i)(c). All claimed points must be supported by documentary evidence.",
+      "timeline": "Status change within Japan: 2-4 weeks processing after submission",
+      "documents": [
+        "Completed points calculation worksheet",
+        "Employment contract showing salary",
+        "University degree certificates (all levels)",
+        "Professional experience documentation",
+        "Income certificates (tax records)",
+        "Research publications or patents (if applicable)",
+        "JLPT certificate (if applicable)"
+      ],
+      "notes": "The most common transition path to HSP status. Experienced Engineer/Specialist holders with advanced degrees and strong income often accumulate 70+ points within a few years of working in Japan. This transition unlocks the accelerated permanent residence pathway."
+    },
+    {
+      "type": "ssw1",
+      "name": "Specified Skilled Worker 1",
+      "requirements": "Hold SSW1 status and accumulate 70+ points on the HSP points system. Must meet the income floor requirement and have sufficient education and experience points. This is a less common transition path.",
+      "timeline": "Status change: 2-4 weeks processing; may require additional documentation review",
+      "documents": [
+        "Completed points calculation worksheet",
+        "SSW1 status documentation",
+        "Employment and income records",
+        "Educational credentials",
+        "Skills and language certifications"
+      ],
+      "notes": "While technically possible, the SSW1 to HSP transition is uncommon because SSW1 holders typically have vocational rather than academic credentials, which limits points accumulation. SSW1 workers with additional university degrees or those who have significantly increased their income may qualify."
+    }
+  ],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Immigration Services Agency — Highly Skilled Professional",
+      "url": "https://www.moj.go.jp/isa/publications/materials/newimmiact_3_system_index.html"
+    },
+    {
+      "label": "MOFA — Highly Skilled Professional Visa",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/long/visa16.html"
+    },
+    {
+      "label": "ISA — Points Calculation Tool",
+      "url": "https://www.moj.go.jp/isa/publications/materials/newimmiact_3_evaluate_index.html"
+    },
+    {
+      "label": "Ministry of Justice — HSP English Information",
+      "url": "https://www.moj.go.jp/ENGLISH/m_hisho06_00043.html"
+    }
+  ],
+  "residenceStatus": "高度専門職",
+  "sponsorRequired": true,
+  "coeRequired": true,
+  "pointsSystem": {
+    "minimumPoints": 70,
+    "categories": [
+      "Advanced Academic Research (i)(a) — research, teaching, guidance at institutions",
+      "Advanced Specialized/Technical (i)(b) — technical/specialized work in natural sciences or humanities",
+      "Advanced Business Management (i)(c) — business operation/management in Japan"
+    ],
+    "incomeFloor": "¥3,000,000/year (categories (i)(b) and (i)(c) only)",
+    "calculatorUrl": "https://www.moj.go.jp/isa/publications/materials/newimmiact_3_evaluate_index.html"
+  },
+  "japaneseLanguage": {
+    "required": false,
+    "minimumLevel": "N1 or N2 recommended for bonus points",
+    "notes": "Japanese language proficiency is not required for HSP status itself, but JLPT N1 and N2 certifications earn bonus points on the HSP points system. For applicants close to the 70-point threshold, Japanese language study is one of the most accessible ways to gain additional points."
+  }
+}

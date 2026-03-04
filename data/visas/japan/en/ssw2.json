@@ -1,0 +1,377 @@
+{
+  "type": "ssw2",
+  "name": "Japan Specified Skilled Worker 2 (特定技能2号) — Complete 2026 Guide",
+  "shortName": "SSW2",
+  "category": "work",
+  "description": "Everything about Japan's Specified Skilled Worker Category 2 (SSW2) visa: advanced proficient skills status with no time limit on stay, family inclusion, path toward permanent residency, and the Category 2 skills test. SSW2 represents the upper tier of Japan's Specified Skilled Worker program, designed for experienced workers who have demonstrated supervisory-level expertise in their designated sector. Unlike SSW1's strict 5-year cap, SSW2 holders may renew indefinitely, bring family members (spouse and children), and work toward long-term settlement in Japan. Applicants typically transition from SSW1 after 3 or more years of sector experience and must pass the more advanced Category 2 skills evaluation or hold a Grade 1 National Trade Skill Certificate. Published guidelines indicate that SSW2 holders may eventually pursue permanent residency through the standard 10-year route. Updated for 2026.",
+  "tagline": "Advanced skilled worker status with indefinite renewal and family inclusion",
+  "keyRequirement": "Pass Category 2 skills test (or Grade 1 National Trade Certificate) + Japanese N3, typically after 3+ years on SSW1",
+  "targetAudience": [
+    "SSW1 holders with 3+ years of sector experience seeking long-term stability in Japan",
+    "Experienced skilled workers with supervisory or management capabilities",
+    "Trade professionals holding Grade 1 National Trade Skill Certificates",
+    "Workers who want to bring their family (spouse and children) to Japan",
+    "Foreign nationals seeking an indefinite-renewal work visa with settlement potential"
+  ],
+  "eligibility": [
+    {
+      "id": "skills-test-cat2",
+      "label": "Pass the Category 2 Specified Skills Test (higher standard than SSW1)",
+      "description": "According to published guidelines, applicants must pass the Category 2 Specified Skills Test, which evaluates proficiency at a supervisory or expert level. The test standard is significantly higher than the Category 1 test required for SSW1.",
+      "required": true
+    },
+    {
+      "id": "alternative-qualification",
+      "label": "Alternative: Grade 1 National Trade Skill Certificate or 3+ years supervisory experience",
+      "description": "Published guidelines indicate that holding a Grade 1 National Trade Skill Certificate (技能検定1級) or demonstrating 3 or more years of supervisory or management experience in the relevant sector may satisfy the skills requirement as an alternative to the Category 2 test.",
+      "required": false
+    },
+    {
+      "id": "japanese-language-n3",
+      "label": "Japanese language proficiency at N3 level or higher",
+      "description": "SSW2 applicants must demonstrate intermediate Japanese language ability at JLPT N3 level or higher. This is a step above the N4 requirement for SSW1 and reflects the supervisory responsibilities expected of SSW2 workers.",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "label": "Full-time employment contract with authority to supervise or manage worksites",
+      "description": "A valid employment contract with a Japanese employer registered under the SSW program is required. The contract must specify supervisory or management responsibilities consistent with the SSW2 skill level.",
+      "required": true
+    },
+    {
+      "id": "age-requirement",
+      "label": "Minimum age of 18 years old",
+      "description": "Applicants must be at least 18 years of age. In practice, most SSW2 applicants are older due to the experience requirements.",
+      "required": true
+    },
+    {
+      "id": "health-background",
+      "label": "Pass medical examination and criminal background check",
+      "description": "Recent medical examination and police clearance certificate from home country are required. Documents must be translated into Japanese by a certified translator.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "Up to 3 years (renewable in 1-year or 3-year increments)",
+    "extension": "Renewable indefinitely — no cumulative time limit",
+    "maxTotal": "No maximum — SSW2 can be renewed indefinitely, allowing long-term settlement in Japan"
+  },
+  "fees": {
+    "application": "Skills test: ¥6,000–10,000, JLPT: ¥7,700, COE: ¥0 (free), Visa issuance: ¥3,000 (single-entry) / ¥6,000 (multiple-entry)",
+    "extension": "¥4,000 per extension application",
+    "notes": "Fee structure is similar to SSW1. Skills test fees vary by sector and testing organization. Published guidelines indicate visa fees may increase in FY2026 — check your local embassy or consulate for current schedules."
+  },
+  "residenceStatus": "特定技能2号",
+  "sponsorRequired": true,
+  "coeRequired": true,
+  "designatedSectors": [
+    "Caregiving (介護)",
+    "Construction (建設)",
+    "Hospitality (宿泊)",
+    "Agriculture (農業)",
+    "Fisheries (漁業)",
+    "Food Processing (食品製造業)",
+    "Manufacturing (製造業)",
+    "Electricity and Gas (電気・ガス)",
+    "Semiconductor/Electronics Manufacturing (電子機器・部品製造)",
+    "Automobile Transportation (自動車整備)",
+    "Railways (鉄道)",
+    "Forestry (林業)",
+    "Timber Industry (木材産業)",
+    "Food Service (飲食料品製造業)",
+    "Cleaning (ビルクリーニング)",
+    "Human Resources (人材派遣業)"
+  ],
+  "japaneseLanguage": {
+    "required": true,
+    "minimumLevel": "JLPT N3 (intermediate conversational)",
+    "notes": "N3 represents intermediate ability — understanding of Japanese used in everyday situations and ability to read and comprehend materials on familiar topics. This higher requirement reflects the supervisory and communication responsibilities expected of SSW2 workers. The Japan Foundation Test for Basic Japanese (JFT-Basic) may also be accepted — check published guidelines for your sector."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "パスポート",
+      "description": "Must be valid for at least 6 months beyond the intended period of stay in Japan",
+      "required": true
+    },
+    {
+      "id": "coe",
+      "name": "Certificate of Eligibility (COE)",
+      "nameLocal": "在留資格認定証明書",
+      "description": "Issued by the Immigration Services Agency after the employer submits an application. For SSW1 to SSW2 transitions, this is processed as a Change of Status of Residence application.",
+      "tips": [
+        "If transitioning from SSW1 while already in Japan, apply for Change of Status at your regional immigration bureau",
+        "If applying from outside Japan, your employer submits the COE application"
+      ],
+      "required": true
+    },
+    {
+      "id": "skills-test-cat2-results",
+      "name": "Category 2 Skills Test Pass Certificate",
+      "nameLocal": "技能試験2号合格証明書",
+      "description": "Official certificate confirming passage of the Category 2 Specified Skills Test. Alternatively, a Grade 1 National Trade Skill Certificate (技能検定1級) may be submitted.",
+      "tips": [
+        "Category 2 tests are sector-specific and significantly more rigorous than Category 1",
+        "Not all sectors currently offer Category 2 testing — check the ISA website for availability"
+      ],
+      "required": true
+    },
+    {
+      "id": "language-test-results",
+      "name": "Japanese Language Test Certificate (N3 or higher)",
+      "nameLocal": "日本語能力試験結果通知書",
+      "description": "JLPT N3 or higher score report demonstrating intermediate Japanese language proficiency.",
+      "tips": [
+        "N3 is a significant step up from N4 — allocate 3–6 months of dedicated study for the upgrade",
+        "JLPT is held in July and December each year"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract with Supervisory Role",
+      "nameLocal": "雇用契約書（管理・監督職）",
+      "description": "Full-time employment contract with a registered Japanese employer. The contract must specify supervisory or management responsibilities consistent with SSW2 skill level.",
+      "tips": [
+        "The contract should clearly describe the supervisory scope — team size, worksite management responsibilities",
+        "Salary must reflect the higher skill level and supervisory duties"
+      ],
+      "required": true
+    },
+    {
+      "id": "work-experience-proof",
+      "name": "Proof of Work Experience",
+      "nameLocal": "職歴証明書",
+      "description": "Documentation proving 3 or more years of work experience in the designated sector on SSW1 status (or equivalent). May include employment certificates, tax records, or pension records from the employer.",
+      "required": true
+    },
+    {
+      "id": "medical-exam",
+      "name": "Medical Examination Certificate",
+      "nameLocal": "健康診断書",
+      "description": "Recent medical examination results from a recognized medical institution, confirming the applicant is in good health",
+      "required": true
+    },
+    {
+      "id": "background-check",
+      "name": "Criminal Background Check",
+      "nameLocal": "犯罪経歴証明書",
+      "description": "Police clearance certificate confirming no criminal record. If transitioning from SSW1 while already in Japan, your Japanese residence record may be used instead of a home-country certificate.",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photograph",
+      "nameLocal": "証明写真",
+      "description": "4cm x 3cm photograph, taken within the last 6 months, white background, meeting Japanese immigration specifications",
+      "required": true
+    },
+    {
+      "id": "residence-card",
+      "name": "Current Residence Card (if in Japan)",
+      "nameLocal": "在留カード",
+      "description": "Current Residence Card showing SSW1 status. Required for applicants transitioning from SSW1 while residing in Japan.",
+      "required": false
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Build Experience and Prepare for Category 2 Test",
+      "description": "Accumulate 3 or more years of work experience in your designated sector on SSW1 status. During this time, study for the Category 2 Specified Skills Test and upgrade your Japanese language proficiency to N3 level.",
+      "duration": "3+ years on SSW1 status",
+      "tips": [
+        "Begin studying for N3 and the Category 2 test during your SSW1 period — do not wait until the 5-year limit approaches",
+        "Seek supervisory responsibilities at work to build the management experience that SSW2 requires",
+        "Check sector availability for Category 2 testing early — not all sectors have active SSW2 programs yet"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Pass the Category 2 Skills Test and N3 Language Test",
+      "description": "Register for and pass the Category 2 Specified Skills Test in your sector. Separately, pass the JLPT N3 or equivalent language test. Alternatively, obtain a Grade 1 National Trade Skill Certificate.",
+      "duration": "1–3 months (for test registration and results)",
+      "tips": [
+        "Category 2 tests evaluate supervisory-level competence — practical experience is as important as study",
+        "If you already hold a Grade 1 National Trade Skill Certificate, you may not need the Category 2 test"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Secure or Confirm Employment with Supervisory Contract",
+      "description": "Ensure you have an employment contract that specifies supervisory or management duties consistent with SSW2. This may be an updated contract with your current employer or a new contract with a different registered employer.",
+      "duration": "1–4 weeks"
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Apply for Change of Status of Residence",
+      "description": "Submit your Change of Status of Residence application at the regional immigration bureau. Include all required documents: test certificates, employment contract, proof of experience, and current Residence Card.",
+      "duration": "4–8 weeks for processing",
+      "tips": [
+        "Apply before your SSW1 status expires — immigration processing times can vary",
+        "Bring all original documents and copies to the immigration bureau"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Receive SSW2 Status and Updated Residence Card",
+      "description": "Once approved, your Residence Card is updated to reflect SSW2 status. You may now also apply for dependent visas for your spouse and children.",
+      "duration": "1–2 weeks for card update",
+      "tips": [
+        "Review the expiration date on your new Residence Card — SSW2 periods are typically 1 or 3 years",
+        "If bringing family, file dependent visa applications promptly after receiving SSW2 status"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "4–8 weeks for Change of Status processing",
+    "notes": "Processing times vary by regional immigration bureau and application volume. Published guidelines indicate that well-documented applications with clear supervisory credentials tend to process faster. If applying from outside Japan with a COE, add 2–4 weeks for COE issuance and 5–10 working days for embassy visa processing."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Work is limited to the designated sector specified in the employment contract",
+      "Must hold a supervisory or management role consistent with SSW2 skill level",
+      "Cannot engage in self-employment or business ownership",
+      "Changing employers requires formal change of employment procedure"
+    ],
+    "notes": "SSW2 holders have broader work authorization than SSW1 within their designated sector. The supervisory role allows greater autonomy and responsibility. As with SSW1, changing employers or sectors requires formal immigration procedures."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "How is SSW2 different from SSW1?",
+      "answer": "The key differences are: (1) SSW2 has no cumulative time limit, while SSW1 is capped at 5 years; (2) SSW2 allows family members (spouse and children) to accompany you, while SSW1 does not; (3) SSW2 requires higher skills (Category 2 test) and Japanese language (N3 vs N4); (4) SSW2 represents supervisory-level expertise, while SSW1 is for workers with 'considerable knowledge and experience.' SSW2 is a significant upgrade in terms of stability, rights, and long-term settlement potential."
+    },
+    {
+      "question": "Can I bring my family to Japan on SSW2?",
+      "answer": "Yes. According to published guidelines, SSW2 holders may sponsor their spouse and children for dependent visa status. Family members receive their own Residence Cards and can reside in Japan for the same period as the SSW2 holder. Dependent family members may apply for work permission separately."
+    },
+    {
+      "question": "Is there a path from SSW2 to permanent residency?",
+      "answer": "Published guidelines indicate that SSW2 holders may pursue permanent residency through the standard 10-year residence route. Since SSW2 has no time limit, it is possible to accumulate the required years of continuous residence. The pathway from SSW to permanent residency is still being formalized by the Immigration Services Agency, and specific requirements may evolve."
+    },
+    {
+      "question": "Which sectors currently offer SSW2 testing?",
+      "answer": "Not all 16 designated sectors have active Category 2 testing programs. The availability of SSW2 testing varies by sector and is expanding over time. According to published information, construction and shipbuilding were among the first sectors to offer SSW2. Check the ISA and SSW support websites for the current list of sectors with active Category 2 testing."
+    },
+    {
+      "question": "What if my sector does not yet offer Category 2 testing?",
+      "answer": "If your sector does not currently offer the Category 2 Specified Skills Test, you may not be able to transition to SSW2 in that sector at this time. Published guidelines indicate that the government is actively working to expand SSW2 testing across all sectors. Monitor the ISA website for updates on test availability in your field."
+    },
+    {
+      "question": "Do I need to take the Category 2 test if I have a Grade 1 National Trade Skill Certificate?",
+      "answer": "According to published guidelines, holding a Grade 1 National Trade Skill Certificate (技能検定1級) in the relevant trade may satisfy the skills requirement for SSW2 without taking the Category 2 test. Verify with the Immigration Services Agency that your specific certificate is accepted for your designated sector."
+    },
+    {
+      "question": "What salary should I expect as an SSW2 worker?",
+      "answer": "SSW2 workers are expected to receive compensation reflecting their supervisory skill level, which is typically higher than SSW1 wages. Published guidelines require that pay be equal to or greater than Japanese workers in comparable supervisory roles. Exact salaries vary by sector, region, and employer, but the supervisory premium generally results in meaningful salary increases over SSW1."
+    },
+    {
+      "question": "Can I switch from SSW2 in one sector to another sector?",
+      "answer": "Switching between designated sectors on SSW2 generally requires passing the Category 2 test for the new sector and obtaining a new employment contract. Published guidelines indicate that sector changes are treated as formal changes of employment and require immigration approval. Cross-sector moves are not straightforward."
+    },
+    {
+      "question": "What happens to my family's visas if my SSW2 renewal is delayed?",
+      "answer": "Dependent visas are tied to the primary SSW2 holder's status. Published guidelines indicate that you should apply for renewal well before your current status expires. If there is a processing gap, consult your regional immigration bureau about provisional measures. Family members' visa status cannot extend beyond the primary holder's authorized period."
+    },
+    {
+      "question": "How does the upcoming Employment for Skill Development (ESD) system affect SSW2?",
+      "answer": "The ESD system, scheduled to replace the Technical Intern Training program starting in 2027, is expected to create a clearer pipeline into the SSW framework. Published guidelines suggest that ESD completers will have a structured pathway to SSW1 and eventually SSW2. The SSW program itself is not being replaced — it is expected to continue and expand alongside ESD."
+    }
+  ],
+  "tips": [
+    "Start preparing for the Category 2 test and JLPT N3 during your SSW1 period — waiting until year 4 or 5 leaves no margin for error",
+    "Seek supervisory responsibilities early in your SSW1 career — practical management experience strengthens both your test performance and your application",
+    "Check whether your sector currently offers Category 2 testing before building your transition plan",
+    "If you hold a Grade 1 National Trade Skill Certificate, verify its acceptance for SSW2 with the ISA — this can significantly shorten your pathway",
+    "Budget for the language upgrade from N4 to N3 — this typically requires 300–600 additional study hours",
+    "Once on SSW2, file dependent visa applications for family members promptly — processing takes additional time",
+    "Keep all employment records, tax certificates, and pension documentation organized — these serve as proof of continuous work history",
+    "Monitor the ISA website for policy updates — the SSW program is actively evolving with new sectors and testing schedules"
+  ],
+  "warnings": [
+    "Not all sectors currently offer Category 2 testing — verify availability before committing to the SSW2 transition plan",
+    "The Category 2 test is significantly more difficult than Category 1 — adequate preparation is essential",
+    "Apply for SSW2 status change before your SSW1 5-year limit expires — late applications may result in a gap in legal status",
+    "Family dependent visas are tied to the primary SSW2 holder — if your status expires or is revoked, dependent visas are also affected",
+    "Changing employers on SSW2 still requires formal immigration procedures — unauthorized changes are visa violations"
+  ],
+  "communityTips": [
+    {
+      "id": "early-n3-prep",
+      "tip": "Start studying for JLPT N3 as soon as you arrive on SSW1 — the jump from N4 to N3 is substantial. Many workers underestimate the time required and miss the July or December test dates, pushing their SSW2 transition back by 6 months or more.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "supervisor-experience-tip",
+      "tip": "Document every supervisory task you perform on SSW1 — training new workers, managing schedules, quality inspections. When you apply for SSW2, this documented experience strengthens your application and may serve as alternative qualification if Category 2 testing is not yet available in your sector.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "family-timing-tip",
+      "tip": "If you plan to bring your family, start gathering their documents (marriage certificate, birth certificates, translations) before you receive SSW2 approval. Dependent visa processing adds weeks, and having documents ready shortens the separation period.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "sector-research-tip",
+      "tip": "Construction and shipbuilding were the first sectors to offer SSW2 — they have the most established testing and transition processes. If your sector is newer to SSW2, look at how these sectors handle the transition for guidance on what to expect.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "ssw1",
+    "engineer-specialist",
+    "hsw"
+  ],
+  "pathsTo": [
+    {
+      "type": "ssw1",
+      "name": "Specified Skilled Worker 1 (Considerable Knowledge/Experience)",
+      "requirements": "Accumulate 3+ years of work experience on SSW1 status in the designated sector. Pass the Category 2 Specified Skills Test or hold Grade 1 National Trade Skill Certificate. Demonstrate N3 Japanese language proficiency.",
+      "timeline": "SSW1 minimum 3 years, then 4–8 weeks for status change processing",
+      "documents": [
+        "Category 2 Skills Test pass certificate (or Grade 1 National Trade Skill Certificate)",
+        "JLPT N3 score report",
+        "Employment contract with supervisory duties",
+        "Proof of 3+ years SSW1 work experience",
+        "Current Residence Card"
+      ],
+      "notes": "The SSW1 to SSW2 transition is the primary and most common pathway. Most SSW2 holders began on SSW1. The transition represents a significant upgrade: no time limit, family inclusion, and long-term settlement potential."
+    }
+  ],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Immigration Services Agency (ISA)",
+      "url": "https://www.moj.go.jp/isa/"
+    },
+    {
+      "label": "SSW Support Website",
+      "url": "https://www.ssw.go.jp/"
+    },
+    {
+      "label": "Ministry of Foreign Affairs — Visa Information",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    }
+  ]
+}

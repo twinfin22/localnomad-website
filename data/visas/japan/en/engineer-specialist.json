@@ -1,0 +1,405 @@
+{
+  "type": "engineer-specialist",
+  "name": "Engineer/Specialist in Humanities/International Services Visa — Complete 2026 Guide",
+  "shortName": "Engineer/Specialist",
+  "category": "work",
+  "description": "Everything about Japan's most popular white-collar work visa: the Engineer/Specialist in Humanities/International Services (技術・人文知識・国際業務) status of residence. This visa covers IT engineers, researchers, designers, translators, marketing professionals, and specialists in international business. Applicants typically need a bachelor's degree in a field relevant to the job, or approximately 10 years of professional experience. The employer must sponsor the application by obtaining a Certificate of Eligibility (COE) from the Immigration Services Agency. Duration ranges from 1 to 5 years depending on qualifications and employer, and the visa is renewable indefinitely. Work is restricted to the designated employer and job duties specified in the employment contract. According to published guidelines, this is the standard pathway for professionals seeking long-term careers in Japan, and it serves as a stepping stone to Highly Skilled Professional status or permanent residence. Updated for 2026.",
+  "tagline": "Japan's primary work visa for white-collar professionals",
+  "keyRequirement": "Bachelor's degree in relevant field + job offer from Japanese employer (COE required)",
+  "targetAudience": [
+    "IT engineers and software developers seeking employment at Japanese companies",
+    "Business professionals in marketing, finance, or international trade roles",
+    "Researchers and scientists joining Japanese institutions or corporations",
+    "Translators, interpreters, and language specialists working in international services",
+    "Foreign professionals planning long-term careers in Japan with a path to permanent residence"
+  ],
+  "eligibility": [
+    {
+      "id": "education",
+      "label": "Bachelor's degree or higher in a field relevant to the job duties",
+      "description": "A four-year university degree is the standard requirement. The field of study must align with the job duties — immigration officers verify this via transcripts and graduation certificates. Science and engineering degrees are well-suited for engineering roles; humanities degrees for international services roles.",
+      "required": true
+    },
+    {
+      "id": "experience-alternative",
+      "label": "Approximately 10 years of professional experience (alternative to degree)",
+      "description": "Applicants without a bachelor's degree may qualify with roughly 10 or more years of documented professional experience in the relevant field. Published guidelines indicate that this experience must be substantiated with employment certificates and references.",
+      "required": false
+    },
+    {
+      "id": "employer-sponsorship",
+      "label": "Full-time employment contract with a Japanese employer who will sponsor the visa",
+      "description": "The employer must agree to sponsor the visa by applying for a Certificate of Eligibility (COE) at the regional immigration bureau. The employment contract must clearly state the job title, duties, and compensation. The employer's financial stability is also evaluated.",
+      "required": true
+    },
+    {
+      "id": "salary-parity",
+      "label": "Salary comparable to Japanese employees in the same role",
+      "description": "While there is no stated minimum salary, published guidelines require that compensation be at least equal to what a Japanese national would receive for the same position. Immigration officers may reject applications where the salary appears unreasonably low.",
+      "required": true
+    },
+    {
+      "id": "job-match",
+      "label": "Job duties must align with educational qualifications or professional experience",
+      "description": "One of the most common rejection reasons is a mismatch between the applicant's degree field and the actual job duties. For example, a literature degree holder applying for a software engineering position may face scrutiny. Immigration officers evaluate transcripts alongside the job description.",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "No criminal record or previous immigration violations",
+      "description": "Applicants with criminal convictions, prior visa overstays, or immigration violations in any country face significant difficulty. Published guidelines indicate that even minor infractions can result in denial.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "1, 3, or 5 years (determined by qualifications, employer stability, and immigration officer discretion)",
+    "extension": "Renewable indefinitely — apply before current period expires",
+    "maxTotal": "No cumulative limit (renewable as long as employment continues)"
+  },
+  "fees": {
+    "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
+    "extension": "¥4,000 for extension of stay or change of status",
+    "notes": "Fees are subject to change. FY2026 fee increases have been announced — check the Immigration Services Agency website for the current schedule. Some embassies may charge additional local processing fees."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "旅券",
+      "description": "Must be valid for at least 6 months beyond the intended period of stay",
+      "required": true
+    },
+    {
+      "id": "coe",
+      "name": "Certificate of Eligibility (COE)",
+      "nameLocal": "在留資格認定証明書",
+      "description": "Issued by the regional immigration bureau in Japan after the employer submits an application on behalf of the applicant. The COE confirms that the applicant meets the requirements for the requested status of residence.",
+      "tips": [
+        "The employer files this at the immigration bureau — the applicant cannot apply directly",
+        "COE processing typically takes 2-3 months — plan well ahead of the intended start date",
+        "The COE is valid for 3 months from issuance — visa application at the embassy must be completed within this window"
+      ],
+      "required": true
+    },
+    {
+      "id": "visa-application-form",
+      "name": "Visa Application Form",
+      "nameLocal": "査証申請書",
+      "description": "Standard visa application form, completed in full. Must be the current version — outdated forms downloaded from unofficial sources are rejected immediately.",
+      "tips": [
+        "Download only from the official MOFA website or your local Japanese embassy",
+        "Fill out all fields completely — incomplete forms are returned without processing"
+      ],
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photo",
+      "nameLocal": "証明写真",
+      "description": "4cm x 3cm, taken within the last 6 months, white background, no hats or sunglasses",
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract",
+      "nameLocal": "雇用契約書",
+      "description": "Full employment contract from the Japanese employer showing job title, duties, salary, employment period, and working conditions. The contract language must be clear enough for immigration officers to verify that the job matches the applicant's qualifications.",
+      "tips": [
+        "Ensure the job description specifically references duties that match your degree field",
+        "Vague job descriptions (e.g., 'general duties') are a common rejection trigger"
+      ],
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "University Degree Certificate and Transcripts",
+      "nameLocal": "卒業証明書・成績証明書",
+      "description": "Original or certified copies of the bachelor's, master's, or doctoral degree. Transcripts showing the field of study and courses completed. All foreign-language documents must have certified Japanese translations.",
+      "tips": [
+        "The degree field must match the job duties — immigration officers check transcripts",
+        "If your degree is from a non-English-speaking country, provide both an official English translation and a Japanese translation"
+      ],
+      "required": true
+    },
+    {
+      "id": "experience-proof",
+      "name": "Proof of Professional Experience (if applicable)",
+      "nameLocal": "職歴証明書",
+      "description": "Employment certificates from previous employers showing job titles, duties, and duration of employment. Required for applicants relying on work experience instead of a degree, or to supplement the application.",
+      "required": false
+    },
+    {
+      "id": "company-documents",
+      "name": "Employer Company Registration Documents",
+      "nameLocal": "会社登記簿謄本",
+      "description": "Documents proving the employer's legal registration, financial stability, and business activities in Japan. Includes company registry extract (登記簿謄本), annual report, and tax payment certificates.",
+      "tips": [
+        "New startups or small companies may face additional scrutiny — strong financial documentation helps",
+        "Immigration may request additional company financial records if the employer is not well-established"
+      ],
+      "required": true
+    },
+    {
+      "id": "criminal-background",
+      "name": "Criminal Background Check",
+      "nameLocal": "犯罪経歴証明書",
+      "description": "Police clearance certificate from the applicant's home country or country of current residence. Must be recent and may require apostille or consular authentication depending on the issuing country.",
+      "tips": [
+        "FBI background checks (US citizens) can take 12-18 weeks by mail — start early",
+        "Some countries offer expedited processing for additional fees"
+      ],
+      "required": true
+    },
+    {
+      "id": "medical-exam",
+      "name": "Medical Examination Certificate",
+      "nameLocal": "健康診断書",
+      "description": "Recent medical examination from a certified medical institution. Requirements vary by embassy — check with your local Japanese embassy for specific health screening requirements.",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Secure a Job Offer from a Japanese Employer",
+      "description": "Find employment with a Japanese company willing to sponsor your visa. The employer must agree to file the Certificate of Eligibility (COE) application on your behalf. Ensure the job duties align with your educational qualifications.",
+      "tips": [
+        "Major job platforms for Japan: LinkedIn, GaijinPot, Daijob, Japan Dev, Wantedly",
+        "Confirm that the employer has experience sponsoring visas — some smaller companies may be unfamiliar with the process"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Employer Applies for Certificate of Eligibility (COE)",
+      "description": "The employer submits the COE application at the regional immigration bureau in Japan. This includes the employment contract, company registration documents, and the applicant's educational credentials. The immigration bureau evaluates whether the applicant meets the requirements for the Engineer/Specialist status.",
+      "duration": "2-3 months for COE processing",
+      "tips": [
+        "The employer handles this step — provide all requested documents promptly to avoid delays",
+        "Processing times vary by region — Tokyo and Osaka offices tend to be busier"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Receive COE and Prepare Visa Application Documents",
+      "description": "Once the COE is approved, the employer mails the original COE to the applicant. Gather all remaining documents: passport, photos, visa application form, and any translations. The COE is valid for 3 months — the visa application must be submitted within this window.",
+      "duration": "1-2 weeks for document preparation",
+      "tips": [
+        "Use tracked/express mail for the COE — losing it requires reapplication",
+        "Download the visa application form from the official MOFA website, not third-party sites"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Apply for Visa at Japanese Embassy or Consulate",
+      "description": "Submit the complete visa application package at the Japanese embassy or consulate in your country of residence. Some embassies accept appointments; others use walk-in systems. As of December 2025, eVISA applications are available for select countries (USA, Canada, UK, Australia, and others).",
+      "duration": "5-10 working days for visa processing",
+      "tips": [
+        "Check if your country is eligible for eVISA — it can significantly reduce processing time",
+        "Bring all original documents plus one complete set of copies"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Enter Japan and Obtain Residence Card",
+      "description": "After receiving the visa, enter Japan within the validity period. At the port of entry, immigration issues a Residence Card (在留カード) confirming your status of residence and permitted period of stay. You must carry this card at all times.",
+      "duration": "Issued at port of entry (same day)",
+      "tips": [
+        "Arrive at a major airport (Narita, Haneda, Kansai, Chubu) to receive the Residence Card immediately",
+        "If entering through a smaller airport, the card is mailed to your registered address within 2-3 weeks"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Complete Post-Arrival Registration",
+      "description": "Within 14 days of establishing your address, register at your local city/ward office (市区町村役場). This activates your health insurance and pension enrollment. Also notify the immigration bureau of your residential address.",
+      "duration": "1-2 days",
+      "tips": [
+        "Bring your Residence Card and passport to the ward office",
+        "Register for National Health Insurance (国民健康保険) and National Pension (国民年金) — enrollment is mandatory"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "3-5 months total (COE: 2-3 months + document preparation: 1-2 months + visa: 5-10 working days)",
+    "notes": "Processing times vary by immigration bureau workload and embassy location. Published guidelines recommend starting the COE application at least 4-6 months before the intended start date. Incomplete applications or document requests can extend the timeline significantly."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Work only for the designated employer specified in the employment contract",
+      "Job duties must match those approved in the visa application",
+      "Cannot engage in self-employment, business ownership, or freelance work",
+      "Part-time work at other employers requires separate 'Permission to Engage in Activities Outside Status of Residence'"
+    ],
+    "notes": "Published guidelines strictly limit work to the designated employer and approved job duties. Changing employers requires notifying immigration within 14 days and may require a new COE application if the job category changes significantly."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "What if my degree field does not exactly match my job?",
+      "answer": "This is the most common rejection reason. Published guidelines require that the degree field be relevant to the job duties. 'Relevant' allows some flexibility — for example, a mathematics degree may be accepted for a data engineering role. However, a completely unrelated degree (e.g., literature for a software engineering position) typically results in denial. If your degree is borderline, the employer's written explanation of how your education relates to the job duties becomes critical."
+    },
+    {
+      "question": "Can I change employers while on this visa?",
+      "answer": "Yes, but it is not automatic. According to published guidelines, you must notify immigration within 14 days of changing employment. If the new job is in the same category (e.g., both IT engineering roles), a notification may suffice. If the job category changes significantly, you may need to apply for a change of status or a new COE. Working for a new employer without proper notification is a violation that can affect future renewals."
+    },
+    {
+      "question": "Is Japanese language ability required for this visa?",
+      "answer": "Japanese language proficiency is not a formal requirement for the Engineer/Specialist visa. Many technology companies hire English-speaking professionals. However, for roles classified under 'International Services' (translation, interpretation, international business), relevant language skills are expected. Published guidelines do not mandate JLPT certification, but practical language ability matching the job description is assessed."
+    },
+    {
+      "question": "How does this visa lead to permanent residence?",
+      "answer": "There are two main pathways. First, the standard route requires 10 consecutive years of residence in Japan, with at least 5 years on a work visa. Second, the Highly Skilled Professional (HSP) points route allows Engineer/Specialist holders to apply for permanent residence after 1 year (80+ points) or 3 years (70-79 points) under HSP criteria — without first changing to HSP visa status. Published guidelines indicate that from April 2027, applicants must hold the longest available visa period (typically 5 years) before applying for permanent residence."
+    },
+    {
+      "question": "What happens if my COE application is rejected?",
+      "answer": "Published guidelines indicate that immigration does not disclose specific rejection reasons (under the Administrative Procedure Act). The applicant cannot reapply for the same visa type within 6 months. Common reasons include: educational mismatch with job duties, employer financial instability, vague job descriptions, or documentation issues. The employer can request a reason for denial in writing, though responses are typically brief."
+    },
+    {
+      "question": "Can I do freelance or side work on this visa?",
+      "answer": "Not by default. The Engineer/Specialist visa restricts work to the designated employer. For any side work, you must apply for 'Permission to Engage in Activities Outside Status of Residence' (資格外活動許可) at the immigration bureau. Published guidelines indicate this permission is granted on a case-by-case basis and typically allows up to 28 hours per week of additional work."
+    },
+    {
+      "question": "What is the eVISA system and can I use it?",
+      "answer": "As of December 2025, Japan launched an electronic visa (eVISA) system for select countries including the USA, Canada, UK, Australia, New Zealand, and several others. Eligible applicants can submit visa applications online through the Visit Japan Web portal, reducing the need for in-person embassy visits. Check the MOFA website for the current list of eligible countries and visa categories."
+    },
+    {
+      "question": "My employer is a startup — will that cause problems?",
+      "answer": "Published guidelines evaluate the employer's financial stability and business legitimacy. Startups and new companies face additional scrutiny. The employer should provide strong documentation: business plan, financial projections, current bank balance, client contracts, and any investment documentation. Having Japanese co-founders or established business relationships strengthens the application."
+    },
+    {
+      "question": "Can my spouse and children join me in Japan?",
+      "answer": "Yes. According to published guidelines, Engineer/Specialist visa holders can sponsor dependent family members (spouse and unmarried children under 18) for a Dependent visa (家族滞在). Dependents can apply for limited work permission (up to 28 hours per week) separately. The primary visa holder must demonstrate sufficient income to support the family."
+    },
+    {
+      "question": "What are the upcoming FY2026 fee increases?",
+      "answer": "Published guidelines indicate significant fee increases planned for FY2026. The change of status fee is expected to rise to approximately ¥40,000 (from the current ¥4,000), and permanent residency application fees may increase to approximately ¥100,000. These changes are part of broader immigration fee restructuring. Check the Immigration Services Agency website for confirmed fee schedules before applying."
+    }
+  ],
+  "tips": [
+    "Start the COE application at least 4-6 months before your intended start date — processing alone takes 2-3 months",
+    "Ensure your degree field clearly matches the job description — this is the single most common rejection reason",
+    "Download visa application forms only from official MOFA or embassy websites — outdated forms from third-party sites cause immediate rejection",
+    "All foreign-language documents require certified Japanese translations — machine translations are not accepted",
+    "Keep your COE safe — it is valid for only 3 months and losing it requires starting the application process over",
+    "Register at your local ward office within 14 days of establishing your address in Japan — this activates health insurance and pension",
+    "Check if your country is eligible for eVISA (launched December 2025) — it can save significant time on embassy visits",
+    "If changing employers, notify immigration within 14 days — unauthorized employer changes can jeopardize your visa status"
+  ],
+  "warnings": [
+    "Educational mismatch between degree and job duties is the top rejection reason — immigration officers verify transcripts against the job description",
+    "Working outside your designated employer or job duties without permission is a violation that can result in visa revocation and deportation",
+    "Outdated visa application forms are rejected immediately — always download the current version from the official MOFA website",
+    "If the COE application is denied, published guidelines indicate you cannot reapply for the same visa type within 6 months",
+    "Significant fee increases are expected in FY2026 — the change of status fee may rise from ¥4,000 to approximately ¥40,000"
+  ],
+  "communityTips": [
+    {
+      "id": "degree-match-strategy",
+      "tip": "If your degree is not an obvious match, ask your employer to write a detailed 'reason for hiring' statement (採用理由書) explaining how your academic background is relevant. Some successful applicants have bridged gaps by highlighting specific courses or thesis work that align with the job duties.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "coe-timing",
+      "tip": "COE processing at the Tokyo Regional Immigration Bureau can take up to 3 months during peak periods (March-April and September-October, coinciding with Japanese fiscal and academic year transitions). Apply during off-peak months if possible.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "hsp-points-check",
+      "tip": "Even if you are on an Engineer/Specialist visa, check your HSP points score regularly. Published guidelines indicate that Engineer/Specialist holders can apply for permanent residence under HSP criteria (80+ points = 1-year PR track) without first switching to HSP visa status. Many engineers accumulate enough points within a few years without realizing it.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "employer-change-notification",
+      "tip": "When changing employers, file the notification with immigration as soon as possible — ideally on day 1 at the new company. The 14-day window is strict, and late notification can be flagged during your next renewal. Keep a copy of the notification receipt as proof.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "evisa-advantage",
+      "tip": "If your country is eligible for eVISA, consider using it even if an embassy visit is convenient. The electronic system tends to have faster processing times and provides digital confirmation, which reduces the risk of document loss in transit.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "hsw",
+    "business-manager",
+    "digital-nomad-jp",
+    "ssw1"
+  ],
+  "pathsTo": [],
+  "pathsFrom": [
+    {
+      "type": "hsw",
+      "name": "Highly Skilled Professional Visa",
+      "requirements": "Accumulate 70+ points on the HSP points system (evaluated across income, education, age, work experience, and achievements). Annual income must be at least ¥3,000,000 for specialized/technical and business management categories.",
+      "timeline": "COE processing 2-3 months; can apply for status change while in Japan (¥4,000 fee, 2-4 weeks processing)",
+      "documents": [
+        "Points calculation worksheet (completed by applicant)",
+        "Employment contract showing salary and duties",
+        "University degree certificates and transcripts",
+        "Proof of professional experience",
+        "Income documentation (tax certificates)",
+        "Research publications or patents (if applicable)"
+      ],
+      "notes": "A common upgrade path for experienced professionals. Engineers with a master's degree, 5+ years experience, and annual income above ¥5,000,000 often reach 70+ points. HSP status unlocks accelerated permanent residence (1 year at 80+ points, 3 years at 70-79 points)."
+    },
+    {
+      "type": "business-manager",
+      "name": "Business Manager Visa",
+      "requirements": "As of October 2025: minimum ¥30,000,000 capital investment, 1+ full-time Japanese or permanent resident employee, certified business plan, 3+ years management experience, and Japanese language proficiency. Applicants must establish a legitimate business entity in Japan.",
+      "timeline": "Business setup: 2-4 months; COE/status change processing: 2-3 months; total 4-7 months",
+      "documents": [
+        "Business registration certificate (登記簿謄本)",
+        "Certified business plan (from professional expert)",
+        "Proof of ¥30,000,000+ capital investment",
+        "Employment contracts for full-time employee(s)",
+        "Management experience documentation (3+ years)",
+        "Japanese language proficiency certification"
+      ],
+      "notes": "The October 2025 overhaul significantly raised the bar for this transition. The capital requirement increased 6x from ¥5,000,000 to ¥30,000,000. Critical timing: file your startup notification before your current employment ends — a gap of more than 3 months without valid status creates legal complications. Transitional measures apply until October 2028 for existing Business Manager holders."
+    }
+  ],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Immigration Services Agency (ISA)",
+      "url": "https://www.moj.go.jp/isa/"
+    },
+    {
+      "label": "MOFA Visa Information",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    },
+    {
+      "label": "MOFA Work/Long-Term Visa Guide",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/long/index.html"
+    }
+  ],
+  "residenceStatus": "技術・人文知識・国際業務",
+  "sponsorRequired": true,
+  "coeRequired": true,
+  "japaneseLanguage": {
+    "required": false,
+    "notes": "Japanese language proficiency is not formally required. Many technology companies hire English-speaking professionals. However, for 'International Services' roles (translation, interpretation, international business), relevant language ability is expected and assessed."
+  }
+}

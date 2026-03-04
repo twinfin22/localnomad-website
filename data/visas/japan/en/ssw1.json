@@ -1,0 +1,402 @@
+{
+  "type": "ssw1",
+  "name": "Japan Specified Skilled Worker 1 (特定技能1号) — Complete 2026 Guide",
+  "shortName": "SSW1",
+  "category": "work",
+  "description": "Everything about Japan's Specified Skilled Worker Category 1 (SSW1) visa: 16 authorized sectors, skills testing and Japanese language requirements, the Technical Intern Training exemption pathway, employment conditions, and transition to SSW2. The SSW1 visa is Japan's primary labor migration program targeting workforce shortages in construction, caregiving, hospitality, agriculture, fisheries, food processing, manufacturing, and other designated sectors. Applicants must pass a sector-specific skills test and demonstrate at least N4-level Japanese language proficiency, or complete 3 years of Technical Intern Training to qualify without testing. The visa is issued for up to 1 year at a time, renewable up to a cumulative maximum of 5 years. Family members cannot accompany SSW1 holders. After 3 or more years on SSW1, published guidelines indicate a pathway to SSW2 for workers who demonstrate advanced skill levels. Updated for 2026.",
+  "tagline": "Skilled labor visa for Japan's high-demand sectors",
+  "keyRequirement": "Pass sector-specific skills test + Japanese N4, OR complete 3 years Technical Intern Training",
+  "targetAudience": [
+    "Skilled trade workers seeking employment in Japan's labor-shortage sectors",
+    "Technical Intern Training program graduates transitioning to longer-term work status",
+    "Workers in construction, caregiving, hospitality, agriculture, or manufacturing with relevant experience",
+    "Foreign nationals from partner countries with vocational skills in designated fields",
+    "Workers planning a long-term career path through SSW1 to SSW2 advancement"
+  ],
+  "eligibility": [
+    {
+      "id": "age-requirement",
+      "label": "Minimum age of 18 years old",
+      "description": "Applicants must be at least 18 years of age at the time of application. There is no upper age limit, though employers may have their own preferences.",
+      "required": true
+    },
+    {
+      "id": "skills-test",
+      "label": "Pass the Category 1 Specified Skills Test (written + practical exam)",
+      "description": "According to published guidelines, applicants must pass a sector-specific skills evaluation test that includes both written and practical components. The test content varies by sector and is administered by designated testing organizations in Japan and select overseas locations.",
+      "required": true
+    },
+    {
+      "id": "japanese-language",
+      "label": "Pass Japanese Language Proficiency Test at N4 level or higher",
+      "description": "Published guidelines require applicants to demonstrate basic Japanese conversational ability at JLPT N4 level minimum. Some sectors may require higher proficiency. The Japan Foundation Test for Basic Japanese (JFT-Basic) is also accepted as an alternative to JLPT.",
+      "required": true
+    },
+    {
+      "id": "tit-exemption",
+      "label": "Technical Intern Training (3 years) exempts from both skills and language tests",
+      "description": "Applicants who have completed 3 years of Technical Intern Training Program (Phase ii) in a related sector are exempt from both the skills test and the Japanese language test. This is the most common entry pathway for SSW1.",
+      "required": false
+    },
+    {
+      "id": "employment-contract",
+      "label": "Full-time employment contract with a registered Japanese employer",
+      "description": "A valid employment contract with a Japanese employer registered under the SSW program is required. The employer must meet labor standards and provide adequate working conditions, including salary comparable to Japanese workers in the same role.",
+      "required": true
+    },
+    {
+      "id": "health-background",
+      "label": "Pass medical examination and criminal background check",
+      "description": "Applicants must undergo a medical examination and provide a criminal background check from their home country. Both documents must be recent and translated into Japanese by a certified translator.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "Up to 1 year (renewable in 6-month or 1-year increments)",
+    "extension": "Renewable up to 5 years cumulative total",
+    "maxTotal": "5 years maximum — cannot be extended beyond this limit on SSW1 status"
+  },
+  "fees": {
+    "application": "Skills test: ¥6,000–10,000, JLPT: ¥7,700, COE: ¥0 (free), Visa issuance: ¥3,000 (single-entry) / ¥6,000 (multiple-entry)",
+    "extension": "¥4,000 per extension application",
+    "notes": "Skills test fees vary by sector and testing organization. JLPT fees are per attempt. Visa fees may be waived for certain nationalities under bilateral agreements. Check your local Japanese embassy or consulate for current fee schedules."
+  },
+  "residenceStatus": "特定技能1号",
+  "sponsorRequired": true,
+  "coeRequired": true,
+  "designatedSectors": [
+    "Caregiving (介護)",
+    "Construction (建設)",
+    "Hospitality (宿泊)",
+    "Agriculture (農業)",
+    "Fisheries (漁業)",
+    "Food Processing (食品製造業)",
+    "Manufacturing (製造業)",
+    "Electricity and Gas (電気・ガス)",
+    "Semiconductor/Electronics Manufacturing (電子機器・部品製造)",
+    "Automobile Transportation (自動車整備)",
+    "Railways (鉄道)",
+    "Forestry (林業)",
+    "Timber Industry (木材産業)",
+    "Food Service (飲食料品製造業)",
+    "Cleaning (ビルクリーニング)",
+    "Human Resources (人材派遣業)"
+  ],
+  "japaneseLanguage": {
+    "required": true,
+    "minimumLevel": "JLPT N4 (basic conversational)",
+    "notes": "N4 is the minimum for most sectors. Some sectors such as caregiving may require higher proficiency. Applicants who completed 3 years of Technical Intern Training are exempt from the language test. The Japan Foundation Test for Basic Japanese (JFT-Basic) is accepted as an alternative to JLPT."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "パスポート",
+      "description": "Must be valid for at least 6 months beyond the intended period of stay in Japan",
+      "required": true
+    },
+    {
+      "id": "coe",
+      "name": "Certificate of Eligibility (COE)",
+      "nameLocal": "在留資格認定証明書",
+      "description": "Issued by the Immigration Services Agency after the employer submits an application on your behalf. The COE confirms that you meet the requirements for SSW1 status.",
+      "tips": [
+        "The employer files the COE application at the regional immigration bureau in Japan",
+        "Processing typically takes 2–4 weeks but can vary by region and season"
+      ],
+      "required": true
+    },
+    {
+      "id": "skills-test-results",
+      "name": "Skills Test Pass Certificate",
+      "nameLocal": "技能試験合格証明書",
+      "description": "Official certificate confirming passage of the Category 1 Specified Skills Test for your designated sector. Not required if transitioning from Technical Intern Training.",
+      "tips": [
+        "Results are typically available within 2–4 weeks after the test date",
+        "Ensure the certificate clearly indicates the sector and passing score"
+      ],
+      "required": true
+    },
+    {
+      "id": "language-test-results",
+      "name": "Japanese Language Test Certificate",
+      "nameLocal": "日本語能力試験結果通知書",
+      "description": "JLPT N4 or higher score report, or JFT-Basic pass certificate. Not required if transitioning from Technical Intern Training.",
+      "tips": [
+        "JLPT is held twice a year (July and December) — plan test dates well in advance",
+        "JFT-Basic is offered more frequently and may be more accessible in some countries"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract",
+      "nameLocal": "雇用契約書",
+      "description": "Full-time employment contract with a Japanese employer registered under the SSW program. Must clearly state job duties, salary, working hours, and employment conditions.",
+      "tips": [
+        "Salary must be equal to or higher than Japanese workers in the same position",
+        "Contract should specify the designated sector and specific job duties"
+      ],
+      "required": true
+    },
+    {
+      "id": "medical-exam",
+      "name": "Medical Examination Certificate",
+      "nameLocal": "健康診断書",
+      "description": "Recent medical examination results from a recognized medical institution, confirming the applicant is in good health and free of communicable diseases.",
+      "required": true
+    },
+    {
+      "id": "background-check",
+      "name": "Criminal Background Check",
+      "nameLocal": "犯罪経歴証明書",
+      "description": "Police clearance certificate from your home country, confirming no criminal record. Must be recent (typically within 6 months) and include a certified Japanese translation.",
+      "tips": [
+        "Processing times vary significantly by country — start this early",
+        "Some countries require apostille or notarization in addition to translation"
+      ],
+      "required": true
+    },
+    {
+      "id": "tit-completion",
+      "name": "Technical Intern Training Completion Certificate",
+      "nameLocal": "技能実習修了証明書",
+      "description": "Certificate confirming completion of 3 years of Technical Intern Training (Phase ii) in a related sector. Required only if using the TIT exemption pathway instead of skills and language tests.",
+      "required": false
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photograph",
+      "nameLocal": "証明写真",
+      "description": "4cm x 3cm photograph, taken within the last 6 months, white background, no hats or sunglasses. Must meet Japanese immigration photo specifications.",
+      "required": true
+    },
+    {
+      "id": "support-plan",
+      "name": "Support Plan for SSW Worker",
+      "nameLocal": "支援計画書",
+      "description": "Document prepared by the employer or a registered support organization outlining the support to be provided to the SSW worker, including Japanese language training, daily life assistance, and workplace guidance.",
+      "tips": [
+        "The support plan is mandatory — employers must demonstrate how they will assist the worker",
+        "A registered support organization may prepare and execute the plan on behalf of the employer"
+      ],
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Pass the Skills Test and Language Test",
+      "description": "Register for and pass the Category 1 Specified Skills Test in your designated sector, and the JLPT N4 (or JFT-Basic) language test. If you completed 3 years of Technical Intern Training, you are exempt from both tests.",
+      "duration": "1–6 months (depending on test availability and study time)",
+      "tips": [
+        "Skills tests are offered at designated locations in Japan and select countries",
+        "JLPT is held in July and December; JFT-Basic is offered more frequently",
+        "Study materials for sector-specific skills tests are available on the SSW support website (ssw.go.jp)"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Secure Employment with a Registered Employer",
+      "description": "Find and sign an employment contract with a Japanese employer who is registered to accept SSW workers in your designated sector. The employer must provide a support plan and meet labor standards.",
+      "duration": "2–8 weeks",
+      "tips": [
+        "Use the SSW support website or authorized recruitment agencies to find registered employers",
+        "Verify that the employer is registered with the Immigration Services Agency for SSW hiring"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Employer Applies for Certificate of Eligibility (COE)",
+      "description": "Your employer submits the COE application to the regional immigration bureau in Japan on your behalf. The application includes your test certificates, employment contract, support plan, and other required documents.",
+      "duration": "2–4 weeks for COE processing",
+      "tips": [
+        "The employer handles the COE application — provide all documents promptly when requested",
+        "COE processing is generally faster for SSW than for professional visa categories"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Apply for Visa at Japanese Embassy or Consulate",
+      "description": "Once the COE is issued, take it along with your passport, test certificates, and other documents to the nearest Japanese embassy or consulate to apply for the SSW1 visa.",
+      "duration": "5–10 working days for visa processing",
+      "tips": [
+        "Some countries may offer eVISA application (check embassy website)",
+        "Bring all original documents and one set of copies"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Enter Japan and Begin Employment",
+      "description": "Travel to Japan with your visa, report to immigration at the port of entry, and receive your Residence Card (在留カード). Complete address registration at your local municipal office within 14 days of arrival.",
+      "duration": "1–2 weeks for settling in",
+      "tips": [
+        "Register your address at the local city/ward office (市区町村役場) within 14 days",
+        "Enroll in the National Health Insurance and National Pension programs",
+        "Your employer or support organization should assist with initial settlement procedures"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "6–8 weeks from test completion to visa issuance",
+    "notes": "Total timeline includes skills test registration and results (2–4 weeks), COE processing (2–4 weeks), and embassy visa processing (5–10 working days). Published guidelines indicate that SSW applications are generally processed faster than professional visa categories. Actual timelines vary by region and embassy."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Work is limited to the designated sector specified in the employment contract",
+      "Cannot work for employers other than the contracted employer without formal change of employment procedures",
+      "Cannot engage in self-employment or business ownership",
+      "Must notify immigration immediately if employment ends"
+    ],
+    "notes": "SSW1 holders are authorized to work full-time in their designated sector only. Changing employers requires a formal change of employment procedure through immigration. Working outside the designated sector or for unauthorized employers constitutes a visa violation."
+  },
+  "familyAllowed": false,
+  "faqs": [
+    {
+      "question": "What are the 16 designated sectors for SSW1?",
+      "answer": "As of 2026, the designated sectors are: caregiving, construction, hospitality, agriculture, fisheries, food processing, manufacturing, electricity and gas, semiconductor/electronics manufacturing, automobile transportation, railways, forestry, timber industry, food service, cleaning, and human resources. Four sectors (automobile transportation, railways, forestry, timber) were added in March 2024. Published guidelines indicate the sector list is continuously reviewed for expansion."
+    },
+    {
+      "question": "Can I skip the skills test and language test?",
+      "answer": "According to published guidelines, applicants who have completed 3 years of Technical Intern Training Program (Phase ii) in a related sector are exempt from both the skills test and the Japanese language test. This is the most common exemption pathway. No other exemptions are currently documented."
+    },
+    {
+      "question": "What is the difference between SSW1 and SSW2?",
+      "answer": "SSW1 is for workers with 'considerable knowledge and experience' — it has a 5-year cumulative limit, does not allow family members, and requires passing the Category 1 skills test. SSW2 is for workers with 'proficient skills' at a supervisory level — it has no time limit, allows family members (spouse and children), and requires passing the more advanced Category 2 test. SSW2 represents a significant upgrade in terms of stability and rights."
+    },
+    {
+      "question": "How do I transition from SSW1 to SSW2?",
+      "answer": "Published guidelines indicate that SSW1 holders can apply for SSW2 after accumulating 3 or more years of experience in their designated sector and passing the Category 2 Specified Skills Test (a higher-standard evaluation) or holding a Grade 1 National Trade Skill Certificate. Demonstrated supervisory or management experience in the sector is also a pathway. The transition is not automatic — it requires a formal application and status change."
+    },
+    {
+      "question": "Can I change employers while on SSW1?",
+      "answer": "Changing employers on SSW1 is possible but requires a formal change of employment procedure through immigration. You cannot simply quit and start working for another employer. The new employer must be registered for SSW in the same designated sector, and a new employment contract and support plan must be submitted. Published guidelines indicate that unauthorized employer changes constitute a visa violation."
+    },
+    {
+      "question": "What happens when I reach the 5-year limit on SSW1?",
+      "answer": "According to published guidelines, SSW1 has a strict 5-year cumulative maximum. When this limit is reached, you must either transition to SSW2 (by passing the Category 2 test) or leave Japan. There is no extension beyond 5 years on SSW1 status. Time spent on Technical Intern Training does not count toward the 5-year SSW1 limit."
+    },
+    {
+      "question": "Is the salary for SSW1 comparable to Japanese workers?",
+      "answer": "Published guidelines require that SSW1 workers receive salary and working conditions equal to or better than Japanese workers in the same role and sector. Employers must demonstrate compliance with this requirement. If you believe your compensation is below prevailing wages, you can consult the Hello Work (ハローワーク) employment service or the Labor Standards Inspection Office."
+    },
+    {
+      "question": "What support does my employer provide?",
+      "answer": "Under published guidelines, employers or their designated registered support organizations must provide: Japanese language training, daily life assistance (housing, banking, medical access), workplace orientation, complaint and consultation channels, airport pickup upon arrival, and assistance with administrative procedures. This support plan is a mandatory part of the SSW program."
+    },
+    {
+      "question": "Can I bring my family to Japan on SSW1?",
+      "answer": "No. According to published guidelines, SSW1 holders cannot bring family members (spouse or children) as dependents. This is one of the key differences between SSW1 and SSW2. Family members would need to obtain their own independent visa status to reside in Japan."
+    },
+    {
+      "question": "What is the Technical Intern Training program and how does it relate to SSW?",
+      "answer": "The Technical Intern Training (TIT) program is a government program that brings foreign trainees to Japan for skills development over 1–3 years. Completing 3 years of TIT Phase ii in a related sector qualifies you for SSW1 without taking skills or language tests. Note that TIT is being replaced by the Employment for Skill Development (ESD) system starting in 2027, though the transition pathway to SSW is expected to continue."
+    }
+  ],
+  "tips": [
+    "Start studying for the JLPT N4 and sector-specific skills test well in advance — preparation typically takes 3–6 months",
+    "The Technical Intern Training exemption pathway is the most straightforward route to SSW1 — leverage it if you have completed TIT",
+    "Verify your prospective employer is registered with the Immigration Services Agency for SSW hiring before signing any agreements",
+    "Keep all test certificates, employment documents, and translations organized — incomplete applications are a common cause of delays",
+    "Salary must be equal to or higher than Japanese workers in the same role — know the prevailing wage for your sector and region",
+    "The support plan from your employer is not optional — ensure they have a concrete plan or use a registered support organization",
+    "Plan your SSW1 to SSW2 transition early — the 5-year cumulative limit comes up faster than expected",
+    "Register with your local municipal office within 14 days of arrival — this is a legal requirement, not optional"
+  ],
+  "warnings": [
+    "SSW1 has a strict 5-year cumulative maximum — there are no exceptions or extensions beyond this limit",
+    "Working outside your designated sector or for unauthorized employers is a visa violation that can result in deportation and future visa denial",
+    "Family members (spouse, children) cannot accompany SSW1 holders — this restriction applies for the duration of SSW1 status",
+    "Changing employers without following the formal change of employment procedure is a violation — always process the change through immigration",
+    "If your employment ends, you must notify immigration immediately — failure to report can affect your immigration record"
+  ],
+  "communityTips": [
+    {
+      "id": "tit-pathway-tip",
+      "tip": "If you are currently in a Technical Intern Training program, completing the full 3-year Phase ii is the fastest and most reliable path to SSW1. You skip both the skills test and the language test entirely, saving months of preparation and test fees.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "jft-basic-tip",
+      "tip": "The Japan Foundation Test for Basic Japanese (JFT-Basic) is offered much more frequently than the JLPT and is accepted as an equivalent for SSW1 language requirements. If JLPT test dates do not align with your timeline, consider JFT-Basic instead.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "support-org-tip",
+      "tip": "If your employer does not have an established support system, ask whether they use a registered support organization (登録支援機関). These organizations handle everything from airport pickup to Japanese language classes, and the quality of support varies widely between organizations.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "sector-test-prep",
+      "tip": "Sector-specific skills test study materials are available for free on the SSW support website (ssw.go.jp). Many sectors also offer practice tests. The pass rate varies significantly by sector — construction and caregiving tend to have more rigorous testing than food processing or cleaning.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "wage-awareness",
+      "tip": "Check the prevailing wage for your sector and prefecture before accepting an offer. Published data from Hello Work (ハローワーク) shows average wages by sector and region. Some employers in rural areas offer lower wages that still meet minimums, but may be below urban averages for the same work.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "ssw2",
+    "engineer-specialist",
+    "business-manager"
+  ],
+  "pathsTo": [],
+  "pathsFrom": [
+    {
+      "type": "ssw2",
+      "name": "Specified Skilled Worker 2 (Proficient Skills)",
+      "requirements": "Accumulate 3+ years of experience on SSW1 status and pass the Category 2 Specified Skills Test, or hold a Grade 1 National Trade Skill Certificate, or demonstrate 3+ years of supervisory/management experience in the designated sector. Japanese language proficiency at N3 level or higher.",
+      "timeline": "Application processing: 4–8 weeks after passing Category 2 test",
+      "documents": [
+        "Category 2 Specified Skills Test pass certificate (or Grade 1 National Trade Skill Certificate)",
+        "Employment contract with supervisory role specified",
+        "Proof of 3+ years SSW1 work experience",
+        "Japanese language test certificate (N3 or higher)",
+        "Current Residence Card"
+      ],
+      "notes": "The SSW1 to SSW2 transition is the primary upgrade path. SSW2 removes the 5-year limit, allows family members, and represents a significant improvement in long-term stability. Not all sectors currently have SSW2 testing available — check the ISA website for current availability."
+    }
+  ],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Immigration Services Agency (ISA)",
+      "url": "https://www.moj.go.jp/isa/"
+    },
+    {
+      "label": "SSW Support Website",
+      "url": "https://www.ssw.go.jp/"
+    },
+    {
+      "label": "Ministry of Foreign Affairs — Visa Information",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    },
+    {
+      "label": "JLPT Official Website",
+      "url": "https://www.jlpt.jp/e/"
+    }
+  ]
+}

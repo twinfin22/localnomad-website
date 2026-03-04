@@ -1,0 +1,383 @@
+{
+  "type": "digital-nomad-jp",
+  "name": "Japan Digital Nomad Visa (特定活動 デジタルノマド) — Complete 2026 Guide",
+  "shortName": "Digital Nomad",
+  "category": "digital-nomad",
+  "description": "Everything about Japan's Digital Nomad Visa launched in April 2024: income requirements, eligible nationalities, insurance coverage, the 6-month non-renewable structure, and reapplication rules. The Digital Nomad Visa is a designated activities (特定活動) status created for remote workers employed by companies registered outside Japan. Applicants must demonstrate annual income of at least 10 million yen (approximately $68,000–72,000 USD) and maintain private health insurance with coverage of at least 10 million yen. The visa is valid for 6 months and is non-renewable — holders must leave Japan for at least 6 consecutive months before reapplying. No residence card is issued, which limits access to some domestic services. Family members (spouse and children) may be included in the application without additional income requirements. Eligible nationalities include the United States, Canada, most European countries, Australia, New Zealand, Singapore, and Hong Kong. Updated for 2026.",
+  "tagline": "6-month remote work visa for high-earning digital professionals",
+  "keyRequirement": "Annual income ≥¥10 million (~$68,000 USD) from a foreign employer + private health insurance ≥¥10 million coverage",
+  "targetAudience": [
+    "Remote workers employed by companies registered outside Japan earning ¥10M+ annually",
+    "Freelancers and independent contractors with verifiable high income from international clients",
+    "Digital professionals from eligible countries seeking an extended stay in Japan beyond tourist visa limits",
+    "Entrepreneurs running businesses registered abroad who want to work remotely from Japan",
+    "Families where the primary earner works remotely and wants to experience life in Japan for 6 months"
+  ],
+  "eligibility": [
+    {
+      "id": "income-requirement",
+      "label": "Annual income of at least ¥10,000,000 (~$68,000–72,000 USD)",
+      "description": "Published guidelines require applicants to demonstrate annual income of at least 10 million yen from sources outside Japan. Income can come from employment, freelance work, or business ownership, provided the company or clients are registered outside Japan. Documentation must cover at least the previous 2 years of income history.",
+      "required": true
+    },
+    {
+      "id": "remote-work",
+      "label": "Remote work for a company or clients registered outside Japan",
+      "description": "The visa is exclusively for remote workers whose income originates from outside Japan. Employment by a Japanese company, on-site work at a Japanese office, or business activities involving Japanese clients or contracts registered in Japan are not permitted under this visa status.",
+      "required": true
+    },
+    {
+      "id": "health-insurance",
+      "label": "Private health insurance with minimum ¥10,000,000 coverage",
+      "description": "Applicants must hold private health insurance that covers medical treatment for injury and illness up to at least 10 million yen (approximately $67,000 USD). Japanese national health insurance is not available to digital nomad visa holders. Insurance must be valid for the entire 6-month stay period.",
+      "required": true
+    },
+    {
+      "id": "eligible-nationality",
+      "label": "National of an eligible country (USA, Canada, most of Europe, Australia, NZ, Singapore, Hong Kong)",
+      "description": "Published guidelines restrict the digital nomad visa to nationals of specific countries. The current list includes the United States, Canada, most European Union and Schengen Area countries, United Kingdom, Australia, New Zealand, Singapore, and Hong Kong. Most Asian countries (China, India, Philippines, etc.) are currently not eligible. The eligible country list is subject to expansion — check the MOFA website for the current list.",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "Clean criminal record and no immigration violations",
+      "description": "Applicants must provide a criminal background check from their home country confirming no criminal record. Previous visa overstays or immigration violations in Japan or other countries may result in denial.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "6 months (non-renewable)",
+    "maxTotal": "6 months per application — must exit Japan for 6+ months before reapplying"
+  },
+  "fees": {
+    "application": "Visa application: ¥0–3,000 (varies by embassy; some embassies waive the fee for designated activities visas)",
+    "notes": "Fee structures vary by Japanese embassy and consulate. Some locations charge ¥3,000 for visa issuance while others waive the fee entirely for designated activities categories. Confirm with your local embassy before applying. No COE fee is charged."
+  },
+  "incomeRequirement": {
+    "amount": "10,000,000",
+    "currency": "JPY",
+    "period": "annual",
+    "notes": "Approximately $68,000–72,000 USD depending on exchange rate. Income must be from sources outside Japan. Both employment income and self-employment/freelance income are accepted.",
+    "proofMethods": [
+      "Tax returns from the previous 2 years",
+      "Employment contract from foreign employer",
+      "Business contracts or engagement letters (for freelancers)",
+      "Bank statements showing regular income deposits",
+      "Income certificates issued by tax authorities"
+    ]
+  },
+  "residenceStatus": "特定活動（デジタルノマド）",
+  "sponsorRequired": false,
+  "coeRequired": false,
+  "reentryGap": "6 months",
+  "japaneseLanguage": {
+    "required": false,
+    "notes": "Japanese language proficiency is not required for the digital nomad visa. All application documents may be submitted in English with Japanese translations where required."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "パスポート",
+      "description": "Must be valid for at least 6 months beyond the planned entry date to Japan. Passport must be from an eligible country.",
+      "required": true
+    },
+    {
+      "id": "visa-application-form",
+      "name": "Visa Application Form (Designated Activities)",
+      "nameLocal": "査証申請書（特定活動）",
+      "description": "Standard visa application form for designated activities status. Download only from the official MOFA website or your local embassy — outdated forms are immediately rejected.",
+      "tips": [
+        "Always download the latest version from the official MOFA or embassy website",
+        "Fill out all fields completely — incomplete forms are returned without processing"
+      ],
+      "required": true
+    },
+    {
+      "id": "income-proof",
+      "name": "Proof of Annual Income (¥10M+)",
+      "nameLocal": "収入証明書",
+      "description": "Documentation proving annual income of at least 10 million yen from sources outside Japan. Submit at least 2 years of income records to demonstrate consistent earning history.",
+      "tips": [
+        "Tax returns are the strongest form of income proof — submit the most recent 2 years",
+        "For freelancers, include contracts, invoices, and bank statements as supplementary evidence",
+        "Sudden income spikes without historical consistency may raise questions — provide context if income has recently increased"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-documentation",
+      "name": "Employment Contract or Business Registration",
+      "nameLocal": "雇用契約書または事業登録証",
+      "description": "Employment contract from a foreign employer, or business registration documents if self-employed or a business owner. Must clearly show that the employer or business is registered outside Japan.",
+      "tips": [
+        "The contract should specify that work is performed remotely and the employer is based outside Japan",
+        "For freelancers, include contracts with at least 2–3 major clients"
+      ],
+      "required": true
+    },
+    {
+      "id": "insurance-documentation",
+      "name": "Private Health Insurance Policy",
+      "nameLocal": "民間医療保険証書",
+      "description": "Proof of private health insurance with coverage of at least ¥10,000,000 for medical treatment of injury and illness. The policy must be valid for the entire 6-month stay period.",
+      "tips": [
+        "Confirm the policy explicitly covers at least ¥10 million in medical expenses",
+        "Travel insurance with medical coverage is typically accepted if the coverage amount meets the threshold",
+        "Japanese national health insurance is not available to digital nomad visa holders — private insurance is mandatory"
+      ],
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photograph",
+      "nameLocal": "証明写真",
+      "description": "4cm x 3cm photograph, taken within the last 6 months, white background, meeting Japanese immigration specifications",
+      "required": true
+    },
+    {
+      "id": "background-check",
+      "name": "Criminal Background Check",
+      "nameLocal": "犯罪経歴証明書",
+      "description": "Police clearance certificate from your home country (or country of residence) confirming no criminal record. Must be recent and translated into Japanese.",
+      "tips": [
+        "Processing times vary by country — FBI background checks for US citizens can take 12–18 weeks by mail",
+        "Some embassies accept electronic or digitally verified background checks"
+      ],
+      "required": true
+    },
+    {
+      "id": "travel-history",
+      "name": "Travel History Documentation",
+      "nameLocal": "渡航歴証明",
+      "description": "Summary of international travel history for the last 3–5 years. Some embassies may request photocopies of passport pages showing entry and exit stamps.",
+      "required": false
+    },
+    {
+      "id": "accommodation-proof",
+      "name": "Accommodation Information in Japan",
+      "nameLocal": "日本での宿泊先情報",
+      "description": "Address and proof of accommodation in Japan for the 6-month stay. Hotel reservations, rental agreements, or a letter of invitation from a host in Japan are accepted.",
+      "tips": [
+        "Long-term accommodation (monthly apartment rentals) may be difficult without a residence card — consider furnished apartments or serviced residences that accept short-term leases",
+        "Some co-living spaces in Tokyo, Osaka, and other cities cater specifically to digital nomads"
+      ],
+      "required": true
+    },
+    {
+      "id": "family-documents",
+      "name": "Family Relationship Documents (if including dependents)",
+      "nameLocal": "家族関係書類",
+      "description": "Marriage certificate and birth certificates for any family members included in the application. All documents must be translated into Japanese.",
+      "required": false
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Verify Eligibility and Gather Income Documentation",
+      "description": "Confirm that your nationality is on the eligible country list, your annual income exceeds ¥10 million, and you can obtain private health insurance meeting the coverage threshold. Gather 2 years of tax returns, employment contracts, and bank statements.",
+      "duration": "1–4 weeks",
+      "tips": [
+        "Check the MOFA website for the current eligible country list — it is periodically updated",
+        "Ensure your income documentation is consistent across all sources — discrepancies raise red flags",
+        "If you are self-employed, prepare a clear summary of your business and client relationships"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Obtain Private Health Insurance",
+      "description": "Purchase or verify private health insurance that covers medical treatment up to at least ¥10,000,000 for the entire 6-month stay period. Obtain the policy certificate and coverage confirmation letter.",
+      "duration": "1–2 weeks",
+      "tips": [
+        "International health insurance providers like SafetyWing, World Nomads, and Cigna offer plans that meet the requirement",
+        "Verify the specific coverage amount in writing from the insurance provider before applying"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Prepare and Submit Visa Application",
+      "description": "Download the current visa application form from the official MOFA website or your local Japanese embassy. Complete the form and submit it along with all required documents at the Japanese embassy or consulate in your country of residence.",
+      "duration": "1–2 weeks for preparation",
+      "tips": [
+        "Some countries now support eVISA applications (expanded December 2025) — check if online submission is available for your location",
+        "All foreign-language documents must include certified Japanese translations",
+        "Submit all documents in a well-organized folder — presentation matters"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Wait for Visa Processing",
+      "description": "The embassy processes your application and reviews all documentation. Processing times vary by location but typically take 2–4 weeks from completed submission.",
+      "duration": "2–4 weeks",
+      "tips": [
+        "Do not book non-refundable flights or accommodation until the visa is approved",
+        "The embassy may request additional documents during processing — respond promptly"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Enter Japan and Begin Remote Work",
+      "description": "Travel to Japan with your approved visa. Present your passport and visa at immigration upon arrival. Note: no residence card (在留カード) is issued for the digital nomad visa — your passport visa stamp serves as your proof of legal stay.",
+      "tips": [
+        "Without a residence card, you cannot open a standard Japanese bank account or sign a standard phone contract",
+        "Consider prepaid SIM cards and international banking solutions",
+        "Register your address at the local municipal office if staying at a fixed address for administrative purposes"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Exit Japan Before Visa Expiration",
+      "description": "The 6-month visa is non-renewable. You must leave Japan before the visa expires. If you wish to return, you must spend at least 6 consecutive months outside Japan before submitting a new application.",
+      "tips": [
+        "Mark your visa expiration date clearly and plan departure well in advance",
+        "Overstaying even by one day creates a criminal record and may permanently affect future visa applications for Japan"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "2–4 weeks from completed application submission",
+    "notes": "Processing times vary by Japanese embassy and consulate. Some locations may process faster or slower depending on application volume. The eVISA system (expanded December 2025) may offer faster processing for eligible countries. Published guidelines indicate that incomplete applications or missing translations are the most common cause of delays."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Remote work for foreign companies or clients ONLY — no Japanese employment permitted",
+      "Cannot work on-site at a Japanese office, even for the same foreign company",
+      "No business activities involving Japanese clients or contracts registered in Japan",
+      "No income-generating activities within the Japanese market",
+      "Dependent family members cannot work without obtaining separate visa status"
+    ],
+    "notes": "The digital nomad visa is not a work permit in Japan — it is a residency status that permits remote work for foreign entities only. All income must originate from outside Japan. Any engagement with the Japanese labor market, including consulting for Japanese clients, constitutes a violation."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "What counts as 'income from outside Japan'?",
+      "answer": "Published guidelines specify that income must be from a company, organization, or clients registered outside Japan. This includes salary from a foreign employer, freelance payments from international clients, business income from a company registered abroad, and investment income from foreign sources. Any income generated through activities within the Japanese market — including consulting for Japanese companies or selling services to Japanese clients — does not meet this requirement."
+    },
+    {
+      "question": "Can I freelance for multiple international clients?",
+      "answer": "Yes, according to published guidelines, freelancers and independent contractors are eligible as long as total annual income from foreign clients exceeds ¥10 million. Provide contracts, invoices, and bank statements from at least your 2–3 largest clients as documentation. The key requirement is that all clients are based outside Japan."
+    },
+    {
+      "question": "Why is no residence card issued?",
+      "answer": "The digital nomad visa falls under the designated activities category with a 6-month non-renewable duration. According to published guidelines, residence cards are not issued for stays under certain designated activities statuses. This means digital nomad visa holders may face practical challenges: difficulty opening bank accounts, signing phone contracts, and renting standard apartments. Plan for these limitations with international banking, prepaid SIM cards, and short-term housing solutions."
+    },
+    {
+      "question": "Can I reapply immediately after my 6 months end?",
+      "answer": "No. Published guidelines require a minimum gap of 6 consecutive months outside Japan before you can submit a new digital nomad visa application. This means the maximum time in Japan under this visa is 6 months out of every 12-month period. There is no limit on the number of times you can reapply, provided you meet the gap requirement each time."
+    },
+    {
+      "question": "Can my family come with me?",
+      "answer": "Yes. Published guidelines allow the primary applicant to include their spouse and children in the same application. Dependents receive the same 6-month stay period and do not need to meet separate income requirements. Include marriage certificates and birth certificates (with Japanese translations) in your application. Dependent family members cannot work in Japan without obtaining separate visa status."
+    },
+    {
+      "question": "Which countries are eligible for the digital nomad visa?",
+      "answer": "As of 2026, eligible countries include the United States, Canada, most European Union and Schengen Area countries, United Kingdom, Australia, New Zealand, Singapore, and Hong Kong. Most Asian countries including China, India, and the Philippines are currently not on the eligible list. The country list is subject to expansion — always check the current MOFA website for the most up-to-date list."
+    },
+    {
+      "question": "Can I transition from a digital nomad visa to a work visa in Japan?",
+      "answer": "No. Published guidelines indicate that the digital nomad visa is a closed system with no direct transition pathways to other visa types. You cannot change your status to a work visa, business manager visa, or any other category while in Japan on the digital nomad visa. If you wish to obtain a different visa, you must leave Japan and apply through the standard process (COE from employer, then embassy application)."
+    },
+    {
+      "question": "What type of health insurance is accepted?",
+      "answer": "Published guidelines require private health insurance covering medical treatment for injury and illness up to at least ¥10,000,000 (approximately $67,000 USD). Travel health insurance policies are typically accepted if the coverage amount meets the threshold. Japanese national health insurance is not available to digital nomad visa holders. Verify your policy amount in writing with your insurance provider and include the confirmation in your application."
+    },
+    {
+      "question": "Can I open a bank account in Japan with this visa?",
+      "answer": "Practically, this is very difficult. Without a residence card, most Japanese banks will not open an account for you. International digital banks (Wise, Revolut) with multi-currency accounts, or keeping your existing foreign bank accounts and using international ATM withdrawals, are the most common solutions used by digital nomad visa holders."
+    },
+    {
+      "question": "What happens if my income drops below ¥10 million during my stay?",
+      "answer": "The income requirement is evaluated at the time of application based on your previous income history. Published guidelines do not indicate ongoing income monitoring during the 6-month stay. However, if you reapply for a subsequent term and your most recent income falls below the threshold, your new application may be denied."
+    }
+  ],
+  "tips": [
+    "Prepare 2 full years of income documentation — tax returns are the strongest proof, supplemented by contracts and bank statements",
+    "Secure private health insurance with explicit ¥10 million coverage confirmation in writing before you apply",
+    "Without a residence card, plan for practical challenges: use international banking, prepaid SIM cards, and short-term furnished apartments",
+    "Check whether eVISA is available for your country (expanded December 2025) — it can significantly speed up the application process",
+    "Do not book non-refundable travel or accommodation until your visa is approved",
+    "Mark your visa expiration date prominently and plan your departure well in advance — overstaying has severe consequences",
+    "If you plan to reapply, keep meticulous records of your exit date to prove the 6-month gap requirement",
+    "Co-living spaces and serviced apartments in Tokyo, Osaka, Kyoto, and Fukuoka are popular among digital nomad visa holders and often do not require a residence card"
+  ],
+  "warnings": [
+    "The visa is strictly non-renewable — there is no extension mechanism. You must leave Japan before it expires.",
+    "You must spend at least 6 consecutive months outside Japan before reapplying — there is no workaround for this gap requirement",
+    "No residence card is issued — this limits your ability to open bank accounts, sign phone contracts, and rent standard apartments in Japan",
+    "Any work for Japanese companies or clients constitutes a visa violation, even if your foreign company has a Japanese office",
+    "Overstaying even by one day creates a criminal record in Japan and may result in deportation and a multi-year entry ban"
+  ],
+  "communityTips": [
+    {
+      "id": "housing-tip",
+      "tip": "Finding housing without a residence card is one of the biggest challenges. Services like OYO Life, Sakura House, and various co-living spaces in major cities accept digital nomad visa holders without requiring a residence card or Japanese guarantor. Monthly furnished apartments are also available through platforms that cater to short-term residents.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "banking-tip",
+      "tip": "Open a Wise or Revolut multi-currency account before arriving in Japan. These services allow you to hold yen, make local transfers, and withdraw cash from Japanese ATMs (7-Eleven and Japan Post ATMs have the best compatibility with international cards). Most daily transactions in Japan can now be handled with contactless payment via phone.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "insurance-tip",
+      "tip": "SafetyWing's Nomad Insurance and World Nomads are commonly used by digital nomad visa applicants. Request a formal coverage letter from your insurer that explicitly states the coverage amount in yen — some embassies are strict about seeing the ¥10 million figure in the documentation rather than an equivalent in another currency.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "reapplication-cycle",
+      "tip": "If you plan to alternate between Japan and another country on a 6-months-in, 6-months-out cycle, consider establishing a base in a nearby country (Thailand, Taiwan, South Korea) for your gap period. Some digital nomads pair the Japan digital nomad visa with Thailand's Long-Term Resident visa or Taiwan's Gold Card for year-round coverage.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "coworking-tip",
+      "tip": "Japan has excellent coworking infrastructure in major cities. WeWork, Regus, and local chains like BIZcomfort offer day passes and monthly memberships without requiring a residence card. Many cafes in Tokyo and Osaka are also laptop-friendly with fast Wi-Fi and power outlets.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "engineer-specialist",
+    "hsw",
+    "business-manager"
+  ],
+  "pathsTo": [],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Ministry of Foreign Affairs — Digital Nomad Visa",
+      "url": "https://www.mofa.go.jp/ca/fna/pagewe_000001_00046.html"
+    },
+    {
+      "label": "Immigration Services Agency (ISA)",
+      "url": "https://www.moj.go.jp/isa/"
+    },
+    {
+      "label": "Ministry of Foreign Affairs — Visa Information",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    }
+  ]
+}

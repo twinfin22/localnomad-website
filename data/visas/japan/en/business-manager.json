@@ -1,0 +1,397 @@
+{
+  "type": "business-manager",
+  "name": "Business Manager Visa (経営・管理) — Complete 2026 Guide",
+  "shortName": "Business Manager",
+  "category": "business",
+  "description": "Everything about Japan's Business Manager visa (経営・管理): the status of residence for foreign entrepreneurs, company directors, and business executives operating in Japan. This visa underwent a major overhaul effective October 16, 2025, significantly raising the requirements for new applicants. The minimum capital investment increased from ¥5,000,000 to ¥30,000,000, a certified business plan is now mandatory, Japanese language proficiency is required, and applicants must demonstrate at least 3 years of management experience. At least 1 full-time employee must be hired (note: foreign employees do not count toward this requirement under the new rules). Published guidelines indicate that transitional measures apply until October 16, 2028 for existing holders who obtained their visas before the overhaul. Duration ranges from 1 to 5 years and is renewable, with a path to permanent residence through the standard 10-year route. This visa is fundamentally different from a work visa — the holder must be actively managing or operating the business, not simply employed by it. Updated for 2026.",
+  "tagline": "Establish and manage a business in Japan under the new 2025 framework",
+  "keyRequirement": "¥30,000,000+ capital investment, certified business plan, 3+ years management experience, Japanese language proficiency (Oct 2025 rules)",
+  "targetAudience": [
+    "Foreign entrepreneurs planning to establish a new business in Japan",
+    "Company directors and executives of Japan-based subsidiaries",
+    "Professionals transitioning from Engineer/Specialist visa to start their own business",
+    "International business owners seeking to expand operations into the Japanese market",
+    "Existing Business Manager visa holders navigating the October 2025 rule changes"
+  ],
+  "eligibility": [
+    {
+      "id": "capital-investment",
+      "label": "Minimum capital investment of ¥30,000,000 (effective October 2025)",
+      "description": "The business must have invested capital of at least ¥30,000,000. This represents a 6x increase from the previous ¥5,000,000 threshold. The capital must be verifiable through business registration documents and bank records. Published guidelines indicate that the source of funds may be scrutinized to ensure legitimacy.",
+      "required": true
+    },
+    {
+      "id": "full-time-employee",
+      "label": "Employ at least 1 full-time employee who is a Japanese national or permanent resident",
+      "description": "The business must hire at least one full-time employee who is either a Japanese national or a permanent resident of Japan. Under the new October 2025 rules, foreign employees on work visas do not count toward this requirement. The employee must be enrolled in social insurance (health insurance and pension).",
+      "required": true
+    },
+    {
+      "id": "business-plan-certification",
+      "label": "Business plan certified by a professional expert",
+      "description": "A comprehensive business plan must be prepared and certified by a recognized professional expert (such as a certified public accountant, tax accountant, or SME management consultant). Published guidelines indicate this is a new requirement under the October 2025 overhaul — previously, a business plan was recommended but not formally required to be certified.",
+      "required": true
+    },
+    {
+      "id": "management-experience",
+      "label": "At least 3 years of management experience or equivalent education",
+      "description": "Applicants must demonstrate a minimum of 3 years of experience in business management, operations, or equivalent executive-level responsibilities. Published guidelines indicate that an MBA or equivalent graduate business degree may partially substitute for experience, though the exact substitution criteria are evaluated case by case.",
+      "required": true
+    },
+    {
+      "id": "japanese-language",
+      "label": "Japanese language proficiency (mandatory under October 2025 rules)",
+      "description": "Published guidelines indicate that Japanese language proficiency is now mandatory for Business Manager visa applicants under the new rules. The expected level is approximately JLPT N2 (B2 on the CEFR scale), though the specific assessment criteria may vary. This was not required before October 2025.",
+      "required": true
+    },
+    {
+      "id": "physical-office",
+      "label": "Physical office space in Japan",
+      "description": "The business must have a physical office or business premises in Japan — not a virtual office or residential address. The office must be properly registered and verifiable. Published guidelines evaluate whether the business has a legitimate operational base.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "1, 3, or 5 years (determined by business scale, financial stability, and immigration officer assessment)",
+    "extension": "Renewable — must demonstrate ongoing business operations, employee retention, and tax compliance at each renewal",
+    "maxTotal": "No cumulative limit (path to permanent residence through 10-year standard route)"
+  },
+  "fees": {
+    "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
+    "extension": "¥4,000 for extension of stay or change of status",
+    "notes": "These are government fees only. Business setup costs (incorporation, registered agent, office lease, professional certification of business plan) are substantial additional expenses. FY2026 fee increases have been announced — check the ISA website for current schedules."
+  },
+  "incomeRequirement": {
+    "amount": "30,000,000",
+    "currency": "JPY",
+    "period": "one-time capital investment",
+    "notes": "The ¥30,000,000 is a capital investment requirement, not an income requirement. However, the business must also demonstrate financial sustainability and the ability to generate revenue. Immigration officers evaluate whether the business can support the visa holder and employees.",
+    "proofMethods": [
+      "Business bank account statements showing capitalization",
+      "Company registration documents showing paid-in capital",
+      "Investment records and fund transfer documentation",
+      "Certified business plan with financial projections"
+    ]
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "旅券",
+      "description": "Must be valid for at least 6 months beyond the intended period of stay",
+      "required": true
+    },
+    {
+      "id": "coe",
+      "name": "Certificate of Eligibility (COE)",
+      "nameLocal": "在留資格認定証明書",
+      "description": "Filed at the regional immigration bureau. For the Business Manager visa, the applicant or a designated representative in Japan (such as a registered agent or lawyer) typically handles the filing since there is no employer sponsor.",
+      "tips": [
+        "Many applicants hire an immigration lawyer (行政書士 or 弁護士) to handle the COE application",
+        "Processing is typically 2-3 months but can take longer for new businesses without track record"
+      ],
+      "required": true
+    },
+    {
+      "id": "business-plan",
+      "name": "Certified Business Plan",
+      "nameLocal": "事業計画書（専門家認証済み）",
+      "description": "A detailed business plan covering the business model, market analysis, revenue projections, staffing plan, and operational details. Must be certified by a professional expert (CPA, tax accountant, or SME management consultant). This is a new mandatory requirement under the October 2025 rules.",
+      "tips": [
+        "The business plan should be realistic and conservative — overly optimistic projections raise red flags",
+        "Include clear financial projections for at least 3 years",
+        "Explain how the business contributes to Japan's economy (job creation, tax revenue, innovation)"
+      ],
+      "required": true
+    },
+    {
+      "id": "company-registration",
+      "name": "Company Registration Documents",
+      "nameLocal": "会社登記簿謄本",
+      "description": "Certificate of registered matters (登記事項証明書) from the Legal Affairs Bureau showing the company's legal registration, directors, capital, and registered address in Japan. If the company is not yet registered, documents showing the incorporation process may be accepted.",
+      "required": true
+    },
+    {
+      "id": "capital-proof",
+      "name": "Proof of Capital Investment (¥30,000,000+)",
+      "nameLocal": "資本金証明書",
+      "description": "Bank statements, fund transfer records, and company financial documents proving that at least ¥30,000,000 has been invested as capital. The source of funds must be transparent and legitimate.",
+      "tips": [
+        "Prepare documentation showing the origin of funds — immigration may investigate fund sources",
+        "Wire transfers from overseas accounts should have clear paper trails"
+      ],
+      "required": true
+    },
+    {
+      "id": "office-lease",
+      "name": "Office Lease Agreement",
+      "nameLocal": "事務所賃貸借契約書",
+      "description": "Lease contract for the business premises in Japan. The office must be a proper commercial space — residential addresses and virtual offices are typically not accepted. The lease should be in the company's name.",
+      "required": true
+    },
+    {
+      "id": "employee-contracts",
+      "name": "Employee Employment Contracts",
+      "nameLocal": "従業員雇用契約書",
+      "description": "Employment contracts for at least 1 full-time employee who is a Japanese national or permanent resident. Must show job title, duties, salary, and enrollment in social insurance. Foreign employees on work visas do not count under the new rules.",
+      "required": true
+    },
+    {
+      "id": "management-experience-proof",
+      "name": "Proof of Management Experience (3+ years)",
+      "nameLocal": "経営経験証明書",
+      "description": "Documentation proving at least 3 years of management experience: employment certificates showing executive or management titles, company registration showing directorship, or MBA degree certificate as partial substitute.",
+      "tips": [
+        "Include references from business partners or board members who can verify your management role",
+        "If using an MBA as partial substitute, provide the degree certificate and transcripts"
+      ],
+      "required": true
+    },
+    {
+      "id": "japanese-language-proof",
+      "name": "Japanese Language Proficiency Certificate",
+      "nameLocal": "日本語能力証明書",
+      "description": "JLPT N2 certificate or equivalent proof of Japanese language proficiency. This is a new mandatory requirement under the October 2025 rules. The expected level is approximately B2 on the CEFR scale.",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Size Photo",
+      "nameLocal": "証明写真",
+      "description": "4cm x 3cm, taken within the last 6 months, white background",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Prepare Capital and Business Plan",
+      "description": "Secure the ¥30,000,000+ capital investment and develop a comprehensive business plan. Engage a professional expert (CPA, tax accountant, or SME management consultant) to certify the business plan. This is the most time-consuming preparatory step under the new rules.",
+      "duration": "1-3 months for business plan development and certification",
+      "tips": [
+        "Start with the business plan — the certification process itself can take several weeks",
+        "Research the Japanese market thoroughly — immigration evaluates the viability of the business",
+        "Consider hiring a Japanese business consultant familiar with immigration requirements"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Incorporate the Business in Japan",
+      "description": "Register the company with the Legal Affairs Bureau (法務局). Choose the appropriate corporate structure (株式会社 for a standard corporation or 合同会社 for an LLC). Deposit the required capital, obtain a company seal (印鑑), open a corporate bank account, and secure office space.",
+      "duration": "2-4 weeks for incorporation",
+      "tips": [
+        "Many foreign entrepreneurs use a 合同会社 (LLC) for simpler setup, but 株式会社 may carry more credibility with immigration",
+        "You may need a local representative or registered agent if you are not yet in Japan",
+        "Corporate bank accounts for new foreign-owned companies can be difficult to open — start this process early"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Hire Required Employee(s) and Set Up Operations",
+      "description": "Hire at least 1 full-time employee who is a Japanese national or permanent resident. Enroll the employee in social insurance (health insurance and pension). Set up the physical office, business operations, and any necessary licenses.",
+      "duration": "2-4 weeks",
+      "tips": [
+        "The employee must be enrolled in shakai hoken (social insurance) — this is verified by immigration",
+        "Foreign employees on work visas do not count toward the requirement under the new rules"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "File COE Application at Immigration Bureau",
+      "description": "Submit the complete COE application at the regional immigration bureau. Include: certified business plan, company registration documents, proof of ¥30,000,000+ capital, office lease, employee contracts, management experience documentation, and Japanese language certificate. Many applicants engage an immigration lawyer (行政書士) to handle this step.",
+      "duration": "2-3 months for COE processing",
+      "tips": [
+        "Professional representation by a licensed 行政書士 (administrative scrivener) or immigration lawyer is strongly recommended",
+        "New businesses without a track record face more scrutiny — the strength of the business plan is critical"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Obtain Visa and Enter Japan (or Change Status)",
+      "description": "If applying from abroad: receive the COE, apply for the visa at your local Japanese embassy, and enter Japan. If already in Japan on another visa (e.g., Engineer/Specialist): apply for change of status at the immigration bureau. Critical timing: if transitioning from an employment visa, file the change of status before your current employment ends to avoid a gap in legal status.",
+      "duration": "Visa processing: 5-10 working days (from abroad) | Status change: 2-4 weeks (in Japan)",
+      "tips": [
+        "If transitioning from Engineer/Specialist visa: file the startup notification and status change application before your employment ends",
+        "A gap of more than 3 months without valid status creates serious legal complications"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Begin Operations and Maintain Compliance",
+      "description": "Once the visa is issued, begin active business operations. Maintain compliance with all tax filing, social insurance, and employee requirements. Immigration evaluates ongoing business viability at each renewal — the business must demonstrate sustained operations, revenue, and employment.",
+      "tips": [
+        "File all tax returns on time — late or missing filings are a red flag at renewal",
+        "Keep detailed financial records — immigration may request profit and loss statements at renewal",
+        "Maintain the full-time employee requirement continuously — losing the employee can affect renewal"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "4-8 months total (business setup: 1-3 months + COE processing: 2-3 months + visa: 5-10 working days)",
+    "notes": "The total timeline from initial planning to visa issuance is typically longer for Business Manager visas than for employment-based visas, due to the business setup requirements. New businesses without an operating history face additional scrutiny that can extend processing. Published guidelines recommend engaging professional support (immigration lawyer and business consultant) to avoid delays."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Must be actively engaged in managing or operating the business — cannot be a passive investor",
+      "Cannot work as an employee of another company on this visa",
+      "Business activities must match those described in the visa application and business plan"
+    ],
+    "notes": "The Business Manager visa authorizes the holder to manage and operate their business in Japan. This is fundamentally different from an employment visa — the holder must be an active manager or director, not simply an employee. Passive investment without active management does not qualify. The holder may operate multiple businesses."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "What changed with the October 2025 overhaul?",
+      "answer": "The October 16, 2025 changes significantly raised the bar for new Business Manager visa applicants. Key changes: (1) minimum capital increased from ¥5,000,000 to ¥30,000,000 — a 6x increase; (2) a certified business plan is now mandatory — it must be certified by a professional expert; (3) at least 3 years of management experience is now required; (4) Japanese language proficiency (approximately JLPT N2 / CEFR B2) is now mandatory; (5) the full-time employee must be a Japanese national or permanent resident — foreign employees no longer count. These changes were designed to ensure that Business Manager visa holders operate genuine, viable businesses."
+    },
+    {
+      "question": "Do the new rules affect existing Business Manager visa holders?",
+      "answer": "Published guidelines indicate that transitional measures apply until October 16, 2028. Existing holders who obtained their visas before the October 2025 overhaul may renew under more lenient conditions during this transition period. However, the exact scope of transitional measures — particularly regarding the ¥30,000,000 capital requirement at renewal — should be confirmed with the immigration bureau or a licensed immigration professional."
+    },
+    {
+      "question": "Can I transition from Engineer/Specialist visa to Business Manager?",
+      "answer": "Yes, but the timing is critical. Published guidelines indicate that you should file the startup notification and status change application while still employed — before your current employment ends. A gap of more than 3 months without valid status creates legal complications. You must meet all the new requirements: ¥30,000,000 capital, certified business plan, management experience, Japanese language proficiency, and at least 1 Japanese/permanent-resident full-time employee."
+    },
+    {
+      "question": "What type of business plan certification is required?",
+      "answer": "The business plan must be certified by a recognized professional expert. Published guidelines accept certification from: certified public accountants (公認会計士), tax accountants (税理士), SME management consultants (中小企業診断士), or other qualified business professionals. The certifier reviews the plan for feasibility, financial soundness, and market viability. This is a new requirement — before October 2025, a business plan was recommended but did not require formal certification."
+    },
+    {
+      "question": "Is ¥30,000,000 the minimum for all business types?",
+      "answer": "Published guidelines set ¥30,000,000 as the minimum capital investment for the Business Manager visa under the new October 2025 rules. This applies regardless of business type or industry. There is no lower threshold for smaller businesses or specific sectors. The full amount must be verifiable as invested capital — it cannot be a loan that is repaid after visa issuance, and the source of funds must be transparent."
+    },
+    {
+      "question": "Why do foreign employees no longer count toward the employee requirement?",
+      "answer": "Under the October 2025 overhaul, the full-time employee requirement specifies that the employee must be a Japanese national or permanent resident of Japan. Published guidelines indicate this change ensures that Business Manager visa holders create genuine local employment. Foreign employees on work visas can still be hired, but they do not satisfy the minimum employee requirement."
+    },
+    {
+      "question": "Can I operate the business remotely from outside Japan?",
+      "answer": "No. The Business Manager visa requires active, in-person management of the business in Japan. Published guidelines evaluate whether the visa holder is genuinely managing operations — passive ownership or remote management from abroad does not qualify. Extended absences from Japan can jeopardize visa renewal, as immigration may determine the holder is not actively engaged in business management."
+    },
+    {
+      "question": "What level of Japanese language is required?",
+      "answer": "Published guidelines indicate that Japanese language proficiency is now mandatory under the October 2025 rules. The expected level is approximately JLPT N2, which corresponds to B2 on the CEFR scale. This means the ability to read newspapers, participate in business conversations, and handle basic business correspondence in Japanese. This was not required before October 2025, and represents a significant additional barrier for non-Japanese-speaking entrepreneurs."
+    },
+    {
+      "question": "How does this visa lead to permanent residence?",
+      "answer": "Published guidelines indicate the standard route to permanent residence: 10 consecutive years of residence in Japan, with at least 5 years on a qualifying visa. Business Manager holders can also potentially qualify under HSP (Highly Skilled Professional) criteria in the Advanced Business Management category (i)(c) if they accumulate 70+ points, which accelerates the PR timeline to 1-3 years. From April 2027, PR applicants must hold the longest available visa period (typically 5 years). Tax and insurance payment history is also scrutinized."
+    },
+    {
+      "question": "What happens at renewal if the business is not profitable?",
+      "answer": "Immigration officers evaluate the business's ongoing viability at each renewal. Published guidelines indicate that temporary losses are not automatically disqualifying — early-stage businesses often operate at a loss. However, the business must demonstrate: ongoing operations, employee retention, tax compliance, and a credible path to sustainability. Persistent losses without clear recovery plans, failure to maintain the required employee, or tax delinquency can result in renewal denial."
+    }
+  ],
+  "tips": [
+    "Engage a licensed immigration lawyer (行政書士 or 弁護士) early — the Business Manager visa application is significantly more complex than employment-based visas",
+    "Start Japanese language study well in advance — JLPT N2 proficiency is now mandatory and typically requires 1-2 years of intensive study for non-Japanese speakers",
+    "Build the business plan with immigration requirements in mind — a certified plan that demonstrates job creation, tax contribution, and economic impact strengthens the application",
+    "Open the corporate bank account early — Japanese banks are notoriously difficult for new foreign-owned companies, and the process can take weeks",
+    "If transitioning from an employment visa, file the status change before your employment ends — the 3-month gap rule is strictly enforced",
+    "Maintain meticulous financial records from day one — immigration reviews profit and loss statements, tax filings, and employee records at each renewal",
+    "The ¥30,000,000 capital must be verifiable and its source transparent — prepare documentation showing the origin of funds",
+    "Ensure the full-time employee is enrolled in social insurance (shakai hoken) — this is verified by immigration during the application and at renewal"
+  ],
+  "warnings": [
+    "The October 2025 overhaul raised the capital requirement 6x to ¥30,000,000 — applications under the old ¥5,000,000 threshold are no longer accepted for new applicants",
+    "Japanese language proficiency (approximately JLPT N2) is now mandatory — applicants without certification face rejection under the new rules",
+    "Foreign employees on work visas no longer count toward the minimum employee requirement — at least 1 Japanese national or permanent resident employee is required",
+    "If transitioning from another visa, a gap of more than 3 months without valid status creates serious legal complications that can affect all future visa applications",
+    "Passive investment or remote management from outside Japan does not qualify — immigration verifies active, in-person business management"
+  ],
+  "communityTips": [
+    {
+      "id": "transition-timing",
+      "tip": "If you are on an Engineer/Specialist visa and planning to start a business, begin the Business Manager visa preparation at least 6-8 months before you plan to leave your current employer. The business setup, plan certification, COE filing, and status change processing all take time. Leaving your job before the status change is approved creates a dangerous gap.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "bank-account-challenge",
+      "tip": "Opening a corporate bank account for a new foreign-owned company in Japan is one of the biggest practical challenges. Major banks (MUFG, SMBC, Mizuho) often require an established business history. Consider starting with a smaller regional bank or an online bank like GMO Aozora or PayPay Bank, which tend to have more accessible requirements for new businesses.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "gyoseishoshi-recommendation",
+      "tip": "A licensed 行政書士 (administrative scrivener) specializing in immigration is invaluable for the Business Manager visa. They handle the COE application, ensure documentation is complete, and communicate directly with the immigration bureau. Fees typically range from ¥200,000-¥500,000 depending on complexity, but the investment significantly reduces rejection risk.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "transitional-measures",
+      "tip": "If you already hold a Business Manager visa obtained before October 2025, published guidelines indicate transitional measures apply until October 2028. This may mean less stringent requirements at renewal during this period. However, confirm the specifics with your immigration lawyer — the transitional provisions are not identical for all situations.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "n2-study-timeline",
+      "tip": "JLPT N2 is now mandatory for the Business Manager visa. For an English speaker starting from zero, reaching N2 typically takes 1.5-2 years of regular study (or 6-12 months of intensive full-time study). The JLPT is offered only twice a year (July and December), so plan your test dates around your visa application timeline.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "engineer-specialist",
+    "hsw",
+    "digital-nomad-jp"
+  ],
+  "pathsTo": [
+    {
+      "type": "engineer-specialist",
+      "name": "Engineer/Specialist in Humanities/International Services Visa",
+      "requirements": "Hold Engineer/Specialist status and meet all Business Manager visa requirements: ¥30,000,000 capital, certified business plan, 3+ years management experience, Japanese language proficiency (JLPT N2), and 1+ full-time Japanese/permanent-resident employee.",
+      "timeline": "Business setup: 1-3 months + COE/status change: 2-3 months; total 3-6 months",
+      "documents": [
+        "Certified business plan",
+        "Company registration documents",
+        "Proof of ¥30,000,000+ capital investment",
+        "Office lease agreement",
+        "Employee employment contracts",
+        "Management experience documentation (3+ years)",
+        "JLPT N2 certificate or equivalent"
+      ],
+      "notes": "The most common transition path to Business Manager visa. The October 2025 overhaul makes this a significantly more demanding transition than before. Critical: file the startup notification and status change before your current employment ends to avoid a gap in legal status. Begin preparations at least 6-8 months in advance."
+    }
+  ],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "Immigration Services Agency (ISA)",
+      "url": "https://www.moj.go.jp/isa/"
+    },
+    {
+      "label": "MOFA — Work/Long-Term Visa Guide",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/long/index.html"
+    },
+    {
+      "label": "Japan External Trade Organization (JETRO) — Starting a Business",
+      "url": "https://www.jetro.go.jp/en/invest/setting_up/"
+    }
+  ],
+  "residenceStatus": "経営・管理",
+  "sponsorRequired": true,
+  "coeRequired": true,
+  "japaneseLanguage": {
+    "required": true,
+    "minimumLevel": "JLPT N2 (approximately B2 CEFR)",
+    "notes": "Japanese language proficiency became mandatory under the October 2025 overhaul. The expected level is approximately JLPT N2, meaning the ability to read business documents, participate in meetings, and handle correspondence in Japanese. This was not required before October 2025."
+  }
+}
