@@ -3,16 +3,19 @@ import type { MetadataRoute } from 'next';
 const BASE_URL = 'https://localnomad.club';
 
 const LOCALES = ['en', 'ja', 'zh-cn', 'zh-tw', 'vi'] as const;
-const COUNTRIES = ['korea', 'taiwan'] as const;
+const COUNTRIES = ['korea', 'taiwan', 'japan', 'china', 'southeast-asia'] as const;
 
 const COUNTRY_VISAS: Record<string, string[]> = {
   korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1'],
   taiwan: ['gold-card', 'dnv'],
+  japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager'],
+  china: ['z-visa', 'r-visa', 'x1-visa', 'permanent-cn'],
+  'southeast-asia': [],
 };
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
 
-const LAST_MODIFIED = new Date('2026-02-28');
+const LAST_MODIFIED = new Date('2026-03-04');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -46,13 +49,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         });
       }
 
-      // Compare page
-      entries.push({
-        url: `${BASE_URL}/${locale}/${country}/compare`,
-        lastModified: LAST_MODIFIED,
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      });
+      // Compare page (not for southeast-asia — comparison is on the country page)
+      if (country !== 'southeast-asia') {
+        entries.push({
+          url: `${BASE_URL}/${locale}/${country}/compare`,
+          lastModified: LAST_MODIFIED,
+          changeFrequency: 'monthly',
+          priority: 0.6,
+        });
+      }
     }
 
     // Legal pages
