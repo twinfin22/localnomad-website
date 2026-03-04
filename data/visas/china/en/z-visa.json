@@ -1,0 +1,421 @@
+{
+  "type": "z-visa",
+  "name": "China Work Visa (Z Visa) — Complete 2026 Guide",
+  "shortName": "Z Visa",
+  "category": "work",
+  "description": "Everything about China's Z Visa (Work Visa): employer-sponsored employment authorization, work permit categories A/B/C, residence permit conversion within 30 days, PSB registration requirements, and paths to permanent residence. The Z Visa is China's standard employment visa for foreign professionals hired by Chinese employers. Applicants must secure a job offer from a China-registered employer, obtain a work permit notification letter, and apply through the COVA online system. Work permits are classified into three tiers: Category A for high-end talent earning above 500,000 RMB annually with expedited 5-day processing, Category B for professionals with a bachelor's degree and 2+ years of experience processed in 10-15 days, and Category C for ordinary workers subject to quotas and longer processing times. After arrival, holders must register at the local Public Security Bureau within 24 hours and convert the visa to a residence permit within 30 days. Published guidelines indicate a total end-to-end timeline of 2-3 months. Updated for 2026.",
+  "tagline": "Standard employment visa for foreign professionals in China",
+  "keyRequirement": "Job offer from China-registered employer + work permit approval + bachelor's degree or equivalent",
+  "targetAudience": [
+    "Foreign professionals with confirmed job offers from Chinese employers",
+    "Technology and engineering workers relocating to China",
+    "Educators and language instructors at Chinese institutions",
+    "Business professionals transferring to China-based offices",
+    "Recent graduates with specialized skills sought by Chinese companies"
+  ],
+  "eligibility": [
+    {
+      "id": "job-offer",
+      "label": "Confirmed job offer from a China-registered employer",
+      "description": "Must have a formal employment contract or offer letter from an employer legally registered in China. The employer initiates the work permit application on your behalf.",
+      "required": true
+    },
+    {
+      "id": "education",
+      "label": "Bachelor's degree or equivalent professional qualifications",
+      "description": "Published guidelines indicate a minimum of a bachelor's degree for Category B work permits. Category A (high-end talent) may have alternative qualification paths. Category C has no minimum education requirement but is subject to quotas.",
+      "required": true
+    },
+    {
+      "id": "age-requirement",
+      "label": "Age between 18 and 60 years old",
+      "description": "Standard age requirement for Z Visa applicants. Extensions beyond age 60 may be possible for Category A talent in certain circumstances.",
+      "required": true
+    },
+    {
+      "id": "clean-record",
+      "label": "No criminal record",
+      "description": "A criminal background check from your home country is required. The document must be legalized by the Chinese embassy or consulate in the issuing country.",
+      "required": true
+    },
+    {
+      "id": "health-check",
+      "label": "Pass a medical examination",
+      "description": "Must pass a health examination at a designated clinic. The exam includes blood tests, chest X-ray, ECG, and general physical assessment. Results are valid for 6 months.",
+      "required": true
+    },
+    {
+      "id": "work-experience",
+      "label": "2+ years of relevant work experience (Category B)",
+      "description": "Category B work permits typically require at least 2 years of post-graduation work experience in a relevant field. Category A high-end talent may satisfy this through demonstrated expertise and achievements instead.",
+      "required": false
+    }
+  ],
+  "duration": {
+    "initial": "1-2 years (aligned with employment contract duration)",
+    "extension": "Renewable for up to 5 years total, subject to continued employment",
+    "maxTotal": "Renewable indefinitely with valid employment; path to permanent residence after 4+ years"
+  },
+  "fees": {
+    "application": "Work permit: 800-1,000 RMB (~$115-145 USD) + Z Visa consular fee: $30-140 USD (varies by nationality)",
+    "extension": "Residence permit renewal: 400-800 RMB (~$55-115 USD)",
+    "notes": "Additional costs: health examination 400-600 RMB (~$60-85 USD), document legalization fees vary by country. Total typical cost: $200-350 USD excluding authentication."
+  },
+  "incomeRequirement": {
+    "amount": "500,000",
+    "currency": "RMB",
+    "period": "annual",
+    "notes": "The 500,000 RMB threshold applies to Category A (high-end talent) classification only. Category B and C have no published minimum income requirement, though the employer must demonstrate the salary is appropriate for the position.",
+    "proofMethods": [
+      "Employment contract with stated salary",
+      "Employer tax records",
+      "Bank statements showing salary deposits"
+    ]
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "有效护照",
+      "description": "Must have at least 6 months validity remaining and 2 or more blank visa pages",
+      "required": true
+    },
+    {
+      "id": "visa-application-form",
+      "name": "Visa Application Form (COVA System)",
+      "nameLocal": "签证申请表",
+      "description": "Completed online through the COVA (China Online Visa Application) system. Print and sign the generated form.",
+      "tips": [
+        "Complete the application at https://cova.mfa.gov.cn before your consulate appointment",
+        "Double-check all fields — errors may delay processing or result in rejection"
+      ],
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Sized Photo",
+      "nameLocal": "护照照片",
+      "description": "Recent photo (within 6 months), white background, full face, no hat. 48mm x 33mm for China specifications.",
+      "required": true
+    },
+    {
+      "id": "pu-letter",
+      "name": "PU Letter (Invitation Letter)",
+      "nameLocal": "邀请函 / PU函",
+      "description": "Official invitation letter issued by the Provincial Foreign Affairs Office on behalf of your employer. The employer must apply for this through local government channels.",
+      "tips": [
+        "The PU letter process is employer-driven and can take 2-3 months",
+        "Ensure your employer starts this process as early as possible"
+      ],
+      "required": true
+    },
+    {
+      "id": "work-permit-notification",
+      "name": "Work Permit Notification Letter",
+      "nameLocal": "外国人工作许可通知",
+      "description": "Official notification issued by the local Human Resources and Social Security Bureau confirming your work permit approval. Your employer applies for this on your behalf.",
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Degree Certificate (Legalized)",
+      "nameLocal": "学位证书（公证认证）",
+      "description": "Original degree certificate that has been notarized, apostilled (or authenticated), and legalized by the Chinese embassy or consulate in the issuing country.",
+      "tips": [
+        "The legalization chain: notarize, then apostille (or state authentication), then Chinese embassy legalization",
+        "This process can take 4-8 weeks depending on your country — start early"
+      ],
+      "required": true
+    },
+    {
+      "id": "criminal-background",
+      "name": "Criminal Background Check (Legalized)",
+      "nameLocal": "无犯罪记录证明（公证认证）",
+      "description": "Police clearance certificate from your home country, legalized through the same chain as the degree certificate: notarization, apostille, and Chinese embassy legalization.",
+      "tips": [
+        "FBI background checks (US citizens) can take 12-18 weeks by mail",
+        "Some countries offer expedited processing for additional fees",
+        "Must be legalized by the Chinese embassy — not just apostilled"
+      ],
+      "required": true
+    },
+    {
+      "id": "medical-exam",
+      "name": "Medical Examination Certificate",
+      "nameLocal": "体检证明",
+      "description": "Health examination results from a designated medical institution. Includes blood tests, chest X-ray, ECG, and general physical examination.",
+      "tips": [
+        "Some countries accept pre-departure exams at designated clinics",
+        "You may need to redo the exam in China for the residence permit if your pre-departure results are not accepted"
+      ],
+      "required": true
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract",
+      "nameLocal": "劳动合同",
+      "description": "Signed employment contract from your Chinese employer showing job title, salary, employment period, and work location.",
+      "required": true
+    },
+    {
+      "id": "employer-license",
+      "name": "Employer Business License Copy",
+      "nameLocal": "营业执照副本",
+      "description": "Copy of the employer's business registration certificate in China. Your employer provides this as part of the work permit application package.",
+      "required": true
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Employer Initiates Work Permit Application",
+      "description": "Your Chinese employer applies for the work permit notification letter through the local Human Resources and Social Security Bureau. They also begin the PU Letter (invitation letter) application through the Provincial Foreign Affairs Office.",
+      "duration": "2-8 weeks (PU Letter may take longer)",
+      "tips": [
+        "This step is entirely employer-driven — maintain regular communication with your employer's HR team",
+        "Category A applications receive expedited 5-day processing for the work permit"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Gather and Legalize Documents",
+      "description": "While your employer processes the work permit, prepare your personal documents: degree certificate, criminal background check, and medical examination. Each document must go through the legalization chain (notarize, apostille, Chinese embassy legalization).",
+      "duration": "4-12 weeks (varies by country)",
+      "tips": [
+        "Start document legalization as soon as you receive the job offer — do not wait for the work permit approval",
+        "The criminal background check often takes the longest — prioritize this"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Apply for Z Visa at Chinese Embassy/Consulate",
+      "description": "Once you receive the work permit notification letter and PU letter, submit your complete Z Visa application at the Chinese embassy or consulate in your country. Apply through the COVA online system first, then attend your appointment.",
+      "duration": "1-2 weeks processing",
+      "tips": [
+        "Book your consulate appointment in advance — slots can fill quickly",
+        "Bring all original documents plus one set of copies"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Enter China and Register with PSB",
+      "description": "After receiving your Z Visa, travel to China. Within 24 hours of arrival, register at the local Public Security Bureau (PSB). Hotels handle this automatically for guests; if staying in private accommodation, you must register in person.",
+      "duration": "Within 24 hours of arrival",
+      "tips": [
+        "Keep your PSB registration receipt — you will need it for the residence permit application",
+        "If staying with friends or in private housing, visit the nearest PSB station with your landlord or host"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Apply for Work Permit Card",
+      "description": "Within 15 days of arrival, your employer assists you in applying for the physical work permit card at the local Foreign Experts Bureau. This converts your work permit notification into the actual work permit.",
+      "duration": "5-15 working days"
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Apply for Residence Permit",
+      "description": "Within 30 days of arrival, apply for a residence permit at the local Entry-Exit Administration of the Public Security Bureau. This replaces your Z Visa entry stamp with a multi-year residence permit allowing re-entry.",
+      "duration": "7-10 working days",
+      "tips": [
+        "You will need your work permit card, PSB registration, medical exam results, and passport",
+        "The residence permit validity aligns with your employment contract duration (up to 5 years)"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "2-3 months (end-to-end from initial application to residence permit)",
+    "expedited": "Category A applicants: work permit processed in 5 working days via 'green channel'",
+    "notes": "The longest component is typically the PU Letter and document legalization, which happen in parallel. Visa issuance itself takes 1-2 weeks. Post-arrival residence permit processing takes 7-10 working days."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [
+      "Work authorization is tied to the sponsoring employer — changing jobs requires a new work permit",
+      "Cannot engage in work activities before receiving the work permit card",
+      "Work location is restricted to the city/province specified on the work permit"
+    ],
+    "notes": "Z Visa holders must obtain the physical work permit card before beginning employment. Work authorization is employer-specific and location-specific. Changing employers requires applying for a new work permit through the new employer before the current permit expires."
+  },
+  "familyAllowed": true,
+  "faqs": [
+    {
+      "question": "What are the three work permit categories (A, B, C)?",
+      "answer": "China classifies foreign workers into three tiers. Category A is for high-end talent, typically earning above 500,000 RMB annually, with expedited 5-day processing through a 'green channel.' Category B is for professional talent with a bachelor's degree and 2+ years of relevant experience, processed in 10-15 working days. Category C is for ordinary workers with no minimum education requirement, but processing takes 20+ working days and is subject to regional quotas. Most foreign professionals fall under Category B."
+    },
+    {
+      "question": "What is a PU Letter and how do I get one?",
+      "answer": "A PU Letter (also called an invitation letter) is an official document issued by the Provincial Foreign Affairs Office confirming that a foreign worker is invited to work in China. Your Chinese employer must apply for this through local government channels. The process is entirely employer-driven and typically takes 2-3 months. Published guidelines indicate that the PU Letter is required for Z Visa applications at most Chinese embassies and consulates."
+    },
+    {
+      "question": "Can I change employers while on a Z Visa?",
+      "answer": "Changing employers while on a Z Visa requires applying for a new work permit through the new employer before your current permit expires. Published guidelines indicate you cannot simply transfer your existing work permit to a new employer. The new employer must initiate a fresh work permit application, and you may need to obtain a new residence permit. It is advisable to secure the new work permit before leaving your current position."
+    },
+    {
+      "question": "What happens if I miss the 30-day residence permit deadline?",
+      "answer": "Published guidelines indicate that failing to apply for a residence permit within 30 days of arrival may result in fines, administrative penalties, or being required to leave China and reapply. The penalty for overstaying the conversion deadline can range from 500 RMB per day of violation up to a maximum of 10,000 RMB. Immigration authorities may also impose a temporary entry ban in serious cases."
+    },
+    {
+      "question": "Can my family join me on a Z Visa?",
+      "answer": "Family members (spouse and minor children) of Z Visa holders can apply for an S1 visa (dependent visa) to accompany you to China. They must also register with the PSB within 24 hours and apply for a residence permit within 30 days. S1 visa holders cannot work independently but may apply for a separate work permit if an employer sponsors them."
+    },
+    {
+      "question": "Do I need to redo the medical exam in China?",
+      "answer": "Published guidelines indicate that you may need to undergo a medical examination at a designated health facility in China after arrival, even if you completed one before departure. The post-arrival exam is required for the residence permit application if your pre-departure exam results are not recognized by the local Entry-Exit Administration. Designated facilities are typically in major cities and the exam takes one morning."
+    },
+    {
+      "question": "What is the PSB 24-hour registration requirement?",
+      "answer": "All foreigners in China must register at the local Public Security Bureau (PSB) within 24 hours of arrival or within 24 hours of moving to a new address. Hotels handle this registration automatically for guests. If you are staying in private accommodation (rented apartment, friend's home), you must visit the nearest PSB station in person with your landlord or host to complete the registration."
+    },
+    {
+      "question": "How does the COVA online system work?",
+      "answer": "COVA (China Online Visa Application) is the official online platform for submitting visa applications to Chinese embassies and consulates worldwide. You fill out the application form online at cova.mfa.gov.cn, upload a digital photo, and generate the completed form. You then print the form and bring it to your consulate appointment along with supporting documents. The system streamlines the application process and reduces errors."
+    },
+    {
+      "question": "Can I work in a different city from where my permit is registered?",
+      "answer": "Published guidelines indicate that your work permit is tied to a specific city or province. Working outside your designated area typically requires applying for a transfer or obtaining a new work permit in the new location. Some employers with offices in multiple cities may arrange multi-location permits, but this varies by local authority policies."
+    },
+    {
+      "question": "What is the path from Z Visa to permanent residence?",
+      "answer": "Published guidelines indicate that Z Visa holders may apply for permanent residence after maintaining continuous employment in China for a minimum of 4 years, with cumulative residence of at least 3 years during that period, and meeting income and tax contribution requirements. The specific requirements vary by province. High-salary earners and Category A talent may have shorter timelines. The R Visa (talent visa) pathway offers a more streamlined route to permanent residence."
+    }
+  ],
+  "tips": [
+    "Start document legalization (degree, background check) immediately after receiving a job offer — this is the longest step in the process",
+    "Ask your employer about their work permit category classification early — Category A processing is significantly faster",
+    "Keep multiple copies of all documents, both digital scans and physical copies, throughout the entire process",
+    "Register with the PSB within 24 hours of arrival — penalties for late registration can be significant",
+    "Apply for the residence permit as soon as your work permit card is issued — do not wait until the 30-day deadline",
+    "Maintain a good relationship with your employer's HR department — they handle most of the bureaucratic process on your behalf",
+    "Learn basic Mandarin phrases for government office interactions — not all local PSB or Entry-Exit Administration staff speak English",
+    "Keep your passport and residence permit on you at all times — random document checks occur in some cities"
+  ],
+  "warnings": [
+    "Missing the 30-day residence permit conversion deadline can result in fines up to 10,000 RMB or deportation in serious cases",
+    "Working without a valid work permit card is illegal and can result in fines of 5,000-20,000 RMB, detention, and deportation",
+    "Your work authorization is tied to your specific employer and city — unauthorized job changes or location transfers violate the permit terms",
+    "Document legalization must follow the exact chain (notarize, apostille, Chinese embassy) — incomplete legalization will be rejected",
+    "PSB registration within 24 hours is mandatory every time you move to a new address, not just upon initial arrival"
+  ],
+  "communityTips": [
+    {
+      "id": "legalization-timing",
+      "tip": "The document legalization chain takes much longer than most people expect. FBI background checks (US) take 12-18 weeks by mail, and then you still need state-level authentication and Chinese embassy legalization on top of that. Start this the day you accept the job offer.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "category-a-advantage",
+      "tip": "If your salary is close to the 500,000 RMB threshold for Category A, negotiate with your employer to push it over. The difference in processing speed (5 days vs. 10-15 days) and the 'green channel' treatment at government offices makes a significant difference.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "wechat-essential",
+      "tip": "Set up a Chinese phone number and WeChat before or immediately after arrival. Most government offices, employers, and landlords communicate through WeChat. It is also needed for many daily services in China.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "psb-hotel-trick",
+      "tip": "If you arrive before your apartment is ready, stay in a hotel for the first few days. Hotels automatically register you with the PSB, satisfying the 24-hour requirement without you needing to visit a police station in person.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "medical-exam-fasting",
+      "tip": "The medical exam requires fasting (no food or drink except water) from the night before. Arrive early in the morning as designated clinics get crowded. The exam typically takes 2-3 hours including wait times.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "r-visa",
+    "x1-visa",
+    "permanent-cn"
+  ],
+  "pathsTo": [
+    {
+      "type": "x1-visa",
+      "name": "Student Visa (Long-term)",
+      "requirements": "Graduate from a Chinese university with a confirmed job offer from a Chinese employer. Must exit China and apply for Z Visa at a Chinese embassy/consulate abroad.",
+      "timeline": "1-3 months after securing job offer and employer sponsorship",
+      "documents": [
+        "Graduation certificate from Chinese institution",
+        "Employment contract from new employer",
+        "Work permit notification letter",
+        "PU Letter from employer"
+      ],
+      "notes": "Graduates from Shanghai universities may access fast-track processing for employers in the Shanghai Free Trade Zone and Zhang Jiang High-Tech Park, potentially bypassing the standard 2-year experience requirement. Published guidelines indicate you must exit China to change from student to work visa status."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "r-visa",
+      "name": "High-Level Talent Visa",
+      "requirements": "Demonstrate Category A talent qualifications and obtain certification from authorized government agencies (Organization Department of CPC Central Committee, MOHRSS, or State Administration of Foreign Experts Affairs).",
+      "timeline": "3-6 months for talent certification process",
+      "documents": [
+        "Confirmation Letter for High Level Foreign Talents",
+        "Evidence of achievements, publications, patents, or awards",
+        "Employer recommendation letter",
+        "Updated employment and income documentation"
+      ],
+      "notes": "The Z to R transition represents an upgrade to high-level talent status with significantly better benefits: 5-10 year visa validity, up to 180 days per entry, and a preferred pathway to permanent residence. Requires government talent certification which is a competitive process."
+    },
+    {
+      "type": "permanent-cn",
+      "name": "Permanent Residence (Chinese Green Card)",
+      "requirements": "Maintain continuous employment for 4+ years on Z Visa with cumulative residence of 3+ years in China. Meet income and tax contribution thresholds (vary by province). Stable employment record and no criminal violations.",
+      "timeline": "4-8 years from initial Z Visa, depending on province and individual circumstances",
+      "documents": [
+        "Continuous employment records spanning 4+ years",
+        "Tax payment certificates",
+        "Annual income documentation",
+        "Health examination certificate",
+        "Criminal background check (Chinese and home country)"
+      ],
+      "notes": "Published guidelines indicate that the Z Visa to permanent residence pathway requires the longest timeline among transition options. High-salary earners and those in economically important regions (Shanghai, Shenzhen, Beijing) may have access to shortened timelines. Provincial variation in requirements is significant."
+    }
+  ],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "COVA - China Online Visa Application",
+      "url": "https://cova.mfa.gov.cn"
+    },
+    {
+      "label": "Ministry of Foreign Affairs - Visa Information",
+      "url": "https://www.mfa.gov.cn/ce/ceus/eng/visas/"
+    },
+    {
+      "label": "State Administration of Foreign Experts Affairs",
+      "url": "https://www.safea.gov.cn"
+    }
+  ],
+  "workPermitCategory": "B",
+  "puLetterRequired": true,
+  "psbRegistration": {
+    "required": true,
+    "deadlineHours": 24,
+    "notes": "Must register at local Public Security Bureau within 24 hours of arrival or moving to a new address. Hotels handle this automatically for guests."
+  },
+  "residencePermitDeadline": 30,
+  "covaOnline": true
+}

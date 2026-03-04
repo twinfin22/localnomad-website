@@ -1,0 +1,349 @@
+{
+  "type": "x1-visa",
+  "name": "China Student Visa (X1 Visa) — Complete 2026 Guide",
+  "shortName": "X1 Visa",
+  "category": "study",
+  "description": "Everything about China's X1 Visa (Long-term Student Visa): degree programs, language study, JW201/JW202 forms, residence permit conversion, and post-graduation pathways. The X1 Visa is issued to international students enrolled in educational programs in China lasting more than 180 days, including bachelor's, master's, doctoral, and long-term language programs. Applicants must obtain an admission notice from a recognized Chinese institution and either a JW201 form (for government-sponsored or scholarship students) or JW202 form (for self-funded students). Published guidelines indicate that X1 Visa holders must apply for a residence permit within 30 days of arrival and register with the Public Security Bureau within 24 hours. Work is generally restricted to academic activities, though limited part-time work and internships may be authorized in some circumstances. After graduation, published guidelines indicate a pathway from X1 to Z Visa for students who secure employment with a Chinese employer. Updated for 2026.",
+  "tagline": "Long-term student visa for degree programs and extended study in China",
+  "keyRequirement": "Admission notice from a Chinese educational institution + JW201 or JW202 form",
+  "targetAudience": [
+    "International students pursuing bachelor's, master's, or doctoral degrees at Chinese universities",
+    "Government-sponsored or CSC scholarship recipients studying in China",
+    "Language students enrolled in Mandarin programs exceeding 180 days",
+    "Research scholars and visiting students on long-term academic exchanges",
+    "Professionals seeking advanced training programs at Chinese institutions"
+  ],
+  "eligibility": [
+    {
+      "id": "admission",
+      "label": "Admission notice from a recognized Chinese educational institution",
+      "description": "Must have received an official admission notice from a Chinese university, college, or other recognized educational institution for a program lasting more than 180 days.",
+      "required": true
+    },
+    {
+      "id": "jw-form",
+      "label": "JW201 or JW202 form from the institution",
+      "description": "JW201 is issued to government-sponsored and scholarship students. JW202 is issued to self-funded international students. The form is prepared by the Chinese institution and sent to the student along with the admission notice.",
+      "required": true
+    },
+    {
+      "id": "financial-means",
+      "label": "Proof of financial means to cover tuition and living expenses",
+      "description": "Bank statements, scholarship award letters, or financial sponsorship documents demonstrating ability to fund the study period. Scholarship students may use the scholarship award as proof.",
+      "required": true
+    },
+    {
+      "id": "previous-education",
+      "label": "Previous educational certificates",
+      "description": "High school diploma (for bachelor's), bachelor's degree (for master's), or master's degree (for doctoral programs). Transcripts may also be required.",
+      "required": true
+    },
+    {
+      "id": "health",
+      "label": "Good health (medical examination may be required)",
+      "description": "Published guidelines indicate that a medical examination may be required for programs lasting longer than one year. The Foreigner Physical Examination Form must be completed at a designated clinic.",
+      "required": false
+    },
+    {
+      "id": "age",
+      "label": "Meet minimum age requirements (typically 18+)",
+      "description": "Most degree programs require applicants to be at least 18 years old. Some language programs may accept younger students with parental consent.",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "Aligned with program duration (typically 1-5 years)",
+    "extension": "Extendable if program duration extends or student enrolls in a subsequent program",
+    "maxTotal": "Up to 5 years; longer programs may require visa renewal"
+  },
+  "fees": {
+    "application": "X1 Visa consular fee: $30-140 USD (varies by nationality)",
+    "extension": "Residence permit renewal: standard fees apply (400-800 RMB)",
+    "notes": "No work permit fee required for study visa. University tuition and housing fees are separate from visa costs. Scholarship students may have fees waived by their sponsoring institution."
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "有效护照",
+      "description": "Must have at least 6 months validity remaining and blank visa pages available",
+      "required": true
+    },
+    {
+      "id": "visa-application-form",
+      "name": "Visa Application Form",
+      "nameLocal": "签证申请表",
+      "description": "Completed online through the COVA system or obtained at the Chinese embassy/consulate. Print and sign.",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport-Sized Photo",
+      "nameLocal": "护照照片",
+      "description": "Recent photo (within 6 months), white background, full face, no hat. 48mm x 33mm.",
+      "required": true
+    },
+    {
+      "id": "admission-notice",
+      "name": "Admission Notice (Original)",
+      "nameLocal": "录取通知书",
+      "description": "Original admission notice from the Chinese educational institution. Must clearly state the program name, duration, and start date.",
+      "tips": [
+        "Keep a photocopy of the admission notice — the original will be retained by the embassy",
+        "Verify that the institution name on the notice matches your visa application exactly"
+      ],
+      "required": true
+    },
+    {
+      "id": "jw-form",
+      "name": "JW201 or JW202 Form (Original and Copy)",
+      "nameLocal": "JW201/JW202表",
+      "description": "Official student visa application form issued by the Chinese educational institution. JW201 for government-sponsored students, JW202 for self-funded students. Both original and a photocopy are required.",
+      "tips": [
+        "The form is sent by the university along with the admission notice",
+        "If you lose the original, contact your university immediately for a replacement — processing takes 2-4 weeks"
+      ],
+      "required": true
+    },
+    {
+      "id": "financial-proof",
+      "name": "Proof of Financial Means",
+      "nameLocal": "经济能力证明",
+      "description": "Bank statements from the last 6 months, scholarship award letter, or financial sponsor's declaration showing sufficient funds to cover tuition and living expenses for the study period.",
+      "tips": [
+        "Scholarship students can use the CSC (China Scholarship Council) award letter as financial proof",
+        "Self-funded students should show a balance sufficient to cover at least one year of tuition plus living expenses"
+      ],
+      "required": true
+    },
+    {
+      "id": "previous-certificates",
+      "name": "Previous Education Certificates",
+      "nameLocal": "学历证明",
+      "description": "Highest completed degree certificate and transcripts. Documents not in English or Chinese should be accompanied by certified translations.",
+      "required": true
+    },
+    {
+      "id": "medical-exam",
+      "name": "Foreigner Physical Examination Form",
+      "nameLocal": "外国人体格检查表",
+      "description": "Health examination results from a designated medical institution. Required for programs lasting longer than one year. Must be completed on the official Foreigner Physical Examination Form.",
+      "tips": [
+        "The form can be downloaded from the Chinese embassy website",
+        "Some universities require the exam to be redone at a designated Chinese hospital after arrival"
+      ],
+      "required": false
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Apply and Receive University Admission",
+      "description": "Apply to Chinese universities through their international student offices or through the CSC (China Scholarship Council) for scholarship programs. Upon acceptance, the university issues an admission notice and JW201/JW202 form.",
+      "duration": "2-6 months (application to admission)",
+      "tips": [
+        "CSC scholarship applications typically open in January-March for the following academic year",
+        "Many universities accept direct applications through their international student websites",
+        "Some programs require HSK (Chinese proficiency test) scores — check your program's requirements"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Gather Supporting Documents",
+      "description": "Collect all required documents: passport, financial proof, previous education certificates, medical examination form (if applicable), and passport photos. Have non-English/non-Chinese documents translated.",
+      "duration": "2-4 weeks",
+      "tips": [
+        "Some consulates require documents to be notarized — check your specific consulate's requirements",
+        "Complete the medical examination at a clinic recognized by the Chinese embassy"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Apply for X1 Visa at Chinese Embassy/Consulate",
+      "description": "Submit your complete application with the admission notice, JW form, and all supporting documents at the Chinese embassy or consulate. Complete the COVA online form before your appointment.",
+      "duration": "1-2 weeks processing",
+      "tips": [
+        "Apply well before the semester start date — at least 4-6 weeks in advance",
+        "Some consulates allow express processing for additional fees"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Arrive in China and Register with PSB",
+      "description": "Travel to China and register at the local Public Security Bureau within 24 hours of arrival. If staying in university dormitories, the university may handle this registration. For off-campus housing, you must register in person.",
+      "duration": "Within 24 hours of arrival",
+      "tips": [
+        "University dormitory staff typically assist with PSB registration for on-campus students",
+        "Bring your passport, admission notice, and housing proof to the PSB station"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Apply for Residence Permit",
+      "description": "Within 30 days of arrival, apply for a residence permit at the local Entry-Exit Administration of the Public Security Bureau. The residence permit replaces the X1 Visa entry stamp and allows re-entry during your study period.",
+      "duration": "7-10 working days",
+      "tips": [
+        "You will need your passport, admission notice, JW form, medical exam results, PSB registration receipt, and passport photos",
+        "The residence permit validity matches your program duration (up to 5 years)"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Register at University and Begin Studies",
+      "description": "Complete university registration, attend orientation, and begin your academic program. The university's international student office can assist with any remaining administrative requirements.",
+      "tips": [
+        "Keep copies of all visa and registration documents — you may need them for scholarship disbursements, bank account opening, and phone registration"
+      ]
+    }
+  ],
+  "processingTime": {
+    "typical": "1-2 weeks for visa processing (after all documents are ready)",
+    "expedited": "Express processing available at some consulates for additional fees (2-3 business days)",
+    "notes": "The overall timeline from university application to arrival is typically 3-6 months. The visa processing step itself is relatively quick once you have the admission notice and JW form. Allow extra time for document preparation and medical examinations."
+  },
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "X1 Visa holders are primarily restricted to academic and study activities",
+      "Limited part-time work may be authorized through the university in some circumstances",
+      "Internships related to the field of study may be possible with university and employer coordination",
+      "Full-time employment is not permitted on a student visa"
+    ],
+    "notes": "Published guidelines indicate that X1 Visa holders cannot engage in full-time employment. Limited part-time work or internships may be authorized in certain circumstances, typically arranged through the university's international student office. Any work activity must not interfere with academic obligations."
+  },
+  "familyAllowed": false,
+  "faqs": [
+    {
+      "question": "What is the difference between X1 and X2 visas?",
+      "answer": "The X1 Visa is for study programs lasting more than 180 days (one semester or longer), while the X2 Visa is for short-term programs of 180 days or less. X1 holders must apply for a residence permit within 30 days of arrival, while X2 holders do not need a residence permit. X1 allows re-entry during the study period; X2 is typically single-entry."
+    },
+    {
+      "question": "What is the difference between JW201 and JW202 forms?",
+      "answer": "The JW201 form is issued to government-sponsored students, including CSC (China Scholarship Council) scholarship recipients and students on bilateral government exchange programs. The JW202 form is issued to self-funded international students paying their own tuition and expenses. Both forms are prepared by the Chinese educational institution and sent to the student as part of the admission package."
+    },
+    {
+      "question": "Can I work while studying on an X1 Visa?",
+      "answer": "Published guidelines indicate that X1 Visa holders are primarily restricted to academic activities. Limited part-time work or internships may be possible in some circumstances, typically arranged through the university's international student office and requiring coordination with the employing organization. Full-time employment is not permitted. Students found working without authorization may face penalties including visa revocation."
+    },
+    {
+      "question": "Can I transition from X1 Visa to Z Visa (work visa) after graduation?",
+      "answer": "Published guidelines indicate that X1 Visa holders who graduate and secure a job offer from a Chinese employer can transition to a Z Visa. However, this typically requires exiting China and applying for the Z Visa at a Chinese embassy or consulate abroad. Graduates from certain Shanghai universities may access fast-track processing for employers in the Shanghai Free Trade Zone. Your employer must initiate the work permit application process."
+    },
+    {
+      "question": "Do I need to take the HSK (Chinese proficiency test) for the X1 Visa?",
+      "answer": "The HSK is not required for the X1 Visa application itself. However, many Chinese universities require HSK scores for admission to Chinese-language degree programs. Programs taught in English typically do not require HSK scores. Scholarship programs (especially CSC) may have HSK requirements as part of their selection criteria."
+    },
+    {
+      "question": "What happens if my program is extended?",
+      "answer": "If your academic program is extended (for example, extending a master's program or continuing to a doctoral program), you can apply to extend your residence permit through the local Entry-Exit Administration before it expires. You will need updated documentation from your university confirming the extension. Apply for the extension before your current permit expires to avoid overstaying."
+    },
+    {
+      "question": "Can my family join me while I study in China?",
+      "answer": "Published guidelines indicate that X1 Visa holders generally cannot sponsor dependent visas for family members in the same way that Z Visa (work) holders can. Family members may apply for Q2 (short-term visit) visas or, in some cases, S2 visas for short stays. Long-term family accompaniment on a student visa is not standard."
+    },
+    {
+      "question": "Is health insurance required for X1 Visa holders?",
+      "answer": "Published guidelines indicate that many Chinese universities require international students to purchase health insurance, either through the university's group plan or through a qualified insurance provider. Some scholarship programs include health insurance coverage. Self-funded students should budget for health insurance and confirm their university's requirements before arrival."
+    }
+  ],
+  "tips": [
+    "Apply for university admission 6-12 months before the intended start date — popular programs fill quickly",
+    "CSC scholarship applications typically open in January-March — prepare your materials well in advance",
+    "Keep all original documents safe throughout your stay — you will need them for residence permit renewals and post-graduation transitions",
+    "Register with your country's embassy in China upon arrival for consular protection",
+    "Learn basic Mandarin before arrival even for English-taught programs — daily life in China is much easier with basic Chinese",
+    "Set up a Chinese bank account and phone number within the first week — these are needed for most services including university registration",
+    "Maintain a good academic record — poor academic standing can affect your residence permit renewal"
+  ],
+  "warnings": [
+    "Residence permit must be applied for within 30 days of arrival — late applications result in fines and potential visa complications",
+    "PSB registration within 24 hours is mandatory — this applies every time you move to a new address",
+    "Working without authorization on a student visa can result in fines, visa revocation, and potential deportation",
+    "Do not overstay your residence permit — overstaying can result in fines of 500 RMB per day (up to 10,000 RMB) and entry bans",
+    "Loss of the JW form can significantly delay your visa application — handle the original with care and keep copies"
+  ],
+  "communityTips": [
+    {
+      "id": "csc-scholarship",
+      "tip": "The CSC (China Scholarship Council) scholarship covers tuition, accommodation, and provides a monthly stipend. It is highly competitive but covers all major costs. Apply through your home country's CSC nominating agency or directly through a Chinese university that offers CSC programs.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "university-dorm",
+      "tip": "University dormitories simplify many administrative processes — PSB registration is often handled by the dorm office, and you have easy access to the international student office for visa questions. If possible, stay on campus at least for the first semester while you get settled.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "wechat-groups",
+      "tip": "Join your university's international student WeChat groups before arrival. Current students can share practical information about the registration process, document requirements, and local tips that are not in any official guide.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    },
+    {
+      "id": "graduation-planning",
+      "tip": "If you plan to work in China after graduation, start networking and job hunting 6+ months before graduation. The transition from X1 to Z Visa requires exiting China, so plan your timeline carefully. Some employers can help expedite the process if you start early.",
+      "source": "community",
+      "verified": false,
+      "upvotes": 0,
+      "dateAdded": "2026-03-04"
+    }
+  ],
+  "relatedVisas": [
+    "z-visa",
+    "r-visa",
+    "permanent-cn"
+  ],
+  "pathsTo": [],
+  "pathsFrom": [
+    {
+      "type": "z-visa",
+      "name": "Work Visa",
+      "requirements": "Graduate from a Chinese educational institution and secure a confirmed job offer from a China-registered employer. The employer must initiate the work permit application. Published guidelines indicate you must exit China and apply for the Z Visa at a Chinese embassy/consulate abroad.",
+      "timeline": "1-3 months after securing job offer (including exit, visa application, and return)",
+      "documents": [
+        "Graduation certificate from Chinese institution",
+        "Employment contract from Chinese employer",
+        "Work permit notification letter",
+        "PU Letter (if required by consulate)"
+      ],
+      "notes": "The X1 to Z Visa transition is the standard pathway for international graduates seeking employment in China. Graduates from Shanghai universities may access fast-track processing for certain employers. The 2-year work experience requirement may be waived for graduates of Chinese institutions in some regions. Plan the job search well before graduation to minimize the gap between study and employment."
+    }
+  ],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "COVA - China Online Visa Application",
+      "url": "https://cova.mfa.gov.cn"
+    },
+    {
+      "label": "China Scholarship Council (CSC)",
+      "url": "https://www.csc.edu.cn/laihua"
+    },
+    {
+      "label": "Ministry of Education - Study in China",
+      "url": "https://www.campuschina.org"
+    }
+  ],
+  "psbRegistration": {
+    "required": true,
+    "deadlineHours": 24,
+    "notes": "Must register at local Public Security Bureau within 24 hours of arrival or moving to a new address. Hotels handle this automatically for guests."
+  },
+  "residencePermitDeadline": 30,
+  "invitationRequired": false,
+  "covaOnline": true
+}
