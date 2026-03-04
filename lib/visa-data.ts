@@ -12,8 +12,8 @@ const COUNTRY_CODE_MAP: Record<Country, CountryCode> = {
 const AVAILABLE_VISAS: Record<Country, string[]> = {
   korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1'],
   taiwan: ['gold-card', 'dnv'],
-  japan: [],
-  china: [],
+  japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager'],
+  china: ['z-visa', 'r-visa', 'x1-visa', 'permanent-cn'],
   'southeast-asia': [],
 };
 
