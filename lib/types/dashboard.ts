@@ -11,12 +11,15 @@ export interface Profile {
   updated_at: string;
 }
 
+export type VisaCountry = 'kr' | 'tw' | 'jp' | 'cn';
+
 export interface UserVisa {
   id: string;
   user_id: string;
-  country: 'kr' | 'tw';
-  visa_type: string;
-  expiry_date: string | null;
+  country: VisaCountry;
+  goal_visa_type: string;
+  current_visa_type: string | null;
+  current_expiry_date: string | null;
   is_active: boolean;
   created_at: string;
   updated_at: string;

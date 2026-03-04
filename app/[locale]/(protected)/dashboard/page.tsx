@@ -17,6 +17,8 @@ export const metadata: Metadata = {
 const COUNTRY_CODE_TO_SLUG: Record<string, Country> = {
   kr: 'korea',
   tw: 'taiwan',
+  jp: 'japan',
+  cn: 'china',
 };
 
 interface Props {
@@ -37,7 +39,7 @@ export default async function DashboardPage({ params }: Props) {
 
   const [t, visa, checklist] = await Promise.all([
     getTranslations('Dashboard'),
-    getVisaData(countrySlug, locale, activeVisa.visa_type),
+    getVisaData(countrySlug, locale, activeVisa.goal_visa_type),
     getChecklist(activeVisa.id),
   ]);
 
@@ -45,12 +47,12 @@ export default async function DashboardPage({ params }: Props) {
     <main id="main-content" className="min-h-svh bg-neutral-50">
       <div className="mx-auto max-w-3xl px-6 py-16">
         <DashboardHeader
-          visaName={visa?.name ?? activeVisa.visa_type.toUpperCase()}
+          visaName={visa?.name ?? activeVisa.goal_visa_type.toUpperCase()}
           country={activeVisa.country}
         />
 
         <div className="mt-8">
-          <DDayCountdown expiryDate={activeVisa.expiry_date} />
+          <DDayCountdown expiryDate={activeVisa.current_expiry_date} />
         </div>
 
         {visa && (
@@ -65,7 +67,7 @@ export default async function DashboardPage({ params }: Props) {
 
         <div className="mt-8 text-center">
           <Link
-            href={`/${countrySlug}/visa/${activeVisa.visa_type}`}
+            href={`/${countrySlug}/visa/${activeVisa.goal_visa_type}`}
             className="inline-flex min-h-[44px] items-center text-sm text-primary hover:underline"
           >
             {t('viewGuide')} &rarr;

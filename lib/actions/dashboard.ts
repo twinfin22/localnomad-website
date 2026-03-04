@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import { getSession } from './auth';
-import type { Profile, UserVisa, ChecklistItem } from '@/lib/types/dashboard';
+import type { Profile, UserVisa, ChecklistItem, VisaCountry } from '@/lib/types/dashboard';
 
 // =============================================================================
 // Profile
@@ -70,9 +70,10 @@ export const getActiveVisa = async (): Promise<UserVisa | null> => {
 };
 
 export const createVisa = async (input: {
-  country: 'kr' | 'tw';
-  visa_type: string;
-  expiry_date: string | null;
+  country: VisaCountry;
+  goal_visa_type: string;
+  current_visa_type: string | null;
+  current_expiry_date: string | null;
 }): Promise<UserVisa> => {
   const user = await getSession();
   if (!user) throw new Error('Unauthenticated');
@@ -91,8 +92,9 @@ export const createVisa = async (input: {
     .insert({
       user_id: user.id,
       country: input.country,
-      visa_type: input.visa_type,
-      expiry_date: input.expiry_date,
+      goal_visa_type: input.goal_visa_type,
+      current_visa_type: input.current_visa_type,
+      current_expiry_date: input.current_expiry_date,
       is_active: true,
     })
     .select()
@@ -105,7 +107,7 @@ export const createVisa = async (input: {
 
 export const updateVisa = async (
   visaId: string,
-  updates: Partial<Pick<UserVisa, 'expiry_date' | 'is_active'>>
+  updates: Partial<Pick<UserVisa, 'current_expiry_date' | 'is_active'>>
 ): Promise<UserVisa> => {
   const user = await getSession();
   if (!user) throw new Error('Unauthenticated');

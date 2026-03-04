@@ -139,7 +139,7 @@ export function DocumentChecklist({
       if (
         activeVisa &&
         activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
-        activeVisa.visa_type === visaType
+        activeVisa.goal_visa_type === visaType
       ) {
         const checklist = await getChecklist(activeVisa.id);
         if (cancelled) return;
