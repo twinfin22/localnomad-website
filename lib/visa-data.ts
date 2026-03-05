@@ -13,7 +13,7 @@ const AVAILABLE_VISAS: Record<Country, string[]> = {
   korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1', 'b-2'],
   taiwan: ['gold-card', 'dnv', 'visitor'],
   japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager', 'tourist'],
-  china: ['z-visa', 'r-visa', 'x1-visa', 'permanent-cn'],
+  china: ['z-visa', 'x1-visa', 'k-visa'],
   'southeast-asia': [],
 };
 

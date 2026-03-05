@@ -35,7 +35,7 @@ const VISA_OPTIONS: Record<VisaCountry, { type: string; label: string }[]> = {
   ],
   cn: [
     { type: 'z-visa', label: 'Z Visa — Work Visa' },
-    { type: 'r-visa', label: 'R Visa — High-level Talent' },
+    { type: 'k-visa', label: 'K Visa — STEM Talent' },
     { type: 'x1-visa', label: 'X1 Visa — Long-term Study' },
   ],
 };
