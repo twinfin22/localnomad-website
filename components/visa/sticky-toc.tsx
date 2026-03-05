@@ -42,9 +42,9 @@ export function MobileTocBar({
             type="button"
             onClick={() => onNavigate(section.id)}
             className={cn(
-              'shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-colors',
+              'shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors',
               activeSection === section.id
-                ? 'bg-primary text-primary-foreground'
+                ? 'bg-primary text-primary-foreground shadow-sm'
                 : 'bg-neutral-100 text-muted-foreground hover:bg-neutral-200'
             )}
           >
@@ -76,8 +76,8 @@ export function DesktopTocSidebar({
               className={cn(
                 'flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-colors',
                 activeSection === section.id
-                  ? 'border-l-2 border-primary bg-primary/5 font-medium text-primary'
-                  : 'border-l-2 border-transparent text-muted-foreground hover:bg-neutral-100 hover:text-foreground'
+                  ? 'border-l-2 border-primary bg-primary/8 font-medium text-primary'
+                  : 'border-l-2 border-transparent text-muted-foreground hover:bg-primary/[0.04] hover:text-foreground'
               )}
             >
               <span className="shrink-0">{section.icon}</span>

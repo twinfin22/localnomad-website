@@ -17,16 +17,16 @@ export async function VisaHero({ visa, hideSummaryCards }: VisaHeroProps) {
   const t = await getTranslations('VisaDetail');
 
   return (
-    <div>
+    <div className="-mx-6 rounded-xl bg-primary/[0.03] px-6 py-8">
       {/* Title area */}
-      <h1 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
+      <h1 className="font-lora text-2xl font-bold text-primary sm:text-4xl">
         {visa.name}
       </h1>
-      <p className="mt-2 text-lg text-muted-foreground">{visa.tagline}</p>
+      <p className="mt-2 text-lg text-foreground/70">{visa.tagline}</p>
 
       {/* Warnings */}
       {visa.warnings && visa.warnings.length > 0 && (
-        <div className="mt-8 rounded-lg border border-amber-300 bg-amber-50 p-5">
+        <div className="mt-8 rounded-lg border border-amber-400 bg-amber-100 p-5">
           <div className="flex items-center gap-2">
             <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600" />
             <h2 className="text-xl font-semibold text-amber-800">
@@ -86,10 +86,10 @@ function SummaryCard({
   value: string;
 }) {
   return (
-    <div className="rounded-lg border border-primary/20 bg-white p-4 text-center">
+    <div className="rounded-lg border border-primary/30 bg-white p-4 text-center shadow-sm transition-shadow hover:shadow-md">
       <div className="flex justify-center">{icon}</div>
       <p className="mt-2 text-xs font-medium text-muted-foreground">{label}</p>
-      <p className="mt-1 text-sm font-semibold">{value}</p>
+      <p className="mt-1 font-lora text-sm font-bold">{value}</p>
     </div>
   );
 }

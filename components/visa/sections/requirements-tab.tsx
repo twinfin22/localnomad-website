@@ -78,7 +78,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
         <div>
           <span
             className={cn(
-              'text-sm font-medium',
+              'text-base font-medium',
               isNegative && 'text-red-600'
             )}
           >
@@ -103,7 +103,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
             </ul>
           )}
           {item.warnings && item.warnings.length > 0 && (
-            <div className="mt-2 flex items-start gap-2 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
+            <div className="mt-2 flex items-start gap-2 rounded-md bg-amber-100 px-3 py-2 text-sm text-amber-800">
               <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
               <div className="space-y-1">
                 {item.warnings.map((warning, i) => (
@@ -133,7 +133,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
     return (
       <div className="flex items-center gap-2">
         <Icon className="h-5 w-5 text-primary" />
-        <h3 className="text-lg font-semibold">{categoryLabel(category)}</h3>
+        <h3 className="font-lora text-lg font-semibold">{categoryLabel(category)}</h3>
       </div>
     );
   };
@@ -146,7 +146,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
 
         return (
           <div key={category}>
-            {catIndex > 0 && <div className="my-5 border-t" />}
+            {catIndex > 0 && <div className="my-6 border-t" />}
 
             {renderCategoryHeader(category)}
 
@@ -156,7 +156,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
               {/* Merge income metadata into the income category */}
               {isIncome && visa.incomeRequirement && (
                 <div className="mt-4">
-                <p className="text-2xl font-bold text-primary">
+                <p className="font-lora text-2xl font-bold text-primary">
                   ${visa.incomeRequirement.amount}{' '}
                   <span className="text-base font-normal text-muted-foreground">
                     {visa.incomeRequirement.currency} /{' '}
@@ -202,7 +202,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
           <div className="my-5 border-t" />
           <div className="flex items-center gap-2">
             <Briefcase className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold">{t('workPermission')}</h3>
+            <h3 className="font-lora text-lg font-semibold">{t('workPermission')}</h3>
           </div>
           <div className="pl-7">
             <p
@@ -249,7 +249,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
               <div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
-                  <h3 className="text-lg font-semibold">
+                  <h3 className="font-lora text-lg font-semibold">
                     {t('insuranceDetails')}
                   </h3>
                 </div>
@@ -280,7 +280,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
               <div className="rounded-md bg-amber-50 p-4">
                 <div className="flex items-center gap-2">
                   <AlertTriangle className="h-5 w-5 text-amber-600" />
-                  <h3 className="text-lg font-semibold text-amber-800">
+                  <h3 className="font-lora text-lg font-semibold text-amber-800">
                     {t('taxImplications')}
                   </h3>
                 </div>

@@ -15,83 +15,67 @@ export function TimelineFees({ visa }: TimelineFeesProps) {
   const t = useTranslations('VisaDetail');
 
   return (
-    <div className="space-y-6">
-      {/* Duration details */}
-      <div className="grid gap-3 sm:grid-cols-3">
-        <InfoCard
-          icon={<Calendar className="h-4 w-4 text-primary" />}
-          label={t('initialDuration')}
-          value={visa.duration.initial}
-        />
-        {visa.duration.extension && (
-          <InfoCard
-            icon={<RefreshCw className="h-4 w-4 text-primary" />}
-            label={t('extensionDuration')}
-            value={visa.duration.extension}
+    <div className="space-y-4">
+      {/* Compact summary panel */}
+      <div className="rounded-xl bg-primary/5 px-5 py-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
+          <SummaryItem
+            icon={<Calendar className="h-4 w-4 text-primary" />}
+            label={t('initialDuration')}
+            value={visa.duration.initial}
           />
-        )}
-        {visa.duration.maxTotal && (
-          <InfoCard
-            icon={<Clock className="h-4 w-4 text-primary" />}
-            label={t('maxStay')}
-            value={visa.duration.maxTotal}
-          />
-        )}
-      </div>
-
-      {/* Fees details */}
-      <div>
-        <h3 className="text-sm font-semibold text-foreground">{t('fees')}</h3>
-        <div className="mt-2 grid gap-3 sm:grid-cols-2">
-          <InfoCard
+          {visa.duration.extension && (
+            <SummaryItem
+              icon={<RefreshCw className="h-4 w-4 text-primary" />}
+              label={t('extensionDuration')}
+              value={visa.duration.extension}
+            />
+          )}
+          {visa.duration.maxTotal && (
+            <SummaryItem
+              icon={<Clock className="h-4 w-4 text-primary" />}
+              label={t('maxStay')}
+              value={visa.duration.maxTotal}
+            />
+          )}
+          <SummaryItem
             icon={<DollarSign className="h-4 w-4 text-primary" />}
             label={t('fees')}
             value={visa.fees.application}
           />
           {visa.fees.extension && (
-            <InfoCard
+            <SummaryItem
               icon={<DollarSign className="h-4 w-4 text-primary" />}
               label={t('extensionFee')}
               value={visa.fees.extension}
             />
           )}
-        </div>
-        {visa.fees.notes && (
-          <p className="mt-2 text-sm text-muted-foreground">
-            {visa.fees.notes}
-          </p>
-        )}
-      </div>
-
-      {/* Processing time */}
-      <div>
-        <h3 className="text-sm font-semibold text-foreground">
-          {t('processingTime')}
-        </h3>
-        <div className="mt-2 grid gap-3 sm:grid-cols-2">
-          <InfoCard
+          <SummaryItem
             icon={<Clock className="h-4 w-4 text-primary" />}
             label={t('processingTime')}
             value={visa.processingTime.typical}
           />
           {visa.processingTime.expedited && (
-            <InfoCard
+            <SummaryItem
               icon={<Clock className="h-4 w-4 text-primary" />}
               label={t('expeditedProcessing')}
               value={visa.processingTime.expedited}
             />
           )}
         </div>
-        {visa.processingTime.notes && (
-          <p className="mt-2 text-sm text-muted-foreground">
-            {visa.processingTime.notes}
-          </p>
+
+        {/* Notes */}
+        {(visa.fees.notes || visa.processingTime.notes) && (
+          <div className="mt-3 space-y-1 border-t border-primary/10 pt-3 text-sm text-muted-foreground">
+            {visa.fees.notes && <p>{visa.fees.notes}</p>}
+            {visa.processingTime.notes && <p>{visa.processingTime.notes}</p>}
+          </div>
         )}
       </div>
 
       {/* Renewal info */}
       {visa.renewal && (
-        <div className="rounded-lg border bg-neutral-50 p-4">
+        <div className="rounded-xl bg-neutral-50 p-4">
           <h3 className="flex items-center gap-2 font-lora text-sm font-semibold text-foreground">
             <RefreshCw className="h-4 w-4 text-primary" />
             {t('renewal')}
@@ -152,7 +136,7 @@ export function TimelineFees({ visa }: TimelineFeesProps) {
   );
 }
 
-function InfoCard({
+function SummaryItem({
   icon,
   label,
   value,
@@ -162,12 +146,12 @@ function InfoCard({
   value: string;
 }) {
   return (
-    <div className="rounded-lg border bg-white p-3">
-      <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+    <div>
+      <div className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
         {icon}
         {label}
       </div>
-      <p className="mt-1 text-sm font-semibold">{value}</p>
+      <p className="mt-0.5 font-lora text-sm font-bold">{value}</p>
     </div>
   );
 }

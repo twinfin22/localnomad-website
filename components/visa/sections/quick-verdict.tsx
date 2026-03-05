@@ -39,25 +39,25 @@ export function QuickVerdict({ visa }: QuickVerdictProps) {
       </h2>
 
       {/* Summary cards */}
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
         <SummaryCard
-          icon={<Calendar className="h-4 w-4 text-primary" />}
+          icon={<Calendar className="h-5 w-5 text-primary" />}
           label={t('duration')}
           value={visa.duration.initial}
           detail={visa.duration.initialDetail}
         />
         <SummaryCard
-          icon={<DollarSign className="h-4 w-4 text-primary" />}
+          icon={<DollarSign className="h-5 w-5 text-primary" />}
           label={t('fees')}
           value={visa.fees.application}
         />
         <SummaryCard
-          icon={<Clock className="h-4 w-4 text-primary" />}
+          icon={<Clock className="h-5 w-5 text-primary" />}
           label={t('processingTime')}
           value={visa.processingTime.typical}
         />
         <SummaryCard
-          icon={<Timer className="h-4 w-4 text-primary" />}
+          icon={<Timer className="h-5 w-5 text-primary" />}
           label={t('maxStay')}
           value={visa.duration.maxTotal ?? '-'}
           detail={visa.duration.maxTotalDetail}
@@ -73,7 +73,7 @@ export function QuickVerdict({ visa }: QuickVerdictProps) {
             ) : (
               <Zap className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
             )}
-            <span className="text-sm font-medium">{item.label}</span>
+            <span className="text-base font-medium">{item.label}</span>
           </li>
         ))}
       </ul>
@@ -94,7 +94,7 @@ function SummaryCard({
   detail?: string;
 }) {
   return (
-    <div className="rounded-lg border border-primary/20 bg-neutral-50 p-3 text-center">
+    <div className="rounded-lg border border-primary/30 bg-primary/[0.04] p-4 text-center transition-shadow hover:shadow-sm">
       <div className="flex justify-center">{icon}</div>
       <p className="mt-1.5 text-xs font-medium text-muted-foreground">
         {label}

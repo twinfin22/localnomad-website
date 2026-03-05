@@ -62,7 +62,9 @@ function useLocalChecklist(storageKey: string) {
         const next = { ...prev, [docId]: !prev[docId] };
         try {
           localStorage.setItem(storageKey, JSON.stringify(next));
-          window.dispatchEvent(new CustomEvent('checklist-update'));
+          queueMicrotask(() => {
+            window.dispatchEvent(new CustomEvent('checklist-update'));
+          });
         } catch (error: unknown) {
           if (error instanceof Error) {
             if (process.env.NODE_ENV === 'development') {
@@ -179,7 +181,7 @@ export function DocumentChecklist({
   return (
     <div>
       {/* Document Checklist */}
-      <section className="mt-12">
+      <section className="mt-8">
         <div className="flex items-center gap-2">
           <FileText className="h-5 w-5 text-primary" />
           <h2 className="text-xl font-semibold">
@@ -191,7 +193,7 @@ export function DocumentChecklist({
         </div>
 
         {/* Progress bar */}
-        <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-neutral-200">
+        <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-neutral-200">
           <div
             className="h-full rounded-full bg-primary transition-all duration-300"
             style={{
@@ -236,7 +238,7 @@ export function DocumentChecklist({
 
       {/* Save progress CTA for anonymous users */}
       {authResolved && !user && (
-        <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-center">
+        <div className="mt-6 rounded-lg border border-primary/30 bg-primary/8 p-4 text-center">
           <p className="text-sm text-muted-foreground">
             {tAuth('saveProgress')}{' '}
             <a

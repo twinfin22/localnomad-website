@@ -265,7 +265,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
                   </span>
                 ))}
               {!hasVisitedDocs && (
-                <span className="absolute -right-1 -top-1 h-2 w-2 animate-pulse rounded-full bg-primary" />
+                <span className="absolute right-1 top-0.5 h-2 w-2 animate-pulse rounded-full bg-primary" />
               )}
             </TabsTrigger>
             <TabsTrigger
@@ -282,13 +282,13 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value={TAB_IDS.REQUIREMENTS} className="mt-4">
+          <TabsContent value={TAB_IDS.REQUIREMENTS} className="mt-4 animate-fade-in">
             <RequirementsTab visa={visa} />
           </TabsContent>
-          <TabsContent value={TAB_IDS.DOCUMENTS} className="mt-4">
+          <TabsContent value={TAB_IDS.DOCUMENTS} className="mt-4 animate-fade-in">
             <DocumentsTab visa={visa} country={country} />
           </TabsContent>
-          <TabsContent value={TAB_IDS.PROCESS} className="mt-4">
+          <TabsContent value={TAB_IDS.PROCESS} className="mt-4 animate-fade-in">
             <ProcessTab visa={visa} />
           </TabsContent>
         </Tabs>
@@ -305,7 +305,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
           <AccordionItem
             value={SECTION_IDS.FAQ}
             id={SECTION_IDS.FAQ}
-            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
           >
             <AccordionTrigger className="py-5 text-lg font-semibold">
               <span className="flex items-center gap-2">
@@ -325,7 +325,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
           <AccordionItem
             value={SECTION_IDS.TIPS_COMMUNITY}
             id={SECTION_IDS.TIPS_COMMUNITY}
-            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
           >
             <AccordionTrigger className="py-5 text-lg font-semibold">
               <span className="flex items-center gap-2">
@@ -347,7 +347,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
         <AccordionItem
           value={SECTION_IDS.SOURCES_RELATED}
           id={SECTION_IDS.SOURCES_RELATED}
-          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
         >
           <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">

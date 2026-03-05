@@ -353,7 +353,7 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
                           'after:absolute after:right-0 after:top-0 after:h-full after:w-px after:bg-gray-200',
                           ri % 2 === 1 ? 'bg-gray-50/50' : 'bg-white',
                         )
-                      : 'whitespace-nowrap px-4',
+                      : 'sm:whitespace-nowrap px-4',
                   )}
                 >
                   {cell}

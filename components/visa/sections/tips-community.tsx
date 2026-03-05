@@ -13,7 +13,7 @@ export function TipsCommunity({ communityTips }: TipsCommunityProps) {
   if (!communityTips || communityTips.length === 0) return null;
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {communityTips.map((tip) => (
         <CommunityTipCard
           key={tip.id}
@@ -33,8 +33,8 @@ function CommunityTipCard({
   verifiedLabel: string;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-l-primary/30 bg-white py-4 pl-5 pr-4">
-      <p className="text-sm italic leading-relaxed text-muted-foreground">
+    <div className="rounded-lg border-l-4 border-l-primary/50 bg-white py-5 pl-6 pr-5 transition-shadow hover:shadow-sm">
+      <p className="text-base italic leading-relaxed text-muted-foreground">
         &ldquo;{tip.tip}&rdquo;
       </p>
       {(tip.verified || (tip.upvotes !== undefined && tip.upvotes > 0)) && (
