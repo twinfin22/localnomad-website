@@ -168,7 +168,7 @@ export function VisaAccordionLayout({
         <AccordionItem
           value={SECTION_IDS.KEY_REQUIREMENTS}
           id={SECTION_IDS.KEY_REQUIREMENTS}
-          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
         >
           <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
@@ -185,7 +185,7 @@ export function VisaAccordionLayout({
         <AccordionItem
           value={SECTION_IDS.TIMELINE_FEES}
           id={SECTION_IDS.TIMELINE_FEES}
-          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
         >
           <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
@@ -202,7 +202,7 @@ export function VisaAccordionLayout({
         <AccordionItem
           value={SECTION_IDS.DOCUMENTS}
           id={SECTION_IDS.DOCUMENTS}
-          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
         >
           <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
@@ -223,7 +223,7 @@ export function VisaAccordionLayout({
         <AccordionItem
           value={SECTION_IDS.APPLICATION_STEPS}
           id={SECTION_IDS.APPLICATION_STEPS}
-          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
         >
           <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
@@ -241,7 +241,7 @@ export function VisaAccordionLayout({
           <AccordionItem
             value={SECTION_IDS.FAQ}
             id={SECTION_IDS.FAQ}
-            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
           >
             <AccordionTrigger className="py-5 text-lg font-semibold">
               <span className="flex items-center gap-2">
@@ -260,7 +260,7 @@ export function VisaAccordionLayout({
           <AccordionItem
             value={SECTION_IDS.TIPS_COMMUNITY}
             id={SECTION_IDS.TIPS_COMMUNITY}
-            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+            className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
           >
             <AccordionTrigger className="py-5 text-lg font-semibold">
               <span className="flex items-center gap-2">
@@ -281,7 +281,7 @@ export function VisaAccordionLayout({
         <AccordionItem
           value={SECTION_IDS.SOURCES_RELATED}
           id={SECTION_IDS.SOURCES_RELATED}
-          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b"
+          className="scroll-mt-28 rounded-lg border bg-white px-5 last:border-b data-[state=open]:border-l-4 data-[state=open]:border-l-primary"
         >
           <AccordionTrigger className="py-5 text-lg font-semibold">
             <span className="flex items-center gap-2">
