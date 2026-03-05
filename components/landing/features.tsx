@@ -14,11 +14,11 @@ export const Features = () => {
   return (
     <section className="bg-neutral-50 px-6 pt-16 pb-24">
       <div className="mx-auto max-w-4xl">
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-3">
           {features.map((feat, i) => (
-            <ScrollReveal key={i} delay={i * 150}>
-              <div className="group flex items-start gap-4 text-left">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+            <ScrollReveal key={i} delay={i * 150} direction={i % 2 === 0 ? 'left' : 'right'}>
+              <div className="group flex h-full flex-col items-start gap-4 rounded-xl border border-border/60 bg-white p-6 text-left shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-primary/10">
                   <feat.icon className="h-6 w-6 text-primary transition-colors group-hover:text-primary-light" aria-hidden="true" />
                 </div>
                 <div>

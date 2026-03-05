@@ -16,7 +16,7 @@ export const CountryCard = ({
   return (
     <Link
       href={href}
-      className="group flex min-h-[88px] items-center gap-4 rounded-xl border border-white/20 bg-white/10 px-6 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-white/[0.15] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_40px_rgba(0,0,0,0.2)] focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
+      className="group flex min-h-[88px] items-center gap-4 rounded-xl border border-white/20 bg-white/10 px-6 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:bg-white/[0.15] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_12px_40px_rgba(0,0,0,0.2),inset_0_0_20px_rgba(255,255,255,0.05)] focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
     >
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10">
         <span className="text-3xl" role="img" aria-label={name}>

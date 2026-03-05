@@ -5,9 +5,10 @@ import { useRef, useEffect, type ReactNode } from 'react';
 interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
+  direction?: 'up' | 'left' | 'right';
 }
 
-export const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
+export const ScrollReveal = ({ children, delay = 0, direction = 'up' }: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
   return (
     <div
       ref={ref}
-      className="scroll-reveal"
+      className={`scroll-reveal ${direction === 'left' ? 'scroll-reveal-left' : direction === 'right' ? 'scroll-reveal-right' : ''}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

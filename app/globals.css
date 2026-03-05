@@ -199,6 +199,145 @@ body::after {
   animation: fade-in 0.2s ease-out;
 }
 
+/* Blog carousel scrollbar */
+.blog-carousel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(27, 73, 101, 0.15) transparent;
+}
+.blog-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.blog-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.blog-carousel::-webkit-scrollbar-thumb {
+  background: rgba(27, 73, 101, 0.15);
+  border-radius: 3px;
+}
+.blog-carousel::-webkit-scrollbar-thumb:hover {
+  background: rgba(27, 73, 101, 0.3);
+}
+
+/* Scroll reveal directional variants */
+.scroll-reveal-left {
+  transform: translateX(-2rem);
+}
+.scroll-reveal-right {
+  transform: translateX(2rem);
+}
+.scroll-reveal-visible.scroll-reveal-left,
+.scroll-reveal-visible.scroll-reveal-right {
+  transform: translateX(0);
+}
+
+/* Icon scale on scroll reveal */
+.scroll-reveal-scale {
+  transform: scale(0.8);
+  transition: transform 0.5s ease-out;
+}
+.scroll-reveal-visible .scroll-reveal-scale {
+  transform: scale(1);
+}
+
+/* How it works connector line */
+@media (min-width: 640px) {
+  .hiw-steps {
+    position: relative;
+  }
+  .hiw-steps::before {
+    content: '';
+    position: absolute;
+    top: 72px;
+    left: 16.67%;
+    right: 16.67%;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--primary) 0,
+      var(--primary) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+    opacity: 0.15;
+  }
+}
+
+/* Hero scroll indicator line */
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.hero-scroll-line {
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+/* Hero compass slow rotation */
+@keyframes compass-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+.hero-compass {
+  animation: compass-rotate 60s linear infinite;
+}
+
+/* CTA floating particles */
+@keyframes float-up {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-400px); opacity: 0; }
+}
+.cta-particle {
+  animation: float-up 8s ease-in-out infinite;
+}
+
+/* Map marker pulse */
+@keyframes marker-pulse {
+  0%, 100% { box-shadow: 0 2px 8px rgba(27,73,101,0.25); }
+  50% { box-shadow: 0 2px 8px rgba(27,73,101,0.25), 0 0 0 8px rgba(27,73,101,0.08); }
+}
+.landing-country-marker {
+  animation: marker-pulse 2s ease-in-out infinite;
+}
+
+/* Section gradient transitions */
+.section-fade-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--section-next-bg, #fafafa));
+  pointer-events: none;
+}
+.section-fade-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, transparent, var(--section-prev-bg, #ffffff));
+  pointer-events: none;
+}
+
+/* Section divider accent */
+.section-divider {
+  display: flex;
+  justify-content: center;
+}
+.section-divider::before {
+  content: '';
+  width: 2px;
+  height: 40px;
+  background: var(--primary);
+  opacity: 0.15;
+  border-radius: 1px;
+}
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal {
@@ -221,5 +360,26 @@ body::after {
 
   .animate-fade-in {
     animation: none;
+  }
+
+  .hero-scroll-line {
+    animation: none;
+  }
+
+  .hero-compass {
+    animation: none;
+  }
+
+  .cta-particle {
+    animation: none;
+  }
+
+  .landing-country-marker {
+    animation: none;
+  }
+
+  .scroll-reveal-scale {
+    transform: none;
+    transition: none;
   }
 }
