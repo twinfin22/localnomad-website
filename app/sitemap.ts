@@ -15,6 +15,8 @@ const COUNTRY_VISAS: Record<string, string[]> = {
   'southeast-asia': [],
 };
 
+const NEIGHBORHOOD_COUNTRIES = ['korea'] as const;
+
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
 
 const LAST_MODIFIED = new Date('2026-03-04');
@@ -60,6 +62,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
           priority: 0.6,
         });
       }
+    }
+
+    // Neighborhood pages
+    for (const neighborhoodCountry of NEIGHBORHOOD_COUNTRIES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/neighborhood/${neighborhoodCountry}`,
+        lastModified: LAST_MODIFIED,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
     }
 
     // Legal pages

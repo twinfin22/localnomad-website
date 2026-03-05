@@ -1,0 +1,85 @@
+import { Check, X } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import type { Neighborhood } from '@/lib/types/neighborhood';
+
+interface NeighborhoodCardProps {
+  neighborhood: Neighborhood;
+}
+
+export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
+  return (
+    <div className="rounded-lg border bg-white shadow-sm">
+      <div className="p-5">
+        <h3 className="font-lora text-lg font-bold text-primary">
+          {neighborhood.name}
+        </h3>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {neighborhood.vibe}
+        </p>
+        <p className="mt-2 text-sm font-semibold">{neighborhood.rent}/mo</p>
+
+        {/* Tags */}
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {neighborhood.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Pros & Cons accordion */}
+      <div className="border-t px-5">
+        <Accordion type="single" collapsible>
+          <AccordionItem value="pros-cons" className="border-b-0">
+            <AccordionTrigger className="text-sm">
+              Pros &amp; Cons
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="space-y-3">
+                {neighborhood.pros.length > 0 && (
+                  <div>
+                    <ul className="space-y-1">
+                      {neighborhood.pros.map((pro) => (
+                        <li
+                          key={pro}
+                          className="flex items-start gap-2 text-sm"
+                        >
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                          <span>{pro}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {neighborhood.cons.length > 0 && (
+                  <div>
+                    <ul className="space-y-1">
+                      {neighborhood.cons.map((con) => (
+                        <li
+                          key={con}
+                          className="flex items-start gap-2 text-sm"
+                        >
+                          <X className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
+                          <span>{con}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+  );
+}
