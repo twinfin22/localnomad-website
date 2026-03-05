@@ -52,10 +52,8 @@ export type JapanVisaType =
 
 export type ChinaVisaType =
   | 'z-visa'
-  | 'r-visa'
   | 'k-visa'
-  | 'x1-visa'
-  | 'permanent-cn';
+  | 'x1-visa';
 
 export type VisaType = KoreaVisaType | TaiwanVisaType | JapanVisaType | ChinaVisaType;
 
@@ -93,7 +91,7 @@ export function isJapanVisa(type: VisaType): type is JapanVisaType {
 }
 
 export const CHINA_VISA_TYPES: ChinaVisaType[] = [
-  'z-visa', 'r-visa', 'k-visa', 'x1-visa', 'permanent-cn',
+  'z-visa', 'k-visa', 'x1-visa',
 ];
 
 export function isChinaVisa(type: VisaType): type is ChinaVisaType {

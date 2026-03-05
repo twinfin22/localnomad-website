@@ -346,9 +346,8 @@
     }
   ],
   "relatedVisas": [
-    "r-visa",
     "x1-visa",
-    "permanent-cn"
+    "k-visa"
   ],
   "pathsTo": [
     {
@@ -363,35 +362,34 @@
         "PU Letter from employer"
       ],
       "notes": "Graduates from Shanghai universities may access fast-track processing for employers in the Shanghai Free Trade Zone and Zhang Jiang High-Tech Park, potentially bypassing the standard 2-year experience requirement. Published guidelines indicate you must exit China to change from student to work visa status."
+    },
+    {
+      "type": "k-visa",
+      "name": "K Visa (STEM Talent)",
+      "requirements": "Bachelor's degree or higher in STEM from a recognized university, aged 18\u201345. No employer sponsorship required.",
+      "timeline": "4\u20135 business days standard processing",
+      "documents": [
+        "STEM degree certificate (legalized)",
+        "Valid passport with 6+ months validity",
+        "Completed COVA application form",
+        "Health examination certificate"
+      ],
+      "notes": "For Z Visa holders who want to transition to independent STEM work without employer ties. The K Visa allows research, entrepreneurship, and job-seeking without sponsorship."
     }
   ],
   "pathsFrom": [
     {
-      "type": "r-visa",
-      "name": "High-Level Talent Visa",
-      "requirements": "Demonstrate Category A talent qualifications and obtain certification from authorized government agencies (Organization Department of CPC Central Committee, MOHRSS, or State Administration of Foreign Experts Affairs).",
-      "timeline": "3-6 months for talent certification process",
+      "type": "k-visa",
+      "name": "K Visa (STEM Talent)",
+      "requirements": "Bachelor's degree or higher in STEM from a recognized university, aged 18-45. No employer sponsorship required.",
+      "timeline": "4-5 business days standard processing",
       "documents": [
-        "Confirmation Letter for High Level Foreign Talents",
-        "Evidence of achievements, publications, patents, or awards",
-        "Employer recommendation letter",
-        "Updated employment and income documentation"
+        "STEM degree certificate (legalized)",
+        "Valid passport with 6+ months validity",
+        "Completed COVA application form",
+        "Health examination certificate"
       ],
-      "notes": "The Z to R transition represents an upgrade to high-level talent status with significantly better benefits: 5-10 year visa validity, up to 180 days per entry, and a preferred pathway to permanent residence. Requires government talent certification which is a competitive process."
-    },
-    {
-      "type": "permanent-cn",
-      "name": "Permanent Residence (Chinese Green Card)",
-      "requirements": "Maintain continuous employment for 4+ years on Z Visa with cumulative residence of 3+ years in China. Meet income and tax contribution thresholds (vary by province). Stable employment record and no criminal violations.",
-      "timeline": "4-8 years from initial Z Visa, depending on province and individual circumstances",
-      "documents": [
-        "Continuous employment records spanning 4+ years",
-        "Tax payment certificates",
-        "Annual income documentation",
-        "Health examination certificate",
-        "Criminal background check (Chinese and home country)"
-      ],
-      "notes": "Published guidelines indicate that the Z Visa to permanent residence pathway requires the longest timeline among transition options. High-salary earners and those in economically important regions (Shanghai, Shenzhen, Beijing) may have access to shortened timelines. Provincial variation in requirements is significant."
+      "notes": "For Z Visa holders who want to transition to independent STEM work without employer ties. The K Visa allows research, entrepreneurship, and job-seeking without sponsorship."
     }
   ],
   "lastUpdated": "2026-03-04",
