@@ -113,7 +113,11 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <article className="prose prose-lg max-w-none prose-headings:font-lora prose-headings:text-foreground prose-a:text-[#1B4965]">
-          <MDXRemote source={post.content} components={mdxComponents} />
+          <MDXRemote
+            source={post.content}
+            components={mdxComponents}
+            options={{ blockJS: false }}
+          />
         </article>
       </main>
     </>
