@@ -48,9 +48,9 @@ export function DocumentRow({
             <span className="text-sm font-medium">
               {doc.name}
             </span>
-            {doc.nameKorean && (
+            {doc.nameLocal && (
               <span className="ml-2 text-xs">
-                ({doc.nameKorean})
+                ({doc.nameLocal})
               </span>
             )}
           </div>

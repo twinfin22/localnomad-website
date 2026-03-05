@@ -6,7 +6,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { routing } from '@/i18n/routing';
 import { getPost, getAllPostSlugs } from '@/lib/blog';
 import { extractHeadings } from '@/lib/blog/utils';
-import { mdxComponents } from '@/components/blog/mdx-components';
+import { createMdxComponents } from '@/components/blog/mdx-components';
 import { BlogToc } from '@/components/blog/blog-toc';
 
 interface Props {
@@ -64,6 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   const headings = extractHeadings(post.content);
+  const mdxComponents = createMdxComponents();
 
   return (
     <>

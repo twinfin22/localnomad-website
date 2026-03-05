@@ -1,8 +1,46 @@
 {
   "type": "d-8",
-  "name": "韓国企業投資ビザ（D-8）— 2026年完全ガイド",
+  "name": "韓国企業投資ビザ（D-8）",
   "shortName": "D-8",
   "category": "investment",
+  "nameLocal": "기업투자비자 (D-8)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "外国人登録証の取得",
+      "deadline": "入国後90日以内",
+      "description": "最寄りの出入国管理事務所でARC申請。銀行口座開設、携帯電話契約など各種サービスに必要。",
+      "tips": ["HiKorea（hikorea.go.kr）で予約", "パスポート、写真、住所証明、ビザ関連書類を持参", "事業閉業後30日以内に出入国管理局に届け出ないとビザステータスを失うリスク"]
+    },
+    {
+      "id": "phone-number",
+      "title": "携帯電話番号の取得",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の通信キャリアで携帯電話番号を取得。銀行口座開設や各種オンラインサービスに必要。"
+    },
+    {
+      "id": "bank-account",
+      "title": "銀行口座の開設",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の銀行で口座を開設。給与受取や日常取引に必要。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "国民健康保険への加入",
+      "deadline": "入国後6ヶ月以内",
+      "description": "韓国国民健康保険（NHI）への加入手続き。長期滞在者は加入義務あり。"
+    },
+    {
+      "id": "address-registration",
+      "title": "住所登録",
+      "deadline": "転入後14日以内",
+      "description": "居住地の管轄区役所で住所登録（전입신고）を完了。各種行政サービスに必要。"
+    }
+  ],
+  "renewal": {
+    "process": "満了日の少なくとも30日前に最寄りの出入国管理事務所で延長申請を提出。"
+  },
   "description": "韓国D-8企業投資ビザの完全ガイド：₩1億の最低投資額、外国直接投資（FDI）登録、法人設立、サブカテゴリ（D-8-1、D-8-2、D-8-4、D-8-4S）、必要書類、申請手順、FAQ。2026年最新版。",
   "tagline": "韓国で事業を始める・投資する",
   "keyRequirement": "最低投資額₩100,000,000（約$75,000 USD）+ 議決権10%以上 + 経営への積極的関与",
@@ -30,13 +68,15 @@
       "id": "active-management",
       "label": "投資先事業を積極的に経営",
       "description": "公開されている要件によると、受動的な投資はD-8の基準を満たさない。ビザ保持者は事業の日常的な経営または運営管理に従事する必要がある。",
-      "required": true
+      "required": true,
+      "warnings": ["受動的な投資はD-8要件を満たさない — 経営への積極的関与が必須"]
     },
     {
       "id": "legitimate-funds",
       "label": "合法的で追跡可能な資金源からの投資資金",
       "description": "すべての投資資金は個人が合法的に取得し、追跡可能でなければならない。送金者は投資家本人、配偶者、または未成年の子でなければならない。投資額が₩300,000,000を超える場合は、投資家または配偶者の親も認められる。",
-      "required": true
+      "required": true,
+      "warnings": ["投資資金は合法的で追跡可能な資金源から — 未登録の手段は却下の原因"]
     },
     {
       "id": "fdi-registration",
@@ -57,7 +97,7 @@
     "maxTotal": "上限なし — 事業運営が継続する限り無期限更新可能"
   },
   "fees": {
-    "application": "₩60,000（約$42 USD）",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "法人登記費用は会社の形態により別途₩500,000〜₩2,000,000。法務・会計の専門家費用も別途必要。"
   },
@@ -70,28 +110,28 @@
     {
       "id": "passport",
       "name": "有効なパスポート（旅券）",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "滞在予定期間の6ヶ月以上有効なもの",
       "required": true
     },
     {
       "id": "application-form",
       "name": "ビザ申請書",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "記入済みのビザ申請書（様式第34号）",
       "required": true
     },
     {
       "id": "photo",
       "name": "証明写真",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm、最近撮影、白背景",
       "required": true
     },
     {
       "id": "fdi-certificate",
       "name": "外国直接投資届出証明書",
-      "nameKorean": "외국인투자신고서",
+      "nameLocal": "외국인투자신고서",
       "description": "KOTRAまたは外国為替銀行でFDIが届出済みであることの証明。資金送金前に完了する必要がある。",
       "tips": [
         "KOTRAまたは韓国の外国為替銀行で届出",
@@ -102,7 +142,7 @@
     {
       "id": "forex-purchase-certificate",
       "name": "外国為替買入証明書",
-      "nameKorean": "외국환매입증명서",
+      "nameLocal": "외국환매입증명서",
       "description": "投資目的での外貨の購入と送金を確認する銀行発行の証明書。",
       "tips": [
         "本人名義の銀行送金のみ使用",
@@ -113,14 +153,14 @@
     {
       "id": "business-registration",
       "name": "事業者登録証",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "法人登記後に国税庁から発行される。事業が韓国で正式に登録されていることを確認する書類。",
       "required": true
     },
     {
       "id": "articles-of-incorporation",
       "name": "定款",
-      "nameKorean": "정관",
+      "nameLocal": "정관",
       "description": "事業目的、株式構成、経営規則を記載した公証済みの定款。",
       "tips": [
         "韓国の公証人による公証が必要",
@@ -131,14 +171,14 @@
     {
       "id": "stock-deposit-certificate",
       "name": "株金払込証明書",
-      "nameKorean": "주식인수대금납입증명서",
+      "nameLocal": "주식인수대금납입증명서",
       "description": "株式資本が法人の銀行口座に入金されたことを確認する銀行発行の証明書。",
       "required": true
     },
     {
       "id": "business-plan",
       "name": "事業計画書",
-      "nameKorean": "사업계획서",
+      "nameLocal": "사업계획서",
       "description": "会社概要、市場分析、収益モデル、3〜5年間の財務予測、雇用創出計画を含む詳細な事業計画書。",
       "tips": [
         "データに基づいた現実的な財務予測を含める",
@@ -150,7 +190,7 @@
     {
       "id": "background-check",
       "name": "犯罪経歴証明書",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国からの警察証明書。国籍によりアポスティーユが必要な場合がある。",
       "tips": [
         "最近のもの（6ヶ月以内）",
@@ -162,19 +202,20 @@
     {
       "id": "office-lease",
       "name": "事務所賃貸契約書",
-      "nameKorean": "사무실임대차계약서",
+      "nameLocal": "사무실임대차계약서",
       "description": "事業者登録証の住所と一致する実際のオフィスの証明。出入国管理官は実態のある事業環境を確認する。",
       "tips": [
         "バーチャルオフィスの住所は出入国管理局で日常的にチェックされている",
         "実際の事務所の賃貸契約が事実上必須",
         "住所は事業者登録証と一致する必要がある"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["バーチャルオフィスの住所は日常的にチェックされている — 実際の事務所賃貸が事実上必須"]
     },
     {
       "id": "health-insurance",
       "name": "健康保険証明書",
-      "nameKorean": "보험증서",
+      "nameLocal": "보험증서",
       "description": "韓国で有効な健康保険の証明。D-8保持者は自社を通じて国民健康保険（NHI）に職場加入者として加入できる場合がある。",
       "tips": [
         "事業が運営を開始すれば、会社経由のNHI加入が可能",
@@ -194,7 +235,8 @@
         "KOTRAのオフィスは世界各地にある — investkorea.orgで確認",
         "韓国の外国為替銀行でもFDI届出が可能",
         "事業計画書と投資の詳細を準備しておく"
-      ]
+      ],
+      "warnings": ["FDI届出は資金送金前に必ず行う — 未届出の場合50%の税金ペナルティ"]
     },
     {
       "id": "step-2",
@@ -265,7 +307,8 @@
     }
   ],
   "processingTime": {
-    "typical": "4〜8週間（大使館申請）",
+    "governmentReview": "4〜8週間（大使館申請）",
+    "totalEndToEnd": "3〜6ヶ月",
     "notes": "審査期間は大使館、国籍、時期により異なる。韓国国内での在留資格変更は通常2〜4週間。法人登記に2〜3週間（法人銀行口座を含めると最大4週間）が追加される。開始からビザ発行までの合計期間は約9〜17週間。開業予定日の少なくとも2〜3ヶ月前に申請すること。"
   },
   "workPermission": {
@@ -337,51 +380,40 @@
     "ビザ満了の2〜3ヶ月前に延長を申請 — 事業活動と納税コンプライアンスの実績が更新を強化する",
     "正式な学位がなくても強力なビジネスアイデアがあればD-8-4S経路を検討"
   ],
-  "warnings": [
-    "FDI届出は資金送金前に必ず行う — 未届出の場合50%の税金ペナルティ",
-    "事業閉業後30日以内に出入国管理局に届け出ないとビザステータスを失うリスク",
-    "バーチャルオフィスの住所は日常的にチェックされている — 実際の事務所賃貸が事実上必須",
-    "投資資金は合法的で追跡可能な資金源から — 未登録の手段は却下の原因",
-    "受動的な投資はD-8要件を満たさない — 経営への積極的関与が必須"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "fdi-before-transfer",
+      "section": "process",
       "tip": "資金送金前に必ず外国直接投資の事前届出が必要。この手順を省略すると送金額の50%の税金ペナルティが課される可能性がある。まずKOTRAまたは外国為替銀行で届出を完了すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "paper-trail-funds",
+      "section": "documents",
       "tip": "送金されたすべてのウォンが追跡可能でなければならない。本人名義の銀行送金のみ使用すること。未登録の送金手段は自動的に却下される可能性がある。すべての領収書と送金確認書のコピーを保管すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "virtual-office-flagged",
+      "section": "documents",
       "tip": "出入国管理官は実態のある事業環境を確認するようになっている。実際の事務所の賃貸契約が事実上必須。バーチャルアドレスのペーパーカンパニーは審査でフラグが立ち、申請が遅延または却下される可能性がある。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "d-8-4s-startup-special",
+      "section": "requirements",
       "tip": "2024年11月以降、スタートアップコリア特別ビザ（D-8-4S）は学位や学業成績を要求しない。アイデアの実現可能性とチーム能力で評価される。K-Startupポータルまたはグローバルスタートアップセンターから申請。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "company-registration-timeline",
+      "section": "process",
       "tip": "法人設立が1日で完了すると期待しないこと。登記だけで2〜3週間、法人銀行口座を含めると最大4週間を見込む必要がある。一部の銀行は法人口座開設に複数回の来店を要求する。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

@@ -2,6 +2,7 @@
   "type": "k-visa",
   "name": "China K Visa — STEM Talent Visa (2026 Guide)",
   "shortName": "K Visa",
+  "nameLocal": "字签证",
   "category": "work",
   "description": "Everything about China's K Visa for young STEM talent: no employer sponsorship required, eligibility for graduates and researchers, permitted activities (work, research, entrepreneurship), and comparison with the Z Visa. The K Visa launched October 1, 2025, as China's 13th visa category — the first new category added since 2013. It targets young foreign professionals (aged 18–45) with STEM backgrounds from recognized universities or research institutions worldwide. Unlike the Z Visa, the K Visa does not require a job offer or employer sponsorship, allowing holders to enter China independently and pursue employment, research, entrepreneurship, or business activities. Updated for 2026.",
   "tagline": "No-sponsorship visa for young STEM professionals",
@@ -40,6 +41,7 @@
     },
     {
       "id": "no-employer-needed",
+      "sentiment": "positive",
       "label": "No employer sponsorship or job offer required",
       "description": "Unlike the Z Visa, the K Visa does not require a job offer, employer sponsorship, or an invitation letter from a Chinese entity. Applicants can enter China independently and pursue employment, research, or entrepreneurship after arrival.",
       "required": false
@@ -59,6 +61,7 @@
     {
       "id": "passport",
       "name": "Valid Passport",
+      "nameLocal": "护照",
       "description": "Must be valid for at least 6 months beyond intended stay with at least 2 blank pages",
       "required": true
     },
@@ -105,6 +108,7 @@
     {
       "id": "criminal-background",
       "name": "Criminal Background Check",
+      "nameLocal": "无犯罪记录证明",
       "description": "Police clearance certificate from applicant's home country, issued within the last 6 months. Must be notarized and authenticated.",
       "required": true
     }
@@ -155,9 +159,11 @@
     }
   ],
   "processingTime": {
-    "typical": "Standard: 4–5 business days; Express: 2–3 business days; Rush: 1 business day (where available)",
+    "governmentReview": "Standard: 4–5 business days; Express: 2–3 business days; Rush: 1 business day (where available)",
+    "totalEndToEnd": "1-2 months",
     "notes": "Processing times vary by embassy and nationality. Peak seasons (September–October, January–February) may result in longer wait times. The K Visa uses a simplified application process compared to the Z Visa — no employer-issued documents or work permit pre-approval needed."
   },
+  "familyAllowed": true,
   "workPermission": {
     "allowed": true,
     "restrictions": [
@@ -166,7 +172,7 @@
       "Work should be related to the applicant's STEM qualifications",
       "May need to apply for a work permit after securing employment (specific post-entry requirements being clarified by authorities)"
     ],
-    "notes": "The K Visa is a significant departure from the Z Visa model. It allows entry without a pre-arranged job offer, giving holders flexibility to explore opportunities, conduct research, start businesses, or seek employment after arrival. This makes it functionally similar to job-seeker visas offered by countries like Germany. However, post-entry work permit requirements may still apply depending on the type of employment — consult with local PSB and MOHRSS offices."
+    "notes": "The K Visa is a significant departure from the Z Visa model. It allows entry without a pre-arranged job offer, giving holders flexibility to explore opportunities, conduct research, start businesses, or seek employment after arrival. This makes it functionally similar to job-seeker visas offered by countries like Germany. However, post-entry work permit requirements may still apply depending on the type of employment — consult with local PSB and MOHRSS offices. While the K Visa allows entry without a job offer, you may still need to obtain a work permit after arrival to engage in formal employment — consult with local authorities. Remote work for a foreign company while in China on a K Visa occupies a legal gray area similar to other visa categories."
   },
   "faqs": [
     {
@@ -213,27 +219,49 @@
   ],
   "warnings": [
     "The K Visa is very new (October 2025) — specific implementation details may vary between embassies and are subject to change as authorities refine the program",
-    "While the K Visa allows entry without a job offer, you may still need to obtain a work permit after arrival to engage in formal employment — consult with local authorities",
-    "The Great Firewall blocks many Western services. VPN use is widespread but technically regulated",
-    "China requires accommodation registration with local police within 24 hours of arrival — failure to comply can result in fines",
-    "Remote work for a foreign company while in China on a K Visa occupies a legal gray area similar to other visa categories"
+    "The Great Firewall blocks many Western services. VPN use is widespread but technically regulated"
   ],
   "communityTips": [
     {
       "id": "k-visa-new-tip",
+      "section": "process",
       "tip": "The K Visa is brand new as of October 2025. Embassy staff may not be fully familiar with it yet. Bring printed copies of the official State Council announcement and be patient with the process.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "z-visa-comparison-tip",
+      "section": "general",
       "tip": "If you already have a job offer from a Chinese company, the Z Visa may still be a better option — it has a more established process and clearer post-entry procedures. The K Visa is best for those who want to explore opportunities before committing to an employer.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "requirements": ["Valid employment/enrollment", "Employer/institution support letter"],
+    "documents": ["Passport", "Current residence permit", "Employment certificate or enrollment proof"],
+    "applyBeforeDays": 30,
+    "processingTime": "7-15 business days",
+    "fees": "¥400-800"
+  },
+  "postArrivalSteps": [
+    {
+      "id": "psb-registration",
+      "title": "PSB Registration",
+      "deadline": "Within 24 hours of arrival",
+      "description": "Register at the local Public Security Bureau. Hotels do this automatically; if staying elsewhere, visit the nearest PSB station.",
+      "tips": ["Bring passport, entry stamp page copy, and accommodation proof"],
+      "warnings": [
+        "China requires accommodation registration with local police within 24 hours of arrival — failure to comply can result in fines"
+      ]
+    },
+    {
+      "id": "residence-permit",
+      "title": "Residence Permit Conversion",
+      "deadline": "Within 30 days of entry",
+      "description": "Convert your visa entry to a formal residence permit at the local PSB Exit-Entry Administration.",
+      "tips": ["Requires health check, employment docs, and PSB registration receipt"]
     }
   ],
   "relatedVisas": [

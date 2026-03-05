@@ -1,7 +1,8 @@
 {
   "type": "tourist",
-  "name": "Japan Tourist Visa & Visa Waiver — Complete 2026 Guide",
+  "name": "Japan Tourist Visa & Visa Waiver",
   "shortName": "Tourist",
+  "nameLocal": "短期滞在",
   "category": "tourist",
   "description": "Comprehensive guide covering Japan's visa waiver program (74 countries), tourist visa application, 30-90 day stays, and practical information for short-term visitors including digital nomads exploring Japan before committing to the Digital Nomad Visa. Japan offers visa-free entry to nationals of 74 countries for stays of 15 to 90 days depending on nationality. Visitors from non-waiver countries must apply for a tourist visa (短期滞在) at a Japanese embassy or consulate. The tourist visa and visa waiver cover activities including sightseeing, visiting friends and relatives, attending conferences, and short-term business meetings — but no paid work of any kind is permitted, including remote work. This guide covers eligibility, required documents, entry procedures, and practical tips for making the most of your short-term stay in Japan. Updated for 2026.",
   "tagline": "Short-term stays for tourism, business meetings, and exploration",
@@ -40,6 +41,7 @@
     },
     {
       "id": "no-work-activities",
+      "sentiment": "negative",
       "label": "No work of any kind permitted (including remote work — technically)",
       "description": "The tourist visa and visa waiver explicitly prohibit all forms of paid employment and income-generating work in Japan. This technically includes remote work for a foreign employer, although enforcement on remote work is minimal. For legal remote work in Japan, the Digital Nomad Visa is the proper authorization.",
       "required": true
@@ -47,7 +49,8 @@
   ],
   "duration": {
     "initial": "15-90 days (varies by nationality)",
-    "maxTotal": "90 days — extensions are generally not granted except in exceptional circumstances"
+    "maxTotal": "90 days — extensions are generally not granted except in exceptional circumstances",
+    "notes": "Extensions are almost never granted — plan your trip within the permitted stay duration from the beginning. Only truly exceptional circumstances such as hospitalization or natural disasters may warrant an extension."
   },
   "fees": {
     "application": "¥0 for visa-waiver entry; ¥3,000 (single entry) or ¥6,000 (multiple entry) for tourist visa — current as of March 2026",
@@ -171,12 +174,14 @@
       "tips": [
         "Immigration processing at Narita, Haneda, and Kansai airports typically takes 15-45 minutes depending on queue length",
         "Note the date written in your passport stamp — this is your departure deadline",
-        "Extensions are rarely granted — plan your trip within the permitted stay period from the start"
+        "Extensions are rarely granted — plan your trip within the permitted stay period from the start",
+        "Immigration officers may question travelers with one-way tickets, minimal luggage, or patterns suggesting residence rather than tourism — have your return ticket and accommodation details ready"
       ]
     }
   ],
   "processingTime": {
-    "typical": "Instant for visa-waiver entry; 5-7 business days for tourist visa applications",
+    "governmentReview": "Instant for visa-waiver entry; 5-7 business days for tourist visa applications",
+    "totalEndToEnd": "1-2 weeks",
     "notes": "Visa-waiver nationals receive their entry permission instantly at the airport upon arrival. Tourist visa applicants should allow 5-7 business days for standard processing at the embassy, though some locations may take longer during peak travel seasons (cherry blossom season, Golden Week, New Year). Expedited processing is generally not available."
   },
   "workPermission": {
@@ -186,11 +191,12 @@
       "No remote work — technically, working remotely for a foreign employer is not permitted under the tourist visa or visa waiver",
       "No business activities beyond attending meetings, conferences, or trade shows as a visitor",
       "No freelance or contract work during the stay",
-      "Violation of work restrictions can result in deportation, entry ban, and criminal charges"
+      "Violation of work restrictions can result in deportation, entry ban, and criminal charges",
+      "No work of any kind is permitted — including remote work for a foreign employer. The Digital Nomad Visa is required for legal remote work in Japan."
     ],
     "notes": "The tourist visa and visa waiver strictly prohibit all forms of work. Many digital nomads do work remotely during tourist stays in practice, but this is a legal gray area with no explicit enforcement mechanism for remote work performed privately. Japan's Digital Nomad Visa, launched in April 2024, is the proper legal framework for remote work. Anyone planning to work remotely for an extended period should consider applying for the Digital Nomad Visa instead."
   },
-  "familyAllowed": true,
+  "familyAllowed": false,
   "faqs": [
     {
       "question": "Can I do remote work on a tourist visa?",
@@ -223,6 +229,10 @@
     {
       "question": "Can I use the tourist visa for business meetings?",
       "answer": "Yes. Published guidelines permit short-term business activities under the tourist visa and visa waiver, including attending meetings, conferences, trade shows, factory visits, and contract signing ceremonies. However, any activity that constitutes actual work — such as providing services, performing consulting, or participating in the day-to-day operations of a Japanese business — requires a work visa. The line between permitted business meetings and prohibited work activity is based on whether you are performing labor or merely conducting discussions."
+    },
+    {
+      "question": "Can I switch from tourist status to another visa while in Japan?",
+      "answer": "No. You cannot switch from tourist status to any other visa category while inside Japan — you must leave the country and apply from abroad. Published guidelines do not permit changes of status from short-term stay (tourist) to other visa categories. If you wish to obtain a work visa, Digital Nomad Visa, or any other status, you must exit Japan and apply through the standard process at a Japanese embassy or consulate in your country of residence."
     }
   ],
   "tips": [
@@ -235,45 +245,52 @@
     "Book accommodations in advance during peak seasons: cherry blossom season (late March-April), Golden Week (late April-early May), autumn foliage (November), and New Year"
   ],
   "warnings": [
-    "No work of any kind is permitted — including remote work for a foreign employer. The Digital Nomad Visa is required for legal remote work in Japan.",
-    "Extensions are almost never granted — plan your trip within the permitted stay duration from the beginning",
-    "Immigration officers may question travelers with one-way tickets, minimal luggage, or patterns suggesting residence rather than tourism",
-    "Overstaying even by one day results in arrest, deportation, criminal record, and a multi-year entry ban from Japan",
-    "You cannot switch from tourist status to any other visa category while inside Japan — you must leave the country and apply from abroad",
-    "Frequent entries on visa waivers may attract scrutiny — immigration officers may reduce your permitted stay or deny entry if they suspect you are living in Japan on tourist entries"
+    "Overstaying even by one day results in arrest, deportation, criminal record, and a multi-year entry ban from Japan"
   ],
   "communityTips": [
     {
       "id": "dn-scouting-tip",
+      "section": "general",
       "tip": "Use your tourist visa stay as a scouting trip before committing to the Digital Nomad Visa. Spend time in Tokyo, Osaka, Fukuoka, and smaller cities to find the best fit for your lifestyle and budget. Many digital nomads discover that cities outside Tokyo (especially Fukuoka and Kyoto) offer better quality of life at lower cost.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "transit-tip",
+      "section": "general",
       "tip": "Get a Suica or Pasmo card at the airport on arrival and load at least ¥3,000. These IC cards work on virtually all public transit in Japan and can be used for contactless payments at convenience stores, vending machines, and many restaurants. Apple Pay and Google Pay users can add a virtual Suica directly to their phone.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "accommodation-tip",
+      "section": "general",
       "tip": "For stays longer than a week, monthly apartments and guesthouses are significantly cheaper than hotels. Platforms like Monthly-Mansion, Sakura House, and OYO Life offer furnished rooms without requiring a Japanese guarantor. Airbnb is also widely available but subject to Japan's minpaku (vacation rental) laws — legal listings display a registration number.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "coworking-tourist-tip",
+      "section": "general",
       "tip": "Even if you are officially on a tourist visa and not supposed to work, knowing where the coworking spaces and laptop-friendly cafes are is useful for planning. Starbucks and Tully's Coffee have reliable Wi-Fi. Dedicated coworking spaces like BIZcomfort and Regus offer day passes. Many public libraries also have free Wi-Fi and work-friendly environments.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": false,
+    "requirements": [],
+    "documents": [],
+    "applyBeforeDays": 0
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "Embassy",
+      "agencyFullName": "Japanese Embassy/Consulate",
+      "action": "Visa Application",
+      "description": "Submit application directly at nearest Japanese embassy or consulate.",
+      "processingDays": 7
     }
   ],
   "relatedVisas": [

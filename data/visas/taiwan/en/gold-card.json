@@ -1,6 +1,7 @@
 {
   "type": "gold-card",
-  "name": "Taiwan Employment Gold Card — Complete 2026 Guide",
+  "name": "Taiwan Employment Gold Card",
+  "nameLocal": "就業金卡",
   "shortName": "Gold Card",
   "category": "gold-card",
   "description": "Everything about Taiwan's Employment Gold Card: 11 professional fields, 4-in-1 work + residence permit, 50% tax exemption, NHI access, and APRC fast-track. Updated for 2026.",
@@ -17,7 +18,8 @@
       "id": "professional-field",
       "label": "Expertise in one of 11 designated professional fields",
       "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Practitioners of Ancestor Rites",
-      "required": true
+      "required": true,
+      "tips": ["Architecture field uses AND logic — all conditions (licensed architect or 5+ years experience AND monthly salary ≥ NT$160,000) must be met simultaneously"]
     },
     {
       "id": "field-qualification",
@@ -39,9 +41,11 @@
     },
     {
       "id": "no-ineligible-status",
+      "sentiment": "negative",
       "label": "Not currently holding ineligible visa status in Taiwan",
       "description": "Cannot convert from blue-collar work visa, APEC Business Travel Card, Chinese language study visa, or Working Holiday visa. Must exit Taiwan and re-apply from overseas.",
-      "required": true
+      "required": true,
+      "warnings": ["Cannot convert from: blue-collar work visa, APEC Business Travel Card, Working Holiday visa, or Chinese language study visa — must exit Taiwan and re-apply from overseas"]
     },
     {
       "id": "document-attestation",
@@ -58,7 +62,7 @@
   "fees": {
     "application": "NT$3,700 – NT$9,790 (varies by nationality, location, and duration)",
     "extension": "NT$1,500 – NT$3,500 (ARC renewal)",
-    "notes": "US passport holders applying overseas pay higher fees (NT$7,790-9,790). Non-US and domestic applicants: NT$3,700-5,700. HK/Macau: flat NT$3,100. Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). Non-refundable."
+    "notes": "US passport holders applying overseas pay higher fees (NT$7,790-9,790). Non-US and domestic applicants: NT$3,700-5,700. HK/Macau: flat NT$3,100. Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). Non-refundable. Application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline results in automatic rejection."
   },
   "incomeRequirement": {
     "amount": "160,000",
@@ -70,6 +74,7 @@
     {
       "id": "passport",
       "name": "Valid Passport",
+      "nameLocal": "護照",
       "description": "Must be valid for 6+ months, color copy of photo page required for upload",
       "tips": [
         "Ensure name matches exactly as on application account"
@@ -95,6 +100,7 @@
     {
       "id": "tax-certificate",
       "name": "Tax Documents / Income Proof",
+      "nameLocal": "財力證明",
       "description": "Tax return or salary certificate proving income for salary-track applicants",
       "tips": [
         "W-2 (US), P60 (UK), T4 (Canada), PAYG (Australia), PIT-11 (Poland)",
@@ -106,6 +112,7 @@
     {
       "id": "degree-certificate",
       "name": "Academic Degree Certificates",
+      "nameLocal": "學位證書",
       "description": "Relevant academic degrees (for experience/academic tracks)",
       "tips": [
         "PhD from world top-500 university qualifies for multiple fields"
@@ -115,12 +122,14 @@
     {
       "id": "employment-certificates",
       "name": "Employment Certificates",
+      "nameLocal": "聘僱合約",
       "description": "Formal employment certificates proving work history",
       "tips": [
         "Must include: full name, company name, position title, actual employment period, official seal or signature",
         "Generic reference letters or offer letters are NOT accepted"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["Employment certificates must include: full name, company name, position title, employment period, and official seal or signature. Offer letters, generic reference letters, and unsigned certificates are NOT accepted."]
     },
     {
       "id": "patents-publications",
@@ -235,7 +244,8 @@
     }
   ],
   "processingTime": {
-    "typical": "30-60 business days",
+    "governmentReview": "30-60 business days",
+    "totalEndToEnd": "2-4 months",
     "notes": "Assumes complete documentation. Document supplement: 3 days (domestic), up to 6 months (overseas). Failure to supplement within deadline = rejection without refund."
   },
   "workPermission": {
@@ -243,6 +253,16 @@
     "restrictions": [],
     "notes": "Open Work Permit included. No employer tie — free to freelance, work for multiple employers, change jobs, or start businesses. Covers all legal employment in Taiwan."
   },
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-application",
+      "title": "ARC Application",
+      "deadline": "Within 15 days of arrival (for stays over 180 days)",
+      "description": "Apply for Alien Resident Certificate at the nearest NIA service center.",
+      "tips": ["Bring passport, visa, 2 photos, proof of address, and fees"]
+    }
+  ],
   "goldCardFields": {
     "categories": [
       "Science & Technology",
@@ -385,52 +405,43 @@
     "Architecture field uses AND logic — all conditions must be met simultaneously, unlike other fields which use OR logic"
   ],
   "warnings": [
-    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。",
-    "Cannot convert from: blue-collar work visa, APEC Business Travel Card, Working Holiday visa, or Chinese language study visa — must exit Taiwan and re-apply from overseas",
-    "Architecture field uses AND logic — all conditions (licensed architect or 5+ years experience AND monthly salary ≥ NT$160,000) must be met simultaneously",
-    "Application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline results in automatic rejection.",
-    "Employment certificates must include: full name, company name, position title, employment period, and official seal or signature. Offer letters, generic reference letters, and unsigned certificates are NOT accepted."
+    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。"
   ],
   "communityTips": [
     {
       "id": "document-narrative",
+      "section": "documents",
       "tip": "Create a 'story' with your documents — explain your expertise as if to someone unfamiliar with your field. A cover letter highlighting your uniqueness can help, even though it's not officially required.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "salary-track-tip",
+      "section": "documents",
       "tip": "For the salary track, you can choose any 1 year within the past 3 years for your tax return evidence — pick your best year. W-2, P60, T4, PAYG, or PIT-11 accepted.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "resident-auth-cert",
+      "section": "process",
       "tip": "Don't wait for the physical card — download and print your Resident Authorization Certificate in color to enter Taiwan immediately after approval.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "banking-prep",
+      "section": "general",
       "tip": "Get a Taiwan phone number first (needed for OTP verification). Open a bank account near your registered address. Community CPAs are available for tax filing to maintain the 50% exemption benefit.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "gold-card-community",
+      "section": "general",
       "tip": "Join the taiwangoldcard.com community — Slack and LINE groups, monthly networking events, holders from 100+ countries. Great resource for field-specific application advice.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     }
   ],
   "relatedVisas": [

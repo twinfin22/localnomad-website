@@ -134,9 +134,36 @@
     "showLess": "收起",
     "visaStatus": "簽證資格",
     "pointsSystem": "積分制度",
+    "totalTimeline": "全程時間",
+    "category": {
+      "visaStatus": "簽證資格要求",
+      "pointsSystem": "積分制度",
+      "income": "收入要求",
+      "investment": "投資要求",
+      "legitimate-funds": "資金證明",
+      "employer-sponsorship": "雇主擔保",
+      "education-masters": "學歷要求",
+      "salary-parity": "薪資要求",
+      "employment": "就業",
+      "education": "學歷",
+      "age": "年齡要求",
+      "nationality": "國籍",
+      "insurance": "保險",
+      "professional-field": "專業領域",
+      "salary-threshold": "薪資標準",
+      "tax-residency": "稅務居住",
+      "coe-required": "在留資格認定證明書",
+      "sponsor-employer": "擔保方/雇主",
+      "language-ability": "語言能力",
+      "work-permit": "工作許可",
+      "psb-registration": "公安局登記",
+      "health-check": "健康檢查"
+    },
     "tabSubItems": "{count}項",
     "tabSubDocs": "{count}份文件",
-    "tabSubSteps": "{count}個步驟"
+    "tabSubSteps": "{count}個步驟",
+    "additionalRequirements": "查看其他{count}項要求",
+    "estimatedTotal": "預計總時間"
   },
   "Auth": {
     "logIn": "登入",
@@ -193,9 +220,19 @@
     "disclaimer": "依據公開要求整理，不構成法律建議。"
   },
   "Nav": {
-    "skipToContent": "\u8df3\u81f3\u4e3b\u8981\u5167\u5bb9",
-    "mainNavigation": "\u4e3b\u8981\u5c0e\u89bd",
-    "blog": "\u90e8\u843d\u683c"
+    "skipToContent": "跳至主要內容",
+    "mainNavigation": "主要導覽",
+    "blog": "部落格",
+    "countryKorea": "韓國",
+    "countryJapan": "日本",
+    "countryTaiwan": "台灣",
+    "countryChina": "中國",
+    "visaInfo": "簽證資訊",
+    "neighborhoods": "社區指南",
+    "guide": "指南",
+    "moreCountries": "切換國家",
+    "openMenu": "開啟選單",
+    "closeMenu": "關閉選單"
   },
   "Blog": {
     "title": "\u90e8\u843d\u683c",

@@ -1,7 +1,8 @@
 {
   "type": "ssw1",
-  "name": "Japan Specified Skilled Worker 1 (特定技能1号) — Complete 2026 Guide",
+  "name": "Japan Specified Skilled Worker 1 (特定技能1号)",
   "shortName": "SSW1",
+  "nameLocal": "特定技能1号",
   "category": "work",
   "description": "Everything about Japan's Specified Skilled Worker Category 1 (SSW1) visa: 16 authorized sectors, skills testing and Japanese language requirements, the Technical Intern Training exemption pathway, employment conditions, and transition to SSW2. The SSW1 visa is Japan's primary labor migration program targeting workforce shortages in construction, caregiving, hospitality, agriculture, fisheries, food processing, manufacturing, and other designated sectors. Applicants must pass a sector-specific skills test and demonstrate at least N4-level Japanese language proficiency, or complete 3 years of Technical Intern Training to qualify without testing. The visa is issued for up to 1 year at a time, renewable up to a cumulative maximum of 5 years. Family members cannot accompany SSW1 holders. After 3 or more years on SSW1, published guidelines indicate a pathway to SSW2 for workers who demonstrate advanced skill levels. Updated for 2026.",
   "tagline": "Skilled labor visa for Japan's high-demand sectors",
@@ -54,7 +55,8 @@
   "duration": {
     "initial": "Up to 1 year (renewable in 6-month or 1-year increments)",
     "extension": "Renewable up to 5 years cumulative total",
-    "maxTotal": "5 years maximum — cannot be extended beyond this limit on SSW1 status"
+    "maxTotal": "5 years maximum — cannot be extended beyond this limit on SSW1 status",
+    "notes": "SSW1 has a strict 5-year cumulative maximum — there are no exceptions or extensions beyond this limit. Plan your SSW1 to SSW2 transition well before reaching this cap."
   },
   "fees": {
     "application": "Skills test: ¥6,000–10,000, JLPT: ¥7,700, COE: ¥0 (free), Visa issuance: ¥3,000 (single-entry) / ¥6,000 (multiple-entry)",
@@ -243,7 +245,8 @@
     }
   ],
   "processingTime": {
-    "typical": "6–8 weeks from test completion to visa issuance",
+    "governmentReview": "6–8 weeks from test completion to visa issuance",
+    "totalEndToEnd": "3-6 months",
     "notes": "Total timeline includes skills test registration and results (2–4 weeks), COE processing (2–4 weeks), and embassy visa processing (5–10 working days). Published guidelines indicate that SSW applications are generally processed faster than professional visa categories. Actual timelines vary by region and embassy."
   },
   "workPermission": {
@@ -252,11 +255,14 @@
       "Work is limited to the designated sector specified in the employment contract",
       "Cannot work for employers other than the contracted employer without formal change of employment procedures",
       "Cannot engage in self-employment or business ownership",
-      "Must notify immigration immediately if employment ends"
+      "Must notify immigration immediately if employment ends",
+      "Working outside your designated sector or for unauthorized employers is a visa violation that can result in deportation and future visa denial",
+      "Changing employers without following the formal change of employment procedure is a violation — always process the change through immigration"
     ],
     "notes": "SSW1 holders are authorized to work full-time in their designated sector only. Changing employers requires a formal change of employment procedure through immigration. Working outside the designated sector or for unauthorized employers constitutes a visa violation."
   },
   "familyAllowed": false,
+  "familyNotes": "Family members (spouse, children) cannot accompany SSW1 holders — this restriction applies for the duration of SSW1 status. Family members would need to obtain their own independent visa status to reside in Japan.",
   "faqs": [
     {
       "question": "What are the 16 designated sectors for SSW1?",
@@ -309,53 +315,95 @@
     "Plan your SSW1 to SSW2 transition early — the 5-year cumulative limit comes up faster than expected",
     "Register with your local municipal office within 14 days of arrival — this is a legal requirement, not optional"
   ],
-  "warnings": [
-    "SSW1 has a strict 5-year cumulative maximum — there are no exceptions or extensions beyond this limit",
-    "Working outside your designated sector or for unauthorized employers is a visa violation that can result in deportation and future visa denial",
-    "Family members (spouse, children) cannot accompany SSW1 holders — this restriction applies for the duration of SSW1 status",
-    "Changing employers without following the formal change of employment procedure is a violation — always process the change through immigration",
-    "If your employment ends, you must notify immigration immediately — failure to report can affect your immigration record"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "tit-pathway-tip",
+      "section": "requirements",
       "tip": "If you are currently in a Technical Intern Training program, completing the full 3-year Phase ii is the fastest and most reliable path to SSW1. You skip both the skills test and the language test entirely, saving months of preparation and test fees.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "jft-basic-tip",
+      "section": "requirements",
       "tip": "The Japan Foundation Test for Basic Japanese (JFT-Basic) is offered much more frequently than the JLPT and is accepted as an equivalent for SSW1 language requirements. If JLPT test dates do not align with your timeline, consider JFT-Basic instead.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "support-org-tip",
+      "section": "general",
       "tip": "If your employer does not have an established support system, ask whether they use a registered support organization (登録支援機関). These organizations handle everything from airport pickup to Japanese language classes, and the quality of support varies widely between organizations.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "sector-test-prep",
+      "section": "requirements",
       "tip": "Sector-specific skills test study materials are available for free on the SSW support website (ssw.go.jp). Many sectors also offer practice tests. The pass rate varies significantly by sector — construction and caregiving tend to have more rigorous testing than food processing or cleaning.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "wage-awareness",
+      "section": "requirements",
       "tip": "Check the prevailing wage for your sector and prefecture before accepting an offer. Published data from Hello Work (ハローワーク) shows average wages by sector and region. Some employers in rural areas offer lower wages that still meet minimums, but may be below urban averages for the same work.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": null,
+    "maxTotalStay": "Indefinite (with continuous renewal)",
+    "requirements": ["Valid employment contract", "Tax payment records", "No immigration violations"],
+    "documents": ["Passport", "Current residence card", "Employment certificate", "Tax certificate"],
+    "applyBeforeDays": 90,
+    "processingTime": "2-4 weeks",
+    "fees": "¥4,000"
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "ISA",
+      "agencyFullName": "Immigration Services Agency of Japan (出入国在留管理庁)",
+      "action": "COE Application",
+      "description": "Employer or representative files Certificate of Eligibility application.",
+      "processingDays": 60,
+      "tips": ["Processing varies by regional bureau — Tokyo is typically slower"]
+    },
+    {
+      "order": 2,
+      "agency": "Embassy",
+      "agencyFullName": "Japanese Embassy/Consulate",
+      "action": "Visa Issuance",
+      "description": "Submit COE with passport and application form at nearest Japanese embassy.",
+      "processingDays": 5,
+      "dependsOn": 1
+    }
+  ],
+  "postArrivalSteps": [
+    {
+      "id": "residence-card",
+      "title": "Residence Card",
+      "deadline": "Issued at airport (Narita, Haneda, Kansai, Chubu)",
+      "description": "Your residence card (在留カード) is issued upon arrival at designated airports. At other ports of entry, visit your local ward office within 14 days.",
+      "tips": ["Always carry your residence card — it is legally required"]
+    },
+    {
+      "id": "ward-office-registration",
+      "title": "Ward Office Registration (住民届)",
+      "deadline": "Within 14 days of finding address",
+      "description": "Register your address at the local ward/city office. Required for health insurance enrollment and bank account opening.",
+      "tips": ["Bring residence card, passport, and proof of address"]
+    },
+    {
+      "id": "employment-end-notification",
+      "title": "Notify Immigration if Employment Ends",
+      "deadline": "Immediately upon employment ending",
+      "description": "If your employment ends for any reason, you must notify immigration immediately. Failure to report can affect your immigration record and future visa applications.",
+      "tips": ["Contact your regional immigration bureau as soon as possible if your employment situation changes"]
     }
   ],
   "relatedVisas": [

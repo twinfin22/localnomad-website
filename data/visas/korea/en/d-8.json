@@ -1,11 +1,12 @@
 {
   "type": "d-8",
-  "name": "Korea Corporate Investment Visa (D-8) — Complete 2026 Guide",
+  "name": "Korea Corporate Investment Visa (D-8)",
+  "nameLocal": "기업투자비자 (D-8)",
   "shortName": "D-8",
   "category": "investment",
   "description": "Everything about Korea's D-8 Corporate Investment Visa: ₩100M minimum investment, FDI registration, company setup, sub-categories (D-8-1, D-8-2, D-8-4, D-8-4S), documents, step-by-step application, and FAQ. Updated for 2026.",
   "tagline": "Start or invest in a Korean business",
-  "keyRequirement": "₩100,000,000 (~$75,000 USD) minimum investment + 10%+ voting shares + active management",
+  "keyRequirement": "₩100,000,000 minimum investment + 10%+ voting shares + active management",
   "targetAudience": [
     "Foreign entrepreneurs starting a business in Korea",
     "Investors establishing or acquiring Korean companies",
@@ -16,7 +17,7 @@
   "eligibility": [
     {
       "id": "minimum-investment",
-      "label": "Minimum investment of ₩100,000,000 (~$75,000 USD)",
+      "label": "Minimum investment of ₩100,000,000",
       "description": "Capital must be transferred from abroad and registered as Foreign Direct Investment (FDI). Funds must remain in the company's capital structure and cannot be immediately withdrawn as salary or dividends.",
       "required": true
     },
@@ -30,13 +31,15 @@
       "id": "active-management",
       "label": "Actively manage the invested business",
       "description": "Published requirements specify that passive investment does not meet D-8 criteria. The visa holder must engage in day-to-day management or operational oversight of the business.",
-      "required": true
+      "required": true,
+      "warnings": ["Passive investment does not meet D-8 requirements — active management is required"]
     },
     {
       "id": "legitimate-funds",
       "label": "Investment funds from legitimate, traceable sources",
       "description": "All investment capital must be personally generated and traceable. Remitter must be the investor, their spouse, or minor child. For investments exceeding ₩300,000,000, parents of the investor or spouse are also permitted.",
-      "required": true
+      "required": true,
+      "warnings": ["Investment funds must be from legitimate, traceable sources — unregulated channels result in rejection"]
     },
     {
       "id": "fdi-registration",
@@ -57,7 +60,7 @@
     "maxTotal": "No fixed maximum — renewable indefinitely with active business operations"
   },
   "fees": {
-    "application": "₩60,000 (~$42 USD)",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "Company registration costs an additional ₩500,000–₩2,000,000 depending on company type. Legal and accounting fees for company setup are additional."
   },
@@ -70,28 +73,28 @@
     {
       "id": "passport",
       "name": "Valid Passport",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "Must be valid for at least 6 months beyond intended stay",
       "required": true
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "Completed visa application form (Form 34)",
       "required": true
     },
     {
       "id": "photo",
       "name": "Passport Photo",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm, recent, white background",
       "required": true
     },
     {
       "id": "fdi-certificate",
       "name": "Foreign Direct Investment Registration Certificate",
-      "nameKorean": "외국인투자신고서",
+      "nameLocal": "외국인투자신고서",
       "description": "Proof that Foreign Direct Investment has been registered at KOTRA or a foreign exchange bank. This must be completed BEFORE capital remittance.",
       "tips": [
         "Register at KOTRA or any foreign exchange bank in Korea",
@@ -102,7 +105,7 @@
     {
       "id": "forex-purchase-certificate",
       "name": "Foreign Currency Purchase Certificate",
-      "nameKorean": "외국환매입증명서",
+      "nameLocal": "외국환매입증명서",
       "description": "Bank-issued certificate confirming the purchase and transfer of foreign currency for investment purposes.",
       "tips": [
         "Use only bank wire transfers under your name",
@@ -113,14 +116,14 @@
     {
       "id": "business-registration",
       "name": "Business Registration Certificate",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "Issued by the National Tax Service upon company registration. Confirms the business is officially registered in Korea.",
       "required": true
     },
     {
       "id": "articles-of-incorporation",
       "name": "Articles of Incorporation",
-      "nameKorean": "정관",
+      "nameLocal": "정관",
       "description": "Notarized company charter document outlining business purpose, share structure, and governance rules.",
       "tips": [
         "Must be notarized by a Korean notary public",
@@ -131,14 +134,14 @@
     {
       "id": "stock-deposit-certificate",
       "name": "Securities Subscription Deposit Certificate",
-      "nameKorean": "주식인수대금납입증명서",
+      "nameLocal": "주식인수대금납입증명서",
       "description": "Bank-issued certificate confirming that share capital has been deposited into the company's corporate bank account.",
       "required": true
     },
     {
       "id": "business-plan",
       "name": "Business Plan",
-      "nameKorean": "사업계획서",
+      "nameLocal": "사업계획서",
       "description": "Detailed business plan including company overview, market analysis, revenue model, 3-5 year financial projections, and job creation plan.",
       "tips": [
         "Include realistic financial projections backed by data",
@@ -150,7 +153,7 @@
     {
       "id": "background-check",
       "name": "Criminal Background Check",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "Police clearance certificate from your home country. May require apostille depending on nationality.",
       "tips": [
         "Must be recent (within 6 months)",
@@ -162,19 +165,20 @@
     {
       "id": "office-lease",
       "name": "Office Lease Agreement",
-      "nameKorean": "사무실임대차계약서",
+      "nameLocal": "사무실임대차계약서",
       "description": "Proof of a physical office address matching the Business Registration Certificate. Immigration officers verify authentic business environments.",
       "tips": [
         "Virtual office addresses are routinely flagged by immigration",
         "A real office lease is practically required",
         "Address must match the Business Registration Certificate"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["Virtual office addresses are routinely flagged — a real office lease is practically required"]
     },
     {
       "id": "health-insurance",
       "name": "Health Insurance Certificate",
-      "nameKorean": "보험증서",
+      "nameLocal": "보험증서",
       "description": "Proof of health insurance valid in Korea. D-8 holders may enroll in National Health Insurance (NHI) as workplace subscribers through their own company.",
       "tips": [
         "Company-enrolled NHI is available once business is operational",
@@ -194,7 +198,8 @@
         "KOTRA offices exist globally — check investkorea.org for locations",
         "Any foreign exchange bank in Korea can also process FDI registration",
         "Have your business plan and investment details ready"
-      ]
+      ],
+      "warnings": ["FDI registration MUST happen before capital remittance — 50% tax penalty for non-compliance"]
     },
     {
       "id": "step-2",
@@ -260,12 +265,14 @@
       "tips": [
         "ARC registration is mandatory within 90 days of arrival",
         "Book an appointment at the immigration office via HiKorea",
-        "The ARC serves as your primary identification in Korea"
+        "The ARC serves as your primary identification in Korea",
+        "Report business closure to immigration within 30 days or risk losing visa status"
       ]
     }
   ],
   "processingTime": {
-    "typical": "4-8 weeks (embassy application)",
+    "governmentReview": "4-8 weeks (embassy application)",
+    "totalEndToEnd": "3-6 months",
     "notes": "Processing times vary by embassy, nationality, and season. Change of status within Korea typically takes 2-4 weeks. Company registration adds 2-3 weeks (up to 4 weeks including corporate bank account). Total timeline from start to visa issuance is approximately 9-17 weeks. Apply at least 2-3 months before your intended start date."
   },
   "workPermission": {
@@ -277,10 +284,20 @@
     ],
     "notes": "The D-8 visa authorizes managing your own invested company only. Employment at other organizations requires a different visa type."
   },
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Alien Registration Card (ARC)",
+      "deadline": "Within 90 days of entry",
+      "description": "Visit your local immigration office to apply for ARC. Required for banking, phone contracts, and most services.",
+      "tips": ["Book appointment via HiKorea (hikorea.go.kr)", "Bring passport, photos, proof of address, and visa-specific documents"]
+    }
+  ],
   "faqs": [
     {
       "question": "What is the minimum investment amount for a D-8 visa?",
-      "answer": "According to published requirements, the minimum investment is ₩100,000,000 (approximately $75,000 USD). The capital must be transferred from abroad through a registered Foreign Direct Investment (FDI) and deposited as share capital. The investment must remain in the company's capital structure — it cannot be immediately withdrawn as salary or dividends."
+      "answer": "According to published requirements, the minimum investment is ₩100,000,000. The capital must be transferred from abroad through a registered Foreign Direct Investment (FDI) and deposited as share capital. The investment must remain in the company's capital structure — it cannot be immediately withdrawn as salary or dividends."
     },
     {
       "question": "What is the D-8-4S Startup Korea Special Visa?",
@@ -312,7 +329,7 @@
     },
     {
       "question": "What is the path from D-8 to permanent residency (F-5)?",
-      "answer": "According to published immigration guidelines, D-8 holders may transition to F-5 (Permanent Resident) status after maintaining a successful business for 3 or more years. The standard investor pathway requires maintaining an investment of ₩500,000,000 or more (or equivalent in foreign currency, approximately $500,000 USD). Additional requirements include full tax compliance, a clean criminal record, and Korean language proficiency (TOPIK Level 2-4)."
+      "answer": "According to published immigration guidelines, D-8 holders may transition to F-5 (Permanent Resident) status after maintaining a successful business for 3 or more years. The standard investor pathway requires maintaining an investment of ₩500,000,000 or more. Additional requirements include full tax compliance, a clean criminal record, and Korean language proficiency (TOPIK Level 2-4)."
     },
     {
       "question": "Can I hire employees on a D-8 visa?",
@@ -337,53 +354,42 @@
     "Apply for visa extension 2-3 months before expiration — demonstrating business activity and tax compliance strengthens renewal",
     "Consider the D-8-4S pathway if you have a strong business idea but lack formal degrees"
   ],
-  "warnings": [
-    "FDI registration MUST happen before capital remittance — 50% tax penalty for non-compliance",
-    "Report business closure to immigration within 30 days or risk losing visa status",
-    "Virtual office addresses are routinely flagged — a real office lease is practically required",
-    "Investment funds must be from legitimate, traceable sources — unregulated channels result in rejection",
-    "Passive investment does not meet D-8 requirements — active management is required"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "fdi-before-transfer",
+      "section": "process",
       "tip": "You must report your foreign direct investment in advance before capital remittance. Skipping this step can result in a 50% tax penalty on the transferred amount. Register at KOTRA or any foreign exchange bank first.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "paper-trail-funds",
+      "section": "documents",
       "tip": "Every won transferred must be traceable. Use only bank wire transfers under your name. Unregulated exchange channels can result in automatic rejection. Keep copies of every receipt and transfer confirmation.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "virtual-office-flagged",
+      "section": "documents",
       "tip": "Immigration officers now check for authentic business environments. A real office lease is practically required. Paper companies with virtual addresses get flagged during review and can delay or derail your application.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "d-8-4s-startup-special",
+      "section": "requirements",
       "tip": "Since November 2024, the Startup Korea Special Visa (D-8-4S) does not require degrees or academic scores. Applicants are evaluated on the idea's feasibility and team capability. Apply through the K-Startup Portal or Global Startup Center.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "company-registration-timeline",
+      "section": "process",
       "tip": "Do not expect to walk in and start a company in a day. Budget 2-3 weeks for registration alone, up to 4 weeks with the corporate bank account. Some banks require multiple visits for corporate account opening.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     }
   ],
   "relatedVisas": [

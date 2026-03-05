@@ -1,7 +1,8 @@
 {
   "type": "engineer-specialist",
-  "name": "Engineer/Specialist in Humanities/International Services Visa — Complete 2026 Guide",
+  "name": "Engineer/Specialist in Humanities/International Services Visa",
   "shortName": "Engineer/Specialist",
+  "nameLocal": "技術・人文知識・国際業務",
   "category": "work",
   "description": "Everything about Japan's most popular white-collar work visa: the Engineer/Specialist in Humanities/International Services (技術・人文知識・国際業務) status of residence. This visa covers IT engineers, researchers, designers, translators, marketing professionals, and specialists in international business. Applicants typically need a bachelor's degree in a field relevant to the job, or approximately 10 years of professional experience. The employer must sponsor the application by obtaining a Certificate of Eligibility (COE) from the Immigration Services Agency. Duration ranges from 1 to 5 years depending on qualifications and employer, and the visa is renewable indefinitely. Work is restricted to the designated employer and job duties specified in the employment contract. According to published guidelines, this is the standard pathway for professionals seeking long-term careers in Japan, and it serves as a stepping stone to Highly Skilled Professional status or permanent residence. Updated for 2026.",
   "tagline": "Japan's primary work visa for white-collar professionals",
@@ -42,7 +43,10 @@
       "id": "job-match",
       "label": "Job duties must align with educational qualifications or professional experience",
       "description": "One of the most common rejection reasons is a mismatch between the applicant's degree field and the actual job duties. For example, a literature degree holder applying for a software engineering position may face scrutiny. Immigration officers evaluate transcripts alongside the job description.",
-      "required": true
+      "required": true,
+      "warnings": [
+        "Educational mismatch between degree and job duties is the top rejection reason — immigration officers verify transcripts against the job description"
+      ]
     },
     {
       "id": "no-criminal-record",
@@ -59,7 +63,7 @@
   "fees": {
     "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
     "extension": "¥4,000 for extension of stay or change of status",
-    "notes": "Fees are subject to change. FY2026 fee increases have been announced — check the Immigration Services Agency website for the current schedule. Some embassies may charge additional local processing fees."
+    "notes": "Fees are subject to change. FY2026 fee increases have been announced — the change of status fee may rise from ¥4,000 to approximately ¥40,000. Check the Immigration Services Agency website for the current schedule. Some embassies may charge additional local processing fees."
   },
   "documents": [
     {
@@ -89,6 +93,9 @@
       "tips": [
         "Download only from the official MOFA website or your local Japanese embassy",
         "Fill out all fields completely — incomplete forms are returned without processing"
+      ],
+      "warnings": [
+        "Outdated visa application forms are rejected immediately — always download the current version from the official MOFA website"
       ],
       "required": true
     },
@@ -226,7 +233,8 @@
     }
   ],
   "processingTime": {
-    "typical": "3-5 months total (COE: 2-3 months + document preparation: 1-2 months + visa: 5-10 working days)",
+    "governmentReview": "3-5 months total (COE: 2-3 months + document preparation: 1-2 months + visa: 5-10 working days)",
+    "totalEndToEnd": "3-5 months",
     "notes": "Processing times vary by immigration bureau workload and embassy location. Published guidelines recommend starting the COE application at least 4-6 months before the intended start date. Incomplete applications or document requests can extend the timeline significantly."
   },
   "workPermission": {
@@ -235,7 +243,8 @@
       "Work only for the designated employer specified in the employment contract",
       "Job duties must match those approved in the visa application",
       "Cannot engage in self-employment, business ownership, or freelance work",
-      "Part-time work at other employers requires separate 'Permission to Engage in Activities Outside Status of Residence'"
+      "Part-time work at other employers requires separate 'Permission to Engage in Activities Outside Status of Residence'",
+      "Working outside your designated employer or job duties without permission is a violation that can result in visa revocation and deportation"
     ],
     "notes": "Published guidelines strictly limit work to the designated employer and approved job duties. Changing employers requires notifying immigration within 14 days and may require a new COE application if the job category changes significantly."
   },
@@ -280,6 +289,10 @@
     {
       "question": "What are the upcoming FY2026 fee increases?",
       "answer": "Published guidelines indicate significant fee increases planned for FY2026. The change of status fee is expected to rise to approximately ¥40,000 (from the current ¥4,000), and permanent residency application fees may increase to approximately ¥100,000. These changes are part of broader immigration fee restructuring. Check the Immigration Services Agency website for confirmed fee schedules before applying."
+    },
+    {
+      "question": "What happens if my COE application is denied?",
+      "answer": "If the COE application is denied, published guidelines indicate you cannot reapply for the same visa type within 6 months. Immigration does not disclose specific rejection reasons (under the Administrative Procedure Act). Common reasons include: educational mismatch with job duties, employer financial instability, vague job descriptions, or documentation issues. The employer can request a reason for denial in writing, though responses are typically brief."
     }
   ],
   "tips": [
@@ -292,53 +305,88 @@
     "Check if your country is eligible for eVISA (launched December 2025) — it can save significant time on embassy visits",
     "If changing employers, notify immigration within 14 days — unauthorized employer changes can jeopardize your visa status"
   ],
-  "warnings": [
-    "Educational mismatch between degree and job duties is the top rejection reason — immigration officers verify transcripts against the job description",
-    "Working outside your designated employer or job duties without permission is a violation that can result in visa revocation and deportation",
-    "Outdated visa application forms are rejected immediately — always download the current version from the official MOFA website",
-    "If the COE application is denied, published guidelines indicate you cannot reapply for the same visa type within 6 months",
-    "Significant fee increases are expected in FY2026 — the change of status fee may rise from ¥4,000 to approximately ¥40,000"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "degree-match-strategy",
+      "section": "requirements",
       "tip": "If your degree is not an obvious match, ask your employer to write a detailed 'reason for hiring' statement (採用理由書) explaining how your academic background is relevant. Some successful applicants have bridged gaps by highlighting specific courses or thesis work that align with the job duties.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "coe-timing",
+      "section": "process",
       "tip": "COE processing at the Tokyo Regional Immigration Bureau can take up to 3 months during peak periods (March-April and September-October, coinciding with Japanese fiscal and academic year transitions). Apply during off-peak months if possible.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "hsp-points-check",
+      "section": "requirements",
       "tip": "Even if you are on an Engineer/Specialist visa, check your HSP points score regularly. Published guidelines indicate that Engineer/Specialist holders can apply for permanent residence under HSP criteria (80+ points = 1-year PR track) without first switching to HSP visa status. Many engineers accumulate enough points within a few years without realizing it.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "employer-change-notification",
+      "section": "process",
       "tip": "When changing employers, file the notification with immigration as soon as possible — ideally on day 1 at the new company. The 14-day window is strict, and late notification can be flagged during your next renewal. Keep a copy of the notification receipt as proof.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "evisa-advantage",
+      "section": "process",
       "tip": "If your country is eligible for eVISA, consider using it even if an embassy visit is convenient. The electronic system tends to have faster processing times and provides digital confirmation, which reduces the risk of document loss in transit.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": null,
+    "maxTotalStay": "Indefinite (with continuous renewal)",
+    "requirements": ["Valid employment contract", "Tax payment records", "No immigration violations"],
+    "documents": ["Passport", "Current residence card", "Employment certificate", "Tax certificate"],
+    "applyBeforeDays": 90,
+    "processingTime": "2-4 weeks",
+    "fees": "¥4,000"
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "ISA",
+      "agencyFullName": "Immigration Services Agency of Japan (出入国在留管理庁)",
+      "action": "COE Application",
+      "description": "Employer or representative files Certificate of Eligibility application.",
+      "processingDays": 60,
+      "tips": ["Processing varies by regional bureau — Tokyo is typically slower"]
+    },
+    {
+      "order": 2,
+      "agency": "Embassy",
+      "agencyFullName": "Japanese Embassy/Consulate",
+      "action": "Visa Issuance",
+      "description": "Submit COE with passport and application form at nearest Japanese embassy.",
+      "processingDays": 5,
+      "dependsOn": 1
+    }
+  ],
+  "postArrivalSteps": [
+    {
+      "id": "residence-card",
+      "title": "Residence Card",
+      "deadline": "Issued at airport (Narita, Haneda, Kansai, Chubu)",
+      "description": "Your residence card (在留カード) is issued upon arrival at designated airports. At other ports of entry, visit your local ward office within 14 days.",
+      "tips": ["Always carry your residence card — it is legally required"]
+    },
+    {
+      "id": "ward-office-registration",
+      "title": "Ward Office Registration (住民届)",
+      "deadline": "Within 14 days of finding address",
+      "description": "Register your address at the local ward/city office. Required for health insurance enrollment and bank account opening.",
+      "tips": ["Bring residence card, passport, and proof of address"]
     }
   ],
   "relatedVisas": [

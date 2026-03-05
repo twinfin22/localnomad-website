@@ -36,6 +36,7 @@ import type { Visa } from '@/lib/types/visa';
 interface VisaTabLayoutProps {
   visa: Visa;
   country: string;
+  relatedVisaSummaries?: { type: string; shortName: string; tagline: string }[];
 }
 
 const TAB_IDS = {
@@ -52,11 +53,10 @@ const SECTION_IDS = {
   SOURCES_RELATED: 'sources-related',
 } as const;
 
-export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
+export function VisaTabLayout({ visa, country, relatedVisaSummaries }: VisaTabLayoutProps) {
   const t = useTranslations('VisaDetail');
   const tabsRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<string>(TAB_IDS.REQUIREMENTS);
-  const [hasVisitedDocs, setHasVisitedDocs] = useState(false);
   const { completed: docsCompleted, total: docsTotal } = useDocumentProgress(
     country,
     visa.type,
@@ -81,14 +81,25 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
   );
   const [openAccordions, setOpenAccordions] = useState<string[]>([]);
 
+  const requirementsTips = useMemo(
+    () => visa.communityTips?.filter(t => t.section === 'requirements') ?? [],
+    [visa.communityTips]
+  );
+  const processTips = useMemo(
+    () => visa.communityTips?.filter(t => t.section === 'process') ?? [],
+    [visa.communityTips]
+  );
+  const generalTips = useMemo(
+    () => visa.communityTips?.filter(t => !t.section || t.section === 'general') ?? [],
+    [visa.communityTips]
+  );
+
   const hasFaqs = visa.faqs.length > 0;
-  const hasTips =
-    visa.communityTips !== undefined && visa.communityTips.length > 0;
+  const hasTips = generalTips.length > 0;
 
   // Update URL hash when tab changes
   const handleTabChange = useCallback((value: string) => {
     setActiveTab(value);
-    if (value === 'documents') setHasVisitedDocs(true);
     window.history.replaceState(null, '', `#${value}`);
   }, []);
 
@@ -235,7 +246,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
         className="mt-6 scroll-mt-28"
       >
         <Tabs value={activeTab} onValueChange={handleTabChange}>
-          <TabsList className="h-auto w-full overflow-x-auto">
+          <TabsList className="sticky top-[85px] z-[8] h-auto w-full overflow-x-auto bg-white md:static">
             <TabsTrigger
               value={TAB_IDS.REQUIREMENTS}
               className="flex-1 flex-col gap-0.5 py-2"
@@ -264,9 +275,6 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
                     {docsCompleted}/{docsTotal}
                   </span>
                 ))}
-              {!hasVisitedDocs && (
-                <span className="absolute right-1 top-0.5 h-2 w-2 animate-pulse rounded-full bg-primary" />
-              )}
             </TabsTrigger>
             <TabsTrigger
               value={TAB_IDS.PROCESS}
@@ -283,13 +291,13 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
           </TabsList>
 
           <TabsContent value={TAB_IDS.REQUIREMENTS} className="mt-4 animate-fade-in">
-            <RequirementsTab visa={visa} />
+            <RequirementsTab visa={visa} communityTips={requirementsTips} />
           </TabsContent>
           <TabsContent value={TAB_IDS.DOCUMENTS} className="mt-4 animate-fade-in">
             <DocumentsTab visa={visa} country={country} />
           </TabsContent>
           <TabsContent value={TAB_IDS.PROCESS} className="mt-4 animate-fade-in">
-            <ProcessTab visa={visa} />
+            <ProcessTab visa={visa} communityTips={processTips} />
           </TabsContent>
         </Tabs>
       </div>
@@ -337,7 +345,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
               <div className="pl-7">
                 <TipsCommunity
                   tips={visa.tips}
-                  communityTips={visa.communityTips}
+                  communityTips={generalTips}
                 />
               </div>
             </AccordionContent>
@@ -360,6 +368,7 @@ export function VisaTabLayout({ visa, country }: VisaTabLayoutProps) {
               <SourcesRelated
                 officialLinks={visa.officialLinks}
                 relatedVisas={visa.relatedVisas}
+                relatedVisaSummaries={relatedVisaSummaries}
                 lastUpdated={visa.lastUpdated}
                 country={country}
               />

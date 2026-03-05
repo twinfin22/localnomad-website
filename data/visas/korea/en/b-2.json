@@ -1,6 +1,7 @@
 {
   "type": "b-2",
-  "name": "Korea B-2 Tourist Visa — Complete 2026 Guide",
+  "name": "Korea B-2 Tourist Visa",
+  "nameLocal": "관광비자 (B-2)",
   "shortName": "B-2",
   "category": "tourist",
   "description": "Everything about Korea's B-2 Tourist Visa: visa-free entry for 106+ countries, application process for non-exempt nationalities, documents, and FAQ. Updated for 2026.",
@@ -17,7 +18,8 @@
       "id": "visa-exempt",
       "label": "Visa-exempt entry available for 106+ countries",
       "description": "Citizens of visa-exempt countries may enter Korea for up to 90 days without a visa. Check the Korea Immigration Service website for the current list of visa-exempt countries.",
-      "required": false
+      "required": false,
+      "tips": ["Some nationalities receive less than 90 days visa-free — verify your specific allowance"]
     },
     {
       "id": "visa-application",
@@ -33,6 +35,7 @@
     },
     {
       "id": "no-work",
+      "sentiment": "negative",
       "label": "No employment or paid work in Korea",
       "description": "B-2 holders are not authorized to engage in any employment, freelancing, or paid activities in Korea.",
       "required": true
@@ -50,8 +53,8 @@
     "maxTotal": "90 days per entry (visa-free); 30-90 days per visa grant"
   },
   "fees": {
-    "application": "Varies by nationality — typically $40-90 USD (single entry)",
-    "extension": "₩60,000 (~$42 USD) for extension at immigration office",
+    "application": "Varies by nationality — typically ₩50,000-120,000 (single entry)",
+    "extension": "₩60,000 for extension at immigration office",
     "notes": "Visa-free entry has no application fee. Visa fees vary by nationality and number of entries (single, double, multiple). Check your nearest Korean embassy for exact fees."
   },
   "documents": [
@@ -60,53 +63,53 @@
       "name": "Valid Passport",
       "description": "Must be valid for the duration of your stay with at least 2 blank pages. Some airlines may require 6+ months validity — check with your carrier.",
       "required": true,
-      "nameKorean": "여권"
+      "nameLocal": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed visa application form (only for non-exempt nationalities applying at embassy)",
       "required": true,
-      "nameKorean": "사증발급신청서"
+      "nameLocal": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, recent (within 6 months), white background",
       "required": true,
-      "nameKorean": "여권사진"
+      "nameLocal": "여권사진"
     },
     {
       "id": "return-ticket",
       "name": "Return or Onward Flight Ticket",
       "description": "Confirmed booking showing departure from Korea within the permitted stay period",
       "required": true,
-      "nameKorean": "왕복항공권"
+      "nameLocal": "왕복항공권"
     },
     {
       "id": "accommodation",
       "name": "Proof of Accommodation",
       "description": "Hotel booking confirmation, Airbnb reservation, or invitation letter from a host in Korea",
       "required": true,
-      "nameKorean": "숙소 예약 확인서"
+      "nameLocal": "숙소 예약 확인서"
     },
     {
       "id": "financial-proof",
       "name": "Proof of Financial Means",
-      "description": "Bank statement or credit card statement showing sufficient funds for the duration of stay (no fixed minimum, but ~$1,500-3,000 recommended for a 90-day stay)",
+      "description": "Bank statement or credit card statement showing sufficient funds for the duration of stay (no fixed minimum, but ₩2,000,000-4,000,000 recommended for a 90-day stay)",
       "tips": [
         "Recent bank statement (within 1 month)",
         "Show enough funds to cover accommodation and daily expenses"
       ],
       "required": true,
-      "nameKorean": "재정증명서"
+      "nameLocal": "재정증명서"
     },
     {
       "id": "itinerary",
       "name": "Travel Itinerary",
       "description": "Brief description of travel plans in Korea (some embassies require this)",
       "required": false,
-      "nameKorean": "여행일정서"
+      "nameLocal": "여행일정서"
     }
   ],
   "applicationSteps": [
@@ -149,7 +152,8 @@
       "description": "Upon arrival, present your passport (and visa if applicable) at immigration. Immigration officers may ask about the purpose and duration of your visit. Have your return ticket and accommodation proof accessible.",
       "tips": [
         "Fill out the arrival card on the plane",
-        "Have accommodation address written in Korean if possible"
+        "Have accommodation address written in Korean if possible",
+        "Immigration officers may deny entry if they suspect you intend to work or overstay — be prepared to show return tickets and financial proof"
       ]
     },
     {
@@ -165,7 +169,8 @@
     }
   ],
   "processingTime": {
-    "typical": "Visa-free: instant at port of entry; Visa application: 1-2 weeks",
+    "governmentReview": "Visa-free: instant at port of entry; Visa application: 1-2 weeks",
+    "totalEndToEnd": "1-3 weeks",
     "notes": "Processing times for visa applications vary by embassy, nationality, and season. During peak travel seasons, processing may take longer. Visa-free entry is processed at the airport or port upon arrival."
   },
   "workPermission": {
@@ -174,9 +179,17 @@
       "No employment of any kind in Korea",
       "No freelancing for Korean clients",
       "No paid activities or business operations in Korea",
-      "Remote work for foreign employers is technically a gray area — B-2 does not explicitly authorize it"
+      "Remote work for foreign employers is technically a gray area — B-2 does not explicitly authorize it",
+      "No employment of any kind is permitted on B-2 status — violations can lead to deportation and re-entry bans"
     ],
     "notes": "The B-2 visa is strictly for tourism, transit, and short-term business activities (meetings, conferences). It does not authorize any form of employment. Digital nomads working remotely for foreign companies on a B-2 operate in a legal gray area. For authorized remote work, consider the F-1-D Digital Nomad Visa."
+  },
+  "familyAllowed": false,
+  "renewal": {
+    "eligible": false,
+    "requirements": [],
+    "documents": [],
+    "applyBeforeDays": 0
   },
   "faqs": [
     {
@@ -189,7 +202,7 @@
     },
     {
       "question": "Can I switch from B-2 to F-1-D (Digital Nomad Visa) while in Korea?",
-      "answer": "According to published immigration procedures, a change of status from B-2 to F-1-D may be possible at the local immigration office, provided you meet all F-1-D requirements (income ~$70,000+, remote employment, health insurance). However, not all status changes are guaranteed — check with the immigration office or HiKorea portal for current procedures."
+      "answer": "According to published immigration procedures, a change of status from B-2 to F-1-D may be possible at the local immigration office, provided you meet all F-1-D requirements (income ₩88,000,000+, remote employment, health insurance). However, not all status changes are guaranteed — check with the immigration office or HiKorea portal for current procedures."
     },
     {
       "question": "What happens if I overstay my B-2 visa?",
@@ -217,14 +230,12 @@
     "If scouting Korea for a longer stay, use the B-2 period to research neighborhoods and coworking spaces"
   ],
   "warnings": [
-    "No employment of any kind is permitted on B-2 status — violations can lead to deportation and re-entry bans",
-    "Overstaying even by 1 day is recorded and may affect future visa applications to Korea and other countries",
-    "Some nationalities receive less than 90 days visa-free — verify your specific allowance",
-    "Immigration officers may deny entry if they suspect you intend to work or overstay — be prepared to show return tickets and financial proof"
+    "Overstaying even by 1 day is recorded and may affect future visa applications to Korea and other countries"
   ],
   "communityTips": [
     {
       "id": "visa-free-check",
+      "section": "requirements",
       "tip": "Always double-check the visa-free period for your nationality. I'm from Brazil and only got 90 days, but my friend from the Philippines only got 59 days under a special arrangement.",
       "source": "reddit",
       "verified": true,
@@ -233,6 +244,7 @@
     },
     {
       "id": "immigration-questions",
+      "section": "process",
       "tip": "Had a smooth entry at Incheon. Officer asked where I was staying and how long. Had my hotel booking on my phone and was through in 2 minutes.",
       "source": "community",
       "verified": true,
@@ -241,6 +253,7 @@
     },
     {
       "id": "b2-to-f1d-switch",
+      "section": "process",
       "tip": "Successfully changed status from B-2 to F-1-D at Seoul Immigration Office (Mokdong). Took about 3 weeks. Make sure you have all F-1-D documents ready before applying.",
       "source": "reddit",
       "verified": true,
@@ -249,6 +262,7 @@
     },
     {
       "id": "k-eta-reminder",
+      "section": "process",
       "tip": "If you're from a visa-exempt country, you may need a K-ETA (Korea Electronic Travel Authorization) before boarding your flight. Check if your country requires it — some nationalities are exempt from K-ETA too.",
       "source": "discord",
       "verified": true,
@@ -265,7 +279,7 @@
     {
       "type": "f-1-d",
       "name": "Digital Nomad Visa",
-      "requirements": "Remote employment with a foreign company and annual income of ~$70,000+ USD (GNI x 2). Must have health insurance covering Korea.",
+      "requirements": "Remote employment with a foreign company and annual income of ₩88,000,000+ (GNI × 2). Must have health insurance covering Korea.",
       "timeline": "1-3 weeks processing at immigration office",
       "documents": [
         "Proof of remote employment",

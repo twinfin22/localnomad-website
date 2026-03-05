@@ -30,11 +30,13 @@ export default function NeighborhoodMap({
 
   const createCityMarker = useCallback(
     (city: City, isActive: boolean) => {
+      const count = city.neighborhoods.length;
+
       const el = document.createElement('div');
       el.className = 'neighborhood-city-marker';
       Object.assign(el.style, {
-        width: '28px',
-        height: '28px',
+        width: '36px',
+        height: '36px',
         borderRadius: '50%',
         border: `3px solid ${BRAND_COLOR}`,
         backgroundColor: isActive ? BRAND_COLOR : 'white',
@@ -44,7 +46,19 @@ export default function NeighborhoodMap({
         alignItems: 'center',
         justifyContent: 'center',
         boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+        position: 'relative',
       });
+
+      // Count number inside the circle
+      const countEl = document.createElement('span');
+      countEl.textContent = String(count);
+      Object.assign(countEl.style, {
+        fontSize: '13px',
+        fontWeight: '700',
+        color: isActive ? 'white' : BRAND_COLOR,
+        lineHeight: '1',
+      });
+      el.appendChild(countEl);
 
       if (isActive) {
         el.style.transform = 'scale(1.15)';
@@ -54,7 +68,7 @@ export default function NeighborhoodMap({
       label.textContent = city.name;
       Object.assign(label.style, {
         position: 'absolute',
-        top: '32px',
+        top: '40px',
         left: '50%',
         transform: 'translateX(-50%)',
         whiteSpace: 'nowrap',
@@ -166,19 +180,22 @@ export default function NeighborhoodMap({
 
     clearMarkers();
 
-    // Always show city markers
-    cities.forEach((city) => {
-      const isActive = city.name === selectedCity;
-      const marker = createCityMarker(city, isActive);
-      marker.addTo(map);
-      markersRef.current.push(marker);
-    });
-
-    // Show neighborhood markers when a city is selected
     if (selectedCity) {
-      const city = cities.find((c) => c.name === selectedCity);
-      if (city) {
-        city.neighborhoods.forEach((n) => {
+      const activeCity = cities.find((c) => c.name === selectedCity);
+
+      // Show dimmed cluster markers for non-selected cities
+      cities.forEach((city) => {
+        if (city.name === selectedCity) return;
+        const marker = createCityMarker(city, false);
+        const el = marker.getElement();
+        el.style.opacity = '0.4';
+        marker.addTo(map);
+        markersRef.current.push(marker);
+      });
+
+      // Show individual neighborhood dots for the selected city
+      if (activeCity) {
+        activeCity.neighborhoods.forEach((n) => {
           const marker = createNeighborhoodMarker(n.name, n.coordinates);
           marker.addTo(map);
           markersRef.current.push(marker);
@@ -186,13 +203,20 @@ export default function NeighborhoodMap({
 
         // Zoom to the selected city
         const bounds = new mapboxgl.LngLatBounds();
-        city.neighborhoods.forEach((n) => {
+        activeCity.neighborhoods.forEach((n) => {
           bounds.extend([n.coordinates[1], n.coordinates[0]]);
         });
-        bounds.extend([city.coordinates[1], city.coordinates[0]]);
+        bounds.extend([activeCity.coordinates[1], activeCity.coordinates[0]]);
         map.fitBounds(bounds, { padding: 60, maxZoom: 13, duration: 800 });
       }
     } else {
+      // Show cluster markers for all cities
+      cities.forEach((city) => {
+        const marker = createCityMarker(city, false);
+        marker.addTo(map);
+        markersRef.current.push(marker);
+      });
+
       // Zoom out to show all cities
       const bounds = new mapboxgl.LngLatBounds();
       cities.forEach((city) => {

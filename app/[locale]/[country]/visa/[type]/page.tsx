@@ -8,7 +8,6 @@ import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country } from '@/lib/types/visa';
 import {
   VisaHero,
-  VisaAccordionLayout,
   VisaTabLayout,
   VisaDisclaimer,
 } from '@/components/visa';
@@ -120,6 +119,12 @@ export default async function VisaDetailPage({ params }: Props) {
     relatedVisas: visa.relatedVisas?.filter((v) => availableTypes.includes(v)),
   };
 
+  // Build related visa summaries for tagline display
+  const relatedVisaSummaries = filteredVisa.relatedVisas
+    ?.map((type) => availableVisas.find((v) => v.type === type))
+    .filter(Boolean)
+    .map((v) => ({ type: v!.type, shortName: v!.shortName, tagline: v!.tagline }));
+
   // Schema.org JSON-LD: FAQPage
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -201,30 +206,6 @@ export default async function VisaDetailPage({ params }: Props) {
     { label: filteredVisa.shortName },
   ];
 
-  // F-2 uses the new 3-layer tab layout; all other visas use the accordion layout.
-  // Separate return paths preserve identical React tree structure for non-F-2 pages,
-  // preventing Radix useId() hydration mismatches.
-  if (filteredVisa.type === 'f-2') {
-    return (
-      <>
-        {jsonLdScripts}
-        <main id="main-content" className="min-h-svh bg-neutral-50">
-          <Breadcrumb variant="band" items={breadcrumbItems} />
-          <div className="md:pl-[220px]">
-            <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
-              <VisaHero visa={filteredVisa} hideSummaryCards />
-              <VisaTabLayout
-                visa={filteredVisa}
-                country={country}
-              />
-              <VisaDisclaimer country={country} />
-            </div>
-          </div>
-        </main>
-      </>
-    );
-  }
-
   return (
     <>
       {jsonLdScripts}
@@ -232,10 +213,11 @@ export default async function VisaDetailPage({ params }: Props) {
         <Breadcrumb variant="band" items={breadcrumbItems} />
         <div className="md:pl-[220px]">
           <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
-            <VisaHero visa={filteredVisa} />
-            <VisaAccordionLayout
+            <VisaHero visa={filteredVisa} hideSummaryCards />
+            <VisaTabLayout
               visa={filteredVisa}
               country={country}
+              relatedVisaSummaries={relatedVisaSummaries}
             />
             <VisaDisclaimer country={country} />
           </div>

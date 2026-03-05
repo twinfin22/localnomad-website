@@ -1,7 +1,8 @@
 {
   "type": "hsw",
-  "name": "Highly Skilled Professional (HSP) Visa — Complete 2026 Guide",
+  "name": "Highly Skilled Professional (HSP) Visa",
   "shortName": "HSW / HSP",
+  "nameLocal": "高度専門職",
   "category": "work",
   "description": "Everything about Japan's Highly Skilled Professional (高度専門職) visa: the points-based fast-track to permanent residence. This status of residence recognizes top-tier talent across three activity categories — Advanced Academic Research, Advanced Specialized/Technical, and Advanced Business Management. Applicants must accumulate at least 70 points based on academic background, professional career, annual salary, age, research achievements, and other contributions. The HSP visa offers Japan's most accelerated permanent residence pathway: 80+ points grants eligibility after just 1 year, and 70-79 points after 3 years — compared to the standard 10-year requirement. Additional benefits include up to 5 years initial stay, flexible work authorization, permission to engage in multiple activities, and dependent family inclusion. Annual income must be at least ¥3,000,000 for the specialized/technical and business management categories. Published guidelines indicate that even Engineer/Specialist visa holders can apply for permanent residence under HSP criteria without first switching to HSP status. Updated for 2026.",
   "tagline": "Points-based fast-track to permanent residence for top talent",
@@ -24,7 +25,10 @@
       "id": "income-floor",
       "label": "Annual income of at least ¥3,000,000 for categories (i)(b) and (i)(c)",
       "description": "For the Advanced Specialized/Technical and Advanced Business Management categories, published guidelines impose a ¥3,000,000 annual income floor. Even if total points reach 70+, applicants below this income threshold are not recognized as Highly Skilled Professionals. The Advanced Academic Research category (i)(a) does not have this income floor.",
-      "required": true
+      "required": true,
+      "warnings": [
+        "The ¥3,000,000 annual income floor for categories (i)(b) and (i)(c) is absolute — below this threshold, HSP status is not recognized regardless of total points"
+      ]
     },
     {
       "id": "activity-category",
@@ -53,7 +57,7 @@
   "fees": {
     "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
     "extension": "¥4,000 for extension of stay or change of status",
-    "notes": "Fees are subject to change. FY2026 fee increases have been announced — the change of status fee may rise to approximately ¥40,000. Check the Immigration Services Agency website for the current schedule."
+    "notes": "Fees are subject to change. Significant fee increases are expected in FY2026 — the change of status fee may rise to approximately ¥40,000, and the permanent residency application fee may rise to approximately ¥100,000. Check the Immigration Services Agency website for the current schedule."
   },
   "incomeRequirement": {
     "amount": "3,000,000",
@@ -161,6 +165,9 @@
         "Use the official online calculator at the ISA website for accuracy",
         "Be conservative in your self-assessment — immigration officers verify every claimed point",
         "If you are close to 70 points, consider whether a salary increase, additional certification, or Japanese language study could push you over the threshold"
+      ],
+      "warnings": [
+        "Immigration officers verify every point claimed on the worksheet — overclaiming without supporting documents leads to rejection and potential credibility issues in future applications"
       ]
     },
     {
@@ -208,7 +215,8 @@
     }
   ],
   "processingTime": {
-    "typical": "3-5 months total (COE: 2-3 months + visa processing: 5-10 working days) for new applications; 2-4 weeks for status change within Japan",
+    "governmentReview": "3-5 months total (COE: 2-3 months + visa processing: 5-10 working days) for new applications; 2-4 weeks for status change within Japan",
+    "totalEndToEnd": "2-4 months",
     "notes": "HSP applications may receive higher processing priority compared to standard work visas, according to published guidelines. However, the points verification process can add time if documentation is incomplete. Immigration officers verify each claimed point against supporting documents."
   },
   "workPermission": {
@@ -256,6 +264,14 @@
     {
       "question": "How do the April 2027 permanent residence rule changes affect HSP holders?",
       "answer": "Starting April 2027, published guidelines require permanent residence applicants to hold the longest available visa period under their current status — typically 5 years. For HSP holders, the 5-year initial stay is already the longest period available, so this change may be less impactful. However, applicants who previously received shorter HSP periods (1 or 3 years) may need to renew to a 5-year period first. Additionally, tax and insurance payment history is now scrutinized more strictly — even past unpaid amounts that have been settled can negatively affect the application."
+    },
+    {
+      "question": "What happens if my points drop below 70 during the permanent residence eligibility period?",
+      "answer": "If your points drop below 70 during the permanent residence eligibility period (due to salary decrease, aging, job change, etc.), the clock may reset. Published guidelines indicate that you must maintain the required points throughout the qualifying period. It is critical to monitor your points score annually and consider whether controllable categories (language certifications, salary negotiation) can offset any declines."
+    },
+    {
+      "question": "What are the upcoming changes to permanent residence requirements from April 2027?",
+      "answer": "From April 2027, permanent residence applicants must hold the longest available visa period (typically 5 years) and demonstrate perfect tax and insurance payment history. Even past unpaid amounts that have been settled can negatively affect the application. For HSP holders, the 5-year initial stay is already the longest period available, but applicants with shorter periods may need to renew first."
     }
   ],
   "tips": [
@@ -268,53 +284,88 @@
     "The ¥3,000,000 income floor for categories (i)(b) and (i)(c) is a hard cutoff — ensure your documented income clears this threshold",
     "Consider the timing of your PR application carefully: from April 2027, you must hold the longest available visa period before applying"
   ],
-  "warnings": [
-    "The ¥3,000,000 annual income floor for categories (i)(b) and (i)(c) is absolute — below this threshold, HSP status is not recognized regardless of total points",
-    "Immigration officers verify every point claimed on the worksheet — overclaiming without supporting documents leads to rejection and potential credibility issues in future applications",
-    "If your points drop below 70 during the permanent residence eligibility period, the clock may reset — monitor your score continuously",
-    "Significant fee increases are expected in FY2026 — the permanent residency application fee may rise to approximately ¥100,000",
-    "From April 2027, PR applicants must hold the longest available visa period (typically 5 years) and demonstrate perfect tax and insurance payment history"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "engineer-to-hsp-shortcut",
+      "section": "requirements",
       "tip": "Many Engineer/Specialist visa holders do not realize they can apply for permanent residence using HSP points criteria without first switching to HSP visa. If you have a master's degree, 5+ years experience, and earn ¥5,000,000+, you may already have enough points. Check the calculator before assuming you need to change your visa status.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "salary-negotiation-for-points",
+      "section": "requirements",
       "tip": "Income is a major points factor. If you are close to a higher salary bracket on the points worksheet, negotiating a salary increase of even ¥500,000 can push you into the next tier. Some applicants time their HSP application to coincide with annual salary reviews or job changes that come with higher compensation.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "jlpt-as-point-booster",
+      "section": "requirements",
       "tip": "JLPT N1 or N2 certification is one of the most accessible ways to boost your points score. Unlike salary or degree level, which may take years to change, Japanese language proficiency can be improved through focused study. The JLPT test is offered twice a year (July and December) worldwide.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "spouse-work-benefit",
+      "section": "general",
       "tip": "One often-overlooked benefit of HSP status: your spouse on a Dependent visa gains broader work permissions than under a standard work visa. This can significantly impact household income and quality of life in Japan.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "tax-insurance-warning",
+      "section": "process",
       "tip": "If you are planning to apply for permanent residence through the HSP fast-track, start paying all taxes and insurance premiums on time immediately. The February 2026 rule change means that even past unpaid amounts — even if subsequently paid — are now a negative factor. A perfect payment history is effectively mandatory.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": null,
+    "maxTotalStay": "Indefinite (with continuous renewal)",
+    "requirements": ["Valid employment contract", "Tax payment records", "No immigration violations"],
+    "documents": ["Passport", "Current residence card", "Employment certificate", "Tax certificate"],
+    "applyBeforeDays": 90,
+    "processingTime": "2-4 weeks",
+    "fees": "¥4,000"
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "ISA",
+      "agencyFullName": "Immigration Services Agency of Japan (出入国在留管理庁)",
+      "action": "COE Application",
+      "description": "Employer or representative files Certificate of Eligibility application.",
+      "processingDays": 60,
+      "tips": ["Processing varies by regional bureau — Tokyo is typically slower"]
+    },
+    {
+      "order": 2,
+      "agency": "Embassy",
+      "agencyFullName": "Japanese Embassy/Consulate",
+      "action": "Visa Issuance",
+      "description": "Submit COE with passport and application form at nearest Japanese embassy.",
+      "processingDays": 5,
+      "dependsOn": 1
+    }
+  ],
+  "postArrivalSteps": [
+    {
+      "id": "residence-card",
+      "title": "Residence Card",
+      "deadline": "Issued at airport (Narita, Haneda, Kansai, Chubu)",
+      "description": "Your residence card (在留カード) is issued upon arrival at designated airports. At other ports of entry, visit your local ward office within 14 days.",
+      "tips": ["Always carry your residence card — it is legally required"]
+    },
+    {
+      "id": "ward-office-registration",
+      "title": "Ward Office Registration (住民届)",
+      "deadline": "Within 14 days of finding address",
+      "description": "Register your address at the local ward/city office. Required for health insurance enrollment and bank account opening.",
+      "tips": ["Bring residence card, passport, and proof of address"]
     }
   ],
   "relatedVisas": [

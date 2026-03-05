@@ -1,6 +1,7 @@
 {
   "type": "dnv",
-  "name": "Taiwan Digital Nomad Visa (DNV) — Complete 2026 Guide",
+  "name": "Taiwan Digital Nomad Visa (DNV)",
+  "nameLocal": "數位遊牧簽證",
   "shortName": "DNV",
   "category": "digital-nomad",
   "description": "Everything about Taiwan's Digital Nomad Visa: age-tiered income requirements, 2-year maximum stay, remote work rules, insurance, and step-by-step application. Updated for 2026.",
@@ -27,6 +28,7 @@
     },
     {
       "id": "no-taiwan-work",
+      "sentiment": "negative",
       "label": "Must NOT work for any Taiwan-based employer or company",
       "description": "This is the most critical legal restriction. Violation may result in visa revocation, fines, and deportation. To work for a Taiwan employer, a separate Work Permit or Gold Card is required.",
       "required": true
@@ -47,7 +49,8 @@
       "id": "health-insurance",
       "label": "Comprehensive international health and hospitalization insurance",
       "description": "Must cover the entire planned stay in Taiwan. DNV holders are excluded from Taiwan's National Health Insurance (NHI) — no exceptions. Policy must explicitly cover hospitalization.",
-      "required": true
+      "required": true,
+      "warnings": ["DNV holders are excluded from Taiwan's National Health Insurance (NHI) — you must maintain private international health and hospitalization insurance at all times"]
     }
   ],
   "duration": {
@@ -58,7 +61,7 @@
   "fees": {
     "application": "NT$1,600 (single entry) / NT$3,200 (multiple entry) — domestic. USD $50/$100 — overseas.",
     "extension": "Varies by NIA schedule",
-    "notes": "US citizens: NT$7,090 (domestic) or USD $185 (overseas) due to reciprocity surcharge. Non-refundable regardless of outcome."
+    "notes": "US citizens: NT$7,090 (domestic) or USD $185 (overseas) due to reciprocity surcharge. Application fees are non-refundable regardless of outcome."
   },
   "incomeRequirement": {
     "amount": "20,000-40,000",
@@ -79,6 +82,7 @@
     {
       "id": "passport",
       "name": "Valid Passport",
+      "nameLocal": "護照",
       "description": "Must have 6+ months validity and blank visa pages. Color copy of photo page required.",
       "tips": [
         "Temporary and emergency passports are NOT accepted",
@@ -101,6 +105,7 @@
     {
       "id": "employment-contract",
       "name": "Employment Contract or Project Contracts",
+      "nameLocal": "聘僱合約",
       "description": "For employees: valid employment contract with overseas employer. For freelancers: active project contracts with global clients.",
       "tips": [
         "Contract must clearly show the employer/client is based outside Taiwan",
@@ -121,6 +126,7 @@
     {
       "id": "income-proof",
       "name": "Income Proof / Tax Certificates",
+      "nameLocal": "財力證明",
       "description": "Tax certificates (W-2, P60, T4, PAYG, etc.) or employer salary certificate proving age-tier income for at least 1 of previous 2 years",
       "tips": [
         "Age 20-29: prove ≥ USD $20,000/year",
@@ -132,6 +138,7 @@
     {
       "id": "bank-statement",
       "name": "Bank Statement",
+      "nameLocal": "財力證明",
       "description": "Bank statement showing 6-month average monthly balance of at least USD $10,000",
       "tips": [
         "Start maintaining $10K+ average 6 months BEFORE applying — last-minute deposits may not count",
@@ -142,6 +149,7 @@
     {
       "id": "insurance-certificate",
       "name": "International Health Insurance Certificate",
+      "nameLocal": "健康檢查證明",
       "description": "Proof of comprehensive international health and hospitalization insurance covering the entire planned stay period",
       "tips": [
         "SafetyWing, World Nomads, and Cigna Global are commonly used",
@@ -206,7 +214,8 @@
       "tips": [
         "Domestic applicants: MUST apply at least 10 business days before current stay expires",
         "Overseas: check your jurisdictional TECO office for appointment requirements"
-      ]
+      ],
+      "warnings": ["Domestic applicants must apply at least 10 business days before current stay expires — overstay during processing is your responsibility"]
     },
     {
       "id": "step-5",
@@ -230,7 +239,8 @@
     }
   ],
   "processingTime": {
-    "typical": "5-15 working days",
+    "governmentReview": "5-15 working days",
+    "totalEndToEnd": "1-2 months",
     "notes": "Faster than Gold Card. Domestic applicants: apply at least 10 business days before current stay expires to avoid overstay risk."
   },
   "workPermission": {
@@ -239,15 +249,26 @@
       "ONLY for overseas employer/clients — absolutely NO Taiwan-based work",
       "Cannot work for any Taiwan-registered company or entity",
       "Cannot provide any form of labor or service to Taiwan-based businesses",
-      "To work for a Taiwan employer, must obtain separate Work Permit or Gold Card"
+      "To work for a Taiwan employer, must obtain separate Work Permit or Gold Card",
+      "ABSOLUTELY NO work for Taiwan-based employers — this is a visa violation that may result in revocation, fines, and deportation"
     ],
     "notes": "This is the most critical legal restriction. Violation may result in visa revocation, fines, and deportation."
   },
+  "familyAllowed": false,
+  "postArrivalSteps": [
+    {
+      "id": "arc-application",
+      "title": "ARC Application",
+      "deadline": "Within 15 days of arrival (for stays over 180 days)",
+      "description": "Apply for Alien Resident Certificate at the nearest NIA service center.",
+      "tips": ["Bring passport, visa, 2 photos, proof of address, and fees"]
+    }
+  ],
   "agencySteps": [
     {
       "order": 1,
       "agency": "other",
-      "agencyFullName": "National Development Council (NDC, \u570b\u5bb6\u767c\u5c55\u59d4\u54e1\u6703)",
+      "agencyFullName": "National Development Council (NDC, 國家發展委員會)",
       "action": "Eligibility Review",
       "description": "NDC reviews your income, employment status, and remote work credentials to verify eligibility.",
       "processingDays": 10,
@@ -258,7 +279,7 @@
     {
       "order": 2,
       "agency": "BOCA",
-      "agencyFullName": "Bureau of Consular Affairs (\u5916\u4ea4\u90e8\u9818\u4e8b\u4e8b\u52d9\u5c40)",
+      "agencyFullName": "Bureau of Consular Affairs (外交部領事事務局)",
       "action": "Visa Issuance",
       "description": "BOCA processes and issues the Digital Nomad Visa upon NDC approval.",
       "url": "https://www.boca.gov.tw",
@@ -301,7 +322,7 @@
     },
     {
       "question": "What are the tax implications of staying in Taiwan on DNV?",
-      "answer": "Three tiers: \u226490 days \u2014 minimal tax exposure (overseas-sourced income largely exempt). 91-183 days \u2014 remote work income performed in Taiwan becomes reportable, must file before departure. \u2265183 days \u2014 full tax resident with progressive rates. High-income DNV holders planning 183+ day stays may want to check Gold Card eligibility for the 50% tax exemption benefit."
+      "answer": "Three tiers: ≤90 days — minimal tax exposure (overseas-sourced income largely exempt). 91-183 days — remote work income performed in Taiwan becomes reportable, must file before departure. ≥183 days — full tax resident with progressive rates. High-income DNV holders planning 183+ day stays may want to check Gold Card eligibility for the 50% tax exemption benefit."
     },
     {
       "question": "Can I bring my family on the Digital Nomad Visa?",
@@ -317,7 +338,7 @@
     },
     {
       "question": "What's the bank balance requirement?",
-      "answer": "Your bank statement must show an average monthly balance of at least USD $10,000 over the past 6 months. This is separate from the income requirement. Start maintaining this balance well in advance \u2014 last-minute deposits may not be accepted."
+      "answer": "Your bank statement must show an average monthly balance of at least USD $10,000 over the past 6 months. This is separate from the income requirement. Start maintaining this balance well in advance — last-minute deposits may not be accepted."
     }
   ],
   "tips": [
@@ -329,52 +350,43 @@
     "If planning to stay 183+ days, understand the tax implications — you may become a full tax resident"
   ],
   "warnings": [
-    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (\u79fb\u6c11\u696d\u52d9\u6a5f\u69cb). This is not an eligibility assessment or legal advice. \u672c\u8cc7\u8a0a\u50c5\u4f9d\u64da\u53f0\u7063\u653f\u5e9c\u516c\u958b\u8cc7\u6599\u6574\u7406\uff0cLocalNomad\u4e26\u975e\u5408\u6cd5\u79fb\u6c11\u696d\u52d9\u6a5f\u69cb\u3002\u672c\u5167\u5bb9\u4e0d\u69cb\u6210\u8cc7\u683c\u8a55\u4f30\u6216\u6cd5\u5f8b\u5efa\u8b70\u3002",
-    "ABSOLUTELY NO work for Taiwan-based employers — this is a visa violation that may result in revocation, fines, and deportation",
-    "DNV holders are excluded from Taiwan's National Health Insurance (NHI) — you must maintain private international health and hospitalization insurance at all times",
-    "Domestic applicants must apply at least 10 business days before current stay expires — overstay during processing is your responsibility",
-    "Application fees are non-refundable regardless of outcome"
+    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。"
   ],
   "communityTips": [
     {
       "id": "insurance-tip",
+      "section": "documents",
       "tip": "Get SafetyWing, World Nomads, or Cigna Global — your policy must explicitly cover Taiwan and include hospitalization. DNV holders have no NHI access, so budget for private insurance throughout your stay.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "bank-balance-early",
+      "section": "documents",
       "tip": "Start maintaining $10K+ average bank balance at least 6 months BEFORE applying. Last-minute large deposits may be questioned or not counted toward the average.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "activity-plan-detail",
+      "section": "documents",
       "tip": "Be very specific in your 'Description of Intended Activities' — list actual projects, client names (or descriptions), and deliverables. Vague plans like 'remote work' get questioned by NDC reviewers.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "taipei-vs-elsewhere",
+      "section": "general",
       "tip": "Taipei has the best coworking spaces, transit system, and expat community. Taichung and Kaohsiung are significantly cheaper. Monthly costs: USD $1,200-2,000 including rent, food, coworking, and transport.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "prior-dnv-waiver",
+      "section": "requirements",
       "tip": "If you held a Digital Nomad Visa from another country (e.g., Thailand, Portugal), the income requirement is completely waived. Just bring proof of your previous DNV.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     }
   ],
   "relatedVisas": [
@@ -385,7 +397,6 @@
   "renewal": {
     "eligible": true,
     "maxExtensions": 3,
-    "maxTotalStay": "2 years (updated January 8, 2026)",
     "requirements": [
       "Valid DNV status",
       "Proof of residential address in Taiwan",
@@ -404,7 +415,7 @@
     {
       "type": "gold-card",
       "name": "Taiwan Employment Gold Card",
-      "requirements": "Meet qualification criteria in one of 12 professional fields (salary \u2265 NT$160,000/month, relevant experience, PhD, awards, etc.). Can apply while on active DNV status in Taiwan.",
+      "requirements": "Meet qualification criteria in one of 12 professional fields (salary ≥ NT$160,000/month, relevant experience, PhD, awards, etc.). Can apply while on active DNV status in Taiwan.",
       "timeline": "30-60 business days processing",
       "documents": [
         "Current passport",
@@ -443,7 +454,7 @@
         "Insurance certificate",
         "Activity plan"
       ],
-      "notes": "The most common pathway. Enter Taiwan visa-exempt (up to 90 days for most countries), then apply for DNV conversion at a BOCA office. Also applies to holders of Digital Nomad Visas from other countries (income requirement waived \u2014 provide proof of previous DNV)."
+      "notes": "The most common pathway. Enter Taiwan visa-exempt (up to 90 days for most countries), then apply for DNV conversion at a BOCA office. Also applies to holders of Digital Nomad Visas from other countries (income requirement waived — provide proof of previous DNV)."
     }
   ],
   "lastUpdated": "2026-02-27",

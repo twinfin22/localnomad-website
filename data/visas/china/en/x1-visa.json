@@ -1,7 +1,8 @@
 {
   "type": "x1-visa",
-  "name": "China Student Visa (X1 Visa) — Complete 2026 Guide",
+  "name": "China Student Visa (X1 Visa)",
   "shortName": "X1 Visa",
+  "nameLocal": "X1签证（留学签证）",
   "category": "study",
   "description": "Everything about China's X1 Visa (Long-term Student Visa): degree programs, language study, JW201/JW202 forms, residence permit conversion, and post-graduation pathways. The X1 Visa is issued to international students enrolled in educational programs in China lasting more than 180 days, including bachelor's, master's, doctoral, and long-term language programs. Applicants must obtain an admission notice from a recognized Chinese institution and either a JW201 form (for government-sponsored or scholarship students) or JW202 form (for self-funded students). Published guidelines indicate that X1 Visa holders must apply for a residence permit within 30 days of arrival and register with the Public Security Bureau within 24 hours. Work is generally restricted to academic activities, though limited part-time work and internships may be authorized in some circumstances. After graduation, published guidelines indicate a pathway from X1 to Z Visa for students who secure employment with a Chinese employer. Updated for 2026.",
   "tagline": "Long-term student visa for degree programs and extended study in China",
@@ -103,6 +104,9 @@
         "The form is sent by the university along with the admission notice",
         "If you lose the original, contact your university immediately for a replacement — processing takes 2-4 weeks"
       ],
+      "warnings": [
+        "Loss of the JW form can significantly delay your visa application — handle the original with care and keep copies"
+      ],
       "required": true
     },
     {
@@ -190,6 +194,9 @@
       "tips": [
         "You will need your passport, admission notice, JW form, medical exam results, PSB registration receipt, and passport photos",
         "The residence permit validity matches your program duration (up to 5 years)"
+      ],
+      "warnings": [
+        "Residence permit must be applied for within 30 days of arrival — late applications result in fines and potential visa complications"
       ]
     },
     {
@@ -203,7 +210,8 @@
     }
   ],
   "processingTime": {
-    "typical": "1-2 weeks for visa processing (after all documents are ready)",
+    "governmentReview": "1-2 weeks for visa processing (after all documents are ready)",
+    "totalEndToEnd": "1-2 months",
     "expedited": "Express processing available at some consulates for additional fees (2-3 business days)",
     "notes": "The overall timeline from university application to arrival is typically 3-6 months. The visa processing step itself is relatively quick once you have the admission notice and JW form. Allow extra time for document preparation and medical examinations."
   },
@@ -213,11 +221,12 @@
       "X1 Visa holders are primarily restricted to academic and study activities",
       "Limited part-time work may be authorized through the university in some circumstances",
       "Internships related to the field of study may be possible with university and employer coordination",
-      "Full-time employment is not permitted on a student visa"
+      "Full-time employment is not permitted on a student visa",
+      "Working without authorization on a student visa can result in fines, visa revocation, and potential deportation"
     ],
     "notes": "Published guidelines indicate that X1 Visa holders cannot engage in full-time employment. Limited part-time work or internships may be authorized in certain circumstances, typically arranged through the university's international student office. Any work activity must not interfere with academic obligations."
   },
-  "familyAllowed": false,
+  "familyAllowed": true,
   "faqs": [
     {
       "question": "What is the difference between X1 and X2 visas?",
@@ -262,44 +271,63 @@
     "Maintain a good academic record — poor academic standing can affect your residence permit renewal"
   ],
   "warnings": [
-    "Residence permit must be applied for within 30 days of arrival — late applications result in fines and potential visa complications",
-    "PSB registration within 24 hours is mandatory — this applies every time you move to a new address",
-    "Working without authorization on a student visa can result in fines, visa revocation, and potential deportation",
-    "Do not overstay your residence permit — overstaying can result in fines of 500 RMB per day (up to 10,000 RMB) and entry bans",
-    "Loss of the JW form can significantly delay your visa application — handle the original with care and keep copies"
+    "Do not overstay your residence permit — overstaying can result in fines of 500 RMB per day (up to 10,000 RMB) and entry bans"
   ],
   "communityTips": [
     {
       "id": "csc-scholarship",
+      "section": "requirements",
       "tip": "The CSC (China Scholarship Council) scholarship covers tuition, accommodation, and provides a monthly stipend. It is highly competitive but covers all major costs. Apply through your home country's CSC nominating agency or directly through a Chinese university that offers CSC programs.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "university-dorm",
+      "section": "general",
       "tip": "University dormitories simplify many administrative processes — PSB registration is often handled by the dorm office, and you have easy access to the international student office for visa questions. If possible, stay on campus at least for the first semester while you get settled.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "wechat-groups",
+      "section": "general",
       "tip": "Join your university's international student WeChat groups before arrival. Current students can share practical information about the registration process, document requirements, and local tips that are not in any official guide.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "graduation-planning",
+      "section": "process",
       "tip": "If you plan to work in China after graduation, start networking and job hunting 6+ months before graduation. The transition from X1 to Z Visa requires exiting China, so plan your timeline carefully. Some employers can help expedite the process if you start early.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "requirements": ["Valid employment/enrollment", "Employer/institution support letter"],
+    "documents": ["Passport", "Current residence permit", "Employment certificate or enrollment proof"],
+    "applyBeforeDays": 30,
+    "processingTime": "7-15 business days",
+    "fees": "¥400-800"
+  },
+  "postArrivalSteps": [
+    {
+      "id": "psb-registration",
+      "title": "PSB Registration",
+      "deadline": "Within 24 hours of arrival",
+      "description": "Register at the local Public Security Bureau. Hotels do this automatically; if staying elsewhere, visit the nearest PSB station.",
+      "tips": [
+        "Bring passport, entry stamp page copy, and accommodation proof",
+        "PSB registration within 24 hours is mandatory — this applies every time you move to a new address"
+      ]
+    },
+    {
+      "id": "residence-permit",
+      "title": "Residence Permit Conversion",
+      "deadline": "Within 30 days of entry",
+      "description": "Convert your visa entry to a formal residence permit at the local PSB Exit-Entry Administration.",
+      "tips": ["Requires health check, employment docs, and PSB registration receipt"]
     }
   ],
   "relatedVisas": [

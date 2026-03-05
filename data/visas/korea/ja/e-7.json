@@ -1,8 +1,46 @@
 {
   "type": "e-7",
-  "name": "韓国特定活動ビザ（E-7）— 2026年完全ガイド",
+  "name": "韓国特定活動ビザ（E-7）",
   "shortName": "E-7",
   "category": "work",
+  "nameLocal": "특정활동비자 (E-7)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "外国人登録証の取得",
+      "deadline": "入国後90日以内",
+      "description": "最寄りの出入国管理事務所でARC申請。銀行口座開設、携帯電話契約など各種サービスに必要。",
+      "tips": ["HiKorea（hikorea.go.kr）で予約", "パスポート、写真、住所証明、ビザ関連書類を持参"]
+    },
+    {
+      "id": "phone-number",
+      "title": "携帯電話番号の取得",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の通信キャリアで携帯電話番号を取得。銀行口座開設や各種オンラインサービスに必要。"
+    },
+    {
+      "id": "bank-account",
+      "title": "銀行口座の開設",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の銀行で口座を開設。給与受取や日常取引に必要。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "国民健康保険への加入",
+      "deadline": "入国後6ヶ月以内",
+      "description": "韓国国民健康保険（NHI）への加入手続き。長期滞在者は加入義務あり。"
+    },
+    {
+      "id": "address-registration",
+      "title": "住所登録",
+      "deadline": "転入後14日以内",
+      "description": "居住地の管轄区役所で住所登録（전입신고）を完了。各種行政サービスに必要。"
+    }
+  ],
+  "renewal": {
+    "process": "満了日の少なくとも30日前に最寄りの出入国管理事務所で延長申請を提出。"
+  },
   "description": "韓国E-7特定活動ビザの完全ガイド：雇用主スポンサーシップ、給与基準、サブカテゴリ（E-7-1〜E-7-4）、必要書類、申請手順、FAQ。2026年最新版。",
   "tagline": "雇用主スポンサーシップで韓国で働く",
   "keyRequirement": "雇用主スポンサーシップ + 学士号＋実務経験1年（または修士号、または5年以上の実務経験）",
@@ -18,7 +56,8 @@
       "id": "employer-sponsorship",
       "label": "韓国企業からのスポンサーシップ",
       "description": "韓国の企業がビザをスポンサーする必要がある。自己申請は認められず、雇用主が代理で申請しなければならない。",
-      "required": true
+      "required": true,
+      "warnings": ["実際の業務とビザカテゴリの職業コードの不一致はビザ取り消しにつながる可能性がある"]
     },
     {
       "id": "education-masters",
@@ -69,7 +108,7 @@
     "maxTotal": "上限なし — 雇用が継続する限り延長可能"
   },
   "fees": {
-    "application": "約$60〜100 USD（大使館・国籍により異なる）",
+    "application": "₩60,000〜130,000（大使館・国籍により異なる）",
     "extension": "₩60,000",
     "notes": "査証発給認定書（CCVI）の審査手数料が別途かかる。手数料は韓国大使館/領事館により異なる。"
   },
@@ -88,28 +127,28 @@
     {
       "id": "passport",
       "name": "有効なパスポート（旅券）",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "滞在予定期間の6ヶ月以上有効なもの",
       "required": true
     },
     {
       "id": "application-form",
       "name": "ビザ申請書",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "記入済みのビザ申請書（様式第34号）",
       "required": true
     },
     {
       "id": "photo",
       "name": "証明写真",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm、最近撮影、白背景",
       "required": true
     },
     {
       "id": "employment-contract",
       "name": "雇用契約書",
-      "nameKorean": "고용계약서",
+      "nameLocal": "고용계약서",
       "description": "韓国スポンサー企業との署名済み雇用契約書。職種、給与（E-7最低基準を満たすもの）、雇用期間を明記する必要がある。",
       "tips": [
         "給与はE-7サブカテゴリの2026年最低基準以上であること",
@@ -121,7 +160,7 @@
     {
       "id": "degree-certificate",
       "name": "学位証明書",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "公式学位証明書（学士、修士、博士）。発行国の韓国大使館でアポスティーユまたは認証を受ける必要がある。",
       "tips": [
         "ハーグ条約加盟国はアポスティーユが必要",
@@ -133,7 +172,7 @@
     {
       "id": "career-certificate",
       "name": "経歴証明書",
-      "nameKorean": "경력증명서",
+      "nameLocal": "경력증명서",
       "description": "前職の雇用主からの公式経歴証明書。学士号保持者（1年）または経験のみの申請者（5年）に必要。",
       "tips": [
         "会社のレターヘッドに公印または署名があること",
@@ -145,7 +184,7 @@
     {
       "id": "background-check",
       "name": "犯罪経歴証明書",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国からの警察証明書。最近のもの（通常6ヶ月以内）でアポスティーユ付きであること。",
       "tips": [
         "米国市民のFBI身元調査は12〜18週間かかることがある — 早めに開始",
@@ -157,14 +196,14 @@
     {
       "id": "business-registration",
       "name": "事業者登録証（雇用主）",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "韓国の税務当局が発行したスポンサー企業の公式事業者登録証。",
       "required": true
     },
     {
       "id": "foreigner-utilization-plan",
       "name": "外国人雇用活用計画書 / 招聘状（雇用主）",
-      "nameKorean": "외국인고용사유서",
+      "nameLocal": "외국인고용사유서",
       "description": "韓国人ではなく外国人専門家が必要な理由を説明する雇用主からの詳細な説明書。この書類は承認の鍵となる。",
       "tips": [
         "外国人が持つ特定のスキルや資格を説明すること",
@@ -176,7 +215,7 @@
     {
       "id": "employment-recommendation",
       "name": "雇用推薦書",
-      "nameKorean": "고용추천서",
+      "nameLocal": "고용추천서",
       "description": "その職業の管轄省庁または政府機関からの推薦書。特定のE-7職業コードに必要。",
       "tips": [
         "必要な機関は職業により異なる — 具体的な職業コードを確認",
@@ -188,7 +227,7 @@
     {
       "id": "statement-of-employment",
       "name": "在職証明書（雇用主）",
-      "nameKorean": "재직증명서",
+      "nameLocal": "재직증명서",
       "description": "雇用の提供、ポジション、条件を確認するスポンサー企業からの公式在職証明書。",
       "required": true
     }
@@ -252,12 +291,14 @@
       "tips": [
         "HiKorea（www.hikorea.go.kr）で事前に予約",
         "パスポート、雇用契約書、証明写真を持参",
-        "仮IDとして使える受領証がその場で発行される"
+        "仮IDとして使える受領証がその場で発行される",
+        "ビザ満了の少なくとも30日前に延長申請を提出 — 罰金の可能性を回避するため"
       ]
     }
   ],
   "processingTime": {
-    "typical": "合計3〜6週間",
+    "governmentReview": "合計3〜6週間",
+    "totalEndToEnd": "2〜5ヶ月",
     "notes": "出入国管理局でのCCVI審査：2〜4週間。CCVI後の大使館でのビザ処理：5〜10営業日。雇用主の申請からビザ取得までの合計期間は通常3〜6週間。審査期間は国籍、大使館の業務量、時期により異なる。公開されているガイドラインによると、就業予定日の少なくとも6〜8週間前にCCVI申請を提出してください。"
   },
   "workPermission": {
@@ -266,7 +307,8 @@
       "スポンサー企業でのみ就労可能",
       "職務内容はビザに記載された承認済み職業コードと一致しなければならない",
       "雇用主の変更には新たなCCVIとビザ変更が必要",
-      "別途の許可なく副業やフリーランスは認められない"
+      "別途の許可なく副業やフリーランスは認められない",
+      "許可なくスポンサー以外の雇用主のために働くことはビザ違反"
     ],
     "notes": "E-7は特定の雇用主と職業コードに紐づけられている。転職する場合、新しい雇用主が新たなCCVI申請を行い、出入国管理事務所で勤務先変更の申請が必要。承認された職業コード以外の業務を行うとビザが取り消される可能性がある。"
   },
@@ -330,49 +372,41 @@
   ],
   "warnings": [
     "韓国で最も競争の激しい就労ビザ — 雇用主は韓国人ではなく外国人を採用する理由を正当化しなければならない",
-    "超過滞在の罰金：約₩100,000/日",
-    "ビザ満了の少なくとも30日前に延長申請を提出 — 罰金の可能性を回避するため",
-    "実際の業務とビザカテゴリの職業コードの不一致はビザ取り消しにつながる可能性がある",
-    "許可なくスポンサー以外の雇用主のために働くことはビザ違反"
+    "超過滞在の罰金：約₩100,000/日"
   ],
   "communityTips": [
     {
       "id": "job-code-critical",
+      "section": "requirements",
       "tip": "職業コードの選択ミスはE-7拒否の最大の原因の一つ。雇用主の人事担当または入国管理の専門家と協力して、ポジションに正確に一致するコードを選択すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "employment-reason-statement",
+      "section": "documents",
       "tip": "企業は韓国人ではなく外国人が必要な理由を説明しなければならない。一般的な理由では却下される。自身のユニークなスキルと資格について具体的に記載すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "korean-university-advantage",
+      "section": "requirements",
       "tip": "韓国の大学を卒業していれば、専攻に関係なく経歴要件が免除される。これはE-7への最も容易な経路とされることが多い。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "pangyo-startups",
+      "section": "general",
       "tip": "韓国のシリコンバレー（板橋、盆唐）には英語チームに慣れたスタートアップが多い。AI、ブロックチェーン、サイバーセキュリティ分野は外国人専門家の需要が最も高い。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "start-before-expiry",
+      "section": "process",
       "tip": "CCVIの審査は通常1.5〜2ヶ月かかる。審査中にビザが満了しても、有効期限は通常延長される。ただし、罰金を避けるため、満了の少なくとも30日前に提出すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

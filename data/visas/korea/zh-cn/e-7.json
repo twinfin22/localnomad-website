@@ -1,8 +1,46 @@
 {
   "type": "e-7",
-  "name": "韩国特定活动签证 (E-7) — 2026年完整指南",
+  "name": "韩国特定活动签证 (E-7)",
   "shortName": "E-7",
   "category": "work",
+  "nameLocal": "특정활동비자 (E-7)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "办理外国人登陆证",
+      "deadline": "入境后90天内",
+      "description": "前往最近的出入境管理局办理ARC。开设银行账户、办理手机号等各类服务均需此证。",
+      "tips": ["在HiKorea (hikorea.go.kr) 预约", "携带护照、照片、住址证明及签证相关材料"]
+    },
+    {
+      "id": "phone-number",
+      "title": "办理韩国手机号",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国运营商处办理手机号。开设银行账户及使用各类在线服务均需手机号。"
+    },
+    {
+      "id": "bank-account",
+      "title": "开设银行账户",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国银行开设账户。用于接收工资和日常交易。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "加入国民健康保险",
+      "deadline": "入境后6个月内",
+      "description": "办理韩国国民健康保险（NHI）加入手续。长期居留者有加入义务。"
+    },
+    {
+      "id": "address-registration",
+      "title": "办理住址登记",
+      "deadline": "搬入后14天内",
+      "description": "在居住地所辖区厅完成住址登记（전입신고）。各类行政服务均需此登记。"
+    }
+  ],
+  "renewal": {
+    "process": "在签证到期前至少30天向最近的出入境管理局提交延期申请。"
+  },
   "description": "韩国E-7专业就业签证完整指南：雇主担保、工资要求、子类别（E-7-1至E-7-4）、所需材料、申请流程及常见问题。2026年最新版。",
   "tagline": "通过雇主担保在韩国工作",
   "keyRequirement": "雇主担保 + 学士学位及1年经验（或硕士学位，或5年以上经验）",
@@ -18,7 +56,8 @@
       "id": "employer-sponsorship",
       "label": "韩国雇主的担保",
       "description": "须由韩国公司担保签证。不允许个人自行申请。雇主须代为提交申请。",
-      "required": true
+      "required": true,
+      "warnings": ["实际工作与签证类别的职业代码不符可能导致签证被撤销"]
     },
     {
       "id": "education-masters",
@@ -69,7 +108,7 @@
     "maxTotal": "无固定上限 — 在雇佣关系持续期间可不断延期"
   },
   "fees": {
-    "application": "约$60-100 USD（因使领馆和国籍而异）",
+    "application": "₩60,000-130,000（因使领馆和国籍而异）",
     "extension": "₩60,000",
     "notes": "签证发放认定书（CCVI）处理费另计。费用因韩国使领馆而异。"
   },
@@ -88,28 +127,28 @@
     {
       "id": "passport",
       "name": "有效护照",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "有效期须超过预计滞留期限6个月以上",
       "required": true
     },
     {
       "id": "application-form",
       "name": "签证申请表",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "已填写完整的签证申请表（第34号表格）",
       "required": true
     },
     {
       "id": "photo",
       "name": "护照照片",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm，近期拍摄，白色背景",
       "required": true
     },
     {
       "id": "employment-contract",
       "name": "劳动合同",
-      "nameKorean": "고용계약서",
+      "nameLocal": "고용계약서",
       "description": "与韩国担保公司签署的劳动合同。须注明职位、薪资（达到E-7最低标准）和雇佣期限。",
       "tips": [
         "薪资须达到或超过2026年您所属E-7子类别的最低标准",
@@ -121,7 +160,7 @@
     {
       "id": "degree-certificate",
       "name": "学位证书",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "官方学位证书（学士、硕士或博士）。须经签发国的韩国使馆认证或办理海牙认证。",
       "tips": [
         "海牙公约缔约国须办理海牙认证",
@@ -133,7 +172,7 @@
     {
       "id": "career-certificate",
       "name": "经历证明书",
-      "nameKorean": "경력증명서",
+      "nameLocal": "경력증명서",
       "description": "由前雇主出具的官方经历证明，证明相关工作经验。学士学位持有者（1年）或仅凭经验申请者（5年）须提交。",
       "tips": [
         "须使用公司抬头信纸，并加盖公章或签名",
@@ -145,7 +184,7 @@
     {
       "id": "background-check",
       "name": "无犯罪记录证明",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国出具的无犯罪记录证明。须为近期（通常6个月以内）并经海牙认证。",
       "tips": [
         "美国公民的FBI无犯罪记录证明可能需要12至18周 — 请尽早办理",
@@ -157,14 +196,14 @@
     {
       "id": "business-registration",
       "name": "营业执照（雇主）",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "担保公司由韩国税务机关颁发的官方营业执照。",
       "required": true
     },
     {
       "id": "foreigner-utilization-plan",
       "name": "外国人雇佣理由书/邀请函（雇主）",
-      "nameKorean": "외국인고용사유서",
+      "nameLocal": "외국인고용사유서",
       "description": "雇主出具的详细说明，解释为何需要聘用外国专业人才而非韩国籍人员。此文件对审批至关重要。",
       "tips": [
         "须具体说明外国人所具备的特殊技能或资质",
@@ -176,7 +215,7 @@
     {
       "id": "employment-recommendation",
       "name": "雇佣推荐书",
-      "nameKorean": "고용추천서",
+      "nameLocal": "고용추천서",
       "description": "由相关政府部委或机构出具的雇佣推荐书。特定E-7职业代码需要此文件。",
       "tips": [
         "所需机构因职业而异 — 请核实具体职业代码",
@@ -188,7 +227,7 @@
     {
       "id": "statement-of-employment",
       "name": "在职证明（雇主）",
-      "nameKorean": "재직증명서",
+      "nameLocal": "재직증명서",
       "description": "担保公司出具的官方证明，确认录用通知、职位和条款。",
       "required": true
     }
@@ -252,12 +291,14 @@
       "tips": [
         "提前在HiKorea（www.hikorea.go.kr）预约",
         "携带护照、劳动合同和护照照片",
-        "当场发放收据作为临时身份证明"
+        "当场发放收据作为临时身份证明",
+        "请在签证到期前至少30天提交延期申请，以避免可能的罚款"
       ]
     }
   ],
   "processingTime": {
-    "typical": "总计3至6周",
+    "governmentReview": "总计3至6周",
+    "totalEndToEnd": "2至5个月",
     "notes": "出入境管理局审核CCVI：2至4周。使领馆在获得CCVI后处理签证：5至10个工作日。从雇主提交申请到拿到签证通常需要3至6周。审批时间因国籍、使领馆工作量和季节而异。根据公布的指南，建议在预计入职日期前至少6至8周提交CCVI申请。"
   },
   "workPermission": {
@@ -266,7 +307,8 @@
       "须仅为担保雇主工作",
       "工作职责须与签证上批准的职业代码一致",
       "更换雇主须重新申请CCVI并办理签证变更",
-      "未经另行授权不得兼职或从事自由职业"
+      "未经另行授权不得兼职或从事自由职业",
+      "未经授权为担保雇主以外的单位工作属于签证违规"
     ],
     "notes": "E-7签证与特定雇主和职业代码绑定。如更换工作，新雇主须提交新的CCVI申请，您须向出入境管理局申请变更工作单位。从事批准职业代码以外的工作可能导致签证被撤销。"
   },
@@ -330,49 +372,41 @@
   ],
   "warnings": [
     "韩国竞争最激烈的工作签证 — 雇主须证明聘用外国人而非韩国人的合理性",
-    "超期滞留罚款：每日约₩100,000",
-    "请在签证到期前至少30天提交延期申请，以避免可能的罚款",
-    "实际工作与签证类别的职业代码不符可能导致签证被撤销",
-    "未经授权为担保雇主以外的单位工作属于签证违规"
+    "超期滞留罚款：每日约₩100,000"
   ],
   "communityTips": [
     {
       "id": "job-code-critical",
+      "section": "requirements",
       "tip": "选错职业代码是E-7被拒的最常见原因之一。请与雇主的人力资源部门或入境管理专家合作，精确匹配您职位对应的代码。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "employment-reason-statement",
+      "section": "documents",
       "tip": "公司须解释为何需要聘用外国人而非韩国籍人员。笼统的理由会被拒绝。请详细说明您独特的技能和资质。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "korean-university-advantage",
+      "section": "requirements",
       "tip": "如果您从韩国大学毕业，无论专业均可免除经历要求。这通常被认为是获得E-7最便捷的途径。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "pangyo-startups",
+      "section": "general",
       "tip": "韩国的硅谷地区（板桥、盆唐）有许多适应英语团队的初创企业。AI、区块链和网络安全领域对外国专业人才的需求最为旺盛。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "start-before-expiry",
+      "section": "process",
       "tip": "CCVI审核通常需要1.5至2个月。即使审核期间签证到期，到期日通常会被延长。但请在到期前至少30天提交，以避免可能的罚款。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

@@ -3,7 +3,6 @@ import {
   DollarSign,
   Clock,
   Timer,
-  AlertTriangle,
 } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { Visa } from '@/lib/types/visa';
@@ -24,29 +23,6 @@ export async function VisaHero({ visa, hideSummaryCards }: VisaHeroProps) {
       </h1>
       <p className="mt-2 text-lg text-foreground/70">{visa.tagline}</p>
 
-      {/* Warnings */}
-      {visa.warnings && visa.warnings.length > 0 && (
-        <div className="mt-8 rounded-lg border border-amber-400 bg-amber-100 p-5">
-          <div className="flex items-center gap-2">
-            <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600" />
-            <h2 className="text-xl font-semibold text-amber-800">
-              {t('warnings')}
-            </h2>
-          </div>
-          <ul className="mt-3 space-y-2">
-            {visa.warnings.map((warning, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-2 text-sm text-amber-800"
-              >
-                <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
-                {warning}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       {/* Summary cards grid */}
       {!hideSummaryCards && (
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -63,7 +39,7 @@ export async function VisaHero({ visa, hideSummaryCards }: VisaHeroProps) {
         <SummaryCard
           icon={<Clock className="h-5 w-5 text-primary" />}
           label={t('processingTime')}
-          value={visa.processingTime.typical}
+          value={visa.processingTime.governmentReview}
         />
         <SummaryCard
           icon={<Timer className="h-5 w-5 text-primary" />}

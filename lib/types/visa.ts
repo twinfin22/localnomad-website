@@ -127,6 +127,7 @@ export interface Requirement {
   description?: string;
   required: boolean;
   priority?: 'essential' | 'detail';
+  sentiment?: 'positive' | 'negative' | 'neutral';
   warnings?: string[];
   tips?: string[];
   category?: string;
@@ -135,7 +136,7 @@ export interface Requirement {
 export interface Document {
   id: string;
   name: string;
-  nameKorean?: string;
+  nameLocal?: string;
   description: string;
   tips?: string[];
   where_to_get?: string;
@@ -176,10 +177,11 @@ export interface VisaTransitionPath {
 export interface CommunityTip {
   id: string;
   tip: string;
-  source: 'discord' | 'reddit' | 'community' | 'official';
+  source?: 'discord' | 'reddit' | 'community' | 'official';
   verified: boolean;
   upvotes?: number;
   dateAdded?: string;
+  section?: 'requirements' | 'documents' | 'process' | 'general';
 }
 
 export interface VisaRenewalInfo {
@@ -229,7 +231,7 @@ export interface TECOAuthenticationInfo {
 
 export interface AgencyStep {
   order: number;
-  agency: 'TECO' | 'NIA' | 'MOL' | 'MOFA' | 'BOCA' | 'GoldCardOffice' | 'other';
+  agency: 'TECO' | 'NIA' | 'MOL' | 'MOFA' | 'BOCA' | 'GoldCardOffice' | 'ISA' | 'Embassy' | 'PSB' | 'other';
   agencyFullName: string;
   action: string;
   description: string;
@@ -277,7 +279,8 @@ export interface VisaBase {
   documents: Document[];
   applicationSteps: ApplicationStep[];
   processingTime: {
-    typical: string;
+    governmentReview: string;
+    totalEndToEnd?: string;
     expedited?: string;
     notes?: string;
   };
@@ -286,7 +289,15 @@ export interface VisaBase {
     restrictions?: string[];
     notes?: string;
   };
-  familyAllowed?: boolean;
+  familyAllowed: boolean;
+  nameLocal?: string;
+  postArrivalSteps?: {
+    id: string;
+    title: string;
+    deadline?: string;
+    description: string;
+    tips?: string[];
+  }[];
   faqs: FAQ[];
   tips: string[];
   warnings?: string[];
@@ -301,6 +312,11 @@ export interface VisaBase {
 
 export interface KoreaVisa extends VisaBase {
   country: 'kr';
+  languageRequirement?: {
+    required: boolean;
+    minimumLevel?: string;
+    notes?: string;
+  };
   insuranceRequirement?: {
     minimumCoverage: string;
     type: string;
@@ -341,13 +357,6 @@ export interface TaiwanVisa extends VisaBase {
 // Japan-Specific Types
 // =============================================================================
 
-export interface JapanPointsSystem {
-  minimumPoints: number;
-  categories: string[];
-  incomeFloor?: string;
-  calculatorUrl?: string;
-}
-
 export interface JapanLanguageRequirement {
   required: boolean;
   minimumLevel?: string;
@@ -359,9 +368,8 @@ export interface JapanVisa extends VisaBase {
   residenceStatus: string;
   sponsorRequired: boolean;
   coeRequired: boolean;
-  pointsSystem?: JapanPointsSystem;
+  agencySteps?: AgencyStep[];
   japaneseLanguage?: JapanLanguageRequirement;
-  designatedSectors?: string[];
   reentryGap?: string;
 }
 
@@ -375,11 +383,6 @@ export interface ChinaPSBRegistration {
   notes?: string;
 }
 
-export interface ChinaTalentCertification {
-  required: boolean;
-  agencies?: string[];
-}
-
 export interface ChinaVisa extends VisaBase {
   country: 'cn';
   workPermitCategory?: 'A' | 'B' | 'C';
@@ -387,9 +390,7 @@ export interface ChinaVisa extends VisaBase {
   psbRegistration?: ChinaPSBRegistration;
   residencePermitDeadline?: number;
   invitationRequired?: boolean;
-  talentCertification?: ChinaTalentCertification;
   covaOnline?: boolean;
-  stemFields?: string[];
 }
 
 export type Visa = KoreaVisa | TaiwanVisa | JapanVisa | ChinaVisa;

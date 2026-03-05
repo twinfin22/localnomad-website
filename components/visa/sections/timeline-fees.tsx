@@ -53,8 +53,15 @@ export function TimelineFees({ visa }: TimelineFeesProps) {
           <SummaryItem
             icon={<Clock className="h-4 w-4 text-primary" />}
             label={t('processingTime')}
-            value={visa.processingTime.typical}
+            value={visa.processingTime.governmentReview}
           />
+          {visa.processingTime.totalEndToEnd && (
+            <SummaryItem
+              icon={<Clock className="h-4 w-4 text-primary" />}
+              label={t('totalTimeline')}
+              value={visa.processingTime.totalEndToEnd}
+            />
+          )}
           {visa.processingTime.expedited && (
             <SummaryItem
               icon={<Clock className="h-4 w-4 text-primary" />}

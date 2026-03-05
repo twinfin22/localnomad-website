@@ -1,6 +1,7 @@
 {
   "type": "visitor",
-  "name": "Taiwan Visitor Visa & Visa-Exempt Entry — Complete 2026 Guide",
+  "name": "Taiwan Visitor Visa & Visa-Exempt Entry",
+  "nameLocal": "停留簽證",
   "shortName": "Visitor",
   "category": "tourist",
   "description": "Everything about visiting Taiwan: visa-exempt entry for 64 jurisdictions, visitor visa applications, duration by nationality, required documents, and transition options. Updated for 2026.",
@@ -29,7 +30,8 @@
       "id": "visa-exempt-14",
       "label": "14-day visa-free entry (extended program)",
       "description": "Citizens of Thailand, Brunei, and the Philippines receive 14-day visa-free entry under an extended trial program (valid through July 31, 2026).",
-      "required": false
+      "required": false,
+      "warnings": ["The 14-day visa-free program for Thailand, Brunei, and Philippines is a trial program — check BOCA for the latest extension status"]
     },
     {
       "id": "visitor-visa-eligible",
@@ -45,6 +47,7 @@
     },
     {
       "id": "no-local-employment",
+      "sentiment": "negative",
       "label": "No local employment permitted",
       "description": "Visitor visa and visa-exempt entry do not grant work authorization. Any form of employment in Taiwan requires a separate work permit.",
       "required": true
@@ -53,7 +56,8 @@
   "duration": {
     "initial": "14-90 days depending on nationality",
     "extension": "Not available for visa-exempt entry. Visitor visa holders may apply for extension at NIA in limited circumstances.",
-    "maxTotal": "90 days for most visa-exempt nationalities"
+    "maxTotal": "90 days for most visa-exempt nationalities",
+    "notes": "Visa-exempt stays CANNOT be extended — you must depart before your permitted period expires or apply for a different visa status"
   },
   "fees": {
     "application": "Free for visa-exempt entry. Visitor visa: NT$1,600 (single entry) / NT$3,200 (multiple entry).",
@@ -64,6 +68,7 @@
     {
       "id": "passport",
       "name": "Valid Passport",
+      "nameLocal": "護照",
       "description": "Must have 6+ months validity and blank pages. Japan and US passport holders only need passport valid for duration of stay.",
       "tips": [
         "Temporary and emergency passports are NOT accepted for visa-exempt entry",
@@ -94,6 +99,7 @@
     {
       "id": "financial-proof",
       "name": "Financial Proof",
+      "nameLocal": "財力證明",
       "description": "Evidence of sufficient funds for your stay. Bank statement, credit card statement, or cash equivalent. No official minimum stated, but approximately NT$25,000-50,000 (USD $750-1,500) per trip is a common reference.",
       "tips": [
         "Immigration officers rarely ask for financial proof, but it is recommended",
@@ -170,7 +176,8 @@
     }
   ],
   "processingTime": {
-    "typical": "Instant for visa-exempt entry. 3-5 business days for visitor visa applications.",
+    "governmentReview": "Instant for visa-exempt entry. 3-5 business days for visitor visa applications.",
+    "totalEndToEnd": "1-2 weeks",
     "notes": "Visitor visa processing times vary by TECO office. Some offices may take longer during peak travel seasons."
   },
   "workPermission": {
@@ -179,9 +186,17 @@
       "No employment of any kind is permitted on visitor visa or visa-exempt entry",
       "Remote work for overseas employers occupies a legal gray area — there is no explicit prohibition in the visa-exempt rules, but it is not formally authorized either",
       "Any work for a Taiwan-based employer requires a separate work permit",
-      "Violation of work restrictions may result in fines and deportation"
+      "Violation of work restrictions may result in fines and deportation",
+      "No employment of any kind is permitted on visitor visa or visa-exempt entry — working for a Taiwan employer requires a separate work permit"
     ],
     "notes": "Visitor status is strictly for tourism, business meetings, family visits, and short-term stays. For remote work, consider the Digital Nomad Visa (DNV). For Taiwan employment, a Work ARC or Gold Card is required."
+  },
+  "familyAllowed": false,
+  "renewal": {
+    "eligible": false,
+    "requirements": [],
+    "documents": [],
+    "applyBeforeDays": 0
   },
   "agencySteps": [
     {
@@ -252,51 +267,43 @@
   ],
   "warnings": [
     "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。",
-    "Visa-exempt stays CANNOT be extended — you must depart before your permitted period expires or apply for a different visa status",
-    "No employment of any kind is permitted on visitor visa or visa-exempt entry — working for a Taiwan employer requires a separate work permit",
-    "Overstaying may result in fines, detention, deportation, and future entry bans",
-    "The 14-day visa-free program for Thailand, Brunei, and Philippines is a trial program — check BOCA for the latest extension status"
+    "Overstaying may result in fines, detention, deportation, and future entry bans"
   ],
   "communityTips": [
     {
       "id": "arrival-card-tip",
+      "section": "process",
       "tip": "Fill out the arrival card on the plane. You'll need your Taiwan accommodation address, so screenshot your hotel/Airbnb booking before you lose WiFi on landing.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "easycard-tip",
+      "section": "general",
       "tip": "Get an EasyCard (悠遊卡) or iPASS at the airport convenience store. It works on MRT, buses, trains, convenience stores, and many restaurants. You can top it up at any convenience store.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "sim-card-tip",
+      "section": "general",
       "tip": "Buy a tourist SIM card at the airport (Chunghwa Telecom, Taiwan Mobile, or FarEasTone counters just past immigration). 30-day unlimited data plans cost approximately NT$500-1,000 (USD $15-30).",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "dnv-scout-tip",
+      "section": "general",
       "tip": "If you're scouting Taiwan as a digital nomad base, use your 90-day visa-exempt stay to explore different cities. Taipei has the best infrastructure, but Taichung and Kaohsiung are cheaper. Apply for DNV at BOCA before day 80.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "visa-run-warning",
+      "section": "general",
       "tip": "Don't rely on visa runs to live in Taiwan long-term. Immigration officers track entry patterns and may deny re-entry if they suspect you're using visa-exempt entry as a long-term residency workaround.",
-      "source": "community",
       "verified": true,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     }
   ],
   "relatedVisas": [

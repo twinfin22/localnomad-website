@@ -1,11 +1,49 @@
 {
   "type": "d-8",
-  "name": "Visa đầu tư doanh nghiệp Hàn Quốc (D-8) — Hướng dẫn đầy đủ 2026",
+  "name": "Visa đầu tư doanh nghiệp Hàn Quốc (D-8)",
   "shortName": "D-8",
   "category": "investment",
+  "nameLocal": "기업투자비자 (D-8)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Đăng ký Thẻ cư trú",
+      "deadline": "Trong vòng 90 ngày sau khi nhập cảnh",
+      "description": "Nộp đơn xin ARC tại Cục Quản lý xuất nhập cảnh gần nhất. Cần thiết cho mở tài khoản ngân hàng, đăng ký điện thoại và các dịch vụ khác.",
+      "tips": ["Đặt lịch hẹn trên HiKorea (hikorea.go.kr)", "Mang theo hộ chiếu, ảnh, giấy xác nhận địa chỉ và các giấy tờ liên quan đến visa"]
+    },
+    {
+      "id": "phone-number",
+      "title": "Đăng ký số điện thoại",
+      "deadline": "Ngay sau khi có ARC",
+      "description": "Sau khi có ARC, đăng ký số điện thoại tại nhà mạng Hàn Quốc. Cần thiết cho mở tài khoản ngân hàng và các dịch vụ trực tuyến."
+    },
+    {
+      "id": "bank-account",
+      "title": "Mở tài khoản ngân hàng",
+      "deadline": "Ngay sau khi có ARC",
+      "description": "Sau khi có ARC, mở tài khoản tại ngân hàng Hàn Quốc. Cần thiết cho nhận lương và các giao dịch hàng ngày."
+    },
+    {
+      "id": "health-insurance",
+      "title": "Đăng ký bảo hiểm y tế",
+      "deadline": "Trong vòng 6 tháng sau khi nhập cảnh",
+      "description": "Đăng ký Bảo hiểm y tế quốc gia Hàn Quốc (NHI). Người cư trú dài hạn có nghĩa vụ tham gia."
+    },
+    {
+      "id": "address-registration",
+      "title": "Đăng ký địa chỉ cư trú",
+      "deadline": "Trong vòng 14 ngày sau khi chuyển đến",
+      "description": "Hoàn tất đăng ký địa chỉ (전입신고) tại phường/quận nơi cư trú. Cần thiết cho các dịch vụ hành chính."
+    }
+  ],
+  "renewal": {
+    "process": "Nộp đơn gia hạn tại Cục Quản lý xuất nhập cảnh gần nhất ít nhất 30 ngày trước khi hết hạn."
+  },
   "description": "Tất cả về Visa đầu tư doanh nghiệp D-8 của Hàn Quốc: đầu tư tối thiểu ₩100 triệu, đăng ký FDI, thành lập công ty, các phân loại phụ (D-8-1, D-8-2, D-8-4, D-8-4S), hồ sơ, quy trình nộp đơn từng bước và câu hỏi thường gặp. Cập nhật năm 2026.",
   "tagline": "Khởi nghiệp hoặc đầu tư vào doanh nghiệp Hàn Quốc",
-  "keyRequirement": "Đầu tư tối thiểu ₩100,000,000 (~$75,000 USD) + sở hữu từ 10% cổ phần biểu quyết trở lên + quản lý trực tiếp",
+  "keyRequirement": "Đầu tư tối thiểu ₩100,000,000  + sở hữu từ 10% cổ phần biểu quyết trở lên + quản lý trực tiếp",
   "targetAudience": [
     "Doanh nhân nước ngoài khởi nghiệp tại Hàn Quốc",
     "Nhà đầu tư thành lập hoặc mua lại công ty Hàn Quốc",
@@ -16,7 +54,7 @@
   "eligibility": [
     {
       "id": "minimum-investment",
-      "label": "Đầu tư tối thiểu ₩100,000,000 (~$75,000 USD)",
+      "label": "Đầu tư tối thiểu ₩100,000,000 ",
       "description": "Vốn phải được chuyển từ nước ngoài và đăng ký là Đầu tư trực tiếp nước ngoài (FDI). Vốn phải nằm trong cơ cấu vốn của công ty và không được rút ngay dưới dạng lương hoặc cổ tức.",
       "required": true
     },
@@ -30,13 +68,15 @@
       "id": "active-management",
       "label": "Tham gia quản lý trực tiếp doanh nghiệp đầu tư",
       "description": "Yêu cầu công bố quy định rằng đầu tư thụ động không đáp ứng tiêu chí D-8. Người sở hữu visa phải tham gia quản lý hàng ngày hoặc giám sát hoạt động của doanh nghiệp.",
-      "required": true
+      "required": true,
+      "warnings": ["Đầu tư thụ động không đáp ứng yêu cầu D-8 — yêu cầu quản lý trực tiếp"]
     },
     {
       "id": "legitimate-funds",
       "label": "Vốn đầu tư từ nguồn hợp pháp, có thể truy xuất",
       "description": "Toàn bộ vốn đầu tư phải do cá nhân tạo ra và có thể truy xuất nguồn gốc. Người chuyển tiền phải là nhà đầu tư, vợ/chồng hoặc con chưa thành niên. Đối với khoản đầu tư trên ₩300,000,000, cha mẹ của nhà đầu tư hoặc vợ/chồng cũng được phép.",
-      "required": true
+      "required": true,
+      "warnings": ["Vốn đầu tư phải từ nguồn hợp pháp, có thể truy xuất — các kênh không được quản lý dẫn đến bị từ chối"]
     },
     {
       "id": "fdi-registration",
@@ -57,7 +97,7 @@
     "maxTotal": "Không có giới hạn cố định — có thể gia hạn vô thời hạn với hoạt động kinh doanh thực tế"
   },
   "fees": {
-    "application": "₩60,000 (~$42 USD)",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "Chi phí đăng ký công ty bổ sung ₩500,000-₩2,000,000 tùy loại hình công ty. Phí luật sư và kế toán cho việc thành lập công ty là chi phí riêng."
   },
@@ -70,28 +110,28 @@
     {
       "id": "passport",
       "name": "Hộ chiếu còn hiệu lực",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "Phải còn hiệu lực ít nhất 6 tháng kể từ ngày dự kiến lưu trú",
       "required": true
     },
     {
       "id": "application-form",
       "name": "Tờ khai xin cấp visa",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "Tờ khai xin cấp visa đã điền đầy đủ (Mẫu 34)",
       "required": true
     },
     {
       "id": "photo",
       "name": "Ảnh hộ chiếu",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3,5cm x 4,5cm, chụp gần đây, nền trắng",
       "required": true
     },
     {
       "id": "fdi-certificate",
       "name": "Giấy chứng nhận đăng ký Đầu tư trực tiếp nước ngoài",
-      "nameKorean": "외국인투자신고서",
+      "nameLocal": "외국인투자신고서",
       "description": "Bằng chứng rằng Đầu tư trực tiếp nước ngoài đã được đăng ký tại KOTRA hoặc ngân hàng ngoại hối. Phải hoàn tất TRƯỚC KHI chuyển vốn.",
       "tips": [
         "Đăng ký tại KOTRA hoặc bất kỳ ngân hàng ngoại hối nào tại Hàn Quốc",
@@ -102,7 +142,7 @@
     {
       "id": "forex-purchase-certificate",
       "name": "Giấy chứng nhận mua ngoại hối",
-      "nameKorean": "외국환매입증명서",
+      "nameLocal": "외국환매입증명서",
       "description": "Giấy chứng nhận do ngân hàng cấp xác nhận việc mua và chuyển ngoại tệ cho mục đích đầu tư.",
       "tips": [
         "Chỉ sử dụng chuyển khoản ngân hàng dưới tên của bạn",
@@ -113,14 +153,14 @@
     {
       "id": "business-registration",
       "name": "Giấy đăng ký kinh doanh",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "Do Cơ quan thuế quốc gia cấp khi đăng ký công ty. Xác nhận doanh nghiệp đã được đăng ký chính thức tại Hàn Quốc.",
       "required": true
     },
     {
       "id": "articles-of-incorporation",
       "name": "Điều lệ công ty",
-      "nameKorean": "정관",
+      "nameLocal": "정관",
       "description": "Tài liệu điều lệ công ty được công chứng, nêu rõ mục đích kinh doanh, cơ cấu cổ phần và quy tắc quản trị.",
       "tips": [
         "Phải được công chứng viên Hàn Quốc công chứng",
@@ -131,14 +171,14 @@
     {
       "id": "stock-deposit-certificate",
       "name": "Giấy chứng nhận nộp tiền cổ phần",
-      "nameKorean": "주식인수대금납입증명서",
+      "nameLocal": "주식인수대금납입증명서",
       "description": "Giấy chứng nhận do ngân hàng cấp xác nhận vốn cổ phần đã được nộp vào tài khoản ngân hàng doanh nghiệp của công ty.",
       "required": true
     },
     {
       "id": "business-plan",
       "name": "Kế hoạch kinh doanh",
-      "nameKorean": "사업계획서",
+      "nameLocal": "사업계획서",
       "description": "Kế hoạch kinh doanh chi tiết bao gồm tổng quan công ty, phân tích thị trường, mô hình doanh thu, dự báo tài chính 3-5 năm và kế hoạch tạo việc làm.",
       "tips": [
         "Dự báo tài chính phải thực tế và có dữ liệu hỗ trợ",
@@ -150,7 +190,7 @@
     {
       "id": "background-check",
       "name": "Lý lịch tư pháp",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "Giấy xác nhận không tiền án từ cơ quan cảnh sát nước sở tại. Có thể yêu cầu Apostille tùy theo quốc tịch.",
       "tips": [
         "Phải là bản mới (trong vòng 6 tháng)",
@@ -162,19 +202,20 @@
     {
       "id": "office-lease",
       "name": "Hợp đồng thuê văn phòng",
-      "nameKorean": "사무실임대차계약서",
+      "nameLocal": "사무실임대차계약서",
       "description": "Bằng chứng có địa chỉ văn phòng thực khớp với Giấy đăng ký kinh doanh. Cán bộ xuất nhập cảnh xác minh môi trường kinh doanh thực tế.",
       "tips": [
         "Địa chỉ văn phòng ảo thường xuyên bị gắn cờ bởi cơ quan xuất nhập cảnh",
         "Hợp đồng thuê văn phòng thực tế là yêu cầu gần như bắt buộc",
         "Địa chỉ phải khớp với Giấy đăng ký kinh doanh"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["Địa chỉ văn phòng ảo thường xuyên bị gắn cờ — hợp đồng thuê văn phòng thực là yêu cầu gần như bắt buộc"]
     },
     {
       "id": "health-insurance",
       "name": "Giấy chứng nhận bảo hiểm y tế",
-      "nameKorean": "보험증서",
+      "nameLocal": "보험증서",
       "description": "Chứng nhận bảo hiểm y tế có hiệu lực tại Hàn Quốc. Người sở hữu visa D-8 có thể đăng ký Bảo hiểm y tế quốc gia (NHI) với tư cách người lao động qua công ty của mình.",
       "tips": [
         "NHI qua công ty có thể đăng ký khi doanh nghiệp bắt đầu hoạt động",
@@ -194,7 +235,8 @@
         "KOTRA có văn phòng trên toàn cầu — kiểm tra investkorea.org để biết địa điểm",
         "Bất kỳ ngân hàng ngoại hối nào tại Hàn Quốc cũng có thể xử lý đăng ký FDI",
         "Chuẩn bị sẵn kế hoạch kinh doanh và chi tiết đầu tư"
-      ]
+      ],
+      "warnings": ["Đăng ký FDI PHẢI thực hiện trước khi chuyển vốn — phạt thuế 50% nếu không tuân thủ"]
     },
     {
       "id": "step-2",
@@ -260,12 +302,14 @@
       "tips": [
         "Đăng ký ARC là bắt buộc trong vòng 90 ngày kể từ khi đến",
         "Đặt lịch hẹn tại Cục xuất nhập cảnh qua HiKorea",
-        "Thẻ cư trú là giấy tờ tùy thân chính tại Hàn Quốc"
+        "Thẻ cư trú là giấy tờ tùy thân chính tại Hàn Quốc",
+        "Báo cáo đóng cửa doanh nghiệp cho Cục xuất nhập cảnh trong vòng 30 ngày hoặc có nguy cơ mất tư cách lưu trú"
       ]
     }
   ],
   "processingTime": {
-    "typical": "4-8 tuần (nộp tại đại sứ quán)",
+    "governmentReview": "4-8 tuần (nộp tại đại sứ quán)",
+    "totalEndToEnd": "3-6 tháng",
     "notes": "Thời gian xử lý khác nhau tùy theo đại sứ quán, quốc tịch và mùa. Chuyển đổi tư cách trong nước Hàn Quốc thường mất 2-4 tuần. Đăng ký công ty mất thêm 2-3 tuần (lên đến 4 tuần bao gồm tài khoản ngân hàng doanh nghiệp). Tổng thời gian từ đầu đến khi cấp visa là khoảng 9-17 tuần. Nộp đơn ít nhất 2-3 tháng trước ngày bắt đầu dự kiến."
   },
   "workPermission": {
@@ -280,7 +324,7 @@
   "faqs": [
     {
       "question": "Mức đầu tư tối thiểu cho visa D-8 là bao nhiêu?",
-      "answer": "Theo yêu cầu công bố, mức đầu tư tối thiểu là ₩100,000,000 (khoảng $75,000 USD). Vốn phải được chuyển từ nước ngoài thông qua Đầu tư trực tiếp nước ngoài (FDI) đã đăng ký và nộp dưới dạng vốn cổ phần. Khoản đầu tư phải nằm trong cơ cấu vốn của công ty — không thể rút ngay dưới dạng lương hoặc cổ tức."
+      "answer": "Theo yêu cầu công bố, mức đầu tư tối thiểu là ₩100,000,000 . Vốn phải được chuyển từ nước ngoài thông qua Đầu tư trực tiếp nước ngoài (FDI) đã đăng ký và nộp dưới dạng vốn cổ phần. Khoản đầu tư phải nằm trong cơ cấu vốn của công ty — không thể rút ngay dưới dạng lương hoặc cổ tức."
     },
     {
       "question": "Visa khởi nghiệp đặc biệt D-8-4S Startup Korea là gì?",
@@ -312,7 +356,7 @@
     },
     {
       "question": "Con đường từ D-8 đến thường trú (F-5) là gì?",
-      "answer": "Theo hướng dẫn xuất nhập cảnh công bố, người sở hữu visa D-8 có thể chuyển sang tư cách Visa thường trú (F-5) sau khi duy trì doanh nghiệp thành công từ 3 năm trở lên. Lộ trình nhà đầu tư tiêu chuẩn yêu cầu duy trì khoản đầu tư từ ₩500,000,000 trở lên (hoặc tương đương bằng ngoại tệ, khoảng $500,000 USD). Các yêu cầu bổ sung bao gồm tuân thủ thuế đầy đủ, không có tiền án và trình độ tiếng Hàn (TOPIK cấp 2-4)."
+      "answer": "Theo hướng dẫn xuất nhập cảnh công bố, người sở hữu visa D-8 có thể chuyển sang tư cách Visa thường trú (F-5) sau khi duy trì doanh nghiệp thành công từ 3 năm trở lên. Lộ trình nhà đầu tư tiêu chuẩn yêu cầu duy trì khoản đầu tư từ ₩500,000,000 trở lên . Các yêu cầu bổ sung bao gồm tuân thủ thuế đầy đủ, không có tiền án và trình độ tiếng Hàn (TOPIK cấp 2-4)."
     },
     {
       "question": "Tôi có thể tuyển dụng nhân viên với visa D-8 không?",
@@ -337,51 +381,40 @@
     "Nộp đơn gia hạn visa 2-3 tháng trước khi hết hạn — chứng minh hoạt động kinh doanh và tuân thủ thuế củng cố hồ sơ gia hạn",
     "Cân nhắc lộ trình D-8-4S nếu bạn có ý tưởng kinh doanh tốt nhưng thiếu bằng cấp chính quy"
   ],
-  "warnings": [
-    "Đăng ký FDI PHẢI thực hiện trước khi chuyển vốn — phạt thuế 50% nếu không tuân thủ",
-    "Báo cáo đóng cửa doanh nghiệp cho Cục xuất nhập cảnh trong vòng 30 ngày hoặc có nguy cơ mất tư cách lưu trú",
-    "Địa chỉ văn phòng ảo thường xuyên bị gắn cờ — hợp đồng thuê văn phòng thực là yêu cầu gần như bắt buộc",
-    "Vốn đầu tư phải từ nguồn hợp pháp, có thể truy xuất — các kênh không được quản lý dẫn đến bị từ chối",
-    "Đầu tư thụ động không đáp ứng yêu cầu D-8 — yêu cầu quản lý trực tiếp"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "fdi-before-transfer",
+      "section": "process",
       "tip": "Bạn phải khai báo đầu tư trực tiếp nước ngoài trước khi chuyển vốn. Bỏ qua bước này có thể bị phạt thuế 50% trên số tiền chuyển. Đăng ký tại KOTRA hoặc bất kỳ ngân hàng ngoại hối nào trước.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "paper-trail-funds",
+      "section": "documents",
       "tip": "Mọi đồng won chuyển phải có thể truy xuất. Chỉ sử dụng chuyển khoản ngân hàng dưới tên bạn. Các kênh ngoại hối không được quản lý có thể dẫn đến tự động bị từ chối. Giữ bản sao mọi biên lai và xác nhận chuyển khoản.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "virtual-office-flagged",
+      "section": "documents",
       "tip": "Cán bộ xuất nhập cảnh hiện kiểm tra môi trường kinh doanh thực tế. Hợp đồng thuê văn phòng thực là yêu cầu gần như bắt buộc. Công ty trên giấy với địa chỉ ảo bị gắn cờ trong quá trình xem xét và có thể làm chậm hoặc cản trở hồ sơ của bạn.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "d-8-4s-startup-special",
+      "section": "requirements",
       "tip": "Từ tháng 11 năm 2024, Visa khởi nghiệp đặc biệt Startup Korea (D-8-4S) không yêu cầu bằng cấp hay điểm học thuật. Ứng viên được đánh giá dựa trên tính khả thi của ý tưởng và năng lực đội ngũ. Nộp đơn qua Cổng thông tin K-Startup hoặc Trung tâm Startup Toàn cầu.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "company-registration-timeline",
+      "section": "process",
       "tip": "Đừng kỳ vọng có thể đến và thành lập công ty trong một ngày. Dự trù 2-3 tuần chỉ riêng cho đăng ký, lên đến 4 tuần kèm tài khoản ngân hàng doanh nghiệp. Một số ngân hàng yêu cầu đến trực tiếp nhiều lần để mở tài khoản doanh nghiệp.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

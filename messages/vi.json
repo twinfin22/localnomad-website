@@ -134,9 +134,36 @@
     "showLess": "Ẩn bớt",
     "visaStatus": "Tình trạng visa",
     "pointsSystem": "Hệ thống điểm",
+    "totalTimeline": "Tổng thời gian",
+    "category": {
+      "visaStatus": "Yêu cầu tình trạng visa",
+      "pointsSystem": "Hệ thống điểm",
+      "income": "Yêu cầu thu nhập",
+      "investment": "Yêu cầu đầu tư",
+      "legitimate-funds": "Chứng minh tài chính",
+      "employer-sponsorship": "Bảo lãnh của chủ lao động",
+      "education-masters": "Yêu cầu học vấn",
+      "salary-parity": "Yêu cầu lương",
+      "employment": "Việc làm",
+      "education": "Học vấn",
+      "age": "Yêu cầu tuổi",
+      "nationality": "Quốc tịch",
+      "insurance": "Bảo hiểm",
+      "professional-field": "Lĩnh vực chuyên môn",
+      "salary-threshold": "Ngưỡng lương",
+      "tax-residency": "Cư trú thuế",
+      "coe-required": "Giấy chứng nhận tư cách lưu trú",
+      "sponsor-employer": "Nhà bảo lãnh / Chủ lao động",
+      "language-ability": "Năng lực ngôn ngữ",
+      "work-permit": "Giấy phép lao động",
+      "psb-registration": "Đăng ký công an",
+      "health-check": "Khám sức khỏe"
+    },
     "tabSubItems": "{count} mục",
     "tabSubDocs": "{count} hồ sơ",
-    "tabSubSteps": "{count} bước"
+    "tabSubSteps": "{count} bước",
+    "additionalRequirements": "Xem thêm {count} yêu cầu",
+    "estimatedTotal": "Tổng thời gian ước tính"
   },
   "Auth": {
     "logIn": "Đăng nhập",
@@ -193,9 +220,19 @@
     "disclaimer": "Dựa trên các yêu cầu đã công bố. Không phải tư vấn pháp lý."
   },
   "Nav": {
-    "skipToContent": "Chuy\u1ec3n \u0111\u1ebfn n\u1ed9i dung",
-    "mainNavigation": "\u0110i\u1ec1u h\u01b0\u1edbng ch\u00ednh",
-    "blog": "Blog"
+    "skipToContent": "Chuyển đến nội dung",
+    "mainNavigation": "Điều hướng chính",
+    "blog": "Blog",
+    "countryKorea": "Hàn Quốc",
+    "countryJapan": "Nhật Bản",
+    "countryTaiwan": "Đài Loan",
+    "countryChina": "Trung Quốc",
+    "visaInfo": "Thông tin visa",
+    "neighborhoods": "Khu vực",
+    "guide": "Hướng dẫn",
+    "moreCountries": "Đổi quốc gia",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu"
   },
   "Blog": {
     "title": "Blog",

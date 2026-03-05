@@ -134,9 +134,36 @@
     "showLess": "閉じる",
     "visaStatus": "ビザ資格",
     "pointsSystem": "ポイント制度",
+    "totalTimeline": "全体のスケジュール",
+    "category": {
+      "visaStatus": "ビザ資格要件",
+      "pointsSystem": "ポイント制度",
+      "income": "収入要件",
+      "investment": "投資要件",
+      "legitimate-funds": "資金証明",
+      "employer-sponsorship": "雇用主スポンサー",
+      "education-masters": "学歴要件",
+      "salary-parity": "給与要件",
+      "employment": "雇用",
+      "education": "学歴",
+      "age": "年齢要件",
+      "nationality": "国籍",
+      "insurance": "保険",
+      "professional-field": "専門分野",
+      "salary-threshold": "給与基準",
+      "tax-residency": "税務居住",
+      "coe-required": "在留資格認定証明書",
+      "sponsor-employer": "スポンサー・雇用主",
+      "language-ability": "語学力",
+      "work-permit": "就労許可",
+      "psb-registration": "公安局届出",
+      "health-check": "健康診断"
+    },
     "tabSubItems": "{count}項目",
     "tabSubDocs": "{count}件の書類",
-    "tabSubSteps": "{count}ステップ"
+    "tabSubSteps": "{count}ステップ",
+    "additionalRequirements": "他{count}件の要件を表示",
+    "estimatedTotal": "推定合計期間"
   },
   "Auth": {
     "logIn": "ログイン",
@@ -193,9 +220,19 @@
     "disclaimer": "公開されている要件に基づきます。法的アドバイスではありません。"
   },
   "Nav": {
-    "skipToContent": "\u30b3\u30f3\u30c6\u30f3\u30c4\u3078\u30b9\u30ad\u30c3\u30d7",
-    "mainNavigation": "\u30e1\u30a4\u30f3\u30ca\u30d3\u30b2\u30fc\u30b7\u30e7\u30f3",
-    "blog": "\u30d6\u30ed\u30b0"
+    "skipToContent": "コンテンツへスキップ",
+    "mainNavigation": "メインナビゲーション",
+    "blog": "ブログ",
+    "countryKorea": "韓国",
+    "countryJapan": "日本",
+    "countryTaiwan": "台湾",
+    "countryChina": "中国",
+    "visaInfo": "ビザ情報",
+    "neighborhoods": "エリアガイド",
+    "guide": "ガイド",
+    "moreCountries": "国を切り替え",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる"
   },
   "Blog": {
     "title": "\u30d6\u30ed\u30b0",

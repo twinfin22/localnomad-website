@@ -1,8 +1,46 @@
 {
   "type": "f-2",
-  "name": "Visa cư trú theo điểm Hàn Quốc (F-2-7) — Hướng dẫn đầy đủ 2026",
+  "name": "Visa cư trú theo điểm Hàn Quốc (F-2-7)",
   "shortName": "F-2",
   "category": "residence",
+  "nameLocal": "점수제 거주비자 (F-2-7)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Đăng ký Thẻ cư trú",
+      "deadline": "Trong vòng 90 ngày sau khi nhập cảnh",
+      "description": "Nộp đơn xin ARC tại Cục Quản lý xuất nhập cảnh gần nhất. Cần thiết cho mở tài khoản ngân hàng, đăng ký điện thoại và các dịch vụ khác.",
+      "tips": ["Đặt lịch hẹn trên HiKorea (hikorea.go.kr)", "Mang theo hộ chiếu, ảnh, giấy xác nhận địa chỉ và các giấy tờ liên quan đến visa"]
+    },
+    {
+      "id": "phone-number",
+      "title": "Đăng ký số điện thoại",
+      "deadline": "Ngay sau khi có ARC",
+      "description": "Sau khi có ARC, đăng ký số điện thoại tại nhà mạng Hàn Quốc. Cần thiết cho mở tài khoản ngân hàng và các dịch vụ trực tuyến."
+    },
+    {
+      "id": "bank-account",
+      "title": "Mở tài khoản ngân hàng",
+      "deadline": "Ngay sau khi có ARC",
+      "description": "Sau khi có ARC, mở tài khoản tại ngân hàng Hàn Quốc. Cần thiết cho nhận lương và các giao dịch hàng ngày."
+    },
+    {
+      "id": "health-insurance",
+      "title": "Đăng ký bảo hiểm y tế",
+      "deadline": "Trong vòng 6 tháng sau khi nhập cảnh",
+      "description": "Đăng ký Bảo hiểm y tế quốc gia Hàn Quốc (NHI). Người cư trú dài hạn có nghĩa vụ tham gia."
+    },
+    {
+      "id": "address-registration",
+      "title": "Đăng ký địa chỉ cư trú",
+      "deadline": "Trong vòng 14 ngày sau khi chuyển đến",
+      "description": "Hoàn tất đăng ký địa chỉ (전입신고) tại phường/quận nơi cư trú. Cần thiết cho các dịch vụ hành chính."
+    }
+  ],
+  "renewal": {
+    "process": "Nộp đơn gia hạn tại Cục Quản lý xuất nhập cảnh gần nhất ít nhất 30 ngày trước khi hết hạn."
+  },
   "description": "Tất cả về Visa cư trú theo điểm F-2-7 của Hàn Quốc: điểm ≥80 trên 170, phân tích điểm theo tuổi, học vấn, thu nhập, tiếng Hàn, và các hạng mục thưởng, lộ trình đến thường trú, và quyền làm việc không hạn chế. F-2-7 là visa cư trú dài hạn hàng đầu của Hàn Quốc dành cho chuyên gia tài năng. Ứng viên tích lũy điểm qua năm hạng mục — Tuổi (tối đa 25 điểm), Học vấn (tối đa 25 điểm), Tiếng Hàn qua TOPIK hoặc KIIP (tối đa 20 điểm), Thu nhập hàng năm (tối đa 60 điểm), và Điểm thưởng (tối đa 40 điểm) — và phải đạt tổng điểm từ 80 trở lên. Thời hạn visa từ 1 đến 5 năm tùy theo tổng điểm, và người sở hữu được quyền làm việc tự do: đổi nhà tuyển dụng, mở doanh nghiệp, hoặc làm nhiều việc cùng lúc. Sau 3 năm trên visa F-2-7, hướng dẫn công bố cho thấy lộ trình đến Visa thường trú F-5. Cập nhật năm 2026.",
   "tagline": "Cư trú dài hạn thông qua hệ thống tính điểm",
   "keyRequirement": "Đạt ≥80 điểm (trên 170) về tuổi, học vấn, thu nhập, tiếng Hàn",
@@ -18,13 +56,16 @@
       "id": "qualifying-visa",
       "label": "Sở hữu visa đủ điều kiện (E-1~E-7, D-5~D-9) từ 3 năm liên tục trở lên",
       "description": "Phải đã cư trú hợp pháp tại Hàn Quốc trên tư cách lưu trú đủ điều kiện ít nhất 3 năm liên tục. Yêu cầu này được miễn cho ứng viên có thu nhập hàng năm ≥₩40 triệu hoặc sinh viên tốt nghiệp đại học Hàn Quốc.",
-      "required": true
+      "required": true,
+      "warnings": ["Điểm được xác minh nghiêm ngặt — cán bộ xuất nhập cảnh có thể yêu cầu hồ sơ bổ sung cho mỗi yêu cầu"]
     },
     {
       "id": "points-threshold",
       "label": "Đạt ≥80 điểm trên tổng 170 điểm",
       "description": "Điểm được đánh giá qua năm hạng mục: Tuổi (tối đa 25), Học vấn (tối đa 25), Tiếng Hàn TOPIK/KIIP (tối đa 20), Thu nhập hàng năm (tối đa 60), và Điểm thưởng (tối đa 40). Cán bộ xuất nhập cảnh xác minh mỗi điểm yêu cầu bằng hồ sơ chứng minh.",
-      "required": true
+      "required": true,
+      "warnings": ["Điểm phải duy trì ≥80 mỗi lần gia hạn — mất việc, giảm lương, hoặc lớn tuổi hơn có thể làm giảm điểm dưới ngưỡng"],
+      "tips": ["Sử dụng koreaprcalculator.com để ước tính điểm trước khi nộp đơn — công cụ này tuân theo bảng tính điểm chính thức", "Theo dõi điểm dự kiến khi gia hạn — lớn tuổi hơn và thay đổi công việc có thể ảnh hưởng tổng điểm"]
     },
     {
       "id": "income-fast-track",
@@ -42,7 +83,8 @@
       "id": "no-criminal-record",
       "label": "Không có tiền án hoặc vi phạm xuất nhập cảnh trong thời gian lưu trú",
       "description": "Hành vi phạm tội, vi phạm xuất nhập cảnh hoặc vi phạm giao thông nghiêm trọng có thể dẫn đến trừ điểm hoặc mất đủ điều kiện F-2-7.",
-      "required": true
+      "required": true,
+      "warnings": ["Tiền án hoặc vi phạm xuất nhập cảnh trong thời gian lưu trú có thể dẫn đến trừ điểm hoặc thu hồi visa"]
     }
   ],
   "duration": {
@@ -51,15 +93,15 @@
     "maxTotal": "Có thể gia hạn vô thời hạn (lộ trình đến Visa thường trú F-5 sau 3 năm)"
   },
   "fees": {
-    "application": "₩85,000 (~$63 USD)",
-    "extension": "₩60,000 (~$45 USD)",
+    "application": "₩85,000",
+    "extension": "₩60,000",
     "notes": "Phí có thể thay đổi. Kiểm tra HiKorea hoặc Cục Quản lý xuất nhập cảnh địa phương để biết biểu phí hiện hành."
   },
   "documents": [
     {
       "id": "application-form",
       "name": "Tờ khai tích hợp",
-      "nameKorean": "통합신청서",
+      "nameLocal": "통합신청서",
       "description": "Tờ khai xuất nhập cảnh tiêu chuẩn, điền đầy đủ",
       "tips": [
         "Tải từ cổng thông tin HiKorea hoặc nhận tại Cục xuất nhập cảnh",
@@ -70,35 +112,35 @@
     {
       "id": "passport",
       "name": "Hộ chiếu còn hiệu lực",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "Phải còn hiệu lực ít nhất 6 tháng sau thời gian lưu trú dự kiến",
       "required": true
     },
     {
       "id": "arc",
       "name": "Thẻ cư trú",
-      "nameKorean": "외국인등록증",
+      "nameLocal": "외국인등록증",
       "description": "Thẻ cư trú hiện tại thể hiện tư cách lưu trú hiện hành (loại E, loại D, v.v.)",
       "required": true
     },
     {
       "id": "photo",
       "name": "Ảnh hộ chiếu",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3,5cm x 4,5cm, chụp gần đây (trong vòng 6 tháng), nền trắng",
       "required": true
     },
     {
       "id": "residency-proof",
       "name": "Giấy xác nhận nơi ở / Hợp đồng thuê nhà",
-      "nameKorean": "거주지증명서",
+      "nameLocal": "거주지증명서",
       "description": "Hợp đồng thuê nhà (임대차계약서), đăng ký cư trú, hoặc hóa đơn tiện ích thể hiện địa chỉ hiện tại tại Hàn Quốc",
       "required": true
     },
     {
       "id": "employment-proof",
       "name": "Hợp đồng lao động hoặc Giấy đăng ký kinh doanh",
-      "nameKorean": "고용계약서 / 사업자등록증",
+      "nameLocal": "고용계약서 / 사업자등록증",
       "description": "Hợp đồng lao động hiện tại từ nhà tuyển dụng Hàn Quốc, hoặc giấy đăng ký kinh doanh nếu tự kinh doanh",
       "tips": [
         "Hợp đồng cần ghi rõ chức danh, mức lương và thời gian làm việc",
@@ -109,7 +151,7 @@
     {
       "id": "income-certificate",
       "name": "Giấy chứng nhận thu nhập / Khai thuế thu nhập",
-      "nameKorean": "근로소득증명서",
+      "nameLocal": "근로소득증명서",
       "description": "Giấy chứng nhận thu nhập chính thức từ Cơ quan thuế quốc gia (NTS) hoặc biên nhận khấu trừ thuế thu nhập tại nguồn do nhà tuyển dụng cấp (원천징수영수증). Phải thể hiện thu nhập gộp hàng năm.",
       "tips": [
         "Phát hành từ Hometax (홈택스) cho năm thuế gần nhất",
@@ -120,29 +162,31 @@
     {
       "id": "degree-certificates",
       "name": "Bằng cấp",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "Bản gốc hoặc bản sao chứng thực của tất cả bằng cấp (cử nhân, thạc sĩ, tiến sĩ). Bằng cấp nước ngoài phải được dịch sang tiếng Hàn hoặc tiếng Anh và có Apostille hoặc công chứng.",
       "tips": [
         "Apostille hoặc công chứng là bắt buộc cho tất cả bằng cấp nước ngoài",
         "Bằng khoa học và kỹ thuật được tính điểm cao hơn các ngành khác — mang theo bảng điểm để chứng minh chuyên ngành"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["Bằng cấp nước ngoài phải có Apostille hoặc công chứng và dịch thuật — hồ sơ chưa dịch sẽ không được chấp nhận"]
     },
     {
       "id": "topik-kiip",
       "name": "Chứng chỉ TOPIK hoặc KIIP",
-      "nameKorean": "한국어능력시험 / 사회통합프로그램 증명서",
+      "nameLocal": "한국어능력시험 / 사회통합프로그램 증명서",
       "description": "Kết quả Kỳ thi năng lực tiếng Hàn (TOPIK) hoặc Giấy chứng nhận hoàn thành Chương trình hội nhập xã hội (KIIP). Không bắt buộc cho đơn nộp, nhưng đóng góp đến 20 điểm.",
       "tips": [
         "Hoàn thành KIIP cấp 5 được cộng thêm 10 điểm thưởng ngoài 20 điểm tiếng Hàn",
         "Kết quả TOPIK có hiệu lực 2 năm kể từ ngày thi"
       ],
-      "required": false
+      "required": false,
+      "warnings": ["Kết quả TOPIK hết hạn sau 2 năm — đảm bảo kết quả còn hiệu lực tại thời điểm nộp đơn"]
     },
     {
       "id": "tb-screening",
       "name": "Giấy xác nhận xét nghiệm lao phổi",
-      "nameKorean": "결핵검진확인서",
+      "nameLocal": "결핵검진확인서",
       "description": "Giấy chứng nhận xét nghiệm lao phổi từ cơ sở y tế được chỉ định tại Hàn Quốc. Bắt buộc đối với công dân các quốc gia được chỉ định.",
       "tips": [
         "Xét nghiệm tại trung tâm y tế xuất nhập cảnh được chỉ định",
@@ -153,7 +197,7 @@
     {
       "id": "background-check",
       "name": "Lý lịch tư pháp",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "Giấy xác nhận không tiền án từ cơ quan cảnh sát nước sở tại. Bắt buộc cho ứng viên lần đầu hoặc người đã ở ngoài Hàn Quốc từ 6 tháng trở lên. Phải có Apostille.",
       "tips": [
         "Kiểm tra lý lịch FBI (cho công dân Hoa Kỳ) có thể mất 12-18 tuần qua bưu điện — hãy bắt đầu sớm",
@@ -165,7 +209,7 @@
     {
       "id": "family-documents",
       "name": "Giấy tờ quan hệ gia đình",
-      "nameKorean": "가족관계증명서",
+      "nameLocal": "가족관계증명서",
       "description": "Giấy đăng ký kết hôn, giấy khai sinh con, hoặc các bằng chứng quan hệ gia đình khác. Chỉ bắt buộc nếu nộp đơn kèm người phụ thuộc hoặc yêu cầu điểm liên quan đến gia đình.",
       "required": false
     }
@@ -213,7 +257,8 @@
       "tips": [
         "Đến sớm — văn phòng có thể đông",
         "Sắp xếp hồ sơ theo hạng mục (tuổi, học vấn, thu nhập, tiếng Hàn, thưởng) để nộp suôn sẻ"
-      ]
+      ],
+      "warnings": ["Phải nộp đơn trực tiếp tại Cục Quản lý xuất nhập cảnh Hàn Quốc — không thể nộp từ nước ngoài"]
     },
     {
       "id": "step-5",
@@ -235,7 +280,8 @@
     }
   ],
   "processingTime": {
-    "typical": "2-4 tuần",
+    "governmentReview": "2-4 tuần",
+    "totalEndToEnd": "2-4 tháng",
     "notes": "Thời gian xử lý khác nhau tùy theo Cục xuất nhập cảnh và khối lượng hồ sơ. Cán bộ xuất nhập cảnh có thể yêu cầu hồ sơ bổ sung để xác minh điểm, có thể kéo dài thời gian. Theo hướng dẫn công bố, nộp đơn trước khi visa hiện tại hết hạn."
   },
   "workPermission": {
@@ -302,52 +348,40 @@
     "Sắp xếp hồ sơ theo hạng mục tính điểm (tuổi, học vấn, thu nhập, tiếng Hàn, thưởng) để nộp suôn sẻ",
     "Theo dõi điểm dự kiến khi gia hạn — lớn tuổi hơn và thay đổi công việc có thể ảnh hưởng tổng điểm"
   ],
-  "warnings": [
-    "Điểm được xác minh nghiêm ngặt — cán bộ xuất nhập cảnh có thể yêu cầu hồ sơ bổ sung cho mỗi yêu cầu",
-    "Điểm phải duy trì ≥80 mỗi lần gia hạn — mất việc, giảm lương, hoặc lớn tuổi hơn có thể làm giảm điểm dưới ngưỡng",
-    "Tiền án hoặc vi phạm xuất nhập cảnh trong thời gian lưu trú có thể dẫn đến trừ điểm hoặc thu hồi visa",
-    "Phải nộp đơn trực tiếp tại Cục Quản lý xuất nhập cảnh Hàn Quốc — không thể nộp từ nước ngoài",
-    "Bằng cấp nước ngoài phải có Apostille hoặc công chứng và dịch thuật — hồ sơ chưa dịch sẽ không được chấp nhận",
-    "Kết quả TOPIK hết hạn sau 2 năm — đảm bảo kết quả còn hiệu lực tại thời điểm nộp đơn"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "income-lever",
+      "section": "requirements",
       "tip": "Điểm thu nhập chiếm 60 trên tổng 170 điểm. Nếu lương hàng năm vượt ₩40 triệu, hướng dẫn công bố cho thấy bạn có thể nộp đơn ngay mà không cần chờ 3 năm cư trú. Tập trung đưa lương lên cao nhất có thể trên giấy tờ.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "salary-negotiation",
+      "section": "requirements",
       "tip": "Thay vì chấp nhận chia nhỏ như '2,5 triệu lương + 0,5 triệu phụ cấp nhà,' hãy đàm phán lương cố định 3 triệu. Khai thuế phản ánh thu nhập cao hơn, chuyển trực tiếp thành nhiều điểm F-2-7 hơn. Giấy chứng nhận thu nhập từ Hometax chỉ hiển thị thu nhập chịu thuế.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "kiip-bonus",
+      "section": "requirements",
       "tip": "Hoàn thành KIIP (사회통합프로그램) cấp 5 cho bạn thêm 10 điểm thưởng ngoài 20 điểm tiếng Hàn — tổng cộng 30 điểm chỉ từ tiếng Hàn. Chương trình miễn phí, do chính phủ tổ chức, và là đầu tư thời gian hiệu quả nhất về mặt điểm.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "blood-donation",
+      "section": "general",
       "tip": "Hiến máu tại Hội Chữ thập đỏ Hàn Quốc được tính là giờ tình nguyện hướng đến điểm thưởng tình nguyện. Bạn cần hoạt động được ghi nhận qua nhiều lần. Đăng ký giờ tình nguyện trên cổng thông tin 1365.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "start-early",
+      "section": "process",
       "tip": "Bắt đầu chuẩn bị 2-3 năm trước khi cần F-2-7. Học TOPIK, đăng ký KIIP, đàm phán lương, và tích lũy giờ tình nguyện đều cần thời gian. Nhiều chuyên gia nhận ra quá muộn rằng họ thiếu điểm và không thể bù kịp nhanh chóng.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

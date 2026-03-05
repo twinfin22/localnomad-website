@@ -8,33 +8,64 @@ import {
   Zap,
   TriangleAlert,
   Lightbulb,
+  ChevronRight,
   DollarSign,
   Briefcase,
   Shield,
-  AlertTriangle,
   Stamp,
   BarChart3,
+  GraduationCap,
+  Building2,
+  Globe,
+  FileText,
+  Landmark,
+  Award,
+  Clock,
+  Heart,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { linkifyText } from '@/lib/linkify-text';
-import type { Visa, KoreaVisa, Requirement } from '@/lib/types/visa';
+import type { Visa, KoreaVisa, Requirement, CommunityTip } from '@/lib/types/visa';
 
 interface RequirementsTabProps {
   visa: Visa;
+  communityTips?: CommunityTip[];
 }
 
-const CATEGORY_CONFIG: Record<
-  string,
-  { icon: typeof Check; labelKey: string }
-> = {
-  visaStatus: { icon: Stamp, labelKey: 'visaStatus' },
-  pointsSystem: { icon: BarChart3, labelKey: 'pointsSystem' },
-  income: { icon: DollarSign, labelKey: 'incomeRequirement' },
+const FOLDABLE_REQUIREMENT_IDS = new Set([
+  'no-criminal-record',
+  'good-health',
+  'valid-passport',
+  'health-check',
+  'passport-validity',
+]);
+
+const CATEGORY_ICON_MAP: Record<string, typeof Check> = {
+  visaStatus: Stamp,
+  pointsSystem: BarChart3,
+  income: DollarSign,
+  investment: Landmark,
+  'legitimate-funds': DollarSign,
+  'employer-sponsorship': Building2,
+  'education-masters': GraduationCap,
+  'salary-parity': DollarSign,
+  employment: Briefcase,
+  education: GraduationCap,
+  age: Clock,
+  nationality: Globe,
+  insurance: Shield,
+  'professional-field': Award,
+  'salary-threshold': DollarSign,
+  'tax-residency': Landmark,
+  'coe-required': FileText,
+  'sponsor-employer': Building2,
+  'language-ability': Globe,
+  'work-permit': FileText,
+  'psb-registration': Landmark,
+  'health-check': Heart,
 };
 
-const CATEGORY_ORDER = ['visaStatus', 'pointsSystem', 'income'];
-
-export function RequirementsTab({ visa }: RequirementsTabProps) {
+export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabProps) {
   const t = useTranslations('VisaDetail');
 
   const isKoreaVisa = visa.country === 'kr';
@@ -52,24 +83,20 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
     return map;
   }, [visa.eligibility]);
 
-  // Ordered categories: known order first, then any extras
+  // Render categories in the order they appear in the data
   const orderedCategories = useMemo(() => {
-    const result: string[] = [];
-    for (const cat of CATEGORY_ORDER) {
-      if (grouped.has(cat)) result.push(cat);
-    }
-    for (const cat of grouped.keys()) {
-      if (!result.includes(cat)) result.push(cat);
-    }
-    return result;
+    return Array.from(grouped.keys());
   }, [grouped]);
 
   const renderItem = (item: Requirement) => {
-    const isNegative = item.id.startsWith('no-');
+    const isNegative = item.sentiment === 'negative';
+    const isPositive = item.sentiment === 'positive';
     return (
       <li key={item.id} className="flex items-start gap-3">
         {isNegative ? (
           <X className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />
+        ) : isPositive ? (
+          <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
         ) : item.required ? (
           <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
         ) : (
@@ -79,7 +106,8 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
           <span
             className={cn(
               'text-base font-medium',
-              isNegative && 'text-red-600'
+              isNegative && 'text-red-600',
+              isPositive && 'text-green-600'
             )}
           >
             {item.label}
@@ -118,18 +146,20 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
   };
 
   const categoryLabel = (category: string) => {
-    const labels: Record<string, string> = {
-      visaStatus: t('visaStatus'),
-      pointsSystem: t('pointsSystem'),
-      income: t('incomeRequirement'),
-    };
-    return labels[category] ?? category;
+    const key = `category.${category}`;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- dynamic key lookup with fallback
+    if (t.has(key as any)) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return t(key as any);
+    }
+    return category
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase());
   };
 
   const renderCategoryHeader = (category: string) => {
-    const config = CATEGORY_CONFIG[category];
-    if (!config) return null;
-    const Icon = config.icon;
+    if (category === '_uncategorized') return null;
+    const Icon = CATEGORY_ICON_MAP[category] ?? FileText;
     return (
       <div className="flex items-center gap-2">
         <Icon className="h-5 w-5 text-primary" />
@@ -141,7 +171,9 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
   return (
     <div className="rounded-lg border bg-white p-5">
       {orderedCategories.map((category, catIndex) => {
-        const items = grouped.get(category) ?? [];
+        const allItems = grouped.get(category) ?? [];
+        const primaryItems = allItems.filter(item => !FOLDABLE_REQUIREMENT_IDS.has(item.id));
+        const foldableItems = allItems.filter(item => FOLDABLE_REQUIREMENT_IDS.has(item.id));
         const isIncome = category === 'income';
 
         return (
@@ -151,7 +183,17 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
             {renderCategoryHeader(category)}
 
             <div className="pl-7">
-              <ul className="mt-3 space-y-3">{items.map(renderItem)}</ul>
+              <ul className="mt-3 space-y-3">{primaryItems.map(renderItem)}</ul>
+
+              {foldableItems.length > 0 && (
+                <details className="mt-4">
+                  <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+                    <ChevronRight className="h-4 w-4 transition-transform [[open]>&]:rotate-90" />
+                    {t('additionalRequirements', { count: foldableItems.length })}
+                  </summary>
+                  <ul className="mt-3 space-y-3">{foldableItems.map(renderItem)}</ul>
+                </details>
+              )}
 
               {/* Merge income metadata into the income category */}
               {isIncome && visa.incomeRequirement && (
@@ -244,7 +286,7 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
       {(koreaVisa?.insuranceRequirement || koreaVisa?.taxImplications) && (
         <>
           <div className="my-5 border-t" />
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className={cn("grid gap-6", koreaVisa?.insuranceRequirement && koreaVisa?.taxImplications && "sm:grid-cols-2")}>
             {koreaVisa?.insuranceRequirement && (
               <div>
                 <div className="flex items-center gap-2">
@@ -277,27 +319,42 @@ export function RequirementsTab({ visa }: RequirementsTabProps) {
             )}
 
             {koreaVisa?.taxImplications && (
-              <div className="rounded-md bg-amber-50 p-4">
+              <div>
                 <div className="flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-amber-600" />
-                  <h3 className="font-lora text-lg font-semibold text-amber-800">
+                  <DollarSign className="h-5 w-5 text-primary" />
+                  <h3 className="font-lora text-lg font-semibold">
                     {t('taxImplications')}
                   </h3>
                 </div>
-                <div className="mt-3 space-y-2 pl-7 text-sm text-amber-900">
+                <div className="mt-3 space-y-2 pl-7 text-sm text-muted-foreground">
                   <p>
-                    <span className="font-medium">{t('taxThreshold')}:</span>{' '}
+                    <span className="font-medium text-foreground">{t('taxThreshold')}:</span>{' '}
                     {koreaVisa.taxImplications.threshold}
                   </p>
                   <p>{koreaVisa.taxImplications.notes}</p>
-                  <p className="text-xs text-amber-700">
-                    {t('source')}: {koreaVisa.taxImplications.source}
-                  </p>
+                  {koreaVisa.taxImplications.source && (
+                    <p className="text-xs text-muted-foreground">
+                      {t('source')}: {koreaVisa.taxImplications.source}
+                    </p>
+                  )}
                 </div>
               </div>
             )}
           </div>
         </>
+      )}
+
+      {communityTips.length > 0 && (
+        <div className="mt-6 border-t pt-4">
+          <ul className="space-y-2">
+            {communityTips.map((ct) => (
+              <li key={ct.id} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span className="italic">{ct.tip}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

@@ -134,9 +134,36 @@
     "showLess": "收起",
     "visaStatus": "签证资格",
     "pointsSystem": "积分制度",
+    "totalTimeline": "全程时间",
+    "category": {
+      "visaStatus": "签证资格要求",
+      "pointsSystem": "积分制度",
+      "income": "收入要求",
+      "investment": "投资要求",
+      "legitimate-funds": "资金证明",
+      "employer-sponsorship": "雇主担保",
+      "education-masters": "学历要求",
+      "salary-parity": "薪资要求",
+      "employment": "就业",
+      "education": "学历",
+      "age": "年龄要求",
+      "nationality": "国籍",
+      "insurance": "保险",
+      "professional-field": "专业领域",
+      "salary-threshold": "薪资标准",
+      "tax-residency": "税务居住",
+      "coe-required": "在留资格认定证明书",
+      "sponsor-employer": "担保方/雇主",
+      "language-ability": "语言能力",
+      "work-permit": "工作许可",
+      "psb-registration": "公安局登记",
+      "health-check": "体检"
+    },
     "tabSubItems": "{count}项",
     "tabSubDocs": "{count}份材料",
-    "tabSubSteps": "{count}个步骤"
+    "tabSubSteps": "{count}个步骤",
+    "additionalRequirements": "查看其他{count}项要求",
+    "estimatedTotal": "预计总时间"
   },
   "Common": {
     "backToHome": "返回首页",
@@ -193,9 +220,19 @@
     "viewGuide": "查看完整签证指南"
   },
   "Nav": {
-    "skipToContent": "\u8df3\u8f6c\u5230\u5185\u5bb9",
-    "mainNavigation": "\u4e3b\u5bfc\u822a",
-    "blog": "\u535a\u5ba2"
+    "skipToContent": "跳转到内容",
+    "mainNavigation": "主导航",
+    "blog": "博客",
+    "countryKorea": "韩国",
+    "countryJapan": "日本",
+    "countryTaiwan": "台湾",
+    "countryChina": "中国",
+    "visaInfo": "签证信息",
+    "neighborhoods": "社区指南",
+    "guide": "指南",
+    "moreCountries": "切换国家",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
   },
   "Blog": {
     "title": "\u535a\u5ba2",

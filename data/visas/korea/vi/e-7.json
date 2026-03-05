@@ -1,8 +1,46 @@
 {
   "type": "e-7",
-  "name": "Visa hoạt động đặc biệt Hàn Quốc (E-7) — Hướng dẫn đầy đủ 2026",
+  "name": "Visa hoạt động đặc biệt Hàn Quốc (E-7)",
   "shortName": "E-7",
   "category": "work",
+  "nameLocal": "특정활동비자 (E-7)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Đăng ký Thẻ cư trú",
+      "deadline": "Trong vòng 90 ngày sau khi nhập cảnh",
+      "description": "Nộp đơn xin ARC tại Cục Quản lý xuất nhập cảnh gần nhất. Cần thiết cho mở tài khoản ngân hàng, đăng ký điện thoại và các dịch vụ khác.",
+      "tips": ["Đặt lịch hẹn trên HiKorea (hikorea.go.kr)", "Mang theo hộ chiếu, ảnh, giấy xác nhận địa chỉ và các giấy tờ liên quan đến visa"]
+    },
+    {
+      "id": "phone-number",
+      "title": "Đăng ký số điện thoại",
+      "deadline": "Ngay sau khi có ARC",
+      "description": "Sau khi có ARC, đăng ký số điện thoại tại nhà mạng Hàn Quốc. Cần thiết cho mở tài khoản ngân hàng và các dịch vụ trực tuyến."
+    },
+    {
+      "id": "bank-account",
+      "title": "Mở tài khoản ngân hàng",
+      "deadline": "Ngay sau khi có ARC",
+      "description": "Sau khi có ARC, mở tài khoản tại ngân hàng Hàn Quốc. Cần thiết cho nhận lương và các giao dịch hàng ngày."
+    },
+    {
+      "id": "health-insurance",
+      "title": "Đăng ký bảo hiểm y tế",
+      "deadline": "Trong vòng 6 tháng sau khi nhập cảnh",
+      "description": "Đăng ký Bảo hiểm y tế quốc gia Hàn Quốc (NHI). Người cư trú dài hạn có nghĩa vụ tham gia."
+    },
+    {
+      "id": "address-registration",
+      "title": "Đăng ký địa chỉ cư trú",
+      "deadline": "Trong vòng 14 ngày sau khi chuyển đến",
+      "description": "Hoàn tất đăng ký địa chỉ (전입신고) tại phường/quận nơi cư trú. Cần thiết cho các dịch vụ hành chính."
+    }
+  ],
+  "renewal": {
+    "process": "Nộp đơn gia hạn tại Cục Quản lý xuất nhập cảnh gần nhất ít nhất 30 ngày trước khi hết hạn."
+  },
   "description": "Tất cả về Visa hoạt động đặc biệt E-7 của Hàn Quốc: bảo lãnh của nhà tuyển dụng, yêu cầu lương, các phân loại phụ (E-7-1 đến E-7-4), hồ sơ cần thiết, quy trình nộp đơn từng bước và câu hỏi thường gặp. Cập nhật năm 2026.",
   "tagline": "Làm việc tại Hàn Quốc với sự bảo lãnh của nhà tuyển dụng",
   "keyRequirement": "Bảo lãnh của nhà tuyển dụng + bằng cử nhân kèm 1 năm kinh nghiệm (hoặc thạc sĩ, hoặc hơn 5 năm kinh nghiệm)",
@@ -18,7 +56,8 @@
       "id": "employer-sponsorship",
       "label": "Bảo lãnh từ nhà tuyển dụng Hàn Quốc",
       "description": "Một công ty Hàn Quốc phải bảo lãnh visa cho bạn. Không được phép tự nộp đơn. Nhà tuyển dụng phải nộp hồ sơ thay mặt bạn.",
-      "required": true
+      "required": true,
+      "warnings": ["Mã nghề không phù hợp giữa công việc thực tế và loại visa có thể dẫn đến hủy visa"]
     },
     {
       "id": "education-masters",
@@ -69,7 +108,7 @@
     "maxTotal": "Không có giới hạn cố định — có thể gia hạn miễn là còn đang làm việc"
   },
   "fees": {
-    "application": "~60-100 USD (tùy đại sứ quán và quốc tịch)",
+    "application": "₩60,000-130,000 (tùy đại sứ quán và quốc tịch)",
     "extension": "₩60,000",
     "notes": "Phí xử lý Giấy chứng nhận chấp thuận cấp visa (CCVI) được tính riêng. Phí khác nhau tùy theo đại sứ quán/lãnh sự quán Hàn Quốc."
   },
@@ -88,28 +127,28 @@
     {
       "id": "passport",
       "name": "Hộ chiếu còn hiệu lực",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "Phải còn hiệu lực ít nhất 6 tháng kể từ ngày dự kiến lưu trú",
       "required": true
     },
     {
       "id": "application-form",
       "name": "Tờ khai xin cấp visa",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "Tờ khai xin cấp visa đã điền đầy đủ (Mẫu số 34)",
       "required": true
     },
     {
       "id": "photo",
       "name": "Ảnh hộ chiếu",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3,5cm x 4,5cm, chụp gần đây, nền trắng",
       "required": true
     },
     {
       "id": "employment-contract",
       "name": "Hợp đồng lao động",
-      "nameKorean": "고용계약서",
+      "nameLocal": "고용계약서",
       "description": "Hợp đồng lao động đã ký với công ty Hàn Quốc bảo lãnh. Phải ghi rõ chức danh, mức lương (đáp ứng mức tối thiểu E-7) và thời gian làm việc.",
       "tips": [
         "Mức lương phải đạt hoặc vượt mức tối thiểu năm 2026 cho phân loại E-7 phụ của bạn",
@@ -121,7 +160,7 @@
     {
       "id": "degree-certificate",
       "name": "Bằng cấp",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "Bằng cấp chính thức (cử nhân, thạc sĩ hoặc tiến sĩ). Phải được Apostille hoặc chứng thực bởi đại sứ quán Hàn Quốc tại nước cấp bằng.",
       "tips": [
         "Yêu cầu Apostille cho các nước trong Công ước Apostille La Haye",
@@ -133,7 +172,7 @@
     {
       "id": "career-certificate",
       "name": "Giấy chứng nhận kinh nghiệm / Chứng minh kinh nghiệm làm việc",
-      "nameKorean": "경력증명서",
+      "nameLocal": "경력증명서",
       "description": "Giấy chứng nhận kinh nghiệm chính thức từ (các) nhà tuyển dụng trước đó chứng minh kinh nghiệm làm việc liên quan. Bắt buộc đối với người có bằng cử nhân (1 năm) hoặc chỉ có kinh nghiệm (5 năm).",
       "tips": [
         "Phải trên giấy có tiêu đề công ty với con dấu hoặc chữ ký chính thức",
@@ -145,7 +184,7 @@
     {
       "id": "background-check",
       "name": "Lý lịch tư pháp",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "Giấy xác nhận không tiền án từ cơ quan cảnh sát nước sở tại. Phải là bản mới (thường trong vòng 6 tháng) và có Apostille.",
       "tips": [
         "Kiểm tra lý lịch FBI cho công dân Hoa Kỳ có thể mất 12-18 tuần — hãy bắt đầu sớm",
@@ -157,14 +196,14 @@
     {
       "id": "business-registration",
       "name": "Giấy đăng ký kinh doanh (Nhà tuyển dụng)",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "Giấy đăng ký kinh doanh chính thức của công ty bảo lãnh do cơ quan thuế Hàn Quốc cấp.",
       "required": true
     },
     {
       "id": "foreigner-utilization-plan",
       "name": "Kế hoạch sử dụng lao động nước ngoài / Thư mời (Nhà tuyển dụng)",
-      "nameKorean": "외국인고용사유서",
+      "nameLocal": "외국인고용사유서",
       "description": "Bản giải trình chi tiết từ nhà tuyển dụng giải thích lý do cần tuyển chuyên gia nước ngoài thay vì công dân Hàn Quốc. Tài liệu này rất quan trọng cho việc phê duyệt.",
       "tips": [
         "Phải giải thích kỹ năng hoặc trình độ cụ thể mà người nước ngoài mang lại",
@@ -176,7 +215,7 @@
     {
       "id": "employment-recommendation",
       "name": "Thư giới thiệu việc làm",
-      "nameKorean": "고용추천서",
+      "nameLocal": "고용추천서",
       "description": "Thư giới thiệu từ bộ hoặc cơ quan chính phủ liên quan cho nghề nghiệp. Bắt buộc đối với một số mã nghề nghiệp E-7.",
       "tips": [
         "Cơ quan yêu cầu khác nhau tùy theo nghề nghiệp — kiểm tra mã nghề cụ thể",
@@ -188,7 +227,7 @@
     {
       "id": "statement-of-employment",
       "name": "Giấy xác nhận việc làm (Nhà tuyển dụng)",
-      "nameKorean": "재직증명서",
+      "nameLocal": "재직증명서",
       "description": "Giấy xác nhận chính thức từ công ty bảo lãnh xác nhận lời mời làm việc, vị trí và điều khoản.",
       "required": true
     }
@@ -252,12 +291,14 @@
       "tips": [
         "Đặt lịch hẹn trên HiKorea (www.hikorea.go.kr) trước",
         "Mang theo hộ chiếu, hợp đồng lao động và ảnh hộ chiếu",
-        "Bạn sẽ nhận biên nhận ngay lập tức có thể dùng làm giấy tờ tạm thời"
+        "Bạn sẽ nhận biên nhận ngay lập tức có thể dùng làm giấy tờ tạm thời",
+        "Nộp đơn gia hạn ít nhất 30 ngày trước khi visa hết hạn để tránh phạt"
       ]
     }
   ],
   "processingTime": {
-    "typical": "Tổng cộng 3-6 tuần",
+    "governmentReview": "Tổng cộng 3-6 tuần",
+    "totalEndToEnd": "2-5 tháng",
     "notes": "Xem xét CCVI tại Cục xuất nhập cảnh: 2-4 tuần. Xử lý visa tại đại sứ quán sau CCVI: 5-10 ngày làm việc. Tổng thời gian từ khi nhà tuyển dụng nộp hồ sơ đến khi nhận visa thường là 3-6 tuần. Thời gian xử lý khác nhau tùy theo quốc tịch, khối lượng công việc của đại sứ quán và mùa. Theo hướng dẫn công bố, nộp đơn CCVI ít nhất 6-8 tuần trước ngày bắt đầu dự kiến."
   },
   "workPermission": {
@@ -266,7 +307,8 @@
       "Phải làm việc độc quyền cho nhà tuyển dụng bảo lãnh",
       "Nhiệm vụ công việc phải phù hợp với mã nghề nghiệp trên visa",
       "Đổi nhà tuyển dụng yêu cầu CCVI mới và thay đổi visa",
-      "Không được phép làm thêm hoặc freelance nếu không có giấy phép riêng"
+      "Không được phép làm thêm hoặc freelance nếu không có giấy phép riêng",
+      "Làm việc cho bất kỳ nhà tuyển dụng nào khác ngoài nhà bảo lãnh mà không có giấy phép là vi phạm visa"
     ],
     "notes": "Visa E-7 gắn liền với một nhà tuyển dụng và mã nghề cụ thể. Nếu bạn đổi việc, nhà tuyển dụng mới phải nộp đơn CCVI mới và bạn phải đăng ký thay đổi nơi làm việc tại Cục xuất nhập cảnh. Làm việc ngoài mã nghề được phê duyệt có thể dẫn đến hủy visa."
   },
@@ -330,49 +372,41 @@
   ],
   "warnings": [
     "Visa lao động cạnh tranh nhất Hàn Quốc — nhà tuyển dụng phải giải trình lý do tuyển người nước ngoài thay vì công dân Hàn Quốc",
-    "Phạt quá hạn lưu trú: khoảng ₩100,000 mỗi ngày quá hạn",
-    "Nộp đơn gia hạn ít nhất 30 ngày trước khi visa hết hạn để tránh phạt",
-    "Mã nghề không phù hợp giữa công việc thực tế và loại visa có thể dẫn đến hủy visa",
-    "Làm việc cho bất kỳ nhà tuyển dụng nào khác ngoài nhà bảo lãnh mà không có giấy phép là vi phạm visa"
+    "Phạt quá hạn lưu trú: khoảng ₩100,000 mỗi ngày quá hạn"
   ],
   "communityTips": [
     {
       "id": "job-code-critical",
+      "section": "requirements",
       "tip": "Chọn sai mã nghề nghiệp là một trong những lý do lớn nhất dẫn đến bị từ chối E-7. Làm việc với bộ phận nhân sự của nhà tuyển dụng hoặc chuyên gia xuất nhập cảnh để chọn đúng mã cho vị trí của bạn.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "employment-reason-statement",
+      "section": "documents",
       "tip": "Công ty phải giải thích lý do cần người nước ngoài thay vì công dân Hàn Quốc. Lý do chung chung sẽ bị từ chối. Hãy cụ thể về kỹ năng và trình độ đặc biệt của bạn.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "korean-university-advantage",
+      "section": "requirements",
       "tip": "Nếu bạn tốt nghiệp đại học Hàn Quốc, bạn được miễn yêu cầu kinh nghiệm bất kể chuyên ngành. Đây thường được coi là con đường dễ nhất đến E-7.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "pangyo-startups",
+      "section": "general",
       "tip": "Khu vực Thung lũng Silicon của Hàn Quốc (Pangyo, Bundang) có nhiều startup thoải mái với đội ngũ nói tiếng Anh. Các lĩnh vực AI, blockchain và an ninh mạng có nhu cầu cao nhất đối với chuyên gia nước ngoài.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "start-before-expiry",
+      "section": "process",
       "tip": "Quá trình xem xét CCVI thường mất 1,5 đến 2 tháng. Ngay cả khi visa hết hạn trong quá trình xem xét, ngày hết hạn thường được gia hạn. Nhưng hãy nộp ít nhất 30 ngày trước khi hết hạn để tránh bị phạt.",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

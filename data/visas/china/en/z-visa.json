@@ -1,7 +1,8 @@
 {
   "type": "z-visa",
-  "name": "China Work Visa (Z Visa) — Complete 2026 Guide",
+  "name": "China Work Visa (Z Visa)",
   "shortName": "Z Visa",
+  "nameLocal": "Z签证（工作签证）",
   "category": "work",
   "description": "Everything about China's Z Visa (Work Visa): employer-sponsored employment authorization, work permit categories A/B/C, residence permit conversion within 30 days, PSB registration requirements, and paths to permanent residence. The Z Visa is China's standard employment visa for foreign professionals hired by Chinese employers. Applicants must secure a job offer from a China-registered employer, obtain a work permit notification letter, and apply through the COVA online system. Work permits are classified into three tiers: Category A for high-end talent earning above 500,000 RMB annually with expedited 5-day processing, Category B for professionals with a bachelor's degree and 2+ years of experience processed in 10-15 days, and Category C for ordinary workers subject to quotas and longer processing times. After arrival, holders must register at the local Public Security Bureau within 24 hours and convert the visa to a residence permit within 30 days. Published guidelines indicate a total end-to-end timeline of 2-3 months. Updated for 2026.",
   "tagline": "Standard employment visa for foreign professionals in China",
@@ -57,9 +58,9 @@
     "maxTotal": "Renewable indefinitely with valid employment; path to permanent residence after 4+ years"
   },
   "fees": {
-    "application": "Work permit: 800-1,000 RMB (~$115-145 USD) + Z Visa consular fee: $30-140 USD (varies by nationality)",
-    "extension": "Residence permit renewal: 400-800 RMB (~$55-115 USD)",
-    "notes": "Additional costs: health examination 400-600 RMB (~$60-85 USD), document legalization fees vary by country. Total typical cost: $200-350 USD excluding authentication."
+    "application": "Work permit: 800-1,000 RMB + Z Visa consular fee: $30-140 USD (varies by nationality)",
+    "extension": "Residence permit renewal: 400-800 RMB",
+    "notes": "Additional costs: health examination 400-600 RMB, document legalization fees vary by country."
   },
   "incomeRequirement": {
     "amount": "500,000",
@@ -124,6 +125,9 @@
       "tips": [
         "The legalization chain: notarize, then apostille (or state authentication), then Chinese embassy legalization",
         "This process can take 4-8 weeks depending on your country — start early"
+      ],
+      "warnings": [
+        "Document legalization must follow the exact chain (notarize, apostille, Chinese embassy) — incomplete legalization will be rejected"
       ],
       "required": true
     },
@@ -226,11 +230,15 @@
       "tips": [
         "You will need your work permit card, PSB registration, medical exam results, and passport",
         "The residence permit validity aligns with your employment contract duration (up to 5 years)"
+      ],
+      "warnings": [
+        "Missing the 30-day residence permit conversion deadline can result in fines up to 10,000 RMB or deportation in serious cases"
       ]
     }
   ],
   "processingTime": {
-    "typical": "2-3 months (end-to-end from initial application to residence permit)",
+    "governmentReview": "2-3 months (end-to-end from initial application to residence permit)",
+    "totalEndToEnd": "2-3 months",
     "expedited": "Category A applicants: work permit processed in 5 working days via 'green channel'",
     "notes": "The longest component is typically the PU Letter and document legalization, which happen in parallel. Visa issuance itself takes 1-2 weeks. Post-arrival residence permit processing takes 7-10 working days."
   },
@@ -239,7 +247,9 @@
     "restrictions": [
       "Work authorization is tied to the sponsoring employer — changing jobs requires a new work permit",
       "Cannot engage in work activities before receiving the work permit card",
-      "Work location is restricted to the city/province specified on the work permit"
+      "Work location is restricted to the city/province specified on the work permit",
+      "Working without a valid work permit card is illegal and can result in fines of 5,000-20,000 RMB, detention, and deportation",
+      "Your work authorization is tied to your specific employer and city — unauthorized job changes or location transfers violate the permit terms"
     ],
     "notes": "Z Visa holders must obtain the physical work permit card before beginning employment. Work authorization is employer-specific and location-specific. Changing employers requires applying for a new work permit through the new employer before the current permit expires."
   },
@@ -296,53 +306,69 @@
     "Learn basic Mandarin phrases for government office interactions — not all local PSB or Entry-Exit Administration staff speak English",
     "Keep your passport and residence permit on you at all times — random document checks occur in some cities"
   ],
-  "warnings": [
-    "Missing the 30-day residence permit conversion deadline can result in fines up to 10,000 RMB or deportation in serious cases",
-    "Working without a valid work permit card is illegal and can result in fines of 5,000-20,000 RMB, detention, and deportation",
-    "Your work authorization is tied to your specific employer and city — unauthorized job changes or location transfers violate the permit terms",
-    "Document legalization must follow the exact chain (notarize, apostille, Chinese embassy) — incomplete legalization will be rejected",
-    "PSB registration within 24 hours is mandatory every time you move to a new address, not just upon initial arrival"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "legalization-timing",
+      "section": "documents",
       "tip": "The document legalization chain takes much longer than most people expect. FBI background checks (US) take 12-18 weeks by mail, and then you still need state-level authentication and Chinese embassy legalization on top of that. Start this the day you accept the job offer.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "category-a-advantage",
+      "section": "requirements",
       "tip": "If your salary is close to the 500,000 RMB threshold for Category A, negotiate with your employer to push it over. The difference in processing speed (5 days vs. 10-15 days) and the 'green channel' treatment at government offices makes a significant difference.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "wechat-essential",
+      "section": "general",
       "tip": "Set up a Chinese phone number and WeChat before or immediately after arrival. Most government offices, employers, and landlords communicate through WeChat. It is also needed for many daily services in China.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "psb-hotel-trick",
+      "section": "process",
       "tip": "If you arrive before your apartment is ready, stay in a hotel for the first few days. Hotels automatically register you with the PSB, satisfying the 24-hour requirement without you needing to visit a police station in person.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "medical-exam-fasting",
+      "section": "documents",
       "tip": "The medical exam requires fasting (no food or drink except water) from the night before. Arrive early in the morning as designated clinics get crowded. The exam typically takes 2-3 hours including wait times.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "requirements": ["Valid employment/enrollment", "Employer/institution support letter"],
+    "documents": ["Passport", "Current residence permit", "Employment certificate or enrollment proof"],
+    "applyBeforeDays": 30,
+    "processingTime": "7-15 business days",
+    "fees": "¥400-800"
+  },
+  "postArrivalSteps": [
+    {
+      "id": "psb-registration",
+      "title": "PSB Registration",
+      "deadline": "Within 24 hours of arrival",
+      "description": "Register at the local Public Security Bureau. Hotels do this automatically; if staying elsewhere, visit the nearest PSB station.",
+      "tips": [
+        "Bring passport, entry stamp page copy, and accommodation proof",
+        "PSB registration within 24 hours is mandatory every time you move to a new address, not just upon initial arrival"
+      ]
+    },
+    {
+      "id": "residence-permit",
+      "title": "Residence Permit Conversion",
+      "deadline": "Within 30 days of entry",
+      "description": "Convert your visa entry to a formal residence permit at the local PSB Exit-Entry Administration.",
+      "tips": ["Requires health check, employment docs, and PSB registration receipt"]
     }
   ],
   "relatedVisas": [

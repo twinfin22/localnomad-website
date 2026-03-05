@@ -1,8 +1,46 @@
 {
   "type": "d-8",
-  "name": "韩国企业投资签证 (D-8) — 2026年完整指南",
+  "name": "韩国企业投资签证 (D-8)",
   "shortName": "D-8",
   "category": "investment",
+  "nameLocal": "기업투자비자 (D-8)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "办理外国人登陆证",
+      "deadline": "入境后90天内",
+      "description": "前往最近的出入境管理局办理ARC。开设银行账户、办理手机号等各类服务均需此证。",
+      "tips": ["在HiKorea (hikorea.go.kr) 预约", "携带护照、照片、住址证明及签证相关材料", "企业停业须在30天内向出入境管理局报告，否则可能导致签证身份失效"]
+    },
+    {
+      "id": "phone-number",
+      "title": "办理韩国手机号",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国运营商处办理手机号。开设银行账户及使用各类在线服务均需手机号。"
+    },
+    {
+      "id": "bank-account",
+      "title": "开设银行账户",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国银行开设账户。用于接收工资和日常交易。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "加入国民健康保险",
+      "deadline": "入境后6个月内",
+      "description": "办理韩国国民健康保险（NHI）加入手续。长期居留者有加入义务。"
+    },
+    {
+      "id": "address-registration",
+      "title": "办理住址登记",
+      "deadline": "搬入后14天内",
+      "description": "在居住地所辖区厅完成住址登记（전입신고）。各类行政服务均需此登记。"
+    }
+  ],
+  "renewal": {
+    "process": "在签证到期前至少30天向最近的出入境管理局提交延期申请。"
+  },
   "description": "韩国D-8企业投资签证完整指南：₩1亿最低投资额、外国直接投资登记、公司设立、子类别（D-8-1、D-8-2、D-8-4、D-8-4S）、所需材料、申请流程及常见问题。2026年最新版。",
   "tagline": "在韩国创业或投资",
   "keyRequirement": "最低投资₩100,000,000（约$75,000 USD）+ 10%以上表决权股份 + 实际经营管理",
@@ -30,13 +68,15 @@
       "id": "active-management",
       "label": "积极参与企业经营管理",
       "description": "公布的要求明确指出被动投资不符合D-8条件。签证持有者须参与企业的日常管理或运营监督。",
-      "required": true
+      "required": true,
+      "warnings": ["被动投资不符合D-8要求 — 须实际参与经营管理"]
     },
     {
       "id": "legitimate-funds",
       "label": "投资资金来源合法且可追溯",
       "description": "所有投资资金须为个人合法取得且来源可追溯。汇款人须为投资者本人、配偶或未成年子女。投资超过₩300,000,000的，汇款人还可以是投资者或配偶的父母。",
-      "required": true
+      "required": true,
+      "warnings": ["投资资金须来源合法且可追溯 — 使用非正规渠道将导致拒签"]
     },
     {
       "id": "fdi-registration",
@@ -57,7 +97,7 @@
     "maxTotal": "无固定上限 — 在企业正常运营期间可无限期续签"
   },
   "fees": {
-    "application": "₩60,000（约$42 USD）",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "公司注册费用另需₩500,000至₩2,000,000不等，视公司类型而定。律师和会计师的公司设立服务费另计。"
   },
@@ -70,28 +110,28 @@
     {
       "id": "passport",
       "name": "有效护照",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "有效期须超过预计滞留期限6个月以上",
       "required": true
     },
     {
       "id": "application-form",
       "name": "签证申请表",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "已填写完整的签证申请表（第34号表格）",
       "required": true
     },
     {
       "id": "photo",
       "name": "护照照片",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm，近期拍摄，白色背景",
       "required": true
     },
     {
       "id": "fdi-certificate",
       "name": "外国直接投资登记证明",
-      "nameKorean": "외국인투자신고서",
+      "nameLocal": "외국인투자신고서",
       "description": "证明已在KOTRA或外汇银行完成外国直接投资登记。须在汇入资金之前完成。",
       "tips": [
         "可在KOTRA或韩国任何外汇银行办理登记",
@@ -102,7 +142,7 @@
     {
       "id": "forex-purchase-certificate",
       "name": "外汇购入证明书",
-      "nameKorean": "외국환매입증명서",
+      "nameLocal": "외국환매입증명서",
       "description": "银行开具的证明，确认已购买和转入用于投资目的的外汇。",
       "tips": [
         "仅使用以本人名义进行的银行电汇",
@@ -113,14 +153,14 @@
     {
       "id": "business-registration",
       "name": "营业执照",
-      "nameKorean": "사업자등록증",
+      "nameLocal": "사업자등록증",
       "description": "公司注册后由国税厅签发。确认企业已在韩国正式注册。",
       "required": true
     },
     {
       "id": "articles-of-incorporation",
       "name": "公司章程",
-      "nameKorean": "정관",
+      "nameLocal": "정관",
       "description": "经公证的公司章程文件，载明经营目的、股权结构和治理规则。",
       "tips": [
         "须经韩国公证人公证",
@@ -131,14 +171,14 @@
     {
       "id": "stock-deposit-certificate",
       "name": "股款缴纳证明书",
-      "nameKorean": "주식인수대금납입증명서",
+      "nameLocal": "주식인수대금납입증명서",
       "description": "银行开具的证明，确认股本已存入公司法人银行账户。",
       "required": true
     },
     {
       "id": "business-plan",
       "name": "商业计划书",
-      "nameKorean": "사업계획서",
+      "nameLocal": "사업계획서",
       "description": "详细的商业计划书，包括公司概况、市场分析、盈利模式、3至5年财务预测和就业创造计划。",
       "tips": [
         "财务预测须切合实际并有数据支撑",
@@ -150,7 +190,7 @@
     {
       "id": "background-check",
       "name": "无犯罪记录证明",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国出具的无犯罪记录证明。根据国籍可能需要海牙认证。",
       "tips": [
         "须为近期开具（6个月以内）",
@@ -162,19 +202,20 @@
     {
       "id": "office-lease",
       "name": "办公室租赁合同",
-      "nameKorean": "사무실임대차계약서",
+      "nameLocal": "사무실임대차계약서",
       "description": "证明实际办公地址与营业执照上的地址一致。出入境管理人员会核实是否为真实经营场所。",
       "tips": [
         "虚拟办公地址通常会被出入境管理局标记",
         "实际的办公室租赁合同几乎是必须的",
         "地址须与营业执照上的地址一致"
       ],
-      "required": true
+      "required": true,
+      "warnings": ["虚拟办公地址通常会被标记 — 实际的办公室租赁合同几乎是必须的"]
     },
     {
       "id": "health-insurance",
       "name": "健康保险证明",
-      "nameKorean": "보험증서",
+      "nameLocal": "보험증서",
       "description": "在韩国有效的健康保险证明。D-8持有者可通过自己的公司以职场参保人身份加入国民健康保险（NHI）。",
       "tips": [
         "企业运营后可办理公司参保的国民健康保险",
@@ -194,7 +235,8 @@
         "KOTRA在全球设有办事处 — 请查阅investkorea.org了解地点信息",
         "韩国任何外汇银行均可办理FDI登记",
         "准备好商业计划书和投资详情"
-      ]
+      ],
+      "warnings": ["FDI登记必须在资金汇入之前完成 — 违规将面临50%的税务罚款"]
     },
     {
       "id": "step-2",
@@ -265,7 +307,8 @@
     }
   ],
   "processingTime": {
-    "typical": "4至8周（使领馆申请）",
+    "governmentReview": "4至8周（使领馆申请）",
+    "totalEndToEnd": "3至6个月",
     "notes": "审批时间因使领馆、国籍和季节而异。韩国境内资格变更通常需要2至4周。公司注册另需2至3周（含法人银行开户最长4周）。从启动到签证签发总计约需9至17周。建议在预计开始经营日期前至少2至3个月开始准备。"
   },
   "workPermission": {
@@ -337,51 +380,40 @@
     "在签证到期前2至3个月申请延期 — 展示企业经营状况和纳税合规有助于续签",
     "如果您有优秀的商业理念但缺乏正式学历，可考虑D-8-4S途径"
   ],
-  "warnings": [
-    "FDI登记必须在资金汇入之前完成 — 违规将面临50%的税务罚款",
-    "企业停业须在30天内向出入境管理局报告，否则可能导致签证身份失效",
-    "虚拟办公地址通常会被标记 — 实际的办公室租赁合同几乎是必须的",
-    "投资资金须来源合法且可追溯 — 使用非正规渠道将导致拒签",
-    "被动投资不符合D-8要求 — 须实际参与经营管理"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "fdi-before-transfer",
+      "section": "process",
       "tip": "在汇入资金之前必须事先申报外国直接投资。跳过此步骤可能导致汇入金额被征收50%的税务罚款。请先在KOTRA或任何外汇银行完成登记。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "paper-trail-funds",
+      "section": "documents",
       "tip": "每一笔汇入的资金都必须可追溯。仅使用以本人名义进行的银行电汇。使用非正规换汇渠道可能导致自动拒签。保留每一份收据和转账确认单的副本。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "virtual-office-flagged",
+      "section": "documents",
       "tip": "出入境管理人员现在会核实是否为真实经营场所。实际的办公室租赁合同几乎是必须的。使用虚拟地址的空壳公司在审查中会被标记，可能延误或导致申请失败。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "d-8-4s-startup-special",
+      "section": "requirements",
       "tip": "自2024年11月起，创业韩国特别签证（D-8-4S）不要求学历或学术成绩。申请人基于理念的可行性和团队能力进行评估。可通过K-Startup Portal或Global Startup Center申请。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "company-registration-timeline",
+      "section": "process",
       "tip": "不要指望一天就能完成公司注册。仅注册本身就需要预留2至3周，加上法人银行开户可能长达4周。部分银行的法人账户开设需要多次到场办理。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

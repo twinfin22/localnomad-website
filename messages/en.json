@@ -134,9 +134,36 @@
     "showLess": "Show less",
     "visaStatus": "Visa Status",
     "pointsSystem": "Points System",
+    "totalTimeline": "Total Timeline",
+    "category": {
+      "visaStatus": "Visa Status Requirements",
+      "pointsSystem": "Points System",
+      "income": "Income Requirement",
+      "investment": "Investment Requirements",
+      "legitimate-funds": "Proof of Funds",
+      "employer-sponsorship": "Employer Sponsorship",
+      "education-masters": "Education Requirements",
+      "salary-parity": "Salary Requirements",
+      "employment": "Employment",
+      "education": "Education",
+      "age": "Age Requirement",
+      "nationality": "Nationality",
+      "insurance": "Insurance",
+      "professional-field": "Professional Field",
+      "salary-threshold": "Salary Threshold",
+      "tax-residency": "Tax Residency",
+      "coe-required": "Certificate of Eligibility",
+      "sponsor-employer": "Sponsor / Employer",
+      "language-ability": "Language Ability",
+      "work-permit": "Work Permit",
+      "psb-registration": "PSB Registration",
+      "health-check": "Health Check"
+    },
     "tabSubItems": "{count} items",
     "tabSubDocs": "{count} docs",
-    "tabSubSteps": "{count} steps"
+    "tabSubSteps": "{count} steps",
+    "additionalRequirements": "See {count} additional requirements",
+    "estimatedTotal": "Estimated total timeline"
   },
   "Common": {
     "backToHome": "Back to home",
@@ -195,7 +222,17 @@
   "Nav": {
     "skipToContent": "Skip to content",
     "mainNavigation": "Main navigation",
-    "blog": "Blog"
+    "blog": "Blog",
+    "countryKorea": "Korea",
+    "countryJapan": "Japan",
+    "countryTaiwan": "Taiwan",
+    "countryChina": "China",
+    "visaInfo": "Visa Info",
+    "neighborhoods": "Neighborhoods",
+    "guide": "Guide",
+    "moreCountries": "Switch country",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "Blog": {
     "title": "Blog",

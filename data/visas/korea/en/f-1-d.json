@@ -1,9 +1,10 @@
 {
   "type": "f-1-d",
-  "name": "Korea Digital Nomad Visa (F-1-D) — Complete 2026 Guide",
+  "name": "Korea Digital Nomad Visa (F-1-D)",
+  "nameLocal": "디지털노마드비자 (F-1-D)",
   "shortName": "F-1-D",
   "category": "digital-nomad",
-  "description": "Everything about Korea's F-1-D Workation Visa: $66K income requirement, insurance, documents, step-by-step application, and FAQ. Updated for 2026.",
+  "description": "Everything about Korea's F-1-D Workation Visa: ₩88M income requirement, insurance, documents, step-by-step application, and FAQ. Updated for 2026.",
   "tagline": "Work remotely, live in Korea",
   "keyRequirement": "Remote employment with foreign company + income ≥ GNI×2 (~₩88M/year)",
   "targetAudience": [
@@ -21,36 +22,40 @@
     },
     {
       "id": "income",
-      "label": "Annual income of ~$66,000+ USD (or equivalent)",
+      "label": "Annual income of ₩88,000,000+ (GNI × 2)",
       "description": "Approximately ₩88,000,000 per year (GNI × 2)",
       "required": true
     },
     {
       "id": "insurance",
       "label": "Health insurance with Korea coverage",
-      "description": "Private health insurance with minimum coverage of approximately ₩100,000,000 (~$75,000 USD). F-1-D holders are generally not eligible for Korea's National Health Insurance (국민건강보험) as workplace subscribers. Maintain private coverage for the entire duration of stay.",
-      "required": true
+      "description": "Private health insurance with minimum coverage of approximately ₩100,000,000. F-1-D holders are generally not eligible for Korea's National Health Insurance (국민건강보험) as workplace subscribers. Maintain private coverage for the entire duration of stay.",
+      "required": true,
+      "warnings": ["Must maintain valid health insurance throughout stay"]
     },
     {
       "id": "no-korean-work",
+      "sentiment": "negative",
       "label": "Not working for Korean companies",
       "description": "Cannot work for Korean clients/companies on this visa",
-      "required": true
+      "required": true,
+      "warnings": ["Working for Korean companies is a visa violation"]
     }
   ],
   "duration": {
     "initial": "1 year",
     "extension": "1 additional year",
-    "maxTotal": "2 years"
+    "maxTotal": "2 years",
+    "notes": "Maximum 2-year stay - plan accordingly"
   },
   "fees": {
-    "application": "₩60,000 (~$42 USD)",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "Additional fees may apply at embassy"
   },
   "incomeRequirement": {
-    "amount": "66,000",
-    "currency": "USD",
+    "amount": "88,000,000",
+    "currency": "KRW",
     "period": "annual",
     "notes": "As of 2026. Approximately ₩88,102,000/year (GNI × 2, based on 2024 per-capita GNI of ₩44,051,000). Updated annually by the Ministry of Justice (법무부). Proof required for previous 6-12 months.",
     "proofMethods": [
@@ -62,7 +67,7 @@
     ]
   },
   "insuranceRequirement": {
-    "minimumCoverage": "₩100,000,000 (~$75,000 USD)",
+    "minimumCoverage": "₩100,000,000",
     "type": "Private health insurance",
     "notes": "Published requirements specify private health insurance with minimum coverage of ₩100,000,000. F-1-D holders are generally not eligible for Korea's National Health Insurance (NHI) as they are not employed by a Korean entity. International plans such as SafetyWing, Cigna Global, and World Nomads are commonly used. Insurance must cover the entire duration of stay.",
     "source": "Ministry of Justice, Immigration Service"
@@ -78,21 +83,21 @@
       "name": "Valid Passport",
       "description": "Must be valid for at least 6 months beyond intended stay",
       "required": true,
-      "nameKorean": "여권"
+      "nameLocal": "여권"
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
       "description": "Completed application form",
       "required": true,
-      "nameKorean": "사증발급신청서"
+      "nameLocal": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "Passport Photo",
       "description": "3.5cm x 4.5cm, recent, white background",
       "required": true,
-      "nameKorean": "여권사진"
+      "nameLocal": "여권사진"
     },
     {
       "id": "employment-proof",
@@ -103,18 +108,18 @@
         "Include job title and employment duration"
       ],
       "required": true,
-      "nameKorean": "재직증명서"
+      "nameLocal": "재직증명서"
     },
     {
       "id": "income-proof",
       "name": "Income Documentation",
-      "description": "Bank statements, tax returns, or pay stubs showing ~$66,000+ annual income",
+      "description": "Bank statements, tax returns, or pay stubs showing ₩88,000,000+ annual income",
       "tips": [
         "Show 6-12 months of income history",
         "Include tax documents if available"
       ],
       "required": true,
-      "nameKorean": "소득증명서"
+      "nameLocal": "소득증명서"
     },
     {
       "id": "health-insurance",
@@ -125,7 +130,7 @@
         "SafetyWing, Cigna Global, and similar accepted"
       ],
       "required": true,
-      "nameKorean": "보험증서"
+      "nameLocal": "보험증서"
     },
     {
       "id": "background-check",
@@ -136,7 +141,7 @@
         "May need apostille"
       ],
       "required": true,
-      "nameKorean": "범죄경력증명서"
+      "nameLocal": "범죄경력증명서"
     },
     {
       "id": "accommodation",
@@ -146,7 +151,7 @@
         "At least first 2 weeks of accommodation"
       ],
       "required": false,
-      "nameKorean": "거주증명서"
+      "nameLocal": "거주증명서"
     }
   ],
   "applicationSteps": [
@@ -154,7 +159,7 @@
       "id": "step-1",
       "step": 1,
       "title": "Check Eligibility",
-      "description": "Verify you meet income requirement (~$66,000+) and have remote work arrangement.",
+      "description": "Verify you meet income requirement (₩88,000,000+) and have remote work arrangement.",
       "tips": [
         "Calculate your annual income carefully",
         "Gather 6-12 months of income proof"
@@ -205,7 +210,8 @@
     }
   ],
   "processingTime": {
-    "typical": "2-4 weeks",
+    "governmentReview": "2-4 weeks",
+    "totalEndToEnd": "1-2 months",
     "notes": "Processing times vary by embassy, nationality, and season. According to published guidelines, apply at least 4-6 weeks before your intended travel date. Some embassies may offer expedited processing for additional fees."
   },
   "workPermission": {
@@ -217,6 +223,16 @@
     ],
     "notes": "This visa is specifically for remote work. Working for Korean clients requires different visa."
   },
+  "familyAllowed": false,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Alien Registration Card (ARC)",
+      "deadline": "Within 90 days of entry",
+      "description": "Visit your local immigration office to apply for ARC. Required for banking, phone contracts, and most services.",
+      "tips": ["Book appointment via HiKorea (hikorea.go.kr)", "Bring passport, photos, proof of address, and visa-specific documents"]
+    }
+  ],
   "faqs": [
     {
       "question": "What counts as 'remote work' for this visa?",
@@ -228,7 +244,7 @@
     },
     {
       "question": "What if my income varies as a freelancer?",
-      "answer": "You need to demonstrate average annual income of ~$66,000+ (~₩88M). Provide 6-12 months of bank statements and invoices showing consistent income."
+      "answer": "You need to demonstrate average annual income of approximately ₩88,000,000 (GNI × 2). Provide 6-12 months of bank statements and invoices showing consistent income."
     },
     {
       "question": "Can I bring my family?",
@@ -252,7 +268,7 @@
     },
     {
       "question": "Can I start a business in Korea on an F-1-D visa?",
-      "answer": "The F-1-D visa does not authorize business operations in Korea. To start a business, you would typically need to transition to a D-8 (Corporate Investment) visa, which requires a minimum investment of approximately ₩100,000,000 (~$75,000 USD) and a registered Korean business entity."
+      "answer": "The F-1-D visa does not authorize business operations in Korea. To start a business, you would typically need to transition to a D-8 (Corporate Investment) visa, which requires a minimum investment of approximately ₩100,000,000 and a registered Korean business entity."
     },
     {
       "question": "Is it possible to change status within Korea, or must I leave the country?",
@@ -260,7 +276,7 @@
     },
     {
       "question": "How does the income requirement work for freelancers?",
-      "answer": "Freelancers must demonstrate average annual income of approximately $66,000 USD (~₩88M) from foreign clients. Published requirements indicate that acceptable proof includes: invoices and contracts from the previous 12 months, bank statements showing deposits, and tax returns from the home country. Income must be from work performed for entities outside of Korea."
+      "answer": "Freelancers must demonstrate average annual income of approximately ₩88,000,000 (GNI × 2) from foreign clients. Published requirements indicate that acceptable proof includes: invoices and contracts from the previous 12 months, bank statements showing deposits, and tax returns from the home country. Income must be from work performed for entities outside of Korea."
     },
     {
       "question": "Can my family accompany me to Korea?",
@@ -280,14 +296,12 @@
     "Popular areas: Gangnam (business), Itaewon (international), Hongdae (creative)"
   ],
   "warnings": [
-    "Income requirement is strict — approximately ₩88M (~$66K) based on GNI × 2",
-    "Working for Korean companies is a visa violation",
-    "Must maintain valid health insurance throughout stay",
-    "Maximum 2-year stay - plan accordingly"
+    "Income requirement is strict — approximately ₩88M based on GNI × 2"
   ],
   "communityTips": [
     {
       "id": "fbi-check",
+      "section": "documents",
       "tip": "FBI background check can take 12-18 weeks via mail. Start this FIRST before anything else.",
       "source": "reddit",
       "verified": true,
@@ -296,7 +310,8 @@
     },
     {
       "id": "safetywing-accepted",
-      "tip": "SafetyWing Nomad Insurance was accepted at Seoul Immigration Office for my F-1-D extension. Cost about $45/month.",
+      "section": "documents",
+      "tip": "SafetyWing Nomad Insurance was accepted at Seoul Immigration Office for my F-1-D extension. Cost about ₩60,000/month.",
       "source": "reddit",
       "verified": true,
       "upvotes": 32,
@@ -304,6 +319,7 @@
     },
     {
       "id": "income-proof-bank",
+      "section": "documents",
       "tip": "I used Wise (TransferWise) bank statements + employment contract. They accepted it without issues at the Sejongno office.",
       "source": "community",
       "verified": true,
@@ -312,6 +328,7 @@
     },
     {
       "id": "arc-timeline",
+      "section": "process",
       "tip": "Got my ARC card in 10 business days after registering at Mokdong immigration. They give you a receipt right away that works as temp ID.",
       "source": "discord",
       "verified": true,
@@ -320,6 +337,7 @@
     },
     {
       "id": "apostille-tip",
+      "section": "documents",
       "tip": "If you're American, get your background check apostilled at the US State Department before coming. Takes 4-6 weeks by mail.",
       "source": "reddit",
       "verified": true,
@@ -349,7 +367,7 @@
     {
       "type": "d-8",
       "name": "Corporate Investment Visa",
-      "requirements": "Register a business in Korea with minimum investment of ~₩100,000,000 (~$75,000 USD). Must demonstrate viable business operations.",
+      "requirements": "Register a business in Korea with minimum investment of ~₩100,000,000. Must demonstrate viable business operations.",
       "timeline": "4-8 weeks processing",
       "documents": [
         "Business registration certificate",
@@ -377,7 +395,7 @@
     {
       "type": "d-10",
       "name": "Job Seeking Visa",
-      "requirements": "Remote employment with a foreign company and annual income of ~$66,000+ USD (GNI x 2). Must have health insurance covering Korea.",
+      "requirements": "Remote employment with a foreign company and annual income of ₩88,000,000+ (GNI × 2). Must have health insurance covering Korea.",
       "timeline": "1-3 weeks processing",
       "documents": [
         "Proof of remote employment",

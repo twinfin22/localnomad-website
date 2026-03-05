@@ -98,7 +98,7 @@ export function ComparisonCard({ visa, country }: ComparisonCardProps) {
           {t('processing')}
         </p>
         <p className="mt-1 text-sm font-semibold">
-          {visa.processingTime.typical}
+          {visa.processingTime.governmentReview}
         </p>
       </div>
 

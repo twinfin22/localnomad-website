@@ -1,8 +1,46 @@
 {
   "type": "h-1",
-  "name": "韩国打工度假签证 (H-1) — 2026年完整指南",
+  "name": "韩国打工度假签证 (H-1)",
   "shortName": "H-1",
   "category": "working-holiday",
+  "nameLocal": "워킹홀리데이비자 (H-1)",
+  "familyAllowed": false,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "办理外国人登陆证",
+      "deadline": "入境后90天内",
+      "description": "前往最近的出入境管理局办理ARC。开设银行账户、办理手机号等各类服务均需此证。",
+      "tips": ["在HiKorea (hikorea.go.kr) 预约", "携带护照、照片、住址证明及签证相关材料"]
+    },
+    {
+      "id": "phone-number",
+      "title": "办理韩国手机号",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国运营商处办理手机号。开设银行账户及使用各类在线服务均需手机号。"
+    },
+    {
+      "id": "bank-account",
+      "title": "开设银行账户",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国银行开设账户。用于接收工资和日常交易。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "加入国民健康保险",
+      "deadline": "入境后6个月内",
+      "description": "办理韩国国民健康保险（NHI）加入手续。长期居留者有加入义务。"
+    },
+    {
+      "id": "address-registration",
+      "title": "办理住址登记",
+      "deadline": "搬入后14天内",
+      "description": "在居住地所辖区厅完成住址登记（전입신고）。各类行政服务均需此登记。"
+    }
+  ],
+  "renewal": {
+    "process": "在签证到期前至少30天向最近的出入境管理局提交延期申请。"
+  },
   "description": "韩国H-1打工度假签证完整指南：适用国家、年龄限制、配额、工作限制、所需材料、申请流程及常见问题。2026年最新版。",
   "tagline": "年轻人在韩国边工作边旅行",
   "keyRequirement": "年龄18-30岁（部分国家18-35岁）+ 29个协定国家公民",
@@ -51,21 +89,25 @@
     },
     {
       "id": "no-dependents",
+      "sentiment": "negative",
       "label": "不得携带家属",
       "description": "根据公布的要求，H-1持有者不得携带家属（配偶或子女）。",
-      "required": true
+      "required": true,
+      "warnings": ["不允许携带家属 — 配偶和子女不能以H-1随行"]
     },
     {
       "id": "first-time",
       "label": "此前未持有过H-1签证",
       "description": "H-1通常为一次性签证。根据公布的指南，美国、爱尔兰和瑞典公民可以再次申请。加拿大参与者可参加两次，每次最长24个月。",
-      "required": true
+      "required": true,
+      "warnings": ["大多数情况下为一次性签证 — 使用后不可再次申请（例外：美国、爱尔兰、瑞典和加拿大）"]
     },
     {
       "id": "apply-from-home",
       "label": "须从本国申请",
       "description": "须在国籍所在国的韩国大使馆或领事馆提交申请。不能在韩国境内将旅游签证转换为H-1。",
-      "required": true
+      "required": true,
+      "warnings": ["须从本国申请 — 不能在韩国境内将旅游签证转换为H-1"]
     },
     {
       "id": "us-specific",
@@ -80,7 +122,7 @@
     "maxTotal": "最长2年"
   },
   "fees": {
-    "application": "约$50-100 USD（因国籍和领事馆而异）",
+    "application": "₩60,000-130,000（因国籍和领事馆而异）",
     "notes": "费用因国籍和使领馆而异。部分国家有互惠收费协议。请向当地韩国使领馆咨询确切费用。"
   },
   "insuranceRequirement": {
@@ -93,28 +135,28 @@
     {
       "id": "passport",
       "name": "有效护照",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "有效期须超过预计滞留期限至少6个月。部分使领馆要求12个月以上。",
       "required": true
     },
     {
       "id": "photo",
       "name": "护照照片",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "近期彩色照片，3.5cm x 4.5cm（或2\" x 2\"，视使领馆而定），白色背景。",
       "required": true
     },
     {
       "id": "application-form",
       "name": "签证申请表",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "已填写完整的签证申请表，可从韩国使领馆网站下载。",
       "required": true
     },
     {
       "id": "health-insurance",
       "name": "健康保险证明",
-      "nameKorean": "보험증서",
+      "nameLocal": "보험증서",
       "description": "覆盖韩国、最低保额₩40,000,000、涵盖整个滞留期间的旅行或健康保险证明。",
       "tips": [
         "确保保单覆盖整个滞留期间",
@@ -125,7 +167,7 @@
     {
       "id": "bank-statements",
       "name": "银行流水",
-      "nameKorean": "잔고증명서",
+      "nameLocal": "잔고증명서",
       "description": "过去3个月的银行流水，显示最低余额₩3,000,000（约$2,200 USD）。",
       "tips": [
         "部分使领馆接受英文流水；其他可能要求公证翻译",
@@ -136,14 +178,14 @@
     {
       "id": "return-ticket",
       "name": "往返机票或回程资金证明",
-      "nameKorean": "왕복항공권 또는 귀국자금증명",
+      "nameLocal": "왕복항공권 또는 귀국자금증명",
       "description": "已预订的回程机票，或足以购买回程机票的额外资金证明。",
       "required": true
     },
     {
       "id": "background-check",
       "name": "无犯罪记录证明",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国出具的无犯罪记录证明。部分使领馆要求海牙认证或公证。",
       "tips": [
         "美国公民的FBI无犯罪记录证明可能需要12至18周 — 请尽早办理",
@@ -154,7 +196,7 @@
     {
       "id": "travel-itinerary",
       "name": "旅行计划书或申请动机书",
-      "nameKorean": "여행계획서",
+      "nameLocal": "여행계획서",
       "description": "简要的旅行计划或动机信，说明您在韩国的预期活动。部分使领馆要求此文件。",
       "tips": [
         "包括计划访问的城市、活动和大致时间表",
@@ -172,7 +214,8 @@
       "tips": [
         "在打工度假信息中心（whic.mofa.go.kr）查询当前配额状态",
         "热门国家配额（英国、法国、荷兰）可能在开放后数周内用完"
-      ]
+      ],
+      "warnings": ["年度配额先到先得 — 部分国家在开放后数周内即告罄"]
     },
     {
       "id": "step-2",
@@ -226,7 +269,8 @@
     }
   ],
   "processingTime": {
-    "typical": "1-3周",
+    "governmentReview": "1-3周",
+    "totalEndToEnd": "2-4周",
     "notes": "审批时间因使领馆、国籍和季节而异。热门国家配额（英国、法国）可能很快用完 — 请尽早申请。部分使领馆有特定的申请窗口或开放日期。请向当地韩国使领馆咨询最新时间表。"
   },
   "workPermission": {
@@ -235,7 +279,8 @@
       "每周最多工作25小时（年约1,300小时）",
       "不允许：英语教学、技术专业工作（法律、医疗、工程、金融）、专业演艺",
       "允许：餐饮服务、零售、翻译、实习、志愿服务、育儿",
-      "部分国籍有额外限制（如每位雇主限雇6个月）"
+      "部分国籍有额外限制（如每位雇主限雇6个月）",
+      "大多数国籍的每周25小时工作限制严格执行 — 违规可能导致驱逐出境和未来入境禁令"
     ],
     "notes": "H-1持有者限于兼职工作（每周25小时）。该签证主要用于文化交流和旅行，工作为辅助收入。根据公布的指南，加拿大参与者免除每周25小时的限制。违反工作限制可能导致签证被撤销和未来入境禁令。2026年韩国最低工资为₩10,030/小时。"
   },
@@ -297,51 +342,40 @@
     "抵达前加入在线打工度假社群（Facebook群组、Reddit r/korea）获取住房和求职信息",
     "首尔工作机会最多，但釜山和济州生活成本更低、生活节奏更好"
   ],
-  "warnings": [
-    "大多数情况下为一次性签证 — 使用后不可再次申请（例外：美国、爱尔兰、瑞典和加拿大）",
-    "年度配额先到先得 — 部分国家在开放后数周内即告罄",
-    "须从本国申请 — 不能在韩国境内将旅游签证转换为H-1",
-    "大多数国籍的每周25小时工作限制严格执行 — 违规可能导致驱逐出境和未来入境禁令",
-    "不允许携带家属 — 配偶和子女不能以H-1随行"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "arc-appointment-early",
+      "section": "process",
       "tip": "入境第一天就预约出入境管理局的ARC办理。等候时间通常为3至4周，而您只有90天的登记期限。通过HiKorea网站预约 — 名额很快满额。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "accommodation-arc-cooperation",
+      "section": "documents",
       "tip": "签署租赁合同或预订长期住宿前，请先确认房东是否愿意提供ARC办理所需的文件（住址证明、租赁合同）。并非所有房东都愿意配合。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "bank-account-restriction",
+      "section": "general",
       "tip": "作为新来的外国居民，大多数韩国银行在前3个月会限制您的账户功能。在限制解除（通常需要有工资入账记录）之前，您可能无法进行国际转账或使用某些服务。请携带足够现金或准备替代支付方式应对初期开支。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "quota-timing",
+      "section": "process",
       "tip": "查看您所在国家的配额开放日期，尽早申请。部分热门配额（英国、法国、荷兰）在数天或数周内即告罄。设置日历提醒，并在配额开放前备齐所有材料。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "budget-extra-time",
+      "section": "general",
       "tip": "在韩国办理行政事务请预留额外时间 — 材料准备、出入境预约和银行开户都比其他打工度假国家耗时更长。建议预留至少2至3周的安顿时间后再开始工作。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

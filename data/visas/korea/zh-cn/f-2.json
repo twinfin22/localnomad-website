@@ -1,8 +1,46 @@
 {
   "type": "f-2",
-  "name": "韩国积分制居留签证 (F-2-7) — 2026年完整指南",
+  "name": "韩国积分制居留签证 (F-2-7)",
   "shortName": "F-2",
   "category": "residence",
+  "nameLocal": "점수제 거주비자 (F-2-7)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "办理外国人登陆证",
+      "deadline": "入境后90天内",
+      "description": "前往最近的出入境管理局办理ARC。开设银行账户、办理手机号等各类服务均需此证。",
+      "tips": ["在HiKorea (hikorea.go.kr) 预约", "携带护照、照片、住址证明及签证相关材料"]
+    },
+    {
+      "id": "phone-number",
+      "title": "办理韩国手机号",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国运营商处办理手机号。开设银行账户及使用各类在线服务均需手机号。"
+    },
+    {
+      "id": "bank-account",
+      "title": "开设银行账户",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国银行开设账户。用于接收工资和日常交易。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "加入国民健康保险",
+      "deadline": "入境后6个月内",
+      "description": "办理韩国国民健康保险（NHI）加入手续。长期居留者有加入义务。"
+    },
+    {
+      "id": "address-registration",
+      "title": "办理住址登记",
+      "deadline": "搬入后14天内",
+      "description": "在居住地所辖区厅完成住址登记（전입신고）。各类行政服务均需此登记。"
+    }
+  ],
+  "renewal": {
+    "process": "在签证到期前至少30天向最近的出入境管理局提交延期申请。"
+  },
   "description": "韩国F-2-7积分制居留签证完整指南：170分中需达到80分以上，涵盖年龄、学历、收入、韩语能力及加分项的积分明细，永久居留路径及不受限制的工作许可。F-2-7是韩国面向优秀专业人才的首选长期居留签证。申请者在五个类别中累积积分 — 年龄（最高25分）、学历（最高25分）、韩语能力（TOPIK或KIIP，最高20分）、年收入（最高60分）和加分项（最高40分） — 综合得分须达到80分以上。签证有效期根据总分为1至5年不等，持有者享有完全的工作自由：可自由更换雇主、创业或同时从事多份工作。持F-2-7满3年后，根据公布的指南可申请F-5永久居留权。2026年最新版。",
   "tagline": "通过积分制获得长期居留权",
   "keyRequirement": "积分 ≥ 80分（满分170分），涵盖年龄、学历、收入、韩语能力",
@@ -51,15 +89,15 @@
     "maxTotal": "可无限期续签（持满3年后可申请F-5永久居留权）"
   },
   "fees": {
-    "application": "₩85,000（约$63 USD）",
-    "extension": "₩60,000（约$45 USD）",
+    "application": "₩85,000",
+    "extension": "₩60,000",
     "notes": "费用可能有所调整。请通过HiKorea或当地出入境·外国人厅查询最新费用标准。"
   },
   "documents": [
     {
       "id": "application-form",
       "name": "综合申请表",
-      "nameKorean": "통합신청서",
+      "nameLocal": "통합신청서",
       "description": "标准出入境申请表，须填写完整",
       "tips": [
         "可从HiKorea门户网站下载或在出入境管理局领取",
@@ -70,35 +108,35 @@
     {
       "id": "passport",
       "name": "有效护照",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "有效期须超过预计滞留期限6个月以上",
       "required": true
     },
     {
       "id": "arc",
       "name": "外国人登陆证",
-      "nameKorean": "외국인등록증",
+      "nameLocal": "외국인등록증",
       "description": "显示当前签证状态（E系列、D系列等）的外国人登陆证",
       "required": true
     },
     {
       "id": "photo",
       "name": "护照照片",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm，近期（6个月以内），白色背景",
       "required": true
     },
     {
       "id": "residency-proof",
       "name": "居住证明/住房合同",
-      "nameKorean": "거주지증명서",
+      "nameLocal": "거주지증명서",
       "description": "租赁合同（임대차계약서）、住房登记或水电费账单，证明在韩国的现居住地址",
       "required": true
     },
     {
       "id": "employment-proof",
       "name": "劳动合同或营业执照",
-      "nameKorean": "고용계약서 / 사업자등록증",
+      "nameLocal": "고용계약서 / 사업자등록증",
       "description": "韩国雇主出具的现有劳动合同，或自营业者的营业执照",
       "tips": [
         "合同应明确注明职位、薪资和雇佣期限",
@@ -109,7 +147,7 @@
     {
       "id": "income-certificate",
       "name": "收入证明/个人所得税申报表",
-      "nameKorean": "근로소득증명서",
+      "nameLocal": "근로소득증명서",
       "description": "国税厅（NTS）出具的官方收入证明或雇主出具的源泉征收凭证（원천징수영수증）。须显示年度总收入。",
       "tips": [
         "可通过Hometax（홈택스）在线开具最近一个纳税年度的证明",
@@ -120,7 +158,7 @@
     {
       "id": "degree-certificates",
       "name": "学位证书",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "所有学位证书（学士、硕士、博士）的原件或认证副本。外国学位须翻译为韩文或英文并经海牙认证或公证。",
       "tips": [
         "所有外国学位证书须经海牙认证或公证",
@@ -131,7 +169,7 @@
     {
       "id": "topik-kiip",
       "name": "TOPIK或KIIP证书",
-      "nameKorean": "한국어능력시험 / 사회통합프로그램 증명서",
+      "nameLocal": "한국어능력시험 / 사회통합프로그램 증명서",
       "description": "韩国语能力考试（TOPIK）成绩报告或社会融合项目（KIIP）结业证书。申请非必需，但最高可贡献20分。",
       "tips": [
         "KIIP 5级结业可在20分语言分基础上额外获得10分加分",
@@ -142,7 +180,7 @@
     {
       "id": "tb-screening",
       "name": "结核病检查证明",
-      "nameKorean": "결핵검진확인서",
+      "nameLocal": "결핵검진확인서",
       "description": "韩国指定医疗机构出具的结核病检查证明。特定国家公民须提交。",
       "tips": [
         "须在指定的入境管理医疗中心检查",
@@ -153,7 +191,7 @@
     {
       "id": "background-check",
       "name": "无犯罪记录证明",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国出具的无犯罪记录证明。首次申请者或离开韩国6个月以上者须提交。须经海牙认证。",
       "tips": [
         "美国公民的FBI无犯罪记录证明邮寄办理可能需要12至18周 — 请尽早办理",
@@ -165,7 +203,7 @@
     {
       "id": "family-documents",
       "name": "亲属关系证明材料",
-      "nameKorean": "가족관계증명서",
+      "nameLocal": "가족관계증명서",
       "description": "结婚证、子女出生证明或其他亲属关系证明。仅在携带家属或申请家庭相关积分时需要。",
       "required": false
     }
@@ -235,7 +273,8 @@
     }
   ],
   "processingTime": {
-    "typical": "2至4周",
+    "governmentReview": "2至4周",
+    "totalEndToEnd": "2至4个月",
     "notes": "审批时间因出入境管理局和申请量而异。管理人员可能要求补交材料以核实积分，这可能延长审批时间。根据公布的指南，建议在当前签证到期前充分提前申请。"
   },
   "workPermission": {
@@ -313,41 +352,36 @@
   "communityTips": [
     {
       "id": "income-lever",
+      "section": "requirements",
       "tip": "收入积分在170分总分中占60分。如年薪超过₩4,000万，根据公布的指南可直接申请，无需满足3年居留要求。尽量让纸面收入达到最高水平。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "salary-negotiation",
+      "section": "requirements",
       "tip": "与其接受「250万工资 + 50万住房补贴」的拆分方案，不如协商300万的统一工资。您的纳税申报表会反映更高的收入，直接转化为更多的F-2-7积分。Hometax的收入证明只显示应税收入。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "kiip-bonus",
+      "section": "requirements",
       "tip": "KIIP（사회통합프로그램）5级结业可在20分语言分基础上额外获得10分加分 — 仅韩语一项就能贡献30分。KIIP是免费的政府项目，是最具积分性价比的时间投入。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "blood-donation",
+      "section": "requirements",
       "tip": "在韩国红十字会献血可计为志愿服务加分时间。需要多次参与并积累记录。请在1365门户网站登记您的志愿服务时间。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "start-early",
+      "section": "process",
       "tip": "在需要F-2-7之前2至3年就开始准备。TOPIK学习、KIIP报名、薪资谈判和志愿服务时间都需要时间积累。很多专业人士发现时才意识到积分不够，已经来不及追赶了。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

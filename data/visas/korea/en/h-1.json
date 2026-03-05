@@ -1,6 +1,7 @@
 {
   "type": "h-1",
-  "name": "Korea Working Holiday Visa (H-1) — Complete 2026 Guide",
+  "name": "Korea Working Holiday Visa (H-1)",
+  "nameLocal": "워킹홀리데이비자 (H-1)",
   "shortName": "H-1",
   "category": "working-holiday",
   "description": "Everything about Korea's H-1 Working Holiday Visa: eligible countries, age limits, quotas, work restrictions, required documents, step-by-step application, and FAQ. Updated for 2026.",
@@ -46,26 +47,30 @@
     {
       "id": "funds",
       "label": "Proof of funds: minimum ₩3,000,000 + return ticket",
-      "description": "Bank statements from the last 3 months showing at least ₩3,000,000 (~$2,200 USD) in available funds, plus a return flight ticket or proof of sufficient funds for the return journey.",
+      "description": "Bank statements from the last 3 months showing at least ₩3,000,000 in available funds, plus a return flight ticket or proof of sufficient funds for the return journey.",
       "required": true
     },
     {
       "id": "no-dependents",
+      "sentiment": "negative",
       "label": "No dependents accompanying",
       "description": "Published requirements indicate H-1 holders cannot bring dependents (spouse or children) on this visa.",
-      "required": true
+      "required": true,
+      "warnings": ["No dependents allowed — spouse and children cannot accompany on H-1"]
     },
     {
       "id": "first-time",
       "label": "Must not have previously held H-1 visa",
       "description": "The H-1 is generally a one-time visa. According to published guidelines, exceptions exist for US, Ireland, and Sweden nationals who may reapply. Canadian participants may participate twice for up to 24 months each.",
-      "required": true
+      "required": true,
+      "warnings": ["One-time visa in most cases — once used, you cannot apply again (exceptions: US, Ireland, Sweden, and Canada)"]
     },
     {
       "id": "apply-from-home",
       "label": "Must apply from home country",
       "description": "Applications must be submitted at the Korean embassy or consulate in your country of citizenship. You cannot convert a tourist visa to H-1 within Korea.",
-      "required": true
+      "required": true,
+      "warnings": ["Must apply from your home country — cannot convert a tourist visa to H-1 within Korea"]
     },
     {
       "id": "us-specific",
@@ -80,11 +85,11 @@
     "maxTotal": "2 years maximum"
   },
   "fees": {
-    "application": "~$50-100 USD (varies by nationality and consulate)",
+    "application": "₩60,000-130,000 (varies by nationality and consulate)",
     "notes": "Fees vary by nationality and embassy. Some countries have reciprocal fee agreements. Check with your local Korean embassy or consulate for exact fees."
   },
   "insuranceRequirement": {
-    "minimumCoverage": "₩40,000,000 (~$30,000 USD)",
+    "minimumCoverage": "₩40,000,000",
     "type": "Travel/health insurance",
     "notes": "Published requirements specify health insurance with minimum coverage of ₩40,000,000 for the entire duration of stay. Travel insurance plans that include medical coverage in Korea are commonly used. The coverage amount is lower than the F-1-D visa requirement (₩100M) as H-1 is a shorter-term visa.",
     "source": "Ministry of Foreign Affairs, Working Holiday Information Center"
@@ -93,28 +98,28 @@
     {
       "id": "passport",
       "name": "Valid Passport",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "Must be valid for at least 6 months beyond intended stay. Some embassies require 12+ months validity.",
       "required": true
     },
     {
       "id": "photo",
       "name": "Passport Photo",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "Recent color photo, 3.5cm x 4.5cm (or 2\" x 2\" depending on embassy), white background.",
       "required": true
     },
     {
       "id": "application-form",
       "name": "Visa Application Form",
-      "nameKorean": "사증발급신청서",
+      "nameLocal": "사증발급신청서",
       "description": "Completed visa application form, available from the Korean embassy or consulate website.",
       "required": true
     },
     {
       "id": "health-insurance",
       "name": "Health Insurance Certificate",
-      "nameKorean": "보험증서",
+      "nameLocal": "보험증서",
       "description": "Proof of travel or health insurance covering Korea with minimum coverage of ₩40,000,000 for the entire duration of stay.",
       "tips": [
         "Ensure the policy covers the full duration of your stay",
@@ -125,8 +130,8 @@
     {
       "id": "bank-statements",
       "name": "Bank Statements",
-      "nameKorean": "잔고증명서",
-      "description": "Bank statements from the last 3 months showing a minimum balance of ₩3,000,000 (~$2,200 USD).",
+      "nameLocal": "잔고증명서",
+      "description": "Bank statements from the last 3 months showing a minimum balance of ₩3,000,000.",
       "tips": [
         "Some embassies accept statements in English; others may require notarized translations",
         "Ensure funds are in an accessible account, not locked investments"
@@ -136,14 +141,14 @@
     {
       "id": "return-ticket",
       "name": "Return Flight Ticket or Proof of Funds for Return",
-      "nameKorean": "왕복항공권 또는 귀국자금증명",
+      "nameLocal": "왕복항공권 또는 귀국자금증명",
       "description": "A booked return flight ticket, or additional proof of funds sufficient to purchase a return ticket.",
       "required": true
     },
     {
       "id": "background-check",
       "name": "Criminal Background Check",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "Police clearance certificate from your home country. Some embassies require this to be apostilled or notarized.",
       "tips": [
         "FBI background checks (US) can take 12-18 weeks — start early",
@@ -154,7 +159,7 @@
     {
       "id": "travel-itinerary",
       "name": "Travel Itinerary or Statement of Purpose",
-      "nameKorean": "여행계획서",
+      "nameLocal": "여행계획서",
       "description": "A brief travel plan or motivation letter describing your intended activities in Korea. Some embassies require this document.",
       "tips": [
         "Include planned cities, activities, and general timeline",
@@ -172,7 +177,8 @@
       "tips": [
         "Check the Working Holiday Information Center (whic.mofa.go.kr) for current quota status",
         "Popular quotas (UK, France, Netherlands) can fill within weeks of opening"
-      ]
+      ],
+      "warnings": ["Annual quotas are first-come-first-served — some countries fill within weeks of opening"]
     },
     {
       "id": "step-2",
@@ -226,7 +232,8 @@
     }
   ],
   "processingTime": {
-    "typical": "1-3 weeks",
+    "governmentReview": "1-3 weeks",
+    "totalEndToEnd": "2-4 weeks",
     "notes": "Processing times vary by embassy, nationality, and season. Popular quotas (UK, France) may fill quickly — apply well in advance. Some embassies have specific application windows or opening dates. Check with your local Korean embassy or consulate for current timelines."
   },
   "workPermission": {
@@ -235,10 +242,21 @@
       "Maximum 25 hours per week (approximately 1,300 hours annually)",
       "Not permitted: English teaching, skilled professional work (law, medicine, engineering, finance), professional entertainment",
       "Permitted: hospitality, retail, food service, translation, internships, volunteering, childcare",
-      "Some nationalities have additional restrictions (e.g., 6-month employment limits per employer)"
+      "Some nationalities have additional restrictions (e.g., 6-month employment limits per employer)",
+      "25-hour weekly work limit is strictly enforced for most nationalities — violations can result in deportation and future entry bans"
     ],
     "notes": "H-1 holders are limited to part-time work (25 hours/week). The visa is primarily intended for cultural exchange and travel, with work as supplementary income. Canadian participants are exempt from the 25-hour weekly restriction according to published guidelines. Violations of work restrictions can result in visa cancellation and future entry bans. Minimum wage in Korea is ₩10,030/hour as of 2026."
   },
+  "familyAllowed": false,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Alien Registration Card (ARC)",
+      "deadline": "Within 90 days of entry",
+      "description": "Visit your local immigration office to apply for ARC. Required for banking, phone contracts, and most services.",
+      "tips": ["Book appointment via HiKorea (hikorea.go.kr)", "Bring passport, photos, proof of address, and visa-specific documents"]
+    }
+  ],
   "faqs": [
     {
       "question": "Which countries have working holiday agreements with Korea?",
@@ -266,11 +284,11 @@
     },
     {
       "question": "How much money do I need in my bank account?",
-      "answer": "Published requirements indicate a minimum of ₩3,000,000 (~$2,200 USD) in your bank account, demonstrated through statements from the last 3 months. You also need a return flight ticket or additional funds for the return journey. It is advisable to bring more than the minimum, as initial expenses (housing deposit, first month's rent, transportation) can be significant."
+      "answer": "Published requirements indicate a minimum of ₩3,000,000 in your bank account, demonstrated through statements from the last 3 months. You also need a return flight ticket or additional funds for the return journey. It is advisable to bring more than the minimum, as initial expenses (housing deposit, first month's rent, transportation) can be significant."
     },
     {
       "question": "What health insurance do I need?",
-      "answer": "Published requirements specify health insurance with minimum coverage of ₩40,000,000 (~$30,000 USD) valid for the entire duration of stay. Travel insurance plans that include medical coverage in Korea are commonly used. Popular options include SafetyWing, World Nomads, and Allianz travel insurance."
+      "answer": "Published requirements specify health insurance with minimum coverage of ₩40,000,000 valid for the entire duration of stay. Travel insurance plans that include medical coverage in Korea are commonly used. Popular options include SafetyWing, World Nomads, and Allianz travel insurance."
     },
     {
       "question": "How do I register for an Alien Registration Card (ARC)?",
@@ -297,53 +315,42 @@
     "Join working holiday communities online (Facebook groups, Reddit r/korea) before arriving for housing and job tips",
     "Seoul has the most job opportunities, but Busan and Jeju offer better work-life balance and lower living costs"
   ],
-  "warnings": [
-    "One-time visa in most cases — once used, you cannot apply again (exceptions: US, Ireland, Sweden, and Canada)",
-    "Annual quotas are first-come-first-served — some countries fill within weeks of opening",
-    "Must apply from your home country — cannot convert a tourist visa to H-1 within Korea",
-    "25-hour weekly work limit is strictly enforced for most nationalities — violations can result in deportation and future entry bans",
-    "No dependents allowed — spouse and children cannot accompany on H-1"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "arc-appointment-early",
+      "section": "process",
       "tip": "Book your ARC appointment at the immigration office on Day 1 after arrival. Wait times are typically 3-4 weeks, and you only have 90 days to register. The HiKorea website is where you book — it fills up fast.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "accommodation-arc-cooperation",
+      "section": "documents",
       "tip": "Before signing a lease or booking long-term accommodation, confirm with the host or landlord that they will provide the documents needed for your ARC application (proof of address, lease agreement). Not all landlords are willing to cooperate.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "bank-account-restriction",
+      "section": "general",
       "tip": "Most Korean banks restrict your account for the first 3 months as a new foreign resident. You may not be able to make international transfers or use certain services until the restriction is lifted (typically requires paychecks). Bring enough cash or have an alternative payment method for initial expenses.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "quota-timing",
+      "section": "process",
       "tip": "Check your country's quota opening date and apply as early as possible. Some popular quotas (UK, France, Netherlands) fill within days or weeks. Set calendar reminders and have all documents ready before the quota opens.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     },
     {
       "id": "budget-extra-time",
+      "section": "general",
       "tip": "Budget extra time for everything administrative in Korea — document preparation, immigration appointments, and bank account setup all take longer than expected compared to other working holiday countries. Plan for at least 2-3 weeks of settling-in time before starting work.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-02-27"
+      "upvotes": 0
     }
   ],
   "relatedVisas": [

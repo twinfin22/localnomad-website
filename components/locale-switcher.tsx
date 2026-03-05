@@ -114,7 +114,7 @@ export const LocaleSwitcher = () => {
           <path d="M2 12h20" />
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
-        {localeLabels[locale]}
+        <span className="hidden md:inline">{localeLabels[locale]}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="12"
@@ -125,7 +125,7 @@ export const LocaleSwitcher = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={cn('transition-transform', open && 'rotate-180')}
+          className={cn('hidden md:block transition-transform', open && 'rotate-180')}
           aria-hidden="true"
         >
           <path d="m6 9 6 6 6-6" />

@@ -6,6 +6,7 @@ import type { VisaType } from '@/lib/types/visa';
 interface SourcesRelatedProps {
   officialLinks: { label: string; url: string }[];
   relatedVisas?: VisaType[];
+  relatedVisaSummaries?: { type: string; shortName: string; tagline: string }[];
   lastUpdated: string;
   country: string;
 }
@@ -13,6 +14,7 @@ interface SourcesRelatedProps {
 export function SourcesRelated({
   officialLinks,
   relatedVisas,
+  relatedVisaSummaries,
   lastUpdated,
   country,
 }: SourcesRelatedProps) {
@@ -46,7 +48,29 @@ export function SourcesRelated({
       )}
 
       {/* Related Visas */}
-      {relatedVisas && relatedVisas.length > 0 && (
+      {relatedVisaSummaries && relatedVisaSummaries.length > 0 ? (
+        <div>
+          <div className="flex items-center gap-2">
+            <ArrowRight className="h-5 w-5 text-primary" />
+            <h3 className="font-lora text-base font-semibold">{t('relatedVisas')}</h3>
+          </div>
+          <div className="mt-4 space-y-2 pl-7">
+            {relatedVisaSummaries.map((rv) => (
+              <Link
+                key={rv.type}
+                href={`/${country}/visa/${rv.type}`}
+                className="flex items-center gap-3 rounded-lg border border-primary/20 bg-white px-4 py-3 transition-all hover:border-primary/40 hover:shadow-sm"
+              >
+                <span className="shrink-0 rounded bg-primary/10 px-2.5 py-1 text-sm font-bold text-primary">
+                  {rv.shortName}
+                </span>
+                <span className="text-sm text-muted-foreground">{rv.tagline}</span>
+                <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-primary/40" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : relatedVisas && relatedVisas.length > 0 ? (
         <div>
           <div className="flex items-center gap-2">
             <ArrowRight className="h-5 w-5 text-primary" />
@@ -65,7 +89,7 @@ export function SourcesRelated({
             ))}
           </div>
         </div>
-      )}
+      ) : null}
 
       {/* Last updated */}
       <p className="flex items-center gap-1.5 text-base text-muted-foreground">

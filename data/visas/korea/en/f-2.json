@@ -1,6 +1,7 @@
 {
   "type": "f-2",
   "name": "Korea Points-Based Resident Visa (F-2-7)",
+  "nameLocal": "점수제 거주비자 (F-2-7)",
   "shortName": "F-2",
   "category": "residence",
   "description": "Everything about Korea's F-2-7 Points-Based Resident Visa: score ≥80 out of 170, points breakdown by age, education, income, Korean language, and bonus categories, path to permanent residency, and unrestricted work authorization. The F-2-7 is Korea's premier long-term residence visa for talented professionals. Applicants accumulate points across five categories — Age (max 25 pts), Education (max 25 pts), Korean Language via TOPIK or KIIP (max 20 pts), Annual Income (max 60 pts), and Bonus Points (max 40 pts) — and must reach a combined score of 80 or higher. The visa duration ranges from 1 to 5 years depending on your total score, and holders enjoy full work freedom: change employers, start a business, or hold multiple jobs. After 3 years on F-2-7, published guidelines indicate a path to F-5 permanent residency. Updated for 2026.",
@@ -66,15 +67,15 @@
     "maxTotalDetail": "Path to F-5 permanent residency after 3 years"
   },
   "fees": {
-    "application": "₩85,000 (~$63 USD)",
-    "extension": "₩60,000 (~$45 USD)",
+    "application": "₩85,000",
+    "extension": "₩60,000",
     "notes": "Fees may vary. Check HiKorea or your local immigration office for current fee schedule."
   },
   "documents": [
     {
       "id": "application-form",
       "name": "Integrated Application Form",
-      "nameKorean": "통합신청서",
+      "nameLocal": "통합신청서",
       "description": "Standard immigration application form, completed in full",
       "tips": [
         "Download from HiKorea portal or pick up at immigration office",
@@ -86,7 +87,7 @@
       "id": "passport",
       "priority": "essential",
       "name": "Valid Passport",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "Must be valid for at least 6 months beyond intended stay period",
       "required": true
     },
@@ -94,21 +95,21 @@
       "id": "arc",
       "priority": "essential",
       "name": "Alien Registration Card",
-      "nameKorean": "외국인등록증",
+      "nameLocal": "외국인등록증",
       "description": "Current ARC showing your existing visa status (E-series, D-series, etc.)",
       "required": true
     },
     {
       "id": "photo",
       "name": "Passport Photo",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm, recent (within 6 months), white background",
       "required": true
     },
     {
       "id": "residency-proof",
       "name": "Proof of Residency / Housing Contract",
-      "nameKorean": "거주지증명서",
+      "nameLocal": "거주지증명서",
       "description": "Lease agreement (임대차계약서), housing registration, or utility bills showing current address in Korea",
       "required": true
     },
@@ -116,7 +117,7 @@
       "id": "employment-proof",
       "priority": "essential",
       "name": "Employment Contract or Business Registration",
-      "nameKorean": "고용계약서 / 사업자등록증",
+      "nameLocal": "고용계약서 / 사업자등록증",
       "description": "Current employment contract from Korean employer, or business registration certificate if self-employed",
       "tips": [
         "Contract should clearly show job title, salary, and employment period",
@@ -129,7 +130,7 @@
       "id": "income-certificate",
       "priority": "essential",
       "name": "Income Certificate / Tax Return",
-      "nameKorean": "근로소득증명서",
+      "nameLocal": "근로소득증명서",
       "description": "Official income certificate from the National Tax Service (NTS) or employer-issued withholding tax receipt (원천징수영수증). Must show annual gross income.",
       "tips": [
         "Issue from Hometax (홈택스) for the most recent tax year",
@@ -141,7 +142,7 @@
       "id": "degree-certificates",
       "priority": "essential",
       "name": "Degree Certificates",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "Original or certified copies of all degree certificates (bachelor's, master's, doctoral). Foreign degrees must be translated into Korean or English and apostilled or notarized.",
       "tips": [
         "Apostille or notarization is required for all foreign-issued degrees",
@@ -153,7 +154,7 @@
     {
       "id": "topik-kiip",
       "name": "TOPIK or KIIP Certificate",
-      "nameKorean": "한국어능력시험 / 사회통합프로그램 증명서",
+      "nameLocal": "한국어능력시험 / 사회통합프로그램 증명서",
       "description": "Test of Proficiency in Korean (TOPIK) score report or Social Integration Program (KIIP) completion certificate. Not mandatory for application, but contributes up to 20 points.",
       "tips": [
         "KIIP Level 5 completion grants 10 additional bonus points on top of the 20 language points",
@@ -166,7 +167,7 @@
     {
       "id": "tb-screening",
       "name": "Tuberculosis Screening Certificate",
-      "nameKorean": "결핵검진확인서",
+      "nameLocal": "결핵검진확인서",
       "description": "TB screening certificate from a designated medical institution in Korea. Required for nationals of designated countries.",
       "tips": [
         "Get tested at a designated immigration medical center",
@@ -177,7 +178,7 @@
     {
       "id": "background-check",
       "name": "Criminal Background Check",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "Police clearance certificate from your home country. Required for first-time applicants or those who have been outside Korea for 6+ months. Must be apostilled.",
       "tips": [
         "FBI background check (for US citizens) can take 12–18 weeks by mail — start early",
@@ -189,7 +190,7 @@
     {
       "id": "family-documents",
       "name": "Family Relationship Documents",
-      "nameKorean": "가족관계증명서",
+      "nameLocal": "가족관계증명서",
       "description": "Marriage certificate, birth certificates for children, or other family relationship proof. Required only if applying with dependents or claiming family-related points.",
       "required": false
     }
@@ -266,13 +267,29 @@
     }
   ],
   "processingTime": {
-    "typical": "2–4 weeks",
+    "governmentReview": "2–4 weeks",
+    "totalEndToEnd": "2-4 months",
     "notes": "Processing times vary by immigration office and application volume. Immigration officers may request additional documents to verify point claims, which can extend the timeline. According to published guidelines, apply well in advance of your current visa expiration date."
   },
   "workPermission": {
     "allowed": true,
     "notes": "F-2-7 holders have unrestricted work authorization in Korea. This includes changing employers freely, starting a business, and holding multiple jobs simultaneously. No separate work permit is required."
   },
+  "familyAllowed": true,
+  "languageRequirement": {
+    "required": false,
+    "minimumLevel": "TOPIK Level 3+ or KIIP Level 3+ (earns bonus points)",
+    "notes": "Not mandatory but contributes up to 20 points in the Korean language category of the F-2-7 points system."
+  },
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Alien Registration Card (ARC)",
+      "deadline": "Within 90 days of entry",
+      "description": "Visit your local immigration office to apply for ARC. Required for banking, phone contracts, and most services.",
+      "tips": ["Book appointment via HiKorea (hikorea.go.kr)", "Bring passport, photos, proof of address, and visa-specific documents"]
+    }
+  ],
   "faqs": [
     {
       "priority": "essential",
@@ -331,30 +348,35 @@
   "communityTips": [
     {
       "id": "income-lever",
+      "section": "requirements",
       "tip": "Income scores make up 60 out of 170 total points. If your annual salary exceeds ₩40M, published guidelines indicate you can apply immediately without the 3-year stay requirement. Focus on getting your salary as high as possible on paper.",
       "verified": false,
       "upvotes": 0
     },
     {
       "id": "salary-negotiation",
+      "section": "requirements",
       "tip": "Instead of accepting a split like '2.5M salary + 0.5M housing allowance,' negotiate a flat 3M salary. Your tax return reflects higher income, which translates directly to more F-2-7 points. The income certificate from Hometax only shows taxable income.",
       "verified": false,
       "upvotes": 0
     },
     {
       "id": "kiip-bonus",
+      "section": "requirements",
       "tip": "KIIP (사회통합프로그램) Level 5 completion gives you 10 extra bonus points on top of the 20 language points — a total of 30 points from Korean language alone. It is free, government-run, and the most point-efficient investment of your time.",
       "verified": false,
       "upvotes": 0
     },
     {
       "id": "blood-donation",
+      "section": "requirements",
       "tip": "Blood donation at Korean Red Cross counts as community service hours toward the volunteering bonus points. You need documented activity over multiple occasions to build up credit. Register your volunteer hours on the 1365 portal.",
       "verified": false,
       "upvotes": 0
     },
     {
       "id": "start-early",
+      "section": "process",
       "tip": "Start preparing 2–3 years before you need the F-2-7. TOPIK study, KIIP enrollment, salary negotiations, and community service hours all take time. Many professionals realize too late that they are short on points and cannot catch up quickly.",
       "verified": false,
       "upvotes": 0

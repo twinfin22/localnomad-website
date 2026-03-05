@@ -1,8 +1,46 @@
 {
   "type": "f-1-d",
-  "name": "韓国デジタルノマドビザ（F-1-D）— 2026年完全ガイド",
+  "name": "韓国デジタルノマドビザ（F-1-D）",
   "shortName": "F-1-D",
   "category": "digital-nomad",
+  "nameLocal": "디지털노마드비자 (F-1-D)",
+  "familyAllowed": false,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "外国人登録証の取得",
+      "deadline": "入国後90日以内",
+      "description": "最寄りの出入国管理事務所でARC申請。銀行口座開設、携帯電話契約など各種サービスに必要。",
+      "tips": ["HiKorea（hikorea.go.kr）で予約", "パスポート、写真、住所証明、ビザ関連書類を持参"]
+    },
+    {
+      "id": "phone-number",
+      "title": "携帯電話番号の取得",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の通信キャリアで携帯電話番号を取得。銀行口座開設や各種オンラインサービスに必要。"
+    },
+    {
+      "id": "bank-account",
+      "title": "銀行口座の開設",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の銀行で口座を開設。給与受取や日常取引に必要。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "国民健康保険への加入",
+      "deadline": "入国後6ヶ月以内",
+      "description": "韓国国民健康保険（NHI）への加入手続き。長期滞在者は加入義務あり。"
+    },
+    {
+      "id": "address-registration",
+      "title": "住所登録",
+      "deadline": "転入後14日以内",
+      "description": "居住地の管轄区役所で住所登録（전입신고）を完了。各種行政サービスに必要。"
+    }
+  ],
+  "renewal": {
+    "process": "満了日の少なくとも30日前に最寄りの出入国管理事務所で延長申請を提出。"
+  },
   "description": "韓国F-1-Dワーケーションビザの完全ガイド：$66K収入要件、保険、必要書類、申請手順、FAQ。2026年最新版。",
   "tagline": "リモートワークをしながら韓国で暮らす",
   "keyRequirement": "外国企業でのリモート雇用 + 収入がGNI×2以上（約₩88M/年）",
@@ -29,22 +67,26 @@
       "id": "insurance",
       "label": "韓国をカバーする健康保険",
       "description": "補償額が約₩100,000,000（約$75,000 USD）以上の民間健康保険が必要です。F-1-D保持者は一般的に韓国の国民健康保険（국민건강보험）の職場加入者としての資格がありません。滞在期間全体を通して民間保険を維持してください。",
-      "required": true
+      "required": true,
+      "warnings": ["滞在期間中、有効な健康保険を維持する必要があります"]
     },
     {
       "id": "no-korean-work",
+      "sentiment": "negative",
       "label": "韓国企業では働いていない",
       "description": "このビザでは韓国のクライアント/企業のために働くことはできません",
-      "required": true
+      "required": true,
+      "warnings": ["韓国企業のために働くことはビザ違反"]
     }
   ],
   "duration": {
     "initial": "1年",
     "extension": "1年の追加延長",
-    "maxTotal": "2年"
+    "maxTotal": "2年",
+    "notes": "最長2年の滞在 — それに応じて計画を立ててください"
   },
   "fees": {
-    "application": "₩60,000（約$42）",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "大使館により追加料金がかかる場合があります"
   },
@@ -78,21 +120,21 @@
       "name": "有効なパスポート（旅券）",
       "description": "滞在予定期間の6ヶ月以上有効なもの",
       "required": true,
-      "nameKorean": "여권"
+      "nameLocal": "여권"
     },
     {
       "id": "application-form",
       "name": "ビザ申請書",
       "description": "記入済みの申請書",
       "required": true,
-      "nameKorean": "사증발급신청서"
+      "nameLocal": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "証明写真",
       "description": "3.5cm x 4.5cm、最近撮影、白背景",
       "required": true,
-      "nameKorean": "여권사진"
+      "nameLocal": "여권사진"
     },
     {
       "id": "employment-proof",
@@ -103,7 +145,7 @@
         "役職と雇用期間を含める"
       ],
       "required": true,
-      "nameKorean": "재직증명서"
+      "nameLocal": "재직증명서"
     },
     {
       "id": "income-proof",
@@ -114,7 +156,7 @@
         "利用可能であれば税務書類を含める"
       ],
       "required": true,
-      "nameKorean": "소득증명서"
+      "nameLocal": "소득증명서"
     },
     {
       "id": "health-insurance",
@@ -125,7 +167,7 @@
         "SafetyWing、Cigna Globalなどが認められています"
       ],
       "required": true,
-      "nameKorean": "보험증서"
+      "nameLocal": "보험증서"
     },
     {
       "id": "background-check",
@@ -136,7 +178,7 @@
         "アポスティーユが必要な場合あり"
       ],
       "required": true,
-      "nameKorean": "범죄경력증명서"
+      "nameLocal": "범죄경력증명서"
     },
     {
       "id": "accommodation",
@@ -146,7 +188,7 @@
         "少なくとも最初の2週間の宿泊先"
       ],
       "required": false,
-      "nameKorean": "거주증명서"
+      "nameLocal": "거주증명서"
     }
   ],
   "applicationSteps": [
@@ -205,7 +247,8 @@
     }
   ],
   "processingTime": {
-    "typical": "2〜4週間",
+    "governmentReview": "2〜4週間",
+    "totalEndToEnd": "1〜2ヶ月",
     "notes": "審査期間は大使館、国籍、時期により異なります。公開されているガイドラインによると、渡航予定日の少なくとも4〜6週間前に申請してください。一部の大使館では追加料金で迅速審査を提供している場合があります。"
   },
   "workPermission": {
@@ -280,14 +323,12 @@
     "人気のエリア：江南（ビジネス）、梨泰院（インターナショナル）、弘大（クリエイティブ）"
   ],
   "warnings": [
-    "収入要件は厳格 — GNI × 2に基づき約₩8,800万（約$66K）",
-    "韓国企業のために働くことはビザ違反",
-    "滞在期間中、有効な健康保険を維持する必要があります",
-    "最長2年の滞在 — それに応じて計画を立ててください"
+    "収入要件は厳格 — GNI × 2に基づき約₩8,800万（約$66K）"
   ],
   "communityTips": [
     {
       "id": "fbi-check",
+      "section": "documents",
       "tip": "FBIの身元調査は郵送で12〜18週間かかることがあります。他の何よりも先にこれから始めてください。",
       "source": "reddit",
       "verified": true,
@@ -296,6 +337,7 @@
     },
     {
       "id": "safetywing-accepted",
+      "section": "documents",
       "tip": "SafetyWing Nomad Insuranceは、F-1-D延長申請でソウル出入国管理事務所に受理されました。月額約$45です。",
       "source": "reddit",
       "verified": true,
@@ -304,6 +346,7 @@
     },
     {
       "id": "income-proof-bank",
+      "section": "documents",
       "tip": "Wise（TransferWise）の銀行明細書と雇用契約書を提出しました。世宗路事務所で問題なく受理されました。",
       "source": "community",
       "verified": true,
@@ -312,6 +355,7 @@
     },
     {
       "id": "arc-timeline",
+      "section": "process",
       "tip": "Mokdong出入国管理事務所で登録後、10営業日でARCカードを受け取りました。その場で仮IDとして使える受領証を発行してもらえます。",
       "source": "discord",
       "verified": true,
@@ -320,6 +364,7 @@
     },
     {
       "id": "apostille-tip",
+      "section": "documents",
       "tip": "アメリカ人の方は、渡航前に米国国務省で身元調査書にアポスティーユを取得してください。郵送で4〜6週間かかります。",
       "source": "reddit",
       "verified": true,

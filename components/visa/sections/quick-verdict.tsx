@@ -3,7 +3,6 @@
 import {
   Check,
   Zap,
-  Info,
   Clock,
   Calendar,
   DollarSign,
@@ -11,11 +10,11 @@ import {
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
 import type { Visa } from '@/lib/types/visa';
 
 interface QuickVerdictProps {
@@ -25,9 +24,13 @@ interface QuickVerdictProps {
 export function QuickVerdict({ visa }: QuickVerdictProps) {
   const t = useTranslations('VisaDetail');
 
-  const essentialEligibility = visa.eligibility.filter(
+  const byPriority = visa.eligibility.filter(
     (e) => e.priority === 'essential'
   );
+  const essentialEligibility =
+    byPriority.length > 0
+      ? byPriority
+      : visa.eligibility.filter((e) => e.required);
 
   return (
     <section
@@ -54,7 +57,7 @@ export function QuickVerdict({ visa }: QuickVerdictProps) {
         <SummaryCard
           icon={<Clock className="h-5 w-5 text-primary" />}
           label={t('processingTime')}
-          value={visa.processingTime.typical}
+          value={visa.processingTime.governmentReview}
         />
         <SummaryCard
           icon={<Timer className="h-5 w-5 text-primary" />}
@@ -93,32 +96,38 @@ function SummaryCard({
   value: string;
   detail?: string;
 }) {
-  return (
-    <div className="rounded-lg border border-primary/30 bg-primary/[0.04] p-4 text-center transition-shadow hover:shadow-sm">
+  const card = (
+    <div className={cn(
+      'rounded-lg border border-primary/30 bg-primary/[0.04] p-4 text-center transition-all',
+      detail && 'cursor-pointer hover:border-primary/60 hover:shadow-md hover:bg-primary/[0.08]'
+    )}>
       <div className="flex justify-center">{icon}</div>
       <p className="mt-1.5 text-xs font-medium text-muted-foreground">
         {label}
       </p>
-      <p className="mt-0.5 text-sm font-semibold">
-        {value}
-        {detail && (
-          <TooltipProvider delayDuration={200}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button className="ml-1 inline-flex translate-y-[1px] items-center text-primary/40 hover:text-primary">
-                  <Info className="h-3.5 w-3.5" />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent
-                side="top"
-                className="max-w-[240px] text-xs"
-              >
-                {detail}
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        )}
-      </p>
+      <p className="mt-0.5 text-sm font-semibold">{value}</p>
+      {detail && (
+        <p className="mt-1 text-[10px] text-primary/50">Click for details</p>
+      )}
     </div>
+  );
+
+  if (!detail) return card;
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        {card}
+      </PopoverTrigger>
+      <PopoverContent
+        side="top"
+        className="max-w-[280px] text-sm"
+        sideOffset={8}
+      >
+        <p className="text-xs font-medium text-muted-foreground mb-1">{label}</p>
+        <p className="font-semibold text-base">{value}</p>
+        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{detail}</p>
+      </PopoverContent>
+    </Popover>
   );
 }

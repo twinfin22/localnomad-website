@@ -1,7 +1,7 @@
 import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { slugify } from '@/lib/blog/utils';
+import { createSlugTracker } from '@/lib/blog/utils';
 
 const BudgetTable = ({
   data,
@@ -378,15 +378,17 @@ const extractText = (children: React.ReactNode): string => {
   return '';
 };
 
-export const mdxComponents: MDXComponents = {
+export const createMdxComponents = (): MDXComponents => {
+  const uniqueSlug = createSlugTracker();
+  return {
   h2: (props) => {
     const text = extractText(props.children);
-    const id = slugify(text);
+    const id = uniqueSlug(text);
     return <h2 id={id} className="scroll-mt-24" {...props} />;
   },
   h3: (props) => {
     const text = extractText(props.children);
-    const id = slugify(text);
+    const id = uniqueSlug(text);
     return <h3 id={id} className="scroll-mt-24" {...props} />;
   },
   img: (props) => {
@@ -425,4 +427,5 @@ export const mdxComponents: MDXComponents = {
   StatusList,
   ResponsiveTable,
   NeighborhoodCards,
+};
 };

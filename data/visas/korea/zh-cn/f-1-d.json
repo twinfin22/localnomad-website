@@ -1,8 +1,46 @@
 {
   "type": "f-1-d",
-  "name": "韩国数字游民签证 (F-1-D) — 2026年完整指南",
+  "name": "韩国数字游民签证 (F-1-D)",
   "shortName": "F-1-D",
   "category": "digital-nomad",
+  "nameLocal": "디지털노마드비자 (F-1-D)",
+  "familyAllowed": false,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "办理外国人登陆证",
+      "deadline": "入境后90天内",
+      "description": "前往最近的出入境管理局办理ARC。开设银行账户、办理手机号等各类服务均需此证。",
+      "tips": ["在HiKorea (hikorea.go.kr) 预约", "携带护照、照片、住址证明及签证相关材料"]
+    },
+    {
+      "id": "phone-number",
+      "title": "办理韩国手机号",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国运营商处办理手机号。开设银行账户及使用各类在线服务均需手机号。"
+    },
+    {
+      "id": "bank-account",
+      "title": "开设银行账户",
+      "deadline": "取得ARC后尽快",
+      "description": "取得ARC后，在韩国银行开设账户。用于接收工资和日常交易。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "加入国民健康保险",
+      "deadline": "入境后6个月内",
+      "description": "办理韩国国民健康保险（NHI）加入手续。长期居留者有加入义务。"
+    },
+    {
+      "id": "address-registration",
+      "title": "办理住址登记",
+      "deadline": "搬入后14天内",
+      "description": "在居住地所辖区厅完成住址登记（전입신고）。各类行政服务均需此登记。"
+    }
+  ],
+  "renewal": {
+    "process": "在签证到期前至少30天向最近的出入境管理局提交延期申请。"
+  },
   "description": "韩国F-1-D远程工作签证完整指南：$66K收入要求、保险、所需材料、申请流程及常见问题。2026年最新版。",
   "tagline": "远程办公，居住在韩国",
   "keyRequirement": "外国公司远程就业 + 收入 ≥ GNI×2（约₩88M/年）",
@@ -29,22 +67,26 @@
       "id": "insurance",
       "label": "覆盖韩国的健康保险",
       "description": "需持有最低保额约₩100,000,000（约$75,000 USD）的私人健康保险。F-1-D持有者通常不具备以职场参保人身份加入韩国国民健康保险（국민건강보험）的资格。请在整个滞留期间维持私人保险。",
-      "required": true
+      "required": true,
+      "warnings": ["整个滞留期间必须维持有效的健康保险"]
     },
     {
       "id": "no-korean-work",
+      "sentiment": "negative",
       "label": "不为韩国公司工作",
       "description": "持此签证不得为韩国客户/公司工作",
-      "required": true
+      "required": true,
+      "warnings": ["为韩国公司工作属于签证违规"]
     }
   ],
   "duration": {
     "initial": "1年",
     "extension": "可延长1年",
-    "maxTotal": "2年"
+    "maxTotal": "2年",
+    "notes": "最长滞留2年 — 请提前做好规划"
   },
   "fees": {
-    "application": "₩60,000（约$42 USD）",
+    "application": "₩60,000",
     "extension": "₩60,000",
     "notes": "使领馆可能收取额外费用"
   },
@@ -78,21 +120,21 @@
       "name": "有效护照",
       "description": "有效期须超过预计滞留期限6个月以上",
       "required": true,
-      "nameKorean": "여권"
+      "nameLocal": "여권"
     },
     {
       "id": "application-form",
       "name": "签证申请表",
       "description": "已填写完整的申请表",
       "required": true,
-      "nameKorean": "사증발급신청서"
+      "nameLocal": "사증발급신청서"
     },
     {
       "id": "photo",
       "name": "护照照片",
       "description": "3.5cm x 4.5cm，近期拍摄，白色背景",
       "required": true,
-      "nameKorean": "여권사진"
+      "nameLocal": "여권사진"
     },
     {
       "id": "employment-proof",
@@ -103,7 +145,7 @@
         "应包含职位名称和雇佣期限"
       ],
       "required": true,
-      "nameKorean": "재직증명서"
+      "nameLocal": "재직증명서"
     },
     {
       "id": "income-proof",
@@ -114,7 +156,7 @@
         "如有税务文件请一并提交"
       ],
       "required": true,
-      "nameKorean": "소득증명서"
+      "nameLocal": "소득증명서"
     },
     {
       "id": "health-insurance",
@@ -125,7 +167,7 @@
         "SafetyWing、Cigna Global等均可接受"
       ],
       "required": true,
-      "nameKorean": "보험증서"
+      "nameLocal": "보험증서"
     },
     {
       "id": "background-check",
@@ -136,7 +178,7 @@
         "可能需要海牙认证"
       ],
       "required": true,
-      "nameKorean": "범죄경력증명서"
+      "nameLocal": "범죄경력증명서"
     },
     {
       "id": "accommodation",
@@ -146,7 +188,7 @@
         "至少提供前2周的住宿安排"
       ],
       "required": false,
-      "nameKorean": "거주증명서"
+      "nameLocal": "거주증명서"
     }
   ],
   "applicationSteps": [
@@ -205,7 +247,8 @@
     }
   ],
   "processingTime": {
-    "typical": "2-4周",
+    "governmentReview": "2-4周",
+    "totalEndToEnd": "1-2个月",
     "notes": "审批时间因使领馆、国籍和季节而异。根据公布的指南，请至少在预计出发日期前4至6周提交申请。部分使领馆可能提供加急处理服务（需额外收费）。"
   },
   "workPermission": {
@@ -280,14 +323,12 @@
     "热门区域：江南（商务）、梨泰院（国际化）、弘大（创意）"
   ],
   "warnings": [
-    "收入要求严格 — 基于GNI × 2约₩8,800万（约$66K）",
-    "为韩国公司工作属于签证违规",
-    "整个滞留期间必须维持有效的健康保险",
-    "最长滞留2年 — 请提前做好规划"
+    "收入要求严格 — 基于GNI × 2约₩8,800万（约$66K）"
   ],
   "communityTips": [
     {
       "id": "fbi-check",
+      "section": "documents",
       "tip": "FBI无犯罪记录证明邮寄办理可能需要12至18周。务必在其他准备工作之前最先启动。",
       "source": "reddit",
       "verified": true,
@@ -296,6 +337,7 @@
     },
     {
       "id": "safetywing-accepted",
+      "section": "documents",
       "tip": "SafetyWing Nomad Insurance在我办理F-1-D延期时被首尔出入境管理局接受了。每月费用约$45。",
       "source": "reddit",
       "verified": true,
@@ -304,6 +346,7 @@
     },
     {
       "id": "income-proof-bank",
+      "section": "documents",
       "tip": "我提交了Wise（TransferWise）银行流水和劳动合同，在世宗路办事处顺利通过，没有任何问题。",
       "source": "community",
       "verified": true,
@@ -312,6 +355,7 @@
     },
     {
       "id": "arc-timeline",
+      "section": "process",
       "tip": "在木洞出入境管理局登记后10个工作日拿到了ARC卡。当场就发了一张收据，可以作为临时身份证明使用。",
       "source": "discord",
       "verified": true,
@@ -320,6 +364,7 @@
     },
     {
       "id": "apostille-tip",
+      "section": "documents",
       "tip": "如果您是美国公民，请在来韩前在美国国务院办理无犯罪记录证明的海牙认证。邮寄办理需要4至6周。",
       "source": "reddit",
       "verified": true,

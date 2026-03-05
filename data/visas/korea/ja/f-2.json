@@ -1,8 +1,46 @@
 {
   "type": "f-2",
-  "name": "韓国ポイント制居住ビザ（F-2-7）— 2026年完全ガイド",
+  "name": "韓国ポイント制居住ビザ（F-2-7）",
   "shortName": "F-2",
   "category": "residence",
+  "nameLocal": "점수제 거주비자 (F-2-7)",
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "外国人登録証の取得",
+      "deadline": "入国後90日以内",
+      "description": "最寄りの出入国管理事務所でARC申請。銀行口座開設、携帯電話契約など各種サービスに必要。",
+      "tips": ["HiKorea（hikorea.go.kr）で予約", "パスポート、写真、住所証明、ビザ関連書類を持参"]
+    },
+    {
+      "id": "phone-number",
+      "title": "携帯電話番号の取得",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の通信キャリアで携帯電話番号を取得。銀行口座開設や各種オンラインサービスに必要。"
+    },
+    {
+      "id": "bank-account",
+      "title": "銀行口座の開設",
+      "deadline": "ARC取得後すぐ",
+      "description": "ARC取得後、韓国の銀行で口座を開設。給与受取や日常取引に必要。"
+    },
+    {
+      "id": "health-insurance",
+      "title": "国民健康保険への加入",
+      "deadline": "入国後6ヶ月以内",
+      "description": "韓国国民健康保険（NHI）への加入手続き。長期滞在者は加入義務あり。"
+    },
+    {
+      "id": "address-registration",
+      "title": "住所登録",
+      "deadline": "転入後14日以内",
+      "description": "居住地の管轄区役所で住所登録（전입신고）を完了。各種行政サービスに必要。"
+    }
+  ],
+  "renewal": {
+    "process": "満了日の少なくとも30日前に最寄りの出入国管理事務所で延長申請を提出。"
+  },
   "description": "韓国F-2-7ポイント制居住ビザの完全ガイド：170点満点中80点以上、年齢・学歴・収入・韓国語能力・加算点のポイント内訳、永住権への経路、無制限の就労許可。F-2-7は韓国における優秀な外国人専門職向けの主要な長期居住ビザ。申請者は5つのカテゴリ — 年齢（最大25点）、学歴（最大25点）、韓国語能力 TOPIK/KIIP（最大20点）、年間所得（最大60点）、加算点（最大40点）— でポイントを積み上げ、合計80点以上を達成する必要がある。ビザの期間は合計スコアに応じて1〜5年、保持者は自由な就労が可能：雇用主変更、起業、複数の仕事の兼業。F-2-7で3年後、公開されているガイドラインではF-5永住権への経路が示されている。2026年最新版。",
   "tagline": "ポイント制度による長期居住",
   "keyRequirement": "年齢、学歴、収入、韓国語能力のポイントで80点以上（170点満点）を獲得",
@@ -51,15 +89,15 @@
     "maxTotal": "無期限更新可能（3年後にF-5永住権への経路あり）"
   },
   "fees": {
-    "application": "₩85,000（約$63 USD）",
-    "extension": "₩60,000（約$45 USD）",
+    "application": "₩85,000",
+    "extension": "₩60,000",
     "notes": "手数料は変動する場合がある。最新の手数料はHiKoreaまたは最寄りの出入国管理事務所で確認すること。"
   },
   "documents": [
     {
       "id": "application-form",
       "name": "統合申請書",
-      "nameKorean": "통합신청서",
+      "nameLocal": "통합신청서",
       "description": "標準的な出入国管理申請書、すべての欄を記入",
       "tips": [
         "HiKoreaポータルからダウンロードまたは出入国管理事務所で入手",
@@ -70,35 +108,35 @@
     {
       "id": "passport",
       "name": "有効なパスポート（旅券）",
-      "nameKorean": "여권",
+      "nameLocal": "여권",
       "description": "滞在予定期間の6ヶ月以上有効なもの",
       "required": true
     },
     {
       "id": "arc",
       "name": "外国人登録証（ARC）",
-      "nameKorean": "외국인등록증",
+      "nameLocal": "외국인등록증",
       "description": "現在のビザステータス（Eシリーズ、Dシリーズ等）が記載された現行のARC",
       "required": true
     },
     {
       "id": "photo",
       "name": "証明写真",
-      "nameKorean": "여권사진",
+      "nameLocal": "여권사진",
       "description": "3.5cm x 4.5cm、最近撮影（6ヶ月以内）、白背景",
       "required": true
     },
     {
       "id": "residency-proof",
       "name": "居住証明書 / 住居契約書",
-      "nameKorean": "거주지증명서",
+      "nameLocal": "거주지증명서",
       "description": "賃貸契約書（임대차계약서）、住居登録、または韓国での現住所を示す公共料金の領収書",
       "required": true
     },
     {
       "id": "employment-proof",
       "name": "雇用契約書または事業者登録証",
-      "nameKorean": "고용계약서 / 사업자등록증",
+      "nameLocal": "고용계약서 / 사업자등록증",
       "description": "韓国の雇用主との現行の雇用契約書、または自営業の場合は事業者登録証",
       "tips": [
         "契約書には職種、給与、雇用期間を明記",
@@ -109,7 +147,7 @@
     {
       "id": "income-certificate",
       "name": "所得証明書 / 確定申告書",
-      "nameKorean": "근로소득증명서",
+      "nameLocal": "근로소득증명서",
       "description": "国税庁（NTS）発行の公式所得証明書または雇用主発行の源泉徴収票（원천징수영수증）。年間総所得が記載されていること。",
       "tips": [
         "ホームタックス（홈택스）から直近の課税年度のものを発行",
@@ -120,7 +158,7 @@
     {
       "id": "degree-certificates",
       "name": "学位証明書",
-      "nameKorean": "학위증명서",
+      "nameLocal": "학위증명서",
       "description": "すべての学位証明書（学士、修士、博士）の原本または認証コピー。海外の学位は韓国語または英語に翻訳し、アポスティーユまたは公証が必要。",
       "tips": [
         "海外発行のすべての学位にアポスティーユまたは公証が必要",
@@ -131,7 +169,7 @@
     {
       "id": "topik-kiip",
       "name": "TOPIKまたはKIIP証明書",
-      "nameKorean": "한국어능력시험 / 사회통합프로그램 증명서",
+      "nameLocal": "한국어능력시험 / 사회통합프로그램 증명서",
       "description": "韓国語能力試験（TOPIK）の成績証明書または社会統合プログラム（KIIP）の修了証明書。申請の必須要件ではないが、最大20ポイントの加算。",
       "tips": [
         "KIIP 5段階修了で韓国語の20ポイントに加え10ポイントの加算点が追加される",
@@ -142,7 +180,7 @@
     {
       "id": "tb-screening",
       "name": "結核検査証明書",
-      "nameKorean": "결핵검진확인서",
+      "nameLocal": "결핵검진확인서",
       "description": "韓国の指定医療機関での結核検査証明書。指定国の国民に必要。",
       "tips": [
         "指定された入国管理医療センターで検査を受ける",
@@ -153,7 +191,7 @@
     {
       "id": "background-check",
       "name": "犯罪経歴証明書",
-      "nameKorean": "범죄경력증명서",
+      "nameLocal": "범죄경력증명서",
       "description": "本国からの警察証明書。初回申請者または韓国を6ヶ月以上離れていた場合に必要。アポスティーユ付きであること。",
       "tips": [
         "米国市民のFBI身元調査は郵送で12〜18週間かかることがある — 早めに開始",
@@ -165,7 +203,7 @@
     {
       "id": "family-documents",
       "name": "家族関係書類",
-      "nameKorean": "가족관계증명서",
+      "nameLocal": "가족관계증명서",
       "description": "婚姻証明書、子供の出生証明書、その他の家族関係の証明。扶養家族と一緒に申請する場合または家族関連のポイントを主張する場合のみ必要。",
       "required": false
     }
@@ -235,7 +273,8 @@
     }
   ],
   "processingTime": {
-    "typical": "2〜4週間",
+    "governmentReview": "2〜4週間",
+    "totalEndToEnd": "2〜4ヶ月",
     "notes": "処理時間は出入国管理事務所と申請量により異なる。出入国管理官がポイントの主張を確認するために追加書類を要求する場合があり、それにより期間が延びることがある。公開されているガイドラインによると、現在のビザの有効期限より十分前に申請すること。"
   },
   "workPermission": {
@@ -313,41 +352,36 @@
   "communityTips": [
     {
       "id": "income-lever",
+      "section": "requirements",
       "tip": "所得スコアは170点満点中60点を占める。年収が₩4,000万を超えれば、公開されているガイドラインによると3年の滞在要件なしに即時申請可能。書類上の給与をできるだけ高くすることに集中すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "salary-negotiation",
+      "section": "requirements",
       "tip": "「基本給250万 + 住宅手当50万」という分割ではなく、一律300万の基本給を交渉すること。確定申告にはより高い所得が反映され、F-2-7のポイントに直結する。ホームタックスの所得証明書には課税所得しか表示されない。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "kiip-bonus",
+      "section": "requirements",
       "tip": "KIIP（사회통합프로그램）5段階修了で韓国語の20ポイントに加え10ポイントの加算点が得られる — 韓国語関連だけで合計30ポイント。無料の政府プログラムで、時間対ポイント効率が最も高い投資。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "blood-donation",
+      "section": "requirements",
       "tip": "韓国赤十字での献血はボランティア活動の加算点に算入される。複数回にわたる活動実績の記録が必要。1365ポータルでボランティア時間を登録すること。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },
     {
       "id": "start-early",
+      "section": "process",
       "tip": "F-2-7が必要な2〜3年前から準備を開始すること。TOPIK対策、KIIP受講、給与交渉、ボランティア時間はすべて時間がかかる。多くの専門職がポイント不足に気づくのが遅く、短期間では挽回できない。",
-      "source": "community",
-      "verified": false,
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     }

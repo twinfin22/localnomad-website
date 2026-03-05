@@ -1,7 +1,8 @@
 {
   "type": "ssw2",
-  "name": "Japan Specified Skilled Worker 2 (特定技能2号) — Complete 2026 Guide",
+  "name": "Japan Specified Skilled Worker 2 (特定技能2号)",
   "shortName": "SSW2",
+  "nameLocal": "特定技能2号",
   "category": "work",
   "description": "Everything about Japan's Specified Skilled Worker Category 2 (SSW2) visa: advanced proficient skills status with no time limit on stay, family inclusion, path toward permanent residency, and the Category 2 skills test. SSW2 represents the upper tier of Japan's Specified Skilled Worker program, designed for experienced workers who have demonstrated supervisory-level expertise in their designated sector. Unlike SSW1's strict 5-year cap, SSW2 holders may renew indefinitely, bring family members (spouse and children), and work toward long-term settlement in Japan. Applicants typically transition from SSW1 after 3 or more years of sector experience and must pass the more advanced Category 2 skills evaluation or hold a Grade 1 National Trade Skill Certificate. Published guidelines indicate that SSW2 holders may eventually pursue permanent residency through the standard 10-year route. Updated for 2026.",
   "tagline": "Advanced skilled worker status with indefinite renewal and family inclusion",
@@ -18,7 +19,10 @@
       "id": "skills-test-cat2",
       "label": "Pass the Category 2 Specified Skills Test (higher standard than SSW1)",
       "description": "According to published guidelines, applicants must pass the Category 2 Specified Skills Test, which evaluates proficiency at a supervisory or expert level. The test standard is significantly higher than the Category 1 test required for SSW1.",
-      "required": true
+      "required": true,
+      "warnings": [
+        "Not all sectors currently offer Category 2 testing — verify availability before committing to the SSW2 transition plan"
+      ]
     },
     {
       "id": "alternative-qualification",
@@ -196,7 +200,8 @@
       "duration": "1–3 months (for test registration and results)",
       "tips": [
         "Category 2 tests evaluate supervisory-level competence — practical experience is as important as study",
-        "If you already hold a Grade 1 National Trade Skill Certificate, you may not need the Category 2 test"
+        "If you already hold a Grade 1 National Trade Skill Certificate, you may not need the Category 2 test",
+        "The Category 2 test is significantly more difficult than Category 1 — adequate preparation is essential. Allocate more study time than you expect."
       ]
     },
     {
@@ -215,6 +220,9 @@
       "tips": [
         "Apply before your SSW1 status expires — immigration processing times can vary",
         "Bring all original documents and copies to the immigration bureau"
+      ],
+      "warnings": [
+        "Apply for SSW2 status change before your SSW1 5-year limit expires — late applications may result in a gap in legal status"
       ]
     },
     {
@@ -230,7 +238,8 @@
     }
   ],
   "processingTime": {
-    "typical": "4–8 weeks for Change of Status processing",
+    "governmentReview": "4–8 weeks for Change of Status processing",
+    "totalEndToEnd": "3-6 months",
     "notes": "Processing times vary by regional immigration bureau and application volume. Published guidelines indicate that well-documented applications with clear supervisory credentials tend to process faster. If applying from outside Japan with a COE, add 2–4 weeks for COE issuance and 5–10 working days for embassy visa processing."
   },
   "workPermission": {
@@ -239,7 +248,8 @@
       "Work is limited to the designated sector specified in the employment contract",
       "Must hold a supervisory or management role consistent with SSW2 skill level",
       "Cannot engage in self-employment or business ownership",
-      "Changing employers requires formal change of employment procedure"
+      "Changing employers requires formal change of employment procedure",
+      "Changing employers on SSW2 still requires formal immigration procedures — unauthorized changes are visa violations"
     ],
     "notes": "SSW2 holders have broader work authorization than SSW1 within their designated sector. The supervisory role allows greater autonomy and responsibility. As with SSW1, changing employers or sectors requires formal immigration procedures."
   },
@@ -284,6 +294,10 @@
     {
       "question": "How does the upcoming Employment for Skill Development (ESD) system affect SSW2?",
       "answer": "The ESD system, scheduled to replace the Technical Intern Training program starting in 2027, is expected to create a clearer pipeline into the SSW framework. Published guidelines suggest that ESD completers will have a structured pathway to SSW1 and eventually SSW2. The SSW program itself is not being replaced — it is expected to continue and expand alongside ESD."
+    },
+    {
+      "question": "What happens to my family's dependent visas if I lose SSW2 status?",
+      "answer": "Family dependent visas are tied to the primary SSW2 holder's status. If your SSW2 status expires or is revoked, dependent visas are also affected. Published guidelines indicate that you should apply for renewal well before your current status expires to avoid gaps. Family members' visa status cannot extend beyond the primary holder's authorized period."
     }
   ],
   "tips": [
@@ -296,45 +310,81 @@
     "Keep all employment records, tax certificates, and pension documentation organized — these serve as proof of continuous work history",
     "Monitor the ISA website for policy updates — the SSW program is actively evolving with new sectors and testing schedules"
   ],
-  "warnings": [
-    "Not all sectors currently offer Category 2 testing — verify availability before committing to the SSW2 transition plan",
-    "The Category 2 test is significantly more difficult than Category 1 — adequate preparation is essential",
-    "Apply for SSW2 status change before your SSW1 5-year limit expires — late applications may result in a gap in legal status",
-    "Family dependent visas are tied to the primary SSW2 holder — if your status expires or is revoked, dependent visas are also affected",
-    "Changing employers on SSW2 still requires formal immigration procedures — unauthorized changes are visa violations"
-  ],
+  "warnings": [],
   "communityTips": [
     {
       "id": "early-n3-prep",
+      "section": "requirements",
       "tip": "Start studying for JLPT N3 as soon as you arrive on SSW1 — the jump from N4 to N3 is substantial. Many workers underestimate the time required and miss the July or December test dates, pushing their SSW2 transition back by 6 months or more.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "supervisor-experience-tip",
+      "section": "requirements",
       "tip": "Document every supervisory task you perform on SSW1 — training new workers, managing schedules, quality inspections. When you apply for SSW2, this documented experience strengthens your application and may serve as alternative qualification if Category 2 testing is not yet available in your sector.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "family-timing-tip",
+      "section": "documents",
       "tip": "If you plan to bring your family, start gathering their documents (marriage certificate, birth certificates, translations) before you receive SSW2 approval. Dependent visa processing adds weeks, and having documents ready shortens the separation period.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
     },
     {
       "id": "sector-research-tip",
+      "section": "process",
       "tip": "Construction and shipbuilding were the first sectors to offer SSW2 — they have the most established testing and transition processes. If your sector is newer to SSW2, look at how these sectors handle the transition for guidance on what to expect.",
-      "source": "community",
       "verified": false,
-      "upvotes": 0,
-      "dateAdded": "2026-03-04"
+      "upvotes": 0
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "maxExtensions": null,
+    "maxTotalStay": "Indefinite (with continuous renewal)",
+    "requirements": ["Valid employment contract", "Tax payment records", "No immigration violations"],
+    "documents": ["Passport", "Current residence card", "Employment certificate", "Tax certificate"],
+    "applyBeforeDays": 90,
+    "processingTime": "2-4 weeks",
+    "fees": "¥4,000"
+  },
+  "agencySteps": [
+    {
+      "order": 1,
+      "agency": "ISA",
+      "agencyFullName": "Immigration Services Agency of Japan (出入国在留管理庁)",
+      "action": "COE Application",
+      "description": "Employer or representative files Certificate of Eligibility application.",
+      "processingDays": 60,
+      "tips": ["Processing varies by regional bureau — Tokyo is typically slower"]
+    },
+    {
+      "order": 2,
+      "agency": "Embassy",
+      "agencyFullName": "Japanese Embassy/Consulate",
+      "action": "Visa Issuance",
+      "description": "Submit COE with passport and application form at nearest Japanese embassy.",
+      "processingDays": 5,
+      "dependsOn": 1
+    }
+  ],
+  "postArrivalSteps": [
+    {
+      "id": "residence-card",
+      "title": "Residence Card",
+      "deadline": "Issued at airport (Narita, Haneda, Kansai, Chubu)",
+      "description": "Your residence card (在留カード) is issued upon arrival at designated airports. At other ports of entry, visit your local ward office within 14 days.",
+      "tips": ["Always carry your residence card — it is legally required"]
+    },
+    {
+      "id": "ward-office-registration",
+      "title": "Ward Office Registration (住民届)",
+      "deadline": "Within 14 days of finding address",
+      "description": "Register your address at the local ward/city office. Required for health insurance enrollment and bank account opening.",
+      "tips": ["Bring residence card, passport, and proof of address"]
     }
   ],
   "relatedVisas": [
