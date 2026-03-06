@@ -1,7 +1,7 @@
 import { cache } from 'react';
 import type { CountryNeighborhoodData } from '@/lib/types/neighborhood';
 
-const VALID_COUNTRIES = ['korea'] as const;
+const VALID_COUNTRIES = ['korea', 'japan', 'taiwan', 'china'] as const;
 type NeighborhoodCountry = (typeof VALID_COUNTRIES)[number];
 
 export const getNeighborhoodData = cache(

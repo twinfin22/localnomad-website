@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { routing } from '@/i18n/routing';
+import { getAlternates } from '@/lib/seo';
 import { getPost, getAllPostSlugs } from '@/lib/blog';
 import { extractHeadings } from '@/lib/blog/utils';
 import { createMdxComponents } from '@/components/blog/mdx-components';
@@ -18,14 +20,17 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { category, slug } = await params;
+  const { locale, category, slug } = await params;
   const post = getPost(category, slug);
 
   if (!post) return {};
 
+  const alternates = getAlternates(locale, `/blog/${category}/${slug}`);
+
   return {
     title: `${post.frontmatter.title} | LocalNomad Blog`,
     description: post.frontmatter.description,
+    alternates,
     openGraph: {
       title: post.frontmatter.title,
       description: post.frontmatter.description,
@@ -33,6 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.frontmatter.date,
       modifiedTime: post.frontmatter.updatedAt ?? post.frontmatter.date,
       authors: [post.frontmatter.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
     },
   };
 }
@@ -75,6 +83,18 @@ export default async function BlogPostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <header className="mb-10">
+          {post.frontmatter.coverImage && (
+            <div className="mb-6 overflow-hidden rounded-xl">
+              <Image
+                src={post.frontmatter.coverImage}
+                alt={post.frontmatter.title}
+                width={960}
+                height={480}
+                className="w-full object-cover"
+                priority
+              />
+            </div>
+          )}
           <div className="mb-4 flex items-center gap-2">
             <span className="rounded-full bg-[#1B4965] px-2.5 py-0.5 text-xs font-medium text-white">
               {post.category}

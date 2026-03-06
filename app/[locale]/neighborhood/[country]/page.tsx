@@ -9,10 +9,13 @@ import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import { NeighborhoodExplorer } from '@/components/neighborhood';
 import type { City } from '@/lib/types/neighborhood';
 
-const VALID_COUNTRIES = ['korea'] as const;
+const VALID_COUNTRIES = ['korea', 'japan', 'taiwan', 'china'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',
+  japan: 'Japan',
+  taiwan: 'Taiwan',
+  china: 'China',
 };
 
 interface Props {

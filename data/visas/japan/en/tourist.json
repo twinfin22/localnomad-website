@@ -49,11 +49,13 @@
   ],
   "duration": {
     "initial": "15-90 days (varies by nationality)",
-    "maxTotal": "90 days — extensions are generally not granted except in exceptional circumstances",
+    "maxTotal": "90 days",
+    "maxTotalDetail": "Extensions are generally not granted except in exceptional circumstances.",
     "notes": "Extensions are almost never granted — plan your trip within the permitted stay duration from the beginning. Only truly exceptional circumstances such as hospitalization or natural disasters may warrant an extension."
   },
   "fees": {
-    "application": "¥0 for visa-waiver entry; ¥3,000 (single entry) or ¥6,000 (multiple entry) for tourist visa — current as of March 2026",
+    "application": "Free (visa-waiver); ¥3,000–¥6,000 (visa)",
+    "applicationDetail": "¥0 for visa-waiver entry. ¥3,000 (single entry) or ¥6,000 (multiple entry) for tourist visa. Current as of March 2026.",
     "notes": "Visa-waiver entry is completely free — no fee is charged at any point. For tourist visa applicants, fees are paid at the embassy or consulate upon visa issuance (not at application submission). Fee amounts may vary slightly by embassy. Some countries have bilateral fee waiver agreements with Japan. IMPORTANT: Japan's government has proposed increasing visa fees significantly (single entry to ¥15,000) as part of fiscal year 2026 immigration reforms. The bill is pending Diet approval — check MOFA for the latest fee schedule before applying."
   },
   "residenceStatus": "短期滞在 (Temporary Visitor)",
@@ -180,7 +182,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "Instant for visa-waiver entry; 5-7 business days for tourist visa applications",
+    "governmentReview": "Instant (visa-waiver); 5–7 days (visa)",
+    "governmentReviewDetail": "Instant for visa-waiver entry. 5–7 business days for tourist visa applications.",
     "totalEndToEnd": "1-2 weeks",
     "notes": "Visa-waiver nationals receive their entry permission instantly at the airport upon arrival. Tourist visa applicants should allow 5-7 business days for standard processing at the embassy, though some locations may take longer during peak travel seasons (cherry blossom season, Golden Week, New Year). Expedited processing is generally not available."
   },

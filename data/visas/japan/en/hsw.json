@@ -52,10 +52,12 @@
   "duration": {
     "initial": "Up to 5 years",
     "extension": "Renewable indefinitely — reapplication required before expiration",
-    "maxTotal": "No cumulative limit (fast-track to permanent residence: 1 year at 80+ points, 3 years at 70-79 points)"
+    "maxTotal": "No cumulative limit",
+    "maxTotalDetail": "Fast-track to permanent residence: 1 year at 80+ points, 3 years at 70–79 points."
   },
   "fees": {
-    "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
+    "application": "COE: free; Visa: ¥3,000–¥6,000",
+    "applicationDetail": "Certificate of Eligibility (COE): ¥0 (free). Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry).",
     "extension": "¥4,000 for extension of stay or change of status",
     "notes": "Fees are subject to change. Significant fee increases are expected in FY2026 — the change of status fee may rise to approximately ¥40,000, and the permanent residency application fee may rise to approximately ¥100,000. Check the Immigration Services Agency website for the current schedule."
   },
@@ -215,7 +217,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "3-5 months total (COE: 2-3 months + visa processing: 5-10 working days) for new applications; 2-4 weeks for status change within Japan",
+    "governmentReview": "3–5 months (new); 2–4 weeks (change)",
+    "governmentReviewDetail": "New applications: COE 2–3 months + visa 5–10 working days. Status change within Japan: 2–4 weeks.",
     "totalEndToEnd": "2-4 months",
     "notes": "HSP applications may receive higher processing priority compared to standard work visas, according to published guidelines. However, the points verification process can add time if documentation is incomplete. Immigration officers verify each claimed point against supporting documents."
   },

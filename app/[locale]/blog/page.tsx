@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import { getAllPosts } from '@/lib/blog';
 import type { BlogCategory, BlogCountry } from '@/lib/blog/schema';
 import { BLOG_CATEGORIES, BLOG_COUNTRIES } from '@/lib/blog/schema';
@@ -22,10 +23,23 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: 'Blog' });
 
+  const alternates = getAlternates(locale, '/blog');
+
   return {
     title: `${t('title')} | LocalNomad`,
     description:
       'Digital nomad guides, visa updates, and travel tips for Korea, Japan, China, Taiwan, and Southeast Asia.',
+    alternates,
+    openGraph: {
+      title: `${t('title')} | LocalNomad`,
+      description:
+        'Digital nomad guides, visa updates, and travel tips for Korea, Japan, China, Taiwan, and Southeast Asia.',
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: ['/og-default.png'],
+    },
   };
 }
 

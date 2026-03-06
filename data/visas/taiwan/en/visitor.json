@@ -60,7 +60,8 @@
     "notes": "Visa-exempt stays CANNOT be extended — you must depart before your permitted period expires or apply for a different visa status"
   },
   "fees": {
-    "application": "Free for visa-exempt entry. Visitor visa: NT$1,600 (single entry) / NT$3,200 (multiple entry).",
+    "application": "Free (visa-exempt); NT$1,600–NT$3,200 (visa)",
+    "applicationDetail": "Free for visa-exempt entry. Visitor visa: NT$1,600 (single entry) or NT$3,200 (multiple entry).",
     "extension": "Not applicable for visa-exempt entry",
     "notes": "US citizens: NT$7,090 reciprocity surcharge for visitor visa. All visa fees are non-refundable regardless of outcome."
   },
@@ -176,7 +177,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "Instant for visa-exempt entry. 3-5 business days for visitor visa applications.",
+    "governmentReview": "Instant (visa-exempt); 3–5 days (visa)",
+    "governmentReviewDetail": "Instant for visa-exempt entry. 3–5 business days for visitor visa applications.",
     "totalEndToEnd": "1-2 weeks",
     "notes": "Visitor visa processing times vary by TECO office. Some offices may take longer during peak travel seasons."
   },
@@ -242,7 +244,7 @@
     },
     {
       "question": "What happens if I overstay my visa-exempt period?",
-      "answer": "Overstaying is a serious violation. Penalties may include fines (up to NT$150,000 depending on circumstances; NT$2,000-10,000 for self-reported overstays), detention, deportation, and a future entry ban. Recent legislation has increased overstay penalties significantly. Always depart before your permitted stay expires."
+      "answer": "Overstaying is a serious violation. Standard overstay fines range from NT$30,000 to NT$150,000 depending on the length and circumstances of the violation. Self-reported overstayers receive lenient treatment: minimum fine NT$2,000, no detention, and exemption from entry ban. All overstays may result in entry bans for up to 10 years. Recent legislation has significantly increased penalties from the previous NT$2,000-10,000 range. Always depart before your permitted stay expires."
     },
     {
       "question": "Do I need travel insurance for visa-exempt entry?",

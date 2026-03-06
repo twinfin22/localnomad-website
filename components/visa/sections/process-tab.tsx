@@ -17,18 +17,20 @@ export function ProcessTab({ visa, communityTips = [] }: ProcessTabProps) {
     <div>
       {/* Total timeline summary */}
       {visa.processingTime.totalEndToEnd && (
-        <div className="mb-6 flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/[0.04] px-4 py-3">
-          <Clock className="h-5 w-5 text-primary" />
-          <div>
-            <p className="text-xs font-medium text-muted-foreground">
-              {t('estimatedTotal')}
-            </p>
-            <p className="text-base font-semibold text-primary">
-              {visa.processingTime.totalEndToEnd}
-            </p>
+        <div className="mb-6 rounded-lg border border-primary/20 bg-primary/[0.04] px-4 py-3">
+          <div className="flex items-center gap-3">
+            <Clock className="h-5 w-5 shrink-0 text-primary" />
+            <div>
+              <p className="text-xs font-medium text-muted-foreground">
+                {t('estimatedTotal')}
+              </p>
+              <p className="text-base font-semibold text-primary">
+                {visa.processingTime.totalEndToEnd}
+              </p>
+            </div>
           </div>
           {visa.processingTime.notes && (
-            <p className="ml-auto text-xs text-muted-foreground max-w-[200px]">
+            <p className="mt-2 pl-8 text-xs text-muted-foreground">
               {visa.processingTime.notes}
             </p>
           )}

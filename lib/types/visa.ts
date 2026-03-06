@@ -266,6 +266,7 @@ export interface VisaBase {
   };
   fees: {
     application: string;
+    applicationDetail?: string;
     extension?: string;
     notes?: string;
   };
@@ -280,6 +281,7 @@ export interface VisaBase {
   applicationSteps: ApplicationStep[];
   processingTime: {
     governmentReview: string;
+    governmentReviewDetail?: string;
     totalEndToEnd?: string;
     expedited?: string;
     notes?: string;

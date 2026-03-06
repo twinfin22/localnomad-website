@@ -149,8 +149,11 @@ export default function NeighborhoodMap({
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/light-v11',
-      center: [127.5, 36.0], // Center of Korea [lng, lat]
-      zoom: 6,
+      center: [
+        cities.reduce((sum, c) => sum + c.coordinates[1], 0) / cities.length,
+        cities.reduce((sum, c) => sum + c.coordinates[0], 0) / cities.length,
+      ],
+      zoom: 5,
       scrollZoom: false,
     });
 

@@ -8,18 +8,18 @@ const LOCALES = ['en', 'ja', 'zh-cn', 'zh-tw', 'vi'] as const;
 const COUNTRIES = ['korea', 'taiwan', 'japan', 'china', 'southeast-asia'] as const;
 
 const COUNTRY_VISAS: Record<string, string[]> = {
-  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1'],
-  taiwan: ['gold-card', 'dnv'],
-  japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager'],
+  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1', 'b-2'],
+  taiwan: ['gold-card', 'dnv', 'visitor'],
+  japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager', 'tourist'],
   china: ['z-visa', 'x1-visa', 'k-visa'],
   'southeast-asia': [],
 };
 
-const NEIGHBORHOOD_COUNTRIES = ['korea'] as const;
+const NEIGHBORHOOD_COUNTRIES = ['korea', 'japan', 'taiwan', 'china'] as const;
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
 
-const LAST_MODIFIED = new Date('2026-03-04');
+const LAST_MODIFIED = new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

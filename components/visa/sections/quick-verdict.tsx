@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useRef, useCallback } from 'react';
 import {
   Check,
   Zap,
@@ -53,11 +54,13 @@ export function QuickVerdict({ visa }: QuickVerdictProps) {
           icon={<DollarSign className="h-5 w-5 text-primary" />}
           label={t('fees')}
           value={visa.fees.application}
+          detail={visa.fees.applicationDetail}
         />
         <SummaryCard
           icon={<Clock className="h-5 w-5 text-primary" />}
           label={t('processingTime')}
           value={visa.processingTime.governmentReview}
+          detail={visa.processingTime.governmentReviewDetail}
         />
         <SummaryCard
           icon={<Timer className="h-5 w-5 text-primary" />}
@@ -85,6 +88,17 @@ export function QuickVerdict({ visa }: QuickVerdictProps) {
   );
 }
 
+/** Extract trailing parenthetical from a value string.
+ *  e.g. "$23–$140 USD (varies by nationality)" → ["$23–$140 USD", "Varies by nationality"]
+ */
+function extractParenthetical(value: string): { display: string; extra: string | null } {
+  const match = value.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+  if (!match) return { display: value, extra: null };
+  // Capitalize first letter of extracted text
+  const extra = match[2].charAt(0).toUpperCase() + match[2].slice(1);
+  return { display: match[1].trim(), extra };
+}
+
 function SummaryCard({
   icon,
   label,
@@ -96,37 +110,72 @@ function SummaryCard({
   value: string;
   detail?: string;
 }) {
+  const [open, setOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
+
+  // If explicit detail provided, use value as-is for display.
+  // Otherwise, auto-extract parenthetical content as detail.
+  const { display: autoDisplay, extra } = extractParenthetical(value);
+  const displayValue = detail ? value : autoDisplay;
+  const resolvedDetail = detail ?? extra;
+  const hasPopover = !!resolvedDetail;
+
+  const handleMouseEnter = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setOpen(true), 200);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setOpen(false), 300);
+  }, []);
+
+  // Split semicolon-separated values into lines for card display
+  const displayLines = displayValue.includes(';')
+    ? displayValue.split(';').map((s) => s.trim())
+    : null;
+
   const card = (
     <div className={cn(
-      'rounded-lg border border-primary/30 bg-primary/[0.04] p-4 text-center transition-all',
-      detail && 'cursor-pointer hover:border-primary/60 hover:shadow-md hover:bg-primary/[0.08]'
+      'flex h-full flex-col items-center justify-start rounded-lg border border-primary/30 bg-primary/[0.04] p-4 text-center transition-all',
+      hasPopover && 'cursor-pointer hover:border-primary/60 hover:shadow-md hover:bg-primary/[0.08]'
     )}>
       <div className="flex justify-center">{icon}</div>
-      <p className="mt-1.5 text-xs font-medium text-muted-foreground">
+      <p className="mt-1.5 text-sm font-semibold">
         {label}
       </p>
-      <p className="mt-0.5 text-sm font-semibold">{value}</p>
-      {detail && (
-        <p className="mt-1 text-[10px] text-primary/50">Click for details</p>
+      {displayLines ? (
+        <div className="mt-0.5 space-y-0.5">
+          {displayLines.map((line, i) => (
+            <p key={i} className="text-xs text-muted-foreground">{line}</p>
+          ))}
+        </div>
+      ) : (
+        <p className="mt-0.5 text-xs text-muted-foreground">{displayValue}</p>
       )}
     </div>
   );
 
-  if (!detail) return card;
+  if (!hasPopover) return card;
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        {card}
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {card}
+        </div>
       </PopoverTrigger>
       <PopoverContent
         side="top"
-        className="max-w-[280px] text-sm"
+        className="max-w-[280px]"
         sideOffset={8}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        <p className="text-xs font-medium text-muted-foreground mb-1">{label}</p>
-        <p className="font-semibold text-base">{value}</p>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{detail}</p>
+        <p className="text-sm leading-relaxed">{resolvedDetail}</p>
       </PopoverContent>
     </Popover>
   );

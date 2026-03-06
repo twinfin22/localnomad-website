@@ -24,7 +24,7 @@ export type BlogCountry = (typeof BLOG_COUNTRIES)[number];
 
 export const frontmatterSchema = z.object({
   title: z.string().min(1, 'Title is required'),
-  description: z.string().min(1, 'Description is required'),
+  description: z.string().min(1, 'Description is required').max(200, 'Description should be under 160 characters for optimal SERP display; hard limit 200'),
   category: z.enum(BLOG_CATEGORIES),
   country: z.enum(BLOG_COUNTRIES),
   date: z

@@ -105,7 +105,8 @@
   "duration": {
     "initial": "Lên đến 3 năm (thường là 1 năm)",
     "extension": "Có thể gia hạn, lên đến 5 năm trong trường hợp đặc biệt",
-    "maxTotal": "Không có giới hạn cố định — có thể gia hạn miễn là còn đang làm việc"
+    "maxTotal": "Không có giới hạn",
+    "maxTotalDetail": "Có thể gia hạn miễn là còn đang làm việc."
   },
   "fees": {
     "application": "₩60,000-130,000 (tùy đại sứ quán và quốc tịch)",

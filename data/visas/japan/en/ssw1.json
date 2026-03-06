@@ -55,11 +55,13 @@
   "duration": {
     "initial": "Up to 1 year (renewable in 6-month or 1-year increments)",
     "extension": "Renewable up to 5 years cumulative total",
-    "maxTotal": "5 years maximum — cannot be extended beyond this limit on SSW1 status",
+    "maxTotal": "5 years maximum",
+    "maxTotalDetail": "Cannot be extended beyond this limit on SSW1 status.",
     "notes": "SSW1 has a strict 5-year cumulative maximum — there are no exceptions or extensions beyond this limit. Plan your SSW1 to SSW2 transition well before reaching this cap."
   },
   "fees": {
-    "application": "Skills test: ¥6,000–10,000, JLPT: ¥7,700, COE: ¥0 (free), Visa issuance: ¥3,000 (single-entry) / ¥6,000 (multiple-entry)",
+    "application": "Tests: ¥6,000–¥10,000; Visa: ¥3,000–¥6,000",
+    "applicationDetail": "Skills test: ¥6,000–¥10,000. JLPT: ¥7,700. COE: free. Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry).",
     "extension": "¥4,000 per extension application",
     "notes": "Skills test fees vary by sector and testing organization. JLPT fees are per attempt. Visa fees may be waived for certain nationalities under bilateral agreements. IMPORTANT: Japan's government has proposed significant fee increases for FY2026 (starting April 2026), including extension fees rising from ¥4,000 to approximately ¥30,000–40,000. Check the ISA website for the latest fee schedule."
   },

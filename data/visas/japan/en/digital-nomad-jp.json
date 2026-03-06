@@ -51,10 +51,12 @@
   ],
   "duration": {
     "initial": "6 months (non-renewable)",
-    "maxTotal": "6 months per application — must exit Japan for 6+ months before reapplying"
+    "maxTotal": "6 months per stay",
+    "maxTotalDetail": "6 months per application. Must exit Japan for 6+ months before reapplying."
   },
   "fees": {
-    "application": "Visa application: ¥0–3,000 (varies by embassy; some embassies waive the fee for designated activities visas)",
+    "application": "¥0–¥3,000",
+    "applicationDetail": "Varies by embassy. Some embassies waive the fee for designated activities visas.",
     "notes": "Fee structures vary by Japanese embassy and consulate. Some locations charge ¥3,000 for visa issuance while others waive the fee entirely for designated activities categories. Confirm with your local embassy before applying. No COE fee is charged. IMPORTANT: Japan's government has proposed significant visa fee increases for FY2026 (starting April 2026) — check MOFA for the latest fee schedule."
   },
   "incomeRequirement": {
@@ -381,18 +383,18 @@
   ],
   "postArrivalSteps": [
     {
-      "id": "residence-card",
-      "title": "Residence Card",
-      "deadline": "Issued at airport (Narita, Haneda, Kansai, Chubu)",
-      "description": "Your residence card (在留カード) is issued upon arrival at designated airports. At other ports of entry, visit your local ward office within 14 days.",
-      "tips": ["Always carry your residence card — it is legally required"]
+      "id": "note-no-residence-card",
+      "title": "Important: No Residence Card Issued",
+      "deadline": "Upon arrival",
+      "description": "Unlike other visa categories, the Digital Nomad visa does NOT result in the issuance of a Residence Card (在留カード). Your visa stamp in the passport serves as your proof of legal status. This limitation affects your ability to open a standard Japanese bank account, sign a standard phone contract, and access certain resident-only services.",
+      "tips": ["Plan ahead for banking using international services (Wise, Revolut)", "Prepare with a prepaid SIM card or international phone plan", "Some accommodations and services require a residence card — verify in advance"]
     },
     {
       "id": "ward-office-registration",
-      "title": "Ward Office Registration (住民届)",
-      "deadline": "Within 14 days of finding address",
-      "description": "Register your address at the local ward/city office. Required for health insurance enrollment and bank account opening.",
-      "tips": ["Bring residence card, passport, and proof of address"]
+      "title": "Address Registration at Ward Office (Optional)",
+      "deadline": "Within 14 days of establishing a fixed address",
+      "description": "You may register your address at the local ward/city office for administrative purposes. However, without a residence card, some services typically requiring registration may be unavailable.",
+      "tips": ["Check whether your accommodation landlord requires this for tenancy", "Not mandatory for Digital Nomad visa holders but useful for some administrative purposes"]
     }
   ],
   "relatedVisas": [

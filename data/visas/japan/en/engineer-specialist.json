@@ -56,12 +56,15 @@
     }
   ],
   "duration": {
-    "initial": "1, 3, or 5 years (determined by qualifications, employer stability, and immigration officer discretion)",
+    "initial": "1, 3, or 5 years",
+    "initialDetail": "Duration determined by qualifications, employer stability, and immigration officer discretion.",
     "extension": "Renewable indefinitely — apply before current period expires",
-    "maxTotal": "No cumulative limit (renewable as long as employment continues)"
+    "maxTotal": "No cumulative limit",
+    "maxTotalDetail": "Renewable as long as employment continues."
   },
   "fees": {
-    "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
+    "application": "COE: free; Visa: ¥3,000–¥6,000",
+    "applicationDetail": "Certificate of Eligibility (COE): ¥0 (free). Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry).",
     "extension": "¥4,000 for extension of stay or change of status",
     "notes": "Fees are subject to change. FY2026 fee increases have been announced — the change of status fee may rise from ¥4,000 to approximately ¥40,000. Check the Immigration Services Agency website for the current schedule. Some embassies may charge additional local processing fees."
   },
@@ -233,7 +236,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "3-5 months total (COE: 2-3 months + document preparation: 1-2 months + visa: 5-10 working days)",
+    "governmentReview": "3–5 months total",
+    "governmentReviewDetail": "COE processing: 2–3 months. Document preparation: 1–2 months. Visa issuance: 5–10 working days.",
     "totalEndToEnd": "3-5 months",
     "notes": "Processing times vary by immigration bureau workload and embassy location. Published guidelines recommend starting the COE application at least 4-6 months before the intended start date. Incomplete applications or document requests can extend the timeline significantly."
   },

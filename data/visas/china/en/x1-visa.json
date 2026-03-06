@@ -55,7 +55,8 @@
   "duration": {
     "initial": "Aligned with program duration (typically 1-5 years)",
     "extension": "Extendable if program duration extends or student enrolls in a subsequent program",
-    "maxTotal": "Up to 5 years; longer programs may require visa renewal"
+    "maxTotal": "Up to 5 years",
+    "maxTotalDetail": "Longer programs may require visa renewal during the course of study."
   },
   "fees": {
     "application": "X1 Visa consular fee: $30-140 USD (varies by nationality)",

@@ -88,9 +88,11 @@
     }
   ],
   "duration": {
-    "initial": "1-5 năm (tùy theo điểm: 80-109 điểm = 1 năm, 110-119 điểm = 2 năm, 120-129 điểm = 3 năm, 130+ điểm = 5 năm)",
+    "initial": "1-5 năm (tùy theo điểm)",
+    "initialDetail": "80-109 điểm = 1 năm, 110-119 điểm = 2 năm, 120-129 điểm = 3 năm, 130+ điểm = 5 năm.",
     "extension": "Có thể gia hạn ở cùng hoặc khác mức tùy theo điểm khi gia hạn",
-    "maxTotal": "Có thể gia hạn vô thời hạn (lộ trình đến Visa thường trú F-5 sau 3 năm)"
+    "maxTotal": "Gia hạn vô thời hạn",
+    "maxTotalDetail": "Lộ trình đến Visa thường trú F-5 sau 3 năm."
   },
   "fees": {
     "application": "₩85,000",

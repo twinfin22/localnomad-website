@@ -55,23 +55,30 @@
   "duration": {
     "initial": "1-2 years (aligned with employment contract duration)",
     "extension": "Renewable for up to 5 years total, subject to continued employment",
-    "maxTotal": "Renewable indefinitely with valid employment; path to permanent residence after 4+ years"
+    "maxTotal": "Renewable indefinitely",
+    "maxTotalDetail": "Renewable indefinitely with valid employment. Path to permanent residence after 4+ years of continuous work."
   },
   "fees": {
-    "application": "Work permit: 800-1,000 RMB + Z Visa consular fee: $30-140 USD (varies by nationality)",
+    "application": "800–1,000 RMB + $30–140 USD",
+    "applicationDetail": "Work permit fee: 800–1,000 RMB. Z Visa consular fee: $30–140 USD, varies by nationality.",
     "extension": "Residence permit renewal: 400-800 RMB",
     "notes": "Additional costs: health examination 400-600 RMB, document legalization fees vary by country."
   },
   "incomeRequirement": {
-    "amount": "500,000",
+    "amount": "varies by category and city",
     "currency": "RMB",
-    "period": "annual",
-    "notes": "The 500,000 RMB threshold applies to Category A (high-end talent) classification only. Category B and C have no published minimum income requirement, though the employer must demonstrate the salary is appropriate for the position.",
+    "period": "monthly and annual",
+    "notes": "As of February 5, 2026, China's National Immigration Administration enforces salary-based thresholds using local average wage multipliers (strict enforcement resumed after pandemic leniency). Category A: minimum 6x local average monthly social wage. Category B: minimum 4x local average monthly social wage. Category C: no fixed salary requirement (subject to regional quotas). City examples for 2026: Beijing — Category A RMB 71,622/month (RMB 859,464/year); Category B RMB 47,748/month. Shanghai — Category A RMB 74,604/month (RMB 895,248/year); Category B RMB 49,736/month. The online application portal automatically blocks applications that fall even slightly below the threshold.",
     "proofMethods": [
       "Employment contract with stated salary",
       "Employer tax records",
       "Bank statements showing salary deposits"
-    ]
+    ],
+    "categoryBreakdown": {
+      "categoryA": "6x local average monthly wage (e.g., Shanghai RMB 74,604/month). High-end talent with expedited 5-day processing.",
+      "categoryB": "4x local average monthly wage (e.g., Shanghai RMB 49,736/month). Professionals with bachelor's degree and 2+ years experience. 10-15 day processing.",
+      "categoryC": "No fixed salary threshold. Subject to regional quotas. Ordinary workers, fresh graduates from top-500 universities. 20+ day processing."
+    }
   },
   "documents": [
     {

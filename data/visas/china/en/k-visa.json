@@ -48,9 +48,11 @@
     }
   ],
   "duration": {
-    "initial": "Multiple entries; exact validity period and duration of stay per entry to be confirmed by individual embassies",
+    "initial": "Multiple entries; varies by embassy",
+    "initialDetail": "Exact validity period and duration of stay per entry to be confirmed by individual embassies.",
     "extension": "Must apply for residence permit within 30 days of arrival for stays exceeding visa validity",
-    "maxTotal": "Published guidelines indicate K Visa holders receive more generous terms than standard visa categories — check with your local Chinese embassy for current validity periods"
+    "maxTotal": "More generous than standard categories",
+    "maxTotalDetail": "Published guidelines indicate K Visa holders receive more generous terms than standard visa categories. Check with your local Chinese embassy for current validity periods."
   },
   "fees": {
     "application": "$23–$140 USD (varies by nationality and processing speed)",

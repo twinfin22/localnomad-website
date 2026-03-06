@@ -68,7 +68,8 @@
   "duration": {
     "initial": "Up to 3 years (typically 1 year)",
     "extension": "Renewable, up to 5 years in special cases",
-    "maxTotal": "No fixed maximum — extensions possible as long as employment continues"
+    "maxTotal": "No fixed maximum",
+    "maxTotalDetail": "Extensions possible as long as employment continues."
   },
   "fees": {
     "application": "~USD 60-100 (varies by embassy and nationality)",

@@ -57,12 +57,19 @@
   "duration": {
     "initial": "1, 2, or 3 years (applicant chooses at application)",
     "extension": "Renewable before expiration (apply within 4 months)",
-    "maxTotal": "Renewable indefinitely; APRC eligible after 1-3 years"
+    "maxTotal": "Renewable indefinitely",
+    "maxTotalDetail": "APRC eligible after 1–3 years of residence."
   },
   "fees": {
     "application": "NT$3,700 – NT$9,790 (varies by nationality, location, and duration)",
     "extension": "NT$1,500 – NT$3,500 (ARC renewal)",
-    "notes": "US passport holders applying overseas pay higher fees (NT$7,790-9,790). Non-US and domestic applicants: NT$3,700-5,700. HK/Macau: flat NT$3,100. Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). Non-refundable. Application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline results in automatic rejection."
+    "breakdown": {
+      "domestic": "Applicants already in Taiwan (visa-exempt or visitor status): NT$3,700 (1-yr), NT$4,700 (2-yr), NT$5,700 (3-yr). Applies to all nationalities including US citizens.",
+      "usOverseas": "US citizens applying from abroad via TECO/diplomatic mission: NT$7,790 (1-yr), NT$8,790 (2-yr), NT$9,790 (3-yr). Surcharge due to reciprocity agreements.",
+      "nonUsOverseas": "All other nationalities applying from abroad: NT$3,700 (1-yr), NT$4,700 (2-yr), NT$5,700 (3-yr).",
+      "hkMacao": "Hong Kong/Macau residents: NT$3,100 flat rate (all durations)"
+    },
+    "notes": "Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). All application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline (3 days domestic, up to 6 months overseas) results in automatic rejection without refund."
   },
   "incomeRequirement": {
     "amount": "160,000",
@@ -357,7 +364,7 @@
     },
     {
       "question": "What are the industry fields for Gold Card qualification?",
-      "answer": "The 11 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
+      "answer": "The 11 primary designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law. Additionally, 'Practitioners of Ancestor Rites' (宗教專業人士) is recognized as a specialized qualification path. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
     },
     {
       "question": "How does the salary track work (NT$160,000/month)?",

@@ -59,7 +59,8 @@
     "maxTotal": "2 years (updated January 8, 2026)"
   },
   "fees": {
-    "application": "NT$1,600 (single entry) / NT$3,200 (multiple entry) — domestic. USD $50/$100 — overseas.",
+    "application": "NT$1,600–NT$3,200; USD $50–$100",
+    "applicationDetail": "NT$1,600 (single entry) or NT$3,200 (multiple entry) for domestic applications. USD $50 or $100 for overseas applications.",
     "extension": "Varies by NIA schedule",
     "notes": "US citizens: NT$7,090 (domestic) or USD $185 (overseas) due to reciprocity surcharge. Application fees are non-refundable regardless of outcome."
   },

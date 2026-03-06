@@ -81,7 +81,7 @@
     {
       "id": "fdi-registration",
       "label": "Đã hoàn tất đăng ký Đầu tư trực tiếp nước ngoài (FDI)",
-      "description": "FDI phải được đăng ký tại KOTRA hoặc ngân hàng ngoại hối TRƯỚC KHI chuyển vốn đầu tư sang Hàn Quốc. Bỏ qua bước này có thể bị phạt thuế 50% trên số tiền chuyển.",
+      "description": "FDI phải được đăng ký tại KOTRA hoặc ngân hàng ngoại hối TRƯỚC KHI chuyển vốn đầu tư sang Hàn Quốc. Bỏ qua bước này có thể bị bị phạt thuế nghiêm trọng.",
       "required": true
     },
     {
@@ -92,9 +92,11 @@
     }
   ],
   "duration": {
-    "initial": "1-2 năm (tùy phân loại phụ: D-8-1/D-8-3 lên đến 5 năm, D-8-2/D-8-4 lên đến 2 năm)",
+    "initial": "1-2 năm",
+    "initialDetail": "Tùy phân loại phụ: D-8-1/D-8-3 lên đến 5 năm, D-8-2/D-8-4 lên đến 2 năm.",
     "extension": "Có thể gia hạn dựa trên kết quả kinh doanh và tuân thủ quy định",
-    "maxTotal": "Không có giới hạn cố định — có thể gia hạn vô thời hạn với hoạt động kinh doanh thực tế"
+    "maxTotal": "Không có giới hạn",
+    "maxTotalDetail": "Có thể gia hạn vô thời hạn với hoạt động kinh doanh thực tế."
   },
   "fees": {
     "application": "₩60,000",
@@ -229,14 +231,14 @@
       "id": "step-1",
       "step": 1,
       "title": "Đăng ký Đầu tư trực tiếp nước ngoài (FDI)",
-      "description": "Đăng ký đầu tư tại KOTRA hoặc ngân hàng ngoại hối. Bước này PHẢI thực hiện TRƯỚC KHI chuyển bất kỳ khoản vốn đầu tư nào sang Hàn Quốc. Bỏ qua bước này có thể bị phạt thuế 50%.",
+      "description": "Đăng ký đầu tư tại KOTRA hoặc ngân hàng ngoại hối. Bước này PHẢI thực hiện TRƯỚC KHI chuyển bất kỳ khoản vốn đầu tư nào sang Hàn Quốc. Bỏ qua bước này có thể bị phạt thuế nghiêm trọng.",
       "duration": "1-3 ngày",
       "tips": [
         "KOTRA có văn phòng trên toàn cầu — kiểm tra investkorea.org để biết địa điểm",
         "Bất kỳ ngân hàng ngoại hối nào tại Hàn Quốc cũng có thể xử lý đăng ký FDI",
         "Chuẩn bị sẵn kế hoạch kinh doanh và chi tiết đầu tư"
       ],
-      "warnings": ["Đăng ký FDI PHẢI thực hiện trước khi chuyển vốn — phạt thuế 50% nếu không tuân thủ"]
+      "warnings": ["Đăng ký FDI PHẢI thực hiện trước khi chuyển vốn — phạt thuế nghiêm trọng nếu không tuân thủ"]
     },
     {
       "id": "step-2",
@@ -352,7 +354,7 @@
     },
     {
       "question": "Điều gì xảy ra nếu tôi không đăng ký FDI trước khi chuyển vốn?",
-      "answer": "Theo quy định ngoại hối Hàn Quốc, việc không đăng ký Đầu tư trực tiếp nước ngoài trước khi chuyển vốn có thể bị phạt thuế lên đến 50% số tiền chuyển. Đăng ký FDI tại KOTRA hoặc ngân hàng ngoại hối phải hoàn tất trước khi bất kỳ khoản vốn đầu tư nào được chuyển sang Hàn Quốc. Đây là một trong những sai lầm phổ biến và tốn kém nhất mà nhà đầu tư nước ngoài mắc phải."
+      "answer": "Theo quy định ngoại hối Hàn Quốc, việc không đăng ký Đầu tư trực tiếp nước ngoài trước khi chuyển vốn có thể bị bị phạt thuế nghiêm trọng. Đăng ký FDI tại KOTRA hoặc ngân hàng ngoại hối phải hoàn tất trước khi bất kỳ khoản vốn đầu tư nào được chuyển sang Hàn Quốc. Đây là một trong những sai lầm phổ biến và tốn kém nhất mà nhà đầu tư nước ngoài mắc phải."
     },
     {
       "question": "Con đường từ D-8 đến thường trú (F-5) là gì?",
@@ -386,7 +388,7 @@
     {
       "id": "fdi-before-transfer",
       "section": "process",
-      "tip": "Bạn phải khai báo đầu tư trực tiếp nước ngoài trước khi chuyển vốn. Bỏ qua bước này có thể bị phạt thuế 50% trên số tiền chuyển. Đăng ký tại KOTRA hoặc bất kỳ ngân hàng ngoại hối nào trước.",
+      "tip": "Bạn phải khai báo đầu tư trực tiếp nước ngoài trước khi chuyển vốn. Bỏ qua bước này có thể bị bị phạt thuế nghiêm trọng. Đăng ký tại KOTRA hoặc bất kỳ ngân hàng ngoại hối nào trước.",
       "upvotes": 0,
       "dateAdded": "2026-02-27"
     },

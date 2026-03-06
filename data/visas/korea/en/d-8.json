@@ -44,7 +44,7 @@
     {
       "id": "fdi-registration",
       "label": "Foreign Direct Investment (FDI) registration completed",
-      "description": "FDI must be registered at KOTRA or a foreign exchange bank BEFORE transferring investment funds to Korea. Skipping this step can result in a 50% tax penalty on the transferred amount.",
+      "description": "FDI must be registered at KOTRA or a foreign exchange bank BEFORE transferring investment funds to Korea. Skipping this step can result in significant tax penalties.",
       "required": true
     },
     {
@@ -55,9 +55,11 @@
     }
   ],
   "duration": {
-    "initial": "1-2 years (varies by sub-category: D-8-1/D-8-3 up to 5 years, D-8-2/D-8-4 up to 2 years)",
+    "initial": "1–2 years",
+    "initialDetail": "Varies by sub-category: D-8-1/D-8-3 up to 5 years, D-8-2/D-8-4 up to 2 years.",
     "extension": "Renewable based on business performance and compliance",
-    "maxTotal": "No fixed maximum — renewable indefinitely with active business operations"
+    "maxTotal": "No fixed maximum",
+    "maxTotalDetail": "Renewable indefinitely with active business operations."
   },
   "fees": {
     "application": "₩60,000",
@@ -192,14 +194,14 @@
       "id": "step-1",
       "step": 1,
       "title": "Register Foreign Direct Investment (FDI)",
-      "description": "Register your investment at KOTRA or a foreign exchange bank. This step MUST happen BEFORE transferring any investment funds to Korea. Skipping this step can result in a 50% tax penalty.",
+      "description": "Register your investment at KOTRA or a foreign exchange bank. This step MUST happen BEFORE transferring any investment funds to Korea. Skipping this step can result in significant tax penalties.",
       "duration": "1-3 days",
       "tips": [
         "KOTRA offices exist globally — check investkorea.org for locations",
         "Any foreign exchange bank in Korea can also process FDI registration",
         "Have your business plan and investment details ready"
       ],
-      "warnings": ["FDI registration MUST happen before capital remittance — 50% tax penalty for non-compliance"]
+      "warnings": ["FDI registration MUST happen before capital remittance — significant tax penalties for non-compliance"]
     },
     {
       "id": "step-2",
@@ -325,7 +327,7 @@
     },
     {
       "question": "What happens if I skip FDI registration before transferring funds?",
-      "answer": "According to Korean foreign exchange regulations, failing to register Foreign Direct Investment before capital remittance can result in a tax penalty of up to 50% of the transferred amount. FDI registration at KOTRA or a foreign exchange bank must be completed before any investment funds are wired to Korea. This is one of the most common and costly mistakes foreign investors make."
+      "answer": "According to Korean foreign exchange regulations, failing to register Foreign Direct Investment before capital remittance can result in significant tax penalties. FDI registration at KOTRA or a foreign exchange bank must be completed before any investment funds are wired to Korea. This is one of the most common and costly mistakes foreign investors make."
     },
     {
       "question": "What is the path from D-8 to permanent residency (F-5)?",
@@ -359,7 +361,7 @@
     {
       "id": "fdi-before-transfer",
       "section": "process",
-      "tip": "You must report your foreign direct investment in advance before capital remittance. Skipping this step can result in a 50% tax penalty on the transferred amount. Register at KOTRA or any foreign exchange bank first.",
+      "tip": "You must report your foreign direct investment in advance before capital remittance. Skipping this step can result in significant tax penalties. Register at KOTRA or any foreign exchange bank first.",
       "verified": false,
       "upvotes": 0
     },

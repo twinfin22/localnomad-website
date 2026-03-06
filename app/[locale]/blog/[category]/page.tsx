@@ -3,6 +3,7 @@ import { hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import { getAllPosts } from '@/lib/blog';
 import { BLOG_CATEGORIES, type BlogCategory } from '@/lib/blog/schema';
 import { BlogCard } from '@/components/blog/blog-card';
@@ -16,12 +17,23 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { category } = await params;
+  const { locale, category } = await params;
   const label = category.charAt(0).toUpperCase() + category.slice(1);
+  const alternates = getAlternates(locale, `/blog/${category}`);
 
   return {
     title: `Digital Nomad ${label} | LocalNomad Blog`,
     description: `Browse digital nomad ${category} — visa information, travel tips, and community stories.`,
+    alternates,
+    openGraph: {
+      title: `Digital Nomad ${label} | LocalNomad Blog`,
+      description: `Browse digital nomad ${category} — visa information, travel tips, and community stories.`,
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: ['/og-default.png'],
+    },
   };
 }
 

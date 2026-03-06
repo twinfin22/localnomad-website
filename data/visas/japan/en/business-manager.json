@@ -65,12 +65,15 @@
     }
   ],
   "duration": {
-    "initial": "1, 3, or 5 years (determined by business scale, financial stability, and immigration officer assessment)",
+    "initial": "1, 3, or 5 years",
+    "initialDetail": "Duration determined by business scale, financial stability, and immigration officer assessment.",
     "extension": "Renewable — must demonstrate ongoing business operations, employee retention, and tax compliance at each renewal",
-    "maxTotal": "No cumulative limit (path to permanent residence through 10-year standard route)"
+    "maxTotal": "No cumulative limit",
+    "maxTotalDetail": "Path to permanent residence through the 10-year standard route."
   },
   "fees": {
-    "application": "Certificate of Eligibility (COE): ¥0 (free) | Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry)",
+    "application": "COE: free; Visa: ¥3,000–¥6,000",
+    "applicationDetail": "Certificate of Eligibility (COE): ¥0 (free). Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry).",
     "extension": "¥4,000 for extension of stay or change of status",
     "notes": "These are government fees only. Business setup costs (incorporation, registered agent, office lease, professional certification of business plan) are substantial additional expenses. FY2026 fee increases have been announced — check the ISA website for current schedules."
   },
@@ -249,7 +252,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "4-8 months total (business setup: 1-3 months + COE processing: 2-3 months + visa: 5-10 working days)",
+    "governmentReview": "4–8 months total",
+    "governmentReviewDetail": "Business setup: 1–3 months. COE processing: 2–3 months. Visa issuance: 5–10 working days.",
     "totalEndToEnd": "4-6 months",
     "notes": "The total timeline from initial planning to visa issuance is typically longer for Business Manager visas than for employment-based visas, due to the business setup requirements. New businesses without an operating history face additional scrutiny that can extend processing. Published guidelines recommend engaging professional support (immigration lawyer and business consultant) to avoid delays."
   },

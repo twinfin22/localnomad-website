@@ -246,7 +246,7 @@ export function VisaTabLayout({ visa, country, relatedVisaSummaries }: VisaTabLa
         className="mt-6 scroll-mt-28"
       >
         <Tabs value={activeTab} onValueChange={handleTabChange}>
-          <TabsList className="sticky top-[85px] z-[8] h-auto w-full overflow-x-auto bg-white md:static">
+          <TabsList className="sticky top-[101px] z-[8] h-auto w-full overflow-x-auto bg-white md:static">
             <TabsTrigger
               value={TAB_IDS.REQUIREMENTS}
               className="flex-1 flex-col gap-0.5 py-2"

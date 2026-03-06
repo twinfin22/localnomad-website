@@ -368,6 +368,79 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
 );
 
 /* ------------------------------------------------------------------ */
+/*  DecisionTree — Visual yes/no flowchart for blog comparison posts   */
+/* ------------------------------------------------------------------ */
+
+interface DecisionNode {
+  question: string;
+  yes?: string | DecisionNode;
+  no?: string | DecisionNode;
+}
+
+interface DecisionTreeProps {
+  data: DecisionNode;
+}
+
+const AnswerBox = ({ text }: { text: string }) => (
+  <div className="rounded-lg border-2 border-[#1B4965] bg-[#1B4965]/5 px-4 py-2.5 text-sm font-semibold text-[#1B4965]">
+    {text}
+  </div>
+);
+
+const TreeNode = ({ node, depth = 0 }: { node: DecisionNode; depth?: number }) => {
+  const isYesLeaf = typeof node.yes === 'string';
+  const isNoLeaf = typeof node.no === 'string';
+
+  return (
+    <div className={cn('flex flex-col items-center', depth > 0 && 'mt-1')}>
+      {/* Question */}
+      <div className="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-center text-sm font-medium shadow-sm">
+        {node.question}
+      </div>
+
+      {/* Vertical stem from question down to the T-junction */}
+      <div className="h-6 w-0.5 bg-gray-300" />
+
+      {/* T-junction: horizontal bar connecting left and right branches */}
+      <div className="relative flex w-full items-start justify-center">
+        {/* Horizontal connector bar */}
+        <div className="absolute top-0 left-1/4 right-1/4 h-0.5 bg-gray-300" />
+
+        {/* Yes branch (left) */}
+        <div className="flex flex-1 flex-col items-center">
+          <div className="h-5 w-0.5 bg-emerald-400" />
+          <span className="mb-1 text-xs font-bold text-emerald-600">Yes</span>
+          <div className="h-3 w-0.5 bg-emerald-400" />
+          {isYesLeaf ? (
+            <AnswerBox text={node.yes as string} />
+          ) : (
+            <TreeNode node={node.yes as DecisionNode} depth={depth + 1} />
+          )}
+        </div>
+
+        {/* No branch (right) */}
+        <div className="flex flex-1 flex-col items-center">
+          <div className="h-5 w-0.5 bg-red-400" />
+          <span className="mb-1 text-xs font-bold text-red-500">No</span>
+          <div className="h-3 w-0.5 bg-red-400" />
+          {isNoLeaf ? (
+            <AnswerBox text={node.no as string} />
+          ) : (
+            <TreeNode node={node.no as DecisionNode} depth={depth + 1} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DecisionTree = ({ data }: DecisionTreeProps) => (
+  <div className="not-prose my-8 overflow-x-auto rounded-xl border border-gray-200 bg-gray-50/50 p-6">
+    <TreeNode node={data} />
+  </div>
+);
+
+/* ------------------------------------------------------------------ */
 
 const extractText = (children: React.ReactNode): string => {
   if (typeof children === 'string') return children;
@@ -427,5 +500,6 @@ export const createMdxComponents = (): MDXComponents => {
   StatusList,
   ResponsiveTable,
   NeighborhoodCards,
+  DecisionTree,
 };
 };

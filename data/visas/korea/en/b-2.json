@@ -4,7 +4,7 @@
   "nameLocal": "관광비자 (B-2)",
   "shortName": "B-2",
   "category": "tourist",
-  "description": "Everything about Korea's B-2 Tourist Visa: visa-free entry for 106+ countries, application process for non-exempt nationalities, documents, and FAQ. Updated for 2026.",
+  "description": "Everything about Korea's B-2 Tourist Visa: visa-free entry for 106 countries, with 67 exempted from K-ETA requirements through 2026, application process for non-exempt nationalities, documents, and FAQ. Updated for 2026.",
   "tagline": "Short-term stays for tourism and business",
   "keyRequirement": "Valid passport from visa-exempt country (90 days) or visa application for non-exempt countries",
   "targetAudience": [
@@ -16,10 +16,10 @@
   "eligibility": [
     {
       "id": "visa-exempt",
-      "label": "Visa-exempt entry available for 106+ countries",
-      "description": "Citizens of visa-exempt countries may enter Korea for up to 90 days without a visa. Check the Korea Immigration Service website for the current list of visa-exempt countries.",
+      "label": "Visa-exempt entry available for 106 countries (67 K-ETA exempt through 2026)",
+      "description": "Citizens of visa-exempt countries may enter Korea for up to 90 days without a visa. As of 2026, nationals from 106 countries have visa-free access to Korea for tourism. Additionally, 67 countries are currently exempt from K-ETA (Korea Electronic Travel Authorization) requirements through December 31, 2026. Check the Korea Immigration Service website for the current list of visa-exempt countries and K-ETA requirements.",
       "required": false,
-      "tips": ["Some nationalities receive less than 90 days visa-free — verify your specific allowance"]
+      "tips": ["Some nationalities receive less than 90 days visa-free — verify your specific allowance", "After December 31, 2026, K-ETA may be required for some nationalities — confirm K-ETA eligibility before travel"]
     },
     {
       "id": "visa-application",
@@ -50,10 +50,12 @@
   "duration": {
     "initial": "30-90 days",
     "extension": "Up to 90 days total (extension possible at immigration office)",
-    "maxTotal": "90 days per entry (visa-free); 30-90 days per visa grant"
+    "maxTotal": "30–90 days per entry",
+    "maxTotalDetail": "90 days per entry for visa-free nationals. 30–90 days per visa grant depending on nationality."
   },
   "fees": {
-    "application": "Varies by nationality — typically ₩50,000-120,000 (single entry)",
+    "application": "₩50,000–120,000 (single entry)",
+    "applicationDetail": "Varies by nationality. Typically ₩50,000–120,000 for a single-entry visa.",
     "extension": "₩60,000 for extension at immigration office",
     "notes": "Visa-free entry has no application fee. Visa fees vary by nationality and number of entries (single, double, multiple). Check your nearest Korean embassy for exact fees."
   },
@@ -117,9 +119,10 @@
       "id": "step-1",
       "step": 1,
       "title": "Check Visa-Free Status",
-      "description": "Verify whether your nationality is on Korea's visa-exempt list. Citizens of 106+ countries can enter without a visa for up to 90 days. Check the Korea Immigration Service or visa.go.kr website.",
+      "description": "Verify whether your nationality is on Korea's visa-exempt list. Citizens of 106 countries can enter without a visa for up to 90 days. Additionally, verify if your country is exempted from K-ETA requirements (67 countries through December 31, 2026). Check the Korea Immigration Service or visa.go.kr website for current information.",
       "tips": [
         "Visa-exempt periods vary by country (some get 30 or 60 days, not 90)",
+        "K-ETA exemption status expires December 31, 2026 — after that date, K-ETA may be required",
         "The visa-exempt list is updated periodically — verify before travel"
       ]
     },
@@ -169,7 +172,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "Visa-free: instant at port of entry; Visa application: 1-2 weeks",
+    "governmentReview": "Instant (visa-free); 1–2 weeks (visa)",
+    "governmentReviewDetail": "Visa-free entry is instant at port of entry. Visa applications take 1–2 weeks.",
     "totalEndToEnd": "1-3 weeks",
     "notes": "Processing times for visa applications vary by embassy, nationality, and season. During peak travel seasons, processing may take longer. Visa-free entry is processed at the airport or port upon arrival."
   },

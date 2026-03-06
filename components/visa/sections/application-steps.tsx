@@ -75,7 +75,7 @@ function TimelineStep({
       <div className="min-w-0 pt-0.5">
         {/* Title + duration badge */}
         <div className="flex flex-wrap items-center gap-2.5">
-          <h3 className="font-lora text-[17px] font-bold leading-snug">
+          <h3 className="font-lora text-lg font-bold leading-snug sm:text-xl">
             {step.title}
           </h3>
           {step.duration && (

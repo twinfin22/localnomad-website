@@ -33,7 +33,7 @@ export function MobileTocBar({
   }, [activeSection]);
 
   return (
-    <div className="sticky top-[41px] z-[9] -mx-6 overflow-x-auto border-b bg-white/95 px-6 py-2 backdrop-blur-sm md:hidden">
+    <div className="sticky top-16 z-[9] -mx-6 overflow-x-auto border-b bg-white/95 px-6 py-2 backdrop-blur-sm md:hidden">
       <div className="flex gap-2">
         {sections.map((section) => (
           <button

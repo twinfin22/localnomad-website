@@ -58,10 +58,12 @@
   "duration": {
     "initial": "Up to 3 years (renewable in 1-year or 3-year increments)",
     "extension": "Renewable indefinitely — no cumulative time limit",
-    "maxTotal": "No maximum — SSW2 can be renewed indefinitely, allowing long-term settlement in Japan"
+    "maxTotal": "No maximum",
+    "maxTotalDetail": "SSW2 can be renewed indefinitely, allowing long-term settlement in Japan."
   },
   "fees": {
-    "application": "Skills test: ¥6,000–10,000, JLPT: ¥7,700, COE: ¥0 (free), Visa issuance: ¥3,000 (single-entry) / ¥6,000 (multiple-entry)",
+    "application": "Tests: ¥6,000–¥10,000; Visa: ¥3,000–¥6,000",
+    "applicationDetail": "Skills test: ¥6,000–¥10,000. JLPT: ¥7,700. COE: free. Visa issuance: ¥3,000 (single-entry) or ¥6,000 (multiple-entry).",
     "extension": "¥4,000 per extension application",
     "notes": "Fee structure is similar to SSW1. Skills test fees vary by sector and testing organization. Published guidelines indicate visa fees may increase in FY2026 — check your local embassy or consulate for current schedules."
   },

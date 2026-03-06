@@ -59,6 +59,27 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'LocalNomad',
+              url: 'https://localnomad.club',
+              inLanguage: ['en', 'ja', 'zh-Hans', 'zh-Hant', 'vi'],
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'LocalNomad',
+              url: 'https://localnomad.club',
+              logo: 'https://localnomad.club/logo_new_all-blue.png',
+            },
+          ]),
+        }}
+      />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
