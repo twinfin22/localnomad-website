@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { MapPin } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
@@ -23,6 +23,7 @@ interface NeighborhoodPreviewProps {
 
 export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => {
   const t = useTranslations('Landing');
+  const locale = useLocale();
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
 
@@ -40,13 +41,12 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
         center: [121, 33],
         zoom: 3,
         scrollZoom: false,
-        dragPan: false,
+        dragPan: true,
         dragRotate: false,
-        doubleClickZoom: false,
-        touchZoomRotate: false,
+        doubleClickZoom: true,
+        touchZoomRotate: true,
         keyboard: false,
         attributionControl: false,
-        interactive: false,
       });
 
       map.on('load', () => {
@@ -106,6 +106,10 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
           });
           el.appendChild(label);
 
+          el.addEventListener('click', () => {
+            window.location.href = `/${locale}/neighborhood/${country.country}`;
+          });
+
           new mapboxgl.default.Marker({ element: el })
             .setLngLat([country.coordinates[1], country.coordinates[0]])
             .addTo(map);
@@ -118,7 +122,7 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
 
       mapRef.current = map;
     });
-  }, [countries]);
+  }, [countries, locale]);
 
   useEffect(() => {
     const container = mapContainerRef.current;
