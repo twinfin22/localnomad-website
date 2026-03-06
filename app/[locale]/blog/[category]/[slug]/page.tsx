@@ -58,6 +58,9 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'BlogPosting',
     headline: post.frontmatter.title,
     description: post.frontmatter.description,
+    image: post.frontmatter.coverImage
+      ? `https://localnomad.club${post.frontmatter.coverImage}`
+      : 'https://localnomad.club/og-default.png',
     datePublished: post.frontmatter.date,
     dateModified: post.frontmatter.updatedAt ?? post.frontmatter.date,
     author: {
@@ -68,6 +71,10 @@ export default async function BlogPostPage({ params }: Props) {
       '@type': 'Organization',
       name: 'LocalNomad',
       url: 'https://localnomad.club',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://localnomad.club/logo_new_all-blue.png',
+      },
     },
   };
 

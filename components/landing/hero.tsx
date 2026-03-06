@@ -87,12 +87,6 @@ export const Hero = () => {
             description={t('countryJapanDesc')}
           />
           <CountryCard
-            href="/china"
-            emoji={t('countryChinaEmoji')}
-            name={t('countryChina')}
-            description={t('countryChinaDesc')}
-          />
-          <CountryCard
             href="/taiwan"
             emoji={t('countryTaiwanEmoji')}
             name={t('countryTaiwan')}

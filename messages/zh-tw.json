@@ -32,6 +32,7 @@
     "feat2Desc": "使用可儲存的互動式檢查清單追蹤準備進度。",
     "feat3Title": "社群經驗",
     "feat3Desc": "來自成功申辦簽證者的實際經驗分享。",
+    "featuresHeading": "LocalNomad 提供的服務",
     "statVisasCount": "7",
     "statVisasLabel": "種簽證",
     "statCountriesCount": "2",
@@ -298,11 +299,13 @@
     "discord": "Discord",
     "discordCta": "加入 LocalNomad 社群",
     "discordCtaSub": "提問、分享秘訣、與亞洲各地的遊牧者交流",
-    "discordJoin": "加入 Discord"
+    "discordJoin": "加入 Discord",
+    "about": "關於我們",
+    "contact": "聯絡我們"
   },
   "Meta": {
     "landingTitle": "LocalNomad — 簽證資訊，終於清楚了。",
-    "landingDescription": "韓國和台灣的簽證要求、文件清單和社群經驗 — 數位遊牧者準備簽證申請所需的一切資訊，全部匯整於此。",
+    "landingDescription": "韓國、日本和台灣的簽證要求、文件清單和社群經驗 — 數位遊牧者準備簽證申請所需的一切資訊，全部匯整於此。",
     "countryDescription": "並排比較{country}簽證類型 — 申請條件、所需文件、費用和時程。透過清晰、結構化的指南和清單，找到適合您的簽證。",
     "loginTitle": "登入 — LocalNomad",
     "loginDescription": "登入 LocalNomad，儲存簽證清單進度、追蹤截止日期，並在所有裝置間同步您的準備狀態。",

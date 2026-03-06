@@ -51,18 +51,6 @@ export const DISCLAIMER_CONFIGS: Record<string, DisclaimerConfig> = {
       '出入国管理及び難民認定法 (Immigration Control Act)',
     ],
   },
-  china: {
-    paragraphs: [
-      {
-        lang: 'en',
-        text: "This information is compiled from publicly available sources for general reference only. It does not constitute immigration consulting, document preparation services, or legal advice. For personalized guidance, consult a licensed immigration agency or attorney in China. Final decisions on visa issuance rest solely with the National Immigration Administration (国家移民管理局) of the People's Republic of China.",
-      },
-    ],
-    legalReferences: [
-      '出境入境管理法 (Exit-Entry Administration Law)',
-      "外国人在中国就业管理规定 (Regulations on Foreigners' Employment in China)",
-    ],
-  },
   'southeast-asia': {
     paragraphs: [
       {

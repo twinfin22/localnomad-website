@@ -10,13 +10,12 @@ import { SEAComparisonTable } from '@/components/visa/sea-comparison-table';
 import type { Country } from '@/lib/types/visa';
 import type { SEAComparisonData } from '@/lib/types/sea';
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china', 'southeast-asia'] as const;
+const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'southeast-asia'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',
   taiwan: 'Taiwan',
   japan: 'Japan',
-  china: 'China',
   'southeast-asia': 'Southeast Asia',
 };
 

@@ -11,7 +11,7 @@ export interface Profile {
   updated_at: string;
 }
 
-export type VisaCountry = 'kr' | 'tw' | 'jp' | 'cn';
+export type VisaCountry = 'kr' | 'tw' | 'jp';
 
 export interface UserVisa {
   id: string;

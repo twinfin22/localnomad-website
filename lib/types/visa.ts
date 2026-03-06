@@ -8,8 +8,8 @@
 // Country Types
 // =============================================================================
 
-export type Country = 'korea' | 'taiwan' | 'japan' | 'china' | 'southeast-asia';
-export type CountryCode = 'kr' | 'tw' | 'jp' | 'cn' | 'sea';
+export type Country = 'korea' | 'taiwan' | 'japan' | 'southeast-asia';
+export type CountryCode = 'kr' | 'tw' | 'jp' | 'sea';
 
 // =============================================================================
 // Country-Scoped Visa Types
@@ -50,12 +50,7 @@ export type JapanVisaType =
   | 'digital-nomad-jp'
   | 'business-manager';
 
-export type ChinaVisaType =
-  | 'z-visa'
-  | 'k-visa'
-  | 'x1-visa';
-
-export type VisaType = KoreaVisaType | TaiwanVisaType | JapanVisaType | ChinaVisaType;
+export type VisaType = KoreaVisaType | TaiwanVisaType | JapanVisaType;
 
 // =============================================================================
 // Type Registries & Guards
@@ -88,14 +83,6 @@ export const JAPAN_VISA_TYPES: JapanVisaType[] = [
 
 export function isJapanVisa(type: VisaType): type is JapanVisaType {
   return (JAPAN_VISA_TYPES as string[]).includes(type);
-}
-
-export const CHINA_VISA_TYPES: ChinaVisaType[] = [
-  'z-visa', 'k-visa', 'x1-visa',
-];
-
-export function isChinaVisa(type: VisaType): type is ChinaVisaType {
-  return (CHINA_VISA_TYPES as string[]).includes(type);
 }
 
 // =============================================================================
@@ -375,27 +362,7 @@ export interface JapanVisa extends VisaBase {
   reentryGap?: string;
 }
 
-// =============================================================================
-// China-Specific Types
-// =============================================================================
-
-export interface ChinaPSBRegistration {
-  required: boolean;
-  deadlineHours: number;
-  notes?: string;
-}
-
-export interface ChinaVisa extends VisaBase {
-  country: 'cn';
-  workPermitCategory?: 'A' | 'B' | 'C';
-  puLetterRequired?: boolean;
-  psbRegistration?: ChinaPSBRegistration;
-  residencePermitDeadline?: number;
-  invitationRequired?: boolean;
-  covaOnline?: boolean;
-}
-
-export type Visa = KoreaVisa | TaiwanVisa | JapanVisa | ChinaVisa;
+export type Visa = KoreaVisa | TaiwanVisa | JapanVisa;
 
 // =============================================================================
 // Summary type for listings

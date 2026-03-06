@@ -85,6 +85,14 @@ export async function Footer() {
             <Link href="/refund" className="hover:text-foreground transition-colors focus-visible:text-foreground focus-visible:underline outline-none">
               {t('refund')}
             </Link>
+            {' · '}
+            <Link href="/about" className="hover:text-foreground transition-colors focus-visible:text-foreground focus-visible:underline outline-none">
+              {t('about')}
+            </Link>
+            {' · '}
+            <Link href="/contact" className="hover:text-foreground transition-colors focus-visible:text-foreground focus-visible:underline outline-none">
+              {t('contact')}
+            </Link>
           </p>
         </div>
 

@@ -32,6 +32,7 @@
     "feat2Desc": "保存できるインタラクティブなチェックリストで準備状況を管理。",
     "feat3Title": "コミュニティの声",
     "feat3Desc": "ビザ取得に成功した人々からのリアルな体験談。",
+    "featuresHeading": "LocalNomadの特徴",
     "statVisasCount": "7",
     "statVisasLabel": "種類のビザ",
     "statCountriesCount": "2",
@@ -298,11 +299,13 @@
     "discord": "Discord",
     "discordCta": "LocalNomadコミュニティに参加しよう",
     "discordCtaSub": "質問を投げかけ、ヒントを共有し、アジア各地のノマドとつながろう",
-    "discordJoin": "Discordに参加"
+    "discordJoin": "Discordに参加",
+    "about": "概要",
+    "contact": "お問い合わせ"
   },
   "Meta": {
     "landingTitle": "LocalNomad — ビザ情報、やっとクリアに。",
-    "landingDescription": "韓国・台湾のビザ要件、必要書類チェックリスト、コミュニティの体験談 — デジタルノマドのビザ申請準備に必要な情報をすべてまとめました。",
+    "landingDescription": "韓国・日本・台湾のビザ要件、必要書類チェックリスト、コミュニティの体験談 — デジタルノマドのビザ申請準備に必要な情報をまとめました。",
     "countryDescription": "{country}のビザを並べて比較 — 要件、必要書類、費用、スケジュール。明確で体系的なガイドとチェックリストで最適なビザを見つけましょう。",
     "loginTitle": "ログイン — LocalNomad",
     "loginDescription": "LocalNomadにログインして、ビザのチェックリスト進捗を保存し、締め切りを管理し、すべてのデバイスで準備状況を同期しましょう。",

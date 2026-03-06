@@ -142,6 +142,7 @@ export default async function NeighborhoodPage({ params }: Props) {
             to explore its neighborhoods.
           </p>
 
+          <h2 className="sr-only">Neighborhoods</h2>
           <div className="mt-8">
             <NeighborhoodExplorer cities={data.cities} allTags={allTags} />
           </div>

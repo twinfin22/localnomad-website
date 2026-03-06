@@ -21,19 +21,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
 
-  const t = await getTranslations({ locale, namespace: 'Blog' });
-
   const alternates = getAlternates(locale, '/blog');
 
   return {
-    title: `${t('title')} | LocalNomad`,
+    title: 'Digital Nomad Blog — Visa Guides & Travel Tips | LocalNomad',
     description:
-      'Digital nomad guides, visa updates, and travel tips for Korea, Japan, China, Taiwan, and Southeast Asia.',
+      'Digital nomad guides, visa updates, and travel tips for Korea, Japan, Taiwan, and Southeast Asia.',
     alternates,
     openGraph: {
-      title: `${t('title')} | LocalNomad`,
+      title: 'Digital Nomad Blog — Visa Guides & Travel Tips | LocalNomad',
       description:
-        'Digital nomad guides, visa updates, and travel tips for Korea, Japan, China, Taiwan, and Southeast Asia.',
+        'Digital nomad guides, visa updates, and travel tips for Korea, Japan, Taiwan, and Southeast Asia.',
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
@@ -79,6 +77,8 @@ export default async function BlogPage({ params, searchParams }: Props) {
           <BlogFilters />
         </Suspense>
       </div>
+
+      <h2 className="sr-only">Posts</h2>
 
       {posts.length === 0 ? (
         <p className="mt-12 text-center text-muted-foreground">

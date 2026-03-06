@@ -22,7 +22,6 @@ const NEIGHBORHOOD_COUNTRIES = [
   { country: 'korea', displayName: 'South Korea' },
   { country: 'japan', displayName: 'Japan' },
   { country: 'taiwan', displayName: 'Taiwan' },
-  { country: 'china', displayName: 'China' },
 ] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

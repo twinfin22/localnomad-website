@@ -30,14 +30,6 @@ export const COUNTRIES = [
     neighborhoodPath: '/neighborhood/taiwan',
     guidePath: '/blog/guides/taiwan-ultimate-digital-nomad-guide',
   },
-  {
-    key: 'china',
-    emoji: '\u{1F1E8}\u{1F1F3}',
-    nameKey: 'countryChina',
-    visaPath: '/china/visa',
-    neighborhoodPath: '/neighborhood/china',
-    guidePath: '/blog/guides/china-ultimate-digital-nomad-guide',
-  },
 ] as const;
 
 type CountryKey = (typeof COUNTRIES)[number]['key'];

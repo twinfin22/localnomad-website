@@ -5,19 +5,19 @@ import { BLOG_CATEGORIES } from '@/lib/blog/schema';
 const BASE_URL = 'https://localnomad.club';
 
 const LOCALES = ['en', 'ja', 'zh-cn', 'zh-tw', 'vi'] as const;
-const COUNTRIES = ['korea', 'taiwan', 'japan', 'china', 'southeast-asia'] as const;
+const COUNTRIES = ['korea', 'taiwan', 'japan', 'southeast-asia'] as const;
 
 const COUNTRY_VISAS: Record<string, string[]> = {
   korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'h-1', 'b-2'],
   taiwan: ['gold-card', 'dnv', 'visitor'],
   japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager', 'tourist'],
-  china: ['z-visa', 'x1-visa', 'k-visa'],
   'southeast-asia': [],
 };
 
-const NEIGHBORHOOD_COUNTRIES = ['korea', 'japan', 'taiwan', 'china'] as const;
+const NEIGHBORHOOD_COUNTRIES = ['korea', 'japan', 'taiwan'] as const;
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
+const INFO_PAGES = ['about', 'contact'];
 
 const LAST_MODIFIED = new Date();
 
@@ -71,6 +71,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: LAST_MODIFIED,
         changeFrequency: 'monthly',
         priority: 0.7,
+      });
+    }
+
+    // Info pages (about, contact)
+    for (const page of INFO_PAGES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/${page}`,
+        lastModified: LAST_MODIFIED,
+        changeFrequency: 'monthly',
+        priority: 0.4,
       });
     }
 

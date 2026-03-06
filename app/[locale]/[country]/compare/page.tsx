@@ -10,13 +10,12 @@ import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country, Visa } from '@/lib/types/visa';
 import { ComparisonTool } from '@/components/visa';
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china'] as const;
+const VALID_COUNTRIES = ['korea', 'taiwan', 'japan'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',
   taiwan: 'Taiwan',
   japan: 'Japan',
-  china: 'China',
 };
 
 export function generateStaticParams() {

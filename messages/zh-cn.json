@@ -32,6 +32,7 @@
     "feat2Desc": "通过可保存的交互式清单，追踪你的准备进度。",
     "feat3Title": "社区经验",
     "feat3Desc": "来自成功办理签证的人们分享的真实经验。",
+    "featuresHeading": "LocalNomad 提供的服务",
     "statVisasCount": "7",
     "statVisasLabel": "种签证",
     "statCountriesCount": "2",
@@ -298,11 +299,13 @@
     "discord": "Discord",
     "discordCta": "加入 LocalNomad 社区",
     "discordCtaSub": "提问、分享经验、与亚洲各地的数字游民交流",
-    "discordJoin": "加入 Discord"
+    "discordJoin": "加入 Discord",
+    "about": "关于我们",
+    "contact": "联系我们"
   },
   "Meta": {
     "landingTitle": "LocalNomad — 签证信息，一目了然。",
-    "landingDescription": "韩国和台湾的签证要求、材料清单和社区经验 — 数字游民准备签证申请所需的一切信息，全部汇集于此。",
+    "landingDescription": "韩国、日本和台湾的签证要求、材料清单和社区经验 — 数字游民准备签证申请所需的一切信息，全部汇集于此。",
     "countryDescription": "并排比较{country}签证类型 — 申请条件、所需材料、费用和时间。通过清晰、结构化的指南和清单，找到适合您的签证。",
     "loginTitle": "登录 — LocalNomad",
     "loginDescription": "登录 LocalNomad，保存签证清单进度、追踪截止日期，并在所有设备间同步您的准备状态。",

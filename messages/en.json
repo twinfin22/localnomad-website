@@ -32,6 +32,7 @@
     "feat2Desc": "Track your preparation progress with interactive checklists you can save.",
     "feat3Title": "Community tips",
     "feat3Desc": "Real insights from people who've successfully navigated the visa process.",
+    "featuresHeading": "What LocalNomad offers",
     "statVisasCount": "7",
     "statVisasLabel": "visa types",
     "statCountriesCount": "2",
@@ -298,12 +299,14 @@
     "discord": "Discord",
     "discordCta": "Join the LocalNomad community",
     "discordCtaSub": "Ask questions, share tips, and connect with nomads across Asia",
-    "discordJoin": "Join Discord"
+    "discordJoin": "Join Discord",
+    "about": "About",
+    "contact": "Contact"
   },
   "Meta": {
     "landingTitle": "LocalNomad — Visa clarity, finally.",
-    "landingDescription": "Visa requirements, document checklists, and community tips for South Korea and Taiwan — everything digital nomads need to prepare their visa application, all in one place.",
-    "countryDescription": "Compare {country} visa types side by side — requirements, documents, fees, and timelines. Find the right visa for your stay with clear, structured guides and checklists.",
+    "landingDescription": "Visa requirements, document checklists, and community tips for digital nomads in South Korea, Japan, and Taiwan — all in one place.",
+    "countryDescription": "Compare {country} visa types side by side — requirements, documents, fees, and timelines. Find the right visa for your stay.",
     "loginTitle": "Log In — LocalNomad",
     "loginDescription": "Sign in to LocalNomad to save your visa checklist progress, track deadlines, and sync your preparation across all your devices.",
     "termsTitle": "Terms of Service — LocalNomad",

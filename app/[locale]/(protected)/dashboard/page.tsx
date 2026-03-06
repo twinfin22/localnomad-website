@@ -18,7 +18,6 @@ const COUNTRY_CODE_TO_SLUG: Record<string, Country> = {
   kr: 'korea',
   tw: 'taiwan',
   jp: 'japan',
-  cn: 'china',
 };
 
 interface Props {

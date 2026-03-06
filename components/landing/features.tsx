@@ -14,6 +14,7 @@ export const Features = () => {
   return (
     <section className="bg-neutral-50 px-6 pt-16 pb-24">
       <div className="mx-auto max-w-4xl">
+        <h2 className="sr-only">{t('featuresHeading')}</h2>
         <div className="grid gap-6 sm:grid-cols-3">
           {features.map((feat, i) => (
             <ScrollReveal key={i} delay={i * 150} direction={i % 2 === 0 ? 'left' : 'right'}>

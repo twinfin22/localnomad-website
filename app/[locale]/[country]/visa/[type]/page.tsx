@@ -13,7 +13,7 @@ import {
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'china'] as const;
+const VALID_COUNTRIES = ['korea', 'taiwan', 'japan'] as const;
 
 interface Props {
   params: Promise<{ locale: string; country: string; type: string }>;

@@ -111,7 +111,7 @@ export function ComparisonTool({
               value={slug ?? ''}
               onChange={(e) => handleSelect(index, e.target.value)}
               className="rounded-md border bg-white px-3 py-2 text-sm text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-              aria-label={t('selectVisa')}
+              aria-label={`${t('selectVisa')} ${index + 1}`}
             >
               <option value="">{t('selectVisa')}</option>
               {summaries.map((s) => (

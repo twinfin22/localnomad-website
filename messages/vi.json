@@ -32,6 +32,7 @@
     "feat2Desc": "Theo dõi tiến trình chuẩn bị với danh sách kiểm tra tương tác có thể lưu lại.",
     "feat3Title": "Kinh nghiệm cộng đồng",
     "feat3Desc": "Chia sẻ thực tế từ những người đã thành công trong quá trình xin thị thực.",
+    "featuresHeading": "LocalNomad cung cấp gì",
     "statVisasCount": "7",
     "statVisasLabel": "loại thị thực",
     "statCountriesCount": "2",
@@ -298,11 +299,13 @@
     "discord": "Discord",
     "discordCta": "Tham gia cộng đồng LocalNomad",
     "discordCtaSub": "Đặt câu hỏi, chia sẻ mẹo và kết nối với dân du mục khắp châu Á",
-    "discordJoin": "Tham gia Discord"
+    "discordJoin": "Tham gia Discord",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
   },
   "Meta": {
     "landingTitle": "LocalNomad — Thông tin thị thực, cuối cùng cũng rõ ràng.",
-    "landingDescription": "Yêu cầu thị thực, danh sách hồ sơ và kinh nghiệm cộng đồng cho Hàn Quốc và Đài Loan — mọi thứ dân du mục kỹ thuật số cần để chuẩn bị hồ sơ xin thị thực, tất cả ở một nơi.",
+    "landingDescription": "Yêu cầu thị thực, danh sách hồ sơ và kinh nghiệm cộng đồng cho Hàn Quốc, Nhật Bản và Đài Loan — tất cả ở một nơi.",
     "countryDescription": "So sánh các loại thị thực {country} song song — yêu cầu, hồ sơ, lệ phí và thời gian. Tìm loại thị thực phù hợp với hướng dẫn rõ ràng và danh sách kiểm tra chi tiết.",
     "loginTitle": "Đăng nhập — LocalNomad",
     "loginDescription": "Đăng nhập LocalNomad để lưu tiến trình danh sách kiểm tra thị thực, theo dõi thời hạn và đồng bộ quá trình chuẩn bị trên tất cả thiết bị.",

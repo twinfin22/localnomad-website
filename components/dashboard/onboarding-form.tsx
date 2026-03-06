@@ -13,7 +13,6 @@ const COUNTRY_OPTIONS = [
   { code: 'kr' as const, emoji: '🇰🇷', label: 'korea' as const },
   { code: 'tw' as const, emoji: '🇹🇼', label: 'taiwan' as const },
   { code: 'jp' as const, emoji: '🇯🇵', label: 'japan' as const },
-  { code: 'cn' as const, emoji: '🇨🇳', label: 'china' as const },
 ];
 
 const VISA_OPTIONS: Record<VisaCountry, { type: string; label: string }[]> = {
@@ -32,11 +31,6 @@ const VISA_OPTIONS: Record<VisaCountry, { type: string; label: string }[]> = {
     { type: 'digital-nomad', label: 'Digital Nomad Visa' },
     { type: 'business-manager', label: 'Business Manager Visa' },
     { type: 'engineer', label: 'Engineer / Specialist in Humanities' },
-  ],
-  cn: [
-    { type: 'z-visa', label: 'Z Visa — Work Visa' },
-    { type: 'k-visa', label: 'K Visa — STEM Talent' },
-    { type: 'x1-visa', label: 'X1 Visa — Long-term Study' },
   ],
 };
 
