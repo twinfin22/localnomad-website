@@ -66,7 +66,7 @@
     "ctaDiscord": "Join the community"
   },
   "Country": {
-    "title": "{country} Visa Guide",
+    "title": "{country} Visa Guide for Digital Nomads",
     "subtitle": "Find the right visa for your stay in {country}. Compare requirements, documents, and timelines.",
     "comingSoon": "Visa information for this country is coming soon.",
     "visaCount": "{count} visa types available",
@@ -307,13 +307,13 @@
     "landingTitle": "LocalNomad — Visa clarity, finally.",
     "landingDescription": "Visa requirements, document checklists, and community tips for digital nomads in South Korea, Japan, and Taiwan — all in one place.",
     "countryDescription": "Compare {country} visa types side by side — requirements, documents, fees, and timelines. Find the right visa for your stay.",
-    "loginTitle": "Log In — LocalNomad",
+    "loginTitle": "Log In to Your Visa Dashboard — LocalNomad",
     "loginDescription": "Sign in to LocalNomad to save your visa checklist progress, track deadlines, and sync your preparation across all your devices.",
-    "termsTitle": "Terms of Service — LocalNomad",
+    "termsTitle": "Terms of Service — LocalNomad Visa Platform",
     "termsDescription": "Read LocalNomad's terms of service covering usage rights, intellectual property, liability limitations, and governing law for our visa information platform.",
-    "privacyTitle": "Privacy Policy — LocalNomad",
+    "privacyTitle": "Privacy Policy — LocalNomad Visa Platform",
     "privacyDescription": "Learn how LocalNomad collects, uses, and protects your personal data — including authentication, analytics, and your rights under GDPR and Korean privacy law.",
-    "refundTitle": "Refund Policy — LocalNomad",
+    "refundTitle": "Refund Policy — LocalNomad Visa Platform",
     "refundDescription": "LocalNomad's refund policy for paid features and services. Currently a free platform — detailed refund terms will be published when paid features launch."
   }
 }

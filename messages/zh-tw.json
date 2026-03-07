@@ -66,7 +66,7 @@
     "ctaDiscord": "加入社群"
   },
   "Country": {
-    "title": "{country}簽證指南",
+    "title": "{country}簽證指南 — 數位遊牧者必備",
     "subtitle": "找到適合您在{country}停留的簽證。比較申請條件、所需文件和辦理時程。",
     "comingSoon": "此國家的簽證資訊即將推出。",
     "visaCount": "共 {count} 種簽證類型",
@@ -307,13 +307,13 @@
     "landingTitle": "LocalNomad — 簽證資訊，終於清楚了。",
     "landingDescription": "韓國、日本和台灣的簽證要求、文件清單和社群經驗 — 數位遊牧者準備簽證申請所需的一切資訊，全部匯整於此。",
     "countryDescription": "並排比較{country}簽證類型 — 申請條件、所需文件、費用和時程。透過清晰、結構化的指南和清單，找到適合您的簽證。",
-    "loginTitle": "登入 — LocalNomad",
+    "loginTitle": "登入簽證管理面板 — LocalNomad",
     "loginDescription": "登入 LocalNomad，儲存簽證清單進度、追蹤截止日期，並在所有裝置間同步您的準備狀態。",
-    "termsTitle": "服務條款 — LocalNomad",
+    "termsTitle": "服務條款 — LocalNomad 簽證資訊平台",
     "termsDescription": "查閱 LocalNomad 的服務條款，涵蓋使用權限、智慧財產權、責任限制以及簽證資訊平台的準據法。",
-    "privacyTitle": "隱私權政策 — LocalNomad",
+    "privacyTitle": "隱私權政策 — LocalNomad 簽證資訊平台",
     "privacyDescription": "了解 LocalNomad 如何蒐集、使用和保護您的個人資料 — 包括身分驗證、數據分析以及您在 GDPR 和韓國隱私法下的權利。",
-    "refundTitle": "退款政策 — LocalNomad",
+    "refundTitle": "退款政策 — LocalNomad 簽證資訊平台",
     "refundDescription": "LocalNomad 付費功能和服務的退款政策。目前為免費平台 — 付費功能上線時將發布詳細退款條款。"
   }
 }

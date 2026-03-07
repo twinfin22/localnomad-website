@@ -66,7 +66,7 @@
     "ctaDiscord": "コミュニティに参加"
   },
   "Country": {
-    "title": "{country}ビザガイド",
+    "title": "{country}ビザガイド — デジタルノマド向け",
     "subtitle": "{country}滞在に合ったビザを見つけましょう。要件・必要書類・スケジュールを比較できます。",
     "comingSoon": "この国のビザ情報は近日公開予定です。",
     "visaCount": "{count}種類のビザがあります",
@@ -307,13 +307,13 @@
     "landingTitle": "LocalNomad — ビザ情報、やっとクリアに。",
     "landingDescription": "韓国・日本・台湾のビザ要件、必要書類チェックリスト、コミュニティの体験談 — デジタルノマドのビザ申請準備に必要な情報をまとめました。",
     "countryDescription": "{country}のビザを並べて比較 — 要件、必要書類、費用、スケジュール。明確で体系的なガイドとチェックリストで最適なビザを見つけましょう。",
-    "loginTitle": "ログイン — LocalNomad",
+    "loginTitle": "ビザダッシュボードにログイン — LocalNomad",
     "loginDescription": "LocalNomadにログインして、ビザのチェックリスト進捗を保存し、締め切りを管理し、すべてのデバイスで準備状況を同期しましょう。",
-    "termsTitle": "利用規約 — LocalNomad",
+    "termsTitle": "利用規約 — LocalNomad ビザ情報プラットフォーム",
     "termsDescription": "LocalNomadの利用規約 — 使用権、知的財産、責任の制限、準拠法など、ビザ情報プラットフォームの利用条件をご確認ください。",
-    "privacyTitle": "プライバシーポリシー — LocalNomad",
+    "privacyTitle": "プライバシーポリシー — LocalNomad ビザ情報プラットフォーム",
     "privacyDescription": "LocalNomadが個人情報をどのように収集・使用・保護するか — 認証、アナリティクス、GDPRおよび韓国個人情報保護法に基づく権利について。",
-    "refundTitle": "返金ポリシー — LocalNomad",
+    "refundTitle": "返金ポリシー — LocalNomad ビザ情報プラットフォーム",
     "refundDescription": "LocalNomadの有料機能・サービスに関する返金ポリシー。現在は無料プラットフォームです — 有料機能の開始時に詳細な返金規定を公開します。"
   }
 }
