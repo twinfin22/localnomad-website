@@ -14,6 +14,8 @@ import {
 } from '@/components/landing';
 import { getNeighborhoodData } from '@/lib/neighborhood-data';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }

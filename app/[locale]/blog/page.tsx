@@ -10,6 +10,8 @@ import { BLOG_CATEGORIES, BLOG_COUNTRIES } from '@/lib/blog/schema';
 import { BlogCard } from '@/components/blog/blog-card';
 import { BlogFilters } from '@/components/blog/blog-filters';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ category?: string; country?: string }>;

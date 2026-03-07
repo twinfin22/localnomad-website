@@ -5,6 +5,8 @@ import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }

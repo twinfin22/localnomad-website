@@ -10,6 +10,8 @@ import { SEAComparisonTable } from '@/components/visa/sea-comparison-table';
 import type { Country } from '@/lib/types/visa';
 import type { SEAComparisonData } from '@/lib/types/sea';
 
+export const revalidate = 3600;
+
 const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'southeast-asia'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {

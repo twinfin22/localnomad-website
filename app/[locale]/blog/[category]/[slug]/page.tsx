@@ -11,6 +11,8 @@ import { extractHeadings } from '@/lib/blog/utils';
 import { createMdxComponents } from '@/components/blog/mdx-components';
 import { BlogToc } from '@/components/blog/blog-toc';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string; category: string; slug: string }>;
 }

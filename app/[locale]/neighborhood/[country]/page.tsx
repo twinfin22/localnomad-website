@@ -9,6 +9,8 @@ import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import { NeighborhoodExplorer } from '@/components/neighborhood';
 import type { City } from '@/lib/types/neighborhood';
 
+export const revalidate = 3600;
+
 const VALID_COUNTRIES = ['korea', 'japan', 'taiwan', 'china'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {

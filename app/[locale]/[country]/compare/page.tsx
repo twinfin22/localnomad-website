@@ -10,6 +10,8 @@ import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country, Visa } from '@/lib/types/visa';
 import { ComparisonTool } from '@/components/visa';
 
+export const revalidate = 3600;
+
 const VALID_COUNTRIES = ['korea', 'taiwan', 'japan'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {

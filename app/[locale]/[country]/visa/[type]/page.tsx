@@ -13,6 +13,8 @@ import {
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
 
+export const revalidate = 3600;
+
 const VALID_COUNTRIES = ['korea', 'taiwan', 'japan'] as const;
 
 interface Props {

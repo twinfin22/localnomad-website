@@ -8,6 +8,8 @@ import { getAllPosts } from '@/lib/blog';
 import { BLOG_CATEGORIES, type BlogCategory } from '@/lib/blog/schema';
 import { BlogCard } from '@/components/blog/blog-card';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string; category: string }>;
 }

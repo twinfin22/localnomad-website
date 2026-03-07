@@ -6,6 +6,8 @@ import { Link } from '@/i18n/navigation';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import { Instagram, Mail } from 'lucide-react';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
