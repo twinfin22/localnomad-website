@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = 'Contact Us — LocalNomad';
   const description =
-    'Get in touch with the LocalNomad team. Join our Discord community, email us, or follow us on Instagram.';
+    'Get in touch with the LocalNomad team via Discord, email, or Instagram. Join our community of digital nomads exploring Korea, Japan, and Taiwan.';
 
   return {
     title,

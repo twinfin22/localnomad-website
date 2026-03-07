@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = 'About LocalNomad';
   const description =
-    'LocalNomad makes visa information accessible and clear for digital nomads in South Korea, Japan, and Taiwan.';
+    'LocalNomad makes visa information accessible for digital nomads in South Korea, Japan, and Taiwan. Clear requirements, document checklists, and community tips.';
 
   return {
     title,
