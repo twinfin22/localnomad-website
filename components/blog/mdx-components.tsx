@@ -368,6 +368,48 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
 );
 
 /* ------------------------------------------------------------------ */
+/*  CheckGrid — Visual requirement boxes (e.g. eligibility criteria)  */
+/* ------------------------------------------------------------------ */
+
+interface CheckBoxItem {
+  label: string;
+  title: string;
+  description: string;
+}
+
+interface CheckGridProps {
+  items: CheckBoxItem[];
+  note?: string;
+}
+
+const CheckGrid = ({ items, note }: CheckGridProps) => (
+  <div className="not-prose my-6">
+    <div className={cn('grid gap-3', items.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2')}>
+      {items.map((item, i) => (
+        <div
+          key={i}
+          className="relative rounded-lg border-2 border-[#1B4965]/20 bg-white p-4 shadow-sm"
+        >
+          <div className="mb-2 flex items-center gap-2">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1B4965] text-xs font-bold text-white">
+              {i + 1}
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-wide text-[#1B4965]/60">
+              {item.label}
+            </span>
+          </div>
+          <h4 className="text-base font-bold text-[#1B4965]">{item.title}</h4>
+          <p className="mt-1.5 text-sm leading-relaxed text-gray-700">{item.description}</p>
+        </div>
+      ))}
+    </div>
+    {note && (
+      <p className="mt-3 text-center text-sm font-medium text-gray-500">{note}</p>
+    )}
+  </div>
+);
+
+/* ------------------------------------------------------------------ */
 /*  DecisionTree — Visual yes/no flowchart for blog comparison posts   */
 /* ------------------------------------------------------------------ */
 
@@ -501,5 +543,6 @@ export const createMdxComponents = (): MDXComponents => {
   ResponsiveTable,
   NeighborhoodCards,
   DecisionTree,
+  CheckGrid,
 };
 };
