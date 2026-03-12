@@ -148,7 +148,7 @@ Estimate total word count based on outline and category target:
 - Internal links: ≥3 assigned to specific sections
 - External links: ≥1 identified
 - Legal flags: any country-specific compliance needed?
-- Unsplash search keywords: 2-3 keyword combinations for cover image
+- Unsplash search keywords: 2-3 **broad** keyword combos (1-2 words each, not long phrases). Prefer keywords that return photos with people.
 
 ---
 
@@ -247,9 +247,16 @@ If series: each part within category target, mutual internal links between parts
 
 Use `skills/cover-image/SKILL.md`.
 
-1. Search Unsplash with approved keywords from CHECKPOINT 1
-2. Pull **5 candidates** (landscape orientation, relevant to topic, **sort by popular** — `order_by=popular` parameter)
-3. For each candidate, present: Unsplash page URL + photographer name + short description
+### Search Rules
+- **Keywords**: broad, 1-2 words max (e.g., "korea campus" not "korean university student studying AI in laboratory"). Avoid overly specific or compound phrases — Unsplash works best with simple terms.
+- **Sort**: `order_by=popular` parameter (always)
+- **People preferred**: prioritize results with people in the photo — Asian subjects preferred for relevance. Avoid empty landscapes, stock-style flat lays, or abstract graphics.
+- Use approved keywords from CHECKPOINT 1 as starting point, but simplify them.
+
+### Process
+1. Search Unsplash with 2-3 broad keyword combos
+2. Pull **5 candidates** (landscape orientation, people preferred, sorted by popular)
+3. For each candidate, present: Unsplash page URL + photographer name + short description of what's in the photo
 4. **DO NOT download yet** — present candidates at CHECKPOINT 2 for Gen to pick
 5. **NEVER read image files with the Read tool** — download and resize with bash only
 
