@@ -64,6 +64,15 @@ const Disclaimer = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+const TldrBox = ({ children }: { children: React.ReactNode }) => (
+  <div className="not-prose my-8 rounded-xl bg-[#1B4965] px-6 py-5 text-white">
+    <p className="mb-2 text-xs font-bold uppercase tracking-widest text-white/50">
+      TL;DR
+    </p>
+    <div className="text-sm leading-relaxed text-white/90">{children}</div>
+  </div>
+);
+
 interface HeroBannerItem {
   emoji: string;
   label: string;
@@ -544,5 +553,6 @@ export const createMdxComponents = (): MDXComponents => {
   NeighborhoodCards,
   DecisionTree,
   CheckGrid,
+  TldrBox,
 };
 };

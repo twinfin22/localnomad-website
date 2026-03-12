@@ -193,6 +193,9 @@ Present to Gen:
 - Emotional register: earnest idealism + pragmatic skepticism
 - Personal → systemic pivot
 
+### TL;DR Box
+Every post must have a `<TldrBox>` immediately after the hook (before the first H2). 2-4 sentences max, plain language summary of the post's key takeaway. Use the `TldrBox` MDX component (brand teal background, white text).
+
 ### Writing Rules
 - Short paragraphs (2-4 sentences)
 - ≥1 data point, example, or quote per section
