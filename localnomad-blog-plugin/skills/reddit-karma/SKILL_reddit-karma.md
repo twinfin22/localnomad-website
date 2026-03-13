@@ -18,12 +18,11 @@ Find high-potential threads where LocalNomad blog content can provide genuine va
 
 ### Step 1: Build Topic Index
 
-Read blog frontmatter from `content/blog/` to build a topic map:
+Generate the topic index from blog frontmatter:
 ```bash
-# Glob all published posts
-ls content/blog/**/*.mdx
+python3 scripts/reddit-scout.py index
 ```
-Extract: slug, title, category, country, tags. Group by country and topic.
+Returns JSON array of `{slug, title, category, country, tags, path}` for all published posts. Group by country and topic to plan discovery queries.
 
 ### Step 2: Discover Subreddits
 

@@ -385,6 +385,86 @@ def reddit_subreddit_search(
         return []
 
 
+def reddit_thread(
+    permalink: str,
+    *,
+    comment_limit: int = 50,
+    comment_sort: str = "top",
+    comment_depth: int = 2,
+    rate_limiter: Optional[RateLimiter] = None,
+) -> dict:
+    """
+    Fetch a thread's post and comments in a single API call.
+    Returns {"post": {...}, "comments": [{body, score, author, depth, parent_id}]}.
+    """
+    try:
+        data = _reddit_fetch(
+            permalink,
+            params={
+                "limit": str(comment_limit),
+                "sort": comment_sort,
+                "depth": str(comment_depth),
+            },
+            rate_limiter=rate_limiter,
+        )
+        if not isinstance(data, list) or len(data) < 1:
+            return {"post": {}, "comments": []}
+
+        # Extract post from data[0]
+        post = {}
+        post_children = data[0].get("data", {}).get("children", [])
+        if post_children and post_children[0].get("kind") == "t3":
+            pd = post_children[0]["data"]
+            post = {
+                "title": pd.get("title", ""),
+                "selftext": pd.get("selftext", "")[:3000],
+                "score": pd.get("score", 0),
+                "author": pd.get("author", ""),
+                "num_comments": pd.get("num_comments", 0),
+                "created_utc": pd.get("created_utc", 0),
+                "subreddit": pd.get("subreddit", ""),
+                "url": f"https://reddit.com{pd.get('permalink', '')}",
+            }
+
+        # Extract comments from data[1]
+        comments: list[dict] = []
+        if len(data) >= 2:
+            _extract_comments(data[1].get("data", {}).get("children", []), comments, current_depth=0)
+
+        return {"post": post, "comments": comments}
+    except Exception as e:
+        print(f"  ⚠ Thread fetch failed for {permalink}: {e}", file=sys.stderr)
+        return {"post": {}, "comments": []}
+
+
+def reddit_listing(
+    subreddit: str,
+    listing: str = "hot",
+    *,
+    limit: int = 25,
+    time_filter: str = "all",
+    rate_limiter: Optional[RateLimiter] = None,
+) -> list[dict]:
+    """
+    Fetch posts from a subreddit listing (hot, new, rising, top, controversial).
+    Returns list of post data dicts.
+    """
+    params: dict = {"limit": str(limit)}
+    if listing in ("top", "controversial"):
+        params["t"] = time_filter
+    try:
+        data = _reddit_fetch(
+            f"/r/{subreddit}/{listing}",
+            params=params,
+            rate_limiter=rate_limiter,
+        )
+        posts = data.get("data", {}).get("children", [])
+        return [p["data"] for p in posts if p["kind"] == "t3"]
+    except FetchError as e:
+        print(f"  ⚠ {listing.capitalize()} posts fetch failed for r/{subreddit}: {e}", file=sys.stderr)
+        return []
+
+
 def reddit_top_posts(
     subreddit: str,
     *,
@@ -392,18 +472,5 @@ def reddit_top_posts(
     time_filter: str = "all",
     rate_limiter: Optional[RateLimiter] = None,
 ) -> list[dict]:
-    """Fetch top posts from a subreddit."""
-    try:
-        data = _reddit_fetch(
-            f"/r/{subreddit}/top",
-            params={
-                "t": time_filter,
-                "limit": str(limit),
-            },
-            rate_limiter=rate_limiter,
-        )
-        posts = data.get("data", {}).get("children", [])
-        return [p["data"] for p in posts if p["kind"] == "t3"]
-    except FetchError as e:
-        print(f"  ⚠ Top posts fetch failed for r/{subreddit}: {e}", file=sys.stderr)
-        return []
+    """Fetch top posts from a subreddit. Convenience wrapper around reddit_listing."""
+    return reddit_listing(subreddit, "top", limit=limit, time_filter=time_filter, rate_limiter=rate_limiter)
