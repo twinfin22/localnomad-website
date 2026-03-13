@@ -22,6 +22,16 @@ One brief per selected thread. All fields required unless marked optional.
 |------|---------------|
 | {slug} | {specific facts/numbers pulled from this post} |
 
+## Existing Replies (top 3)
+
+{Summarize what the top 3 commenters already said — 1 line each. Use this to differentiate the draft: add new info or a different angle, don't restate what's been covered.}
+
+- **u/{author1}** ({score}): {1-line summary}
+- **u/{author2}** ({score}): {1-line summary}
+- **u/{author3}** ({score}): {1-line summary}
+
+{If thread has < 3 comments, note "Thread is under-answered — opportunity to be the definitive reply."}
+
 ## Draft
 
 {The actual reply or post text. Written in founder voice per voice-guide-reddit.md. Linkless by default.}
