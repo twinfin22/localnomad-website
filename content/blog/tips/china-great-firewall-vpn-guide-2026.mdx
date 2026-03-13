@@ -1,10 +1,10 @@
 ---
-title: "Surviving China's Great Firewall: A Digital Nomad's VPN Guide (2026)"
-coverImage: "/images/blog/china-great-firewall-vpn.svg"
-description: "Everything you need to know about internet access in China. Which VPNs work, what's blocked, Chinese alternatives, and what to set up before you arrive."
+title: "China VPN Guide: Surviving the Great Firewall (2026)"
+coverImage: "/images/blog/china-great-firewall-vpn-guide-2026.jpg"
+description: "Google, WhatsApp, Slack — all blocked in China. Install 2 VPNs before you fly. Here's what works behind the Great Firewall in 2026."
 category: tips
 country: china
-date: "2026-03-04"
+date: "2026-03-13"
 author: "LocalNomad Team"
 tags: ["china", "vpn", "great-firewall", "internet", "digital-nomad", "2026"]
 featured: false
@@ -13,384 +13,156 @@ draft: false
 
 import { Callout } from '@/components/ui/callout';
 import { Disclaimer } from '@/components/ui/disclaimer';
-import { StatusList } from '@/components/blog';
+import { TldrBox, StatusList } from '@/components/blog';
 
-## The Reality: You MUST Prepare Before You Land
+<TldrBox>
+Google, WhatsApp, Slack, Instagram — all dead the moment you land in China. You cannot download a VPN once you're behind the wall. Install two VPN providers on every device before your flight. Pick ones with obfuscation or stealth protocols. Test them. Then test them again. This post covers what's blocked, what protocol tricks actually punch through the firewall in March 2026, and what to do when (not if) your VPN dies mid-trip.
+</TldrBox>
 
-China's Great Firewall doesn't care about your work deadlines or your Slack notifications. The moment you land, your Google account, WhatsApp, Instagram, and most Western services vanish. But here's what matters: **everything on this list takes 10 minutes to set up from home, and 10 times longer (or impossible) once you're inside China.**
+## What's Blocked (March 2026)
 
-This is not optional. This is survival.
-
----
-
-## What's Actually Blocked (and When)
-
-The Great Firewall operates like a border agent: it lets nothing through unless it's approved. Here's the official blocklist for March 2026:
+The Great Firewall (防火长城, fánghuǒ chángchéng) isn't subtle. It doesn't slow things down or make them glitchy. It deletes them.
 
 <StatusList groups={[
   {
     status: "blocked",
     label: "Blocked",
     items: [
-      { name: "Google / Gmail / Maps / Drive", note: "fully blocked — no search, email, navigation, or cloud storage" },
-      { name: "WhatsApp", note: "since 2017 — messaging, calls, video all gone" },
-      { name: "Instagram", note: "your feed, DMs, Stories — gone" },
-      { name: "Facebook / Messenger", note: "since 2009 — no social bridge to home" },
-      { name: "YouTube", note: "no video streaming" },
-      { name: "X (Twitter)", note: "news, networking, messaging — inaccessible" },
-      { name: "Telegram", note: "no private messaging" },
+      { name: "Google (all of it)", note: "Search, Gmail, Maps, Drive, Docs, Calendar — gone" },
+      { name: "WhatsApp", note: "messaging, calls, video — blocked since 2017" },
+      { name: "Instagram / Facebook / Messenger", note: "no feed, no DMs, no Stories" },
+      { name: "YouTube", note: "no streaming, no downloads" },
+      { name: "X (Twitter)", note: "blocked" },
+      { name: "Telegram", note: "blocked" },
+      { name: "Slack", note: "technically loads sometimes, drops constantly — treat it as blocked" },
     ],
   },
   {
     status: "partial",
     label: "Unreliable",
     items: [
-      { name: "Slack", note: "slow and drops constantly — use as backup only" },
+      { name: "Notion / Figma", note: "works some days, crawls on others" },
+      { name: "Some news sites", note: "BBC, NYT, Reuters — blocked or throttled depending on the week" },
     ],
   },
   {
     status: "works",
-    label: "Works in China",
+    label: "Works Fine",
     items: [
-      { name: "WeChat", note: "your lifeline — messaging, payments, everything" },
-      { name: "Local Chinese sites", note: "Bilibili, Douyin, Weibo, Xiaohongshu — full speed" },
+      { name: "WeChat", note: "messaging, payments, mini-programs — your lifeline" },
+      { name: "Bilibili / Douyin / Weibo", note: "full speed, no restrictions" },
+      { name: "Baidu / Gaode Maps", note: "the local replacements that actually work better for China" },
+      { name: "Apple iMessage", note: "works if both sides use Apple devices" },
     ],
   },
 ]} />
 
-<Callout type="warning">
-**Reality check:** You will lose real-time access to your home country's messaging apps. Your friends won't understand why you're "offline." This is normal. Plan ahead.
-</Callout>
-
----
-
-## Which VPNs Actually Work (March 2026)
-
-**IMPORTANT: Do NOT recommend specific VPN brands to friends in China.** The Great Firewall blocks VPN providers constantly. What works today may be blocked next week. Instead of brand recommendations, here's what you need to look for:
-
-### The Protocol Strategy
-
-Working VPNs in 2026 use one of these approaches:
-
-1. **Obfuscated Servers** — Disguises VPN traffic to look like regular HTTPS traffic, making it harder for the Great Firewall to detect
-2. **NoBorders Mode or Stealth Protocols** — Actively evades Deep Packet Inspection (DPI), the GFW's detective system
-3. **Shadowsocks or V2Ray** — Older, lighter proxy protocols that are harder to block (technical setup required)
-4. **Rotating IP Addresses** — Changes your VPN server regularly to avoid detection and blocking
-
-### What to Look For When Choosing
-
-When evaluating VPNs before your trip:
-- ✅ Check **LocalNomad Community** — real users in China report what's working this week
-- ✅ Look for VPNs offering **free trial periods** — test from home before committing
-- ✅ Verify the provider offers **obfuscation or stealth modes** (essential for China)
-- ✅ Read **recent user reports** (2026, not 2024) — older reviews are useless
-- ✅ Pick a provider with **live chat support** — you'll need help from outside China if things break
-
-### Popular Choices (Recent Reports)
-
-**Note:** These all require setup and testing BEFORE you arrive. Do not wait.
-
-- **NordVPN** — Often cited as most reliable; requires obfuscation enabled
-- **Surfshark** — NoBorders mode works consistently in recent reports
-- **Astrill** — StealthVPN protocol stronger at evading DPI; steep learning curve
-- **ExpressVPN** — Used to be gold standard; now inconsistent; still used by many
-- **LetsVPN** — Lighter, newer option with good recent reports
-
-<Callout type="tip">
-**Backup strategy:** Install 2 different VPNs on every device. If one gets blocked tomorrow, you have a failover without panic. Many long-term residents rotate between 3 providers.
-</Callout>
-
----
-
-## Setup BEFORE Your Flight (Non-Negotiable Checklist)
-
-This is the most important section. **Do this now.** Not at the airport. Not when you land. NOW.
-
-### 7 Days Before Departure
-- [ ] **Choose and subscribe** to your VPN(s) using a credit card from home
-- [ ] **Complete registration** while outside China (Chinese payment methods won't work with foreign VPN providers)
-- [ ] Create a strong password and **save it offline** (you'll panic later if you forget)
-
-### 5 Days Before Departure
-- [ ] **Download VPN apps** on your phone, laptop, tablet — every device you're bringing
-- [ ] **Test that each app launches** without errors
-- [ ] **Verify login works** (do it now, not in Pudong Airport)
-- [ ] **Don't uninstall if there are bugs** — troubleshoot now while you have support access
-
-### 3 Days Before Departure
-- [ ] **Enable obfuscation settings:**
-  - NordVPN: Turn on "Obfuscation"
-  - Surfshark: Activate "NoBorders mode"
-  - Astrill: Enable "StealthVPN protocol"
-  - Others: Check their China-specific setup guide
-- [ ] **Select a stable server location** (usually Japan, Hong Kong, or Singapore for China access)
-- [ ] **Configure kill switch** (stops all internet if VPN drops — prevents accidental unencrypted traffic)
-
-### 2 Days Before Departure
-- [ ] **Run a full connectivity test:**
-  - Open Google → should load
-  - Send WhatsApp message → should deliver
-  - Access Gmail → should show inbox
-  - Open Google Maps → should show location
-  - Test Slack or Teams → should connect
-- [ ] **Verify all work tools load** (Zoom, Google Drive, whatever you rely on)
-- [ ] **If anything fails, troubleshoot NOW** — you have support access here
-
-### 1 Day Before Departure
-- [ ] **Screenshot or download** VPN provider's support email addresses
-- [ ] **Save offline copies** of their troubleshooting guides (you won't access them from inside China)
-- [ ] **Note manual configuration options** (Shadowsocks, WireGuard config) as backup
-- [ ] **Turn on your VPN one final time** and confirm everything loads
-
-### Check Your Devices
-- [ ] Phone VPN working? ✓
-- [ ] Laptop VPN working? ✓
-- [ ] Tablet (if bringing)? ✓
-- [ ] iPad? ✓
-- [ ] Watch or any IoT device? ✓
+The full blocked list runs into the hundreds. [Travel China Cheaper](https://www.travelchinacheaper.com/index-blocked-websites-in-china) maintains a searchable index if you need to check a specific service.
 
 <Callout type="warning">
-**CRITICAL:** If you skip this checklist and your VPN fails the first night in Shanghai, you cannot:
-- Download a new VPN app
-- Access the VPN provider's website to reset your password
-- Contact support via email (your email is likely blocked)
-- Access any troubleshooting guides
-
-You will be offline. Prepare now.
+Your team back home won't understand why you vanished from Slack. Give them a heads-up before you fly. Set expectations: "I'll be on WeChat or email via VPN, and response times will be slower."
 </Callout>
 
----
+## Choosing a VPN That Works
 
-## Mobile vs. Laptop Setup (Different Rules)
+Here's the thing about the Great Firewall: it learns. Standard VPN connections get flagged and killed within hours. The VPNs that survive use disguise.
 
-### Your Phone (Most Important)
+Three protocol strategies that work in early 2026:
 
-Your phone is your lifeline. In China, your phone is:
-- Your WeChat account (required for everything)
-- Your payment method (Alipay / WeChat Pay)
-- Your ID verification tool
-- Your ride-hailing app (DiDi)
-- Your hotel check-in method
+**Obfuscated servers** make your VPN traffic look like regular HTTPS browsing. The firewall sees what appears to be normal web traffic and lets it through. Most major VPN providers offer this as a toggle.
 
-**Setup:**
-1. Install VPN app + test before departure
-2. Turn on at airport, test immediately
-3. Once VPN connects, open WeChat and verify it loads
-4. If WeChat doesn't load on VPN, your VPN doesn't work in China — switch to backup VPN
+**Stealth / NoBorders protocols** go further. They actively detect when DPI (deep packet inspection, the firewall's detective system) is scanning traffic, and reshape packets in real time. More cat-and-mouse, but more reliable during crackdown periods.
 
-<Callout type="tip">
-**Phone tip:** iPhone vs Android makes a difference. iPhone App Store has regional restrictions; Android gives you more flexibility. If you're bringing both devices, test Android as primary.
-</Callout>
+**Shadowsocks and V2Ray** are open-source proxy tools that predate commercial VPNs in China. They're lighter, harder to detect, and preferred by long-term residents. The trade-off: you need some technical comfort to set them up, and there's no customer support hotline.
 
-### Your Laptop (Work Setup)
+What to look for when picking a provider:
 
-Your laptop needs VPN + local Chinese alternatives.
+- Obfuscation or stealth mode (not optional — required for China)
+- Servers in Japan, Hong Kong, or Singapore (closest exit points)
+- A kill switch (stops all traffic if VPN drops, so you don't accidentally send unencrypted data)
+- Recent user reports from 2026, not 2024. Older reviews are useless here.
+- Live chat support accessible from outside China
 
-**Why both?** Because:
-- VPN bandwidth is slow for video calls (use WeChat for calls instead)
-- Some Chinese services block VPN users (access them without VPN on parallel network)
-- Backup system if one fails
+Install two different providers. Not two servers on the same provider. Two separate companies. When one gets blocked (and it will), you switch.
 
-**Setup:**
-1. Install VPN on laptop
-2. Configure split tunneling: VPN for Google/Slack, direct connection for Bilibili/WeChat video
-3. Install local alternatives (see next section)
-4. Test your exact workflow before arriving
+## Pre-Flight Setup Checklist
 
----
+Compressed version. Do this in one day if you have to. Do it in a week if you can.
 
-## Chinese Alternatives (What You'll Actually Use Every Day)
+**7 days out:**
+- [ ] Subscribe to 2 VPN providers. Pay with a card from home.
+- [ ] Download apps on phone, laptop, and tablet.
+- [ ] Write down your login credentials on paper. (Yes, paper. You'll thank yourself when the password manager is behind the firewall.)
 
-Stop thinking of this as "losing" Western apps. Think of it as upgrading. Chinese equivalents are actually superior for nomading in China.
+**3 days out:**
+- [ ] Turn on obfuscation/stealth mode in both apps.
+- [ ] Select server locations: try Japan, Hong Kong, Singapore.
+- [ ] Enable the kill switch.
 
-### Messaging & Communication (RIP WhatsApp)
-
-**WeChat** (not optional — required)
-- Everyone uses it. Coworkers, landlords, landlords, delivery drivers, banks
-- Mini-programs inside WeChat = apps (no separate downloads)
-- Payment integrated (you'll never carry cash)
-- Video calls work (even on VPN, slower than phone but stable)
-
-**Feishu / Lark** (if working for tech company)
-- ByteDance's team chat app; cleaner than WeChat for work
-- Video calls, screen sharing, file sharing — all built in
-- Popular with Chinese startups and international teams
-
-**QQ** (older, less common)
-- Think of it as WeChat's older cousin
-- Still used by some communities and gaming groups
-- Bonus: Works with international users occasionally
-
-### Video & Entertainment (Replacing YouTube)
-
-**Bilibili** (Chinese YouTube meets Reddit)
-- Real-time subtitle comments (danmaku culture)
-- Creators obsessed with quality content
-- Search works better than YouTube for niche topics
-- Community is friendlier to international people
-
-**Douyin** (TikTok's origin)
-- Infinite scroll, high-production content
-- Built-in live shopping, booking, everything
-- More addictive than original TikTok
-- Access to creators' real-time deals
-
-**iQIYI** (Netflix equivalent)
-- Chinese TV shows, dramas, some international content
-- Subscription: ~40 RMB/month (under $6)
-
-### Maps (Google Maps → Gaode / Baidu)
-
-**Gaode (Amap)** — Recommended
-- Real-time traffic
-- Next bus arrival times
-- Metro exit guidance (which exit takes you closest to destination)
-- English interface available (menu top-right)
-
-**Baidu Maps** — Detailed but Chinese-only UI
-- Better offline maps
-- More restaurant details
-- POI information rich
-
-**Pro tip:** Use Gaode for transport, Baidu for exploration. Download offline maps for both before arriving.
-
-### Payment (Replacing credit cards)
-
-**Alipay** — More merchants, higher limits
-- Link international Visa/Mastercard
-- Used everywhere
-- Limits: ¥35,000 per transaction, ¥350,000 annually
-- 3% fee on foreign cards over 200 CNY
-- Tour Pass option for short-term visitors (¥50,000/year, valid 180 days)
-
-**WeChat Pay** — Faster, lower limits
-- Link international Visa/Mastercard
-- Equally widespread
-- Limits: ¥6,000 per transaction, ¥60,000 annually
-- Same 3% fee structure on foreign cards over 200 CNY
-
-**Setup before arrival:**
-1. Download apps
-2. Link your Visa/Mastercard
-3. Test payment from home (buy something small)
-4. Verify it works
-
----
-
-## What to Do If Your VPN Stops Working (It Will Happen)
-
-The Great Firewall updates constantly. Your VPN might work Day 1 and fail Day 3. Here's the escalation plan:
-
-### Day 1: VPN Works
-- ✓ Test WeChat, Gmail, Google Maps
-- ✓ Download one week of offline content (news, articles)
-- ✓ Make sure all work files are synced to cloud
-
-### Day 3: VPN Suddenly Slow
-- [ ] Switch to backup VPN provider
-- [ ] Disable and re-enable VPN
-- [ ] Change to different server (try Hong Kong → Singapore → Tokyo)
-- [ ] Contact VPN support via email (you may still have access)
-
-### Day 7: VPN Completely Blocked
-- [ ] Activate second VPN provider (this is why you installed 2)
-- [ ] If both blocked, research Shadowsocks setup (more technical, lasts longer)
-- [ ] Ask LocalNomad Community what's working this week
-- [ ] Check if hotel WiFi has international gateway (some business hotels route around the issue)
-
-### Day 14: Still No VPN
-- [ ] This is rare, but it happens during government crackdowns
-- [ ] Ask your company IT if they have corporate VPN you can use
-- [ ] Consider relocating to Hong Kong, Taiwan, or Singapore for a week (no GFW there)
-- [ ] Use eSIM international roaming as temporary backup (expensive, but works)
+**1 day out:**
+- [ ] Run a full test: open Google, send a WhatsApp message, load Gmail, check Slack.
+- [ ] Screenshot your VPN provider's support email and troubleshooting page. Save them offline.
+- [ ] Note any manual config options (Shadowsocks, WireGuard) as a third backup layer.
 
 <Callout type="warning">
-**Reality:** You will experience internet cuts. Plan for this. Download offline tools:
-- Offline Wikipedia (Kiwix app)
-- Offline maps (Google Maps already supports offline)
-- Offline productivity (Google Docs downloads offline)
-- Offline communication method with your team (email backup, scheduled check-ins)
+If you skip this and your VPN fails on night one in Shanghai, you cannot download a replacement. You cannot access the provider's website to reset your password. You cannot email support because your email is blocked. Prepare now.
 </Callout>
 
----
+## When Your VPN Stops Working
 
-## Legal Considerations (The Gray Zone)
+Not "if." When. The firewall updates constantly. Your escalation plan:
 
-This is the part you won't like, but you need to know it.
+**Day 1 — VPN connects.** Good. Download a week's worth of offline content. Sync all work files to local storage. Don't get comfortable.
+
+**Day 3 — VPN slows to a crawl.** Switch servers (Hong Kong to Singapore to Tokyo). If still slow, switch to your second VPN provider. Contact support while you still can.
+
+**Day 7 — Both VPNs blocked.** This happens during political events, national holidays, or random crackdown cycles. Options: set up Shadowsocks manually (tutorials exist on GitHub, download them beforehand), ask the [LocalNomad Community](https://localnomad.club) what's working this week, or check if your hotel has an international gateway (some business hotels route around the firewall for guests).
+
+**Day 14 — Still nothing.** Rare, but real. Use international eSIM roaming as an expensive temporary bridge. Ask your company IT about corporate VPN access. Or do what some nomads do: take a weekend trip to Hong Kong or Macau, resync everything, and come back.
+
+## Chinese Apps You'll Actually Love
+
+Stop mourning WhatsApp. The Chinese equivalents aren't downgrades. For daily life in China, they're upgrades.
+
+**WeChat** (微信, wēixìn) is not a messaging app. It's an operating system. Payments, food delivery, ride-hailing, mini-programs for everything from laundry to government services. Your landlord uses it. Your coworking space uses it. The fruit vendor on the corner uses it. See our full [WeChat Ecosystem Guide](/en/blog/tips/china-wechat-ecosystem-guide-2026) for setup details.
+
+**Gaode Maps** (高德地图) replaces Google Maps and does it better for China. Real-time transit, next-bus countdowns, metro exit guidance (which exit puts you closest to your destination). English interface available.
+
+**Bilibili** (哔哩哔哩) is YouTube meets Reddit, with real-time scrolling comments (danmaku, 弹幕) layered over videos. The creator community is obsessive about quality. You'll fall down rabbit holes you didn't know existed.
+
+**Baidu** (百度) replaces Google search. It's not as good for English queries, but for anything China-specific (restaurants, local services, train schedules), it's the only search engine that matters.
+
+For payment setup (Alipay and WeChat Pay with your foreign card), see the [Alipay & WeChat Pay Setup Guide](/en/blog/tips/china-alipay-wechat-pay-foreigner-setup-2026).
+
+## The Legal Gray Zone
+
+This is the part nobody loves talking about.
 
 <Disclaimer>
-**VPN use in China is a legal gray area.** Here's the actual status:
+VPN use in China is technically illegal under the Cybersecurity Law (网络安全法, 2017). Unauthorized VPN services violate regulations on "cross-border data channels."
 
-- **Official line:** VPNs are illegal; unauthorized VPNs violate regulations
-- **Actual enforcement:** Foreigners using VPNs are rarely targeted; thousands of expats use them openly
-- **The risk:** It's technically illegal, but enforcement is inconsistent and often directed at political activists, not digital nomads
-- **The exception:** Your employer cannot be involved in your VPN use; corporate VPNs accessing foreign servers are monitored more heavily
-- **What this means:** Personal VPN for email/messaging = low risk; business VPN for corporate data exfiltration = high risk
+In practice: enforcement targets VPN providers and political activists, not individual foreigners checking Gmail. Thousands of expats, students, and business travelers use personal VPNs daily without incident.
 
-**If you're a company employee:**
-- Do NOT use your company's VPN to bypass the Great Firewall
-- Use personal VPN for personal needs; ask IT about approved tools for work
-- Some multinational companies have approved solutions; ask before you leave home
+That said, "low risk" is not "no risk." Don't post about your VPN use on Chinese social media. Don't discuss it with officials. Don't use it for anything you wouldn't do at home.
 
-**If you're a solopreneur / freelancer:**
-- Personal VPN is generally accepted
-- Don't publicize it on Chinese social media
-- Don't discuss it with government officials
-- Don't use it for anything sketchy (which you wouldn't anyway)
+Corporate VPNs are a separate category. If your employer provides one, ask IT about approved usage before you arrive. Multinational companies operating in China typically have licensed cross-border data solutions.
 
-**The real talk:** Thousands of digital nomads, expats, students, and business travelers use VPNs in China daily. Enforcement focuses on large-scale abuse and political activity, not individual browsing.
+This is a government policy, not a guarantee. Your risk tolerance is your own call.
 
-**But:** This is a government decision, not a guarantee. Your risk tolerance is your call. Consult a local lawyer or your embassy if you're concerned.
+This is informational only. Not legal advice.
 </Disclaimer>
 
----
+## FAQ
 
-## The Setup You'll Actually Need (Compressed Version)
+**Can I buy a VPN after I arrive in China?**
+No. VPN provider websites are blocked. App stores in China don't carry them. The Google Play Store is blocked entirely. Apple's China App Store has removed most VPN apps. You must install before you fly.
 
-If you read only this section:
+**Will my VPN work for video calls?**
+Sometimes. VPN bandwidth in China is slower than direct connections. For team calls, many long-term residents use WeChat video instead of Zoom. It works without a VPN and the call quality is solid.
 
-1. **Choose a VPN** → Research on LocalNomad Community for current options
-2. **Install on all devices** → Phone, laptop, tablet (7 days before arrival)
-3. **Enable obfuscation** → Required to work in China (3 days before)
-4. **Test everything** → Google, WhatsApp, Gmail, work tools (2 days before)
-5. **Install backup VPN** → Insurance policy when first one slows down
-6. **Download Gaode Maps offline** → Works without VPN
-7. **Link WeChat Pay + Alipay** → Your only payment method (before arrival)
-8. **Screenshot support emails** → You won't access websites from China
-9. **Tell your team** → When and how you'll communicate during setup week
-10. **Expect 1-2 hours of friction** → First week, internet is your main headache. Then it gets better.
+**What about using a Chinese SIM vs. international eSIM?**
+Different tools for different jobs. A Chinese SIM gives you a local number (required for WeChat Pay, Alipay, and many apps). An international eSIM routes through non-Chinese networks, bypassing the firewall for basic browsing. Most nomads run both: Chinese SIM as primary, eSIM as firewall bypass backup. See our [China Arrival Checklist](/en/blog/tips/china-arrival-checklist-2026) for the full dual-SIM strategy.
 
 ---
 
-## Pro Tips from the LocalNomad Community
-
-**From Shanghai-based nomads:**
-- "I switched to my backup VPN on Day 4. Wish I'd tested it more rigorously at home."
-- "Luckin Coffee has the most reliable WiFi for work; brings VPN speed down less."
-- "WeChat video calls don't need VPN; use them for team calls instead of Zoom."
-
-**From Chengdu long-term residents:**
-- "Shadowsocks is faster than VPN but requires CLI setup. Worth learning if you stay 3+ months."
-- "Download offline content every weekend. You never know when the GFW updates."
-
-**From Beijing developers:**
-- "Company VPN + personal VPN = backup strategy. Never rely on just one."
-- "Test your VPN in the airport lounge before clearing customs. You have WiFi there."
-
----
-
-## References
-
-- [Best VPN for China 2026 – Real Tests](https://thebestvpn.com/best-china-vpn-tested/)
-- [What Apps Are Blocked in China – 2026](https://www.travelchinacheaper.com/index-blocked-websites-in-china)
-- [WhatsApp in China 2026 Guide](https://www.nomadesim.com/blog/can-you-use-whatsapp-in-china)
-- [Essential Apps Download Before China](https://www.lostincn.com/essential-china-apps-download-before-travel/)
-- [VPN Setup Checklist for Digital Nomads](https://www.blerdtravels.com/blog/how-to-work-remotely-from-china-without-losing-your-sanity)
-- [VPN for China Travel Setup Guide 2025](https://www.eneba.com/hub/vpn/best-vpn-for-china-travel/)
-- [Chinese Apps Guide for Foreigners](https://www.journeychinese.com.au/china-travel-guides/china-mobile-apps-guide)
-
----
-
-**Last updated: March 4, 2026**
-
-Have questions? Join the **LocalNomad Community** — real users in China sharing what's working right now, not what worked 6 months ago.
+*Planning your move? The [China Ultimate Digital Nomad Guide](/en/blog/guides/china-ultimate-digital-nomad-guide) covers visas, cities, costs, and the full picture beyond the firewall.*
