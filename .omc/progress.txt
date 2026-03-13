@@ -1,0 +1,35 @@
+=== RALPH FACT-CHECK PROGRESS ===
+Started: 2026-03-13
+
+--- Previous Session ---
+- First full pass: found ~71 factual inaccuracies across 23/28 posts
+- All 71 fixes committed as cf1b66c
+- Countries: Korea(6), Japan(7), Taiwan(4), China(4), Multi-country(2) had issues
+
+--- Iteration 1 (ralph) ---
+Goal: Re-verify all 28 posts to confirm fixes and catch any remaining issues
+Fact-check: 5 parallel agents (Korea, Japan, Taiwan, China, Multi-country)
+Found: 13 CRITICAL, 21 MODERATE, 19 LOW across all batches
+Fixed: All CRITICAL and MODERATE via 5 parallel fix agents across 13 files
+Verification: 12 stale-pattern greps = 0 matches, 8 replacement greps = all present
+Architect review: APPROVED (sonnet tier)
+Minor fix: taiwan-gold-card-vs-dn-visa meta description "if employed" → "if employed or self-employed"
+
+--- Iteration 2 (ralph, 3rd pass) ---
+Goal: Re-verify all 28 posts, fix CRITICAL + MODERATE only (19 LOWs deferred)
+Found: 7 issues across 7 files (3 CRITICAL, 4 MODERATE)
+Fixed files:
+  1. china-arrival-checklist-2026.mdx: Chinese SIM not required for WeChat/Alipay (international numbers work)
+  2. korea-ultimate-digital-nomad-guide.mdx: local tax rate 10% of national PIT (not 1-2%), treaty count ~97
+  3. taiwan-gold-card-2026-changes.mdx: employee pension voluntary up to 6% (not 0.5-1%)
+  4. korea-f1d-workation-visa-2026.mdx: F-1-D is 1+1=2yr max (not 3yr), no direct F-1-D→F-2 conversion
+  5. japan-arrival-checklist-2026.mdx: DN visa holders cannot do ward registration (no Residence Card)
+  6. japan-digital-nomad-visa-vs-tourist-2026.mdx: ¥10M insurance is DN-visa-only (not "both")
+Verification: 4 stale-pattern greps = 0 matches
+
+--- Deferred (LOW / uncertain) ---
+- Korea F-1-D income ₩88.1M: conflicting sources (BrightTax vs DigitalNomadsKorea ₩100M). Left as-is pending official 2026 GNI publication.
+- WeChat Pay limits ¥6,500/¥65K: conflicting sources (app vs LTL Chengdu ¥6,000/¥60K). Left as-is (app-sourced).
+- Japan Seishun 18 Kippu price ¥12,050: format changes announced, needs manual verification.
+- Japan NTT East 25Gbps claim: needs manual verification against NTT press releases.
+- Korea TM-188/TM-200 form numbers: unverifiable, left as-is.
