@@ -1,6 +1,6 @@
 ---
 name: reddit-karma
-description: Two-phase Reddit karma farming — scout high-potential threads, then draft authentic replies using LocalNomad blog knowledge. Read-only, human-in-the-loop. Uses subagents for context efficiency.
+description: Two-phase Reddit karma farming — scout high-potential threads, then draft authentic replies using LocalNomad blog knowledge. Subagent architecture with JSON contracts, progressive context loading, and self-eval gates.
 ---
 
 # Reddit Karma
@@ -17,124 +17,218 @@ Scout Reddit for threads where LocalNomad blog knowledge is relevant, then draft
 ```
 Main (orchestrator)
 ├─ Phase 1: Scout Agent (Explore)
-│   index → discover → search → rank → top 10 table
-│   Returns: compact ranked table only
-├─ User selects threads (AskUserQuestion)
+│   index → discover → search → score → JSON file
+│   Returns: $TMPDIR/scout-results.json (top 10, structured)
+├─ Main reads JSON → AskUserQuestion with options
 └─ Phase 2: Draft Agents (executor, parallel)
-    ├─ Agent per thread: fetch + read MDX + draft + anti-AI check
+    ├─ Each receives: structured JSON input (permalink, slugs, subreddit)
+    ├─ Each does: progressive MDX loading → CoT analysis → draft → self-eval
     └─ Each returns: completed brief only
 ```
 
 Context stays lean: main context holds the ranked table + final briefs.
 Heavy lifting (blog MDX reads, comment parsing, checklist validation) happens inside subagents and is released when they complete.
 
+---
+
 ## Phase 1 — Scout (subagent)
 
 Spawn a single **Explore** agent with this prompt:
 
 ```
-Scout Reddit for LocalNomad karma opportunities.
+Scout Reddit for LocalNomad karma opportunities. Output structured JSON.
 
-1. Run `python3 scripts/reddit-scout.py index` to get the blog topic map.
+STEP 1 — BLOG INDEX
+Run: python3 scripts/reddit-scout.py index
+Parse the JSON output. Group posts by country.
 
-2. For each country (korea, japan, taiwan, china), pick 2-3 discovery queries
-   from the blog topics and from `localnomad-blog-plugin/skills/reddit-karma/references/subreddit-seed-topics.md`.
-   Run `python3 scripts/reddit-scout.py discover "<query>"` for each.
+STEP 2 — DISCOVER SUBREDDITS
+For each country (korea, japan, taiwan, china), pick 2-3 queries from:
+- Blog topics from Step 1
+- Seed queries from localnomad-blog-plugin/skills/reddit-karma/references/subreddit-seed-topics.md
 
-3. For each discovered subreddit (deduplicated, skip < 1000 subscribers),
-   run `python3 scripts/reddit-scout.py search <subreddit> "<query>" --time week --limit 10`.
-   Also try `python3 scripts/reddit-scout.py hot <subreddit> --listing new --limit 5` for fresh threads.
+Run: python3 scripts/reddit-scout.py discover "<query>"
+Collect all subreddits. Deduplicate. Skip any with < 1000 subscribers.
 
-4. Rank ALL results by:
-   - Engagement: high score + active comments = more eyeballs
-   - Recency + unanswered: < 48h old with few quality answers
-   - Topic match: how directly a blog post answers the question
+Check localnomad-blog-plugin/skills/reddit-karma/references/subreddit-profiles.json
+for cached profiles. For any NEW subreddit not in the cache, note it for profile creation.
 
-5. Return ONLY the top 10 opportunities as a markdown table:
-   # | Subreddit | Title | Score | Comments | Age | Matching Blog Post(s)
+STEP 3 — SEARCH THREADS
+For each viable subreddit, run:
+  python3 scripts/reddit-scout.py search <sub> "<query>" --time week --limit 10
+  python3 scripts/reddit-scout.py hot <sub> --listing new --limit 5
 
-   Also note any new subreddits worth tracking that aren't in seed-topics.md.
+STEP 4 — SCORE & RANK
+Score every thread using this formula:
+
+  SCORE = (engagement × 0.4) + (freshness × 0.3) + (match × 0.3)
+
+  engagement = min(score + num_comments, 100) / 100
+  freshness  = max(0, 1 - (age_hours / 168))    # 1.0 at 0h, 0.0 at 7d
+  match      = 1.0 if exact topic match
+               0.5 if related country
+               0.2 if general nomad topic
+
+STEP 5 — OUTPUT
+Write results to $TMPDIR/scout-results.json as:
+{
+  "generated": "ISO timestamp",
+  "opportunities": [
+    {
+      "rank": 1,
+      "score": 0.85,
+      "subreddit": "digitalnomad",
+      "title": "...",
+      "permalink": "/r/...",
+      "post_score": 45,
+      "num_comments": 12,
+      "age_hours": 6,
+      "matching_slugs": ["korea-f1d-workation-visa-2026"],
+      "why": "High engagement, unanswered visa question, exact topic match"
+    }
+  ],
+  "new_subreddits": [
+    {"name": "...", "subscribers": ..., "suggested_profile": "..."}
+  ]
+}
+
+Return the top 10 only. Also return the file path.
+
+Also update localnomad-blog-plugin/skills/reddit-karma/references/subreddit-profiles.json
+with profiles for any newly discovered subreddits (tone, avoid, best_for fields).
 ```
 
-When the scout agent returns, present the ranked table to the user.
+### Processing Scout Results
 
-### User Selection
+1. Read `$TMPDIR/scout-results.json`
+2. Present as a numbered table to the user
+3. Use `AskUserQuestion` (multiSelect: true) to let user pick threads
+4. For each selection, extract `permalink` and `matching_slugs` from the JSON
 
-Use `AskUserQuestion` to let the user pick which threads to draft for. Allow multi-select.
+---
 
 ## Phase 2 — Draft (parallel subagents)
 
 For each selected thread, spawn an **executor** agent. Launch all in parallel.
 
-Each agent gets this prompt (fill in `{permalink}`, `{blog_slugs}`, `{subreddit}`):
+Each agent gets this prompt (fill `{permalink}`, `{matching_slugs}`, `{subreddit}`, `{why}`):
 
 ```
-Draft a Reddit reply brief for a thread.
+Draft a Reddit reply brief for a karma opportunity.
 
-THREAD: Fetch context with:
-  python3 scripts/reddit-scout.py thread "{permalink}"
-Read the post body and top comments. Note what's already been said — don't repeat it.
+═══ INPUT ═══
+Thread permalink: {permalink}
+Subreddit: r/{subreddit}
+Matching blog slugs: {matching_slugs}
+Selection reason: {why}
 
-KNOWLEDGE: Read these blog posts for source material:
-  {for each slug: cat content/blog/{category}/{slug}.mdx}
-Extract specific facts, numbers, dates, and personal experiences that answer the thread.
+═══ STEP 1: FETCH THREAD ═══
+Run: python3 scripts/reddit-scout.py thread "{permalink}"
+Parse the JSON. Note:
+- Post title, body, author, score
+- Top 3 comments (author, score, summary) — these are your COMPETITORS
 
-EXISTING REPLIES: Note the top 3 comments in the thread. The draft must differentiate
-from these — add new information or a different angle, not a restatement.
+═══ STEP 2: PROGRESSIVE BLOG LOADING ═══
+For each matching slug:
+1. Read ONLY the frontmatter (first 20 lines) to confirm relevance
+2. Scan heading outline (grep for ^## lines) to find relevant sections
+3. Read ONLY the relevant sections using offset/limit — NOT the entire file
 
-VOICE: Follow `localnomad-blog-plugin/skills/reddit-karma/references/voice-guide-reddit.md` exactly.
-- First-person founder: "I've been living in Seoul for..." / "When I went through the F-1-D..."
+Extract specific facts, numbers, dates that answer the thread.
+
+═══ STEP 3: CHAIN-OF-THOUGHT ANALYSIS ═══
+Before writing anything, answer these 5 questions:
+
+1. THREAD ANALYSIS: What is the person actually asking? (1 sentence)
+2. GAP ANALYSIS: What have the top 3 existing replies NOT covered? (bullets)
+3. KNOWLEDGE MATCH: Which specific blog facts fill that gap? (with numbers)
+4. ANGLE: What unique perspective does a founder who lived this add?
+5. LENGTH DECISION: Based on thread energy, target word count? (short/medium/long)
+
+═══ STEP 4: DRAFT ═══
+Write the reply following localnomad-blog-plugin/skills/reddit-karma/references/voice-guide-reddit.md.
+
+Check subreddit profile in localnomad-blog-plugin/skills/reddit-karma/references/subreddit-profiles.json
+for tone guidance specific to r/{subreddit}.
+
+Key rules:
+- First-person founder voice
 - Specific numbers, dates, opinions. No hedging.
-- Match thread energy: short thread = short reply, deep discussion = longer.
-- No links by default. If a link fits naturally, note as optional placement hint.
+- Match thread energy from LENGTH DECISION
+- No links by default
+- If draft-examples.md exists in references/, match that quality level
 
-ANTI-AI CHECK: Before finalizing, verify against the Quick self-check in voice-guide-reddit.md:
-- Zero banned words (delve, crucial, landscape, leverage, navigate, comprehensive, robust, vibrant)
-- Zero hedge phrases, filler transitions, false enthusiasm
-- Sentence length varies (mix fragments and longer sentences)
-- At least 1 specific number/date and 1 opinion
-If ANY violation found, rewrite before outputting.
+═══ STEP 5: ANTI-AI SELF-CHECK ═══
+Verify against Quick self-check in voice-guide-reddit.md:
+- [ ] Zero banned words (delve, crucial, landscape, leverage, navigate, comprehensive, robust, vibrant)
+- [ ] Zero hedge phrases, filler transitions, false enthusiasm
+- [ ] Sentence length varies (fragments mixed with longer)
+- [ ] At least 1 specific number/date
+- [ ] At least 1 opinion or judgment
+If ANY violation: rewrite before proceeding.
 
-OUTPUT: Return a completed brief using this format:
+═══ STEP 6: SELF-EVAL GATE ═══
+Rate your draft 1-5 on each dimension:
+- Specificity (numbers, dates, places): ___
+- Voice authenticity (sounds human, not AI): ___
+- Thread relevance (actually answers the question): ___
+- Differentiation (new info vs existing replies): ___
+
+If ANY dimension < 3: rewrite that aspect. Show what changed.
+
+═══ OUTPUT ═══
+Return ONLY the completed brief:
 
 ## Thread
 - Subreddit: r/{subreddit}
-- Title: [from fetched thread]
-- URL: [from fetched thread]
-- Age/Score/Comments: [from fetched thread]
+- Title: [from thread]
+- URL: [from thread]
+- Age/Score/Comments: [from thread]
 
 ## Why This Thread
-[1-2 sentences on why this is a good opportunity]
+[from selection reason + your analysis]
 
 ## Source Blog Post(s)
 | Post | Key Facts Used |
 |------|---------------|
-| [slug] | [specific facts pulled] |
 
 ## Existing Replies (top 3)
-[Summarize what top commenters already said — 1 line each]
+- u/[author1] ([score]): [1-line summary]
+- u/[author2] ([score]): [1-line summary]
+- u/[author3] ([score]): [1-line summary]
+[Or: "Thread is under-answered — opportunity to be the definitive reply."]
+
+## Chain-of-Thought
+[Your 5-question analysis from Step 3 — compressed to 3-4 lines]
 
 ## Draft
-[The actual reply text. Linkless. Founder voice. Anti-AI compliant.]
+[The reply text. Linkless. Founder voice. Anti-AI compliant. Self-eval passed.]
+
+## Self-Eval
+Specificity: _/5 | Voice: _/5 | Relevance: _/5 | Differentiation: _/5
 
 ## Tone Notes
-[Subreddit-specific guidance]
+[Subreddit-specific guidance from profile]
 
 ## Link Hint (optional)
-[Natural placement or "No natural link placement. Value is in the answer itself."]
+[Natural placement or "No natural link placement."]
 ```
 
 ### Collecting Results
 
-When all draft agents complete, present each brief to the user in order. The main context only holds the final briefs — all the MDX content, thread comments, and checklist validation happened inside the agents.
+When all draft agents complete, present each brief to the user in order.
+The main context only holds the final briefs — all MDX content, thread comments, and analysis happened inside agents.
+
+---
 
 ## New Post Mode
 
-When drafting original subreddit posts (not replies), include in the agent prompt:
+When drafting original subreddit posts (not replies), add to the agent prompt:
 - Frame as sharing personal experience, never promotion
-- Title should match subreddit norms (agent should check top posts for style)
+- Title should match subreddit norms (agent should check top posts via `hot` subcommand)
 - Body follows same voice/anti-AI rules
 - Longer format OK (300-800 words) but must earn every paragraph
+- Self-eval adds a 5th dimension: "Title quality (would you click this?)"
 
 ## Degradation
 
@@ -169,7 +263,9 @@ If the scout agent returns zero results or errors:
 ## References
 
 - `references/subreddit-seed-topics.md` — baseline topic-to-query mapping
+- `references/subreddit-profiles.json` — cached subreddit tone profiles (auto-updated by scout)
 - `references/voice-guide-reddit.md` — Reddit-specific voice adaptation + anti-AI rules
 - `references/brief-template.md` — structured output format for draft briefs
+- `references/draft-examples.md` — gold-standard draft examples + anti-patterns (TODO: add examples)
 - `localnomad-blog-plugin/skills/quality-gate/references/anti-ai-checklist.md` — full banned words list (load only if draft fails quick self-check)
 - `localnomad-blog-plugin/skills/blog-voice/references/voice-examples.md` — LibaD voice DNA (load only for new post mode)
