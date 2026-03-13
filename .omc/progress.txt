@@ -27,9 +27,34 @@ Fixed files:
   6. japan-digital-nomad-visa-vs-tourist-2026.mdx: ¥10M insurance is DN-visa-only (not "both")
 Verification: 4 stale-pattern greps = 0 matches
 
---- Deferred (LOW / uncertain) ---
-- Korea F-1-D income ₩88.1M: conflicting sources (BrightTax vs DigitalNomadsKorea ₩100M). Left as-is pending official 2026 GNI publication.
-- WeChat Pay limits ¥6,500/¥65K: conflicting sources (app vs LTL Chengdu ¥6,000/¥60K). Left as-is (app-sourced).
-- Japan Seishun 18 Kippu price ¥12,050: format changes announced, needs manual verification.
-- Japan NTT East 25Gbps claim: needs manual verification against NTT press releases.
-- Korea TM-188/TM-200 form numbers: unverifiable, left as-is.
+--- Iteration 3 (deferred LOW items research + fix) ---
+Goal: Deep-research all 5 deferred clusters with web sources, then fix
+Research: 5 parallel docs-researcher agents with web search
+
+1. Korea F-1-D income ₩88.1M → ₩100M (~$70K)
+   - ROOT CAUSE: ₩88.1M was based on 2023 GNI. 2024 GNI = ₩49,955,000 → 2x = ~₩99.9M
+   - Threshold updates every April 1 (not January). From Apr 2026: ~₩104.8M
+   - Sources: Bank of Korea, Pureum Law Office, visa.go.kr
+   - Fixed: 27 instances across 6 files
+
+2. WeChat Pay ¥6,500/¥65K → ¥6,000/¥60K
+   - ROOT CAUSE: ¥6,500 appears in no authoritative source. Correct: ¥6,000/tx, ¥50K/mo, ¥60K/yr
+   - Sources: China Briefing, Tencent official, LTL Chengdu
+   - Fixed: 6 instances across 3 files
+
+3. Seishun 18 Kippu format update
+   - ROOT CAUSE: Oct 2024 overhaul — now 3-day (¥10,000) or 5-day (¥12,050), consecutive only, no group sharing
+   - Sources: japan-guide.com, JR press releases, tetsudo.com
+   - Fixed: 1 instance in japan-ultimate-digital-nomad-guide.mdx
+
+4. NTT East 25Gbps — NO FIX NEEDED
+   - Blog already correctly states "launching 25 Gbps fiber in Tokyo on March 31, 2026"
+   - Sources: NTT East press release Dec 23, 2025; current max is 10Gbps (FLET'S Hikari Cross)
+
+5. Korea TM-188/TM-200 → Form No. 17 / Form No. 34
+   - ROOT CAUSE: "TM" is Thailand's immigration prefix. Completely fabricated for Korea context
+   - Correct: Form No. 17 (사증발급신청서, overseas), Form No. 34 (통합신청서, in-country)
+   - Sources: visa.go.kr, Korean Law Portal, VISAS Korea
+   - Fixed: 4 instances in korea-f1d-workation-visa-2026.mdx
+
+--- All deferred items resolved ---
