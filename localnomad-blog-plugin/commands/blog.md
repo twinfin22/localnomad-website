@@ -1,18 +1,30 @@
 ---
 name: blog
-description: LocalNomad blog content pipeline — 7 stages from research to publish with 2 checkpoints. Produces SEO-optimized, anti-AI-verified, legally compliant blog posts in LibaD voice.
+description: LocalNomad blog content pipeline — 5 stages from research to publish with 2 checkpoints. Produces SEO-optimized, anti-AI-verified, legally compliant blog posts in LibaD voice.
 ---
 
 # /blog [topic?]
 
+## Batch Rewrite Mode
+
+When rewriting multiple posts (user specifies >1 post):
+1. Group posts into batches of 3-5 by category/country
+2. Run subagents in parallel per batch
+3. Present CP1 per batch, wait for approval
+4. After CP1 approval, write drafts in parallel
+5. Present CP2 per batch, wait for approval
+6. Cover images: present 3 candidates per post, full batch at once
+7. Download all selected images after full batch approval
+8. Track selected Unsplash photo IDs to prevent duplicates across batches
+
+---
+
 ## Before You Start
 
-Read these skill files in order:
-1. `skills/seo-engine/SKILL.md`
-2. `skills/blog-voice/SKILL.md` + `skills/blog-voice/references/voice-examples.md`
-3. `skills/quality-gate/SKILL.md`
-4. `skills/legal-bright-lines/SKILL.md`
-5. `skills/cover-image/SKILL.md`
+Skills are loaded at the stage where they're needed:
+- STAGE 2: `skills/seo-engine/SKILL.md`
+- STAGE 3: `skills/blog-voice/SKILL.md` + `skills/blog-voice/references/voice-examples.md`
+- STAGE 4: `skills/quality-gate/SKILL.md`, `skills/fact-checker/SKILL_fact-checker.md`, `skills/legal-bright-lines/SKILL.md`, `skills/cover-image/SKILL.md`
 
 ## Priority Order (Conflict Resolution R7)
 
@@ -25,14 +37,15 @@ SEO soft rules (first 100w, subheading) apply only when natural.
 ## Article Structure (R1)
 
 ```
-Hook (personal anecdote default)
-  → TL;DR (1-2 sentences, primary keyword if natural)
+TL;DR (1-2 sentences, primary keyword if natural)
   → Body Sections (3-5 H2, 200-300w each)
   → Actionable Steps (guides/tips only)
   → FAQ (2-3, People Also Ask based — SEO snippet opportunity)
   → Closing (75-100w, personal reflection)
   → CTA (1 primary, community tone)
 ```
+
+Hook (personal anecdote, surprising stat, etc.) is **optional** — use only when the topic naturally lends itself to one. Do not force a hook.
 
 Word count targets vary by category — see quality-gate Layer 5.
 
@@ -62,10 +75,11 @@ Word count targets vary by category — see quality-gate Layer 5.
 
 ---
 
-## STAGE 2: Keyword & SEO Strategy
+## STAGE 2: Keyword Strategy & Outline
 
 Use `skills/seo-engine/SKILL.md`.
 
+### Keyword Research
 1. Research and propose:
    - **Primary keyword** (1) — the main search term to rank for
    - **Secondary keywords** (2-3) — supporting terms
@@ -78,12 +92,6 @@ Use `skills/seo-engine/SKILL.md`.
 5. Identify **featured snippet opportunities** (what format would win: definition, list, table?)
 6. Propose **URL slug** (short, includes primary keyword, hyphenated)
 
-Output: keyword strategy brief.
-
----
-
-## STAGE 3: Brief & Outline
-
 ### Headlines
 Generate **3 headline options** (see `seo-engine/references/headline-formulas.md`):
 - Option A: SEO-optimized (keyword prominent, clear structure)
@@ -91,21 +99,11 @@ Generate **3 headline options** (see `seo-engine/references/headline-formulas.md
 - Option C: Hybrid (keyword + LibaD tone)
 - ALL must: contain primary keyword + ≤70 characters
 
-### Hook
-Select hook type from 6 formulas (default: **Story opening** for LibaD voice):
-1. Surprising statistic
-2. Contrarian statement
-3. Question
-4. Scenario
-5. Bold claim
-6. Story opening ← default
-
 ### Section Outline
 Build the full outline following R1 structure:
 
 ```
 BODY:
-  Hook: [type] — [1-sentence description]
   TL;DR: [1-2 sentences with primary keyword]
 
   H2: [Section 1 title]
@@ -130,16 +128,7 @@ OUTSIDE BODY:
 For each section: subheading, core point, ≥1 data/example, snippet opportunity, internal link.
 
 ### Word Count Estimation
-Estimate total word count based on outline and category target:
-
-| Category | Target Range |
-|----------|-------------|
-| guides | 1500-2500w |
-| comparisons | 1200-1800w |
-| tips | 800-1200w |
-| stories | 1000-1500w |
-| news/updates | 600-1000w |
-
+Word count targets: see quality-gate Layer 5.
 - If estimate exceeds category max by >50%: propose **series split**
 - Series split: design full outline, each part within category target, this `/blog` = Part 1 only
 
@@ -155,70 +144,22 @@ Estimate total word count based on outline and category target:
 ## ✅ CHECKPOINT 1
 
 Present to Gen:
-1. **3 headline options** → Gen picks one (or requests revision)
-2. **Hook type + opening 2-3 sentences draft** → Gen reviews tone and approach (is it too aggressive? too generic? does it match the target reader?)
-3. **Series split** → if applicable, confirm structure
-4. **Section outline** → review and adjust
-5. **Any external comparisons** → if the post references other programs/visas/products, list them with sources so Gen can verify before writing
-6. **Unsplash keywords** → approve or modify
+1. **Headline** — 3 options → Gen picks one (or requests revision)
+2. **Outline** — section structure + word count estimate (flag series split if applicable)
+3. **Unsplash keywords** — 2-3 broad combos for cover image search later
 
 **STOP and wait for Gen's response before proceeding.**
 
 ---
 
-## STAGE 4: Write Full Draft
+## STAGE 3: Write Full Draft
 
-### Writing Approach
+Follow `blog-voice/SKILL.md` for voice, readability, and structure.
+Follow `seo-engine/SKILL.md` for keyword placement and CTA rules.
 
-**SEO keyword placement:**
-- Hard rules (must): headline, meta description, slug
-- Soft rules (if natural): first 100 words, ≥1 H2 subheading
-- Stuffing ban: same keyword < 3 times
-- If placement feels forced → skip it, preserve voice
+### Blog-Specific Overrides
 
-**ESL-friendly readability (R2):**
-- Short sentences (one idea each)
-- Vocabulary can be high, but jargon gets parenthetical explanation on first use
-- Short paragraphs (2-4 sentences, max 5)
-- H2 subheading every 200-300 words
-- Abstract concepts → metaphor/analogy
-- Extended tangents → footnotes (LibaD side quest pattern)
-- Intellectual references (Gramsci, etymology, etc.) stay in body with inline context
-
-**LibaD Voice (primary creative driver):**
-- Sentence rhythm: short-long alternation, fragment-as-paragraph
-- Humor: self-deprecation, deadpan observations, (X)/(O) format
-- Metaphor: sensory-first, extended metaphors, physical world imagery
-- Footnotes: tangential deep-dives
-- Emotional register: earnest idealism + pragmatic skepticism
-- Personal → systemic pivot
-
-### TL;DR Box
-Every post must have a `<TldrBox>` immediately after the hook (before the first H2). 2-4 sentences max, plain language summary of the post's key takeaway. Use the `TldrBox` MDX component (brand teal background, white text).
-
-### Writing Rules
-- Short paragraphs (2-4 sentences)
-- ≥1 data point, example, or quote per section
-- Active voice, fragments OK
-- Front-load key information in each section
-- Every section answers "so what?" from reader's perspective
-- Lead with benefits, not features
-
-### List Rules (R3)
-- Numbered sections as mini-essays: OK
-- Bullet lists: only for comparisons, checklists, requirements
-- Each bullet: ≥1-2 sentences
-- NEVER: full-post listicle structure, one-liner bullet lists
-
-### Table Rules (R4)
-- Factual data comparisons (visa requirements, costs, timelines): OK
-- Opinion/analysis tables: avoid unless clearly beneficial
-- Voice > SEO: tables should not break LibaD tone
-
-### CTA Insertion (R8)
-- 1 primary CTA after Closing (community tone)
-- 1-2 inline CTAs in body (contextual links, natural wording)
-- Never in first paragraph
+**TldrBox**: `<TldrBox>` at top of post (before first H2). If optional hook exists, TldrBox comes after it. 2-4 sentences max, plain language summary of the post's key takeaway.
 
 ### Frontmatter (MDX)
 ```yaml
@@ -237,86 +178,46 @@ readingTime: [estimated minutes]
 ---
 ```
 
-### Image Alt Text
-For any images referenced in the post, include descriptive alt text with primary keyword where natural.
-
-### Word Count Target
-Category-dependent — see quality-gate Layer 5 for ranges.
 If series: each part within category target, mutual internal links between parts.
 
 ---
 
-## STAGE 5: Cover Image Search
+## STAGE 4: Quality Gate + Cover Image (parallel)
+
+After the draft is written, run **quality gate** and **cover image search** in parallel.
+
+### Track A: Quality Gate
+
+Run `quality-gate/SKILL.md`. Execution order:
+- **Layers 1-4 in parallel** (fact-check, SEO, anti-AI, legal — they are independent)
+- **Layer 5 after** (voice & readability — depends on anti-AI fixes)
+- Auto-fix: max 3 attempts per layer, then flag for Gen's manual review at CP2
+
+### Track B: Cover Image Search
 
 Use `skills/cover-image/SKILL.md`.
 
-### Search Rules
+#### Search Rules
 - **Keywords**: broad, 1-2 words max (e.g., "korea campus" not "korean university student studying AI in laboratory"). Avoid overly specific or compound phrases — Unsplash works best with simple terms.
 - **Sort**: `order_by=popular` parameter (always)
 - **People preferred**: prioritize results with people in the photo — Asian subjects preferred for relevance. Avoid empty landscapes, stock-style flat lays, or abstract graphics.
 - Use approved keywords from CHECKPOINT 1 as starting point, but simplify them.
 
-### Process
+#### Process
 1. Search Unsplash with 2-3 broad keyword combos
-2. Pull **5 candidates** (landscape orientation, people preferred, sorted by popular)
+2. Pull **3 candidates** (free only, landscape, color, people preferred, sorted by popular)
 3. For each candidate, present: Unsplash page URL + photographer name + short description of what's in the photo
 4. **DO NOT download yet** — present candidates at CHECKPOINT 2 for Gen to pick
 5. **NEVER read image files with the Read tool** — download and resize with bash only
 
 ---
 
-## STAGE 6: Quality Gate
-
-Use `skills/quality-gate/SKILL.md`. Run all 5 layers:
-
-### Layer 1: Fact-Check
-- Verify all factual claims against source tiers
-- Visa requirements → Tier 1 source required
-- Statistics → source attribution required
-- Freshness check: visa info ≤6 months
-
-### Layer 2: SEO Audit
-- Run 13-item on-page SEO checklist
-- Verify all mandatory keyword placements
-- Validate all links (internal + external)
-
-### Layer 3: Anti-AI Checklist
-- Scan for banned words → replace ALL instances
-- Scan for 13 banned structures → remove/rewrite (includes synonym cycling, em dash overuse, vague attributions, significance inflation, "challenges" template, promotional language, chatbot remnants)
-- Run 10 structural checks → all must pass
-- Result: PASS (zero issues) or FAIL (auto-fix → re-scan)
-
-### Layer 4: Legal Compliance
-- Scan for prohibited phrases
-- Check country-specific disclaimer requirements
-- Taiwan content: verify EN + 繁中 disclaimers
-- Tax content: verify 3-layer disclaimer
-
-### Layer 5: Voice & Readability
-- ESL-friendly readability checks (6 items)
-- Word count: category-dependent target
-- Jargon first-mention explanation
-- CTA community tone
-- Benefits-first section openings
-
-### Auto-Fix
-If any layer FAILs:
-1. Identify specific failures
-2. Auto-fix each one
-3. Re-run the failing layer
-4. **Max 3 attempts per layer.** If still failing → flag for Gen's manual review at CHECKPOINT 2
-
-### Quality Report
-Generate the full report (see quality-gate SKILL.md for format).
-
----
-
 ## ✅ CHECKPOINT 2
 
-Present to Gen:
+Present to Gen (quality gate + cover image results together):
 1. **Full draft** (formatted MDX)
 2. **Quality Report** (5-layer results)
-3. **Cover image 5개 후보** — 각각 Unsplash preview URL + 설명 제시. Gen이 번호로 선택.
+3. **Cover image 3개 후보** — 각각 Unsplash preview URL + 설명 제시. Gen이 번호로 선택.
 4. **Taiwan content flag**: if country = taiwan, explicitly note: "⚠️ Taiwan 콘텐츠입니다. EN + 繁中 disclaimer 및 법적 표현을 직접 검토해 주세요."
 5. **"최종본입니다. 발행해도 될까요?"**
 
@@ -337,7 +238,7 @@ If Gen gives other feedback:
 
 ---
 
-## STAGE 7: Publish
+## STAGE 5: Publish
 
 After Gen approves:
 
@@ -355,26 +256,3 @@ After Gen approves:
    - Topic cluster gaps identified in STAGE 1
    - Related keywords from STAGE 2
    - Internal linking opportunities
-
----
-
-## Quick Reference
-
-| Rule | Value |
-|------|-------|
-| Priority | Voice > SEO when they conflict |
-| Word count | Category-dependent (see quality-gate) |
-| Headline | Primary keyword + ≤70 chars (hard rule) |
-| Meta desc | Primary keyword + ≤160 chars (hard rule) |
-| First 100w keyword | Soft rule (if natural) |
-| Internal links | ≥3 |
-| External links | ≥1 |
-| Subheading freq | Every 200-300 words |
-| Paragraphs | 2-4 sentences typical |
-| Keyword stuffing | Same phrase < 3 times |
-| Banned AI words | 0 tolerance |
-| Banned structures | 13 patterns (0 tolerance) |
-| Structural checks | 10 checks (all must pass) |
-| Em dash limit | ≤3 per 500 words |
-| Synonym cycling | Max 2 alternatives per entity |
-| Cover image | 960×480 JPEG |

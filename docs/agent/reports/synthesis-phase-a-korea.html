@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase A v3: Reddit Korea 외국인 고통 분석 (카테고리 수정)</title>
+<style>
+  :root { --teal: #1B4965; --accent: #E8763A; --bg: #F8F9FA; --card: #FFFFFF; --border: #DEE2E6; --text: #212529; --muted: #6C757D; --green: #198754; --red: #DC3545; --yellow: #FFC107; --blue: #0D6EFD; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1 { color: var(--teal); font-size: 1.8rem; margin-bottom: 0.3rem; }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  .version-badge { display: inline-block; background: var(--accent); color: white; font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+  h2 { color: var(--teal); font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--teal); }
+  h3 { color: var(--teal); font-size: 1.1rem; margin: 1.5rem 0 0.75rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; }
+  .card-title { font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-box .number { font-size: 2rem; font-weight: 700; color: var(--teal); }
+  .stat-box .label { font-size: 0.85rem; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th { background: var(--teal); color: white; padding: 0.6rem 0.8rem; text-align: left; }
+  td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) { background: #F8F9FA; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; margin: 2px; }
+  .tag-pain { background: #FFE5E5; color: var(--red); }
+  .tag-wtp { background: #E8F5E9; color: var(--green); }
+  .tag-noise { background: #FFF3CD; color: #856404; }
+  .tag-insight { background: #E3F2FD; color: var(--blue); }
+  .tag-new { background: #E8763A; color: white; }
+  .insight { background: #FFF8E1; border: 1px solid var(--yellow); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .insight::before { content: "💡"; margin-right: 6px; }
+  .warning { background: #FFF0F0; border: 1px solid var(--red); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .warning::before { content: "⚠️"; margin-right: 6px; }
+  .erratum { background: #FFEBEE; border: 2px solid var(--red); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+  .methodology { background: #E8F4F8; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; font-size: 0.88rem; }
+  .gold-zone { background: linear-gradient(135deg, #FFF8E1, #FFE082); border: 2px solid #FFB300; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; }
+  .gold-zone h3 { color: #E65100; }
+  .heat-high { background: #FFCDD2; }
+  .heat-med { background: #FFE0B2; }
+  .heat-low { background: #E8F5E9; }
+  .comparison-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  @media (max-width: 768px) { .comparison-row { grid-template-columns: 1fr; } .stat-grid { grid-template-columns: 1fr 1fr; } }
+  .footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Phase A: Reddit Korea 외국인 고통 분석 <span class="version-badge">v3 카테고리 수정</span></h1>
+<p class="subtitle">2,406건 Reddit 데이터 · 18개 카테고리(수정) · TF-IDF + KMeans · 2026-03-11</p>
+
+<!-- ============================================================ -->
+<h2>0. v2 → v3 정오표</h2>
+<!-- ============================================================ -->
+
+<div class="erratum">
+<strong>v2의 핵심 오류:</strong> TF-IDF 스크립트가 실제 분류기 카테고리 이름과 다른 이름을 사용했습니다. <code>visa_immigration</code>(실제: <code>visa</code>), <code>social_isolation</code>(실제: <code>community</code>), <code>banking_finance</code>(실제: <code>banking</code>) 등 9개 카테고리가 이름 불일치로 0건 처리되었고, 이로 인해 미분류가 44.1%로 부풀려졌습니다.
+
+<table style="margin-top:0.5rem;">
+  <tr><th>항목</th><th>v2 (버그)</th><th>v3 (수정)</th></tr>
+  <tr><td>분류된 레코드</td><td>1,345 (55.9%)</td><td><strong>2,252 (93.6%)</strong></td></tr>
+  <tr><td>미분류</td><td>1,061 (44.1%)</td><td><strong>154 (6.4%)</strong></td></tr>
+  <tr><td>카테고리 수</td><td>7개만 매칭</td><td><strong>18개 전체 매칭</strong></td></tr>
+  <tr><td>visa</td><td>0건</td><td><strong>445건</strong></td></tr>
+  <tr><td>community</td><td>0건</td><td><strong>684건</strong></td></tr>
+  <tr><td>banking</td><td>0건</td><td><strong>131건</strong></td></tr>
+</table>
+
+<p style="margin-top:0.75rem; font-size:0.9rem;"><strong>v2의 "분류기 커버리지 갭이 심각하다"는 결론은 거짓이었습니다.</strong> 분류기는 정상 작동 중이었고, 분석 스크립트의 카테고리 이름 매핑 버그였습니다. v2의 권고사항 중 "미분류 44.1%", "visa_immigration 0건", "social_isolation/banking_finance 0건"은 모두 이 버그에서 비롯된 잘못된 진단입니다.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. 데이터 개요 (수정)</h2>
+<!-- ============================================================ -->
+
+<div class="stat-grid">
+  <div class="stat-box"><div class="number">2,406</div><div class="label">Reddit Korea 전체</div></div>
+  <div class="stat-box"><div class="number">2,252</div><div class="label">분류 완료 (93.6%)</div></div>
+  <div class="stat-box"><div class="number">154</div><div class="label">미분류 (6.4%)</div></div>
+  <div class="stat-box"><div class="number">18</div><div class="label">카테고리</div></div>
+  <div class="stat-box"><div class="number">51</div><div class="label">WTP 신호 (2.12%)</div></div>
+</div>
+
+<h3>전체 카테고리 분포 (볼륨 순)</h3>
+<table>
+  <tr><th>#</th><th>카테고리</th><th>건수</th><th>비율</th><th>WTP</th><th>WTP 밀도</th><th>그룹</th></tr>
+  <tr><td>1</td><td><strong>housing</strong></td><td>850</td><td>35.3%</td><td>18</td><td>2.12%</td><td><span class="tag tag-pain">정착번들</span></td></tr>
+  <tr><td>2</td><td><strong>community</strong> <span class="tag tag-new">v3 신규</span></td><td>684</td><td>28.4%</td><td>4</td><td>0.58%</td><td><span class="tag tag-insight">리텐션</span></td></tr>
+  <tr><td>3</td><td><strong>visa</strong> <span class="tag tag-new">v3 신규</span></td><td>445</td><td>18.5%</td><td>11</td><td>2.47%</td><td><span class="tag tag-pain">정착번들</span></td></tr>
+  <tr><td>4</td><td>healthcare</td><td>232</td><td>9.6%</td><td>9</td><td>3.88%</td><td><span class="tag tag-wtp">건보</span></td></tr>
+  <tr><td>5</td><td>discrimination</td><td>222</td><td>9.2%</td><td>1</td><td>0.45%</td><td><span class="tag tag-insight">리텐션</span></td></tr>
+  <tr><td>6</td><td><strong>cost_of_living</strong> <span class="tag tag-new">v3 신규</span></td><td>160</td><td>6.7%</td><td>7</td><td>4.38%</td><td><span class="tag tag-wtp">Gold Zone</span></td></tr>
+  <tr><td>7</td><td><strong>banking</strong> <span class="tag tag-new">v3 신규</span></td><td>131</td><td>5.4%</td><td>7</td><td>5.34%</td><td><span class="tag tag-pain">정착번들</span></td></tr>
+  <tr><td>8</td><td><strong>phone_connectivity</strong> <span class="tag tag-new">v3 신규</span></td><td>98</td><td>4.1%</td><td>6</td><td>6.12%</td><td><span class="tag tag-pain">정착번들</span></td></tr>
+  <tr><td>9</td><td>tax</td><td>97</td><td>4.0%</td><td>6</td><td>6.19%</td><td><span class="tag tag-wtp">세금</span></td></tr>
+  <tr><td>10</td><td>mental_health</td><td>94</td><td>3.9%</td><td>2</td><td>2.13%</td><td><span class="tag tag-insight">리텐션</span></td></tr>
+  <tr><td>11</td><td><strong>family</strong> <span class="tag tag-new">v3 신규</span></td><td>89</td><td>3.7%</td><td>2</td><td>2.25%</td><td><span class="tag tag-insight">리텐션</span></td></tr>
+  <tr><td>12</td><td><strong>bureaucracy</strong> <span class="tag tag-new">v3 신규</span></td><td>69</td><td>2.9%</td><td>1</td><td>1.45%</td><td><span class="tag tag-pain">정착번들</span></td></tr>
+  <tr><td>13</td><td>language_localization</td><td>48</td><td>2.0%</td><td>0</td><td>0%</td><td><span class="tag tag-noise">노이즈</span></td></tr>
+  <tr><td>14</td><td>work_culture</td><td>41</td><td>1.7%</td><td>1</td><td>2.44%</td><td><span class="tag tag-insight">리텐션</span></td></tr>
+  <tr><td>15</td><td>language_barrier</td><td>40</td><td>1.7%</td><td>0</td><td>0%</td><td>—</td></tr>
+  <tr><td>16</td><td>app_ux</td><td>33</td><td>1.4%</td><td>0</td><td>0%</td><td><span class="tag tag-noise">노이즈</span></td></tr>
+  <tr><td>17</td><td><strong>work_legal</strong> <span class="tag tag-new">v3 신규</span></td><td>28</td><td>1.2%</td><td>2</td><td>7.14%</td><td><span class="tag tag-wtp">Gold Zone</span></td></tr>
+  <tr><td>18</td><td>driving</td><td>2</td><td>0.1%</td><td>0</td><td>0%</td><td>—</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>2. WTP 밀도 순위 (수정)</h2>
+<!-- ============================================================ -->
+
+<div class="insight">
+<strong>v2에서 보이지 않았던 WTP 시그널이 드러났습니다.</strong> banking(5.34%), phone_connectivity(6.12%), work_legal(7.14%)이 모두 상위 WTP 밀도 카테고리입니다.
+</div>
+
+<table>
+  <tr><th>#</th><th>카테고리</th><th>WTP 건수</th><th>전체 건수</th><th>WTP 밀도</th><th>성격</th></tr>
+  <tr style="background:#FFF8E1;"><td>1</td><td><strong>work_legal</strong></td><td>2</td><td>28</td><td><strong>7.14%</strong></td><td>DN 원격근무 합법성 문의 — 샘플 작지만 밀도 최고</td></tr>
+  <tr style="background:#FFF8E1;"><td>2</td><td><strong>tax</strong></td><td>6</td><td>97</td><td><strong>6.19%</strong></td><td>소득세 신고, 연금 환급 — 안정적 수요</td></tr>
+  <tr style="background:#FFF8E1;"><td>3</td><td><strong>phone_connectivity</strong></td><td>6</td><td>98</td><td><strong>6.12%</strong></td><td>SIM, 본인인증, 전화번호 — 정착 첫날 문제</td></tr>
+  <tr style="background:#FFFDE7;"><td>4</td><td><strong>banking</strong></td><td>7</td><td>131</td><td><strong>5.34%</strong></td><td>계좌 개설, 송금, 외국인 은행 선택</td></tr>
+  <tr style="background:#FFFDE7;"><td>5</td><td><strong>cost_of_living</strong></td><td>7</td><td>160</td><td><strong>4.38%</strong></td><td>생활비, 의료비, 물가 비교</td></tr>
+  <tr><td>6</td><td>healthcare</td><td>9</td><td>232</td><td>3.88%</td><td>건보 가입, 의료비, 병원 이용</td></tr>
+  <tr><td>7</td><td>visa</td><td>11</td><td>445</td><td>2.47%</td><td>비자 종류, DN 비자, 체류 자격 변경</td></tr>
+  <tr><td>8</td><td>work_culture</td><td>1</td><td>41</td><td>2.44%</td><td>—</td></tr>
+  <tr><td>9</td><td>family</td><td>2</td><td>89</td><td>2.25%</td><td>—</td></tr>
+  <tr><td>10</td><td>mental_health</td><td>2</td><td>94</td><td>2.13%</td><td>—</td></tr>
+  <tr><td>—</td><td>housing</td><td>18</td><td>850</td><td>2.12%</td><td>절대건수 1위, 밀도 낮음</td></tr>
+  <tr><td>—</td><td>community</td><td>4</td><td>684</td><td>0.58%</td><td>—</td></tr>
+  <tr><td>—</td><td>discrimination</td><td>1</td><td>222</td><td>0.45%</td><td>—</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>3. 공동출현 분석 (수정 — 완전히 다른 그림)</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>#</th><th>카테고리 쌍</th><th>공동출현</th><th>해석</th></tr>
+  <tr class="heat-high"><td>1</td><td><strong>community + housing</strong></td><td><strong>145</strong></td><td>주거+커뮤니티가 동시 논의 — "어디 살아야 하나" + "거기 사는 사람 있나"</td></tr>
+  <tr class="heat-high"><td>2</td><td><strong>housing + visa</strong></td><td><strong>135</strong></td><td>비자 상태가 주거 옵션을 결정 — 정착번들 핵심 연결고리</td></tr>
+  <tr class="heat-high"><td>3</td><td><strong>community + visa</strong></td><td><strong>89</strong></td><td>비자 질문을 커뮤니티에서 해결 — 정보 허브 수요</td></tr>
+  <tr class="heat-med"><td>4</td><td>healthcare + housing</td><td>57</td><td>건보+주거 동시 부담</td></tr>
+  <tr class="heat-med"><td>5</td><td>discrimination + housing</td><td>50</td><td>주거 차별 경험</td></tr>
+  <tr class="heat-med"><td>6</td><td><strong>banking + visa</strong></td><td><strong>47</strong></td><td>비자→은행 연쇄: ARC 없이 계좌 불가</td></tr>
+  <tr class="heat-med"><td>7</td><td><strong>banking + housing</strong></td><td><strong>46</strong></td><td>전세/월세 → 은행 계좌 필요</td></tr>
+  <tr class="heat-low"><td>8</td><td>cost_of_living + housing</td><td>44</td><td>주거비가 생활비의 핵심</td></tr>
+  <tr class="heat-low"><td>9</td><td>housing + mental_health</td><td>35</td><td>주거 스트레스 → 정신건강</td></tr>
+  <tr class="heat-low"><td>10</td><td>family + housing</td><td>34</td><td>가족 동반 이주 + 주거</td></tr>
+</table>
+
+<div class="insight">
+<strong>v2에서 보이지 않았던 핵심 연결:</strong> community+housing(145건), housing+visa(135건), community+visa(89건)이 상위 3개입니다. v2에서는 이 세 쌍이 모두 0건이었습니다. 이것은 <strong>"비자→주거→커뮤니티"가 정착 여정의 3대 축</strong>이라는 것을 보여줍니다. banking+visa(47건)과 banking+housing(46건)까지 합치면, 정착번들의 연쇄 구조가 명확해집니다.
+</div>
+
+<!-- ============================================================ -->
+<h2>4. Engagement vs Volume 비교 (결정적 발견)</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>카테고리</th><th>Vol 순위</th><th>건수</th><th>Eng 순위</th><th>Delta</th><th>해석</th></tr>
+  <tr><td>housing</td><td>1</td><td>850</td><td>1</td><td>0</td><td>양쪽 1위 — 안정</td></tr>
+  <tr><td>community</td><td>2</td><td>684</td><td>2</td><td>0</td><td>양쪽 2위 — 안정</td></tr>
+  <tr><td>visa</td><td>3</td><td>445</td><td>3</td><td>0</td><td>양쪽 3위 — 안정</td></tr>
+  <tr style="background:#E3F2FD;"><td><strong>banking</strong></td><td><strong>7</strong></td><td>131</td><td><strong>13</strong></td><td><strong>+6</strong></td><td>조용히 반복되는 질문 — 바이럴 안 됨, 실용적 문제</td></tr>
+  <tr style="background:#E3F2FD;"><td><strong>phone_connectivity</strong></td><td><strong>8</strong></td><td>98</td><td><strong>16</strong></td><td><strong>+8</strong></td><td>가장 "조용한" 고통 — 인게이지먼트 최저, 건수 중상위</td></tr>
+  <tr><td>mental_health</td><td>10</td><td>94</td><td>7</td><td>−3</td><td>바이럴 포스트 많음 — 공감도 높음</td></tr>
+  <tr><td>family</td><td>11</td><td>89</td><td>8</td><td>−3</td><td>감정적 서사 → 높은 인게이지먼트</td></tr>
+  <tr><td>work_legal</td><td>17</td><td>28</td><td>11</td><td>−6</td><td>적은 건수지만 관심 높음</td></tr>
+</table>
+
+<div class="insight">
+<strong>"조용한 고통" 발견:</strong> banking(delta +6)과 phone_connectivity(delta +8)는 <strong>인게이지먼트는 매우 낮지만 건수는 꾸준히 높은</strong> 카테고리입니다. "SIM 카드 어디서 사나요?", "은행 계좌 어떻게 여나요?" 같은 질문은 토론을 유발하지 않고 답만 받으면 끝나는 <strong>실용적 정보 수요</strong>입니다. 이 패턴은 제품화에 가장 적합합니다 — 검색 가능한 가이드, 체크리스트, 비교표로 즉시 전환 가능하기 때문입니다.
+</div>
+
+<!-- ============================================================ -->
+<h2>5. 정착번들 서브테마 분석</h2>
+<!-- ============================================================ -->
+
+<p>정착번들(visa+banking+phone_connectivity+bureaucracy+housing 일부)의 카테고리별 TF-IDF 서브테마:</p>
+
+<h3>5.1 Visa (445건) — k=8, silhouette=0.061</h3>
+<table>
+  <tr><th>서브테마</th><th>크기</th><th>핵심 키워드</th><th>해석</th></tr>
+  <tr><td>1</td><td>171 (38.4%)</td><td>korea, people, just, like</td><td>일반 논의/노이즈 — visa 키워드가 넓게 잡은 것</td></tr>
+  <tr><td>2</td><td>90 (20.2%)</td><td>visa, job, tourist, months</td><td><strong>비자 종류/체류 기간 실무 질문</strong></td></tr>
+  <tr><td>3</td><td>47 (10.6%)</td><td>korean, japan, japanese, women</td><td>한일 비교/문화 — 노이즈</td></tr>
+  <tr><td>4</td><td>45 (10.1%)</td><td>card, sim, phone, arc</td><td><strong>ARC+SIM 연쇄 문제</strong></td></tr>
+  <tr><td>5</td><td>34 (7.6%)</td><td>nomad, digital, bank, visa</td><td><strong>DN 비자 + 은행 — 정착번들 코어</strong></td></tr>
+  <tr><td>6</td><td>23 (5.2%)</td><td>workers, questions, covid</td><td>노동자/COVID — 노이즈</td></tr>
+  <tr><td>7</td><td>19 (4.3%)</td><td>insurance, health insurance, visa</td><td><strong>비자-건보 연계</strong></td></tr>
+  <tr><td>8</td><td>16 (3.6%)</td><td>overseas, domestic, confirmed</td><td>COVID — 노이즈</td></tr>
+</table>
+
+<div class="insight">
+445건 중 actionable한 서브테마: #2(비자 실무 90건) + #4(ARC+SIM 45건) + #5(DN+은행 34건) + #7(비자-건보 19건) = <strong>188건 (42.2%)</strong>. 나머지 58%는 일반 논의/노이즈.
+</div>
+
+<h3>5.2 Banking (131건) — k=2, silhouette=0.016</h3>
+<table>
+  <tr><th>서브테마</th><th>크기</th><th>핵심 키워드</th><th>해석</th></tr>
+  <tr><td>1</td><td>104 (79.4%)</td><td>bank, account, bank account, korean</td><td><strong>은행 계좌 개설/관리</strong> — 외국인 은행 선택, ARC 필요, 서류</td></tr>
+  <tr><td>2</td><td>27 (20.6%)</td><td>card, credit, credit card</td><td><strong>카드/결제</strong> — 신용카드 발급, 체크카드 사용</td></tr>
+</table>
+
+<p>Banking은 매우 집중된 카테고리입니다. 79.4%가 "어떤 은행에서 외국인 계좌를 열 수 있는가"라는 단일 질문에 수렴합니다. WTP 밀도 5.34%로 높고, <strong>답이 명확한 만큼 가이드/비교표로 즉시 제품화 가능</strong>합니다.</p>
+
+<h3>5.3 Phone Connectivity (98건) — k=2, silhouette=0.027</h3>
+<table>
+  <tr><th>서브테마</th><th>크기</th><th>핵심 키워드</th><th>해석</th></tr>
+  <tr><td>1</td><td>54 (55.1%)</td><td>sim, card, sim card, use</td><td><strong>SIM 카드 구매/호환성</strong></td></tr>
+  <tr><td>2</td><td>44 (44.9%)</td><td>number, phone number, korean phone, account</td><td><strong>한국 전화번호 → 본인인증 → 서비스 접근</strong></td></tr>
+</table>
+
+<div class="insight">
+<strong>Phone connectivity의 진짜 고통:</strong> 서브테마 2가 핵심입니다. "한국 전화번호가 없으면 카카오, 은행, 배달앱, PC방, 나이 인증이 전부 불가능"이라는 연쇄 차단 문제. 이것은 SIM 카드 문제가 아니라 <strong>한국 디지털 인프라의 전화번호 의존 구조</strong>에 대한 불만입니다.
+</div>
+
+<h3>5.4 Bureaucracy (69건) — k=2, silhouette=0.016</h3>
+<table>
+  <tr><th>서브테마</th><th>크기</th><th>핵심 키워드</th><th>해석</th></tr>
+  <tr><td>1</td><td>53 (76.8%)</td><td>korea, visa, immigration, korean</td><td><strong>출입국 관리/행정 절차</strong></td></tr>
+  <tr><td>2</td><td>16 (23.2%)</td><td>documentary, make, drama, netflix</td><td>노이즈 — "bureaucracy" 키워드가 드라마/다큐 평을 잡음</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>6. 세금 & 건보 서브테마 분석</h2>
+<!-- ============================================================ -->
+
+<h3>6.1 Tax (97건) — k=8, silhouette=0.051</h3>
+<table>
+  <tr><th>서브테마</th><th>크기</th><th>핵심 키워드</th><th>해석</th><th>판정</th></tr>
+  <tr><td>1</td><td>39 (40.2%)</td><td>tax, income, year, taxes</td><td>소득세 신고 실무</td><td><span class="tag tag-wtp">핵심</span></td></tr>
+  <tr><td>2</td><td>12 (12.4%)</td><td>taxi, driver, stop</td><td>택시 — false positive</td><td><span class="tag tag-noise">노이즈</span></td></tr>
+  <tr><td>3</td><td>11 (11.3%)</td><td>foreigners, south korea, tax</td><td>외국인 세금 정책</td><td><span class="tag tag-wtp">핵심</span></td></tr>
+  <tr><td>4</td><td>10 (10.3%)</td><td>000, company, make</td><td>급여/금액 논의</td><td><span class="tag tag-insight">관련</span></td></tr>
+  <tr><td>5</td><td>9 (9.3%)</td><td>space, visa, youtube</td><td>혼합 토픽</td><td><span class="tag tag-noise">노이즈</span></td></tr>
+  <tr><td>6</td><td>7 (7.2%)</td><td>pension, korea tax, fund</td><td>국민연금 환급</td><td><span class="tag tag-wtp">핵심</span></td></tr>
+  <tr><td>7</td><td>5 (5.2%)</td><td>state, hyundai, locals</td><td>노이즈</td><td><span class="tag tag-noise">노이즈</span></td></tr>
+  <tr><td>8</td><td>4 (4.1%)</td><td>dn, visas, travel</td><td>DN 세금 문제</td><td><span class="tag tag-wtp">핵심</span></td></tr>
+</table>
+
+<p>핵심 서브테마: #1(소득세 39건) + #3(외국인 정책 11건) + #6(연금 7건) + #8(DN 세금 4건) = <strong>61건 (62.9%)</strong>. 노이즈 제거 후 실제 세금 관련 레코드는 ~61건이며, 이 중 WTP 밀도가 6.19%로 여전히 최상위입니다.</p>
+
+<h3>6.2 Healthcare → 건강보험 (232건 중 70건)</h3>
+
+<p>Healthcare 232건은 2개 서브테마로 분리됩니다:</p>
+<table>
+  <tr><th>서브테마</th><th>크기</th><th>핵심 키워드</th><th>해석</th></tr>
+  <tr><td>1</td><td>162 (69.8%)</td><td>hospital, doctor, medical, clinic</td><td>의료 서비스 경험</td></tr>
+  <tr style="background:#FFF8E1;"><td>2</td><td><strong>70 (30.2%)</strong></td><td>insurance, health insurance, national, foreign</td><td><strong>건강보험 전용 — 건보 내비게이션 대상</strong></td></tr>
+</table>
+
+<p>전체 클러스터 #7(insurance, 72건)과 거의 일치합니다. 외국인 건보 가입, 보험료, 비자 연계, 커버리지 불만이 핵심입니다.</p>
+
+<!-- ============================================================ -->
+<h2>7. Gold Zone 재평가 (수정)</h2>
+<!-- ============================================================ -->
+
+<div class="gold-zone">
+<h3>🏆 Gold Zone v3: 수정된 데이터 기반</h3>
+
+<table>
+  <tr><th>영역</th><th>관련 카테고리</th><th>합계 건수</th><th>WTP 밀도</th><th>Eng delta</th><th>우선순위</th></tr>
+  <tr style="background:#FFF8E1;">
+    <td><strong>정착 인프라 번들</strong></td>
+    <td>visa(445) + banking(131) + phone(98) + bureaucracy(69) + housing 일부(~205)</td>
+    <td><strong>~948</strong></td>
+    <td>2.5~6.1%</td>
+    <td>banking +6, phone +8</td>
+    <td><span class="tag tag-wtp">★★★</span></td>
+  </tr>
+  <tr style="background:#FFF8E1;">
+    <td><strong>세금 신고 가이드</strong></td>
+    <td>tax(97) — 노이즈 제거 후 ~61건</td>
+    <td><strong>61</strong></td>
+    <td>6.19%</td>
+    <td>0</td>
+    <td><span class="tag tag-wtp">★★★</span></td>
+  </tr>
+  <tr style="background:#FFFDE7;">
+    <td><strong>건강보험 내비게이션</strong></td>
+    <td>healthcare 서브테마2(70) + 전체 클러스터 #7(72)</td>
+    <td><strong>~70</strong></td>
+    <td>3.88%</td>
+    <td>+1</td>
+    <td><span class="tag tag-wtp">★★☆</span></td>
+  </tr>
+</table>
+
+<h3>v2 → v3 Gold Zone 변경점</h3>
+<ol style="font-size:0.92rem; padding-left:1.2rem; line-height:1.8;">
+  <li><strong>정착번들 규모가 폭증:</strong> v2에서는 ~310건으로 추정했으나, v3에서는 <strong>~948건(39.4%)</strong>으로 전체의 거의 4할을 차지합니다. visa(445건)과 banking(131건)이 완전히 누락되었던 것이 원인입니다.</li>
+  <li><strong>"조용한 고통" 패턴 발견:</strong> banking(Eng delta +6)과 phone_connectivity(Eng delta +8)는 인게이지먼트는 낮지만 건수는 꾸준합니다. 이것은 <strong>"답만 있으면 바로 해결되는 실용적 문제"</strong>이며, 가이드/체크리스트/비교표로 직접 전환 가능한 제품화 최적 타겟입니다.</li>
+  <li><strong>세금과 건보는 규모 변화 없음:</strong> 이 두 영역은 v2에서도 올바른 카테고리 이름이었으므로 수정 영향 없습니다.</li>
+</ol>
+</div>
+
+<!-- ============================================================ -->
+<h2>8. 분류기 개선 권고 (수정)</h2>
+<!-- ============================================================ -->
+
+<div class="card">
+<div class="card-title">실제로 수정이 필요한 문제 (v2 허위 진단 제거 후)</div>
+<table>
+  <tr><th>문제</th><th>영향</th><th>수정 방향</th><th>우선순위</th></tr>
+  <tr>
+    <td>Housing 분류기 과도한 범위</td>
+    <td>850건 중 서브테마 분석 결과 ~73% 노이즈</td>
+    <td>Housing 서브테마 재검증 필요 — community/visa와의 중복 태깅이 원인일 수 있음. housing+community 145건, housing+visa 135건의 중복 구조 분석 선행</td>
+    <td><span class="tag tag-pain">재검증</span></td>
+  </tr>
+  <tr>
+    <td>"tax" → "taxi" false positive</td>
+    <td>12건 (12.4%) 오분류</td>
+    <td>\btax\b word boundary + "taxi" 제외</td>
+    <td><span class="tag tag-noise">중간</span></td>
+  </tr>
+  <tr>
+    <td>COVID 메가쓰레드</td>
+    <td>community 서브테마 내 157건, visa 서브테마 내 ~39건</td>
+    <td>날짜 필터 또는 "confirmed cases" 키워드 제외</td>
+    <td><span class="tag tag-noise">낮음</span></td>
+  </tr>
+  <tr>
+    <td>bureaucracy "documentary" 노이즈</td>
+    <td>16건 (23.2%) 오분류</td>
+    <td>"documentary", "netflix", "drama" 제외 규칙</td>
+    <td><span class="tag tag-noise">낮음</span></td>
+  </tr>
+  <tr>
+    <td>r/korea 한국인 사회평론</td>
+    <td>housing/community/visa 상위 서브테마 다수가 문화 논쟁</td>
+    <td>r/Living_in_Korea 가중치 또는 외국인 관련 키워드 필터</td>
+    <td><span class="tag tag-insight">중간</span></td>
+  </tr>
+</table>
+
+<p style="margin-top:1rem; font-size:0.9rem;"><strong>v2에서 제거된 허위 진단:</strong> "미분류 44.1% 심각" (실제 6.4%), "visa_immigration 0건" (이름 불일치), "social_isolation/banking_finance 0건" (이름 불일치), "NLP 분류기 업그레이드 필요" (현재 분류기 93.6% 커버리지로 충분).</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>9. 핵심 결론</h2>
+<!-- ============================================================ -->
+
+<div class="card" style="border-left: 4px solid var(--teal);">
+<div class="card-title">v3 최종 결론</div>
+<ol style="font-size:0.92rem; padding-left:1.2rem; line-height:1.8;">
+  <li><strong>정착번들이 Reddit Korea의 ~40%를 차지합니다.</strong> visa(445)+banking(131)+phone(98)+bureaucracy(69)+housing 일부(~205) = ~948건. 이것은 "비자 대시보드" 단독이 아닌 "정착 인프라 전체"가 제품 범위가 되어야 함을 의미합니다.</li>
+  <li><strong>community(684건, 28.4%)가 2위입니다.</strong> v2에서 완전히 보이지 않았던 카테고리. 외로움, 친구 찾기, 경험 공유가 핵심이며 WTP는 낮지만(0.58%) <strong>사용자 리텐션의 핵심 드라이버</strong>입니다.</li>
+  <li><strong>"조용한 고통"(banking, phone)이 제품화 최적 타겟입니다.</strong> 인게이지먼트 delta +6~+8은 "답만 있으면 해결되는 반복 질문" 패턴이며, 가이드/비교표로 즉시 전환 가능합니다.</li>
+  <li><strong>WTP 밀도 상위 5개: work_legal(7.14%) > tax(6.19%) > phone(6.12%) > banking(5.34%) > cost_of_living(4.38%).</strong> 이 5개가 수익 모델의 우선순위입니다.</li>
+  <li><strong>분류기는 잘 작동하고 있습니다.</strong> 93.6% 커버리지. housing의 노이즈 비율이 높은 것은 분류기 문제라기보다 멀티레이블링에서의 "catch-all" 성격 때문일 수 있으며, housing+community(145건), housing+visa(135건) 등의 중복 구조를 분석하면 해결될 수 있습니다.</li>
+</ol>
+</div>
+
+<div class="footer">
+  Phase A v3 합성 리포트 · Reddit Korea 2,406건 · 18개 카테고리(수정) · TF-IDF + KMeans<br>
+  LocalNomad Research · 2026-03-11 · v2 카테고리 이름 불일치 버그 수정
+</div>
+
+</div>
+</body>
+</html>

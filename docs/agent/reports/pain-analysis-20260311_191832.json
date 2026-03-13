@@ -1,0 +1,2694 @@
+{
+  "generated_at": "2026-03-11T19:18:32.519808",
+  "total_records": 15997,
+  "source_counts": {
+    "appstore": 6147,
+    "reddit": 5808,
+    "youtube": 4042
+  },
+  "crosstab": {
+    "sources": [
+      "appstore",
+      "reddit",
+      "youtube"
+    ],
+    "ranked": [
+      [
+        "housing",
+        4250
+      ],
+      [
+        "visa",
+        2401
+      ],
+      [
+        "community",
+        2397
+      ],
+      [
+        "discrimination",
+        955
+      ],
+      [
+        "cost_of_living",
+        793
+      ],
+      [
+        "language",
+        792
+      ],
+      [
+        "tax",
+        697
+      ],
+      [
+        "banking",
+        660
+      ],
+      [
+        "healthcare",
+        564
+      ],
+      [
+        "mental_health",
+        469
+      ],
+      [
+        "bureaucracy",
+        414
+      ],
+      [
+        "family",
+        414
+      ],
+      [
+        "phone_connectivity",
+        309
+      ],
+      [
+        "work_culture",
+        253
+      ],
+      [
+        "work_legal",
+        208
+      ],
+      [
+        "driving",
+        18
+      ]
+    ],
+    "crosstab": {
+      "housing": {
+        "appstore": 407,
+        "reddit": 2113,
+        "youtube": 1730
+      },
+      "visa": {
+        "appstore": 268,
+        "reddit": 1625,
+        "youtube": 508
+      },
+      "community": {
+        "appstore": 279,
+        "reddit": 1222,
+        "youtube": 896
+      },
+      "discrimination": {
+        "appstore": 68,
+        "reddit": 493,
+        "youtube": 394
+      },
+      "cost_of_living": {
+        "appstore": 171,
+        "reddit": 354,
+        "youtube": 268
+      },
+      "language": {
+        "appstore": 552,
+        "reddit": 175,
+        "youtube": 65
+      },
+      "tax": {
+        "appstore": 19,
+        "reddit": 594,
+        "youtube": 84
+      },
+      "banking": {
+        "appstore": 120,
+        "reddit": 495,
+        "youtube": 45
+      },
+      "healthcare": {
+        "appstore": 4,
+        "reddit": 384,
+        "youtube": 176
+      },
+      "mental_health": {
+        "appstore": 9,
+        "reddit": 195,
+        "youtube": 265
+      },
+      "bureaucracy": {
+        "appstore": 6,
+        "reddit": 328,
+        "youtube": 80
+      },
+      "family": {
+        "reddit": 251,
+        "youtube": 163
+      },
+      "phone_connectivity": {
+        "appstore": 100,
+        "reddit": 199,
+        "youtube": 10
+      },
+      "work_culture": {
+        "appstore": 2,
+        "reddit": 107,
+        "youtube": 144
+      },
+      "work_legal": {
+        "reddit": 187,
+        "youtube": 21
+      },
+      "driving": {
+        "appstore": 2,
+        "reddit": 16
+      }
+    }
+  },
+  "wtp": {
+    "total_wtp": 225,
+    "wtp_rate": 1.406513721322748,
+    "by_category": {
+      "visa": 61,
+      "housing": 59,
+      "tax": 32,
+      "banking": 24,
+      "cost_of_living": 23,
+      "community": 17,
+      "healthcare": 16,
+      "bureaucracy": 10,
+      "phone_connectivity": 9,
+      "language": 7,
+      "mental_health": 7,
+      "family": 5,
+      "discrimination": 4,
+      "work_culture": 3,
+      "work_legal": 3
+    },
+    "by_source": {
+      "appstore": 18,
+      "reddit": 154,
+      "youtube": 53
+    },
+    "by_tier": {
+      "passive": 36,
+      "active_buyer": 110,
+      "seeker": 91
+    }
+  },
+  "wtp_top_quotes": [
+    {
+      "source": "youtube",
+      "text": "I’m Korean, and I’m currently living in Australia. The moment I arrived, I felt it.\n“This is the real world.”\nFor the first time, I saw what it means for people to actually live — not just exist.\n\nI h",
+      "categories": [
+        "housing",
+        "mental_health"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 16759
+    },
+    {
+      "source": "reddit",
+      "text": "My experience with the same surgery in America Vs Korea Felt like writing this to put folks at ease with the Korean medical system.\n\n**Murica**\n\nIn America, I screwed up my knee really bad. Tore a bun",
+      "categories": [
+        "healthcare",
+        "mental_health"
+      ],
+      "wtp_signals": [
+        "I paid"
+      ],
+      "engagement": 2179
+    },
+    {
+      "source": "youtube",
+      "text": "I’ve been two times in Seoul. Last time I spent almost 3 months there. Both times I had to sit in priority seats because elder people where telling me to sit down, even when I said I was fine. But the",
+      "categories": [],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 1784
+    },
+    {
+      "source": "youtube",
+      "text": "I spent an ENTIRE DAY reading about North Korea. Then, this video resumed in 26 minutes EVERY information I had been able to put my hands on for hours and hours. Amazing job.",
+      "categories": [],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 1244
+    },
+    {
+      "source": "reddit",
+      "text": "I got led into Shincheonji's trap and I've never felt so depressed before It happened yesterday. I am a Korean exchange student who came back to korea temporarily(for military reasons). Since I'll hav",
+      "categories": [
+        "visa",
+        "community",
+        "mental_health"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 1199
+    },
+    {
+      "source": "reddit",
+      "text": "Challenging Mexico's two laptop rule  I was unfortunately charged for having two laptops on my way into Mexico, which from reading old threads, seems to be random. They based the tax on the price of m",
+      "categories": [
+        "visa",
+        "tax",
+        "banking",
+        "cost_of_living"
+      ],
+      "wtp_signals": [
+        "I paid",
+        "I paid"
+      ],
+      "engagement": 922
+    },
+    {
+      "source": "reddit",
+      "text": "My saga selling and buying property in Japan, getting 0-1% fees, and the lessons I learned along the way *\\[edit: spelling/fixing errors, added some 'lessons' at the end\\]*\n\n**Preface**\n\nHello all,\n\nI",
+      "categories": [
+        "housing"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 594
+    },
+    {
+      "source": "youtube",
+      "text": "I spent my 11 years of life in South Korea as a doctor \nAnd one thing i finally came to realise is that \nIndia is the best❤",
+      "categories": [
+        "healthcare"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 330
+    },
+    {
+      "source": "reddit",
+      "text": "Anyone else get depressed when coming home after digital nomading? Hi everyone. Is what I'm feeling a common thing after traveling?\n\nI'm an American that quit his tech job a year ago to travel the wor",
+      "categories": [
+        "cost_of_living",
+        "mental_health"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 303
+    },
+    {
+      "source": "reddit",
+      "text": "How would you rank the Southeast Asian countries you visited/lived in? Southeast Asia, where I have been to seven countries, is one of my favorite regions of the world to travel in. What countries the",
+      "categories": [],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 253
+    },
+    {
+      "source": "reddit",
+      "text": "A lawyer cost me the love of my life I moved to Valencia, Spain in my mid-20s on a non-lucrative residence visa. I hired an immigration lawyer because I didn’t want to mess anything up and figured hav",
+      "categories": [
+        "visa",
+        "bureaucracy"
+      ],
+      "wtp_signals": [
+        "I hired"
+      ],
+      "engagement": 251
+    },
+    {
+      "source": "reddit",
+      "text": "Am I dumb or is it ACTUALLY insanely difficult to order things on websites in Korea? (As a foreigner) I don’t know whether to laugh or cry trying to set up accounts on sites such as coupang &amp; emar",
+      "categories": [
+        "visa",
+        "banking"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 240
+    },
+    {
+      "source": "reddit",
+      "text": "Scam alerts for TEFL Teachers in Korea, China, Japan, and Taiwan. There are some clever fraudsters that want your money and identity. Know who they are BEFORE you send them your resumes. Roughly 60% o",
+      "categories": [],
+      "wtp_signals": [
+        "would pay"
+      ],
+      "engagement": 240
+    },
+    {
+      "source": "reddit",
+      "text": "Divorce by agreement -協議離婚 - kyogi rikon, do I need a lawyer? Hello,\n\nI (41M - foreigner) am done with my verbal abusive partner (43F - japanese).  \nEveryday I'm walking on eggshells, waiting for the ",
+      "categories": [
+        "visa",
+        "family"
+      ],
+      "wtp_signals": [
+        "I paid"
+      ],
+      "engagement": 189
+    },
+    {
+      "source": "reddit",
+      "text": "Tax Office told me I don’t owe any taxes on salary from foreign company earned while in Taiwan. I am in Taiwan on a Gold Card and stayed here 152 days last year. The law and Gold Card website seem ver",
+      "categories": [
+        "visa",
+        "tax",
+        "housing"
+      ],
+      "wtp_signals": [
+        "I paid"
+      ],
+      "engagement": 185
+    },
+    {
+      "source": "reddit",
+      "text": "super burned out on being a nomad but hate the weather/politics of home Hey all,\n\nI've been working remotely for almost 7 years, and I'm just super burnt out on being a nomad. Unlike many I guess, I d",
+      "categories": [],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 172
+    },
+    {
+      "source": "youtube",
+      "text": "Very well said. I spent a couple of years in Korea in the early 2000's and was absolutely blown away by how much the country had progressed in such a short time. \n\nIt took an entire population working",
+      "categories": [
+        "mental_health"
+      ],
+      "wtp_signals": [
+        "I spent"
+      ],
+      "engagement": 153
+    },
+    {
+      "source": "reddit",
+      "text": "cockroaches in my appartment I am in Taipei with a Taiwan resident visa to study Chinese for one year at the CLD at NTU. For this, I signed an 11-month rental contract for an apartment starting on Aug",
+      "categories": [
+        "visa",
+        "housing"
+      ],
+      "wtp_signals": [
+        "I paid"
+      ],
+      "engagement": 140
+    },
+    {
+      "source": "reddit",
+      "text": "I have looked into Italy’s taxes (for digital nomads) — might help if you're considering it I’m working on a free resource for people looking to relocate — a tool that helps you project your quality o",
+      "categories": [
+        "visa",
+        "tax",
+        "housing",
+        "cost_of_living"
+      ],
+      "wtp_signals": [
+        "would pay"
+      ],
+      "engagement": 138
+    },
+    {
+      "source": "appstore",
+      "text": "Love the app, just wish there was an English version. I know its a Korean company, although a lot of foreigners use this app. I manly use it for easier access to my Shinhan bank info. Easier to use an",
+      "categories": [
+        "banking",
+        "housing",
+        "language"
+      ],
+      "wtp_signals": [
+        "wish there was"
+      ],
+      "engagement": 133
+    }
+  ],
+  "segments": {
+    "total_with_hints": 1359,
+    "hint_rate": 8.495342876789397,
+    "dimensions": {
+      "visa_type": {
+        "DIGITAL NOMAD": 316,
+        "GOLD CARD": 45,
+        "BUSINESS MANAGER": 12,
+        "APRC": 11,
+        "F-4": 10,
+        "E-7": 7,
+        "E-2": 5,
+        "D-2": 5,
+        "WORK PERMIT": 5,
+        "EMPLOYMENT GOLD": 5,
+        "F-6": 4,
+        "ENGINEER/SPECIALIST": 4,
+        "D-4": 4,
+        "F-2": 3,
+        "E-6": 2
+      },
+      "nationality": {
+        "korean": 98,
+        "american": 50,
+        "canadian": 13,
+        "japanese": 11,
+        "indian": 11,
+        "taiwanese": 6,
+        "british": 6,
+        "chinese": 5,
+        "french": 5,
+        "european": 4,
+        "australian": 4,
+        "german": 3,
+        "indonesian": 2,
+        "asian": 2,
+        "singaporean": 1
+      },
+      "tenure": {
+        "long": 87,
+        "short": 68,
+        "mid": 33
+      },
+      "role": {
+        "digital nomad": 306,
+        "student": 241,
+        "teacher": 72,
+        "engineer": 66,
+        "nomad": 56,
+        "english teacher": 31,
+        "translator": 30,
+        "developer": 24,
+        "freelancer": 23,
+        "professor": 17,
+        "designer": 16,
+        "researcher": 6,
+        "entrepreneur": 6,
+        "business owner": 5,
+        "journalist": 5
+      }
+    },
+    "visa_pain_matrix": {
+      "F-4": {
+        "visa": 8,
+        "banking": 5,
+        "housing": 4,
+        "community": 2,
+        "family": 2
+      },
+      "E-6": {
+        "visa": 2,
+        "community": 1,
+        "housing": 1
+      },
+      "F-1": {
+        "visa": 1,
+        "housing": 1,
+        "healthcare": 1,
+        "language": 1,
+        "community": 1
+      },
+      "E-2": {
+        "visa": 5,
+        "housing": 2,
+        "community": 1,
+        "banking": 1,
+        "cost_of_living": 1
+      },
+      "DIGITAL NOMAD": {
+        "visa": 195,
+        "housing": 105,
+        "tax": 70,
+        "community": 37,
+        "cost_of_living": 33
+      },
+      "H-1": {
+        "visa": 2,
+        "bureaucracy": 1
+      },
+      "F-6": {
+        "visa": 4,
+        "family": 1,
+        "banking": 1,
+        "healthcare": 1,
+        "community": 1
+      },
+      "TECHNICAL INTERN": {
+        "housing": 2,
+        "visa": 1
+      },
+      "ENGINEER/SPECIALIST": {
+        "visa": 3,
+        "tax": 1,
+        "bureaucracy": 1,
+        "housing": 1,
+        "work_legal": 1
+      },
+      "D-2": {
+        "visa": 5,
+        "community": 2,
+        "banking": 1,
+        "healthcare": 1,
+        "bureaucracy": 1
+      },
+      "F-2": {
+        "visa": 3,
+        "housing": 1,
+        "healthcare": 1
+      },
+      "D-8": {
+        "visa": 1,
+        "banking": 1,
+        "housing": 1
+      },
+      "D-4": {
+        "visa": 4,
+        "bureaucracy": 1,
+        "housing": 1,
+        "phone_connectivity": 1
+      },
+      "E-7": {
+        "visa": 7,
+        "housing": 4,
+        "bureaucracy": 2,
+        "language": 2,
+        "driving": 1
+      },
+      "WORK PERMIT": {
+        "visa": 5,
+        "work_legal": 5,
+        "housing": 2,
+        "language": 1,
+        "bureaucracy": 1
+      },
+      "BUSINESS MANAGER": {
+        "visa": 12,
+        "housing": 7,
+        "banking": 5,
+        "community": 2,
+        "bureaucracy": 2
+      },
+      "SSW1": {
+        "visa": 1,
+        "banking": 1
+      },
+      "SPECIFIED SKILLED WORKER": {
+        "visa": 1,
+        "housing": 1
+      },
+      "APRC": {
+        "visa": 7,
+        "housing": 4,
+        "banking": 4,
+        "tax": 2,
+        "work_culture": 1
+      },
+      "GOLD CARD": {
+        "visa": 45,
+        "housing": 10,
+        "tax": 7,
+        "bureaucracy": 6,
+        "banking": 6
+      },
+      "EMPLOYMENT GOLD": {
+        "visa": 5,
+        "tax": 1,
+        "bureaucracy": 1
+      }
+    }
+  },
+  "trends": {
+    "monthly": {
+      "2010-06": {
+        "housing": 2,
+        "language": 1
+      },
+      "2010-08": {
+        "language": 2
+      },
+      "2010-09": {
+        "housing": 3,
+        "language": 2,
+        "community": 1
+      },
+      "2010-10": {
+        "housing": 1,
+        "language": 1
+      },
+      "2010-11": {
+        "language": 2
+      },
+      "2010-12": {
+        "visa": 1,
+        "language": 4,
+        "housing": 1,
+        "tax": 1
+      },
+      "2011-01": {
+        "language": 1
+      },
+      "2011-02": {
+        "language": 3,
+        "housing": 1,
+        "visa": 1,
+        "discrimination": 1
+      },
+      "2011-03": {
+        "language": 4,
+        "housing": 1
+      },
+      "2011-04": {
+        "language": 1
+      },
+      "2011-06": {
+        "language": 1
+      },
+      "2011-11": {
+        "housing": 1
+      },
+      "2012-02": {
+        "tax": 1
+      },
+      "2012-03": {
+        "language": 1,
+        "tax": 1,
+        "cost_of_living": 1
+      },
+      "2012-05": {
+        "housing": 1,
+        "language": 1
+      },
+      "2012-06": {
+        "housing": 1,
+        "community": 1,
+        "banking": 1
+      },
+      "2012-07": {
+        "language": 1,
+        "housing": 2
+      },
+      "2012-08": {
+        "housing": 2,
+        "community": 1
+      },
+      "2012-09": {
+        "language": 1,
+        "community": 1
+      },
+      "2012-10": {
+        "language": 1,
+        "phone_connectivity": 1
+      },
+      "2012-11": {
+        "housing": 3,
+        "language": 2
+      },
+      "2012-12": {
+        "language": 1,
+        "housing": 1,
+        "tax": 1,
+        "cost_of_living": 1
+      },
+      "2013-01": {
+        "visa": 1
+      },
+      "2013-02": {
+        "community": 1
+      },
+      "2013-04": {
+        "language": 1,
+        "phone_connectivity": 1
+      },
+      "2013-05": {
+        "language": 5,
+        "banking": 1,
+        "housing": 1,
+        "cost_of_living": 1
+      },
+      "2013-06": {
+        "language": 1,
+        "visa": 1,
+        "banking": 1,
+        "housing": 1
+      },
+      "2013-07": {
+        "language": 2,
+        "housing": 3
+      },
+      "2013-08": {
+        "language": 1,
+        "visa": 1
+      },
+      "2013-09": {
+        "housing": 2,
+        "language": 2,
+        "bureaucracy": 1
+      },
+      "2013-10": {
+        "housing": 3,
+        "language": 2,
+        "community": 1
+      },
+      "2013-11": {
+        "community": 1,
+        "discrimination": 1,
+        "phone_connectivity": 1
+      },
+      "2013-12": {
+        "housing": 3,
+        "language": 2,
+        "discrimination": 1,
+        "banking": 1,
+        "community": 1
+      },
+      "2014-01": {
+        "banking": 1,
+        "housing": 2,
+        "language": 1
+      },
+      "2014-03": {
+        "language": 2,
+        "housing": 1,
+        "work_legal": 1,
+        "community": 1,
+        "phone_connectivity": 1
+      },
+      "2014-04": {
+        "language": 3,
+        "banking": 2,
+        "housing": 1,
+        "community": 1,
+        "discrimination": 1
+      },
+      "2014-05": {
+        "language": 4,
+        "visa": 2,
+        "banking": 1
+      },
+      "2014-06": {
+        "banking": 1,
+        "housing": 3,
+        "language": 3,
+        "visa": 1,
+        "community": 1,
+        "bureaucracy": 1
+      },
+      "2014-07": {
+        "housing": 2,
+        "language": 2,
+        "community": 2,
+        "phone_connectivity": 1,
+        "visa": 1
+      },
+      "2014-08": {
+        "language": 3,
+        "housing": 6,
+        "tax": 2,
+        "discrimination": 1,
+        "cost_of_living": 2,
+        "healthcare": 1,
+        "community": 1,
+        "visa": 2,
+        "banking": 1,
+        "phone_connectivity": 1
+      },
+      "2014-09": {
+        "housing": 4,
+        "language": 2,
+        "visa": 2,
+        "family": 1,
+        "phone_connectivity": 1
+      },
+      "2014-10": {
+        "language": 4,
+        "community": 1,
+        "housing": 1,
+        "banking": 1,
+        "tax": 1,
+        "visa": 1
+      },
+      "2014-11": {
+        "housing": 6,
+        "language": 2,
+        "visa": 2,
+        "tax": 1,
+        "healthcare": 1,
+        "banking": 2,
+        "community": 2,
+        "work_legal": 1
+      },
+      "2014-12": {
+        "housing": 2,
+        "language": 1,
+        "cost_of_living": 1
+      },
+      "2015-01": {
+        "language": 2,
+        "housing": 2,
+        "banking": 1,
+        "phone_connectivity": 1
+      },
+      "2015-02": {
+        "language": 1,
+        "visa": 2,
+        "tax": 2,
+        "housing": 2,
+        "community": 2,
+        "mental_health": 1
+      },
+      "2015-03": {
+        "language": 2,
+        "visa": 3,
+        "housing": 3,
+        "discrimination": 1,
+        "tax": 1,
+        "banking": 1,
+        "healthcare": 1,
+        "phone_connectivity": 1
+      },
+      "2015-04": {
+        "housing": 2,
+        "community": 2,
+        "visa": 1,
+        "cost_of_living": 1,
+        "work_culture": 1
+      },
+      "2015-05": {
+        "language": 1,
+        "visa": 2,
+        "phone_connectivity": 2,
+        "tax": 1,
+        "banking": 1,
+        "cost_of_living": 1
+      },
+      "2015-06": {
+        "housing": 1,
+        "banking": 2,
+        "language": 1,
+        "discrimination": 2
+      },
+      "2015-07": {
+        "banking": 2,
+        "phone_connectivity": 2,
+        "community": 2,
+        "visa": 2,
+        "housing": 2,
+        "bureaucracy": 1
+      },
+      "2015-08": {
+        "community": 2,
+        "phone_connectivity": 2,
+        "language": 1,
+        "banking": 1,
+        "housing": 2,
+        "cost_of_living": 1
+      },
+      "2015-09": {
+        "healthcare": 1,
+        "visa": 4,
+        "bureaucracy": 2,
+        "housing": 2,
+        "banking": 2,
+        "tax": 1,
+        "phone_connectivity": 1
+      },
+      "2015-10": {
+        "visa": 2,
+        "language": 1,
+        "housing": 1
+      },
+      "2015-11": {
+        "housing": 3,
+        "language": 2,
+        "healthcare": 1,
+        "cost_of_living": 1
+      },
+      "2015-12": {
+        "banking": 2,
+        "housing": 2,
+        "discrimination": 1,
+        "language": 4,
+        "tax": 1
+      },
+      "2016-01": {
+        "housing": 3,
+        "banking": 3,
+        "discrimination": 1,
+        "phone_connectivity": 2,
+        "visa": 1,
+        "community": 1
+      },
+      "2016-02": {
+        "community": 3,
+        "language": 2,
+        "tax": 1,
+        "housing": 3,
+        "visa": 1,
+        "cost_of_living": 1
+      },
+      "2016-03": {
+        "banking": 1,
+        "language": 3,
+        "tax": 2,
+        "visa": 1,
+        "bureaucracy": 2,
+        "housing": 1
+      },
+      "2016-04": {
+        "housing": 2,
+        "language": 1,
+        "visa": 3,
+        "family": 1,
+        "discrimination": 1,
+        "tax": 1
+      },
+      "2016-05": {
+        "housing": 2,
+        "healthcare": 1
+      },
+      "2016-06": {
+        "language": 2,
+        "housing": 3,
+        "healthcare": 2,
+        "mental_health": 1,
+        "visa": 1,
+        "community": 1
+      },
+      "2016-07": {
+        "banking": 3,
+        "community": 1,
+        "language": 1,
+        "driving": 1,
+        "tax": 2,
+        "visa": 2,
+        "phone_connectivity": 1,
+        "work_culture": 1,
+        "housing": 3,
+        "healthcare": 1
+      },
+      "2016-08": {
+        "language": 2,
+        "visa": 3,
+        "housing": 2,
+        "phone_connectivity": 1,
+        "banking": 1
+      },
+      "2016-09": {
+        "housing": 7,
+        "visa": 3,
+        "language": 4,
+        "family": 2,
+        "banking": 1,
+        "community": 1,
+        "cost_of_living": 1,
+        "tax": 1,
+        "discrimination": 1,
+        "driving": 1
+      },
+      "2016-10": {
+        "housing": 3,
+        "language": 4,
+        "visa": 2,
+        "work_culture": 1,
+        "bureaucracy": 1,
+        "work_legal": 1,
+        "phone_connectivity": 1,
+        "banking": 1
+      },
+      "2016-11": {
+        "tax": 1,
+        "language": 1,
+        "discrimination": 1,
+        "visa": 1
+      },
+      "2016-12": {
+        "visa": 3,
+        "language": 5,
+        "housing": 5,
+        "tax": 2,
+        "work_legal": 1,
+        "banking": 2,
+        "healthcare": 1,
+        "discrimination": 1,
+        "community": 1
+      },
+      "2017-01": {
+        "housing": 4,
+        "language": 3,
+        "visa": 3,
+        "cost_of_living": 1,
+        "tax": 3,
+        "banking": 1,
+        "work_legal": 2
+      },
+      "2017-02": {
+        "language": 5,
+        "visa": 3,
+        "community": 1,
+        "tax": 2,
+        "bureaucracy": 2,
+        "banking": 1
+      },
+      "2017-03": {
+        "language": 2,
+        "visa": 2,
+        "tax": 3,
+        "healthcare": 1,
+        "banking": 2,
+        "housing": 1,
+        "phone_connectivity": 1,
+        "cost_of_living": 1
+      },
+      "2017-04": {
+        "housing": 3,
+        "language": 1,
+        "visa": 2,
+        "tax": 4,
+        "healthcare": 1,
+        "banking": 3,
+        "bureaucracy": 1,
+        "community": 1
+      },
+      "2017-05": {
+        "banking": 3,
+        "language": 2,
+        "housing": 4,
+        "visa": 1,
+        "phone_connectivity": 1,
+        "tax": 1,
+        "discrimination": 3,
+        "cost_of_living": 2,
+        "community": 2
+      },
+      "2017-06": {
+        "visa": 4,
+        "language": 3,
+        "housing": 4,
+        "healthcare": 2,
+        "tax": 1,
+        "banking": 1,
+        "cost_of_living": 1
+      },
+      "2017-07": {
+        "banking": 5,
+        "language": 5,
+        "phone_connectivity": 2,
+        "housing": 5,
+        "visa": 1,
+        "tax": 1
+      },
+      "2017-08": {
+        "banking": 3,
+        "discrimination": 4,
+        "phone_connectivity": 1,
+        "visa": 6,
+        "language": 5,
+        "housing": 4,
+        "healthcare": 2,
+        "tax": 2,
+        "bureaucracy": 1
+      },
+      "2017-09": {
+        "visa": 5,
+        "banking": 1,
+        "housing": 4,
+        "language": 1,
+        "tax": 2,
+        "family": 1,
+        "healthcare": 1,
+        "phone_connectivity": 1
+      },
+      "2017-10": {
+        "banking": 3,
+        "community": 2,
+        "language": 2,
+        "tax": 1,
+        "phone_connectivity": 3,
+        "visa": 1,
+        "housing": 1
+      },
+      "2017-11": {
+        "banking": 2,
+        "housing": 4,
+        "language": 1,
+        "visa": 1,
+        "work_legal": 1,
+        "tax": 1,
+        "community": 1
+      },
+      "2017-12": {
+        "visa": 3,
+        "housing": 4,
+        "banking": 2,
+        "cost_of_living": 1,
+        "discrimination": 1,
+        "phone_connectivity": 1
+      },
+      "2018-01": {
+        "housing": 19,
+        "banking": 2,
+        "tax": 2,
+        "community": 3,
+        "language": 13,
+        "visa": 8,
+        "phone_connectivity": 2,
+        "mental_health": 1
+      },
+      "2018-02": {
+        "housing": 14,
+        "language": 5,
+        "community": 4,
+        "visa": 2,
+        "phone_connectivity": 1,
+        "discrimination": 1,
+        "banking": 1,
+        "healthcare": 1
+      },
+      "2018-03": {
+        "housing": 6,
+        "language": 5,
+        "mental_health": 1,
+        "banking": 2,
+        "phone_connectivity": 1
+      },
+      "2018-04": {
+        "banking": 3,
+        "housing": 3,
+        "bureaucracy": 1,
+        "phone_connectivity": 1,
+        "language": 13,
+        "community": 3,
+        "work_legal": 1,
+        "visa": 1
+      },
+      "2018-05": {
+        "community": 5,
+        "language": 7,
+        "visa": 4,
+        "housing": 6,
+        "tax": 3,
+        "cost_of_living": 3,
+        "banking": 2,
+        "discrimination": 1,
+        "healthcare": 1,
+        "work_legal": 1
+      },
+      "2018-06": {
+        "language": 7,
+        "cost_of_living": 3,
+        "housing": 2,
+        "healthcare": 1,
+        "tax": 2,
+        "visa": 2
+      },
+      "2018-07": {
+        "banking": 2,
+        "visa": 4,
+        "language": 1,
+        "cost_of_living": 1,
+        "tax": 1,
+        "housing": 3,
+        "work_legal": 1,
+        "family": 1,
+        "healthcare": 1,
+        "bureaucracy": 1,
+        "mental_health": 1,
+        "phone_connectivity": 1
+      },
+      "2018-08": {
+        "housing": 5,
+        "language": 1,
+        "visa": 5,
+        "banking": 3,
+        "healthcare": 2,
+        "discrimination": 1,
+        "phone_connectivity": 5,
+        "community": 1,
+        "cost_of_living": 1,
+        "tax": 1
+      },
+      "2018-09": {
+        "phone_connectivity": 3,
+        "visa": 6,
+        "language": 7,
+        "tax": 2,
+        "housing": 6,
+        "cost_of_living": 1,
+        "community": 6,
+        "banking": 2,
+        "bureaucracy": 1
+      },
+      "2018-10": {
+        "housing": 10,
+        "language": 6,
+        "community": 5,
+        "cost_of_living": 3,
+        "visa": 5,
+        "banking": 5,
+        "tax": 1,
+        "phone_connectivity": 2,
+        "healthcare": 4
+      },
+      "2018-11": {
+        "discrimination": 1,
+        "language": 8,
+        "housing": 7,
+        "cost_of_living": 3,
+        "visa": 3,
+        "banking": 4,
+        "community": 1,
+        "mental_health": 1,
+        "phone_connectivity": 2
+      },
+      "2018-12": {
+        "phone_connectivity": 4,
+        "discrimination": 1,
+        "banking": 4,
+        "housing": 6,
+        "language": 2,
+        "cost_of_living": 2,
+        "visa": 4,
+        "tax": 4,
+        "community": 1,
+        "bureaucracy": 1,
+        "work_legal": 2,
+        "healthcare": 1
+      },
+      "2019-01": {
+        "language": 8,
+        "visa": 10,
+        "community": 6,
+        "housing": 10,
+        "work_culture": 1,
+        "cost_of_living": 3,
+        "banking": 5,
+        "discrimination": 2,
+        "healthcare": 2,
+        "bureaucracy": 2,
+        "phone_connectivity": 2,
+        "tax": 5
+      },
+      "2019-02": {
+        "discrimination": 1,
+        "banking": 1,
+        "housing": 11,
+        "phone_connectivity": 1,
+        "language": 7,
+        "visa": 2,
+        "cost_of_living": 2,
+        "community": 4,
+        "tax": 1,
+        "healthcare": 1
+      },
+      "2019-03": {
+        "community": 25,
+        "housing": 20,
+        "language": 10,
+        "cost_of_living": 5,
+        "banking": 2,
+        "mental_health": 5,
+        "visa": 6,
+        "healthcare": 4,
+        "phone_connectivity": 3,
+        "family": 1,
+        "tax": 6,
+        "bureaucracy": 2,
+        "discrimination": 1
+      },
+      "2019-04": {
+        "housing": 9,
+        "language": 11,
+        "community": 2,
+        "visa": 4,
+        "phone_connectivity": 2
+      },
+      "2019-05": {
+        "visa": 3,
+        "phone_connectivity": 4,
+        "language": 9,
+        "housing": 5,
+        "discrimination": 1,
+        "banking": 2,
+        "tax": 1,
+        "healthcare": 2,
+        "mental_health": 1,
+        "cost_of_living": 1
+      },
+      "2019-06": {
+        "visa": 8,
+        "banking": 4,
+        "discrimination": 1,
+        "community": 3,
+        "language": 7,
+        "tax": 2,
+        "housing": 4,
+        "phone_connectivity": 1,
+        "cost_of_living": 1,
+        "healthcare": 1
+      },
+      "2019-07": {
+        "visa": 12,
+        "discrimination": 1,
+        "language": 5,
+        "housing": 10,
+        "community": 6,
+        "phone_connectivity": 3,
+        "tax": 2,
+        "banking": 1,
+        "healthcare": 2
+      },
+      "2019-08": {
+        "banking": 7,
+        "discrimination": 4,
+        "housing": 14,
+        "community": 3,
+        "language": 5,
+        "visa": 7,
+        "phone_connectivity": 3,
+        "cost_of_living": 3,
+        "family": 1,
+        "healthcare": 1,
+        "bureaucracy": 2
+      },
+      "2019-09": {
+        "language": 8,
+        "visa": 5,
+        "housing": 5,
+        "tax": 2,
+        "healthcare": 1,
+        "phone_connectivity": 3,
+        "community": 1,
+        "cost_of_living": 1,
+        "banking": 2
+      },
+      "2019-10": {
+        "banking": 4,
+        "phone_connectivity": 2,
+        "discrimination": 3,
+        "driving": 1,
+        "housing": 9,
+        "community": 5,
+        "language": 7,
+        "tax": 2,
+        "visa": 6,
+        "cost_of_living": 1,
+        "healthcare": 1,
+        "bureaucracy": 1
+      },
+      "2019-11": {
+        "banking": 4,
+        "bureaucracy": 2,
+        "language": 3,
+        "community": 2,
+        "housing": 7,
+        "visa": 3,
+        "cost_of_living": 1,
+        "phone_connectivity": 3,
+        "healthcare": 2,
+        "family": 1,
+        "tax": 1
+      },
+      "2019-12": {
+        "language": 3,
+        "housing": 15,
+        "community": 16,
+        "visa": 6,
+        "healthcare": 4,
+        "mental_health": 10,
+        "family": 1,
+        "banking": 2,
+        "discrimination": 1,
+        "tax": 1,
+        "phone_connectivity": 1
+      },
+      "2020-01": {
+        "language": 5,
+        "banking": 4,
+        "community": 2,
+        "housing": 8,
+        "visa": 6,
+        "tax": 1,
+        "phone_connectivity": 1,
+        "cost_of_living": 1,
+        "bureaucracy": 1
+      },
+      "2020-02": {
+        "tax": 3,
+        "language": 4,
+        "phone_connectivity": 5,
+        "community": 1,
+        "housing": 11,
+        "discrimination": 1,
+        "healthcare": 3,
+        "visa": 4,
+        "bureaucracy": 2,
+        "work_legal": 1,
+        "mental_health": 1
+      },
+      "2020-03": {
+        "banking": 10,
+        "community": 17,
+        "discrimination": 16,
+        "housing": 27,
+        "language": 6,
+        "visa": 17,
+        "cost_of_living": 2,
+        "work_culture": 1,
+        "healthcare": 1,
+        "phone_connectivity": 5,
+        "bureaucracy": 1,
+        "tax": 2
+      },
+      "2020-04": {
+        "banking": 10,
+        "housing": 13,
+        "language": 6,
+        "community": 3,
+        "visa": 10,
+        "work_culture": 1,
+        "cost_of_living": 2,
+        "phone_connectivity": 4,
+        "healthcare": 3,
+        "bureaucracy": 2,
+        "driving": 1,
+        "tax": 3
+      },
+      "2020-05": {
+        "visa": 80,
+        "banking": 7,
+        "language": 9,
+        "discrimination": 7,
+        "phone_connectivity": 8,
+        "housing": 45,
+        "community": 18,
+        "healthcare": 6,
+        "cost_of_living": 3,
+        "bureaucracy": 13,
+        "mental_health": 2,
+        "family": 6,
+        "tax": 4,
+        "work_legal": 1
+      },
+      "2020-06": {
+        "language": 6,
+        "community": 11,
+        "banking": 9,
+        "housing": 17,
+        "visa": 4,
+        "healthcare": 18,
+        "mental_health": 1,
+        "cost_of_living": 10,
+        "discrimination": 4,
+        "work_culture": 11,
+        "tax": 4,
+        "work_legal": 1,
+        "phone_connectivity": 3,
+        "family": 1
+      },
+      "2020-07": {
+        "discrimination": 2,
+        "banking": 3,
+        "bureaucracy": 2,
+        "community": 6,
+        "housing": 8,
+        "language": 4,
+        "visa": 10,
+        "cost_of_living": 1,
+        "healthcare": 2,
+        "phone_connectivity": 2,
+        "tax": 2
+      },
+      "2020-08": {
+        "language": 4,
+        "housing": 8,
+        "community": 3,
+        "visa": 7,
+        "cost_of_living": 3,
+        "phone_connectivity": 3,
+        "banking": 3,
+        "tax": 5,
+        "healthcare": 4,
+        "bureaucracy": 3
+      },
+      "2020-09": {
+        "housing": 12,
+        "banking": 3,
+        "language": 5,
+        "discrimination": 3,
+        "mental_health": 6,
+        "healthcare": 5,
+        "bureaucracy": 3,
+        "family": 3,
+        "community": 7,
+        "visa": 9,
+        "tax": 2,
+        "phone_connectivity": 2
+      },
+      "2020-10": {
+        "housing": 7,
+        "language": 4,
+        "community": 8,
+        "phone_connectivity": 3,
+        "visa": 8,
+        "tax": 1,
+        "banking": 5,
+        "healthcare": 4,
+        "bureaucracy": 1,
+        "cost_of_living": 1,
+        "work_legal": 1
+      },
+      "2020-11": {
+        "housing": 9,
+        "visa": 9,
+        "language": 7,
+        "phone_connectivity": 3,
+        "cost_of_living": 2,
+        "banking": 1,
+        "healthcare": 1,
+        "bureaucracy": 2,
+        "community": 3,
+        "discrimination": 1,
+        "tax": 1
+      },
+      "2020-12": {
+        "discrimination": 1,
+        "cost_of_living": 2,
+        "language": 2,
+        "banking": 3,
+        "housing": 8,
+        "visa": 9,
+        "healthcare": 1,
+        "community": 3,
+        "phone_connectivity": 2,
+        "tax": 1
+      },
+      "2021-01": {
+        "housing": 11,
+        "community": 5,
+        "language": 4,
+        "visa": 7,
+        "phone_connectivity": 3,
+        "banking": 4,
+        "healthcare": 3,
+        "cost_of_living": 1,
+        "tax": 5,
+        "bureaucracy": 3
+      },
+      "2021-02": {
+        "language": 5,
+        "banking": 5,
+        "community": 3,
+        "visa": 6,
+        "phone_connectivity": 2,
+        "housing": 5,
+        "discrimination": 1,
+        "tax": 1
+      },
+      "2021-03": {
+        "community": 11,
+        "banking": 4,
+        "language": 1,
+        "housing": 12,
+        "discrimination": 4,
+        "mental_health": 2,
+        "cost_of_living": 3,
+        "tax": 6,
+        "visa": 9,
+        "phone_connectivity": 1,
+        "work_legal": 1,
+        "bureaucracy": 1
+      },
+      "2021-04": {
+        "banking": 2,
+        "visa": 25,
+        "housing": 17,
+        "community": 164,
+        "language": 5,
+        "cost_of_living": 2,
+        "discrimination": 3,
+        "healthcare": 3,
+        "tax": 4,
+        "phone_connectivity": 1,
+        "family": 1,
+        "work_legal": 1
+      },
+      "2021-05": {
+        "phone_connectivity": 5,
+        "housing": 12,
+        "visa": 6,
+        "banking": 5,
+        "language": 5,
+        "community": 8,
+        "cost_of_living": 1,
+        "bureaucracy": 3,
+        "work_culture": 1,
+        "family": 1,
+        "tax": 3,
+        "work_legal": 1,
+        "healthcare": 1
+      },
+      "2021-06": {
+        "language": 3,
+        "housing": 9,
+        "community": 1,
+        "tax": 4,
+        "cost_of_living": 2,
+        "visa": 5,
+        "bureaucracy": 1,
+        "banking": 1,
+        "phone_connectivity": 1
+      },
+      "2021-07": {
+        "banking": 3,
+        "discrimination": 1,
+        "language": 7,
+        "community": 10,
+        "housing": 21,
+        "mental_health": 11,
+        "healthcare": 6,
+        "visa": 6,
+        "work_culture": 1,
+        "bureaucracy": 2,
+        "phone_connectivity": 1,
+        "cost_of_living": 1
+      },
+      "2021-08": {
+        "discrimination": 2,
+        "phone_connectivity": 4,
+        "visa": 7,
+        "housing": 8,
+        "language": 2,
+        "community": 1,
+        "healthcare": 3,
+        "family": 1,
+        "tax": 3,
+        "banking": 2,
+        "work_legal": 1,
+        "cost_of_living": 1
+      },
+      "2021-09": {
+        "language": 3,
+        "community": 6,
+        "housing": 6,
+        "visa": 10,
+        "discrimination": 2,
+        "banking": 5,
+        "phone_connectivity": 5,
+        "healthcare": 2,
+        "family": 3,
+        "tax": 1,
+        "cost_of_living": 1
+      },
+      "2021-10": {
+        "language": 10,
+        "housing": 62,
+        "discrimination": 10,
+        "cost_of_living": 6,
+        "tax": 2,
+        "visa": 81,
+        "community": 7,
+        "work_culture": 2,
+        "healthcare": 4,
+        "bureaucracy": 24,
+        "mental_health": 3,
+        "family": 2,
+        "banking": 2,
+        "phone_connectivity": 1,
+        "work_legal": 1
+      },
+      "2021-11": {
+        "visa": 70,
+        "language": 8,
+        "housing": 32,
+        "discrimination": 6,
+        "community": 12,
+        "mental_health": 1,
+        "banking": 4,
+        "healthcare": 2,
+        "bureaucracy": 13,
+        "work_legal": 3,
+        "cost_of_living": 1,
+        "family": 2,
+        "phone_connectivity": 2,
+        "tax": 3,
+        "work_culture": 1
+      },
+      "2021-12": {
+        "visa": 13,
+        "banking": 4,
+        "housing": 21,
+        "cost_of_living": 3,
+        "discrimination": 4,
+        "community": 5,
+        "language": 4,
+        "tax": 6,
+        "bureaucracy": 4,
+        "work_culture": 1
+      },
+      "2022-01": {
+        "banking": 7,
+        "bureaucracy": 14,
+        "mental_health": 3,
+        "language": 7,
+        "community": 26,
+        "visa": 64,
+        "housing": 47,
+        "family": 1,
+        "work_culture": 1,
+        "discrimination": 5,
+        "healthcare": 9,
+        "tax": 2,
+        "cost_of_living": 3,
+        "phone_connectivity": 2,
+        "work_legal": 1
+      },
+      "2022-02": {
+        "discrimination": 2,
+        "housing": 19,
+        "cost_of_living": 4,
+        "banking": 1,
+        "language": 6,
+        "visa": 6,
+        "healthcare": 2,
+        "community": 3,
+        "mental_health": 1,
+        "tax": 3,
+        "bureaucracy": 1,
+        "work_legal": 1,
+        "driving": 1
+      },
+      "2022-03": {
+        "language": 5,
+        "housing": 8,
+        "community": 2,
+        "visa": 8,
+        "banking": 3,
+        "phone_connectivity": 2,
+        "cost_of_living": 1,
+        "discrimination": 2,
+        "tax": 10,
+        "bureaucracy": 3,
+        "work_culture": 1,
+        "family": 1,
+        "work_legal": 4,
+        "healthcare": 1
+      },
+      "2022-04": {
+        "language": 3,
+        "housing": 7,
+        "healthcare": 1,
+        "discrimination": 1,
+        "visa": 4,
+        "banking": 4,
+        "community": 4,
+        "phone_connectivity": 2,
+        "tax": 4,
+        "bureaucracy": 1,
+        "work_legal": 1
+      },
+      "2022-05": {
+        "banking": 7,
+        "housing": 10,
+        "language": 5,
+        "community": 5,
+        "visa": 13,
+        "tax": 2,
+        "work_culture": 5,
+        "cost_of_living": 1,
+        "work_legal": 1
+      },
+      "2022-06": {
+        "community": 5,
+        "tax": 6,
+        "banking": 5,
+        "visa": 6,
+        "language": 4,
+        "housing": 4,
+        "family": 2,
+        "phone_connectivity": 1,
+        "cost_of_living": 4
+      },
+      "2022-07": {
+        "banking": 5,
+        "community": 7,
+        "language": 9,
+        "housing": 16,
+        "visa": 14,
+        "discrimination": 6,
+        "phone_connectivity": 1,
+        "cost_of_living": 4,
+        "mental_health": 1,
+        "work_culture": 1,
+        "family": 2,
+        "tax": 4,
+        "bureaucracy": 2
+      },
+      "2022-08": {
+        "housing": 13,
+        "language": 4,
+        "banking": 4,
+        "visa": 12,
+        "cost_of_living": 5,
+        "family": 2,
+        "community": 2,
+        "work_culture": 3,
+        "discrimination": 1,
+        "healthcare": 2,
+        "bureaucracy": 1,
+        "tax": 5,
+        "work_legal": 2
+      },
+      "2022-09": {
+        "banking": 8,
+        "phone_connectivity": 1,
+        "language": 9,
+        "community": 5,
+        "visa": 11,
+        "discrimination": 2,
+        "housing": 8,
+        "bureaucracy": 4,
+        "cost_of_living": 1,
+        "tax": 4,
+        "work_legal": 2
+      },
+      "2022-10": {
+        "visa": 13,
+        "community": 7,
+        "housing": 18,
+        "language": 5,
+        "banking": 7,
+        "tax": 7,
+        "mental_health": 3,
+        "cost_of_living": 3,
+        "bureaucracy": 1,
+        "family": 2,
+        "work_legal": 3,
+        "healthcare": 2
+      },
+      "2022-11": {
+        "housing": 7,
+        "visa": 13,
+        "banking": 4,
+        "language": 4,
+        "community": 3,
+        "tax": 5,
+        "work_legal": 2,
+        "discrimination": 1,
+        "work_culture": 1,
+        "mental_health": 1
+      },
+      "2022-12": {
+        "banking": 5,
+        "housing": 18,
+        "visa": 9,
+        "phone_connectivity": 1,
+        "language": 2,
+        "healthcare": 2,
+        "community": 3,
+        "family": 1,
+        "tax": 1,
+        "discrimination": 1,
+        "driving": 1
+      },
+      "2023-01": {
+        "banking": 3,
+        "community": 5,
+        "language": 6,
+        "housing": 14,
+        "visa": 18,
+        "discrimination": 3,
+        "family": 3,
+        "work_legal": 3,
+        "healthcare": 1,
+        "tax": 8,
+        "bureaucracy": 4,
+        "cost_of_living": 2
+      },
+      "2023-02": {
+        "housing": 20,
+        "language": 6,
+        "phone_connectivity": 1,
+        "healthcare": 7,
+        "community": 12,
+        "discrimination": 2,
+        "tax": 9,
+        "cost_of_living": 2,
+        "mental_health": 3,
+        "visa": 7,
+        "banking": 1,
+        "work_legal": 4,
+        "family": 1,
+        "work_culture": 1
+      },
+      "2023-03": {
+        "healthcare": 3,
+        "discrimination": 18,
+        "banking": 8,
+        "language": 4,
+        "community": 48,
+        "visa": 19,
+        "phone_connectivity": 3,
+        "bureaucracy": 6,
+        "housing": 61,
+        "work_culture": 2,
+        "cost_of_living": 10,
+        "tax": 10,
+        "work_legal": 1,
+        "mental_health": 34,
+        "family": 2
+      },
+      "2023-04": {
+        "language": 3,
+        "housing": 39,
+        "visa": 10,
+        "community": 13,
+        "discrimination": 3,
+        "mental_health": 3,
+        "bureaucracy": 3,
+        "tax": 5,
+        "cost_of_living": 1,
+        "banking": 2,
+        "healthcare": 1,
+        "work_legal": 1
+      },
+      "2023-05": {
+        "banking": 4,
+        "visa": 13,
+        "language": 13,
+        "housing": 32,
+        "discrimination": 4,
+        "family": 1,
+        "community": 26,
+        "mental_health": 6,
+        "cost_of_living": 2,
+        "phone_connectivity": 4,
+        "healthcare": 2,
+        "tax": 6,
+        "bureaucracy": 2,
+        "work_legal": 1
+      },
+      "2023-06": {
+        "banking": 6,
+        "housing": 86,
+        "community": 53,
+        "language": 15,
+        "visa": 39,
+        "phone_connectivity": 2,
+        "healthcare": 25,
+        "discrimination": 53,
+        "work_culture": 14,
+        "bureaucracy": 7,
+        "cost_of_living": 12,
+        "family": 2,
+        "tax": 37,
+        "mental_health": 11,
+        "work_legal": 4
+      },
+      "2023-07": {
+        "housing": 159,
+        "visa": 39,
+        "community": 96,
+        "language": 19,
+        "tax": 12,
+        "healthcare": 22,
+        "bureaucracy": 11,
+        "discrimination": 29,
+        "mental_health": 15,
+        "family": 6,
+        "banking": 6,
+        "cost_of_living": 14,
+        "phone_connectivity": 5,
+        "work_culture": 5
+      },
+      "2023-08": {
+        "community": 6,
+        "language": 7,
+        "visa": 12,
+        "housing": 20,
+        "phone_connectivity": 2,
+        "cost_of_living": 4,
+        "healthcare": 4,
+        "family": 2,
+        "mental_health": 7,
+        "discrimination": 4,
+        "tax": 6,
+        "bureaucracy": 4,
+        "banking": 3,
+        "work_legal": 2
+      },
+      "2023-09": {
+        "visa": 11,
+        "housing": 21,
+        "language": 13,
+        "phone_connectivity": 3,
+        "tax": 9,
+        "community": 4,
+        "discrimination": 3,
+        "cost_of_living": 3,
+        "work_culture": 1,
+        "banking": 3,
+        "work_legal": 6,
+        "bureaucracy": 2,
+        "driving": 1
+      },
+      "2023-10": {
+        "language": 5,
+        "visa": 12,
+        "cost_of_living": 5,
+        "housing": 26,
+        "community": 31,
+        "discrimination": 1,
+        "phone_connectivity": 3,
+        "family": 4,
+        "bureaucracy": 6,
+        "healthcare": 5,
+        "mental_health": 9,
+        "work_culture": 1,
+        "banking": 3,
+        "tax": 5,
+        "work_legal": 2
+      },
+      "2023-11": {
+        "phone_connectivity": 4,
+        "language": 2,
+        "community": 5,
+        "housing": 11,
+        "bureaucracy": 5,
+        "cost_of_living": 3,
+        "visa": 15,
+        "family": 1,
+        "discrimination": 1,
+        "mental_health": 1,
+        "banking": 9,
+        "tax": 8,
+        "work_legal": 1
+      },
+      "2023-12": {
+        "banking": 3,
+        "housing": 20,
+        "visa": 16,
+        "community": 11,
+        "discrimination": 2,
+        "language": 3,
+        "cost_of_living": 5,
+        "bureaucracy": 1,
+        "phone_connectivity": 5,
+        "family": 1,
+        "tax": 3,
+        "work_legal": 1
+      },
+      "2024-01": {
+        "tax": 3,
+        "visa": 45,
+        "community": 34,
+        "language": 9,
+        "discrimination": 113,
+        "housing": 109,
+        "healthcare": 3,
+        "mental_health": 10,
+        "work_culture": 12,
+        "bureaucracy": 3,
+        "cost_of_living": 9,
+        "work_legal": 4,
+        "banking": 2,
+        "phone_connectivity": 1,
+        "family": 57
+      },
+      "2024-02": {
+        "housing": 16,
+        "language": 5,
+        "discrimination": 5,
+        "community": 4,
+        "visa": 14,
+        "healthcare": 10,
+        "mental_health": 2,
+        "work_culture": 2,
+        "cost_of_living": 2,
+        "tax": 9,
+        "bureaucracy": 2,
+        "banking": 3,
+        "work_legal": 2,
+        "phone_connectivity": 2
+      },
+      "2024-03": {
+        "banking": 13,
+        "housing": 51,
+        "visa": 32,
+        "language": 11,
+        "community": 23,
+        "tax": 13,
+        "phone_connectivity": 2,
+        "discrimination": 4,
+        "cost_of_living": 19,
+        "work_legal": 3,
+        "bureaucracy": 3,
+        "family": 1,
+        "healthcare": 3
+      },
+      "2024-04": {
+        "language": 10,
+        "community": 46,
+        "cost_of_living": 4,
+        "housing": 64,
+        "discrimination": 9,
+        "phone_connectivity": 3,
+        "visa": 33,
+        "family": 6,
+        "work_culture": 3,
+        "healthcare": 13,
+        "mental_health": 5,
+        "bureaucracy": 6,
+        "tax": 7,
+        "banking": 8,
+        "work_legal": 3
+      },
+      "2024-05": {
+        "visa": 23,
+        "housing": 45,
+        "language": 8,
+        "discrimination": 6,
+        "healthcare": 13,
+        "bureaucracy": 4,
+        "mental_health": 7,
+        "community": 31,
+        "family": 18,
+        "cost_of_living": 9,
+        "driving": 1,
+        "tax": 9,
+        "phone_connectivity": 2,
+        "work_legal": 1,
+        "work_culture": 1,
+        "banking": 4
+      },
+      "2024-06": {
+        "banking": 5,
+        "language": 4,
+        "community": 8,
+        "discrimination": 3,
+        "housing": 25,
+        "healthcare": 3,
+        "visa": 11,
+        "tax": 13,
+        "work_legal": 4,
+        "family": 1,
+        "bureaucracy": 5,
+        "cost_of_living": 6,
+        "driving": 1,
+        "phone_connectivity": 2,
+        "work_culture": 2
+      },
+      "2024-07": {
+        "community": 10,
+        "banking": 3,
+        "housing": 36,
+        "discrimination": 3,
+        "language": 3,
+        "cost_of_living": 18,
+        "tax": 10,
+        "mental_health": 2,
+        "visa": 18,
+        "family": 5,
+        "work_culture": 2,
+        "bureaucracy": 4,
+        "work_legal": 1,
+        "phone_connectivity": 2
+      },
+      "2024-08": {
+        "banking": 4,
+        "housing": 12,
+        "language": 6,
+        "community": 5,
+        "phone_connectivity": 1,
+        "visa": 10,
+        "cost_of_living": 5,
+        "tax": 6,
+        "work_legal": 2,
+        "bureaucracy": 2,
+        "discrimination": 1
+      },
+      "2024-09": {
+        "phone_connectivity": 3,
+        "community": 17,
+        "language": 6,
+        "housing": 47,
+        "visa": 29,
+        "discrimination": 9,
+        "healthcare": 3,
+        "work_culture": 3,
+        "banking": 15,
+        "family": 11,
+        "work_legal": 3,
+        "cost_of_living": 4,
+        "tax": 7,
+        "mental_health": 1,
+        "bureaucracy": 3
+      },
+      "2024-10": {
+        "banking": 8,
+        "visa": 28,
+        "community": 46,
+        "housing": 47,
+        "language": 6,
+        "cost_of_living": 6,
+        "mental_health": 9,
+        "work_culture": 5,
+        "healthcare": 9,
+        "discrimination": 16,
+        "family": 8,
+        "work_legal": 4,
+        "tax": 15,
+        "bureaucracy": 7,
+        "phone_connectivity": 1,
+        "driving": 1
+      },
+      "2024-11": {
+        "discrimination": 32,
+        "housing": 95,
+        "community": 53,
+        "language": 4,
+        "bureaucracy": 12,
+        "tax": 8,
+        "banking": 11,
+        "visa": 66,
+        "work_legal": 9,
+        "family": 7,
+        "healthcare": 6,
+        "cost_of_living": 19,
+        "phone_connectivity": 2,
+        "work_culture": 17,
+        "mental_health": 3
+      },
+      "2024-12": {
+        "visa": 93,
+        "community": 117,
+        "housing": 213,
+        "cost_of_living": 47,
+        "mental_health": 26,
+        "family": 15,
+        "discrimination": 24,
+        "healthcare": 54,
+        "language": 16,
+        "phone_connectivity": 5,
+        "bureaucracy": 13,
+        "tax": 33,
+        "work_culture": 34,
+        "work_legal": 10,
+        "banking": 12,
+        "driving": 1
+      },
+      "2025-01": {
+        "language": 13,
+        "banking": 13,
+        "housing": 142,
+        "community": 29,
+        "work_culture": 6,
+        "discrimination": 13,
+        "family": 8,
+        "mental_health": 14,
+        "healthcare": 21,
+        "visa": 58,
+        "work_legal": 7,
+        "tax": 17,
+        "bureaucracy": 3,
+        "cost_of_living": 36,
+        "phone_connectivity": 5
+      },
+      "2025-02": {
+        "banking": 16,
+        "community": 45,
+        "housing": 137,
+        "language": 8,
+        "visa": 42,
+        "work_culture": 5,
+        "discrimination": 34,
+        "cost_of_living": 15,
+        "bureaucracy": 10,
+        "family": 4,
+        "work_legal": 5,
+        "driving": 1,
+        "tax": 15,
+        "healthcare": 8,
+        "mental_health": 6,
+        "phone_connectivity": 8
+      },
+      "2025-03": {
+        "housing": 216,
+        "cost_of_living": 43,
+        "banking": 9,
+        "language": 19,
+        "visa": 53,
+        "community": 120,
+        "phone_connectivity": 8,
+        "tax": 16,
+        "discrimination": 10,
+        "bureaucracy": 11,
+        "healthcare": 7,
+        "family": 76,
+        "mental_health": 40,
+        "work_culture": 8,
+        "work_legal": 13
+      },
+      "2025-04": {
+        "banking": 27,
+        "language": 8,
+        "phone_connectivity": 10,
+        "housing": 263,
+        "community": 205,
+        "visa": 95,
+        "cost_of_living": 58,
+        "mental_health": 65,
+        "family": 39,
+        "discrimination": 8,
+        "bureaucracy": 13,
+        "tax": 23,
+        "work_legal": 3,
+        "work_culture": 20,
+        "healthcare": 32
+      },
+      "2025-05": {
+        "language": 5,
+        "housing": 123,
+        "phone_connectivity": 6,
+        "community": 87,
+        "visa": 48,
+        "cost_of_living": 20,
+        "family": 8,
+        "discrimination": 111,
+        "mental_health": 18,
+        "work_culture": 7,
+        "tax": 11,
+        "banking": 8,
+        "healthcare": 10,
+        "bureaucracy": 8,
+        "work_legal": 3
+      },
+      "2025-06": {
+        "housing": 180,
+        "community": 82,
+        "tax": 29,
+        "language": 5,
+        "discrimination": 24,
+        "phone_connectivity": 10,
+        "visa": 105,
+        "cost_of_living": 30,
+        "family": 9,
+        "work_culture": 15,
+        "bureaucracy": 12,
+        "work_legal": 9,
+        "mental_health": 29,
+        "healthcare": 43,
+        "banking": 14
+      },
+      "2025-07": {
+        "banking": 24,
+        "community": 117,
+        "phone_connectivity": 5,
+        "bureaucracy": 24,
+        "housing": 168,
+        "cost_of_living": 56,
+        "visa": 94,
+        "discrimination": 64,
+        "mental_health": 13,
+        "healthcare": 36,
+        "tax": 16,
+        "work_culture": 20,
+        "language": 12,
+        "family": 5,
+        "driving": 1,
+        "work_legal": 8
+      },
+      "2025-08": {
+        "banking": 17,
+        "tax": 15,
+        "discrimination": 48,
+        "housing": 124,
+        "phone_connectivity": 6,
+        "community": 63,
+        "cost_of_living": 39,
+        "visa": 54,
+        "bureaucracy": 5,
+        "language": 16,
+        "work_culture": 4,
+        "mental_health": 2,
+        "healthcare": 19,
+        "family": 4,
+        "work_legal": 2,
+        "driving": 1
+      },
+      "2025-09": {
+        "visa": 87,
+        "housing": 98,
+        "language": 7,
+        "community": 79,
+        "discrimination": 27,
+        "banking": 21,
+        "phone_connectivity": 4,
+        "cost_of_living": 30,
+        "bureaucracy": 10,
+        "tax": 19,
+        "healthcare": 6,
+        "work_legal": 9,
+        "family": 6,
+        "work_culture": 3
+      },
+      "2025-10": {
+        "banking": 10,
+        "visa": 29,
+        "community": 29,
+        "discrimination": 4,
+        "housing": 68,
+        "phone_connectivity": 5,
+        "language": 6,
+        "cost_of_living": 16,
+        "healthcare": 5,
+        "family": 4,
+        "tax": 10,
+        "mental_health": 3,
+        "bureaucracy": 10,
+        "driving": 1,
+        "work_legal": 8
+      },
+      "2025-11": {
+        "visa": 58,
+        "banking": 16,
+        "community": 96,
+        "housing": 160,
+        "bureaucracy": 11,
+        "language": 4,
+        "cost_of_living": 24,
+        "phone_connectivity": 7,
+        "driving": 1,
+        "healthcare": 14,
+        "mental_health": 11,
+        "discrimination": 32,
+        "work_culture": 9,
+        "tax": 21,
+        "family": 3,
+        "work_legal": 8
+      },
+      "2025-12": {
+        "banking": 18,
+        "healthcare": 6,
+        "language": 4,
+        "phone_connectivity": 5,
+        "community": 40,
+        "housing": 83,
+        "discrimination": 16,
+        "visa": 70,
+        "cost_of_living": 23,
+        "bureaucracy": 13,
+        "work_culture": 1,
+        "tax": 12,
+        "work_legal": 8,
+        "mental_health": 1,
+        "driving": 1,
+        "family": 2
+      },
+      "2026-01": {
+        "banking": 12,
+        "mental_health": 41,
+        "language": 8,
+        "visa": 78,
+        "phone_connectivity": 6,
+        "housing": 158,
+        "cost_of_living": 36,
+        "community": 110,
+        "healthcare": 19,
+        "bureaucracy": 15,
+        "work_culture": 13,
+        "discrimination": 72,
+        "family": 13,
+        "tax": 18,
+        "work_legal": 2
+      },
+      "2026-02": {
+        "banking": 20,
+        "visa": 82,
+        "housing": 91,
+        "phone_connectivity": 6,
+        "language": 9,
+        "mental_health": 5,
+        "discrimination": 9,
+        "community": 40,
+        "cost_of_living": 22,
+        "work_legal": 7,
+        "tax": 16,
+        "healthcare": 5,
+        "bureaucracy": 10,
+        "driving": 1,
+        "family": 1,
+        "work_culture": 1
+      },
+      "2026-03": {
+        "mental_health": 9,
+        "community": 22,
+        "visa": 43,
+        "banking": 9,
+        "phone_connectivity": 2,
+        "cost_of_living": 6,
+        "housing": 45,
+        "discrimination": 4,
+        "family": 39,
+        "bureaucracy": 11,
+        "healthcare": 6,
+        "work_legal": 3,
+        "tax": 4,
+        "work_culture": 1,
+        "language": 1
+      }
+    },
+    "rising": {
+      "language": {
+        "recent_pct": 1.7,
+        "old_pct": 7.3,
+        "change": -5.6,
+        "direction": "📉"
+      },
+      "community": {
+        "recent_pct": 17.6,
+        "old_pct": 13.9,
+        "change": 3.7,
+        "direction": "📈"
+      },
+      "cost_of_living": {
+        "recent_pct": 6.5,
+        "old_pct": 4.1,
+        "change": 2.4,
+        "direction": "📈"
+      },
+      "housing": {
+        "recent_pct": 28.7,
+        "old_pct": 26.3,
+        "change": 2.4,
+        "direction": "📈"
+      },
+      "tax": {
+        "recent_pct": 3.4,
+        "old_pct": 5.2,
+        "change": -1.8,
+        "direction": "📉"
+      },
+      "banking": {
+        "recent_pct": 3.3,
+        "old_pct": 4.8,
+        "change": -1.5,
+        "direction": "📉"
+      },
+      "visa": {
+        "recent_pct": 14.5,
+        "old_pct": 16.0,
+        "change": -1.5,
+        "direction": "📉"
+      },
+      "mental_health": {
+        "recent_pct": 3.8,
+        "old_pct": 2.5,
+        "change": 1.4,
+        "direction": "📈"
+      },
+      "discrimination": {
+        "recent_pct": 6.9,
+        "old_pct": 5.6,
+        "change": 1.3,
+        "direction": "📈"
+      },
+      "family": {
+        "recent_pct": 3.4,
+        "old_pct": 2.2,
+        "change": 1.2,
+        "direction": "📈"
+      },
+      "phone_connectivity": {
+        "recent_pct": 1.3,
+        "old_pct": 2.4,
+        "change": -1.1,
+        "direction": "📉"
+      }
+    }
+  },
+  "source_unique": {
+    "source_categories": {
+      "appstore": [
+        "banking",
+        "bureaucracy",
+        "community",
+        "cost_of_living",
+        "discrimination",
+        "driving",
+        "healthcare",
+        "housing",
+        "language",
+        "mental_health",
+        "phone_connectivity",
+        "tax",
+        "visa",
+        "work_culture"
+      ],
+      "reddit": [
+        "banking",
+        "bureaucracy",
+        "community",
+        "cost_of_living",
+        "discrimination",
+        "driving",
+        "family",
+        "healthcare",
+        "housing",
+        "language",
+        "mental_health",
+        "phone_connectivity",
+        "tax",
+        "visa",
+        "work_culture",
+        "work_legal"
+      ],
+      "youtube": [
+        "banking",
+        "bureaucracy",
+        "community",
+        "cost_of_living",
+        "discrimination",
+        "family",
+        "healthcare",
+        "housing",
+        "language",
+        "mental_health",
+        "phone_connectivity",
+        "tax",
+        "visa",
+        "work_culture",
+        "work_legal"
+      ]
+    },
+    "unique_to_source": {},
+    "universal": [
+      "banking",
+      "bureaucracy",
+      "community",
+      "cost_of_living",
+      "discrimination",
+      "healthcare",
+      "housing",
+      "language",
+      "mental_health",
+      "phone_connectivity",
+      "tax",
+      "visa",
+      "work_culture"
+    ]
+  }
+}

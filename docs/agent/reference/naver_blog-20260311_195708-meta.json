@@ -1,0 +1,21 @@
+{
+  "source": "naver_blog",
+  "started_at": "2026-03-11T19:12:34.953836",
+  "finished_at": "2026-03-11T19:57:08.361734",
+  "total_records": 1672,
+  "config": {
+    "expert_types": [
+      "visa",
+      "tax",
+      "labor",
+      "housing",
+      "banking",
+      "startup",
+      "family",
+      "driving"
+    ],
+    "max_per_keyword": 30,
+    "fetch_content": true
+  },
+  "errors": []
+}

@@ -1,0 +1,3458 @@
+{
+  "description": "Phase C: Aggregate statistics + ALL WTP records with full text. For business opportunity analysis.",
+  "total_records": 17644,
+  "stats": {
+    "by_category": {
+      "housing": 4908,
+      "visa": 3583,
+      "community": 2525,
+      "mental_health": 1272,
+      "banking": 1151,
+      "tax": 1142,
+      "discrimination": 1129,
+      "healthcare": 891,
+      "family": 876,
+      "bureaucracy": 868,
+      "cost_of_living": 856,
+      "work_legal": 517,
+      "language": 394,
+      "phone_connectivity": 375,
+      "work_culture": 280,
+      "language_localization": 267,
+      "app_ux": 162,
+      "language_barrier": 151,
+      "driving": 130
+    },
+    "by_source": {
+      "appstore": 6150,
+      "naver_blog": 1669,
+      "reddit": 5783,
+      "youtube": 4042
+    },
+    "by_country": {
+      "korea": 14249,
+      "japan": 2414,
+      "taiwan": 615,
+      "general": 366
+    },
+    "category_by_source": {
+      "language_localization": {
+        "appstore": 190,
+        "reddit": 48,
+        "youtube": 29
+      },
+      "discrimination": {
+        "appstore": 94,
+        "naver_blog": 123,
+        "reddit": 493,
+        "youtube": 419
+      },
+      "banking": {
+        "appstore": 123,
+        "naver_blog": 488,
+        "reddit": 495,
+        "youtube": 45
+      },
+      "housing": {
+        "appstore": 468,
+        "naver_blog": 603,
+        "reddit": 2113,
+        "youtube": 1724
+      },
+      "community": {
+        "appstore": 290,
+        "naver_blog": 121,
+        "reddit": 1222,
+        "youtube": 892
+      },
+      "visa": {
+        "appstore": 289,
+        "naver_blog": 1163,
+        "reddit": 1625,
+        "youtube": 506
+      },
+      "phone_connectivity": {
+        "appstore": 105,
+        "naver_blog": 61,
+        "reddit": 199,
+        "youtube": 10
+      },
+      "language_barrier": {
+        "appstore": 42,
+        "reddit": 63,
+        "youtube": 46
+      },
+      "driving": {
+        "appstore": 2,
+        "naver_blog": 112,
+        "reddit": 16
+      },
+      "tax": {
+        "appstore": 26,
+        "naver_blog": 438,
+        "reddit": 594,
+        "youtube": 84
+      },
+      "app_ux": {
+        "appstore": 54,
+        "reddit": 55,
+        "youtube": 53
+      },
+      "cost_of_living": {
+        "appstore": 173,
+        "naver_blog": 61,
+        "reddit": 354,
+        "youtube": 268
+      },
+      "healthcare": {
+        "appstore": 9,
+        "naver_blog": 323,
+        "reddit": 384,
+        "youtube": 175
+      },
+      "mental_health": {
+        "appstore": 9,
+        "naver_blog": 803,
+        "reddit": 195,
+        "youtube": 265
+      },
+      "bureaucracy": {
+        "appstore": 12,
+        "naver_blog": 451,
+        "reddit": 328,
+        "youtube": 77
+      },
+      "work_culture": {
+        "appstore": 2,
+        "naver_blog": 27,
+        "reddit": 107,
+        "youtube": 144
+      },
+      "language": {
+        "appstore": 32,
+        "naver_blog": 362
+      },
+      "family": {
+        "naver_blog": 462,
+        "reddit": 251,
+        "youtube": 163
+      },
+      "work_legal": {
+        "naver_blog": 309,
+        "reddit": 187,
+        "youtube": 21
+      }
+    },
+    "wtp_by_category": {
+      "housing": 67,
+      "visa": 66,
+      "tax": 38,
+      "banking": 29,
+      "cost_of_living": 23,
+      "community": 22,
+      "healthcare": 17,
+      "mental_health": 16,
+      "bureaucracy": 15,
+      "phone_connectivity": 9,
+      "discrimination": 8,
+      "work_legal": 6,
+      "family": 6,
+      "language": 4,
+      "language_localization": 3,
+      "work_culture": 3,
+      "language_barrier": 2,
+      "driving": 2,
+      "app_ux": 1
+    },
+    "segments": {
+      "visa_type": {
+        "DIGITAL NOMAD": 314,
+        "D-8": 122,
+        "F-6": 114,
+        "E-9": 70,
+        "E-7": 70,
+        "F-2": 55,
+        "D-2": 52,
+        "GOLD CARD": 45,
+        "F-4": 36,
+        "F-5": 21,
+        "D-4": 12,
+        "BUSINESS MANAGER": 12,
+        "APRC": 11,
+        "E-2": 8,
+        "C-4": 7,
+        "F-1": 7,
+        "E-6": 7,
+        "D-3": 6,
+        "WORK PERMIT": 5,
+        "EMPLOYMENT GOLD": 5
+      },
+      "role": {
+        "digital nomad": 304,
+        "student": 241,
+        "사업자": 126,
+        "teacher": 72,
+        "engineer": 66,
+        "프리랜서": 60,
+        "nomad": 56,
+        "english teacher": 30,
+        "translator": 29,
+        "developer": 23,
+        "freelancer": 23,
+        "학생": 20,
+        "professor": 17,
+        "designer": 16,
+        "교사": 16,
+        "연구원": 9,
+        "엔지니어": 7,
+        "researcher": 6,
+        "entrepreneur": 6,
+        "business owner": 5
+      },
+      "nationality": {
+        "korean": 97,
+        "american": 50,
+        "canadian": 13,
+        "japanese": 11,
+        "indian": 11,
+        "taiwanese": 6,
+        "british": 6,
+        "chinese": 5,
+        "french": 5,
+        "european": 4,
+        "australian": 4,
+        "german": 3,
+        "indonesian": 2,
+        "asian": 2,
+        "singaporean": 1
+      }
+    }
+  },
+  "wtp_records": [
+    {
+      "t": "Really impressed with this financial app it’s fast, easy to use, and very helpful. I especially love the regular updates about benefits, tax news, and recent support. I do wish there was a full English version for all info *although the korean somehow manageable* but for better and deep understanding it is recommended to have full english version, ",
+      "c": [
+        "tax",
+        "language_localization"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Since I was hospitalized.the next day I went to Rosedale for computer repair and I paid 120000 won I think I should be paid by Google. The computer caused by one of Google customers.",
+      "c": [
+        "healthcare"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Love the app, just wish there was an English version. I know its a Korean company, although a lot of foreigners use this app. I manly use it for easier access to my Shinhan bank info. Easier to use and transfer funds and plus, sooo many extras. You even get paid for walking and doing quizzes (only if you select to do so,) in this app. So many featu",
+      "c": [
+        "banking",
+        "housing",
+        "language_localization"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 133,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "This is the ONLY GPS app I use. I absolutely rely on this app for work-EVERY DAY. I wish there was more customization with the Favorites Folders, and I want to be able to customize the advisories, to toggle them on and off, individually. I appreciate the helpfulness, but at times it can be TOO helpful - Sometimes, I just want it to shut up - I don'",
+      "c": [],
+      "src": "appstore",
+      "co": "korea",
+      "e": 41,
+      "w": [
+        "wish there was",
+        "would gladly pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My account got suspended after less than a day (same reason as all the other negative comments), so I lost all my pins and lists I spent HOURS to make. Great way to start the trip I've literally been in Korea for less than an hour 💀💀",
+      "c": [],
+      "src": "appstore",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "A complete waste of time for tourists. I spent ages setting up custom lists & pins, only to be banned for \"unsafe environment\" (foreign phone number) as hundreds of others have also reported. It asks you to contact support, but nothing is in English and frankly it was all a huge waste of time. Unless you have a Korean sim don't bother with this jok",
+      "c": [
+        "discrimination",
+        "phone_connectivity"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 13,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Used it when visiting Korea - loved the favourite feature and organizing the pins in folders so it was easy to plan all the places I wanted to go prior to visiting the country. It can get tricky with addresses but I found more success typing names without the spaces (like SeoulStation and COEXAquarium). I wish there was an \"Arrive by\" option becaus",
+      "c": [
+        "visa"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 5,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "The delivery system is so much smoother than Coupang Eats. Their estimated delivery times are accurate. *Edit* 1 year later and this app is much worse. The delivery times are heavily delayed, but they don't tell you that until after they have your order and your money. They also don't have English customer service. So, I don't recommend this app to",
+      "c": [
+        "language_barrier"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 14,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I really love using 배민, but why is it not allowed for foreigners residents in Korea to send or receive gift coupons???? Today I spent 1 hour of my time trying to do it but it was not possible because \"내국인만 가능합니다\". Even months, and a year ago it was not possible either, but I thought 배민 had improved. So I ended up using a different korean delivery a",
+      "c": [
+        "housing"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 18,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Please Coupang check your sellers especially in the beauty section. There are a lot of sellers from china selling fake products. This is unacceptable I paid monthly membership for what? To get fake products? This is like the 7th time i reveive fake products from china. So please check your sellers.",
+      "c": [
+        "housing"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Coupang is good, wish there was a little more product, but most people will find what they need.",
+      "c": [],
+      "src": "appstore",
+      "co": "korea",
+      "e": 9,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "새벽배송 받을지를 선택할 수 있는 기능이 있으면 좋겠어요. 굳이 새벽에 받지 않아도 되는 경우들이 있어요. 근데 소비자에게 선택할 기회를 주지 않고 일방적으로 새벽에 도착한다고 통보하는건 불쾌해요. 새벽에 도착할거라는 일방적인 방식과 통보가 싫습니다. 새벽에 받아도 새벽에 받았다고 나무라거나 구매 취소하진 않지만 은근히 스트레스 감입니다. 작은 문제도 쌓이면 안 좋은 것 같아서 말씀드렸습니다.",
+      "c": [
+        "visa"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 4,
+      "w": [
+        "있으면 좋겠"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I need improvement i am seeing people come in ask for product leave the message. I wish there was a feature where people can click I am interested or similar to that.",
+      "c": [],
+      "src": "appstore",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I wish there was better moderation. There's a bunch of listings that don't belong there Additionally, simply looking at an item doesn't mean that I want constant notifications about it.",
+      "c": [],
+      "src": "appstore",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I purchased a beautiful engagement ring from a lady named Sophia . she was very nice and friendly. she let me try on the ring before I paid her. my boyfriend gave me the money too buy the ring. I love it so much! I get so much compliments! thanks Sophia I'll deal with your business again dear! take care! and I also like the karrot site too!",
+      "c": [
+        "community"
+      ],
+      "src": "appstore",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "very helpful app. It's great too app too sell my items in a safe manner. I wish there was a section for faith based items...",
+      "c": [],
+      "src": "appstore",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "🎯 예술, 연예, 운동 / E-6 비자 완벽 가이드\n– 신청 요건, 절차, 자주 묻는 질문, 승인 사례까지 한 번에!\n​\n안녕하세요, 행정사 이선림입니다.\n국내에서\n예술·연예·흥행 활동\n을 하려면 반드시\nE-6 비자\n가 필요합니다.\n하지만 신청 과정에서 서류가 반려되거나, 요건 불충족으로 허가를 받지 못하는 사례가 적지 않습니다.\n오늘은 현장에서 자주 받는 질문을 바탕으로\nE-6 비자 신청 필수 가이드\n를 준비했습니다.\n🎬. E-6 비자는 어떤 경우에 필요한가요?\nE-6 비자는 다음과 같은 활동에 필요합니다.\n예술 활동\n– 미술, 음악, 무용 등 창작·공연\n연예 활동\n– 방송, 영화, 광고, 모델 활동\n기타 흥행 활동\n",
+      "c": [
+        "visa",
+        "bureaucracy",
+        "work_legal"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "의뢰했"
+      ],
+      "seg": {
+        "visa_type": "E-6"
+      }
+    },
+    {
+      "t": "​\n​\n중국 여행 비자 발급 받으려는 분들\n요즘 많으시죠?\n​\n​\n​\n​\n​\n​\n​\n​\n​\n​\n중국 비자\n셀프신청 & 대리신청 &대행사\n모두 경험한 오치가 상세히 쓴\n중국 관광 비자 관련글 아직 못보신분\n▼▼▼▼\n​\n​\n중국비자발급 방법 관광비자 셀프신청 대리신청 3일만에 발급 성공\n제가 며칠전에 중국비자발급센터 서울 지점에 가서 관광 비자 셀프 신청 발급 성공 노하우 및 방법 관련해...\nblog.naver.com\n중국비자발급센터 서울 비자 셀프 신청 발급 성공 노하우 관광 비자 발급 주차 연락처\n중국 비자가 셀프로 발급받기 참 번거롭죠 저도 늘 그렇게 생각해왔고 사실 지금도 이 생각이 변함없긴 해...\nblog.na",
+      "c": [
+        "visa"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "비용 얼마"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "안녕하세요 저희 택스라이트는 신고가 끝난 뒤 뒤늦게 환급 가능성을 알게 되신 납세자 여러분의\n숨은 세금\n을 되찾아드리고 있습니다.\n「종합소득세 환급 및 경정청구」 받을세금찾기 운동입니다.\n비전문인력이 아닌 환급 프로세스의 전문가인 베테랑 세무사가 직접 검토하고 진행합니다!\n​\n​\n​\n​\n​\n​\n​\n​\n​\n받을세금찾기\n30초만에 작성하는 초간단 세금환급검토 신청\n택스라이트와 함께 쉽게 해결하세요!\n유 세무사의 받을세금찾기 신청서\n30초도 안 걸리는 신청서 작성으로, 받을세금을 찾아보세요!\nwalla.my\n작성해 주시고 비밀댓글에 작성한 사실을 알려주시면 보다 더 빠르게 연락드립니다.\n끝난 줄 알았던 종합소득세 신고, 아직",
+      "c": [
+        "tax",
+        "discrimination",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "맡겼",
+        "의뢰했"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Hello this is TAXLIGHT. We help taxpayers recognizing the possibility of tax refunds after completing tax declaration recover hidden ones.\n안녕하세요 저희 택스라이트는 신고가 끝난 뒤 뒤늦게 환급 가능성을 알게 되신 납세자 여러분의\n숨은 세금\n을 되찾아드리고 있습니다.\nThis is our Find Your Refund program for Korean income tax refunds and claims for them.\n「종합소득세 환급 및 경정청구」 받을세금찾기 운동입니다.\nNot by untrained s",
+      "c": [
+        "tax",
+        "banking",
+        "housing",
+        "language",
+        "discrimination",
+        "work_legal",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "맡겼",
+        "맡겼"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "외국인 근로자 연말정산 방법 총정리(세율, 공제, 서류 등)\n외국인 근로자의 연말정산은 어떻게 준비해야 할까요?\n매년 초가 되면 연말정산 준비로 분주하실 텐데요. 외국인 근로자를 고용한 기업은 다른 기업들보다 조금 더 세심하게 살펴보실 거예요.\n​\n외국인 근로자는 내국인 근로자와는 다르게, 세율과 공제 기준이 약간 다르게 적용될 수 있기 때문이죠. 일부 직군은 소득세 전부를 감면받을 수 있어요. 게다가 외국인이다 보니 실수도 할 수 있어서 서류를 제대로 제출했는지 더욱 꼼꼼히 살펴봐야 하고요.\n​\n그래서 여러분이 만약 외국인 근로자가 있는 기업의 HR담당자라면 다른 기업에 있을 때보다 연말정산 절차가 좀 더 까다롭게 느",
+      "c": [
+        "visa",
+        "tax",
+        "banking",
+        "housing",
+        "healthcare",
+        "family",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "추천해 주"
+      ],
+      "seg": {
+        "role": "연구원"
+      }
+    },
+    {
+      "t": "​\n안녕하세요. 자영업경영지원센터입니다.\n1월이 되면 많은 사장님들이 비슷한 고민을 하게 됩니다.\n​\n“이번 달에는 어떤 세금 신고를 해야 하지?”\n“작년이랑 비슷하게 하면 되는 걸까?”\n​\n특히 외국인 사업자 사장님들의 경우,\n신고 방법은 알 것 같은데\n이게 맞는지 확신이 서지 않아\n마지막까지 불안한 마음으로 신고를 마치는 경우가 많습니다.\n​\n“한국 세금, 잘 몰라서 놓쳤어요”는 이유가 되지 않습니다.\n​\n​\n오늘은\n1월에 꼭 챙겨야 할 세금 신고 포인트와 함께,\n외국인 사업자 사장님들이 자주 헷갈려 하는 부분을\n조금 더 쉽게 정리해 드리려고 합니다.\n​\n한국에서 사업을 하고 있다면\n국적과 상관없이\n1월 세금 신고는",
+      "c": [
+        "tax",
+        "language",
+        "bureaucracy",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "맡겼"
+      ],
+      "seg": {
+        "role": "사업자"
+      }
+    },
+    {
+      "t": "1. 외국인 대상, 수도권 토지거래허가구역 지정\n​\n앞으로 외국인, 우리나라에서 집을 사려면 반드시 허가를 받아야 한다.\n​\n다음 주 화요일인 26일부터 내년 8월 25일까지 1년간, 서울과 인천, 경기도 등 수도권 대다수 지역\n에서\n한국 국적이 아닌 사람들\n은 반드시\n지자체의 허가를 받아야\n만\n집을 사는 것이 가능\n집 사는\n돈을 어디서 구했는지 등\n에 대한\n서류를 더 많이 내게\n하고, 집을 사는 데 들어가는\n시간과 절차를 까다롭게\n하는 것\n우리나라는 1998년부터 외국인이 집을 살 때 허가가 아니라 그냥 신고만 하면 되는 것으로 제도를 바꿔서 유지하고 있었는데,\n대략 30년 만에 제도를 변경\n​\n​\n※ 출처:\n국토교통",
+      "c": [
+        "housing",
+        "bureaucracy",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "어디서 구"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "어떤 종류이던 금융자산에 투자를 하는 사람이라면 2025년부터 시행예정인 금융투자세에 대한 관심이 지대할 것이다.\n만약 예정대로 시행이 된다면 오늘의 이 포스팅은 내년에는 쓸모없을 지도 모르겠다.\n​\n예전에 금융소득 종합과세에 대해서 포스팅을 한 적이 있다.\n금융소득종합과세 - 남의 일이 아니다\n펀드에 2천만원 맡겼는데 금융소득종합과세 대상자가 되다니 그것도 수익도 못낸 채로 털었는데... 기본적...\nblog.naver.com\n그 불합리성에 대해 말을 하고 싶어서 쓴 글이었는데...\n뭐 그건 그렇다 치고, 이것 때문에 참 할 일이 많고 번거로워지는 일들도 많다.\n​\n일단 모든 금융소득을 다 합쳐서 (이자. 배당소득) ",
+      "c": [
+        "tax",
+        "banking"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "맡겼"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "※2026년도 20번째 사건※\n★\n무료 전화상담 ☎ 010-2748-7530\n문의사항 문자로 적어보내주시면 노무사가 연락드립니다.\n★ 전국의 모든 사건을 수임합니다. 전화로 사건 의뢰 가능하며 노무사가 해당 지역을 찾아갑니다.\n★ 무료 주말 방문상담 찾아오시는 곳 ☞\n노무사사무소 용기\n식당 주방보조 태국 근로자 퇴직금 사건, 창원노동청 출석 전 해결 완료하였습니다.\n26년 1월 23일 13시 30분  창원노동청 출석 일정 인증\n​\n최근 외국인 근로자분들의 사건 수임이 많아지고 있습니다. 다양한 유형의 비자 소지분들 영주권을 가지신 분들 그리고 불법체류 외국인 근로자분들까지 다양한 사건들이 들어옵니다.\n​\n우즈베키스탄, ",
+      "c": [
+        "visa",
+        "tax",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "추천해 주"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "전세집으로 새로 이사를 오면서\n계약 및 입주와 동시에 해야 할 건?\n전세보증보험가입\n​\n전세금 절대 지켜\n​\nHUG 홈페이지 ↓\nhttps://www.khug.or.kr/index.jsp\n​\n가입은 PC로 HUG 홈페이지 또는\n네이버홈페이지로 가능하고\n안심 전세 APP 앱을 통해서도 가능하다\n​\n나는 임대인이 외국인이라 pc나 어플로는\n접수가 불가해서\n영업점에 방문을 해야만 했음\n​\n근데 방문을 한 번만 해야 하느냐?\n최소 두 번은 방문을 해야 함..\n지사가 가깝느냐? 나는 편도 1시간 넘게 걸림\n서류 실수하면 또 가야 하니 한 번에 제대로 내야 함\n​\n인터넷에 아무리 찾아도 외국인임대인에 대한 정보는 많이\n안 나와서 ",
+      "c": [
+        "banking",
+        "housing",
+        "bureaucracy"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "어디서 구"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "외국인 친구 집 구하느라 고민 많았는데 신림역 근처에서 정말 좋은 오피스텔을 만나서 걱정이 싹 사라졌어요. 친절한 상담과 꼼꼼한 임대 관리 덕분에 계약부터 입주까지 편안하게 진행됐답니다.\n친절한 상담과 외국인 맞춤 가이드\n처음엔 어디서부터 시작해야 할지 막막했는데, 여기 부동산에서 상담받고 나서 완전 달라졌어요. 직원분들이 한국 임대 절차를 쉽게 설명해 주시고, 외국인이라면 꼭 알아야 하는 부분들을 세세하게 알려주거든요. 뭔가 복잡한 서류나 권리관계도 친절하게 안내해줘서 안심할 수 있었어요. 친구도 금방 이해해서 너무 편해했답니다.\n신림역 도보 1분 거리 오피스텔 장점\n와 진짜 위치가 너무 좋아서 놀랐어요. 신림역에서 ",
+      "c": [
+        "housing",
+        "community",
+        "discrimination",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "추천해 주"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "외국인 친구가 한국에서 집을 구하는 게 쉽지 않을 줄 알았는데, 친절하고 체계적인 설명 덕분에 오히려 편안했어요. 복잡한 계약서도 쉽게 이해할 수 있게 도와주셔서 처음부터 끝까지 믿음이 갔답니다.\n처음 방문부터 느낀 세심한 배려와 신뢰\n와 진짜 처음 방문했을 때부터 분위기가 너무 좋았어요. 뭔가 딱딱한 느낌일 줄 알았는데, 중개사님이 너무 친절하게 하나하나 설명해주셔서 안심이 됐거든요. 특히 외국인 전용 계약 과정이 따로 마련되어 있어서, 친구가 한국어가 서툴러도 어렵지 않게 이해할 수 있었어요. 저도 덕분에 몰랐던 부동산 관련 지식을 많이 배웠답니다. 아 그리고 계약서류도 다 외국어로 준비돼 있어서 실수 없이 진행할 ",
+      "c": [
+        "housing",
+        "language",
+        "community",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "추천해 주"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "외국인 친구 방을 구하려고 여러 곳을 알아봤는데 대부분 한국어만 사용하거나 상담이 소극적이라 난감했어요. 그런데 신림역 근처에서 외국인 전용 서비스를 잘하는 곳을 발견한 뒤부터는 상황이 확 달라졌답니다.\n처음부터 다르던 상담 분위기\n처음 전화했을 때부터 뭔가 친절한 느낌이 확 들었어요. 특히 영어로 바로 소통 가능한 점이 친구한테 큰 도움이 됐거든요. 다른 곳은 서류 얘기만 나오면 복잡하다며 얼버무리는 경우가 많았는데 여기선 외국인 계약 절차가 다 준비되어 있어 덜 당황스러웠어요. 그리고 무엇보다도 하나하나 꼼꼼히 설명해줘서 신뢰가 갔습니다.\n신림역 초역세권 오피스텔에서의 안심 입주\n친구가 머물 방을 찾은 곳이 신림역에",
+      "c": [
+        "housing",
+        "language",
+        "community",
+        "mental_health"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "추천해주"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "안녕하세요\n서울 신촌에서\n외국인의 법률 및 법인서류 업무를 다루는\n광장 강택구 법무사입니다.\n제가 8년 전 행정사사무소에서 근무할 당시\n해당 사무소가 외국인 전문이기도 했었고\n그 후에도 외국사건을 하나씩 다루다보니\n현재는 여러 거래처, 수 백건의 외국사건 진행 경험이 쌓였습니다.\n​\n이처럼 외국인 전문 법무사사무소로\n다양한 국적, 다양한 업무를 다뤄왔는데\n​\n오늘은 그 중에서도\n외국인의 법인설립에 대해서 말씀드리고\n한국 투자비자에 대해서도 말씀드릴까 합니다.\n​\n​\n일단 비자부터\n외국인이 한국 법인 설립 가능할까,\n그리고 비자발급까지 하려면\n어떻게 해야할지\n4단 절차로 공유드리죠!\n​\n​\n​\n​\n법인 설립 1단계 - 자",
+      "c": [
+        "visa",
+        "banking",
+        "housing",
+        "work_legal"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "맡겼"
+      ],
+      "seg": {
+        "visa_type": "D-8"
+      }
+    },
+    {
+      "t": "​\n뉴질랜드에서 운전면허증 발급\nAA (Automobile Association)\n또는 VTNZ 센터\n​\n중고차 매장에서\n중고차 구입하기\n아이와 함께 뉴질랜드 일년 살기에 도전하고 있는 꿈꾸는 유목민입니다.\n​\n뉴질랜드에 도착해서 가장 먼저 한 일은 바로 자동차 운전면허증 전환입니다.\n​\n국제운전면허증을 발급 받는 대신 한국에서 이미 자동차 운전면허증을 뒷면에 영문 운전면허증이 나오게 신규로 발급받았습니다.\n​\n한국운전면허증 뒷면에 영문 운전면허증이 있으면 세계 여러나라에서 1년간 운전\n이 가능합니다. 뉴질랜드도 물론 가능하구요.\n​\n그런데 저는 1년살기를 할 예정이고, 뉴질랜드 운전면허증이 신분증을 대신하기때문에 빨리",
+      "c": [
+        "community",
+        "driving"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "추천해주",
+        "추천해주",
+        "추천해주"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "최근 후쿠오카로 여행을 갔다왔음!\n​\n​\n​\n이번에는 직접 운전대를 잡고\n소도시도 쪽으로 둘러보려고\n마음이 들떴었는데,\n​\n떠나기 며칠 전에\n아차\n싶은 게 튀어나옴.\n​\n​\n국제운전면허증 온라인 발급\n​\n받는다는 걸\n​\n생각 못하고\n미루다가 까먹은거임..;;\n​\n비행기 표에\n해외 렌터카 예약까지\n​\n전부 다 마친 상태라\n마음 놓고 있었는데\n​\n​\n​\n출국 3일 남기고,\n국제운전면허증이 없다는 걸\n깨닫고 얼마나 아찔했는지 모름.\n​\n​\n그래서 오늘은\n국제운전면허증 온라인 발급부터\n신청 비용, 주말에도 되는지\n등\n관련 정보를 총정리해보려고 함.\n​\n​\n해외에서 운전할 계획이 있다면,\n​\n괜히 미루다가 나처럼 까먹고\n발등에 ",
+      "c": [
+        "bureaucracy",
+        "community",
+        "driving"
+      ],
+      "src": "naver_blog",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "비용 얼마"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent quite a bit of time in Korea before and it doesn't surprise me at all that so many public citizens were out defending democracy. I'm always amazed by the sheer passion and will Koreans have when they're not happy about something. Many other countries would just whine about it but Koreans take action. It's an amazing feat to stand up to an a",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 4,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know if she's safe? I know her inbox and this post must be flooding her feed right now.",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 3,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "OP- if you are Australian and need help with a plane ticket DM me.  Stay strong, I believe in you.",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "need help with"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My experience with the same surgery in America Vs Korea Felt like writing this to put folks at ease with the Korean medical system.\n\n**Murica**\n\nIn America, I screwed up my knee really bad. Tore a bunch of tendons, fractured my knee cap, etc. I was referring to the highest-rated orthopedic in my region. This guy was famous for his practice, he has ",
+      "c": [
+        "healthcare",
+        "mental_health"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 2179,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I had a keloid from a really bad piercing and I couldn’t get it fixed in America because it was too expensive out of pocket. So I just lived with it and hated having to put my hair up. After living in Korea I decided to get it fixed. They scheduled my surgery a few days later and set me up for radiation because keloids can grow back. The radiation ",
+      "c": [
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 42,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Even without insurance in Korea it’s still dramatically cheaper. I have bad stomach problems and a doctors visit plus 2 different prescriptions was like 90,000krw, but the same doctor back home in the US, without any prescriptions, wasn’t covered by my insurance and cost me $300.",
+      "c": [
+        "housing",
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 13,
+      "w": [
+        "cost me $3"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I haven't had any major things done, but my experience in Korea related to cost of healthcare vs the USA is probably around a factor of 10 or 100 times cheaper in general. I recall going to the ER in the USA for what I thought was Zika Virus at the time. Made me wait 6 hours, took some blood gave me tylenol and sent me home. Got a bill for $1200 bu",
+      "c": [
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 8,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "God bless Cigna Global, i’m in HK right now and i paid $50 HKD (less than $10USD) for a check up and my skin antibiotics.",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 4,
+      "w": [
+        "i paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Your experience was the exact opposite of mine. I was at a training center up in the mountains even though I live in Seoul. The food was absolute trash (they just bought it from 7 eleven) and the internet speeds were horrible. I at least had a bed and tv. When I first entered my room they didn’t even clean it and I had to wait a full day to get int",
+      "c": [
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent so much time on Homo Hill. I miss it! Did you ever go to Miracle? A little lesbian hole-in-the-wall spot? \n\nI remember one time, the military had a curfew and they were checking homo hill at like 2 AM for American soldiers breaking curfew. The soldiers went to Miracle and started looking for secret doors (maybe because it was so small) but ",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 41,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know the anonymous number for reporting bullshit? My school (not hagwon) still has full classrooms of 20 plus students.",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 20,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I got led into Shincheonji's trap and I've never felt so depressed before It happened yesterday. I am a Korean exchange student who came back to korea temporarily(for military reasons). Since I'll have to go back to my uni in the future, I decided I'll have to have some way to practice English so as to not let it 'rust'. I also needed a friend with",
+      "c": [
+        "visa",
+        "community",
+        "mental_health"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 1199,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "I spent one afternoon in Seoul. I'm from the US and my father fought in our war over there. So I assumed there would be a lot of English speakers. Nope. Hardly anyone spoke any English by my wife and I are seasoned travelers so no problem.. I just ordered my food by pointing. We arrived downtown by bus from the airport and were mildly nervous about",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent a lot of time in Quintana-roo and this story is pretty well known with locals as just common knowledge. Pretty fascinating.",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 7,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My aunt asked me to take my baby cousin to his pediatrician for a vaccine while she was running some errands. I don't know why I didn't bring my wallet with me, especially considering I've lived in the US for most of my life. The lady at the clinic was low-key panicking and being like \"I'm so so so sorry but there is a charge today\" and I was like ",
+      "c": [
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 29,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent five years in Korea and will be back again and again. Is it a perfect place? No. But it *is* amazing, and I LOVE it there.",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "This is rather accurate. I spent a year as an exchange student, and I enjoyed my time and assimilated as much as possible. Except for the double speak and fake attitudes. I'm polite yet blunt, and I've made a few good friends, and that's enough for me. I'll be coming back for my master's as part of a job offer in SK. But I honestly didn't have as m",
+      "c": [
+        "housing",
+        "community"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "I would not even bother with teaching. That is, unless you have a master's degree and relevant teaching experience. Then you might get a university job with a very long vacation, and a somewhat better salary. The only other realistic option for you is to teach at an international school. That is only feasible if you have a teaching degree and you a",
+      "c": [
+        "housing",
+        "healthcare",
+        "work_culture",
+        "discrimination",
+        "family"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 6,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "teacher"
+      }
+    },
+    {
+      "t": "My in-laws laugh at me for liking Daiso, but Daiso has good quality stuff for a ridiculously low price!! I got kitchen organizers that would have cost at least 10€ at ikea and probably double that elsewhere. It was 3,000 won at Daiso.\n\nThey have so many practical things that are not even in stores here (like the cable organizer from your pictures)!",
+      "c": [
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 9,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Had a similar experience. I spent 120 days. I live more in the countryside, so the jail I was at didn’t allow English at all. I learned how to write and ready hiragana katakana and up to 2nd grade kanji (Kumon books). They forced me to stay an extra 2 months because they couldn’t find an interpreter for the courtroom. You’re right, the prosecutors ",
+      "c": [
+        "language_barrier"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 3,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Wow Thank you OP 😭 I thought that I was the only one, but I have the same exact experience. It always makes me feel as if there is something wrong wjth me :(\n\nBut lately I've started thinking that maybe they are seeing multiple people and are not interested enough to stick with me. Which is fine, but I wish there was an easier way to find out soone",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I agree if someone is refusing to learn the language just because they are lazy but everybody has their own story and I wouldn’t judge someone before I know why they didn’t learn the language. For example: I came to Japan 7 years ago and got diagnosed with MS in my first year here, was in a hospital for a long time, had to pay a lot of hospital bil",
+      "c": [
+        "healthcare",
+        "cost_of_living",
+        "mental_health"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 6,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My journey was completely different, though stage one definitely happened when I first got here.\n\nMy journey in Japan started back in my home country, where I met my now wife at college. We were together almost her entire stay in my country and we didn’t want to split up, so I dropped my original plans for after college and went with her to Japan. ",
+      "c": [
+        "visa",
+        "housing",
+        "community"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 9,
+      "w": [
+        "I paid",
+        "I hired"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I called 119 twice, both times because my then infant kid was having a very high fever, like high 39~40°C. Both times, the ambulance arrived within 5 minutes, and we were taken to a hospital right away. And for all that, I paid exactly 0 yen, because what kind of civilized society would even consider charging money to save a kid's life?",
+      "c": [
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 11,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I just want to say the idea that everywhere is the same so you should just stay where you are is pretty ridiculous.\n\nSure, the grass is greener where you water it, but watering grass in a jungle and watering grass in a desert are going to yield different results in the long run. You need to figure out what environment allows you do be you and grow ",
+      "c": [
+        "visa",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 21,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Hello. My English is not good, but I will try my best to write.\n I've lived in Japan since I was 2 years old and most of my life has been spent in Japan.\n\n I spent a period of time abroad and I believe I have experienced cultural differences.\n\n I understand your problems and issues very well, and I can sympathize with you because I have suffered fr",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Reminds me of being told by several Koreans that there are no STDs in Korea, at least not from Koreans. That would also apply to times when one would pay for it. If there are any, thats from foreigners. Obviously many Koreans would beg to disagree, but it does speak to some extent to the echo chamber many live in. Basically when most only present t",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "A huge chunk of the official statement is dedicated to explaining the DUI damage repayment situation, and there's a lot of complicated legal matters involved. My attempt at a summary:\n\n- Gold Medalist worked with KSR to resolve her penalties and damages she incurred because of her DUI. \n\n- KSR had 700 million won left to pay for the penalties, but ",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 19,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I mirror all of this. I think that the rudest coldest people that I’ve ever met are here in korea.. and although I spent years trying to learn their language. They just act like they can’t understand anything that I’m saying. But they don’t mind coming over and bothering me about putting on my mask when I take it off for a second while a korean, wa",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know if it is ok to change your flight date after turning in your visa application? I know I filled in that date in the paperwork somewhere, but not sure how important it is.",
+      "c": [
+        "visa",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 11,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "[There are more articles about foreign students, and I think they will increase as Fall approaches.](https://www.timeshighereducation.com/news/he-leaders-question-japans-ban-returning-foreigners)\n\nI just hope they won't make distinctions also about students visa, when they allow them, they should allow everyone, no matter from where they apply or t",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 15,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I wish there was a way to contact the Ministry of Foreign Affairs and put some pressure on them. They have a fax number you could theoretically send complaints to, but I'm afraid I don't possess such sophisticated cutting edge technology at the moment.\n\nIdeally a member of the press should write an article about how inconvenient this is for foreign",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know if easing of border restrictions is related to Japan's testing capacity or not?",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent way too long wondering what a Sea Asian was. Time to sleep 😅",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Wow this is very empowering and I am sorry you experienced this.. \n\n\nI had an experience in tokyo on new years in 2018 where i was drugged. I had one drink and one shot.. i was with a group of 3 other friends. I’m not sure what happened to be honest but i was feeling fine.. kinda not feeling the place and didnt want to be out anymore but the other ",
+      "c": [
+        "tax",
+        "community"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 12,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "You are a very brave person. If there is anything you need help with please reach. \n\nI hope your story helps other people here.",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 1,
+      "w": [
+        "need help with"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Well, as you should really know, he's such an important person that his boss has to tell him how to dress for work. That by itself qualifies him for free seat upgrades.\n\nI bet his job title has 長 in it too! デスク長, say.\n\nSurely if he were that important, his place of work would pay him enough to afford to pay for seat upgrades, but that's none of my ",
+      "c": [
+        "work_culture",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 11,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "unrelated but recently i took a trip and BOTH times i was on the plane, someone was sitting at my seat. It wasn't even great because I paid for my window seat, the person sitting at my window were in the same group as the mid and aisle seat. They couldn't even speak english. So I asked the staff to help. Took them awhile to move. It was so annoying",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 6,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I was -chan at work when I spent 2y as an expat on the finance industry 10+ years ago. More specifically a nickname (basically the first half of my name) - Chan. Still not sure how offended I should have been but I took it in stride. I was a 26y old male 😂",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "www.traveldailymedia.com/japan-reopening-fully-vaccinated-travellers/amp/\n\nI see a whole bunch of articles like this popping up, does anyone know about the accuracy?",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 7,
+      "w": [
+        "anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Probably been asked a million times but I can’t find anything to do with the Working Holiday visa, anyone know if this counts as long term work visa?  Or what’s the situation with the working holiday visa in general? Cheers 🙏🏻",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 4,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent forever on the phone today with various people at my embassy and the visa hotline, one thing no one could answer is where to send the application for entry? It just says to the relevant ministry. I've seen a few posts that say the email addresses have been published but I can't find them anywhere and my Japanese isn't great. Has anyone's wo",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "For a new visa under the new restrictions for business entry, does anyone know if the screening certificate applies to dependents (including wife) or if each dependent needs a separate certificate?",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know if the new policy on letting people in applies to working holiday visa applicants? It mentions business and students, but I wonder where us working holiday people fall under. Probably tourists?",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 1,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "does anyone know what will be required for the ShinsaZumisho ?",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 2,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know if the quarantine has to take place in a hotel or if it can be at an Airbnb if you’re arriving from South Korea on a long-term work visa? I feel like I remember seeing somewhere that quarantine at home or an Airbnb is okay if you’re arriving from certain countries, but I wasn’t sure if that has changed. Just trying to plan ahead be",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 2,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Japan times just wrote about the border situation again, mentioning a student from China and someone from the USA unable to visit family for fear or not being able to reenter\n\n[Omicron offers stark reminder of human cost of Japan's border controls](https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwi22",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 29,
+      "w": [
+        "willing to pay"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "Hi, my employer said to create the screening certificate they required to provide the flight schedule and the accomodation details, but we don't know when I can go to japan since we don't have the visa yet. Anyone know if the schedule must be fix or it can be tentative?",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 13,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Hi, does anyone know if it's pssible to immigrate to Japan with a working holiday visa, or are the CoEs restricted to certain kinds of visa now?",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know if you're allowed to stay in any hotel for 14 days quarantine? I don't have a home yet in Tokyo and am not sure how to approach my pending business visa to Japan. Can I just book any hotel for the duration of my quarantine? I'm coming from the USA and by my understanding the USA is not a designated special country where I have to b",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 5,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Please could someone recommend the best bank to use for foreigners? + another question I’ve put off making a local bank account for a while now; I think it’s about time, so I would greatly appreciate anyone’s suggestions. \n\nI also have a separate questions for anyone who knows about transferring a fairly large sum of money internationally from a fo",
+      "c": [
+        "banking",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 15,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Am I dumb or is it ACTUALLY insanely difficult to order things on websites in Korea? (As a foreigner) I don’t know whether to laugh or cry trying to set up accounts on sites such as coupang &amp; emart. It’s like I finally figure out how to complete one part just to not be able to do the next part. I don’t have my ARC yet so it seems near impossibl",
+      "c": [
+        "visa",
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 240,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "What's the easiest way for a foreigner to get the ARC (Alien Registration Card)? Traveling to South Korea in February and would like to get the ARC so that I can open a bank account.\n\nWilling to pay a local to help facilitate the process.",
+      "c": [
+        "visa",
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 42,
+      "w": [
+        "Willing to pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "No Korea # - How do I order food in quarantine? Sorry I couldn’t find an answer to this so I’m posting it here. Background: I will be traveling to Korea with an F-4 visa soon and will stay at an Airbnb. Question I have is how can I order food to be delivered without a Korean phone number? I also don’t have a Korean bank account either. \n\nI heard th",
+      "c": [
+        "visa",
+        "banking",
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 20,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "visa_type": "F-4"
+      }
+    },
+    {
+      "t": "Naver Pay for foreigners Does anyone know if it's possible for a foreigner to accept payments via Naver Pay on their website? I'm creating a website only available in Korea and I would like to use Naver Pay as a payment option.l but I currently don't have a Korean bank account. Is it possible to connect a paypal account? That is my only option for ",
+      "c": [
+        "banking",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 30,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Severance Tax Rate in Korea? Hello Everyone, I am an English Teacher and have been given a very high severance tax rate by my school!   \n\n\nDoes anyone know what the severance tax rate for foreigners in South Korea is? Facts/your personal experiences, please!",
+      "c": [
+        "tax",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 8,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "role": "english teacher"
+      }
+    },
+    {
+      "t": "Korean Health Insurance for Foreigners I was hoping to get some advice regarding the health insurance Korea provides for foreigners. Specifically the unemployed. I'm paying around 122,000 won and tbh I haven't been able to make the payments on time because, again, I'm unemployed. Does anyone know if there is some way I could be paying less?? thanks",
+      "c": [
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 12,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Advice: Working remotely for non-Korean company in Korea Hello,\n\nI'm currently working for a Korean company in Korea on a marriage visa but I've started applying for remote positions in non-Korean companies. One of the companies got back to me and I'm now trying to figure out approximate salary deductions to make sure I'm not going to make less tha",
+      "c": [
+        "visa",
+        "tax",
+        "housing",
+        "work_legal",
+        "family"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 61,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "role": "freelancer"
+      }
+    },
+    {
+      "t": "Health insurance premiums Does anyone know if there’s a list somewhere of health insurance premiums based on your income (in English)? Thanks!\n\nEdit: Come to think of it, if it’s a list of income and premiums, it doesn’t need to be in English!",
+      "c": [
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 36,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Did anyone else stop getting public health insurance papers? At my old job I got them every month, but apparently they changed the system lately?\n\nAnyone know if I can check to make sure my work is paying into the NHIS?",
+      "c": [
+        "housing",
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 17,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Health insurance on d4 Stopped by the office and was told enrolling in NHI was literally impossible for d4s (I've lived here on a different visa well over 6 months, switched back to d4). Called the local immigration office and they didnt know. I now take some daily meds that are costing me a lot out of pocket. Is it true d4s CANNOT enroll in NHI pe",
+      "c": [
+        "visa",
+        "housing",
+        "healthcare",
+        "bureaucracy",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 12,
+      "w": [
+        "anyone recommend a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Housing contract renewal So my current housing 2-year contract expires at the end of September 2019.\n\nI will have Visa renewed and will plan to renew the contract for the same home and was wondering about the general process.\n\nThis is what i plan to do, but i'm not sure if this is how its usually done and i have some questions\n\n\\- Get in touch with",
+      "c": [
+        "visa",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 11,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Long term visa holder looking for a SIM card I have my alien number but no card as of yet. I opened my bank account with NH today. I was planning to buy from KT M Mobile 30,000won a month for 10GB, but apparently they only allow credit card payments and I have a debit card. So does anyone know where I should buy from?",
+      "c": [
+        "visa",
+        "banking",
+        "housing",
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 35,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Need a korean phone number for four months Hi, I'm an exchange student in korea and just arrived to seoul a few hours ago. My phone number from my home country is not working and I need a korean phone number as soon as possible so I can communicate with my family and go around the city without the risk of getting lost. I need internet connection an",
+      "c": [
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 36,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "tenure": "short",
+        "role": "student"
+      }
+    },
+    {
+      "t": "Anyone know how to get a Kookmin check card working on foreign sites? I’ve been to the bank and they’ve given me at least 3 apps to use but most sites just want the number which it always says something went wrong. Korean sites are no problem but the moment I buy elsewhere then is not working. The bank also haven’t been helpful. Any clue how to fix",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 9,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "As a newcomer to Korea (Incheon airport), I'm planning on buying a phone number and a portable wi-fi router. Where do I buy these? Gonna be there tomorrow and I want to know where to buy these 2 things for a month and how much would it cost? I hope I find something good and not expensive but it is what it is",
+      "c": [
+        "phone_connectivity",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 22,
+      "w": [
+        "how much would it cost"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Can't get in contact with EG sim to cancel plan and disconnect phone. Does anyone know what I can do? I need help! I've been trying to contact EG sim in many different ways for about 2 weeks. They won't respond. I can't sign with a different mobile company with their sim card still connected to my phone. This is stopping me from doing important thi",
+      "c": [
+        "banking",
+        "housing",
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 24,
+      "w": [
+        "anyone know",
+        "anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Anyone recommend wifi \"egg\" vs new SIM card? I'll be in Seoul for a few days and then traveling down to Jeju and back. Can anyone have experience or recommend the wifi egg rental or getting a new SIM card? I have an iPhone 6 and will use it mostly for Internet and FaceTime with my kids. ",
+      "c": [
+        "housing",
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 41,
+      "w": [
+        "Anyone recommend"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Where can I find continuous, official information on the physical release of Korean Dramas/Movies/OSTs/Short Films? Thanks for reading first and foremost.\n\nI am collecting physical blurays/limited editions/director's cuts/full slips/steelbooks of many Korean Film Entertainment and their corresponding OSTs and always have trouble knowing when they r",
+      "c": [
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 18,
+      "w": [
+        "Where can I find"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Korean show like Sesame Street or Mr. Rogers? Hello all,\n\nI've found that letting our kids watch Korean TV is a great way to help teach them Korean Language.  But I'm tired of showing them Pororo or Tayo the bus.  Enough with the silly cartoons!  Ideally, I would like to show them something akin to Sesame Street, or Mr. Rogers Neighborhood, or Read",
+      "c": [],
+      "src": "reddit",
+      "co": "korea",
+      "e": 10,
+      "w": [
+        "anyone recommend a",
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Looking for a financial advisor regarding real estate (just for my living situation, not investment). Can anyone point me to a resource for consulting services? Willing to pay of course. I have made an anonymous account to avoid judgment and real life harassment and all that. Please mods, let it go through. I am not trying to abuse anything/anyone.",
+      "c": [
+        "visa",
+        "tax",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 3,
+      "w": [
+        "Willing to pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Has anyone else had problems ordering from Amazon.com and having items shipped to a Korean address? Normally when ordering from Amazon I have items shipped to my parents place in the states, and they then forward the stuff to me whenever they get enough to fill a \"care package.\"  Occasionally I want to get something faster and am willing to pay the",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 31,
+      "w": [
+        "willing to pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Same day flower delivery for gf's birthday? Hello fellow redditers,\n\nI'm looking for a service where I could order flowers for my girlfriend since she has birthday tomorrow, where they'd be delivered the same day. \nI've heard about letterfly from a friend, the prices seem to be great, but the Bouquets I'm interested in need a few days to be prepare",
+      "c": [
+        "community",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 9,
+      "w": [
+        "looking for a service"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "Looking for a service like Ask Adjumma/Wonderful except just for one time use, not a membership. Suggestions? Basically, my dog has done damage to the laminate flooring in my apartment and a wall. I want to get it fixed without telling the school (the apartment building is owned by my Director). My school knows about my dog, and I've paid a deposit",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 8,
+      "w": [
+        "Looking for a service"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Leaving Korea: pension and tax return questions Hi everyone,\n\nI'm leaving Korea on August 17th and I've been reading online trying to figure out how I can leave with my pension and tax refund.\n\n- I called the National Pension Service and they said I could apply to get my pension given to me in cash in the airport when I leave. Does anyone know some",
+      "c": [
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 21,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Question Living in Korea Hey, I am going to study at Hanyang starting this fall and I am very excited :). \nTo prepare I am currently looking for some accommodation when I found Simple Spaces. They are now offering me a Queen-Size room in 368-103 Sindang-dong, Jung-gu, Seoul.\nDoes anyone know anything if the housing company is good and also if the l",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 41,
+      "w": [
+        "anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Be aware of being ripped off in daily life living in Korea 1. Make sure to check your invoice after purchase. It happened several times that I was overcharged in convenient store, stationary store, and restaurants.\n\n2. I used designated driver service once. It should be 30,000won, then after arrival I paid 50,000won, and the driver just ran away wi",
+      "c": [
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 70,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Looking to slow down but not sure where to live - anyone else have this issue? So first of all, complete first world problem ay 🤦‍♂️  \n\n\nI'm nearly 30. I first went solo backpacking at 21 and it completely fueled my drive for travelling. I fortunately landed a remote job early creating my own business and can do it anywhere in the world.   \n\n\nI spe",
+      "c": [
+        "community"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 26,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Visa's in Mexico when combinig tourism and remote work I've entered and exited Mexico numerous times this year. I spent an entire month with my partner traveling around (exclusively for tourism) and then went back to the USA. Then I spent 4 months working remotely, I left for a week for an event in the USA, then returned for another 3 months. Legal",
+      "c": [
+        "visa",
+        "tax",
+        "work_legal"
+      ],
+      "src": "reddit",
+      "co": "korea",
+      "e": 17,
+      "w": [
+        "I spent",
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Dude involved in Noborito’s incident Does anyone know anything about the guy who went berserk in Noborito today? Is there usually a follow-up or an update about their background? His motives? I usually just hear about these horrible stabbing incidents in Japan but could not find a legit source about the main people involved. I know it might be beca",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 60,
+      "w": [
+        "anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know how I might get treatment for ADHD in Japan (Tokyo)? Yes, this is a throwaway account ...\n\nWhile it's not like I had never heard of ADD or ADHD, I never really bothered looking up the [symptoms](http://www.nhs.uk/CONDITIONS/ATTENTION-DEFICIT-HYPERACTIVITY-DISORDER/Pages/Symptoms.aspx). \n\nI always thought it was just some b.s. to ex",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 68,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Foreign account deposit Does anyone know if I can deposit money into my foreign bank account from an ATM. I dont have a debit card in Japan and I need to use my foreign one to buy a plane ticket back home.\n\nWhat's your experience with this issue?",
+      "c": [
+        "banking",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 6,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "How to get a bank account as a student ? Does anyone know how to get a bank account over here as a student ? It’s basically impossible from what I’m gathering. JP bank won’t do it because my student card shortened my middle name to one letter and it’s university policy to not change the document after enrolment. Rakuten bank sent me an email saying",
+      "c": [
+        "banking",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 54,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "Cheapest way to get cash from foreign accounts? I’m trying to find the best way to withdraw cash with low or no fees. My income comes from overseas into a US bank account. I was thinking about finding a loophole for cash withdrawal. Perhaps a Japanese cash card in my Apple wallet I can transfer funds to from Apple Pay? Anyone know a way to do this?",
+      "c": [
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 78,
+      "w": [
+        "Anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Foreign currency exchange (cash) at JP post bank? (JPY to AUD) I am travelling overseas for a holiday next month, and wondering if Japan Post Bank can convert JPY (cash) into AUD (cash)? My searches just come up with remittance/bank transfers which I do not want to do.\n\nAnyone know if they offer this service?\n\nEdit: Thanks for everyone's help/advic",
+      "c": [
+        "visa",
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 26,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Recommended corporate bank account? Can anyone recommend a bank for a corporate bank account with internet banking that doesn't suck? Right now I have Web21 from SMBC and it's driving me nuts. Here are some of the things wrong with it:\n\n- Internet Explorer only, but if you first log into IE, you can then log into Chrome and it works\n- You can only ",
+      "c": [
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 71,
+      "w": [
+        "anyone recommend a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Can't seem to get any visa over one year. I have been living and working in Japan for fourteen years, tl;dr warning:\n\nI have changed employers several times, in some cases with circumstances that may have complicated my immigration status.\n\nFor example, my first employer forced me to work for almost six months on two tourist visas (I didn't have or",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 51,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I am working in Japan at the moment under a work visa but a US citizen, and I was wondering does anyone know how to handle the tax situation with the foreign earned income exclusion? Hello, I came to Japan to work for around a year on a work visa, and I am incredibly confused on how to handle the tax situation. My income for the year is less than 1",
+      "c": [
+        "visa",
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 58,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I've been double paying my tax for the past two years. What should I do? So, I'm an idiot and I messed up my taxes.  I didn't realise tax was being taken from my various eikaiwa contracts etc so when I filed my tax return I paid income tax on the full amount again.  \n\nI just compared income and taxes with a friend a few days ago and I was blown awa",
+      "c": [
+        "tax",
+        "housing",
+        "community"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 33,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "US citizens in Japan, do you know where I can find advice on filing US taxes? (In English, over phone or in Kyoto) I am looking for some (free/affordable) tax advice for US citizens. Does anyone know of anyone I can contact?\n\nBasically I need help filing a late tax return",
+      "c": [
+        "tax",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 36,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Anyone know of a U.S. Tax Professional to double check my return? Filing from Japan I'm an American living in Kansai and it's tax season again. Last year I was denied my stimulus check due the fact that I had been filing wrong for the last 10 years. I had been listing my wife (Japanese) on my taxes but I wasn't aware that I had to apply for an ITIN",
+      "c": [
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 31,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {
+        "nationality": "american"
+      }
+    },
+    {
+      "t": "Is it ok to move during visa renewal process? I’ll be submitting the paperwork to renew my visa (3-year work visa) in the next week or two, and from past experience I know it usually takes a month for it to be finalized.\n\nMy partner and I are planning to move apartments (same city) within this time period — probably mid-Feb. Does anyone know if thi",
+      "c": [
+        "visa",
+        "housing",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 10,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Need help with online renewal visa So I usually try and figure stuff like this out on my own but I’m at my wits end and the stress of this situation is killing me.\n\nI finally got my my number card after scrambling to get it for like 2 months so I can renew my visa online (on top of all the necessary documents).\n\nOf course the system is extremely ha",
+      "c": [
+        "visa",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 12,
+      "w": [
+        "Need help with"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "未納額 Visa renewel issue? good morning everyone \n\nim currently in the midst of renewing my work visa, but I’m running into an issue with my tax documents. I have both my 令和6年度 (令和5年分) 課税証明書 and 納税証明書, but the 納税証明書 shows an unpaid balance. It mentions that most of it has been paid, but not that specific amount. I, however, have the bank statement to ",
+      "c": [
+        "visa",
+        "tax",
+        "housing",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 14,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "A week late notifying immigration about a job change Hi everyone!\n\nI’ve been very stressed out with my new job as I was in training for 2 weeks away from home and just finished my actual week at work, when I realized I haven’t notified immigration about my job change. It’s within my same visa category but I’m a bit worried. \n\nDoes anyone know if I’",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 31,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Tax document for visa renewal? Hello everyone, \n\nMy employer mentioned that I need to get a certificate saying that I paid my taxes and submit it along with the regular visa renewal paperwork when I go to the immigration office. I've never had to get that before. It's just a regular visa extension that I'll be applying for. \n\nDoes anyone know anyth",
+      "c": [
+        "visa",
+        "tax",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 14,
+      "w": [
+        "I paid",
+        "anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know how long language school visas get renewed for? I came to Japan in June of last year.\n\nMy residency card is set to expire in September of this year. (1 year and 3 months).\n\nMy school told me I can only study up until March of next year because of the Japanese fiscal school year. I was under the impression I got to study for 2 years",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 32,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Resident Taxes and Visa Renewal Hey all, \n\nI’m reapplying for my visa and when I went to get the form that lists what I paid for resident taxes last year I was told that they don’t have anything listed for me, only this years (I have moved, but put both my current and old address on the application) I swear I paid my resident taxes, and never recei",
+      "c": [
+        "visa",
+        "tax",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 29,
+      "w": [
+        "I paid",
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Late residence tax/visa renewal Okay I'm just having some anxiety and would just like some reassurance.\n\nSo I was late on 2 residence tax payments last year by a couple of months (there was reason for this, and I can provide proof if necessary). However I'm about to apply for a visa extension (NOT permanent residency) and I'm worried it will cause ",
+      "c": [
+        "visa",
+        "tax",
+        "bureaucracy",
+        "mental_health"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 12,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Freaking out about VISA renewal I have been in Japan 12 years, the last 4 or 5 on a spousal visa. I have a 3 year old kid and recently submit my routine visa renewal application.   \n\n\nThe thing is, due to health reasons, I spent 6 months of my three year visa abroad. My wife was struggling to deal with my health condition AND taking care of our kid",
+      "c": [
+        "visa",
+        "housing",
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 66,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "tenure": "long"
+      }
+    },
+    {
+      "t": "Do mobile phone companies still have the 2 years+ requirement for foreigners? A few years ago, none of the big companies would sell me a phone or their services because they said I had to prove I could legally live in Japan for at least 2 years.  I ended up buying a phone and service from DMM, an online company, which doesn't have physical stores o",
+      "c": [
+        "visa",
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 28,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Rakuten Credit Card Application So I applied for a rakuten credit card earlier this week and had gotten a mail back saying to check my status.  When I checked, I seem to be stuck on step 3, which is them contracting me via phone to confirm.  I haven't heard from them and I hear some people saying that this probably means that they have rejected you",
+      "c": [
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 33,
+      "w": [
+        "Anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Divorce by agreement -協議離婚 - kyogi rikon, do I need a lawyer? Hello,\n\nI (41M - foreigner) am done with my verbal abusive partner (43F - japanese).  \nEveryday I'm walking on eggshells, waiting for the next verbal beating.  \nAfter years of this, I don't want to fix it, I just want out.  \nBut here is where the problems begin. \n\nI'm on spouse visa, we ",
+      "c": [
+        "visa",
+        "family"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 189,
+      "w": [
+        "I paid"
+      ],
+      "seg": {
+        "tenure": "long"
+      }
+    },
+    {
+      "t": "Amending tax return for double taxation relief? Hi all, thanks for any advice. \n\n\n\nFor context I am a tax resident of Japan. In 2024 I had gains from my US brokerage, and I paid capital gains tax on that via my US tax return. I then had my Japanese accountant include these in my 確定申告 and paid the relevant taxes Japan side as well, with the intentio",
+      "c": [
+        "visa",
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 8,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I'm confused about international tax laws I'm a foreigner in Japan. If I send money from Japan to India and make some profit while doing so (Basically by buying and selling digital assets). Do I need to pay taxes on it? Which country should I pay tax in?\n\nIf this is not the right place for such question, please guide me where can I get consultation",
+      "c": [
+        "tax",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 13,
+      "w": [
+        "where can I get"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My saga selling and buying property in Japan, getting 0-1% fees, and the lessons I learned along the way *\\[edit: spelling/fixing errors, added some 'lessons' at the end\\]*\n\n**Preface**\n\nHello all,\n\nI wanted to share my experience at the start of this year selling real estate in Japan. This is not a solicitation or condemnation of any particular se",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 594,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Capital gains tax on inherited overseas property I initially asked about this in another thread but that became very messy and was full of inaccuracies so posting the latest information I have here. People who have undergone the same thing are welcome to share their experiences but for the sake of others who might need this info please refrain from",
+      "c": [
+        "visa",
+        "tax",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 48,
+      "w": [
+        "I hired"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Remote work employer's insurance and NHI / Taxes I'm currently a \"seishain\" in a Japanese company and I have PR.\n\nI recently had an interview with a foreign company based in Singapore for a remote position (they have no legal entities in Japan) they basically said they would pay me my salary in full to my bank account (without deducting taxes) and ",
+      "c": [
+        "tax",
+        "banking",
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 20,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Is there still hope for my credit? Hello guys,\n\nSorry for the bad English but for context, I’ve been living in Japan as a self supported international uni student for 2 years now. I applied for a paidy credit card around September 2023. Things were going well and I have just been mostly using it for konbini food. I’ve been paying it diligently unti",
+      "c": [
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 49,
+      "w": [
+        "ended up paying"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "Bank account for € in Japan? Hello!\n\nI heard there are bank accounts where you can deposit other currencies apart from Yen and which usually give interests. Can anyone recommend which one I could look up for €? Ideally:\n\n* I can move money from MUFJ to this account for free (domestic wire) every month\n* exchange is good\n* they give me interests\n* n",
+      "c": [
+        "banking",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 32,
+      "w": [
+        "anyone recommend"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Open A Bank Account - How Hard Is it? I just got a spouse visa and will be moving to Japan very soon. Does anyone know which bank allows one with no job offer in Japan to open an account ASAP and wire funds from aboard, not requiring to jump thru hoops? Maybe also get a credit card too if possible. I need to get the account soon so i can transfer Y",
+      "c": [
+        "visa",
+        "banking",
+        "family"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 56,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Looking for banks that offer fixed deposit accounts Does anyone know if the postal bank (Yucho) offers fixed deposit accounts in  Euros? If not, can anyone recommend a Japanese bank that is available all throughout Japan to open a fixed deposit account in a currency that is not dollars, preferably Euros?",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 18,
+      "w": [
+        "anyone know",
+        "anyone recommend a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Can I open a brokerage account on a work VISA? Title pretty much sums up the situation. I'm on a 5 year work visa and have been here since Japan reopened in 2022. I'm trying to move my US brokerage funds over, but have been having a hell of a time finding a bank that will let me open up a brokerage account.  \n  \nI've seen Rakuten and SBI mentioned ",
+      "c": [
+        "visa",
+        "language_localization"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 29,
+      "w": [
+        "is there a service"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Japanese bank account for Military Members Not sure but does anyone know a way to make a Japanese bank account if I am not a resident because I am in the military?  Any help would be appreciated.",
+      "c": [
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 6,
+      "w": [
+        "anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Part and and Freelance work at the same time - Need help with taxes? I was, until recently, working with 2 freelance income streams. I worked 15-20 hours a week freelance WFH for a Japanese travel agency, and I also stream on Twitch and make social media content as a side hustle. The streaming amount will be less than 200,000 for the year.\n\n2025 is",
+      "c": [
+        "tax",
+        "work_legal"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 7,
+      "w": [
+        "Need help with"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Moving to Japan after first visit **Hi everyone!**\n\nThis is actually my first time posting on Reddit, so apologies in advance if I make any mistakes.\n\nI’m originally from Turkey. I moved to Poland in 2017 for university and language studies. After graduating, I found an IT job here and decided to stay. I now have a TRC and a stable life here.\n\nThro",
+      "c": [],
+      "src": "reddit",
+      "co": "japan",
+      "e": 12,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Can my meds be prescribed in Japan? My husband and I intend to move to Japan within the next year or two (location tbd, it would depend on jobs). One of the biggest concerns I have before we even start the process is my daily medications. Does anyone know if the below can be prescribed by a Japanese doctor? Google is not giving the best answers.\n\nV",
+      "c": [
+        "housing",
+        "healthcare"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 25,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Anyone else get depressed when coming home after digital nomading? Hi everyone. Is what I'm feeling a common thing after traveling?\n\nI'm an American that quit his tech job a year ago to travel the world and work on my own business. I spent a lot of time in SE asia and I absolutely loved it. Mainly Bali.\n\nI found myself living a dream life: affordab",
+      "c": [
+        "cost_of_living",
+        "mental_health"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 303,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "nationality": "american"
+      }
+    },
+    {
+      "t": "Where can I find digital nomad work? I’m searching for a new job right now and would like to be able to work remotely. The problem is a few years ago I fell for a remote work scam and haven’t trusted the ones listed on Indeed and LinkedIn since, and I’m worried about the reliability of the job if it is legit. I was wondering if you have any ideas o",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 52,
+      "w": [
+        "Where can I find"
+      ],
+      "seg": {
+        "visa_type": "DIGITAL NOMAD",
+        "role": "digital nomad"
+      }
+    },
+    {
+      "t": "I have looked into Italy’s taxes (for digital nomads) — might help if you're considering it I’m working on a free resource for people looking to relocate — a tool that helps you project your quality of life in different European countries by comparing taxes, healthcare, and cost of living.\n\nI’ve gathered data on how much taxes you would pay as a di",
+      "c": [
+        "visa",
+        "tax",
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 138,
+      "w": [
+        "would pay"
+      ],
+      "seg": {
+        "visa_type": "DIGITAL NOMAD",
+        "role": "digital nomad"
+      }
+    },
+    {
+      "t": "Digital Nomad Visa Spain Hey all!\n\nI'm about to apply to the digital nomad visa in Spain, and I'm concerned about the income you need to demonstrate. I work for a corporate client, and I was wondering what happens if my contract is not renewed?\n\nI’m obviously looking to find other clients so that this doesn’t happen but you never know.\n\nI don't wan",
+      "c": [
+        "visa",
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 4,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "visa_type": "DIGITAL NOMAD",
+        "role": "digital nomad"
+      }
+    },
+    {
+      "t": "Tax residency for a digital nomad? Hi all.   \n\n\nAustralia tax resident currently, working remotely and in Asia.  I want to stop being a tax resident of Australia. \n\nDoes anyone know whether I would need to become a tax resident else where? Or can I simply open a foreign bank account, eg in Hong Kong, and have my wages paid to that?\n\nBeen looking at",
+      "c": [
+        "visa",
+        "tax",
+        "banking",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "japan",
+      "e": 90,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {
+        "visa_type": "DIGITAL NOMAD",
+        "role": "digital nomad"
+      }
+    },
+    {
+      "t": "Any limit to leaving and re-entry to Taiwan inside of 90 day Visitor Visa window For any expats or foreigners based in Taiwan or with experience in Taiwan in general:\n\nI'm in Taiwan for 3 months for business purposes but just entering as a US citizen under a Visitor visa since I don't plan to stay longer than the 90 day limit. \n\nIf a take a couple ",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 25,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My apartment search in Taiwan - what worked, what didn't, and a scraper I built to make 591 less painful I just finished my apartment search in Taipei and wanted to share what worked for me. This is my specific, subjective experience - your mileage may vary.\n\n**The outcome:** 1.5 weeks from starting my search to signing a contract. Budget was 40-45",
+      "c": [
+        "visa",
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 101,
+      "w": [
+        "ended up paying"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "any crypto.com users in Taiwan? bank question I'm going to Taiwan later this year, and would like to open a bank account there, does anyone know which bank can easily be linked to crypto.com so that i can move the money i made into said bank.  it would make it easier for me to send money to relatives and/or spend money there when i'm in taiwan for ",
+      "c": [
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 15,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Foreign teacher legal repercussions  Throwaway account. Not sure if this is the best sub to ask this question. I worked in Taiwan as a foreign English teacher for a year and it was one of the best ever years of my life. Left to come back to the states and go back to school around 5 months ago. A reoccurring issue I had with one of my schools while ",
+      "c": [],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 5,
+      "w": [
+        "would pay"
+      ],
+      "seg": {
+        "role": "teacher"
+      }
+    },
+    {
+      "t": "Tax Refund Question Due to a family emergency, I will be leaving Taiwan (permanently) before my tax refund hits my bank account. \n\nDoes anyone know if I can still use my debit card (from Changhwa bank, with a foreign PIN number) abroad, if my ARC is cancelled?\n\nI’m worried that I won’t be able to access this money at all. If anyone has any experien",
+      "c": [
+        "visa",
+        "tax",
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 12,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "What do I need to do to go from a Visa-Exempt entry to ARC? I've done my best to research this thoroughly without having to resort to a new thread but there's just so much conflicting information out there it's impossible to wade through it all. If anyone who has been in a similar position to me within the last 1-2 years could shed some light on th",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 78,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Taiwan Labor Pension and US Tax reporting Hi guys,\n\nDoes anyone know of good authority on declaring / filing requirements for US citizens / Dual citizens with foreign pension accounts, specifically the standard Taiwan labor pension? \n\n\n&gt; Participation in a foreign pension will generally require  Form 8938, Foreign Bank Account Report (FBAR or Fi",
+      "c": [
+        "tax",
+        "banking"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 8,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Tax Office told me I don’t owe any taxes on salary from foreign company earned while in Taiwan. I am in Taiwan on a Gold Card and stayed here 152 days last year. The law and Gold Card website seem very clear I would owe 18% on the money earned for the 152 days I was in Taiwan. Seems simple. \n\nI went to the Da’an tax office today and spoke to two di",
+      "c": [
+        "visa",
+        "tax",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 185,
+      "w": [
+        "I paid"
+      ],
+      "seg": {
+        "visa_type": "GOLD CARD"
+      }
+    },
+    {
+      "t": "Studio Apartment Hunting in Taipei - Any Tips or Things to Look Out For? Hi guys, I've just started apartment hunting in Taipei. My budget isn't super high (around 20-23k per month) but an agent has been sending me options.\n\nI don't have a lot of house hunting experience so I'd like to hear from anyone who has gone through this in Taipei and any le",
+      "c": [
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 111,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Anyone know where I can rent a scooter in Taipei, other than bike farm I want to rent a scooter for a holiday we are taking next month. Bike farm is the only one that I know of that rent to foreigners but the scooters are pretty dodge.",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 20,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Short-term apartment rent 3 months Taipei Does anyone know someone that can rent me a decent apartment 3 months on a price range 12,000TWD-18,000TWD/month (if possible, with kitchen) from 11th May - 9th August in Taipei? Also I am up for shorter rents during this time if any of you that happen to be leaving Taiwan for 1-2 months and want to rent ou",
+      "c": [
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 23,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Serviced Apartments in Taipei Hi, \n\nWife and I are moving to Taipei at the end of the year and would like to first rent a serviced apartment while we look for longer term rentals. So far I've found istaytion, itaipei, and Howard suites. Anyone know of any others? \n\nWe're looking to stay in Da'an or ZhongZheng only. \n\nThanks",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 11,
+      "w": [
+        "Anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "cockroaches in my appartment I am in Taipei with a Taiwan resident visa to study Chinese for one year at the CLD at NTU. For this, I signed an 11-month rental contract for an apartment starting on August 15 in the Da’an District. I paid the deposit and one month’s rent in advance in cash, arranged through a local agency.\n\nThe problem is that from t",
+      "c": [
+        "visa",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 140,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Cost of living in Taichung in 2025? Hey 👋 I'm looking at few places and curious to know how much does it cost to live in Taichung per month all included?\n\nStarting from the rent that is the main expense...is it possible to find studio/apartments for 2-3 months? What about deposits how does that work?\n\nThanks in advance :)",
+      "c": [
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 17,
+      "w": [
+        "how much does it cost"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Need help with with a tax question! Hi all! My fiance and I are working through a tax situation that we're hoping to get some input on. Here's a little background:\n\nThe fiance: \n-Taiwanese born and immigrated to the states at an early age\n-Became a U.S. Citizen but never officially \"gave up\" her Taiwanese citizen ship\n-She moved back there several ",
+      "c": [
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 18,
+      "w": [
+        "Need help with"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Getting phone in Taiwan I don't really know very much about phones, and my local friends are on contract, so they don't really know either.\n\nBasically, I'm looking to by an unlocked smartphone handset. Where would be a good place in Taipei or Kaoshiung?\n\nI'm also trying to get a prepaid SIM, but I'm not sure about how minutes/data work? Are things ",
+      "c": [
+        "community",
+        "phone_connectivity"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 36,
+      "w": [
+        "where can I get"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Household Registration for non-Chinese Immigrants Lí hó guys,\n\nI've been doing some pondering and was exploring maybe moving to Taiwan for some time in the future and this just got me in a little research hole about Taiwanese immigration laws but Taiwan is a bit different than a lot of other jurisdictions because it has household registration and t",
+      "c": [
+        "visa",
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 7,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Looking for lawyer to help me with digital nomad visa (UK citizen) I am a UK citizen with a remote contract for a UK based company.\n\nMy employer is happy for me to work abroad in Europe for 5.5 months every tax year, but after that time is up they state I have to return to the UK.\n\nI talked with HR and asked if I could go for longer (still within E",
+      "c": [
+        "visa",
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 3,
+      "w": [
+        "Looking for lawyer"
+      ],
+      "seg": {
+        "visa_type": "DIGITAL NOMAD",
+        "role": "digital nomad"
+      }
+    },
+    {
+      "t": "Challenging Mexico's two laptop rule  I was unfortunately charged for having two laptops on my way into Mexico, which from reading old threads, seems to be random. They based the tax on the price of my work laptop, when it was new, in 2017. It's obviously worth much less now. The only other option was for them to confiscate it, which seemed bad, so",
+      "c": [
+        "visa",
+        "tax",
+        "banking",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "taiwan",
+      "e": 922,
+      "w": [
+        "I paid",
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "super burned out on being a nomad but hate the weather/politics of home Hey all,\n\nI've been working remotely for almost 7 years, and I'm just super burnt out on being a nomad. Unlike many I guess, I didn't particularly wanted to travel around, I just wanted to use the freedom I had to find a place to settle down that suited me better than my home c",
+      "c": [],
+      "src": "reddit",
+      "co": "general",
+      "e": 172,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "nomad"
+      }
+    },
+    {
+      "t": "List of countries in Americas/Europe which have an option to get tax residency while staying for &lt;183 days? As a motivating example, Bahamas has a rule where \"\"Tax residency certificates are issued to individuals who spend at least 90 days in the Bahamas and under 184 days in any other single country[5] and purchase a property worth in excess of",
+      "c": [
+        "visa",
+        "tax"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 20,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "How would you rank the Southeast Asian countries you visited/lived in? Southeast Asia, where I have been to seven countries, is one of my favorite regions of the world to travel in. What countries there did you enjoy the most and why? How would you rank the countries you have visited/lived in?\n\nI didn’t rank Thailand because I went there when I was",
+      "c": [],
+      "src": "reddit",
+      "co": "general",
+      "e": 253,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Suggestions for less common destinations I've been a DN since 2017 but have always been tied to US timezones, which has kept me in the Americas and Europe for longer stays. I've switched to part time contracting and am not tied to specific hours anymore, although I am on a reduced budget of $4k/month (which, I know, is still a lot). \n\nIf you could ",
+      "c": [
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My Guide to Rawai One spot I am starting to see mentioned here and there is Rawai, Thailand.  Although I wouldn’t call Rawai a DN hotspot in Thailand in the same way that Koh Phangan, Chiang Mai or Bangkok is it’s slowly growing and becoming a bit more popular – evidence of this is that Selina opened up its very first SE Asia location there ([https",
+      "c": [],
+      "src": "reddit",
+      "co": "general",
+      "e": 36,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Bandung for a month ? Or Yogja ? Would love to hear your feedback Hi all,\n\n\n\nI am Taiwan-based and today, my manager (himself in Bangkok for 2 months) agreed that I spent a few months out of Taiwan from June onwards. It is awesome, it is the first time I will have a glimpse on the DN lifestyle. If it goes well I plan to be, in the future, half-noma",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 10,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Scam alerts for TEFL Teachers in Korea, China, Japan, and Taiwan. There are some clever fraudsters that want your money and identity. Know who they are BEFORE you send them your resumes. Roughly 60% of the TEFL job ads you see online are linked to frauds. These are \"bait ads\". This is my story and yes I accept part of the blame but I never knew abo",
+      "c": [],
+      "src": "reddit",
+      "co": "general",
+      "e": 240,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Moving from France to Asia Hello everyone !\n\nI’m Théophile, I’m a 25yo male, I’m French, and I’ve been working as a software engineer in a French company for 3 years now.\nFor my New Year’s resolution I decided that 2023 would be the year I finally fulfill my dream of moving to Asia !\n\nI have a master’s degree in programming, networking and cybersec",
+      "c": [
+        "community"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 88,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "engineer"
+      }
+    },
+    {
+      "t": "USA or Expat (to Asia) after College? Hey Guys, \nI’m a Taiwanese American Male (20 yr old) rising Sophomore in College. I’m going to major in Biology. I have dreams of becoming a scientist (researcher)\nI dreamed of expating to Asia (either Taiwan or Japan). I mean I spent all my life born and raised in Texas. I occasionally would visit Taiwan to se",
+      "c": [
+        "visa"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 13,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "researcher"
+      }
+    },
+    {
+      "t": "A lawyer cost me the love of my life I moved to Valencia, Spain in my mid-20s on a non-lucrative residence visa. I hired an immigration lawyer because I didn’t want to mess anything up and figured having a professional handle it was the smart move. He told me it was straightforward, said everything was on track, and that I didn’t need to worry.\n\nTh",
+      "c": [
+        "visa",
+        "bureaucracy"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 251,
+      "w": [
+        "I hired"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Need advice- ending rental contract early in Poland Hey everyone,\nI’m a foreigner living in Kraków, and I really need some advice about my rental situation.\n\nI signed a one-year contract for a single room managed by an agency (MB Zarządzanie). The rent is 1550 PLN per month (everything included), and I paid a 3100 PLN deposit at the beginning.\n\nUnf",
+      "c": [
+        "housing"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 0,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "How to deal with a landlord who doesnt pay deposits back, on a budget, in Italy I am an international student in Padova/Italy. I had a contract for a year but after some time I had to move out (the room was shared with another girl). I found another person who can take my place so that the income of theirs wont be interrupted.\n\nHe told me that he w",
+      "c": [
+        "housing",
+        "cost_of_living"
+      ],
+      "src": "reddit",
+      "co": "general",
+      "e": 86,
+      "w": [
+        "would pay"
+      ],
+      "seg": {
+        "role": "student"
+      }
+    },
+    {
+      "t": "Moving company demanding more $$ to deliver my belongings -- options? First and foremost a warning to people shipping their life's belongings across the world; I would advise negotiating your contract to avoid the following eventuality.\n\nSecond, looking for any suggestions to salvage this situation.\n\nWill keep to the facts and do my best to filter ",
+      "c": [],
+      "src": "reddit",
+      "co": "general",
+      "e": 70,
+      "w": [
+        "I hired"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I’m Korean, and I’m currently living in Australia. The moment I arrived, I felt it.\n“This is the real world.”\nFor the first time, I saw what it means for people to actually live — not just exist.\n\nI had always known, at least intellectually, that Korea was a high-pressure society and that Western countries seemed more relaxed and happy. But nothing",
+      "c": [
+        "housing",
+        "mental_health"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 16759,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "And I thought school in Germany sucked😅 But I spent 8,5 hours maximum in school, and that’s already a very long day when you then have homework and exams to prepare. I can’t imagine having to spend all day sitting and studying and not even allowing myself to sleep. It’s just inhumane to rob kids of their childhood.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 73,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Very well said. I spent a couple of years in Korea in the early 2000's and was absolutely blown away by how much the country had progressed in such a short time. \n\nIt took an entire population working extremely hard for many years...but now that same tenacity is exactly what is killing Korea. After so many decades of working themselves to death, th",
+      "c": [
+        "mental_health"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 153,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I have ADHD, and it has held me back all my life.  Not a day goes by without some aspect of it interfering with my life - usually because I forget things.  I have often wished that if I have to have some disability, I wish it was something physical so that people could see and understand it - but it's not like that.  I speak intelligently, and I am",
+      "c": [
+        "housing"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 6,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "That's right. It's like comparing North America to South America. When I went to Japan it felt like Korea town with so many Korean tourists. It was sickening. I paid money to go to Japan NOT S.Korea! I have no interest in Korea at all.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 8,
+      "w": [
+        "I paid"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I’ve been two times in Seoul. Last time I spent almost 3 months there. Both times I had to sit in priority seats because elder people where telling me to sit down, even when I said I was fine. But they got kind of upset and I had to follow their orders. One of them speaks a bit of English and talked to me very kindly.\nTip number 16: Just do what el",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1784,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent 13 months in Korea in 1982-1983. When one person pours you a drink, you are expected to return the gesture. This resulted in many a drunken night and a hangover the next day.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "tenure": "mid"
+      }
+    },
+    {
+      "t": "If only there was a way to like your comment 100 times",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "If only there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent an ENTIRE DAY reading about North Korea. Then, this video resumed in 26 minutes EVERY information I had been able to put my hands on for hours and hours. Amazing job.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1244,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Nice video with lots of interesting info. I wish there was less judgement in your speech though.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I would still go to korea if given a chance to work there, ordinary work would pay bigger compared to my country, and if your life goals is not really about money but sustainability and connectivity in life then this type of problems is not a concern for you",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I distinctly remember the first time I felt ugly, and it was when I had first started listening to Kpop. It was 2009, I was age 11/12, and I got really into Girls Generation. I remember watching their music videos on Youtube and thinking about how beautiful they were, and looking at myself in the mirror and realizing I did not look like them and th",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 58,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Cosmetic surgery in regards to beauty makes me feel so uncomfortable. Like, if we start analysing ourselves to find the so-called ‘perfect’ body and face, where does it even end? How can you even find ‘perfection’? Not to mention beauty standards are always changing, in the West at least. Sometimes I just sit and think: how did we even get here? Ho",
+      "c": [
+        "visa",
+        "housing"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 88,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My least favorite youtube ad I ever got was a black woman getting her “bulbous nose” changed in korea. I hate targeted ads that pray on peoples insecurities. I like my nose now but if I was younger that would’ve done some damage to my confidence. I spent a long time wondering if my favorite idols would find me ugly or not. Getting into Kpop right a",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 39,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent my 11 years of life in South Korea as a doctor \nAnd one thing i finally came to realise is that \nIndia is the best❤",
+      "c": [
+        "healthcare"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 330,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "My daughter and I spent 2 1/2 weeks in Seoul in June. I think about it every, single day, and we cannot wait to go back. The people are phenomenal, as is the food, shopping, and everything about this stunning and pristine city. “Seoul for my soul” was my motto before I even got there, and it exceeded my expectations in every way.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 44,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent two years in Seoul and this makes me miss it so much now.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 73,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "It is a beautiful country with warm, welcoming people. I spent almost a decade there and it was definitely well-worth it in so many ways!!!! Go fighting Korea!!!!❤🎉",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 11,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Where can I find more specific info about the telecommunication sanctions in particular?",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "Where can I find"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Yoo... Anyone know any good video essays or books that explain the situation in Syria? I'm totally clueless in this topic and I feel like there's too much info going around but most of them seem suspicious...",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "Anyone know a"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I heard a piano instrumental for \"we will follow you only\" in the video, where can I find it?",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "where can I find"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I onky mention I ever hear of sanctions is how they are \"justified,\" but I always find that we Americans have a short-term memory of our own actions around the world. Also, where can I find that AI song in the conclusion? It's fantastic",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "where can I find"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "​@Khunarkno no... I was fake quoting johnny and other criminals. I wish there was Joke-qoutation marks.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent two tours in Korea roughly 10 years apart and I  loved every second. Korea is a peaceful and kind place where I felt very comfortable. I've gone shopping with locals in Seoul. I hung out in Bandai Side 1. I made some friends and love the place and people.\nThey didn't deserve this idiot.",
+      "c": [
+        "community"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Thanks for the video 🫶I’m from U.S. and did a work study program in Japan. It was amazing! I spent time in Nikko living with a family and the rest of the time in Tokyo. I’ve traveled the world, and to this day…Japan continues to be the one place I think I could live.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Same. I spent two years in Korea and the people were so warm and kind to me.  I was moved to tears because as a black person, I expected the opposite and coming from America, people are all about themselves here. There were a few not so great and awkward moments, but the good heavily outweighed the bad. People would stop to help me at the bus termi",
+      "c": [
+        "discrimination"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 88,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Does anyone know the name of the song that starts playing at 10:09? I know I’ve heard it before, but can’t find it.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 4,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Feeling really similar as you about moving. I spent a semester in Korea last year and made unforgettable memories there. Now a year later, life has felt a little dull compared to the time I spent abroad. I'm also in my late 20's and about to graduate Masters degree, I feel like now would be the latest chance to recreate something similar I had in m",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "I spent",
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Omg same!!!!! I wish there was more episode!!!",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "wish there was"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I love watching your videos, it brings sm peace to me knowing that I’m not the only one still trying to figure out what works for me and the your 20s are for you to open up and adventure around the world 😌 also does anyone know where she purchased the knife from ?",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "at @3:20 anyone know where I can get that poster/print of the woman in the butcher shop that's hanging on the wall?!?",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent a year in S Korea from 1985 to 1986. I owned a production company, and my cabaret shows performed at Sheraton Walker Hill casino. Any and all, slightly off the beat, entertainment was underground. The gay scene, discos, love hotels, etc. It was extremely inexpensive to live then, and big brand knockoffs could be had for a few dollars. The s",
+      "c": [
+        "cost_of_living"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I agree Kim Jung Un is the worst and agreed he is EVIL! If North Korea ever were to be freed, I would so so so hope he gets to get a taste of his own medicine. I would pay money to see him starve and be so fearful and in agony. Being he's a big boy that had a life of luxury it sure would be a hard fall and break him emotionally...hopefully be the p",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "would pay"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "hey how much does it cost to go to south korea now?",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "how much does it cost"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent my childhood 99% of the time occupied with mandatory things. I think it still affects me decades later. When I can spend time just goofing around without any planned activity, it’s pretty much my favorite thing to do. I will spend an entire 3 day weekend just hanging out with my cats doing nothing at home, and it feels like heaven.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 8,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Hi,  your young and I believe it’s a good thing you tried this. Later in life you will not regret the experience. \n\nI spent 2 years in phoenix, 4 years in LA. I discovered things I liked and things I didn’t. For instance the summers are too hot in phoenix to enjoy outdoor activities, again my opinion. \n\nYou still have a viable skill if you want to ",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 12,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "tenure": "mid"
+      }
+    },
+    {
+      "t": "As a retired person, I enjoy listening to comments from young adults who are still trying to figure it out! As I’ve learned, life is “tough”, with many “uncertainties”, but I truly believe its a price you pay to live an extraordinary life! Taken fm one of my favorite quotes-“The tolerance of uncertainties is the price you pay for an extraordinary l",
+      "c": [
+        "community",
+        "cost_of_living"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent 8 full days in Seoul this past May and I loved it so much that I am returning for another 8 full days of exploring the city in April, 2026.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 6,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Just watched this video, and while you make some solid points, I think you might be a bit too harsh in places. I spent over a month in Korea at one point (thanks to an absurd amount of overtime to burn 😅) — mostly in Seoul — and my experience was quite different. The food? Incredible. The people? Warm and kind... but that’s probably because I wande",
+      "c": [
+        "housing",
+        "community",
+        "work_culture",
+        "cost_of_living"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 14,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent a week in Seoul early this year. It was honestly an underwhelming experience. Like its a megacity that feels soulless, even Shanghai feels like a cultural hotspot compared to Seoul.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 8,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "WHERE CAN I GET A RICKYYYYYYYY. IM IN TEARS LORD WHEN IS MY TURN!?!",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "WHERE CAN I GET"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I spent 5 years stationed in Korea when I was younger....not because I liked the place, but because the military had some really undesirable locations stateside that you couldn't get out of once you got there, and being stuck on the ROK for 1 year was a better trade-off. What don't I like about Korea? Rampant xenophobia, open sewage (aka Benjo ditc",
+      "c": [
+        "discrimination"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 2,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Hey there K, your skill and gift of hospitality is amazing, this is the best journalist channel on the Tube,I'm Cherokee American Tanio Indian and Cajun Canadian French, I spent my first years in West and Central Europe,I have lived in the Racist I hate you pre Civil rights deep south , I see the beauty of international travel ,if I didn't have sic",
+      "c": [
+        "healthcare",
+        "discrimination"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "role": "journalist"
+      }
+    },
+    {
+      "t": "you obviously never been to seoul. It is very active city, people go out every night. I spent my 20's 30's in seoul. So much fun, so many friends to hang out with. These foreginers learn about korea from some youtuber.",
+      "c": [
+        "community"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 5,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "What a lovely apartment with great space! I would have killed for an apartment like this when i live in osaka XD Also, i love those jeans, anyone know where they are from? :x alsooo i appreciate seeing the skin care <3",
+      "c": [
+        "housing"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 3,
+      "w": [
+        "anyone know"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "I agree with you. I had a similar experience.  I am Australian and I spent 6 months in Korea, too. Now I live in Brazil haha cause I just didn't feel I could ever be accepted in Korea as a foreigner.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "tenure": "short"
+      }
+    },
+    {
+      "t": "\"How do you tell the world you're leaving the country you love so much?\" That's so real! I move to London right after high school (from Italy) and I lived there for over 10 years straight. Lots of people get burnt out  in London after a while, but not me! I loved and still love that city with my whole heart, it's my home and where I see myself gett",
+      "c": [
+        "housing",
+        "community"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 6,
+      "w": [
+        "I spent"
+      ],
+      "seg": {
+        "tenure": "long"
+      }
+    },
+    {
+      "t": "It’s funny. I’m going to turn 28 this year, and I’m ready to move abroad and explore. I spent my early 20s studying and working towards a career. I’m now an attorney in NJ and TX, and decided that it’s time to travel before I enter my 30s despite me having a comfy wfh corporate job. I’m buying a home in the summer so that I can have something to co",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "남구청 간판은 어디서 구하셧대요? 그게 더 신기방기 ㅋㅋㅋㅋ",
+      "c": [
+        "bureaucracy"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 0,
+      "w": [
+        "어디서 구"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "저는 일본인의 공손함, 질서를 잘지킴, 호주의 깨끗한 자연환경, 한국의 디지털 편리함. 미국의 경제력  이 네가지 조화로운 곳이 있으면 좋겠어요.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 5,
+      "w": [
+        "있으면 좋겠"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Yeah i very much feel your situation. I am South Korean and working in Singapore and pay tax to Kor Gov.\n\nBut i wanna give you one tip, Before coming Singapore i was working in Tokyo,Japan and I also had Japanese gf(?)\nI spent almost 3month and i talked to her that i wanna move out another country and come back again because of Visa prob.\nShe said ",
+      "c": [
+        "visa",
+        "tax",
+        "housing",
+        "community"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent",
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "Haha! I don’t know how someone who’s lived in an orderly society like Korea can even handle the craziness that is America. I spent only a month in Korea and Japan and coming back to the U.S. I was like, wtf! I’m still struggling to adjust and I’ve lived here most of my life.",
+      "c": [],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent"
+      ],
+      "seg": {}
+    },
+    {
+      "t": "3:41 You have managed to give me the vocabulary to describe the struggle that I had since year 1. I came from a similar background as you. I spent 15 years studying in the same international school in Thailand, ended up getting accepted into one of the top universities in Taiwan for my program, and also getting a government scholarship. Suffice to ",
+      "c": [
+        "community",
+        "family",
+        "app_ux"
+      ],
+      "src": "youtube",
+      "co": "korea",
+      "e": 1,
+      "w": [
+        "I spent",
+        "I spent"
+      ],
+      "seg": {}
+    }
+  ]
+}

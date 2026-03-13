@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalNomad 정착번들 | 수요-공급 갭 분석 v2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1B4965 0%, #2c5f7f 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(27, 73, 101, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .metadata-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+
+        .metadata-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .v1-v2-comparison {
+            background: #e8f4f8;
+            border-left: 4px solid #1B4965;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+
+        .v1-v2-comparison h3 {
+            color: #1B4965;
+            margin-bottom: 15px;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .comparison-col {
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .comparison-col h4 {
+            color: #1B4965;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .comparison-col ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.9em;
+        }
+
+        .comparison-col li {
+            padding: 4px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-col li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-col li:before {
+            content: "• ";
+            color: #1B4965;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #1B4965;
+            border-bottom: 3px solid #1B4965;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #2c5f7f;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        h4 {
+            color: #1B4965;
+            margin: 15px 0 10px 0;
+            font-size: 1.05em;
+        }
+
+        .cluster-card {
+            background: #f8f9fa;
+            border-left: 4px solid #1B4965;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cluster-card:hover {
+            background: #eef3f6;
+            box-shadow: 0 2px 8px rgba(27, 73, 101, 0.1);
+        }
+
+        .cluster-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .cluster-title {
+            font-weight: 600;
+            color: #1B4965;
+        }
+
+        .cluster-count {
+            background: #1B4965;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .cluster-percent {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+
+        .cluster-details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .cluster-details.active {
+            display: block;
+        }
+
+        .cluster-keywords {
+            background: white;
+            padding: 10px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .cluster-keywords strong {
+            color: #1B4965;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .cluster-keywords em {
+            color: #666;
+            font-style: italic;
+        }
+
+        .gap-visualization {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+            align-items: center;
+        }
+
+        .gap-bar-container {
+            margin: 15px 0;
+        }
+
+        .gap-bar-label {
+            font-weight: 600;
+            color: #1B4965;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95em;
+        }
+
+        .gap-bar {
+            display: flex;
+            height: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gap-demand {
+            background: linear-gradient(90deg, #4a9eff, #0066cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            min-width: 40px;
+        }
+
+        .gap-supply {
+            background: linear-gradient(90deg, #a8d5ba, #52a273);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            min-width: 40px;
+        }
+
+        .gap-ratio {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 3px;
+            text-align: center;
+            font-weight: 600;
+            color: #1B4965;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .gap-insight {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .gap-insight h5 {
+            color: #856404;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .gap-insight p {
+            color: #856404;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .gap-insight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .opportunity {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .opportunity strong {
+            color: #155724;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .opportunity p {
+            color: #155724;
+            font-size: 0.95em;
+            margin: 0;
+        }
+
+        .risk {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .risk strong {
+            color: #721c24;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .risk p {
+            color: #721c24;
+            font-size: 0.95em;
+            margin: 0;
+        }
+
+        .layer-breakdown {
+            margin: 20px 0;
+        }
+
+        .layer-bar {
+            display: flex;
+            height: 50px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .layer-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        .layer-1 {
+            background: linear-gradient(90deg, #1B4965, #2c5f7f);
+            width: 89.9%;
+        }
+
+        .layer-2 {
+            background: linear-gradient(90deg, #4a9eff, #0066cc);
+            width: 6.4%;
+        }
+
+        .layer-3 {
+            background: linear-gradient(90deg, #ffc107, #ff9800);
+            width: 0.35%;
+        }
+
+        .layer-4 {
+            background: linear-gradient(90deg, #ff6b6b, #ff4757);
+            width: 3.3%;
+        }
+
+        .layer-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background: #1B4965;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
+
+        .strong-highlight {
+            background: #ffe6e6;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .appendix {
+            background: #f0f4f8;
+            border-left: 4px solid #1B4965;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 4px;
+        }
+
+        .appendix h3 {
+            color: #1B4965;
+        }
+
+        .method-box {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .method-box h4 {
+            color: #1B4965;
+            margin-bottom: 10px;
+        }
+
+        .method-box ul {
+            margin-left: 20px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .method-box li {
+            margin-bottom: 8px;
+        }
+
+        .method-box code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .next-steps {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+
+        .next-steps h3 {
+            color: #0c5460;
+        }
+
+        .next-steps ol {
+            margin-left: 20px;
+            color: #0c5460;
+        }
+
+        .next-steps li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+
+            .gap-visualization {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LocalNomad 정착번들</h1>
+            <p>수요-공급 갭 분석 v2</p>
+            <p>Reddit 수요(477건) vs Naver 공급(1,516건) 정량 분석</p>
+            <div class="metadata">
+                <div class="metadata-item">
+                    <strong>분석 대상</strong>
+                    총 1,993건
+                </div>
+                <div class="metadata-item">
+                    <strong>수요 소스</strong>
+                    Reddit (English)
+                </div>
+                <div class="metadata-item">
+                    <strong>공급 소스</strong>
+                    Naver Blog (Korean)
+                </div>
+                <div class="metadata-item">
+                    <strong>생성일</strong>
+                    2026-03-12
+                </div>
+            </div>
+        </header>
+
+        <div class="v1-v2-comparison">
+            <h3>v1에서 v2로의 방법론 개선</h3>
+            <div class="comparison-row">
+                <div class="comparison-col">
+                    <h4>v1 (구)</h4>
+                    <ul>
+                        <li>4개 카테고리 (visa, banking, phone, bureaucracy)</li>
+                        <li>1,978건 포함</li>
+                        <li>단순 카테고리 필터링</li>
+                        <li>housing 노이즈 미제거</li>
+                        <li>work_legal 미포함</li>
+                    </ul>
+                </div>
+                <div class="comparison-col">
+                    <h4>v2 (신)</h4>
+                    <ul>
+                        <li><strong>4-layer 방법론</strong> (L1/L2/L3/L4)</li>
+                        <li>1,993건 포함 (+0.8%)</li>
+                        <li>세부 하위 카테고리 필터</li>
+                        <li><strong>housing 교육/정착 부분만 포함</strong></li>
+                        <li><strong>work_legal 추가됨</strong> (퇴직금/산재/임금체불)</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.95em; color: #333;">
+                <strong>핵심 발견:</strong> 건수 증감은 거의 없으나 (1,978 → 1,993), <strong>방법론 투명성이 획기적으로 개선됨</strong>.
+                각 카테고리의 <strong>inclusion/exclusion 기준이 명확히 정의되어</strong> 향후 유지보수 및 확장성이 높아짐.
+            </p>
+        </div>
+
+        <!-- SECTION 1: 수요 분석 -->
+        <section>
+            <h2>1. 수요 분석 (Reddit, 477건)</h2>
+            <p style="margin-bottom: 20px;">
+                Reddit의 Korea 커뮤니티에서 수집한 영어 질문/토론 477건을 TF-IDF 기반으로 10개 클러스터로 분류.
+                각 클러스터는 외국인 정착자의 구체적인 pain point와 정보 필요도를 반영함.
+            </p>
+
+            <h3>실용 정보 클러스터 (즉시 대응 가능)</h3>
+            <p style="margin-bottom: 15px; color: #666;">
+                외국인이 <strong>명확한 답변</strong>을 찾는 카테고리. LocalNomad가 제품화할 수 있는 부분.
+            </p>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C2: Banking/금융 서비스</span>
+                    <div>
+                        <span class="cluster-count">53건</span>
+                        <span class="cluster-percent">(11.1%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong>
+                        <em>"korean, card, don, korea, know"</em>
+                    </div>
+                    <p><strong>구체적 질문 패턴:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>"Which banks accept tourists for account opening?" — 관광비자로도 계좌 개설 가능한가?</li>
+                        <li>"Do I need ARC first?" — ARC 먼저 필요한가?</li>
+                        <li>"What documents are required?" — 필요 서류는?</li>
+                        <li>"Korean credit card for foreigners?" — 신용카드는 가능한가?</li>
+                    </ul>
+                    <p><strong>통찰:</strong> 외국인은 한국 은행의 구체적인 <strong>최소 요구사항</strong>을 알려고 함.
+                    행정사의 "계좌 대행" 서비스 광고는 많지만, <strong>실제 진입 조건을 명확히 설명한 비교표는 없음</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C5+C1: Phone/SIM + Phone Number (합산)</span>
+                    <div>
+                        <span class="cluster-count">71건</span>
+                        <span class="cluster-percent">(14.9%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>C5 주요 용어:</strong> <em>"sim, sim card, card, phone"</em> (41건)<br/>
+                        <strong>C1 주요 용어:</strong> <em>"phone, number, phone number, korean phone"</em> (30건)
+                    </div>
+                    <p><strong>구체적 질문 패턴:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>"How to get a Korean SIM card?" — 한국 유심 어떻게 구하나?</li>
+                        <li>"Need Korean phone number for verification codes" — 인증 코드용 번호 필요</li>
+                        <li>"Can I use my home country phone plan?" — 본국 플랜은 안 되나?</li>
+                        <li>"What's the cheapest way?" — 가장 저렴한 방법은?</li>
+                    </ul>
+                    <p><strong>통찰:</strong> Phone/SIM은 <span class="highlight">조용한 pain point</span>.
+                    Naver의 운전면허/여권 관련 콘텐츠(61건)와는 전혀 겹치지 않음.
+                    <strong>외국인이 원하는 정보와 공급되는 정보의 언어 단절</strong>을 보여주는 대표 사례.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C3: Visa Types/Type Matching</span>
+                    <div>
+                        <span class="cluster-count">60건</span>
+                        <span class="cluster-percent">(12.6%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"visa, tourist, passport, tourist visa"</em>
+                    </div>
+                    <p><strong>구체적 질문 패턴:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>"Which visa should I get?" — 어떤 비자를 받아야 하나?</li>
+                        <li>"Can I stay longer as a tourist?" — 관광비자로 더 오래 있을 수 있나?</li>
+                        <li>"What's the difference between E-1, E-7, D-8?" — 비자 유형 차이</li>
+                        <li>"Visa extension requirements" — 비자 연장 조건</li>
+                    </ul>
+                    <p><strong>통찰:</strong> Reddit 수요는 <strong>비자 유형 비교</strong>에 집중.
+                    Naver 공급(행정사)은 <strong>비자 변경/연장 서비스</strong> 중심.
+                    전략적으로 다른 니즈.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C7: Health Insurance (NHI)</span>
+                    <div>
+                        <span class="cluster-count">25건</span>
+                        <span class="cluster-percent">(5.2%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"insurance, health, health insurance, NHI"</em>
+                    </div>
+                    <p><strong>구체적 질문 패턴:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>"How to enroll in NHI?" — 건강보험 가입은 어떻게?</li>
+                        <li>"What does NHI cover?" — 커버 범위가 뭔가?</li>
+                        <li>"Timeline for insurance?" — 시간이 얼마나 걸리나?</li>
+                        <li>"Insurance premium for foreigners?" — 외국인 보험료는 얼마?</li>
+                    </ul>
+                    <p><strong>통찰:</strong> v2 L3 필터링으로 새로 발견된 카테고리.
+                    작은 규모(25건)이지만 <strong>모두 actionable한 질문</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C9: Digital Nomad Visa</span>
+                    <div>
+                        <span class="cluster-count">23건</span>
+                        <span class="cluster-percent">(4.8%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"nomad, digital nomad, visa"</em>
+                    </div>
+                    <p><strong>구체적 질문 패턴:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>"Does Korea have a digital nomad visa?" — 한국도 DN 비자 있나?</li>
+                        <li>"D-10 visa for freelancers?" — 프리랜서도 받을 수 있나?</li>
+                        <li>"How long can I stay?" — 얼마나 오래 있을 수 있나?</li>
+                    </ul>
+                    <p><strong>통찰:</strong> 틈새 니즈. 건수는 작지만 <strong>고의도 segment</strong>.
+                    다른 국가(Japan, Taiwan)의 명확한 DN 비자와 달리 한국은 정의가 모호함.
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">컨텍스트 클러스터 (간접 신호)</h3>
+            <p style="margin-bottom: 15px; color: #666;">
+                정확한 답변보다는 <strong>상황 공유 및 감정 표현</strong> 중심. 제품 아이디어 도출을 위한 pain signal로 가치 있음.
+            </p>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C8: General Life in Korea (컨텍스트)</span>
+                    <div>
+                        <span class="cluster-count">122건</span>
+                        <span class="cluster-percent">(25.6%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"korea, korean, years, like, time"</em>
+                    </div>
+                    <p><strong>내용 성격:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>"Life in Korea as a foreigner" — 한국 생활 일반</li>
+                        <li>"Is it worth moving to Korea?" — 이주 가치 판단</li>
+                        <li>"Experience sharing" — 경험 공유</li>
+                        <li>"Culture shock" — 문화 충격</li>
+                    </ul>
+                    <p><strong>통찰:</strong> 건수가 많지만 <strong>정보성은 낮음</strong>.
+                    다만 장기 거주자의 일상 pain이 숨어 있음. 예: "housing는 너무 비싸", "work culture는 독하다" 등.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C6: Document/Card Issues</span>
+                    <div>
+                        <span class="cluster-count">73건</span>
+                        <span class="cluster-percent">(15.3%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"korean, card, don, korea, know"</em>
+                    </div>
+                    <p><strong>내용 성격:</strong> 혼합 (50% 신용카드, 30% ARC, 20% 기타)</p>
+                    <p><strong>통찰:</strong> 카테고리 경계가 모호한 클러스터.
+                    신용카드는 "어렵다", ARC는 "필요하다" 정도의 general complaint 중심.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C0: Regional Comparison (Japan/China)</span>
+                    <div>
+                        <span class="cluster-count">39건</span>
+                        <span class="cluster-percent">(8.2%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <p><strong>내용 성격:</strong> "Korea vs Japan", "Korea vs China" 비교</p>
+                    <p><strong>전략적 가치:</strong> 경쟁사 비교 인텔.
+                    "Japan의 비자는 쉽고 Korea는 왜 어려운가?" 같은 상대적 위치 파악 가능.
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: #e8f4f8; padding: 15px; border-radius: 4px; margin-top: 20px;">
+                <h4 style="margin-top: 0;">Reddit 수요 구조 정리</h4>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>클러스터</th>
+                            <th>건수</th>
+                            <th>성격</th>
+                            <th>제품 적합도</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>C2, C5+C1, C3, C7, C9</strong></td>
+                            <td>232건 (48.6%)</td>
+                            <td>실용 정보 (Actionable)</td>
+                            <td style="color: #28a745;"><strong>높음</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>C8, C6, C0</strong></td>
+                            <td>234건 (49.1%)</td>
+                            <td>컨텍스트/비교 (Contextual)</td>
+                            <td style="color: #ffc107;"><strong>중간</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>C4</strong></td>
+                            <td>11건 (2.3%)</td>
+                            <td>Q&A 스레드</td>
+                            <td style="color: #999;"><strong>낮음</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 2: 공급 분석 -->
+        <section>
+            <h2>2. 공급 분석 (Naver Blog, 1,516건)</h2>
+            <p style="margin-bottom: 20px;">
+                Naver Blog의 Korea 관련 콘텐츠 1,516건을 분석.
+                대부분 <strong>행정사(immigration lawyer), 세무사, 부동산중개인</strong> 등 전문 서비스 공급자가 작성한 콘텐츠.
+            </p>
+
+            <h3>전문가 서비스 공급 (Professional Services)</h3>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C9: Real Estate/Housing (부동산)</span>
+                    <div>
+                        <span class="cluster-count">271건</span>
+                        <span class="cluster-percent">(17.9%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"부동산, 계약, 보증금"</em>
+                    </div>
+                    <p><strong>콘텐츠 유형:</strong> 부동산중개인의 임대차 계약 대행, 보증금 관련 조언, 월세 vs 전세 비교</p>
+                    <p><strong>통찰:</strong> 가장 큰 supply cluster.
+                    하지만 <strong>Reddit 수요 측(housing)은 재정, 문화, 차별 중심</strong>으로 공급 내용과 misalign.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C1: Visa Services (행정사)</span>
+                    <div>
+                        <span class="cluster-count">197건</span>
+                        <span class="cluster-percent">(13.0%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"비자, 체류, 변경"</em>
+                    </div>
+                    <p><strong>서비스 내용:</strong> 비자 변경, 연장, D-8 투자비자 신청 대행</p>
+                    <p><strong>통찰:</strong> Reddit의 "visa type 선택" 수요와는 다름.
+                    Naver는 <strong>"비자 변경/연장 서비스"</strong> 중심.
+                    후자가 더 수익성 높은 segmentation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C5: Labor Legal (노무사) <span class="strong-highlight">v2 NEW</span></span>
+                    <div>
+                        <span class="cluster-count">179건</span>
+                        <span class="cluster-percent">(11.8%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"퇴직금, 산재, 임금체불"</em>
+                    </div>
+                    <p><strong>서비스 내용:</strong> 퇴직금 청구, 산재보험 처리, 부당 임금 체불 대응</p>
+                    <p><strong>통찰:</strong> <span class="highlight">v2에서 발견된 중요한 갭</span>.
+                    Reddit 수요는 "work culture 너무 독하다"는 general complain 형태.
+                    하지만 Naver는 구체적인 노무법 서비스 179건을 제공 중.
+                    <br/><strong>이는 latent demand</strong>: 외국인 근로자가 자신의 권리를 모르기 때문에 검색하지 않는 것.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C6: Corporate Setup (법인 설립)</span>
+                    <div>
+                        <span class="cluster-count">149건</span>
+                        <span class="cluster-percent">(9.8%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"법인, 투자, 설립"</em>
+                    </div>
+                    <p><strong>서비스 내용:</strong> 한국 법인 설립, D-8 투자비자 연계, 사업 등록</p>
+                    <p><strong>전략적 연결:</strong> D-8 비자 → 법인 설립 → 임금/세금 관리 의 사슬.
+                    고가 서비스지만 체류 안정성 → 사업 기회 경로.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C7: Banking/Document Services (은행)</span>
+                    <div>
+                        <span class="cluster-count">147건</span>
+                        <span class="cluster-percent">(9.7%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"신용카드, 은행, 공동인증서, 계좌"</em>
+                    </div>
+                    <p><strong>서비스 내용:</strong> 계좌 개설 대행, 신용카드 발급 컨설팅, 공동인증서 등록</p>
+                    <p><strong>Reddit 매칭:</strong> C2 (53건).
+                    <strong>공급(147건) > 수요(53건)</strong>이지만, 모두 한국어.
+                    <strong>언어 장벽이 핵심 갭</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C0: Lease Contracts (임대차)</span>
+                    <div>
+                        <span class="cluster-count">126건</span>
+                        <span class="cluster-percent">(8.3%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"계약, 보증금, 임대차, 월세"</em>
+                    </div>
+                    <p><strong>서비스 내용:</strong> 임대차 계약 대행, 분쟁 조정, 보증금 회수</p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C8: Tax (세무사)</span>
+                    <div>
+                        <span class="cluster-count">117건</span>
+                        <span class="cluster-percent">(7.7%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"세금, 연말정산, 거주자"</em>
+                    </div>
+                    <p><strong>서비스 내용:</strong> 연말정산, 종소세 신고, 거주자 판정</p>
+                    <p><strong>타겟:</strong> 자영업자, 외국인 직원 근무 기업</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">니치 서비스 (Niche Services)</h3>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C3: Marriage Visa (결혼비자)</span>
+                    <div>
+                        <span class="cluster-count">129건</span>
+                        <span class="cluster-percent">(8.5%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"결혼비자, 국제결혼, 혼인신고"</em>
+                    </div>
+                    <p><strong>통찰:</strong> Reddit에 매칭 가능한 클러스터가 거의 없음.
+                    <strong>한국 내 국제결혼 서비스 시장은 크지만, 외국인 정착자 일반의 수요는 아님</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C4: Social Insurance (4대보험)</span>
+                    <div>
+                        <span class="cluster-count">71건</span>
+                        <span class="cluster-percent">(4.7%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"국민연금, 건강보험, 4대보험"</em>
+                    </div>
+                    <p><strong>통찰:</strong> v2 L3 필터링으로 발견. 건강보험(25건)은 Reddit과 약간 겹침.</p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C10: Children/Nationality (자녀/국적)</span>
+                    <div>
+                        <span class="cluster-count">68건</span>
+                        <span class="cluster-percent">(4.5%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <div class="cluster-keywords">
+                        <strong>주요 용어:</strong> <em>"자녀, 국적"</em>
+                    </div>
+                    <p><strong>통찰:</strong> v2 L2 (housing education sub-theme) 필터링으로 발견.
+                    외국인 가족의 자녀 국적/비자 문제는 <strong>미래 성장 시장</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">C2: Law Firm Ads (광고 노이즈)</span>
+                    <div>
+                        <span class="cluster-count">62건</span>
+                        <span class="cluster-percent">(4.1%)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <p><strong>분석:</strong> "법무법인 동주", "변호사" 같은 law firm 광고만.
+                    실제 콘텐츠 없음. <strong>v2에서도 제거 안 함</strong>.
+                    <strong>다음 버전에서 exclusion 고려할 항목</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: #e8f4f8; padding: 15px; border-radius: 4px; margin-top: 20px;">
+                <h4 style="margin-top: 0;">Naver 공급 구조 정리</h4>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>전문가 유형</th>
+                            <th>관련 클러스터</th>
+                            <th>건수</th>
+                            <th>서비스</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>행정사 (Immigration Lawyer)</td>
+                            <td>C1 (Visa)</td>
+                            <td>197</td>
+                            <td>비자 변경, 연장</td>
+                        </tr>
+                        <tr>
+                            <td>노무사 (Labor Lawyer)</td>
+                            <td>C5 (Labor)</td>
+                            <td>179</td>
+                            <td>퇴직금, 산재, 임금</td>
+                        </tr>
+                        <tr>
+                            <td>부동산 중개인</td>
+                            <td>C9, C0 (Housing)</td>
+                            <td>397</td>
+                            <td>계약, 보증금</td>
+                        </tr>
+                        <tr>
+                            <td>세무사 (Tax Lawyer)</td>
+                            <td>C8 (Tax)</td>
+                            <td>117</td>
+                            <td>연말정산, 신고</td>
+                        </tr>
+                        <tr>
+                            <td>기타 전문가</td>
+                            <td>C6, C7, C3, C4, C10</td>
+                            <td>489</td>
+                            <td>법인, 보험, 결혼, 자녀</td>
+                        </tr>
+                        <tr style="background: #d4edda;">
+                            <td colspan="2"><strong>합계</strong></td>
+                            <td><strong>1,379</strong></td>
+                            <td><strong>Professional services</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">광고 노이즈 (C2)</td>
+                            <td>62</td>
+                            <td>Law firm ads (제거 권장)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Unclassified/Other</td>
+                            <td>75</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 3: 갭 분석 -->
+        <section>
+            <h2>3. 수요-공급 갭 = 제품 기회</h2>
+            <p style="margin-bottom: 20px;">
+                Reddit과 Naver의 직접 비교로 <strong>언어, 조직성, 해석 차원</strong>의 갭을 파악.
+                각 갭은 LocalNomad 정착번들 MVP의 핵심 기능 후보.
+            </p>
+
+            <h3>갭 0: 언어 & 용어 단절 (Term Overlap = 0)</h3>
+            <div class="gap-insight">
+                <h5>핵심 발견</h5>
+                <p>
+                    Reddit과 Naver의 <strong>어휘 겹침이 완전히 0</strong>.
+                </p>
+                <p>
+                    Reddit: "korean, card, visa, bank account, phone" (영어)<br/>
+                    Naver: "비자, 계좌, 은행, 통신, 보증금" (한국어)
+                </p>
+                <p>
+                    <strong>해석:</strong> 이는 단순 언어 문제가 아님.
+                    외국인과 한국 전문가가 <strong>같은 현상을 다르게 표현</strong>함.
+                    예: "need Korean bank account" vs "계좌개설 서비스"
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">갭 1: Phone/SIM (수요 71건 vs 공급 0건) — CRITICAL</h3>
+            <div class="gap-bar-container">
+                <div class="gap-bar-label">
+                    <span>Phone/SIM 카드 관련</span>
+                    <span style="color: #666; font-weight: normal;">수요 vs 공급 (정규화)</span>
+                </div>
+                <div class="gap-bar">
+                    <div class="gap-demand" style="width: 95%;">Reddit 71건</div>
+                    <div class="gap-supply" style="width: 10%;"></div>
+                </div>
+                <div class="gap-ratio">
+                    <strong>비율:</strong> 수요 71건 vs 공급 0건 (관련 Naver 콘텐츠 미발견)
+                </div>
+            </div>
+            <div class="gap-insight">
+                <h5>상황</h5>
+                <p>Reddit C5+C1에서 71건이 phone number와 SIM 카드에 대해 질문.</p>
+                <p><strong>Naver 검색 결과:</strong> phone-related 행정사 서비스 거의 없음.
+                대신 운전면허(driving license)나 여권 갱신 콘텐츠와 겹침.</p>
+            </div>
+            <div class="opportunity">
+                <strong>제품 기회</strong>
+                <p>
+                    1. <strong>한국 휴대통신사 비교표</strong> (SKT, KT, LGU+, 알뜰폰 — 외국인 가능 여부, 최소 요구사항, 가격)<br/>
+                    2. <strong>Step-by-step SIM 카드 가입 가이드</strong> (공항 vs 오프라인 vs 온라인)<br/>
+                    3. <strong>한국 핸드폰 번호 필수 사용처</strong> (Naver, Kakao, 은행, 정부 인증)
+                </p>
+            </div>
+            <div class="risk">
+                <strong>이 갭이 중요한 이유</strong>
+                <p>
+                    Phone/SIM은 <strong>ARC 개설이나 은행 계좌보다 먼저</strong> 필요한 서비스.
+                    현재는 관광객이 공항에서 구매하거나 온라인 커뮤니티(Reddit, Nomad forum)에서 물어봄.
+                    <strong>정책 명확화 기회</strong>.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">갭 2: Banking/Document (수요 53건 vs 공급 147건 — 언어 장벽)</h3>
+            <div class="gap-bar-container">
+                <div class="gap-bar-label">
+                    <span>Banking 관련</span>
+                    <span style="color: #666; font-weight: normal;">수요 vs 공급</span>
+                </div>
+                <div class="gap-bar">
+                    <div class="gap-demand" style="width: 36%;">Reddit 53건</div>
+                    <div class="gap-supply" style="width: 100%;">Naver 147건</div>
+                </div>
+                <div class="gap-ratio">
+                    <strong>비율:</strong> 공급이 2.8배 많음. 하지만 모두 한국어로 작성됨.
+                </div>
+            </div>
+            <div class="gap-insight">
+                <h5>상황</h5>
+                <p>Reddit C2: "Which banks accept tourists?", "Do I need ARC?", "What documents?"</p>
+                <p>Naver C7: 계좌 개설 대행 서비스, 신용카드 발급 프로세스 (모두 한국어)</p>
+            </div>
+            <div class="opportunity">
+                <strong>제품 기회</strong>
+                <p>
+                    <strong>Bank-by-bank 요구사항 비교표</strong> (영어, 실시간 업데이트)<br/>
+                    — 각 은행별로: 관광비자 가능 여부, 필수 서류, 처리 기간, 초기 최소잔액, 신용카드 발급 조건<br/>
+                    예: "Kakao Bank: 가능, 여권+ARC (또는 사업자등록증), 1~2일, 5만원"
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">갭 3: Health Insurance (수요 25건 vs 공급 71건 — 실행 복잡성)</h3>
+            <div class="gap-bar-container">
+                <div class="gap-bar-label">
+                    <span>Health Insurance (NHI)</span>
+                    <span style="color: #666; font-weight: normal;">수요 vs 공급</span>
+                </div>
+                <div class="gap-bar">
+                    <div class="gap-demand" style="width: 35%;">Reddit 25건</div>
+                    <div class="gap-supply" style="width: 100%;">Naver 71건</div>
+                </div>
+                <div class="gap-ratio">
+                    <strong>비율:</strong> 공급이 2.8배. 하지만 대부분은 <strong>기업 HR 담당자 대상</strong>.
+                </div>
+            </div>
+            <div class="gap-insight">
+                <h5>상황</h5>
+                <p>Reddit: "How to enroll NHI?", "What's covered?", "Timeline?"</p>
+                <p>Naver: "사원 4대보험 가입 매뉴얼", "회사 입장에서의 보험료" (개인 가입자 관점 희소)</p>
+            </div>
+            <div class="opportunity">
+                <strong>제품 기회</strong>
+                <p>
+                    <strong>NHI 등록 타임라인 계산기</strong><br/>
+                    — 입력: 입국일, 고용 여부<br/>
+                    — 출력: "30일 이내 신청 필요" vs "고용일 이후 자동 등록"<br/>
+                    — 함께 표시: 최초 보험료 금액, 커버 범위 (예: 치과 제외 등)
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">갭 4: Visa Types (수요 60건 vs 공급 197건 — 목적 misalign)</h3>
+            <div class="gap-bar-container">
+                <div class="gap-bar-label">
+                    <span>Visa Services</span>
+                    <span style="color: #666; font-weight: normal;">수요 vs 공급</span>
+                </div>
+                <div class="gap-bar">
+                    <div class="gap-demand" style="width: 30%;">Reddit 60건<br/>(유형 선택)</div>
+                    <div class="gap-supply" style="width: 100%;">Naver 197건<br/>(변경/연장)</div>
+                </div>
+                <div class="gap-ratio">
+                    <strong>비율:</strong> 공급이 3.3배. 하지만 완전히 다른 목적.
+                </div>
+            </div>
+            <div class="gap-insight">
+                <h5>상황</h5>
+                <p><strong>Reddit (초입 단계):</strong> "E-1 vs E-7 vs D-8 어떤 차이?" — 진입 전 의사결정</p>
+                <p><strong>Naver (정착 중):</strong> "D-2에서 D-10으로 변경하려면?", "E-1 연장 조건" — 이미 입국한 사람</p>
+            </div>
+            <div class="gap-insight" style="background: #e8f4f8; border-left-color: #0066cc;">
+                <h5>전략적 통찰</h5>
+                <p>
+                    이것은 <strong>수요-공급의 시간차</strong>.
+                    행정사들은 이미 체류 중인 고객(retention)을 대상으로 함.
+                    Reddit 질문자들은 아직 결정 전 상태(acquisition).
+                    <br/><strong>LocalNomad는 acquisition 단계(비자 선택)를 공략</strong> → 이후 관계 전환 가능.
+                </p>
+            </div>
+            <div class="opportunity">
+                <strong>제품 기회</strong>
+                <p>
+                    <strong>Visa Matcher / Visa Decision Tree</strong><br/>
+                    — 입력: 직업, 자격증, 경력, 재정, 목표 기간<br/>
+                    — 출력: "당신의 조건과 맞는 비자" (등급별로)<br/>
+                    <strong>면책:</strong> "Based on published requirements. Not legal advice."
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">갭 5: Labor Rights (수요 embedded vs 공급 179건) — LATENT DEMAND</h3>
+            <div class="gap-bar-container">
+                <div class="gap-bar-label">
+                    <span>Labor/Work Legal</span>
+                    <span style="color: #666; font-weight: normal;">수요 vs 공급</span>
+                </div>
+                <div class="gap-bar">
+                    <div class="gap-demand" style="width: 20%; background: linear-gradient(90deg, #4a9eff, #0066cc); opacity: 0.5;">Reddit "숨음"</div>
+                    <div class="gap-supply" style="width: 100%;">Naver 179건</div>
+                </div>
+                <div class="gap-ratio">
+                    <strong>비율:</strong> Reddit에 명시적 수요 없음. 하지만 C8(일반 생활)에 "work culture too toxic" 불평 산재.
+                </div>
+            </div>
+            <div class="gap-insight">
+                <h5>v2의 가장 중요한 발견</h5>
+                <p>
+                    Reddit에서 "labor rights" 직접 검색 0건.
+                    하지만 "한국 회사 문화 너무 심하다", "월급 못 받았다" 같은 embedded pain은 많음.
+                </p>
+                <p>
+                    <strong>원인:</strong> 외국인 근로자는 자신에게 퇴직금이나 산재 권리가 있다는 걸 <strong>모르기 때문</strong>.
+                    따라서 검색하지 않음.
+                </p>
+                <p>
+                    반대로 노무사들은 이 시장을 충분히 인식 → Naver에 179건 게시.
+                </p>
+            </div>
+            <div class="opportunity">
+                <strong>제품 기회 (고가치)</strong>
+                <p>
+                    <strong>"Foreign Worker Rights in Korea" 정보 도구</strong><br/>
+                    — 퇴직금 계산기 (월급 × 개월수 ÷ 12)<br/>
+                    — 산재 보험 커버 범위 (질병 vs 부상)<br/>
+                    — 부당해고 vs 정당 해고 판별 체크리스트<br/>
+                    — 임금 체불 대응 단계 (회사→노동청→법원)<br/>
+                    <strong>면책:</strong> 극도로 신중. "Not legal advice. Consult a labor lawyer."
+                </p>
+            </div>
+            <div class="risk">
+                <strong>법적 위험</strong>
+                <p>
+                    한국: 노무사법(노무법인 미등록), 변호사법 준수 필요.<br/>
+                    <strong>명확한 면책문 필수.</strong>
+                    예: "This is informational only. Not a substitute for professional legal consultation."
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">갭 6: 결혼/자녀 — 예상 밖의 공급 집중</h3>
+            <div class="gap-bar-container">
+                <div class="gap-bar-label">
+                    <span>Marriage Visa + Children</span>
+                    <span style="color: #666; font-weight: normal;">수요 vs 공급</span>
+                </div>
+                <div class="gap-bar">
+                    <div class="gap-demand" style="width: 15%; background: linear-gradient(90deg, #4a9eff, #0066cc); opacity: 0.5;">Reddit 적음</div>
+                    <div class="gap-supply" style="width: 100%;">Naver 197건<br/>(C3: 129 + C10: 68)</div>
+                </div>
+                <div class="gap-ratio">
+                    <strong>비율:</strong> 공급이 훨씬 많음. 하지만 Reddit 수요 상대적으로 낮음.
+                </div>
+            </div>
+            <div class="opportunity">
+                <strong>관찰</strong>
+                <p>
+                    이것은 <strong>정착번들 v1 스코프를 벗어남</strong>.
+                    하지만 <strong>미래 수직 확장 기회</strong>로 기록.
+                    특히 배우자 동반 이주(F-2-1 비자) 또는 자녀 교육이 필요한 중기 거주자가 타겟.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: 층별 분석 -->
+        <section>
+            <h2>4. v1 → v2 변경으로 발견된 것들</h2>
+            <p style="margin-bottom: 20px;">
+                4-layer 필터링의 각 층이 어떤 통찰을 제공했는지 역추적.
+            </p>
+
+            <h3>Layer 분포 시각화</h3>
+            <div class="layer-breakdown">
+                <div class="layer-bar">
+                    <div class="layer-segment layer-1">L1: 1,793건 (89.9%)</div>
+                    <div class="layer-segment layer-2">L2: 127건 (6.4%)</div>
+                    <div class="layer-segment layer-3">L3: 7건 (0.4%)</div>
+                    <div class="layer-segment layer-4">L4: 66건 (3.3%)</div>
+                </div>
+                <div class="layer-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #1B4965;"></div>
+                        <span><strong>L1:</strong> Core categories</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #0066cc;"></div>
+                        <span><strong>L2:</strong> Housing sub-theme</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff9800;"></div>
+                        <span><strong>L3:</strong> CoL health insurance</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff4757;"></div>
+                        <span><strong>L4:</strong> Rescue pass</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Layer 1: Core Categories (visa, banking, phone, bureaucracy, work_legal)</h3>
+            <p style="margin-bottom: 15px; color: #666;">
+                기초층. 대부분의 데이터(89.9%)가 여기 포함.
+            </p>
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">v2에서 추가: work_legal</span>
+                    <div>
+                        <span class="cluster-count">337건</span>
+                        <span class="cluster-percent">(Reddit: 28, Naver: 309)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <p><strong>변화:</strong> v1에서는 빠짐. v2에서 명시적으로 추가.</p>
+                    <p><strong>영향:</strong> Naver의 대규모 "퇴직금/산재/임금체불" 콘텐츠(179건)가 비로소 포함되어
+                    <strong>labor rights라는 전혀 새로운 갭</strong>을 드러냄.
+                    </p>
+                    <p><strong>학습:</strong> 카테고리 누락만으로도 유의미한 인사이트를 놓칠 수 있음.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Layer 2: Housing Sub-themes (127건)</h3>
+            <p style="margin-bottom: 15px; color: #666;">
+                Housing은 원래 1,959건(!)이지만 대부분 noise. L2 필터(education + settlement-practical)로 127건만 추출.
+            </p>
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">Housing Noise Exclusion</span>
+                    <div>
+                        <span class="cluster-count">1,832건 제거</span>
+                        <span class="cluster-percent">(93.5% reduction)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <p><strong>제거된 카테고리:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Culture comparison (238건):</strong> "한국 집은 왜 작아?", "방음이 안 된다"</li>
+                        <li><strong>Family conflict (234건):</strong> "배우자와 거주지 때문에 싸움", "시댁 압박"</li>
+                        <li><strong>History (26건):</strong> 한국 주택 역사, 부동산 정책 역사</li>
+                        <li><strong>COVID (21건):</strong> 팬데믹 기간 주거 이슈</li>
+                    </ul>
+                    <p><strong>유지된 카테고리:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Education (43건):</strong> "자녀 학교 등록", "국제학교 비용"</li>
+                        <li><strong>Settlement-practical (84건):</strong> "전입신고 하는 방법", "보증금 반환", "계약서 이해"</li>
+                    </ul>
+                    <p><strong>결과:</strong> Housing은 <strong>정착번들 스코프 내에서 극도로 구체적</strong>.
+                    일반적인 "생활 만족도" 조사와는 다름.
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Layer 3: Cost-of-Living Sub-theme (7건)</h3>
+            <p style="margin-bottom: 15px; color: #666;">
+                CoL 원본 87건 중 건강보험만 추출. 매우 작지만 모두 high-signal.
+            </p>
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">Health Insurance Sub-theme</span>
+                    <div>
+                        <span class="cluster-count">7건</span>
+                        <span class="cluster-percent">(CoL 원본 87건 중)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <p><strong>CoL 원본 내용:</strong> "cheese too expensive", "beer price comparison", "cost of living 일반"</p>
+                    <p><strong>L3 필터링 후:</strong> 건강보험 가입/보험료 관련만 7건 추출.</p>
+                    <p><strong>학습:</strong> 작은 규모이지만, <strong>모든 7건이 actionable</strong>.
+                    "건강보험 가입하려면?", "보험료 계산 방법?", "외국인도 가입되나?" 같은 질문만.
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Layer 4: Rescue Pass (66건)</h3>
+            <p style="margin-bottom: 15px; color: #666;">
+                L1, L2, L3에 걸리지 않은 기록을 특정 키워드로 "구제" — 동시 인코딩(simultaneous coding) 원칙.
+            </p>
+            <div class="cluster-card" onclick="toggleCluster(this)">
+                <div class="cluster-header">
+                    <span class="cluster-title">Rescue Keywords 적중</span>
+                    <div>
+                        <span class="cluster-count">66건</span>
+                        <span class="cluster-percent">(재분류됨)</span>
+                    </div>
+                </div>
+                <div class="cluster-details">
+                    <p><strong>예시 키워드:</strong> bank account, SIM card, immigration office, ARC, international school, labor law</p>
+                    <p><strong>포착된 사례:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li>"어린이집에서 계좌를 요구한다" — housing 카테고리에 태그되었지만 banking 관련</li>
+                        <li>"외국인등록증 받으면 통신사에서 유심을 쉽게 판다" — bureaucracy vs phone 경계</li>
+                        <li>"회사에서 4대보험 가입하라고 했는데..." — work vs insurance의 교집합</li>
+                    </ul>
+                    <p><strong>학습:</strong> 원본 카테고리 분류가 불완전한 경우, 키워드 기반 "구제"가 효과적.
+                    향후 카테고리 재정의의 신호 제공.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: 한계 및 다음 단계 -->
+        <section>
+            <h2>5. 한계 및 다음 단계</h2>
+
+            <h3>현재 v2의 한계</h3>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-bottom: 20px; border-radius: 4px;">
+                <h4 style="color: #856404; margin-top: 0;">L2 Housing Education Filter (~6% 노이즈 예상)</h4>
+                <p style="color: #856404;">
+                    "hagwon" (학원) 키워드가 교육비 비교와 학원 문화 탈출 콘텐츠를 구분 못 함.
+                    43건 중 약 2~3건은 "사교육은 안 하려고 한다" 같은 가치관 논쟁.
+                </p>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-bottom: 20px; border-radius: 4px;">
+                <h4 style="color: #856404; margin-top: 0;">L4 Rescue Keywords (False Positives)</h4>
+                <p style="color: #856404;">
+                    "KT" (한국통신)와 "hagwon" 키워드가 5~10건의 false positive 생성.
+                    예: "KT 스포츠" (체육 센터), "hagwon 추천" (가치관 토론).
+                </p>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-bottom: 20px; border-radius: 4px;">
+                <h4 style="color: #856404; margin-top: 0;">Naver C2 광고 노이즈 (62건)</h4>
+                <p style="color: #856404;">
+                    "법무법인 동주", "변호사 사무소" 등 law firm ads.
+                    v2에서도 제거 미적용. 차기 버전에서 exclusion 권장.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 30px;">통계적 한계</h3>
+            <div style="background: #e8f4f8; padding: 15px; border-radius: 4px;">
+                <p>
+                    <strong>TF-IDF 용어 중복 = 0</strong> 때문에 수요-공급의 직접 매칭이 불가능.
+                    정량적으로는 "완전 갭"으로 보이지만,
+                    실은 "같은 대상인데 다른 언어/프레이밍" 가능성 높음.
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>해결책:</strong> 향후 분석에서는 semantic similarity(Word2Vec, BERT) 도입 검토.
+                    "bank account" ≈ "계좌개설" 같은 의미론적 연결 발견.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 30px;">방향</h3>
+            <div class="next-steps">
+                <h3 style="margin-top: 0; color: #0c5460;">우선순위 순서로 다음 작업</h3>
+                <ol>
+                    <li>
+                        <strong>갭 1-2 (Phone/SIM + Banking) MVP 스펙 정의</strong><br/>
+                        가장 큰 갭이자 언어 장벽이 명확함.
+                        Phone은 공급이 0, Banking은 공급이 있지만 한국어만.
+                    </li>
+                    <li>
+                        <strong>갭 5 (Labor Rights) 법적 검토</strong><br/>
+                        행정사법/변호사법 준수 범위 확인.
+                        정보 제공(informational) vs 법적 조언(consulting) 경계선 명확화.
+                    </li>
+                    <li>
+                        <strong>비자 Matcher 스펙</strong><br/>
+                        Reddit C3 수요 매칭. 면책문과 UX 워크플로우 디자인.
+                    </li>
+                    <li>
+                        <strong>Health Insurance 계산기</strong><br/>
+                        NHI 엔롤먼트 타임라인 + 보험료 시뮬레이션.
+                    </li>
+                    <li>
+                        <strong>Medium-term: Work Legal Guide</strong><br/>
+                        교육 + 경고. "이 정보가 법적 조언이 아님" 반복 강조.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- APPENDIX: 방법론 -->
+        <section class="appendix">
+            <h2>부록: 방법론 (Methodology)</h2>
+
+            <h3>개요</h3>
+            <p>
+                4-layer systematic review 방식.
+                각 layer는 다른 inclusion/exclusion 기준을 적용.
+                투명성 확보를 위해 모든 기준과 rationale을 문서화.
+            </p>
+
+            <div class="method-box">
+                <h4>Layer 1: 핵심 카테고리 포함</h4>
+                <p><strong>Rule:</strong> <code>category IN (visa, banking, phone_connectivity, bureaucracy, work_legal)</code></p>
+                <p><strong>Rationale:</strong> 정착 인프라의 가장 기본 요소.
+                외국인이 한국 입국 후 30일 내에 해결해야 할 서비스들.</p>
+                <p><strong>v2 변경:</strong> work_legal 추가 (퇴직금, 산재, 임금체불)</p>
+                <ul style="margin-left: 20px; color: #555; font-size: 0.9em;">
+                    <li><strong>Reddit:</strong> visa 직접 검색 (visa, tourist visa, E-1, E-7, D-8, D-10 등)</li>
+                    <li><strong>Reddit:</strong> banking (bank account, credit card, Korean bank)</li>
+                    <li><strong>Reddit:</strong> phone (SIM card, Korean phone number)</li>
+                    <li><strong>Reddit:</strong> bureaucracy (ARC, visa extension, documentation)</li>
+                    <li><strong>Reddit:</strong> work_legal (salary, labor rights, workplace issues)</li>
+                    <li><strong>Naver:</strong> 행정사 (visa), 노무사 (labor), 세무사 (tax), 부동산 (housing), 은행 서비스</li>
+                </ul>
+                <p><strong>산출물:</strong> 1,793건 (Reddit 469 + Naver 1,324)</p>
+            </div>
+
+            <div class="method-box">
+                <h4>Layer 2: Housing 부분 필터</h4>
+                <p><strong>Rule:</strong> <code>category = housing AND keyword match (education OR settlement-practical)</code></p>
+                <p><strong>Why separate?</strong> Housing 카테고리 전체 (1,959건)는 73% noise.
+                문화 비교, 가족 갈등, 역사, COVID 관련 등 정착과 무관한 논의 포함.</p>
+                <p><strong>Sub-themes:</strong></p>
+                <ul style="margin-left: 20px; color: #555; font-size: 0.9em;">
+                    <li><strong>Education:</strong> 자녀 학교 등록, 국제학교 비용, 입학 조건 (43건)</li>
+                    <li><strong>Settlement-practical:</strong> 전입신고, 계약 프로세스, 보증금 회수 (84건)</li>
+                </ul>
+                <p><strong>제외된 노이즈 (1,832건):</strong></p>
+                <ul style="margin-left: 20px; color: #555; font-size: 0.9em;">
+                    <li>C1 Culture comparison (238건): "왜 한국 집이 작아?", "방음"</li>
+                    <li>C5 Family conflict (234건): "배우자와 싸움", "시댁 간섭"</li>
+                    <li>C0 History (26건): 한옥 역사, 부동산 정책 변화</li>
+                    <li>C2 COVID (21건): 팬데믹 거주 이슈</li>
+                </ul>
+                <p><strong>산출물:</strong> 127건 추가</p>
+            </div>
+
+            <div class="method-box">
+                <h4>Layer 3: Cost-of-Living 부분 필터</h4>
+                <p><strong>Rule:</strong> <code>category = cost_of_living AND keyword match (health insurance)</code></p>
+                <p><strong>Why separate?</strong> CoL 전체 (87건)는 87% subjective complaints
+                ("cheese 비싸", "rent 올랐다", "생활비 많이 든다" 등).</p>
+                <p><strong>Health Insurance sub-theme:</strong></p>
+                <ul style="margin-left: 20px; color: #555; font-size: 0.9em;">
+                    <li>NHI 가입 방법, 보험료, 커버 범위 — actionable</li>
+                </ul>
+                <p><strong>제외된 노이즈 (80건):</strong> 일반 생활비 투덜거림</p>
+                <p><strong>산출물:</strong> 7건 추가</p>
+            </div>
+
+            <div class="method-box">
+                <h4>Layer 4: Rescue Pass (크로스 도메인 회수)</h4>
+                <p><strong>Rule:</strong> <code>ANY record matching rescue keywords NOT ALREADY IN L1/L2/L3</code></p>
+                <p><strong>Rationale:</strong> Systematic review의 "simultaneous coding" 원칙.
+                한 기록이 여러 주제에 해당할 수 있으니 특정 키워드 매칭으로 "구제".</p>
+                <p><strong>Keywords (English):</strong></p>
+                <ul style="margin-left: 20px; color: #555; font-size: 0.9em;">
+                    <li>bank account, SIM card, immigration office, ARC, alien registration, international school,
+                    health insurance foreigner, labor law, employment contract, layoff, severance, workplace rights</li>
+                </ul>
+                <p><strong>Keywords (Korean):</strong></p>
+                <ul style="margin-left: 20px; color: #555; font-size: 0.9em;">
+                    <li>계좌개설, 유심, 외국인등록증, 국제학교, 건강보험가입, 퇴직금, 임금체불, 근로자, 고용계약, 해고, 산재보험</li>
+                </ul>
+                <p><strong>산출물:</strong> 66건 추가</p>
+            </div>
+
+            <h3 style="margin-top: 30px;">데이터 품질</h3>
+            <table style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>v1</th>
+                        <th>v2</th>
+                        <th>변화</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>총 기록</td>
+                        <td>1,978</td>
+                        <td>1,993</td>
+                        <td>+15 (+0.8%)</td>
+                    </tr>
+                    <tr>
+                        <td>Reddit</td>
+                        <td>469</td>
+                        <td>477</td>
+                        <td>+8</td>
+                    </tr>
+                    <tr>
+                        <td>Naver</td>
+                        <td>1,509</td>
+                        <td>1,516</td>
+                        <td>+7</td>
+                    </tr>
+                    <tr>
+                        <td>카테고리 수</td>
+                        <td>4</td>
+                        <td>5 (+ work_legal)</td>
+                        <td>+1</td>
+                    </tr>
+                    <tr style="background: #d4edda;">
+                        <td><strong>방법론 투명성</strong></td>
+                        <td>낮음</td>
+                        <td><strong>높음</strong></td>
+                        <td>대폭 개선</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 30px;">선택 사항 및 정당성</h3>
+            <ul style="margin-left: 20px; color: #555; line-height: 1.8;">
+                <li><strong>Reddit만 영어 사용:</strong> 영어 댓글 필터링으로 국제 이주자 정확히 대표.
+                한국인 Reddit 사용자 제외.</li>
+                <li><strong>Naver만 한국어 사용:</strong> 한국 거주 전문가(행정사, 노무사, 세무사) 공급 대표.
+                국제 서비스(visadb 등) 제외.</li>
+                <li><strong>Keyword matching vs ML 분류:</strong>
+                Rule 기반으로 재현성 및 감사 추적성 확보.
+                향후 word embeddings 도입 검토.</li>
+                <li><strong>Rescue layer를 마지막에 배치:</strong>
+                L1-L3의 정밀 필터링을 보존하되, 누락된 항목 회수 목적.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">재현성 & 업데이트</h3>
+            <p>
+                모든 필터링 규칙, 키워드, exclusion criteria가 문서화되어 있으므로:
+            </p>
+            <ul style="margin-left: 20px; color: #555;">
+                <li>향후 대규모 Reddit/Naver 데이터 추가 시 동일한 기준 적용 가능</li>
+                <li>키워드 추가/제거 시 incremental update 가능</li>
+                <li>다른 연구자가 같은 방식으로 검증 가능 (과학적 엄밀성)</li>
+            </ul>
+        </section>
+
+        <!-- 최종 정리 -->
+        <section>
+            <h2>결론</h2>
+            <p style="margin-bottom: 20px;">
+                LocalNomad의 "정착 인프라 번들"은 <strong>명확한 수요-공급 갭</strong>에 기초한 제품 전략을 가질 수 있음.
+            </p>
+
+            <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 20px; border-radius: 4px;">
+                <h4 style="color: #155724; margin-top: 0;">즉시 시작 가능한 기회 (Top 3)</h4>
+                <ol style="color: #155724; margin-left: 20px;">
+                    <li>
+                        <strong>Phone/SIM 가이드 + 휴대통신사 비교표</strong><br/>
+                        갭이 가장 크고(71건 수요, 0건 공급), 제품화 난이도 낮음.
+                    </li>
+                    <li>
+                        <strong>Bank Account 요구사항 비교 (Bank-by-bank)</strong><br/>
+                        공급 있지만 한국어 전용. 번역이 아닌 <strong>외국인 관점</strong> 재설계 필요.
+                    </li>
+                    <li>
+                        <strong>Visa Matcher / Decision Tree</strong><br/>
+                        Reddit 수요(60건) ≈ 초입 단계 구매자.
+                        신뢰 확보 → 법무 서비스 upsell 경로.
+                    </li>
+                </ol>
+            </div>
+
+            <div style="background: #d1ecf1; border-left: 4px solid #0c5460; padding: 20px; margin-top: 20px; border-radius: 4px;">
+                <h4 style="color: #0c5460; margin-top: 0;">중기 기회 (Strategic)</h4>
+                <p style="color: #0c5460; margin-bottom: 8px;">
+                    <strong>Foreign Worker Rights Guide</strong> — Labor Rights(179건 공급, latent demand)
+                </p>
+                <p style="color: #0c5460; margin: 0;">
+                    Reddit에 명시적 수요 없지만, Naver의 대규모 퇴직금/산재 콘텐츠 +
+                    "work culture too toxic" 불평으로 강력한 신호.
+                    <strong>교육적 가치 높고 법적 위험 관리 필요</strong>.
+                </p>
+            </div>
+
+            <p style="margin-top: 20px; color: #666; font-size: 0.95em;">
+                <strong>생성:</strong> 2026-03-12 | <strong>분석:</strong> 1,993건 (Reddit 477 + Naver 1,516) |
+                <strong>방법:</strong> 4-layer systematic filtering
+            </p>
+        </section>
+
+        <footer class="footer">
+            <p>LocalNomad 수요-공급 갭 분석 v2</p>
+            <p>Reddit (477건) vs Naver (1,516건) TF-IDF 기반 정량 분석</p>
+            <p>생성일: 2026-03-12 | 다음 업데이트: 2026-04-12 (월간)</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleCluster(element) {
+            const details = element.querySelector('.cluster-details');
+            details.classList.toggle('active');
+            element.style.background = details.classList.contains('active') ? '#eef3f6' : '#f8f9fa';
+        }
+    </script>
+</body>
+</html>

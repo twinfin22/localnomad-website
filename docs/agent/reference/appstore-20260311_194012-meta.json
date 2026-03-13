@@ -1,0 +1,14 @@
+{
+  "source": "appstore",
+  "started_at": "2026-03-11T19:38:10.713594",
+  "finished_at": "2026-03-11T19:40:12.467534",
+  "total_records": 691,
+  "config": {
+    "categories": [
+      "government",
+      "telecom"
+    ],
+    "max_per_app": 2000
+  },
+  "errors": []
+}

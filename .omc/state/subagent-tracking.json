@@ -1,0 +1,51 @@
+{
+  "agents": [
+    {
+      "agent_id": "a504e30dde0a879b4",
+      "agent_type": "Explore",
+      "started_at": "2026-03-13T13:25:40.433Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-03-13T13:26:42.245Z",
+      "duration_ms": 61812
+    },
+    {
+      "agent_id": "aafb5388860909a20",
+      "agent_type": "Explore",
+      "started_at": "2026-03-13T13:25:43.027Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-03-13T13:26:35.756Z",
+      "duration_ms": 52729
+    },
+    {
+      "agent_id": "a6dceda0bd863b14d",
+      "agent_type": "general-purpose",
+      "started_at": "2026-03-13T13:25:45.347Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-03-13T13:26:13.151Z",
+      "duration_ms": 27804
+    },
+    {
+      "agent_id": "a09aa6de79a9b2c20",
+      "agent_type": "Explore",
+      "started_at": "2026-03-13T13:40:11.989Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-03-13T13:40:46.113Z",
+      "duration_ms": 34124
+    },
+    {
+      "agent_id": "a92af833b42766ebc",
+      "agent_type": "oh-my-claudecode:planner",
+      "started_at": "2026-03-13T13:41:13.985Z",
+      "parent_mode": "none",
+      "status": "running"
+    }
+  ],
+  "total_spawned": 5,
+  "total_completed": 4,
+  "total_failed": 0,
+  "last_updated": "2026-03-13T13:41:14.087Z"
+}

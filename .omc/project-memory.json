@@ -1,0 +1,560 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1773384944040,
+  "projectRoot": "/Users/leegen/localnomad/b2c-website",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "16.1.6",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.2.3",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.3",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "next dev --port 1004",
+      "build": "next build",
+      "start": "next start",
+      "lint": "eslint"
+    }
+  },
+  "conventions": {
+    "namingStyle": "camelCase",
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "app",
+      "components",
+      "docs",
+      "lib",
+      "public",
+      "scripts"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "app": {
+      "path": "app",
+      "purpose": "Application code",
+      "fileCount": 5,
+      "lastAccessed": 1773384943991,
+      "keyFiles": [
+        "globals.css",
+        "layout.tsx",
+        "page.tsx",
+        "robots.ts",
+        "sitemap.ts"
+      ]
+    },
+    "components": {
+      "path": "components",
+      "purpose": "UI components",
+      "fileCount": 1,
+      "lastAccessed": 1773384943991,
+      "keyFiles": [
+        "locale-switcher.tsx"
+      ]
+    },
+    "content": {
+      "path": "content",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1773384943995,
+      "keyFiles": []
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 0,
+      "lastAccessed": 1773384943996,
+      "keyFiles": []
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1773384943996,
+      "keyFiles": []
+    },
+    "hooks": {
+      "path": "hooks",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1773384943996,
+      "keyFiles": [
+        "use-document-progress.ts",
+        "use-user.ts"
+      ]
+    },
+    "i18n": {
+      "path": "i18n",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1773384943997,
+      "keyFiles": [
+        "Visa i18n Glossary.txt",
+        "navigation.ts",
+        "request.ts",
+        "routing.ts"
+      ]
+    },
+    "lib": {
+      "path": "lib",
+      "purpose": "Library code",
+      "fileCount": 6,
+      "lastAccessed": 1773384943998,
+      "keyFiles": [
+        "disclaimer-config.ts",
+        "linkify-text.tsx",
+        "neighborhood-data.ts",
+        "seo.ts",
+        "utils.ts"
+      ]
+    },
+    "localnomad-blog-plugin": {
+      "path": "localnomad-blog-plugin",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1773384943998,
+      "keyFiles": [
+        "README.md",
+        "_conflict-resolution.md",
+        "_source-audit.md"
+      ]
+    },
+    "memory": {
+      "path": "memory",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1773384943998,
+      "keyFiles": [
+        "glossary.md",
+        "session-notes.md"
+      ]
+    },
+    "messages": {
+      "path": "messages",
+      "purpose": null,
+      "fileCount": 5,
+      "lastAccessed": 1773384943999,
+      "keyFiles": [
+        "en.json",
+        "ja.json",
+        "vi.json",
+        "zh-cn.json",
+        "zh-tw.json"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 8,
+      "lastAccessed": 1773384943999,
+      "keyFiles": [
+        "basicLogo.png",
+        "fabicon.jpeg",
+        "favicon.png",
+        "logo_new.png",
+        "logo_new_all-blue.png"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 19,
+      "lastAccessed": 1773384943999,
+      "keyFiles": [
+        "analyze.py",
+        "appstore-mining.py",
+        "filter-gold-zones-v2.py",
+        "filter-gold-zones.py",
+        "global-claude-md-proposed.md"
+      ]
+    },
+    "venv": {
+      "path": "venv",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1773384944000,
+      "keyFiles": [
+        "pyvenv.cfg"
+      ]
+    },
+    "lib/types": {
+      "path": "lib/types",
+      "purpose": "Type definitions",
+      "fileCount": 4,
+      "lastAccessed": 1773384944001,
+      "keyFiles": [
+        "dashboard.ts",
+        "neighborhood.ts",
+        "sea.ts"
+      ]
+    },
+    "venv/bin": {
+      "path": "venv/bin",
+      "purpose": "Executable scripts",
+      "fileCount": 14,
+      "lastAccessed": 1773384944003,
+      "keyFiles": [
+        "Activate.ps1",
+        "activate",
+        "activate.csh"
+      ]
+    },
+    "venv/lib": {
+      "path": "venv/lib",
+      "purpose": "Library code",
+      "fileCount": 0,
+      "lastAccessed": 1773384944004,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "localnomad-blog-plugin/skills/quality-gate/SKILL_quality-gate.md",
+      "accessCount": 62,
+      "lastAccessed": 1773409232133,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/cover-image/SKILL_cover-image.md",
+      "accessCount": 54,
+      "lastAccessed": 1773409224522,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/blog-voice/SKILL_blog-voice.md",
+      "accessCount": 54,
+      "lastAccessed": 1773409232310,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/legal-bright-lines/SKILL_legal-bright-lines.md",
+      "accessCount": 46,
+      "lastAccessed": 1773408349415,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/seo-engine/SKILL_seo-engine.md",
+      "accessCount": 45,
+      "lastAccessed": 1773409224469,
+      "type": "file"
+    },
+    {
+      "path": ".claude/skills/blog-voice/references/voice-examples.md",
+      "accessCount": 41,
+      "lastAccessed": 1773389928567,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/quality-gate/references/anti-ai-checklist.md",
+      "accessCount": 39,
+      "lastAccessed": 1773408365756,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/quality-gate/references/banned-words.md",
+      "accessCount": 37,
+      "lastAccessed": 1773406629755,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/taiwan-arrival-checklist-2026.mdx",
+      "accessCount": 30,
+      "lastAccessed": 1773408370853,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/guides/japan-housing-digital-nomads-2026.mdx",
+      "accessCount": 29,
+      "lastAccessed": 1773408360341,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/seo-engine/references/seo-checklist.md",
+      "accessCount": 26,
+      "lastAccessed": 1773406426426,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/seo-engine/references/headline-formulas.md",
+      "accessCount": 25,
+      "lastAccessed": 1773408357641,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/comparisons/japan-korea-taiwan-digital-nomad-visa-2026.mdx",
+      "accessCount": 21,
+      "lastAccessed": 1773408371589,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 17,
+      "lastAccessed": 1773407713743,
+      "type": "directory"
+    },
+    {
+      "path": "content/blog/guides/korea-ultimate-digital-nomad-guide.mdx",
+      "accessCount": 17,
+      "lastAccessed": 1773408361083,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/korea-arc-phone-bank-catch-22-guide-2026.mdx",
+      "accessCount": 16,
+      "lastAccessed": 1773408375148,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/legal-bright-lines/references/disclaimer-templates.md",
+      "accessCount": 14,
+      "lastAccessed": 1773404391272,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/blog-voice/references/voice-examples.md",
+      "accessCount": 14,
+      "lastAccessed": 1773408350449,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/comparisons/seoul-vs-tokyo-cost-of-living-2026.mdx",
+      "accessCount": 11,
+      "lastAccessed": 1773408371991,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/news/korea-2026-immigration-overhaul.mdx",
+      "accessCount": 11,
+      "lastAccessed": 1773408372981,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/japan-konbini-survival-guide-2026.mdx",
+      "accessCount": 11,
+      "lastAccessed": 1773408375976,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/comparisons/korea-k-star-visa-stem-fast-track-2026.mdx",
+      "accessCount": 10,
+      "lastAccessed": 1773408359806,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/guides/china-ultimate-digital-nomad-guide.mdx",
+      "accessCount": 10,
+      "lastAccessed": 1773408361904,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026.mdx",
+      "accessCount": 10,
+      "lastAccessed": 1773408374519,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/korea-arrival-checklist-2026.mdx",
+      "accessCount": 10,
+      "lastAccessed": 1773408374712,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/cover-image/references/image-presets.md",
+      "accessCount": 9,
+      "lastAccessed": 1773408357582,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/guides/japan-ultimate-digital-nomad-guide.mdx",
+      "accessCount": 9,
+      "lastAccessed": 1773408360672,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/taiwan-night-market-guide-2026.mdx",
+      "accessCount": 9,
+      "lastAccessed": 1773408375521,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/seo-engine/references/cta-playbook.md",
+      "accessCount": 8,
+      "lastAccessed": 1773404390132,
+      "type": "file"
+    },
+    {
+      "path": "lib/blog/schema.ts",
+      "accessCount": 8,
+      "lastAccessed": 1773408350623,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/japan-arrival-checklist-2026.mdx",
+      "accessCount": 8,
+      "lastAccessed": 1773408371128,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/news/taiwan-gold-card-2026-changes.mdx",
+      "accessCount": 8,
+      "lastAccessed": 1773408372495,
+      "type": "file"
+    },
+    {
+      "path": "components/blog/mdx-components.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1773392606769,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/guides/taiwan-ultimate-digital-nomad-guide.mdx",
+      "accessCount": 7,
+      "lastAccessed": 1773408361496,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/china-arrival-checklist-2026.mdx",
+      "accessCount": 7,
+      "lastAccessed": 1773408368566,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/183-day-tax-trap-digital-nomads.mdx",
+      "accessCount": 7,
+      "lastAccessed": 1773408373173,
+      "type": "file"
+    },
+    {
+      "path": "localnomad-blog-plugin/skills/quality-gate/references/fact-check-tiers.md",
+      "accessCount": 6,
+      "lastAccessed": 1773407701648,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/china-alipay-wechat-pay-foreigner-setup-2026.mdx",
+      "accessCount": 6,
+      "lastAccessed": 1773408369419,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/china-wechat-ecosystem-guide-2026.mdx",
+      "accessCount": 6,
+      "lastAccessed": 1773408369597,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/taiwan-gold-card-vs-dn-visa-2026.mdx",
+      "accessCount": 6,
+      "lastAccessed": 1773408370693,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/japan-earthquake-preparedness-guide-2026.mdx",
+      "accessCount": 6,
+      "lastAccessed": 1773408373845,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/comparisons/taiwan-gold-card-vs-digital-nomad-visa-2026.mdx",
+      "accessCount": 5,
+      "lastAccessed": 1773390467867,
+      "type": "file"
+    },
+    {
+      "path": ".claude",
+      "accessCount": 5,
+      "lastAccessed": 1773406432243,
+      "type": "directory"
+    },
+    {
+      "path": "content/blog/comparisons/korea-f1d-workation-visa-do-you-need-it-2026.mdx",
+      "accessCount": 5,
+      "lastAccessed": 1773408359216,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/china-great-firewall-vpn-guide-2026.mdx",
+      "accessCount": 5,
+      "lastAccessed": 1773408368954,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/tips/japan-garbage-separation-guide-2026.mdx",
+      "accessCount": 5,
+      "lastAccessed": 1773408370674,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/comparisons/japan-digital-nomad-visa-vs-tourist-2026.mdx",
+      "accessCount": 5,
+      "lastAccessed": 1773408373603,
+      "type": "file"
+    },
+    {
+      "path": "content/blog/guides/korea-f1d-workation-visa-2026.mdx",
+      "accessCount": 4,
+      "lastAccessed": 1773408358626,
+      "type": "file"
+    },
+    {
+      "path": "components/blog",
+      "accessCount": 2,
+      "lastAccessed": 1773392603396,
+      "type": "directory"
+    },
+    {
+      "path": "content",
+      "accessCount": 1,
+      "lastAccessed": 1773385551408,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}

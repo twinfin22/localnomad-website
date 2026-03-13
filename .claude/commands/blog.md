@@ -1,0 +1,1 @@
+../../localnomad-blog-plugin/commands/blog.md

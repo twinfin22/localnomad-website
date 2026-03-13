@@ -1,0 +1,16 @@
+{
+  "source": "youtube",
+  "started_at": "2026-03-11T19:04:31.422635",
+  "finished_at": "2026-03-11T19:11:45.801621",
+  "total_records": 4042,
+  "config": {
+    "keyword_groups": [
+      "negative",
+      "practical",
+      "honest"
+    ],
+    "max_videos": 300,
+    "max_comments_per_video": 500
+  },
+  "errors": []
+}
