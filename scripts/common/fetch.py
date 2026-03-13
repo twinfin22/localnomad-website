@@ -4,17 +4,23 @@ HTTP Fetch Utilities
 Shared HTTP fetching with retry logic, rate limiting, and 429 handling.
 Used by all scrapers to avoid duplicating this logic.
 
+Reddit helpers use public .json endpoints by default.
+If REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET are set, auto-upgrades to
+OAuth (oauth.reddit.com) for higher rate limits (600 req/10min).
+
 No external dependencies — uses only urllib (stdlib).
 """
 
 from __future__ import annotations
 
+import base64
 import json
-import time
+import os
 import sys
+import time
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlencode
 from typing import Optional
 
 
@@ -133,6 +139,119 @@ def fetch_json(
     raise FetchError(url, status, f"Failed after {max_retries} attempts: {last_error}")
 
 
+# ── Reddit OAuth (optional, auto-detected) ───────────────────
+#
+# When REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET are set (in .env or env),
+# all Reddit helpers transparently switch from www.reddit.com/*.json to
+# oauth.reddit.com/* with a Bearer token.  This gives 600 req/10min
+# instead of the unauthenticated limit.
+#
+# If credentials are absent, everything works via public .json endpoints.
+
+_reddit_token: Optional[str] = None
+_reddit_token_expires: float = 0
+_reddit_oauth_checked: bool = False
+_reddit_oauth_available: bool = False
+
+
+def _try_load_reddit_credentials() -> tuple[str, str]:
+    """Try to load Reddit OAuth credentials. Returns ('', '') if not found."""
+    client_id = os.environ.get('REDDIT_CLIENT_ID', '')
+    client_secret = os.environ.get('REDDIT_CLIENT_SECRET', '')
+
+    if client_id and client_secret:
+        return client_id, client_secret
+
+    env_candidates = [
+        os.path.join(os.getcwd(), '.env'),
+        os.path.join(os.path.dirname(__file__), '..', '..', '.env'),
+    ]
+    for env_path in env_candidates:
+        env_path = os.path.abspath(env_path)
+        if os.path.exists(env_path):
+            with open(env_path) as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith('#') or '=' not in line:
+                        continue
+                    key, _, val = line.partition('=')
+                    key = key.strip()
+                    val = val.strip().strip('"').strip("'")
+                    if key == 'REDDIT_CLIENT_ID' and not client_id:
+                        client_id = val
+                    elif key == 'REDDIT_CLIENT_SECRET' and not client_secret:
+                        client_secret = val
+            break
+
+    return client_id, client_secret
+
+
+def _is_oauth_available() -> bool:
+    """Check once whether OAuth credentials are configured."""
+    global _reddit_oauth_checked, _reddit_oauth_available
+    if not _reddit_oauth_checked:
+        cid, csec = _try_load_reddit_credentials()
+        _reddit_oauth_available = bool(cid and csec)
+        if _reddit_oauth_available:
+            print("  🔑 Reddit OAuth credentials found — using oauth.reddit.com", file=sys.stderr)
+        _reddit_oauth_checked = True
+    return _reddit_oauth_available
+
+
+def _get_reddit_token() -> str:
+    """Get a valid OAuth token, refreshing if expired."""
+    global _reddit_token, _reddit_token_expires
+
+    if _reddit_token and time.time() < _reddit_token_expires:
+        return _reddit_token
+
+    client_id, client_secret = _try_load_reddit_credentials()
+    credentials = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
+
+    req = Request(
+        "https://www.reddit.com/api/v1/access_token",
+        data=urlencode({"grant_type": "client_credentials"}).encode(),
+        headers={
+            "Authorization": f"Basic {credentials}",
+            "User-Agent": DEFAULT_USER_AGENT,
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        method="POST",
+    )
+
+    with urlopen(req, timeout=DEFAULT_TIMEOUT) as resp:
+        data = json.loads(resp.read().decode())
+
+    if "access_token" not in data:
+        raise RuntimeError(f"Reddit OAuth response missing access_token: {data}")
+
+    _reddit_token = data["access_token"]
+    _reddit_token_expires = time.time() + data.get("expires_in", 3600) - 300
+    return _reddit_token
+
+
+def _reddit_fetch(
+    path: str,
+    *,
+    params: Optional[dict] = None,
+    rate_limiter: Optional[RateLimiter] = None,
+) -> dict:
+    """
+    Fetch Reddit data. Auto-selects between:
+    - OAuth: oauth.reddit.com + Bearer token (if credentials available)
+    - Public: www.reddit.com + .json suffix (fallback)
+    """
+    if _is_oauth_available():
+        token = _get_reddit_token()
+        query_string = f"?{urlencode(params)}" if params else ""
+        url = f"https://oauth.reddit.com{path}{query_string}"
+        return fetch_json(url, headers={"Authorization": f"Bearer {token}"}, rate_limiter=rate_limiter)
+    else:
+        query_string = f"?{urlencode(params)}" if params else ""
+        url = f"https://www.reddit.com{path}.json{query_string}"
+        return fetch_json(url, rate_limiter=rate_limiter)
+
+
 # ── Reddit-specific helpers ───────────────────────────────────
 
 def reddit_search(
@@ -145,16 +264,21 @@ def reddit_search(
     rate_limiter: Optional[RateLimiter] = None,
 ) -> list[dict]:
     """
-    Search a subreddit via Reddit's public JSON API.
+    Search a subreddit for posts.
     Returns list of post data dicts.
     """
-    url = (
-        f"https://www.reddit.com/r/{subreddit}/search.json"
-        f"?q={quote_plus(query)}&restrict_sr=on&sort={sort}"
-        f"&t={time_filter}&limit={limit}"
-    )
     try:
-        data = fetch_json(url, rate_limiter=rate_limiter)
+        data = _reddit_fetch(
+            f"/r/{subreddit}/search",
+            params={
+                "q": query,
+                "restrict_sr": "on",
+                "sort": sort,
+                "t": time_filter,
+                "limit": str(limit),
+            },
+            rate_limiter=rate_limiter,
+        )
         posts = data.get("data", {}).get("children", [])
         return [p["data"] for p in posts if p["kind"] == "t3"]
     except FetchError as e:
@@ -173,19 +297,22 @@ def reddit_comments(
     """
     Fetch comments from a Reddit post.
     Returns list of {body, score, author, depth, parent_id} dicts.
-    Now supports depth > 1 for sub-comments.
     """
-    safe_permalink = quote_plus(permalink, safe="/")
-    url = (
-        f"https://www.reddit.com{safe_permalink}.json"
-        f"?limit={limit}&sort={sort}&depth={depth}"
-    )
+    # permalink already starts with /r/... — use directly as path
     try:
-        data = fetch_json(url, rate_limiter=rate_limiter)
-        if len(data) < 2:
+        data = _reddit_fetch(
+            permalink,
+            params={
+                "limit": str(limit),
+                "sort": sort,
+                "depth": str(depth),
+            },
+            rate_limiter=rate_limiter,
+        )
+        if not isinstance(data, list) or len(data) < 2:
             return []
 
-        results = []
+        results: list[dict] = []
         _extract_comments(data[1].get("data", {}).get("children", []), results, current_depth=0)
         return results
 
@@ -221,6 +348,43 @@ def _extract_comments(children: list, results: list, current_depth: int):
             _extract_comments(reply_children, results, current_depth + 1)
 
 
+def reddit_subreddit_search(
+    query: str,
+    *,
+    limit: int = 10,
+    rate_limiter: Optional[RateLimiter] = None,
+) -> list[dict]:
+    """
+    Search for subreddits matching a topic query.
+    Returns list of {name, subscribers, public_description, url} dicts.
+    """
+    try:
+        data = _reddit_fetch(
+            "/subreddits/search",
+            params={
+                "q": query,
+                "limit": str(limit),
+            },
+            rate_limiter=rate_limiter,
+        )
+        children = data.get("data", {}).get("children", [])
+        results = []
+        for item in children:
+            if item.get("kind") != "t5":
+                continue
+            d = item["data"]
+            results.append({
+                "name": d.get("display_name", ""),
+                "subscribers": d.get("subscribers", 0),
+                "public_description": d.get("public_description", "")[:200],
+                "url": d.get("url", ""),
+            })
+        return results
+    except FetchError as e:
+        print(f"  ⚠ Subreddit search failed for '{query}': {e}", file=sys.stderr)
+        return []
+
+
 def reddit_top_posts(
     subreddit: str,
     *,
@@ -229,9 +393,15 @@ def reddit_top_posts(
     rate_limiter: Optional[RateLimiter] = None,
 ) -> list[dict]:
     """Fetch top posts from a subreddit."""
-    url = f"https://www.reddit.com/r/{subreddit}/top.json?t={time_filter}&limit={limit}"
     try:
-        data = fetch_json(url, rate_limiter=rate_limiter)
+        data = _reddit_fetch(
+            f"/r/{subreddit}/top",
+            params={
+                "t": time_filter,
+                "limit": str(limit),
+            },
+            rate_limiter=rate_limiter,
+        )
         posts = data.get("data", {}).get("children", [])
         return [p["data"] for p in posts if p["kind"] == "t3"]
     except FetchError as e:
