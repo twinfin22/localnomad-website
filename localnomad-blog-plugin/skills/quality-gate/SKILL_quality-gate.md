@@ -5,28 +5,23 @@ description: 5-layer quality validation for LocalNomad blog posts — fact-check
 
 # Quality Gate — 5-Layer Validation
 
-Run this during STAGE 6. All 5 layers must PASS. Any FAIL triggers auto-fix and re-check.
+Run this during STAGE 4. All 5 layers must PASS. Any FAIL triggers auto-fix and re-check.
 
 ## Layer 1: Fact-Check
 
-Read `references/fact-check-tiers.md` for source tier definitions.
+Run the `fact-checker` skill (`skills/fact-checker/SKILL_fact-checker.md`) on the full post. The fact-checker handles: claim extraction (with domain batching), source discovery (with fetched-pages tracker), URL verification, freshness assessment, and context checks. It returns a structured Fact-Check Report.
 
-### Process
-1. Identify all factual claims in the post (dates, numbers, requirements, processes)
-2. Verify each claim against source tiers:
-   - **Tier 1** (government/official): immigration.go.kr, MOFA, NIA, BOCA — required for visa requirements
-   - **Tier 2** (established media): major news outlets, official announcements
-   - **Tier 3** (community/expert): verified community sources, expert blogs
-3. Check source freshness: visa info must be ≤6 months old
-4. Cross-verify: critical claims need ≥2 independent sources
+**After fact-checker returns**, apply these LocalNomad-specific checks on top:
+- Cross-reference `references/fact-check-tiers.md` for source tier definitions
+- Cross-verify: critical claims need ≥2 independent sources
+- Check all internal links against CLAUDE.md Internal Link Map
 
 ### Fail Conditions
 - Any visa requirement claim without Tier 1 source **and inline citation**
 - Any statistic without source attribution **visible in the post** (link or parenthetical)
 - Any claim older than 12 months without "as of [date]" qualifier
-- Any factual claim with NO source traceable by the reader (source must be findable, not just "verified by author")
-- **Internal logic contradiction**: any sentence or list item where two parts contradict each other (e.g., "NOT a work visa" next to "you can work"). Read each Callout, list, and comparison item as a standalone claim — does it make sense without surrounding context?
-- **Comparison data without source**: any comparison table or reference to another program (e.g., Top-Tier Visa) must have verifiable source + launch date. If the source can't be verified, remove the comparison or flag for manual review.
+- **Internal logic contradiction**: read each Callout, list, and comparison item as a standalone claim — does it make sense without surrounding context?
+- **Comparison data without source**: any comparison table or reference to another program must have verifiable source + launch date
 
 ## Layer 2: SEO Audit
 
@@ -101,7 +96,7 @@ All 10 must pass:
 
 ## Layer 4: Legal Compliance
 
-Read `references/legal-bright-lines.md` for country-specific rules.
+Read the `legal-bright-lines` skill (`skills/legal-bright-lines/SKILL_legal-bright-lines.md`) for country-specific rules.
 
 ### Checks
 - [ ] No "you qualify," "you are eligible," "recommended visa," "guaranteed" language
