@@ -40,7 +40,7 @@ Before extracting claims, prepare the verification environment:
    - China/Thailand/Vietnam/Indonesia/Malaysia/Singapore/Philippines → `references/government-sources-sea.md`
    - Multi-country posts → load all relevant country files
    - Do NOT load country files for countries not mentioned in the post.
-3. **Check verified-claims-cache (lazy-load)** — do NOT read `references/verified-claims-cache.md` wholesale. Instead, for each claim extracted in Step 1, use Grep to search `references/verified-claims-cache.md` for matching keywords (claim type, country, key terms). Only load matching cached entries into context. If no cached match is found for a claim, proceed directly to Source Discovery (Step 2) for that claim. Stale entries (current date ≥ Next Review) must be re-verified via web even if found in cache.
+3. **Check verified-claims-cache (lazy-load)** — do NOT read `references/verified-claims-cache.md` wholesale. Instead, for each claim extracted in Step 1, use Grep to search `references/verified-claims-cache.md` for matching keywords (claim type, country, key terms). Only load matching cached entries into context. If no cached match is found for a claim, proceed directly to Source Discovery (Step 2) for that claim. Stale entries (current date ≥ Next Review) must be re-verified via web even if found in cache. Also re-verify if the entry's Next Review is within 14 days of current date AND the claim involves an annual or seasonal update cycle.
    - **Why**: This grep-based approach scales as the cache grows — O(claims) lookups instead of O(cache_size) full context load.
 4. **Initialize fetched-pages tracker** — empty table to record every URL fetched during this run:
 
@@ -61,7 +61,7 @@ MUST NOT proceed to Step 1 until all gates pass.
 
 ---
 
-## 6-Step Verification Protocol
+## 5-Step Verification Protocol
 
 ### Step 1: Extract Claims
 
@@ -144,6 +144,7 @@ For each source URL found, MUST verify all 5 points:
 3. **Date freshness**: When was this page last updated? (Apply freshness rules in Step 4)
 4. **Specificity**: Exact page with the claim, not a domain homepage? (Homepage alone = FAIL)
 5. **Accessibility**: URL reachable? (If behind paywall/login, note it)
+6. **Identifier existence**: If the claim contains a specific code, form number, or program name, search the government site for that exact string. Zero results = FABRICATED. Mark CRITICAL.
 
 **Red flags** (automatic FAIL for that source):
 - Domain does not match the claimed organization
@@ -206,48 +207,7 @@ If a nuance check reveals a context error, MUST classify severity (CRITICAL/MODE
 - [ ] Every context error found has severity classification and specific description
 - [ ] Taiwan content checked for prohibited eligibility language (legal-bright-lines)
 
-MUST NOT proceed to Step 6 until all gates pass.
-
-### Step 6: Source Link Injection
-
-After verification, ensure the blog post itself links to authoritative sources for key claims. Readers should be able to verify critical information without leaving the post to search.
-
-#### Which claims need inline source links?
-
-| Claim Type | Link Required? | Example |
-|-----------|---------------|---------|
-| B — Requirement (visa rules, eligibility) | **YES — mandatory** | "income threshold of ₩100M — [source](https://immigration.go.kr/...)" |
-| D — Policy (government programs, law) | **YES — mandatory** | "expanded to 32 universities in Dec 2025 — [source](https://...)" |
-| A — Stat (numbers, dates, amounts) | Recommended if Tier 1 source exists | "birth rate hit 0.72 — [source](https://kostat.go.kr/...)" |
-| C — Process (how-to, timeline) | Optional — link to official portal once per section | "Apply at [HiKorea](https://www.hikorea.go.kr/)" |
-| E — Attribution | Only if the original source is linkable | "According to [Korea Times](https://...)" |
-
-#### Link placement rules
-
-1. **Natural inline links** — weave into sentence flow, not footnotes or parenthetical dumps
-   - GOOD: "The F-1-D requires [₩100M annual income](https://immigration.go.kr/...) and ₩100M health coverage."
-   - BAD: "The F-1-D requires ₩100M annual income. (Source: https://immigration.go.kr/...)"
-2. **One link per claim** — don't stack multiple source links on the same sentence
-3. **Tier 1 preferred** — link to government/official sources over media articles when both exist
-4. **Deduplicate** — if the same source URL verifies multiple claims in the same section, link it once on the most prominent claim
-5. **No broken links** — only inject URLs that passed the 5-point check in Step 3
-6. **Existing links preserved** — if the post already has a correct source link for a claim, do not duplicate or replace it
-
-#### Source link density target
-
-- **Minimum**: Every section containing Type B or D claims has at least 1 source link
-- **Maximum**: No more than 3 source links per paragraph (avoids link spam)
-- **Comparison tables**: Link the most critical row (usually income/eligibility) to its source; not every cell
-
-### Step 6 Completion Gate
-
-- [ ] Every Type B and D claim has an inline source link in the post (or is documented as "no suitable URL")
-- [ ] Links are natural inline style, not footnotes or parenthetical
-- [ ] No broken or unverified URLs injected
-- [ ] Existing correct links preserved (not duplicated)
-- [ ] No paragraph exceeds 3 source links
-
-MUST NOT proceed to Output until all gates pass.
+Step 5 is the final step of this skill. Source link injection is handled separately by `SKILL_source-link-injector.md`.
 
 ---
 
@@ -301,3 +261,10 @@ Key rules:
 - Source Table URLs MUST be specific pages, not domain homepages. `immigration.go.kr` alone = FAIL.
 - If exact URL cannot be retrieved: `[domain] — specific page not retrievable, manual verification required`
 - Every Type B and Type D claim MUST have a Tier 1 source or be flagged as CRITICAL.
+
+### Output Completion Gate
+
+- [ ] Report follows the report template format
+- [ ] All claims accounted for (verified + failed + unverifiable = total from Step 1)
+- [ ] UNVERIFIABLE claims are exempt from URL and link gates but MUST appear in UNVERIFIABLE CLAIMS section
+- [ ] New data points discovered during this run added to verified-claims-cache (or documented why not)

@@ -235,7 +235,8 @@ Also read the full draft text from `draftFilePath` (from stage3 output) to pass 
 Subagent reports go to `$TMPDIR/blog-pipeline/stage4-reports/`:
 ```
 $TMPDIR/blog-pipeline/stage4-reports/
-├── fact-check.json   # conforms to stage4-layer-report.schema.json
+├── fact-check.json    # conforms to stage4-layer-report.schema.json
+├── contrarian.json    # ESCALATED claims merged into fact-check as CRITICAL
 ├── seo-audit.json
 ├── anti-ai.json
 ├── legal.json
@@ -252,7 +253,7 @@ After the draft is written, run **quality gate** and **cover image search** in p
 
 Read `skills/quality-gate/SKILL_quality-gate.md` and follow its subagent orchestration protocol exactly.
 
-The orchestrator spawns 5 parallel subagents (fact-check, seo-audit, anti-ai, legal, voice). Each subagent loads only its own skill file and country-scoped references. Do not load individual layer skills into the main agent context — the orchestrator handles all routing.
+The orchestrator runs in two phases: Phase 1 spawns 5 parallel read-only subagents (fact-check, seo-audit, anti-ai, legal, voice), then a contrarian subagent challenges VERIFIED claims from the fact-check report. Phase 2 applies fixes sequentially, with source link injection (via `SKILL_source-link-injector.md`) running last to preserve links from anti-AI/voice rewrites. Each subagent loads only its own skill file and country-scoped references. Do not load individual layer skills into the main agent context — the orchestrator handles all routing.
 
 Auto-fix: max 3 attempts per layer, then flag for Gen's manual review at CP2.
 

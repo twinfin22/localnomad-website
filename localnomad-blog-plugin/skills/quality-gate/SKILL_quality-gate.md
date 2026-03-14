@@ -56,15 +56,31 @@ Return ONLY valid JSON matching contracts/stage4-layer-report.schema.json:
 
 Write each subagent's JSON report to: `$TMPDIR/blog-pipeline/stage4-reports/{layer}.json`
 
+### Layer 1b: Contrarian Verification (after fact-check completes)
+
+After the fact-check subagent returns its JSON report, spawn a contrarian subagent:
+
+```
+Agent(subagent_type="oh-my-claudecode:critic",
+      model="sonnet",
+      prompt="Read skills/fact-checker/SKILL_fact-contrarian.md and execute.
+              Input: [VERIFIED claims from fact-check report SOURCE TABLE only]
+              Do NOT read the blog post draft. Do NOT receive blog text.")
+```
+
+Write contrarian report to: `$TMPDIR/blog-pipeline/stage4-reports/contrarian.json`
+
+Any ESCALATED claims from the contrarian are merged into the fact-check report as CRITICAL items before Phase 2.
+
 ## Phase 2: Sequential Fix (write operations)
 
-After ALL 5 JSON reports are collected, apply fixes to the draft in this order:
+After ALL reports are collected (5 layers + contrarian), apply fixes to the draft in this order:
 
-1. **Critical fact corrections** — wrong visa requirements, policy details (from fact-check report)
+1. **Critical fact corrections** — wrong visa requirements, policy details, + ESCALATED claims from contrarian
 2. **Moderate fact corrections** — outdated stats, process differences (from fact-check report)
 3. **Anti-AI rewrites** — banned words, banned structures, structural fixes (from anti-ai report)
 4. **Voice adjustments** — ESL-friendly, word count, jargon explanations (from voice report)
-5. **Source link injection** — fact-checker Step 6, runs LAST to preserve links
+5. **Source link injection** — run `skills/fact-checker/SKILL_source-link-injector.md` using the fact-check report's SOURCE TABLE. Only inject URLs with Status=VERIFIED. Do NOT fetch new URLs.
 6. **Legal disclaimer insertion** — if missing (from legal report)
 7. **SEO fixes** — meta description, title, slug corrections (from seo-audit report)
 
@@ -74,7 +90,7 @@ Max 3 auto-fix attempts per layer. After 3 failures, flag for Gen's manual revie
 
 ## Phase 1 Verification Pass
 
-After Phase 2, re-spawn the same 5 subagents as a verification pass (no fixes — confirm all layers PASS).
+After Phase 2, re-spawn the same 5 subagents as a verification pass (no fixes — confirm all layers PASS). Verification pass reuses Phase 1 fetched-pages tracker as read-only cache — only re-verify claims touched by Phase 2 fixes.
 
 ## Aggregated Output
 
