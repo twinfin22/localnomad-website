@@ -1,6 +1,6 @@
 ---
 name: fact-check
-description: Standalone fact-checker — 5-step verification protocol for any content (file, URL, text, or single claim). Same protocol as blog pipeline Layer 1, without quality-gate overhead.
+description: Standalone fact-checker — 6-step verification protocol for any content (file, URL, text, or single claim). Same protocol as blog pipeline Layer 1, without quality-gate overhead.
 ---
 
 # /fact-check $ARGUMENTS
@@ -26,7 +26,7 @@ If input type is ambiguous, ask the user to clarify.
    `localnomad-blog-plugin/skills/fact-checker/references/government-sources.md`
 3. Auto-detect country from content (scan for country names, visa type codes like F-1-D/E-7/Gold Card, government URLs). If no country detected, proceed without country-specific notes.
 4. Run the **Preparation** preamble (identify countries, pre-load government URLs, initialize fetched-pages tracker and tool budget)
-5. Run the full **5-step protocol** (Steps 1-5) on the parsed content
+5. Run the full **6-step protocol** (Steps 1-6) on the parsed content
 6. Output the standard **Fact-Check Report** (see SKILL_fact-checker.md Output Format section)
 
 ## Differences from Blog Pipeline

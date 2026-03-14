@@ -7,12 +7,37 @@ description: 5-layer quality validation for LocalNomad blog posts — fact-check
 
 Run this during STAGE 4. All 5 layers must PASS. Any FAIL triggers auto-fix and re-check.
 
+## Execution Model: Two-Phase Pipeline
+
+Quality gate runs in two phases to prevent write collisions between layers.
+
+### Phase 1: Parallel Verify (read-only)
+All 5 layers run simultaneously. Each produces a report. No file edits happen.
+- Layer 1 (Fact-Check): runs Steps 1-5 only → returns Fact-Check Report
+- Layer 2 (SEO Audit): runs checklist → returns SEO Report
+- Layer 3 (Anti-AI): scans for banned words/structures → returns Anti-AI Report
+- Layer 4 (Legal): scans for prohibited language → returns Legal Report
+- Layer 5 (Voice): checks readability/word count → returns Voice Report
+
+### Phase 2: Sequential Fix (write operations)
+After ALL Phase 1 reports are collected, apply fixes in this order:
+1. **CRITICAL fact corrections** (wrong visa requirements, policy details)
+2. **MODERATE fact corrections** (outdated stats, process differences)
+3. **Anti-AI rewrites** (banned words, banned structures, structural fixes)
+4. **Voice adjustments** (ESL-friendly, word count, jargon explanations)
+5. **Source link injection** (fact-checker Step 6 — runs LAST to preserve links)
+6. **Legal disclaimer insertion** (if missing)
+
+This ordering ensures source links injected in step 5 are not overwritten by anti-AI or voice rewrites in steps 3-4.
+
+After Phase 2, re-run Phase 1 as a verification pass (no fixes, just confirm all layers PASS).
+
 ## Layer 1: Fact-Check
 
-Run the `fact-checker` skill (`skills/fact-checker/SKILL_fact-checker.md`) on the full post. The fact-checker handles: claim extraction (with domain batching), source discovery (with fetched-pages tracker), URL verification, freshness assessment, and context checks. It returns a structured Fact-Check Report.
+Run the `fact-checker` skill (`skills/fact-checker/SKILL_fact-checker.md`) Steps 1-5 on the full post (verify phase only — Step 6 link injection runs in Phase 2). The fact-checker handles: claim extraction (with domain batching), source discovery (with fetched-pages tracker and verified-claims-cache), URL verification, freshness assessment, and context checks. It returns a structured Fact-Check Report.
 
 **After fact-checker returns**, apply these LocalNomad-specific checks on top:
-- Cross-reference `references/fact-check-tiers.md` for source tier definitions
+- Source tier definitions are in `fact-checker/references/government-sources.md` (Tier Classification Quick Rules section)
 - Cross-verify: critical claims need ≥2 independent sources
 - Check all internal links against CLAUDE.md Internal Link Map
 

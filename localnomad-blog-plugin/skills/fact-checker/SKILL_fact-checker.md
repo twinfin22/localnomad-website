@@ -33,18 +33,20 @@ If all tools unavailable, mark every claim as UNVERIFIABLE with reason "no web a
 Before extracting claims, prepare the verification environment:
 
 1. **Identify target countries** mentioned in the post (scan for country names, visa types, government URLs)
-2. **Pre-load government source URLs** from `references/government-sources.md` for each identified country
-3. **Initialize fetched-pages tracker** — empty table to record every URL fetched during this run:
+2. **Pre-load government source URLs** from `references/government-sources.md` — read ONLY the sections for identified target countries + the "Tier Classification Quick Rules" section. Skip all other country sections to minimize context usage.
+3. **Check verified-claims-cache** — read `references/verified-claims-cache.md` and note any cached values relevant to the post's claims. Stale entries (current date ≥ Next Review) must be re-verified via web.
+4. **Initialize fetched-pages tracker** — empty table to record every URL fetched during this run:
 
 | # | URL | Tool Used | Content Summary | Claims Verified Against |
 |---|-----|-----------|-----------------|------------------------|
 
-4. **Initialize tool budget counter** — starts at 0 for each: search calls, scrape calls, extract calls
+5. **Initialize tool budget counter** — starts at 0 for each: search calls, scrape calls, extract calls
 
 ### Preparation Gate
 
 - [ ] Target countries identified (≥1)
 - [ ] Government source URLs loaded for each country
+- [ ] Verified-claims-cache loaded and stale entries identified
 - [ ] Fetched-pages tracker initialized (empty table present)
 - [ ] Tool budget counters at 0/0/0
 
@@ -52,7 +54,7 @@ MUST NOT proceed to Step 1 until all gates pass.
 
 ---
 
-## 5-Step Verification Protocol
+## 6-Step Verification Protocol
 
 ### Step 1: Extract Claims
 
@@ -92,10 +94,11 @@ MUST NOT proceed to Step 2 until all gates pass.
 
 **Tool selection (MUST follow this order for every claim):**
 
-1. **Check fetched-pages tracker** — if URL (or same domain+path) already fetched, reuse content. STOP.
-2. **Known government URL** (listed in government-sources.md) → `firecrawl_scrape` directly. No search needed.
-3. **Unknown source needed** → `firecrawl_search` to discover the right page first.
-4. **Structured data** (tables, fee schedules, requirement lists) → `firecrawl_extract` with JSON schema.
+1. **Check verified-claims-cache** — if claim matches a cached entry and cache is fresh (current date < Next Review), use cached value. STOP. No web lookup needed.
+2. **Check fetched-pages tracker** — if URL (or same domain+path) already fetched in this run, reuse content. STOP.
+3. **Known government URL** (listed in government-sources.md) → `firecrawl_scrape` directly. No search needed.
+4. **Unknown source needed** → `firecrawl_search` to discover the right page first.
+5. **Structured data** (tables, fee schedules, requirement lists) → `firecrawl_extract` with JSON schema.
 
 **Cost-aware batching rules:**
 
@@ -196,50 +199,75 @@ If a nuance check reveals a context error, MUST classify severity (CRITICAL/MODE
 - [ ] Every context error found has severity classification and specific description
 - [ ] Taiwan content checked for prohibited eligibility language (legal-bright-lines)
 
+MUST NOT proceed to Step 6 until all gates pass.
+
+### Step 6: Source Link Injection
+
+After verification, ensure the blog post itself links to authoritative sources for key claims. Readers should be able to verify critical information without leaving the post to search.
+
+#### Which claims need inline source links?
+
+| Claim Type | Link Required? | Example |
+|-----------|---------------|---------|
+| B — Requirement (visa rules, eligibility) | **YES — mandatory** | "income threshold of ₩100M — [source](https://immigration.go.kr/...)" |
+| D — Policy (government programs, law) | **YES — mandatory** | "expanded to 32 universities in Dec 2025 — [source](https://...)" |
+| A — Stat (numbers, dates, amounts) | Recommended if Tier 1 source exists | "birth rate hit 0.72 — [source](https://kostat.go.kr/...)" |
+| C — Process (how-to, timeline) | Optional — link to official portal once per section | "Apply at [HiKorea](https://www.hikorea.go.kr/)" |
+| E — Attribution | Only if the original source is linkable | "According to [Korea Times](https://...)" |
+
+#### Link placement rules
+
+1. **Natural inline links** — weave into sentence flow, not footnotes or parenthetical dumps
+   - GOOD: "The F-1-D requires [₩100M annual income](https://immigration.go.kr/...) and ₩100M health coverage."
+   - BAD: "The F-1-D requires ₩100M annual income. (Source: https://immigration.go.kr/...)"
+2. **One link per claim** — don't stack multiple source links on the same sentence
+3. **Tier 1 preferred** — link to government/official sources over media articles when both exist
+4. **Deduplicate** — if the same source URL verifies multiple claims in the same section, link it once on the most prominent claim
+5. **No broken links** — only inject URLs that passed the 5-point check in Step 3
+6. **Existing links preserved** — if the post already has a correct source link for a claim, do not duplicate or replace it
+
+#### Source link density target
+
+- **Minimum**: Every section containing Type B or D claims has at least 1 source link
+- **Maximum**: No more than 3 source links per paragraph (avoids link spam)
+- **Comparison tables**: Link the most critical row (usually income/eligibility) to its source; not every cell
+
+#### Output
+
+Add a `--- SOURCE LINKS INJECTED ---` section to the report:
+
+```
+--- SOURCE LINKS INJECTED ---
+| # | Claim | Source URL | Placement (section + approx line) |
+|---|-------|-----------|-----------------------------------|
+| 1 | [claim] | [URL] | [section heading, line ~N] |
+...
+
+Links added: [N] | Already present: [N] | Skipped (no suitable URL): [N]
+```
+
+### Step 6 Completion Gate
+
+- [ ] Every Type B and D claim has an inline source link in the post (or is documented as "no suitable URL")
+- [ ] Links are natural inline style, not footnotes or parenthetical
+- [ ] No broken or unverified URLs injected
+- [ ] Existing correct links preserved (not duplicated)
+- [ ] No paragraph exceeds 3 source links
+
+MUST NOT proceed to Output until all gates pass.
+
 ---
 
 ## East Asian Government Source Handling
 
-### Special Considerations
+Country-specific verification notes and URL directories are in `references/government-sources.md`. Key points:
 
 1. **Bilingual pages**: Many government sites have Korean/Japanese/Chinese pages with more detail than English pages. Note when English version is less complete.
 2. **PDF-heavy sites**: Korean and Japanese government sites often publish rules as PDF attachments. Note the PDF filename and page number.
 3. **Announcement-based updates**: Policy changes often appear as press releases before the main page is updated. Official government press releases count as Tier 1.
 4. **Law database citations**: When citing law.go.kr (Korea) or law.moj.gov.tw (Taiwan), include the specific act name and article number, not just the database URL.
-5. **HiKorea vs immigration.go.kr**: HiKorea = service portal (applications), immigration.go.kr = information portal (rules). Both Tier 1, but immigration.go.kr is better for policy citations.
 
-### Country-Specific Verification Notes
-
-**Korea**:
-- Immigration rules change frequently. Always check immigration.go.kr announcement section for recent changes.
-- K-STAR, Top-Tier, and other programs are announced via MOJ press releases — these count as Tier 1.
-- law.go.kr has English translations of the Immigration Control Act.
-- E-7, F-2, F-5 visa categories: verify the specific sub-category codes (e.g., F-2-7, F-2-T).
-
-**Japan**:
-- ISA (isa.go.jp) = residence status. MOFA (mofa.go.jp) = visa issuance at embassies.
-- Digital Nomad Visa is "Designated Activities (Notification 53)" — use this official name.
-- japaneselawtranslation.go.jp has official English translations.
-- SSW portal: ssw.go.jp.
-
-**Taiwan**:
-- NIA (immigration.gov.tw) = residence. BOCA (boca.gov.tw) = entry visas.
-- Gold Card portal (goldcard.nat.gov.tw) is authoritative for Gold Card specifics.
-- law.moj.gov.tw has the Immigration Act in English — cite specific article numbers.
-- **Legal requirement**: Taiwan content MUST NOT use eligibility language ("you qualify", "you are eligible").
-
-**China**:
-- NIA (nia.gov.cn) — English at en.nia.gov.cn
-- COVA system (consular.mfa.gov.cn/VISA/) launched Sep 2025 for online visa applications
-- Policy changes announced through NIA official channels
-
-**SEA Countries**:
-- Thailand: immigration.go.th + thaievisa.go.th
-- Vietnam: immigration.gov.vn + evisa.gov.vn
-- Indonesia: imigrasi.go.id + evisa.imigrasi.go.id
-- Malaysia: imi.gov.my + malaysiavisa.imi.gov.my
-- Singapore: ica.gov.sg
-- Philippines: immigration.gov.ph
+For the full country directory, tier classification rules, and country-specific notes, see `references/government-sources.md`.
 
 ---
 
@@ -309,6 +337,14 @@ Tool budget used: search=[N] | scrape=[N] | extract=[N]
 [ ] No comparison gaps
 [ ] No jurisdiction confusion
 [ ] No internal contradictions
+
+--- SOURCE LINKS INJECTED ---
+| # | Claim | Source URL | Placement (section + approx line) |
+|---|-------|-----------|-----------------------------------|
+| 1 | [claim] | [URL] | [section heading, line ~N] |
+...
+
+Links added: [N] | Already present: [N] | Skipped (no suitable URL): [N]
 
 --- FETCHED-PAGES TRACKER ---
 | # | URL | Tool Used | Content Summary | Claims Verified Against |
