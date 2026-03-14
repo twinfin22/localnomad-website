@@ -22,9 +22,9 @@ When rewriting multiple posts (user specifies >1 post):
 ## Before You Start
 
 Skills are loaded at the stage where they're needed:
-- STAGE 2: `skills/seo-engine/SKILL.md`
-- STAGE 3: `skills/blog-voice/SKILL.md` + `skills/blog-voice/references/voice-examples.md`
-- STAGE 4: `skills/quality-gate/SKILL.md`, `skills/fact-checker/SKILL_fact-checker.md`, `skills/legal-bright-lines/SKILL.md`, `skills/cover-image/SKILL.md`
+- STAGE 2: `skills/seo-engine/SKILL_seo-engine.md`
+- STAGE 3: `skills/blog-voice/SKILL_blog-voice.md` + `skills/blog-voice/references/voice-examples.md`
+- STAGE 4: `skills/quality-gate/SKILL_quality-gate.md`, `skills/fact-checker/SKILL_fact-checker.md`, `skills/legal-bright-lines/SKILL_legal-bright-lines.md`, `skills/cover-image/SKILL_cover-image.md`
 
 ## Priority Order (Conflict Resolution R7)
 
@@ -77,7 +77,7 @@ Word count targets vary by category — see quality-gate Layer 5.
 
 ## STAGE 2: Keyword Strategy & Outline
 
-Use `skills/seo-engine/SKILL.md`.
+Use `skills/seo-engine/SKILL_seo-engine.md`.
 
 ### Keyword Research
 1. Research and propose:
@@ -141,6 +141,24 @@ Word count targets: see quality-gate Layer 5.
 
 ---
 
+## Stage 2 → State Logging
+
+Before presenting CP1, write stage2 output JSON to `$TMPDIR/blog-pipeline/stage2-output.json`:
+
+```bash
+mkdir -p $TMPDIR/blog-pipeline
+```
+
+Write a JSON file conforming to `contracts/stage2-output.schema.json` with:
+- `primaryKeyword`, `secondaryKeywords`, `selectedHeadline` (use the 3 options; update after Gen picks)
+- `outline` (full section array with headings, keyPoints, snippetOpportunity, internalLink)
+- `unsplashKeywords`, `internalLinkTargets`, `wordCountEstimate`, `category`, `country`
+- `targetAudience`, `keyMessages`, `slug`
+
+**Update `selectedHeadline` in the file after Gen selects at CP1.**
+
+---
+
 ## ✅ CHECKPOINT 1
 
 Present to Gen:
@@ -154,8 +172,8 @@ Present to Gen:
 
 ## STAGE 3: Write Full Draft
 
-Follow `blog-voice/SKILL.md` for voice, readability, and structure.
-Follow `seo-engine/SKILL.md` for keyword placement and CTA rules.
+Follow `blog-voice/SKILL_blog-voice.md` for voice, readability, and structure.
+Follow `seo-engine/SKILL_seo-engine.md` for keyword placement and CTA rules.
 
 ### Blog-Specific Overrides
 
@@ -182,20 +200,65 @@ If series: each part within category target, mutual internal links between parts
 
 ---
 
+## Stage 3 → State Logging
+
+After writing the draft, write stage3 output JSON to `$TMPDIR/blog-pipeline/stage3-output.json`.
+
+Write a JSON file conforming to `contracts/stage3-output.schema.json` with:
+- `draftFilePath` — absolute path to the .mdx file just written
+- `slug` — final slug used
+- `frontmatter` — exact frontmatter values from the draft (title, description, category, country, date, author, tags, draft, coverImage, readingTime)
+- `actualWordCount` — word count of the draft body (excluding frontmatter block)
+- `sectionsWritten` — list of H2 headings actually written
+
+---
+
 ## STAGE 4: Quality Gate + Cover Image (parallel)
+
+### Stage 4 Entry — Load Pipeline State
+
+Before spawning any Quality Gate subagents, read the pipeline state written by Stages 2 and 3:
+
+```bash
+cat $TMPDIR/blog-pipeline/stage2-output.json
+cat $TMPDIR/blog-pipeline/stage3-output.json
+```
+
+These two files are the authoritative source of truth for:
+- Keywords, outline, internal link targets (`stage2-output.json`)
+- Draft file path, frontmatter, actual word count (`stage3-output.json`)
+
+Pass the relevant fields directly into each subagent prompt — do **not** rely on conversation context.
+
+Also read the full draft text from `draftFilePath` (from stage3 output) to pass as `draftText` to subagents.
+
+Subagent reports go to `$TMPDIR/blog-pipeline/stage4-reports/`:
+```
+$TMPDIR/blog-pipeline/stage4-reports/
+├── fact-check.json   # conforms to stage4-layer-report.schema.json
+├── seo-audit.json
+├── anti-ai.json
+├── legal.json
+└── voice.json
+```
+
+After all subagent reports are received, write the merged report to `$TMPDIR/blog-pipeline/stage4-merged.json` conforming to `contracts/stage4-output.schema.json`.
+
+---
 
 After the draft is written, run **quality gate** and **cover image search** in parallel.
 
 ### Track A: Quality Gate
 
-Run `quality-gate/SKILL.md`. Execution order:
-- **Layers 1-4 in parallel** (fact-check, SEO, anti-AI, legal — they are independent)
-- **Layer 5 after** (voice & readability — depends on anti-AI fixes)
-- Auto-fix: max 3 attempts per layer, then flag for Gen's manual review at CP2
+Read `skills/quality-gate/SKILL_quality-gate.md` and follow its subagent orchestration protocol exactly.
+
+The orchestrator spawns 5 parallel subagents (fact-check, seo-audit, anti-ai, legal, voice). Each subagent loads only its own skill file and country-scoped references. Do not load individual layer skills into the main agent context — the orchestrator handles all routing.
+
+Auto-fix: max 3 attempts per layer, then flag for Gen's manual review at CP2.
 
 ### Track B: Cover Image Search
 
-Use `skills/cover-image/SKILL.md`.
+Use `skills/cover-image/SKILL_cover-image.md`.
 
 #### Search Rules
 - **Keywords**: broad, 1-2 words max (e.g., "korea campus" not "korean university student studying AI in laboratory"). Avoid overly specific or compound phrases — Unsplash works best with simple terms.

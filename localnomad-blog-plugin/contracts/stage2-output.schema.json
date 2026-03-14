@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "stage2-output.schema.json",
+  "title": "Stage 2 Output",
+  "description": "SEO strategy and outline produced at end of Stage 2, passed to Stage 3 and Stage 4.",
+  "type": "object",
+  "required": [
+    "primaryKeyword",
+    "secondaryKeywords",
+    "selectedHeadline",
+    "outline",
+    "unsplashKeywords",
+    "internalLinkTargets",
+    "wordCountEstimate",
+    "category",
+    "country",
+    "targetAudience",
+    "keyMessages"
+  ],
+  "properties": {
+    "primaryKeyword": {
+      "type": "string",
+      "description": "The main search term to rank for."
+    },
+    "secondaryKeywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "maxItems": 5,
+      "description": "Supporting keyword terms (2-3 typical)."
+    },
+    "selectedHeadline": {
+      "type": "string",
+      "maxLength": 70,
+      "description": "Gen-approved headline containing primary keyword, ≤70 characters."
+    },
+    "outline": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Ordered list of sections following R1 structure.",
+      "items": {
+        "type": "object",
+        "required": ["heading", "keyPoints"],
+        "properties": {
+          "heading": {
+            "type": "string",
+            "description": "Section heading (H2 or special block like TL;DR, FAQ, Closing, CTA)."
+          },
+          "keyPoints": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Core points to cover in this section."
+          },
+          "snippetOpportunity": {
+            "type": ["string", "null"],
+            "enum": ["definition", "list", "table", null],
+            "description": "Featured snippet format if applicable."
+          },
+          "internalLink": {
+            "type": ["string", "null"],
+            "description": "Internal URL path to link within this section, or null."
+          }
+        }
+      }
+    },
+    "unsplashKeywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2,
+      "maxItems": 3,
+      "description": "Broad 1-2 word keyword combos for Unsplash cover image search (approved at CP1)."
+    },
+    "internalLinkTargets": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 3,
+      "description": "Internal URL paths identified for linking (≥3 required)."
+    },
+    "wordCountEstimate": {
+      "type": "object",
+      "required": ["min", "max"],
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 100,
+          "description": "Minimum target word count."
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 100,
+          "description": "Maximum target word count."
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "enum": ["guides", "updates", "tips", "comparisons", "news", "stories"],
+      "description": "Blog category."
+    },
+    "country": {
+      "type": "string",
+      "enum": ["korea", "japan", "china", "taiwan", "sea", "global"],
+      "description": "Target country for this post."
+    },
+    "targetAudience": {
+      "type": "string",
+      "description": "Description of the intended reader."
+    },
+    "keyMessages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2,
+      "maxItems": 4,
+      "description": "2-4 key messages the post must convey."
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Proposed URL slug (short, primary keyword, hyphenated)."
+    },
+    "seriesSplit": {
+      "type": ["object", "null"],
+      "description": "Present only if word count estimate exceeds category max by >50%.",
+      "properties": {
+        "totalParts": { "type": "integer", "minimum": 2 },
+        "thisPart": { "type": "integer", "minimum": 1 },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}

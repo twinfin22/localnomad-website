@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "stage3-output.schema.json",
+  "title": "Stage 3 Output",
+  "description": "Draft metadata produced at end of Stage 3, passed to Stage 4.",
+  "type": "object",
+  "required": [
+    "draftFilePath",
+    "slug",
+    "frontmatter",
+    "actualWordCount",
+    "sectionsWritten"
+  ],
+  "properties": {
+    "draftFilePath": {
+      "type": "string",
+      "description": "Absolute path to the written .mdx draft file."
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Final URL slug used in the file path."
+    },
+    "frontmatter": {
+      "type": "object",
+      "required": ["title", "description", "category", "country", "date", "author", "tags", "draft", "coverImage", "readingTime"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 70,
+          "description": "Post title (selected headline, ≤70 chars)."
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "SERP meta description (≤160 recommended, hard max 200 chars)."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["guides", "updates", "tips", "comparisons", "news", "stories"]
+        },
+        "country": {
+          "type": "string",
+          "enum": ["korea", "japan", "china", "taiwan", "sea", "global"]
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Publication date in YYYY-MM-DD format."
+        },
+        "author": {
+          "type": "string",
+          "description": "Author name (typically 'LocalNomad Team')."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Post tags."
+        },
+        "draft": {
+          "type": "boolean",
+          "description": "true until Gen approves at Stage 5."
+        },
+        "coverImage": {
+          "type": "string",
+          "pattern": "^/images/blog/.+\\.jpg$",
+          "description": "Cover image path relative to public/, e.g. /images/blog/[slug].jpg."
+        },
+        "readingTime": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Estimated reading time in minutes."
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to feature on homepage."
+        }
+      }
+    },
+    "actualWordCount": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Actual word count of the written draft body (excluding frontmatter)."
+    },
+    "sectionsWritten": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of section headings actually written (for verification against outline)."
+    }
+  }
+}

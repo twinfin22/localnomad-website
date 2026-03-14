@@ -1,6 +1,6 @@
 ---
 name: fact-checker
-description: Verify factual claims in LocalNomad blog posts against government sources and established media. Designed for East Asian immigration/visa content. Called by quality-gate Layer 1.
+description: Verify factual claims in LocalNomad blog posts against government sources and established media. Optimized for East Asian immigration/visa content. Called as a subagent by quality-gate Layer 1.
 ---
 
 # Fact-Checker — LocalNomad Blog
@@ -33,8 +33,15 @@ If all tools unavailable, mark every claim as UNVERIFIABLE with reason "no web a
 Before extracting claims, prepare the verification environment:
 
 1. **Identify target countries** mentioned in the post (scan for country names, visa types, government URLs)
-2. **Pre-load government source URLs** from `references/government-sources.md` — read ONLY the sections for identified target countries + the "Tier Classification Quick Rules" section. Skip all other country sections to minimize context usage.
-3. **Check verified-claims-cache** — read `references/verified-claims-cache.md` and note any cached values relevant to the post's claims. Stale entries (current date ≥ Next Review) must be re-verified via web.
+2. **Pre-load government source URLs** — load ONLY the country-specific file(s) matching the post's `country` field, plus `references/government-sources-global.md` for tier classification rules:
+   - Korea → `references/government-sources-korea.md`
+   - Japan → `references/government-sources-japan.md`
+   - Taiwan → `references/government-sources-taiwan.md`
+   - China/Thailand/Vietnam/Indonesia/Malaysia/Singapore/Philippines → `references/government-sources-sea.md`
+   - Multi-country posts → load all relevant country files
+   - Do NOT load country files for countries not mentioned in the post.
+3. **Check verified-claims-cache (lazy-load)** — do NOT read `references/verified-claims-cache.md` wholesale. Instead, for each claim extracted in Step 1, use Grep to search `references/verified-claims-cache.md` for matching keywords (claim type, country, key terms). Only load matching cached entries into context. If no cached match is found for a claim, proceed directly to Source Discovery (Step 2) for that claim. Stale entries (current date ≥ Next Review) must be re-verified via web even if found in cache.
+   - **Why**: This grep-based approach scales as the cache grows — O(claims) lookups instead of O(cache_size) full context load.
 4. **Initialize fetched-pages tracker** — empty table to record every URL fetched during this run:
 
 | # | URL | Tool Used | Content Summary | Claims Verified Against |
@@ -45,8 +52,8 @@ Before extracting claims, prepare the verification environment:
 ### Preparation Gate
 
 - [ ] Target countries identified (≥1)
-- [ ] Government source URLs loaded for each country
-- [ ] Verified-claims-cache loaded and stale entries identified
+- [ ] Country-specific government source file(s) loaded (+ global rules file)
+- [ ] Verified-claims-cache grep strategy ready (lazy-load per claim, NOT full file read)
 - [ ] Fetched-pages tracker initialized (empty table present)
 - [ ] Tool budget counters at 0/0/0
 
@@ -96,7 +103,7 @@ MUST NOT proceed to Step 2 until all gates pass.
 
 1. **Check verified-claims-cache** — if claim matches a cached entry and cache is fresh (current date < Next Review), use cached value. STOP. No web lookup needed.
 2. **Check fetched-pages tracker** — if URL (or same domain+path) already fetched in this run, reuse content. STOP.
-3. **Known government URL** (listed in government-sources.md) → `firecrawl_scrape` directly. No search needed.
+3. **Known government URL** (listed in the loaded country-specific government-sources file) → `firecrawl_scrape` directly. No search needed.
 4. **Unknown source needed** → `firecrawl_search` to discover the right page first.
 5. **Structured data** (tables, fee schedules, requirement lists) → `firecrawl_extract` with JSON schema.
 
@@ -104,14 +111,14 @@ MUST NOT proceed to Step 2 until all gates pass.
 
 - Group claims by Target Domain from Step 1 → single `firecrawl_scrape` per domain, verify multiple claims from one fetch
 - Prefer `firecrawl_scrape` over `firecrawl_search` when exact URL is known (cheaper, faster, more precise)
-- Use `firecrawl_search` only for source discovery, never for pages already in government-sources.md
+- Use `firecrawl_search` only for source discovery, never for pages already in the loaded country-specific government-sources file
 - Track every call in the fetched-pages tracker immediately after execution
 
 **Fallback (Firecrawl down):** Use `WebSearch` / `WebFetch` with the same batching logic. If all tools unavailable → mark all remaining claims UNVERIFIABLE with reason "no web access".
 
 #### Source Priority (try in this order)
 
-1. **Tier 1 — Government/Official**: See `references/government-sources.md`. Mandatory for Type B and D claims.
+1. **Tier 1 — Government/Official**: See loaded country-specific government-sources file + `references/government-sources-global.md`. Mandatory for Type B and D claims.
 2. **Tier 2 — Established Media**: Korea Times, Korea Herald, Japan Times, Taipei Times, Reuters, AP, OECD, World Bank, IOM, academic papers.
 3. **Tier 3 — Community/Expert**: Verified expat forums, established immigration blogs, immigration lawyer commentary.
 
@@ -232,20 +239,6 @@ After verification, ensure the blog post itself links to authoritative sources f
 - **Maximum**: No more than 3 source links per paragraph (avoids link spam)
 - **Comparison tables**: Link the most critical row (usually income/eligibility) to its source; not every cell
 
-#### Output
-
-Add a `--- SOURCE LINKS INJECTED ---` section to the report:
-
-```
---- SOURCE LINKS INJECTED ---
-| # | Claim | Source URL | Placement (section + approx line) |
-|---|-------|-----------|-----------------------------------|
-| 1 | [claim] | [URL] | [section heading, line ~N] |
-...
-
-Links added: [N] | Already present: [N] | Skipped (no suitable URL): [N]
-```
-
 ### Step 6 Completion Gate
 
 - [ ] Every Type B and D claim has an inline source link in the post (or is documented as "no suitable URL")
@@ -260,14 +253,14 @@ MUST NOT proceed to Output until all gates pass.
 
 ## East Asian Government Source Handling
 
-Country-specific verification notes and URL directories are in `references/government-sources.md`. Key points:
+Country-specific verification notes and URL directories are in country-scoped files (`references/government-sources-korea.md`, `government-sources-japan.md`, `government-sources-taiwan.md`, `government-sources-sea.md`). Load only the file(s) matching the post's country. Tier classification rules are in `references/government-sources-global.md`. Key points:
 
 1. **Bilingual pages**: Many government sites have Korean/Japanese/Chinese pages with more detail than English pages. Note when English version is less complete.
 2. **PDF-heavy sites**: Korean and Japanese government sites often publish rules as PDF attachments. Note the PDF filename and page number.
 3. **Announcement-based updates**: Policy changes often appear as press releases before the main page is updated. Official government press releases count as Tier 1.
 4. **Law database citations**: When citing law.go.kr (Korea) or law.moj.gov.tw (Taiwan), include the specific act name and article number, not just the database URL.
 
-For the full country directory, tier classification rules, and country-specific notes, see `references/government-sources.md`.
+For the full country directory, tier classification rules, and country-specific notes, see the loaded country-specific government-sources file and `references/government-sources-global.md`.
 
 ---
 
@@ -300,61 +293,11 @@ When a claim fails verification, classify the error:
 
 ---
 
-## Output Format
+## Output
 
-Return a structured report that quality-gate Layer 1 can consume:
+Format your report following `references/report-template.md`. Write the JSON portion to `$TMPDIR/blog-pipeline/stage4-reports/fact-check.json`.
 
-```
-=== FACT-CHECK REPORT ===
-
-Post: [title]
-Date checked: [date]
-Claims found: [N]
-Verified: [N] | Failed: [N] | Unverifiable: [N]
-Tool budget used: search=[N] | scrape=[N] | extract=[N]
-
---- CRITICAL ISSUES ---
-[list each critical issue with claim text, expected source, what was found]
-
---- MODERATE ISSUES ---
-[list each moderate issue]
-
---- LOW ISSUES ---
-[list each low issue]
-
---- UNVERIFIABLE CLAIMS ---
-[list each with reason and search queries attempted]
-
---- SOURCE TABLE ---
-| # | Claim | Type | Source | Tier | Date | URL | Status |
-|---|-------|------|--------|------|------|-----|--------|
-| 1 | [claim text] | A/B/C/D/E | [source name] | 1/2/3 | [date] | [full URL] | VERIFIED/FAILED/UNVERIFIED |
-...
-
---- CONTEXT CHECKS ---
-[ ] No omitted conditions
-[ ] No outdated framing
-[ ] No comparison gaps
-[ ] No jurisdiction confusion
-[ ] No internal contradictions
-
---- SOURCE LINKS INJECTED ---
-| # | Claim | Source URL | Placement (section + approx line) |
-|---|-------|-----------|-----------------------------------|
-| 1 | [claim] | [URL] | [section heading, line ~N] |
-...
-
-Links added: [N] | Already present: [N] | Skipped (no suitable URL): [N]
-
---- FETCHED-PAGES TRACKER ---
-| # | URL | Tool Used | Content Summary | Claims Verified Against |
-|---|-----|-----------|-----------------|------------------------|
-...
-
-RESULT: PASS / FAIL (CRITICAL) / FAIL (MODERATE) / NEEDS REVIEW
-```
-
-**Important**:
-- Source Table URLs MUST be **specific pages**, not domain homepages. `immigration.go.kr` alone = FAIL. MUST be the actual page URL.
-- If exact URL cannot be retrieved, write: `[domain] — specific page not retrievable, manual verification required`
+Key rules:
+- Source Table URLs MUST be specific pages, not domain homepages. `immigration.go.kr` alone = FAIL.
+- If exact URL cannot be retrieved: `[domain] — specific page not retrievable, manual verification required`
 - Every Type B and Type D claim MUST have a Tier 1 source or be flagged as CRITICAL.
