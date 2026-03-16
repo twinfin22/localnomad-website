@@ -1,0 +1,2 @@
+# Ignore generated slide PNGs (large binary files)
+*/slides/

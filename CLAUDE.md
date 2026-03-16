@@ -28,6 +28,11 @@
 - Session history: `memory/session-notes.md`
 - Project context: `memory/context/project.md`
 
+### Session Start Fallback
+If SessionStart hook did not inject context, read these at session start:
+- `memory/context/project.md`
+- `memory/glossary.md`
+
 ## MCP Tool Restrictions
 - **Firecrawl** (`firecrawl_search`, `firecrawl_scrape`): Only use when running `fact-checker` skill or `/blog` pipeline. Do not use for general browsing or ad-hoc web searches.
 

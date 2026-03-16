@@ -316,6 +316,16 @@ After Gen approves:
    blog: add [slug] — [brief description]
    ```
 5. Update TASKS.md if applicable
+
+### Step 6.5: Instagram Carousel Suggestion (optional)
+
+If `memory/instagram-style-guide.md` has `auto_generate_on_publish: true`:
+- Present to Gen: "Instagram 캐러셀 생성을 추천합니다. `/instagram [slug]` 실행하시겠습니까?"
+- This is a **suggestion only**, NOT automatic execution
+- Gen can say yes → run `/instagram [slug]` in current session
+- Gen can say no/skip → proceed to next topic suggestion
+- If style-guide doesn't have the config or it's false, skip this step silently
+
 6. Suggest **1-2 "next topic" ideas** based on:
    - Topic cluster gaps identified in STAGE 1
    - Related keywords from STAGE 2

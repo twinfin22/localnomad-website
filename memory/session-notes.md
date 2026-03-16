@@ -109,3 +109,43 @@
 - Segment specificity: E-6 artists + researchers + students more interesting than "digital nomads"
 - Regulatory awareness: Phase C calls out Taiwan legal bright lines for tax consulting
 - Dislikes dashboards: content-only tools score 0% monetization; service-first models win
+
+---
+
+## 2026-03-16 Session (Instagram Carousel Pipeline Design)
+
+### Decisions Made
+- Instagram carousel from blog posts: Contentdrips API (free tier, 10 calls) for Phase 1, HTML→PNG for Phase 2
+- Architecture: add to existing localnomad-blog-plugin as /instagram command + instagram-repurpose skill
+- Memory: 2-tier (distilled + raw-log), compaction every ~10 entries
+- Performance data: manual input Phase 1, Instagram Graph API Phase 2
+- Content: English only, carousel/card news format, 7-10 slides
+
+### Incident: Unauthorized File Creation
+**What happened**: Gen asked "스펙 문서 줘봐" (show me the spec). Claude created 7 files + modified plugin.json instead of presenting text for review. All changes reverted.
+
+**Root cause**: Conflated "줘봐" (show me) with "만들어" (create). Ignored user preference "strategic thought partner, not an executor."
+
+**Prevention rules (PERMANENT)**:
+1. "줘봐" / "보여줘" / "초안" → present as text in conversation. NEVER create files.
+2. "만들어" / "생성해" / "작성해" → confirm scope before creating files ("파일로 만들까요?")
+3. Ambiguous → ask, don't assume.
+4. Multiple files touching codebase = irreversible change → ALWAYS get explicit approval first.
+5. After presenting a "만들까요?" question, Gen's next message is a SEPARATE request unless it explicitly says "응/네/만들어."
+
+### Gen's Preferences Learned
+- "줘봐" ≠ "만들어" — showing ≠ creating
+- Wants to review specs as text before anything hits the file system
+- Strategic thought partner role is non-negotiable — present options, don't execute
+- Profile rules apply at all times: tradeoffs, confidence levels, blind spots, irreversibility flags
+
+### Open Questions
+- Contentdrips API key: Gen needs to sign up + provide
+- Template IDs: Gen needs to create 3 templates (Type A/B/C) in Contentdrips editor
+- Instagram Business/Creator account for future Graph API integration
+
+### Next Session Should
+1. Review instagram command spec (presented as text this session)
+2. If approved → Gen says "만들어" → then create files
+3. Gen signs up for Contentdrips + sets up templates
+4. First test run with japan-arrival-checklist-2026
