@@ -6,13 +6,14 @@
     "name": "LocalNomad Team"
   },
   "keywords": ["blog", "content", "seo", "anti-ai", "visa", "localnomad"],
-  "commands": ["commands/blog.md"],
+  "commands": ["commands/blog.md", "commands/reddit-karma.md"],
   "skills": [
     "skills/blog-voice",
     "skills/seo-engine",
     "skills/cover-image",
     "skills/quality-gate",
     "skills/fact-checker",
-    "skills/legal-bright-lines"
+    "skills/legal-bright-lines",
+    "skills/reddit-karma"
   ]
 }

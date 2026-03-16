@@ -24,11 +24,5 @@ Phase: product-market fit exploration. Core question: "Visa dashboard or pivot t
 3. `blog-write-and-publish` (manual) → 8-step: draft → fact-check → SEO → title hook → readability → AI de-detect → internal links → publish
 
 ## Key Competitors
-| Name | What | Revenue |
-|------|------|---------|
-| GaijinPot | Japan foreigner portal | $6M, 73 employees |
-| Visadb | 12K visas, info-only | Free |
-| Relocate.me | Job + relocation | €126K, bootstrapped |
-| Boundless | US immigration | $999+ per case |
 
-No GaijinPot equivalent for Korea or Taiwan — that's our gap.
+Competitive landscape + positioning → see ~/.claude/memory/warm/knowledge/market-intel.md

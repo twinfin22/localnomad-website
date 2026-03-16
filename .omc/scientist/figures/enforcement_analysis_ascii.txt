@@ -1,0 +1,74 @@
+# Enforcement Density & Gate Coverage Analysis
+# (ASCII visualization -- matplotlib unavailable)
+
+## Enforcement Density by Section Type
+
+  Signals/Line
+  0.60 |  ==========================================  Gates (0.57)
+  0.50 |
+  0.40 |
+  0.30 |
+  0.20 |
+  0.10 |  ======  Step Content (0.09)
+  0.05 |                                                              ===  Supporting (0.03)
+  0.00 +------------------------------------------------------------------
+         Step Content           Completion Gates          Supporting
+         (instruction body)     (enforcement)             (output/triage)
+
+  Insight: Gates have 6.3x higher enforcement density than step content.
+  This is by design -- but Step 6 body has 0.00 density (anti-pattern).
+
+
+## Gate Coverage per Step
+
+         Prep   S1    S2    S3    S4    S5    S6
+  Gate    [X]   [X]   [X]   [X]   [X]   [X]   [X]    7/7 (100%)
+  Abort   [ ]   [ ]   [X]   [X]   [ ]   [X]   [ ]    3/7 (43%)
+  Table   [X]   [X]   [ ]   [ ]   [ ]   [ ]   [X]    3/7 (43%)
+
+  Gap: Steps 1, 4, 6 lack abort conditions.
+  Gap: Steps 2-5 lack structured table output (prose-mode risk).
+
+
+## Hallucination Risk Heatmap by Pipeline Stage
+
+  Stage          Risk Level    Primary Vector              Mitigation
+  -----          ----------    ---------------             ----------
+  Preparation    LOW           Context loading incomplete   Gate checklist
+  Step 1         LOW-MED       Claim omission/merge        Table forcing
+  Step 2         HIGH          Source misidentification     Cache + tier system
+  Step 3         HIGH          URL/content mismatch         5-point check
+  Step 4         MEDIUM        Date misinterpretation       Freshness table
+  Step 5         MEDIUM-HIGH   Confirmation bias            Nuance categories
+  Step 6         MEDIUM        Wrong URL injection          Gate (but no MUST in body)
+  Output         LOW           Format compliance            Template
+
+  Highest risk: Steps 2-3 (source discovery + URL verification)
+  Largest gap:  Step 5 (no adversarial framing) and Step 6 (no enforcement in body)
+
+
+## Cache Lookup Order: Hallucination Risk Gradient
+
+  Cache Hit -----> Tracker Hit -----> Known URL -----> Search
+  LOWEST RISK      LOW RISK           MEDIUM RISK      HIGHEST RISK
+  (pre-verified)   (same-session)     (pre-vetted URL)  (4 error points)
+  
+  Risk amplifiers at each stage:
+  - Cache:   Stale data, cache poisoning
+  - Tracker: Content reuse from wrong page section  
+  - Known:   Government page changed since last reference update
+  - Search:  Wrong result selection, content misinterpretation,
+             domain confusion, semantic distortion
+
+
+## Recommendation Priority Matrix
+
+                    HIGH IMPACT                    LOW IMPACT
+  LOW EFFORT    [1] Domain batch guard          [8] Claim count reconciliation
+                [3] Step 6 MUST signals         [12] Recall anchors
+                [4] Priority rules              [13] Tier 1 specificity note
+                                                
+  HIGH EFFORT   [2] Semantic context check      [10] Location specificity
+                [5] Self-verification guard     [11] Cache confidence column  
+                [6] Compound claim decomp       [14] Selective CoVe
+                [7] Adversarial self-challenge

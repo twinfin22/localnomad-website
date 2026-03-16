@@ -3,15 +3,7 @@
 ## 2026-03-08 Session (Market Research + Blog + Security)
 
 ### Decisions Made
-- Blog language: English only
-- Blog publish flow: draft:true → Gen reviews → publish
-- Blog workflow: 8-step (research → Gen picks → draft → fact-check x2 → SEO → title hook → readability → AI de-detection → internal links → grammar → publish)
-- Cover images: Unsplash free photos (not SVG generation)
-- Titles: Gen prefers hook-driven, specific, curiosity-gap titles over generic descriptive ones
-- Deny list: comprehensive 85-rule security hardening applied
-- Pre-commit hook: secret scanning for 15+ patterns
-- Weekly auto tasks: blog research (Sun midnight KST), report (Sun 3am KST)
-- Context engineering: split CLAUDE.md into rules/ + memory/ structure
+→ see memory/decisions.md § 2026-03-08
 
 ### Work Completed
 - 7 blog posts written, reviewed (steps 3-8), AI de-detected, schema validated — all PASS
@@ -55,10 +47,7 @@
 ## 2026-03-11 Session (Phase D Synthesis: Uncategorized Data Analysis)
 
 ### Decisions Made
-- Confirmed classifier is capturing ~70% of pain records — 30% uncategorized is expected for unbiased scrape
-- 4 new pain categories identified: Admin_Procedures, Digital_Access, Belonging_Identity, Workplace_Culture
-- Strategic pivot recommended: "Visa Dashboard" → "Foreigner Survival OS" (wider scope, higher retention value)
-- Product roadmap: Phase 1 (Admin Checklist + App Database), Phase 2 (Belonging Framework), Phase 3 (Culture Guides)
+→ see memory/decisions.md § 2026-03-11 (Phase D)
 
 ### Work Completed
 - Read + analyzed 5,246 uncategorized records (510 non-appstore high-value + 4,736 appstore noise)
@@ -91,12 +80,7 @@
 ## 2026-03-11 Session (Phase C: WTP & Business Opportunity Synthesis)
 
 ### Decisions Made
-- Confirmed: 1.35% WTP penetration is LOW signal — pain volume ≠ revenue (must chase high-ratio categories)
-- Tax refund brokerage is #1 revenue opportunity (3.3% WTP ratio, 38 signals, TaxLight model validates)
-- Banking + visa verification are tier-2 (2.5% and 1.8% ratio respectively)
-- Housing dashboard is ANTI-OPPORTUNITY despite highest pain volume (1.4% WTP, local problem, policy-driven)
-- B2B2C model (via employers, relocation agencies) outweighs direct B2C for unit economics
-- Service + tool hybrid (not content-only) is required for monetization
+→ see memory/decisions.md § 2026-03-11 (Phase C)
 
 ### Work Completed
 - Analyzed all 239 WTP records + 17,644 pain aggregate data

@@ -1,0 +1,42 @@
+
+GAP SEVERITY DISTRIBUTION (12 gaps total)
+==========================================
+
+HIGH   (4) ████████████████████████████████  33%
+           GAP-01 GAP-02 GAP-04 GAP-12
+
+MEDIUM (6) ████████████████████████████████████████████████  50%
+           GAP-03 GAP-05 GAP-06 GAP-08 GAP-10 GAP-11
+
+LOW    (2) ████████████████  17%
+           GAP-07 GAP-09
+
+GAP LOCATION BREAKDOWN
+======================
+
+Category                    Gaps              Severity
+─────────────────────────────────────────────────────────
+Phase handoff (P1→P2)       GAP-02, GAP-03    HIGH, MEDIUM
+Skill enforcement (mode)    GAP-01, GAP-11    HIGH, MEDIUM
+Data integrity (cache)      GAP-06, GAP-12    MEDIUM, HIGH
+Write collision (links)     GAP-04            HIGH
+Verification cost           GAP-05, GAP-09    MEDIUM, LOW
+Standalone vs pipeline      GAP-07, GAP-08,   LOW, MEDIUM,
+                            GAP-10            MEDIUM
+─────────────────────────────────────────────────────────
+
+PRIORITY FIX ORDER (by impact × implementation cost)
+=====================================================
+
+1. GAP-12  HIGH    Fix Tier 3 cache entry (pureumlawoffice.com) — 5 min fix
+2. GAP-01  HIGH    Add mode parameter to fact-checker skill — 30 min
+3. GAP-04  HIGH    Pre-extract existing links before anti-AI pass — 45 min
+4. GAP-02  HIGH    Define Phase 1→2 structured handoff contract — 1 hr
+5. GAP-08  MEDIUM  Explicit UNVERIFIABLE exemption in gates 3-6 — 20 min
+6. GAP-06  MEDIUM  Add cache write-back step — 30 min
+7. GAP-03  MEDIUM  Fix Output Format template for pipeline mode — 15 min
+8. GAP-10  MEDIUM  Document LocalNomad checks gap in /fact-check — 20 min
+9. GAP-11  MEDIUM  Reconcile blog.md vs quality-gate Layer 5 timing — 15 min
+10. GAP-05 MEDIUM  Spec cache reuse in verification re-run — 30 min
+11. GAP-07 LOW     Document standalone link ordering risk — 10 min
+12. GAP-09 LOW     Pass Phase 1 tracker to verification pass — 30 min

@@ -1,0 +1,90 @@
+================================================================================
+URL HEALTH CHECK SUMMARY — March 14, 2026
+45 Government Source URLs Tested Across 4 Regions
+================================================================================
+
+OVERALL RESULTS
+===============
+Total URLs:      45
+OK:              19 (42.2%)
+Failed:          26 (57.8%)
+
+BY REGION
+=========
+KOREA:           8/13 OK (62%)  — ACCEPTABLE
+JAPAN:           2/10 OK (20%)  — CRITICAL (DNS issues from US networks)
+TAIWAN:          1/11 OK (9%)   — CRITICAL (SSL + DNS infrastructure failure)
+SEA:             8/11 OK (73%)  — GOOD
+
+CRITICAL ISSUES
+===============
+
+1. TAIWAN (91% FAILURE RATE)
+   Problem: immigration.gov.tw unresolvable from US. Most .gov.tw sites have SSL cert errors.
+   Impact:  Primary Taiwan immigration source is inaccessible.
+   Action:  Test from Taiwan IP/VPN. Provide TECO contact alternatives.
+
+2. JAPAN (80% FAILURE RATE)
+   Problem: 8/10 URLs fail DNS resolution from US (likely IP-gated or region-DNS).
+   Impact:  Japanese law/visa sources hard to verify. May work from Japan IP.
+   Action:  Test from Japan or with VPN. Use isa.go.jp → moj.go.jp/isa/ redirect.
+
+3. KOREA MOFA (100% FAILURE)
+   Problem: mofa.go.kr, overseas.mofa.go.kr all return "Connection reset by peer"
+   Impact:  Korean MFA sources unavailable. Root immigration.go.kr also fails.
+   Action:  Find alternative Korean MFA source. Use immigration.go.kr/immigration_eng/ instead.
+
+URL STATUS BY CATEGORY
+======================
+
+WORKING SOURCES (RECOMMEND):
+✓ Korea:  HiKorea, E-Arrival Card, NTS, visa.go.kr, SOCINET, Study Korea
+✓ Japan:  isa.go.jp (redirects correctly to moj.go.jp/isa/)
+✓ Taiwan: coa.immigration.gov.tw/coa-frontend/four-in-one/entry/golden-card
+✓ SEA:    China NIA, Thailand thaievisa, Indonesia (both), Malaysia visa portal, Singapore, Philippines
+
+BROKEN SOURCES (NEED REPLACEMENT):
+✗ Korea:  mofa.go.kr (all 3 variants), immigration.go.kr root, law.go.kr/LSW/eng/, gov.kr/portal/foreigner/
+✗ Japan:  mofa.go.jp, moj.go.jp main variants, japaneselawtranslation.go.jp, e-gov.go.jp (all DNS)
+✗ Taiwan: immigration.gov.tw (DNS), boca.gov.tw (SSL), goldcard.nat.gov.tw (SSL), law.moj.gov.tw (SSL), en.mofa.gov.tw (SSL), digitalnomad.ndc.gov.tw (403)
+✗ SEA:    immigration.go.th (403), evisa.gov.vn (SSL), imi.gov.my (DNS)
+
+ERROR BREAKDOWN
+===============
+DNS Failure:         10 URLs (22%) — Requires VPN/country IP to access
+SSL Certificate:     9 URLs (20%)  — Can sometimes access via browser or HTTP
+Connection Reset:    3 URLs (7%)   — Likely DDoS/bot protection
+403 Forbidden:       2 URLs (4%)   — Rate limiting or IP blocking
+404 Not Found:       2 URLs (4%)   — Pages no longer exist
+
+IMMEDIATE ACTIONS
+=================
+
+For Documentation Team:
+1. Update Korea references: immigration.go.kr → immigration.go.kr/immigration_eng/
+2. Remove/replace MOFA references (mofa.go.kr all variants) with alternatives
+3. Remove broken URLs: law.go.kr/LSW/eng/, gov.kr/portal/foreigner/
+4. Taiwan sources: Test from Taiwan VPN or switch to TECO embassy info
+5. Japan sources: Test from Japan IP or document that local access required
+
+For Legal/Compliance:
+1. Taiwan: Consider strengthening disclaimers since official sources are unreliable
+2. Add note: "Government source accessibility varies by region and IP"
+3. Document alternative contact info for hard-to-reach sources
+
+For Future Maintenance:
+1. Create version tracking for source URLs (last-verified date)
+2. Set up periodic health checks (quarterly)
+3. Add fallback sources for each country
+4. Document regional access limitations
+
+DETAILED REPORT
+===============
+Full analysis: /Users/leegen/localnomad/b2c-website/.omc/scientist/reports/url-health-check-2026-03-14.md
+
+Contains:
+- Region-by-region breakdown with severity assessments
+- Root cause analysis for each error type
+- Workaround recommendations
+- Testing methodology and limitations
+- Future testing recommendations

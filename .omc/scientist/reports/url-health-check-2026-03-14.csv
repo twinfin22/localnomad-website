@@ -1,0 +1,46 @@
+Region,URL,Status,Details,Error Type
+KOREA,immigration.go.kr,Error,[Errno 54] Connection reset by peer,Connection Reset
+KOREA,immigration.go.kr/immigration_eng/,OK,,Accessible
+KOREA,hikorea.go.kr,OK,https://www.hikorea.go.kr/,Accessible
+KOREA,law.go.kr,OK,,Accessible
+KOREA,law.go.kr/LSW/eng/,Error,404 Not Found,404 Not Found
+KOREA,mofa.go.kr,Error,[Errno 54] Connection reset by peer,Connection Reset
+KOREA,overseas.mofa.go.kr,Error,[Errno 54] Connection reset by peer,Connection Reset
+KOREA,gov.kr/portal/foreigner/,Error,404 Not Found,404 Not Found
+KOREA,e-arrivalcard.go.kr,OK,,Accessible
+KOREA,nts.go.kr,OK,,Accessible
+KOREA,visa.go.kr,OK,,Accessible
+KOREA,socinet.go.kr,OK,https://www.socinet.go.kr/,Accessible
+KOREA,studyinkorea.go.kr,OK,https://studyinkorea.go.kr/ko/main.do;jsessionid=L3rwAuYXriGnsC7LETylIp0s1KneWgZtXjXSuW84.studyinkorea20,Accessible
+JAPAN,isa.go.jp,OK,https://www.moj.go.jp/isa/,Accessible
+JAPAN,isa.go.jp/en/,OK,https://www.moj.go.jp/isa/,Accessible
+JAPAN,moj.go.jp/isa/,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+JAPAN,mofa.go.jp,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+JAPAN,mofa.go.jp/j_info/visit/visa/,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+JAPAN,japaneselawtranslation.go.jp,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+JAPAN,e-gov.go.jp,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+JAPAN,ssw.go.jp,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+JAPAN,moj.go.jp/isa/applications/status/designatedactivities53_00001.html,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+JAPAN,mofa.go.jp/ca/fna/pagewe_000001_00046.html,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+TAIWAN,immigration.gov.tw,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+TAIWAN,immigration.gov.tw/7120/,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+TAIWAN,boca.gov.tw,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+TAIWAN,boca.gov.tw/np-137-2.html,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+TAIWAN,goldcard.nat.gov.tw,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+TAIWAN,coa.immigration.gov.tw/coa-frontend/four-in-one/entry/golden-card,OK,,Accessible
+TAIWAN,en.mofa.gov.tw,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+TAIWAN,law.moj.gov.tw/ENG/,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+TAIWAN,law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=D0080132,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+TAIWAN,digitalnomad.ndc.gov.tw,Error,403 Forbidden,403 Forbidden
+TAIWAN,boca.gov.tw/cp-158-7718-c0382-2.html,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+SEA,nia.gov.cn,OK,https://www.nia.gov.cn/,Accessible
+SEA,en.nia.gov.cn,OK,,Accessible
+SEA,immigration.go.th,Error,403 Forbidden,403 Forbidden
+SEA,thaievisa.go.th,OK,,Accessible
+SEA,evisa.gov.vn,Error,[SSL: CERTIFICATE_VERIFY_FAILED] certificate verif,SSL Certificate Error
+SEA,imigrasi.go.id,OK,,Accessible
+SEA,evisa.imigrasi.go.id,OK,,Accessible
+SEA,imi.gov.my,Error,"[Errno 8] nodename nor servname provided, or not k",DNS Failure
+SEA,malaysiavisa.imi.gov.my,OK,,Accessible
+SEA,ica.gov.sg,OK,https://www.ica.gov.sg/,Accessible
+SEA,immigration.gov.ph,OK,,Accessible
