@@ -291,7 +291,15 @@
         "Health insurance certificate",
         "Criminal background check"
       ],
-      "notes": "For B-2 holders who want to legally work remotely in Korea. A change of status from B-2 to F-1-D may be possible at the local immigration office without leaving the country. Verify current procedures on HiKorea."
+      "notes": "For B-2 holders who want to legally work remotely in Korea. A change of status from B-2 to F-1-D may be possible at the local immigration office without leaving the country. Verify current procedures on HiKorea.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://www.digitalnomadskorea.com/post/everything-you-need-to-know-about-koreas-digital-nomad-visa",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [],

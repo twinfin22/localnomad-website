@@ -9,7 +9,7 @@ const COUNTRY_CODE_MAP: Record<Country, CountryCode> = {
 };
 
 const AVAILABLE_VISAS: Record<Country, string[]> = {
-  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'f-6', 'd-10', 'h-1', 'b-2'],
+  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'f-5', 'f-6', 'd-10', 'h-1', 'b-2'],
   taiwan: ['gold-card', 'dnv', 'visitor'],
   japan: ['digital-nomad-jp', 'engineer-specialist', 'business-manager', 'hsw', 'tourist', 'ssw1', 'ssw2'],
   'southeast-asia': [],

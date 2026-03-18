@@ -370,7 +370,15 @@
         "Bank statement showing sufficient funds",
         "Valid passport"
       ],
-      "notes": "A common transition for H-1 holders who want to continue studying Korean. The D-4 visa allows full-time language study and limited part-time work (up to 20 hours/week after 6 months)."
+      "notes": "A common transition for H-1 holders who want to continue studying Korean. The D-4 visa allows full-time language study and limited part-time work (up to 20 hours/week after 6 months).",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://www.immigration.go.kr/immigration_eng/index.do",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-10",
@@ -383,12 +391,20 @@
         "Bank statement",
         "Resume/CV"
       ],
-      "notes": "For H-1 holders with a bachelor's degree who want to stay in Korea to find full-time employment. The D-10 provides a bridge period for job searching and allows limited part-time work."
+      "notes": "For H-1 holders with a bachelor's degree who want to stay in Korea to find full-time employment. The D-10 provides a bridge period for job searching and allows limited part-time work.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "e-7",
       "name": "Professional Employment Visa",
-      "requirements": "Secure a job offer from a Korean employer willing to sponsor your visa. Must meet E-7 qualifications (typically bachelor's degree or 5+ years relevant experience).",
+      "requirements": "Secure a job offer from a Korean employer willing to sponsor your visa. Must meet E-7 qualifications (typically bachelor's degree or 5+ years relevant experience). In-country status change available for 17 countries; others must exit Korea.",
       "timeline": "2-4 weeks processing",
       "documents": [
         "Employment contract",
@@ -396,7 +412,15 @@
         "Degree certificate (apostilled)",
         "Career certificate or portfolio"
       ],
-      "notes": "For H-1 holders who find a Korean employer offering full-time professional employment. The employer must sponsor the visa, and the position must match E-7 qualifying categories. This is a significant transition from part-time working holiday to full-time professional work."
+      "notes": "For H-1 holders who find a Korean employer offering full-time professional employment. The employer must sponsor the visa, and the position must match E-7 qualifying categories. This is a significant transition from part-time working holiday to full-time professional work.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": true,
+      "nationalityNotes": "In-country change available for 17 countries: JP, HK, TW, AU, CA, NZ, DE, SE, CZ, AT, ES, PL, HU, PT, NL, AR, AD. Must exit for: FR, UK, IE, IT, BE, DK, IL, CL.",
+      "sourceUrl": "https://kowork.kr/en/blog/fromH-1toE-7-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": "First step toward permanent residence: H-1 → E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [],

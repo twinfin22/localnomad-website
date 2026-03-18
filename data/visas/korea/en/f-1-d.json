@@ -362,7 +362,15 @@
         "Degree certificate (apostilled)",
         "Career certificate"
       ],
-      "notes": "For digital nomads who find local Korean employment. This means giving up remote work for foreign companies — a major lifestyle change. Korean employers must sponsor your visa."
+      "notes": "For digital nomads who find local Korean employment. This means giving up remote work for foreign companies — a major lifestyle change. Korean employers must sponsor your visa. Verify current in-country change of status procedures with the local immigration office.",
+      "officiallyDocumented": false,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/E-7",
+      "confidenceLevel": "medium",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-8",
@@ -375,7 +383,15 @@
         "Business plan",
         "Office lease agreement"
       ],
-      "notes": "For digital nomads who want to establish a Korean business entity. The investment threshold is significant. Some nomads transition by incorporating their existing remote business in Korea."
+      "notes": "For digital nomads who want to establish a Korean business entity. The investment threshold is significant. Some nomads transition by incorporating their existing remote business in Korea.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/D-8",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-10",
@@ -388,7 +404,15 @@
         "Bank statement",
         "Resume/CV"
       ],
-      "notes": "A bridge option if your F-1-D is expiring and you want to stay in Korea to find local employment. D-10 gives you up to 2 years to job search."
+      "notes": "A bridge option if your F-1-D is expiring and you want to stay in Korea to find local employment. D-10 gives you up to 2 years to job search.",
+      "officiallyDocumented": false,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "medium",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [
@@ -403,7 +427,15 @@
         "Health insurance certificate",
         "Criminal background check"
       ],
-      "notes": "For D-10 holders who find remote work with foreign companies. The income requirement is strict (~₩88M/year). This is an alternative to seeking Korean employment."
+      "notes": "For D-10 holders who find remote work with foreign companies. The income requirement is strict (~₩88M/year). This is an alternative to seeking Korean employment.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "lastUpdated": "2026-02-16",

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import { BLOG_CATEGORIES } from '@/lib/blog/schema';
+import { getAllTransitionPairs } from '@/lib/visa-transitions';
 
 const BASE_URL = 'https://localnomad.club';
 
@@ -8,7 +9,7 @@ const LOCALES = ['en', 'ja', 'zh-cn', 'zh-tw', 'vi'] as const;
 const COUNTRIES = ['korea', 'taiwan', 'japan', 'southeast-asia'] as const;
 
 const COUNTRY_VISAS: Record<string, string[]> = {
-  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'f-6', 'd-10', 'h-1', 'b-2'],
+  korea: ['f-1-d', 'e-7', 'd-8', 'f-2', 'f-5', 'f-6', 'd-10', 'h-1', 'b-2'],
   taiwan: ['gold-card', 'dnv', 'visitor'],
   japan: ['engineer-specialist', 'hsw', 'ssw1', 'ssw2', 'digital-nomad-jp', 'business-manager', 'tourist'],
   'southeast-asia': [],
@@ -21,7 +22,7 @@ const INFO_PAGES = ['about', 'contact'];
 
 const LAST_MODIFIED = new Date();
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of LOCALES) {
@@ -61,6 +62,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: 'monthly',
           priority: 0.6,
         });
+      }
+
+      // Visa change hub (Korea only)
+      if (country === 'korea') {
+        entries.push({
+          url: `${BASE_URL}/${locale}/${country}/visa/change`,
+          lastModified: LAST_MODIFIED,
+          changeFrequency: 'weekly',
+          priority: 0.8,
+        });
+
+        const pairs = await getAllTransitionPairs('korea', locale);
+        for (const { from, to } of pairs) {
+          if (to === 'd-4') continue;
+          entries.push({
+            url: `${BASE_URL}/${locale}/${country}/visa/change/${from}-to-${to}`,
+            lastModified: LAST_MODIFIED,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+          });
+        }
       }
     }
 

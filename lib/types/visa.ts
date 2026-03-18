@@ -19,6 +19,7 @@ export type KoreaVisaType =
   | 'd-10'
   | 'e-7'
   | 'f-2'
+  | 'f-5'
   | 'f-1-d'
   | 'd-2'
   | 'h-1'
@@ -57,7 +58,7 @@ export type VisaType = KoreaVisaType | TaiwanVisaType | JapanVisaType;
 // =============================================================================
 
 export const KOREA_VISA_TYPES: KoreaVisaType[] = [
-  'd-10', 'e-7', 'f-2', 'f-1-d', 'd-2', 'h-1',
+  'd-10', 'e-7', 'f-2', 'f-5', 'f-1-d', 'd-2', 'h-1',
   'e-2', 'd-7', 'd-8', 'f-6', 'f-4', 'd-4',
 ];
 
@@ -159,6 +160,15 @@ export interface VisaTransitionPath {
   timeline: string;
   documents: string[];
   notes: string;
+  // New fields (Phase 1 — Visa Change Simulator)
+  officiallyDocumented?: boolean;
+  mustExitCountry?: boolean;
+  nationalityDependent?: boolean;
+  nationalityNotes?: string;
+  sourceUrl?: string;
+  confidenceLevel?: 'high' | 'medium';
+  ultimateDestination?: string;
+  lastUpdated?: string;
 }
 
 export interface CommunityTip {

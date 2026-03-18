@@ -1,0 +1,716 @@
+{
+  "type": "f-5",
+  "name": "Korea Permanent Residence Visa (F-5)",
+  "nameLocal": "영주자격 (F-5)",
+  "shortName": "F-5",
+  "category": "residence",
+  "description": "Complete guide to Korea's F-5 Permanent Residence status: sub-categories (F-5-1, F-5-2, F-5-5, F-5-6, F-5-7, F-5-11, F-5-16), eligibility paths, KIIP language requirements, income thresholds, required documents, application steps, and rights of F-5 holders.",
+  "tagline": "Permanent residence in Korea with unrestricted work rights",
+  "keyRequirement": "Varies by sub-category: typically 2–5 years legal residence + KIIP Level 5 + income proof",
+  "targetAudience": [
+    "F-2-7 holders who have completed 3 years and meet income + KIIP Level 5 requirements (F-5-16)",
+    "F-6-1 (marriage visa) holders after 2 years of continuous residence (F-5-2)",
+    "Long-term residents on any qualifying status after 5 years (F-5-1)",
+    "Foreign investors with 5+ years on D-8 and sustained employment of Korean nationals (F-5-5)",
+    "Ethnic Koreans (재외동포) holding F-4 for 2+ years (F-5-7)",
+    "Highly qualified professionals with advanced degrees and income above 3x GNI (F-5-11)",
+    "Foreign retirees aged 60+ with qualifying pension or asset holdings (F-5-6)"
+  ],
+  "subCategories": [
+    {
+      "id": "f-5-16",
+      "code": "F-5-16",
+      "name": "From F-2-7 (Points-Based Residence)",
+      "nameLocal": "점수제 거주(F-2-7) 자격 소지자",
+      "description": "The most common pathway for professional immigrants and skilled workers. F-2-7 holders who have maintained continuous residence for 3 years and meet income and Korean language requirements may apply directly for F-5-16.",
+      "keyRequirements": [
+        "F-2-7 status held continuously for 3+ years",
+        "Annual income ≥ 2x GNI per capita (₩99,910,000 based on 2024 GNI of ₩49,955,000)",
+        "KIIP Level 5 completion — TOPIK alone is NOT accepted (policy since March 2019)",
+        "No criminal record; full tax compliance; NHIS enrollment maintained"
+      ]
+    },
+    {
+      "id": "f-5-2",
+      "code": "F-5-2",
+      "name": "Spouse of Korean National",
+      "nameLocal": "국민의 배우자",
+      "description": "For foreign nationals who have held F-6-1 (Spouse of Korean National) status for 2+ consecutive years, maintaining genuine marital cohabitation, and who meet the financial and Korean language integration requirements.",
+      "keyRequirements": [
+        "F-6-1 status held continuously for 2+ years",
+        "Genuine marital cohabitation maintained (verified by immigration)",
+        "KIIP Level 5 completion",
+        "Combined household financial assets ≥ ₩30,000,000 (cash, deposits, or property)"
+      ]
+    },
+    {
+      "id": "f-5-1",
+      "code": "F-5-1",
+      "name": "General Permanent Residence",
+      "nameLocal": "일반 영주자격",
+      "description": "The broadest F-5 path, available to any foreign national who has maintained continuous legal residence in Korea for 5+ years and meets the financial and Korean language integration requirements. Applicable to residents on E-7, D-8, and most other long-term statuses not covered by other sub-categories.",
+      "keyRequirements": [
+        "Continuous legal residence in Korea for 5+ years (absences under 90 days/year do not break continuity)",
+        "Annual income ≥ 2x GNI per capita (₩99,910,000 based on 2024 GNI)",
+        "KIIP Level 5 completion — TOPIK alone is NOT accepted (policy since March 2019)",
+        "No criminal record; full tax compliance"
+      ]
+    },
+    {
+      "id": "f-5-5",
+      "code": "F-5-5",
+      "name": "Foreign Investor",
+      "nameLocal": "투자자",
+      "description": "For foreign nationals who entered on D-8 (Corporate Investment) status and have maintained a qualifying active investment in a Korean enterprise, with sustained employment of Korean nationals throughout their residency.",
+      "keyRequirements": [
+        "D-8 status held continuously for 5+ years",
+        "Maintained investment of USD 500,000 or more in active Korean business operations",
+        "5+ Korean national employees enrolled in all four major insurances (4대보험) throughout the residency period",
+        "Investment must be KOTRA-registered and actively deployed (not passive financial instruments)",
+        "Note: Alternative tier exists — USD 300,000 investment + 10 Korean employees"
+      ]
+    },
+    {
+      "id": "f-5-7",
+      "code": "F-5-7",
+      "name": "Ethnic Korean",
+      "nameLocal": "재외동포",
+      "description": "For ethnic Koreans (재외동포) holding F-4 (Overseas Korean) status who have resided in Korea for 2+ years and meet Korean language and financial requirements. Published requirements indicate a lower Korean language bar than F-5-1 given the presumed cultural and linguistic affinity.",
+      "keyRequirements": [
+        "F-4 status held continuously for 2+ years in Korea",
+        "KIIP Level 4+ completion (published requirement; in practice, Level 5 eliminates any ambiguity)",
+        "Annual income ≥ 2x GNI per capita or equivalent assets",
+        "Documentary proof of ethnic Korean lineage (prior Korean nationality records, family registry, or birth certificate showing Korean parentage)"
+      ]
+    },
+    {
+      "id": "f-5-11",
+      "code": "F-5-11",
+      "name": "Highly Qualified Specialist",
+      "nameLocal": "학력·능력 우수자",
+      "description": "For professionals with advanced academic qualifications and high income who have contributed significantly to Korea's economy. Published requirements indicate a higher income threshold and educational bar than the general F-5-1 track.",
+      "keyRequirements": [
+        "Master's or PhD degree from a recognized institution (apostilled degree certificate required)",
+        "Annual income ≥ 3x GNI per capita (₩149,865,000 based on 2024 GNI of ₩49,955,000)",
+        "Legal residence in Korea for 3+ years",
+        "KIIP Level 5 completion or TOPIK Level 5/6 (specialized achievement track — TOPIK may be accepted per published guidelines)",
+        "Relevant career experience and demonstrated economic contribution in specialized field"
+      ]
+    },
+    {
+      "id": "f-5-6",
+      "code": "F-5-6",
+      "name": "Retired Foreign National",
+      "nameLocal": "은퇴자",
+      "description": "For foreign nationals aged 60 or older who can demonstrate sufficient passive income or assets to reside in Korea without employment. Published criteria are among the least codified of all F-5 sub-categories — thresholds below are approximate practitioner estimates.",
+      "keyRequirements": [
+        "Age 60 or above",
+        "Annual pension income approximately ≥ ₩20,000,000 from a recognized foreign pension institution OR substantial liquid assets (approximately ≥ ₩300,000,000) — thresholds are approximate; verify directly with immigration office",
+        "Prior legal residence in Korea required; minimum period at officer discretion",
+        "No active employment in Korea (retirement status is verified)",
+        "National Health Insurance enrollment or equivalent private coverage"
+      ]
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "f2-7-residence-3yr",
+      "label": "3 years continuous F-2-7 residence + income 2x GNI + KIIP L5 (F-5-16)",
+      "description": "Published requirements for F-5-16 indicate F-2-7 status held for 3+ consecutive years, annual income at or above 2x per capita GNI (₩99,910,000 based on 2024 figures), and KIIP Level 5 completion. This is the primary pathway for skilled professionals who entered Korea on E-7 and transitioned to F-2-7.",
+      "required": false,
+      "priority": "essential",
+      "sentiment": "positive",
+      "category": "f-5-16",
+      "tips": [
+        "Income is verified via NTS 근로소득증명서 (issued by Hometax) — bank statements alone do not satisfy the requirement",
+        "KIIP program is free and government-run at soci.go.kr — typical timeline to Level 5 is 1–2 years"
+      ]
+    },
+    {
+      "id": "f6-1-residence-2yr",
+      "label": "2 years continuous F-6-1 residence + assets ₩30M + KIIP L5 (F-5-2)",
+      "description": "Published requirements for F-5-2 indicate F-6-1 (spouse of Korean national) status held for 2+ consecutive years, with genuine cohabitation, combined household assets ≥ ₩30,000,000, and KIIP Level 5 completion. Domestic violence convictions are an absolute bar.",
+      "required": false,
+      "priority": "essential",
+      "sentiment": "positive",
+      "category": "f-5-2",
+      "warnings": [
+        "Fraud in the underlying marriage discovered post-issuance is grounds for revocation of F-5-2 status"
+      ]
+    },
+    {
+      "id": "general-5yr-residence",
+      "label": "5 years continuous legal residence + income 2x GNI + KIIP L5 (F-5-1)",
+      "description": "Published requirements for F-5-1 indicate continuous legal residence for 5+ years on any qualifying status, annual income ≥ 2x GNI per capita, and KIIP Level 5 completion. Absences under 90 days per year generally do not interrupt continuity; absences of 90+ days in a single year may be reviewed at officer discretion.",
+      "required": false,
+      "priority": "essential",
+      "sentiment": "neutral",
+      "category": "f-5-1"
+    },
+    {
+      "id": "d8-investment-5yr",
+      "label": "5 years D-8 + USD 500K investment + 5 Korean employees (F-5-5)",
+      "description": "Published requirements for F-5-5 indicate D-8 status for 5+ years, sustained investment of USD 500,000 or more in active Korean business operations, and 5+ Korean national employees enrolled in all four major insurances throughout the residency period.",
+      "required": false,
+      "priority": "detail",
+      "sentiment": "neutral",
+      "category": "f-5-5"
+    },
+    {
+      "id": "f4-ethnic-korean-2yr",
+      "label": "2 years F-4 residence + KIIP L4+ + income proof (F-5-7)",
+      "description": "Published requirements for F-5-7 indicate F-4 (Overseas Korean) status held for 2+ consecutive years, KIIP Level 4 or higher completion, and income or asset proof. Documentary evidence of ethnic Korean lineage is required.",
+      "required": false,
+      "priority": "detail",
+      "sentiment": "neutral",
+      "category": "f-5-7"
+    },
+    {
+      "id": "specialist-degree-income",
+      "label": "Master's/PhD + 3x GNI income + 3yr residence (F-5-11)",
+      "description": "Published requirements for F-5-11 indicate an advanced degree (Master's or PhD), annual income ≥ 3x per capita GNI (₩149,865,000 based on 2024 figures), 3+ years legal residence, and KIIP Level 5 or TOPIK Level 5/6 completion.",
+      "required": false,
+      "priority": "detail",
+      "sentiment": "positive",
+      "category": "f-5-11"
+    },
+    {
+      "id": "shared-requirements",
+      "label": "All sub-categories: no criminal record + tax compliance + self-sufficiency",
+      "description": "Published requirements shared across all F-5 sub-categories: no criminal record within the last 5 years, no immigration law violations (overstays, unauthorized work), full tax compliance (all taxes paid, no defaults), and sufficient assets or income for self-support without public assistance dependency.",
+      "required": true,
+      "priority": "essential",
+      "sentiment": "neutral",
+      "warnings": [
+        "Any immigration law violation (including past overstays) may result in F-5 denial even if all other requirements are met",
+        "Tax non-compliance is an absolute bar — obtain 납세사실증명서 from NTS Hometax before applying"
+      ]
+    }
+  ],
+  "duration": {
+    "initial": "Permanent (영주 — the residence status itself does not expire)",
+    "initialDetail": "F-5 is a permanent residence status with no expiration date on the status itself. The Alien Registration Card (ARC/외국인등록증) must be renewed every 10 years. ARC renewal does not require re-evaluation of income or language — it is a biometric/administrative update only.",
+    "extension": "ARC renewal every 10 years (biometric update at local immigration office; no income or language re-evaluation required)",
+    "maxTotal": "Permanent — no maximum total duration",
+    "maxTotalDetail": "F-5 status continues indefinitely unless revoked. Revocation grounds include: criminal conviction of 1+ year imprisonment, fraud in the original application, 2+ consecutive years absence from Korea (subject to discretionary review, not automatic cancellation), or national security threats."
+  },
+  "fees": {
+    "application": "₩200,000",
+    "applicationDetail": "F-5 영주자격 부여 (permanent residence grant) carries a higher fee tier than standard status changes. Per law.go.kr 시행규칙 Article 72 and practitioner consensus, the application fee is ₩200,000. Verify the current fee against the HiKorea fee schedule (hikorea.go.kr) before applying as fees are subject to annual revision.",
+    "extension": "~₩30,000 (ARC re-issuance every 10 years — approximate; verify current fee at immigration office)",
+    "notes": "KIIP program is free (government-funded). TOPIK exam fee ₩11,000–40,000 depending on level. Criminal background check with apostille varies by country (approximately USD 20–150+)."
+  },
+  "incomeRequirement": {
+    "amount": "99910000",
+    "currency": "KRW",
+    "period": "annual",
+    "notes": "For F-5-1 and F-5-16: annual income ≥ 2x per capita GNI. Based on 2024 GNI of ₩49,955,000, the threshold is ₩99,910,000. For F-5-11: threshold is 3x GNI = ₩149,865,000. For F-5-2: asset-based requirement of ≥ ₩30,000,000 (not income-based). GNI figures are updated annually — confirm the current year's threshold before applying.",
+    "proofMethods": [
+      "근로소득증명서 (Employment income certificate) from NTS Hometax — required for employed applicants",
+      "사업소득증명서 or 소득금액증명원 (Business income certificate) from NTS Hometax — for self-employed",
+      "Bank statements alone do not satisfy the income requirement — NTS-issued certificates are required"
+    ]
+  },
+  "languageRequirement": {
+    "required": true,
+    "minimumLevel": "KIIP Level 5 (general tracks: F-5-1, F-5-16, F-5-2); KIIP Level 4+ (F-5-7 ethnic Korean); KIIP Level 5 or TOPIK Level 5/6 (F-5-11 specialist); KIIP Level 4+ or TOPIK Level 4+ (F-5-17 HSP)",
+    "notes": "TOPIK alone has NOT been accepted as a substitute for KIIP for standard F-5 tracks since March 2019. KIIP Level 5 is the required standard for F-5-1, F-5-2, and F-5-16. TOPIK Level 5/6 may be accepted for specialized achievement tracks (F-5-11) per published guidelines. Applicants over 60 or with physical/mental disabilities preventing KIIP enrollment may be reviewed under separate criteria."
+  },
+  "documents": [
+    {
+      "id": "integrated-application-form",
+      "name": "Integrated Application Form",
+      "nameLocal": "통합신청서",
+      "description": "Standard immigration application form available at the local immigration office or HiKorea portal",
+      "required": true,
+      "priority": "essential",
+      "where_to_get": "HiKorea portal (hikorea.go.kr) or local immigration office (출입국·외국인청)"
+    },
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "여권",
+      "description": "Must be valid for at least 6 months beyond the application date",
+      "required": true,
+      "priority": "essential"
+    },
+    {
+      "id": "arc",
+      "name": "Alien Registration Card",
+      "nameLocal": "외국인등록증",
+      "description": "Current ARC showing the qualifying resident status (F-2-7, F-6-1, D-8, F-4, or other qualifying status)",
+      "required": true,
+      "priority": "essential"
+    },
+    {
+      "id": "passport-photo",
+      "name": "Passport Photo",
+      "nameLocal": "여권사진",
+      "description": "3.5cm x 4.5cm, taken within the last 6 months, white background",
+      "required": true,
+      "priority": "essential"
+    },
+    {
+      "id": "income-certificate",
+      "name": "Income Certificate from NTS",
+      "nameLocal": "근로소득증명서 / 소득금액증명원",
+      "description": "Official income certificate issued by the National Tax Service via Hometax (hometax.go.kr). Must show the required annual income threshold for the applicable sub-category.",
+      "required": true,
+      "priority": "essential",
+      "tips": [
+        "For employed applicants: 근로소득증명서 (employment income certificate)",
+        "For self-employed applicants: 소득금액증명원 (income amount certificate)",
+        "If applying early in the calendar year, the previous year's certificate is typically used"
+      ],
+      "where_to_get": "NTS Hometax (hometax.go.kr) — online issuance available"
+    },
+    {
+      "id": "tax-payment-confirmation",
+      "name": "Tax Payment Confirmation",
+      "nameLocal": "납세사실증명서",
+      "description": "Certificate confirming all taxes have been paid, issued by the National Tax Service. Required for all F-5 sub-categories.",
+      "required": true,
+      "priority": "essential",
+      "where_to_get": "NTS Hometax (hometax.go.kr) — online issuance available"
+    },
+    {
+      "id": "kiip-certificate",
+      "name": "KIIP Completion Certificate",
+      "nameLocal": "사회통합프로그램 이수증",
+      "description": "Certificate confirming completion of the Social Integration Program (KIIP) at the required level. Level 5 is required for most F-5 sub-categories.",
+      "required": true,
+      "priority": "essential",
+      "tips": [
+        "KIIP is free — enroll at soci.go.kr",
+        "Complete all 5 levels: approximately 415–560 classroom hours total",
+        "Typical timeline from enrollment to Level 5: 1–2 years depending on prior Korean ability",
+        "Start KIIP early — enrollment waitlists at popular centers can extend timelines significantly"
+      ],
+      "where_to_get": "KIIP/SOCINET portal (soci.go.kr)"
+    },
+    {
+      "id": "criminal-background-check",
+      "name": "Criminal Background Check (Home Country)",
+      "nameLocal": "범죄경력증명서",
+      "description": "Criminal background check from the applicant's home country, with apostille authentication. Must cover at minimum the past 5 years.",
+      "required": true,
+      "priority": "essential",
+      "tips": [
+        "Apostille required for Hague Apostille Convention member countries",
+        "Non-Hague countries need embassy authentication",
+        "Allow ample lead time — processing can take 4–12 weeks depending on country"
+      ],
+      "warnings": [
+        "Must be authenticated — unauthenticated foreign police certificates are not accepted"
+      ]
+    },
+    {
+      "id": "address-proof",
+      "name": "Proof of Address",
+      "nameLocal": "거주지증명서",
+      "description": "Lease contract or utility bill confirming current residential address in Korea",
+      "required": true,
+      "priority": "essential"
+    },
+    {
+      "id": "nhis-payment-confirmation",
+      "name": "National Health Insurance Premium Payment Confirmation",
+      "nameLocal": "건강보험료 납부확인서",
+      "description": "Confirmation from the National Health Insurance Service (NHIS) that all premiums have been paid",
+      "required": true,
+      "priority": "essential",
+      "where_to_get": "NHIS portal (nhis.or.kr) or local NHIS office"
+    },
+    {
+      "id": "entry-exit-records",
+      "name": "Entry/Exit Records",
+      "nameLocal": "출입국사실증명서",
+      "description": "Official record of all Korea entries and exits, used to verify continuous residency duration. Critical for demonstrating the required residency period.",
+      "required": true,
+      "priority": "essential",
+      "where_to_get": "Government24 (gov.kr) online or local immigration office"
+    },
+    {
+      "id": "employment-certificate",
+      "name": "Certificate of Employment (if employed)",
+      "nameLocal": "재직증명서",
+      "description": "Employer-issued certificate confirming current employment, position, and salary",
+      "required": false,
+      "priority": "essential",
+      "tips": [
+        "Required if using employment income to satisfy the income threshold"
+      ]
+    },
+    {
+      "id": "business-registration",
+      "name": "Business Registration Certificate (if self-employed)",
+      "nameLocal": "사업자등록증",
+      "description": "Business registration certificate from the National Tax Service, required for self-employed applicants",
+      "required": false,
+      "priority": "detail"
+    },
+    {
+      "id": "marriage-certificate",
+      "name": "Marriage Certificate (F-5-2 only)",
+      "nameLocal": "혼인관계증명서",
+      "description": "Certificate from the Korean family registry (가족관계증명서) confirming valid marriage. Also requires cohabitation proof and Korean spouse's 주민등록등본.",
+      "required": false,
+      "priority": "detail"
+    },
+    {
+      "id": "asset-proof",
+      "name": "Asset Proof (F-5-2 and F-5-6)",
+      "nameLocal": "금융잔고증명서 / 재산세 납부영수증",
+      "description": "For F-5-2: bank balance statements or property tax receipts showing combined household assets ≥ ₩30,000,000. For F-5-6: statements showing pension income or liquid assets at the applicable thresholds.",
+      "required": false,
+      "priority": "detail"
+    },
+    {
+      "id": "investment-documents",
+      "name": "Investment Documentation (F-5-5 only)",
+      "nameLocal": "외국인투자등록증 / 투자금액 증빙서류",
+      "description": "Foreign investment registration certificate (issued by KOTRA), audited financial statements showing investment amount, bank transfer records for initial investment, and 4대보험 enrollment records for 5+ Korean employee headcount.",
+      "required": false,
+      "priority": "detail"
+    },
+    {
+      "id": "ethnic-korean-proof",
+      "name": "Ethnic Korean Lineage Proof (F-5-7 only)",
+      "nameLocal": "재외동포 신분 증빙서류",
+      "description": "Documentation establishing ethnic Korean identity: prior Korean nationality records, family registry tracing Korean lineage, or birth certificate showing Korean parentage. Requirements vary by diaspora community (조선족, 고려인, etc.).",
+      "required": false,
+      "priority": "detail"
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Degree Certificate (F-5-11 only)",
+      "nameLocal": "학위증명서",
+      "description": "Apostilled Master's or PhD degree certificate from a recognized institution. For F-5-11, a bachelor's degree alone is generally not sufficient.",
+      "required": false,
+      "priority": "detail"
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1-kiip",
+      "step": 1,
+      "title": "Complete KIIP Level 5",
+      "description": "Enroll in the Social Integration Program (KIIP) via soci.go.kr and complete all 5 levels. Level 5 is the Korean language and civic integration requirement for most F-5 sub-categories. Allow 1–2 years for completion if starting from scratch.",
+      "duration": "1–2 years (can be done concurrently with residency accumulation)",
+      "tips": [
+        "Register as early as possible — enrollment waitlists at popular centers can delay your timeline",
+        "KIIP is completely free — government-funded through the Ministry of Justice",
+        "Prior Korean language ability may allow placement testing to skip lower levels"
+      ],
+      "links": [
+        { "label": "KIIP/SOCINET Enrollment", "url": "https://www.soci.go.kr" }
+      ],
+      "priority": "essential"
+    },
+    {
+      "id": "step-2-documents",
+      "step": 2,
+      "title": "Gather Required Documents",
+      "description": "Collect all required documents. The most time-consuming items are the criminal background check from your home country (4–12 weeks with apostille) and KIIP completion. Request your income certificate and tax payment confirmation from NTS Hometax.",
+      "duration": "4–12 weeks (depending on home country apostille processing)",
+      "tips": [
+        "Request NTS certificates online via Hometax — typically issued same day",
+        "Request NHIS premium confirmation via nhis.or.kr",
+        "Request entry/exit records via Government24 (gov.kr)"
+      ],
+      "links": [
+        { "label": "NTS Hometax", "url": "https://www.hometax.go.kr" },
+        { "label": "Government24 (출입국사실증명)", "url": "https://www.gov.kr" }
+      ],
+      "priority": "essential"
+    },
+    {
+      "id": "step-3-appointment",
+      "step": 3,
+      "title": "Book Appointment at Local Immigration Office",
+      "description": "Book an in-person appointment at your local immigration office (출입국·외국인청) via HiKorea. F-5 applications must be submitted in person — online submission is not available for permanent residence applications.",
+      "duration": "1–4 weeks (appointment wait time varies by region and season)",
+      "tips": [
+        "Seoul Immigration Office has longer wait times — consider nearby offices if applicable",
+        "Bring all original documents plus one copy of each"
+      ],
+      "links": [
+        { "label": "HiKorea Appointment Booking", "url": "https://www.hikorea.go.kr" }
+      ],
+      "priority": "essential"
+    },
+    {
+      "id": "step-4-submit",
+      "step": 4,
+      "title": "Submit Application and Pay Fee",
+      "description": "Attend the appointment at the immigration office. Submit the completed 통합신청서 (Integrated Application Form) and all supporting documents. Pay the ₩200,000 application fee at the counter.",
+      "duration": "1–2 hours (at the immigration office)",
+      "tips": [
+        "Bring original documents — immigration officers may inspect originals",
+        "If documents are in a language other than Korean or English, include a certified translation"
+      ],
+      "warnings": [
+        "Incomplete document sets will result in rejection at submission — verify the checklist with the immigration office beforehand"
+      ],
+      "priority": "essential"
+    },
+    {
+      "id": "step-5-review",
+      "step": 5,
+      "title": "Background Review Period",
+      "description": "F-5 applications undergo a comprehensive background review by immigration, the National Police Agency (경찰청), and the National Tax Service (국세청). Processing times vary by sub-category: F-5-2 and F-5-16 typically process in 4–8 weeks; F-5-1, F-5-5, and F-5-11 typically take 3–6 months.",
+      "duration": "4 weeks – 6 months (varies by sub-category)",
+      "tips": [
+        "You will receive a receipt (접수증) at submission — keep this for status tracking",
+        "Do not make international travel plans during the review period if possible",
+        "Status inquiries can be made via HiKorea or by calling 1345 (Immigration Contact Center)"
+      ],
+      "priority": "essential"
+    },
+    {
+      "id": "step-6-arc",
+      "step": 6,
+      "title": "Receive Approval and Issue New ARC",
+      "description": "Upon approval, the immigration office will issue a new Alien Registration Card with F-5 permanent residence status. This ARC is valid for 10 years, after which it must be renewed through a biometric/administrative update — no income or language re-evaluation is required at renewal.",
+      "duration": "1–2 weeks after approval (ARC printing)",
+      "tips": [
+        "ARC renewal in 10 years is administrative only — no new income or KIIP requirements",
+        "Keep your F-5 ARC safe — it is your primary residence proof in Korea"
+      ],
+      "priority": "essential"
+    }
+  ],
+  "processingTime": {
+    "governmentReview": "4 weeks – 6 months",
+    "governmentReviewDetail": "Processing time varies by sub-category. F-5-2 (spousal) and F-5-16 (from F-2-7): 4–8 weeks, as immigration records are already on file. F-5-1 (general), F-5-5 (investor), F-5-11 (specialist): 3–6 months, due to more extensive background investigation. F-5-7 (ethnic Korean): 2–4 months.",
+    "totalEndToEnd": "Allow 1–2 years of preparation time before the application date, primarily due to KIIP Level 5 completion requirements",
+    "notes": "F-5 applications involve coordination between the immigration office, National Police Agency (경찰청), and National Tax Service (국세청). Processing is substantially longer than standard status renewals."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [],
+    "notes": "F-5 holders have fully unrestricted work rights. They may work for any employer in any sector without prior immigration approval, change employers freely (no notification required), hold multiple jobs simultaneously, establish and operate businesses independently, and engage in any lawful economic activity. No separate work permit is required."
+  },
+  "familyAllowed": true,
+  "postArrivalSteps": [
+    {
+      "id": "register-arc-renewal",
+      "title": "Note ARC Expiry Date for 10-Year Renewal",
+      "description": "Your F-5 ARC must be renewed every 10 years at the local immigration office. The renewal is a biometric update — no income or KIIP re-evaluation is required. Mark the expiry date and begin the renewal process at least 3 months before expiration.",
+      "deadline": "Before ARC expiry date (10 years from issuance)"
+    },
+    {
+      "id": "absence-awareness",
+      "title": "Understand Absence Rules for F-5 Holders",
+      "description": "F-5 holders may depart and re-enter Korea freely without a re-entry permit for absences of up to 2 years (exemption under Immigration Control Act Article 30-2, amended 2016). After 2 consecutive years abroad, re-entry remains possible but the holder must report to an immigration office within 14 days, and the status may be subject to discretionary review by the Minister of Justice.",
+      "tips": [
+        "For extended absences (over 1 year), consider notifying your local immigration office in advance",
+        "The 2-year rule applies to continuous absence — multiple shorter trips do not accumulate"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the fastest path to F-5 permanent residence?",
+      "answer": "The fastest documented path is via F-6-1 (Spouse of Korean National): after 2 years on F-6-1 with genuine cohabitation, KIIP Level 5 completion, and household assets ≥ ₩30,000,000, published requirements indicate F-5-2 application is possible. The F-5-16 path (from F-2-7) requires 3 years on F-2-7. The general F-5-1 path requires 5 years.",
+      "priority": "essential"
+    },
+    {
+      "question": "Can I work freely in any job with F-5 status?",
+      "answer": "Yes. F-5 permanent residence confers fully unrestricted work rights. You may work for any employer in any sector, change employers at will (no immigration notification required), hold multiple jobs, and establish and operate businesses — all without prior immigration approval. No separate work permit is needed.",
+      "priority": "essential"
+    },
+    {
+      "question": "Do I need to renew F-5 status?",
+      "answer": "The F-5 residence status itself is permanent and does not expire. However, your Alien Registration Card (ARC) must be renewed every 10 years at the local immigration office. ARC renewal is a biometric/administrative update only — no income re-verification or Korean language re-testing is required.",
+      "priority": "essential"
+    },
+    {
+      "question": "What happens if I leave Korea for a long time on F-5?",
+      "answer": "F-5 holders may leave and re-enter Korea freely without a re-entry permit for absences of up to 2 years (per Immigration Control Act Article 30-2, amended 2016). After 2 consecutive years abroad, re-entry remains possible but you must report to an immigration office within 14 days of arrival. The Ministry of Justice may initiate a discretionary review of your status — automatic cancellation does not occur, but the outcome depends on circumstances.",
+      "priority": "essential"
+    },
+    {
+      "question": "Is TOPIK accepted instead of KIIP for F-5?",
+      "answer": "No — not for standard F-5 tracks. Since March 2019, the Ministry of Justice policy requires KIIP Level 5 completion for F-5-1, F-5-2, and F-5-16. TOPIK alone is not accepted as a substitute on these tracks. TOPIK Level 5/6 may be accepted for specialized achievement tracks (F-5-11) per published guidelines. Limited exemptions exist for applicants over 60 or those with physical/mental disabilities preventing KIIP enrollment.",
+      "priority": "essential"
+    },
+    {
+      "question": "What is the income requirement for F-5?",
+      "answer": "For F-5-1 (general) and F-5-16 (from F-2-7): annual income ≥ 2x per capita GNI (₩99,910,000 based on 2024 GNI of ₩49,955,000). For F-5-11 (specialist): ≥ 3x GNI (₩149,865,000 based on 2024 figures). For F-5-2 (spouse): asset-based — combined household assets ≥ ₩30,000,000. GNI figures update annually — confirm the current year's threshold before applying. Income must be proven via NTS-issued certificates, not bank statements.",
+      "priority": "essential"
+    },
+    {
+      "question": "Can I change employers freely on F-5?",
+      "answer": "Yes, freely and without any immigration notification. Unlike E-7 or F-2-7 holders who must notify immigration of employer changes, F-5 permanent residents may change employers at any time, in any industry, without prior approval or notification to the immigration office.",
+      "priority": "essential"
+    },
+    {
+      "question": "Can I start a business on F-5?",
+      "answer": "Yes. F-5 holders may establish and operate any lawful business in Korea without immigration restriction. There is no requirement for a separate business investment visa or prior immigration approval. You may also employ staff freely.",
+      "priority": "essential"
+    },
+    {
+      "question": "What can cause F-5 status to be revoked?",
+      "answer": "F-5 status can be revoked for: criminal conviction with a sentence of 1+ year imprisonment; fraud in the original application (including sham marriage for F-5-2); national security threats or organized crime involvement; 2+ consecutive years of absence from Korea (subject to ministerial discretionary review, not automatic cancellation); serious and willful tax evasion. Minor offenses (traffic fines, minor misdemeanors) typically do not trigger revocation — immigration exercises discretion based on severity.",
+      "priority": "detail"
+    },
+    {
+      "question": "Which F-5 sub-category is most relevant for digital nomads and skilled workers?",
+      "answer": "F-5-16 is the primary terminal path for skilled professionals. The typical journey: enter on E-7 (specialist) → transition to F-2-7 (points-based residence) after 3 years → apply for F-5-16 after 3 years on F-2-7. Total timeline from first E-7 entry: approximately 6–8 years. The key milestones are maintaining income ≥ 2x GNI and completing KIIP Level 5.",
+      "priority": "essential"
+    }
+  ],
+  "tips": [
+    "Start KIIP enrollment as early as possible in your Korea residency — Level 5 takes 1–2 years and is the most common bottleneck for F-5 applications",
+    "Income must be NTS-certified — request 근로소득증명서 from Hometax, not bank statements",
+    "Begin gathering the home country criminal background check at least 3 months before your planned application date — apostille processing can take weeks",
+    "F-5-16 applicants (from F-2-7): your 3-year clock starts from the date F-2-7 was granted, not the date you first arrived in Korea",
+    "F-5-2 applicants (from F-6-1): cohabitation is actively verified — ensure both names appear on the same address in government records",
+    "Tax compliance is verified rigorously — request 납세사실증명서 from NTS Hometax and resolve any outstanding tax issues well before applying",
+    "F-5 ARC must be renewed every 10 years — mark your calendar well in advance as no automatic reminder is sent"
+  ],
+  "warnings": [
+    "TOPIK alone does NOT substitute for KIIP on standard F-5 tracks — this policy has been in effect since March 2019",
+    "The ₩200,000 application fee is consistent with published practitioner sources and law.go.kr citations; verify against the current HiKorea fee schedule before applying as fees are subject to revision",
+    "F-5-6 (retired) financial thresholds (pension ≥ ₩20M/year; assets ≥ ₩300M) are approximate practitioner estimates — published requirements indicate significant officer discretion; consult a licensed immigration attorney (행정사) before applying",
+    "F-5 status can be revoked — departure from Korea for 2+ consecutive years subjects the status to discretionary ministerial review, though automatic cancellation does not occur",
+    "Income threshold figures (₩99,910,000 and ₩149,865,000) are based on 2024 GNI — GNI is updated annually and thresholds change accordingly"
+  ],
+  "relatedVisas": ["f-2", "f-6", "e-7", "d-8", "f-4"],
+  "pathsTo": [],
+  "pathsFrom": [
+    {
+      "type": "f-2",
+      "name": "F-2-7 Points-Based Residence",
+      "requirements": "F-2-7 status held for 3+ consecutive years; annual income ≥ 2x GNI (₩99,910,000 at 2024 GNI); KIIP Level 5 completion; no criminal record; full tax compliance",
+      "timeline": "3 years on F-2-7 + 4–8 weeks processing (F-5-16 sub-category)",
+      "documents": [
+        "통합신청서 (Integrated Application Form)",
+        "여권 + 외국인등록증 (showing F-2-7 status)",
+        "근로소득증명서 or 소득금액증명원 (NTS income certificate ≥ ₩99,910,000)",
+        "납세사실증명서 (Tax payment confirmation)",
+        "사회통합프로그램 5단계 이수증 (KIIP Level 5 certificate)",
+        "건강보험료 납부확인서 (NHIS premium payment confirmation)",
+        "출입국사실증명서 (Entry/exit records — verify 3yr continuous F-2-7)",
+        "범죄경력증명서 (Home country criminal background check, apostilled)",
+        "거주지증명서 (Proof of address)"
+      ],
+      "notes": "F-5-16 is the most common pathway for professional immigrants in Korea. Published requirements indicate no re-scoring of F-2-7 points is required — the 3-year residency period + income + KIIP are the criteria. This is the terminal destination of the E-7 → F-2-7 → F-5 professional pathway."
+    },
+    {
+      "type": "f-6",
+      "name": "F-6-1 Spouse of Korean National",
+      "requirements": "F-6-1 status held for 2+ consecutive years; genuine marital cohabitation maintained; KIIP Level 5 completion; combined household assets ≥ ₩30,000,000",
+      "timeline": "2 years on F-6-1 + 4–8 weeks processing (F-5-2 sub-category)",
+      "documents": [
+        "통합신청서",
+        "여권 + 외국인등록증",
+        "혼인관계증명서 (Marriage certificate from Korean family registry)",
+        "동거 확인 서류 (Cohabitation proof — utility bills or joint lease showing same address)",
+        "사회통합프로그램 이수증 (KIIP Level 5 certificate)",
+        "금융잔고증명서 or 재산세 납부영수증 (Asset proof ≥ ₩30M)",
+        "납세사실증명서",
+        "범죄경력증명서 (apostilled)",
+        "Korean spouse: 주민등록등본 + 가족관계증명서"
+      ],
+      "notes": "F-5-2 is the fastest documented path to permanent residence — 2 years vs. 3–5 years for other sub-categories. Divorce after F-5-2 issuance does not automatically revoke status; however, fraud in the underlying marriage discovered post-issuance is grounds for revocation."
+    },
+    {
+      "type": "e-7",
+      "name": "E-7 Specialist/Designated Activities",
+      "requirements": "5+ years total continuous legal residence (typically E-7 → F-2-7 combined) with income ≥ 2x GNI and KIIP Level 5; or via F-2-7 after accumulating enough points to transition (F-5-1 or F-5-16 path)",
+      "timeline": "5 years total + 3–6 months processing (F-5-1 path); or E-7 → F-2-7 (3yr) → F-5-16 (3yr) = 6+ years total",
+      "documents": [
+        "통합신청서",
+        "여권 + 외국인등록증",
+        "근로소득증명서 (NTS income certificate ≥ ₩99,910,000)",
+        "납세사실증명서",
+        "사회통합프로그램 이수증 (KIIP Level 5)",
+        "출입국사실증명서 (Entry/exit records verifying 5yr continuous residence)",
+        "범죄경력증명서 (apostilled)",
+        "재직증명서 or 사업자등록증"
+      ],
+      "notes": "Most E-7 holders pursue F-5 via the E-7 → F-2-7 → F-5-16 route (6–8 years total) rather than the direct F-5-1 route (5 years), because F-2-7 provides broader work rights as an intermediate step."
+    },
+    {
+      "type": "d-8",
+      "name": "D-8 Corporate Investment",
+      "requirements": "D-8 status held for 5+ consecutive years; USD 500,000+ active investment in Korean enterprise; 5+ Korean national employees enrolled in 4대보험 throughout the residency period; KOTRA-registered investment",
+      "timeline": "5 years on D-8 + 3–6 months processing (F-5-5 sub-category)",
+      "documents": [
+        "통합신청서",
+        "여권 + 외국인등록증",
+        "사업자등록증 (Business registration)",
+        "외국인투자등록증 (Foreign investment registration — issued by KOTRA)",
+        "투자금액 증빙서류 (Investment proof — audited financials, bank transfer records)",
+        "4대보험 가입자명부 (4대보험 enrollment records for 5+ Korean employees)",
+        "법인등기부등본 (Corporate registry extract)",
+        "납세사실증명서",
+        "범죄경력증명서 (apostilled)"
+      ],
+      "notes": "F-5-5 requires sustained active investment — capital repatriated from Korea does not satisfy the requirement at application time. Alternative tier exists: USD 300,000 investment + 10 Korean employees. Investment verification involves coordination with KOTRA."
+    },
+    {
+      "type": "f-4",
+      "name": "F-4 Overseas Korean",
+      "requirements": "F-4 status held for 2+ consecutive years in Korea; KIIP Level 4+ completion; annual income ≥ 2x GNI or equivalent assets; ethnic Korean lineage documentation",
+      "timeline": "2 years on F-4 + 2–4 months processing (F-5-7 sub-category)",
+      "documents": [
+        "통합신청서",
+        "여권 + 외국인등록증",
+        "재외동포 신분 증빙서류 (Ethnic Korean lineage proof)",
+        "사회통합프로그램 이수증 (KIIP Level 4+ certificate)",
+        "근로소득증명서 or 금융잔고증명서 (Income or asset proof)",
+        "납세사실증명서",
+        "범죄경력증명서 (apostilled)"
+      ],
+      "notes": "F-5-7 published requirements indicate KIIP Level 4 as the general threshold (lower than the Level 5 required for F-5-1), reflecting the presumed cultural/linguistic affinity of ethnic Koreans. In practice, completing KIIP Level 5 eliminates any ambiguity at the officer review stage."
+    }
+  ],
+  "renewal": {
+    "eligible": true,
+    "requirements": [
+      "ARC renewal required every 10 years — biometric/administrative update only",
+      "No income re-verification at ARC renewal",
+      "No Korean language re-testing at ARC renewal",
+      "Valid passport required at time of ARC renewal"
+    ],
+    "documents": [
+      "통합신청서 (Integrated Application Form)",
+      "Current ARC (expiring)",
+      "Valid passport",
+      "Passport photo"
+    ],
+    "applyBeforeDays": 90,
+    "processingTime": "1–2 weeks",
+    "fees": "~₩30,000 (approximate ARC re-issuance fee — verify at immigration office)"
+  },
+  "lastUpdated": "2026-03-18",
+  "officialLinks": [
+    {
+      "label": "Immigration Control Act — National Law Information Center",
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=251683"
+    },
+    {
+      "label": "F-5 Visa Overview — KoWork (English)",
+      "url": "https://kowork.kr/en/visa/F-5"
+    },
+    {
+      "label": "Korea Permanent Residency F-5 — ImmiKorea (English)",
+      "url": "https://immikorea.com/en/f-5-korean-permanent-residency/"
+    },
+    {
+      "label": "F-5 Permanent Residency — Pureum Law Office (English)",
+      "url": "https://pureumlawoffice.com/permanent-residency-in-korea-f-5-visa/"
+    },
+    {
+      "label": "KIIP/SOCINET Enrollment Portal",
+      "url": "https://www.soci.go.kr"
+    },
+    {
+      "label": "HiKorea — Applications and Fee Schedules",
+      "url": "https://www.hikorea.go.kr"
+    }
+  ]
+}

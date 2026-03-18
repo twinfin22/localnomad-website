@@ -403,17 +403,49 @@
   "pathsTo": [
     {
       "type": "f-2",
-      "name": "Points-Based Resident Visa",
-      "requirements": "Meet the points threshold on the F-2 points-based system. Points are awarded for income, age, Korean language ability (TOPIK), education, and investment amount.",
+      "name": "Points-Based Resident Visa (F-2-5 — Investor Route)",
+      "requirements": "Investment of USD 500,000 or more maintained for 3+ years, OR investment of USD 300,000 or more with 2+ full-time Korean employees maintained for 2+ years. Must also meet the general F-2 points threshold via the investor track.",
       "timeline": "2-4 weeks processing",
       "documents": [
-        "Points calculation worksheet",
-        "Income documentation",
-        "TOPIK certificate (if applicable)",
+        "FDI registration certificate",
+        "Investment proof (bank transfer records, capital verification)",
         "Business registration certificate",
+        "Employee records (if claiming employment track)",
         "Tax payment records"
       ],
-      "notes": "An intermediate step toward permanent residency. The F-2 visa provides more flexibility than the D-8, including the ability to change employers. Business owners with high income and Korean language skills score well on the points system. For permanent residency (F-5), published guidelines indicate maintaining ₩500M+ investment for 3+ consecutive years, with tax compliance and Korean language proficiency (TOPIK Level 2-4)."
+      "notes": "The F-2-5 investor route is separate from the points-based F-2-7. It targets D-8 investors who have maintained a substantial investment and created Korean employment. From F-2, the path continues toward F-5 permanent residence.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://www.allvisakorea.com/en/post/f2-visa-f-2-5-f5-permanent-residency-f-5-5",
+      "confidenceLevel": "high",
+      "ultimateDestination": "Common step toward permanent residence: D-8 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
+    },
+    {
+      "type": "f-5",
+      "name": "Permanent Resident Visa (Investor — F-5-5)",
+      "requirements": "5+ years of continuous residence in Korea on D-8 status, investment of USD 500,000 or more maintained throughout, and 5+ full-time Korean employees. TOPIK Level 2-4 or equivalent Korean language proficiency. Clean criminal record and full tax compliance.",
+      "timeline": "4-8 weeks processing",
+      "documents": [
+        "FDI registration certificate",
+        "Investment proof (5-year capital verification)",
+        "Employee records (5+ Korean nationals)",
+        "Tax payment records (5 years)",
+        "TOPIK Level 2+ certificate",
+        "ARC",
+        "Criminal background check"
+      ],
+      "notes": "Direct permanent residence path for long-term D-8 investors. Published guidelines (F-5-5) require 5 years of continuous D-8 residence, USD 500,000+ investment, and 5 Korean employees. The D-8 → F-2-5 → F-5 route is an alternative that may allow earlier application.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://www.allvisakorea.com/en/post/f2-visa-f-2-5-f5-permanent-residency-f-5-5",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [
@@ -429,7 +461,15 @@
         "Business plan",
         "Office lease agreement"
       ],
-      "notes": "For digital nomads who want to incorporate their remote business in Korea. The transition requires significant capital investment and active business management, which is a major shift from remote work for foreign companies."
+      "notes": "For digital nomads who want to incorporate their remote business in Korea. The transition requires significant capital investment and active business management, which is a major shift from remote work for foreign companies.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/D-8",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "e-7",
@@ -443,7 +483,15 @@
         "Business plan",
         "Previous employment contract (for reference)"
       ],
-      "notes": "For E-7 professionals who want to transition from employment to running their own business in Korea. This means giving up employer sponsorship for entrepreneurial independence."
+      "notes": "For E-7 professionals who want to transition from employment to running their own business in Korea. This means giving up employer sponsorship for entrepreneurial independence.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/D-8",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-10",
@@ -457,7 +505,15 @@
         "Business plan",
         "Office lease agreement"
       ],
-      "notes": "For D-10 holders who decide to start their own business rather than find employment. The D-10 visa provides time to prepare company registration while legally staying in Korea."
+      "notes": "For D-10 holders who decide to start their own business rather than find employment. The D-10 visa provides time to prepare company registration while legally staying in Korea.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/D-8",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "lastUpdated": "2026-02-27",

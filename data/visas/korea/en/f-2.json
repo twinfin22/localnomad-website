@@ -388,7 +388,30 @@
     "e-2",
     "f-1-d"
   ],
-  "pathsTo": [],
+  "pathsTo": [
+    {
+      "type": "f-5",
+      "name": "Permanent Resident Visa (F-5-16)",
+      "requirements": "3+ years of continuous residence on F-2-7 status, income at or above 2x per capita GNI (~₩99,910,000/year based on most recently published Bank of Korea figure), and KIIP Level 5 completion. Clean criminal record and tax compliance required.",
+      "timeline": "4-8 weeks processing",
+      "documents": [
+        "KIIP Level 5 completion certificate",
+        "Income/tax payment proof (3 years)",
+        "ARC",
+        "Criminal background check",
+        "Proof of continuous F-2 residence"
+      ],
+      "notes": "Published guidelines indicate that F-2-7 holders who have maintained F-2 status for 3+ consecutive years, meet the income threshold, and hold KIIP Level 5 may apply for F-5-16 permanent residence. The 80-point threshold is the F-2-7 entry requirement, not an F-5-16 requirement.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://immikorea.com/en/f-5-16-green-card-change-from-f-2-7-visa-to-f-5-visa/",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
+    }
+  ],
   "pathsFrom": [
     {
       "type": "e-7",
@@ -402,7 +425,15 @@
         "TOPIK/KIIP certificate (if applicable)",
         "Criminal background check"
       ],
-      "notes": "The most common transition path. E-7 holders with strong income and education credentials often accumulate 80+ points within their first few years. The E-7 → F-2-7 → F-5 pathway is the standard route to permanent residency."
+      "notes": "The most common transition path. E-7 holders with strong income and education credentials often accumulate 80+ points within their first few years. The E-7 → F-2-7 → F-5 pathway is the standard route to permanent residency.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": "Common step toward permanent residence: E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-8",
@@ -415,7 +446,15 @@
         "Degree certificates (apostilled)",
         "Criminal background check"
       ],
-      "notes": "D-8 holders with successful businesses generating strong income can transition to F-2-7 for more flexible residency rights. Business income must be verifiable through NTS records."
+      "notes": "D-8 holders with successful businesses generating strong income can transition to F-2-7 for more flexible residency rights. Business income must be verifiable through NTS records.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "e-2",
@@ -429,7 +468,15 @@
         "TOPIK/KIIP certificate",
         "Criminal background check"
       ],
-      "notes": "E-2 holders face a challenge because teaching salaries are often in the ₩25–35M range, yielding only 10–30 income points. Maximizing education, language, and bonus points is critical for E-2 to F-2-7 transitions."
+      "notes": "E-2 holders face a challenge because teaching salaries are often in the ₩25–35M range, yielding only 10–30 income points. Maximizing education, language, and bonus points is critical for E-2 to F-2-7 transitions.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-2",
@@ -442,7 +489,15 @@
         "Income certificate",
         "TOPIK/KIIP certificate"
       ],
-      "notes": "Korean university graduates receive bonus points (Bachelor's +5, Master's/PhD +10) which significantly helps reach the 80-point threshold. Combined D-2 and D-10 time may count toward the 3-year residency requirement according to published guidelines."
+      "notes": "Korean university graduates receive bonus points (Bachelor's +5, Master's/PhD +10) which significantly helps reach the 80-point threshold. Combined D-2 and D-10 time may count toward the 3-year residency requirement according to published guidelines.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "lastUpdated": "2026-02-27",

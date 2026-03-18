@@ -562,20 +562,27 @@
   "pathsTo": [
     {
       "type": "f-5",
-      "name": "Permanent Resident Visa (Spouse of Korean National)",
+      "name": "Permanent Resident Visa (Spouse of Korean National — F-5-2)",
       "code": "F-5-2",
-      "requirements": "According to published guidelines: (1) 2+ years of continuous residence in Korea on F-6 status, (2) ongoing valid marriage to a Korean national (or qualifying F-6-2/F-6-3 circumstances), (3) Korean language competency — KIIP Level 5 completion (which includes the comprehensive evaluation), OR passing the permanent residence comprehensive evaluation (영주용 종합평가) with a score of 60 or above, (4) established livelihood base: income must be at or above the per capita GNI (1인당 국민총소득) — approximately ₩49,955,000/year based on the most recently published Bank of Korea figure. The applicant's own income must constitute at least 50% of total household income, (5) good moral character.",
+      "requirements": "According to published guidelines: (1) 2+ years of continuous residence in Korea on F-6-1 status, (2) ongoing valid marriage to a Korean national (or qualifying F-6-2/F-6-3 circumstances), (3) Korean language competency — KIIP Level 5 completion ONLY (TOPIK is not accepted for F-5-2 since March 2019), (4) established livelihood base: assets of at least ₩30,000,000, and income at or above the per capita GNI (~₩49,955,000/year based on most recently published Bank of Korea figure), (5) good moral character.",
       "timeline": "4-8 weeks processing after submission",
       "documents": [
         "KIIP Level 5 completion certificate",
-        "Comprehensive permanent residence test results",
-        "Income/asset proof",
+        "Asset proof (bank statements, property records showing ≥₩30M)",
+        "Income/tax proof",
         "Family relation certificate",
         "ARC",
-        "Tax payment records",
         "Criminal background check"
       ],
-      "notes": "F-5 grants indefinite residence without periodic renewals. It is the primary long-term goal for most F-6 holders. The language requirement may be satisfied by KIIP Level 5 completion (which includes the comprehensive evaluation) OR by passing the permanent residence comprehensive evaluation (영주용 종합평가) with a score of 60 or above — making early KIIP enrollment strongly advisable. Published guidelines indicate that the livelihood base requirement for F-5 is evaluated on the applicant's own income (must be at least 50% of household income) at or above the per capita GNI."
+      "notes": "F-5 grants indefinite residence without periodic renewals. CRITICAL: TOPIK is NOT accepted for F-5-2 since March 2019 — only KIIP Level 5 completion satisfies the language requirement. Early KIIP enrollment is essential as KIIP Level 5 takes 6+ months to complete.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://pureumlawoffice.com/blog-updates/how-to-apply-korean-f-5-visa/",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "f-2",
@@ -589,7 +596,15 @@
         "Employment contract or business registration",
         "ARC"
       ],
-      "notes": "The F-2 route is less commonly used by F-6 holders since the F-5 path (after 2 years + KIIP Level 5) is typically more straightforward. F-2 removes the marriage dependency on your status and allows work in any occupation."
+      "notes": "The F-2 route is less commonly used by F-6 holders since the F-5 path (after 2 years + KIIP Level 5) is typically more straightforward. F-2 removes the marriage dependency on your status and allows work in any occupation.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [

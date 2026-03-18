@@ -405,7 +405,37 @@
         "Employment contract",
         "ARC"
       ],
-      "notes": "The most common long-term residency pathway from E-7. The F-2 visa removes the single-employer restriction, allowing you to work for any Korean company. From F-2, you can eventually apply for F-5 (Permanent Resident), which grants unrestricted work rights and long-term stability in Korea."
+      "notes": "The most common long-term residency pathway from E-7. The F-2 visa removes the single-employer restriction, allowing you to work for any Korean company. From F-2, you can eventually apply for F-5 (Permanent Resident), which grants unrestricted work rights and long-term stability in Korea.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": "Common step toward permanent residence: E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
+    },
+    {
+      "type": "f-5",
+      "name": "Permanent Resident Visa (General — F-5-1)",
+      "requirements": "5+ years of continuous residence in Korea on E-7 or other qualifying status, Korean language competency (KIIP Level 5 completion), and income at or above 2x per capita GNI (~₩99,910,000/year based on most recently published Bank of Korea figure). Clean criminal record and tax compliance required.",
+      "timeline": "4-8 weeks processing",
+      "documents": [
+        "KIIP Level 5 completion certificate",
+        "Income/tax payment proof",
+        "ARC",
+        "Criminal background check",
+        "Proof of continuous residence (entry/exit records)"
+      ],
+      "notes": "Direct path to permanent residence for long-term E-7 holders. Published guidelines (F-5-1) require 5 years of qualifying residence, KIIP Level 5, and income of 2x per capita GNI. The E-7 → F-2 → F-5 route is also commonly used and allows F-5 application after 3 years on F-2.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://immikorea.com/en/f-5-1-general-permanent-residence-requirements/",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [
@@ -421,7 +451,15 @@
         "Employer's business registration",
         "Foreigner employment justification"
       ],
-      "notes": "D-10 holders who find Korean employment can transition to E-7. The D-10 visa is specifically designed as a job-seeking bridge. Apply for change of status at the local immigration office before D-10 expires."
+      "notes": "D-10 holders who find Korean employment can transition to E-7. The D-10 visa is specifically designed as a job-seeking bridge. Apply for change of status at the local immigration office before D-10 expires.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": "Common step toward permanent residence: D-10 → E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-2",
@@ -434,7 +472,15 @@
         "Employer's business registration",
         "Foreigner employment justification"
       ],
-      "notes": "One of the most common E-7 pathways. Korean university graduates have a significant advantage — no career experience required. Apply for change of status before your D-2 or D-10 post-graduation visa expires."
+      "notes": "One of the most common E-7 pathways. Korean university graduates have a significant advantage — no career experience required. Apply for change of status before your D-2 or D-10 post-graduation visa expires.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/E-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": "Graduate path to permanent residence: D-2 → E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "f-1-d",
@@ -448,12 +494,20 @@
         "Employer's business registration",
         "Foreigner employment justification"
       ],
-      "notes": "For digital nomads who decide to transition to local Korean employment. This means giving up remote work for foreign companies. Apply for change of status at immigration before F-1-D expires."
+      "notes": "For digital nomads who decide to transition to local Korean employment. This means giving up remote work for foreign companies. Apply for change of status at immigration before F-1-D expires. Verify current in-country change of status procedures with the local immigration office.",
+      "officiallyDocumented": false,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/E-7",
+      "confidenceLevel": "medium",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "h-1",
       "name": "Working Holiday Visa",
-      "requirements": "Find a Korean employer willing to sponsor E-7 during or after working holiday period. Must meet E-7 education or experience criteria.",
+      "requirements": "Find a Korean employer willing to sponsor E-7 during or after working holiday period. Must meet E-7 education or experience criteria. In-country status change available for 17 countries only; others must exit Korea to apply.",
       "timeline": "3-6 weeks (CCVI + status change processing)",
       "documents": [
         "Employment contract",
@@ -462,7 +516,15 @@
         "Employer's business registration",
         "Foreigner employment justification"
       ],
-      "notes": "Working holiday participants who find long-term employment in Korea can transition to E-7. The employer must file a CCVI before the H-1 visa expires. Plan ahead as the CCVI review takes several weeks."
+      "notes": "Working holiday participants who find long-term employment in Korea can transition to E-7. The employer must file a CCVI before the H-1 visa expires. Plan ahead as the CCVI review takes several weeks.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": true,
+      "nationalityNotes": "In-country change available for 17 countries: JP, HK, TW, AU, CA, NZ, DE, SE, CZ, AT, ES, PL, HU, PT, NL, AR, AD. Must exit for: FR, UK, IE, IT, BE, DK, IL, CL.",
+      "sourceUrl": "https://kowork.kr/en/blog/fromH-1toE-7-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": "First step toward permanent residence: H-1 → E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
     }
   ],
   "lastUpdated": "2026-02-27",

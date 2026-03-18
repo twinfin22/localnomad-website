@@ -534,7 +534,15 @@
         "Foreigner employment justification letter (외국인고용사유서)",
         "CCVI number from employer"
       ],
-      "notes": "The primary pathway from D-10-1. Begin the employer's CCVI process at least 6 weeks before your D-10 expires. You cannot officially start full-time employment until the E-7 status change is approved. Report any new employment to immigration within 15 days of starting."
+      "notes": "The primary pathway from D-10-1. Begin the employer's CCVI process at least 6 weeks before your D-10 expires. You cannot officially start full-time employment until the E-7 status change is approved. Report any new employment to immigration within 15 days of starting.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": "Common step toward permanent residence: D-10 → E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "d-8",
@@ -548,7 +556,15 @@
         "Business plan",
         "Degree certificate"
       ],
-      "notes": "D-10-2 → D-8-4 is the standard startup founder pathway in Korea's OASIS program. D-8-4 allows full operation of the startup company. The D-8-4 pathway has been progressively streamlined through OASIS since 2020."
+      "notes": "D-10-2 → D-8-4 is the standard startup founder pathway in Korea's OASIS program. D-8-4 allows full operation of the startup company. The D-8-4 pathway has been progressively streamlined through OASIS since 2020.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "f-1-d",
@@ -561,7 +577,15 @@
         "Employer letter confirming remote work arrangement",
         "Degree certificate"
       ],
-      "notes": "An option for D-10 holders who decide they prefer remote work over Korean local employment. Note: transitioning to F-1-D means giving up the path to E-7 and Korean employment. The F-1-D income threshold is significantly higher than most D-10 holder profiles."
+      "notes": "An option for D-10 holders who decide they prefer remote work over Korean local employment. Note: transitioning to F-1-D means giving up the path to E-7 and Korean employment. The F-1-D income threshold is significantly higher than most D-10 holder profiles.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [
@@ -577,7 +601,15 @@
         "Job search plan",
         "Passport"
       ],
-      "notes": "The most common pathway to D-10. Korean university graduates have a natural advantage: familiarity with the job market, Korean language ability, and an existing network. Apply for status change before your D-2 expires — do not wait until after graduation ceremony. D-2 graduates are exempt from both the 190-point evaluation system and bank statement requirement on first D-10 application."
+      "notes": "The most common pathway to D-10. Korean university graduates have a natural advantage: familiarity with the job market, Korean language ability, and an existing network. Apply for status change before your D-2 expires — do not wait until after graduation ceremony. D-2 graduates are exempt from both the 190-point evaluation system and bank statement requirement on first D-10 application.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "h-1",
@@ -592,7 +624,15 @@
         "Criminal background check",
         "Passport"
       ],
-      "notes": "A common transition for working holiday participants who decide to pursue long-term employment in Korea. Note that time spent on H-1 does not count toward D-10's maximum 3-year limit (extended from 2 years per October 2025 immigration reform)."
+      "notes": "A common transition for working holiday participants who decide to pursue long-term employment in Korea. Note that time spent on H-1 does not count toward D-10's maximum 3-year limit (extended from 2 years per October 2025 immigration reform).",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "b-2",
@@ -607,7 +647,15 @@
         "Criminal background check",
         "Passport"
       ],
-      "notes": "While some B-2 visitors apply for D-10 status changes inside Korea, immigration officers may prefer that applicants return to their home country for a proper visa application. This approach is increasingly scrutinized — consult an immigration specialist (행정사) before attempting a B-2 to D-10 status change inside Korea."
+      "notes": "While some B-2 visitors apply for D-10 status changes inside Korea, immigration officers may prefer that applicants return to their home country for a proper visa application. This approach is increasingly scrutinized — consult an immigration specialist (행정사) before attempting a B-2 to D-10 status change inside Korea.",
+      "officiallyDocumented": false,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "medium",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     },
     {
       "type": "e-2",
@@ -622,7 +670,15 @@
         "Release from current E-2 employer (or contract completion confirmation)",
         "Criminal background check"
       ],
-      "notes": "E-2 teachers who wish to transition into other professional fields in Korea often use D-10 as a bridge. Ensure your E-2 contract is formally completed before applying — maintaining two visa statuses simultaneously is not permitted."
+      "notes": "E-2 teachers who wish to transition into other professional fields in Korea often use D-10 as a bridge. Ensure your E-2 contract is formally completed before applying — maintaining two visa statuses simultaneously is not permitted.",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/blog/d10-2025-update-en",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "lastUpdated": "2026-03-18",

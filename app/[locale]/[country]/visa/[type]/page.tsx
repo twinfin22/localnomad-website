@@ -12,6 +12,7 @@ import {
   VisaDisclaimer,
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
+import { VisaChangePrompt } from '@/components/visa-change/VisaChangePrompt';
 
 export const revalidate = 3600;
 
@@ -221,6 +222,7 @@ export default async function VisaDetailPage({ params }: Props) {
               country={country}
               relatedVisaSummaries={relatedVisaSummaries}
             />
+            <VisaChangePrompt country={country} visaType={type} locale={locale} />
             <VisaDisclaimer country={country} />
           </div>
         </div>
