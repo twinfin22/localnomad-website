@@ -9,6 +9,7 @@
 ## Critical Rules
 1. **Never modify `components/ui/`** — shadcn/ui managed
 2. **`"use client"` only when needed** — hooks/browser APIs/interactivity
+3. **i18n SoT: `i18n/Visa i18n Glossary.txt`** — All visa/immigration term translations in `messages/*.json` must match this glossary. When adding or updating translations, check the glossary first. New terms go in the glossary before going into code.
 
 ## Blog System
 - Posts: `content/blog/[category]/[slug].mdx` (categories: guides, updates, tips, comparisons, news, stories)

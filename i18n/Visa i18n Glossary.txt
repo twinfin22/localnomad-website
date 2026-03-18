@@ -1,4 +1,4 @@
-한국 및 대만 비자 대시보드 다국어(i18n) 공식 용어집
+한국, 일본 및 대만 비자 대시보드 다국어(i18n) 공식 용어집
 
 ================================================================================
 1. 대한민국 비자 대시보드 (South Korea Visa Dashboard)
@@ -47,6 +47,17 @@ Working Holiday Visa (H-1)	워킹홀리데이 비자 (H-1)	打工度假签证 (H
 Job Seeking Visa (D-10)	구직 비자 (D-10)	求职签证 (D-10)	Visa tìm việc (D-10)	求職ビザ (D-10)
 Permanent Residency (F-5)	영주 비자 (F-5)	永久居留签证 (F-5)	Visa thường trú (F-5)	永住ビザ (F-5)
 Dependent Visa (F-3)	동반 비자 (F-3)	随行签证 (F-3)	Visa người phụ thuộc (F-3)	同伴ビザ (F-3)
+Marriage Visa (F-6)	결혼이민 비자 (F-6)	结婚移民签证 (F-6)	Visa kết hôn di trú (F-6)	結婚移民ビザ (F-6)
+Tourist Visa (B-2)	관광통과 비자 (B-2)	旅游过境签证 (B-2)	Visa du lịch (B-2)	観光通過ビザ (B-2)
+Student Visa (D-2)	유학 비자 (D-2)	留学签证 (D-2)	Visa du học (D-2)	留学ビザ (D-2)
+Language Trainee (D-4-1)	어학연수 비자 (D-4-1)	语言研修签证 (D-4-1)	Visa học tiếng (D-4-1)	語学研修ビザ (D-4-1)
+Intra-company Transferee (D-7)	주재 비자 (D-7)	驻在签证 (D-7)	Visa biệt phái (D-7)	駐在ビザ (D-7)
+International Trade (D-9)	무역경영 비자 (D-9)	贸易经营签证 (D-9)	Visa thương mại (D-9)	貿易経営ビザ (D-9)
+Professor (E-1)	교수 비자 (E-1)	教授签证 (E-1)	Visa giáo sư (E-1)	教授ビザ (E-1)
+Foreign Language Instructor (E-2)	회화지도 비자 (E-2)	会话指导签证 (E-2)	Visa giáo viên ngoại ngữ (E-2)	会話指導ビザ (E-2)
+Non-professional Employment (E-9)	비전문취업 비자 (E-9)	非专业就业签证 (E-9)	Visa lao động phổ thông (E-9)	非専門就業ビザ (E-9)
+Work and Visit (H-2)	방문취업 비자 (H-2)	访问就业签证 (H-2)	Visa thăm quan làm việc (H-2)	訪問就業ビザ (H-2)
+Overseas Korean (F-4)	재외동포 비자 (F-4)	海外同胞签证 (F-4)	Visa kiều bào (F-4)	在外同胞ビザ (F-4)
 
 --- E-7 전용 용어 (E-7 Specific Terms) ---
 
@@ -93,8 +104,109 @@ Work Hour Limit (25hrs/week)	근로시간 제한 (주 25시간)	工作时间限�
 Return Flight Ticket	왕복 항공권	往返机票	Vé máy bay khứ hồi	往復航空券
 Proof of Funds	잔고증명서	资金证明	Chứng minh tài chính	残高証明書
 
+Sources:
+- https://www.visa.go.kr (KO/EN/ZH/JA — visa types, procedures)
+- https://www.hikorea.go.kr (KO/EN/ZH/JA — application forms, status of stay)
+- https://www.liveinkorea.kr (13 languages incl. Vietnamese — settlement, marriage visa)
+- https://elaw.klri.re.kr/eng_service/newWordSearch.do (KO/EN — legal terminology dictionary)
+- https://www.immigration.go.kr (KO/EN — Visa Navigator PDF, 37 visa types)
+
 ================================================================================
-2. 대만 비자 대시보드 (Taiwan Visa Dashboard)
+2. 일본 비자 대시보드 (Japan Visa Dashboard)
+================================================================================
+지원 언어: 영어, 중국어(간체), 베트남어
+
+--- 일반 비자 용어 (General Visa Terms) ---
+
+English (기준 명칭)	日本語 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)
+
+Status of Residence	在留資格	在留资格	Tư cách lưu trú
+Period of Stay	在留期間	在留期间	Thời hạn lưu trú
+Extension of Period of Stay	在留期間更新	在留期间更新	Gia hạn thời gian lưu trú
+Change of Status of Residence	在留資格変更	在留资格变更	Thay đổi tư cách lưu trú
+Residence Card	在留カード	在留卡	Thẻ lưu trú
+Certificate of Eligibility (COE)	在留資格認定証明書	在留资格认定证明书	Giấy chứng nhận tư cách lưu trú
+Re-entry Permit	再入国許可	再入国许可	Giấy phép tái nhập cảnh
+Deportation	退去強制	强制遣返	Trục xuất
+Overstay	不法残留	非法滞留	Quá hạn lưu trú
+Landing Permission	上陸許可	登陆许可	Cho phép nhập cảnh
+Designated Activities	特定活動	特定活动	Hoạt động chỉ định
+Permission to Engage in Activities Other Than Those Permitted	資格外活動許可	资格外活动许可	Giấy phép hoạt động ngoài tư cách lưu trú
+Immigration Services Agency (ISA)	出入国在留管理庁	出入国在留管理厅	Cục Quản lý Xuất nhập cảnh và Lưu trú
+
+--- 재류자격 (Status of Residence Types) ---
+Source: Immigration Control and Refugee Recognition Act, Appended Tables I & II
+(japaneselawtranslation.go.jp/en/laws/view/3624)
+
+English (기준 명칭)	日本語 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)
+
+--- 별표 제1의1 (Appended Table I-1) ---
+
+Diplomat	外交	外交	Ngoại giao
+Official	公用	公用	Công vụ
+Professor	教授	教授	Giáo sư
+Artist	芸術	艺术	Nghệ thuật
+Religious Activities	宗教	宗教	Tôn giáo
+Journalist	報道	报道	Báo chí
+
+--- 별표 제1의2 (Appended Table I-2) ---
+
+Highly Skilled Professional	高度専門職	高度专门职业	Chuyên gia kỹ năng cao
+Business Manager	経営・管理	经营・管理	Quản lý kinh doanh
+Legal/ Accounting Services	法律・会計業務	法律・会计业务	Dịch vụ pháp lý/kế toán
+Medical Services	医療	医疗	Y tế
+Researcher	研究	研究	Nghiên cứu
+Instructor	教育	教育	Giáo dục
+Engineer/ Specialist in Humanities/ International Services	技術・人文知識・国際業務	技术・人文知识・国际业务	Kỹ thuật/Nhân văn/Nghiệp vụ quốc tế
+Intra-Company Transferee	企業内転勤	企业内调动	Luân chuyển nội bộ
+Nursing Care	介護	护理	Điều dưỡng
+Entertainer	興行	演出	Biểu diễn
+Skilled Labor	技能	技能	Kỹ năng
+Specified Skilled Worker (SSW)	特定技能	特定技能	Kỹ năng đặc định
+Technical Intern Training	技能実習	技能实习	Thực tập kỹ năng
+
+--- 별표 제1의3 (Appended Table I-3) ---
+
+Cultural Activities	文化活動	文化活动	Hoạt động văn hóa
+Temporary Visitor	短期滞在	短期滞在	Lưu trú ngắn hạn
+
+--- 별표 제1의4 (Appended Table I-4) ---
+
+Student	留学	留学	Du học
+Trainee	研修	研修	Thực tập sinh
+Dependent	家族滞在	家族滞在	Gia đình cư trú
+
+--- 별표 제1의5 (Appended Table I-5) ---
+
+Designated Activities	特定活動	特定活动	Hoạt động chỉ định
+
+--- 별표 제2 (Appended Table II — Status-Based) ---
+
+Permanent Resident	永住者	永住者	Thường trú nhân
+Spouse or Child of Japanese National	日本人の配偶者等	日本人的配偶者等	Vợ/chồng hoặc con của công dân Nhật
+Spouse or Child of Permanent Resident	永住者の配偶者等	永住者的配偶者等	Vợ/chồng hoặc con của thường trú nhân
+Long-Term Resident	定住者	定住者	Cư trú dài hạn
+
+--- LocalNomad 대상 비자 유형 (LocalNomad Target Visas) ---
+
+English (기준 명칭)	日本語 (참고용)	简体中文 (Simplified Chinese)	Tiếng Việt (Vietnamese)
+
+Digital Nomad Visa (Designated Activities 53)	デジタルノマドビザ (特定活動53号)	数字游民签证 (特定活动53号)	Visa du mục kỹ thuật số
+Business Manager Visa	経営・管理ビザ	经营管理签证	Visa quản lý kinh doanh
+Engineer/ Specialist in Humanities/ Int'l Services Visa	技術・人文知識・国際業務ビザ	技人国签证	Visa kỹ thuật/nhân văn/quốc tế
+Highly Skilled Professional Visa (HSW)	高度専門職ビザ	高度专门职业签证	Visa chuyên gia kỹ năng cao
+Specified Skilled Worker 1 (SSW1)	特定技能1号	特定技能1号	Kỹ năng đặc định loại 1
+Specified Skilled Worker 2 (SSW2)	特定技能2号	特定技能2号	Kỹ năng đặc định loại 2
+Tourist Visa (Temporary Visitor)	短期滞在ビザ (観光)	短期滞在签证 (旅游)	Visa du lịch (lưu trú ngắn hạn)
+
+Sources:
+- https://www.japaneselawtranslation.go.jp/en/laws/view/3624 (JP/EN — Immigration Control Act, 29 status types)
+- https://www.japaneselawtranslation.go.jp/en/dicts/download (JP/EN — ~3,800 legal terms CSV)
+- https://www.moj.go.jp/isa/support/portal/guidebook_all.html (16 languages — ISA Living & Working Guidebook)
+- https://www.moj.go.jp/isa/applications/status/qaq5.html (JP — complete status of residence list)
+
+================================================================================
+3. 대만 비자 대시보드 (Taiwan Visa Dashboard)
 ================================================================================
 지원 언어: 영어, 중국어(번체), 베트남어
 
@@ -119,3 +231,40 @@ Overseas Community Affairs Council (OCAC)	僑務委員會	Hội đồng Kiều v
 TECO (Taipei Economic and Cultural Office)	駐外辦事處	Văn phòng Kinh tế và Văn hóa Đài Bắc
 Digital Nomad Visa (Taiwan)	數位遊牧簽證	Visa du mục kỹ thuật số
 Permanent Resident Certificate (APRC)	永久居留證	Thẻ thường trú
+Registered Permanent Residence	定居	Định cư
+Visa-exempt Entry	免簽證入境	Nhập cảnh miễn thị thực
+
+--- 법률 및 규정 (Laws & Regulations) ---
+
+English (기준 명칭)	繁體中文 (Traditional Chinese)	Tiếng Việt (Vietnamese)
+
+Immigration Act	入出國及移民法	Luật Xuất nhập cảnh và Di trú
+Act Governing Relations between People of Taiwan Area and Mainland Area	臺灣地區與大陸地區人民關係條例	Điều lệ quan hệ giữa nhân dân hai bờ eo biển
+Laws and Regulations Regarding Hong Kong & Macao Affairs	香港澳門關係條例	Điều lệ quan hệ Hồng Kông và Ma Cao
+
+--- 정부 기관 (Government Organizations) ---
+
+English (기준 명칭)	繁體中文 (Traditional Chinese)	Tiếng Việt (Vietnamese)
+
+National Immigration Agency (NIA)	移民署	Cục Di trú Quốc gia
+Entry and Exit Division	入出國事務組	Phòng Xuất nhập cảnh
+Immigration Affairs Division	移民事務組	Phòng Sự vụ Di trú
+International Affairs and Law Enforcement Division	國際及執法事務組	Phòng Quốc tế và Thực thi Pháp luật
+Northern Taiwan Administration Corps	北區事務大隊	Đội Quản lý khu vực Bắc Đài Loan
+Central Taiwan Administration Corps	中區事務大隊	Đội Quản lý khu vực Trung Đài Loan
+Southern Taiwan Administration Corps	南區事務大隊	Đội Quản lý khu vực Nam Đài Loan
+Border Affairs Corps	國境事務大隊	Đội Quản lý Biên giới
+
+--- 이민 위반 및 행정 조치 (Immigration Violations & Administrative Actions) ---
+
+English (기준 명칭)	繁體中文 (Traditional Chinese)	Tiếng Việt (Vietnamese)
+
+Overstay	逾期停(居)留	Quá hạn lưu trú
+Undocumented Migrant Worker	非法移工	Lao động di cư bất hợp pháp
+Illegal Employment	非法聘雇	Tuyển dụng bất hợp pháp
+Sham Marriage	虛偽結婚	Kết hôn giả
+Detention	收容	Tạm giữ
+Deportation	強制出國	Trục xuất
+Voluntary Departure	自願離境	Tự nguyện xuất cảnh
+
+Source: https://www.immigration.gov.tw/5475/141185/180110/180113/
