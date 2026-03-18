@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface TocSection {
@@ -15,13 +15,16 @@ interface TocProps {
   onNavigate: (sectionId: string) => void;
 }
 
-/** Horizontal pill bar — sticks below breadcrumb on mobile/tablet */
+/** Horizontal pill bar — sticks below breadcrumb on mobile/tablet.
+ *  Auto-hides when user scrolls down past the sentinel, shows on scroll-up. */
 export function MobileTocBar({
   sections,
   activeSection,
   onNavigate,
 }: TocProps) {
   const activeRef = useRef<HTMLButtonElement>(null);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   // Auto-scroll to keep active pill centered
   useEffect(() => {
@@ -32,8 +35,35 @@ export function MobileTocBar({
     });
   }, [activeSection]);
 
+  // Scroll-direction auto-hide
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        // Only hide after scrolling past 200px to avoid flicker at page top
+        if (currentY > 200) {
+          setHidden(currentY > lastScrollY.current);
+        } else {
+          setHidden(false);
+        }
+        lastScrollY.current = currentY;
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <div className="sticky top-16 z-[9] -mx-6 overflow-x-auto border-b bg-white/95 px-6 py-2 backdrop-blur-sm md:hidden">
+    <div
+      className={cn(
+        'sticky top-16 z-[9] -mx-6 overflow-x-auto border-b bg-white/95 px-6 py-2 backdrop-blur-sm transition-transform duration-200 md:hidden',
+        hidden && '-translate-y-full'
+      )}
+    >
       <div className="flex gap-2">
         {sections.map((section) => (
           <button

@@ -4,6 +4,7 @@ export { ApplicationSteps } from './application-steps';
 export { FaqSection } from './faq-section';
 export { TipsCommunity } from './tips-community';
 export { SourcesRelated } from './sources-related';
+export { CollapsibleSection } from './collapsible-section';
 export { QuickVerdict } from './quick-verdict';
 export { RequirementsTab } from './requirements-tab';
 export { DocumentsTab } from './documents-tab';

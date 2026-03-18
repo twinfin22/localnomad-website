@@ -80,7 +80,7 @@ function TimelineStep({
           </h3>
           {step.duration && (
             <span
-              className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium text-primary"
+              className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold text-primary"
               style={{
                 background:
                   'linear-gradient(135deg, rgba(42,111,151,0.1), rgba(27,73,101,0.15))',

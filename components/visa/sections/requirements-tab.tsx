@@ -3,9 +3,6 @@
 import { useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import {
-  Check,
-  X,
-  Zap,
   TriangleAlert,
   Lightbulb,
   ChevronRight,
@@ -22,6 +19,7 @@ import {
   Award,
   Clock,
   Heart,
+  X,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { linkifyText } from '@/lib/linkify-text';
@@ -40,7 +38,7 @@ const FOLDABLE_REQUIREMENT_IDS = new Set([
   'passport-validity',
 ]);
 
-const CATEGORY_ICON_MAP: Record<string, typeof Check> = {
+const CATEGORY_ICON_MAP: Record<string, typeof Briefcase> = {
   visaStatus: Stamp,
   pointsSystem: BarChart3,
   income: DollarSign,
@@ -90,57 +88,63 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
 
   const renderItem = (item: Requirement) => {
     const isNegative = item.sentiment === 'negative';
-    const isPositive = item.sentiment === 'positive';
+    const isOptional = !item.required && !isNegative;
+
+    // Text label + color bar style
+    const barColor = isNegative
+      ? 'border-l-red-400'
+      : isOptional
+        ? 'border-l-slate-300'
+        : 'border-l-primary';
+    const labelText = isNegative
+      ? t('labelNotAllowed')
+      : isOptional
+        ? t('labelOptional')
+        : t('labelRequired');
+    const labelColor = isNegative
+      ? 'text-red-600 bg-red-50'
+      : isOptional
+        ? 'text-slate-500 bg-slate-100'
+        : 'text-primary bg-primary/10';
+
     return (
-      <li key={item.id} className="flex items-start gap-3">
-        {isNegative ? (
-          <X className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />
-        ) : isPositive ? (
-          <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-        ) : item.required ? (
-          <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-        ) : (
-          <Zap className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
-        )}
-        <div>
-          <span
-            className={cn(
-              'text-base font-medium',
-              isNegative && 'text-red-600',
-              isPositive && 'text-green-600'
-            )}
-          >
+      <li key={item.id} className={cn('border-l-[3px] py-2 pl-4', barColor)}>
+        <div className="flex items-center gap-2">
+          <span className={cn('rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide', labelColor)}>
+            {labelText}
+          </span>
+          <span className={cn('text-base font-medium', isNegative && 'text-red-600')}>
             {item.label}
           </span>
-          {item.description && (
-            <p className="mt-0.5 text-sm text-muted-foreground">
-              {linkifyText(item.description)}
-            </p>
-          )}
-          {item.tips && item.tips.length > 0 && (
-            <ul className="mt-2 space-y-1">
-              {item.tips.map((tip, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
-                >
-                  <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {linkifyText(tip)}
-                </li>
-              ))}
-            </ul>
-          )}
-          {item.warnings && item.warnings.length > 0 && (
-            <div className="mt-2 flex items-start gap-2 rounded-md bg-amber-100 px-3 py-2 text-sm text-amber-800">
-              <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-              <div className="space-y-1">
-                {item.warnings.map((warning, i) => (
-                  <p key={i}>{warning}</p>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
+        {item.description && (
+          <p className="mt-1 text-sm text-muted-foreground">
+            {linkifyText(item.description)}
+          </p>
+        )}
+        {item.tips && item.tips.length > 0 && (
+          <ul className="mt-2 space-y-1">
+            {item.tips.map((tip, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-muted-foreground"
+              >
+                <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                {linkifyText(tip)}
+              </li>
+            ))}
+          </ul>
+        )}
+        {item.warnings && item.warnings.length > 0 && (
+          <div className="mt-2 flex items-start gap-2 rounded-md bg-amber-100 px-3 py-2 text-sm text-amber-800">
+            <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+            <div className="space-y-1">
+              {item.warnings.map((warning, i) => (
+                <p key={i}>{warning}</p>
+              ))}
+            </div>
+          </div>
+        )}
       </li>
     );
   };
@@ -176,6 +180,12 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
         const foldableItems = allItems.filter(item => FOLDABLE_REQUIREMENT_IDS.has(item.id));
         const isIncome = category === 'income';
 
+        // Group primary items by status for visual breaks
+        const requiredItems = primaryItems.filter(i => i.required && i.sentiment !== 'negative');
+        const optionalItems = primaryItems.filter(i => !i.required && i.sentiment !== 'negative');
+        const negativeItems = primaryItems.filter(i => i.sentiment === 'negative');
+        const statusGroups = [requiredItems, optionalItems, negativeItems].filter(g => g.length > 0);
+
         return (
           <div key={category}>
             {catIndex > 0 && <div className="my-6 border-t" />}
@@ -183,7 +193,11 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
             {renderCategoryHeader(category)}
 
             <div className="pl-7">
-              <ul className="mt-3 space-y-3">{primaryItems.map(renderItem)}</ul>
+              <div className="mt-3 space-y-4">
+                {statusGroups.map((group, gi) => (
+                  <ul key={gi}>{group.map(renderItem)}</ul>
+                ))}
+              </div>
 
               {foldableItems.length > 0 && (
                 <details className="mt-4">
@@ -191,7 +205,7 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
                     <ChevronRight className="h-4 w-4 transition-transform [[open]>&]:rotate-90" />
                     {t('additionalRequirements', { count: foldableItems.length })}
                   </summary>
-                  <ul className="mt-3 space-y-3">{foldableItems.map(renderItem)}</ul>
+                  <ul className="mt-3">{foldableItems.map(renderItem)}</ul>
                 </details>
               )}
 
@@ -259,15 +273,21 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
             </p>
             {visa.workPermission.restrictions &&
               visa.workPermission.restrictions.length > 0 && (
-                <ul className="mt-2 space-y-1">
+                <ul className="mt-3">
                   {visa.workPermission.restrictions.map(
                     (restriction, index) => (
                       <li
                         key={index}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                        className="border-l-[3px] border-l-amber-400 py-2 pl-4"
                       >
-                        <X className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
-                        {restriction}
+                        <div className="flex items-center gap-2">
+                          <span className="rounded bg-amber-50 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-700">
+                            {t('labelRestriction')}
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            {restriction}
+                          </span>
+                        </div>
                       </li>
                     )
                   )}

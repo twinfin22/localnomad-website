@@ -8,7 +8,7 @@ import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country } from '@/lib/types/visa';
 import {
   VisaHero,
-  VisaTabLayout,
+  VisaScrollLayout,
   VisaDisclaimer,
 } from '@/components/visa';
 import { Breadcrumb } from '@/components/navigation/breadcrumb';
@@ -217,7 +217,7 @@ export default async function VisaDetailPage({ params }: Props) {
         <div className="md:pl-[220px]">
           <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
             <VisaHero visa={filteredVisa} hideSummaryCards />
-            <VisaTabLayout
+            <VisaScrollLayout
               visa={filteredVisa}
               country={country}
               relatedVisaSummaries={relatedVisaSummaries}
