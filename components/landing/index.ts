@@ -1,9 +1,8 @@
 export { Hero } from './hero';
 export { CountryCard } from './country-card';
 export { ScrollReveal } from './scroll-reveal';
-export { Features } from './features';
-export { HowItWorks } from './how-it-works';
+export { BeforeAfter } from './before-after';
+export { CountrySelector } from './country-selector';
 export { NeighborhoodPreview } from './neighborhood-preview';
 export { BlogCarousel } from './blog-carousel';
-export { Testimonials } from './testimonials';
 export { ClosingCta } from './closing-cta';

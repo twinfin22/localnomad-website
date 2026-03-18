@@ -64,11 +64,24 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 2px 8px rgba(27,73,101,0.25)',
+            boxShadow: '0 2px 12px rgba(27,73,101,0.4)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             cursor: 'pointer',
             position: 'relative',
           });
+
+          // Pulse ring
+          const pulse = document.createElement('div');
+          Object.assign(pulse.style, {
+            position: 'absolute',
+            inset: '-6px',
+            borderRadius: '50%',
+            border: `2px solid ${BRAND_COLOR}`,
+            opacity: '0',
+            animation: 'marker-pulse 2.5s ease-out infinite',
+            animationDelay: `${Math.random() * 2}s`,
+          });
+          el.appendChild(pulse);
 
           el.addEventListener('mouseenter', () => {
             el.style.transform = 'scale(1.1)';
@@ -169,10 +182,14 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
 
         <ScrollReveal delay={200}>
           <div className="relative mt-12 overflow-hidden rounded-2xl border border-border/60 bg-neutral-50 shadow-sm">
-            <div
-              ref={mapContainerRef}
-              className="h-[320px] w-full sm:h-[400px]"
-            />
+            <div className="relative">
+              <div
+                ref={mapContainerRef}
+                className="h-[320px] w-full sm:h-[400px]"
+              />
+              {/* Brand teal tint overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-primary/20 mix-blend-multiply" />
+            </div>
             {!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN && (
               <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 text-sm text-muted-foreground">
                 Map requires NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN

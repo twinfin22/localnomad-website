@@ -5,10 +5,9 @@ import { routing } from '@/i18n/routing';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import {
   Hero,
-  Features,
+  BeforeAfter,
+  CountrySelector,
   NeighborhoodPreview,
-  HowItWorks,
-  Testimonials,
   BlogCarousel,
   ClosingCta,
 } from '@/components/landing';
@@ -93,12 +92,9 @@ export default async function LandingPage({ params }: Props) {
   return (
     <main id="main-content">
       <Hero />
-      <Features />
-      <div className="section-divider" />
+      <BeforeAfter />
+      <CountrySelector />
       <NeighborhoodPreview countries={countries} />
-      <HowItWorks />
-      <div className="section-divider" />
-      <Testimonials />
       <BlogCarousel />
       <ClosingCta />
     </main>

@@ -2,15 +2,25 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 
-export const COUNTRIES = [
+export type CountryKey = 'korea' | 'japan' | 'taiwan' | 'sea';
+
+export type CountryConfig = {
+  key: CountryKey;
+  emoji: string;
+  nameKey: string;
+  visaPath: string;
+  neighborhoodPath?: string;
+  guidePath?: string;
+};
+
+export const COUNTRIES: CountryConfig[] = [
   {
     key: 'korea',
     emoji: '\u{1F1F0}\u{1F1F7}',
     nameKey: 'countryKorea',
-    visaPath: '/korea/visa',
+    visaPath: '/korea',
     neighborhoodPath: '/neighborhood/korea',
     guidePath: '/blog/guides/korea-ultimate-digital-nomad-guide',
   },
@@ -18,7 +28,7 @@ export const COUNTRIES = [
     key: 'japan',
     emoji: '\u{1F1EF}\u{1F1F5}',
     nameKey: 'countryJapan',
-    visaPath: '/japan/visa',
+    visaPath: '/japan',
     neighborhoodPath: '/neighborhood/japan',
     guidePath: '/blog/guides/japan-ultimate-digital-nomad-guide',
   },
@@ -26,22 +36,37 @@ export const COUNTRIES = [
     key: 'taiwan',
     emoji: '\u{1F1F9}\u{1F1FC}',
     nameKey: 'countryTaiwan',
-    visaPath: '/taiwan/visa',
+    visaPath: '/taiwan',
     neighborhoodPath: '/neighborhood/taiwan',
     guidePath: '/blog/guides/taiwan-ultimate-digital-nomad-guide',
   },
-] as const;
+  {
+    key: 'sea',
+    emoji: '\u{1F30F}',
+    nameKey: 'countrySEA',
+    visaPath: '/southeast-asia',
+    neighborhoodPath: undefined,
+    guidePath: undefined,
+  },
+];
 
-type CountryKey = (typeof COUNTRIES)[number]['key'];
+interface CountryDropdownProps {
+  selectedCountry: CountryKey;
+  onCountryChange: (key: CountryKey) => void;
+  isTransparent?: boolean;
+}
 
-export const CountryDropdown = () => {
+export const CountryDropdown = ({
+  selectedCountry,
+  onCountryChange,
+  isTransparent = false,
+}: CountryDropdownProps) => {
   const t = useTranslations('Nav');
   const [open, setOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState<CountryKey>('korea');
   const ref = useRef<HTMLDivElement>(null);
-  const menuItemRefs = useRef<(HTMLAnchorElement | HTMLButtonElement | null)[]>([]);
+  const menuItemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-  const selected = COUNTRIES.find((c) => c.key === selectedCountry)!;
+  const selected = COUNTRIES.find((c) => c.key === selectedCountry) ?? COUNTRIES[0];
   const otherCountries = COUNTRIES.filter((c) => c.key !== selectedCountry);
 
   useEffect(() => {
@@ -70,37 +95,30 @@ export const CountryDropdown = () => {
     [open]
   );
 
-  const handleMenuKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLDivElement>) => {
-      const items = menuItemRefs.current.filter(Boolean);
-      const currentIndex = items.findIndex(
-        (item) => item === document.activeElement
-      );
+  const handleMenuKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    const items = menuItemRefs.current.filter(Boolean) as HTMLButtonElement[];
+    const currentIndex = items.findIndex((item) => item === document.activeElement);
+    switch (e.key) {
+      case 'Escape':
+        e.preventDefault();
+        setOpen(false);
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        items[currentIndex < items.length - 1 ? currentIndex + 1 : 0]?.focus();
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        items[currentIndex > 0 ? currentIndex - 1 : items.length - 1]?.focus();
+        break;
+    }
+  }, []);
 
-      switch (e.key) {
-        case 'Escape':
-          e.preventDefault();
-          setOpen(false);
-          break;
-        case 'ArrowDown':
-          e.preventDefault();
-          if (currentIndex < items.length - 1) {
-            items[currentIndex + 1]?.focus();
-          } else {
-            items[0]?.focus();
-          }
-          break;
-        case 'ArrowUp':
-          e.preventDefault();
-          if (currentIndex > 0) {
-            items[currentIndex - 1]?.focus();
-          } else {
-            items[items.length - 1]?.focus();
-          }
-          break;
-      }
-    },
-    []
+  const triggerClass = cn(
+    'flex items-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium transition-colors focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none',
+    isTransparent
+      ? 'text-white/90 hover:bg-white/10 hover:text-white'
+      : 'text-foreground/80 hover:bg-muted hover:text-foreground'
   );
 
   return (
@@ -108,12 +126,13 @@ export const CountryDropdown = () => {
       <button
         onClick={() => setOpen(!open)}
         onKeyDown={handleTriggerKeyDown}
-        className="flex items-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
+        className={triggerClass}
         aria-expanded={open}
-        aria-haspopup="true"
+        aria-haspopup="listbox"
+        aria-label={`${t(selected.nameKey as Parameters<typeof t>[0])} — ${t('moreCountries')}`}
       >
         <span aria-hidden="true">{selected.emoji}</span>
-        {t(selected.nameKey)}
+        <span className="hidden lg:inline">{t(selected.nameKey as Parameters<typeof t>[0])}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="12"
@@ -124,7 +143,7 @@ export const CountryDropdown = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={cn('transition-transform', open && 'rotate-180')}
+          className={cn('transition-transform duration-200', open && 'rotate-180')}
           aria-hidden="true"
         >
           <path d="m6 9 6 6 6-6" />
@@ -133,76 +152,30 @@ export const CountryDropdown = () => {
 
       {open && (
         <div
-          role="menu"
+          role="listbox"
+          aria-label={t('moreCountries')}
           onKeyDown={handleMenuKeyDown}
-          className="absolute left-0 top-full z-50 mt-1 min-w-[260px] rounded-md border bg-white py-1 shadow-md"
+          className="absolute left-0 top-full z-50 mt-1 min-w-[180px] rounded-md border bg-white py-1 shadow-md"
         >
-          {/* Selected country header */}
-          <div className="px-3 py-2 text-sm font-medium text-foreground">
-            <span aria-hidden="true">{selected.emoji}</span>{' '}
-            {t(selected.nameKey)}
-          </div>
-
-          {/* Country links */}
-          <Link
-            ref={(el) => {
-              menuItemRefs.current[0] = el;
-            }}
-            href={selected.visaPath}
-            role="menuitem"
-            onClick={() => setOpen(false)}
-            className="block px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            {t('visaInfo')}
-          </Link>
-          <Link
-            ref={(el) => {
-              menuItemRefs.current[1] = el;
-            }}
-            href={selected.neighborhoodPath}
-            role="menuitem"
-            onClick={() => setOpen(false)}
-            className="block px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            {t('neighborhoods')}
-          </Link>
-          <Link
-            ref={(el) => {
-              menuItemRefs.current[2] = el;
-            }}
-            href={selected.guidePath}
-            role="menuitem"
-            onClick={() => setOpen(false)}
-            className="block px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            {t('guide')}
-          </Link>
-
-          {/* Separator */}
-          <div className="border-t border-border/60 my-2" />
-
-          {/* Other countries */}
-          <div className="px-3 py-1 text-xs text-muted-foreground">
-            {t('moreCountries')}
-          </div>
-          <div className="flex gap-1 px-3 py-1.5">
-            {otherCountries.map((country, index) => (
-              <button
-                key={country.key}
-                ref={(el) => {
-                  menuItemRefs.current[3 + index] = el;
-                }}
-                role="menuitem"
-                onClick={() => {
-                  setSelectedCountry(country.key);
-                }}
-                className="flex items-center gap-1 rounded-md px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              >
-                <span aria-hidden="true">{country.emoji}</span>
-                {t(country.nameKey)}
-              </button>
-            ))}
-          </div>
+          <div className="px-3 py-1 text-xs text-muted-foreground">{t('moreCountries')}</div>
+          {otherCountries.map((country, index) => (
+            <button
+              key={country.key}
+              ref={(el) => {
+                menuItemRefs.current[index] = el;
+              }}
+              role="option"
+              aria-selected={false}
+              onClick={() => {
+                onCountryChange(country.key);
+                setOpen(false);
+              }}
+              className="flex w-full items-center gap-2 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <span aria-hidden="true">{country.emoji}</span>
+              {t(country.nameKey as Parameters<typeof t>[0])}
+            </button>
+          ))}
         </div>
       )}
     </div>

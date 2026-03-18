@@ -4,6 +4,7 @@ import { getAllPosts } from '@/lib/blog';
 import { ArrowRight } from 'lucide-react';
 import type { BlogCategory } from '@/lib/blog/schema';
 import { BlogCarouselScrollButtons } from './blog-carousel-scroll';
+import Image from 'next/image';
 
 const CATEGORY_COLORS: Record<BlogCategory, string> = {
   guides: 'bg-primary text-white',
@@ -84,10 +85,22 @@ export const BlogCarousel = async () => {
                 href={`/blog/${post.category}/${post.slug}`}
                 className="flex h-full flex-col overflow-hidden rounded-xl border border-border/60 bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
               >
-                {/* Gradient header strip */}
-                <div
-                  className={`h-1.5 w-full ${CATEGORY_GRADIENT_COLORS[post.category]}`}
-                />
+                {/* Cover image or gradient strip fallback */}
+                {post.frontmatter.coverImage ? (
+                  <div className="relative aspect-[2/1] w-full overflow-hidden">
+                    <Image
+                      src={post.frontmatter.coverImage}
+                      alt={post.frontmatter.title}
+                      fill
+                      sizes="(max-width: 640px) 300px, 340px"
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={`h-1.5 w-full ${CATEGORY_GRADIENT_COLORS[post.category]}`}
+                  />
+                )}
                 <div className="flex flex-1 flex-col p-5">
                 {/* Category + country row */}
                 <div className="flex items-center gap-2">
