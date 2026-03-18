@@ -1,0 +1,62 @@
+{
+  "sourceBlog": {
+    "slug": "korea-arrival-checklist-2026",
+    "title": "Korea Arrival Checklist for Travelers & Digital Nomads (2026)",
+    "category": "tips",
+    "country": "korea",
+    "tags": ["korea", "arrival", "checklist", "digital-nomad", "tips", "2026", "moving-to-korea"]
+  },
+  "carouselType": "A",
+  "introSlide": {
+    "heading": "Landing in Korea for the first time?",
+    "description": "Your 72-hour survival kit \u2014 save this."
+  },
+  "slides": [
+    {
+      "heading": "1. Get local apps \u2014 they just work better",
+      "description": "Naver Map + Papago. Locals use these. English supported."
+    },
+    {
+      "heading": "2. Foreign cards don't always work",
+      "description": "Small shops accept Korean cards only. Bring some cash or get a WOWPASS."
+    },
+    {
+      "heading": "3. Grab a WOWPASS at Incheon Airport",
+      "description": "Prepaid payment + transit card in one. Load with your native card."
+    },
+    {
+      "heading": "4. AREX train to Seoul \u2014 fastest way in",
+      "description": "Express \u20a911,000 (43 min). All-Stop \u20a94,750 (60 min). Tap your WOWPASS."
+    },
+    {
+      "heading": "5. Uber works for taxis",
+      "description": "Want more options? Get KakaoTaxi \u2014 it's what locals use."
+    },
+    {
+      "heading": "6. Staying long-term? ARC \u2192 Phone \u2192 Bank",
+      "description": "This sequence unlocks Korean payments, delivery apps, and more."
+    }
+  ],
+  "endingSlide": {
+    "heading": "Enjoy your trip \u2708\ufe0f",
+    "description": "Follow @localnomad.club for more Korea tips"
+  },
+  "caption": "Your foreign Visa card might get you through the airport \u2014 but that kimbap place around the corner? Cash only.\n\nKorea runs on local payment systems like Samsung Pay and Kakao Pay. Your foreign card works at big chains and hotels, but smaller spots often don't accept it. The easy fix: get a WOWPASS card at Incheon (works almost everywhere) and keep some cash on hand.\n\nFor getting around, Naver Map beats Google Maps here \u2014 it's what locals use, and it supports English. Same with Papago for translation. These aren't niche apps \u2014 they're the default.\n\nPlanning to stay longer? There's a setup sequence: ARC, then phone plan, then bank account. Each step unlocks the next. But if you're just visiting, WOWPASS + cash + local apps will cover you.\n\nWhat's your first stop in Korea? Tell us below \ud83d\udc47",
+  "hashtags": [
+    "#digitalnomad", "#remotework", "#expat", "#travelasia", "#workabroad",
+    "#seoullife", "#koreaexpat", "#livinginkorea", "#seoultravel", "#koreaguide",
+    "#digitalnomadinkorea", "#remoteworkkorea", "#korealife", "#expatkorea", "#seoulnomad",
+    "#wowpass", "#movingtokorea", "#koreavisa", "#koreachecklist", "#arrivalguide",
+    "#nomadlife", "#slowtravel", "#longstay", "#expatlife", "#workinkorea",
+    "#localnomad", "#localnomadclub", "#localnomadkorea"
+  ],
+  "legalFlags": [],
+  "images": {
+    "backend": "postnitro",
+    "templateId": "adeqh7o3kzdc8evq1n6u0xiu",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-03-18T19:00:00+09:00",
+  "totalSlides": 8
+}

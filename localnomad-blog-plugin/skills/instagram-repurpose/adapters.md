@@ -44,7 +44,7 @@ GET  /post/output/{requestId}  → PNG Blob[] or PDF
       "description": "intro slide description"
     },
     {
-      "type": "content_slide",
+      "type": "body_slide",
       "heading": "slide heading",
       "description": "slide description"
     },
