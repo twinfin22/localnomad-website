@@ -38,7 +38,7 @@ For each VERIFIED claim:
 
 1. Read the claim text and its verified source URL
 2. Generate 2-3 scenarios where this claim could be wrong, outdated, or misleading
-3. For each scenario, run an independent web search (`firecrawl_search`) using different search terms than the original fact-checker likely used
+3. For each scenario, run an independent web search (`WebSearch`) using different search terms than the original fact-checker likely used. Escalate to `firecrawl_search` only if WebSearch returns no relevant results after 2 attempts.
 4. Evaluate search results:
    - **Counter-evidence found from a different source** → mark UNCERTAIN
    - **Same source, different interpretation** → mark UNCERTAIN

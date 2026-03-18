@@ -25,14 +25,16 @@ The only difference: FULL chains downstream skills; VERIFY leaves chaining to th
 
 ## Tools Available
 
-**Primary (Firecrawl MCP — hard dependency, installed)**:
-- `firecrawl_search` — web search for source discovery (use when target URL is unknown)
-- `firecrawl_scrape` — scrape a specific URL (use when exact URL is known)
-- `firecrawl_extract` — extract structured data with a JSON schema (use for tables, lists, fee schedules)
+**Primary (Claude Code built-in — no API limit)**:
+- `WebFetch` — fetch a specific URL (use when exact URL is known)
+- `WebSearch` — web search for source discovery (use when target URL is unknown)
 
-**Fallback (only if Firecrawl is down)**:
-- `WebSearch` — web search
-- `WebFetch` — fetch specific URLs
+**Escalation (Firecrawl MCP — monthly API limit, use sparingly)**:
+- `firecrawl_scrape` — JS-rendered pages where WebFetch returns <200 chars of content
+- `firecrawl_search` — when WebSearch results are insufficient (no relevant results after 2 attempts)
+- `firecrawl_extract` — extract structured data with a JSON schema (tables, fee schedules). No built-in equivalent — use Firecrawl directly for this.
+
+**JS-rendered page detection**: If WebFetch returns a page with <200 characters of meaningful content (excluding HTML boilerplate), the page likely requires JavaScript rendering. Escalate to `firecrawl_scrape` for that URL only.
 
 If all tools unavailable, mark every claim as UNVERIFIABLE with reason "no web access".
 
@@ -107,24 +109,25 @@ MUST NOT proceed to Step 2 until all gates pass.
 
 ### Step 2: Source Discovery
 
-#### Firecrawl Tool Context Optimization
+#### Tool Selection (cost-optimized)
 
 **Tool selection (MUST follow this order for every claim):**
 
 1. **Check verified-claims-cache** — if claim matches a cached entry and cache is fresh (current date < Next Review), use cached value. STOP. No web lookup needed.
 2. **Check fetched-pages tracker** — if URL (or same domain+path) already fetched in this run, reuse content. STOP.
-3. **Known government URL** (listed in the loaded country-specific government-sources file) → `firecrawl_scrape` directly. No search needed.
-4. **Unknown source needed** → `firecrawl_search` to discover the right page first.
-5. **Structured data** (tables, fee schedules, requirement lists) → `firecrawl_extract` with JSON schema.
+3. **Known government URL** (listed in the loaded country-specific government-sources file) → `WebFetch` first. If WebFetch returns <200 chars of meaningful content → escalate to `firecrawl_scrape` (JS-rendered page likely).
+4. **Unknown source needed** → `WebSearch` to discover the right page first. If no relevant results after 2 attempts → escalate to `firecrawl_search`.
+5. **Structured data** (tables, fee schedules, requirement lists) → `firecrawl_extract` with JSON schema (no built-in equivalent).
 
 **Cost-aware batching rules:**
 
-- Group claims by Target Domain from Step 1 → single `firecrawl_scrape` per domain, verify multiple claims from one fetch
-- Prefer `firecrawl_scrape` over `firecrawl_search` when exact URL is known (cheaper, faster, more precise)
-- Use `firecrawl_search` only for source discovery, never for pages already in the loaded country-specific government-sources file
+- Group claims by Target Domain from Step 1 → single `WebFetch` per domain, verify multiple claims from one fetch
+- Prefer `WebFetch` over `WebSearch` when exact URL is known (faster, more precise)
+- Use `WebSearch` only for source discovery, never for pages already in the loaded country-specific government-sources file
 - Track every call in the fetched-pages tracker immediately after execution
+- Track Firecrawl escalations separately — log reason (JS-rendered / insufficient results / structured data) in fetched-pages tracker
 
-**Fallback (Firecrawl down):** Use `WebSearch` / `WebFetch` with the same batching logic. If all tools unavailable → mark all remaining claims UNVERIFIABLE with reason "no web access".
+**Firecrawl budget:** Minimize Firecrawl calls. Use only for: (1) JS-rendered pages that WebFetch cannot read, (2) WebSearch failures after 2 attempts, (3) structured data extraction. Target: ≤5 Firecrawl calls per blog post.
 
 #### Source Priority (try in this order)
 
