@@ -48,10 +48,13 @@ Check this cache in Step 2 before any web lookup. If a claim matches an entry an
 | Gold Card PR fast-track | 1 year for NT$6M+ earners (since Jan 2026) | https://goldcard.nat.gov.tw/en/tags/aprc/ | 2026-03-14 | Rare | 2026-09-14 |
 | DN Visa income requirement | $40K/yr (age 30+) or $20K/yr (age 20-29) | https://digitalnomad.ndc.gov.tw | 2026-03-14 | Rare | 2026-09-14 |
 | Taiwan labor pension (Gold Card) | Employer contributes 6%; employee may voluntarily contribute up to 6% | https://goldcard.nat.gov.tw/en/ | 2026-03-14 | Rare | 2026-09-14 |
+| Gold Card application fee | NT$3,700–NT$9,790 (~USD $115–305), varies by nationality and permit duration | https://goldcard.nat.gov.tw/en/ | 2026-03-18 | Rare | 2026-09-18 |
+| NHI monthly premium (Gold Card, employed) | ~NT$1,500/month | https://www.nhi.gov.tw | 2026-03-18 | Annual | 2027-03-18 |
 
 ## China
 
 | Claim | Verified Value | Source URL | Verified Date | Volatility | Next Review |
 |-------|---------------|-----------|--------------|-----------|-------------|
 | WeChat Pay limits (unverified foreign card) | ¥6,000/transaction, ¥50,000/month, ¥60,000/year | https://www.tencent.com/en-us/articles/2201831.html | 2026-03-14 | Changed multiple times 2023-2025 | 2026-06-14 |
-| Alipay foreign card annual limit | ¥500,000/year | https://www.china-briefing.com/news/wechat-enables-foreigners-to-pay-with-overseas-cards-in-china/ | 2026-03-14 | Rare | 2026-09-14 |
+| Alipay foreign card limits (verified, ID registered) | $5,000 USD/transaction, $50,000 USD/year | https://english.www.gov.cn/news/202403/01/content_WS65e1dacdc6d0868f4e8e487b.html | 2026-03-18 | Rare | 2026-09-18 |
+| Alipay foreign card limits (unverified, no ID) | $500 USD/transaction, $2,000 USD/year | https://english.www.gov.cn/news/202403/01/content_WS65e1dacdc6d0868f4e8e487b.html | 2026-03-18 | Rare | 2026-09-18 |
