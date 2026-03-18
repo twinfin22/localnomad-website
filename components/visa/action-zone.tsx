@@ -9,6 +9,19 @@ import type { Document as VisaDocument } from '@/lib/types/visa';
 import { DocumentRow } from './document-row';
 import type { ChecklistItem } from '@/lib/types/dashboard';
 
+/** Categorize a document's where_to_get into a source group */
+function categorizeSource(whereToGet?: string): string {
+  if (!whereToGet) return 'Prepare Yourself';
+  const lower = whereToGet.toLowerCase();
+  if (lower.includes('employer') || lower.includes('company') || lower.includes('sponsor'))
+    return 'From Employer';
+  if (lower.includes('universit') || lower.includes('school') || lower.includes('institution') || lower.includes('apostil'))
+    return 'From Institution';
+  if (lower.includes('government') || lower.includes('immigration') || lower.includes('embassy') || lower.includes('consulate') || lower.includes('police') || lower.includes('office'))
+    return 'From Government';
+  return 'Prepare Yourself';
+}
+
 const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
   korea: 'kr',
   taiwan: 'tw',
@@ -171,12 +184,26 @@ export function DocumentChecklist({
     ? supabaseChecklist.toggle
     : localChecklist.toggle;
 
-  const requiredDocs = documents.filter((doc) => doc.required);
-  const optionalDocs = documents.filter((doc) => !doc.required);
   const completedCount = documents.filter(
     (doc) => checked[doc.id]
   ).length;
   const totalCount = documents.length;
+
+  // Group documents by source (where_to_get) for visual organization
+  const groupBySource = (docs: typeof documents) => {
+    const groups = new Map<string, typeof documents>();
+    for (const doc of docs) {
+      const source = categorizeSource(doc.where_to_get);
+      const arr = groups.get(source) ?? [];
+      arr.push(doc);
+      groups.set(source, arr);
+    }
+    return groups;
+  };
+
+  const requiredDocs = documents.filter((doc) => doc.required);
+  const optionalDocs = documents.filter((doc) => !doc.required);
+  const requiredGroups = groupBySource(requiredDocs);
 
   return (
     <div>
@@ -202,16 +229,25 @@ export function DocumentChecklist({
           />
         </div>
 
-        {/* Required documents */}
-        <div className="mt-6 space-y-1">
-          {requiredDocs.map((doc) => (
-            <DocumentRow
-              key={doc.id}
-              doc={doc}
-              isChecked={!!checked[doc.id]}
-              onToggle={toggleDocument}
-              t={t}
-            />
+        {/* Required documents grouped by source */}
+        <div className="mt-6 space-y-6">
+          {Array.from(requiredGroups.entries()).map(([source, docs]) => (
+            <div key={source}>
+              <h3 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                {source}
+              </h3>
+              <div className="space-y-1">
+                {docs.map((doc) => (
+                  <DocumentRow
+                    key={doc.id}
+                    doc={doc}
+                    isChecked={!!checked[doc.id]}
+                    onToggle={toggleDocument}
+                    t={t}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 

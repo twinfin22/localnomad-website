@@ -173,84 +173,103 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
   };
 
   return (
-    <div className="rounded-lg border bg-white p-5">
-      {orderedCategories.map((category, catIndex) => {
-        const allItems = grouped.get(category) ?? [];
-        const primaryItems = allItems.filter(item => !FOLDABLE_REQUIREMENT_IDS.has(item.id));
-        const foldableItems = allItems.filter(item => FOLDABLE_REQUIREMENT_IDS.has(item.id));
-        const isIncome = category === 'income';
+    <div>
+      {/* Responsive card grid: 1col mobile (accordion), 2col desktop (cards) */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {orderedCategories.map((category) => {
+          const allItems = grouped.get(category) ?? [];
+          const primaryItems = allItems.filter(item => !FOLDABLE_REQUIREMENT_IDS.has(item.id));
+          const foldableItems = allItems.filter(item => FOLDABLE_REQUIREMENT_IDS.has(item.id));
+          const isIncome = category === 'income';
 
-        // Group primary items by status for visual breaks
-        const requiredItems = primaryItems.filter(i => i.required && i.sentiment !== 'negative');
-        const optionalItems = primaryItems.filter(i => !i.required && i.sentiment !== 'negative');
-        const negativeItems = primaryItems.filter(i => i.sentiment === 'negative');
-        const statusGroups = [requiredItems, optionalItems, negativeItems].filter(g => g.length > 0);
+          // Group primary items by status for visual breaks
+          const requiredItems = primaryItems.filter(i => i.required && i.sentiment !== 'negative');
+          const optionalItems = primaryItems.filter(i => !i.required && i.sentiment !== 'negative');
+          const negativeItems = primaryItems.filter(i => i.sentiment === 'negative');
+          const statusGroups = [requiredItems, optionalItems, negativeItems].filter(g => g.length > 0);
 
-        return (
-          <div key={category}>
-            {catIndex > 0 && <div className="my-6 border-t" />}
+          return (
+            <details
+              key={category}
+              open
+              className="group/card rounded-lg border bg-white p-4 md:open:col-span-1"
+            >
+              <summary className="flex cursor-pointer list-none items-center gap-2 [&::-webkit-details-marker]:hidden">
+                {renderCategoryHeader(category)}
+                <svg
+                  className="ml-auto h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open/card:rotate-90 md:hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </summary>
 
-            {renderCategoryHeader(category)}
+              <div className="mt-3">
+                <div className="space-y-4">
+                  {statusGroups.map((group, gi) => (
+                    <ul key={gi}>{group.map(renderItem)}</ul>
+                  ))}
+                </div>
 
-            <div className="pl-7">
-              <div className="mt-3 space-y-4">
-                {statusGroups.map((group, gi) => (
-                  <ul key={gi}>{group.map(renderItem)}</ul>
-                ))}
-              </div>
-
-              {foldableItems.length > 0 && (
-                <details className="mt-4">
-                  <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
-                    <ChevronRight className="h-4 w-4 transition-transform [[open]>&]:rotate-90" />
-                    {t('additionalRequirements', { count: foldableItems.length })}
-                  </summary>
-                  <ul className="mt-3">{foldableItems.map(renderItem)}</ul>
-                </details>
-              )}
-
-              {/* Merge income metadata into the income category */}
-              {isIncome && visa.incomeRequirement && (
-                <div className="mt-4">
-                <p className="font-lora text-2xl font-bold text-primary">
-                  ${visa.incomeRequirement.amount}{' '}
-                  <span className="text-base font-normal text-muted-foreground">
-                    {visa.incomeRequirement.currency} /{' '}
-                    {visa.incomeRequirement.period}
-                  </span>
-                </p>
-                {visa.incomeRequirement.notes && (
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {visa.incomeRequirement.notes}
-                  </p>
+                {foldableItems.length > 0 && (
+                  <details className="mt-4">
+                    <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+                      <ChevronRight className="h-4 w-4 transition-transform [[open]>&]:rotate-90" />
+                      {t('additionalRequirements', { count: foldableItems.length })}
+                    </summary>
+                    <ul className="mt-3">{foldableItems.map(renderItem)}</ul>
+                  </details>
                 )}
-                {visa.incomeRequirement.proofMethods &&
-                  visa.incomeRequirement.proofMethods.length > 0 && (
-                    <details className="mt-3">
-                      <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm font-medium text-primary hover:underline">
-                        {t('howToProveIncome')}
-                      </summary>
-                      <ul className="mt-2 space-y-1.5 pl-4">
-                        {visa.incomeRequirement.proofMethods.map(
-                          (method, index) => (
-                            <li
-                              key={index}
-                              className="flex items-start gap-2 text-sm text-muted-foreground"
-                            >
-                              <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary/40" />
-                              {method}
-                            </li>
-                          )
-                        )}
-                      </ul>
-                    </details>
-                  )}
+
+                {/* Income metadata */}
+                {isIncome && visa.incomeRequirement && (
+                  <div className="mt-4">
+                    <p className="font-lora text-2xl font-bold text-primary">
+                      ${visa.incomeRequirement.amount}{' '}
+                      <span className="text-base font-normal text-muted-foreground">
+                        {visa.incomeRequirement.currency} /{' '}
+                        {visa.incomeRequirement.period}
+                      </span>
+                    </p>
+                    {visa.incomeRequirement.notes && (
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {visa.incomeRequirement.notes}
+                      </p>
+                    )}
+                    {visa.incomeRequirement.proofMethods &&
+                      visa.incomeRequirement.proofMethods.length > 0 && (
+                        <details className="mt-3">
+                          <summary className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm font-medium text-primary hover:underline">
+                            {t('howToProveIncome')}
+                          </summary>
+                          <ul className="mt-2 space-y-1.5 pl-4">
+                            {visa.incomeRequirement.proofMethods.map(
+                              (method, index) => (
+                                <li
+                                  key={index}
+                                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                                >
+                                  <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary/40" />
+                                  {method}
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        </details>
+                      )}
+                  </div>
+                )}
               </div>
-            )}
-            </div>
-          </div>
-        );
-      })}
+            </details>
+          );
+        })}
+      </div>
 
       {/* Work Permission */}
       {visa.workPermission && (
