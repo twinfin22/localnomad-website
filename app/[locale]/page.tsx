@@ -5,7 +5,6 @@ import { routing } from '@/i18n/routing';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import {
   Hero,
-  BeforeAfter,
   CountrySelector,
   NeighborhoodPreview,
   BlogCarousel,
@@ -90,9 +89,8 @@ export default async function LandingPage({ params }: Props) {
   );
 
   return (
-    <main id="main-content">
+    <main id="main-content" style={{ backgroundColor: 'var(--primary)' }}>
       <Hero />
-      <BeforeAfter />
       <CountrySelector />
       <NeighborhoodPreview countries={countries} />
       <BlogCarousel />

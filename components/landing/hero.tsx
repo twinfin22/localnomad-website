@@ -10,14 +10,14 @@ export const Hero = () => {
       <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" />
 
       <section
-        className="hero-grain relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 py-20"
+        className="hero-grain relative -mt-[70px] flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
         style={{
           backgroundImage: [
             'linear-gradient(135deg, rgba(27,73,101,0.65) 0%, rgba(20,55,78,0.70) 100%)',
             "url('/images/hero-bg.webp')",
           ].join(', '),
           backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
+          backgroundPosition: 'center 70%',
           backgroundRepeat: 'no-repeat',
           // Fallback: teal gradient shows if image fails — no blank screen
           backgroundColor: 'var(--primary)',
@@ -44,8 +44,6 @@ export const Hero = () => {
           {t('legalNote')}
         </p>
 
-        {/* Gradient fade into next section */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[2] h-16 bg-gradient-to-b from-transparent to-white" />
       </section>
     </>
   );
