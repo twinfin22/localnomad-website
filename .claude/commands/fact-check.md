@@ -32,7 +32,7 @@ If input type is ambiguous, ask the user to clarify.
    - Multi-country content → load all relevant country files
    - No country detected → load global rules only, proceed without country-specific notes
 4. Run the **Preparation** preamble (lazy-load verified-claims-cache via grep per claim, initialize fetched-pages tracker and tool budget)
-5. Run the **5-step protocol** (Steps 1-5) on the parsed content
+5. Run the **5-step protocol** with `mode=FULL` (Steps 1-5 + downstream chaining) on the parsed content
 6. Run **contrarian verification** — read `localnomad-blog-plugin/skills/fact-checker/SKILL_fact-contrarian.md` and invoke via `Agent(subagent_type="oh-my-claudecode:critic", model="sonnet")` on VERIFIED claims only. Do NOT pass blog source text to the contrarian.
 7. Run **source link injection** — read `localnomad-blog-plugin/skills/fact-checker/SKILL_source-link-injector.md` and inject links using the fact-check report's SOURCE TABLE
 8. Output the standard Fact-Check Report following `localnomad-blog-plugin/skills/fact-checker/references/report-template.md`, including contrarian results and source links

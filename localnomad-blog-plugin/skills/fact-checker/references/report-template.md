@@ -42,6 +42,9 @@ Notes:
 [ ] No comparison gaps
 [ ] No jurisdiction confusion
 [ ] No internal contradictions
+[ ] 5.4: No currency/unit inconsistencies
+[ ] 5.5: All B/D claims have effective_status classification
+[ ] 5.6: No jurisdiction cross-contamination; regional claims specify scope
 
 --- SOURCE LINKS INJECTED ---
 | # | Claim | Source URL | Placement (section + approx line) |

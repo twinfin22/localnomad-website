@@ -14,10 +14,14 @@ Challenge VERIFIED claims from the fact-checker by independently searching for c
 **MUST receive:**
 - Fact-check report's SOURCE TABLE (VERIFIED claims only)
 - Each claim's: text, type, source URL, tier, verified value
+- Each Type B/D claim's `effective_status` (CURRENT/ANNOUNCED/PROPOSED/DISCONTINUED)
+- Each Type B/D claim's `framing_note` (how the post frames the claim vs actual status; null if effective_status = CURRENT)
 
 **MUST NOT receive:**
 - Original blog post text (prevents anchoring on the author's framing)
 - The fact-checker's reasoning or confidence notes
+
+Note: `framing_note` is a claim-level summary extracted by the fact-checker, NOT the original blog text. This preserves the no-blog-text principle while enabling E6 evaluation.
 
 If blog post text is included in the prompt, STOP and report: "Contrarian must not receive blog source text. Remove it and re-invoke."
 
@@ -64,6 +68,8 @@ Mark UNCERTAIN and escalate when ANY of these apply:
 | E3 | Source states the claim with conditions/exceptions | "₩100M... except for applicants over 65" |
 | E4 | Policy changed within the last 6 months | Seishun 18 Kippu format changed Oct 2024 |
 | E5 | Explicit uncertainty — cannot determine correctness | "I found conflicting dates and cannot resolve which is current" |
+| E6 | Effective status mismatch | effective_status = ANNOUNCED/PROPOSED but framing_note indicates post presents as current law |
+| E7 | Currency conversion mismatch | Source states USD equivalent that differs >15% from post's USD equivalent for same claim |
 
 ---
 

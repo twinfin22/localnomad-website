@@ -76,6 +76,15 @@ Any ESCALATED claims from the contrarian are merged into the fact-check report a
 
 After ALL reports are collected (5 layers + contrarian), apply fixes to the draft in this order:
 
+### Pre-Rewrite Link Extraction (before step 3)
+
+Before running anti-AI rewrites, extract all existing inline markdown links from the current post text:
+- Regex: `\[([^\]]+)\]\(([^)]+)\)` → collect into `pre_rewrite_links[]`
+- Format: `[{ anchor_text, url, section, line_approx }]`
+- Pass this list to source-link-injector when it runs in step 5
+
+### Fix Order
+
 1. **Critical fact corrections** — wrong visa requirements, policy details, + ESCALATED claims from contrarian
 2. **Moderate fact corrections** — outdated stats, process differences (from fact-check report)
 3. **Anti-AI rewrites** — banned words, banned structures, structural fixes (from anti-ai report)

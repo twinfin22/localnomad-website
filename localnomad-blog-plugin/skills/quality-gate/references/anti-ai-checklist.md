@@ -152,3 +152,9 @@ All 10 must pass:
 - ALL checks pass (0 banned words, 0 banned structures, all 10 structural checks green) = **PASS**
 - ANY failure = **FAIL** → auto-rewrite failing elements → re-check
 - Max 3 auto-fix attempts. After 3 rounds still failing, flag for Gen's manual review.
+
+---
+
+## Link Preservation
+
+**MUST preserve markdown link syntax `[text](url)` during all rewrites.** Anchor text may be rewritten to fit new sentence structure. URL MUST NOT be modified or removed. If a sentence containing a link is deleted entirely, move the link to the nearest relevant surviving sentence in the same section.

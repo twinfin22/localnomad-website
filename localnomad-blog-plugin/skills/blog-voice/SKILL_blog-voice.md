@@ -72,6 +72,10 @@ Target audience: non-native English speakers (Korean/Japanese/Taiwanese nomads).
 - Never: neutral — always have opinions, delivered casually
 - Never: trying to sound smart — be smart but wear it lightly
 
+## Link Preservation
+
+When adjusting voice/tone of sentences containing inline markdown links `[text](url)`, preserve the link. Anchor text may change to match the new voice. URL must not be removed.
+
 ## CTA Tone
 
 - Primary CTA (end of post): community tone, never salesy

@@ -15,10 +15,27 @@ This skill requires the fact-checker's output report, specifically:
 
 1. **SOURCE TABLE** — the verified claims with URLs and status
 2. **FETCHED-PAGES TRACKER** — all URLs fetched during verification
+3. **Pre-rewrite link inventory** (quality-gate pipeline only) — list of inline links that existed before anti-AI rewrites, provided by the quality-gate orchestrator. Format: `[{ anchor_text, url, section, line_approx }]`
 
 Only inject URLs where Status = VERIFIED in the Source Table. Do NOT fetch new URLs. Do NOT re-run verification.
 
 If the fact-check report is not available in context, STOP and report: "Source link injection requires a fact-check report. Run fact-checker first."
+
+---
+
+## Pre-Rewrite Link Recovery
+
+If the quality-gate orchestrator provides a `pre_rewrite_links` list:
+
+1. Compare each link in the list against the current post text
+2. For any link that was removed by anti-AI/voice rewrites:
+   - Find the rewritten sentence that corresponds to the original link's context
+   - Re-inject the link with adapted anchor text matching the new wording
+   - Preserve the original URL exactly
+3. Then proceed with normal injection (new links from fact-checker)
+4. Dedup: if a re-injected link and a new link point to the same URL in the same section, keep only one
+
+If no `pre_rewrite_links` list is provided (standalone /fact-check mode), skip this step — there were no rewrites to recover from.
 
 ---
 
@@ -56,6 +73,7 @@ If the fact-check report is not available in context, STOP and report: "Source l
 - [ ] No broken or unverified URLs injected (only VERIFIED status from fact-check report)
 - [ ] Existing correct links preserved (not duplicated)
 - [ ] No paragraph exceeds 3 source links
+- [ ] All pre_rewrite_links either present in final post or documented as intentionally removed
 
 MUST NOT produce output until all gates pass.
 

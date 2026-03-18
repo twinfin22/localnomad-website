@@ -13,6 +13,16 @@ Verify every factual claim in a blog post before publication. Optimized for Kore
 
 Called by `quality-gate` Layer 1 during STAGE 4 of the `/blog` pipeline. Can also be invoked standalone via `/fact-check`.
 
+## Mode Parameter
+
+| Mode | Behavior | Caller |
+|------|----------|--------|
+| `VERIFY` | Steps 1-5 + JSON output. STOP after output. | quality-gate Phase 1 |
+| `FULL` | Steps 1-5 + JSON output + invoke contrarian + invoke source-link-injector | standalone /fact-check |
+
+Default: VERIFY. Both modes produce identical report + JSON output.
+The only difference: FULL chains downstream skills; VERIFY leaves chaining to the quality-gate orchestrator.
+
 ## Tools Available
 
 **Primary (Firecrawl MCP — hard dependency, installed)**:
@@ -197,15 +207,57 @@ After verifying individual claims, check for **context errors** — claims that 
 - **Jurisdiction confusion**: Applying Korea rules to Taiwan or vice versa
 - **Internal contradictions**: Two statements in the same post that conflict with each other
 
+#### 5.4 Unit & Currency Consistency
+
+For every claim involving a monetary amount, check:
+
+1. **Currency label present** — post specifies ₩/¥/NT$/元/$. Mixed currencies in the same paragraph MUST have labels. No bare numbers for monetary claims.
+2. **Period vs threshold** — distinguish income claims (annual/monthly → must state period) from net-worth/threshold claims (no period needed). Example: "¥10M/year income" (income, period required) vs "₩100M net assets" (threshold, no period needed).
+3. **Source-relative conversion** — if the post gives a USD equivalent AND the source document also gives a USD equivalent, verify they match within ±10%. If the source has no USD conversion, the post's conversion is informational — flag only if math is obviously wrong (>25% off at any reasonable recent rate). Do NOT independently look up exchange rates.
+4. **Intra-post consistency** — if the same amount appears in multiple sections, verify all instances state the same value and currency. (Extension of Step 5 "internal contradictions" for monetary claims specifically.)
+
+#### 5.5 Effective Date Pinning
+
+For every Type B (Requirement) and Type D (Policy) claim:
+
+1. **Status classification** — based on sources found in Steps 2-3, determine:
+   - `CURRENT` — enacted and in force
+   - `ANNOUNCED` — officially announced, effective date set but not yet reached
+   - `PROPOSED` — under discussion/legislation, not yet decided
+   - `DISCONTINUED` — program ended or replaced by successor
+2. **Misrepresentation check**:
+   - Post presents ANNOUNCED/PROPOSED as if already in force → CRITICAL
+   - Post presents CURRENT as proposed/upcoming → MODERATE (outdated framing)
+3. **Sunset/review dates** — if the regulation has an expiry or mandatory review date, note it in the report.
+4. **Framing note** — for any claim where effective_status ≠ CURRENT, write a brief framing_note describing how the post presents the claim vs. its actual status. Example: "post says 'currently required' but source says 'effective April 2026'". This note is passed to the contrarian for E6 evaluation.
+5. **Record in output** — include `effective_status` and `framing_note` fields in the JSON claim object for every Type B/D claim.
+
+#### 5.6 Jurisdiction & Regional Variation
+
+Three specific checks:
+
+1. **Country tag match** — every Type B/D claim in the post must belong to the country in the post's frontmatter `country` field. If a Japan-tagged post contains a Korea-specific rule → CRITICAL.
+2. **Regional claim without scope** — if the post states a local fee, tax rate, or support program, verify whether it's nationally uniform or varies by region. If it varies, the post MUST specify which jurisdiction (city/prefecture/province). Examples that vary: NHI premiums (JP municipal), foreign resident support (KR municipal). Examples that DON'T vary: national income tax rates, visa fees, immigration law.
+3. **Do NOT proactively search** for prefecture/municipality-level exceptions to national laws. Only flag when the post itself makes a claim that is regionally scoped but omits the region.
+
 #### Abort Condition
 
 If a nuance check reveals a context error, MUST classify severity (CRITICAL/MODERATE/LOW using Error Severity Triage below) and document the specific misleading framing.
 
 ### Step 5 Completion Gate
 
-- [ ] All 5 nuance categories checked (omitted conditions, outdated framing, comparison gaps, jurisdiction confusion, internal contradictions)
-- [ ] Every context error found has severity classification and specific description
+- [ ] All 8 nuance categories checked:
+      Original 5: omitted conditions | outdated framing | comparison gaps | jurisdiction confusion | internal contradictions
+      New 3: 5.4 currency consistency | 5.5 effective date | 5.6 regional variation
+- [ ] Every context error has severity classification + specific description
+- [ ] Every Type B/D claim has effective_status (CURRENT/ANNOUNCED/PROPOSED/DISCONTINUED)
+- [ ] Every Type B/D claim with effective_status ≠ CURRENT has a framing_note
 - [ ] Taiwan content checked for prohibited eligibility language (legal-bright-lines)
+
+### Mode Guard
+
+IF mode = VERIFY → output report + JSON per sections below, then STOP. Do not invoke contrarian or source-link-injector.
+IF mode = FULL → output report + JSON, then invoke contrarian, then invoke source-link-injector.
 
 Step 5 is the final step of this skill. Source link injection is handled separately by `SKILL_source-link-injector.md`.
 
@@ -255,16 +307,61 @@ When a claim fails verification, classify the error:
 
 ## Output
 
-Format your report following `references/report-template.md`. Write the JSON portion to `$TMPDIR/blog-pipeline/stage4-reports/fact-check.json`.
+### Human-Readable Report
+Format per `references/report-template.md`.
 
-Key rules:
-- Source Table URLs MUST be specific pages, not domain homepages. `immigration.go.kr` alone = FAIL.
-- If exact URL cannot be retrieved: `[domain] — specific page not retrievable, manual verification required`
-- Every Type B and Type D claim MUST have a Tier 1 source or be flagged as CRITICAL.
+### JSON Report (extended stage4-layer-report schema)
+
+The existing `fact-check.json` schema is extended with structured claim data in `metadata`. The base schema fields (`layer`, `result`, `critical`, `moderate`, `low`, `fixes_applied`) remain unchanged. New fields go inside `metadata` (which has `additionalProperties: true`).
+
+```json
+{
+  "layer": "fact-check",
+  "result": "PASS",
+  "critical": [],
+  "moderate": [],
+  "low": [],
+  "fixes_applied": [],
+  "metadata": {
+    "mode": "VERIFY",
+    "claimsChecked": 15,
+    "verified": 13,
+    "failed": 1,
+    "unverifiable": 1,
+    "sourcesUsed": [],
+    "claims": [
+      {
+        "id": 1,
+        "text": "F-1-D requires ₩100M annual income",
+        "type": "B",
+        "verdict": "VERIFIED",
+        "source_url": "https://immigration.go.kr/...",
+        "source_tier": 1,
+        "source_date": "2026-03-14",
+        "effective_status": "CURRENT",
+        "framing_note": null
+      }
+    ],
+    "critical_fixes": [
+      {
+        "claim_id": 3,
+        "current_text": "...",
+        "correct_text": "...",
+        "source_url": "..."
+      }
+    ]
+  }
+}
+```
+
+Write to: `$TMPDIR/blog-pipeline/stage4-reports/fact-check.json`
+(Same file path as before — schema extended, not replaced.)
 
 ### Output Completion Gate
 
 - [ ] Report follows the report template format
 - [ ] All claims accounted for (verified + failed + unverifiable = total from Step 1)
-- [ ] UNVERIFIABLE claims are exempt from URL and link gates but MUST appear in UNVERIFIABLE CLAIMS section
-- [ ] New data points discovered during this run added to verified-claims-cache (or documented why not)
+- [ ] UNVERIFIABLE claims exempt from URL gates but appear in UNVERIFIABLE section
+- [ ] JSON `metadata.claims[]` has entry for every claim with all required fields
+- [ ] Every Type B/D claim in JSON has `effective_status` and `framing_note`
+- [ ] New data points discovered added to verified-claims-cache (or documented why not)
