@@ -1,0 +1,651 @@
+{
+  "type": "d-10",
+  "name": "Korea Job Seeking Visa (D-10)",
+  "nameLocal": "구직비자 (D-10)",
+  "shortName": "D-10",
+  "category": "job-seeking",
+  "description": "Everything about Korea's D-10 Job Seeking Visa: who qualifies, sub-categories (D-10-1 general job seeking, D-10-2 startup preparation), bank balance requirements, part-time work rules, extension requirements, and how to transition to E-7 or D-8. Updated for 2026.",
+  "tagline": "Stay in Korea while you search for employment or prepare your startup",
+  "keyRequirement": "Bachelor's degree (or equivalent) + proof of financial self-sufficiency (bank balance) + no current employment in Korea",
+  "targetAudience": [
+    "Korean university graduates looking for employment before leaving Korea",
+    "Foreign professionals seeking employment with a Korean company",
+    "Working holiday (H-1) or English teacher (E-2) visa holders transitioning careers",
+    "Startup founders preparing to register a technology business in Korea (D-10-2)",
+    "Overseas Koreans and foreign nationals with relevant professional backgrounds"
+  ],
+  "subCategories": [
+    {
+      "id": "d-10-1",
+      "name": "D-10-1 General Job Seeking",
+      "nameLocal": "D-10-1 일반구직",
+      "description": "For individuals actively seeking professional employment in Korea corresponding to E-1 through E-7 visa categories (excluding certain sub-types). Allows part-time work with separate immigration permission. Uses a 190-point evaluation system for non-exempt applicants."
+    },
+    {
+      "id": "d-10-2",
+      "name": "D-10-2 Technology Startup Preparation",
+      "nameLocal": "D-10-2 창업준비",
+      "description": "For individuals preparing to establish a technology-based company in Korea. Typically requires enrollment in a government-recognized startup support program such as OASIS (oasisvisa.com). Pathway to D-8-4 (Technology Startup) visa upon company registration."
+    },
+    {
+      "id": "d-10-3",
+      "name": "D-10-3 High-Tech Intern",
+      "nameLocal": "D-10-3 첨단분야 인턴",
+      "description": "For overseas university students or graduates in high-tech fields with internship contracts at qualified Korean companies. Published requirements indicate: bachelor's candidates must be under 30, master's/doctorate holders must be under 35. Maximum stay of up to 1 year."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "education-bachelors",
+      "label": "Bachelor's degree or higher",
+      "description": "According to published immigration requirements, applicants must hold at least a bachelor's degree from a Korean or foreign university. The degree certificate must be apostilled or authenticated by the Korean embassy in the issuing country.",
+      "required": true,
+      "warnings": [
+        "Foreign degrees must be apostilled or embassy-authenticated before submission",
+        "Degrees not in Korean or English must include a notarized translation"
+      ]
+    },
+    {
+      "id": "professional-training",
+      "label": "Professional training completion (alternative to degree)",
+      "description": "Published guidelines indicate that completion of a recognized professional training program may substitute for a formal degree in certain cases. Consult your local immigration office for specific accepted programs.",
+      "required": false
+    },
+    {
+      "id": "financial-self-sufficiency",
+      "label": "Proof of financial self-sufficiency (bank balance)",
+      "description": "According to published requirements, applicants must demonstrate sufficient funds to support themselves during the job search period. For D-10-1 initial applications from D-2 (student) visa holders, this requirement may be waived. For others and for extensions, a bank balance certificate is required. Published guidelines indicate the benchmark is ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household). For a 6-month stay, this translates to approximately ₩6,888,996 in available funds.",
+      "required": true,
+      "warnings": [
+        "The ₩30,000,000 figure cited in some community forums may refer to older requirements or specific embassy interpretations — verify current thresholds with immigration (1345) or HiKorea",
+        "Bank statements must typically be recent (within 3 months) and show a consistent balance"
+      ]
+    },
+    {
+      "id": "no-current-employment",
+      "label": "No current employment in Korea (without separate permission)",
+      "description": "D-10 is a job-seeking visa, not a work visa. Applicants must not currently hold full-time employment in Korea. Part-time work up to 20–30 hours per week may be authorized separately by immigration.",
+      "required": true
+    },
+    {
+      "id": "no-criminal-record",
+      "label": "Clean criminal background",
+      "description": "A recent police clearance certificate from your home country is typically required. Most immigration offices require the certificate to be within 6 months of issuance and apostilled.",
+      "required": true
+    },
+    {
+      "id": "d-10-1-two-track",
+      "label": "D-10-1: Two-track eligibility system",
+      "description": "D-10-1 has two tracks: (1) Korean university graduates — exempt from point system if within 3 years of graduation with TOPIK 4+; (2) Foreign degree holders — must pass point-based evaluation (60+ points out of 190, with 20+ in basic items). Published guidelines indicate applicants should confirm which track applies before submitting documents.",
+      "required": false
+    },
+    {
+      "id": "d-10-1-point-system",
+      "label": "D-10-1: 190-point evaluation system (for non-exempt applicants)",
+      "description": "D-10-1 uses a 190-point evaluation system for non-exempt applicants. According to published guidelines, a minimum of 60 points is required (with 20+ in basic items). 80+ points qualifies for a 3-year stay with 1-year renewals. 60–79 points results in a 1-year stay with 6-month renewals. Korean university graduates within 3 years of graduation with TOPIK 4+ are exempt from the point system.",
+      "required": false
+    },
+    {
+      "id": "d-10-2-startup-eligibility",
+      "label": "D-10-2: Enrollment in recognized startup support program",
+      "description": "For the D-10-2 startup preparation track, published guidelines indicate that applicants must be enrolled in or accepted to a government-recognized startup support program. The most common pathway is through the OASIS (Overall Assistance for Startup Immigration System) program at oasisvisa.com. TIPS (Tech Incubator Program for Startup) or other Ministry of SMEs-recognized programs may also qualify.",
+      "required": false,
+      "warnings": [
+        "OASIS accepts applications in cohorts — check oasisvisa.com for current intake schedules",
+        "A detailed business plan in Korean and/or English is typically required for program acceptance"
+      ]
+    },
+    {
+      "id": "d-10-2-business-plan",
+      "label": "D-10-2: Written business plan",
+      "description": "For the startup preparation track, a business plan demonstrating the technology-based nature of the intended startup is required as part of both the OASIS application and the D-10-2 visa application.",
+      "required": false
+    }
+  ],
+  "duration": {
+    "initial": "6 months (D-10-1) or 6 months (D-10-2)",
+    "extension": "Extendable in 6-month or 1-year increments depending on score tier. 80+ points = 1-year renewals. D-10-1 up to 4 extensions. D-10-2 up to 5 extensions.",
+    "maxTotal": "Up to 3 years total (D-10-1 and D-10-2)",
+    "maxTotalDetail": "According to published immigration guidelines, the maximum total stay on D-10 status is 3 years (extended from 2 to 3 years per October 2025 immigration reform). Extensions require proof of continued job search activity, valid financial documents, and may require TOPIK certification for certain extensions. D-2 graduates may receive up to 3 years depending on graduation date. D-10-1 holders scoring 80+ points on the 190-point evaluation receive 1-year renewal increments; those scoring 60–79 points receive 6-month increments."
+  },
+  "fees": {
+    "application": "~USD 60-100 (varies by embassy and nationality)",
+    "extension": "₩60,000 (status change or extension at Korean immigration office)",
+    "notes": "Fees vary by Korean embassy or consulate. Status change applications submitted at Korean immigration offices (출입국관리사무소) incur a separate fee. Check HiKorea or your local immigration office for the most current fee schedule."
+  },
+  "incomeRequirement": {
+    "amount": "1148166",
+    "currency": "KRW",
+    "period": "monthly",
+    "notes": "Published guidelines indicate a benchmark of ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household). For a 6-month initial period, this translates to approximately ₩6,888,996 in available funds. D-2 graduates applying for their first D-10 may be exempt from the financial proof requirement. Requirements can change — verify directly with immigration (1345) or HiKorea before applying."
+  },
+  "taxImplications": {
+    "threshold": "183 days",
+    "notes": "According to Korean tax law, individuals who stay in Korea for 183 days or more in a calendar year may be classified as tax residents. D-10 visa holders who engage in authorized part-time work in Korea are subject to Korean income tax on that income. If you transition to E-7 or another work visa during the tax year, your global income obligations may change. Double tax treaties may apply depending on nationality. Consult a licensed tax professional (세무사) for specific guidance.",
+    "source": "National Tax Service (NTS)"
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "여권",
+      "description": "Must be valid for at least 6 months beyond intended stay",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Visa Application Form",
+      "nameLocal": "사증발급신청서",
+      "description": "Completed visa application form (Form No. 34). Available at Korean embassies and immigration offices.",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "nameLocal": "여권사진",
+      "description": "3.5cm x 4.5cm, recent, white background",
+      "required": true
+    },
+    {
+      "id": "degree-certificate",
+      "name": "Degree Certificate",
+      "nameLocal": "학위증명서",
+      "description": "Official degree certificate (bachelor's, master's, or doctorate). Must be apostilled or authenticated by the Korean embassy in the issuing country.",
+      "tips": [
+        "Apostille required for countries in the Hague Apostille Convention",
+        "Non-Hague countries require embassy authentication",
+        "If the degree is not in English or Korean, include a notarized translation",
+        "Korean universities: request an official graduation certificate (졸업증명서) with a university seal"
+      ],
+      "required": true
+    },
+    {
+      "id": "bank-statement",
+      "name": "Bank Statement / Financial Proof",
+      "nameLocal": "잔액증명서",
+      "description": "Official bank balance certificate showing sufficient funds for the intended stay. Published guidelines indicate ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household). For 6 months: approximately ₩6,888,996.",
+      "tips": [
+        "Must be recent (typically within 3 months of application)",
+        "Bank certificate issued in Korea is strongly preferred over foreign bank statements",
+        "D-2 graduates applying for their first D-10 may be exempt from bank statement requirement — confirm with your university's international office or local immigration office",
+        "If using a foreign bank, the statement may need to be translated and notarized"
+      ],
+      "required": true,
+      "notes": "Exemptions may apply for D-2 graduates on initial application. Extensions require updated financial proof."
+    },
+    {
+      "id": "resume",
+      "name": "Resume / CV",
+      "nameLocal": "이력서",
+      "description": "Current resume or curriculum vitae in Korean or English. Should detail education, work history, and professional qualifications.",
+      "required": true
+    },
+    {
+      "id": "job-search-plan",
+      "name": "Job Search Activity Plan",
+      "nameLocal": "구직활동계획서",
+      "description": "A written plan outlining your job search activities, target companies or industries, and timeline. Immigration officers use this to assess the legitimacy of your job-seeking intent.",
+      "tips": [
+        "Be specific about target job positions, industries, and Korean companies",
+        "Include any networking activities, job interviews, or employment agency registrations",
+        "Mention language studies or skills development if applicable"
+      ],
+      "required": true
+    },
+    {
+      "id": "criminal-background-check",
+      "name": "Criminal Background Check",
+      "nameLocal": "범죄경력증명서",
+      "description": "Police clearance certificate from your home country. Must be recent (typically within 6 months) and apostilled or embassy-authenticated.",
+      "tips": [
+        "FBI check for US citizens can take 12-18 weeks — start early",
+        "Must be apostilled or embassy-authenticated",
+        "Some nationalities may need checks from multiple countries of prior residence"
+      ],
+      "required": true
+    },
+    {
+      "id": "proof-of-prior-status",
+      "name": "Proof of Current or Prior Visa Status",
+      "nameLocal": "체류자격 증빙서류",
+      "description": "Documentation of your current or most recent legal status in Korea, such as your ARC (if already in Korea), D-2 student visa, H-1 working holiday visa, or E-2 employment visa. Required for status change applications.",
+      "required": true
+    },
+    {
+      "id": "d-10-2-oasis-certificate",
+      "name": "(D-10-2 only) OASIS or Startup Program Acceptance Letter",
+      "nameLocal": "OASIS 선발통지서 또는 창업지원프로그램 참가확인서",
+      "description": "For D-10-2 startup track: official acceptance or participation certificate from a government-recognized startup support program (OASIS, TIPS, or equivalent).",
+      "tips": [
+        "OASIS acceptance letter from the program administrator is the most straightforward document",
+        "TIPS (Tech Incubator Program for Startup) certificates from a TIPS managing organization may be accepted",
+        "Other Ministry of SMEs (중소벤처기업부) recognized programs may qualify — confirm with immigration"
+      ],
+      "required": false,
+      "notes": "Required for D-10-2 sub-category only"
+    },
+    {
+      "id": "d-10-2-business-plan",
+      "name": "(D-10-2 only) Business Plan",
+      "nameLocal": "사업계획서",
+      "description": "Detailed written business plan for the intended Korean technology startup. Must demonstrate the technology-based nature of the business.",
+      "tips": [
+        "Include market analysis, technology description, funding plan, and team qualifications",
+        "Korean language version preferred; bilingual (Korean + English) acceptable",
+        "Business plan is evaluated by both the startup program and immigration"
+      ],
+      "required": false,
+      "notes": "Required for D-10-2 sub-category only"
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Determine Your Eligibility and Sub-Category",
+      "description": "Decide whether you are applying for D-10-1 (general job seeking) or D-10-2 (startup preparation). For D-10-1, confirm you hold at least a bachelor's degree and have sufficient financial proof. For D-10-2, confirm OASIS or other program acceptance before applying.",
+      "tips": [
+        "D-2 graduates: check if your university's international office can assist with status change documentation",
+        "D-10-2 founders: OASIS intake rounds occur 2-3 times per year — check oasisvisa.com for schedules",
+        "If already in Korea on another visa, apply for a status change (체류자격변경) at local immigration"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Prepare All Required Documents",
+      "description": "Gather your degree certificate (apostilled), bank statement, criminal background check, passport, resume, and job search plan. For D-10-2, also prepare OASIS acceptance letter and business plan.",
+      "tips": [
+        "Apostille and embassy authentication of foreign documents can take several weeks — start early",
+        "Criminal background checks from some countries (e.g., FBI check for US citizens) take 12-18 weeks",
+        "Open a Korean bank account before applying if possible — Korean bank statements are strongly preferred"
+      ]
+    },
+    {
+      "id": "step-3a",
+      "step": 3,
+      "title": "Option A: Apply at Korean Embassy (from abroad)",
+      "description": "If you are outside Korea, submit your D-10 visa application at the Korean embassy or consulate in your country. Book an appointment in advance. Bring originals and copies of all documents.",
+      "duration": "5-15 business days",
+      "tips": [
+        "Book embassy appointments early — wait times vary by location",
+        "Some embassies accept mail-in applications — check your local embassy website",
+        "Bring certified Korean translations of any documents not in Korean or English"
+      ]
+    },
+    {
+      "id": "step-3b",
+      "step": 3,
+      "title": "Option B: Status Change at Korean Immigration (already in Korea)",
+      "description": "If you are already in Korea on a valid visa (D-2, H-1, E-2, etc.), apply for a status change (체류자격변경) at your local immigration office. Book an appointment on HiKorea (www.hikorea.go.kr).",
+      "duration": "2-4 weeks for decision",
+      "tips": [
+        "Apply before your current visa expires — overstay may result in fines (up to ₩30,000,000), deportation, and re-entry bans of 1–10 years. Contact the immigration helpline (1345) for current penalty details.",
+        "Submit at least 30 days before your current visa expires to allow processing time",
+        "Some immigration offices allow same-day walk-in applications for status change — but waits can be hours long; appointments are strongly recommended"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Enter Korea and Register for ARC",
+      "description": "After receiving your D-10 visa, enter Korea. New arrivals must register for an Alien Registration Card (ARC) within 90 days of entry. The 14-day deadline applies to reporting a change of address — not ARC registration. For in-country status changes, ARC is updated during the status change process.",
+      "duration": "2-3 weeks for ARC issuance",
+      "tips": [
+        "Book ARC appointment on HiKorea in advance",
+        "Bring passport, photos, proof of address, and visa-specific documents",
+        "You receive a receipt immediately that serves as a temporary ID",
+        "ARC is required for opening a bank account, signing a phone contract, and most official services"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Apply for Part-Time Work Permission (if needed)",
+      "description": "If you wish to work part-time while job searching, you must apply separately for 'Permission for Activities Outside the Status of Stay' (체류자격외활동허가) at immigration. This must be approved before starting any part-time work.",
+      "duration": "Typically 1-2 weeks processing",
+      "tips": [
+        "According to published guidelines, there is an approximately 2-week waiting period after your D-10 status is confirmed before you can apply for part-time work permission",
+        "The employment contract for part-time work must not extend beyond your visa expiration date",
+        "TOPIK Level 4 is the minimum for any part-time work authorization (20 hours/week). TOPIK Level 5+ allows up to 30 hours/week. Only D-10-1 holders from Korean institutions within 3 years of graduation with no prior E-1 to E-7 visa history qualify. Non-professional work only — prohibited categories include manufacturing, construction, English academies, tutoring, and delivery/gig work."
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Actively Job Search and Document Your Activities",
+      "description": "Engage in documented job search activities: apply to positions, attend interviews, use employment agencies, and network. Keep records of all activities as these are reviewed at extension time.",
+      "tips": [
+        "Job portals: Saramin (saramin.co.kr), JobKorea (jobkorea.co.kr), LinkedIn Korea, Wanted, Jumpit (IT/tech)",
+        "Government job matching for foreigners: Work Together Korea (고용노동부)",
+        "Document every application, interview, and networking event — immigration may ask for proof at extension"
+      ]
+    },
+    {
+      "id": "step-7",
+      "step": 7,
+      "title": "Transition to E-7 (or D-8 for startup founders)",
+      "description": "Once you secure employment with a Korean company, work with your employer to file for a status change to E-7 (or the appropriate E-category). For D-10-2 founders who incorporate a startup, apply for D-8-4 (Technology Startup) visa.",
+      "duration": "3-6 weeks (CCVI review + status change processing)",
+      "tips": [
+        "Your employer must file the CCVI application at immigration before your D-10 expires",
+        "Report starting any new employment to immigration within 15 days",
+        "For D-10-2 to D-8-4: satisfy OASIS program points requirements and company registration before applying"
+      ]
+    }
+  ],
+  "processingTime": {
+    "governmentReview": "2-4 weeks",
+    "totalEndToEnd": "3-6 weeks (including document preparation)",
+    "notes": "Embassy visa processing: 5-15 business days. Status change at Korean immigration: 2-4 weeks. Processing times vary by nationality, immigration office workload, and season. For criminal background checks requiring international processing (e.g., FBI for US citizens), plan for 12-18 weeks lead time. According to published guidelines, submit status change applications at least 30 days before your current visa expires."
+  },
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "D-10 is a job-seeking visa — full-time employment is not permitted",
+      "Part-time work requires separate 'Permission for Activities Outside the Status of Stay' (체류자격외활동허가) — this must be approved before starting any work",
+      "Part-time work permission application can only be submitted approximately 2 weeks after D-10 status is confirmed",
+      "The part-time employment contract must not extend beyond your D-10 visa expiration date",
+      "Freelancing or independent contracting without immigration permission is not permitted",
+      "Working without permission is a visa violation and may result in deportation and re-entry bans",
+      "Only D-10-1 holders from Korean institutions qualify for part-time work permission, and applicants must be within 3 years of graduation",
+      "Applicants must have no prior E-1 to E-7 visa history to qualify for part-time work under D-10-1",
+      "Part-time work is restricted to non-professional roles only (e.g., convenience stores, restaurants, office assistance)",
+      "PROHIBITED work types: manufacturing, construction, English academies, tutoring, delivery/gig work"
+    ],
+    "partTimeNotes": "According to published immigration guidelines, TOPIK Level 4 is the minimum requirement for ANY part-time work authorization (20 hours/week). TOPIK Level 5 or higher allows up to 30 hours/week. Only D-10-1 holders from Korean institutions qualify, and applicants must be within 3 years of graduation with no prior E-1 to E-7 visa history. Non-professional work only. Prohibited categories include manufacturing, construction, English academies, tutoring, and delivery/gig work.",
+    "notes": "D-10 is specifically designed as a non-work, job-seeking visa. Any employment — even part-time — requires prior immigration approval. Engaging in unauthorized work is the most common reason for D-10 status violations. If you receive a full-time job offer, you must change your visa status (to E-7 or another work category) before officially starting work."
+  },
+  "familyAllowed": false,
+  "familyNotes": "D-10 visa holders are generally not permitted to bring dependents on a family visa under D-10 status. Exception: D-10-1 holders scoring 80+ points on the 190-point evaluation system may invite their spouse and minor children on F-3 dependent visas. Accompanying family members in all other cases would need to obtain their own appropriate visa. Consult your local immigration office for current dependent visa options.",
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Alien Registration Card (ARC)",
+      "deadline": "Within 90 days of entry for new arrivals. 14 days = deadline to report a change of address (not ARC registration). For in-country status changes, ARC is updated during the process.",
+      "description": "Visit your local immigration office to apply for ARC. Required for banking, phone contracts, health insurance enrollment, and most official services.",
+      "tips": [
+        "Book appointment via HiKorea (hikorea.go.kr)",
+        "Bring passport, photos, proof of address, and D-10 visa documents",
+        "Proof of address: lease agreement or accommodation registration"
+      ]
+    },
+    {
+      "id": "nhis-enrollment",
+      "title": "National Health Insurance (NHI) Enrollment",
+      "deadline": "Required after 6 months of continuous stay in Korea",
+      "description": "After 6 months of continuous residence, D-10 holders are automatically enrolled in the National Health Insurance Service (NHIS). Premiums are assessed based on income or property.",
+      "tips": [
+        "Enrollment is mandatory — premiums will be billed even if you do not actively enroll",
+        "Contact NHIS (nhis.or.kr) for current premium rates for D-10 holders without income"
+      ]
+    },
+    {
+      "id": "employment-report",
+      "title": "Report Employment to Immigration",
+      "deadline": "Within 15 days of starting any employment",
+      "description": "If you begin any authorized part-time work or internship while on D-10, report this to immigration within 15 days of starting. Failure to report is a visa violation.",
+      "tips": [
+        "This applies to authorized part-time work only — full-time employment requires a visa status change first",
+        "Keep your part-time employment contract on file as proof of compliance"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the bank balance requirement for D-10?",
+      "answer": "Published guidelines indicate the financial proof benchmark is ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household). For a standard 6-month D-10 application, this translates to approximately ₩6,888,996 in available bank funds. Community forums sometimes cite ₩900,000–₩1,100,000/month or ₩30,000,000 as the requirement — these figures may reflect older embassy practices or specific consular interpretations. Verify the current threshold directly with Korean immigration (tel: 1345) or your local Korean embassy before applying. D-2 graduate visa holders applying for their first D-10 may be exempt from this financial proof requirement."
+    },
+    {
+      "question": "What is the difference between D-10-1 and D-10-2?",
+      "answer": "D-10-1 is the general job-seeking track for professionals looking for employment with a Korean company in categories E-1 through E-7. D-10-2 is the startup preparation track for individuals intending to establish a technology-based company in Korea. D-10-2 typically requires enrollment in a government-recognized startup support program like OASIS (Overall Assistance for Startup Immigration System) and a written business plan. The D-10-2 pathway leads to a D-8-4 (Technology Startup) visa upon successful company registration, while D-10-1 leads to an E-7 or other employment visa upon finding a job."
+    },
+    {
+      "question": "Can I work part-time on a D-10 visa?",
+      "answer": "Part-time work on D-10 requires prior immigration approval via 'Permission for Activities Outside the Status of Stay' (체류자격외활동허가). According to published guidelines, this applies only to D-10-1 holders from Korean institutions who are within 3 years of graduation, with no prior E-1 to E-7 visa history. TOPIK Level 4 is the minimum required for any part-time work (20 hours/week). TOPIK Level 5 or higher allows up to 30 hours/week. Permitted work is non-professional only (e.g., convenience stores, restaurants, office assistance). Prohibited categories include manufacturing, construction, English academies, tutoring, and delivery/gig work. Working without this permission — even a single part-time shift — is a visa violation that can result in deportation and re-entry bans."
+    },
+    {
+      "question": "How do I extend my D-10 visa?",
+      "answer": "Submit an extension application at your local immigration office at least 30 days before your D-10 expires. Required documents for extension typically include: updated bank statement (meeting the ₩1,148,166/month threshold), evidence of ongoing job search activities (application records, interview confirmations), updated resume, and your current ARC. TOPIK Level 4 or higher, or Social Integration Program completion, may strengthen your extension application and in some cases replace certain financial proof requirements. Extension increments depend on point score: 80+ points = 1-year renewals (D-10-1 up to 4 extensions, D-10-2 up to 5 extensions); 60–79 points = 6-month renewals. The maximum total stay on D-10 status is 3 years (extended from 2 years per October 2025 immigration reform). If you have not found employment by then, you will need to either leave Korea or qualify for a different visa status."
+    },
+    {
+      "question": "What happens if I can't find a job within 3 years?",
+      "answer": "According to published immigration guidelines, the maximum total stay on D-10 status is 3 years (extended from 2 years per October 2025 immigration reform). If you are unable to secure employment within this period, you will need to leave Korea or change to a different visa status. Options depend on individual circumstances: H-1 (working holiday, if age-eligible), D-2 (return to study), or B-2 (short-term tourist stay while arranging departure). Immigration officers evaluate the genuineness of ongoing job search activity at each extension. Begin planning your transition to E-7 (or an alternative) well before the maximum stay approaches."
+    },
+    {
+      "question": "Do I need TOPIK to get a D-10 visa?",
+      "answer": "TOPIK (Test of Proficiency in Korean) is not a strict requirement to obtain an initial D-10 visa. However, TOPIK Level 4 is the minimum required for any part-time work authorization (20 hours/week). TOPIK Level 5 or higher allows up to 30 hours/week of part-time work. For Korean university graduates, TOPIK Level 4+ within 3 years of graduation also qualifies for exemption from the 190-point evaluation system on initial D-10-1 application. TOPIK scores are also valuable when eventually applying for E-7 or F-2 visas."
+    },
+    {
+      "question": "Can I freelance or work remotely for a foreign company while on D-10?",
+      "answer": "According to published immigration guidelines, D-10 is a job-seeking visa and does not authorize independent freelancing, self-employment, or work for foreign companies inside Korea. Remote work for a foreign employer while physically in Korea may violate D-10 visa conditions. If you are a remote worker employed by a foreign company, the F-1-D (Digital Nomad Visa) is the appropriate status. Engaging in unauthorized work on a D-10 visa is a status violation. Consult an immigration specialist (행정사) if your situation involves remote work."
+    },
+    {
+      "question": "What is the OASIS program and how do I apply for D-10-2?",
+      "answer": "OASIS (Overall Assistance for Startup Immigration System) is a government-funded program run by Korea's Ministry of Justice and startup ecosystem partners. It provides classes, mentoring, incubation support, and startup ecosystem access in English, specifically for foreigners intending to launch technology businesses in Korea. OASIS acceptance is the standard pathway to a D-10-2 visa. The program accepts cohorts 2-3 times per year. After completing OASIS requirements and registering your company, you can apply for a D-8-4 (Technology Startup) visa. Check oasisvisa.com for current intake schedules and requirements."
+    },
+    {
+      "question": "What is the D-10-2 to D-8-4 pathway?",
+      "answer": "D-10-2 is explicitly designed as a preparation step before obtaining a D-8-4 (Technology Startup) visa. After receiving D-10-2 status, founders attend OASIS classes and workshops, develop their business, and work toward company registration. According to published guidelines, D-8-4 qualification is points-based (60+ OASIS certificate points + bachelor's degree + IP rights). The company must be formally incorporated. Founders apply for a D-8-4 visa upon meeting these requirements, which allows full operation of the startup. The transition from D-10-2 to D-8-4 must occur within the D-10-2 validity period (maximum 3 years total)."
+    },
+    {
+      "question": "Can I intern at a Korean company while on D-10?",
+      "answer": "Yes. According to published guidelines, internships or training positions at Korean companies are generally permitted under D-10 status with appropriate immigration permission (체류자격외활동허가). An internship can be a useful step toward transitioning to full employment and eventually an E-7 visa. The internship must be formally structured and the employment contract must not extend beyond your D-10 visa expiration date. Unpaid internships may have different treatment than paid positions — confirm with immigration."
+    },
+    {
+      "question": "How do I transition from D-10 to E-7?",
+      "answer": "Once you secure a full-time employment offer from a Korean company, the transition from D-10 to E-7 follows the standard E-7 process: (1) Your employer files a CCVI (Certificate of Confirmation of Visa Issuance, 사증발급인정서) application at the local Korean immigration office. (2) Immigration reviews the application (2-4 weeks). (3) You apply for a status change at the local immigration office using the CCVI number. You must not begin full-time employment before the E-7 status change is approved. Report the new employment to immigration within 15 days of starting work. The entire transition process can take 4-8 weeks, so begin the employer's CCVI process well before your D-10 expires."
+    },
+    {
+      "question": "What are the penalties for overstaying a D-10 visa?",
+      "answer": "Overstay may result in fines (up to ₩30,000,000), deportation, and re-entry bans of 1–10 years. Contact the immigration helpline (1345) for current penalty details. Overstaying can also make it significantly harder to obtain future Korean visas. If you are unable to leave or change status before your visa expires, contact Korean immigration (tel: 1345) immediately. Extension applications submitted before expiry are generally reviewed without overstay penalty during processing, but this is not guaranteed — submit well in advance."
+    },
+    {
+      "question": "What path does D-10 offer toward long-term residency in Korea?",
+      "answer": "D-10 itself does not directly lead to long-term residency. The intended pathway is: D-10 → E-7 (or D-8 for startup founders) → F-2 (Points-based Resident) → F-5 (Permanent Resident). The time spent on D-10 generally does not count toward the F-2 or F-5 continuous residency requirements. Building a strong employment history on E-7 is the most direct path toward long-term residency. Beginning Korean language study (TOPIK) and tax payment records while on D-10 can provide a head start for the E-7 → F-2 transition."
+    }
+  ],
+  "tips": [
+    "Open a Korean bank account immediately after ARC registration — this simplifies financial proof for extensions",
+    "Document all job search activities (application emails, interview invitations, company contacts) from day one — you may need to show these at extension time",
+    "Submit your status change or extension application at least 30 days before your D-10 expires — processing can take 2-4 weeks",
+    "For D-10-2 founders: OASIS intake rounds are competitive and occur only 2-3 times per year — do not wait until you arrive in Korea to start the application process",
+    "TOPIK Level 4 is the minimum for any part-time work authorization (20 hrs/week). TOPIK Level 5+ increases the limit to 30 hours/week and strengthens extension applications",
+    "Internships at Korean companies are permitted under D-10 with immigration approval and can lead directly to E-7 sponsorship",
+    "Job portals: Saramin (saramin.co.kr), JobKorea, LinkedIn Korea, Wanted.co.kr, Jumpit (tech-focused)"
+  ],
+  "warnings": [
+    "Overstay may result in fines (up to ₩30,000,000), deportation, and re-entry bans of 1–10 years — do not let your visa expire without a valid extension or status change. Contact immigration helpline (1345) for current penalty details.",
+    "Part-time work without prior immigration permission is a visa violation, even if the hours are minimal",
+    "You must report starting any authorized employment to immigration within 15 days",
+    "Bank balance is verified at each extension — maintain sufficient funds throughout your stay",
+    "D-10 maximum stay is 3 years total (extended from 2 years per October 2025 immigration reform) — plan your employment transition well in advance",
+    "Freelancing or remote work for foreign clients while on D-10 may constitute unauthorized work — consult an immigration specialist (행정사) if your situation involves remote income"
+  ],
+  "communityTips": [
+    {
+      "id": "bank-balance-confusion",
+      "section": "requirements",
+      "tip": "The ₩30,000,000 bank balance figure circulates in expat communities and some embassies — but published government guidelines reference ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household; approximately ₩6,888,996 for 6 months). Always verify the current requirement directly with immigration (1345) or HiKorea before applying, as requirements can vary by consulate and may have changed.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "part-time-two-week-wait",
+      "section": "process",
+      "tip": "Many D-10 holders report that immigration requires approximately a 2-week waiting period after your status change before you can apply for part-time work permission. Plan for this gap if you are relying on part-time income.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "employer-wait-reluctance",
+      "section": "general",
+      "tip": "Many Korean employers are unwilling to wait 4-8 weeks for the D-10 to E-7 transition process. Having a D-10 visa and being actively available in Korea can help — but set expectations with potential employers early about the visa transition timeline.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "walk-in-immigration-wait",
+      "section": "process",
+      "tip": "Walk-in attempts at immigration offices (especially Seoul Nowon and Gangnam) are reported to involve hours-long waits. Booking an appointment online via HiKorea (hikorea.go.kr) is strongly recommended for status change and extension applications.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "job-search-document-everything",
+      "section": "process",
+      "tip": "Immigration officers reviewing D-10 extensions assess whether you are genuinely job seeking. Keep screenshots of every application, interview email, and recruiter conversation. A folder of documented activity goes a long way at the extension counter.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "topik-before-extension",
+      "section": "requirements",
+      "tip": "Taking TOPIK before your first extension can pay off: TOPIK Level 4 is the minimum required for any part-time work (20 hrs/week), and Level 5+ unlocks 30 hours/week. Korean university graduates with TOPIK 4+ within 3 years of graduation are also exempt from the 190-point evaluation system. Even a lower score shows good faith to immigration officers.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "internship-path",
+      "section": "general",
+      "tip": "Some job seekers find that landing an internship first (allowed under D-10 with permission) gives them a foot in the door with Korean companies. Companies that start you as an intern often find it easier to justify E-7 sponsorship once they've seen your work.",
+      "verified": false,
+      "upvotes": 0
+    }
+  ],
+  "relatedVisas": [
+    "e-7",
+    "d-8",
+    "d-2",
+    "f-1-d",
+    "h-1"
+  ],
+  "pathsTo": [
+    {
+      "type": "e-7",
+      "name": "Professional Employment Visa",
+      "requirements": "Secure full-time employment with a Korean company that meets E-7 sponsorship requirements. Employer must file a CCVI application at immigration. Applicant must meet E-7 education or experience criteria.",
+      "timeline": "4-8 weeks (CCVI review + status change processing)",
+      "documents": [
+        "Employment contract (meeting E-7 salary minimums)",
+        "Degree certificate (apostilled)",
+        "Career certificate (if required for sub-category)",
+        "Employer's business registration",
+        "Foreigner employment justification letter (외국인고용사유서)",
+        "CCVI number from employer"
+      ],
+      "notes": "The primary pathway from D-10-1. Begin the employer's CCVI process at least 6 weeks before your D-10 expires. You cannot officially start full-time employment until the E-7 status change is approved. Report any new employment to immigration within 15 days of starting."
+    },
+    {
+      "type": "d-8",
+      "name": "Corporate Investment / Technology Startup Visa",
+      "requirements": "For D-10-2 holders: complete OASIS program requirements and register a Korean company. D-8-4 qualification is points-based (60+ OASIS certificate points + bachelor's degree + IP rights). Company must be formally incorporated. For corporate investment track: investment of ₩100,000,000 or more.",
+      "timeline": "4-8 weeks processing after company registration",
+      "documents": [
+        "Business registration certificate (사업자등록증)",
+        "OASIS or startup program completion certificate",
+        "Investment proof or capital documentation",
+        "Business plan",
+        "Degree certificate"
+      ],
+      "notes": "D-10-2 → D-8-4 is the standard startup founder pathway in Korea's OASIS program. D-8-4 allows full operation of the startup company. The D-8-4 pathway has been progressively streamlined through OASIS since 2020."
+    },
+    {
+      "type": "f-1-d",
+      "name": "Digital Nomad Visa",
+      "requirements": "Change of intent from Korean employment to remote work for foreign companies. Must meet F-1-D income threshold (USD 84,000/year as of 2026 published requirements) and employer letter from foreign company.",
+      "timeline": "4-8 weeks processing",
+      "documents": [
+        "Employment contract or proof of income from foreign company",
+        "Income proof (USD 84,000/year equivalent)",
+        "Employer letter confirming remote work arrangement",
+        "Degree certificate"
+      ],
+      "notes": "An option for D-10 holders who decide they prefer remote work over Korean local employment. Note: transitioning to F-1-D means giving up the path to E-7 and Korean employment. The F-1-D income threshold is significantly higher than most D-10 holder profiles."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "d-2",
+      "name": "Student Visa",
+      "requirements": "Graduate from a Korean university (or complete a recognized program) and apply for status change to D-10. D-2 graduates are exempt from both the point system and the bank statement requirement on their first D-10 application.",
+      "timeline": "2-4 weeks (status change at immigration)",
+      "documents": [
+        "Graduation certificate (졸업증명서)",
+        "Bank statement (waived for D-2 graduates on first D-10 application)",
+        "Resume",
+        "Job search plan",
+        "Passport"
+      ],
+      "notes": "The most common pathway to D-10. Korean university graduates have a natural advantage: familiarity with the job market, Korean language ability, and an existing network. Apply for status change before your D-2 expires — do not wait until after graduation ceremony. D-2 graduates are exempt from both the 190-point evaluation system and bank statement requirement on first D-10 application."
+    },
+    {
+      "type": "h-1",
+      "name": "Working Holiday Visa",
+      "requirements": "Transition from H-1 working holiday to D-10 job seeking. Must meet D-10 education requirements. H-1 holders approaching age limit (typically 30) should plan this transition carefully.",
+      "timeline": "2-4 weeks (status change at immigration)",
+      "documents": [
+        "Degree certificate (apostilled)",
+        "Bank statement",
+        "Resume",
+        "Job search plan",
+        "Criminal background check",
+        "Passport"
+      ],
+      "notes": "A common transition for working holiday participants who decide to pursue long-term employment in Korea. Note that time spent on H-1 does not count toward D-10's maximum 3-year limit (extended from 2 years per October 2025 immigration reform)."
+    },
+    {
+      "type": "b-2",
+      "name": "Short-Term Tourist / Visa Waiver",
+      "requirements": "Apply for D-10 at a Korean embassy before arriving in Korea, or apply for status change upon entry (limited cases). Status changes from B-2 to D-10 inside Korea are possible but not always approved — applying at an embassy abroad is more reliable.",
+      "timeline": "5-15 business days (embassy application abroad)",
+      "documents": [
+        "Degree certificate (apostilled)",
+        "Bank statement",
+        "Resume",
+        "Job search plan",
+        "Criminal background check",
+        "Passport"
+      ],
+      "notes": "While some B-2 visitors apply for D-10 status changes inside Korea, immigration officers may prefer that applicants return to their home country for a proper visa application. This approach is increasingly scrutinized — consult an immigration specialist (행정사) before attempting a B-2 to D-10 status change inside Korea."
+    },
+    {
+      "type": "e-2",
+      "name": "English Teacher Visa",
+      "requirements": "Transition from English teaching (E-2) to job seeking in another professional field. Must meet D-10 education and financial requirements. Must not overlap employment periods.",
+      "timeline": "2-4 weeks (status change at immigration)",
+      "documents": [
+        "Degree certificate (apostilled)",
+        "Bank statement",
+        "Resume",
+        "Job search plan",
+        "Release from current E-2 employer (or contract completion confirmation)",
+        "Criminal background check"
+      ],
+      "notes": "E-2 teachers who wish to transition into other professional fields in Korea often use D-10 as a bridge. Ensure your E-2 contract is formally completed before applying — maintaining two visa statuses simultaneously is not permitted."
+    }
+  ],
+  "lastUpdated": "2026-03-18",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service (English)",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea Portal (appointments, applications, status check)",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "OASIS Startup Immigration System",
+      "url": "https://www.oasisvisa.com"
+    },
+    {
+      "label": "Immigration Contact Center (Korea, 1345)",
+      "url": "tel:1345"
+    },
+    {
+      "label": "KoWork D-10-1 Guide",
+      "url": "https://kowork.kr/en/blog/D-10-1-visa-en"
+    }
+  ]
+}

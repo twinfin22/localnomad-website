@@ -1,0 +1,705 @@
+{
+  "type": "f-6",
+  "name": "Korea Marriage/Family Visa (F-6)",
+  "nameLocal": "결혼이민비자 (F-6)",
+  "shortName": "F-6",
+  "category": "family",
+  "description": "Everything about Korea's F-6 Marriage/Family Visa: sub-categories (F-6-1, F-6-2, F-6-3), income requirements, Korean language thresholds, required documents, step-by-step application, cohabitation rules, and the F-5 permanent residence pathway.",
+  "tagline": "Live and work freely in Korea as a spouse of a Korean national",
+  "keyRequirement": "Legal marriage to a Korean national (F-6-1), or raising a Korean child (F-6-2), or loss of spouse through no fault of your own (F-6-3)",
+  "targetAudience": [
+    "Foreign spouses legally married to Korean nationals",
+    "Parents (foreign) raising a minor child born with a Korean national",
+    "Divorced or bereaved foreign spouses of Korean nationals with qualifying circumstances",
+    "B-2 or C-3 visa holders who have married a Korean national",
+    "E-series visa holders (E-2, E-7, etc.) who have married a Korean national"
+  ],
+  "subCategories": [
+    {
+      "id": "f-6-1",
+      "code": "F-6-1",
+      "name": "Spouse of Korean National",
+      "nameLocal": "국민의 배우자",
+      "description": "For foreign nationals who are legally married to a Korean national and intend to reside in Korea to continue their married life. This is the most common sub-category.",
+      "keyRequirements": [
+        "Legal marriage registered in Korea or recognized under Korean law",
+        "Korean sponsor (spouse) meets the annual income requirement set by the Ministry of Justice",
+        "Shared language of daily communication (Korean proficiency or verified shared foreign language)",
+        "Cohabitation space meeting minimum standards"
+      ]
+    },
+    {
+      "id": "f-6-2",
+      "code": "F-6-2",
+      "name": "Child-Rearing Parent",
+      "nameLocal": "자녀양육",
+      "description": "For foreign nationals who do not qualify under F-6-1 but are raising (or intend to raise) a minor child born from a marital or de facto marital relationship with a Korean national, inside Korea.",
+      "keyRequirements": [
+        "Minor child born of a relationship with a Korean national (in wedlock or de facto)",
+        "Child is residing in Korea",
+        "Applicant is the primary caregiver or intends to be",
+        "Does not need to currently be married to the Korean national"
+      ]
+    },
+    {
+      "id": "f-6-3",
+      "code": "F-6-3",
+      "name": "Divorced or Bereaved Spouse",
+      "nameLocal": "혼인단절",
+      "description": "For foreign nationals who cannot maintain a normal marital relationship due to the death, disappearance, or other circumstances not attributable to the foreign national (본인에게 책임이 없는 사유).",
+      "keyRequirements": [
+        "Death or disappearance of Korean spouse, OR",
+        "Divorce where the breakdown is not attributable to the foreign national (본인에게 책임이 없는 사유) — court decision required, OR",
+        "Other circumstances recognized by the Ministry of Justice as not attributable to the foreign national",
+        "Documentary evidence supporting the circumstances (court judgment, death certificate, etc.)"
+      ]
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "legal-marriage",
+      "label": "Legal marriage to a Korean national (F-6-1)",
+      "description": "The marriage must be legally valid in both Korea and the applicant's home country. Marriage must be registered with the Korean family registry (가족관계등록부). A de facto or common-law marriage is generally not sufficient for F-6-1.",
+      "required": true,
+      "subCategory": "f-6-1",
+      "warnings": [
+        "Marriages of convenience (위장결혼) carry severe penalties: immediate deportation and a 5-year re-entry ban for both parties",
+        "Immigration officers conduct in-person interviews and may visit the residence to verify the marriage is genuine"
+      ]
+    },
+    {
+      "id": "income-requirement",
+      "label": "Korean spouse meets annual income threshold",
+      "description": "According to published Ministry of Justice guidelines, the Korean spouse (inviter) must demonstrate income at or above the annual threshold set by the Minister of Justice, which is calculated based on household size. Thresholds are set annually by the Minister of Justice, considering the standard median income (기준 중위소득). The actual percentage varies. Approximate 2025 thresholds (MOJ Notice 2024-587): 2-person household ~₩23,600,000/year, 3-person household ~₩30,200,000/year, 4-person household ~₩36,600,000/year, 5-person household ~₩42,700,000/year. Thresholds are announced annually. Up to 5% of net assets held for 6+ months may be counted as supplemental income.",
+      "required": true,
+      "subCategory": "f-6-1",
+      "warnings": [
+        "Income thresholds are updated every January — always check the current year's Ministry of Justice notice",
+        "If the Korean spouse cannot meet the income requirement, a close family member residing with them may act as a guarantor (보증인) in some circumstances"
+      ]
+    },
+    {
+      "id": "communication-requirement",
+      "label": "Shared language of daily communication",
+      "description": "Published guidelines require that the couple share a language sufficient for daily communication. This is evaluated through an interview at the Korean embassy or consulate. Acceptable proof includes: TOPIK Level 1 or higher certificate, KIIP Level 2 or higher completion certificate, a certificate from a designated Korean language institution, or demonstration during the consular interview of a shared foreign language.",
+      "required": true,
+      "subCategory": "f-6-1",
+      "warnings": [
+        "If the interviewer determines communication is insufficient, the visa may be denied even if all other requirements are met",
+        "When the foreign applicant is a national of one of 7 designated countries (China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, Thailand), the Korean spouse must complete the International Marriage Guidance program (국제결혼 안내 프로그램) prior to the visa application"
+      ]
+    },
+    {
+      "id": "cohabitation-space",
+      "label": "Adequate cohabitation space in Korea",
+      "description": "The Korean spouse must provide proof of a residential space where the married couple will live together. The property must be owned or rented under the name of the Korean sponsor or a household member. Immigration assesses the space based on size, number of rooms, and number of current occupants.",
+      "required": true,
+      "subCategory": "f-6-1",
+      "warnings": [
+        "Cohabitation is actively verified — immigration officers may conduct unannounced visits",
+        "Failure to cohabit without justification may result in visa non-renewal"
+      ]
+    },
+    {
+      "id": "child-custody-f6-2",
+      "label": "Raising a minor Korean child in Korea (F-6-2)",
+      "description": "Applies to foreign nationals not currently married to a Korean national but raising a minor child born from a marital or de facto marital relationship with a Korean citizen. The child must be residing in Korea and the applicant must be, or intend to become, the primary caregiver.",
+      "required": false,
+      "subCategory": "f-6-2"
+    },
+    {
+      "id": "marriage-dissolution-f6-3",
+      "label": "Marriage ended through no fault of the applicant (F-6-3)",
+      "description": "For foreign nationals whose marriage to a Korean national ended due to: (1) death or disappearance of the Korean spouse, (2) a court-recognized divorce where the breakdown of the marriage was not attributable to the foreign national (본인에게 책임이 없는 사유), or (3) other reasons recognized by the Ministry of Justice as not attributable to the foreign national.",
+      "required": false,
+      "subCategory": "f-6-3",
+      "warnings": [
+        "If you initiated or share fault in the divorce, F-6-3 may be denied",
+        "A court judgment explicitly recognizing fault is typically required"
+      ]
+    }
+  ],
+  "duration": {
+    "initial": "90 days (initial visa from embassy). Upon first extension in Korea: 1 year (standard), 2 years (with 조기적응프로그램 early adaptation program completion), or 3 years (if couple has a child born between them).",
+    "extension": "Renewable in 1-3 year increments as long as the marriage remains valid (F-6-1) or qualifying conditions persist",
+    "maxTotal": "No fixed maximum — renewable until transitioning to F-5 or other status",
+    "maxTotalDetail": "F-6 holders may eventually apply for F-5 (Permanent Resident) after meeting the 2-year residency and language/income requirements."
+  },
+  "fees": {
+    "application": "~USD 60-90 (varies by embassy and nationality)",
+    "extension": "₩60,000 (domestic extension at immigration office)",
+    "statusChange": "₩100,000 (change of status within Korea)",
+    "notes": "Fees vary by Korean embassy/consulate. Domestic extension applications are submitted at the local immigration office (출입국관리사무소). Check the current fee schedule at immigration.go.kr or HiKorea."
+  },
+  "incomeRequirement": {
+    "amount": "23,600,000",
+    "currency": "KRW",
+    "period": "annual",
+    "householdBasis": true,
+    "notes": "Income requirement is set annually by the Minister of Justice based on household size, with thresholds set annually by the Minister of Justice, considering the standard median income (기준 중위소득). The actual percentage varies. Approximate 2025 thresholds (MOJ Notice 2024-587): 2-person household ~₩23,600,000/year, 3-person household ~₩30,200,000/year, 4-person household ~₩36,600,000/year, 5-person household ~₩42,700,000/year. For households larger than 5 persons, additional increments apply (approximate figures — verify with current MOJ notice). Up to 5% of net financial assets (deposits, insurance, securities, real estate) held continuously for 6+ months may be counted as supplemental income. Official thresholds are published in the annual Ministry of Justice notice (법무부 고시). Exemptions from the income requirement may apply in certain cases: (1) the couple has a child born between them, (2) the inviter and marriage immigrant lived together abroad for 1+ year with no domestic income, (3) other cases recognized by the MOJ."
+  },
+  "taxImplications": {
+    "threshold": "183 days",
+    "notes": "According to Korean tax law, individuals residing in Korea for 183 days or more in a calendar year are generally classified as tax residents. F-6 holders with unrestricted work permission who are employed in Korea are subject to Korean income tax at progressive rates (6-45%). F-6 holders who work remotely for foreign employers should consult a licensed tax professional (세무사) regarding their obligations. Double tax treaties may apply depending on nationality.",
+    "source": "National Tax Service (NTS)"
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "Valid Passport",
+      "nameLocal": "여권",
+      "description": "Must be valid for at least 6 months beyond intended stay",
+      "required": true
+    },
+    {
+      "id": "application-form",
+      "name": "Visa Application Form",
+      "nameLocal": "사증발급신청서",
+      "description": "Completed visa application form (Form No. 34), available at Korean embassies and consulates",
+      "required": true
+    },
+    {
+      "id": "photo",
+      "name": "Passport Photo",
+      "nameLocal": "여권사진",
+      "description": "3.5cm x 4.5cm, recent (within 6 months), white background",
+      "required": true
+    },
+    {
+      "id": "invitation-letter",
+      "name": "Invitation Letter from Korean Spouse",
+      "nameLocal": "초청장",
+      "description": "Written invitation letter from the Korean national spouse (inviter), including their contact information and declaration of intent to support the applicant's residence in Korea.",
+      "required": true,
+      "subCategory": "f-6-1"
+    },
+    {
+      "id": "personal-statement",
+      "name": "Marriage Migrant Personal Statement",
+      "nameLocal": "결혼이민신청서",
+      "description": "Personal statement written by the applicant in Korean or English, describing the relationship, how the couple met, their communication method, and living plans in Korea.",
+      "tips": [
+        "Write in detail — vague statements raise red flags during review",
+        "Describe how you met, how you communicate, and your shared life plans",
+        "Must be written in Korean or English (no third language)"
+      ],
+      "required": true,
+      "subCategory": "f-6-1"
+    },
+    {
+      "id": "marriage-certificate",
+      "name": "Marriage Certificate",
+      "nameLocal": "혼인관계증명서 / 결혼증명서",
+      "description": "Proof of legal marriage. Required from both the applicant's home country (apostilled) and from Korea (가족관계증명서 or 혼인관계증명서 issued by Korean family registry). If the marriage is only registered in one country, additional documentation may be required.",
+      "tips": [
+        "Apostille required for Hague Apostille Convention countries",
+        "Non-Hague countries need embassy authentication",
+        "If not in Korean or English, include a certified translation"
+      ],
+      "required": true
+    },
+    {
+      "id": "family-relation-certificate",
+      "name": "Korean Spouse's Family Relation Certificate",
+      "nameLocal": "가족관계증명서",
+      "description": "Official family relation certificate (가족관계증명서) for the Korean national spouse, issued by the Korean family registry within 3 months of application. Shows all family members registered in the Korean spouse's household.",
+      "required": true,
+      "subCategory": "f-6-1"
+    },
+    {
+      "id": "basic-certificate",
+      "name": "Korean Spouse's Basic Certificate",
+      "nameLocal": "기본증명서",
+      "description": "Basic certificate (기본증명서) for the Korean national spouse, issued by the Korean family registry. Confirms the Korean national's identity and citizenship status.",
+      "required": true,
+      "subCategory": "f-6-1"
+    },
+    {
+      "id": "income-proof",
+      "name": "Income Proof Documents (Korean Spouse)",
+      "nameLocal": "소득증빙서류",
+      "description": "Documents proving the Korean spouse's annual income meets the Ministry of Justice threshold. Accepted forms: (1) Income Amount Certificate (소득금액증명원) issued by the National Tax Service, (2) Certificate of withholding tax (근로소득 원천징수영수증) from employer, (3) Business registration + tax records for self-employed. If income is insufficient, a Credit Information Report from the Korea Federation of Banks may supplement asset proof.",
+      "tips": [
+        "Income Amount Certificate is available at the National Tax Service (국세청) or online at Hometax (www.hometax.go.kr)",
+        "For recent marriage where the tax year hasn't fully elapsed, the most recent year's certificate is used",
+        "Net assets (deposits, real estate, securities) held for 6+ months: 5% of net asset value counts toward the income requirement",
+        "If the Korean spouse cannot meet the income threshold, a close family member (parent, sibling) residing in the same household may act as guarantor in some cases"
+      ],
+      "required": true
+    },
+    {
+      "id": "cohabitation-proof",
+      "name": "Proof of Cohabitation Space",
+      "nameLocal": "거주지 증명서류",
+      "description": "Documents proving the Korean sponsor provides a residential space for the couple. Accepted forms: (1) Copy of property registration (등기부등본) if owned, (2) Lease contract (임대차계약서) + landlord's confirmation, (3) Certificate of residence (주민등록등본) showing the same address.",
+      "tips": [
+        "The property must be registered in the Korean sponsor's name or an immediate family member living with them",
+        "Immigration evaluates size, number of rooms, and number of occupants",
+        "A very small space with many occupants may raise concerns"
+      ],
+      "required": true
+    },
+    {
+      "id": "criminal-background-check",
+      "name": "Criminal Background Check (Applicant)",
+      "nameLocal": "범죄경력증명서",
+      "description": "Police clearance certificate from the applicant's home country. Required since April 2023 for all F-6 applicants. Must be recent (typically within 6 months) and apostilled or embassy-authenticated.",
+      "tips": [
+        "FBI check for US citizens can take 12-18 weeks — start early",
+        "Required since April 2023 — this is a relatively recent requirement",
+        "Some nationalities need checks from multiple countries of residence"
+      ],
+      "required": true
+    },
+    {
+      "id": "medical-certificate",
+      "name": "Medical Certificate (Health Certificate)",
+      "nameLocal": "건강진단서",
+      "description": "Health certificate from a designated or recognized medical institution. Required since April 2023 for all F-6 applicants. Both the foreign applicant AND the Korean spouse must submit health certificates. The foreign applicant's certificate must include a tuberculosis (TB) test. Must confirm the applicant does not have communicable diseases. Some embassies specify which institutions are authorized to issue this certificate.",
+      "tips": [
+        "Required since April 2023 — this is a relatively recent requirement",
+        "Both the foreign applicant and the Korean spouse must provide health certificates",
+        "The foreign applicant's certificate must include a TB (tuberculosis) test",
+        "Check with your specific Korean embassy for approved medical institutions",
+        "Typically needs to be issued within 3-6 months of the application date"
+      ],
+      "required": true
+    },
+    {
+      "id": "language-certificate",
+      "name": "Korean Language or Communication Proof",
+      "nameLocal": "언어 소통 증빙서류",
+      "description": "Proof of shared language ability. Accepted forms: (1) TOPIK (Test of Proficiency in Korean) Level 1 or higher certificate, (2) KIIP (Korea Immigration & Integration Program) Level 2 or higher completion certificate, (3) Certificate of completion from a designated Korean language institution, or (4) Shared foreign language demonstrated during consular interview. If using option 4, no certificate required but both spouses must demonstrate the shared language during the interview.",
+      "tips": [
+        "TOPIK is offered multiple times per year globally — register early at topik.go.kr",
+        "KIIP is free (though a fee system began in 2025) and available at community centers and universities across Korea",
+        "Even TOPIK Level 1 satisfies the requirement — it is a basic threshold",
+        "When the foreign applicant is a national of one of 7 designated countries (China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, Thailand), the Korean spouse must complete the International Marriage Guidance program (국제결혼 안내 프로그램) — this is separate from the foreign applicant's language proof requirement"
+      ],
+      "required": true
+    },
+    {
+      "id": "international-marriage-guidance",
+      "name": "International Marriage Guidance Certificate",
+      "nameLocal": "국제결혼 안내 프로그램 이수증",
+      "description": "Certificate of completion for the International Marriage Guidance program. Required for Korean nationals who marry a national of one of seven designated countries: China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, and Thailand. The Korean spouse completes the program in Korea; it is submitted as part of the visa application package.",
+      "tips": [
+        "The Korean spouse (not the foreign applicant) completes this program in Korea",
+        "Offered at local immigration offices — registration available via HiKorea",
+        "Not required for nationals of other countries"
+      ],
+      "required": false,
+      "note": "Required only when the foreign applicant is a national of China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, or Thailand"
+    },
+    {
+      "id": "child-documents-f6-2",
+      "name": "Child's Documents (F-6-2 only)",
+      "nameLocal": "자녀 관련 서류 (F-6-2)",
+      "description": "For F-6-2 applicants: documents establishing the parent-child relationship with a Korean national child residing in Korea. Includes: birth certificate of the child, the child's family relation certificate (가족관계증명서), proof of the child's residence in Korea, and evidence that the applicant is or will be the primary caregiver.",
+      "required": false,
+      "subCategory": "f-6-2"
+    },
+    {
+      "id": "divorce-death-documents-f6-3",
+      "name": "Divorce or Death Certificate (F-6-3 only)",
+      "nameLocal": "이혼/사망 관련 서류 (F-6-3)",
+      "description": "For F-6-3 applicants: court judgment of divorce establishing that the breakdown of the marriage was not attributable to the foreign national (본인에게 책임이 없는 사유) (이혼판결문), or death certificate of the Korean spouse, or documentation of the Korean spouse's disappearance. Also include family relation certificate showing the prior marriage and any supporting evidence regarding the circumstances.",
+      "required": false,
+      "subCategory": "f-6-3"
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "Register the Marriage",
+      "description": "Ensure the marriage is legally registered in both Korea and your home country. In Korea, register the marriage at the local district office (구청/시청). In your home country, register the marriage at the relevant civil registry or through the Korean embassy. Both registrations are typically required for the visa application.",
+      "tips": [
+        "In Korea, marriage registration is done at the 시청, 구청, or 읍면사무소 in the Korean spouse's area of registration",
+        "The foreign spouse must provide a Certificate of Eligibility to Marry (결혼적격증명서) or equivalent document from their home country",
+        "After registration in Korea, the family relation certificate (가족관계증명서) will reflect the marriage",
+        "Also register in your home country — some embassies require both countries' marriage certificates"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "Gather All Required Documents",
+      "description": "Compile all documents for both the applicant (foreign national) and the inviter (Korean spouse). Document requirements vary by nationality and embassy — verify the checklist with the specific Korean embassy or consulate in the applicant's country of residence.",
+      "tips": [
+        "Start the criminal background check and medical certificate early — these can take weeks",
+        "Get apostilles for all foreign documents (Hague countries) or embassy authentication (non-Hague)",
+        "Check if your embassy requires translations — some require certified Korean or English translations",
+        "Income Amount Certificate must be issued within 3 months of the application date"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "Apply at the Korean Embassy or Consulate",
+      "description": "Submit the visa application at the Korean embassy or consulate in the applicant's country of residence (or country of nationality if residing abroad). Book an appointment in advance. Both spouses may need to attend the interview, either in person or via video call.",
+      "duration": "Appointment scheduling: varies by embassy (days to weeks)",
+      "tips": [
+        "Book an appointment well in advance — popular embassies have long wait times",
+        "Bring both originals and copies of all documents",
+        "The consular interview assesses communication ability and marriage sincerity — prepare to describe how you met, how you communicate, and your plans in Korea",
+        "Some embassies conduct interviews in the local language, Korean, or English"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "Embassy Review and Visa Issuance",
+      "description": "The embassy reviews the application and may request additional documents. If approved, the F-6 visa is stamped in the applicant's passport. Processing time varies widely by embassy and applicant nationality.",
+      "duration": "4-12 weeks (typical); 3-4 months for designated-country nationals or complex cases",
+      "tips": [
+        "If additional documents are requested, respond promptly — delays extend processing time",
+        "Some embassies notify by email; others require you to check in person",
+        "Visa validity is typically 90 days from issuance for a single entry to Korea"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "Enter Korea and Register for ARC",
+      "description": "Enter Korea within the visa validity period. Within 90 days of entering Korea, visit your local immigration office (출입국관리사무소) to register as a foreign resident and receive your Alien Registration Card (외국인등록증 / ARC). The ARC is required for banking, phone contracts, health insurance enrollment, and most government services.",
+      "duration": "ARC issuance: 2-3 weeks after application",
+      "tips": [
+        "Book an ARC appointment on HiKorea (hikorea.go.kr) as soon as you enter — appointments fill up quickly",
+        "Bring passport, visa, passport photo, and proof of address",
+        "Enroll in National Health Insurance (NHI) as soon as you have your ARC — coverage typically begins within 1 month",
+        "Register for KIIP as early as possible if you plan to pursue F-5 permanent residence eventually"
+      ]
+    },
+    {
+      "id": "step-6",
+      "step": 6,
+      "title": "Extend or Transition Status (Annual/Biennial)",
+      "description": "Before your F-6 status expires, apply for an extension at the local immigration office. Extensions are typically granted in 1-3 year increments. Bring updated income proof, cohabitation proof, and continued marriage documentation. After meeting the F-5 requirements (2+ years residency, KIIP Level 5, income base), you may apply for F-5 permanent residence instead of renewing.",
+      "tips": [
+        "Submit the extension application at least 30 days before expiry to avoid potential fines",
+        "Immigration may conduct a cohabitation check at extension — ensure you are living with your spouse",
+        "Start accumulating KIIP credits and tax records early for the eventual F-5 application",
+        "Changes in marriage status (separation, divorce) must be reported to immigration"
+      ]
+    }
+  ],
+  "processingTime": {
+    "governmentReview": "4-12 weeks (typical); 3-4 months for designated-country nationals",
+    "totalEndToEnd": "2-5 months",
+    "notes": "According to published guidelines and community experience, embassy processing time for F-6 applications ranges from 4-12 weeks depending on embassy and nationality. Cases involving nationals of the 7 designated countries (China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, Thailand) may take 3-4 months due to additional review steps. Complex cases (additional document requests, marriage sincerity investigations) can also extend timelines. Processing times vary significantly by embassy. After entering Korea, ARC registration adds another 2-3 weeks. Plan for the full 2-5 month timeline before your intended arrival in Korea."
+  },
+  "workPermission": {
+    "allowed": true,
+    "restrictions": [],
+    "notes": "F-6 visa holders have unrestricted work permission in Korea. Unlike work visas (E-series), F-6 holders may work in any occupation, for any employer, full-time or part-time, without obtaining a separate work permit. This includes starting a business, freelancing, or being employed. This is one of the most significant benefits of the F-6 visa compared to other visa categories."
+  },
+  "familyAllowed": true,
+  "familyNotes": "Children of F-6 holders may receive F-2-2 status (family member of resident). If children were born to a Korean national parent, they may hold Korean nationality by birth (국적법). Consult the immigration office or a licensed immigration specialist for the specific status applicable to your children's circumstances.",
+  "postArrivalSteps": [
+    {
+      "id": "arc-registration",
+      "title": "Alien Registration Card (ARC)",
+      "deadline": "Before the 90-day initial visa period expires",
+      "description": "The initial F-6 visa grants only 90 days of stay. Both ARC registration AND stay period extension must be completed before the 90 days expires. Visit local immigration office to apply for ARC and extension simultaneously. ARC is required for banking, phone contracts, health insurance, and most government services.",
+      "tips": ["Book appointment via HiKorea (hikorea.go.kr)", "Bring passport, visa, passport photo, and proof of Korean address"]
+    },
+    {
+      "id": "health-insurance",
+      "title": "National Health Insurance (NHI) Enrollment",
+      "deadline": "As soon as possible after ARC registration",
+      "description": "Enroll in Korea's National Health Insurance (건강보험) through the National Health Insurance Service (NHIS). F-6 holders are eligible as local subscribers. Coverage typically begins within 1 month of enrollment.",
+      "tips": ["Visit the nearest NHIS branch with your ARC", "Premium is calculated based on household income and assets", "Reduces medical costs significantly — prioritize early enrollment"]
+    },
+    {
+      "id": "kiip-enrollment",
+      "title": "KIIP (Korea Immigration & Integration Program) Enrollment",
+      "deadline": "Recommended within first 6 months",
+      "description": "Enroll in the Korea Immigration & Integration Program (사회통합프로그램) at socinet.go.kr. KIIP consists of 5 levels: Korean language levels 0-4 (280 hours total) and Korean society understanding level 5 (70 hours). Completing KIIP Level 5 satisfies the language requirement for F-5 permanent residence. Since 2025, KIIP charges a tuition fee (previously free): Levels 1-4 ₩100,000 per level; Level 5 basic (permanent residence track) ₩70,000; Level 5 advanced (naturalization track) ₩30,000.",
+      "tips": ["Register at socinet.go.kr — classes available at community centers, universities, and multicultural centers nationwide", "Take the placement test first to enter at the appropriate level", "KIIP Level 2 completion satisfies the F-6 language requirement for extensions", "KIIP Level 5 completion is required (along with other conditions) for F-5 permanent residence", "Fees since 2025: Levels 1-4 ₩100,000/level; Level 5 basic ₩70,000; Level 5 advanced ₩30,000"]
+    },
+    {
+      "id": "early-adaptation-program",
+      "title": "Early Adaptation Program (조기적응프로그램)",
+      "deadline": "Within first 2-3 months of arrival (if applicable)",
+      "description": "The early adaptation program (조기적응프로그램) is mandatory for nationals of 7 designated countries (Mongolia, Vietnam, Uzbekistan, China, Cambodia, Thailand, Philippines) who entered Korea after October 1, 2019. It is optional but incentivized for nationals of other countries — completion grants a 2-year first extension instead of the standard 1-year extension.",
+      "tips": [
+        "Mandatory for nationals of Mongolia, Vietnam, Uzbekistan, China, Cambodia, Thailand, Philippines (if entered after October 1, 2019)",
+        "Optional for all others — strongly recommended as it extends your first stay period from 1 year to 2 years",
+        "Register through your local immigration office or HiKorea"
+      ]
+    },
+    {
+      "id": "resident-registration",
+      "title": "Resident Registration at District Office",
+      "deadline": "After ARC issuance",
+      "description": "Register your Korean address at the local district office (주민센터) to be entered in the resident registration system. This enables you to access many government services and online systems requiring identity verification.",
+      "tips": ["Bring ARC and proof of address (lease contract, etc.)", "Required for services like opening a Korean bank account, registering for mobile plans, etc."]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What are the three F-6 sub-categories and which one applies to me?",
+      "answer": "The F-6 visa has three sub-categories. F-6-1 (Spouse of Korean National) is for foreign nationals legally married to a Korean citizen who want to live together in Korea — this is the most common. F-6-2 (Child-Rearing) is for a foreign parent raising a minor child born from a relationship with a Korean national in Korea, even if the marriage has ended. F-6-3 (Marriage Dissolution) is for foreign nationals whose marriage to a Korean national ended through the Korean spouse's death, disappearance, or a divorce where the breakdown was not attributable to the foreign national (본인에게 책임이 없는 사유). Most people applying for the first time will use F-6-1."
+    },
+    {
+      "question": "How much income does my Korean spouse need to sponsor my F-6 visa?",
+      "answer": "According to published Ministry of Justice guidelines, the income requirement is set annually based on household size and the standard median income (기준 중위소득). For 2025 (MOJ Notice 2024-587), approximate thresholds are: 2-person household ~₩23,600,000/year, 3-person household ~₩30,200,000/year, 4-person household ~₩36,600,000/year, 5-person household ~₩42,700,000/year. These are pretax annual income figures. If the Korean spouse's income falls short, up to 5% of net financial assets (deposits, real estate, insurance, securities) held continuously for 6+ months may be counted as supplemental income. In some cases, a guarantor (a close family member residing with the sponsor) may substitute for or supplement income proof. Published guidelines indicate that exact thresholds should always be verified at the official Ministry of Justice notice (법무부 고시) for the current year."
+    },
+    {
+      "question": "What is the Korean language requirement for the F-6 visa?",
+      "answer": "Published guidelines require that the couple share a language sufficient for daily communication. You can demonstrate this through: (1) TOPIK Level 1 or higher certificate, (2) KIIP Level 2 or higher completion certificate, (3) a certificate from a designated Korean language institution, or (4) a shared foreign language demonstrated during the consular interview. The threshold is low — TOPIK Level 1 is a basic reading and listening test. However, if the immigration interviewer determines communication is genuinely insufficient, the visa may be denied. When the foreign applicant is a national of one of seven designated countries (China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, Thailand), the Korean spouse must also complete the International Marriage Guidance program (국제결혼 안내 프로그램) prior to application."
+    },
+    {
+      "question": "What is KIIP and do I need it?",
+      "answer": "KIIP (Korea Immigration & Integration Program, 사회통합프로그램) is a government-run language and cultural education program for immigrants in Korea. It has 5 levels: Levels 0-4 are Korean language courses (approximately 280 hours total) and Level 5 is a Korean society understanding course (70 hours). KIIP is not required for the initial F-6 visa application, but completing KIIP Level 2 is one way to satisfy the language requirement. More importantly, completing KIIP Level 5 is required for transitioning from F-6 to F-5 (Permanent Residence). Starting KIIP early gives you a significant advantage on your path to permanent residence. Since 2025, KIIP charges a tuition fee (previously free). Register at socinet.go.kr."
+    },
+    {
+      "question": "Can I work in Korea on an F-6 visa?",
+      "answer": "Yes. F-6 visa holders have fully unrestricted work permission in Korea. You may work in any occupation, for any employer, without needing a separate work permit. You can also start a business, freelance, or do part-time work. This is one of the most significant advantages of the F-6 visa — unlike E-series work visas, you are not tied to a specific employer or job category."
+    },
+    {
+      "question": "What happens if my spouse and I separate or divorce?",
+      "answer": "If you separate from your Korean spouse, your F-6-1 status may be affected at renewal. Immigration officers may investigate whether cohabitation is ongoing and whether the marriage remains valid. If you legally divorce, you generally lose F-6-1 eligibility unless: (1) you qualify for F-6-2 because you are raising a Korean child in Korea, or (2) you qualify for F-6-3 because the divorce was through no fault of your own (requiring a court judgment). Separation or divorce should be reported to immigration. Do not allow your status to lapse — overstaying incurs approximately ₩100,000 per day in penalties."
+    },
+    {
+      "question": "What are the penalties for a fake or convenience marriage?",
+      "answer": "According to published immigration regulations, marriages of convenience (위장결혼) are treated as immigration fraud. Both the foreign national and the Korean national face severe consequences: immediate visa cancellation, deportation, and a 5-year re-entry ban for the foreign national. The Korean national may face criminal charges. Immigration conducts interviews, reviews documents, and may conduct residential visits to verify the authenticity of marriages. Published guidelines indicate that joint interviews, communication testing, and cohabitation checks are standard practice."
+    },
+    {
+      "question": "How do I transition from F-6 to F-5 (permanent residence)?",
+      "answer": "According to published guidelines, F-6 holders may apply for F-5-2 (Spouse of Korean National - Permanent Residence) after meeting the following conditions: (1) at least 2 years of continuous residence in Korea on F-6 status, (2) a valid, ongoing marriage to the Korean national (or qualifying circumstances under F-6-2 or F-6-3), (3) Korean language and social understanding competency — typically demonstrated by completing KIIP Level 5 and passing the comprehensive test, (4) an established livelihood base in Korea (income/assets meeting the standard), and (5) good moral character (no serious criminal convictions). The F-5 visa grants indefinite residency without the need for periodic renewals. Application is submitted at the local immigration office."
+    },
+    {
+      "question": "What is the income proof alternative if my spouse cannot meet the threshold?",
+      "answer": "If the Korean spouse's regular income falls below the Ministry of Justice threshold, there are several documented alternatives. First, net financial assets (deposits, real estate, insurance, securities) held continuously for 6+ months: up to 5% of net asset value may be counted as supplemental annual income. Second, a guarantor (보증인) — a close family member residing with the Korean spouse — may be able to provide their own income proof to supplement. Third, a combination of income and assets may meet the composite requirement. Immigration offices have discretion in evaluating financial sufficiency. Published guidelines indicate that this is one of the most frequently asked questions at immigration offices and there is some branch-by-branch variation in how alternatives are evaluated."
+    },
+    {
+      "question": "What happens if my Korean spouse passes away or disappears?",
+      "answer": "If your Korean spouse passes away, you may be eligible for F-6-3 (Marriage Dissolution sub-category) or, if you are raising a Korean child in Korea, F-6-2. Required documents include the death certificate and a family relation certificate reflecting the death. If your Korean spouse disappears (법원 실종선고), a court declaration of disappearance is required. Under F-6-3, you can continue to reside in Korea and eventually apply for F-5 permanent residence if you meet the standard requirements. Report the situation to your local immigration office as soon as possible."
+    },
+    {
+      "question": "Can my children be included in the F-6 visa?",
+      "answer": "Children of F-6 holders are typically issued F-2-2 (Family Member of Resident) status rather than being included in the parent's visa. If the children were born to the Korean national spouse, they may hold Korean citizenship by birth. The specific status for children depends on their nationality, parentage, and where they were born. Consult your local immigration office or a licensed immigration specialist (행정사) for guidance on your children's specific situation."
+    },
+    {
+      "question": "How often do immigration officers check whether we are actually living together?",
+      "answer": "Immigration officers may conduct residential visits (실거주 확인) at any time, though they are most common during initial visa processing and at the first renewal. Community members report that officers sometimes visit unannounced and may interview neighbors or building managers. Cohabitation must be genuine and continuous. If you and your spouse live in separate cities for work reasons, documentation explaining the arrangement and evidence of a maintained shared home base may be required. Failure to demonstrate cohabitation at renewal can result in F-6 non-renewal."
+    }
+  ],
+  "tips": [
+    "Start your KIIP enrollment as soon as you arrive in Korea — it is required for F-5 permanent residence and classes fill up quickly",
+    "Keep all tax payment records from your first year in Korea — they are required for F-5 later",
+    "Photograph your shared living space and save evidence of cohabitation (utility bills, deliveries, etc.) in case of an immigration visit",
+    "The consular interview is as important as the documents — practice explaining your relationship clearly in the shared language",
+    "If your Korean spouse's income is borderline, gather 6+ months of bank statements showing sustained savings — asset-based calculation may help",
+    "Immigration office policies can vary by branch — what one office accepts, another may question. A licensed immigration specialist (행정사) is worth consulting for complex situations"
+  ],
+  "warnings": [
+    "Cohabitation is actively verified — fake or sham marriages carry a 5-year re-entry ban for both parties and criminal liability for the Korean national",
+    "Income thresholds are updated every January — verify the current year's threshold before applying",
+    "Overstay penalty: approximately ₩100,000 per day of overstay",
+    "Divorce or separation must be reported to immigration — do not let your status lapse while the situation is unresolved",
+    "The 7-country International Marriage Guidance requirement (China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, Thailand): when the foreign applicant is a national of one of these countries, the Korean spouse must complete the program before the visa application — failure to do so is grounds for visa denial"
+  ],
+  "communityTips": [
+    {
+      "id": "income-asset-alternative",
+      "section": "requirements",
+      "tip": "If your Korean spouse's income barely misses the threshold, don't give up. Income can be supplemented with 5% of net assets (bank balance, property, insurance). Get a bank balance certificate and property valuation ready. Many couples pass on the combined income + asset calculation even when salary alone falls short.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "kiip-start-early",
+      "section": "process",
+      "tip": "KIIP classes fill up fast, especially near Seoul. Register at socinet.go.kr as soon as you receive your ARC. If you miss the semester, you may wait months for the next available spot. KIIP Level 5 is non-negotiable for F-5 — start early.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "branch-variation",
+      "section": "process",
+      "tip": "Different immigration offices interpret requirements differently. If one branch gives you a hard time about a document, it doesn't mean every office will. Some community members report better experiences at smaller regional offices versus crowded Seoul offices. That said, follow the official checklist first.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "interview-preparation",
+      "section": "process",
+      "tip": "The consular interview is about proving the marriage is real. Be ready to answer: how did you meet, how do you communicate, what are your spouse's parents' names, where does your spouse work, what is your shared living situation. Couples who clearly know each other's daily lives pass easily.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "cohabitation-evidence",
+      "section": "requirements",
+      "tip": "Keep physical evidence of cohabitation: shared utility bills, delivery receipts to the same address, photos of your shared home with timestamps, and receipts from shared activities. If an immigration officer visits, this evidence matters more than paperwork.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "topik-easier-than-kiip",
+      "section": "requirements",
+      "tip": "For the initial F-6 language requirement, TOPIK Level 1 is much faster to obtain than KIIP Level 2 if you already have basic Korean. TOPIK is a standardized test offered globally — you can take it before arriving in Korea. KIIP requires attending classes inside Korea. Use TOPIK to satisfy the initial requirement, then start KIIP after arrival for the F-5 path.",
+      "verified": false,
+      "upvotes": 0
+    },
+    {
+      "id": "f6-3-fault-documentation",
+      "section": "requirements",
+      "tip": "For F-6-3, the court judgment must establish that the breakdown of the marriage was not attributable to the foreign national (본인에게 책임이 없는 사유). A judgment that assigns fault to the foreign applicant complicates the F-6-3 application significantly. If you are in this situation, consult a licensed immigration specialist (행정사) or attorney before filing.",
+      "verified": false,
+      "upvotes": 0
+    }
+  ],
+  "relatedVisas": [
+    "f-5",
+    "f-2",
+    "f-1-d",
+    "e-7"
+  ],
+  "pathsTo": [
+    {
+      "type": "f-5",
+      "name": "Permanent Resident Visa (Spouse of Korean National)",
+      "code": "F-5-2",
+      "requirements": "According to published guidelines: (1) 2+ years of continuous residence in Korea on F-6 status, (2) ongoing valid marriage to a Korean national (or qualifying F-6-2/F-6-3 circumstances), (3) Korean language competency — KIIP Level 5 completion (which includes the comprehensive evaluation), OR passing the permanent residence comprehensive evaluation (영주용 종합평가) with a score of 60 or above, (4) established livelihood base: income must be at or above the per capita GNI (1인당 국민총소득) — approximately ₩49,955,000/year based on the most recently published Bank of Korea figure. The applicant's own income must constitute at least 50% of total household income, (5) good moral character.",
+      "timeline": "4-8 weeks processing after submission",
+      "documents": [
+        "KIIP Level 5 completion certificate",
+        "Comprehensive permanent residence test results",
+        "Income/asset proof",
+        "Family relation certificate",
+        "ARC",
+        "Tax payment records",
+        "Criminal background check"
+      ],
+      "notes": "F-5 grants indefinite residence without periodic renewals. It is the primary long-term goal for most F-6 holders. The language requirement may be satisfied by KIIP Level 5 completion (which includes the comprehensive evaluation) OR by passing the permanent residence comprehensive evaluation (영주용 종합평가) with a score of 60 or above — making early KIIP enrollment strongly advisable. Published guidelines indicate that the livelihood base requirement for F-5 is evaluated on the applicant's own income (must be at least 50% of household income) at or above the per capita GNI."
+    },
+    {
+      "type": "f-2",
+      "name": "Points-based Resident Visa",
+      "requirements": "F-6 holders may transition to F-2 if they accumulate 80+ points on the F-2 points system (age, income, Korean language, tax history, etc.). This is less common than the F-5 pathway but available for those who prefer an intermediate step.",
+      "timeline": "4-8 weeks processing",
+      "documents": [
+        "Points calculation worksheet",
+        "TOPIK score certificate or KIIP certificate",
+        "Income tax payment proof",
+        "Employment contract or business registration",
+        "ARC"
+      ],
+      "notes": "The F-2 route is less commonly used by F-6 holders since the F-5 path (after 2 years + KIIP Level 5) is typically more straightforward. F-2 removes the marriage dependency on your status and allows work in any occupation."
+    }
+  ],
+  "pathsFrom": [
+    {
+      "type": "b-2",
+      "name": "Tourist Visa / Visa-Free Entry",
+      "requirements": "Legally marry a Korean national while in Korea on B-2 or visa-free entry. Then apply for change of status (체류자격변경) from B-2 to F-6 before the B-2 period expires.",
+      "timeline": "4-8 weeks processing for status change",
+      "documents": [
+        "Marriage certificate (registered in Korea)",
+        "Korean spouse's family relation certificate",
+        "Income proof (Korean spouse)",
+        "Language proof",
+        "Cohabitation proof",
+        "Criminal background check",
+        "Medical certificate",
+        "Passport"
+      ],
+      "notes": "Marrying on a tourist visa and changing status in Korea is permitted if the marriage is genuine. Immigration reviews the situation carefully to prevent visa fraud. Published guidelines indicate that status changes from B-2 to F-6 are accepted but scrutinized for marriage sincerity."
+    },
+    {
+      "type": "c-3",
+      "name": "Short-term Visitor Visa (C-3)",
+      "requirements": "Marry a Korean national while in Korea on C-3 short-term visa, then apply for status change to F-6 before C-3 expires.",
+      "timeline": "4-8 weeks processing for status change",
+      "documents": [
+        "Marriage certificate",
+        "Korean spouse's family relation certificate",
+        "Income proof (Korean spouse)",
+        "Language proof",
+        "Cohabitation proof",
+        "Criminal background check",
+        "Medical certificate"
+      ],
+      "notes": "Similar to B-2. Status change must be applied before the C-3 period expires. Do not overstay — apply for status change as soon as the marriage is registered."
+    },
+    {
+      "type": "e-2",
+      "name": "English Teaching Visa",
+      "requirements": "Marry a Korean national while in Korea on E-2. Apply for status change to F-6 or continue on E-2 and apply for F-6 at renewal. F-6 offers unrestricted work permission — many E-2 holders prefer to switch.",
+      "timeline": "4-8 weeks processing for status change",
+      "documents": [
+        "Marriage certificate",
+        "Korean spouse's family relation certificate",
+        "Income proof (Korean spouse)",
+        "Language proof",
+        "Cohabitation proof",
+        "Criminal background check",
+        "Medical certificate"
+      ],
+      "notes": "E-2 holders who marry Korean nationals often prefer to change to F-6 for the unrestricted work benefit. On F-6, you are not limited to teaching English — you may work any job."
+    },
+    {
+      "type": "e-7",
+      "name": "Professional Employment Visa",
+      "requirements": "Marry a Korean national while on E-7. Apply for status change to F-6 if preferred. Note that on E-7, you are restricted to your sponsoring employer — F-6 removes this restriction.",
+      "timeline": "4-8 weeks processing for status change",
+      "documents": [
+        "Marriage certificate",
+        "Korean spouse's family relation certificate",
+        "Income proof (Korean spouse)",
+        "Language proof",
+        "Cohabitation proof",
+        "Criminal background check",
+        "Medical certificate"
+      ],
+      "notes": "E-7 holders who marry Korean nationals gain a significant advantage by switching to F-6: unrestricted work permission and an independent path to permanent residence through the F-6 → F-5 route, without dependence on a single employer's continued sponsorship."
+    },
+    {
+      "type": "d-2",
+      "name": "Student Visa",
+      "requirements": "Marry a Korean national while on D-2 student visa. Apply for status change to F-6 to gain work rights and independent residency not tied to school enrollment.",
+      "timeline": "4-8 weeks processing for status change",
+      "documents": [
+        "Marriage certificate",
+        "Korean spouse's family relation certificate",
+        "Income proof (Korean spouse)",
+        "Language proof",
+        "Cohabitation proof",
+        "Criminal background check",
+        "Medical certificate"
+      ],
+      "notes": "Students who marry Korean nationals can change to F-6 and gain unrestricted work permission. This is particularly useful for those who want to enter the workforce immediately without waiting for graduation and E-7 sponsorship."
+    }
+  ],
+  "lastUpdated": "2026-03-18",
+  "officialLinks": [
+    {
+      "label": "Korea Immigration Service (English)",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "HiKorea Portal (ARC, Extensions)",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "Social Integration Program KIIP (socinet.go.kr)",
+      "url": "https://www.socinet.go.kr"
+    },
+    {
+      "label": "TOPIK Registration (topik.go.kr)",
+      "url": "https://www.topik.go.kr"
+    },
+    {
+      "label": "National Tax Service Hometax (Income Certificate)",
+      "url": "https://www.hometax.go.kr"
+    },
+    {
+      "label": "KOWORK F-6 Guide",
+      "url": "https://kowork.kr/en/visa/F-6"
+    }
+  ]
+}

@@ -91,7 +91,7 @@ Note: AI gen costs 2x credits. Use import mode by default, AI gen for testing/co
 
 ```
 introSlide   → { type: "starting_slide", heading, description }
-slides[n]    → { type: "content_slide", heading, description }
+slides[n]    → { type: "body_slide", heading, description }
 endingSlide  → { type: "ending_slide", heading, description }
 ```
 
