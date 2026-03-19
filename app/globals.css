@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-sc), var(--font-noto-sans-tc), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-lora: var(--font-lora), "Yu Mincho", "Hiragino Mincho ProN", "Songti SC", "Songti TC", "SimSun", "MingLiU", serif;
+  --font-lora: var(--font-lora), "Yu Mincho", "Hiragino Mincho ProN", "Songti SC", "Songti TC", serif;
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);

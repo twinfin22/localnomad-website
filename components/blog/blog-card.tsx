@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import type { BlogPost } from '@/lib/blog';
 import type { BlogCategory } from '@/lib/blog/schema';
@@ -15,38 +16,53 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
   const categoryColor = CATEGORY_COLORS[post.category];
 
   return (
-    <article className="group rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md">
-      <div className="mb-3 flex items-center gap-2">
-        <span
-          className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${categoryColor}`}
-        >
-          {post.category}
-        </span>
-        <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">
-          {post.frontmatter.country}
-        </span>
-      </div>
-      <Link
-        href={`/blog/${post.category}/${post.slug}`}
-        className="block"
-      >
-        <h3 className="font-lora text-lg font-bold text-foreground transition-colors group-hover:text-[#1B4965]">
-          {post.frontmatter.title}
-        </h3>
+    <article className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-md">
+      <Link href={`/blog/${post.category}/${post.slug}`} className="block">
+        {post.frontmatter.coverImage && (
+          <div className="relative aspect-[2/1] w-full overflow-hidden">
+            <Image
+              src={post.frontmatter.coverImage}
+              alt={post.frontmatter.title}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        )}
       </Link>
-      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-        {post.frontmatter.description}
-      </p>
-      <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
-        <time dateTime={post.frontmatter.date}>
-          {new Date(post.frontmatter.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })}
-        </time>
-        <span>&middot;</span>
-        <span>{post.readingTime} min read</span>
+      <div className="p-6">
+        <div className="mb-3 flex items-center gap-2">
+          <span
+            className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${categoryColor}`}
+          >
+            {post.category}
+          </span>
+          <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">
+            {post.frontmatter.country}
+          </span>
+        </div>
+        <Link
+          href={`/blog/${post.category}/${post.slug}`}
+          className="block"
+        >
+          <h3 className="font-lora text-lg font-bold text-foreground transition-colors group-hover:text-[#1B4965]">
+            {post.frontmatter.title}
+          </h3>
+        </Link>
+        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+          {post.frontmatter.description}
+        </p>
+        <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
+          <time dateTime={post.frontmatter.date}>
+            {new Date(post.frontmatter.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </time>
+          <span>&middot;</span>
+          <span>{post.readingTime} min read</span>
+        </div>
       </div>
     </article>
   );

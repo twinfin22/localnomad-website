@@ -3,7 +3,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { MapPin } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -167,11 +166,7 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
           <div className="text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-xs font-medium tracking-wide text-primary uppercase">
-              <MapPin className="h-3 w-3" />
-              {t('neighborhoodBadge')}
-            </span>
-            <h2 className="mt-4 font-lora text-3xl font-bold text-primary sm:text-4xl">
+            <h2 className="font-lora text-3xl font-bold text-primary sm:text-4xl">
               {t('neighborhoodTitle')}
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-muted-foreground">

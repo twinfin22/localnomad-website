@@ -1,7 +1,8 @@
 {
   "Landing": {
     "headline": "签证信息，一目了然。",
-    "subtitle": "申请条件、所需材料和社区经验，全部汇集于此。",
+    "subtitle": "签证、社区指南、72小时生存包",
+    "subtitleCountries": "韩国 · 日本 · 台湾",
     "countryKorea": "韩国",
     "countryTaiwan": "台湾",
     "countryKoreaEmoji": "🇰🇷",
@@ -288,7 +289,9 @@
     "discordCtaSub": "提问、分享经验、与亚洲各地的数字游民交流",
     "discordJoin": "加入 Discord",
     "about": "关于我们",
-    "contact": "联系我们"
+    "contact": "联系我们",
+    "linksLabel": "法律信息",
+    "companyLabel": "公司"
   },
   "Meta": {
     "landingTitle": "LocalNomad — 签证信息，一目了然。",

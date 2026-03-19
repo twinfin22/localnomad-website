@@ -10,7 +10,7 @@ export const Hero = () => {
       <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" />
 
       <section
-        className="hero-grain relative -mt-[70px] flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
+        className="hero-grain relative -mt-[70px] flex h-[calc(100dvh)] flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
         style={{
           backgroundImage: [
             'linear-gradient(135deg, rgba(27,73,101,0.65) 0%, rgba(20,55,78,0.70) 100%)',
@@ -27,8 +27,11 @@ export const Hero = () => {
           <h1 className="font-lora text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl text-wrap-balance">
             {t('headline')}
           </h1>
-          <p className="mt-5 text-lg text-white/75 sm:text-xl max-w-2xl mx-auto text-wrap-balance">
+          <p className="mt-5 text-lg text-white/75 sm:text-xl max-w-2xl mx-auto">
             {t('subtitle')}
+          </p>
+          <p className="mt-2 text-sm tracking-widest text-white/50 uppercase">
+            {t('subtitleCountries')}
           </p>
           <div className="mt-10">
             <Link

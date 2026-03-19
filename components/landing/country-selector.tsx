@@ -79,7 +79,7 @@ export const CountrySelector = async () => {
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
           <div className="mb-10 text-center">
-            <h2 className="font-lora text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="font-lora text-3xl font-bold text-primary sm:text-4xl">
               {t('countrySectionTitle')}
             </h2>
             <p className="mt-2 text-muted-foreground">

@@ -1,7 +1,8 @@
 {
   "Landing": {
     "headline": "簽證資訊，終於清楚了。",
-    "subtitle": "申請條件、所需文件和社群經驗，全部匯整於此。",
+    "subtitle": "簽證、社區指南、72小時生存包",
+    "subtitleCountries": "韓國 · 日本 · 台灣",
     "countryKorea": "韓國",
     "countryTaiwan": "台灣",
     "countryKoreaEmoji": "🇰🇷",
@@ -288,7 +289,9 @@
     "discordCtaSub": "提問、分享秘訣、與亞洲各地的遊牧者交流",
     "discordJoin": "加入 Discord",
     "about": "關於我們",
-    "contact": "聯絡我們"
+    "contact": "聯絡我們",
+    "linksLabel": "法律資訊",
+    "companyLabel": "公司"
   },
   "Meta": {
     "landingTitle": "LocalNomad — 簽證資訊，終於清楚了。",

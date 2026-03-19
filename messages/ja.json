@@ -1,7 +1,8 @@
 {
   "Landing": {
     "headline": "ビザ情報、やっとクリアに。",
-    "subtitle": "要件、書類、コミュニティからのヒント。すべてを一か所に。",
+    "subtitle": "ビザ、ネイバーフッド、72時間サバイバルキット",
+    "subtitleCountries": "韓国 · 日本 · 台湾",
     "countryKorea": "韓国",
     "countryTaiwan": "台湾",
     "countryKoreaEmoji": "🇰🇷",
@@ -288,7 +289,9 @@
     "discordCtaSub": "質問を投げかけ、ヒントを共有し、アジア各地のノマドとつながろう",
     "discordJoin": "Discordに参加",
     "about": "概要",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "linksLabel": "法的情報",
+    "companyLabel": "会社情報"
   },
   "Meta": {
     "landingTitle": "LocalNomad — ビザ情報、やっとクリアに。",

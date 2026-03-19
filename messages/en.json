@@ -1,7 +1,8 @@
 {
   "Landing": {
     "headline": "Soft Land in Asia",
-    "subtitle": "Start with Visas. Then find your neighborhood, and get the 72-hour survival kit. Korea · Japan · Taiwan.",
+    "subtitle": "Visas, Neighborhoods, 72-hour Survival Kit",
+    "subtitleCountries": "Korea · Japan · Taiwan",
     "countryKorea": "South Korea",
     "countryTaiwan": "Taiwan",
     "countryKoreaEmoji": "🇰🇷",
@@ -288,7 +289,9 @@
     "discordCtaSub": "Ask questions, share tips, and connect with nomads across Asia",
     "discordJoin": "Join Discord",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "linksLabel": "Legal",
+    "companyLabel": "Company"
   },
   "Meta": {
     "landingTitle": "LocalNomad — Visa clarity, finally.",

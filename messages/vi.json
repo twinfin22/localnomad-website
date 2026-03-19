@@ -1,7 +1,8 @@
 {
   "Landing": {
     "headline": "Thông tin thị thực, cuối cùng cũng rõ ràng.",
-    "subtitle": "Yêu cầu, hồ sơ và kinh nghiệm cộng đồng. Tất cả ở một nơi.",
+    "subtitle": "Thị thực, Khu phố, Bộ sinh tồn 72 giờ",
+    "subtitleCountries": "Hàn Quốc · Nhật Bản · Đài Loan",
     "countryKorea": "Hàn Quốc",
     "countryTaiwan": "Đài Loan",
     "countryKoreaEmoji": "🇰🇷",
@@ -288,7 +289,9 @@
     "discordCtaSub": "Đặt câu hỏi, chia sẻ mẹo và kết nối với dân du mục khắp châu Á",
     "discordJoin": "Tham gia Discord",
     "about": "Giới thiệu",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "linksLabel": "Pháp lý",
+    "companyLabel": "Công ty"
   },
   "Meta": {
     "landingTitle": "LocalNomad — Thông tin thị thực, cuối cùng cũng rõ ràng.",

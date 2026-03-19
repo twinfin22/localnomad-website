@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
-import { Inter, Lora, Noto_Sans_JP, Noto_Sans_SC, Noto_Sans_TC } from 'next/font/google';
+import { DM_Sans, DM_Serif_Display, Noto_Sans_JP, Noto_Sans_SC, Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({
-  subsets: ['latin', 'vietnamese'],
+const dmSans = DM_Sans({
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-inter',
   display: 'swap',
 });
 
-const lora = Lora({
-  subsets: ['latin', 'vietnamese'],
-  weight: ['400', '700'],
+const dmSerifDisplay = DM_Serif_Display({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400'],
   variable: '--font-lora',
   display: 'swap',
 });
@@ -56,7 +56,7 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${lora.variable} ${notoSansJP.variable} ${notoSansSC.variable} ${notoSansTC.variable}`}>
+    <html lang={locale} suppressHydrationWarning className={`${dmSans.variable} ${dmSerifDisplay.variable} ${notoSansJP.variable} ${notoSansSC.variable} ${notoSansTC.variable}`}>
       <body className="font-sans antialiased">
         {children}
       </body>

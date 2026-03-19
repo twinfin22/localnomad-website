@@ -16,7 +16,7 @@ export const ClosingCta = async () => {
     <section className="bg-white px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-2xl text-center">
         <ScrollReveal>
-          <h2 className="font-lora text-2xl font-bold text-foreground sm:text-3xl">
+          <h2 className="font-lora text-3xl font-bold text-primary sm:text-4xl">
             {t('newCtaTitle')}
           </h2>
 
