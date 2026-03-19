@@ -112,7 +112,7 @@ export const BlogCarousel = async () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-3 font-lora text-[17px] font-bold leading-snug text-foreground transition-colors group-hover:text-primary line-clamp-2">
+                <h3 className="mt-3 font-lora text-lg font-bold leading-snug text-foreground transition-colors group-hover:text-primary line-clamp-2">
                   {post.frontmatter.title}
                 </h3>
 

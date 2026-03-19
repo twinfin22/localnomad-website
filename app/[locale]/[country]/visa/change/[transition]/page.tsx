@@ -173,7 +173,7 @@ export default async function TransitionDetailPage({ params }: Props) {
           </div>
 
           {/* Title */}
-          <h1 className="font-lora mb-1 text-2xl font-bold leading-snug text-[#1B4965]">
+          <h1 className="font-lora mb-1 text-3xl sm:text-4xl font-bold leading-snug text-primary">
             {fromCode} → {toCode}: Change from {fromName} to {toName}
           </h1>
           <p className="mb-5 text-sm text-slate-500">Korea · Visa Status Change</p>
@@ -328,7 +328,7 @@ export default async function TransitionDetailPage({ params }: Props) {
           {/* Other paths from same source */}
           {otherPaths.length > 0 && (
             <div className="mt-8">
-              <h2 className="mb-3 text-base font-bold text-slate-900">
+              <h2 className="mb-3 text-base font-bold text-foreground">
                 Other paths from {fromCode}
               </h2>
               <div className="flex flex-col gap-2">

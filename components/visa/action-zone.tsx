@@ -211,7 +211,7 @@ export function DocumentChecklist({
       <section className="mt-8">
         <div className="flex items-center gap-2">
           <FileText className="h-5 w-5 text-primary" />
-          <h2 className="text-xl font-semibold">
+          <h2 className="font-lora text-xl font-semibold">
             {t('requiredDocuments')}{' '}
             <span className="text-base font-normal text-muted-foreground">
               ({t('completed', { count: completedCount, total: totalCount })})
@@ -254,7 +254,7 @@ export function DocumentChecklist({
         {/* Optional documents */}
         {optionalDocs.length > 0 && (
           <div className="mt-8">
-            <h3 className="flex items-center gap-2 text-lg font-semibold text-muted-foreground">
+            <h3 className="font-lora flex items-center gap-2 text-lg font-semibold text-muted-foreground">
               {t('optionalDocuments')}
             </h3>
             <div className="mt-3 space-y-1">

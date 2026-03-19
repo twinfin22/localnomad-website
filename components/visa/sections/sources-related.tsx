@@ -27,7 +27,7 @@ export function SourcesRelated({
         <div>
           <div className="flex items-center gap-2">
             <ExternalLink className="h-5 w-5 text-primary" />
-            <h3 className="font-lora text-base font-semibold">{t('officialSources')}</h3>
+            <h3 className="font-lora text-lg font-semibold">{t('officialSources')}</h3>
           </div>
           <ul className="mt-4 space-y-2 pl-7">
             {officialLinks.map((link, index) => (
@@ -52,7 +52,7 @@ export function SourcesRelated({
         <div>
           <div className="flex items-center gap-2">
             <ArrowRight className="h-5 w-5 text-primary" />
-            <h3 className="font-lora text-base font-semibold">{t('relatedVisas')}</h3>
+            <h3 className="font-lora text-lg font-semibold">{t('relatedVisas')}</h3>
           </div>
           <div className="mt-4 space-y-2 pl-7">
             {relatedVisaSummaries.map((rv) => (
@@ -74,7 +74,7 @@ export function SourcesRelated({
         <div>
           <div className="flex items-center gap-2">
             <ArrowRight className="h-5 w-5 text-primary" />
-            <h3 className="font-lora text-base font-semibold">{t('relatedVisas')}</h3>
+            <h3 className="font-lora text-lg font-semibold">{t('relatedVisas')}</h3>
           </div>
           <div className="mt-4 flex flex-wrap gap-2 pl-7">
             {relatedVisas.map((visaType) => (

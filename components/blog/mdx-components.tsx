@@ -88,7 +88,7 @@ interface HeroBannerProps {
 const HeroBanner = ({ title, data, extras }: HeroBannerProps) => {
   return (
     <div className="not-prose my-8 rounded-xl bg-[#1B4965] px-6 py-6 text-white">
-      <h2 className="mb-4 text-lg font-bold tracking-wide text-white/90">
+      <h2 className="mb-4 font-lora text-lg font-bold tracking-wide text-white/90">
         {title}
       </h2>
       <div className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3">
@@ -225,7 +225,7 @@ const NeighborhoodCards = ({ city, data }: NeighborhoodCardsProps) => (
           key={n.name}
           className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
         >
-          <h4 className="text-base font-bold text-[#1B4965]">{n.name}</h4>
+          <h4 className="font-lora text-base font-bold text-primary">{n.name}</h4>
           <p className="mt-0.5 text-xs text-muted-foreground">{n.vibe}</p>
           <p className="mt-2 text-sm font-semibold">{n.rent}</p>
           <p className="mt-1.5 text-sm leading-relaxed text-gray-700">{n.why}</p>
@@ -407,7 +407,7 @@ const CheckGrid = ({ items, note }: CheckGridProps) => (
               {item.label}
             </span>
           </div>
-          <h4 className="text-base font-bold text-[#1B4965]">{item.title}</h4>
+          <h4 className="font-lora text-base font-bold text-primary">{item.title}</h4>
           <p className="mt-1.5 text-sm leading-relaxed text-gray-700">{item.description}</p>
         </div>
       ))}

@@ -45,7 +45,7 @@ export default async function PrivacyPage({ params }: Props) {
           &larr; Back to home
         </Link>
 
-        <h1 className="mt-8 font-lora text-4xl font-bold">Privacy Policy</h1>
+        <h1 className="mt-8 font-lora text-4xl font-bold text-primary">Privacy Policy</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Effective Date: February 19, 2026 · Last Updated: February 19, 2026
         </p>

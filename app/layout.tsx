@@ -5,14 +5,14 @@ import './globals.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
   display: 'swap',
 });
 
 const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin', 'latin-ext'],
   weight: ['400'],
-  variable: '--font-lora',
+  variable: '--font-dm-serif',
   display: 'swap',
 });
 

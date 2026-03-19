@@ -46,7 +46,7 @@ export default async function LoginPage({ params }: Props) {
     <main id="main-content" className="flex min-h-svh items-center justify-center bg-neutral-50 px-6">
       <div className="w-full max-w-sm">
         <div className="text-center">
-          <h1 className="font-lora text-3xl font-bold text-primary">
+          <h1 className="font-lora text-3xl sm:text-4xl font-bold text-primary">
             LocalNomad
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">

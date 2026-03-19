@@ -147,11 +147,11 @@ function SummaryCard({
       {displayLines ? (
         <div className="mt-0.5 space-y-0.5">
           {displayLines.map((line, i) => (
-            <p key={i} className="text-xs text-muted-foreground">{line}</p>
+            <p key={i} className="font-lora text-sm font-bold">{line}</p>
           ))}
         </div>
       ) : (
-        <p className="mt-0.5 text-xs text-muted-foreground">{displayValue}</p>
+        <p className="mt-0.5 font-lora text-sm font-bold">{displayValue}</p>
       )}
     </div>
   );

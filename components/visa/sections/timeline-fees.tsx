@@ -83,7 +83,7 @@ export function TimelineFees({ visa }: TimelineFeesProps) {
       {/* Renewal info */}
       {visa.renewal && (
         <div className="rounded-xl bg-neutral-50 p-4">
-          <h3 className="flex items-center gap-2 font-lora text-sm font-semibold text-foreground">
+          <h3 className="flex items-center gap-2 font-lora text-lg font-semibold text-foreground">
             <RefreshCw className="h-4 w-4 text-primary" />
             {t('renewal')}
           </h3>

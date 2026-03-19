@@ -36,7 +36,7 @@ export function CollapsibleSection({
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <h2 className="font-lora text-lg font-semibold">{title}</h2>
+              <h2 className="font-lora text-xl font-bold text-primary">{title}</h2>
               {count != null && (
                 <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold tabular-nums text-primary">
                   {count}

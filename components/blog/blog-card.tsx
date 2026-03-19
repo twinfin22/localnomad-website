@@ -45,7 +45,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
           href={`/blog/${post.category}/${post.slug}`}
           className="block"
         >
-          <h3 className="font-lora text-lg font-bold text-foreground transition-colors group-hover:text-[#1B4965]">
+          <h3 className="font-lora text-lg font-bold text-foreground transition-colors group-hover:text-primary">
             {post.frontmatter.title}
           </h3>
         </Link>

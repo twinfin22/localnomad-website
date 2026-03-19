@@ -111,7 +111,7 @@ export default async function VisaChangeHubPage({ params, searchParams }: Props)
           <p className="mb-3.5 text-xs font-semibold uppercase tracking-widest text-white/60">
             LocalNomad · Korea Visa Guide
           </p>
-          <h1 className="font-lora mb-2 text-2xl font-bold leading-snug">
+          <h1 className="font-lora mb-2 text-3xl sm:text-4xl font-bold leading-snug">
             Change Your Visa Status in Korea
           </h1>
           <p className="text-sm leading-relaxed text-white/75">

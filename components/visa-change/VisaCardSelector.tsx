@@ -111,7 +111,7 @@ export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProp
 
       {/* Instruction */}
       <div className="px-5 pb-3 pt-1">
-        <h2 className="text-base font-bold text-slate-900">What&apos;s your current visa?</h2>
+        <h2 className="text-base font-bold text-foreground">What&apos;s your current visa?</h2>
         <p className="mt-0.5 text-sm text-slate-500">Tap a card to see your change options</p>
       </div>
 

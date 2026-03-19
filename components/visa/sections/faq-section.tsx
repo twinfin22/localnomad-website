@@ -72,7 +72,7 @@ export function FaqSection({ faqs, generalTips }: FaqSectionProps) {
       {/* General tips — merged from visa.tips */}
       {generalTips && generalTips.length > 0 && (
         <div className="border-t pt-4">
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
+          <h3 className="mb-3 flex items-center gap-2 font-lora text-lg font-semibold">
             <Lightbulb className="h-4 w-4 text-primary" />
             {t('tips')}
           </h3>

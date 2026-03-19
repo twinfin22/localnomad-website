@@ -42,7 +42,7 @@ export async function TransitionResults({
           <span className="text-white/60">·</span>
           <span className="text-white/80 text-xs">{fromName}</span>
         </div>
-        <h2 className="mt-2 text-lg font-bold text-slate-900">
+        <h2 className="mt-2 text-lg font-bold text-foreground">
           Where can you go from {from.toUpperCase()}?
         </h2>
         <p className="text-sm text-slate-500">
