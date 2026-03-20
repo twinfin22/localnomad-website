@@ -16,7 +16,7 @@ import { VisaChangePrompt } from '@/components/visa-change/VisaChangePrompt';
 
 export const revalidate = 3600;
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan'] as const;
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
 
 interface Props {
   params: Promise<{ locale: string; country: string; type: string }>;

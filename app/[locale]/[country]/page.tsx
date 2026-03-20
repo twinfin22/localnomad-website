@@ -12,7 +12,7 @@ import type { SEAComparisonData } from '@/lib/types/sea';
 
 export const revalidate = 3600;
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan', 'southeast-asia'] as const;
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan', 'southeast-asia'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',

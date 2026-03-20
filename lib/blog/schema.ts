@@ -12,10 +12,10 @@ export const BLOG_CATEGORIES = [
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
 
 export const BLOG_COUNTRIES = [
-  'korea',
   'japan',
-  'china',
+  'korea',
   'taiwan',
+  'china',
   'sea',
   'global',
 ] as const;

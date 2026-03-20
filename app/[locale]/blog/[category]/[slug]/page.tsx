@@ -7,10 +7,11 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { routing } from '@/i18n/routing';
 import { getAlternates } from '@/lib/seo';
-import { getPost, getAllPostSlugs } from '@/lib/blog';
+import { getPost, getAllPostSlugs, getRelatedPosts } from '@/lib/blog';
 import { extractHeadings } from '@/lib/blog/utils';
 import { createMdxComponents } from '@/components/blog/mdx-components';
 import { BlogToc } from '@/components/blog/blog-toc';
+import { RelatedPosts } from '@/components/blog/related-posts';
 
 export const revalidate = 3600;
 
@@ -153,6 +154,30 @@ export default async function BlogPostPage({ params }: Props) {
             }}
           />
         </article>
+
+        {(() => {
+          const related = getRelatedPosts(
+            slug,
+            post.category,
+            post.frontmatter.country,
+            post.frontmatter.tags,
+          );
+          if (related.length === 0) return null;
+          return (
+            <RelatedPosts
+              posts={related.map((r) => ({
+                slug: r.slug,
+                category: r.category,
+                title: r.frontmatter.title,
+                description: r.frontmatter.description,
+                coverImage: r.frontmatter.coverImage,
+                country: r.frontmatter.country,
+                date: r.frontmatter.date,
+                readingTime: r.readingTime,
+              }))}
+            />
+          );
+        })()}
       </main>
     </>
   );

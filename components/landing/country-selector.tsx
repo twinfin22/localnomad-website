@@ -49,16 +49,16 @@ export const CountrySelector = async () => {
 
   const countries = [
     {
-      href: '/korea',
-      emoji: t('countryKoreaEmoji'),
-      name: t('countryKorea'),
-      description: t('countryKoreaDesc'),
-    },
-    {
       href: '/japan',
       emoji: t('countryJapanEmoji'),
       name: t('countryJapan'),
       description: t('countryJapanDesc'),
+    },
+    {
+      href: '/korea',
+      emoji: t('countryKoreaEmoji'),
+      name: t('countryKorea'),
+      description: t('countryKoreaDesc'),
     },
     {
       href: '/taiwan',

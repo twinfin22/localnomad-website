@@ -12,7 +12,7 @@ import { ComparisonTool } from '@/components/visa';
 
 export const revalidate = 3600;
 
-const VALID_COUNTRIES = ['korea', 'taiwan', 'japan'] as const;
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',

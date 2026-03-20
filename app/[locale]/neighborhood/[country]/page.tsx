@@ -11,7 +11,7 @@ import type { City, RentSource } from '@/lib/types/neighborhood';
 
 export const revalidate = 3600;
 
-const VALID_COUNTRIES = ['korea', 'japan', 'taiwan'] as const;
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',

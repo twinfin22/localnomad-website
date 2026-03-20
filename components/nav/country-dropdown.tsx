@@ -17,20 +17,20 @@ export type CountryConfig = {
 
 export const COUNTRIES: CountryConfig[] = [
   {
-    key: 'korea',
-    emoji: '\u{1F1F0}\u{1F1F7}',
-    nameKey: 'countryKorea',
-    visaPath: '/korea',
-    neighborhoodPath: '/neighborhood/korea',
-    guidePath: '/blog/guides/korea-ultimate-digital-nomad-guide',
-  },
-  {
     key: 'japan',
     emoji: '\u{1F1EF}\u{1F1F5}',
     nameKey: 'countryJapan',
     visaPath: '/japan',
     neighborhoodPath: '/neighborhood/japan',
     guidePath: '/blog/guides/japan-ultimate-digital-nomad-guide',
+  },
+  {
+    key: 'korea',
+    emoji: '\u{1F1F0}\u{1F1F7}',
+    nameKey: 'countryKorea',
+    visaPath: '/korea',
+    neighborhoodPath: '/neighborhood/korea',
+    guidePath: '/blog/guides/korea-ultimate-digital-nomad-guide',
   },
   {
     key: 'taiwan',

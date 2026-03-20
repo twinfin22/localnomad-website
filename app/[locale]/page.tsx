@@ -19,8 +19,8 @@ interface Props {
 }
 
 const NEIGHBORHOOD_COUNTRIES = [
-  { country: 'korea', displayName: 'South Korea', coordinates: [37.5, 127.0] as [number, number] },
   { country: 'japan', displayName: 'Japan', coordinates: [36.2, 138.2] as [number, number] },
+  { country: 'korea', displayName: 'South Korea', coordinates: [37.5, 127.0] as [number, number] },
   { country: 'taiwan', displayName: 'Taiwan', coordinates: [24.0, 121.0] as [number, number] },
 ] as const;
 
