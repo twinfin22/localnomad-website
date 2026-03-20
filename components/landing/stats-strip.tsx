@@ -29,7 +29,7 @@ export const StatsStrip = () => {
                 <span className="font-lora text-4xl font-bold text-white sm:text-5xl">
                   {stat.count}
                 </span>
-                <span className="text-sm uppercase tracking-widest text-white/60">
+                <span className="text-sm uppercase tracking-widest text-white/70">
                   {stat.label}
                 </span>
               </div>

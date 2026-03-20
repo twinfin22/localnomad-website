@@ -122,7 +122,7 @@ export default async function VisaChangeHubPage({ params, searchParams }: Props)
 
         {/* Hero header */}
         <header className="bg-[#1B4965] px-5 pb-6 pt-7 text-white">
-          <p className="mb-3.5 text-xs font-semibold uppercase tracking-widest text-white/60">
+          <p className="mb-3.5 text-xs font-semibold uppercase tracking-widest text-white/70">
             {t('pageBadge')}
           </p>
           <h1 className="font-lora mb-2 text-3xl sm:text-4xl font-bold leading-snug">

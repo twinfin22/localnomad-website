@@ -30,7 +30,7 @@ export const CountryCard = ({
         </div>
         <div className="text-left">
           <span className="text-lg font-semibold text-white/70">{name}</span>
-          <p className="mt-0.5 text-sm text-white/40">Coming soon</p>
+          <p className="mt-0.5 text-sm text-white/60">Coming soon</p>
         </div>
       </div>
     );
@@ -55,7 +55,7 @@ export const CountryCard = ({
         )}
       </div>
       <svg
-        className="ml-auto h-5 w-5 text-white/40 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white/80"
+        className="ml-auto h-5 w-5 text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white/80"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={2}

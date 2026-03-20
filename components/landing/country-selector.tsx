@@ -23,7 +23,7 @@ const SelectorCard = ({ href, emoji, name, description, delay }: SelectorCardPro
           </span>
         </div>
         <svg
-          className="h-4 w-4 text-gray-300 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-primary"
+          className="h-4 w-4 text-gray-400 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-primary"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}

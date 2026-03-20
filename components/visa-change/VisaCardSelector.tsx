@@ -155,7 +155,7 @@ export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProp
                     </span>
                     <ChevronRight
                       className={`h-4 w-4 shrink-0 transition-colors ${
-                        isSelected ? 'text-[#1B4965]' : 'text-slate-300'
+                        isSelected ? 'text-[#1B4965]' : 'text-slate-400'
                       }`}
                       aria-hidden="true"
                     />

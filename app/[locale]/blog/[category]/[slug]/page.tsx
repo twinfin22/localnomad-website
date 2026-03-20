@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: Props) {
           )}
           <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <span>{post.frontmatter.author}</span>
-            <span className="text-gray-300">/</span>
+            <span className="text-gray-400">/</span>
             <time dateTime={post.frontmatter.date}>
               {new Date(post.frontmatter.date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -152,7 +152,7 @@ export default async function BlogPostPage({ params }: Props) {
             </time>
             {post.frontmatter.updatedAt && (
               <>
-                <span className="text-gray-300">/</span>
+                <span className="text-gray-400">/</span>
                 <span>
                   Updated{' '}
                   {new Date(post.frontmatter.updatedAt).toLocaleDateString(
@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </span>
               </>
             )}
-            <span className="text-gray-300">/</span>
+            <span className="text-gray-400">/</span>
             <span>{post.readingTime} min read</span>
           </div>
         </header>

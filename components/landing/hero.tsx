@@ -30,7 +30,7 @@ export const Hero = () => {
           <p className="mt-5 text-lg text-white/75 sm:text-xl max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
-          <p className="mt-2 text-sm tracking-widest text-white/50 uppercase">
+          <p className="mt-2 text-sm tracking-widest text-white/70 uppercase">
             {t('subtitleCountries')}
           </p>
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -49,7 +49,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <p className="absolute bottom-8 left-0 right-0 z-[2] text-center text-sm text-white/40">
+        <p className="absolute bottom-8 left-0 right-0 z-[2] text-center text-sm text-white/60">
           {t('legalNote')}
         </p>
 
