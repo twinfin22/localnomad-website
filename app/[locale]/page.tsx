@@ -19,9 +19,9 @@ interface Props {
 }
 
 const NEIGHBORHOOD_COUNTRIES = [
-  { country: 'korea', displayName: 'South Korea' },
-  { country: 'japan', displayName: 'Japan' },
-  { country: 'taiwan', displayName: 'Taiwan' },
+  { country: 'korea', displayName: 'South Korea', coordinates: [37.5, 127.0] as [number, number] },
+  { country: 'japan', displayName: 'Japan', coordinates: [36.2, 138.2] as [number, number] },
+  { country: 'taiwan', displayName: 'Taiwan', coordinates: [24.0, 121.0] as [number, number] },
 ] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -57,7 +57,7 @@ export default async function LandingPage({ params }: Props) {
 
   // Load neighborhood data for all countries in parallel
   const countryDataResults = await Promise.all(
-    NEIGHBORHOOD_COUNTRIES.map(async ({ country, displayName }) => {
+    NEIGHBORHOOD_COUNTRIES.map(async ({ country, displayName, coordinates }) => {
       const data = await getNeighborhoodData(country);
       if (!data) return null;
 
@@ -66,20 +66,13 @@ export default async function LandingPage({ params }: Props) {
         0
       );
 
-      // Compute country center from all city coordinates
-      const avgLat =
-        data.cities.reduce((sum, c) => sum + c.coordinates[0], 0) /
-        data.cities.length;
-      const avgLng =
-        data.cities.reduce((sum, c) => sum + c.coordinates[1], 0) /
-        data.cities.length;
-
       return {
         country,
         displayName,
-        coordinates: [avgLat, avgLng] as [number, number],
+        coordinates,
         neighborhoodCount: totalNeighborhoods,
         cityCount: data.cities.length,
+        topCities: data.cities.slice(0, 3).map((c) => c.name),
       };
     })
   );
