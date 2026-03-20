@@ -90,7 +90,12 @@ export default async function VisaDetailPage({ params }: Props) {
     getTranslations('VisaDetail'),
     getAvailableVisas(country as Country, locale),
   ]);
-  const displayCountry = country === 'korea' ? 'South Korea' : 'Taiwan';
+  const countryLabels: Record<string, string> = {
+    korea: tc('countryKorea'),
+    japan: tc('countryJapan'),
+    taiwan: tc('countryTaiwan'),
+  };
+  const displayCountry = countryLabels[country] ?? country;
 
   if (!visa) {
     return (

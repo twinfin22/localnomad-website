@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getTranslations, getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import type { BlogPost } from '@/lib/blog';
 import type { BlogCategory } from '@/lib/blog/schema';
@@ -12,7 +13,11 @@ const CATEGORY_COLORS: Record<BlogCategory, string> = {
   stories: 'bg-rose-100 text-rose-800',
 };
 
-export const BlogCard = ({ post }: { post: BlogPost }) => {
+export const BlogCard = async ({ post }: { post: BlogPost }) => {
+  const [t, locale] = await Promise.all([
+    getTranslations('Blog'),
+    getLocale(),
+  ]);
   const categoryColor = CATEGORY_COLORS[post.category];
 
   return (
@@ -35,7 +40,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
           <span
             className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${categoryColor}`}
           >
-            {post.category}
+            {t(`categories.${post.category}`)}
           </span>
           <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">
             {post.frontmatter.country}
@@ -54,14 +59,14 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
         </p>
         <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
           <time dateTime={post.frontmatter.date}>
-            {new Date(post.frontmatter.date).toLocaleDateString('en-US', {
+            {new Date(post.frontmatter.date).toLocaleDateString(locale, {
               year: 'numeric',
               month: 'short',
               day: 'numeric',
             })}
           </time>
           <span>&middot;</span>
-          <span>{post.readingTime} min read</span>
+          <span>{post.readingTime} {t('minuteRead')}</span>
         </div>
       </div>
     </article>

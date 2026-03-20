@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
@@ -13,10 +13,10 @@ export const revalidate = 3600;
 
 const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
 
-const COUNTRY_DISPLAY: Record<string, string> = {
-  korea: 'South Korea',
-  japan: 'Japan',
-  taiwan: 'Taiwan',
+const COUNTRY_KEY: Record<string, 'countrySouthKorea' | 'countryJapan' | 'countryTaiwan'> = {
+  korea: 'countrySouthKorea',
+  japan: 'countryJapan',
+  taiwan: 'countryTaiwan',
 };
 
 interface Props {
@@ -33,9 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!VALID_COUNTRIES.includes(country as (typeof VALID_COUNTRIES)[number]))
     return {};
 
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
-  const title = `Explore Neighborhoods — ${displayName} | LocalNomad`;
-  const description = `Interactive neighborhood guide for digital nomads in ${displayName}. Compare rent, vibe, and amenities across cities and neighborhoods.`;
+  const t = await getTranslations({ locale, namespace: 'Neighborhood' });
+  const displayName = t(COUNTRY_KEY[country] ?? 'countrySouthKorea');
+  const title = t('metaTitle', { country: displayName });
+  const description = t('metaDescription', { country: displayName });
   const alternates = getAlternates(locale, `/neighborhood/${country}`);
 
   return {
@@ -72,7 +73,8 @@ export default async function NeighborhoodPage({ params }: Props) {
     notFound();
   }
 
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const t = await getTranslations({ locale, namespace: 'Neighborhood' });
+  const displayName = t(COUNTRY_KEY[country] ?? 'countrySouthKorea');
 
   // Collect all unique tags across all neighborhoods
   const allTags = Array.from(
@@ -87,8 +89,8 @@ export default async function NeighborhoodPage({ params }: Props) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `Neighborhoods for Digital Nomads in ${displayName}`,
-    description: `Interactive neighborhood guide for digital nomads in ${displayName}.`,
+    name: t('jsonLdName', { country: displayName }),
+    description: t('jsonLdDescription', { country: displayName }),
     url: `https://localnomad.club/${locale}/neighborhood/${country}`,
     numberOfItems: data.cities.reduce(
       (sum: number, c: City) => sum + c.neighborhoods.length,
@@ -132,15 +134,14 @@ export default async function NeighborhoodPage({ params }: Props) {
             href={`/${country}`}
             className="text-sm text-primary hover:underline"
           >
-            &larr; Back to {displayName}
+            &larr; {t('backToCountry', { country: displayName })}
           </Link>
 
           <h1 className="mt-6 font-lora text-3xl font-bold text-primary sm:text-4xl">
-            Explore Neighborhoods &mdash; {displayName}
+            {t('pageTitle', { country: displayName })}
           </h1>
           <p className="mt-2 text-lg text-muted-foreground">
-            Find the perfect neighborhood for your nomad lifestyle. Click a city
-            to explore its neighborhoods.
+            {t('pageSubtitle')}
           </p>
 
           <h2 className="sr-only">Neighborhoods</h2>
@@ -151,7 +152,7 @@ export default async function NeighborhoodPage({ params }: Props) {
           {data.rentSources && data.rentSources.length > 0 && (
             <div className="mt-12 border-t pt-6 pb-2">
               <p className="text-xs text-muted-foreground">
-                Rent data sourced from:{' '}
+                {t('rentSourcePrefix')}{' '}
                 {data.rentSources.map((source: RentSource, i: number) => (
                   <span key={source.name}>
                     <a
@@ -165,7 +166,7 @@ export default async function NeighborhoodPage({ params }: Props) {
                     {i < data.rentSources!.length - 1 && ', '}
                   </span>
                 ))}
-                . Prices reflect studio to 1BR units and may vary by building age and proximity to transit.
+                . {t('rentSourceSuffix')}
               </p>
             </div>
           )}

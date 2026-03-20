@@ -9,17 +9,19 @@ import type { Document as VisaDocument } from '@/lib/types/visa';
 import { DocumentRow } from './document-row';
 import type { ChecklistItem } from '@/lib/types/dashboard';
 
-/** Categorize a document's where_to_get into a source group */
-function categorizeSource(whereToGet?: string): string {
-  if (!whereToGet) return 'Prepare Yourself';
+type DocSourceKey = 'docSourceSelf' | 'docSourceEmployer' | 'docSourceInstitution' | 'docSourceGovernment';
+
+/** Categorize a document's where_to_get into a translation key */
+function categorizeSource(whereToGet?: string): DocSourceKey {
+  if (!whereToGet) return 'docSourceSelf';
   const lower = whereToGet.toLowerCase();
   if (lower.includes('employer') || lower.includes('company') || lower.includes('sponsor'))
-    return 'From Employer';
+    return 'docSourceEmployer';
   if (lower.includes('universit') || lower.includes('school') || lower.includes('institution') || lower.includes('apostil'))
-    return 'From Institution';
+    return 'docSourceInstitution';
   if (lower.includes('government') || lower.includes('immigration') || lower.includes('embassy') || lower.includes('consulate') || lower.includes('police') || lower.includes('office'))
-    return 'From Government';
-  return 'Prepare Yourself';
+    return 'docSourceGovernment';
+  return 'docSourceSelf';
 }
 
 const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
@@ -191,7 +193,7 @@ export function DocumentChecklist({
 
   // Group documents by source (where_to_get) for visual organization
   const groupBySource = (docs: typeof documents) => {
-    const groups = new Map<string, typeof documents>();
+    const groups = new Map<DocSourceKey, typeof documents>();
     for (const doc of docs) {
       const source = categorizeSource(doc.where_to_get);
       const arr = groups.get(source) ?? [];
@@ -199,6 +201,13 @@ export function DocumentChecklist({
       groups.set(source, arr);
     }
     return groups;
+  };
+
+  const sourceLabels: Record<DocSourceKey, string> = {
+    docSourceSelf: t('docSourceSelf'),
+    docSourceEmployer: t('docSourceEmployer'),
+    docSourceInstitution: t('docSourceInstitution'),
+    docSourceGovernment: t('docSourceGovernment'),
   };
 
   const requiredDocs = documents.filter((doc) => doc.required);
@@ -234,7 +243,7 @@ export function DocumentChecklist({
           {Array.from(requiredGroups.entries()).map(([source, docs]) => (
             <div key={source}>
               <h3 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-muted-foreground">
-                {source}
+                {sourceLabels[source]}
               </h3>
               <div className="space-y-1">
                 {docs.map((doc) => (

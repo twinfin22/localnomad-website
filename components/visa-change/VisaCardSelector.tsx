@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface VisaCard {
   code: string;
@@ -9,15 +10,15 @@ interface VisaCard {
   description: string;
 }
 
-interface VisaCategory {
-  label: string;
+interface VisaCategoryDef {
+  labelKey: 'categoryWork' | 'categoryStudy' | 'categoryResidence' | 'categoryShortTerm';
   icon: string;
   visas: VisaCard[];
 }
 
-const VISA_CATEGORIES: VisaCategory[] = [
+const VISA_CATEGORIES: VisaCategoryDef[] = [
   {
-    label: 'Work',
+    labelKey: 'categoryWork',
     icon: '💼',
     visas: [
       { code: 'e-7', name: 'Professional Employment', description: 'Employer-sponsored skilled work' },
@@ -25,7 +26,7 @@ const VISA_CATEGORIES: VisaCategory[] = [
     ],
   },
   {
-    label: 'Study / Job Seeking',
+    labelKey: 'categoryStudy',
     icon: '🎓',
     visas: [
       { code: 'd-2', name: 'Student', description: 'Enrolled at Korean university' },
@@ -33,7 +34,7 @@ const VISA_CATEGORIES: VisaCategory[] = [
     ],
   },
   {
-    label: 'Residence / Family',
+    labelKey: 'categoryResidence',
     icon: '🏠',
     visas: [
       { code: 'f-2', name: 'Long-term Resident', description: 'Points-based residency' },
@@ -42,7 +43,7 @@ const VISA_CATEGORIES: VisaCategory[] = [
     ],
   },
   {
-    label: 'Short-term / Special',
+    labelKey: 'categoryShortTerm',
     icon: '✈️',
     visas: [
       { code: 'f-1-d', name: 'Digital Nomad', description: 'Remote work for foreign companies' },
@@ -58,6 +59,7 @@ interface VisaCardSelectorProps {
 }
 
 export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProps) {
+  const t = useTranslations('VisaChange');
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -86,7 +88,7 @@ export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProp
           >
             1
           </span>
-          <span className="text-sm font-medium text-[#1B4965]">Your current visa</span>
+          <span className="text-sm font-medium text-[#1B4965]">{t('stepCurrentVisa')}</span>
         </div>
         <div className="mx-4 h-px w-6 bg-slate-300" aria-hidden="true" />
         <div className="flex flex-1 items-center gap-2">
@@ -104,23 +106,23 @@ export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProp
               selectedFrom ? 'text-[#1B4965]' : 'text-slate-400'
             }`}
           >
-            Available paths
+            {t('stepAvailablePaths')}
           </span>
         </div>
       </div>
 
       {/* Instruction */}
       <div className="px-5 pb-3 pt-1">
-        <h2 className="text-base font-bold text-foreground">What&apos;s your current visa?</h2>
-        <p className="mt-0.5 text-sm text-slate-500">Tap a card to see your change options</p>
+        <h2 className="text-base font-bold text-foreground">{t('whatsYourVisa')}</h2>
+        <p className="mt-0.5 text-sm text-slate-500">{t('tapToSee')}</p>
       </div>
 
       {/* Visa categories */}
       <div className="px-5 pb-2">
         {VISA_CATEGORIES.map((cat) => (
-          <div key={cat.label} className="mb-4">
+          <div key={cat.labelKey} className="mb-4">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              {cat.icon}&nbsp;&nbsp;{cat.label}
+              {cat.icon}&nbsp;&nbsp;{t(cat.labelKey)}
             </p>
             <div className="flex flex-col gap-2">
               {cat.visas.map((visa) => {
@@ -171,7 +173,7 @@ export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProp
           href={`/${country}/visa`}
           className="text-sm text-[#1B4965] underline underline-offset-2 hover:text-[#2e6b92]"
         >
-          Not sure which visa you have? Browse all Korea visas →
+          {t('notSureVisa')}
         </a>
       </div>
     </div>

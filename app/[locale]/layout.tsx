@@ -62,7 +62,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               '@type': 'WebSite',
               name: 'LocalNomad',
               url: 'https://localnomad.club',
-              inLanguage: ['en', 'ja', 'zh-Hans', 'zh-Hant', 'vi'],
+              inLanguage: ['en', 'ja', 'zh-Hans'],
             },
             {
               '@context': 'https://schema.org',

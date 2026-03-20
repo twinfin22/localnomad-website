@@ -2,8 +2,6 @@ const BCP47_MAP: Record<string, string> = {
   en: 'en',
   ja: 'ja',
   'zh-cn': 'zh-Hans',
-  'zh-tw': 'zh-Hant',
-  vi: 'vi',
 };
 
 export function getAlternates(locale: string, pathname: string = '') {

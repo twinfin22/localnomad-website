@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { routing } from '@/i18n/routing';
@@ -32,18 +33,23 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country } = await params;
-  const alternates = getAlternates(locale, `/${country}/visa/change`);
+  const [t, alternates] = await Promise.all([
+    getTranslations({ locale: locale as (typeof routing.locales)[number], namespace: 'VisaChange' }),
+    Promise.resolve(getAlternates(locale, `/${country}/visa/change`)),
+  ]);
   const year = new Date().getFullYear();
 
+  const title = t('metaTitle', { year });
+  const description = t('metaDescription');
+  const ogDescription = t('metaOgDescription');
+
   return {
-    title: `Change Visa Status in Korea ${year} | LocalNomad`,
-    description:
-      'Find out which visa you can change to from your current status in Korea. Covers E-7, F-2, F-5, D-10, H-1, B-2, F-1-D and more. Not legal advice.',
+    title,
+    description,
     alternates,
     openGraph: {
-      title: `Change Visa Status in Korea ${year} | LocalNomad`,
-      description:
-        'Card-based guide to all confirmed in-country visa change paths in Korea. See requirements, timelines, and source links.',
+      title,
+      description: ogDescription,
       type: 'website',
       siteName: 'LocalNomad',
       url: `https://localnomad.club/${locale}/${country}/visa/change`,
@@ -51,9 +57,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Change Visa Status in Korea ${year} | LocalNomad`,
-      description:
-        'Card-based guide to all confirmed in-country visa change paths in Korea.',
+      title,
+      description: ogDescription,
       images: ['/og-default.png'],
     },
   };
@@ -70,7 +75,10 @@ export default async function VisaChangeHubPage({ params, searchParams }: Props)
     notFound();
   }
 
-  const displayCountry = country === 'korea' ? 'South Korea' : country;
+  const t = await getTranslations('VisaChange');
+  const tCommon = await getTranslations('Common');
+
+  const displayCountry = country === 'korea' ? tCommon('countryKorea') : country;
 
   // If a "from" visa is selected, load its name for display
   let fromName: string | undefined;
@@ -86,7 +94,7 @@ export default async function VisaChangeHubPage({ params, searchParams }: Props)
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `https://localnomad.club/${locale}` },
       { '@type': 'ListItem', position: 2, name: displayCountry, item: `https://localnomad.club/${locale}/${country}` },
-      { '@type': 'ListItem', position: 3, name: 'Change Visa Status', item: `https://localnomad.club/${locale}/${country}/visa/change` },
+      { '@type': 'ListItem', position: 3, name: t('breadcrumbChangeVisa'), item: `https://localnomad.club/${locale}/${country}/visa/change` },
     ],
   };
 
@@ -100,23 +108,22 @@ export default async function VisaChangeHubPage({ params, searchParams }: Props)
         <Breadcrumb
           variant="band"
           items={[
-            { label: 'Home', href: '/' },
+            { label: tCommon('home'), href: '/' },
             { label: displayCountry, href: `/${country}` },
-            { label: 'Change Visa Status' },
+            { label: t('breadcrumbChangeVisa') },
           ]}
         />
 
         {/* Hero header */}
         <header className="bg-[#1B4965] px-5 pb-6 pt-7 text-white">
           <p className="mb-3.5 text-xs font-semibold uppercase tracking-widest text-white/60">
-            LocalNomad · Korea Visa Guide
+            {t('pageBadge')}
           </p>
           <h1 className="font-lora mb-2 text-3xl sm:text-4xl font-bold leading-snug">
-            Change Your Visa Status in Korea
+            {t('pageTitle')}
           </h1>
           <p className="text-sm leading-relaxed text-white/75">
-            See which visa you can change to from your current status, what&apos;s required, and
-            how long it takes.
+            {t('pageSubtitle')}
           </p>
         </header>
 
@@ -141,7 +148,7 @@ export default async function VisaChangeHubPage({ params, searchParams }: Props)
           {/* Prompt when nothing selected */}
           {!from && (
             <div className="px-5 py-4 text-center text-sm text-slate-400">
-              Select your current visa above to see change options
+              {t('selectPrompt')}
             </div>
           )}
         </div>

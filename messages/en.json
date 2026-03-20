@@ -174,14 +174,21 @@
     "tabSubDocs": "{count} docs",
     "tabSubSteps": "{count} steps",
     "additionalRequirements": "See {count} additional requirements",
-    "estimatedTotal": "Estimated total timeline"
+    "estimatedTotal": "Estimated total timeline",
+    "docSourceSelf": "Prepare Yourself",
+    "docSourceEmployer": "From Employer",
+    "docSourceInstitution": "From Institution",
+    "docSourceGovernment": "From Government"
   },
   "Common": {
     "backToHome": "Back to home",
     "backToCountry": "Back to {country}",
     "home": "Home",
     "learnMore": "Learn more",
-    "disclaimer": "Based on published requirements. Not legal advice."
+    "disclaimer": "Based on published requirements. Not legal advice.",
+    "countryKorea": "South Korea",
+    "countryJapan": "Japan",
+    "countryTaiwan": "Taiwan"
   },
   "Auth": {
     "logIn": "Log in",
@@ -257,6 +264,9 @@
     "filterByCategory": "Filter by category",
     "filterByCountry": "Filter by country",
     "noPosts": "No posts found",
+    "noPostsInCategory": "No posts found in this category.",
+    "allPostsIn": "All posts in {category}.",
+    "relatedArticles": "Related Articles",
     "all": "All",
     "categories": {
       "guides": "Guides",
@@ -273,7 +283,34 @@
       "taiwan": "Taiwan",
       "sea": "Southeast Asia",
       "global": "Global"
-    }
+    },
+    "categoryMeta": {
+      "guides": {
+        "title": "Visa & Relocation Guides | LocalNomad Blog",
+        "description": "Step-by-step visa application guides for Korea, Japan, and Taiwan. Documents, timelines, costs, and insider tips for digital nomads."
+      },
+      "updates": {
+        "title": "Visa Policy Updates | LocalNomad Blog",
+        "description": "Latest visa policy changes and immigration updates for Korea, Japan, and Taiwan. Stay current on rules that affect your stay."
+      },
+      "tips": {
+        "title": "Living Abroad Tips | LocalNomad Blog",
+        "description": "Practical tips for daily life as a foreigner in Korea, Japan, and Taiwan. Banking, housing, healthcare, and local know-how."
+      },
+      "comparisons": {
+        "title": "Visa & Country Comparisons | LocalNomad Blog",
+        "description": "Side-by-side visa comparisons across Korea, Japan, and Taiwan. Find the best visa type and destination for your situation."
+      },
+      "news": {
+        "title": "Digital Nomad News — East Asia | LocalNomad Blog",
+        "description": "News and developments for remote workers in Korea, Japan, and Taiwan. Policy shifts, community events, and market trends."
+      },
+      "stories": {
+        "title": "Nomad Stories | LocalNomad Blog",
+        "description": "Real experiences from digital nomads and expats living in Korea, Japan, and Taiwan. Lessons learned and honest takes."
+      }
+    },
+    "postTitleSuffix": "| LocalNomad Blog"
   },
   "Footer": {
     "tagline": "Visa clarity for nomads, by nomads.",
@@ -293,6 +330,48 @@
     "linksLabel": "Legal",
     "companyLabel": "Company"
   },
+  "About": {
+    "metaTitle": "About LocalNomad",
+    "metaDescription": "LocalNomad makes visa information accessible for digital nomads in South Korea, Japan, and Taiwan. Clear requirements, document checklists, and community tips.",
+    "pageTitle": "About LocalNomad",
+    "whatWeDoTitle": "What We Do",
+    "whatWeDoBody": "LocalNomad is a visa information platform for digital nomads and remote workers exploring life in South Korea, Japan, and Taiwan. We compile published visa requirements, document checklists, and community-sourced tips into one clear, accessible resource.",
+    "ourMissionTitle": "Our Mission",
+    "ourMissionBody": "Navigating visa requirements across Asia shouldn't require hours of research across dozens of government websites and scattered forum posts. Our mission is to make visa information accessible, accurate, and easy to understand — so you can focus on what matters: building your life abroad.",
+    "howWeWorkTitle": "How We Work",
+    "howWeWorkBody": "We gather information from official government sources — including immigration authorities, embassies, and published regulations — and present it in a structured, comparable format. Our community of nomads across Asia contributes real-world experience and practical tips.",
+    "importantNoticeTitle": "Important Notice",
+    "importantNoticeBody": "LocalNomad provides general information based on published requirements for educational purposes only. We are not a law firm, immigration consultancy, or licensed advisory service. The information on this platform does not constitute legal advice. For personalized guidance on your immigration situation, please consult a licensed immigration professional in your destination country."
+  },
+  "Contact": {
+    "metaTitle": "Contact Us — LocalNomad",
+    "metaDescription": "Get in touch with the LocalNomad team via Discord, email, or Instagram. Join our community of digital nomads exploring Korea, Japan, and Taiwan.",
+    "pageTitle": "Contact Us",
+    "intro": "We'd love to hear from you. Whether you have feedback, a question about our platform, or just want to connect — here's how to reach us.",
+    "discordTitle": "Discord Community",
+    "discordDesc": "The best place for visa questions, tips, and connecting with other nomads in Asia.",
+    "discordLink": "Join our Discord",
+    "emailTitle": "Email",
+    "emailDesc": "For partnerships, press inquiries, or anything else.",
+    "instagramTitle": "Instagram",
+    "instagramDesc": "Follow us for nomad life updates and community highlights.",
+    "disclaimer": "For visa-specific questions, please consult a licensed immigration professional in your destination country. LocalNomad provides general information only and cannot offer personalized legal advice."
+  },
+  "Neighborhood": {
+    "metaTitle": "Explore Neighborhoods — {country} | LocalNomad",
+    "metaDescription": "Interactive neighborhood guide for digital nomads in {country}. Compare rent, vibe, and amenities across cities and neighborhoods.",
+    "pageTitle": "Explore Neighborhoods — {country}",
+    "pageSubtitle": "Find the perfect neighborhood for your nomad lifestyle. Click a city to explore its neighborhoods.",
+    "backToCountry": "Back to {country}",
+    "countrySouthKorea": "South Korea",
+    "countryJapan": "Japan",
+    "countryTaiwan": "Taiwan",
+    "rentSourcePrefix": "Rent data sourced from:",
+    "rentSourceSuffix": "Prices reflect studio to 1BR units and may vary by building age and proximity to transit.",
+    "jsonLdName": "Neighborhoods for Digital Nomads in {country}",
+    "jsonLdDescription": "Interactive neighborhood guide for digital nomads in {country}.",
+    "prosAndCons": "Pros & Cons"
+  },
   "Meta": {
     "landingTitle": "LocalNomad — Visa clarity, finally.",
     "landingDescription": "Visa requirements, document checklists, and community tips for digital nomads in South Korea, Japan, and Taiwan — all in one place.",
@@ -305,5 +384,74 @@
     "privacyDescription": "Learn how LocalNomad collects, uses, and protects your personal data — including authentication, analytics, and your rights under GDPR and Korean privacy law.",
     "refundTitle": "Refund Policy — LocalNomad Visa Platform",
     "refundDescription": "LocalNomad's refund policy for paid features and services. Currently a free platform — detailed refund terms will be published when paid features launch."
+  },
+  "VisaChange": {
+    "disclaimerAbove": "Based on published Korean immigration guidelines. This is not legal advice. For your specific situation, consult a licensed immigration consultant (행정사) or attorney (변호사).",
+    "disclaimerBelow": "Information for general reference only. Final decisions on visa status changes rest solely with Korea Immigration Service. Requirements may change — always verify with the official source before applying.",
+    "nationalityTitle": "Nationality-dependent path",
+    "nationalityDefault": "Availability and conditions for this path may vary depending on your passport. Check the source link for country-specific details.",
+    "nationalityBannerMultiple": "Some paths below are only available for certain passport holders. See individual cards for details.",
+    "badgeNationalityDependent": "Nationality-dependent",
+    "badgeMustExit": "Must exit Korea",
+    "badgeInCountry": "In-country",
+    "verifyCaveat": "Verify this path with your local immigration office — official documentation is limited.",
+    "viewFullRequirements": "View full requirements",
+    "whereCanYouGo": "Where can you go from {from}?",
+    "pathsConfirmed": "{count} in-country change path confirmed",
+    "pathsConfirmedPlural": "{count} in-country change paths confirmed",
+    "noPathsFound": "No direct in-country change paths found",
+    "permanentResidentNote": "F-5 is Korea's Permanent Resident visa — no further in-country status changes are required. F-5 holders have unrestricted work rights and long-term residency.",
+    "limitedOptions": "Limited in-country change options from {from}.",
+    "viewVisaDetails": "View {from} visa details",
+    "stepCurrentVisa": "Your current visa",
+    "stepAvailablePaths": "Available paths",
+    "whatsYourVisa": "What's your current visa?",
+    "tapToSee": "Tap a card to see your change options",
+    "notSureVisa": "Not sure which visa you have? Browse all Korea visas →",
+    "categoryWork": "Work",
+    "categoryStudy": "Study / Job Seeking",
+    "categoryResidence": "Residence / Family",
+    "categoryShortTerm": "Short-term / Special",
+    "pageBadge": "LocalNomad · Korea Visa Guide",
+    "pageTitle": "Change Your Visa Status in Korea",
+    "pageSubtitle": "See which visa you can change to from your current status, what's required, and how long it takes.",
+    "selectPrompt": "Select your current visa above to see change options",
+    "backToOptions": "Back to {from} options",
+    "viewToDetails": "View {to} details",
+    "otherPathsFrom": "Other paths from {from}",
+    "chipTimeline": "Timeline",
+    "chipExitRequired": "Exit required?",
+    "chipDocuments": "Documents",
+    "chipConfidence": "Confidence",
+    "chipDocsRequired": "{count} required",
+    "chipConfidenceHigh": "High",
+    "chipConfidenceMedium": "Medium — verify",
+    "exitDependsOnPassport": "Depends on passport",
+    "exitMustLeave": "Must exit Korea",
+    "exitInCountry": "In-country",
+    "pageSubheading": "Korea · Visa Status Change",
+    "sectionRequirements": "Key Requirements",
+    "sectionDocuments": "Required Documents",
+    "sectionTimeline": "Process Timeline",
+    "sectionNotes": "Important Notes",
+    "sectionBiggerPicture": "The Bigger Picture",
+    "biggerPictureBody": "This change is part of a longer path to permanent residence in Korea:",
+    "mediumConfidenceCaveat": "Medium confidence — verify this path with your local immigration office before proceeding.",
+    "timelineStep1": "Prepare documents",
+    "timelineStep1Detail": "Gather all {count} required documents listed above",
+    "timelineStep2": "Submit application",
+    "timelineStep2Exit": "Apply at Korean consulate/embassy in your country",
+    "timelineStep2Local": "Submit at local Immigration Office (출입국관리사무소) in Korea",
+    "timelineStep3": "Processing",
+    "timelineStep4": "Receive new ARC",
+    "timelineStep4Detail": "Pick up updated Alien Registration Card",
+    "breadcrumbChangeVisa": "Change Visa Status",
+    "breadcrumbChangeStatus": "Change Status",
+    "metaTitle": "Change Visa Status in Korea {year} | LocalNomad",
+    "metaDescription": "Find out which visa you can change to from your current status in Korea. Covers E-7, F-2, F-5, D-10, H-1, B-2, F-1-D and more. Not legal advice.",
+    "metaOgDescription": "Card-based guide to all confirmed in-country visa change paths in Korea. See requirements, timelines, and source links.",
+    "metaTitleTransition": "{from} to {to} Visa Change — Korea {year} | LocalNomad",
+    "metaTitleFallback": "Visa Change | LocalNomad",
+    "metaDescriptionTransition": "Requirements, timeline, and documents for changing from {from} to {to} in Korea."
   }
 }

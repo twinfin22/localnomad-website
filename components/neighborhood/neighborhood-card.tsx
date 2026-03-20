@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Check, X } from 'lucide-react';
 import {
   Accordion,
@@ -13,6 +16,7 @@ interface NeighborhoodCardProps {
 }
 
 export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
+  const t = useTranslations('Neighborhood');
   return (
     <div className="overflow-hidden rounded-lg border bg-white shadow-sm">
       {/* Top image */}
@@ -56,7 +60,7 @@ export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
           <Accordion type="single" collapsible>
             <AccordionItem value="pros-cons" className="border-b-0">
               <AccordionTrigger className="text-sm">
-                Pros &amp; Cons
+                {t('prosAndCons')}
               </AccordionTrigger>
               <AccordionContent>
                 <div className="space-y-3">

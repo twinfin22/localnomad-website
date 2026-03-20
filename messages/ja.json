@@ -18,7 +18,7 @@
     "countrySEA": "東南アジア",
     "countrySEAEmoji": "🌏",
     "countrySEADesc": "デジタルノマドビザ比較",
-    "legalNote": "公開された要件に基づいています。法的助言ではありません。",
+    "legalNote": "公開されている要件に基づきます。法的アドバイスではありません。",
     "exploreVisas": "ビザを見る",
     "statVisasCount": "18",
     "statVisasLabel": "種類のビザ",
@@ -174,7 +174,11 @@
     "tabSubDocs": "{count}件の書類",
     "tabSubSteps": "{count}ステップ",
     "additionalRequirements": "他{count}件の要件を表示",
-    "estimatedTotal": "推定合計期間"
+    "estimatedTotal": "推定合計期間",
+    "docSourceSelf": "自分で準備",
+    "docSourceEmployer": "雇用主から",
+    "docSourceInstitution": "学校・機関から",
+    "docSourceGovernment": "政府機関から"
   },
   "Auth": {
     "logIn": "ログイン",
@@ -228,7 +232,10 @@
     "backToCountry": "{country}に戻る",
     "home": "ホーム",
     "learnMore": "詳しく見る",
-    "disclaimer": "公開されている要件に基づきます。法的アドバイスではありません。"
+    "disclaimer": "公開されている要件に基づきます。法的アドバイスではありません。",
+    "countryKorea": "韓国",
+    "countryJapan": "日本",
+    "countryTaiwan": "台湾"
   },
   "Nav": {
     "skipToContent": "コンテンツへスキップ",
@@ -257,6 +264,9 @@
     "filterByCategory": "カテゴリで絞り込み",
     "filterByCountry": "国で絞り込み",
     "noPosts": "記事が見つかりません",
+    "noPostsInCategory": "このカテゴリに記事が見つかりません。",
+    "allPostsIn": "{category}のすべての記事。",
+    "relatedArticles": "関連記事",
     "all": "すべて",
     "categories": {
       "guides": "ガイド",
@@ -273,7 +283,34 @@
       "taiwan": "台湾",
       "sea": "東南アジア",
       "global": "グローバル"
-    }
+    },
+    "categoryMeta": {
+      "guides": {
+        "title": "ビザ・移住ガイド | LocalNomad ブログ",
+        "description": "韓国・日本・台湾のビザ申請ステップガイド。必要書類、スケジュール、費用、デジタルノマドのためのヒント。"
+      },
+      "updates": {
+        "title": "ビザポリシー最新情報 | LocalNomad ブログ",
+        "description": "韓国・日本・台湾の最新ビザ政策変更と入国管理アップデート。あなたの滞在に影響するルールを把握しよう。"
+      },
+      "tips": {
+        "title": "海外生活ヒント | LocalNomad ブログ",
+        "description": "韓国・日本・台湾での外国人としての日常生活に役立つヒント。銀行、住居、医療、地元の知識。"
+      },
+      "comparisons": {
+        "title": "ビザ・国別比較 | LocalNomad ブログ",
+        "description": "韓国・日本・台湾のビザを並べて比較。あなたの状況に最適なビザタイプと目的地を見つけよう。"
+      },
+      "news": {
+        "title": "デジタルノマドニュース — 東アジア | LocalNomad ブログ",
+        "description": "韓国・日本・台湾のリモートワーカー向けニュースと最新情報。政策変更、コミュニティイベント、市場動向。"
+      },
+      "stories": {
+        "title": "ノマドのストーリー | LocalNomad ブログ",
+        "description": "韓国・日本・台湾で生活するデジタルノマドや在留外国人のリアルな体験談。学びと率直な意見。"
+      }
+    },
+    "postTitleSuffix": "| LocalNomad ブログ"
   },
   "Footer": {
     "tagline": "ノマドによる、ノマドのためのビザ情報。",
@@ -293,6 +330,48 @@
     "linksLabel": "法的情報",
     "companyLabel": "会社情報"
   },
+  "About": {
+    "metaTitle": "LocalNomadについて",
+    "metaDescription": "LocalNomadは韓国・日本・台湾のデジタルノマド向けにビザ情報をわかりやすく提供するプラットフォームです。要件・書類チェックリスト・コミュニティのヒントをまとめています。",
+    "pageTitle": "LocalNomadについて",
+    "whatWeDoTitle": "私たちについて",
+    "whatWeDoBody": "LocalNomadは、韓国・日本・台湾での生活を目指すデジタルノマドやリモートワーカー向けのビザ情報プラットフォームです。公開されているビザ要件・書類チェックリスト・コミュニティからのヒントをまとめ、わかりやすく提供しています。",
+    "ourMissionTitle": "ミッション",
+    "ourMissionBody": "アジアのビザ要件を調べるために、政府の複数サイトや散在するフォーラムで何時間も費やす必要はないはずです。私たちのミッションは、ビザ情報をわかりやすく・正確に・理解しやすい形で提供すること。あなたが本当に大切なこと、つまり海外での生活づくりに集中できるように。",
+    "howWeWorkTitle": "情報収集の方法",
+    "howWeWorkBody": "私たちは、入国管理局・大使館・公式規制など公的機関の情報を収集し、整理された比較可能な形式で提供しています。アジア各地のノマドコミュニティも実体験や実践的なヒントを提供しています。",
+    "importantNoticeTitle": "重要なお知らせ",
+    "importantNoticeBody": "LocalNomadは、公開されている要件に基づく一般的な情報を教育目的のみで提供しています。当サービスは法律事務所・入国管理コンサルタント・許認可を受けた相談機関ではありません。本プラットフォームの情報は法的アドバイスを構成するものではありません。個別の入国管理に関するご相談は、渡航先国の資格ある移民専門家にご相談ください。"
+  },
+  "Contact": {
+    "metaTitle": "お問い合わせ — LocalNomad",
+    "metaDescription": "Discord・メール・Instagramでお気軽にご連絡ください。韓国・日本・台湾を目指すデジタルノマドのコミュニティに参加しましょう。",
+    "pageTitle": "お問い合わせ",
+    "intro": "ご意見・ご質問・交流のご希望など、お気軽にご連絡ください。各連絡先はこちらです。",
+    "discordTitle": "Discordコミュニティ",
+    "discordDesc": "ビザの質問・ヒントの共有・アジア各地のノマドとの交流はDiscordが一番です。",
+    "discordLink": "Discordに参加する",
+    "emailTitle": "メール",
+    "emailDesc": "パートナーシップ・取材のご依頼・その他のお問い合わせはこちらから。",
+    "instagramTitle": "Instagram",
+    "instagramDesc": "ノマドライフの最新情報やコミュニティのハイライトをフォローしてください。",
+    "disclaimer": "ビザに関する具体的なご質問は、渡航先国の資格ある移民専門家にご相談ください。LocalNomadは一般的な情報のみを提供しており、個別の法的アドバイスは行っておりません。"
+  },
+  "Neighborhood": {
+    "metaTitle": "エリアを探す — {country} | LocalNomad",
+    "metaDescription": "{country}のデジタルノマド向けエリアガイド。各都市・エリアの家賃・雰囲気・利便性を比較できます。",
+    "pageTitle": "エリアを探す — {country}",
+    "pageSubtitle": "あなたのノマドライフに最適なエリアを見つけよう。都市を選んで各エリアを探索。",
+    "backToCountry": "{country}に戻る",
+    "countrySouthKorea": "韓国",
+    "countryJapan": "日本",
+    "countryTaiwan": "台湾",
+    "rentSourcePrefix": "家賃データ出典：",
+    "rentSourceSuffix": "価格はワンルーム〜1LDKの目安であり、築年数や交通アクセスにより異なる場合があります。",
+    "jsonLdName": "{country}のデジタルノマド向けエリア一覧",
+    "jsonLdDescription": "{country}のデジタルノマド向けエリアガイド。",
+    "prosAndCons": "メリット・デメリット"
+  },
   "Meta": {
     "landingTitle": "LocalNomad — ビザ情報、やっとクリアに。",
     "landingDescription": "韓国・日本・台湾のビザ要件、必要書類チェックリスト、コミュニティの体験談 — デジタルノマドのビザ申請準備に必要な情報をまとめました。",
@@ -305,5 +384,74 @@
     "privacyDescription": "LocalNomadが個人情報をどのように収集・使用・保護するか — 認証、アナリティクス、GDPRおよび韓国個人情報保護法に基づく権利について。",
     "refundTitle": "返金ポリシー — LocalNomad ビザ情報プラットフォーム",
     "refundDescription": "LocalNomadの有料機能・サービスに関する返金ポリシー。現在は無料プラットフォームです — 有料機能の開始時に詳細な返金規定を公開します。"
+  },
+  "VisaChange": {
+    "disclaimerAbove": "韓国の出入国管理ガイドラインに基づいています。これは法的アドバイスではありません。個別の状況については、行政士（행정사）または弁護士（변호사）にご相談ください。",
+    "disclaimerBelow": "一般的な参考情報としてご利用ください。ビザ資格変更に関する最終判断は、韓国出入国・外国人庁が行います。要件は変更される場合があります — 申請前に必ず公式情報源で確認してください。",
+    "nationalityTitle": "国籍によって異なるルート",
+    "nationalityDefault": "このルートの利用可否と条件は、パスポートによって異なる場合があります。国別の詳細は情報源リンクをご確認ください。",
+    "nationalityBannerMultiple": "以下のルートの一部は、特定のパスポート保持者のみが利用できます。個別のカードをご確認ください。",
+    "badgeNationalityDependent": "国籍による",
+    "badgeMustExit": "一旦出国が必要",
+    "badgeInCountry": "国内変更可",
+    "verifyCaveat": "このルートについては、地元の出入国管理事務所で確認してください — 公式文書が限られています。",
+    "viewFullRequirements": "詳細な要件を見る",
+    "whereCanYouGo": "{from}からどこに変更できますか？",
+    "pathsConfirmed": "国内変更ルートが{count}件確認されています",
+    "pathsConfirmedPlural": "国内変更ルートが{count}件確認されています",
+    "noPathsFound": "直接の国内変更ルートは見つかりませんでした",
+    "permanentResidentNote": "F-5は韓国の永住ビザです — これ以上の国内ビザ資格変更は不要です。F-5保持者は無制限の就労権と長期滞在が認められています。",
+    "limitedOptions": "{from}からの国内変更オプションは限られています。",
+    "viewVisaDetails": "{from}ビザの詳細を見る",
+    "stepCurrentVisa": "現在のビザ",
+    "stepAvailablePaths": "変更可能なルート",
+    "whatsYourVisa": "現在のビザは何ですか？",
+    "tapToSee": "カードをタップして変更オプションを確認",
+    "notSureVisa": "どのビザを持っているか分からない場合は？韓国のすべてのビザを見る →",
+    "categoryWork": "就労",
+    "categoryStudy": "留学・就職活動",
+    "categoryResidence": "居住・家族",
+    "categoryShortTerm": "短期・特別",
+    "pageBadge": "LocalNomad · 韓国ビザガイド",
+    "pageTitle": "韓国でビザ資格を変更する",
+    "pageSubtitle": "現在のビザ資格からどのビザに変更できるか、何が必要か、どのくらいかかるかを確認できます。",
+    "selectPrompt": "上のビザを選択して変更オプションを確認してください",
+    "backToOptions": "{from}の変更オプションに戻る",
+    "viewToDetails": "{to}ビザの詳細を見る",
+    "otherPathsFrom": "{from}からの他のルート",
+    "chipTimeline": "スケジュール",
+    "chipExitRequired": "出国必要？",
+    "chipDocuments": "書類",
+    "chipConfidence": "信頼度",
+    "chipDocsRequired": "{count}件必要",
+    "chipConfidenceHigh": "高い",
+    "chipConfidenceMedium": "中 — 要確認",
+    "exitDependsOnPassport": "パスポートによる",
+    "exitMustLeave": "一旦出国が必要",
+    "exitInCountry": "国内変更可",
+    "pageSubheading": "韓国 · ビザ資格変更",
+    "sectionRequirements": "主な要件",
+    "sectionDocuments": "必要書類",
+    "sectionTimeline": "手続きの流れ",
+    "sectionNotes": "重要事項",
+    "sectionBiggerPicture": "将来のビザプラン",
+    "biggerPictureBody": "この変更は、韓国での永住権取得への長い道のりの一部です：",
+    "mediumConfidenceCaveat": "信頼度：中 — 申請前に地元の出入国管理事務所で確認してください。",
+    "timelineStep1": "書類を準備する",
+    "timelineStep1Detail": "上記の必要書類{count}件をすべて揃える",
+    "timelineStep2": "申請書を提出する",
+    "timelineStep2Exit": "自国の韓国領事館・大使館で申請",
+    "timelineStep2Local": "韓国国内の出入国・外国人庁（출입국관리사무소）で提出",
+    "timelineStep3": "審査",
+    "timelineStep4": "新しいARCを受け取る",
+    "timelineStep4Detail": "更新された外国人登録証を受け取る",
+    "breadcrumbChangeVisa": "ビザ資格変更",
+    "breadcrumbChangeStatus": "資格変更",
+    "metaTitle": "韓国でのビザ変更 {year} | LocalNomad",
+    "metaDescription": "現在のビザから変更できるビザを調べましょう。E-7・F-2・F-5・D-10・H-1・B-2・F-1-Dなどをカバー。法的アドバイスではありません。",
+    "metaOgDescription": "韓国の国内ビザ変更パスを確認できるカード型ガイド。要件・スケジュール・情報源を確認。",
+    "metaTitleTransition": "{from}から{to}へのビザ変更 — 韓国{year} | LocalNomad",
+    "metaTitleFallback": "ビザ変更 | LocalNomad",
+    "metaDescriptionTransition": "韓国で{from}から{to}へ変更するための要件・スケジュール・書類。"
   }
 }

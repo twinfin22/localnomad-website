@@ -1,4 +1,5 @@
 import { getTransitionsFrom } from '@/lib/visa-transitions';
+import { getTranslations } from 'next-intl/server';
 import type { Country } from '@/lib/types/visa';
 import { TransitionDetailCard } from './TransitionDetailCard';
 import { NationalityBanner } from './NationalityBanner';
@@ -20,7 +21,10 @@ export async function TransitionResults({
   country,
   locale,
 }: TransitionResultsProps) {
-  const transitions = await getTransitionsFrom(country, from, locale);
+  const [t, transitions] = await Promise.all([
+    getTranslations('VisaChange'),
+    getTransitionsFrom(country, from, locale),
+  ]);
 
   // Filter out d-4 (not in scope for v1 hub)
   const filtered = transitions.filter((t) => t.type !== 'd-4');
@@ -43,19 +47,21 @@ export async function TransitionResults({
           <span className="text-white/80 text-xs">{fromName}</span>
         </div>
         <h2 className="mt-2 text-lg font-bold text-foreground">
-          Where can you go from {from.toUpperCase()}?
+          {t('whereCanYouGo', { from: from.toUpperCase() })}
         </h2>
         <p className="text-sm text-slate-500">
           {filtered.length > 0
-            ? `${filtered.length} in-country change path${filtered.length === 1 ? '' : 's'} confirmed`
-            : 'No direct in-country change paths found'}
+            ? filtered.length === 1
+              ? t('pathsConfirmed', { count: filtered.length })
+              : t('pathsConfirmedPlural', { count: filtered.length })
+            : t('noPathsFound')}
         </p>
       </div>
 
       {/* Nationality banner at top if any transition is nationality-dependent */}
       {hasNationalityDependent && (
         <div className="mb-4">
-          <NationalityBanner notes="Some paths below are only available for certain passport holders. See individual cards for details." />
+          <NationalityBanner notes={t('nationalityBannerMultiple')} />
         </div>
       )}
 
@@ -63,8 +69,7 @@ export async function TransitionResults({
       {isDeadEnd && (
         <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 px-5 py-6 text-center">
           <p className="text-sm leading-relaxed text-slate-600">
-            <strong>F-5 is Korea&apos;s Permanent Resident visa</strong> — no further in-country status
-            changes are required. F-5 holders have unrestricted work rights and long-term residency.
+            {t('permanentResidentNote')}
           </p>
         </div>
       )}
@@ -73,12 +78,12 @@ export async function TransitionResults({
       {filtered.length === 0 && !isDeadEnd && (
         <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 px-5 py-6 text-center">
           <p className="text-sm leading-relaxed text-slate-600">
-            Limited in-country change options from {from.toUpperCase()}.{' '}
+            {t('limitedOptions', { from: from.toUpperCase() })}{' '}
             <Link
               href={`/${country}/visa/${from}`}
               className="font-semibold text-[#1B4965] underline underline-offset-2"
             >
-              View {from.toUpperCase()} visa details
+              {t('viewVisaDetails', { from: from.toUpperCase() })}
             </Link>{' '}
             for renewal and alternative paths.
           </p>

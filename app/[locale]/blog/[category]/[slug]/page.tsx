@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
+import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getAlternates } from '@/lib/seo';
 import { getPost, getAllPostSlugs, getRelatedPosts } from '@/lib/blog';
@@ -29,10 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!post) return {};
 
-  const alternates = getAlternates(locale, `/blog/${category}/${slug}`);
+  const [t, alternates] = await Promise.all([
+    getTranslations({ locale: locale as (typeof routing.locales)[number], namespace: 'Blog' }),
+    Promise.resolve(getAlternates(locale, `/blog/${category}/${slug}`)),
+  ]);
 
   return {
-    title: `${post.frontmatter.title} | LocalNomad Blog`,
+    title: `${post.frontmatter.title} ${t('postTitleSuffix')}`,
     description: post.frontmatter.description,
     alternates,
     openGraph: {
@@ -88,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <BlogToc headings={headings} />
-      <main id="main-content" className="max-w-3xl px-6 py-12 md:ml-[200px] lg:ml-[240px] md:mr-auto">
+      <main id="main-content" className="max-w-3xl px-6 py-12 md:ml-[300px] lg:ml-[340px] md:mr-auto">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -163,6 +167,30 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </header>
 
+        {headings.length > 0 && (
+          <details className="mb-8 rounded-xl border border-gray-200 bg-gray-50/50 px-5 py-4 md:hidden">
+            <summary className="cursor-pointer text-sm font-semibold text-[#1B4965]">
+              Table of Contents
+            </summary>
+            <nav className="mt-3 border-t border-gray-200 pt-3">
+              <ul className="space-y-1.5">
+                {headings.map((h) => (
+                  <li key={h.id}>
+                    <a
+                      href={`#${h.id}`}
+                      className={`block text-sm leading-snug text-muted-foreground hover:text-foreground ${
+                        h.level === 3 ? 'pl-4' : ''
+                      }`}
+                    >
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </details>
+        )}
+
         <article className="prose prose-lg max-w-none prose-headings:font-lora prose-headings:text-foreground prose-a:text-primary">
           <MDXRemote
             source={post.content}
@@ -197,6 +225,8 @@ export default async function BlogPostPage({ params }: Props) {
             />
           );
         })()}
+
+        <div id="blog-disclaimer-target" />
       </main>
     </>
   );

@@ -10,16 +10,12 @@ const localeLabels: Record<string, string> = {
   en: 'EN',
   ja: 'JA',
   'zh-cn': '简中',
-  'zh-tw': '繁中',
-  vi: 'VI',
 };
 
 const localeFullLabels: Record<string, string> = {
   en: 'English',
   ja: '日本語',
   'zh-cn': '简体中文',
-  'zh-tw': '繁體中文',
-  vi: 'Tiếng Việt',
 };
 
 export const LocaleSwitcher = () => {

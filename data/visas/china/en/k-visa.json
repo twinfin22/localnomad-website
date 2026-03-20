@@ -299,7 +299,8 @@
       "url": "https://www.nia.gov.cn/n897453/index.html"
     }
   ],
-  "sourceVerified": true,
+  "draft": true,
+  "sourceVerified": false,
   "primarySourceUrl": "https://english.www.gov.cn/policies/visas/",
   "lastFactChecked": "2026-03-20"
 }

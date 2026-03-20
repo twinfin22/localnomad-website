@@ -5,7 +5,7 @@ import { getAllTransitionPairs } from '@/lib/visa-transitions';
 
 const BASE_URL = 'https://localnomad.club';
 
-const LOCALES = ['en', 'ja', 'zh-cn', 'zh-tw', 'vi'] as const;
+const LOCALES = ['en', 'ja', 'zh-cn'] as const;
 const COUNTRIES = ['japan', 'korea', 'taiwan', 'southeast-asia'] as const;
 
 const COUNTRY_VISAS: Record<string, string[]> = {
@@ -24,8 +24,6 @@ const BCP47_MAP: Record<string, string> = {
   en: 'en',
   ja: 'ja',
   'zh-cn': 'zh-Hans',
-  'zh-tw': 'zh-Hant',
-  vi: 'vi',
 };
 
 // Fallback for pages without a known modification date.

@@ -3,6 +3,7 @@
 import { useCallback } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import type { BlogCategory } from '@/lib/blog/schema';
 
@@ -36,6 +37,8 @@ interface RelatedPost {
 }
 
 export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
+  const t = useTranslations('Blog');
+  const locale = useLocale();
   const scroll = useCallback((direction: 'left' | 'right') => {
     const container = document.getElementById('related-posts-carousel');
     if (!container) return;
@@ -50,7 +53,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
   return (
     <section className="mt-6 pt-4">
       <h2 className="font-lora text-2xl font-bold text-foreground">
-        Related Articles
+        {t('relatedArticles')}
       </h2>
 
       <div className="relative mt-6">
@@ -104,7 +107,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
                     <span
                       className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${CATEGORY_COLORS[post.category]}`}
                     >
-                      {post.category}
+                      {t(`categories.${post.category}`)}
                     </span>
                     <span className="text-sm" aria-hidden="true">
                       {COUNTRY_EMOJI[post.country] ?? ''}
@@ -118,13 +121,13 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
                   </p>
                   <div className="mt-3 flex items-center justify-between border-t border-border/40 pt-2.5 text-xs text-muted-foreground">
                     <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString('en-US', {
+                      {new Date(post.date).toLocaleDateString(locale, {
                         month: 'short',
                         day: 'numeric',
                         year: 'numeric',
                       })}
                     </time>
-                    <span>{post.readingTime} min read</span>
+                    <span>{post.readingTime} {t('minuteRead')}</span>
                   </div>
                 </div>
               </Link>

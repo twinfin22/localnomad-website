@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getAllTransitionPairs, getTransitionDetail } from '@/lib/visa-transitions';
@@ -59,25 +60,28 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country, transition } = await params;
+  const tMeta = await getTranslations({ locale: locale as (typeof routing.locales)[number], namespace: 'VisaChange' });
   const parsed = parseTransitionSlug(transition);
-  if (!parsed) return { title: 'Visa Change | LocalNomad' };
+  if (!parsed) return { title: tMeta('metaTitleFallback') };
 
   const detail = await getTransitionDetail(country as Country, parsed.from, parsed.to, locale);
-  if (!detail) return { title: 'Visa Change | LocalNomad' };
+  if (!detail) return { title: tMeta('metaTitleFallback') };
 
-  const { fromVisa, toVisa, transition: t } = detail;
+  const { fromVisa, toVisa } = detail;
   const year = new Date().getFullYear();
-  const title = `${parsed.from.toUpperCase()} to ${parsed.to.toUpperCase()} Visa Change - Korea ${year} | LocalNomad`;
-  const description = `Requirements, timeline and documents for changing from ${fromVisa?.shortName ?? parsed.from.toUpperCase()} to ${toVisa?.shortName ?? parsed.to.toUpperCase()} in Korea. ${t.requirements.slice(0, 100)}`;
+  const from = fromVisa?.shortName ?? parsed.from.toUpperCase();
+  const to = toVisa?.shortName ?? parsed.to.toUpperCase();
+  const title = tMeta('metaTitleTransition', { from, to, year });
+  const description = tMeta('metaDescriptionTransition', { from, to });
   const alternates = getAlternates(locale, `/${country}/visa/change/${transition}`);
 
   return {
     title,
-    description: description.slice(0, 200),
+    description,
     alternates,
     openGraph: {
       title,
-      description: description.slice(0, 200),
+      description,
       type: 'article',
       siteName: 'LocalNomad',
       url: `https://localnomad.club/${locale}/${country}/visa/change/${transition}`,
@@ -86,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title,
-      description: description.slice(0, 200),
+      description,
       images: ['/og-default.png'],
     },
   };
@@ -108,9 +112,12 @@ export default async function TransitionDetailPage({ params }: Props) {
   const detail = await getTransitionDetail(country as Country, parsed.from, parsed.to, locale);
   if (!detail) notFound();
 
-  const { fromVisa, toVisa, transition: t } = detail;
+  const t = await getTranslations('VisaChange');
+  const tCommon = await getTranslations('Common');
 
-  const displayCountry = country === 'korea' ? 'South Korea' : country;
+  const { fromVisa, toVisa, transition: tr } = detail;
+
+  const displayCountry = country === 'korea' ? tCommon('countryKorea') : country;
   const fromCode = parsed.from.toUpperCase();
   const toCode = parsed.to.toUpperCase();
   const fromName = fromVisa?.shortName ?? fromCode;
@@ -129,7 +136,7 @@ export default async function TransitionDetailPage({ params }: Props) {
     description: `Requirements, timeline and documents for changing from ${fromName} to ${toName} in Korea.`,
     author: { '@type': 'Organization', name: 'LocalNomad' },
     publisher: { '@type': 'Organization', name: 'LocalNomad', url: 'https://localnomad.club' },
-    dateModified: t.lastUpdated ?? new Date().toISOString().slice(0, 10),
+    dateModified: tr.lastUpdated ?? new Date().toISOString().slice(0, 10),
     url: `https://localnomad.club/${locale}/${country}/visa/change/${transition}`,
   };
 
@@ -140,10 +147,22 @@ export default async function TransitionDetailPage({ params }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `https://localnomad.club/${locale}` },
       { '@type': 'ListItem', position: 2, name: displayCountry, item: `https://localnomad.club/${locale}/${country}` },
-      { '@type': 'ListItem', position: 3, name: 'Change Visa Status', item: `https://localnomad.club/${locale}/${country}/visa/change` },
+      { '@type': 'ListItem', position: 3, name: t('breadcrumbChangeVisa'), item: `https://localnomad.club/${locale}/${country}/visa/change` },
       { '@type': 'ListItem', position: 4, name: `${fromCode} → ${toCode}`, item: `https://localnomad.club/${locale}/${country}/visa/change/${transition}` },
     ],
   };
+
+  const exitValue = tr.nationalityDependent
+    ? t('exitDependsOnPassport')
+    : tr.mustExitCountry
+    ? t('exitMustLeave')
+    : t('exitInCountry');
+
+  const exitValueClass = tr.nationalityDependent
+    ? 'text-amber-700'
+    : tr.mustExitCountry
+    ? 'text-[#D64045]'
+    : 'text-green-700';
 
   return (
     <>
@@ -159,9 +178,9 @@ export default async function TransitionDetailPage({ params }: Props) {
         <Breadcrumb
           variant="band"
           items={[
-            { label: 'Home', href: '/' },
+            { label: tCommon('home'), href: '/' },
             { label: displayCountry, href: `/${country}` },
-            { label: 'Change Status', href: `/${country}/visa/change` },
+            { label: t('breadcrumbChangeStatus'), href: `/${country}/visa/change` },
             { label: `${fromCode} → ${toCode}` },
           ]}
         />
@@ -176,48 +195,36 @@ export default async function TransitionDetailPage({ params }: Props) {
           <h1 className="font-lora mb-1 text-3xl sm:text-4xl font-bold leading-snug text-primary">
             {fromCode} → {toCode}: Change from {fromName} to {toName}
           </h1>
-          <p className="mb-5 text-sm text-slate-500">Korea · Visa Status Change</p>
+          <p className="mb-5 text-sm text-slate-500">{t('pageSubheading')}</p>
 
           {/* Summary chips 2×2 grid */}
           <div className="mb-6 grid grid-cols-2 gap-2">
-            <SummaryChip label="Timeline" value={t.timeline} />
+            <SummaryChip label={t('chipTimeline')} value={tr.timeline} />
             <SummaryChip
-              label="Exit required?"
-              value={
-                t.nationalityDependent
-                  ? 'Depends on passport'
-                  : t.mustExitCountry
-                  ? 'Must exit Korea'
-                  : 'In-country'
-              }
-              valueClass={
-                t.nationalityDependent
-                  ? 'text-amber-700'
-                  : t.mustExitCountry
-                  ? 'text-[#D64045]'
-                  : 'text-green-700'
-              }
+              label={t('chipExitRequired')}
+              value={exitValue}
+              valueClass={exitValueClass}
             />
-            <SummaryChip label="Documents" value={`${t.documents.length} required`} />
+            <SummaryChip label={t('chipDocuments')} value={t('chipDocsRequired', { count: tr.documents.length })} />
             <SummaryChip
-              label="Confidence"
-              value={t.confidenceLevel === 'high' ? 'High' : 'Medium — verify'}
-              valueClass={t.confidenceLevel === 'high' ? 'text-green-700' : 'text-amber-700'}
+              label={t('chipConfidence')}
+              value={tr.confidenceLevel === 'high' ? t('chipConfidenceHigh') : t('chipConfidenceMedium')}
+              valueClass={tr.confidenceLevel === 'high' ? 'text-green-700' : 'text-amber-700'}
             />
           </div>
 
           {/* Nationality banner if applicable */}
-          {t.nationalityDependent && (
+          {tr.nationalityDependent && (
             <div className="mb-5">
-              <NationalityBanner notes={t.nationalityNotes ?? undefined} />
+              <NationalityBanner notes={tr.nationalityNotes ?? undefined} />
             </div>
           )}
 
           {/* Multi-hop guide if applicable */}
-          {t.ultimateDestination && (
+          {tr.ultimateDestination && (
             <div className="mb-5">
               <MultiHopGuide
-                ultimateDestination={t.ultimateDestination}
+                ultimateDestination={tr.ultimateDestination}
                 fromCode={parsed.from}
                 toCode={parsed.to}
               />
@@ -227,20 +234,19 @@ export default async function TransitionDetailPage({ params }: Props) {
           {/* Collapsible sections */}
           <div className="flex flex-col gap-2.5">
             {/* Key Requirements */}
-            <AccordionSection icon="📋" title="Key Requirements">
-              <p className="text-sm leading-relaxed text-slate-700">{t.requirements}</p>
-              {t.confidenceLevel === 'medium' && (
+            <AccordionSection icon="📋" title={t('sectionRequirements')}>
+              <p className="text-sm leading-relaxed text-slate-700">{tr.requirements}</p>
+              {tr.confidenceLevel === 'medium' && (
                 <p className="mt-3 rounded border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-700">
-                  Medium confidence — verify this path with your local immigration office before
-                  proceeding.
+                  {t('mediumConfidenceCaveat')}
                 </p>
               )}
             </AccordionSection>
 
             {/* Required Documents */}
-            <AccordionSection icon="📄" title="Required Documents">
+            <AccordionSection icon="📄" title={t('sectionDocuments')}>
               <ul className="flex flex-col gap-2 pt-1" role="list">
-                {t.documents.map((doc, i) => (
+                {tr.documents.map((doc, i) => (
                   <li key={i} className="flex items-start gap-2.5">
                     <span
                       className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 text-[11px] font-bold text-green-700"
@@ -255,56 +261,56 @@ export default async function TransitionDetailPage({ params }: Props) {
             </AccordionSection>
 
             {/* Process Timeline */}
-            <AccordionSection icon="⏱️" title="Process Timeline">
+            <AccordionSection icon="⏱️" title={t('sectionTimeline')}>
               <TransitionTimeline
                 steps={[
-                  { label: 'Prepare documents', detail: `Gather all ${t.documents.length} required documents listed above` },
-                  { label: 'Submit application', detail: t.mustExitCountry ? 'Apply at Korean consulate/embassy in your country' : 'Submit at local Immigration Office (출입국관리사무소) in Korea' },
-                  { label: 'Processing', detail: t.timeline },
-                  { label: 'Receive new ARC', detail: 'Pick up updated Alien Registration Card' },
+                  { label: t('timelineStep1'), detail: t('timelineStep1Detail', { count: tr.documents.length }) },
+                  { label: t('timelineStep2'), detail: tr.mustExitCountry ? t('timelineStep2Exit') : t('timelineStep2Local') },
+                  { label: t('timelineStep3'), detail: tr.timeline },
+                  { label: t('timelineStep4'), detail: t('timelineStep4Detail') },
                 ]}
               />
             </AccordionSection>
 
             {/* Important Notes */}
-            {t.notes && (
-              <AccordionSection icon="💡" title="Important Notes">
-                <p className="text-sm leading-relaxed text-slate-700">{t.notes}</p>
+            {tr.notes && (
+              <AccordionSection icon="💡" title={t('sectionNotes')}>
+                <p className="text-sm leading-relaxed text-slate-700">{tr.notes}</p>
               </AccordionSection>
             )}
 
             {/* The Bigger Picture — only if ultimateDestination exists */}
-            {t.ultimateDestination && (
-              <AccordionSection icon="🗺️" title="The Bigger Picture">
+            {tr.ultimateDestination && (
+              <AccordionSection icon="🗺️" title={t('sectionBiggerPicture')}>
                 <p className="mb-3 text-sm leading-relaxed text-slate-700">
-                  This change is part of a longer path to permanent residence in Korea:
+                  {t('biggerPictureBody')}
                 </p>
                 <div className="rounded-lg border border-[rgba(27,73,101,0.15)] bg-[#e8f0f5] p-3">
-                  <p className="text-sm font-semibold text-[#1B4965]">{t.ultimateDestination}</p>
+                  <p className="text-sm font-semibold text-[#1B4965]">{tr.ultimateDestination}</p>
                 </div>
               </AccordionSection>
             )}
           </div>
 
           {/* Source link */}
-          {t.sourceUrl && (
+          {tr.sourceUrl && (
             <div className="mt-5 flex items-center gap-2 text-xs text-slate-400">
               <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
               <span>Source: </span>
               <a
-                href={t.sourceUrl}
+                href={tr.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1B4965] underline underline-offset-2 hover:text-[#2e6b92]"
               >
-                {t.sourceUrl.replace(/^https?:\/\//, '').split('/')[0]}
+                {tr.sourceUrl.replace(/^https?:\/\//, '').split('/')[0]}
               </a>
             </div>
           )}
 
           {/* Last updated */}
-          {t.lastUpdated && (
-            <p className="mt-1 text-xs text-slate-400">Last updated: {t.lastUpdated}</p>
+          {tr.lastUpdated && (
+            <p className="mt-1 text-xs text-slate-400">Last updated: {tr.lastUpdated}</p>
           )}
 
           {/* Navigation */}
@@ -314,13 +320,13 @@ export default async function TransitionDetailPage({ params }: Props) {
               className="flex items-center gap-1.5 text-sm font-semibold text-[#1B4965] hover:underline"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              Back to {fromCode} options
+              {t('backToOptions', { from: fromCode })}
             </Link>
             <Link
               href={`/${country}/visa/${parsed.to}`}
               className="flex items-center gap-1.5 text-sm font-semibold text-[#1B4965] hover:underline"
             >
-              View {toCode} details
+              {t('viewToDetails', { to: toCode })}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -329,7 +335,7 @@ export default async function TransitionDetailPage({ params }: Props) {
           {otherPaths.length > 0 && (
             <div className="mt-8">
               <h2 className="mb-3 text-base font-bold text-foreground">
-                Other paths from {fromCode}
+                {t('otherPathsFrom', { from: fromCode })}
               </h2>
               <div className="flex flex-col gap-2">
                 {otherPaths.map((path) => (
