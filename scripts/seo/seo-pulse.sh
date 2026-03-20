@@ -29,8 +29,8 @@ if [ ! -f "$PULL_SCRIPT" ]; then
   exit 1
 fi
 
-# Pull GSC data with 60s timeout
-GSC_DATA=$(timeout 60 node "$PULL_SCRIPT" 2>> "$LOG_FILE")
+# Pull GSC data (30s AbortController timeout built into pull-gsc.mjs)
+GSC_DATA=$(node "$PULL_SCRIPT" 2>> "$LOG_FILE")
 PULL_EXIT=$?
 
 if [ $PULL_EXIT -ne 0 ]; then
