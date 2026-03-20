@@ -28,7 +28,7 @@
           "cons": ["Most expensive area in Seoul", "Touristy"],
           "walkability": null,
           "safety": null,
-          "tags": ["expat", "international", "nightlife"],
+          "tags": ["expat", "nightlife", "central"],
           "imageUrl": null
         },
         {
@@ -41,7 +41,7 @@
           "cons": ["Expensive", "Less authentic feel"],
           "walkability": null,
           "safety": null,
-          "tags": ["luxury", "corporate", "networking"],
+          "tags": ["luxury", "central"],
           "imageUrl": null
         },
         {
@@ -54,7 +54,7 @@
           "cons": ["Fewer English speakers", "Rising rents due to gentrification"],
           "walkability": null,
           "safety": null,
-          "tags": ["hipster", "cafe", "trendy"],
+          "tags": ["creative", "cafe"],
           "imageUrl": null
         },
         {
@@ -67,7 +67,7 @@
           "cons": ["Less tourist infrastructure", "Rising rents"],
           "walkability": null,
           "safety": null,
-          "tags": ["local", "central", "mid-range"],
+          "tags": ["central", "cafe"],
           "imageUrl": null
         },
         {
@@ -80,7 +80,7 @@
           "cons": ["Rapidly gentrifying", "Losing indie feel", "Crowded with tourists on weekends"],
           "walkability": null,
           "safety": null,
-          "tags": ["cafe", "creative", "trendy"],
+          "tags": ["cafe", "creative"],
           "imageUrl": null
         },
         {
@@ -93,7 +93,7 @@
           "cons": ["Expensive", "Fewer international shops", "Can feel overly curated"],
           "walkability": null,
           "safety": null,
-          "tags": ["luxury", "gallery", "cafe"],
+          "tags": ["luxury", "cafe", "creative"],
           "imageUrl": null
         }
       ]
@@ -112,7 +112,7 @@
           "cons": ["Expensive for Busan", "Crowded in summer"],
           "walkability": null,
           "safety": null,
-          "tags": ["beach", "coliving", "community"],
+          "tags": ["nature", "expat"],
           "imageUrl": null
         },
         {
@@ -125,7 +125,7 @@
           "cons": ["Fewer nomad facilities", "Less English spoken"],
           "walkability": null,
           "safety": null,
-          "tags": ["beach", "cafe", "mid-range"],
+          "tags": ["nature", "cafe", "budget"],
           "imageUrl": null
         },
         {
@@ -151,7 +151,7 @@
           "cons": ["Few English speakers", "Fewer amenities"],
           "walkability": null,
           "safety": null,
-          "tags": ["budget", "local", "quiet"],
+          "tags": ["budget", "quiet"],
           "imageUrl": null
         }
       ]
@@ -170,7 +170,7 @@
           "cons": ["Typhoon season (Aug–Sep)", "Car recommended for exploring"],
           "walkability": null,
           "safety": null,
-          "tags": ["island", "nature", "budget"],
+          "tags": ["nature", "budget"],
           "imageUrl": null
         },
         {

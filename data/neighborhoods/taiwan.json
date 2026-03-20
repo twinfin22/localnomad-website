@@ -28,7 +28,7 @@
           "cons": ["Most expensive area", "Corporate atmosphere during day", "Less local character", "Mall-centric culture"],
           "walkability": 8,
           "safety": 9,
-          "tags": ["luxury", "corporate", "nightlife", "central"],
+          "tags": ["luxury", "nightlife", "central"],
           "imageUrl": null
         },
         {
@@ -41,7 +41,7 @@
           "cons": ["Some areas feel commercial", "Tourist-heavy near Zhongshan station", "Limited nightlife", "Older apartments"],
           "walkability": 9,
           "safety": 9,
-          "tags": ["creative", "mid-range", "cafe", "culture"],
+          "tags": ["creative", "cafe"],
           "imageUrl": null
         },
         {
@@ -54,7 +54,7 @@
           "cons": ["Touristy around main strip", "Small apartment sizes", "Noisy restaurant streets", "Rising rents"],
           "walkability": 9,
           "safety": 9,
-          "tags": ["food", "local", "cafe", "trendy"],
+          "tags": ["food", "cafe", "creative"],
           "imageUrl": null
         },
         {
@@ -105,7 +105,7 @@
           "cons": ["Small international community", "Limited English", "Hot and humid year-round", "Fewer cafes"],
           "walkability": 7,
           "safety": 9,
-          "tags": ["budget", "creative", "culture", "community"],
+          "tags": ["budget", "creative", "expat"],
           "imageUrl": null
         }
       ]
@@ -124,7 +124,7 @@
           "cons": ["Very limited English", "Car or scooter recommended", "Smallest international community", "Fewer modern amenities"],
           "walkability": 7,
           "safety": 9,
-          "tags": ["food", "culture", "budget", "local"],
+          "tags": ["food", "budget"],
           "imageUrl": null
         }
       ]

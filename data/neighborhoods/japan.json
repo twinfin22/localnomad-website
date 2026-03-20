@@ -15,7 +15,7 @@
           "cons": ["Expensive", "Very crowded especially around station", "Noisy in commercial areas", "Small apartment sizes"],
           "walkability": 9,
           "safety": 8,
-          "tags": ["tech", "nightlife", "trendy", "central"],
+          "tags": ["creative", "nightlife", "central"],
           "imageUrl": null
         },
         {
@@ -28,7 +28,7 @@
           "cons": ["Limited coworking spaces", "Narrow streets", "Fewer English speakers", "Far from business districts"],
           "walkability": 8,
           "safety": 9,
-          "tags": ["hipster", "cafe", "creative", "budget"],
+          "tags": ["creative", "cafe", "budget"],
           "imageUrl": null
         },
         {
@@ -41,7 +41,7 @@
           "cons": ["Expensive", "Limited nightlife", "Fewer international amenities", "Cherry blossom crowds in spring"],
           "walkability": 8,
           "safety": 9,
-          "tags": ["cafe", "trendy", "luxury", "quiet"],
+          "tags": ["cafe", "luxury", "quiet"],
           "imageUrl": null
         },
         {
@@ -54,7 +54,7 @@
           "cons": ["Very touristy around Senso-ji", "Older building stock", "Fewer modern amenities", "Limited coworking"],
           "walkability": 8,
           "safety": 9,
-          "tags": ["budget", "local", "culture", "central"],
+          "tags": ["budget", "central", "food"],
           "imageUrl": null
         }
       ]
@@ -86,7 +86,7 @@
           "cons": ["Corporate atmosphere", "Less character than Namba", "Expensive for Osaka", "Quiet on weekends"],
           "walkability": 8,
           "safety": 9,
-          "tags": ["corporate", "central", "networking", "mid-range"],
+          "tags": ["central", "luxury"],
           "imageUrl": null
         }
       ]
@@ -105,7 +105,7 @@
           "cons": ["Smaller international community", "Fewer direct international flights", "Limited English", "Typhoon season (summer)"],
           "walkability": 9,
           "safety": 9,
-          "tags": ["startup", "food", "budget", "community"],
+          "tags": ["creative", "food", "budget"],
           "imageUrl": null
         }
       ]
@@ -124,7 +124,7 @@
           "cons": ["Tourist crowds (especially spring and fall)", "Limited nightlife", "Fewer coworking spaces", "Hot and humid summers"],
           "walkability": 7,
           "safety": 9,
-          "tags": ["culture", "quiet", "nature", "cafe"],
+          "tags": ["quiet", "nature", "cafe"],
           "imageUrl": null
         }
       ]

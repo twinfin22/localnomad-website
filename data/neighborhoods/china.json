@@ -15,7 +15,7 @@
           "cons": ["Expensive", "Crowded during rush hours", "Construction noise common", "Can feel impersonal"],
           "walkability": 9,
           "safety": 9,
-          "tags": ["central", "luxury", "cafe", "networking"],
+          "tags": ["central", "luxury", "cafe"],
           "imageUrl": null
         },
         {
@@ -28,7 +28,7 @@
           "cons": ["Most expensive area", "Gentrifying rapidly", "Tourist crowds on weekends", "Can feel like an expat bubble"],
           "walkability": 9,
           "safety": 9,
-          "tags": ["expat", "cafe", "hipster", "luxury"],
+          "tags": ["expat", "cafe", "creative", "luxury"],
           "imageUrl": null
         },
         {
@@ -41,7 +41,7 @@
           "cons": ["Premium CBD pricing", "Less character than Puxi", "Spread out (Metro dependent)", "Fewer dining and nightlife options"],
           "walkability": 6,
           "safety": 9,
-          "tags": ["corporate", "modern", "networking", "mid-range"],
+          "tags": ["central", "luxury"],
           "imageUrl": null
         }
       ]
@@ -60,7 +60,7 @@
           "cons": ["Massive district (long commutes within)", "Air quality concerns", "Expensive around Sanlitun/CBD", "Traffic congestion"],
           "walkability": 6,
           "safety": 8,
-          "tags": ["expat", "international", "nightlife", "creative"],
+          "tags": ["expat", "nightlife", "creative"],
           "imageUrl": null
         },
         {
@@ -73,7 +73,7 @@
           "cons": ["Far from central attractions", "Less international", "Air quality concerns", "Fewer dining and nightlife options"],
           "walkability": 6,
           "safety": 9,
-          "tags": ["tech", "budget", "local", "community"],
+          "tags": ["creative", "budget"],
           "imageUrl": null
         }
       ]
@@ -92,7 +92,7 @@
           "cons": ["Expensive for Shenzhen", "Rapidly changing landscape", "Less cultural heritage", "Humid subtropical climate"],
           "walkability": 7,
           "safety": 9,
-          "tags": ["tech", "startup", "modern", "community"],
+          "tags": ["creative", "expat"],
           "imageUrl": null
         },
         {
@@ -105,7 +105,7 @@
           "cons": ["Corporate atmosphere", "Less character", "Fewer independent cafes", "Hot and humid climate"],
           "walkability": 7,
           "safety": 9,
-          "tags": ["central", "corporate", "networking", "mid-range"],
+          "tags": ["central", "luxury"],
           "imageUrl": null
         }
       ]
@@ -124,7 +124,7 @@
           "cons": ["Limited English", "Humid basin climate", "Fewer international amenities", "Far from coast/borders"],
           "walkability": 8,
           "safety": 9,
-          "tags": ["food", "budget", "culture", "local"],
+          "tags": ["food", "budget"],
           "imageUrl": null
         }
       ]
