@@ -149,6 +149,7 @@ export default async function BlogPostPage({ params }: Props) {
             components={mdxComponents}
             options={{
               mdxOptions: { remarkPlugins: [remarkGfm] },
+              blockJS: false,
             }}
           />
         </article>
