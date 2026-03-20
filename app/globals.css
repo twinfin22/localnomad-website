@@ -132,14 +132,13 @@
   display: block;
 }
 .prose :where(thead):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  background-color: color-mix(in srgb, var(--primary) 8%, transparent);
-  border-bottom: 2px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  background-color: var(--primary);
 }
 .prose :where(th):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   padding: 0.625rem 0.75rem;
   text-align: left;
   font-weight: 600;
-  color: var(--foreground);
+  color: #ffffff;
   white-space: nowrap;
 }
 .prose :where(td):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
