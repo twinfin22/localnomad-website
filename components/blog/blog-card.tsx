@@ -13,7 +13,7 @@ const CATEGORY_COLORS: Record<BlogCategory, string> = {
   stories: 'bg-rose-100 text-rose-800',
 };
 
-export const BlogCard = async ({ post }: { post: BlogPost }) => {
+export const BlogCard = async ({ post, priority }: { post: BlogPost; priority?: boolean }) => {
   const [t, locale] = await Promise.all([
     getTranslations('Blog'),
     getLocale(),
@@ -29,6 +29,7 @@ export const BlogCard = async ({ post }: { post: BlogPost }) => {
               src={post.frontmatter.coverImage}
               alt={post.frontmatter.title}
               fill
+              priority={priority}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />

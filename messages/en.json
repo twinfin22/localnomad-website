@@ -331,7 +331,7 @@
     "companyLabel": "Company"
   },
   "About": {
-    "metaTitle": "About LocalNomad",
+    "metaTitle": "About LocalNomad — Visa Guides for East Asia",
     "metaDescription": "LocalNomad makes visa information accessible for digital nomads in South Korea, Japan, and Taiwan. Clear requirements, document checklists, and community tips.",
     "pageTitle": "About LocalNomad",
     "whatWeDoTitle": "What We Do",
@@ -344,7 +344,7 @@
     "importantNoticeBody": "LocalNomad provides general information based on published requirements for educational purposes only. We are not a law firm, immigration consultancy, or licensed advisory service. The information on this platform does not constitute legal advice. For personalized guidance on your immigration situation, please consult a licensed immigration professional in your destination country."
   },
   "Contact": {
-    "metaTitle": "Contact Us — LocalNomad",
+    "metaTitle": "Contact LocalNomad — Questions, Feedback & Partnerships",
     "metaDescription": "Get in touch with the LocalNomad team via Discord, email, or Instagram. Join our community of digital nomads exploring Korea, Japan, and Taiwan.",
     "pageTitle": "Contact Us",
     "intro": "We'd love to hear from you. Whether you have feedback, a question about our platform, or just want to connect — here's how to reach us.",
@@ -450,6 +450,8 @@
     "metaTitle": "Change Visa Status in Korea {year} | LocalNomad",
     "metaDescription": "Find out which visa you can change to from your current status in Korea. Covers E-7, F-2, F-5, D-10, H-1, B-2, F-1-D and more. Not legal advice.",
     "metaOgDescription": "Card-based guide to all confirmed in-country visa change paths in Korea. See requirements, timelines, and source links.",
+    "metaTitleFrom": "Change from {from} Visa in Korea {year} | LocalNomad",
+    "metaDescriptionFrom": "See which visas you can change to from {from} in Korea. Requirements, timelines, and documents. Not legal advice.",
     "metaTitleTransition": "{from} to {to} Visa Change — Korea {year} | LocalNomad",
     "metaTitleFallback": "Visa Change | LocalNomad",
     "metaDescriptionTransition": "Requirements, timeline, and documents for changing from {from} to {to} in Korea."

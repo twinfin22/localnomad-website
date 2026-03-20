@@ -28,12 +28,12 @@ export async function generateMetadata({
   return {
     title: 'Digital Nomad Blog — Visa Guides & Travel Tips | LocalNomad',
     description:
-      'Digital nomad guides, visa updates, and travel tips for Korea, Japan, Taiwan, and Southeast Asia.',
+      'Digital nomad guides, visa updates, and travel tips for Japan, Korea, Taiwan, and China. Practical advice from research, not hearsay.',
     alternates,
     openGraph: {
       title: 'Digital Nomad Blog — Visa Guides & Travel Tips | LocalNomad',
       description:
-        'Digital nomad guides, visa updates, and travel tips for Korea, Japan, Taiwan, and Southeast Asia.',
+        'Digital nomad guides, visa updates, and travel tips for Japan, Korea, Taiwan, and China. Practical advice from research, not hearsay.',
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
@@ -88,8 +88,8 @@ export default async function BlogPage({ params, searchParams }: Props) {
         </p>
       ) : (
         <div className="mt-4 grid gap-6 sm:grid-cols-2">
-          {posts.map((post) => (
-            <BlogCard key={`${post.category}/${post.slug}`} post={post} />
+          {posts.map((post, index) => (
+            <BlogCard key={`${post.category}/${post.slug}`} post={post} priority={index < 3} />
           ))}
         </div>
       )}

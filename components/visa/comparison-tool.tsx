@@ -107,11 +107,14 @@ export function ComparisonTool({
       <div className="flex flex-wrap items-center gap-3">
         {displaySlots.map((slug, index) => (
           <div key={index} className="flex items-center gap-2">
+            <label htmlFor={`visa-select-${index}`} className="sr-only">
+              {t('selectVisa')} {index + 1}
+            </label>
             <select
+              id={`visa-select-${index}`}
               value={slug ?? ''}
               onChange={(e) => handleSelect(index, e.target.value)}
               className="rounded-md border bg-white px-3 py-2 text-sm text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-              aria-label={`${t('selectVisa')} ${index + 1}`}
             >
               <option value="">{t('selectVisa')}</option>
               {summaries.map((s) => (

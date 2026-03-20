@@ -72,8 +72,8 @@ export default async function CategoryPage({ params }: Props) {
         </p>
       ) : (
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {posts.map((post) => (
-            <BlogCard key={`${post.category}/${post.slug}`} post={post} />
+          {posts.map((post, index) => (
+            <BlogCard key={`${post.category}/${post.slug}`} post={post} priority={index < 3} />
           ))}
         </div>
       )}

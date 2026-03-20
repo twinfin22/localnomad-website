@@ -331,7 +331,7 @@
     "companyLabel": "公司"
   },
   "About": {
-    "metaTitle": "关于 LocalNomad",
+    "metaTitle": "关于LocalNomad — 东亚签证指南",
     "metaDescription": "LocalNomad 为韩国、日本和台湾的数字游民提供清晰易懂的签证信息，涵盖申请条件、材料清单和社区建议。",
     "pageTitle": "关于 LocalNomad",
     "whatWeDoTitle": "我们的服务",
@@ -344,7 +344,7 @@
     "importantNoticeBody": "LocalNomad 仅出于教育目的提供基于已公布要求的一般信息。我们不是律师事务所、移民咨询机构或持牌顾问服务。本平台的信息不构成法律建议。如需针对你个人移民情况的专业指导，请咨询目的地国家的持牌移民专业人士。"
   },
   "Contact": {
-    "metaTitle": "联系我们 — LocalNomad",
+    "metaTitle": "联系LocalNomad — 咨询与合作",
     "metaDescription": "通过 Discord、邮件或 Instagram 联系 LocalNomad 团队。加入我们探索韩国、日本和台湾的数字游民社区。",
     "pageTitle": "联系我们",
     "intro": "欢迎随时联系我们。无论是反馈意见、平台咨询，还是单纯想交流——以下是联系方式。",
@@ -450,6 +450,8 @@
     "metaTitle": "韩国签证身份变更 {year} | LocalNomad",
     "metaDescription": "查询你可以从当前签证身份变更为哪种签证。涵盖E-7、F-2、F-5、D-10、H-1、B-2、F-1-D等。不构成法律建议。",
     "metaOgDescription": "韩国境内所有已确认签证变更路径的卡片式指南。查看要求、时间线和信息来源。",
+    "metaTitleFrom": "韩国{from}签证身份变更 {year} | LocalNomad",
+    "metaDescriptionFrom": "查询在韩国从{from}可以变更为哪些签证。涵盖条件、时间线和所需材料。不构成法律建议。",
     "metaTitleTransition": "{from}转{to}签证变更 — 韩国{year} | LocalNomad",
     "metaTitleFallback": "签证变更 | LocalNomad",
     "metaDescriptionTransition": "在韩国从{from}变更为{to}的条件、时间线和所需材料。"

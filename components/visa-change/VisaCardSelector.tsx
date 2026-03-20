@@ -170,7 +170,7 @@ export function VisaCardSelector({ selectedFrom, country }: VisaCardSelectorProp
       {/* Not sure helper */}
       <div className="px-5 pb-6">
         <a
-          href={`/${country}/visa`}
+          href={`/${country}`}
           className="text-sm text-[#1B4965] underline underline-offset-2 hover:text-[#2e6b92]"
         >
           {t('notSureVisa')}

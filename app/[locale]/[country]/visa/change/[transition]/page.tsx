@@ -134,8 +134,10 @@ export default async function TransitionDetailPage({ params }: Props) {
     '@type': 'Article',
     headline: `${fromCode} to ${toCode}: Change from ${fromName} to ${toName} in Korea`,
     description: `Requirements, timeline and documents for changing from ${fromName} to ${toName} in Korea.`,
+    image: 'https://localnomad.club/og-default.png',
     author: { '@type': 'Organization', name: 'LocalNomad' },
-    publisher: { '@type': 'Organization', name: 'LocalNomad', url: 'https://localnomad.club' },
+    publisher: { '@type': 'Organization', name: 'LocalNomad', url: 'https://localnomad.club', logo: { '@type': 'ImageObject', url: 'https://localnomad.club/logo_new_all-blue.png' } },
+    datePublished: tr.lastUpdated ?? '2026-01-01',
     dateModified: tr.lastUpdated ?? new Date().toISOString().slice(0, 10),
     url: `https://localnomad.club/${locale}/${country}/visa/change/${transition}`,
   };

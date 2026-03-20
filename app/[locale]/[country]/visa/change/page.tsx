@@ -31,16 +31,22 @@ export async function generateStaticParams() {
   return params;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { locale, country } = await params;
+  const fromParam = (await searchParams).from;
+  let fromName: string | undefined;
+  if (fromParam) {
+    const fromVisa = await getVisaData(country as Country, locale, fromParam);
+    fromName = fromVisa?.shortName ?? fromParam.toUpperCase();
+  }
   const [t, alternates] = await Promise.all([
     getTranslations({ locale: locale as (typeof routing.locales)[number], namespace: 'VisaChange' }),
     Promise.resolve(getAlternates(locale, `/${country}/visa/change`)),
   ]);
   const year = new Date().getFullYear();
 
-  const title = t('metaTitle', { year });
-  const description = t('metaDescription');
+  const title = fromName ? t('metaTitleFrom', { from: fromName, year }) : t('metaTitle', { year });
+  const description = fromName ? t('metaDescriptionFrom', { from: fromName }) : t('metaDescription');
   const ogDescription = t('metaOgDescription');
 
   return {

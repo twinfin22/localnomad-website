@@ -244,7 +244,7 @@ const NeighborhoodCards = ({ city, data }: NeighborhoodCardsProps) => (
           key={n.name}
           className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
         >
-          <h4 className="font-lora text-base font-bold text-primary">{n.name}</h4>
+          <h3 className="font-lora text-base font-bold text-primary">{n.name}</h3>
           <p className="mt-0.5 text-xs text-muted-foreground">{n.vibe}</p>
           <p className="mt-2 text-sm font-semibold">{n.rent}</p>
           <p className="mt-1.5 text-sm leading-relaxed text-gray-700">{n.why}</p>
@@ -425,7 +425,7 @@ const CheckGrid = ({ items, note }: CheckGridProps) => (
               {item.label}
             </span>
           </div>
-          <h4 className="font-lora text-base font-bold text-primary">{item.title}</h4>
+          <h3 className="font-lora text-base font-bold text-primary">{item.title}</h3>
           <p className="mt-1.5 text-sm leading-relaxed text-gray-700">{item.description}</p>
         </div>
       ))}
@@ -578,5 +578,11 @@ export const createMdxComponents = (): MDXComponents => {
   DecisionTree,
   CheckGrid,
   TldrBox,
+  input: (props) => {
+    if ((props as React.InputHTMLAttributes<HTMLInputElement>).type === 'checkbox') {
+      return <input {...props} aria-label="Checklist item" />;
+    }
+    return <input {...props} />;
+  },
 };
 };

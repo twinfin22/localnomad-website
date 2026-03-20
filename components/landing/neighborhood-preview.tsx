@@ -262,7 +262,8 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
                     src={COUNTRY_IMAGES[c.country] ?? '/images/placeholder.jpg'}
                     alt={c.displayName}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
+                    width={600}
+                    height={400}
                   />
                 </div>
                 {/* Info */}
