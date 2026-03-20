@@ -19,7 +19,7 @@ export function ApplicationSteps({ steps }: ApplicationStepsProps) {
   const t = useTranslations('VisaDetail');
 
   return (
-    <div className="relative ml-5 pl-12">
+    <div className="relative ml-5 pl-16">
       {steps.map((step, index) => (
         <TimelineStep
           key={step.id}
@@ -58,7 +58,7 @@ function TimelineStep({
       {/* Line segment to next step — rendered per-step to avoid overshoot */}
       {!isLast && (
         <div
-          className="absolute -left-5 top-10 bottom-0 w-0.5"
+          className="absolute -left-[25px] top-8 bottom-0 w-0.5"
           style={{
             backgroundColor: 'var(--primary)',
             opacity: lineOpacity,
@@ -67,7 +67,7 @@ function TimelineStep({
       )}
 
       {/* Timeline node — larger circle with stronger visual presence */}
-      <div className="absolute -left-[44px] top-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-primary/10 font-lora text-base font-bold text-primary shadow-sm transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_0_4px_rgba(27,73,101,0.12)]">
+      <div className="absolute -left-[38px] top-0.5 flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-primary/10 font-lora text-sm font-bold text-primary shadow-sm">
         {step.step}
       </div>
 

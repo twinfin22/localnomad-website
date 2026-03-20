@@ -63,6 +63,16 @@ const CATEGORY_ICON_MAP: Record<string, typeof Briefcase> = {
   'health-check': Heart,
 };
 
+/** Split a notes paragraph into individual sentences for bullet display.
+ *  Only splits after a period followed by a space and uppercase letter,
+ *  avoiding false splits on abbreviations like "U.S." or "e.g." */
+function splitNotes(notes: string): string[] {
+  return notes
+    .split(/(?<=\.)\s+(?=[A-Z])/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+}
+
 export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabProps) {
   const t = useTranslations('VisaDetail');
 
@@ -175,7 +185,7 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
   return (
     <div>
       {/* Responsive card grid: 1col mobile (accordion), 2col desktop (cards) */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className={cn("grid grid-cols-1 gap-4", orderedCategories.length > 1 && "md:grid-cols-2")}>
         {orderedCategories.map((category) => {
           const allItems = grouped.get(category) ?? [];
           const primaryItems = allItems.filter(item => !FOLDABLE_REQUIREMENT_IDS.has(item.id));
@@ -327,56 +337,74 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
           <div className="my-5 border-t" />
           <div className={cn("grid gap-6", koreaVisa?.insuranceRequirement && koreaVisa?.taxImplications && "sm:grid-cols-2")}>
             {koreaVisa?.insuranceRequirement && (
-              <div>
+              <div className="rounded-lg border bg-white p-4">
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
                   <h3 className="font-lora text-lg font-semibold">
                     {t('insuranceDetails')}
                   </h3>
                 </div>
-                <div className="mt-3 space-y-2 pl-7 text-sm text-muted-foreground">
-                  <p>
-                    <span className="font-medium text-foreground">
-                      {t('minimumCoverage')}:
-                    </span>{' '}
-                    {koreaVisa.insuranceRequirement.minimumCoverage}
+                {/* Key-value pairs */}
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-medium text-foreground">{t('minimumCoverage')}:</dt>
+                    <dd className="text-muted-foreground">{koreaVisa.insuranceRequirement.minimumCoverage}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-medium text-foreground">{t('insuranceType')}:</dt>
+                    <dd className="text-muted-foreground">{koreaVisa.insuranceRequirement.type}</dd>
+                  </div>
+                </dl>
+                {/* Notes split into bullets */}
+                {koreaVisa.insuranceRequirement.notes && (
+                  <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                    {splitNotes(koreaVisa.insuranceRequirement.notes).map((note, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary/40" />
+                        {linkifyText(note)}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {koreaVisa.insuranceRequirement.source && (
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    {t('source')}: {koreaVisa.insuranceRequirement.source}
                   </p>
-                  <p>
-                    <span className="font-medium text-foreground">
-                      {t('insuranceType')}:
-                    </span>{' '}
-                    {koreaVisa.insuranceRequirement.type}
-                  </p>
-                  <p>{koreaVisa.insuranceRequirement.notes}</p>
-                  {koreaVisa.insuranceRequirement.source && (
-                    <p className="text-xs text-muted-foreground">
-                      {t('source')}: {koreaVisa.insuranceRequirement.source}
-                    </p>
-                  )}
-                </div>
+                )}
               </div>
             )}
 
             {koreaVisa?.taxImplications && (
-              <div>
+              <div className="rounded-lg border bg-white p-4">
                 <div className="flex items-center gap-2">
                   <DollarSign className="h-5 w-5 text-primary" />
                   <h3 className="font-lora text-lg font-semibold">
                     {t('taxImplications')}
                   </h3>
                 </div>
-                <div className="mt-3 space-y-2 pl-7 text-sm text-muted-foreground">
-                  <p>
-                    <span className="font-medium text-foreground">{t('taxThreshold')}:</span>{' '}
-                    {koreaVisa.taxImplications.threshold}
+                {/* Key-value pairs */}
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 font-medium text-foreground">{t('taxThreshold')}:</dt>
+                    <dd className="text-muted-foreground">{koreaVisa.taxImplications.threshold}</dd>
+                  </div>
+                </dl>
+                {/* Notes split into bullets */}
+                {koreaVisa.taxImplications.notes && (
+                  <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                    {splitNotes(koreaVisa.taxImplications.notes).map((note, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary/40" />
+                        {linkifyText(note)}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {koreaVisa.taxImplications.source && (
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    {t('source')}: {koreaVisa.taxImplications.source}
                   </p>
-                  <p>{koreaVisa.taxImplications.notes}</p>
-                  {koreaVisa.taxImplications.source && (
-                    <p className="text-xs text-muted-foreground">
-                      {t('source')}: {koreaVisa.taxImplications.source}
-                    </p>
-                  )}
-                </div>
+                )}
               </div>
             )}
           </div>
