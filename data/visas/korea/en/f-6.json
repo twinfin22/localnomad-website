@@ -717,7 +717,8 @@
       "url": "https://kowork.kr/en/visa/F-6"
     }
   ],
-  "sourceVerified": false,
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.immigration.go.kr/immigration_eng/index.do",
   "lastFactChecked": "2026-03-20",
-  "draft": true
+  "draft": false
 }

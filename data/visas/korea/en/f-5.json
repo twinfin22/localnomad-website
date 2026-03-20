@@ -713,7 +713,8 @@
       "url": "https://www.hikorea.go.kr"
     }
   ],
-  "sourceVerified": false,
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=251683",
   "lastFactChecked": "2026-03-20",
-  "draft": true
+  "draft": false
 }
