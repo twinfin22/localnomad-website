@@ -3,135 +3,290 @@
   "cities": [
     {
       "name": "Taipei",
-      "coordinates": [25.0330, 121.5654],
+      "coordinates": [
+        25.033,
+        121.5654
+      ],
       "neighborhoods": [
         {
           "name": "Da'an (大安區)",
           "city": "Taipei",
-          "coordinates": [25.0268, 121.5436],
-          "rent": "NT$15,000–NT$60,000/month",
+          "coordinates": [
+            25.0268,
+            121.5436
+          ],
+          "rent": "NT$15,000–NT$60,000/mo",
           "vibe": "Tree-lined streets, university area, expat favorite, premium cafes",
-          "pros": ["Highest concentration of cafes and coworking", "MRT Da'an Station (Red + Brown Lines)", "Strong expat community", "Daan Forest Park for breaks"],
-          "cons": ["Most expensive district in Taipei", "Competitive apartment market", "Can feel overly gentrified", "Crowded cafes on weekends"],
+          "pros": [
+            "Highest concentration of cafes and coworking",
+            "MRT Da'an Station (Red + Brown Lines)",
+            "Strong expat community",
+            "Daan Forest Park for breaks"
+          ],
+          "cons": [
+            "Most expensive district in Taipei",
+            "Competitive apartment market",
+            "Can feel overly gentrified",
+            "Crowded cafes on weekends"
+          ],
           "walkability": 9,
           "safety": 9,
-          "tags": ["expat", "cafe", "central", "luxury"],
-          "imageUrl": null
+          "tags": [
+            "expat",
+            "cafe",
+            "central",
+            "luxury"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/daan.jpg"
         },
         {
           "name": "Xinyi (信義區)",
           "city": "Taipei",
-          "coordinates": [25.0330, 121.5654],
-          "rent": "NT$15,000–NT$65,000/month",
+          "coordinates": [
+            25.033,
+            121.5654
+          ],
+          "rent": "NT$15,000–NT$65,000/mo",
           "vibe": "Modern, Taipei 101, luxury malls, corporate, nightlife",
-          "pros": ["Taipei's most modern district", "Premium coworking (WeWork, JustCo)", "City Hall Station (Blue Line) and Taipei 101/World Trade Center Station (Red Line)", "Active nightlife scene"],
-          "cons": ["Most expensive area", "Corporate atmosphere during day", "Less local character", "Mall-centric culture"],
+          "pros": [
+            "Taipei's most modern district",
+            "Premium coworking (WeWork, JustCo)",
+            "City Hall Station (Blue Line) and Taipei 101/World Trade Center Station (Red Line)",
+            "Active nightlife scene"
+          ],
+          "cons": [
+            "Most expensive area",
+            "Corporate atmosphere during day",
+            "Less local character",
+            "Mall-centric culture"
+          ],
           "walkability": 8,
           "safety": 9,
-          "tags": ["luxury", "nightlife", "central"],
-          "imageUrl": null
+          "tags": [
+            "luxury",
+            "nightlife",
+            "central"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/xinyi.jpg"
         },
         {
           "name": "Zhongshan (中山區)",
           "city": "Taipei",
-          "coordinates": [25.0630, 121.5290],
-          "rent": "NT$16,000–NT$25,000/month",
+          "coordinates": [
+            25.063,
+            121.529
+          ],
+          "rent": "NT$16,000–NT$25,000/mo",
           "vibe": "Art galleries, boutique hotels, Japanese-era architecture, refined",
-          "pros": ["Great balance of price and quality", "Gallery and design scene", "Excellent MRT access (Red + Green Lines)", "Quieter than Da'an"],
-          "cons": ["Some areas feel commercial", "Tourist-heavy near Zhongshan station", "Limited nightlife", "Older apartments"],
+          "pros": [
+            "Great balance of price and quality",
+            "Gallery and design scene",
+            "Excellent MRT access (Red + Green Lines)",
+            "Quieter than Da'an"
+          ],
+          "cons": [
+            "Some areas feel commercial",
+            "Tourist-heavy near Zhongshan station",
+            "Limited nightlife",
+            "Older apartments"
+          ],
           "walkability": 9,
           "safety": 9,
-          "tags": ["creative", "cafe"],
-          "imageUrl": null
+          "tags": [
+            "creative",
+            "cafe"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/zhongshan.jpg"
         },
         {
           "name": "Yongkang Street Area (永康街)",
           "city": "Taipei",
-          "coordinates": [25.0302, 121.5296],
-          "rent": "NT$18,000–NT$28,000/month",
+          "coordinates": [
+            25.0302,
+            121.5296
+          ],
+          "rent": "NT$18,000–NT$28,000/mo",
           "vibe": "Foodie paradise, cozy lanes, neighborhood feel near original Din Tai Fung",
-          "pros": ["Best food scene in Taipei", "Walkable charming streets", "Dongmen Station (Red + Orange Lines)", "Strong cafe culture"],
-          "cons": ["Touristy around main strip", "Small apartment sizes", "Noisy restaurant streets", "Rising rents"],
+          "pros": [
+            "Best food scene in Taipei",
+            "Walkable charming streets",
+            "Dongmen Station (Red + Orange Lines)",
+            "Strong cafe culture"
+          ],
+          "cons": [
+            "Touristy around main strip",
+            "Small apartment sizes",
+            "Noisy restaurant streets",
+            "Rising rents"
+          ],
           "walkability": 9,
           "safety": 9,
-          "tags": ["food", "cafe", "creative"],
-          "imageUrl": null
+          "tags": [
+            "food",
+            "cafe",
+            "creative"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/yongkang.jpg"
         },
         {
           "name": "Ximending (西門町)",
           "city": "Taipei",
-          "coordinates": [25.0421, 121.5081],
-          "rent": "NT$14,000–NT$22,000/month",
+          "coordinates": [
+            25.0421,
+            121.5081
+          ],
+          "rent": "NT$14,000–NT$22,000/mo",
           "vibe": "Youth culture, street art, LGBTQ+-friendly, Harajuku of Taipei, bustling",
-          "pros": ["Most affordable central Taipei location", "Vibrant street culture", "Excellent MRT hub (Ximen Station)", "LGBTQ+-friendly area"],
-          "cons": ["Very crowded (especially weekends)", "Noisy", "Touristy", "Older building stock"],
+          "pros": [
+            "Most affordable central Taipei location",
+            "Vibrant street culture",
+            "Excellent MRT hub (Ximen Station)",
+            "LGBTQ+-friendly area"
+          ],
+          "cons": [
+            "Very crowded (especially weekends)",
+            "Noisy",
+            "Touristy",
+            "Older building stock"
+          ],
           "walkability": 9,
           "safety": 8,
-          "tags": ["budget", "nightlife", "creative", "central"],
-          "imageUrl": null
+          "tags": [
+            "budget",
+            "nightlife",
+            "creative",
+            "central"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/ximending.jpg"
         }
       ]
     },
     {
       "name": "Taichung",
-      "coordinates": [24.1477, 120.6736],
+      "coordinates": [
+        24.1477,
+        120.6736
+      ],
       "neighborhoods": [
         {
           "name": "West District (西區)",
           "city": "Taichung",
-          "coordinates": [24.1522, 120.6466],
-          "rent": "NT$12,000–NT$18,000/month",
+          "coordinates": [
+            24.1522,
+            120.6466
+          ],
+          "rent": "NT$12,000–NT$18,000/mo",
           "vibe": "Emerging arts scene, spacious, relaxed pace",
-          "pros": ["Very affordable compared to Taipei", "Calligraphy Greenway cafes", "National Taichung Theater (nearby Xitun District)", "Spacious apartments"],
-          "cons": ["Scooter/car needed for some areas", "Smaller international community", "Fewer coworking spaces", "Hot summers"],
+          "pros": [
+            "Very affordable compared to Taipei",
+            "Calligraphy Greenway cafes",
+            "National Taichung Theater (nearby Xitun District)",
+            "Spacious apartments"
+          ],
+          "cons": [
+            "Scooter/car needed for some areas",
+            "Smaller international community",
+            "Fewer coworking spaces",
+            "Hot summers"
+          ],
           "walkability": 6,
           "safety": 9,
-          "tags": ["budget", "creative", "nature", "quiet"],
-          "imageUrl": null
+          "tags": [
+            "budget",
+            "creative",
+            "nature",
+            "quiet"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/west-district.jpg"
         }
       ]
     },
     {
       "name": "Kaohsiung",
-      "coordinates": [22.6273, 120.3014],
+      "coordinates": [
+        22.6273,
+        120.3014
+      ],
       "neighborhoods": [
         {
           "name": "Yancheng (鹽埕區)",
           "city": "Kaohsiung",
-          "coordinates": [22.6235, 120.2860],
-          "rent": "NT$8,000–NT$14,000/month",
+          "coordinates": [
+            22.6235,
+            120.286
+          ],
+          "rent": "NT$8,000–NT$14,000/mo",
           "vibe": "Port city revival, street art, Pier-2 arts district, emerging creative hub",
-          "pros": ["Cheapest option in this list", "Pier-2 Art Center (5 min walk from Yanchengpu MRT)", "Light rail and MRT Orange Line access", "Waterfront walks"],
-          "cons": ["Small international community", "Limited English", "Hot and humid year-round", "Fewer cafes"],
+          "pros": [
+            "Cheapest option in this list",
+            "Pier-2 Art Center (5 min walk from Yanchengpu MRT)",
+            "Light rail and MRT Orange Line access",
+            "Waterfront walks"
+          ],
+          "cons": [
+            "Small international community",
+            "Limited English",
+            "Hot and humid year-round",
+            "Fewer cafes"
+          ],
           "walkability": 7,
           "safety": 9,
-          "tags": ["budget", "creative", "expat"],
-          "imageUrl": null
+          "tags": [
+            "budget",
+            "creative",
+            "expat"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/yancheng.jpg"
         }
       ]
     },
     {
       "name": "Tainan",
-      "coordinates": [22.9998, 120.2270],
+      "coordinates": [
+        22.9998,
+        120.227
+      ],
       "neighborhoods": [
         {
           "name": "West Central District (中西區)",
           "city": "Tainan",
-          "coordinates": [22.9912, 120.2039],
-          "rent": "NT$10,000–NT$14,000/month",
+          "coordinates": [
+            22.9912,
+            120.2039
+          ],
+          "rent": "NT$10,000–NT$14,000/mo",
           "vibe": "Taiwan's oldest city, temple-lined streets, Taiwan's food capital, slow pace",
-          "pros": ["Among the cheapest cities listed", "Taiwan's food capital", "Rich cultural heritage", "Authentic local experience"],
-          "cons": ["Very limited English", "Car or scooter recommended", "Smallest international community", "Fewer modern amenities"],
+          "pros": [
+            "Among the cheapest cities listed",
+            "Taiwan's food capital",
+            "Rich cultural heritage",
+            "Authentic local experience"
+          ],
+          "cons": [
+            "Very limited English",
+            "Car or scooter recommended",
+            "Smallest international community",
+            "Fewer modern amenities"
+          ],
           "walkability": 7,
           "safety": 9,
-          "tags": ["food", "budget"],
-          "imageUrl": null
+          "tags": [
+            "food",
+            "budget"
+          ],
+          "imageUrl": "/images/neighborhoods/taiwan/west-central.jpg"
         }
       ]
     }
   ],
   "rentSources": [
-    { "name": "591租屋網", "url": "https://rent.591.com.tw" },
-    { "name": "內政部實價登錄", "url": "https://lvr.land.moi.gov.tw" }
+    {
+      "name": "591租屋網",
+      "url": "https://rent.591.com.tw"
+    },
+    {
+      "name": "內政部實價登錄",
+      "url": "https://lvr.land.moi.gov.tw"
+    }
   ]
 }

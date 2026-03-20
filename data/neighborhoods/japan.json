@@ -3,135 +3,289 @@
   "cities": [
     {
       "name": "Tokyo",
-      "coordinates": [35.6812, 139.7671],
+      "coordinates": [
+        35.6812,
+        139.7671
+      ],
       "neighborhoods": [
         {
           "name": "Shibuya (渋谷)",
           "city": "Tokyo",
-          "coordinates": [35.6620, 139.7036],
-          "rent": "¥120,000–¥220,000/month",
+          "coordinates": [
+            35.662,
+            139.7036
+          ],
+          "rent": "¥120,000–¥220,000/mo",
           "vibe": "Tech hub, startup scene, fast-paced, excellent transit",
-          "pros": ["Major tech company offices", "World-class transit (9 train lines)", "Endless dining and entertainment", "Strong coworking scene"],
-          "cons": ["Expensive", "Very crowded especially around station", "Noisy in commercial areas", "Small apartment sizes"],
+          "pros": [
+            "Major tech company offices",
+            "World-class transit (9 train lines)",
+            "Endless dining and entertainment",
+            "Strong coworking scene"
+          ],
+          "cons": [
+            "Expensive",
+            "Very crowded especially around station",
+            "Noisy in commercial areas",
+            "Small apartment sizes"
+          ],
           "walkability": 9,
           "safety": 8,
-          "tags": ["creative", "nightlife", "central"],
-          "imageUrl": null
+          "tags": [
+            "creative",
+            "nightlife",
+            "central"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/shibuya.jpg"
         },
         {
           "name": "Shimokitazawa (下北沢)",
           "city": "Tokyo",
-          "coordinates": [35.6613, 139.6680],
-          "rent": "¥80,000–¥140,000/month",
+          "coordinates": [
+            35.6613,
+            139.668
+          ],
+          "rent": "¥80,000–¥140,000/mo",
           "vibe": "Indie, vintage shops, live music, bohemian, walkable village feel",
-          "pros": ["Affordable for central Tokyo", "Unique indie cafe culture", "Safe and walkable", "Strong community feel"],
-          "cons": ["Limited coworking spaces", "Narrow streets", "Fewer English speakers", "Far from business districts"],
+          "pros": [
+            "Affordable for central Tokyo",
+            "Unique indie cafe culture",
+            "Safe and walkable",
+            "Strong community feel"
+          ],
+          "cons": [
+            "Limited coworking spaces",
+            "Narrow streets",
+            "Fewer English speakers",
+            "Far from business districts"
+          ],
           "walkability": 8,
           "safety": 9,
-          "tags": ["creative", "cafe", "budget"],
-          "imageUrl": null
+          "tags": [
+            "creative",
+            "cafe",
+            "budget"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/shimokitazawa.jpg"
         },
         {
           "name": "Nakameguro (中目黒)",
           "city": "Tokyo",
-          "coordinates": [35.6440, 139.6989],
-          "rent": "¥110,000–¥180,000/month",
+          "coordinates": [
+            35.644,
+            139.6989
+          ],
+          "rent": "¥110,000–¥180,000/mo",
           "vibe": "Stylish, canal-side cafes, design-focused, quieter upscale",
-          "pros": ["Beautiful Meguro River area", "High-quality cafes and restaurants", "Quieter than Shibuya", "Tokyu Toyoko Line and Hibiya Line access"],
-          "cons": ["Expensive", "Limited nightlife", "Fewer international amenities", "Cherry blossom crowds in spring"],
+          "pros": [
+            "Beautiful Meguro River area",
+            "High-quality cafes and restaurants",
+            "Quieter than Shibuya",
+            "Tokyu Toyoko Line and Hibiya Line access"
+          ],
+          "cons": [
+            "Expensive",
+            "Limited nightlife",
+            "Fewer international amenities",
+            "Cherry blossom crowds in spring"
+          ],
           "walkability": 8,
           "safety": 9,
-          "tags": ["cafe", "luxury", "quiet"],
-          "imageUrl": null
+          "tags": [
+            "cafe",
+            "luxury",
+            "quiet"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/nakameguro.jpg"
         },
         {
           "name": "Asakusa (浅草)",
           "city": "Tokyo",
-          "coordinates": [35.7148, 139.7967],
-          "rent": "¥60,000–¥100,000/month",
+          "coordinates": [
+            35.7148,
+            139.7967
+          ],
+          "rent": "¥60,000–¥100,000/mo",
           "vibe": "Traditional, temple district, tourist-adjacent, old-town charm",
-          "pros": ["Among the most affordable central Tokyo areas", "Rich cultural atmosphere", "Good transit (4 lines)", "Authentic local dining"],
-          "cons": ["Very touristy around Senso-ji", "Older building stock", "Fewer modern amenities", "Limited coworking"],
+          "pros": [
+            "Among the most affordable central Tokyo areas",
+            "Rich cultural atmosphere",
+            "Good transit (4 lines)",
+            "Authentic local dining"
+          ],
+          "cons": [
+            "Very touristy around Senso-ji",
+            "Older building stock",
+            "Fewer modern amenities",
+            "Limited coworking"
+          ],
           "walkability": 8,
           "safety": 9,
-          "tags": ["budget", "central", "food"],
-          "imageUrl": null
+          "tags": [
+            "budget",
+            "central",
+            "food"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/asakusa.jpg"
         }
       ]
     },
     {
       "name": "Osaka",
-      "coordinates": [34.6937, 135.5023],
+      "coordinates": [
+        34.6937,
+        135.5023
+      ],
       "neighborhoods": [
         {
           "name": "Namba (難波)",
           "city": "Osaka",
-          "coordinates": [34.6656, 135.5013],
-          "rent": "¥70,000–¥120,000/month",
+          "coordinates": [
+            34.6656,
+            135.5013
+          ],
+          "rent": "¥70,000–¥120,000/mo",
           "vibe": "Street food capital, vibrant nightlife, Dotonbori energy, loud and fun",
-          "pros": ["More affordable than Tokyo city centers", "Best street food scene", "Excellent transit hub", "Friendly locals"],
-          "cons": ["Touristy around Dotonbori", "Noisy at night", "Fewer coworking spaces than Tokyo", "Smaller international community"],
+          "pros": [
+            "More affordable than Tokyo city centers",
+            "Best street food scene",
+            "Excellent transit hub",
+            "Friendly locals"
+          ],
+          "cons": [
+            "Touristy around Dotonbori",
+            "Noisy at night",
+            "Fewer coworking spaces than Tokyo",
+            "Smaller international community"
+          ],
           "walkability": 9,
           "safety": 8,
-          "tags": ["food", "nightlife", "central", "budget"],
-          "imageUrl": null
+          "tags": [
+            "food",
+            "nightlife",
+            "central",
+            "budget"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/namba.jpg"
         },
         {
           "name": "Umeda (梅田)",
           "city": "Osaka",
-          "coordinates": [34.7024, 135.4959],
-          "rent": "¥60,000–¥100,000/month",
+          "coordinates": [
+            34.7024,
+            135.4959
+          ],
+          "rent": "¥60,000–¥100,000/mo",
           "vibe": "Business district, modern, department stores, Osaka's corporate center",
-          "pros": ["Major business hub with coworking options", "6-min subway to Shin-Osaka (Shinkansen access)", "Modern apartments", "Underground shopping complex"],
-          "cons": ["Corporate atmosphere", "Less character than Namba", "Expensive for Osaka", "Quiet on weekends"],
+          "pros": [
+            "Major business hub with coworking options",
+            "6-min subway to Shin-Osaka (Shinkansen access)",
+            "Modern apartments",
+            "Underground shopping complex"
+          ],
+          "cons": [
+            "Corporate atmosphere",
+            "Less character than Namba",
+            "Expensive for Osaka",
+            "Quiet on weekends"
+          ],
           "walkability": 8,
           "safety": 9,
-          "tags": ["central", "luxury"],
-          "imageUrl": null
+          "tags": [
+            "central",
+            "luxury"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/umeda.jpg"
         }
       ]
     },
     {
       "name": "Fukuoka",
-      "coordinates": [33.5904, 130.4017],
+      "coordinates": [
+        33.5904,
+        130.4017
+      ],
       "neighborhoods": [
         {
           "name": "Tenjin (天神)",
           "city": "Fukuoka",
-          "coordinates": [33.5902, 130.3990],
-          "rent": "¥50,000–¥80,000/month",
+          "coordinates": [
+            33.5902,
+            130.399
+          ],
+          "rent": "¥50,000–¥80,000/mo",
           "vibe": "Startup-friendly, compact city center, yatai food stalls, beach accessible",
-          "pros": ["Japan's first Startup Visa city", "Very affordable", "Compact and walkable", "Fukuoka Airport 11 min by subway"],
-          "cons": ["Smaller international community", "Fewer direct international flights", "Limited English", "Typhoon season (summer)"],
+          "pros": [
+            "Japan's first Startup Visa city",
+            "Very affordable",
+            "Compact and walkable",
+            "Fukuoka Airport 11 min by subway"
+          ],
+          "cons": [
+            "Smaller international community",
+            "Fewer direct international flights",
+            "Limited English",
+            "Typhoon season (summer)"
+          ],
           "walkability": 9,
           "safety": 9,
-          "tags": ["creative", "food", "budget"],
-          "imageUrl": null
+          "tags": [
+            "creative",
+            "food",
+            "budget"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/tenjin.jpg"
         }
       ]
     },
     {
       "name": "Kyoto",
-      "coordinates": [35.0116, 135.7681],
+      "coordinates": [
+        35.0116,
+        135.7681
+      ],
       "neighborhoods": [
         {
           "name": "Gion / Higashiyama (祇園・東山)",
           "city": "Kyoto",
-          "coordinates": [35.0036, 135.7747],
-          "rent": "¥55,000–¥95,000/month",
+          "coordinates": [
+            35.0036,
+            135.7747
+          ],
+          "rent": "¥55,000–¥95,000/mo",
           "vibe": "Historic, temples, traditional machiya townhouses, serene, artistic",
-          "pros": ["Unmatched cultural immersion", "Beautiful temples and gardens", "Growing cafe scene", "Quiet work environment"],
-          "cons": ["Tourist crowds (especially spring and fall)", "Limited nightlife", "Fewer coworking spaces", "Hot and humid summers"],
+          "pros": [
+            "Unmatched cultural immersion",
+            "Beautiful temples and gardens",
+            "Growing cafe scene",
+            "Quiet work environment"
+          ],
+          "cons": [
+            "Tourist crowds (especially spring and fall)",
+            "Limited nightlife",
+            "Fewer coworking spaces",
+            "Hot and humid summers"
+          ],
           "walkability": 7,
           "safety": 9,
-          "tags": ["quiet", "nature", "cafe"],
-          "imageUrl": null
+          "tags": [
+            "quiet",
+            "nature",
+            "cafe"
+          ],
+          "imageUrl": "/images/neighborhoods/japan/gion.jpg"
         }
       ]
     }
   ],
   "rentSources": [
-    { "name": "SUUMO (リクルート)", "url": "https://suumo.jp" },
-    { "name": "Homes.co.jp", "url": "https://www.homes.co.jp" }
+    {
+      "name": "SUUMO (リクルート)",
+      "url": "https://suumo.jp"
+    },
+    {
+      "name": "Homes.co.jp",
+      "url": "https://www.homes.co.jp"
+    }
   ]
 }

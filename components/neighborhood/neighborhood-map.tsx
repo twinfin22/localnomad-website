@@ -116,11 +116,11 @@ export default function NeighborhoodMap({
       left: '50%',
       transform: 'translateX(-50%)',
       whiteSpace: 'nowrap',
-      fontSize: '10px',
-      fontWeight: '500',
-      color: '#374151',
+      fontSize: '20px',
+      fontWeight: '700',
+      color: BRAND_COLOR,
       textShadow:
-        '0 0 3px white, 0 0 3px white, 0 0 3px white, 0 0 3px white',
+        '0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white',
       pointerEvents: 'none',
     });
     el.appendChild(tooltip);
