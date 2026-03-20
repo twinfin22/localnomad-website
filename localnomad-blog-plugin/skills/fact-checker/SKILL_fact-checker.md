@@ -40,6 +40,17 @@ If all tools unavailable, mark every claim as UNVERIFIABLE with reason "no web a
 
 ---
 
+## Source Diversity Rule
+
+**CRITICAL**: The fact-checker MUST use different evidence sources than the original content creator.
+
+- If the content was created from training data only → fact-check MUST use live web sources
+- If live web sources are unavailable → mark ALL claims as UNVERIFIABLE, do NOT validate against training data
+- Training-data-vs-training-data validation creates a circular loop that cannot catch structural errors (e.g., wrong sub-category numbering)
+- When checking visa sub-categories (F-5-1, E-7-1, etc.), explicitly verify the NUMBER-to-CONCEPT mapping, not just the content of each category
+
+---
+
 ## Preparation (MUST complete before Step 1)
 
 Before extracting claims, prepare the verification environment:
@@ -88,6 +99,9 @@ Read the full post. MUST extract every verifiable factual claim into the table b
 | C — Process | How-to, timeline, sequence of steps | "Apply through HiKorea, then visit immigration office" |
 | D — Policy | Government program, law, regulation | "K-STAR expanded from 5 to 32 universities in Dec 2025" |
 | E — Attribution | Quote or claim attributed to a source | "According to Korea Times, the program targets 400-600 per year" |
+| F — Structure | Sub-category number, classification, official designation | "F-5-6 is for retired foreign nationals" |
+
+**Type F claims are auto-CRITICAL**: If a visa JSON uses numbered sub-categories, extract EVERY number-to-name mapping as a Type F claim. These must be verified against the official schedule/decree, not just practitioner descriptions.
 
 **Mandatory claims table** — every row MUST have all columns filled:
 

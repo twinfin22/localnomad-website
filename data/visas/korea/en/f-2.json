@@ -4,9 +4,9 @@
   "nameLocal": "점수제 거주비자 (F-2-7)",
   "shortName": "F-2",
   "category": "residence",
-  "description": "Everything about Korea's F-2-7 Points-Based Resident Visa: score ≥80 out of 170, points breakdown by age, education, income, Korean language, and bonus categories, path to permanent residency, and unrestricted work authorization. The F-2-7 is Korea's premier long-term residence visa for talented professionals. Applicants accumulate points across five categories — Age (max 25 pts), Education (max 25 pts), Korean Language via TOPIK or KIIP (max 20 pts), Annual Income (max 60 pts), and Bonus Points (max 40 pts) — and must reach a combined score of 80 or higher. The visa duration ranges from 1 to 5 years depending on your total score, and holders enjoy full work freedom: change employers, start a business, or hold multiple jobs. After 3 years on F-2-7, published guidelines indicate a path to F-5 permanent residency. Updated for 2026.",
+  "description": "Everything about Korea's F-2-7 Points-Based Resident Visa: score ≥80 out of 135, points breakdown by age, education, income, Korean language, and bonus categories, path to permanent residency, and unrestricted work authorization. The F-2-7 is Korea's premier long-term residence visa for talented professionals. Applicants accumulate points across five categories — Age (max 25 pts), Education (max 25 pts), Korean Language via TOPIK or KIIP (max 20 pts), Annual Income (max 60 pts), and Bonus Points (max 40 pts) — and must reach a combined score of 80 or higher. The visa duration ranges from 1 to 5 years depending on your total score, and holders enjoy full work freedom: change employers, start a business, or hold multiple jobs. After 3 years on F-2-7, published guidelines indicate a path to F-5 permanent residency. Updated for 2026.",
   "tagline": "Long-term residence through the points system",
-  "keyRequirement": "Score ≥80 points (out of 170) in age, education, income, Korean language",
+  "keyRequirement": "Score ≥80 points (out of 135) in age, education, income, Korean language",
   "targetAudience": [
     "Professionals on E-series work visas seeking long-term residence",
     "High-income earners (≥₩40M annual salary) wanting immediate eligibility",
@@ -28,7 +28,7 @@
       "id": "points-threshold",
       "priority": "essential",
       "category": "pointsSystem",
-      "label": "Score ≥80 points out of 170 total",
+      "label": "Score ≥80 points out of 135 total",
       "description": "Points are evaluated across five categories: Age (max 25), Education (max 25), Korean Language TOPIK/KIIP (max 20), Annual Income (max 60), and Bonus Points (max 40). Immigration officers verify each claimed point with supporting documents.",
       "required": true,
       "warnings": ["Score must remain ≥80 at each renewal — losing a job, salary decrease, or aging can drop your score below the threshold"],
@@ -294,12 +294,12 @@
     {
       "priority": "essential",
       "question": "How does the F-2-7 points calculation work?",
-      "answer": "The F-2-7 uses a 170-point scoring system across five categories. Age (max 25 pts): peaks at 25–29 years old (25 pts), decreases with age. Education (max 25 pts): PhD in science/engineering scores highest (25 pts). Korean Language (max 20 pts): TOPIK Level 5–6 or KIIP Level 5 earns 20 pts. Annual Income (max 60 pts): ≥₩100M earns the maximum. Bonus Points (max 40 pts): KIIP completion, Korean university degrees, QS Top 500 graduation, community service, and government recommendations. You need a combined score of at least 80 to apply."
+      "answer": "The F-2-7 uses a 135-point scoring system across five categories. Age (max 25 pts): peaks at 25–29 years old (25 pts), decreases with age. Education (max 25 pts): PhD in science/engineering scores highest (25 pts). Korean Language (max 20 pts): TOPIK Level 5–6 or KIIP Level 5 earns 20 pts. Annual Income (max 60 pts): ≥₩100M earns the maximum. Bonus Points (max 40 pts): KIIP completion, Korean university degrees, QS Top 500 graduation, community service, and government recommendations. You need a combined score of at least 80 to apply."
     },
     {
       "priority": "essential",
       "question": "Income seems heavily weighted — how can I maximize income points?",
-      "answer": "Income is the single largest category at 60 out of 170 total points. Annual income of ≥₩100M earns 60 points, ₩90–100M earns 58, ₩80–90M earns 56, and so on down to minimum wage–₩30M at 10 points. According to published guidelines, income is calculated from your National Tax Service records (근로소득증명서). Negotiate your total compensation to appear on your tax return — housing allowances and bonuses that show on your payslip count toward your reported income."
+      "answer": "Income is the single largest category at 60 out of 135 total points. Annual income of ≥₩100M earns 60 points, ₩90–100M earns 58, ₩80–90M earns 56, and so on down to minimum wage–₩30M at 10 points. According to published guidelines, income is calculated from your National Tax Service records (근로소득증명서). Negotiate your total compensation to appear on your tax return — housing allowances and bonuses that show on your payslip count toward your reported income."
     },
     {
       "priority": "essential",
@@ -349,7 +349,7 @@
     {
       "id": "income-lever",
       "section": "requirements",
-      "tip": "Income scores make up 60 out of 170 total points. If your annual salary exceeds ₩40M, published guidelines indicate you can apply immediately without the 3-year stay requirement. Focus on getting your salary as high as possible on paper.",
+      "tip": "Income scores make up 60 out of 135 total points. If your annual salary exceeds ₩40M, published guidelines indicate you can apply immediately without the 3-year stay requirement. Focus on getting your salary as high as possible on paper.",
       "verified": false,
       "upvotes": 0
     },

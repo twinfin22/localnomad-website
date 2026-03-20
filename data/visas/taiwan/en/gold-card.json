@@ -4,9 +4,9 @@
   "nameLocal": "就業金卡",
   "shortName": "Gold Card",
   "category": "gold-card",
-  "description": "Everything about Taiwan's Employment Gold Card: 11 professional fields, 4-in-1 work + residence permit, 50% tax exemption, NHI access, and APRC fast-track. Updated for 2026.",
+  "description": "Everything about Taiwan's Employment Gold Card: 12 professional fields, 4-in-1 work + residence permit, 50% tax exemption, NHI access, and APRC fast-track. Updated for 2026.",
   "tagline": "4-in-1 work, reside, and thrive in Taiwan",
-  "keyRequirement": "Qualifying expertise in one of 11 professional fields OR monthly salary ≥ NT$160,000",
+  "keyRequirement": "Qualifying expertise in one of 12 professional fields OR monthly salary ≥ NT$160,000",
   "targetAudience": [
     "Senior professionals in tech, finance, education, biotech, and other qualifying fields",
     "Entrepreneurs and startup founders seeking open work permission",
@@ -16,7 +16,7 @@
   "eligibility": [
     {
       "id": "professional-field",
-      "label": "Expertise in one of 11 designated professional fields",
+      "label": "Expertise in one of 12 designated professional fields",
       "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Practitioners of Ancestor Rites",
       "required": true,
       "tips": ["Architecture field uses AND logic — all conditions (licensed architect or 5+ years experience AND monthly salary ≥ NT$160,000) must be met simultaneously"]
@@ -69,7 +69,7 @@
       "nonUsOverseas": "All other nationalities applying from abroad: NT$3,700 (1-yr), NT$4,700 (2-yr), NT$5,700 (3-yr).",
       "hkMacao": "Hong Kong/Macau residents: NT$3,100 flat rate (all durations)"
     },
-    "notes": "Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). All application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline (3 days domestic, up to 6 months overseas) results in automatic rejection without refund."
+    "notes": "Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). All application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline (30 days domestic, up to 6 months overseas) results in automatic rejection without refund."
   },
   "incomeRequirement": {
     "amount": "160,000",
@@ -182,9 +182,9 @@
       "id": "step-1",
       "step": 1,
       "title": "Choose Industry Field",
-      "description": "Select 1 of 11 professional fields and 1 sub-track within it. Research which field best matches your qualifications and documentation.",
+      "description": "Select 1 of 12 professional fields and 1 sub-track within it. Research which field best matches your qualifications and documentation.",
       "tips": [
-        "Review all 11 fields before choosing — some have overlapping criteria",
+        "Review all 12 fields before choosing — some have overlapping criteria",
         "Science & Technology and Digital fields are most popular among tech workers"
       ]
     },
@@ -224,7 +224,7 @@
       "description": "3-stage review process: (1) Relevant ministry reviews professional qualification (1-2 weeks), (2) MOFA passport inspection for overseas applicants (1 week), (3) NIA final background check and card processing (1-2 weeks).",
       "duration": "30-60 business days",
       "tips": [
-        "Document supplement deadline: 3 days domestic, up to 6 months overseas",
+        "Document supplement deadline: 30 days domestic, up to 6 months overseas",
         "Failure to supplement = rejection without refund"
       ]
     },
@@ -253,7 +253,7 @@
   "processingTime": {
     "governmentReview": "30-60 business days",
     "totalEndToEnd": "2-4 months",
-    "notes": "Assumes complete documentation. Document supplement: 3 days (domestic), up to 6 months (overseas). Failure to supplement within deadline = rejection without refund."
+    "notes": "Assumes complete documentation. Document supplement: 30 days (domestic), up to 6 months (overseas). Failure to supplement within deadline = rejection without refund."
   },
   "workPermission": {
     "allowed": true,
@@ -265,7 +265,7 @@
     {
       "id": "arc-application",
       "title": "ARC Application",
-      "deadline": "Within 15 days of arrival (for stays over 180 days)",
+      "deadline": "Within 30 days of arrival (for stays over 180 days)",
       "description": "Apply for Alien Resident Certificate at the nearest NIA service center.",
       "tips": ["Bring passport, visa, 2 photos, proof of address, and fees"]
     }
@@ -282,7 +282,8 @@
       "Biotechnology",
       "Economy",
       "National Defense",
-      "Law"
+      "Law",
+      "Environmental Protection"
     ],
     "openWorkPermit": true,
     "taxBenefit": "50% income tax exemption on annual salary exceeding NT$3,000,000 for first 5 years (conditions apply: first-time employment in Taiwan, 183+ days/year residency, no Taiwan household registration in prior 5 years)"
@@ -364,7 +365,7 @@
     },
     {
       "question": "What are the industry fields for Gold Card qualification?",
-      "answer": "The 11 primary designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law. Additionally, 'Practitioners of Ancestor Rites' (宗教專業人士) is recognized as a specialized qualification path. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
+      "answer": "The 12 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law, (12) Environmental Protection. Additionally, 'Practitioners of Ancestor Rites' (宗教專業人士) is recognized as a specialized qualification path. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
     },
     {
       "question": "How does the salary track work (NT$160,000/month)?",
@@ -404,7 +405,7 @@
     }
   ],
   "tips": [
-    "Review all 11 professional fields carefully before choosing — some have overlapping criteria and different documentation requirements",
+    "Review all 12 professional fields carefully before choosing — some have overlapping criteria and different documentation requirements",
     "Employment certificates must include full name, company name, position, employment period, and official seal — offer letters are never accepted",
     "For the salary track, choose your best year within the past 3 years for tax documentation",
     "Print the Resident Authorization Certificate in COLOR after approval — needed for Taiwan entry before physical card is ready",
@@ -506,7 +507,7 @@
     {
       "type": "dnv",
       "name": "Digital Nomad Visa",
-      "requirements": "DNV holders who meet Gold Card qualification criteria in any of the 11 professional fields may apply while on active DNV status in Taiwan.",
+      "requirements": "DNV holders who meet Gold Card qualification criteria in any of the 12 professional fields may apply while on active DNV status in Taiwan.",
       "timeline": "30-60 business days processing",
       "documents": [
         "Current passport",

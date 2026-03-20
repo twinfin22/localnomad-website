@@ -50,11 +50,11 @@
     },
     {
       "id": "japanese-language",
-      "label": "Japanese language proficiency (mandatory under October 2025 rules)",
-      "description": "Published guidelines indicate that Japanese language proficiency is now mandatory for Business Manager visa applicants under the new rules. The expected level is approximately JLPT N2 (B2 on the CEFR scale), though the specific assessment criteria may vary. This was not required before October 2025.",
+      "label": "Japanese language proficiency at N2 level — applicant OR a full-time employee (mandatory under October 2025 rules)",
+      "description": "Published guidelines indicate that Japanese language proficiency at approximately JLPT N2 (B2 on the CEFR scale) is now mandatory under the October 2025 overhaul. Importantly, the requirement is an either/or: either the applicant themselves holds N2-equivalent proficiency, OR at least one full-time employee of the business does. Both the applicant and the employee do not need to satisfy this simultaneously. This was not required before October 2025.",
       "required": true,
       "warnings": [
-        "Japanese language proficiency (approximately JLPT N2) is now mandatory — applicants without certification face rejection under the new rules"
+        "Japanese language proficiency (approximately JLPT N2) is now mandatory — either the applicant OR a full-time employee must hold N2-equivalent proficiency under the new rules"
       ]
     },
     {
@@ -167,7 +167,7 @@
       "id": "japanese-language-proof",
       "name": "Japanese Language Proficiency Certificate",
       "nameLocal": "日本語能力証明書",
-      "description": "JLPT N2 certificate or equivalent proof of Japanese language proficiency. This is a new mandatory requirement under the October 2025 rules. The expected level is approximately B2 on the CEFR scale.",
+      "description": "JLPT N2 certificate or equivalent proof of Japanese language proficiency at approximately B2 CEFR level. Required from either the applicant or a full-time employee of the business — the October 2025 rules require N2-level proficiency in the organization, not necessarily from the applicant alone. This is a new mandatory requirement under the October 2025 rules.",
       "required": true
     },
     {
@@ -270,7 +270,7 @@
   "faqs": [
     {
       "question": "What changed with the October 2025 overhaul?",
-      "answer": "The October 16, 2025 changes significantly raised the bar for new Business Manager visa applicants. Key changes: (1) minimum capital increased from ¥5,000,000 to ¥30,000,000 — a 6x increase; (2) a certified business plan is now mandatory — it must be certified by a professional expert; (3) at least 3 years of management experience is now required; (4) Japanese language proficiency (approximately JLPT N2 / CEFR B2) is now mandatory; (5) the full-time employee must be a Japanese national or permanent resident — foreign employees no longer count. These changes were designed to ensure that Business Manager visa holders operate genuine, viable businesses."
+      "answer": "The October 16, 2025 changes significantly raised the bar for new Business Manager visa applicants. Key changes: (1) minimum capital increased from ¥5,000,000 to ¥30,000,000 — a 6x increase; (2) a certified business plan is now mandatory — it must be certified by a professional expert; (3) at least 3 years of management experience is now required; (4) Japanese language proficiency at approximately JLPT N2 / CEFR B2 is now mandatory — either the applicant OR a full-time employee must hold this level; (5) the full-time employee must be a Japanese national or permanent resident — foreign employees no longer count. These changes were designed to ensure that Business Manager visa holders operate genuine, viable businesses."
     },
     {
       "question": "Do the new rules affect existing Business Manager visa holders?",
@@ -298,7 +298,7 @@
     },
     {
       "question": "What level of Japanese language is required?",
-      "answer": "Published guidelines indicate that Japanese language proficiency is now mandatory under the October 2025 rules. The expected level is approximately JLPT N2, which corresponds to B2 on the CEFR scale. This means the ability to read newspapers, participate in business conversations, and handle basic business correspondence in Japanese. This was not required before October 2025, and represents a significant additional barrier for non-Japanese-speaking entrepreneurs."
+      "answer": "Published guidelines indicate that Japanese language proficiency at approximately JLPT N2 (B2 on the CEFR scale) is now mandatory under the October 2025 rules. Critically, the requirement is either/or: either the applicant holds N2-equivalent proficiency, OR at least one full-time employee of the business does. This means a non-Japanese-speaking entrepreneur can still qualify if they hire an N2-level Japanese or permanent-resident employee. This requirement was not in place before October 2025."
     },
     {
       "question": "How does this visa lead to permanent residence?",
@@ -311,7 +311,7 @@
   ],
   "tips": [
     "Engage a licensed immigration lawyer (行政書士 or 弁護士) early — the Business Manager visa application is significantly more complex than employment-based visas",
-    "Start Japanese language study well in advance — JLPT N2 proficiency is now mandatory and typically requires 1-2 years of intensive study for non-Japanese speakers",
+    "Japanese language proficiency at JLPT N2 is now mandatory — either you or a full-time employee must hold N2-equivalent proficiency. If you are not a Japanese speaker, hiring an N2-level Japanese national or permanent-resident employee can satisfy this requirement",
     "Build the business plan with immigration requirements in mind — a certified plan that demonstrates job creation, tax contribution, and economic impact strengthens the application",
     "Open the corporate bank account early — Japanese banks are notoriously difficult for new foreign-owned companies, and the process can take weeks",
     "If transitioning from an employment visa, file the status change before your employment ends — the 3-month gap rule is strictly enforced",
@@ -352,7 +352,7 @@
     {
       "id": "n2-study-timeline",
       "section": "requirements",
-      "tip": "JLPT N2 is now mandatory for the Business Manager visa. For an English speaker starting from zero, reaching N2 typically takes 1.5-2 years of regular study (or 6-12 months of intensive full-time study). The JLPT is offered only twice a year (July and December), so plan your test dates around your visa application timeline.",
+      "tip": "JLPT N2-level proficiency is now mandatory for the Business Manager visa — but the requirement applies to either the applicant OR a full-time employee. If you are not a Japanese speaker, hiring an N2-level Japanese national or permanent-resident employee satisfies this rule. If you plan to satisfy it yourself, reaching N2 typically takes 1.5-2 years of regular study from zero. The JLPT is offered only twice a year (July and December), so plan your test dates accordingly.",
       "verified": false,
       "upvotes": 0
     }
@@ -412,7 +412,7 @@
     {
       "type": "engineer-specialist",
       "name": "Engineer/Specialist in Humanities/International Services Visa",
-      "requirements": "Hold Engineer/Specialist status and meet all Business Manager visa requirements: ¥30,000,000 capital, certified business plan, 3+ years management experience, Japanese language proficiency (JLPT N2), and 1+ full-time Japanese/permanent-resident employee.",
+      "requirements": "Hold Engineer/Specialist status and meet all Business Manager visa requirements: ¥30,000,000 capital, certified business plan, 3+ years management experience, Japanese language proficiency at JLPT N2 level (either the applicant or a full-time employee), and 1+ full-time Japanese/permanent-resident employee.",
       "timeline": "Business setup: 1-3 months + COE/status change: 2-3 months; total 3-6 months",
       "documents": [
         "Certified business plan",
@@ -443,7 +443,7 @@
     }
   ],
   "residenceStatus": "経営・管理",
-  "sponsorRequired": true,
+  "sponsorRequired": false,
   "coeRequired": true,
   "japaneseLanguage": {
     "required": true,

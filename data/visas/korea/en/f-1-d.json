@@ -223,7 +223,7 @@
     ],
     "notes": "This visa is specifically for remote work. Working for Korean clients requires different visa."
   },
-  "familyAllowed": false,
+  "familyAllowed": true,
   "postArrivalSteps": [
     {
       "id": "arc-registration",

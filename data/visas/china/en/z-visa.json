@@ -59,8 +59,8 @@
     "maxTotalDetail": "Renewable indefinitely with valid employment. Path to permanent residence after 4+ years of continuous work."
   },
   "fees": {
-    "application": "800–1,000 RMB + $30–140 USD",
-    "applicationDetail": "Work permit fee: 800–1,000 RMB. Z Visa consular fee: $30–140 USD, varies by nationality.",
+    "application": "800–1,000 RMB + $23–140 USD",
+    "applicationDetail": "Work permit fee: 800–1,000 RMB. Z Visa consular fee: $23–140 USD, varies by nationality.",
     "extension": "Residence permit renewal: 400-800 RMB",
     "notes": "Additional costs: health examination 400-600 RMB, document legalization fees vary by country."
   },
@@ -108,14 +108,10 @@
     },
     {
       "id": "pu-letter",
-      "name": "PU Letter (Invitation Letter)",
+      "name": "PU Letter (Invitation Letter) — No longer required",
       "nameLocal": "邀请函 / PU函",
-      "description": "Official invitation letter issued by the Provincial Foreign Affairs Office on behalf of your employer. The employer must apply for this through local government channels.",
-      "tips": [
-        "The PU letter process is employer-driven and can take 2-3 months",
-        "Ensure your employer starts this process as early as possible"
-      ],
-      "required": true
+      "description": "No longer required (eliminated post-COVID). The PU Letter was previously issued by the Provincial Foreign Affairs Office on behalf of the employer. It has been replaced by the Work Permit Notification Letter as the primary employer-issued document for Z Visa applications.",
+      "required": false
     },
     {
       "id": "work-permit-notification",
@@ -264,7 +260,7 @@
   "faqs": [
     {
       "question": "What are the three work permit categories (A, B, C)?",
-      "answer": "China classifies foreign workers into three tiers. Category A is for high-end talent, typically earning above 500,000 RMB annually, with expedited 5-day processing through a 'green channel.' Category B is for professional talent with a bachelor's degree and 2+ years of relevant experience, processed in 10-15 working days. Category C is for ordinary workers with no minimum education requirement, but processing takes 20+ working days and is subject to regional quotas. Most foreign professionals fall under Category B."
+      "answer": "China classifies foreign workers into three tiers. Category A is for high-end talent, earning at least 6× the local average wage (e.g., Beijing ~¥860,000/yr, Shanghai ~¥895,000/yr as of Feb 2026), with expedited 5-day processing through a 'green channel.' Category B is for professional talent with a bachelor's degree and 2+ years of relevant experience, processed in 10-15 working days. Category C is for ordinary workers with no minimum education requirement, but processing takes 20+ working days and is subject to regional quotas. Most foreign professionals fall under Category B."
     },
     {
       "question": "What is a PU Letter and how do I get one?",
@@ -441,7 +437,7 @@
     }
   ],
   "workPermitCategory": "B",
-  "puLetterRequired": true,
+  "puLetterRequired": false,
   "psbRegistration": {
     "required": true,
     "deadlineHours": 24,

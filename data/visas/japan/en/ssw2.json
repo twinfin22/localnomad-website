@@ -71,22 +71,17 @@
   "sponsorRequired": true,
   "coeRequired": true,
   "designatedSectors": [
-    "Caregiving (介護)",
     "Construction (建設)",
-    "Hospitality (宿泊)",
+    "Shipbuilding and Ship Machinery (造船・舶用工業)",
+    "Automobile Maintenance (自動車整備)",
+    "Aviation Industry (航空)",
+    "Accommodation (宿泊)",
     "Agriculture (農業)",
     "Fisheries (漁業)",
     "Food Processing (食品製造業)",
-    "Manufacturing (製造業)",
-    "Electricity and Gas (電気・ガス)",
-    "Semiconductor/Electronics Manufacturing (電子機器・部品製造)",
-    "Automobile Transportation (自動車整備)",
-    "Railways (鉄道)",
-    "Forestry (林業)",
-    "Timber Industry (木材産業)",
     "Food Service (飲食料品製造業)",
-    "Cleaning (ビルクリーニング)",
-    "Human Resources (人材派遣業)"
+    "Manufacturing (製造業)",
+    "Electricity and Gas (電気・ガス)"
   ],
   "japaneseLanguage": {
     "required": true,
@@ -271,11 +266,11 @@
     },
     {
       "question": "Which sectors currently offer SSW2 testing?",
-      "answer": "Not all 16 designated sectors have active Category 2 testing programs. The availability of SSW2 testing varies by sector and is expanding over time. According to published information, construction and shipbuilding were among the first sectors to offer SSW2. Check the ISA and SSW support websites for the current list of sectors with active Category 2 testing."
+      "answer": "SSW2 covers 11 designated sectors (fewer than SSW1's 16). Not all 11 sectors have active Category 2 testing programs yet — availability varies by sector and is expanding over time. According to published information, construction and shipbuilding were among the first sectors to offer SSW2. Check the ISA and SSW support websites for the current list of sectors with active Category 2 testing."
     },
     {
       "question": "What if my sector does not yet offer Category 2 testing?",
-      "answer": "If your sector does not currently offer the Category 2 Specified Skills Test, you may not be able to transition to SSW2 in that sector at this time. Published guidelines indicate that the government is actively working to expand SSW2 testing across all sectors. Monitor the ISA website for updates on test availability in your field."
+      "answer": "If your sector does not currently offer the Category 2 Specified Skills Test, you may not be able to transition to SSW2 in that sector at this time. Note also that SSW2 only covers 11 sectors — workers in SSW1-only sectors (such as caregiving, railways, forestry, and timber) cannot transition to SSW2 in those sectors. Published guidelines indicate the government is actively working to expand SSW2 availability. Monitor the ISA website for updates."
     },
     {
       "question": "Do I need to take the Category 2 test if I have a Grade 1 National Trade Skill Certificate?",

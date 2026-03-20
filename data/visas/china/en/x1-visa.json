@@ -59,7 +59,7 @@
     "maxTotalDetail": "Longer programs may require visa renewal during the course of study."
   },
   "fees": {
-    "application": "X1 Visa consular fee: $30-140 USD (varies by nationality)",
+    "application": "X1 Visa consular fee: $23-140 USD (varies by nationality)",
     "extension": "Residence permit renewal: standard fees apply (400-800 RMB)",
     "notes": "No work permit fee required for study visa. University tuition and housing fees are separate from visa costs. Scholarship students may have fees waived by their sponsoring institution."
   },
@@ -255,7 +255,7 @@
     },
     {
       "question": "Can my family join me while I study in China?",
-      "answer": "Published guidelines indicate that X1 Visa holders generally cannot sponsor dependent visas for family members in the same way that Z Visa (work) holders can. Family members may apply for Q2 (short-term visit) visas or, in some cases, S2 visas for short stays. Long-term family accompaniment on a student visa is not standard."
+      "answer": "Published guidelines indicate that X1 Visa holders generally cannot sponsor dependent visas for family members in the same way that Z Visa (work) holders can. Family members may apply for S1 (long-term) or S2 (short-term) dependent visas for stays. Long-term family accompaniment on a student visa is not standard."
     },
     {
       "question": "Is health insurance required for X1 Visa holders?",

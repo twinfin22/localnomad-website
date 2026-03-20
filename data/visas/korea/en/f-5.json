@@ -4,7 +4,7 @@
   "nameLocal": "영주자격 (F-5)",
   "shortName": "F-5",
   "category": "residence",
-  "description": "Complete guide to Korea's F-5 Permanent Residence status: sub-categories (F-5-1, F-5-2, F-5-5, F-5-6, F-5-7, F-5-11, F-5-16), eligibility paths, KIIP language requirements, income thresholds, required documents, application steps, and rights of F-5 holders.",
+  "description": "Complete guide to Korea's F-5 Permanent Residence status: sub-categories (F-5-1, F-5-2, F-5-5, F-5-6, F-5-11, F-5-13, F-5-16), eligibility paths, KIIP language requirements, income thresholds, required documents, application steps, and rights of F-5 holders.",
   "tagline": "Permanent residence in Korea with unrestricted work rights",
   "keyRequirement": "Varies by sub-category: typically 2–5 years legal residence + KIIP Level 5 + income proof",
   "targetAudience": [
@@ -12,9 +12,9 @@
     "F-6-1 (marriage visa) holders after 2 years of continuous residence (F-5-2)",
     "Long-term residents on any qualifying status after 5 years (F-5-1)",
     "Foreign investors with 5+ years on D-8 and sustained employment of Korean nationals (F-5-5)",
-    "Ethnic Koreans (재외동포) holding F-4 for 2+ years (F-5-7)",
-    "Highly qualified professionals with advanced degrees and income above 3x GNI (F-5-11)",
-    "Foreign retirees aged 60+ with qualifying pension or asset holdings (F-5-6)"
+    "Ethnic Koreans (재외동포) holding F-4 for 2+ years (F-5-6)",
+    "Highly qualified professionals with outstanding ability in specialized fields (F-5-11)",
+    "Foreign retirees aged 60+ with overseas pension income ≥ 2x GNI (F-5-13)"
   ],
   "subCategories": [
     {
@@ -71,10 +71,10 @@
       ]
     },
     {
-      "id": "f-5-7",
-      "code": "F-5-7",
-      "name": "Ethnic Korean",
-      "nameLocal": "재외동포",
+      "id": "f-5-6",
+      "code": "F-5-6",
+      "name": "Overseas Korean (F-4 Holder)",
+      "nameLocal": "재외동포(F-4) 2년 이상 체류자",
       "description": "For ethnic Koreans (재외동포) holding F-4 (Overseas Korean) status who have resided in Korea for 2+ years and meet Korean language and financial requirements. Published requirements indicate a lower Korean language bar than F-5-1 given the presumed cultural and linguistic affinity.",
       "keyRequirements": [
         "F-4 status held continuously for 2+ years in Korea",
@@ -86,9 +86,9 @@
     {
       "id": "f-5-11",
       "code": "F-5-11",
-      "name": "Highly Qualified Specialist",
-      "nameLocal": "학력·능력 우수자",
-      "description": "For professionals with advanced academic qualifications and high income who have contributed significantly to Korea's economy. Published requirements indicate a higher income threshold and educational bar than the general F-5-1 track.",
+      "name": "Specialized Field Expert",
+      "nameLocal": "특정분야능력소유자",
+      "description": "For individuals with outstanding ability in science, management, education, culture/arts, or sports who have contributed significantly to Korea. Qualifying criteria include SCI journal publications, tenure at top-200 universities, experience at Fortune 500 companies, or significant intellectual property holdings.",
       "keyRequirements": [
         "Master's or PhD degree from a recognized institution (apostilled degree certificate required)",
         "Annual income ≥ 3x GNI per capita (₩149,865,000 based on 2024 GNI of ₩49,955,000)",
@@ -98,16 +98,16 @@
       ]
     },
     {
-      "id": "f-5-6",
-      "code": "F-5-6",
-      "name": "Retired Foreign National",
-      "nameLocal": "은퇴자",
-      "description": "For foreign nationals aged 60 or older who can demonstrate sufficient passive income or assets to reside in Korea without employment. Published criteria are among the least codified of all F-5 sub-categories — thresholds below are approximate practitioner estimates.",
+      "id": "f-5-13",
+      "code": "F-5-13",
+      "name": "Overseas Pension Recipient",
+      "nameLocal": "연금수혜자",
+      "description": "For foreign nationals aged 60 or older who receive an overseas pension. Published requirements indicate annual pension income from abroad must be at least 2x per capita GNI. KIIP Level 5 completion and the permanent residence qualification test are exempted for this sub-category.",
       "keyRequirements": [
         "Age 60 or above",
-        "Annual pension income approximately ≥ ₩20,000,000 from a recognized foreign pension institution OR substantial liquid assets (approximately ≥ ₩300,000,000) — thresholds are approximate; verify directly with immigration office",
-        "Prior legal residence in Korea required; minimum period at officer discretion",
-        "No active employment in Korea (retirement status is verified)",
+        "Annual overseas pension income ≥ 2x per capita GNI (₩99,910,000 based on 2024 GNI of ₩49,955,000) — must be pension income already received in the past year, not projected future pension",
+        "Prior legal residence in Korea required",
+        "KIIP Level 5 completion is exempted for F-5-13 applicants",
         "National Health Insurance enrollment or equivalent private coverage"
       ]
     }
@@ -158,17 +158,17 @@
     },
     {
       "id": "f4-ethnic-korean-2yr",
-      "label": "2 years F-4 residence + KIIP L4+ + income proof (F-5-7)",
-      "description": "Published requirements for F-5-7 indicate F-4 (Overseas Korean) status held for 2+ consecutive years, KIIP Level 4 or higher completion, and income or asset proof. Documentary evidence of ethnic Korean lineage is required.",
+      "label": "2 years F-4 residence + KIIP L4+ + income proof (F-5-6)",
+      "description": "Published requirements for F-5-6 indicate F-4 (Overseas Korean) status held for 2+ consecutive years, KIIP Level 4 or higher completion, and income or asset proof. Documentary evidence of ethnic Korean lineage is required.",
       "required": false,
       "priority": "detail",
       "sentiment": "neutral",
-      "category": "f-5-7"
+      "category": "f-5-6"
     },
     {
-      "id": "specialist-degree-income",
-      "label": "Master's/PhD + 3x GNI income + 3yr residence (F-5-11)",
-      "description": "Published requirements for F-5-11 indicate an advanced degree (Master's or PhD), annual income ≥ 3x per capita GNI (₩149,865,000 based on 2024 figures), 3+ years legal residence, and KIIP Level 5 or TOPIK Level 5/6 completion.",
+      "id": "specialist-ability",
+      "label": "Outstanding ability in specialized field + 3yr residence (F-5-11)",
+      "description": "Published requirements for F-5-11 indicate outstanding ability in science, management, education, culture/arts, or sports. Qualifying criteria include SCI publications, Fortune 500 experience, tenure at top-200 universities, or significant IP holdings. 3+ years legal residence and KIIP Level 5 or TOPIK Level 5/6 completion required.",
       "required": false,
       "priority": "detail",
       "sentiment": "positive",
@@ -204,7 +204,7 @@
     "amount": "99910000",
     "currency": "KRW",
     "period": "annual",
-    "notes": "For F-5-1 and F-5-16: annual income ≥ 2x per capita GNI. Based on 2024 GNI of ₩49,955,000, the threshold is ₩99,910,000. For F-5-11: threshold is 3x GNI = ₩149,865,000. For F-5-2: asset-based requirement of ≥ ₩30,000,000 (not income-based). GNI figures are updated annually — confirm the current year's threshold before applying.",
+    "notes": "For F-5-1 and F-5-16: annual income ≥ 2x per capita GNI. Based on 2024 GNI of ₩49,955,000, the threshold is ₩99,910,000. For F-5-11: qualification is based on outstanding ability in specialized fields (science, management, education, culture/arts, sports) rather than a fixed income multiple. For F-5-2: asset-based requirement of ≥ ₩30,000,000 (not income-based). For F-5-13: annual overseas pension income ≥ 2x GNI. GNI figures are updated annually — confirm the current year's threshold before applying.",
     "proofMethods": [
       "근로소득증명서 (Employment income certificate) from NTS Hometax — required for employed applicants",
       "사업소득증명서 or 소득금액증명원 (Business income certificate) from NTS Hometax — for self-employed",
@@ -213,8 +213,8 @@
   },
   "languageRequirement": {
     "required": true,
-    "minimumLevel": "KIIP Level 5 (general tracks: F-5-1, F-5-16, F-5-2); KIIP Level 4+ (F-5-7 ethnic Korean); KIIP Level 5 or TOPIK Level 5/6 (F-5-11 specialist); KIIP Level 4+ or TOPIK Level 4+ (F-5-17 HSP)",
-    "notes": "TOPIK alone has NOT been accepted as a substitute for KIIP for standard F-5 tracks since March 2019. KIIP Level 5 is the required standard for F-5-1, F-5-2, and F-5-16. TOPIK Level 5/6 may be accepted for specialized achievement tracks (F-5-11) per published guidelines. Applicants over 60 or with physical/mental disabilities preventing KIIP enrollment may be reviewed under separate criteria."
+    "minimumLevel": "KIIP Level 5 (general tracks: F-5-1, F-5-16, F-5-2); KIIP Level 4+ (F-5-6 overseas Korean); KIIP Level 5 or TOPIK Level 5/6 (F-5-11 specialist); exempted (F-5-13 pension recipient)",
+    "notes": "TOPIK alone has NOT been accepted as a substitute for KIIP for standard F-5 tracks since March 2019. KIIP Level 5 is the required standard for F-5-1, F-5-2, and F-5-16. TOPIK Level 5/6 may be accepted for specialized achievement tracks (F-5-11) per published guidelines. F-5-13 (pension recipient) applicants are exempted from KIIP/language requirements. Applicants over 60 or with physical/mental disabilities preventing KIIP enrollment may be reviewed under separate criteria."
   },
   "documents": [
     {
@@ -359,9 +359,9 @@
     },
     {
       "id": "asset-proof",
-      "name": "Asset Proof (F-5-2 and F-5-6)",
+      "name": "Asset Proof (F-5-2 and F-5-13)",
       "nameLocal": "금융잔고증명서 / 재산세 납부영수증",
-      "description": "For F-5-2: bank balance statements or property tax receipts showing combined household assets ≥ ₩30,000,000. For F-5-6: statements showing pension income or liquid assets at the applicable thresholds.",
+      "description": "For F-5-2: bank balance statements or property tax receipts showing combined household assets ≥ ₩30,000,000. For F-5-13: overseas pension income statements showing annual pension ≥ 2x GNI per capita.",
       "required": false,
       "priority": "detail"
     },
@@ -375,7 +375,7 @@
     },
     {
       "id": "ethnic-korean-proof",
-      "name": "Ethnic Korean Lineage Proof (F-5-7 only)",
+      "name": "Ethnic Korean Lineage Proof (F-5-6 only)",
       "nameLocal": "재외동포 신분 증빙서류",
       "description": "Documentation establishing ethnic Korean identity: prior Korean nationality records, family registry tracing Korean lineage, or birth certificate showing Korean parentage. Requirements vary by diaspora community (조선족, 고려인, etc.).",
       "required": false,
@@ -482,7 +482,7 @@
   ],
   "processingTime": {
     "governmentReview": "4 weeks – 6 months",
-    "governmentReviewDetail": "Processing time varies by sub-category. F-5-2 (spousal) and F-5-16 (from F-2-7): 4–8 weeks, as immigration records are already on file. F-5-1 (general), F-5-5 (investor), F-5-11 (specialist): 3–6 months, due to more extensive background investigation. F-5-7 (ethnic Korean): 2–4 months.",
+    "governmentReviewDetail": "Processing time varies by sub-category. F-5-2 (spousal) and F-5-16 (from F-2-7): 4–8 weeks, as immigration records are already on file. F-5-1 (general), F-5-5 (investor), F-5-11 (specialist): 3–6 months, due to more extensive background investigation. F-5-6 (overseas Korean): 2–4 months. F-5-13 (pension recipient): 2–4 months.",
     "totalEndToEnd": "Allow 1–2 years of preparation time before the application date, primarily due to KIIP Level 5 completion requirements",
     "notes": "F-5 applications involve coordination between the immigration office, National Police Agency (경찰청), and National Tax Service (국세청). Processing is substantially longer than standard status renewals."
   },
@@ -537,7 +537,7 @@
     },
     {
       "question": "What is the income requirement for F-5?",
-      "answer": "For F-5-1 (general) and F-5-16 (from F-2-7): annual income ≥ 2x per capita GNI (₩99,910,000 based on 2024 GNI of ₩49,955,000). For F-5-11 (specialist): ≥ 3x GNI (₩149,865,000 based on 2024 figures). For F-5-2 (spouse): asset-based — combined household assets ≥ ₩30,000,000. GNI figures update annually — confirm the current year's threshold before applying. Income must be proven via NTS-issued certificates, not bank statements.",
+      "answer": "For F-5-1 (general) and F-5-16 (from F-2-7): annual income ≥ 2x per capita GNI (₩99,910,000 based on 2024 GNI of ₩49,955,000). For F-5-11 (specialist): qualification is based on outstanding ability in specialized fields rather than a fixed income multiple. For F-5-2 (spouse): asset-based — combined household assets ≥ ₩30,000,000. For F-5-13 (pension recipient): annual overseas pension ≥ 2x GNI. GNI figures update annually — confirm the current year's threshold before applying. Income must be proven via NTS-issued certificates, not bank statements.",
       "priority": "essential"
     },
     {
@@ -573,7 +573,7 @@
   "warnings": [
     "TOPIK alone does NOT substitute for KIIP on standard F-5 tracks — this policy has been in effect since March 2019",
     "The ₩200,000 application fee is consistent with published practitioner sources and law.go.kr citations; verify against the current HiKorea fee schedule before applying as fees are subject to revision",
-    "F-5-6 (retired) financial thresholds (pension ≥ ₩20M/year; assets ≥ ₩300M) are approximate practitioner estimates — published requirements indicate significant officer discretion; consult a licensed immigration attorney (행정사) before applying",
+    "F-5-13 (pension recipient) requires annual overseas pension income ≥ 2x GNI per capita — must be pension income already received, not projected future pension; consult a licensed immigration attorney (행정사) for detailed requirements",
     "F-5 status can be revoked — departure from Korea for 2+ consecutive years subjects the status to discretionary ministerial review, though automatic cancellation does not occur",
     "Income threshold figures (₩99,910,000 and ₩149,865,000) are based on 2024 GNI — GNI is updated annually and thresholds change accordingly"
   ],
@@ -655,7 +655,7 @@
       "type": "f-4",
       "name": "F-4 Overseas Korean",
       "requirements": "F-4 status held for 2+ consecutive years in Korea; KIIP Level 4+ completion; annual income ≥ 2x GNI or equivalent assets; ethnic Korean lineage documentation",
-      "timeline": "2 years on F-4 + 2–4 months processing (F-5-7 sub-category)",
+      "timeline": "2 years on F-4 + 2–4 months processing (F-5-6 sub-category)",
       "documents": [
         "통합신청서",
         "여권 + 외국인등록증",
@@ -665,7 +665,7 @@
         "납세사실증명서",
         "범죄경력증명서 (apostilled)"
       ],
-      "notes": "F-5-7 published requirements indicate KIIP Level 4 as the general threshold (lower than the Level 5 required for F-5-1), reflecting the presumed cultural/linguistic affinity of ethnic Koreans. In practice, completing KIIP Level 5 eliminates any ambiguity at the officer review stage."
+      "notes": "F-5-6 published requirements indicate KIIP Level 4 as the general threshold (lower than the Level 5 required for F-5-1), reflecting the presumed cultural/linguistic affinity of ethnic Koreans. In practice, completing KIIP Level 5 eliminates any ambiguity at the officer review stage."
     }
   ],
   "renewal": {
@@ -686,7 +686,7 @@
     "processingTime": "1–2 weeks",
     "fees": "~₩30,000 (approximate ARC re-issuance fee — verify at immigration office)"
   },
-  "lastUpdated": "2026-03-18",
+  "lastUpdated": "2026-03-20",
   "officialLinks": [
     {
       "label": "Immigration Control Act — National Law Information Center",

@@ -69,8 +69,8 @@
     },
     {
       "id": "application-form",
-      "name": "Visa Application Form (Form V.2013)",
-      "description": "Completed and signed Chinese visa application form. Can be submitted online through Chinese embassy platforms.",
+      "name": "Visa Application Form (COVA Online System)",
+      "description": "Completed online through the COVA (China Online Visa Application) system at cova.mfa.gov.cn. Print and sign the generated form. The old paper Form V.2013 is no longer accepted as of September 30, 2025.",
       "required": true
     },
     {

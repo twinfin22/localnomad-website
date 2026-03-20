@@ -84,7 +84,7 @@
     "Timber Industry (木材産業)",
     "Food Service (飲食料品製造業)",
     "Cleaning (ビルクリーニング)",
-    "Human Resources (人材派遣業)"
+    "Shipbuilding and Ship Machinery (造船・舶用工業)"
   ],
   "japaneseLanguage": {
     "required": true,
@@ -268,7 +268,7 @@
   "faqs": [
     {
       "question": "What are the 16 designated sectors for SSW1?",
-      "answer": "As of 2026, the designated sectors are: caregiving, construction, hospitality, agriculture, fisheries, food processing, manufacturing, electricity and gas, semiconductor/electronics manufacturing, automobile transportation, railways, forestry, timber industry, food service, cleaning, and human resources. Four sectors (automobile transportation, railways, forestry, timber) were added in March 2024. Published guidelines indicate the sector list is continuously reviewed for expansion."
+      "answer": "As of 2026, the 16 designated sectors are: caregiving, construction, hospitality, agriculture, fisheries, food processing, manufacturing, electricity and gas, semiconductor/electronics manufacturing, automobile transportation, railways, forestry, timber industry, food service, cleaning, and shipbuilding and ship machinery. Four sectors (automobile transportation, railways, forestry, timber) were added in March 2024, bringing the total to 16. Published guidelines indicate the sector list is continuously reviewed for further expansion."
     },
     {
       "question": "Can I skip the skills test and language test?",
@@ -358,7 +358,7 @@
   "renewal": {
     "eligible": true,
     "maxExtensions": null,
-    "maxTotalStay": "Indefinite (with continuous renewal)",
+    "maxTotalStay": "5 years maximum",
     "requirements": ["Valid employment contract", "Tax payment records", "No immigration violations"],
     "documents": ["Passport", "Current residence card", "Employment certificate", "Tax certificate"],
     "applyBeforeDays": 90,

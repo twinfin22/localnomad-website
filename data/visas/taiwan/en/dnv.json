@@ -17,7 +17,7 @@
     {
       "id": "visa-exempt-nationality",
       "label": "Passport from a visa-exempt country",
-      "description": "90-day visa-free entry: 64 jurisdictions including US, UK, Canada, Australia, Japan, Korea, and most EU countries. 14-day trial: Thailand, Brunei, Philippines (extended to July 31, 2026).",
+      "description": "Nationals from approximately 60+ visa-exempt countries and territories (across 90-day, 30-day, and 14-day categories) including US, UK, Canada, Australia, Japan, Korea, and most EU countries. 14-day trial: Thailand, Brunei, Philippines (extended to July 31, 2026).",
       "required": true
     },
     {
@@ -260,7 +260,7 @@
     {
       "id": "arc-application",
       "title": "ARC Application",
-      "deadline": "Within 15 days of arrival (for stays over 180 days)",
+      "deadline": "Within 30 days of arrival (for stays over 180 days)",
       "description": "Apply for Alien Resident Certificate at the nearest NIA service center.",
       "tips": ["Bring passport, visa, 2 photos, proof of address, and fees"]
     }
@@ -335,7 +335,7 @@
     },
     {
       "question": "Can I switch from DNV to Gold Card?",
-      "answer": "If you meet Gold Card qualification criteria in one of the 11 professional fields, you can apply for a Gold Card while on active DNV status in Taiwan. The Gold Card provides Taiwan work permission, NHI access, and tax benefits that the DNV does not."
+      "answer": "If you meet Gold Card qualification criteria in one of the 12 professional fields, you can apply for a Gold Card while on active DNV status in Taiwan. The Gold Card provides Taiwan work permission, NHI access, and tax benefits that the DNV does not."
     },
     {
       "question": "What's the bank balance requirement?",
@@ -416,7 +416,7 @@
     {
       "type": "gold-card",
       "name": "Taiwan Employment Gold Card",
-      "requirements": "Meet qualification criteria in one of 11 professional fields (salary ≥ NT$160,000/month, relevant experience, PhD, awards, etc.). Can apply while on active DNV status in Taiwan.",
+      "requirements": "Meet qualification criteria in one of 12 professional fields (salary ≥ NT$160,000/month, relevant experience, PhD, awards, etc.). Can apply while on active DNV status in Taiwan.",
       "timeline": "30-60 business days processing",
       "documents": [
         "Current passport",

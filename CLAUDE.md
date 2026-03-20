@@ -11,6 +11,13 @@
 2. **`"use client"` only when needed** — hooks/browser APIs/interactivity
 3. **i18n SoT: `i18n/Visa i18n Glossary.txt`** — All visa/immigration term translations in `messages/*.json` must match this glossary. When adding or updating translations, check the glossary first. New terms go in the glossary before going into code.
 
+## Visa Data Integrity Rules
+1. **Primary Source Gate** — No visa JSON may be published without at least ONE verified government source (gov website, official PDF, law database). If gov sources are blocked/unavailable, the visa JSON MUST have `"draft": true` and be excluded from production rendering. Training-data-only research is never sufficient for publication.
+2. **No Circular Validation** — The fact-check agent MUST use a different evidence source than the research agent. If both rely on training data only, output must be flagged as "double-unverified" and blocked from production.
+3. **Reference Table First** — Before creating any visa JSON with sub-categories (e.g., F-5, F-2, E-7), first build a COMPLETE numbered reference list from an official source. Store in `data/visas/[country]/reference/`. Even if we only cover a subset, the full list prevents number-shuffling errors.
+4. **Firecrawl Budget Priority** — Visa data creation/fact-check = HIGH priority for Firecrawl credits. If credits are exhausted, STOP and wait rather than proceeding with training-data-only research.
+5. **Human Review for New Visas** — New visa JSONs (not updates to existing) require human review before deployment. Reviewer must verify sub-category numbers against official source.
+
 ## Blog System
 - Posts: `content/blog/[category]/[slug].mdx` (categories: guides, updates, tips, comparisons, news, stories)
 - Schema: `lib/blog/schema.ts` (title, description ≤200 chars, category, country, date, tags, draft, coverImage)
