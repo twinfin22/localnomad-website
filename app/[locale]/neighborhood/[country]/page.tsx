@@ -7,17 +7,16 @@ import { Link } from '@/i18n/navigation';
 import { getNeighborhoodData } from '@/lib/neighborhood-data';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import { NeighborhoodExplorer } from '@/components/neighborhood';
-import type { City } from '@/lib/types/neighborhood';
+import type { City, RentSource } from '@/lib/types/neighborhood';
 
 export const revalidate = 3600;
 
-const VALID_COUNTRIES = ['korea', 'japan', 'taiwan', 'china'] as const;
+const VALID_COUNTRIES = ['korea', 'japan', 'taiwan'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',
   japan: 'Japan',
   taiwan: 'Taiwan',
-  china: 'China',
 };
 
 interface Props {
@@ -148,6 +147,28 @@ export default async function NeighborhoodPage({ params }: Props) {
           <div className="mt-8">
             <NeighborhoodExplorer cities={data.cities} allTags={allTags} />
           </div>
+
+          {data.rentSources && data.rentSources.length > 0 && (
+            <div className="mt-12 border-t pt-6 pb-2">
+              <p className="text-xs text-muted-foreground">
+                Rent data sourced from:{' '}
+                {data.rentSources.map((source: RentSource, i: number) => (
+                  <span key={source.name}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-primary"
+                    >
+                      {source.name}
+                    </a>
+                    {i < data.rentSources!.length - 1 && ', '}
+                  </span>
+                ))}
+                . Prices reflect studio to 1BR units and may vary by building age and proximity to transit.
+              </p>
+            </div>
+          )}
         </div>
       </main>
     </>

@@ -3,15 +3,15 @@
   "cities": [
     {
       "name": "Tokyo",
-      "coordinates": [35.6762, 139.6503],
+      "coordinates": [35.6812, 139.7671],
       "neighborhoods": [
         {
           "name": "Shibuya (渋谷)",
           "city": "Tokyo",
           "coordinates": [35.6620, 139.7036],
-          "rent": "¥120,000–¥180,000/month",
+          "rent": "¥120,000–¥220,000/month",
           "vibe": "Tech hub, startup scene, fast-paced, excellent transit",
-          "pros": ["Major tech company offices", "World-class transit (6 train lines)", "Endless dining and entertainment", "Strong coworking scene"],
+          "pros": ["Major tech company offices", "World-class transit (9 train lines)", "Endless dining and entertainment", "Strong coworking scene"],
           "cons": ["Expensive", "Very crowded especially around station", "Noisy in commercial areas", "Small apartment sizes"],
           "walkability": 9,
           "safety": 8,
@@ -99,9 +99,9 @@
           "name": "Tenjin (天神)",
           "city": "Fukuoka",
           "coordinates": [33.5902, 130.3990],
-          "rent": "¥40,000–¥70,000/month",
+          "rent": "¥50,000–¥80,000/month",
           "vibe": "Startup-friendly, compact city center, yatai food stalls, beach accessible",
-          "pros": ["Japan's startup capital (Startup Visa program)", "Very affordable", "Compact and walkable", "Fukuoka Airport 11 min by subway"],
+          "pros": ["Japan's first Startup Visa city", "Very affordable", "Compact and walkable", "Fukuoka Airport 11 min by subway"],
           "cons": ["Smaller international community", "Fewer direct international flights", "Limited English", "Typhoon season (summer)"],
           "walkability": 9,
           "safety": 9,
@@ -129,5 +129,9 @@
         }
       ]
     }
+  ],
+  "rentSources": [
+    { "name": "SUUMO (リクルート)", "url": "https://suumo.jp" },
+    { "name": "Homes.co.jp", "url": "https://www.homes.co.jp" }
   ]
 }

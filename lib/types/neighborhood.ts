@@ -18,7 +18,13 @@ export interface City {
   neighborhoods: Neighborhood[];
 }
 
+export interface RentSource {
+  name: string;
+  url: string;
+}
+
 export interface CountryNeighborhoodData {
   country: string;
   cities: City[];
+  rentSources?: RentSource[];
 }

@@ -9,23 +9,23 @@
           "name": "Hongdae (弘大)",
           "city": "Seoul",
           "coordinates": [37.5563, 126.9236],
-          "rent": "₩600K–₩950K",
+          "rent": "₩650K–₩950K",
           "vibe": "Young professionals, artists, indie shops, late-night cafes",
-          "pros": ["Affordable", "Vibrant", "Cafe culture"],
+          "pros": ["Vibrant", "Cafe culture", "Great transit"],
           "cons": ["Noise", "Touristy parts"],
           "walkability": null,
           "safety": null,
-          "tags": ["budget", "cafe", "nightlife"],
+          "tags": ["cafe", "nightlife", "creative"],
           "imageUrl": null
         },
         {
           "name": "Itaewon (이태원)",
           "city": "Seoul",
           "coordinates": [37.5345, 126.9946],
-          "rent": "₩1.0M–₩1.7M",
+          "rent": "₩800K–₩1.4M",
           "vibe": "International, English-friendly, nightlife",
           "pros": ["English spoken", "Expat community", "Coworking"],
-          "cons": ["Most expensive area in Seoul", "Touristy"],
+          "cons": ["One of Seoul's priciest areas", "Touristy"],
           "walkability": null,
           "safety": null,
           "tags": ["expat", "nightlife", "central"],
@@ -87,7 +87,7 @@
           "name": "Hannam-dong (한남동)",
           "city": "Seoul",
           "coordinates": [37.5356, 126.9980],
-          "rent": "₩1.0M–₩1.5M",
+          "rent": "₩900K–₩1.8M",
           "vibe": "Upscale, refined, galleries, quieter than Itaewon",
           "pros": ["Museums and galleries", "Premium cafes", "Walkable tree-lined streets", "Han River access"],
           "cons": ["Expensive", "Fewer international shops", "Can feel overly curated"],
@@ -106,7 +106,7 @@
           "name": "Haeundae (해운대)",
           "city": "Busan",
           "coordinates": [35.1587, 129.1604],
-          "rent": "₩900K–₩1.3M",
+          "rent": "₩500K–₩900K",
           "vibe": "Beach, nomad hub, coliving scene",
           "pros": ["Beach access", "NOMAD LIVE coliving", "Nomad community"],
           "cons": ["Expensive for Busan", "Crowded in summer"],
@@ -166,7 +166,7 @@
           "coordinates": [33.5104, 126.5219],
           "rent": "₩500K–₩950K",
           "vibe": "Island escape, relaxed, growing nomad scene",
-          "pros": ["15–20% cheaper than Seoul", "Nature", "Visa-free entry", "Growing coworking scene (40+ spaces)"],
+          "pros": ["Over 25% cheaper than Seoul", "Nature", "Visa-free entry", "Growing coworking scene (40+ spaces)"],
           "cons": ["Typhoon season (Aug–Sep)", "Car recommended for exploring"],
           "walkability": null,
           "safety": null,
@@ -188,5 +188,9 @@
         }
       ]
     }
+  ],
+  "rentSources": [
+    { "name": "한국부동산원 (Korea Real Estate Board)", "url": "https://www.reb.or.kr" },
+    { "name": "Zippoom 실거래가", "url": "https://zippoom.com" }
   ]
 }
