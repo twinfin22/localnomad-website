@@ -252,6 +252,7 @@
     "neighborhoods": "社区指南",
     "guide": "指南",
     "moreCountries": "切换国家",
+    "checklist": "清单",
     "openMenu": "打开菜单",
     "closeMenu": "关闭菜单"
   },
@@ -396,7 +397,7 @@
     "badgeMustExit": "须出境",
     "badgeInCountry": "境内变更",
     "verifyCaveat": "请向当地出入境管理部门确认此路径 — 官方文件有限。",
-    "viewFullRequirements": "查看完整要求",
+    "viewFullRequirements": "查看{to}签证要求",
     "whereCanYouGo": "持{from}签证可以变更为哪些签证？",
     "pathsConfirmed": "已确认{count}条境内变更路径",
     "pathsConfirmedPlural": "已确认{count}条境内变更路径",
@@ -452,7 +453,7 @@
     "metaDescription": "查询你可以从当前签证身份变更为哪种签证。涵盖E-7、F-2、F-5、D-10、H-1、B-2、F-1-D等。不构成法律建议。",
     "metaOgDescription": "韩国境内所有已确认签证变更路径的卡片式指南。查看要求、时间线和信息来源。",
     "metaTitleFrom": "韩国{from}签证身份变更 {year} | LocalNomad",
-    "metaDescriptionFrom": "查询在韩国从{from}可以变更为哪些签证。涵盖条件、时间线和所需材料。不构成法律建议。",
+    "metaDescriptionFrom": "查询在韩国从{from}可以变更为哪些签证，涵盖每条变更路径的条件、审理时间线、所需材料及申请费用。不构成法律建议。",
     "metaTitleTransition": "{from}转{to}签证变更 — 韩国{year} | LocalNomad",
     "metaTitleFallback": "签证变更 | LocalNomad",
     "metaDescriptionTransition": "在韩国从{from}变更为{to}的条件、时间线和所需材料。"

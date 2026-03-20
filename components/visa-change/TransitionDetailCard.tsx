@@ -76,7 +76,7 @@ export async function TransitionDetailCard({
           href={`/${country}/visa/change/${slug}`}
           className="flex items-center gap-1 text-sm font-semibold text-[#1B4965] hover:underline"
         >
-          {t('viewFullRequirements')}
+          {t('viewFullRequirements', { to: transition.type.toUpperCase() })}
           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
         </Link>
       </div>

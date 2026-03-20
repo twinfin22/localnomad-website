@@ -252,6 +252,7 @@
     "neighborhoods": "エリアガイド",
     "guide": "ガイド",
     "moreCountries": "国を切り替え",
+    "checklist": "チェックリスト",
     "openMenu": "メニューを開く",
     "closeMenu": "メニューを閉じる"
   },
@@ -396,7 +397,7 @@
     "badgeMustExit": "一旦出国が必要",
     "badgeInCountry": "国内変更可",
     "verifyCaveat": "このルートについては、地元の出入国管理事務所で確認してください — 公式文書が限られています。",
-    "viewFullRequirements": "詳細な要件を見る",
+    "viewFullRequirements": "{to}の要件を見る",
     "whereCanYouGo": "{from}からどこに変更できますか？",
     "pathsConfirmed": "国内変更ルートが{count}件確認されています",
     "pathsConfirmedPlural": "国内変更ルートが{count}件確認されています",
@@ -452,7 +453,7 @@
     "metaDescription": "現在のビザから変更できるビザを調べましょう。E-7・F-2・F-5・D-10・H-1・B-2・F-1-Dなどをカバー。法的アドバイスではありません。",
     "metaOgDescription": "韓国の国内ビザ変更パスを確認できるカード型ガイド。要件・スケジュール・情報源を確認。",
     "metaTitleFrom": "韓国で{from}ビザから変更 {year} | LocalNomad",
-    "metaDescriptionFrom": "韓国で{from}から変更できるビザを確認しましょう。要件・スケジュール・必要書類をまとめています。法的アドバイスではありません。",
+    "metaDescriptionFrom": "韓国で{from}から変更できるビザを確認しましょう。各変更パスの要件・審査スケジュール・必要書類・申請手数料をまとめています。法的アドバイスではありません。",
     "metaTitleTransition": "{from}から{to}へのビザ変更 — 韓国{year} | LocalNomad",
     "metaTitleFallback": "ビザ変更 | LocalNomad",
     "metaDescriptionTransition": "韓国で{from}から{to}へ変更するための要件・スケジュール・書類。"

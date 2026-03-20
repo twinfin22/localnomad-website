@@ -252,6 +252,7 @@
     "neighborhoods": "Neighborhoods",
     "guide": "Guide",
     "moreCountries": "Switch country",
+    "checklist": "Checklist",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -396,7 +397,7 @@
     "badgeMustExit": "Must exit Korea",
     "badgeInCountry": "In-country",
     "verifyCaveat": "Verify this path with your local immigration office — official documentation is limited.",
-    "viewFullRequirements": "View full requirements",
+    "viewFullRequirements": "View {to} requirements",
     "whereCanYouGo": "Where can you go from {from}?",
     "pathsConfirmed": "{count} in-country change path confirmed",
     "pathsConfirmedPlural": "{count} in-country change paths confirmed",
@@ -452,7 +453,7 @@
     "metaDescription": "Find out which visa you can change to from your current status in Korea. Covers E-7, F-2, F-5, D-10, H-1, B-2, F-1-D and more. Not legal advice.",
     "metaOgDescription": "Card-based guide to all confirmed in-country visa change paths in Korea. See requirements, timelines, and source links.",
     "metaTitleFrom": "Change from {from} Visa in Korea {year} | LocalNomad",
-    "metaDescriptionFrom": "See which visas you can change to from {from} in Korea. Requirements, timelines, and documents. Not legal advice.",
+    "metaDescriptionFrom": "See which visas you can change to from {from} in Korea, including requirements, processing timelines, and required documents for each path. Not legal advice.",
     "metaTitleTransition": "{from} to {to} Visa Change — Korea {year} | LocalNomad",
     "metaTitleFallback": "Visa Change | LocalNomad",
     "metaDescriptionTransition": "Requirements, timeline, and documents for changing from {from} to {to} in Korea."

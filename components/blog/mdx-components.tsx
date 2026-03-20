@@ -539,6 +539,7 @@ export const createMdxComponents = (): MDXComponents => {
     return <h3 id={id} className="scroll-mt-24" {...props} />;
   },
   hr: () => null,
+  table: (props) => <table aria-label="Data comparison" {...props} />,
   img: (props) => {
     const { src, alt, ...rest } = props as Record<string, unknown>;
     if (!src) return null;

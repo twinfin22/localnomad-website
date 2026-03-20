@@ -16,6 +16,7 @@ const COUNTRY_VISAS: Record<string, string[]> = {
 };
 
 const NEIGHBORHOOD_COUNTRIES = ['korea', 'japan', 'taiwan'] as const;
+const CHECKLIST_COUNTRIES = ['korea', 'japan', 'taiwan'] as const;
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
 const INFO_PAGES = ['about', 'contact'];
@@ -94,6 +95,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Neighborhood pages
   for (const neighborhoodCountry of NEIGHBORHOOD_COUNTRIES) {
     entries.push(...entry(`/neighborhood/${neighborhoodCountry}`, { changeFrequency: 'monthly', priority: 0.7 }));
+  }
+
+  // Arrival checklist pages
+  for (const checklistCountry of CHECKLIST_COUNTRIES) {
+    entries.push(...entry(`/${checklistCountry}/checklist`, { changeFrequency: 'monthly', priority: 0.7 }));
   }
 
   // Info pages (about, contact)
