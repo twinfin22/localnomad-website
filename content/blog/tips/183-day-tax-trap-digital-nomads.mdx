@@ -7,7 +7,7 @@ date: "2026-03-08"
 author: "LocalNomad Team"
 tags: ["183 day tax rule digital nomad", "korea tax residency", "japan tax digital nomad", "taiwan tax foreign professionals"]
 featured: false
-draft: true
+draft: false
 coverImage: "/images/blog/183-day-tax-trap-digital-nomads.jpg"
 readingTime: 6
 ---
@@ -40,20 +40,25 @@ Korea counts on a calendar year basis (January 1–December 31). Both entry and 
 
 **Tax rates once you're a resident:**
 
-| Income Bracket (₩) | Rate |
-|---|---|
-| Up to ₩14M | 6% |
-| ₩14M–₩50M | 15% |
-| ₩50M–₩88M | 24% |
-| ₩88M–₩150M | 35% |
-| ₩150M–₩300M | 38% |
-| ₩300M–₩500M | 40% |
-| ₩500M–₩1B | 42% |
-| Over ₩1B | 45% |
+<ResponsiveTable
+  headers={["Income Bracket (₩)", "Rate"]}
+  rows={[
+    ["Up to ₩14M", "6%"],
+    ["₩14M–₩50M", "15%"],
+    ["₩50M–₩88M", "24%"],
+    ["₩88M–₩150M", "35%"],
+    ["₩150M–₩300M", "38%"],
+    ["₩300M–₩500M", "40%"],
+    ["₩500M–₩1B", "42%"],
+    ["Over ₩1B", "45%"]
+  ]}
+/>
 
 Add local income tax on top (10% of national PIT) in Seoul and most metros.
 
 **Real scenario:** US freelancer on F-1-D, $80K annual income from US clients, 200 days in Korea. Korean tax: roughly ₩32.5M (~$24,800 USD). Effective rate: 31.8% of gross income. They expected to pay zero to Korea. They did not.
+
+(That ₩32.5M breaks down as ~₩23.4M in income tax at a 22.3% effective rate, plus National Pension and mandatory NHIS contributions. Pure income tax alone is bad enough.)
 
 Korea has 97 double taxation treaties (DTTs), including the US, UK, Canada, and most of the EU. If your home country has a treaty, you claim a foreign tax credit and avoid paying twice. The credit requires filing in both countries, which costs $1,500–3,000 in accountant fees even with treaty protection.
 
@@ -93,7 +98,7 @@ Taiwan runs two tiers:
 
 **Gold Card holders get a specific carve-out:** 50% exemption on salary above NT$3M for the first 5 years. Earn NT$6M? NT$1.5M of the upper portion is tax-exempt. At marginal rates of 30–40%, the Gold Card saves roughly NT$450,000–600,000 per year, or NT$2.25–3M over five years.
 
-Taiwan's DTT network is thin: only 35 treaties (vs Korea's 97, Japan's 74). Most major EU countries, Australia, and New Zealand are missing. A Brazilian freelancer earning Taiwan-source income on a Gold Card can end up taxed in both countries with no treaty relief. Check your country's status before moving.
+Taiwan's DTT network is thin: only 35 treaties (vs Korea's 97, Japan's 79). Most major EU countries, Australia, and New Zealand are missing. A Brazilian freelancer earning Taiwan-source income on a Gold Card can end up taxed in both countries with no treaty relief. Check your country's status before moving.
 
 *Sources: [Gold Card tax FAQ](https://goldcard.nat.gov.tw/en/faq/what-is-the-legal-bases-of-enacting-tax-benefits-for-foreign-specialist-professionals-and-what-are-the-benefits/) | [Taiwan MOF treaty list](https://www.mof.gov.tw/eng/singlehtml/264?cntId=82780)*
 
@@ -116,7 +121,7 @@ Taiwan's DTT network is thin: only 35 treaties (vs Korea's 97, Japan's 74). Most
     ["Over-threshold rate", "6–45% progressive + 10% local surtax on national PIT", "20.42% on Japan-source income only", "5–40% graduated on worldwide income"],
     ["Worldwide vs source-only", "Worldwide once resident", "Source-only (Japan-source)", "Worldwide once resident"],
     ["Special exemptions", "Foreign tax credits via DTT", "Non-resident status is the exemption", "50% exempt on salary >NT$3M (Gold Card, first 5 yrs)"],
-    ["DTT network size", "97 treaties", "74 treaties", "35 treaties"],
+    ["DTT network size", "97 treaties", "79 treaties (86 countries/regions)", "35 treaties"],
     ["Biggest risk", "Auto-residency at day 183; retroactive worldwide tax", "PE risk if billing same JP client 3+ months", "Double tax for EU nationals; retroactive recalculation at day 184"]
   ]}
 />

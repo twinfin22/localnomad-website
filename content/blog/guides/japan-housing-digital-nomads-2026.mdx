@@ -13,7 +13,7 @@ coverImage: "/images/blog/japan-housing-digital-nomads-2026.jpg"
 
 {/* Cover: Photo by [TBD, see cover image candidates below] on Unsplash */}
 
-import { TldrBox, Callout, Disclaimer } from '@/components/blog';
+import { TldrBox, Callout, Disclaimer, ResponsiveTable } from '@/components/blog';
 
 <TldrBox>
 Japan's Digital Nomad visa requires proof of accommodation for your full stay (up to 180 days). The problem: regular landlords won't lease to you without resident status. Your real options are serviced apartments (¥80K–180K/month), share houses (¥30K–100K), or Airbnb (watch the 180-day cap). Book before you apply. This guide breaks down costs by city and what to do when plans fall apart.
@@ -64,12 +64,15 @@ Serviced apartments are furnished, month-to-month, and don't need a guarantor. T
 
 **Costs (as of March 2026):**
 
-| Location | Monthly Range |
-|---|---|
-| Tokyo central (Shibuya, Shinjuku) | ¥130K–180K |
-| Tokyo outer (Nakano, Koenji) | ¥80K–120K |
-| Osaka | ¥80K–110K |
-| Fukuoka | ¥60K–85K |
+<ResponsiveTable
+  headers={["Location", "Monthly Range"]}
+  rows={[
+    ["Tokyo central (Shibuya, Shinjuku)", "¥130K–180K"],
+    ["Tokyo outer (Nakano, Koenji)", "¥80K–120K"],
+    ["Osaka", "¥80K–110K"],
+    ["Fukuoka", "¥60K–85K"]
+  ]}
+/>
 
 **Why this works:** No guarantor. Fully furnished. Utilities usually included. Instant booking confirmation for your visa application. Flexible month-to-month terms.
 
@@ -88,12 +91,15 @@ You rent a private bedroom and share kitchen, bathroom, and common areas with ot
 
 **Costs (as of March 2026):**
 
-| Location | Shared Room | Private Room |
-|---|---|---|
-| Tokyo | ¥50K–80K | ¥70K–100K |
-| Osaka | ¥40K–55K | ¥50K–70K |
-| Fukuoka | ¥30K–45K | ¥40K–60K |
-| Kyoto | ¥35K–50K | ¥45K–65K |
+<ResponsiveTable
+  headers={["Location", "Shared Room", "Private Room"]}
+  rows={[
+    ["Tokyo", "¥50K–80K", "¥70K–100K"],
+    ["Osaka", "¥40K–55K", "¥50K–70K"],
+    ["Fukuoka", "¥30K–45K", "¥40K–60K"],
+    ["Kyoto", "¥35K–50K", "¥45K–65K"]
+  ]}
+/>
 
 **Why this works:** 50–60% cheaper than serviced apartments. No guarantor. Flexible 1–3 month leases. Operators provide visa documentation on request. Community baked in.
 
@@ -125,13 +131,16 @@ Airbnb works best as a bridge: your first 2–4 weeks while you scout share hous
 
 Here's how housing costs compare across Japan's four main digital nomad cities. All figures are monthly, as of March 2026.
 
-| City | Serviced Apt | Share House (Private) | Airbnb (Monthly) | Coworking (30-day) | Best For |
-|---|---|---|---|---|---|
-| Tokyo (Shibuya/Shinjuku) | ¥150K–180K | ¥75K–100K | ¥120K–180K | ¥15K–25K | Transit, food, nightlife |
-| Tokyo (Nakano/Koenji) | ¥90K–120K | ¥55K–75K | ¥90K–120K | ¥12K–18K | Budget + arts scene |
-| Osaka (Namba) | ¥80K–110K | ¥50K–70K | ¥80K–110K | ¥10K–15K | Food capital, cheaper than Tokyo |
-| Fukuoka | ¥60K–85K | ¥35K–55K | ¥60K–80K | ¥8K–12K | Lowest cost, fast internet |
-| Kyoto | ¥65K–95K | ¥40K–60K | ¥65K–95K | ¥8K–12K | Temples, slower pace |
+<ResponsiveTable
+  headers={["City", "Serviced Apt", "Share House (Private)", "Airbnb (Monthly)", "Coworking (30-day)", "Best For"]}
+  rows={[
+    ["Tokyo (Shibuya/Shinjuku)", "¥150K–180K", "¥75K–100K", "¥120K–180K", "¥15K–25K", "Transit, food, nightlife"],
+    ["Tokyo (Nakano/Koenji)", "¥90K–120K", "¥55K–75K", "¥90K–120K", "¥12K–18K", "Budget + arts scene"],
+    ["Osaka (Namba)", "¥80K–110K", "¥50K–70K", "¥80K–110K", "¥10K–15K", "Food capital, cheaper than Tokyo"],
+    ["Fukuoka", "¥60K–85K", "¥35K–55K", "¥60K–80K", "¥8K–12K", "Lowest cost, fast internet"],
+    ["Kyoto", "¥65K–95K", "¥40K–60K", "¥65K–95K", "¥8K–12K", "Temples, slower pace"]
+  ]}
+/>
 
 **Quick math for a 3-month Tokyo stay:**
 - Share house at ¥65K/month + coworking ¥15K = **¥240,000 total (~$1,600 USD)**
@@ -175,7 +184,7 @@ Japan digital nomad housing comes down to one question: what are you willing to 
 
 The housing requirement is new. The workarounds aren't. Digital nomads in Japan have been doing this dance with serviced apartments and share houses for years. The visa just made it official.
 
-And if you're comparing Japan against other countries in the region, check the [Japan vs Korea vs Taiwan DN visa comparison](/en/blog/comparisons/japan-korea-taiwan-digital-nomad-visa-2026). Korea's F-1-D visa doesn't require accommodation proof at all. Taiwan's Gold Card leaves housing entirely up to you. Japan is the only one that makes you solve housing before you even get on the plane.
+And if you're comparing Japan against other countries in the region, check the [Japan vs Korea vs Taiwan DN visa comparison](/en/blog/comparisons/japan-korea-taiwan-digital-nomad-visa-2026). Korea's [F-1-D visa](/en/korea/visa/f-1-d) doesn't require accommodation proof at all. Taiwan's Gold Card leaves housing entirely up to you. Japan is the only one that makes you solve housing before you even get on the plane.
 
 ---
 
