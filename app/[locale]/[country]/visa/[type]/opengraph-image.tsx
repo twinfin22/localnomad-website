@@ -1,26 +1,50 @@
 import { ImageResponse } from 'next/og';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { getPost, getAllPostSlugs } from '@/lib/blog';
+import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
+import { routing } from '@/i18n/routing';
+import type { Country } from '@/lib/types/visa';
 
-export const alt = 'LocalNomad Blog';
+export const alt = 'LocalNomad Visa';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export function generateStaticParams() {
-  return getAllPostSlugs();
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
+
+const COUNTRY_DISPLAY: Record<string, string> = {
+  korea: 'South Korea',
+  japan: 'Japan',
+  taiwan: 'Taiwan',
+};
+
+export async function generateStaticParams() {
+  const params: { locale: string; country: string; type: string }[] = [];
+  for (const locale of routing.locales) {
+    for (const country of VALID_COUNTRIES) {
+      const visas = await getAvailableVisas(country, locale);
+      for (const visa of visas) {
+        params.push({ locale, country, type: visa.type });
+      }
+    }
+  }
+  return params;
 }
 
-async function getCoverImageSrc(coverImage?: string): Promise<string | null> {
-  if (!coverImage) return null;
-  try {
-    const filePath = join(process.cwd(), 'public', coverImage);
-    const data = await readFile(filePath);
-    return `data:image/jpeg;base64,${data.toString('base64')}`;
-  } catch {
-    return null;
-  }
-}
+const CATEGORY_ICON: Record<string, string> = {
+  'digital-nomad': '💻',
+  work: '💼',
+  study: '🎓',
+  residence: '🏠',
+  'job-seeking': '🔍',
+  'working-holiday': '🎒',
+  business: '🏛️',
+  family: '👨‍👩‍👧',
+  'ethnic-korean': '🇰🇷',
+  'language-study': '🗣️',
+  'gold-card': '🥇',
+  investment: '💰',
+  visitor: '🛬',
+};
 
 async function loadFont(filename: string): Promise<ArrayBuffer> {
   const fontPath = join(process.cwd(), 'public', 'fonts', filename);
@@ -28,16 +52,34 @@ async function loadFont(filename: string): Promise<ArrayBuffer> {
   return data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
 }
 
+async function getVisaBgSrc(country: string): Promise<string | null> {
+  try {
+    const filePath = join(
+      process.cwd(), 'public', 'images', 'visa', `${country}-visa-bg.jpg`,
+    );
+    const data = await readFile(filePath);
+    return `data:image/jpeg;base64,${data.toString('base64')}`;
+  } catch {
+    return null;
+  }
+}
+
 export default async function Image({
   params,
 }: {
-  params: Promise<{ locale: string; category: string; slug: string }>;
+  params: Promise<{ locale: string; country: string; type: string }>;
 }) {
-  const { category, slug } = await params;
-  const post = getPost(category, slug);
+  const { locale, country, type } = await params;
+  const visa = await getVisaData(country as Country, locale, type);
 
-  const title = post?.frontmatter.title ?? 'LocalNomad Blog';
-  const coverSrc = await getCoverImageSrc(post?.frontmatter.coverImage);
+  const year = new Date().getFullYear();
+  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const title = visa
+    ? `${displayName} ${visa.shortName} Visa — Requirements & Guide ${year}`
+    : `${displayName} ${type.toUpperCase()} Visa`;
+  const icon = CATEGORY_ICON[visa?.category ?? ''] ?? '📋';
+
+  const bgSrc = await getVisaBgSrc(country);
   const [loraFont, dmSerifFont] = await Promise.all([
     loadFont('Lora-BoldItalic.ttf'),
     loadFont('DMSerifDisplay-Regular.ttf'),
@@ -58,10 +100,10 @@ export default async function Image({
           color: '#ffffff',
         }}
       >
-        {/* Full-bleed cover image */}
-        {coverSrc ? (
+        {/* Full-bleed visa background */}
+        {bgSrc ? (
           <img
-            src={coverSrc}
+            src={bgSrc}
             width={1200}
             height={630}
             style={{
@@ -92,7 +134,7 @@ export default async function Image({
           LocalNomad
         </div>
 
-        {/* Bottom: title in DM Serif Display */}
+        {/* Bottom: visa title */}
         <div
           style={{
             position: 'absolute',
@@ -101,7 +143,7 @@ export default async function Image({
             right: '44px',
             display: 'flex',
             fontFamily: '"DM Serif Display"',
-            fontSize: title.length > 60 ? '38px' : '48px',
+            fontSize: title.length > 50 ? '40px' : '48px',
             fontWeight: 400,
             lineHeight: 1.2,
             textShadow: heavyShadow,

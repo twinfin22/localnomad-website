@@ -1,20 +1,38 @@
 import { ImageResponse } from 'next/og';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { getPost, getAllPostSlugs } from '@/lib/blog';
 
-export const alt = 'LocalNomad Blog';
+export const alt = 'LocalNomad Neighborhoods';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
+
+const COUNTRY_DISPLAY: Record<string, string> = {
+  korea: 'South Korea',
+  japan: 'Japan',
+  taiwan: 'Taiwan',
+};
+
+const COUNTRY_CITIES: Record<string, string> = {
+  korea: 'Seoul, Busan, Jeju',
+  japan: 'Tokyo, Osaka, Fukuoka, Kyoto',
+  taiwan: 'Taipei, Taichung, Kaohsiung, Tainan',
+};
+
 export function generateStaticParams() {
-  return getAllPostSlugs();
+  return VALID_COUNTRIES.map((country) => ({ country }));
 }
 
-async function getCoverImageSrc(coverImage?: string): Promise<string | null> {
-  if (!coverImage) return null;
+async function getThumbSrc(country: string): Promise<string | null> {
   try {
-    const filePath = join(process.cwd(), 'public', coverImage);
+    const filePath = join(
+      process.cwd(),
+      'public',
+      'images',
+      'neighborhoods',
+      `${country}-thumb.jpg`,
+    );
     const data = await readFile(filePath);
     return `data:image/jpeg;base64,${data.toString('base64')}`;
   } catch {
@@ -31,13 +49,12 @@ async function loadFont(filename: string): Promise<ArrayBuffer> {
 export default async function Image({
   params,
 }: {
-  params: Promise<{ locale: string; category: string; slug: string }>;
+  params: Promise<{ locale: string; country: string }>;
 }) {
-  const { category, slug } = await params;
-  const post = getPost(category, slug);
-
-  const title = post?.frontmatter.title ?? 'LocalNomad Blog';
-  const coverSrc = await getCoverImageSrc(post?.frontmatter.coverImage);
+  const { country } = await params;
+  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const titleText = `Explore Neighborhoods - ${COUNTRY_CITIES[country] ?? displayName}, ${displayName}`;
+  const thumbSrc = await getThumbSrc(country);
   const [loraFont, dmSerifFont] = await Promise.all([
     loadFont('Lora-BoldItalic.ttf'),
     loadFont('DMSerifDisplay-Regular.ttf'),
@@ -58,10 +75,10 @@ export default async function Image({
           color: '#ffffff',
         }}
       >
-        {/* Full-bleed cover image */}
-        {coverSrc ? (
+        {/* Full-bleed country thumbnail */}
+        {thumbSrc ? (
           <img
-            src={coverSrc}
+            src={thumbSrc}
             width={1200}
             height={630}
             style={{
@@ -92,7 +109,7 @@ export default async function Image({
           LocalNomad
         </div>
 
-        {/* Bottom: title in DM Serif Display */}
+        {/* Bottom: title */}
         <div
           style={{
             position: 'absolute',
@@ -100,14 +117,22 @@ export default async function Image({
             left: '44px',
             right: '44px',
             display: 'flex',
-            fontFamily: '"DM Serif Display"',
-            fontSize: title.length > 60 ? '38px' : '48px',
-            fontWeight: 400,
-            lineHeight: 1.2,
-            textShadow: heavyShadow,
+            flexDirection: 'column',
+            gap: '8px',
           }}
         >
-          {title}
+          <div
+            style={{
+              display: 'flex',
+              fontFamily: '"DM Serif Display"',
+              fontSize: titleText.length > 55 ? '40px' : '48px',
+              fontWeight: 400,
+              lineHeight: 1.2,
+              textShadow: heavyShadow,
+            }}
+          >
+            {titleText}
+          </div>
         </div>
       </div>
     ),

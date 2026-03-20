@@ -1,25 +1,22 @@
 import { ImageResponse } from 'next/og';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { getPost, getAllPostSlugs } from '@/lib/blog';
 
-export const alt = 'LocalNomad Blog';
+export const alt = 'LocalNomad Country';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export function generateStaticParams() {
-  return getAllPostSlugs();
-}
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan', 'southeast-asia'] as const;
 
-async function getCoverImageSrc(coverImage?: string): Promise<string | null> {
-  if (!coverImage) return null;
-  try {
-    const filePath = join(process.cwd(), 'public', coverImage);
-    const data = await readFile(filePath);
-    return `data:image/jpeg;base64,${data.toString('base64')}`;
-  } catch {
-    return null;
-  }
+const COUNTRY_DISPLAY: Record<string, string> = {
+  korea: 'South Korea',
+  japan: 'Japan',
+  taiwan: 'Taiwan',
+  'southeast-asia': 'Southeast Asia',
+};
+
+export function generateStaticParams() {
+  return VALID_COUNTRIES.map((country) => ({ country }));
 }
 
 async function loadFont(filename: string): Promise<ArrayBuffer> {
@@ -28,16 +25,29 @@ async function loadFont(filename: string): Promise<ArrayBuffer> {
   return data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
 }
 
+async function getThumbSrc(country: string): Promise<string | null> {
+  // southeast-asia has no thumb; neighborhood thumbs only for jp/kr/tw
+  const slug = country === 'southeast-asia' ? null : country;
+  if (!slug) return null;
+  try {
+    const filePath = join(
+      process.cwd(), 'public', 'images', 'neighborhoods', `${slug}-thumb.jpg`,
+    );
+    const data = await readFile(filePath);
+    return `data:image/jpeg;base64,${data.toString('base64')}`;
+  } catch {
+    return null;
+  }
+}
+
 export default async function Image({
   params,
 }: {
-  params: Promise<{ locale: string; category: string; slug: string }>;
+  params: Promise<{ locale: string; country: string }>;
 }) {
-  const { category, slug } = await params;
-  const post = getPost(category, slug);
-
-  const title = post?.frontmatter.title ?? 'LocalNomad Blog';
-  const coverSrc = await getCoverImageSrc(post?.frontmatter.coverImage);
+  const { country } = await params;
+  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const thumbSrc = await getThumbSrc(country);
   const [loraFont, dmSerifFont] = await Promise.all([
     loadFont('Lora-BoldItalic.ttf'),
     loadFont('DMSerifDisplay-Regular.ttf'),
@@ -58,10 +68,10 @@ export default async function Image({
           color: '#ffffff',
         }}
       >
-        {/* Full-bleed cover image */}
-        {coverSrc ? (
+        {/* Full-bleed country thumbnail */}
+        {thumbSrc ? (
           <img
-            src={coverSrc}
+            src={thumbSrc}
             width={1200}
             height={630}
             style={{
@@ -92,7 +102,7 @@ export default async function Image({
           LocalNomad
         </div>
 
-        {/* Bottom: title in DM Serif Display */}
+        {/* Bottom: country name */}
         <div
           style={{
             position: 'absolute',
@@ -101,13 +111,13 @@ export default async function Image({
             right: '44px',
             display: 'flex',
             fontFamily: '"DM Serif Display"',
-            fontSize: title.length > 60 ? '38px' : '48px',
+            fontSize: '56px',
             fontWeight: 400,
             lineHeight: 1.2,
             textShadow: heavyShadow,
           }}
         >
-          {title}
+          {displayName}
         </div>
       </div>
     ),

@@ -1,26 +1,10 @@
 import { ImageResponse } from 'next/og';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { getPost, getAllPostSlugs } from '@/lib/blog';
 
-export const alt = 'LocalNomad Blog';
+export const alt = 'LocalNomad — Soft Land in Asia';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-
-export function generateStaticParams() {
-  return getAllPostSlugs();
-}
-
-async function getCoverImageSrc(coverImage?: string): Promise<string | null> {
-  if (!coverImage) return null;
-  try {
-    const filePath = join(process.cwd(), 'public', coverImage);
-    const data = await readFile(filePath);
-    return `data:image/jpeg;base64,${data.toString('base64')}`;
-  } catch {
-    return null;
-  }
-}
 
 async function loadFont(filename: string): Promise<ArrayBuffer> {
   const fontPath = join(process.cwd(), 'public', 'fonts', filename);
@@ -28,19 +12,21 @@ async function loadFont(filename: string): Promise<ArrayBuffer> {
   return data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
 }
 
-export default async function Image({
-  params,
-}: {
-  params: Promise<{ locale: string; category: string; slug: string }>;
-}) {
-  const { category, slug } = await params;
-  const post = getPost(category, slug);
+async function getHeroSrc(): Promise<string | null> {
+  try {
+    const filePath = join(process.cwd(), 'public', 'images', 'hero-bg.webp');
+    const data = await readFile(filePath);
+    return `data:image/webp;base64,${data.toString('base64')}`;
+  } catch {
+    return null;
+  }
+}
 
-  const title = post?.frontmatter.title ?? 'LocalNomad Blog';
-  const coverSrc = await getCoverImageSrc(post?.frontmatter.coverImage);
-  const [loraFont, dmSerifFont] = await Promise.all([
+export default async function Image() {
+  const [loraFont, dmSerifFont, heroSrc] = await Promise.all([
     loadFont('Lora-BoldItalic.ttf'),
     loadFont('DMSerifDisplay-Regular.ttf'),
+    getHeroSrc(),
   ]);
 
   const heavyShadow =
@@ -58,10 +44,10 @@ export default async function Image({
           color: '#ffffff',
         }}
       >
-        {/* Full-bleed cover image */}
-        {coverSrc ? (
+        {/* Full-bleed hero image */}
+        {heroSrc ? (
           <img
-            src={coverSrc}
+            src={heroSrc}
             width={1200}
             height={630}
             style={{
@@ -92,7 +78,7 @@ export default async function Image({
           LocalNomad
         </div>
 
-        {/* Bottom: title in DM Serif Display */}
+        {/* Bottom: tagline in DM Serif Display */}
         <div
           style={{
             position: 'absolute',
@@ -101,13 +87,13 @@ export default async function Image({
             right: '44px',
             display: 'flex',
             fontFamily: '"DM Serif Display"',
-            fontSize: title.length > 60 ? '38px' : '48px',
+            fontSize: '56px',
             fontWeight: 400,
             lineHeight: 1.2,
             textShadow: heavyShadow,
           }}
         >
-          {title}
+          Soft Land in Asia
         </div>
       </div>
     ),
