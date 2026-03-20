@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { createSlugTracker } from '@/lib/blog/utils';
+import { DisclaimerPortal } from './disclaimer-portal';
 
 const BudgetTable = ({
   data,
@@ -43,10 +44,10 @@ const Callout = ({
 }) => {
   const styles = {
     info: {
-      card: 'border-blue-100 bg-blue-50/50',
-      bar: 'from-blue-400 to-blue-600',
-      labelText: 'text-blue-600',
-      text: 'text-blue-900',
+      card: 'border-[#1B4965]/15 bg-[#1B4965]/[0.04]',
+      bar: 'from-[#1B4965] to-[#2a6f97]',
+      labelText: 'text-[#1B4965]/70',
+      text: 'text-gray-800',
     },
     warning: {
       card: 'border-amber-100 bg-amber-50/50',
@@ -76,34 +77,16 @@ const Callout = ({
 };
 
 const Disclaimer = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="not-prose mt-6 border-t border-gray-200 pt-4">
-      <div className="flex gap-3 text-[13px] leading-relaxed text-gray-500">
-        <svg
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className="mt-0.5 h-4 w-4 shrink-0 text-gray-400"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <div>{children}</div>
-      </div>
-    </div>
-  );
+  return <DisclaimerPortal>{children}</DisclaimerPortal>;
 };
 
 const TldrBox = ({ children }: { children: React.ReactNode }) => (
   <div className="not-prose relative my-10 overflow-hidden rounded-2xl border border-[#1B4965]/15 bg-gradient-to-br from-[#1B4965]/[0.04] to-[#2a6f97]/[0.08] px-6 py-6 shadow-sm backdrop-blur-sm">
     <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-[#1B4965] to-[#2a6f97]" />
-    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1B4965]/60">
-      Quick Take
+    <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#1B4965]/60">
+      TL;DR
     </p>
-    <div className="text-[15px] leading-[1.7] text-gray-700 [&>p]:m-0 [&>ul]:m-0 [&>ul]:list-none [&>ul]:space-y-1.5 [&>ul]:p-0 [&>ul>li]:flex [&>ul>li]:items-baseline [&>ul>li]:gap-2 [&>ul>li]:before:inline-block [&>ul>li]:before:h-1 [&>ul>li]:before:w-1 [&>ul>li]:before:shrink-0 [&>ul>li]:before:translate-y-[-1px] [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-[#1B4965]/40 [&>ul>li]:before:content-['']">
+    <div className="text-base leading-[1.75] text-gray-700 [&>p]:m-0 [&>ul]:m-0 [&>ul]:list-none [&>ul]:space-y-1.5 [&>ul]:p-0 [&>ul>li]:flex [&>ul>li]:items-baseline [&>ul>li]:gap-2 [&>ul>li]:before:inline-block [&>ul>li]:before:h-1 [&>ul>li]:before:w-1 [&>ul>li]:before:shrink-0 [&>ul>li]:before:translate-y-[-1px] [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-[#1B4965]/40 [&>ul>li]:before:content-['']">
       {children}
     </div>
   </div>
@@ -367,9 +350,9 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
               <th
                 key={i}
                 className={cn(
-                  'py-2.5 px-4 text-left font-semibold whitespace-nowrap',
+                  'py-2.5 px-4 text-left font-semibold sm:whitespace-nowrap',
                   i === 0 &&
-                    'sticky left-0 z-10 bg-gray-50 after:absolute after:right-0 after:top-0 after:h-full after:w-px after:bg-gray-200',
+                    'sm:sticky sm:left-0 sm:z-10 bg-gray-50 sm:after:absolute sm:after:right-0 sm:after:top-0 sm:after:h-full sm:after:w-px sm:after:bg-gray-200',
                 )}
               >
                 {h}
@@ -390,11 +373,11 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
                 <td
                   key={ci}
                   className={cn(
-                    'py-2.5 px-4 whitespace-nowrap',
+                    'py-2.5 px-4 sm:whitespace-nowrap',
                     ci === 0
                       ? cn(
-                          'sticky left-0 z-10 font-medium',
-                          'after:absolute after:right-0 after:top-0 after:h-full after:w-px after:bg-gray-200',
+                          'sm:sticky sm:left-0 sm:z-10 font-medium',
+                          'sm:after:absolute sm:after:right-0 sm:after:top-0 sm:after:h-full sm:after:w-px sm:after:bg-gray-200',
                           ri % 2 === 1 ? 'bg-gray-50' : 'bg-white',
                         )
                       : '',
@@ -555,6 +538,7 @@ export const createMdxComponents = (): MDXComponents => {
     const id = uniqueSlug(text);
     return <h3 id={id} className="scroll-mt-24" {...props} />;
   },
+  hr: () => null,
   img: (props) => {
     const { src, alt, ...rest } = props as Record<string, unknown>;
     if (!src) return null;

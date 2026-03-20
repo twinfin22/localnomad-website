@@ -84,7 +84,7 @@ export function BlogToc({ headings }: BlogTocProps) {
     <nav
       aria-label="Table of contents"
       className={cn(
-        'hidden md:block fixed left-2 lg:left-4 top-24 w-[160px] lg:w-[200px] max-h-[calc(100vh-8rem)] overflow-y-auto transition-opacity duration-200',
+        'hidden md:block fixed left-4 lg:left-6 top-24 w-[220px] lg:w-[260px] max-h-[calc(100vh-8rem)] overflow-y-auto transition-opacity duration-200',
         hideForFooter ? 'opacity-0 pointer-events-none' : 'opacity-100',
       )}
     >
@@ -102,8 +102,8 @@ export function BlogToc({ headings }: BlogTocProps) {
                 onClick={() => handleClick(heading.id)}
                 className={cn(
                   'block w-full text-left leading-snug transition-colors border-l-2',
-                  heading.level === 2 && 'pl-3 py-1.5 text-sm',
-                  heading.level === 3 && 'pl-6 py-1 text-xs',
+                  heading.level === 2 && 'pl-3 py-2 text-base',
+                  heading.level === 3 && 'pl-6 py-1.5 text-sm',
                   activeId === heading.id
                     ? 'border-[#1B4965] font-medium text-[#1B4965]'
                     : 'border-transparent text-muted-foreground hover:text-foreground',
