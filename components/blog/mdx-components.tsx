@@ -42,34 +42,70 @@ const Callout = ({
   children: React.ReactNode;
 }) => {
   const styles = {
-    info: 'bg-blue-50 border-blue-200 text-blue-900',
-    warning: 'bg-amber-50 border-amber-200 text-amber-900',
-    tip: 'bg-emerald-50 border-emerald-200 text-emerald-900',
+    info: {
+      card: 'border-blue-100 bg-blue-50/50',
+      bar: 'from-blue-400 to-blue-600',
+      labelText: 'text-blue-600',
+      text: 'text-blue-900',
+    },
+    warning: {
+      card: 'border-amber-100 bg-amber-50/50',
+      bar: 'from-amber-400 to-amber-600',
+      labelText: 'text-amber-600',
+      text: 'text-amber-900',
+    },
+    tip: {
+      card: 'border-[#1B4965]/15 bg-[#1B4965]/[0.04]',
+      bar: 'from-[#1B4965] to-[#2a6f97]',
+      labelText: 'text-[#1B4965]/70',
+      text: 'text-gray-800',
+    },
   };
-  const icons = { info: '\u2139\ufe0f', warning: '\u26a0\ufe0f', tip: '\ud83d\udca1' };
+  const labels = { info: 'Note', warning: 'Heads up', tip: 'Tip' };
+  const s = styles[type];
 
   return (
-    <div className={`my-6 rounded-r-lg border-l-4 p-4 ${styles[type]}`}>
-      <span className="mr-2">{icons[type]}</span>
-      {children}
+    <div className={`not-prose relative my-8 overflow-hidden rounded-xl border p-5 shadow-sm ${s.card}`}>
+      <div className={`absolute top-0 left-0 h-full w-1 bg-gradient-to-b ${s.bar}`} />
+      <p className={`mb-1.5 text-[11px] font-bold uppercase tracking-[0.15em] ${s.labelText}`}>
+        {labels[type]}
+      </p>
+      <div className={`text-sm leading-relaxed ${s.text}`}>{children}</div>
     </div>
   );
 };
 
 const Disclaimer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="my-6 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm italic text-gray-600">
-      {children}
+    <div className="not-prose mt-6 border-t border-gray-200 pt-4">
+      <div className="flex gap-3 text-[13px] leading-relaxed text-gray-500">
+        <svg
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="mt-0.5 h-4 w-4 shrink-0 text-gray-400"
+          aria-hidden="true"
+        >
+          <path
+            fillRule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+            clipRule="evenodd"
+          />
+        </svg>
+        <div>{children}</div>
+      </div>
     </div>
   );
 };
 
 const TldrBox = ({ children }: { children: React.ReactNode }) => (
-  <div className="not-prose my-8 rounded-xl bg-[#1B4965] px-6 py-5 text-white">
-    <p className="mb-2 text-xs font-bold uppercase tracking-widest text-white/50">
-      TL;DR
+  <div className="not-prose relative my-10 overflow-hidden rounded-2xl border border-[#1B4965]/15 bg-gradient-to-br from-[#1B4965]/[0.04] to-[#2a6f97]/[0.08] px-6 py-6 shadow-sm backdrop-blur-sm">
+    <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-[#1B4965] to-[#2a6f97]" />
+    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1B4965]/60">
+      Quick Take
     </p>
-    <div className="text-sm leading-relaxed text-white/90">{children}</div>
+    <div className="text-[15px] leading-[1.7] text-gray-700 [&>p]:m-0 [&>ul]:m-0 [&>ul]:list-none [&>ul]:space-y-1.5 [&>ul]:p-0 [&>ul>li]:flex [&>ul>li]:items-baseline [&>ul>li]:gap-2 [&>ul>li]:before:inline-block [&>ul>li]:before:h-1 [&>ul>li]:before:w-1 [&>ul>li]:before:shrink-0 [&>ul>li]:before:translate-y-[-1px] [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-[#1B4965]/40 [&>ul>li]:before:content-['']">
+      {children}
+    </div>
   </div>
 );
 
@@ -331,10 +367,9 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
               <th
                 key={i}
                 className={cn(
-                  'py-2.5 text-left font-semibold',
-                  i === 0
-                    ? 'sticky left-0 z-10 max-w-[10rem] bg-gray-50 pl-4 pr-3 after:absolute after:right-0 after:top-0 after:h-full after:w-px after:bg-gray-200'
-                    : 'whitespace-nowrap px-4',
+                  'py-2.5 px-4 text-left font-semibold whitespace-nowrap',
+                  i === 0 &&
+                    'sticky left-0 z-10 bg-gray-50 after:absolute after:right-0 after:top-0 after:h-full after:w-px after:bg-gray-200',
                 )}
               >
                 {h}
@@ -348,21 +383,21 @@ const ResponsiveTable = ({ headers, rows, caption }: ResponsiveTableProps) => (
               key={ri}
               className={cn(
                 'border-b border-gray-100',
-                ri % 2 === 1 ? 'bg-gray-50/50' : 'bg-white',
+                ri % 2 === 1 ? 'bg-gray-50' : 'bg-white',
               )}
             >
               {row.map((cell, ci) => (
                 <td
                   key={ci}
                   className={cn(
-                    'py-2.5',
+                    'py-2.5 px-4 whitespace-nowrap',
                     ci === 0
                       ? cn(
-                          'sticky left-0 z-10 max-w-[10rem] pl-4 pr-3 font-medium',
+                          'sticky left-0 z-10 font-medium',
                           'after:absolute after:right-0 after:top-0 after:h-full after:w-px after:bg-gray-200',
-                          ri % 2 === 1 ? 'bg-gray-50/50' : 'bg-white',
+                          ri % 2 === 1 ? 'bg-gray-50' : 'bg-white',
                         )
-                      : 'sm:whitespace-nowrap px-4',
+                      : '',
                   )}
                 >
                   {cell}
@@ -508,7 +543,12 @@ export const createMdxComponents = (): MDXComponents => {
   h2: (props) => {
     const text = extractText(props.children);
     const id = uniqueSlug(text);
-    return <h2 id={id} className="scroll-mt-24" {...props} />;
+    return (
+      <>
+        <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" aria-hidden="true" />
+        <h2 id={id} className="scroll-mt-24" {...props} />
+      </>
+    );
   },
   h3: (props) => {
     const text = extractText(props.children);

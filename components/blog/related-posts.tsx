@@ -48,7 +48,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
   if (posts.length === 0) return null;
 
   return (
-    <section className="mt-16 border-t border-border/40 pt-12">
+    <section className="mt-6 pt-4">
       <h2 className="font-lora text-2xl font-bold text-foreground">
         Related Articles
       </h2>

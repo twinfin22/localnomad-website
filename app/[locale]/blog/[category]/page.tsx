@@ -18,18 +18,50 @@ export function generateStaticParams() {
   return BLOG_CATEGORIES.map((category) => ({ category }));
 }
 
+const CATEGORY_META: Record<string, { title: string; description: string }> = {
+  guides: {
+    title: 'Visa & Relocation Guides | LocalNomad Blog',
+    description: 'Step-by-step visa application guides for Korea, Japan, and Taiwan. Documents, timelines, costs, and insider tips for digital nomads.',
+  },
+  updates: {
+    title: 'Visa Policy Updates | LocalNomad Blog',
+    description: 'Latest visa policy changes and immigration updates for Korea, Japan, and Taiwan. Stay current on rules that affect your stay.',
+  },
+  tips: {
+    title: 'Living Abroad Tips | LocalNomad Blog',
+    description: 'Practical tips for daily life as a foreigner in Korea, Japan, and Taiwan. Banking, housing, healthcare, and local know-how.',
+  },
+  comparisons: {
+    title: 'Visa & Country Comparisons | LocalNomad Blog',
+    description: 'Side-by-side visa comparisons across Korea, Japan, and Taiwan. Find the best visa type and destination for your situation.',
+  },
+  news: {
+    title: 'Digital Nomad News — East Asia | LocalNomad Blog',
+    description: 'News and developments for remote workers in Korea, Japan, and Taiwan. Policy shifts, community events, and market trends.',
+  },
+  stories: {
+    title: 'Nomad Stories | LocalNomad Blog',
+    description: 'Real experiences from digital nomads and expats living in Korea, Japan, and Taiwan. Lessons learned and honest takes.',
+  },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, category } = await params;
+  const meta = CATEGORY_META[category];
   const label = category.charAt(0).toUpperCase() + category.slice(1);
+  const fallbackTitle = `Digital Nomad ${label} | LocalNomad Blog`;
+  const fallbackDesc = `Browse digital nomad ${category} — visa information, travel tips, and community stories.`;
+  const title = meta?.title ?? fallbackTitle;
+  const description = meta?.description ?? fallbackDesc;
   const alternates = getAlternates(locale, `/blog/${category}`);
 
   return {
-    title: `Digital Nomad ${label} | LocalNomad Blog`,
-    description: `Browse digital nomad ${category} — visa information, travel tips, and community stories.`,
+    title,
+    description,
     alternates,
     openGraph: {
-      title: `Digital Nomad ${label} | LocalNomad Blog`,
-      description: `Browse digital nomad ${category} — visa information, travel tips, and community stories.`,
+      title,
+      description,
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {

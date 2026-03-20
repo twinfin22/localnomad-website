@@ -15,6 +15,7 @@ interface BlogTocProps {
 
 export function BlogToc({ headings }: BlogTocProps) {
   const [activeId, setActiveId] = useState<string>('');
+  const [hideForFooter, setHideForFooter] = useState(false);
 
   // Derive parent H2 for each heading
   const parentH2Map = useMemo(() => {
@@ -57,6 +58,18 @@ export function BlogToc({ headings }: BlogTocProps) {
     el?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [activeId]);
 
+  // Hide ToC when footer is visible
+  useEffect(() => {
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setHideForFooter(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    obs.observe(footer);
+    return () => obs.disconnect();
+  }, []);
+
   const handleClick = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -70,7 +83,10 @@ export function BlogToc({ headings }: BlogTocProps) {
   return (
     <nav
       aria-label="Table of contents"
-      className="hidden md:block fixed left-2 lg:left-4 top-24 w-[160px] lg:w-[200px] max-h-[calc(100vh-8rem)] overflow-y-auto"
+      className={cn(
+        'hidden md:block fixed left-2 lg:left-4 top-24 w-[160px] lg:w-[200px] max-h-[calc(100vh-8rem)] overflow-y-auto transition-opacity duration-200',
+        hideForFooter ? 'opacity-0 pointer-events-none' : 'opacity-100',
+      )}
     >
       <ul className="space-y-0.5">
         {headings.map((heading) => {

@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 import { getPost, getAllPostSlugs } from '@/lib/blog';
 
 export const alt = 'LocalNomad Blog';
@@ -9,14 +11,23 @@ export function generateStaticParams() {
   return getAllPostSlugs();
 }
 
-const COUNTRY_EMOJI: Record<string, string> = {
-  korea: '🇰🇷',
-  japan: '🇯🇵',
-  taiwan: '🇹🇼',
-  china: '🇨🇳',
-  sea: '🌏',
-  global: '🌍',
-};
+async function getCoverImageSrc(coverImage?: string): Promise<string | null> {
+  if (!coverImage) return null;
+  try {
+    const filePath = join(process.cwd(), 'public', coverImage);
+    const data = await readFile(filePath);
+    return `data:image/jpeg;base64,${data.toString('base64')}`;
+  } catch {
+    return null;
+  }
+}
+
+async function loadLoraBoldItalic(): Promise<ArrayBuffer> {
+  const res = await fetch(
+    'https://fonts.gstatic.com/s/lora/v35/0QI8MX1D_JOuMw_LIftLtfOm84TX.ttf',
+  );
+  return res.arrayBuffer();
+}
 
 export default async function Image({
   params,
@@ -27,9 +38,11 @@ export default async function Image({
   const post = getPost(category, slug);
 
   const title = post?.frontmatter.title ?? 'LocalNomad Blog';
-  const country = post?.frontmatter.country ?? 'global';
-  const emoji = COUNTRY_EMOJI[country] ?? '🌍';
-  const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+  const coverSrc = await getCoverImageSrc(post?.frontmatter.coverImage);
+  const loraFont = await loadLoraBoldItalic();
+
+  const heavyShadow =
+    '0 2px 4px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.6), 0 8px 40px rgba(0,0,0,0.5)';
 
   return new ImageResponse(
     (
@@ -38,57 +51,73 @@ export default async function Image({
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: '60px 80px',
+          position: 'relative',
           backgroundColor: '#1B4965',
           color: '#ffffff',
         }}
       >
-        {/* Top: category + country */}
+        {/* Full-bleed cover image */}
+        {coverSrc ? (
+          <img
+            src={coverSrc}
+            width={1200}
+            height={630}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '1200px',
+              height: '630px',
+              objectFit: 'cover',
+            }}
+          />
+        ) : null}
+
+        {/* Top-left: LocalNomad logo */}
         <div
           style={{
+            position: 'absolute',
+            top: '36px',
+            left: '44px',
             display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-            fontSize: '24px',
-            opacity: 0.8,
+            fontFamily: '"Lora"',
+            fontStyle: 'italic',
+            fontWeight: 700,
+            fontSize: '32px',
+            textShadow: heavyShadow,
           }}
         >
-          <span>{emoji}</span>
-          <span>{categoryLabel}</span>
+          LocalNomad
         </div>
 
-        {/* Middle: title */}
+        {/* Bottom: title */}
         <div
           style={{
+            position: 'absolute',
+            bottom: '40px',
+            left: '44px',
+            right: '44px',
             display: 'flex',
-            fontSize: title.length > 60 ? '42px' : '52px',
+            fontSize: title.length > 60 ? '38px' : '48px',
             fontWeight: 700,
             lineHeight: 1.2,
-            maxWidth: '900px',
+            textShadow: heavyShadow,
           }}
         >
           {title}
         </div>
-
-        {/* Bottom: brand */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <span style={{ fontSize: '28px', fontWeight: 700, opacity: 0.9 }}>
-            LocalNomad
-          </span>
-          <span style={{ fontSize: '20px', opacity: 0.6 }}>
-            localnomad.club
-          </span>
-        </div>
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        {
+          name: 'Lora',
+          data: loraFont,
+          style: 'italic',
+          weight: 700,
+        },
+      ],
+    },
   );
 }
