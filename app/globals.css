@@ -415,3 +415,28 @@ body::after {
     transition: none;
   }
 }
+
+/* Print styles for checklist pages */
+@media print {
+  header, footer, nav,
+  .sticky, /* progress bar */
+  button[onclick], /* print button */
+  a[href*="blog"] /* read full guide link */ {
+    display: none !important;
+  }
+
+  /* Expand all phases */
+  details { open: true; }
+
+  /* Remove shadows and borders for cleaner print */
+  .rounded-xl { border-radius: 0; }
+  .shadow-sm, .shadow-md { box-shadow: none; }
+
+  /* Ensure checked items show strikethrough */
+  .line-through { text-decoration: line-through; }
+
+  body { font-size: 11pt; }
+
+  /* Add URL after print */
+  @page { margin: 1.5cm; }
+}

@@ -2,6 +2,7 @@
   "Landing": {
     "headline": "ビザ情報、やっとクリアに。",
     "subtitle": "ビザ、ネイバーフッド、72時間サバイバルキット",
+    "checklistCta": "チェックリストを見る",
     "subtitleCountries": "韓国 · 日本 · 台湾",
     "countryKorea": "韓国",
     "countryTaiwan": "台湾",
@@ -455,5 +456,16 @@
     "metaTitleTransition": "{from}から{to}へのビザ変更 — 韓国{year} | LocalNomad",
     "metaTitleFallback": "ビザ変更 | LocalNomad",
     "metaDescriptionTransition": "韓国で{from}から{to}へ変更するための要件・スケジュール・書類。"
+  },
+  "Checklist": {
+    "badge": "72時間サバイバルキット",
+    "title": "{country} 到着チェックリスト",
+    "subtitle": "{country}での最初の1週間のインタラクティブチェックリスト。項目をチェックすると進捗が自動保存されます。",
+    "metaDescription": "デジタルノマド・旅行者のための{country}到着チェックリスト（2026年）。ビザ準備、空港セットアップ、最初の1週間のタスクを管理。",
+    "completed": "{count}/{total} 完了",
+    "readFullGuide": "ガイド全文を読む",
+    "print": "チェックリストを印刷",
+    "lastUpdated": "最終確認: {date}",
+    "disclaimer": "公開された要件に基づいています。ビザ規則、費用、手続きは変更される場合があります。最新情報は最寄りの大使館・領事館でご確認ください。法的助言や入国管理の助言ではありません。"
   }
 }

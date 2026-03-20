@@ -1,0 +1,271 @@
+{
+  "country": "taiwan",
+  "title": "Taiwan Arrival Checklist for Travelers & Digital Nomads (2026)",
+  "lastUpdated": "2026-03-13",
+  "blogUrl": "/en/blog/tips/taiwan-arrival-checklist-2026",
+  "disclaimer": {
+    "en": "This guide is based on published requirements and the author's experience. Visa rules, fees, and procedures change. Verify current information with your nearest TECO (Taipei Economic and Cultural Office) and the Taiwan Tourism Bureau before making plans. This is not immigration or legal advice. LocalNomad is not a licensed immigration services organization (移民業務機構).",
+    "zh": "本指南依據已公布之規定及作者經驗撰寫。簽證規定、費用及程序可能隨時變更。請於出發前向最近之駐外館處（TECO）及交通部觀光署確認最新資訊。本內容不構成移民或法律諮詢建議。LocalNomad 並非經許可之移民業務機構。"
+  },
+  "phases": [
+    {
+      "id": "before-you-board",
+      "title": "Before You Board",
+      "timeframe": "1–2 weeks before",
+      "description": "Most of this can't be fixed at Taoyuan with jet lag and no data. Do it now.",
+      "items": [
+        {
+          "id": "tw-visa",
+          "label": "Confirm your visa / entry type",
+          "description": "Citizens of 65+ countries get 90-day visa-free entry. Planning to stay longer or work remotely? The DN Visa covers up to 2 years; the Gold Card is Taiwan's talent visa (start 3–4 months early).",
+          "category": "document",
+          "required": true,
+          "tips": [
+            "Visa-free: bring return ticket proof in case immigration asks",
+            "Gold Card and DN Visa have different income thresholds and work rights — see comparison guide"
+          ],
+          "link": "/en/blog/tips/taiwan-gold-card-vs-dn-visa-2026",
+          "linkLabel": "Gold Card vs DN Visa comparison"
+        },
+        {
+          "id": "tw-esim",
+          "label": "Buy an eSIM before boarding",
+          "description": "Klook, KKday, or Airalo all sell Taiwan eSIMs. Activate after landing. Skips the SIM counter queue at Taoyuan.",
+          "category": "connectivity",
+          "required": false,
+          "tips": [
+            "Physical SIM counters (Chunghwa Telecom) exist in arrivals if you prefer a local SIM on arrival"
+          ]
+        },
+        {
+          "id": "tw-apps",
+          "label": "Download essential apps",
+          "description": "Four apps to install before you leave:",
+          "category": "app",
+          "required": true,
+          "tips": [
+            "LINE: Taiwan's universal messenger — landlord, coworkers, loyalty programs all on LINE",
+            "Google Maps: reliable for MRT routing in Taipei",
+            "Uber: often cheaper than hailing taxis, works from Taoyuan airport",
+            "Google Translate: camera mode reads Chinese menus and signs"
+          ]
+        },
+        {
+          "id": "tw-documents",
+          "label": "Prepare documents folder (digital + printed)",
+          "description": "Passport (6+ months validity), visa approval or return flight proof, health insurance documents, accommodation confirmation, 2 passport photos.",
+          "category": "document",
+          "required": true,
+          "tips": [
+            "Keep digital copies in cloud storage accessible offline"
+          ]
+        },
+        {
+          "id": "tw-cash",
+          "label": "Withdraw or exchange NT$10,000–15,000 (~$310–470 USD)",
+          "description": "Foreign credit cards work at most stores and restaurants, but night markets, small local shops, and some transit kiosks are cash-only.",
+          "category": "money",
+          "required": true,
+          "tips": [
+            "Exchange at the airport on arrival or withdraw from an ATM in the arrivals hall",
+            "Keep NT$500–1,000 in small bills specifically for night markets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-1-airport",
+      "title": "Day 1: Taoyuan Airport",
+      "timeframe": "Day 1",
+      "description": "You just landed. Here's the sequence.",
+      "items": [
+        {
+          "id": "tw-immigration",
+          "label": "Clear immigration",
+          "description": "Have your passport, visa documents (or return ticket for visa-free), and accommodation address ready. Usually 20–30 minutes even at peak times.",
+          "category": "admin",
+          "required": true
+        },
+        {
+          "id": "tw-sim",
+          "label": "Get a SIM card or activate eSIM",
+          "description": "Chunghwa Telecom counter in the arrivals hall. A 30-day unlimited 4G SIM runs NT$1,000–1,600 (~$31–50). Or activate your pre-purchased eSIM.",
+          "category": "connectivity",
+          "required": true,
+          "tips": [
+            "Get data before you leave the airport — you'll need it for navigation and Uber"
+          ]
+        },
+        {
+          "id": "tw-easycard",
+          "label": "Buy an EasyCard (悠遊卡)",
+          "description": "NT$500 package: NT$100 non-refundable deposit + NT$400 loaded credit. Works on MRT, buses, YouBike, convenience stores, and vending machines.",
+          "category": "transport",
+          "required": true,
+          "tips": [
+            "Available at the airport MRT station or any 7-Eleven",
+            "Top up at any convenience store register"
+          ]
+        },
+        {
+          "id": "tw-airport-mrt",
+          "label": "Take Airport MRT to Taipei Main Station",
+          "description": "NT$160, about 45 minutes. Trains run every 15 minutes, 6 AM–11 PM. Free WiFi on board. Use your EasyCard.",
+          "category": "transport",
+          "required": true,
+          "warnings": [
+            "Arriving after 11 PM? Pre-book an airport shuttle or expect NT$1,200–1,500 for a taxi to central Taipei. Uber also works from Taoyuan."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-1-2-settle",
+      "title": "Days 1–2: Settle In",
+      "timeframe": "Days 1–2",
+      "description": "Not everything needs to happen on day one. Spread it out.",
+      "items": [
+        {
+          "id": "tw-wifi-speed",
+          "label": "Test your accommodation WiFi speed",
+          "description": "Aim for 25+ Mbps for video calls. Most Taipei rentals exceed this easily.",
+          "category": "connectivity",
+          "required": true
+        },
+        {
+          "id": "tw-explore-neighborhood",
+          "label": "Walk your neighborhood",
+          "description": "Find the nearest MRT station, convenience store (7-Eleven or FamilyMart), pharmacy, and breakfast shop (早餐店 — cheap, fast, everywhere).",
+          "category": "food",
+          "required": true
+        },
+        {
+          "id": "tw-night-market",
+          "label": "Hit a night market for dinner",
+          "description": "Raohe, Ningxia, or Shilin are the big ones. Bring cash — night markets are cash-only. NT$500 covers a full meal plus snacks.",
+          "category": "food",
+          "required": false,
+          "tips": [
+            "Always cash-only at night markets — no card, no EasyCard"
+          ],
+          "link": "/en/blog/tips/taiwan-night-market-guide-2026",
+          "linkLabel": "Taiwan night market guide"
+        }
+      ]
+    },
+    {
+      "id": "days-2-3-digital",
+      "title": "Days 2–3: Go Digital",
+      "timeframe": "Days 2–3",
+      "description": "Set up your digital layer for daily life in Taiwan.",
+      "items": [
+        {
+          "id": "tw-line-setup",
+          "label": "Set up LINE and add your accommodation host",
+          "description": "LINE is Taiwan's universal messenger. Your landlord, coworkers, and local businesses all use it.",
+          "category": "app",
+          "required": true
+        },
+        {
+          "id": "tw-mobile-pay",
+          "label": "Add foreign credit card to Apple Pay or Google Pay",
+          "description": "Accepted at most chain stores, restaurants, and convenience stores. Foreign Visa/Mastercard works almost everywhere except transit and night markets.",
+          "category": "money",
+          "required": false,
+          "tips": [
+            "LINE Pay registration is limited for foreigners without a local bank account — not a problem, your foreign card covers most things"
+          ]
+        },
+        {
+          "id": "tw-plugs",
+          "label": "Check power plug compatibility",
+          "description": "Taiwan uses Type A/B plugs, same as the US. If you're coming from Europe, UK, or Australia, you need an adapter.",
+          "category": "safety",
+          "required": true,
+          "tips": [
+            "Adapters available at any convenience store or electronics shop"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-3-5-admin",
+      "title": "Days 3–5: Admin",
+      "timeframe": "Days 3–5",
+      "description": "Long-term visa holders only. Visa-free visitors (90 days or less) can skip most of this.",
+      "items": [
+        {
+          "id": "tw-bank-account",
+          "label": "Open a bank account",
+          "description": "Cathay United and E.SUN Bank are foreigner-friendly. Bring passport + residence document (ARC or residence visa required).",
+          "category": "money",
+          "required": false,
+          "visaFilter": ["gold-card", "dnv", "arc-holder"],
+          "warnings": [
+            "Bank accounts require an ARC (Alien Resident Certificate, 居留證) or residence-type visa. Visa-free visitors cannot open bank accounts."
+          ]
+        },
+        {
+          "id": "tw-nia-registration",
+          "label": "Register at the local NIA service center (移民署服務站)",
+          "description": "Required if your visa type mandates registration. Bring your passport and visa documents.",
+          "category": "admin",
+          "required": false,
+          "visaFilter": ["gold-card", "dnv", "arc-holder"]
+        },
+        {
+          "id": "tw-nhi",
+          "label": "Check NHI (National Health Insurance, 全民健保) enrollment",
+          "description": "Enrollment rules vary by visa category. Check whether your visa makes you eligible or required to enroll.",
+          "category": "admin",
+          "required": false,
+          "visaFilter": ["gold-card", "dnv", "arc-holder"],
+          "warnings": [
+            "NHI enrollment typically needs an ARC. Visa-free visitors are covered by travel insurance instead."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-5-7-explore",
+      "title": "Days 5–7: Explore and Connect",
+      "timeframe": "Days 5–7",
+      "description": "Find your regular spots and plug into the local community.",
+      "items": [
+        {
+          "id": "tw-regular-spots",
+          "label": "Find your regular neighborhood spots",
+          "description": "The good 早餐店, the laundromat, the pharmacy that stocks what you need. Walking is the fastest way.",
+          "category": "food",
+          "required": false
+        },
+        {
+          "id": "tw-meetups",
+          "label": "Attend a meetup or coworking event",
+          "description": "Kafnu, Impact Hub, and CLBC all run community events in Taipei.",
+          "category": "admin",
+          "required": false
+        },
+        {
+          "id": "tw-apartment-hunting",
+          "label": "Start apartment hunting on 591.com.tw",
+          "description": "Taiwan's main rental platform. Interface is in Chinese — use Google Translate camera mode to navigate.",
+          "category": "housing",
+          "required": false,
+          "tips": [
+            "Only relevant if you're planning to stay longer term"
+          ],
+          "link": "https://www.591.com.tw/",
+          "linkLabel": "591.com.tw rental platform"
+        },
+        {
+          "id": "tw-pleco",
+          "label": "Download Pleco (Chinese dictionary app)",
+          "description": "Best Chinese dictionary app for daily vocabulary building. Useful for menus, signs, and conversations.",
+          "category": "app",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

@@ -33,12 +33,18 @@ export const Hero = () => {
           <p className="mt-2 text-sm tracking-widest text-white/50 uppercase">
             {t('subtitleCountries')}
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/korea"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-primary shadow-lg transition-all duration-200 hover:bg-white/90 hover:shadow-xl hover:-translate-y-0.5"
             >
               {t('exploreVisas')}
+            </Link>
+            <Link
+              href="/korea/checklist"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-white/10 hover:-translate-y-0.5"
+            >
+              {t('checklistCta')}
             </Link>
           </div>
         </div>

@@ -2,6 +2,7 @@
   "Landing": {
     "headline": "签证信息，一目了然。",
     "subtitle": "签证、社区指南、72小时生存包",
+    "checklistCta": "查看清单",
     "subtitleCountries": "韩国 · 日本 · 台湾",
     "countryKorea": "韩国",
     "countryTaiwan": "台湾",
@@ -455,5 +456,16 @@
     "metaTitleTransition": "{from}转{to}签证变更 — 韩国{year} | LocalNomad",
     "metaTitleFallback": "签证变更 | LocalNomad",
     "metaDescriptionTransition": "在韩国从{from}变更为{to}的条件、时间线和所需材料。"
+  },
+  "Checklist": {
+    "badge": "72小时生存指南",
+    "title": "{country}入境清单",
+    "subtitle": "在{country}第一周的交互式清单。勾选完成的项目，进度自动保存。",
+    "metaDescription": "数字游民和旅行者的{country}入境清单（2026年）。管理签证准备、机场流程和第一周任务。",
+    "completed": "{count}/{total} 已完成",
+    "readFullGuide": "阅读完整指南",
+    "print": "打印清单",
+    "lastUpdated": "最后验证: {date}",
+    "disclaimer": "基于已公布的要求。签证规则、费用和程序可能变更。请向最近的大使馆或领事馆核实最新信息。不构成法律或移民建议。"
   }
 }

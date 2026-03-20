@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useTransition } from 'react';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
 import { useUser } from '@/hooks/use-user';
+import { useLocalChecklist } from '@/hooks/use-local-checklist';
 import { getActiveVisa, getChecklist, toggleChecklistItem } from '@/lib/actions/dashboard';
 import type { Document as VisaDocument } from '@/lib/types/visa';
 import { DocumentRow } from './document-row';
@@ -37,64 +38,7 @@ interface DocumentChecklistProps {
   country: string;
 }
 
-function readChecklist(key: string): Record<string, boolean> {
-  try {
-    const stored = localStorage.getItem(key);
-    if (stored) {
-      const parsed: unknown = JSON.parse(stored);
-      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
-        return parsed as Record<string, boolean>;
-      }
-    }
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('Failed to read checklist from localStorage:', error.message);
-      }
-    }
-  }
-  return {};
-}
-
-function useLocalChecklist(storageKey: string) {
-  const [checked, setChecked] = useState<Record<string, boolean>>(() =>
-    typeof window !== 'undefined' ? readChecklist(storageKey) : {}
-  );
-
-  useEffect(() => {
-    const handler = (e: StorageEvent) => {
-      if (e.key === storageKey) {
-        setChecked(readChecklist(storageKey));
-      }
-    };
-    window.addEventListener('storage', handler);
-    return () => window.removeEventListener('storage', handler);
-  }, [storageKey]);
-
-  const toggle = useCallback(
-    (docId: string) => {
-      setChecked((prev) => {
-        const next = { ...prev, [docId]: !prev[docId] };
-        try {
-          localStorage.setItem(storageKey, JSON.stringify(next));
-          queueMicrotask(() => {
-            window.dispatchEvent(new CustomEvent('checklist-update'));
-          });
-        } catch (error: unknown) {
-          if (error instanceof Error) {
-            if (process.env.NODE_ENV === 'development') {
-              console.warn('Failed to save checklist to localStorage:', error.message);
-            }
-          }
-        }
-        return next;
-      });
-    },
-    [storageKey]
-  );
-
-  return { checked, toggle };
-}
+// Local checklist logic extracted to hooks/use-local-checklist.ts
 
 function useSupabaseChecklist(
   userVisaId: string,

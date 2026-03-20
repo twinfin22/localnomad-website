@@ -1,0 +1,266 @@
+{
+  "country": "korea",
+  "title": "Korea Arrival Checklist for Travelers & Digital Nomads (2026)",
+  "lastUpdated": "2026-03-13",
+  "blogUrl": "/en/blog/tips/korea-arrival-checklist-2026",
+  "phases": [
+    {
+      "id": "before-you-fly",
+      "title": "Before You Fly",
+      "timeframe": "2–4 weeks before departure",
+      "description": "Prep before you board. Some app features lock behind a Korean phone number — load everything while you still have home WiFi.",
+      "items": [
+        {
+          "id": "visa-decision",
+          "label": "Choose your entry path: B-2 visa-free or F-1-D Digital Nomad Visa",
+          "description": "B-2 visa-free covers 106+ countries for up to 90 days. F-1-D gives up to 2 years but requires ₩88M+ (~$64K) annual income proof. Apply at your nearest Korean embassy 2–4 weeks before departure.",
+          "category": "document",
+          "required": true,
+          "tips": [
+            "F-1-D applicants: do not book non-refundable flights until your visa clears. Processing takes 2–4 weeks and embassies do not rush."
+          ],
+          "link": "/en/korea/visa/f-1-d",
+          "linkLabel": "F-1-D Visa Details"
+        },
+        {
+          "id": "k-eta-check",
+          "label": "Check K-ETA requirement (B-2 travelers)",
+          "description": "K-ETA may be required for B-2 visa-free travelers. Check the current eligible country list before departure.",
+          "category": "document",
+          "required": false,
+          "visaFilter": ["b-2"],
+          "link": "https://www.k-eta.go.kr/",
+          "linkLabel": "K-ETA Official Site",
+          "warnings": [
+            "Requirements change — verify on the official K-ETA site before every trip, not just once."
+          ]
+        },
+        {
+          "id": "download-apps",
+          "label": "Download KakaoTalk, Naver Map, and Papago",
+          "description": "Three essential apps before you board:",
+          "category": "app",
+          "required": true,
+          "tips": [
+            "KakaoTalk: messaging — Korea runs on this, not WhatsApp or Telegram",
+            "Naver Map: Korean transit routing and walking directions, better than Google Maps",
+            "Papago: Naver's translator, beats Google Translate for Korean ↔ English",
+            "Download while on home WiFi — some features lock behind a Korean phone number after arrival"
+          ]
+        },
+        {
+          "id": "sim-plan",
+          "label": "Pre-buy a Korean eSIM or plan for airport SIM pickup",
+          "description": "Options: Airalo or eSIMDB for eSIM before departure, or pick up a SIM at Incheon arrival hall. You will upgrade to a Korean postpaid number later, but you need data from minute one.",
+          "category": "connectivity",
+          "required": true
+        },
+        {
+          "id": "documents-pack",
+          "label": "Pack all required documents",
+          "description": "Gather these before departure:",
+          "category": "document",
+          "required": true,
+          "tips": [
+            "Passport (6+ months validity)",
+            "Visa approval letter (if F-1-D)",
+            "Insurance documents",
+            "Accommodation address written in Korean (한글)",
+            "2 passport photos (3.5×4.5cm, white background — Korean standard, NOT US size)"
+          ],
+          "warnings": [
+            "Korean passport photo size is 3.5×4.5cm. US standard (2×2 in) is a different size — bring Korean-format photos."
+          ]
+        },
+        {
+          "id": "cash-preparation",
+          "label": "Bring ₩300,000–500,000 ($230–385) in cash",
+          "description": "Korea is technically 80%+ cashless, but that means Korean payment methods. Your foreign card will be rejected at small restaurants, kiosks, street food stalls, and delivery apps. Cash is essential backup.",
+          "category": "money",
+          "required": true,
+          "warnings": [
+            "Apple Pay launched March 2023 with Hyundai Card only — do not count on it working.",
+            "Samsung Pay requires a Korean phone and Korean bank card — not available until after ARC + bank setup."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-1-airport",
+      "title": "Day 1: Incheon Airport",
+      "timeframe": "Upon landing",
+      "description": "After clearing customs, hit the arrivals hall in this order. Do not skip the WOWPASS step.",
+      "items": [
+        {
+          "id": "tourist-sim",
+          "label": "Get a tourist SIM at Incheon",
+          "description": "KT or LG U+ counters in the arrivals hall. 30-day data SIM runs ₩33,000–55,000. Or activate your pre-purchased eSIM now.",
+          "category": "connectivity",
+          "required": true
+        },
+        {
+          "id": "wowpass-card",
+          "label": "Get a WOWPASS card (₩6,000)",
+          "description": "WOWPASS works as a prepaid payment card (accepted anywhere T-money or credit cards work), a transit card, and a foreign currency exchange machine. Card costs ₩6,000. Load with cash or your foreign card at WOWPASS kiosks. Better exchange rates than airport currency counters.",
+          "category": "money",
+          "required": true,
+          "tips": [
+            "This is your main card for the first week. Works at most shops and all transit.",
+            "Way better exchange rates than the airport currency counters."
+          ]
+        },
+        {
+          "id": "transport-to-seoul",
+          "label": "Take AREX or limousine bus to Seoul",
+          "description": "WOWPASS and T-money work on all options:",
+          "category": "transport",
+          "required": true,
+          "tips": [
+            "AREX All-Stop: ₩4,750, ~60 min to Seoul Station",
+            "AREX Express: ₩11,000, ~43 min (more space for luggage)",
+            "Limousine Bus: ₩15,000–18,000, 60–90 min door-to-door to major areas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-1-2-settle",
+      "title": "Days 1–2: Settle In",
+      "timeframe": "First 1–2 days",
+      "description": "Get oriented. Learn your neighborhood before diving into admin tasks.",
+      "items": [
+        {
+          "id": "neighborhood-orientation",
+          "label": "Walk your neighborhood and find key spots",
+          "description": "Find the nearest subway station (memorize the exit number — Korean addresses are exit-number-dependent), convenience store (CU, GS25), pharmacy (약국), and a few restaurants.",
+          "category": "admin",
+          "required": true
+        },
+        {
+          "id": "kakaotalk-setup",
+          "label": "Set up KakaoTalk with your tourist SIM number",
+          "description": "KakaoTalk is your primary communication channel in Korea. Set it up now — landlords, coworkers, and everyone else will contact you here, not via SMS or email.",
+          "category": "app",
+          "required": true,
+          "warnings": [
+            "KakaoTaxi and delivery apps (Baemin, Coupang Eats) require Korean 본인인증 (identity verification tied to a postpaid plan). These are NOT available until after the postpaid upgrade in Days 5+. Flag taxis on the street for now."
+          ]
+        },
+        {
+          "id": "payment-stack-setup",
+          "label": "Set up your first-week payment stack",
+          "description": "Three layers to cover every situation:",
+          "category": "money",
+          "required": true,
+          "tips": [
+            "WOWPASS: your main card — works at most shops and all transit",
+            "Cash ₩50,000–100,000: for small restaurants, traditional markets, and Korean-card-only spots",
+            "T-money: backup transit card (cash recharge at any convenience store)",
+            "Large chains and department stores usually accept foreign cards; small spots often don't"
+          ]
+        },
+        {
+          "id": "wifi-test",
+          "label": "Test accommodation WiFi",
+          "description": "Korea's standard is 1 Gbps fiber. If you are getting under 100 Mbps consistently, something is wrong with the setup, not the country. Ask your host to check.",
+          "category": "connectivity",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "days-2-5-arc-phone",
+      "title": "Days 2–5: ARC + Phone",
+      "timeframe": "Days 2–5 (F-1-D: within 7 days of arrival)",
+      "description": "Korea has a strict dependency chain: ARC → phone → bank. Each step unlocks the next. Do not skip or reorder.",
+      "items": [
+        {
+          "id": "arc-application",
+          "label": "Apply for ARC (Alien Registration Card) at immigration office",
+          "description": "Apply at the immigration office (출입국사무소). For F-1-D visa holders, apply within 7 days of arrival. For B-2 or others, within 90 days. The physical card takes 2–3 weeks, but Mobile ARC activates same-day and banks accept the digital version.",
+          "category": "admin",
+          "required": true,
+          "visaFilter": ["f-1-d"],
+          "tips": [
+            "Activate Mobile ARC immediately after applying — it is accepted by banks for account opening.",
+            "Full step-by-step is in the ARC → Phone → Bank guide."
+          ],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "ARC → Phone → Bank: Breaking Korea's Catch-22",
+          "warnings": [
+            "F-1-D visa holders must apply within 7 days of arrival — do not delay.",
+            "ARC is required before you can get a postpaid phone plan or open a bank account."
+          ]
+        },
+        {
+          "id": "mobile-arc-activate",
+          "label": "Activate Mobile ARC same-day",
+          "description": "After submitting your ARC application, activate the Mobile ARC (디지털 외국인등록증) on your phone. Banks accept this digital version — you do not need to wait for the physical card.",
+          "category": "app",
+          "required": true,
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "ARC → Phone → Bank Guide"
+        }
+      ]
+    },
+    {
+      "id": "days-5-plus-bank-postpaid",
+      "title": "Days 5+: Bank + Postpaid Unlock",
+      "timeframe": "After ARC application (Day 5+)",
+      "description": "With ARC in hand, you can open a bank account and upgrade to postpaid. The postpaid phone is the real key to living in Korea — it unlocks nearly every Korean app and service.",
+      "items": [
+        {
+          "id": "bank-account",
+          "label": "Open a Korean bank account (Hana, Shinhan, or KB Kookmin)",
+          "description": "With ARC (or Mobile ARC) and a prepaid SIM, walk into Hana Bank, Shinhan, or KB Kookmin. Staff accept prepaid SIM numbers at this stage.",
+          "category": "money",
+          "required": true,
+          "tips": [
+            "Hana Bank and Shinhan are generally the most foreigner-friendly.",
+            "Bring your passport, ARC (or Mobile ARC), and prepaid SIM."
+          ],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "ARC → Phone → Bank Guide"
+        },
+        {
+          "id": "postpaid-phone-upgrade",
+          "label": "Upgrade to a postpaid phone plan (KT, SKT, or LG U+)",
+          "description": "Requires ARC + Korean bank account. This single upgrade unlocks:",
+          "category": "connectivity",
+          "required": true,
+          "tips": [
+            "Kakao Pay, Naver Pay, Samsung Pay",
+            "KakaoTaxi (finally)",
+            "Baemin and Coupang Eats delivery",
+            "Full internet banking features",
+            "Most Korean apps that require 본인인증 (identity verification)"
+          ],
+          "warnings": [
+            "Do this AFTER opening a bank account — postpaid plans require Korean bank payment setup."
+          ]
+        },
+        {
+          "id": "korean-payment-apps",
+          "label": "Set up Kakao Pay, Naver Pay, or Samsung Pay",
+          "description": "With a postpaid plan and Korean bank account, you can now register for Korean mobile payment apps. Samsung Pay is dominant, but all three are widely accepted.",
+          "category": "app",
+          "required": false,
+          "tips": [
+            "Samsung Pay requires a Samsung device.",
+            "Kakao Pay and Naver Pay work on any smartphone."
+          ]
+        },
+        {
+          "id": "delivery-apps",
+          "label": "Set up Baemin or Coupang Eats for food delivery",
+          "description": "Both require 본인인증 (identity verification tied to postpaid plan). Now that you have postpaid, these are available.",
+          "category": "food",
+          "required": false,
+          "tips": [
+            "Baemin (배달의민족) is the dominant app. Coupang Eats is growing and often cheaper."
+          ]
+        }
+      ]
+    }
+  ]
+}

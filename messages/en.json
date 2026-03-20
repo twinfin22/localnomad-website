@@ -2,6 +2,7 @@
   "Landing": {
     "headline": "Soft Land in Asia",
     "subtitle": "Visas, Neighborhoods, 72-hour Survival Kit",
+    "checklistCta": "Get your checklist",
     "subtitleCountries": "Korea · Japan · Taiwan",
     "countryKorea": "South Korea",
     "countryTaiwan": "Taiwan",
@@ -455,5 +456,16 @@
     "metaTitleTransition": "{from} to {to} Visa Change — Korea {year} | LocalNomad",
     "metaTitleFallback": "Visa Change | LocalNomad",
     "metaDescriptionTransition": "Requirements, timeline, and documents for changing from {from} to {to} in Korea."
+  },
+  "Checklist": {
+    "badge": "72-Hour Survival Kit",
+    "title": "{country} Arrival Checklist",
+    "subtitle": "Interactive checklist for your first week in {country}. Check items off as you go — progress saves automatically.",
+    "metaDescription": "Interactive {country} arrival checklist for digital nomads and travelers (2026). Track your visa prep, airport setup, and first-week tasks.",
+    "completed": "{count}/{total} complete",
+    "readFullGuide": "Read the full guide",
+    "print": "Print checklist",
+    "lastUpdated": "Last verified: {date}",
+    "disclaimer": "Based on published requirements. Visa rules, fees, and procedures change. Verify current info with your nearest embassy or consulate. Not legal or immigration advice."
   }
 }
