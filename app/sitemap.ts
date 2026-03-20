@@ -77,10 +77,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (country === 'korea') {
       entries.push(...entry(`/${country}/visa/change`, { changeFrequency: 'weekly', priority: 0.8 }));
 
+      // English-only transition URLs — ja/zh-cn have incomplete pathsTo coverage
       const pairs = await getAllTransitionPairs('korea', 'en');
       for (const { from, to } of pairs) {
         if (to === 'd-4') continue;
-        entries.push(...entry(`/${country}/visa/change/${from}-to-${to}`, { changeFrequency: 'monthly', priority: 0.7 }));
+        entries.push({
+          url: `${BASE_URL}/en/${country}/visa/change/${from}-to-${to}`,
+          lastModified: LAST_MODIFIED,
+          changeFrequency: 'monthly',
+          priority: 0.7,
+        });
       }
     }
   }
