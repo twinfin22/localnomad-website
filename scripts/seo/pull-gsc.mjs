@@ -20,7 +20,7 @@ const keyFile =
   process.env.GSC_SA_KEY_PATH ||
   `${process.env.HOME}/.config/gcloud/localnomad-gsc-sa.json`;
 
-const siteUrl = process.env.GSC_SITE_URL || 'sc-domain:localnomad.club';
+const siteUrl = process.env.GSC_SITE_URL || 'https://localnomad.club/';
 
 const auth = new GoogleAuth({
   keyFile,
