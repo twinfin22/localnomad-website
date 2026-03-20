@@ -1,0 +1,312 @@
+{
+  "type": "b-2",
+  "name": "韩国旅游过境签证 (B-2)",
+  "nameLocal": "관광비자 (B-2)",
+  "shortName": "B-2",
+  "category": "tourist",
+  "description": "韩国B-2旅游签证全攻略：106个国家免签入境，67个国家免除K-ETA要求（有效期至2026年），非免签国家申请流程、所需材料及常见问题。信息已更新至2026年。",
+  "tagline": "短期旅游和商务停留",
+  "keyRequirement": "持有免签国家有效护照（90天）或非免签国家需办理签证",
+  "targetAudience": [
+    "短期探访的数字游民「,\n    」赴韩旅游人士「,\n    」参加会议或商务洽谈的商务旅客「,\n    」赴韩考察后计划申请长期签证的人士"
+  ],
+  "eligibility": [
+    {
+      "id": "visa-exempt",
+      "label": "106个国家可免签入境（67个国家免除K-ETA要求，有效期至2026年）",
+      "description": "免签国家公民可无需签证在韩逗留最长90天。截至2026年，106个国家的公民享有赴韩旅游免签待遇。此外，67个国家目前免除K-ETA（韩国电子旅行授权）要求，有效期至2026年12月31日。请登录韩国出入境·外国人厅官方网站查询最新免签国家及K-ETA要求。",
+      "required": false,
+      "tips": [
+        "部分国籍免签停留时间不足90天——请核实您的具体免签天数",
+        "2026年12月31日后，部分国籍可能需要申请K-ETA——出行前请确认K-ETA适用情况"
+      ]
+    },
+    {
+      "id": "visa-application",
+      "label": "非免签国家须申请签证",
+      "description": "不在免签名单上的国家公民须在出行前前往韩国驻外使馆或领事馆申请B-2签证。",
+      "required": false
+    },
+    {
+      "id": "valid-passport",
+      "label": "护照在整个停留期间须保持有效",
+      "description": "护照必须在预计停留期间内持续有效。韩国虽无正式的护照6个月有效期要求，但部分航空公司可能执行自身规定——出行前请与承运航空公司确认。",
+      "required": true
+    },
+    {
+      "id": "no-work",
+      "sentiment": "negative",
+      "label": "不得在韩从事任何受薪工作",
+      "description": "B-2签证持有人不得在韩从事任何雇佣、自由职业或有偿活动。",
+      "required": true
+    },
+    {
+      "id": "return-ticket",
+      "label": "须提供回程或中转机票证明",
+      "description": "入境韩国时，边检官员可能要求提供回程或后续航班证明。",
+      "required": true
+    }
+  ],
+  "duration": {
+    "initial": "30-90天",
+    "extension": "最长合计90天（可在出入境·外国人厅申请延期）",
+    "maxTotal": "每次入境30–90天",
+    "maxTotalDetail": "免签国家公民每次入境最长90天；签证持有人根据国籍不同，每次签证授权停留30–90天不等。"
+  },
+  "fees": {
+    "application": "₩50,000–120,000（单次入境）",
+    "applicationDetail": "费用因国籍而异，单次入境签证通常为₩50,000–120,000。",
+    "extension": "在出入境·外国人厅申请延期费用为₩60,000",
+    "notes": "免签入境无需缴纳申请费。签证费用因国籍及入境次数（单次、双次、多次）而异。请向最近的韩国使馆查询具体收费标准。"
+  },
+  "documents": [
+    {
+      "id": "passport",
+      "name": "有效护照",
+      "description": "护照须在停留期间内持续有效，并至少有2页空白页。部分航空公司可能要求护照有效期在6个月以上——请提前与航空公司确认。",
+      "required": true,
+      "nameLocal": "여권"
+    },
+    {
+      "id": "application-form",
+      "name": "签证申请表",
+      "description": "填写完整的签证申请表（仅适用于需前往使馆申请签证的非免签国家公民）",
+      "required": true,
+      "nameLocal": "사증발급신청서"
+    },
+    {
+      "id": "photo",
+      "name": "护照照片",
+      "description": "3.5cm × 4.5cm，近期拍摄（6个月内），白色背景",
+      "required": true,
+      "nameLocal": "여권사진"
+    },
+    {
+      "id": "return-ticket",
+      "name": "回程或中转机票",
+      "description": "须为确认订票，显示在允许停留期限内离境韩国",
+      "required": true,
+      "nameLocal": "왕복항공권"
+    },
+    {
+      "id": "accommodation",
+      "name": "住宿证明",
+      "description": "酒店预订确认单、Airbnb订单，或韩国接待方出具的邀请函",
+      "required": true,
+      "nameLocal": "숙소 예약 확인서"
+    },
+    {
+      "id": "financial-proof",
+      "name": "财力证明",
+      "description": "银行对账单或信用卡账单，证明有足够资金维持整个停留期间的开销（无固定最低要求，90天停留建议准备₩2,000,000–4,000,000）",
+      "tips": [
+        "提交近期银行对账单（1个月内）「,\n        」金额须足以覆盖住宿及日常开销"
+      ],
+      "required": true,
+      "nameLocal": "재정증명서"
+    },
+    {
+      "id": "itinerary",
+      "name": "行程安排",
+      "description": "韩国行程简要说明（部分使馆要求提供）",
+      "required": false,
+      "nameLocal": "여행일정서"
+    }
+  ],
+  "applicationSteps": [
+    {
+      "id": "step-1",
+      "step": 1,
+      "title": "确认免签资格",
+      "description": "查询您的国籍是否在韩国免签名单之内。106个国家的公民可免签入境，最长停留90天。同时确认您的国家是否豁免K-ETA要求（67个国家享有豁免，有效期至2026年12月31日）。请登录韩国出入境·外国人厅官网或visa.go.kr查询最新信息。",
+      "tips": [
+        "免签停留天数因国家而异（部分国家仅30天或60天，而非90天）",
+        "K-ETA豁免于2026年12月31日到期——此后可能须申请K-ETA",
+        "免签名单定期更新——出行前请核实"
+      ]
+    },
+    {
+      "id": "step-2",
+      "step": 2,
+      "title": "准备申请材料（须办理签证者适用）",
+      "description": "若您所在国家不在免签名单内，请准备齐全所需材料，以便前往韩国驻外使馆或领事馆申请签证。",
+      "duration": "1-2周",
+      "tips": [
+        "请核实所属使馆的具体要求——各馆可能略有差异「,\n        」部分使馆须提前预约"
+      ]
+    },
+    {
+      "id": "step-3",
+      "step": 3,
+      "title": "前往韩国使馆提交申请（须办理签证者适用）",
+      "description": "前往您所在国的韩国使馆或领事馆提交签证申请。部分使馆接受邮寄申请。",
+      "duration": "1天",
+      "tips": [
+        "至少提前2-4周申请签证「,\n        」保留所有已提交材料的副本"
+      ]
+    },
+    {
+      "id": "step-4",
+      "step": 4,
+      "title": "入境韩国",
+      "description": "抵达后，在边检处出示护照（如有签证请一并出示）。边检官员可能询问访韩目的及停留时长，请随时出示回程机票及住宿证明。",
+      "tips": [
+        "在飞机上填写入境卡「,\n        」如有可能，将住宿地址用韩文写好备用「,\n        」若边检官员怀疑您有工作或超期逗留意图，可能拒绝入境——请备好回程机票及资金证明"
+      ]
+    },
+    {
+      "id": "step-5",
+      "step": 5,
+      "title": "停留90天以上须办理登记",
+      "description": "若计划停留90天或申请延期，须在抵韩后90天内前往当地出入境·外国人厅办理登记，领取外国人登录证（ARC）。",
+      "duration": "ARC办理约需2-4周",
+      "tips": [
+        "ARC是开设银行账户、办理手机套餐等事项的必要证件「,\n        」前往出入境·外国人厅前，请提前在HiKorea预约"
+      ]
+    }
+  ],
+  "processingTime": {
+    "governmentReview": "即时（免签入境）；1-2周（签证申请）",
+    "governmentReviewDetail": "免签入境在口岸即时办理。签证申请需1-2周。",
+    "totalEndToEnd": "1-3周",
+    "notes": "签证申请处理时间因使馆、国籍及季节而异。旅游旺季期间，处理时间可能更长。免签入境在抵达机场或口岸时当场办理。"
+  },
+  "workPermission": {
+    "allowed": false,
+    "restrictions": [
+      "不得在韩从事任何形式的雇佣工作「,\n      」不得为韩国客户提供自由职业服务「,\n      」不得在韩从事任何有偿活动或商业经营「,\n      」为境外雇主远程办公在技术上属于法律灰色地带——B-2签证并未明确授权此类活动",
+      "B-2身份下不得从事任何形式的工作——违规可能导致驱逐出境及禁止再入境"
+    ],
+    "notes": "B-2签证严格限于旅游、过境及短期商务活动（参加会议、研讨会等），不授权任何形式的雇佣工作。在B-2签证下为境外公司远程办公的数字游民处于法律灰色地带。如需合规进行远程办公，请考虑申请F-1-D数字游民签证。"
+  },
+  "familyAllowed": false,
+  "renewal": {
+    "eligible": false,
+    "requirements": [],
+    "documents": [],
+    "applyBeforeDays": 0
+  },
+  "faqs": [
+    {
+      "question": "持B-2旅游签证可以远程办公吗？",
+      "answer": "B-2签证并未明确授权远程办公。虽然有些数字游民在旅游期间会进行远程工作，但这属于法律灰色地带。韩国专门推出了F-1-D数字游民签证，供远程工作者合规使用。若您计划在停留期间进行远程办公，F-1-D签证可提供明确的法律授权。"
+    },
+    {
+      "question": "B-2停留期是否可以延长至90天以上？",
+      "answer": "在有限情况下，可在停留期到期前向当地出入境·外国人厅申请延期。延期不予保证，由移民官员酌情决定。超期停留是严重违规行为，可能导致罚款、驱逐出境及禁止再入境。"
+    },
+    {
+      "question": "在韩期间可以从B-2转换为F-1-D（数字游民签证）吗？",
+      "answer": "根据已公布的移民程序，在满足F-1-D全部条件（年收入₩88,000,000以上、境外远程就业、持有覆盖韩国的医疗保险）的前提下，有可能在当地出入境·外国人厅办理B-2转F-1-D的身份变更，无需出境。但并非所有身份变更均可获批——请登录HiKorea官方网站或咨询出入境·外国人厅了解当前办理流程。"
+    },
+    {
+      "question": "超期停留会有什么后果？",
+      "answer": "超期停留违反韩国出入境管理法。可能面临的后果包括：罚款（最高₩30,000,000）、拘留、驱逐出境，以及禁止再入境（依超期时长，禁止期为1-10年不等）。请务必在停留期届满前离境，或提前申请延期。"
+    },
+    {
+      "question": "持B-2入境需要购买旅行保险吗？",
+      "answer": "旅行保险并非B-2免签入境的正式要求，但强烈建议购买。未投保的访客在韩就医费用可能相当高昂。部分使馆在审核签证申请时可能要求提供保险证明。"
+    },
+    {
+      "question": "90天免签停留结束后可以立即再次入境吗？",
+      "answer": "目前并无已公布的规定要求两次免签入境之间须间隔特定天数。但若边检官员怀疑当事人以多次旅游入境的方式长期居住韩国，可能行使自由裁量权拒绝入境。频繁连续入境可能在边检时引发盘问。"
+    },
+    {
+      "question": "持B-2签证可以开设银行账户吗？",
+      "answer": "持B-2签证以短期访客身份开设银行账户通常较为困难。大多数韩国银行要求提供外国人登录证（ARC），而ARC一般仅向停留90天及以上的人员签发。部分银行可能为旅游人士提供有限度的账户服务，但具体情况因银行而异。"
+    }
+  ],
+  "tips": [
+    "订购机票前请先确认免签资格——并非所有国家都享有90天免签「,\n    」入境时备好回程机票及住宿信息「,\n    」下载HiKorea应用程序，获取出入境相关信息及预约服务",
+    "T-money卡是乘坐公共交通的必备工具——可在机场购买「,\n    」将护照及入境章照片保存在手机中备用「,\n    」若考虑长期居住韩国，可利用B-2停留期间考察各社区及联合办公空间"
+  ],
+  "warnings": [
+    "哪怕超期停留仅1天也会被记录在案，可能影响日后向韩国及其他国家申请签证"
+  ],
+  "communityTips": [
+    {
+      "id": "visa-free-check",
+      "section": "requirements",
+      "tip": "务必确认您所在国籍的免签天数。我来自巴西，可免签停留90天；但我的菲律宾朋友根据特别协议只有59天。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 42,
+      "dateAdded": "2025-11-20"
+    },
+    {
+      "id": "immigration-questions",
+      "section": "process",
+      "tip": "仁川机场入境很顺利。边检官员问了我住在哪里、停留多久，我把酒店预订确认单拿出来，2分钟就通关了。",
+      "source": "community",
+      "verified": true,
+      "upvotes": 28,
+      "dateAdded": "2025-12-15"
+    },
+    {
+      "id": "b2-to-f1d-switch",
+      "section": "process",
+      "tip": "在首尔出入境·外国人厅（木洞）成功完成了B-2转F-1-D的身份变更，整个过程约花了3周。申请前请确保F-1-D所需材料齐备。",
+      "source": "reddit",
+      "verified": true,
+      "upvotes": 55,
+      "dateAdded": "2026-01-08"
+    },
+    {
+      "id": "k-eta-reminder",
+      "section": "process",
+      "tip": "如果您持有免签国护照，登机前可能需要申请K-ETA（韩国电子旅行授权）。请确认您的国籍是否需要申请——部分国籍同样豁免K-ETA要求。",
+      "source": "discord",
+      "verified": true,
+      "upvotes": 37,
+      "dateAdded": "2026-02-01"
+    }
+  ],
+  "relatedVisas": [
+    "f-1-d",
+    "d-2",
+    "e-1"
+  ],
+  "pathsTo": [
+    {
+      "type": "f-1-d",
+      "name": "数字游民签证",
+      "requirements": "须受雇于境外公司，年收入达到₩88,000,000以上（人均国民总收入×2），并持有覆盖韩国的医疗保险。",
+      "timeline": "在出入境·外国人厅办理，处理时间约1-3周",
+      "documents": [
+        "境外就业证明「,\n        」收入证明（6-12个月）「,\n        」医疗保险证明「,\n        」无犯罪记录证明"
+      ],
+      "notes": "适用于希望在韩合规远程办公的B-2签证持有人。在满足条件的前提下，有可能在当地出入境·外国人厅办理B-2转F-1-D身份变更，无需出境。请登录HiKorea核实当前办理流程。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://www.digitalnomadskorea.com/post/everything-you-need-to-know-about-koreas-digital-nomad-visa",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
+    }
+  ],
+  "pathsFrom": [],
+  "lastUpdated": "2026-03-04",
+  "officialLinks": [
+    {
+      "label": "韩国出入境·外国人厅",
+      "url": "https://www.immigration.go.kr/immigration_eng/index.do"
+    },
+    {
+      "label": "签证申请门户（visa.go.kr）",
+      "url": "https://www.visa.go.kr"
+    },
+    {
+      "label": "HiKorea门户",
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "label": "K-ETA（韩国电子旅行授权）",
+      "url": "https://www.k-eta.go.kr"
+    }
+  ],
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.visa.go.kr/openPage.do?MENU_ID=10301",
+  "lastFactChecked": "2026-03-20"
+}
