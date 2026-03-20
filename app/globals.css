@@ -122,6 +122,35 @@
   --sidebar-ring: #2a6f97;
 }
 
+/* Blog prose table styling */
+.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+.prose :where(thead):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  background-color: color-mix(in srgb, var(--primary) 8%, transparent);
+  border-bottom: 2px solid color-mix(in srgb, var(--primary) 20%, transparent);
+}
+.prose :where(th):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--foreground);
+  white-space: nowrap;
+}
+.prose :where(td):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.prose :where(tbody tr):not(:where([class~="not-prose"], [class~="not-prose"] *)):hover {
+  background-color: color-mix(in srgb, var(--primary) 4%, transparent);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { routing } from '@/i18n/routing';
 import { getAlternates } from '@/lib/seo';
 import { getPost, getAllPostSlugs } from '@/lib/blog';
@@ -146,7 +147,9 @@ export default async function BlogPostPage({ params }: Props) {
           <MDXRemote
             source={post.content}
             components={mdxComponents}
-            options={{ blockJS: false }}
+            options={{
+              mdxOptions: { remarkPlugins: [remarkGfm] },
+            }}
           />
         </article>
       </main>
