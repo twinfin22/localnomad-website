@@ -321,5 +321,8 @@
       "label": "K-ETA (Korea Electronic Travel Authorization)",
       "url": "https://www.k-eta.go.kr"
     }
-  ]
+  ],
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.visa.go.kr/openPage.do?MENU_ID=10301",
+  "lastFactChecked": "2026-03-20"
 }

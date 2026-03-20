@@ -325,5 +325,8 @@
       "label": "Ministry of Foreign Affairs — Embassy/Consulate Finder",
       "url": "https://www.mofa.go.jp/about/emb_cons/over/index.html"
     }
-  ]
+  ],
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.mofa.go.jp/j_info/visit/visa/index.html",
+  "lastFactChecked": "2026-03-20"
 }

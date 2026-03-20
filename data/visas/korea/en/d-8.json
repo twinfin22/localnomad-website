@@ -534,5 +534,8 @@
       "label": "Invest Korea (KOTRA)",
       "url": "https://www.investkorea.org"
     }
-  ]
+  ],
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.visa.go.kr/openPage.do?MENU_ID=10301",
+  "lastFactChecked": "2026-03-20"
 }

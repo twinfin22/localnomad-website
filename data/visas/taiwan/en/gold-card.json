@@ -561,5 +561,8 @@
       "label": "Gold Card Community (unofficial)",
       "url": "https://taiwangoldcard.com/"
     }
-  ]
+  ],
+  "sourceVerified": true,
+  "primarySourceUrl": "https://goldcard.nat.gov.tw/en/",
+  "lastFactChecked": "2026-03-20"
 }

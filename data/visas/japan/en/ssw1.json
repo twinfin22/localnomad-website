@@ -448,5 +448,8 @@
       "label": "JLPT Official Website",
       "url": "https://www.jlpt.jp/e/"
     }
-  ]
+  ],
+  "sourceVerified": true,
+  "primarySourceUrl": "https://www.ssw.go.jp/en/",
+  "lastFactChecked": "2026-03-20"
 }

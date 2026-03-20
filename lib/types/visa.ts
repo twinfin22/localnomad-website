@@ -307,6 +307,10 @@ export interface VisaBase {
   pathsFrom?: VisaTransitionPath[];
   lastUpdated: string;
   officialLinks: { label: string; url: string }[];
+  // Data integrity fields — enforced by scripts/validate-visa-data.ts
+  sourceVerified: boolean;
+  primarySourceUrl?: string;
+  lastFactChecked?: string;
 }
 
 export interface KoreaVisa extends VisaBase {

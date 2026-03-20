@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3000",
-    "build": "next build",
+    "validate-visa": "node --experimental-strip-types scripts/validate-visa-data.ts",
+    "build": "npm run validate-visa && next build",
     "start": "next start",
     "lint": "eslint"
   },

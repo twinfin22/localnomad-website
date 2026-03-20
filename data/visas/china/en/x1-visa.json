@@ -373,5 +373,8 @@
   },
   "residencePermitDeadline": 30,
   "invitationRequired": false,
-  "covaOnline": true
+  "covaOnline": true,
+  "sourceVerified": true,
+  "primarySourceUrl": "https://english.www.gov.cn/policies/visas/",
+  "lastFactChecked": "2026-03-20"
 }

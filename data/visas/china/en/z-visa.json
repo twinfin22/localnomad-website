@@ -444,5 +444,8 @@
     "notes": "Must register at local Public Security Bureau within 24 hours of arrival or moving to a new address. Hotels handle this automatically for guests."
   },
   "residencePermitDeadline": 30,
-  "covaOnline": true
+  "covaOnline": true,
+  "sourceVerified": true,
+  "primarySourceUrl": "https://english.www.gov.cn/policies/visas/",
+  "lastFactChecked": "2026-03-20"
 }
