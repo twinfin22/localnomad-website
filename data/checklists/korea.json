@@ -13,7 +13,7 @@
         {
           "id": "visa-decision",
           "label": "Choose your entry path: B-2 visa-free or F-1-D Digital Nomad Visa",
-          "description": "B-2 visa-free covers 106+ countries for up to 90 days. F-1-D gives up to 2 years but requires ₩88M+ (~$64K) annual income proof (2× GNI per capita, Bank of Korea — check current figure before applying). Apply at your nearest Korean embassy 2–4 weeks before departure.",
+          "description": "B-2 visa-free covers 100+ countries for up to 90 days (immigration.go.kr). F-1-D gives up to 2 years but requires ₩88M+ (~$64K) annual income proof (2× GNI per capita, Bank of Korea — check current figure before applying). Apply at your nearest Korean embassy 2–4 weeks before departure.",
           "category": "document",
           "required": true,
           "visaTier": ["tourist"],
@@ -60,6 +60,9 @@
           "visaTier": ["tourist"],
           "link": "https://www.k-eta.go.kr/",
           "linkLabel": "K-ETA Official Site",
+          "tips": [
+            "US, UK, Canada, Australia, Japan, and EU nationals are exempt from K-ETA until Dec 31, 2026 (mofa.go.kr). This exemption is reviewed annually."
+          ],
           "warnings": [
             "Requirements change — verify on the official K-ETA site before every trip, not just once."
           ]
@@ -312,7 +315,8 @@
           "blockedBy": ["arc-received"],
           "tips": [
             "Hana Bank and Shinhan are generally the most foreigner-friendly.",
-            "Bring your passport, Mobile ARC or physical ARC, and your prepaid SIM."
+            "Bring your passport, Mobile ARC or physical ARC, and your prepaid SIM.",
+            "US citizens: FATCA disclosure is required at all Korean banks (US-Korea IGA, 2015). Expect extra paperwork — no banks refuse US citizens outright, but some branches are less experienced with the process."
           ],
           "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
           "linkLabel": "Korea's ARC → Phone → Bank Loop: The Fix"

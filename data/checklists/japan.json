@@ -13,7 +13,7 @@
         {
           "id": "visa-check",
           "label": "Confirm your visa type",
-          "description": "74 countries get visa-free tourist entry (90 days for most). DN visa (up to 6 months) requires ¥10M+ annual income and a non-Japanese employer. Work/resident visas require a Certificate of Eligibility (COE).",
+          "description": "~73 countries get visa-free tourist entry (mofa.go.jp). 90 days for most Western countries, 30 days for Brunei, 15 days for Indonesia and Thailand (ePassport required). UAE upgraded to 90 days as of July 2025. DN visa (up to 6 months) requires ¥10M+ annual income and a non-Japanese employer. Work/resident visas require a Certificate of Eligibility (COE).",
           "category": "document",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
@@ -265,7 +265,8 @@
           "tips": [
             "No minimum balance; free cash withdrawals at 7-Eleven ATMs nationwide",
             "Required for salary transfer if working in Japan",
-            "Process takes about 30–60 minutes at a post office branch"
+            "Process takes about 30–60 minutes at a post office branch",
+            "US citizens: FATCA disclosure required (US-Japan IGA, 2013). Bring passport + Social Security number. Online application is typically blocked — must visit in person."
           ],
           "warnings": [
             "Regular banks (SMBC, MUFG) typically require 6+ months of residence — start with ゆうちょ"

@@ -13,7 +13,7 @@
         {
           "id": "visa-decision",
           "label": "确定入境方式：B-2免签入境或F-1-D数字游民签证",
-          "description": "B-2免签覆盖106个以上国家，最长可停留90天。F-1-D（数字游民签证）最长可住2年，但需要证明年收入₩88M以上（约$64K）（人均GNI的2倍，韩国银行标准。申请前请确认最新金额）。请在出发前2至4周前往最近的韩国大使馆申请。",
+          "description": "B-2免签覆盖100个以上国家（immigration.go.kr），最长可停留90天。F-1-D（数字游民签证）最长可住2年，但需要证明年收入₩88M以上（约$64K）（人均GNI的2倍，韩国银行标准。申请前请确认最新金额）。请在出发前2至4周前往最近的韩国大使馆申请。",
           "category": "document",
           "required": true,
           "visaTier": ["tourist"],
@@ -60,6 +60,9 @@
           "visaTier": ["tourist"],
           "link": "https://www.k-eta.go.kr/",
           "linkLabel": "K-ETA官方网站",
+          "tips": [
+            "美国、英国、加拿大、澳大利亚、日本及欧盟国民在2026年12月31日前免除K-ETA（mofa.go.kr）。该豁免每年重新审核。"
+          ],
           "warnings": [
             "要求随时可能变化——每次出行前都要在K-ETA官网核实，不要只查一次就放心。"
           ]
@@ -312,7 +315,8 @@
           "blockedBy": ["arc-received"],
           "tips": [
             "韩亚银行和新韩银行对外国人通常更友好。",
-            "请携带护照、手机ARC或实体ARC，以及预付费SIM卡。"
+            "请携带护照、手机ARC或实体ARC，以及预付费SIM卡。",
+            "美国公民：所有韩国银行均要求FATCA申报（2015年美韩IGA）。需要额外文件——不会被直接拒绝开户，但部分网点对流程不太熟悉。"
           ],
           "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
           "linkLabel": "韩国ARC→手机→银行死循环：解决方案"

@@ -244,7 +244,8 @@
           "visaTier": ["resident"],
           "blockedBy": ["tw-arc-received"],
           "tips": [
-            "E.SUN has English-speaking staff at major branches"
+            "E.SUN has English-speaking staff at major branches",
+            "US citizens: FATCA disclosure required at all Taiwan banks (US-Taiwan Model 2 IGA). E.SUN (玉山銀行) handles the process smoothly with English-language support."
           ],
           "warnings": [
             "Bank accounts require ARC. DNV and visa-free visitors are not eligible."
@@ -282,7 +283,7 @@
           "tips": [
             "NHI clock starts from NIA registration date — not arrival date",
             "6-month rule: max 1 departure under 30 days allowed, or the clock resets",
-            "Monthly premium: ~NT$749–1,000 for self-enrolled Gold Card holders"
+            "Monthly premium: ~NT$887–1,000+ for self-enrolled Gold Card holders (5.17% × insured salary × 60% — adjusts with minimum wage; nhi.gov.tw)"
           ],
           "warnings": [
             "DNV and visa-free visitors are not eligible for NHI. Maintain private travel insurance."
