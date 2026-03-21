@@ -1,0 +1,63 @@
+{
+  "sourceBlog": {
+    "slug": "japan-arrival-checklist-2026",
+    "title": "Japan Arrival Checklist for Nomads 2026",
+    "category": "tips",
+    "country": "japan",
+    "tags": ["japan", "arrival", "checklist", "digital-nomad", "tips", "2026"]
+  },
+  "carouselType": "CHECKLIST",
+  "introSlide": {
+    "heading": "First time in Japan? Do these in order.",
+    "description": "Pre-flight prep, airport sequence, first week setup."
+  },
+  "slides": [
+    {
+      "heading": "1. Visa: know which door you're walking through",
+      "description": "74 countries enter visa-free. Earning ¥10M+? DN visa gets you 6 months."
+    },
+    {
+      "heading": "2. Get your eSIM before you board",
+      "description": "Airalo or Ubigi. Activate at the airport. Skip the SIM kiosk queue entirely."
+    },
+    {
+      "heading": "3. Download four apps now",
+      "description": "LINE, PayPay, Navitime, Tabelog. These four cover messaging, payment, transit, food."
+    },
+    {
+      "heading": "4. Medication? Carry a doctor's letter",
+      "description": "Some common drugs are controlled in Japan. A doctor's letter keeps things smooth."
+    },
+    {
+      "heading": "5. At the airport: Suica first, cash second",
+      "description": "iPhone 8+? Add Suica to Apple Wallet before landing. Then hit 7-Eleven ATM for ¥30–50K."
+    },
+    {
+      "heading": "6. Book 1–2 weeks only, not a full month",
+      "description": "Shinjuku is loud. Shimokitazawa is walkable. You won't know your vibe until you're there."
+    },
+    {
+      "heading": "7. Week 1: garbage schedule is not optional",
+      "description": "Japan takes separation seriously. Wrong bag, wrong day. Your neighbors will notice."
+    },
+    {
+      "heading": "8. Staying 90+ days? Ward office by day 3",
+      "description": "Resident registration unlocks NHI. DN visa holders skip this. Use private insurance instead."
+    }
+  ],
+  "endingSlide": {
+    "heading": "Enjoy your trip",
+    "description": "Follow @localnomad.club for more Japan tips"
+  },
+  "caption": "Japan is efficient, but only if you arrive in the right order.\n\nMost people land at Narita and figure it out as they go. That works, but it costs you two or three days. The smarter move: eSIM activated before you queue, Suica loaded in Apple Wallet before the gate, ¥30–50K pulled from a 7-Eleven ATM in arrivals. You're on the train to your neighborhood in under 90 minutes.\n\nThe first week is setup week. Test your WiFi, locate your garbage schedule (yes, really), and if you're staying long-term, get to the ward office by day three. DN visa holders: skip the ward office and make sure your private medical insurance is active.\n\nGet the order right and the rest of the trip runs itself.\n\nWhat's the first thing you do when you land in Japan? Tell us below 👇",
+  "hashtags": ["#digitalnomadjapan", "#tokyolife", "#nomadlife", "#remotework", "#localnomad"],
+  "legalFlags": [],
+  "images": {
+    "backend": "postnitro",
+    "templateId": "elu4v6xmbk06gq4jj1xkv1i2",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-03-25T19:00:00+09:00",
+  "totalSlides": 10
+}

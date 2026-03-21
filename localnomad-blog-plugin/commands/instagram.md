@@ -48,8 +48,8 @@ Skills loaded per mode:
 - ALL MODES: `skills/legal-bright-lines/SKILL_legal-bright-lines.md` (if country = taiwan or content mentions tax)
 
 Memory files — read before any generation step:
-- `memory/instagram-style-guide.md` (Gen's preferences — tone, template, anti-patterns, backend config)
-- `memory/instagram-performance.md` (what performs well — save rates, patterns)
+- `memory/skills/instagram/style-guide.md` (Gen's preferences — archetypes, visuals, template IDs, anti-patterns, backend config)
+- `memory/skills/instagram/performance.md` (what performs well — save rates, patterns)
 
 If either file is missing or empty, proceed without it. Preferences will be built from session feedback.
 
@@ -91,18 +91,22 @@ Read `memory/instagram-style-guide.md`. Apply all preferences. Memory overrides 
 
 Read `skills/instagram-repurpose/SKILL_instagram-repurpose.md`.
 
-### Step 5: Determine Carousel Type
+### Step 5: Determine Carousel Archetype
 
 ```
-Blog Category     → Carousel Type      → Slide Structure
+Blog Category     → Archetype          → Slide Structure
 ─────────────────────────────────────────────────────────
-tips, guides      → Type A (list)      → intro → point-per-slide → CTA
-comparisons       → Type B (compare)   → intro → side-by-side × N → verdict → CTA
-stories, news     → Type C (narrative) → intro → story beats × N → takeaway → CTA
-updates           → Type A or C        → judge by content
+tips, guides      → CHECKLIST          → hook → numbered list 1/slide → CTA
+comparisons       → VS_COMPARE         → hook → split-screen × 4-5 → verdict → CTA
+news, updates     → MYTH_BUSTER        → hook → ❌/✅ pairs × 3-5 → CTA
+stories           → PHOTO_STORY        → photo hook → place photos + overlay → CTA
+neighborhood      → PHOTO_STORY        → photo hook → place photos + overlay → CTA
 ```
 
-Override: if `memory/instagram-style-guide.md` specifies a preferred type for this category, use that.
+Alternatives: CHECKLIST alt MYTH_BUSTER, VS_COMPARE alt QUIZ, MYTH_BUSTER alt CHECKLIST.
+Default to CHECKLIST when uncertain.
+
+Override: if `memory/skills/instagram/style-guide.md` specifies a preferred archetype for this category, use that.
 
 ### Step 6: Generate Slides
 
@@ -111,7 +115,7 @@ Override: if `memory/instagram-style-guide.md` specifies a preferred type for th
 - **Words per slide**: ≤25 words (heading + description combined)
 - **Intro slide**: hook question or bold statement — NOT the blog title verbatim
 - **Content slides**: one idea per slide, no walls of text
-- **Ending slide**: CTA — default "Save this for your trip" (override with memory preference)
+- **Ending slide**: CTA — default "Enjoy your trip" (override with memory preference). NEVER "Save this for your trip".
 
 **Extraction rules**:
 - Compress, don't summarize. Each slide = one actionable takeaway.
@@ -152,33 +156,44 @@ If flags triggered: load `skills/legal-bright-lines/SKILL_legal-bright-lines.md`
 
 ### Step 9: Image Generation
 
-Read backend from `memory/instagram-style-guide.md`:
+Read backend from `memory/skills/instagram/style-guide.md`:
 ```
-backend: contentdrips   ← current default
-backend: html-png       ← future (Playwright + HTML templates)
+backend: postnitro      ← current default
 ```
 
-**Contentdrips flow:**
+**PostNitro Embed API flow:**
 
 ```bash
-# 1. Submit render job
-curl -X POST "https://generate.contentdrips.com/render?tool=carousel-maker" \
+# 1. Submit import job
+curl -X POST "https://embed-api.postnitro.ai/post/initiate/import" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $CONTENTDRIPS_API_KEY" \
-  -d '{ ... }'   # payload from slide content + templateId
+  -H "embed-api-key: $POSTNITRO_EMBED_API_KEY" \
+  -d @payload.json   # { postType, templateId, brandId, responseType, slides }
 
-# 2. Poll until status = "done" (timeout: 60s)
-curl -H "Authorization: Bearer $CONTENTDRIPS_API_KEY" \
-  "https://generate.contentdrips.com/status/[job_id]"
+# 2. Poll status (every 5s, timeout 60s)
+curl "https://embed-api.postnitro.ai/post/status/[embedPostId]" \
+  -H "embed-api-key: $POSTNITRO_EMBED_API_KEY"
 
-# 3. Download PNGs
+# 3. On COMPLETED: get output URLs
+curl "https://embed-api.postnitro.ai/post/output/[embedPostId]" \
+  -H "embed-api-key: $POSTNITRO_EMBED_API_KEY"
+
+# 4. Download PNGs
 mkdir -p public/images/instagram/[slug]
-for i in "${!urls[@]}"; do
-  curl -o "public/images/instagram/[slug]/slide-$(printf '%02d' $((i+1))).png" "${urls[$i]}"
-done
+# Download each URL from result.data array
 ```
 
-If `CONTENTDRIPS_API_KEY` is not set: stop and ask Gen to provide it.
+PostNitro slide type mapping:
+```
+introSlide   → { type: "starting_slide", heading, description }
+slides[n]    → { type: "body_slide", heading, description }
+endingSlide  → { type: "ending_slide", heading, description }
+```
+
+API constraints: min 3 slides (start+body+end), rate limit ~2 req/min.
+Config: brandId and templateId from style-guide. See `adapters.md` for full spec.
+
+If `POSTNITRO_EMBED_API_KEY` is not set: stop and ask Gen to provide it.
 
 Set `images.imageStatus`:
 - `"complete"` — all slides downloaded
@@ -202,7 +217,7 @@ Write to `content/instagram/draft/[YYYY-MM-DD]_[slug].json` conforming to `contr
 
 Present to Gen:
 1. **Source blog**: title + category + country
-2. **Carousel type**: A/B/C with reasoning
+2. **Archetype**: CHECKLIST/MYTH_BUSTER/VS_COMPARE/PHOTO_STORY/QUIZ with reasoning
 3. **Slide preview**:
    ```
    [1/8] INTRO: "Still googling what to do when you land in Tokyo?"
@@ -252,11 +267,11 @@ For each selected slug, run the full single-generator flow (Steps 1-11 above) se
 ```
 Batch complete: 5 posts processed
 
-  ✓ [slug-1]   → draft/2026-03-16_slug-1.json   (Type A, 8 slides)
-  ✓ [slug-2]   → draft/2026-03-16_slug-2.json   (Type C, 7 slides)
-  ⚠ [slug-3]   → draft/2026-03-16_slug-3.json   (Type B, imageStatus: failed)
-  ✓ [slug-4]   → draft/2026-03-16_slug-4.json   (Type A, 9 slides)
-  ✓ [slug-5]   → draft/2026-03-16_slug-5.json   (Type A, 7 slides)
+  ✓ [slug-1]   → draft/2026-03-16_slug-1.json   (CHECKLIST, 8 slides)
+  ✓ [slug-2]   → draft/2026-03-16_slug-2.json   (PHOTO_STORY, 7 slides)
+  ⚠ [slug-3]   → draft/2026-03-16_slug-3.json   (VS_COMPARE, imageStatus: failed)
+  ✓ [slug-4]   → draft/2026-03-16_slug-4.json   (MYTH_BUSTER, 9 slides)
+  ✓ [slug-5]   → draft/2026-03-16_slug-5.json   (CHECKLIST, 7 slides)
 
 Run /instagram review to approve, edit, or reject.
 ```
@@ -281,7 +296,7 @@ For each JSON in `draft/`, display:
 
 ```
 ─────────────────────────────────────────
-[slug-name]  Type: A  Slides: 8  Country: korea
+[slug-name]  Archetype: CHECKLIST  Slides: 8  Country: korea
 ─────────────────────────────────────────
 [1/8] INTRO: "Heading text here"
               "Description text"
@@ -350,9 +365,9 @@ Present schedule before moving files:
 ```
 Proposed schedule:
 
-  Mon 2026-03-17  → slug-1  (korea, Type A)
-  Tue 2026-03-18  → slug-2  (japan, Type C)
-  Thu 2026-03-20  → slug-3  (taiwan, Type B)
+  Mon 2026-03-17  → slug-1  (korea, CHECKLIST)
+  Tue 2026-03-18  → slug-2  (japan, PHOTO_STORY)
+  Thu 2026-03-20  → slug-3  (taiwan, VS_COMPARE)
 
 Approve? (yes / adjust)
 ```
@@ -418,7 +433,7 @@ Append to `memory/instagram-raw-log.md`:
 
 ```markdown
 ## [YYYY-MM-DD] — [slug] (PERFORMANCE)
-- Type: [A/B/C], Slides: [count], Country: [country]
+- Archetype: [CHECKLIST/MYTH_BUSTER/VS_COMPARE/PHOTO_STORY/QUIZ], Slides: [count], Country: [country]
 - Reach: [N] / Saves: [N] / Shares: [N] / Comments: [N]
 - Save rate: [saves/reach × 100]%
 - Gen notes: "[qualitative feedback]"
@@ -477,7 +492,7 @@ Other automation (daily posting to Instagram, Friday performance logging) = Phas
 
 | Error | Action |
 |-------|--------|
-| `CONTENTDRIPS_API_KEY` not set | Stop, ask Gen |
+| `POSTNITRO_EMBED_API_KEY` not set | Stop, ask Gen |
 | API returns error | Log error, show to Gen, suggest retry |
 | Job timeout (>60s) | Set imageStatus: "failed", write JSON to draft/ anyway, mark with ⚠️ in review |
 | Template not found | List available templates, ask Gen to pick |
@@ -489,11 +504,12 @@ Other automation (daily posting to Instagram, Friday performance logging) = Phas
 
 ## Image Backend — Swap Protocol
 
-Backend is configured in `memory/instagram-style-guide.md`:
+Backend is configured in `memory/skills/instagram/style-guide.md`:
 
 ```
-backend: contentdrips   ← current
-backend: html-png       ← future (Playwright + HTML templates)
+backend: postnitro      ← current default
+backend: playwright     ← future (local HTML templates)
+backend: canvas         ← zero-cost fallback
 ```
 
-Steps 1-8 (content + legal) and caption/hashtag generation are identical regardless of backend. Only Step 9 (image generation) changes per backend. When swapping backends, only Step 9 needs updating.
+Steps 1-8 (content + legal) and caption/hashtag generation are identical regardless of backend. Only Step 9 (image generation) changes per backend. When swapping backends, only Step 9 needs updating. See `adapters.md` for full backend specs.

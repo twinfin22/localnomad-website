@@ -1,0 +1,57 @@
+{
+  "sourceBlog": {
+    "slug": "korea-arc-phone-bank-catch-22-guide-2026",
+    "title": "Korea's ARC, Phone, Bank Loop: The Fix",
+    "category": "tips",
+    "country": "korea",
+    "tags": ["korea", "ARC", "bank-account", "phone", "digital-nomad", "2026"]
+  },
+  "carouselType": "MYTH_BUSTER",
+  "introSlide": {
+    "heading": "5 things everyone gets wrong about settling in Korea",
+    "description": "The ARC, phone, bank loop is real. This is the 4-week sequence."
+  },
+  "slides": [
+    {
+      "heading": "\u274c MYTH: You can open a bank account on day 1",
+      "description": "Reality: You need an ARC and a Korean phone number first. Expect 3-4 weeks."
+    },
+    {
+      "heading": "\u274c MYTH: Any SIM card works for banking",
+      "description": "eSIMs give data only, no Korean number. You need a physical prepaid SIM (+82 010)."
+    },
+    {
+      "heading": "\u2705 FACT: Mobile ARC works for banking now",
+      "description": "Since Jan 2025, the digital ARC on your phone is accepted. No plastic card needed."
+    },
+    {
+      "heading": "\u274c MYTH: Online banking works right away",
+      "description": "Identity verification (\ubcf8\uc778\uc778\uc99d) needs a postpaid plan. Prepaid won\u2019t cut it."
+    },
+    {
+      "heading": "\u274c MYTH: B-2 tourists can open a bank account",
+      "description": "No ARC, no account. Use WOWPASS instead: it\u2019s the practical workaround for short stays."
+    },
+    {
+      "heading": "The real sequence, week by week",
+      "description": "Day 1: prepaid SIM. Day 7: ARC apply. Day 14: mobile ARC. Day 21: bank. Day 28: postpaid."
+    }
+  ],
+  "endingSlide": {
+    "heading": "Which one surprised you?",
+    "description": "Comment below. Follow @localnomad.club"
+  },
+  "caption": "Most people land in Korea and assume they can sort out a bank account in the first week. That\u2019s not how it works.\n\nThe setup runs in a fixed sequence: get a physical prepaid SIM on day 1 (eSIM won\u2019t give you a Korean number), apply for your ARC within the first week, pick up your mobile ARC around day 14, then open a bank account around day 21. Postpaid phone, which unlocks full identity verification (\ubcf8\uc778\uc778\uc99d), comes last, around week 4.\n\nShort-stay on a B-2 visa? Skip the bank. WOWPASS covers most payment needs and doesn\u2019t require an ARC. And since Jan 2025, if you do have an ARC, the digital version on your phone is accepted at banks, no physical card required.\n\nWhich myth caught you off guard? Comment below \ud83d\udc47",
+  "hashtags": [
+    "#digitalnomadkorea", "#workcation", "#digitalnomadvisa", "#remoteworkasia", "#localnomad"
+  ],
+  "legalFlags": [],
+  "images": {
+    "backend": "postnitro",
+    "templateId": "elu4v6xmbk06gq4jj1xkv1i2",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-03-24T19:00:00+09:00",
+  "totalSlides": 8
+}

@@ -10,8 +10,8 @@ description: Transform LocalNomad blog posts into Instagram carousel content —
 **ALWAYS read these memory files first** (skip if missing/empty):
 
 ```bash
-cat memory/instagram-style-guide.md   # Gen's preferences, backend config, template IDs, anti-patterns
-cat memory/instagram-performance.md   # What performs well (save rates, reach patterns)
+cat memory/skills/instagram/style-guide.md   # Gen's preferences, archetypes, visuals, template IDs, anti-patterns
+cat memory/skills/instagram/performance.md   # What performs well (save rates, reach patterns)
 ```
 
 Memory overrides defaults below when they conflict. State which memory rules you applied.
@@ -33,17 +33,28 @@ If found: report "Already exists in [folder]/" and stop. Do not regenerate unles
 
 ---
 
-## Carousel Type Selection
+## Carousel Archetype Selection
 
-Choose based on blog category and content structure:
+Choose based on blog category, content structure, and style-guide mapping:
 
-| Type | Use When | Structure |
-|------|----------|-----------|
-| **A — List** | tips, guides, how-tos | intro → point-per-slide → CTA |
-| **B — Compare** | comparisons, country vs country | intro → side-by-side × N → verdict → CTA |
-| **C — Narrative** | stories, news, journeys | intro → story beats × N → takeaway → CTA |
+| Archetype | Use When | Structure | Slides |
+|-----------|----------|-----------|--------|
+| **CHECKLIST** | tips, guides, how-tos, checklists | hook → numbered list 1/slide → CTA | 8-10 |
+| **MYTH_BUSTER** | misconceptions, myth correction, news | hook → ❌ Myth / ✅ Fact pairs × 3-5 → CTA | 7-10 |
+| **VS_COMPARE** | comparisons, country vs country, data | hook → split-screen compare × 4-5 → verdict → CTA | 7-9 |
+| **PHOTO_STORY** | neighborhoods, city vibes, stories | photo hook → place photos + text overlay → CTA | 5-8 |
+| **QUIZ** | visa fit, city match, interactive | question hook → choices → swipe reveal → CTA | 5-7 |
 
-Default to Type A when uncertain.
+Default mapping (override with style-guide preferences):
+```
+tips, guides      → CHECKLIST (alt: MYTH_BUSTER)
+comparisons       → VS_COMPARE (alt: QUIZ)
+news, updates     → MYTH_BUSTER (alt: CHECKLIST)
+stories           → PHOTO_STORY
+neighborhood      → PHOTO_STORY (alt: VS_COMPARE)
+```
+
+Default to CHECKLIST when uncertain.
 
 ---
 
@@ -88,8 +99,8 @@ Total: **≤25 words per slide**. If you need more, compress harder.
 
 ### Optimal Length
 
-- Educational content (Type A/B): 7-10 content slides + intro + ending = **9-12 total**
-- Narrative content (Type C): 5-8 story beats + intro + ending = **7-10 total**
+- CHECKLIST / MYTH_BUSTER / VS_COMPARE: 7-10 content slides + intro + ending = **9-12 total**
+- PHOTO_STORY / QUIZ: 5-7 content slides + intro + ending = **7-9 total**
 - Schema enforces 6-11 total (intro + content + ending)
 
 ### Intro Slide (Hook — Must Stop the Scroll)
@@ -110,7 +121,7 @@ Before/After works well for stories/comparisons. Stakes hooks drive urgency on g
 
 ### Content Slide Patterns
 
-**Type A — List (tips, guides):**
+**CHECKLIST:**
 ```
 [2] heading:     "1. Get a SIM card at the airport"
     description: "Pre-order online → pick up at arrival counter"
@@ -118,7 +129,15 @@ Before/After works well for stories/comparisons. Stakes hooks drive urgency on g
     description: "Suica or Pasmo. Any station kiosk. ¥500 deposit."
 ```
 
-**Type B — Compare:**
+**MYTH_BUSTER:**
+```
+[2] heading:     "❌ You need cash everywhere"
+    description: "MYTH"
+[3] heading:     "✅ Cards work at most places"
+    description: "Small shops are the exception. WOWPASS covers the rest."
+```
+
+**VS_COMPARE:**
 ```
 [2] heading:     "Seoul 🇰🇷 vs Tokyo 🇯🇵"
     description: "Rent: $500-800 vs $700-1200/mo"
@@ -126,15 +145,22 @@ Before/After works well for stories/comparisons. Stakes hooks drive urgency on g
     description: "$8-12/meal vs $6-10/meal"
 ```
 
-Note: Contentdrips handles side-by-side layout via template. Slide text is for one side — template does the visual split.
+**PHOTO_STORY:**
+```
+[2] heading:     "Hongdae — the creative heart"
+    description: "Street art, indie cafes, live music every night"
+[3] heading:     "Yeonnam-dong — the quiet side"
+    description: "10 min walk from Hongdae, half the noise"
+```
 
-**Type C — Narrative:**
+**QUIZ:**
 ```
-[2] heading:     "Step 1: Open WeChat"
-    description: "You can't survive China without it."
-[3] heading:     "Step 2: Link your bank"
-    description: "International cards work — sometimes."
+[2] heading:     "You want to freelance remotely..."
+    description: "A) Korea  B) Japan  C) Taiwan"
+[3] heading:     "Answer: C — Taiwan"
+    description: "Gold Card: no employer needed, 3-year stay"
 ```
+Note: QUIZ must NEVER say "you qualify" — use "you may be able to" (행정사법).
 
 ### Ending Slide (CTA — Drives Saves)
 
@@ -142,16 +168,24 @@ The ending slide is the primary save driver. Make it feel worth saving.
 
 Default (override with memory preference):
 ```
-heading:     "Save this for your trip ✈️"
+heading:     "Enjoy your trip ✈️"
 description: "Follow @localnomad.club for more"
 ```
 
-Alternatives (use based on content type):
+**Double CTA strategy** (from style-guide):
+- Soft CTA mid-carousel (slide 3-4): sets value frame early
+- Hard CTA final slide: explicit save/share prompt
+
+Per-archetype CTA examples:
 ```
-"Found this useful? Share with a friend."
-"Bookmark this → you'll need it later."
-"Which tip surprised you? Comment below 👇"
+CHECKLIST:    "Save this checklist" + "Send to someone planning their trip"
+MYTH_BUSTER:  "Which myth surprised you? Comment below"
+VS_COMPARE:   "Tag someone deciding between these two"
+PHOTO_STORY:  "Save this for your trip"
+QUIZ:         "What did you get? Drop your answer below"
 ```
+
+**NEVER** use "Save this for your trip" as CTA (style-guide anti-pattern).
 
 ---
 
@@ -185,7 +219,7 @@ Numbered sections/essays      → Cut — no room
 
 [CTA — 1 line. Save/share/comment prompt. Specific, not generic.]
 
-#hashtags on final line (25-30 tags)
+#hashtags on final line (3-5 tags)
 ```
 
 Caption total (including hashtags): max 2,200 chars (Instagram limit).
@@ -204,37 +238,43 @@ Caption total (including hashtags): max 2,200 chars (Instagram limit).
 
 ## Hashtag Strategy
 
-### Structure (25-30 total)
+### 2026 Best Practice: 3-5 hashtags per post
+
+Instagram now treats 20-30 hashtags as a spam signal. Use **3-5 in the caption**.
+Keyword-rich captions generate ~30% more reach than hashtag-heavy posts.
+
+### Formula (pick 1 from each row, 5 total)
 
 ```
-Tier 1 — Mega (500K+ posts, 5 tags):
-  #digitalnomad #remotework #expat #travelasia #workabroad
+Slot           Purpose       Pool
+─────────────────────────────────────────────────────────────
+1 high-volume  reach         #digitalnomad | #remotework
+2 mid-tier     discovery     #digitalnomadsasia | #digitalnomadlife | #nomadlife
+3 country      targeting     see Default Sets below
+4 niche        topic match   #digitalnomadvisa | #coworking | #slowtravel | #expatlife
+5 brand        owned         #localnomad | #softlandinasia
+```
 
-Tier 2 — Mid (50K-500K, 10 tags):
-  Country-specific. Examples:
-  korea:  #seoullife #koreaexpat #livinginkorea #seoultravel #koreaguide
-          #digitalnomadinkorea #remoteworkkorea #korealife #expatkorea #seoulnomad
-  japan:  #tokyolife #japanexpat #livinginjapan #tokyotravel #japanguide
-          #digitalnomadjapan #remoteworkjapan #japanlife #expatjapan #tokyonomad
-  taiwan: #taiwanlife #taipeiexpat #livingintaiwan #taiwantravel #taipeiguide
-          #digitalnomadindia #remoteworktaiwan #taiwanlife #expattaiwan #taipeinomad
+### Default Sets (copy-paste ready)
 
-Tier 3 — Niche (5K-50K, 10 tags):
-  Topic-specific. Examples:
-  visa:   #digitalnomadvisa #remoteworkasia #nomadguide #expatvisa
-  work:   #workinkorea #workinjapan #workinasia #remotejobs
-  life:   #nomadlife #slowtravel #longstay #expatlife
-
-Tier 4 — Branded (3-5 tags):
-  #localnomad #localnomadclub #localnomad[country]
+```
+Korea visa:      #digitalnomadkorea #workcation #digitalnomadvisa #remoteworkasia #localnomad
+Korea lifestyle: #digitalnomadkorea #seoullife #nomadlife #remotework #localnomad
+Japan visa:      #digitalnomadjapan #workfromasia #digitalnomadvisa #remotework #localnomad
+Japan lifestyle: #digitalnomadjapan #tokyolife #nomadlife #remotework #localnomad
+Taiwan Gold Card:#taiwangoldcard #digitalnomadtaiwan #locationindependent #remotework #localnomad
+Taiwan general:  #digitalnomadtaiwan #taipeilife #nomadlife #remotework #localnomad
+Asia comparison: #digitalnomadsasia #remoteworkasia #digitalnomadlife #workfromanywhere #localnomad
+SEA general:     #digitalnomadthailand #remotework #nomadlife #workfromasia #localnomad
 ```
 
 ### Hashtag Rules
 
-- Rotate Tier 2-3 tags between posts to avoid shadowban patterns
+- Max 5 per post. Reels: 2-3 max
+- Place in caption (not first comment) for search indexing
+- Rotate mid-tier/niche tags between posts to avoid shadowban patterns
+- Never use: #travel (700M+), #backpacking (wrong audience), #follow/#like4like (spam risk)
 - If memory/instagram-performance.md shows specific hashtags correlating with reach → prioritize those
-- Drop any hashtag with <1K posts (too niche, no discovery value)
-- Mix tiers in every post — never all mega tags, never all niche tags
 
 ---
 
@@ -295,9 +335,9 @@ Output `suggestedPostTime` as ISO 8601 timestamp in KST.
 
 ## Image Generation
 
-Read `backend` from memory/instagram-style-guide.md. Delegate all image generation to `adapters.md`.
+Read `backend` from memory/skills/instagram/style-guide.md. Delegate all image generation to `adapters.md`.
 
-- Read `template_ids` from style-guide for the selected carousel type (type_a / type_b / type_c)
+- Read `template_ids` from style-guide for the selected archetype (checklist / myth_buster / vs_compare / photo_story / quiz)
 - Set `images.imageStatus` in output JSON:
   - `"complete"` — all PNGs downloaded to `public/images/instagram/[slug]/`
   - `"pending"` — generation in progress

@@ -1,0 +1,43 @@
+{
+  "sourceBlog": {
+    "slug": "taiwan-gold-card-2026-changes",
+    "title": "Taiwan Gold Card 2026: What It Gets You",
+    "category": "news",
+    "country": "taiwan",
+    "tags": ["taiwan", "gold card", "work permit", "tax benefits", "2026"]
+  },
+  "carouselType": "MYTH_BUSTER",
+  "introSlide": {
+    "heading": "5 things most people get wrong about Taiwan's Gold Card",
+    "description": "4-in-1 document, tax exemption, PR path. But not how you think."
+  },
+  "slides": [
+    {"heading": "❌ Gold Card = just a work visa", "description": "It's 4-in-1: work permit + visa + ARC + re-entry. One document."},
+    {"heading": "❌ Spouse gets automatic work rights", "description": "Separate MOL application required. Not automatic."},
+    {"heading": "❌ High earners get PR in 1 year", "description": "3 years continuous residence. HK/Macau exception only."},
+    {"heading": "❌ Tax break covers all income", "description": "50% exemption on salary ABOVE NT$3M only. First 5 years."},
+    {"heading": "❌ Pension starts on day 1", "description": "Tied to APRC status, not Gold Card employment."},
+    {"heading": "Quick facts", "description": "12 fields. USD 100-310. ~30 days. 100% online."}
+  ],
+  "endingSlide": {
+    "heading": "Which one surprised you?",
+    "description": "Not legal advice. 非法律建議。Verify with Gold Card Office or a licensed professional. Follow @localnomad.club"
+  },
+  "caption": "Taiwan's Gold Card sounds simple until you actually read the fine print.\n\nMost people assume it's just a work visa, that their spouse can work automatically, or that the tax break cuts their whole salary in half. None of those are true.\n\nThe Gold Card is a 4-in-1 document (work permit + visa + ARC + re-entry), the tax exemption only applies to salary above NT$3M, and your spouse still needs a separate MOL application. PR takes 3 years, not 1.\n\nStill one of Asia's best remote-work pathways. Just know what you're signing up for.\n\nWhich myth caught you off guard? Drop it in the comments.",
+  "hashtags": [
+    "#taiwangoldcard",
+    "#digitalnomadtaiwan",
+    "#locationindependent",
+    "#remotework",
+    "#localnomad"
+  ],
+  "legalFlags": ["taiwan-dual-language"],
+  "images": {
+    "backend": "postnitro",
+    "templateId": "elu4v6xmbk06gq4jj1xkv1i2",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-03-26T19:00:00+08:00",
+  "totalSlides": 8
+}

@@ -39,8 +39,8 @@
     },
     "carouselType": {
       "type": "string",
-      "enum": ["A", "B", "C"],
-      "description": "A = list, B = comparison, C = narrative"
+      "enum": ["CHECKLIST", "MYTH_BUSTER", "VS_COMPARE", "PHOTO_STORY", "QUIZ"],
+      "description": "Carousel archetype: CHECKLIST = numbered tips, MYTH_BUSTER = myth/fact pairs, VS_COMPARE = side-by-side comparison, PHOTO_STORY = photo-driven narrative, QUIZ = interactive question/answer"
     },
     "introSlide": {
       "type": "object",
@@ -78,10 +78,10 @@
     },
     "hashtags": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 30,
+      "minItems": 3,
+      "maxItems": 5,
       "items": { "type": "string", "pattern": "^#" },
-      "description": "20-30 hashtags, tiered by volume."
+      "description": "3-5 hashtags in caption. Mix: 1 high-volume + 1 mid-tier + 1 country + 1 niche + 1 brand."
     },
     "legalFlags": {
       "type": "array",

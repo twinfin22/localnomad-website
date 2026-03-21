@@ -1,0 +1,59 @@
+{
+  "sourceBlog": {
+    "slug": "japan-korea-taiwan-digital-nomad-visa-2026",
+    "title": "Korea, Japan & Taiwan Digital Nomad Visas",
+    "category": "comparisons",
+    "country": "global",
+    "tags": ["digital nomad visa", "asia visa comparison", "korea japan taiwan", "2026"]
+  },
+  "carouselType": "VS_COMPARE",
+  "introSlide": {
+    "heading": "3 Asian digital nomad visas. One clear winner for you.",
+    "description": "Korea, Japan, Taiwan. Same region, very different rules."
+  },
+  "slides": [
+    {
+      "heading": "How long can you stay?",
+      "description": "Korea 2 yr | Japan 6 mo hard cap | Taiwan 1–3 yr, renewable indefinitely."
+    },
+    {
+      "heading": "Income requirement",
+      "description": "Korea ~$64K/yr | Japan ~$68K/yr | Taiwan: qualify in 1 of 12 fields, income varies."
+    },
+    {
+      "heading": "Tax reality",
+      "description": "Korea 6–45% worldwide after 183 days. Japan 0% foreign income on DN visa. Taiwan 50% exemption on salary above NT$3M."
+    },
+    {
+      "heading": "ARC & housing",
+      "description": "Korea: full ARC. Japan: no Residence Card, guarantor needed. Taiwan: full ARC."
+    },
+    {
+      "heading": "Path to PR",
+      "description": "Korea 5+ years. Japan 10+ years. Taiwan 3 years. Taiwan wins by a wide margin."
+    },
+    {
+      "heading": "Best for",
+      "description": "Korea: 1–2 yr, simple process. Japan: 6 mo test drive, clean tax. Taiwan: high earner, long-term, PR track."
+    }
+  ],
+  "endingSlide": {
+    "heading": "Which visa fits you?",
+    "description": "非法律建議。Follow @localnomad.club"
+  },
+  "caption": "Korea, Japan, or Taiwan: the right digital nomad visa depends on what you're optimizing for.\n\nFor most remote workers who want a simple, livable base: Korea's F-1-D is the easiest entry point. Full ARC, two-year stay, city that works. Catch: after 183 days you're in the Korean tax system on worldwide income (6–45%).\n\nFor high earners who want tax efficiency: Japan's Digital Nomad visa gives you 6 months as a non-resident, 0% Japanese tax on foreign income. No Residence Card means housing is harder, but it's the cleanest short-term tax position in East Asia.\n\nFor long-term settlers: Taiwan's Gold Card gives 1–3 year stays, full ARC, and PR in just 3 years. Strongest long-term package if you qualify in one of 12 fields.\n\nWhich visa fits your situation? Drop your answer below.",
+  "hashtags": [
+    "#digitalnomadsasia", "#remoteworkasia", "#digitalnomadlife", "#workfromanywhere", "#localnomad"
+  ],
+  "legalFlags": [
+    "taiwan-dual-language"
+  ],
+  "images": {
+    "backend": "postnitro",
+    "templateId": "elu4v6xmbk06gq4jj1xkv1i2",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-03-28T18:00:00+09:00",
+  "totalSlides": 8
+}

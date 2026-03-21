@@ -1,0 +1,63 @@
+{
+  "sourceBlog": {
+    "slug": "seoul-vs-tokyo-cost-of-living-2026",
+    "title": "Seoul vs Tokyo Cost of Living 2026",
+    "category": "comparisons",
+    "country": "global",
+    "tags": ["seoul vs tokyo", "cost of living", "digital nomad", "korea japan"]
+  },
+  "carouselType": "VS_COMPARE",
+  "introSlide": {
+    "heading": "Seoul or Tokyo: which one actually costs less?",
+    "description": "Real 2026 prices. The answer depends on what you earn."
+  },
+  "slides": [
+    {
+      "heading": "$1,600 vs $1,200: monthly total",
+      "description": "Seoul vs Tokyo. The overlap is wider than you think."
+    },
+    {
+      "heading": "Rent: $550–900 vs $450–900",
+      "description": "Similar range. Completely different deposit systems."
+    },
+    {
+      "heading": "Food: nearly identical",
+      "description": "Seoul $375–600 vs Tokyo $335–535. Both under $7 per meal."
+    },
+    {
+      "heading": "Transport: Seoul $41 vs Tokyo $100",
+      "description": "Unlimited card vs route-specific passes. Not close."
+    },
+    {
+      "heading": "Coworking: cafe culture flips it",
+      "description": "Seoul cafes let you work all day. Tokyo enforces time limits."
+    },
+    {
+      "heading": "Healthcare: $110 vs $200",
+      "description": "Seoul NHIS mandatory. Tokyo DN visa: private only."
+    },
+    {
+      "heading": "Tax: this changes everything",
+      "description": "Korea taxes worldwide income after 183 days. Japan DN visa: 0%."
+    }
+  ],
+  "endingSlide": {
+    "heading": "Tag someone choosing between Seoul and Tokyo",
+    "description": "Follow @localnomad.club for more"
+  },
+  "caption": "Seoul is 15–25% cheaper overall. But for the right earner, Tokyo's tax structure changes everything.\n\nFor most remote workers ($50–100K/year): Seoul wins on budget, transport, healthcare, and cafe culture as free workspace. Unlimited transit for $41/month and nobody kicks you out after two hours.\n\nFor high earners ($100K+): Japan's Digital Nomad visa makes you a non-resident. Foreign income is taxed at 0%. Korea's 183-day rule triggers worldwide income tax at 6–45%. At $120K, that gap can be larger than the entire rent difference.\n\nNeither city is universally cheaper. Neighborhood choice matters more than city choice. Gangnam vs Hongdae is a 40–60% rent swing inside Seoul alone.\n\nSee the full breakdown at localnomad.club",
+  "hashtags": [
+    "#digitalnomadsasia", "#remoteworkasia", "#digitalnomadlife", "#workfromanywhere", "#localnomad"
+  ],
+  "legalFlags": [
+    "tax-general-info: tax section marked as general information only, not advice — matches blog Callout warning"
+  ],
+  "images": {
+    "backend": "postnitro",
+    "templateId": "elu4v6xmbk06gq4jj1xkv1i2",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-03-27T19:00:00+09:00",
+  "totalSlides": 9
+}
