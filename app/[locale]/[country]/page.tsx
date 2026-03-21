@@ -184,9 +184,11 @@ export default async function CountryPage({ params }: Props) {
           </Link>
         )}
 
-        <p className="mt-10 text-xs text-muted-foreground">
-          {tc('disclaimer')}
-        </p>
+        {!comparisonData && (
+          <p className="mt-10 text-xs text-muted-foreground">
+            {tc('disclaimer')}
+          </p>
+        )}
       </div>
     </main>
     </>

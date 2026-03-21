@@ -94,7 +94,7 @@
         "dependents": "Yes — spouse and dependent children can accompany. Parents are not eligible as DE Rantau dependents.",
         "taxImplications": "Non-residents (<182 days) pay flat 30% on Malaysian-sourced income. Foreign-sourced income is exempt under Malaysia's FSI exemption (extended to Dec 31, 2036 per Budget 2026). Consult a tax advisor.",
         "multipleEntry": "Yes — multiple-entry privileges included",
-        "recentChanges": "Launched October 2022 for tech/digital professionals. Non-tech eligibility added via post-launch expansion. Maximum stay extended to 24 months total. Income thresholds vary by field."
+        "recentChanges": "Launched October 2022 for tech/digital professionals. Non-tech eligibility expanded June 2024 (DE Rantau Elevate 2024). Maximum stay extended to 24 months total. Income thresholds vary by field (USD 24,000 tech / USD 60,000 non-tech)."
       }
     },
     {
@@ -129,6 +129,8 @@
     { "label": "Indonesia E-Visa Portal", "url": "https://evisa.imigrasi.go.id/" },
     { "label": "Malaysia DE Rantau (MDEC)", "url": "https://www.mdec.my/derantau" },
     { "label": "Philippine Bureau of Immigration", "url": "https://immigration.gov.ph/" },
-    { "label": "Philippine Official Gazette (EO 86)", "url": "https://www.officialgazette.gov.ph/2025/04/24/executive-order-no-86-s-2025/" }
+    { "label": "Philippine Official Gazette (EO 86)", "url": "https://www.officialgazette.gov.ph/2025/04/24/executive-order-no-86-s-2025/" },
+    { "label": "Philippine EO 86 Full Text (LawPhil)", "url": "https://lawphil.net/executive/execord/eo2025/eo_86_2025.html" },
+    { "label": "MDEC DE Rantau Non-Tech Expansion (BusinessToday)", "url": "https://www.businesstoday.com.my/2024/06/07/mdec-expands-de-rantau-programme-to-welcome-non-it-professionals/" }
   ]
 }
