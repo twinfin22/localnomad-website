@@ -114,7 +114,8 @@
       "description": "韓国の雇用主との現行の雇用契約書、または自営業の場合は事業者登録証",
       "tips": [
         "契約書には職種、給与、雇用期間を明記",
-        "事業主の場合は사업자등록증と最近の納税申告書を含める"
+        "事業主の場合は사업자등록증と最近の納税申告書を含める",
+        "すべての雇用契約書と給与明細を整理して保管すること — 更新のたびに所得を証明するために必要になる"
       ],
       "required": true
     },
@@ -147,7 +148,8 @@
       "description": "韓国語能力試験（TOPIK）の成績証明書または社会統合プログラム（KIIP）の修了証明書。申請の必須要件ではないが、最大20ポイントの加算。",
       "tips": [
         "KIIP 5段階修了で韓国語の20ポイントに加え10ポイントの加算点が追加される",
-        "TOPIKのスコアは試験日から2年間有効"
+        "TOPIKのスコアは試験日から2年間有効",
+        "KIIPは早めに開始すること — 無料の政府プログラムで全レベルの修了に6ヶ月以上かかる"
       ],
       "required": false
     },
@@ -350,7 +352,30 @@
     "e-2",
     "f-1-d"
   ],
-  "pathsTo": [],
+  "pathsTo": [
+    {
+      "type": "f-5",
+      "name": "永住権ビザ（F-5-16）",
+      "requirements": "F-2-7ステータスで3年以上継続的に居住し、一人当たりGNIの2倍以上の所得（韓国銀行の直近公表値に基づき年収約₩99,910,000）、およびKIIP 5段階修了が必要。犯罪歴なしおよび納税コンプライアンスが必要。",
+      "timeline": "審査期間4〜8週間",
+      "documents": [
+        "KIIP 5段階修了証明書",
+        "所得・納税証明書（3年分）",
+        "外国人登録証（ARC）",
+        "犯罪経歴証明書",
+        "F-2継続的な滞在の証明"
+      ],
+      "notes": "公開されているガイドラインによると、F-2-7を3年以上継続的に維持し、所得基準を満たし、KIIP 5段階を保有するF-2-7保持者はF-5-16永住権を申請できる。80ポイント基準はF-2-7の入要件であり、F-5-16の要件ではない。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://immikorea.com/en/f-5-16-green-card-change-from-f-2-7-visa-to-f-5-visa/",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
+    }
+  ],
   "pathsFrom": [
     {
       "type": "e-7",

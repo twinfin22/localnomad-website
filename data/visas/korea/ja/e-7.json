@@ -409,7 +409,37 @@
         "雇用契約書",
         "外国人登録証（ARC）"
       ],
-      "notes": "E-7からの最も一般的な長期居住への経路。F-2ビザは単一雇用主の制限を解除し、韓国のどの企業でも就労可能になる。F-2からF-5（永住権）を申請でき、無制限の就労権と韓国での長期的な安定が得られる。"
+      "notes": "E-7からの最も一般的な長期居住への経路。F-2ビザは単一雇用主の制限を解除し、韓国のどの企業でも就労可能になる。F-2からF-5（永住権）を申請でき、無制限の就労権と韓国での長期的な安定が得られる。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": "永住権への一般的な経路：E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
+    },
+    {
+      "type": "f-5",
+      "name": "永住権ビザ（一般 — F-5-1）",
+      "requirements": "E-7またはその他の対象資格で韓国に5年以上継続的に居住し、韓国語能力（KIIP 5段階修了）、および一人当たりGNIの2倍以上の所得（韓国銀行の直近公表値に基づき年収約₩99,910,000）が必要。犯罪歴なしおよび納税コンプライアンスが必要。",
+      "timeline": "審査期間4〜8週間",
+      "documents": [
+        "KIIP 5段階修了証明書",
+        "所得・納税証明書",
+        "外国人登録証（ARC）",
+        "犯罪経歴証明書",
+        "継続的な滞在の証明（入出国記録）"
+      ],
+      "notes": "長期E-7保持者向けの永住権への直接経路。公開されているガイドライン（F-5-1）では、5年間の対象資格での居住、KIIP 5段階、一人当たりGNIの2倍の所得が必要。E-7 → F-2 → F-5の経路も一般的に使用され、F-2で3年後にF-5の申請が可能。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://immikorea.com/en/f-5-1-general-permanent-residence-requirements/",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [

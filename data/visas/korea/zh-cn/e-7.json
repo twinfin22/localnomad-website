@@ -404,7 +404,37 @@
         "劳动合同",
         "外国人登陆证"
       ],
-      "notes": "从E-7出发最常见的长期居留途径。F-2签证解除了单一雇主限制，允许您为任何韩国公司工作。从F-2可进一步申请F-5（永久居留），获得不受限制的工作权利和在韩国的长期稳定身份。"
+      "notes": "从E-7出发最常见的长期居留途径。F-2签证解除了单一雇主限制，允许您为任何韩国公司工作。从F-2可进一步申请F-5（永久居留），获得不受限制的工作权利和在韩国的长期稳定身份。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://kowork.kr/en/visa/F-2-7",
+      "confidenceLevel": "high",
+      "ultimateDestination": "迈向永久居留权的常见路径：E-7 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
+    },
+    {
+      "type": "f-5",
+      "name": "永久居留签证（一般 — F-5-1）",
+      "requirements": "持E-7或其他合格身份在韩国连续居留5年以上，具备韩语能力（完成KIIP 5级），年收入达到人均GNI的2倍以上（约₩99,910,000/年，依韩国银行最新公布数据）。须无犯罪记录且税务合规。",
+      "timeline": "审批需4至8周",
+      "documents": [
+        "KIIP 5级结业证书",
+        "收入/纳税证明",
+        "外国人登陆证",
+        "无犯罪记录证明",
+        "连续居留证明（出入境记录）"
+      ],
+      "notes": "长期E-7持有者的直接永久居留路径。根据公布的指南（F-5-1），须持合格身份居留5年、完成KIIP 5级且收入达到人均GNI的2倍。E-7 → F-2 → F-5路径也被广泛采用，持F-2满3年后即可申请F-5。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://immikorea.com/en/f-5-1-general-permanent-residence-requirements/",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
+      "lastUpdated": "2026-03-18"
     }
   ],
   "pathsFrom": [

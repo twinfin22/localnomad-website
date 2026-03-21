@@ -275,7 +275,8 @@
       "tips": [
         "入境后90天内须完成ARC登记",
         "通过HiKorea预约出入境管理局",
-        "ARC是您在韩国的主要身份证件"
+        "ARC是您在韩国的主要身份证件",
+        "如企业停业，须在30天内向出入境管理局报告，否则有失去签证身份的风险"
       ]
     }
   ],
@@ -418,6 +419,30 @@
       "sourceUrl": "https://www.allvisakorea.com/en/post/f2-visa-f-2-5-f5-permanent-residency-f-5-5",
       "confidenceLevel": "high",
       "ultimateDestination": "迈向永久居留权的常见路径：D-8 → F-2 → F-5",
+      "lastUpdated": "2026-03-18"
+    },
+    {
+      "type": "f-5",
+      "name": "永久居留签证（投资者 — F-5-5）",
+      "requirements": "持D-8身份在韩国连续居留5年以上，期间维持50万美元以上的投资，并雇佣5名以上韩国籍全职员工。需完成KIIP 5级或具备同等韩语能力。须无犯罪记录且税务完全合规。",
+      "timeline": "审批需4至8周",
+      "documents": [
+        "FDI登记证明",
+        "投资证明（5年资本核实）",
+        "员工记录（5名以上韩国籍员工）",
+        "纳税记录（5年）",
+        "KIIP 5级结业证书",
+        "外国人登陆证",
+        "无犯罪记录证明"
+      ],
+      "notes": "长期D-8投资者的直接永久居留路径。根据公布的指南（F-5-5），须持D-8身份连续居留5年、维持50万美元以上投资并雇佣5名韩国籍员工。D-8 → F-2-5 → F-5路径是可提前申请的替代方案。",
+      "officiallyDocumented": true,
+      "mustExitCountry": false,
+      "nationalityDependent": false,
+      "nationalityNotes": null,
+      "sourceUrl": "https://www.allvisakorea.com/en/post/f2-visa-f-2-5-f5-permanent-residency-f-5-5",
+      "confidenceLevel": "high",
+      "ultimateDestination": null,
       "lastUpdated": "2026-03-18"
     }
   ],
