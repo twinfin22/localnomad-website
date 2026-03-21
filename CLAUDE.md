@@ -10,6 +10,7 @@
 1. **Never modify `components/ui/`** — shadcn/ui managed
 2. **`"use client"` only when needed** — hooks/browser APIs/interactivity
 3. **i18n SoT: `i18n/Visa i18n Glossary.txt`** — All visa/immigration term translations in `messages/*.json` must match this glossary. When adding or updating translations, check the glossary first. New terms go in the glossary before going into code.
+4. **No premature action on pending options** — After presenting A/B/C options, NEVER execute any option in the same turn. A confirmation question + tool call in one message = not asking. Wait for the user's explicit selection before acting. This applies especially to Approve-tier actions (data changes, published content edits).
 
 ## Visa Data Integrity Rules
 1. **Primary Source Gate** — No visa JSON may be published without at least ONE verified government source (gov website, official PDF, law database). If gov sources are blocked/unavailable, the visa JSON MUST have `"draft": true` and be excluded from production rendering. Training-data-only research is never sufficient for publication.

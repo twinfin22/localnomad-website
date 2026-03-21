@@ -1,33 +1,128 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { BookOpen, Printer } from 'lucide-react';
+import { BookOpen, Printer, Sparkles } from 'lucide-react';
 import { useLocalChecklist } from '@/hooks/use-local-checklist';
-import type { CountryChecklist } from '@/lib/types/checklist';
+import { VisaTierSelector } from './visa-tier-selector';
 import { ChecklistPhase } from './checklist-phase';
+import type { CountryChecklist, VisaTier } from '@/lib/types/checklist';
 
 interface ArrivalChecklistProps {
   data: CountryChecklist;
   country: string;
+  defaultTier?: VisaTier;
 }
 
-export function ArrivalChecklist({ data, country }: ArrivalChecklistProps) {
+export function ArrivalChecklist({ data, country, defaultTier = 'tourist' }: ArrivalChecklistProps) {
   const t = useTranslations('Checklist');
-  const storageKey = `localnomad:arrival:${country}`;
-  const { checked, toggle } = useLocalChecklist(storageKey);
+  const [tier, setTier] = useState<VisaTier>(defaultTier);
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [toastExiting, setToastExiting] = useState(false);
 
-  // Compute all item IDs for overall progress
-  const allItems = useMemo(
-    () => data.phases.flatMap((phase) => phase.items),
-    [data.phases]
-  );
-  const totalCount = allItems.length;
-  const completedCount = allItems.filter((item) => checked[item.id]).length;
-  const progress = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
+  // All items flat — for hook + gate label lookup
+  const allItems = useMemo(() => data.phases.flatMap((p) => p.items), [data.phases]);
+
+  const { checked, toggle, getItemState, newlyUnlocked, clearNewlyUnlocked, tierCounts } =
+    useLocalChecklist({ country, tier, items: allItems });
+
+  // Toast + scroll when gate unlocks
+  useEffect(() => {
+    if (newlyUnlocked.length === 0) return;
+
+    const count = newlyUnlocked.length;
+    setToastMsg(`${count} item${count > 1 ? 's' : ''} unlocked!`);
+    setToastExiting(false);
+    const exitTimer = setTimeout(() => setToastExiting(true), 2800);
+    const toastTimer = setTimeout(() => { setToastMsg(null); setToastExiting(false); }, 3000);
+
+    // Scroll to first newly unlocked item (give React a tick to render data-state)
+    const scrollTimer = setTimeout(() => {
+      const el = document.querySelector('[data-state="newly-unlocked"]');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 50);
+
+    // Clear after animation completes
+    const clearTimer = setTimeout(() => clearNewlyUnlocked(), 500);
+
+    return () => {
+      clearTimeout(exitTimer);
+      clearTimeout(toastTimer);
+      clearTimeout(scrollTimer);
+      clearTimeout(clearTimer);
+    };
+  }, [newlyUnlocked, clearNewlyUnlocked]);
+
+  const handleTierChange = useCallback((newTier: VisaTier) => {
+    setTier(newTier);
+  }, []);
+
+  // Compute gate → blocked item labels map
+  const unlocksMap = useMemo(() => {
+    const map: Record<string, string[]> = {};
+    allItems.forEach((item) => {
+      if (item.blockedBy) {
+        item.blockedBy.forEach((gateId) => {
+          if (!map[gateId]) map[gateId] = [];
+          map[gateId].push(item.label);
+        });
+      }
+    });
+    return map;
+  }, [allItems]);
+
+  // Filter phases by tier and compute auto-open per phase
+  const filteredPhases = useMemo(() => {
+    let prevPhaseDone = true;
+    return data.phases
+      .map((phase) => {
+        const tierItems = phase.items.filter((item) => item.visaTier.includes(tier));
+        if (tierItems.length === 0) return null;
+
+        const hasActionable = tierItems.some((i) => getItemState(i.id) === 'actionable');
+        const allDone = tierItems.every((i) => getItemState(i.id) === 'done');
+        const allBlocked = tierItems.every((i) => getItemState(i.id) === 'blocked');
+
+        const defaultOpen =
+          tier === 'tourist' ? true : prevPhaseDone && hasActionable;
+
+        if (!allDone) prevPhaseDone = false;
+
+        const phaseState: 'done' | 'active' | 'blocked' | 'upcoming' = allDone
+          ? 'done'
+          : hasActionable
+          ? 'active'
+          : allBlocked
+          ? 'blocked'
+          : 'upcoming';
+
+        return { phase: { ...phase, items: tierItems }, defaultOpen, phaseState };
+      })
+      .filter((p): p is NonNullable<typeof p> => p !== null);
+  }, [data.phases, tier, getItemState]);
+
+  // Overall progress: tier-filtered, all items in denominator (matches tier selector count)
+  const { totalCount, completedCount, progress } = useMemo(() => {
+    const tierItems = allItems.filter((i) => i.visaTier.includes(tier));
+    const done = tierItems.filter((i) => getItemState(i.id) === 'done');
+    const total = tierItems.length;
+    return {
+      totalCount: total,
+      completedCount: done.length,
+      progress: total > 0 ? (done.length / total) * 100 : 0,
+    };
+  }, [allItems, tier, getItemState]);
 
   return (
     <div>
+      {/* Toast notification */}
+      {toastMsg && (
+        <div className={`fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-medium text-white shadow-lg ${toastExiting ? 'toast-exit' : 'toast-enter'}`}>
+          <Sparkles className="h-4 w-4" />
+          {toastMsg}
+        </div>
+      )}
+
       {/* Sticky progress bar */}
       <div className="sticky top-[70px] z-30 border-b bg-background/95 backdrop-blur-sm">
         <div className="mx-auto max-w-3xl px-4 py-3">
@@ -48,20 +143,37 @@ export function ArrivalChecklist({ data, country }: ArrivalChecklistProps) {
         </div>
       </div>
 
-      {/* Phases */}
-      <div className="mx-auto max-w-3xl px-4 py-6 space-y-4">
-        {data.phases.map((phase, i) => (
-          <ChecklistPhase
-            key={phase.id}
-            phase={phase}
-            checked={checked}
-            onToggle={toggle}
-            defaultOpen={i === 0}
-          />
-        ))}
+      <div className="mx-auto max-w-3xl px-4 py-6 space-y-6">
+        {/* Visa tier selector (non-sticky) */}
+        <VisaTierSelector
+          country={country}
+          selectedTier={tier}
+          onTierChange={handleTierChange}
+          tierCounts={tierCounts}
+        />
+
+        {/* Phases */}
+        <div className="relative space-y-4">
+          {filteredPhases.map(({ phase, defaultOpen, phaseState }, index) => (
+            <ChecklistPhase
+              key={phase.id}
+              phase={phase}
+              checked={checked}
+              onToggle={toggle}
+              defaultOpen={defaultOpen}
+              getItemState={getItemState}
+              newlyUnlocked={newlyUnlocked}
+              allItems={allItems}
+              phaseIndex={index}
+              totalPhases={filteredPhases.length}
+              phaseState={phaseState}
+              unlocksMap={unlocksMap}
+            />
+          ))}
+        </div>
 
         {/* Footer actions */}
-        <div className="flex flex-wrap items-center gap-3 pt-4">
+        <div className="flex flex-wrap items-center gap-3 pt-4 print-hide">
           <a
             href={data.blogUrl}
             className="inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium text-foreground hover:bg-muted transition-colors"
@@ -76,6 +188,18 @@ export function ArrivalChecklist({ data, country }: ArrivalChecklistProps) {
           >
             <Printer className="h-4 w-4" />
             {t('print')}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (window.confirm('Reset all progress? This cannot be undone.')) {
+                localStorage.removeItem(`localnomad:checklist:${country}:${tier}`);
+                window.location.reload();
+              }
+            }}
+            className="inline-flex items-center gap-2 rounded-lg border border-destructive/30 px-4 py-2.5 text-sm font-medium text-destructive hover:bg-destructive/5 transition-colors"
+          >
+            Reset checklist
           </button>
         </div>
 

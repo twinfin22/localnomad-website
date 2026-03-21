@@ -2,13 +2,20 @@
 // Arrival Checklist Type Definitions
 // =============================================================================
 
+export type VisaTier = 'tourist' | 'long-term' | 'resident';
+
+export type ChecklistItemState = 'blocked' | 'actionable' | 'done';
+
 export interface ChecklistItem {
   id: string;
   label: string;
   description?: string;
   category: 'app' | 'document' | 'money' | 'transport' | 'admin' | 'connectivity' | 'safety' | 'housing' | 'food';
   required: boolean;
-  visaFilter?: string[];
+  visaTier: VisaTier[];
+  blockedBy?: string[];
+  isGate?: boolean;
+  estimatedWait?: string;
   tips?: string[];
   link?: string;
   linkLabel?: string;

@@ -467,6 +467,11 @@
     "readFullGuide": "阅读完整指南",
     "print": "打印清单",
     "lastUpdated": "最后验证: {date}",
-    "disclaimer": "基于已公布的要求。签证规则、费用和程序可能变更。请向最近的大使馆或领事馆核实最新信息。不构成法律或移民建议。"
+    "disclaimer": "基于已公布的要求。签证规则、费用和程序可能变更。请向最近的大使馆或领事馆核实最新信息。不构成法律或移民建议。",
+    "selectTier": "选择签证类型",
+    "tierTourist": "旅游",
+    "tierLongTerm": "长期居留",
+    "tierResident": "居民",
+    "tierItemCount": "{count}个项目"
   }
 }

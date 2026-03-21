@@ -1,27 +1,29 @@
 {
   "country": "japan",
   "title": "Japan Arrival Checklist for Digital Nomads (2026)",
-  "lastUpdated": "2026-03-13",
+  "lastUpdated": "2026-03-21",
   "blogUrl": "/en/blog/tips/japan-arrival-checklist-2026",
   "phases": [
     {
       "id": "pre-flight",
-      "title": "Pre-Flight",
+      "title": "Before You Fly",
       "timeframe": "1-2 weeks before",
       "description": "Most of this you can't fix once you land. Do it before you fly.",
       "items": [
         {
           "id": "visa-check",
           "label": "Confirm your visa type",
-          "description": "74 countries get visa-free tourist entry (90 days for most). DN visa (up to 6 months) requires ¥10M+ annual income and a non-Japanese employer.",
+          "description": "74 countries get visa-free tourist entry (90 days for most). DN visa (up to 6 months) requires ¥10M+ annual income and a non-Japanese employer. Work/resident visas require a Certificate of Eligibility (COE).",
           "category": "document",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Certificate of Eligibility (COE) is optional but speeds up DN visa processing — takes 1-3 months to obtain, start early",
-            "Most visitors enter visa-free; DN visa is for those wanting full 6-month compliance"
+            "Most visitors enter visa-free; DN visa is for those wanting full 6-month compliance",
+            "Work visa holders: COE must be issued before you apply at a Japanese consulate"
           ],
-          "link": "/en/japan/visa/digital-nomad-jp",
-          "linkLabel": "DN Visa details"
+          "link": "/en/blog/comparisons/japan-digital-nomad-visa-vs-tourist-2026",
+          "linkLabel": "Japan DN Visa vs Tourist Visa (2026)"
         },
         {
           "id": "esim",
@@ -29,6 +31,7 @@
           "description": "Ubigi, Airalo, or Mobal all work. Activate after landing. Skips the physical SIM kiosk queue at Narita.",
           "category": "connectivity",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Physical SIM kiosks exist at Narita and Haneda but lines can be long on busy arrival evenings",
             "Activate on airport WiFi first, then switch to eSIM"
@@ -40,6 +43,7 @@
           "description": "Four essential apps before you land:",
           "category": "app",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "LINE: messaging — Japan's WhatsApp, except everyone actually uses it",
             "PayPay: QR payments at restaurants, konbini, vending machines",
@@ -53,6 +57,7 @@
           "description": "Carry a doctor's letter in English listing each medication, dosage, and generic name. Some common drugs (pseudoephedrine, certain ADHD meds) are controlled in Japan.",
           "category": "document",
           "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
           "warnings": [
             "Some common medications including pseudoephedrine and certain ADHD drugs are controlled substances in Japan — check Ministry of Health import rules before packing"
           ],
@@ -65,6 +70,7 @@
           "description": "Passport (6+ months validity), visa approval if applicable, accommodation confirmation with address in Japanese, travel insurance proof, 2 passport photos.",
           "category": "document",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Print accommodation address in Japanese characters — taxi drivers and station staff may not read romaji"
           ]
@@ -75,12 +81,13 @@
           "description": "Neighborhoods feel different in person. Don't lock into a 3-month lease sight unseen.",
           "category": "housing",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Shinjuku is loud; Shimokitazawa is walkable; Koenji is cheap and eclectic",
             "Explore neighborhoods before committing to a longer-term rental"
           ],
-          "link": "/en/neighborhood/japan",
-          "linkLabel": "Japan neighborhood guide"
+          "link": "/en/blog/guides/japan-housing-digital-nomads-2026",
+          "linkLabel": "Japan Digital Nomad Housing: The Catch-22"
         },
         {
           "id": "bank-notify",
@@ -88,6 +95,7 @@
           "description": "Prevents card freezes at convenience store ATMs on arrival day.",
           "category": "money",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "warnings": [
             "A frozen card at a 7-Eleven ATM on day one can stall your entire arrival sequence"
           ]
@@ -95,8 +103,8 @@
       ]
     },
     {
-      "id": "day-1-airport",
-      "title": "Day 1: Airport",
+      "id": "day-0-airport",
+      "title": "Day 0: Airport",
       "timeframe": "Arrival day",
       "description": "Run this sequence in order. Each step sets up the next.",
       "items": [
@@ -105,7 +113,20 @@
           "label": "Clear immigration",
           "description": "Have passport, return/onward ticket info, and accommodation address ready. Visa-free entry gets a 90-day stamp. DN visa holders show visa and COE if applicable.",
           "category": "document",
-          "required": true
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "residence-card",
+          "label": "Receive Residence Card (在留カード) at immigration",
+          "description": "At 7 major airports (NRT, HND, KIX, FUK, NGO, CTS, HIJ), residence cards are issued at the immigration counter on Day 0. You will need this for ward office registration.",
+          "category": "document",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "Issued automatically at NRT/HND/KIX/FUK/NGO/CTS/HIJ — no separate queue",
+            "If arriving at a smaller airport, your card will be mailed to your registered address later"
+          ]
         },
         {
           "id": "activate-esim",
@@ -113,6 +134,7 @@
           "description": "Connect to free airport WiFi first, then activate eSIM. Send one LINE message to confirm it works before leaving the airport.",
           "category": "connectivity",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Physical SIM kiosks are in the arrivals hall if you didn't get an eSIM pre-flight"
           ]
@@ -123,6 +145,7 @@
           "description": "Pick the right option for your situation:",
           "category": "transport",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Apple Wallet Suica (iPhone 8+): 10-year validity, load ¥3,000 with Mastercard/Amex — best for most visitors",
             "Welcome Suica (physical card): 28-day validity, no deposit, non-refundable balance at expiry",
@@ -139,6 +162,7 @@
           "description": "7-Eleven ATMs accept most international cards and display English. Pull cash before leaving the airport.",
           "category": "money",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Small ramen shops, izakayas, temples, and street vendors are often cash-only",
             "7-Eleven ATMs are everywhere so you won't run out of options, but having cash from the start avoids friction"
@@ -150,6 +174,9 @@
           "description": "From Narita:",
           "category": "transport",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/japan-arrival-checklist-2026",
+          "linkLabel": "Japan Arrival Checklist for Nomads 2026",
           "tips": [
             "Narita → NEX: ¥3,250, ~60 min to Tokyo/Shinjuku/Shibuya",
             "Narita → Skyliner: ¥2,520, ~41 min to Ueno",
@@ -162,67 +189,44 @@
       ]
     },
     {
-      "id": "days-1-2",
-      "title": "Days 1–2: Get Your Bearings",
-      "timeframe": "Days 1–2",
-      "items": [
-        {
-          "id": "wifi-test",
-          "label": "Test WiFi speed at your accommodation",
-          "description": "25+ Mbps minimum for video calls. Verify before unpacking — you need to know if you need a backup plan.",
-          "category": "connectivity",
-          "required": true
-        },
-        {
-          "id": "local-walk",
-          "label": "Walk to nearest konbini, supermarket, and train station",
-          "description": "Orient yourself on foot. Knowing these three locations solves most day-to-day logistics.",
-          "category": "admin",
-          "required": true,
-          "link": "/en/blog/tips/japan-konbini-survival-guide-2026",
-          "linkLabel": "Japan konbini survival guide"
-        },
-        {
-          "id": "garbage-schedule",
-          "label": "Get garbage collection schedule",
-          "description": "Check the building notice board or ask your landlord. Japan takes garbage separation seriously — wrong bag on wrong day causes real friction with neighbors.",
-          "category": "admin",
-          "required": true,
-          "tips": [
-            "Combustible, non-combustible, recyclables, and large items all have separate collection days and bag colors"
-          ],
-          "link": "/en/blog/tips/japan-garbage-separation-guide-2026",
-          "linkLabel": "Japan garbage separation guide"
-        }
-      ]
-    },
-    {
-      "id": "days-2-3",
-      "title": "Days 2–3: Admin",
-      "timeframe": "Days 2–3",
-      "description": "For residence-eligible visa holders only (work visa, student visa, etc.). DN visa holders and tourists: skip this phase.",
+      "id": "days-1-3-ward",
+      "title": "Days 1–3: Ward Office",
+      "timeframe": "Days 1–3 (within 14 days required by law)",
+      "description": "Resident visa holders must register at the ward office (区役所/市役所). This single step unlocks NHI, ゆうちょ bank, and contract SIM.",
       "items": [
         {
           "id": "ward-registration",
-          "label": "Visit ward office for resident registration (住民届)",
-          "description": "Kuyakusho (区役所) resident registration requires a Residence Card (在留カード). Applies to work visas, student visas, and similar residence-eligible statuses.",
+          "label": "Register at ward office (住民登録)",
+          "description": "Bring your Residence Card and passport to the local ward office (区役所/市役所). Registration is legally required within 14 days of arrival. You will receive a 住民票 (juminhyo) which is required for banking and insurance.",
           "category": "admin",
           "required": true,
-          "visaFilter": ["work-visa", "student-visa", "residence-eligible"],
+          "visaTier": ["resident"],
+          "isGate": true,
+          "estimatedWait": "1-2 hours",
+          "tips": [
+            "Bring Residence Card + passport — both required",
+            "Some ward offices have English-speaking staff; call ahead if unsure",
+            "You'll receive a 住民票 (juminhyo) — keep several copies, needed for bank and insurance applications"
+          ],
           "warnings": [
-            "DN visa holders do NOT receive a Residence Card and cannot do ward registration",
+            "DN visa holders do NOT receive a Residence Card and cannot do ward registration — use private health insurance instead",
             "Short-term tourists are also ineligible for ward registration"
           ]
         },
         {
           "id": "nhi",
-          "label": "Enroll in National Health Insurance (NHI)",
-          "description": "Available at the ward office if eligible based on your visa type.",
+          "label": "Enroll in National Health Insurance (国民健康保険)",
+          "description": "Apply at the ward office — same visit as registration. NHI covers 70% of medical costs; premiums are income-based (first year is typically low).",
           "category": "admin",
           "required": true,
-          "visaFilter": ["work-visa", "student-visa", "residence-eligible"],
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "Premiums are calculated on previous year's income — first year abroad is often the cheapest",
+            "Apply on the same day as ward registration — no separate appointment needed"
+          ],
           "warnings": [
-            "DN visa holders are not eligible for NHI — rely on private travel/health insurance instead"
+            "DN visa holders are not eligible for NHI — maintain private travel or health insurance instead"
           ]
         },
         {
@@ -231,23 +235,54 @@
           "description": "Free, practical, and saves you from bin-day confusion for the rest of your stay.",
           "category": "admin",
           "required": false,
-          "visaFilter": ["work-visa", "student-visa", "residence-eligible"]
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"]
         }
       ]
     },
     {
-      "id": "days-3-5",
-      "title": "Days 3–5: Work Mode",
-      "timeframe": "Days 3–5",
+      "id": "week-1-2",
+      "title": "Week 1–2: Banking & SIM",
+      "timeframe": "Days 3–14",
+      "description": "Get banking and long-term connectivity sorted. Residents open ゆうちょ bank after ward registration; tourists and DN visa holders use international cards and prepaid SIMs.",
       "items": [
         {
-          "id": "coworking",
-          "label": "Test a coworking space with a day pass",
-          "description": "WeWork, Regus, or a local spot. Check WiFi speed and outlet availability before committing to a monthly plan.",
-          "category": "admin",
-          "required": false,
+          "id": "wifi-test",
+          "label": "Test WiFi speed at your accommodation",
+          "description": "25+ Mbps minimum for video calls. Verify before unpacking — you need to know if you need a backup plan.",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "yucho-bank",
+          "label": "Open ゆうちょ銀行 (Japan Post Bank) account",
+          "description": "Easiest Japanese bank for new residents — no 6-month wait, foreign-friendly. Bring Residence Card, passport, and your 住民票 to any post office branch.",
+          "category": "money",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
           "tips": [
-            "Monthly coworking runs ¥15,000–30,000 — worth vetting before committing"
+            "No minimum balance; free cash withdrawals at 7-Eleven ATMs nationwide",
+            "Required for salary transfer if working in Japan",
+            "Process takes about 30–60 minutes at a post office branch"
+          ],
+          "warnings": [
+            "Regular banks (SMBC, MUFG) typically require 6+ months of residence — start with ゆうちょ"
+          ]
+        },
+        {
+          "id": "contract-sim",
+          "label": "Switch to a contract SIM (Rakuten, IIJmio, or similar)",
+          "description": "Contract SIMs require resident registration. Rakuten Mobile is cheapest (¥3,278/mo unlimited). IIJmio for lower data needs.",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "Rakuten: ¥3,278/mo unlimited, requires Residence Card + bank account",
+            "IIJmio: from ¥858/mo for 2GB — good for WiFi-primary users",
+            "Tourists and DN visa holders: stick with prepaid SIM or eSIM"
           ]
         },
         {
@@ -256,32 +291,43 @@
           "description": "Link your international card and test it at a konbini. Once it works, you'll use it at restaurants, konbini, and vending machines everywhere.",
           "category": "app",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Test with a small konbini purchase first to confirm your card links correctly"
           ]
         },
         {
-          "id": "commute-test",
-          "label": "Run your commute route during rush hour",
-          "description": "Test the route once at peak time so you know what you're in for before a real deadline.",
-          "category": "transport",
-          "required": false
-        }
-      ]
-    },
-    {
-      "id": "days-5-7",
-      "title": "Days 5–7: Safety and Community",
-      "timeframe": "Days 5–7",
-      "items": [
+          "id": "local-walk",
+          "label": "Walk to nearest konbini, supermarket, and train station",
+          "description": "Orient yourself on foot. Knowing these three locations solves most day-to-day logistics.",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/japan",
+          "linkLabel": "Japan neighborhood guide"
+        },
+        {
+          "id": "garbage-schedule",
+          "label": "Get garbage collection schedule",
+          "description": "Check the building notice board or ask your landlord. Japan takes garbage separation seriously — wrong bag on wrong day causes real friction with neighbors.",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "Combustible, non-combustible, recyclables, and large items all have separate collection days and bag colors"
+          ],
+          "link": "/en/blog/tips/japan-garbage-separation-guide-2026",
+          "linkLabel": "Japan Garbage Rules: A Foreigner's Guide"
+        },
         {
           "id": "disaster-apps",
           "label": "Download Safety Tips and Yahoo! Bosai",
           "description": "Safety Tips is a multilingual government disaster alert app. Yahoo! Bosai adds earthquake early warnings. Both are essential in Japan.",
           "category": "safety",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "link": "/en/blog/tips/japan-earthquake-preparedness-guide-2026",
-          "linkLabel": "Japan earthquake preparedness guide"
+          "linkLabel": "Japan Earthquake Guide for Digital Nomads"
         },
         {
           "id": "evacuation-point",
@@ -289,8 +335,20 @@
           "description": "Your ward office has maps. Identify the hinanbasho nearest to your accommodation before you need it.",
           "category": "safety",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Evacuation points are typically parks, schools, or public facilities"
+          ]
+        },
+        {
+          "id": "coworking",
+          "label": "Test a coworking space with a day pass",
+          "description": "WeWork, Regus, or a local spot. Check WiFi speed and outlet availability before committing to a monthly plan.",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "Monthly coworking runs ¥15,000–30,000 — worth vetting before committing"
           ]
         },
         {
@@ -299,9 +357,56 @@
           "description": "Tokyo Meetup groups are active. Osaka has a smaller but friendlier scene.",
           "category": "admin",
           "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Language exchanges are a good entry point even if your Japanese is zero"
           ]
+        }
+      ]
+    },
+    {
+      "id": "month-1-plus",
+      "title": "Month 1+: Long-term Setup",
+      "timeframe": "Weeks 4–24",
+      "description": "For residents settling in long-term. My Number card and regular banking arrive later — neither is a blocker for daily life.",
+      "items": [
+        {
+          "id": "my-number",
+          "label": "Apply for My Number card (マイナンバーカード)",
+          "description": "My Number is assigned automatically at ward registration; the physical card takes 6–10 weeks. Used for tax filing, government services, and health insurance verification. Not a gate — get it when convenient.",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "estimatedWait": "6-10 weeks",
+          "tips": [
+            "Apply online at myna.go.jp after receiving your notification letter",
+            "Card is useful but not essential in first months — services work with the number alone",
+            "Required for e-Tax filing from 2026"
+          ],
+          "link": "https://www.kojinbango-card.go.jp/en/",
+          "linkLabel": "My Number Card portal"
+        },
+        {
+          "id": "regular-bank",
+          "label": "Open a regular bank account (SMBC / MUFG)",
+          "description": "Regular banks require 6+ months of documented residence. Optional — ゆうちょ handles most everyday needs.",
+          "category": "money",
+          "required": false,
+          "visaTier": ["resident"],
+          "estimatedWait": "6+ months residence",
+          "tips": [
+            "SMBC and MUFG have English online banking interfaces",
+            "Required for some employer salary transfers that don't accept ゆうちょ"
+          ]
+        },
+        {
+          "id": "commute-test",
+          "label": "Run your commute route during rush hour",
+          "description": "Test the route once at peak time so you know what you're in for before a real deadline.",
+          "category": "transport",
+          "required": false,
+          "visaTier": ["long-term", "resident"]
         }
       ]
     }

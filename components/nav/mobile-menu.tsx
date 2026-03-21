@@ -179,6 +179,21 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
                 {t('blog')}
               </Link>
 
+              {/* Checklist */}
+              {selected.checklistPath ? (
+                <Link
+                  href={selected.checklistPath as Parameters<typeof Link>[0]['href']}
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground transition-colors hover:text-foreground/80"
+                >
+                  {t('checklist')}
+                </Link>
+              ) : (
+                <span className="text-base font-medium text-muted-foreground/50 cursor-not-allowed">
+                  {t('checklist')}
+                </span>
+              )}
+
               {/* Discord */}
               <a
                 href="https://discord.gg/uc2eNKVF3V"

@@ -12,6 +12,7 @@ export type CountryConfig = {
   nameKey: string;
   visaPath: string;
   neighborhoodPath?: string;
+  checklistPath?: string;
   guidePath?: string;
 };
 
@@ -22,6 +23,7 @@ export const COUNTRIES: CountryConfig[] = [
     nameKey: 'countryJapan',
     visaPath: '/japan',
     neighborhoodPath: '/neighborhood/japan',
+    checklistPath: '/japan/checklist',
     guidePath: '/blog/guides/japan-ultimate-digital-nomad-guide',
   },
   {
@@ -30,6 +32,7 @@ export const COUNTRIES: CountryConfig[] = [
     nameKey: 'countryKorea',
     visaPath: '/korea',
     neighborhoodPath: '/neighborhood/korea',
+    checklistPath: '/korea/checklist',
     guidePath: '/blog/guides/korea-ultimate-digital-nomad-guide',
   },
   {
@@ -38,6 +41,7 @@ export const COUNTRIES: CountryConfig[] = [
     nameKey: 'countryTaiwan',
     visaPath: '/taiwan',
     neighborhoodPath: '/neighborhood/taiwan',
+    checklistPath: '/taiwan/checklist',
     guidePath: '/blog/guides/taiwan-ultimate-digital-nomad-guide',
   },
   {
@@ -46,6 +50,7 @@ export const COUNTRIES: CountryConfig[] = [
     nameKey: 'countrySEA',
     visaPath: '/southeast-asia',
     neighborhoodPath: undefined,
+    checklistPath: undefined,
     guidePath: undefined,
   },
 ];

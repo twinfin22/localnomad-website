@@ -1,7 +1,7 @@
 {
   "country": "korea",
   "title": "Korea Arrival Checklist for Travelers & Digital Nomads (2026)",
-  "lastUpdated": "2026-03-13",
+  "lastUpdated": "2026-03-21",
   "blogUrl": "/en/blog/tips/korea-arrival-checklist-2026",
   "phases": [
     {
@@ -16,23 +16,65 @@
           "description": "B-2 visa-free covers 106+ countries for up to 90 days. F-1-D gives up to 2 years but requires ₩88M+ (~$64K) annual income proof. Apply at your nearest Korean embassy 2–4 weeks before departure.",
           "category": "document",
           "required": true,
+          "visaTier": ["tourist"],
           "tips": [
-            "F-1-D applicants: do not book non-refundable flights until your visa clears. Processing takes 2–4 weeks and embassies do not rush."
+            "Visa-free travelers from eligible countries get 90 days automatically — no application needed.",
+            "K-ETA may be required for some nationalities — check the official K-ETA site before departure."
           ],
-          "link": "/en/korea/visa/f-1-d",
-          "linkLabel": "F-1-D Visa Details"
+          "link": "/en/blog/comparisons/korea-f1d-workation-visa-do-you-need-it-2026",
+          "linkLabel": "Korea F-1-D Visa: Do You Really Need It?"
+        },
+        {
+          "id": "visa-decision-longterm",
+          "label": "Apply for your long-term visa (F-1-D, D-10, or H-1)",
+          "description": "Long-term visas require application at your nearest Korean embassy or consulate before departure. F-1-D requires ₩88M+ annual income proof. D-10 requires job seeker eligibility. Apply 2–4 weeks before planned departure.",
+          "category": "document",
+          "required": true,
+          "visaTier": ["long-term"],
+          "tips": [
+            "F-1-D applicants: do not book non-refundable flights until your visa clears. Processing takes 2–4 weeks.",
+            "D-10 (job seeker) requires a degree from a top-tier university or 1 year of work experience."
+          ],
+          "link": "/en/blog/guides/korea-f1d-workation-visa-2026",
+          "linkLabel": "Korea F-1-D Workation: 2-Year Visa Guide"
+        },
+        {
+          "id": "visa-decision-resident",
+          "label": "Confirm your resident visa category (E-7, D-8, F-2, F-5, or F-6)",
+          "description": "Resident visa holders already in Korea should verify their ARC expiry and update address if relocating. New arrivals should apply at their nearest Korean embassy with full documentation.",
+          "category": "document",
+          "required": true,
+          "visaTier": ["resident"],
+          "tips": [
+            "E-7 (skilled employment) requires employer sponsorship and Ministry of Labor quota approval.",
+            "F-2 (long-term residency) applicants: confirm point system score before applying.",
+            "F-6 (spousal) requires notarized marriage certificate — allow extra time for apostille."
+          ]
         },
         {
           "id": "k-eta-check",
-          "label": "Check K-ETA requirement (B-2 travelers)",
-          "description": "K-ETA may be required for B-2 visa-free travelers. Check the current eligible country list before departure.",
+          "label": "Check K-ETA requirement (visa-free travelers)",
+          "description": "K-ETA may be required for B-2 visa-free travelers from certain countries. Check the current eligible country list before departure.",
           "category": "document",
           "required": false,
-          "visaFilter": ["b-2"],
+          "visaTier": ["tourist"],
           "link": "https://www.k-eta.go.kr/",
           "linkLabel": "K-ETA Official Site",
           "warnings": [
             "Requirements change — verify on the official K-ETA site before every trip, not just once."
+          ]
+        },
+        {
+          "id": "download-apps-tourist",
+          "label": "Download Naver Map and Papago",
+          "description": "Two essential apps before you board:",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist"],
+          "tips": [
+            "Naver Map: Korean transit routing and walking directions, better than Google Maps",
+            "Papago: Naver's translator, beats Google Translate for Korean ↔ English",
+            "Download while on home WiFi"
           ]
         },
         {
@@ -41,8 +83,9 @@
           "description": "Three essential apps before you board:",
           "category": "app",
           "required": true,
+          "visaTier": ["long-term", "resident"],
           "tips": [
-            "KakaoTalk: messaging — Korea runs on this, not WhatsApp or Telegram",
+            "KakaoTalk: messaging — Korea runs on this, not WhatsApp or Telegram. Landlords, coworkers, and everyone will contact you here.",
             "Naver Map: Korean transit routing and walking directions, better than Google Maps",
             "Papago: Naver's translator, beats Google Translate for Korean ↔ English",
             "Download while on home WiFi — some features lock behind a Korean phone number after arrival"
@@ -51,9 +94,10 @@
         {
           "id": "sim-plan",
           "label": "Pre-buy a Korean eSIM or plan for airport SIM pickup",
-          "description": "Options: Airalo or eSIMDB for eSIM before departure, or pick up a SIM at Incheon arrival hall. You will upgrade to a Korean postpaid number later, but you need data from minute one.",
+          "description": "Options: Airalo or eSIMDB for eSIM before departure, or pick up a SIM at Incheon arrival hall. Long-term and resident visa holders will upgrade to a Korean postpaid number after ARC — but you need data from minute one.",
           "category": "connectivity",
-          "required": true
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
         },
         {
           "id": "documents-pack",
@@ -61,9 +105,10 @@
           "description": "Gather these before departure:",
           "category": "document",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "Passport (6+ months validity)",
-            "Visa approval letter (if F-1-D)",
+            "Visa approval letter (if F-1-D, D-10, E-7, or other non-visa-free)",
             "Insurance documents",
             "Accommodation address written in Korean (한글)",
             "2 passport photos (3.5×4.5cm, white background — Korean standard, NOT US size)"
@@ -78,6 +123,7 @@
           "description": "Korea is technically 80%+ cashless, but that means Korean payment methods. Your foreign card will be rejected at small restaurants, kiosks, street food stalls, and delivery apps. Cash is essential backup.",
           "category": "money",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "warnings": [
             "Apple Pay launched March 2023 with Hyundai Card only — do not count on it working.",
             "Samsung Pay requires a Korean phone and Korean bank card — not available until after ARC + bank setup."
@@ -86,17 +132,20 @@
       ]
     },
     {
-      "id": "day-1-airport",
-      "title": "Day 1: Incheon Airport",
-      "timeframe": "Upon landing",
+      "id": "day-0-airport",
+      "title": "Day 0: Airport",
+      "timeframe": "Upon landing at Incheon",
       "description": "After clearing customs, hit the arrivals hall in this order. Do not skip the WOWPASS step.",
       "items": [
         {
           "id": "tourist-sim",
-          "label": "Get a tourist SIM at Incheon",
+          "label": "Get a tourist SIM at Incheon (or activate eSIM)",
           "description": "KT or LG U+ counters in the arrivals hall. 30-day data SIM runs ₩33,000–55,000. Or activate your pre-purchased eSIM now.",
           "category": "connectivity",
-          "required": true
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/korea-arrival-checklist-2026",
+          "linkLabel": "Korea Arrival Checklist for Nomads 2026"
         },
         {
           "id": "wowpass-card",
@@ -104,10 +153,13 @@
           "description": "WOWPASS works as a prepaid payment card (accepted anywhere T-money or credit cards work), a transit card, and a foreign currency exchange machine. Card costs ₩6,000. Load with cash or your foreign card at WOWPASS kiosks. Better exchange rates than airport currency counters.",
           "category": "money",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "This is your main card for the first week. Works at most shops and all transit.",
             "Way better exchange rates than the airport currency counters."
-          ]
+          ],
+          "link": "/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026",
+          "linkLabel": "Korea Cards: WOWPASS vs T-money vs Cashbee"
         },
         {
           "id": "transport-to-seoul",
@@ -115,26 +167,32 @@
           "description": "WOWPASS and T-money work on all options:",
           "category": "transport",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "AREX All-Stop: ₩4,750, ~60 min to Seoul Station",
             "AREX Express: ₩11,000, ~43 min (more space for luggage)",
             "Limousine Bus: ₩15,000–18,000, 60–90 min door-to-door to major areas"
-          ]
+          ],
+          "link": "/en/blog/tips/korea-arrival-checklist-2026",
+          "linkLabel": "Korea Arrival Checklist for Nomads 2026"
         }
       ]
     },
     {
-      "id": "days-1-2-settle",
-      "title": "Days 1–2: Settle In",
-      "timeframe": "First 1–2 days",
-      "description": "Get oriented. Learn your neighborhood before diving into admin tasks.",
+      "id": "days-1-3-settle",
+      "title": "Days 1–3: Settle In",
+      "timeframe": "First 1–3 days",
+      "description": "Get oriented. Learn your neighborhood before diving into admin tasks. Long-term and resident visa holders: book your immigration office appointment ASAP.",
       "items": [
         {
           "id": "neighborhood-orientation",
           "label": "Walk your neighborhood and find key spots",
           "description": "Find the nearest subway station (memorize the exit number — Korean addresses are exit-number-dependent), convenience store (CU, GS25), pharmacy (약국), and a few restaurants.",
           "category": "admin",
-          "required": true
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/korea",
+          "linkLabel": "Korea Neighborhood Guide"
         },
         {
           "id": "kakaotalk-setup",
@@ -142,8 +200,9 @@
           "description": "KakaoTalk is your primary communication channel in Korea. Set it up now — landlords, coworkers, and everyone else will contact you here, not via SMS or email.",
           "category": "app",
           "required": true,
+          "visaTier": ["long-term", "resident"],
           "warnings": [
-            "KakaoTaxi and delivery apps (Baemin, Coupang Eats) require Korean 본인인증 (identity verification tied to a postpaid plan). These are NOT available until after the postpaid upgrade in Days 5+. Flag taxis on the street for now."
+            "KakaoTaxi and delivery apps (Baemin, Coupang Eats) require Korean 본인인증 (identity verification tied to a postpaid plan). These are NOT available until after ARC + postpaid upgrade. Flag taxis on the street for now."
           ]
         },
         {
@@ -152,6 +211,7 @@
           "description": "Three layers to cover every situation:",
           "category": "money",
           "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
             "WOWPASS: your main card — works at most shops and all transit",
             "Cash ₩50,000–100,000: for small restaurants, traditional markets, and Korean-card-only spots",
@@ -161,32 +221,50 @@
         },
         {
           "id": "wifi-test",
-          "label": "Test accommodation WiFi",
+          "label": "Test accommodation WiFi speed",
           "description": "Korea's standard is 1 Gbps fiber. If you are getting under 100 Mbps consistently, something is wrong with the setup, not the country. Ask your host to check.",
           "category": "connectivity",
-          "required": false
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "immigration-office-booking",
+          "label": "Book immigration office appointment (Hi Korea)",
+          "description": "Book your ARC appointment at HiKorea.go.kr immediately — slots fill fast, especially in Seoul. F-1-D visa holders must apply within 7 days of arrival. Bring all required documents.",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "link": "https://www.hikorea.go.kr/",
+          "linkLabel": "Hi Korea Appointment Booking",
+          "tips": [
+            "Seoul Immigration Office (Seoul Station area) is most convenient for most neighborhoods.",
+            "Required docs: passport, visa, 2 passport photos (3.5×4.5cm), accommodation proof, application fee ₩30,000"
+          ],
+          "warnings": [
+            "F-1-D visa holders: the 7-day deadline is strict. Book immediately on Day 1 — do not wait."
+          ]
         }
       ]
     },
     {
-      "id": "days-2-5-arc-phone",
-      "title": "Days 2–5: ARC + Phone",
-      "timeframe": "Days 2–5 (F-1-D: within 7 days of arrival)",
-      "description": "Korea has a strict dependency chain: ARC → phone → bank. Each step unlocks the next. Do not skip or reorder.",
+      "id": "week-1-4-admin",
+      "title": "Week 1–4: ARC Application",
+      "timeframe": "Within 7–14 days of arrival",
+      "description": "Korea's dependency chain starts here: ARC unlocks phone, phone unlocks bank, bank unlocks everything else. This is the critical path for long-term and resident visa holders.",
       "items": [
         {
           "id": "arc-application",
           "label": "Apply for ARC (Alien Registration Card) at immigration office",
-          "description": "Apply at the immigration office (출입국사무소). For F-1-D visa holders, apply within 7 days of arrival. For B-2 or others, within 90 days. The physical card takes 2–3 weeks, but Mobile ARC activates same-day and banks accept the digital version.",
+          "description": "Apply at the immigration office (출입국사무소) on your booked appointment date. For F-1-D visa holders, apply within 7 days of arrival. Bring passport, visa, 2 photos (3.5×4.5cm), accommodation proof, and ₩30,000 fee.",
           "category": "admin",
           "required": true,
-          "visaFilter": ["f-1-d"],
+          "visaTier": ["long-term", "resident"],
           "tips": [
             "Activate Mobile ARC immediately after applying — it is accepted by banks for account opening.",
             "Full step-by-step is in the ARC → Phone → Bank guide."
           ],
           "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
-          "linkLabel": "ARC → Phone → Bank: Breaking Korea's Catch-22",
+          "linkLabel": "Korea's ARC → Phone → Bank Loop: The Fix",
           "warnings": [
             "F-1-D visa holders must apply within 7 days of arrival — do not delay.",
             "ARC is required before you can get a postpaid phone plan or open a bank account."
@@ -198,36 +276,55 @@
           "description": "After submitting your ARC application, activate the Mobile ARC (디지털 외국인등록증) on your phone. Banks accept this digital version — you do not need to wait for the physical card.",
           "category": "app",
           "required": true,
+          "visaTier": ["long-term", "resident"],
           "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
-          "linkLabel": "ARC → Phone → Bank Guide"
+          "linkLabel": "Korea's ARC → Phone → Bank Loop: The Fix"
+        },
+        {
+          "id": "arc-received",
+          "label": "Receive physical ARC card (2–4 week wait)",
+          "description": "After submitting your application, the physical ARC card arrives by mail in 2–4 weeks. Mobile ARC is already active and accepted by banks, but the physical card is required for some services. Mark this complete when your physical card arrives.",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "isGate": true,
+          "estimatedWait": "2-4 weeks",
+          "tips": [
+            "You can use Mobile ARC for bank account opening while waiting for the physical card.",
+            "Physical ARC is required for some government services and contract renewals."
+          ]
         }
       ]
     },
     {
-      "id": "days-5-plus-bank-postpaid",
-      "title": "Days 5+: Bank + Postpaid Unlock",
-      "timeframe": "After ARC application (Day 5+)",
-      "description": "With ARC in hand, you can open a bank account and upgrade to postpaid. The postpaid phone is the real key to living in Korea — it unlocks nearly every Korean app and service.",
+      "id": "after-arc-full-setup",
+      "title": "After ARC: Full Setup",
+      "timeframe": "Once ARC card is received",
+      "description": "With ARC confirmed, unlock the full Korean resident experience: bank account, contract SIM, health insurance, and delivery apps.",
       "items": [
         {
           "id": "bank-account",
           "label": "Open a Korean bank account (Hana, Shinhan, or KB Kookmin)",
-          "description": "With ARC (or Mobile ARC) and a prepaid SIM, walk into Hana Bank, Shinhan, or KB Kookmin. Staff accept prepaid SIM numbers at this stage.",
+          "description": "With Mobile ARC and a prepaid SIM, walk into Hana Bank, Shinhan, or KB Kookmin. Staff accept Mobile ARC for account opening — you do not need the physical card.",
           "category": "money",
           "required": true,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
           "tips": [
             "Hana Bank and Shinhan are generally the most foreigner-friendly.",
-            "Bring your passport, ARC (or Mobile ARC), and prepaid SIM."
+            "Bring your passport, Mobile ARC or physical ARC, and your prepaid SIM."
           ],
           "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
-          "linkLabel": "ARC → Phone → Bank Guide"
+          "linkLabel": "Korea's ARC → Phone → Bank Loop: The Fix"
         },
         {
           "id": "postpaid-phone-upgrade",
           "label": "Upgrade to a postpaid phone plan (KT, SKT, or LG U+)",
-          "description": "Requires ARC + Korean bank account. This single upgrade unlocks:",
+          "description": "Requires ARC + Korean bank account. This single upgrade unlocks nearly every Korean app and service that requires 본인인증 (identity verification).",
           "category": "connectivity",
           "required": true,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
           "tips": [
             "Kakao Pay, Naver Pay, Samsung Pay",
             "KakaoTaxi (finally)",
@@ -240,11 +337,31 @@
           ]
         },
         {
+          "id": "nhis-enrollment",
+          "label": "Enroll in National Health Insurance (NHIS)",
+          "description": "Resident visa holders (E-7, D-8, F-2, F-5, F-6) are required to enroll in NHIS within the first month. Monthly premiums are income-based. NHIS covers 60–80% of medical costs.",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["arc-received"],
+          "link": "https://www.nhis.or.kr/",
+          "linkLabel": "NHIS Official Site",
+          "tips": [
+            "Enrollment at your local NHIS branch or online with ARC number.",
+            "Long-term visa holders (F-1-D, D-10, H-1) are NOT required to enroll — private insurance is your alternative."
+          ],
+          "warnings": [
+            "Missing the enrollment deadline can result in back-premiums charged from arrival date."
+          ]
+        },
+        {
           "id": "korean-payment-apps",
           "label": "Set up Kakao Pay, Naver Pay, or Samsung Pay",
           "description": "With a postpaid plan and Korean bank account, you can now register for Korean mobile payment apps. Samsung Pay is dominant, but all three are widely accepted.",
           "category": "app",
           "required": false,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
           "tips": [
             "Samsung Pay requires a Samsung device.",
             "Kakao Pay and Naver Pay work on any smartphone."
@@ -256,6 +373,8 @@
           "description": "Both require 본인인증 (identity verification tied to postpaid plan). Now that you have postpaid, these are available.",
           "category": "food",
           "required": false,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
           "tips": [
             "Baemin (배달의민족) is the dominant app. Coupang Eats is growing and often cheaper."
           ]

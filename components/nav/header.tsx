@@ -3,12 +3,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { usePathname, Link } from '@/i18n/navigation';
+import { usePathname, useRouter, Link } from '@/i18n/navigation';
 import { LocaleSwitcher } from '@/components/locale-switcher';
 import { cn } from '@/lib/utils';
 import { CountryDropdown, COUNTRIES } from './country-dropdown';
 import { MobileMenu } from './mobile-menu';
-import type { CountryKey } from './country-dropdown';
+import type { CountryKey, CountryConfig } from './country-dropdown';
+
+type SectionType = 'visa' | 'neighborhood' | 'checklist' | 'other';
 
 function detectCountryFromPath(pathname: string): CountryKey | null {
   const segments = pathname.split('/').filter(Boolean);
@@ -30,6 +32,24 @@ function detectCountryFromPath(pathname: string): CountryKey | null {
   return map[segments[0]] ?? null;
 }
 
+function detectSectionFromPath(pathname: string): SectionType {
+  const segments = pathname.split('/').filter(Boolean);
+  if (segments[0] === 'neighborhood') return 'neighborhood';
+  if (segments[1] === 'checklist') return 'checklist';
+  const countryKeys = ['korea', 'japan', 'taiwan', 'southeast-asia'];
+  if (countryKeys.includes(segments[0])) return 'visa';
+  return 'other';
+}
+
+function buildCountryPath(newCountry: CountryConfig, section: SectionType): string | null {
+  switch (section) {
+    case 'neighborhood': return newCountry.neighborhoodPath ?? newCountry.visaPath;
+    case 'checklist': return newCountry.checklistPath ?? newCountry.visaPath;
+    case 'visa': return newCountry.visaPath;
+    default: return null;
+  }
+}
+
 function getStoredCountry(): CountryKey | null {
   try {
     const stored = localStorage.getItem('ln-selected-country');
@@ -43,6 +63,7 @@ function getStoredCountry(): CountryKey | null {
 export const Header = () => {
   const t = useTranslations('Nav');
   const pathname = usePathname();
+  const router = useRouter();
 
   // Landing page detection — next-intl usePathname strips locale prefix
   // So /en → '/', /en/korea → '/korea'
@@ -71,10 +92,15 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isLanding]);
 
+  const currentSection = detectSectionFromPath(pathname);
+
   const handleCountryChange = useCallback((key: CountryKey) => {
     setManualCountry(key);
     try { localStorage.setItem('ln-selected-country', key); } catch {}
-  }, []);
+    const newCountry = COUNTRIES.find((c) => c.key === key) ?? COUNTRIES[0];
+    const targetPath = buildCountryPath(newCountry, currentSection);
+    if (targetPath) router.push(targetPath as Parameters<typeof router.push>[0]);
+  }, [currentSection, router]);
 
   const isTransparent = isLanding && !isScrolled;
   const country = COUNTRIES.find((c) => c.key === selectedCountry) ?? COUNTRIES[0];
@@ -158,6 +184,23 @@ export const Header = () => {
           <Link href="/blog" className={navLinkClass}>
             {t('blog')}
           </Link>
+
+          {/* Checklist */}
+          {country.checklistPath ? (
+            <Link
+              href={country.checklistPath as Parameters<typeof Link>[0]['href']}
+              className={navLinkClass}
+            >
+              {t('checklist')}
+            </Link>
+          ) : (
+            <span
+              className={cn(navLinkClass, 'opacity-40 cursor-not-allowed pointer-events-none')}
+              aria-disabled="true"
+            >
+              {t('checklist')}
+            </span>
+          )}
         </div>
 
         {/* Right side */}

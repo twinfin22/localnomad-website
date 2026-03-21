@@ -5,19 +5,22 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
-import { getAvailableVisas, getVisaData } from '@/lib/visa-data';
+import { getAvailableVisas, getVisaData, getComparisonData } from '@/lib/visa-data';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country, Visa } from '@/lib/types/visa';
+import type { SEAComparisonData } from '@/lib/types/sea';
 import { ComparisonTool } from '@/components/visa';
+import { SEAComparisonTable } from '@/components/visa/sea-comparison-table';
 
 export const revalidate = 3600;
 
-const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
+const VALID_COUNTRIES = ['japan', 'korea', 'taiwan', 'southeast-asia'] as const;
 
 const COUNTRY_DISPLAY: Record<string, string> = {
   korea: 'South Korea',
   taiwan: 'Taiwan',
   japan: 'Japan',
+  'southeast-asia': 'Southeast Asia',
 };
 
 export function generateStaticParams() {
@@ -33,9 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: 'Comparison' });
   const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const isSEA = country === 'southeast-asia';
 
-  const title = `${t('title')} — ${displayName} | LocalNomad`;
-  const description = t('metaDescription', { country: displayName });
+  const title = isSEA
+    ? `Southeast Asia Digital Nomad Visa Comparison | LocalNomad`
+    : `${t('title')} — ${displayName} | LocalNomad`;
+  const description = isSEA
+    ? 'Compare digital nomad and remote worker visa options across Thailand, Indonesia, Malaysia, and the Philippines.'
+    : t('metaDescription', { country: displayName });
   const alternates = getAlternates(locale, `/${country}/compare`);
 
   return {
@@ -66,18 +74,51 @@ export default async function ComparePage({ params }: Props) {
     notFound();
   }
 
-  const [t, tc, summaries] = await Promise.all([
+  const isSEA = country === 'southeast-asia';
+
+  const [t, tc] = await Promise.all([
     getTranslations('Comparison'),
     getTranslations('Common'),
-    getAvailableVisas(country as Country, locale),
   ]);
 
+  const displayName = COUNTRY_DISPLAY[country] ?? country;
+
+  // SEA: flat comparison table from JSON
+  if (isSEA) {
+    const comparisonData = (await getComparisonData(
+      'sea-digital-nomad',
+    )) as SEAComparisonData;
+
+    return (
+      <main id="main-content" className="min-h-svh bg-neutral-50">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <Link
+            href={`/${country}`}
+            className="text-sm text-primary hover:underline"
+          >
+            &larr; {tc('backToHome')} {displayName}
+          </Link>
+          <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
+            Compare SEA Digital Nomad Visas
+          </h1>
+          <p className="mt-3 text-lg text-muted-foreground">
+            {comparisonData.description}
+          </p>
+
+          <div className="mt-10">
+            <SEAComparisonTable data={comparisonData} />
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // East Asia: per-visa comparison tool
+  const summaries = await getAvailableVisas(country as Country, locale);
   const visaResults = await Promise.all(
-    summaries.map((s) => getVisaData(country as Country, locale, s.type))
+    summaries.map((s) => getVisaData(country as Country, locale, s.type)),
   );
   const visas = visaResults.filter((v): v is Visa => v !== null);
-
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
 
   return (
     <main id="main-content" className="min-h-svh bg-neutral-50">

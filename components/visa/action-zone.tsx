@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useTransition } from 'react';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
 import { useUser } from '@/hooks/use-user';
-import { useLocalChecklist } from '@/hooks/use-local-checklist';
+import { useSimpleChecklist } from '@/hooks/use-local-checklist';
 import { getActiveVisa, getChecklist, toggleChecklistItem } from '@/lib/actions/dashboard';
 import type { Document as VisaDocument } from '@/lib/types/visa';
 import { DocumentRow } from './document-row';
@@ -119,7 +119,7 @@ export function DocumentChecklist({
   const useServer = authResolved && !!user && !!userVisaId;
 
   const storageKey = `localnomad:checklist:${country}:${visaType}`;
-  const localChecklist = useLocalChecklist(storageKey);
+  const localChecklist = useSimpleChecklist(storageKey);
   const supabaseChecklist = useSupabaseChecklist(
     userVisaId ?? '',
     serverChecklist

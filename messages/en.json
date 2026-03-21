@@ -467,6 +467,11 @@
     "readFullGuide": "Read the full guide",
     "print": "Print checklist",
     "lastUpdated": "Last verified: {date}",
-    "disclaimer": "Based on published requirements. Visa rules, fees, and procedures change. Verify current info with your nearest embassy or consulate. Not legal or immigration advice."
+    "disclaimer": "Based on published requirements. Visa rules, fees, and procedures change. Verify current info with your nearest embassy or consulate. Not legal or immigration advice.",
+    "selectTier": "Select your visa type",
+    "tierTourist": "Tourist",
+    "tierLongTerm": "Long-term",
+    "tierResident": "Resident",
+    "tierItemCount": "{count} items"
   }
 }

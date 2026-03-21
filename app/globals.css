@@ -151,6 +151,29 @@
   background-color: color-mix(in srgb, var(--primary) 4%, transparent);
 }
 
+@keyframes unlock {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+.animate-unlock {
+  animation: unlock 400ms ease-out forwards;
+}
+
+@keyframes toast-in {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes toast-out {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(100%); opacity: 0; }
+}
+.toast-enter {
+  animation: toast-in 200ms ease-out;
+}
+.toast-exit {
+  animation: toast-out 200ms ease-in forwards;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -414,29 +437,80 @@ body::after {
     transform: none;
     transition: none;
   }
+
+  .animate-unlock {
+    animation: none;
+    opacity: 1;
+  }
+
+  .timeline-dot-pulse {
+    animation: none;
+  }
+
+  .toast-enter {
+    animation: none;
+    opacity: 1;
+  }
+
+  .toast-exit {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 /* Print styles for checklist pages */
 @media print {
+  /* Hide interactive chrome */
   header, footer, nav,
-  .sticky, /* progress bar */
-  button[onclick], /* print button */
-  a[href*="blog"] /* read full guide link */ {
+  [class*="visa-tier-selector"],
+  [class*="sticky"],
+  button,
+  .print-hide {
     display: none !important;
   }
 
-  /* Expand all phases */
-  details { open: true; }
+  /* Force black/white for ink saving */
+  * {
+    color: #000 !important;
+    background: #fff !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+  }
 
-  /* Remove shadows and borders for cleaner print */
-  .rounded-xl { border-radius: 0; }
-  .shadow-sm, .shadow-md { box-shadow: none; }
+  body { font-size: 11pt; line-height: 1.4; }
 
-  /* Ensure checked items show strikethrough */
-  .line-through { text-decoration: line-through; }
-
-  body { font-size: 11pt; }
-
-  /* Add URL after print */
   @page { margin: 1.5cm; }
+
+  /* Prevent items from splitting across pages */
+  .rounded-lg.border { break-inside: avoid; margin-bottom: 4pt; }
+
+  /* Phase cards */
+  .rounded-xl.border { break-inside: avoid; margin-bottom: 8pt; }
+
+  /* Show blocked items at full opacity — print should show everything */
+  .pointer-events-none { pointer-events: auto !important; }
+  .opacity-50 { opacity: 1 !important; }
+
+  /* Blocked item: prepend lock prefix via CSS */
+  [aria-disabled="true"] .text-sm.font-medium::before {
+    content: "[🔒] ";
+  }
+
+  /* Checked items: prepend checkmark */
+  input[type="checkbox"]:checked + * .text-sm.font-medium::before,
+  .line-through::before {
+    content: "[✓] ";
+  }
+
+  /* Unchecked items: prepend empty box */
+  input[type="checkbox"]:not(:checked) + * .text-sm.font-medium::before {
+    content: "[ ] ";
+  }
+
+  /* Hide checkboxes and lock icons — replaced by text prefixes */
+  input[type="checkbox"],
+  label { display: none !important; }
+
+  /* Expand accordion content — show all details */
+  .border-t.px-4.py-3 { display: block !important; }
 }

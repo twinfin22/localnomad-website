@@ -63,30 +63,60 @@ const isNegative = (value: string) =>
 const isPositive = (value: string) =>
   value.startsWith('Yes');
 
+// Split "main text †footnote" into [main, footnote | null]
+function splitFootnote(text: string): [string, string | null] {
+  const idx = text.indexOf('†');
+  if (idx === -1) return [text, null];
+  return [text.slice(0, idx).trim(), text.slice(idx + 1).trim()];
+}
+
+function FootnoteTooltip({ note }: { note: string }) {
+  return (
+    <span className="group/fn relative ml-1 inline-flex cursor-help">
+      <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-amber-100 text-[10px] font-medium text-amber-700">
+        !
+      </span>
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-56 -translate-x-1/2 rounded-lg border border-border/60 bg-white px-3 py-2 text-xs leading-relaxed text-muted-foreground opacity-0 shadow-lg transition-opacity group-hover/fn:pointer-events-auto group-hover/fn:opacity-100">
+        {note}
+      </span>
+    </span>
+  );
+}
+
 function BooleanBadge({ value }: { value: string }) {
   if (isPositive(value)) {
     const detail = value.replace(/^Yes\s*[—–-]\s*/, '');
+    const [main, footnote] = splitFootnote(detail);
     return (
       <span>
         <span className="mr-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-xs text-emerald-700">
           ✓
         </span>
-        <span className="text-emerald-800">{detail || 'Yes'}</span>
+        <span className="text-emerald-800">{main || 'Yes'}</span>
+        {footnote && <FootnoteTooltip note={footnote} />}
       </span>
     );
   }
   if (isNegative(value)) {
     const detail = value.replace(/^No\s*[—–-]\s*|^Not\s+/, '');
+    const [main, footnote] = splitFootnote(detail);
     return (
       <span>
         <span className="mr-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-xs text-red-700">
           ✗
         </span>
-        <span className="text-red-800">{detail ? `No — ${detail}` : 'No'}</span>
+        <span className="text-red-800">{main ? `No — ${main}` : 'No'}</span>
+        {footnote && <FootnoteTooltip note={footnote} />}
       </span>
     );
   }
-  return <span>{value}</span>;
+  const [main, footnote] = splitFootnote(value);
+  return (
+    <span>
+      {main}
+      {footnote && <FootnoteTooltip note={footnote} />}
+    </span>
+  );
 }
 
 // Extract a short value for summary cards

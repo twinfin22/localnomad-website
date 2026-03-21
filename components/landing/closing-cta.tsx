@@ -6,10 +6,9 @@ export const ClosingCta = async () => {
   const t = await getTranslations('Landing');
 
   const countries = [
-    { href: '/korea', emoji: t('countryKoreaEmoji'), name: t('countryKorea') },
-    { href: '/japan', emoji: t('countryJapanEmoji'), name: t('countryJapan') },
-    { href: '/taiwan', emoji: t('countryTaiwanEmoji'), name: t('countryTaiwan') },
-    { href: '/southeast-asia', emoji: t('countrySEAEmoji'), name: t('countrySEA') },
+    { href: '/korea/checklist', emoji: t('countryKoreaEmoji'), name: t('countryKorea') },
+    { href: '/japan/checklist', emoji: t('countryJapanEmoji'), name: t('countryJapan') },
+    { href: '/taiwan/checklist', emoji: t('countryTaiwanEmoji'), name: t('countryTaiwan') },
   ];
 
   return (
