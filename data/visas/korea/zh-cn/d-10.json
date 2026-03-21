@@ -122,7 +122,7 @@
       "id": "passport",
       "name": "有效护照",
       "nameLocal": "여권",
-      "description": "须在预计滞留期限内有效",
+      "description": "有效期需超过预定停留期限至少6个月",
       "required": true
     },
     {

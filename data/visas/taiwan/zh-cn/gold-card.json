@@ -14,7 +14,7 @@
     {
       "id": "professional-field",
       "label": "具备12个指定专业领域之一的专业能力",
-      "description": "科学技术、数字、金融、教育、建筑、文化艺术、体育、生物技术、经济、国防、法律、宗教专业人士",
+      "description": "科学技术、数字、金融、教育、建筑、文化艺术、体育、生物技术、经济、国防、法律、殡葬礼仪从业人员",
       "required": true,
       "tips": [
         "建筑领域采用AND逻辑 — 须同时满足所有条件（持证建筑师或5年以上经验 AND 月薪≥ NT$160,000）"
@@ -271,7 +271,7 @@
     "taxBenefit": "符合条件者（首次来台就业、每年居留满183天、过去5年内无台湾户籍）在首5年内，年薪超过NT$3,000,000的部分享有50%所得税减免"
   },
   "goldCardComparison": {
-    "disclaimer": "本比较表仅列出公开要件，非推荐或资格评估。本比較表僅列出公開要件，非推薦或資格評估。",
+    "disclaimer": "This comparison shows published requirements only. It is not a recommendation or eligibility assessment. 本比較表僅列出公開要件，非推薦或資格評估。",
     "comparisonTable": [
       {
         "criterion": "在台工作",
@@ -394,7 +394,7 @@
     },
     {
       "question": "就业金卡的专业领域有哪些？",
-      "answer": "12个指定专业领域：(1) 科学技术、(2) 数字、(3) 金融、(4) 教育、(5) 建筑、(6) 文化艺术、(7) 体育、(8) 生物技术、(9) 经济、(10) 国防、(11) 法律、(12) 环境保护。此外，「宗教专业人士」亦为认可的特殊资格路径。每个领域均有各自的子路径与具体资格标准。政府定期扩充名单 — 最新领域请查阅就业金卡官方平台。"
+      "answer": "12个指定专业领域：(1) 科学技术、(2) 数字、(3) 金融、(4) 教育、(5) 建筑、(6) 文化艺术、(7) 体育、(8) 生物技术、(9) 经济、(10) 国防、(11) 法律、(12) 环境保护。此外，「殡葬礼仪从业人员」亦为认可的特殊资格路径。每个领域均有各自的子路径与具体资格标准。政府定期扩充名单 — 最新领域请查阅就业金卡官方平台。"
     },
     {
       "question": "薪资路径（NT$160,000/月）如何运作？",
@@ -437,7 +437,7 @@
     "选择前请仔细查阅全部12个专业领域 — 部分领域标准有重叠，文件要求也不同「,\n    」在职证明须包含姓名、公司名称、职称、在职期间及官方印章 — 录取通知书一律不受理「,\n    」薪资路径请选择过去3年内税务文件中收入最高的年份「,\n    」核准后请彩色打印居留许可证 — 实体卡寄达前入台所需「,\n    」加入taiwangoldcard.com社区，获取领域专属申请建议并与8,300+位持有人交流「,\n    」建筑领域采用AND逻辑 — 所有条件须同时满足，与其他领域采用OR逻辑不同"
   ],
   "warnings": [
-    "本资讯仅依据台湾政府公开资料整理，LocalNomad并非合法移民业务机构。本内容不构成资格评估或法律建议。本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。"
+    "This information is based on publicly available requirements from official Taiwan government sources. LocalNomad is not a licensed immigration services agency (移民業務機構). This is not an eligibility assessment or legal advice. 本資訊僅依據台灣政府公開資料整理，LocalNomad並非合法移民業務機構。本內容不構成資格評估或法律建議。"
   ],
   "communityTips": [
     {
