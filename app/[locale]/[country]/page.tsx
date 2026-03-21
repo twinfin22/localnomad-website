@@ -121,75 +121,134 @@ export default async function CountryPage({ params }: Props) {
         }}
       />
       <main id="main-content" className="min-h-svh bg-neutral-50">
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <Link
-          href="/"
-          className="text-sm text-primary hover:underline"
-        >
-          &larr; {tc('backToHome')}
-        </Link>
-        <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
-          {t('title', { country: displayName })}
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          {t('subtitle', { country: displayName })}
-        </p>
-
-        {visas.length > 0 ? (
+        {/* SEA hero section */}
+        {country === 'southeast-asia' && comparisonData ? (
           <>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {t('visaCount', { count: visas.length })}
-            </p>
-            <div className="mt-8 space-y-3">
-              {visas.map((visa) => (
-                <Link
-                  key={visa.type}
-                  href={`/${country}/visa/${visa.type}`}
-                  className="flex items-center gap-4 rounded-lg border bg-white px-5 py-4 transition-colors hover:border-primary hover:bg-primary/5"
+            <section
+              className="relative overflow-hidden px-6 py-32 sm:py-40"
+              style={{
+                backgroundImage: [
+                  'linear-gradient(135deg, rgba(27,73,101,0.45) 0%, rgba(20,55,78,0.5) 100%)',
+                  "url('/images/sea-hero-bg.webp')",
+                ].join(', '),
+                backgroundSize: 'cover',
+                backgroundPosition: 'center 40%',
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: 'var(--primary)',
+              }}
+            >
+              <div className="mx-auto max-w-4xl text-center">
+                <h1
+                  className="font-lora text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"
+                  style={{
+                    textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2)',
+                  }}
                 >
-                  <span className="text-2xl" aria-hidden="true">
-                    {CATEGORY_ICONS[visa.category] ?? '📋'}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <span className="font-semibold text-primary">
-                      {visa.shortName}
-                    </span>
-                    <span className="ml-2 text-sm text-muted-foreground">
-                      {visa.tagline}
-                    </span>
-                  </div>
-                  <span className="text-muted-foreground" aria-hidden="true">
-                    →
-                  </span>
-                </Link>
-              ))}
+                  Southeast Asia Digital Nomad Visa Guide
+                </h1>
+              </div>
+            </section>
+
+            <div className="mx-auto max-w-5xl px-6 py-10 sm:py-14">
+              <SEAComparisonTable data={comparisonData} />
+
+              {/* CTA: explore East Asia */}
+              <div className="mt-12 rounded-xl border border-primary/10 bg-primary/[0.03] p-6 text-center sm:p-8">
+                <p className="font-lora text-lg font-bold text-primary">
+                  Looking at East Asia instead?
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Compare digital nomad visas in Japan, Korea, and Taiwan
+                </p>
+                <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+                  <Link
+                    href="/japan"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
+                  >
+                    🇯🇵 Japan
+                  </Link>
+                  <Link
+                    href="/korea"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
+                  >
+                    🇰🇷 Korea
+                  </Link>
+                  <Link
+                    href="/taiwan"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
+                  >
+                    🇹🇼 Taiwan
+                  </Link>
+                </div>
+              </div>
             </div>
           </>
-        ) : comparisonData ? (
-          <div className="mt-8">
-            <SEAComparisonTable data={comparisonData} />
-          </div>
         ) : (
-          <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
-            {t('comingSoon')}
+          /* Original layout for KR/JP/TW */
+          <div className="mx-auto max-w-3xl px-6 py-16">
+            <Link
+              href="/"
+              className="text-sm text-primary hover:underline"
+            >
+              &larr; {tc('backToHome')}
+            </Link>
+            <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
+              {t('title', { country: displayName })}
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              {t('subtitle', { country: displayName })}
+            </p>
+
+            {visas.length > 0 ? (
+              <>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {t('visaCount', { count: visas.length })}
+                </p>
+                <div className="mt-8 space-y-3">
+                  {visas.map((visa) => (
+                    <Link
+                      key={visa.type}
+                      href={`/${country}/visa/${visa.type}`}
+                      className="flex items-center gap-4 rounded-lg border bg-white px-5 py-4 transition-colors hover:border-primary hover:bg-primary/5"
+                    >
+                      <span className="text-2xl" aria-hidden="true">
+                        {CATEGORY_ICONS[visa.category] ?? '📋'}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <span className="font-semibold text-primary">
+                          {visa.shortName}
+                        </span>
+                        <span className="ml-2 text-sm text-muted-foreground">
+                          {visa.tagline}
+                        </span>
+                      </div>
+                      <span className="text-muted-foreground" aria-hidden="true">
+                        →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
+                {t('comingSoon')}
+              </div>
+            )}
+
+            {visas.length > 1 && (
+              <Link
+                href={`/${country}/compare`}
+                className="mt-6 inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+              >
+                {t('compareVisas')}
+              </Link>
+            )}
+
+            <p className="mt-10 text-xs text-muted-foreground">
+              {tc('disclaimer')}
+            </p>
           </div>
         )}
-
-        {visas.length > 1 && (
-          <Link
-            href={`/${country}/compare`}
-            className="mt-6 inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
-          >
-            {t('compareVisas')}
-          </Link>
-        )}
-
-        {!comparisonData && (
-          <p className="mt-10 text-xs text-muted-foreground">
-            {tc('disclaimer')}
-          </p>
-        )}
-      </div>
     </main>
     </>
   );
