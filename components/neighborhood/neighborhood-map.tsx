@@ -148,7 +148,7 @@ export default function NeighborhoodMap({
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/light-v11',
+      style: 'mapbox://styles/localrei/cmn0fjz7j00a101r0g1gl073v',
       center: [
         cities.reduce((sum, c) => sum + c.coordinates[1], 0) / cities.length,
         cities.reduce((sum, c) => sum + c.coordinates[0], 0) / cities.length,

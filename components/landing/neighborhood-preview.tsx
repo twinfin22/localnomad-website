@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { ScrollReveal } from './scroll-reveal';
@@ -40,16 +40,23 @@ interface NeighborhoodPreviewProps {
   countries: CountryPreview[];
 }
 
+
+
+
 export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => {
   const t = useTranslations('Landing');
   const locale = useLocale();
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const boundsRef = useRef<mapboxgl.LngLatBounds | null>(null);
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   const handleCardHover = useCallback((country: string | null) => {
+    setHoveredCountry(country);
     const map = mapRef.current;
-    if (!map) return;
+    if (!map || !map.isStyleLoaded()) return;
+
+    // Fly to country or reset
     if (country) {
       const coords = COUNTRY_MAP_COORDS[country];
       if (coords) {
@@ -74,7 +81,8 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
 
       const map = new mapboxgl.default.Map({
         container: mapContainerRef.current!,
-        style: 'mapbox://styles/mapbox/light-v11',
+        style: 'mapbox://styles/localrei/cmn0fjz7j00a101r0g1gl073v',
+        projection: 'mercator',
         center: [128, 32],
         zoom: 3,
         scrollZoom: false,
@@ -111,63 +119,72 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
           },
         });
 
-        // Lodging icon + country name label
+        // Outer ring
         map.addLayer({
-          id: 'country-markers-icon',
+          id: 'country-markers-pulse',
+          type: 'circle',
+          source: 'country-markers',
+          paint: {
+            'circle-radius': 18,
+            'circle-color': BRAND_COLOR,
+            'circle-opacity': 0.12,
+            'circle-stroke-width': 2,
+            'circle-stroke-color': BRAND_COLOR,
+            'circle-stroke-opacity': 0.2,
+          },
+        });
+
+        // Inner dot
+        map.addLayer({
+          id: 'country-markers-dot',
+          type: 'circle',
+          source: 'country-markers',
+          paint: {
+            'circle-radius': 7,
+            'circle-color': BRAND_COLOR,
+            'circle-opacity': 0.9,
+            'circle-stroke-width': 2.5,
+            'circle-stroke-color': '#ffffff',
+          },
+        });
+
+        // Country name label
+        map.addLayer({
+          id: 'country-markers-label',
           type: 'symbol',
           source: 'country-markers',
           layout: {
-            'icon-image': 'globe',
-            'icon-size': 3,
-            'icon-allow-overlap': true,
             'text-field': ['get', 'name'],
-            'text-size': 13,
-            'text-font': ['DIN Pro SemiBold', 'Arial Unicode MS Bold'],
-            'text-offset': [0, 1.4],
+            'text-size': 14,
+            'text-font': ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+            'text-offset': [0, 2.2],
             'text-anchor': 'top',
             'text-allow-overlap': true,
-            'text-letter-spacing': 0.02,
+            'text-letter-spacing': 0.05,
+            'text-transform': 'uppercase',
           },
           paint: {
-            'icon-color': BRAND_COLOR,
             'text-color': BRAND_COLOR,
             'text-halo-color': '#ffffff',
             'text-halo-width': 2,
           },
         });
 
-        // Click → navigate to neighborhood page
-        map.on('click', 'country-markers-icon', (e) => {
-          const feature = e.features?.[0];
-          if (feature?.properties?.country) {
-            window.location.href = `/${locale}/neighborhood/${feature.properties.country}`;
-          }
-        });
-
-        // Hover tooltip + pointer cursor
-        let popup: InstanceType<typeof mapboxgl.default.Popup> | null = null;
-        map.on('mouseenter', 'country-markers-icon', (e) => {
-          map.getCanvas().style.cursor = 'pointer';
-          const feature = e.features?.[0];
-          if (feature?.geometry.type === 'Point' && feature.properties) {
-            const match = countries.find((c) => c.country === feature.properties!.country);
-            if (match) {
-              popup = new mapboxgl.default.Popup({
-                closeButton: false,
-                closeOnClick: false,
-                offset: 20,
-                className: 'landing-map-popup',
-              })
-                .setLngLat(feature.geometry.coordinates as [number, number])
-                .setHTML(`<strong>${match.displayName}</strong><br/>${match.cityCount} cities · ${match.neighborhoodCount} neighborhoods`)
-                .addTo(map);
+        // Click + cursor handlers
+        const interactiveLayers = ['country-markers-dot', 'country-markers-pulse', 'country-markers-label'];
+        interactiveLayers.forEach((layerId) => {
+          map.on('click', layerId, (e) => {
+            const feature = e.features?.[0];
+            if (feature?.properties?.country) {
+              window.location.href = `/${locale}/neighborhood/${feature.properties.country}`;
             }
-          }
-        });
-        map.on('mouseleave', 'country-markers-icon', () => {
-          map.getCanvas().style.cursor = '';
-          popup?.remove();
-          popup = null;
+          });
+          map.on('mouseenter', layerId, () => {
+            map.getCanvas().style.cursor = 'pointer';
+          });
+          map.on('mouseleave', layerId, () => {
+            map.getCanvas().style.cursor = '';
+          });
         });
 
         // Fit bounds to show all markers
@@ -208,10 +225,10 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
   }, [initMap]);
 
   return (
-    <section aria-labelledby="neighborhood-heading" className="relative overflow-hidden bg-neutral-50 px-6 py-20 sm:py-28">
+    <section aria-labelledby="neighborhood-heading" className="relative overflow-hidden bg-white py-16 sm:py-20">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-5xl px-6">
         <ScrollReveal>
           <div className="text-center">
             <h2 id="neighborhood-heading" className="font-lora text-3xl font-bold text-primary sm:text-4xl">
@@ -222,39 +239,49 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
             </p>
           </div>
         </ScrollReveal>
+      </div>
 
-        <ScrollReveal delay={200}>
-          <div className="relative mt-12 overflow-hidden rounded-2xl border border-border/60 bg-neutral-50 shadow-sm">
-            <div className="relative">
-              {/* Skeleton placeholder — visible until map loads */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-neutral-100 animate-pulse">
-                <svg className="h-8 w-8 text-muted-foreground/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                </svg>
-                <span className="text-xs text-muted-foreground/60">Loading map…</span>
-              </div>
-              <div
-                ref={mapContainerRef}
-                className="relative z-[1] h-[280px] w-full sm:h-[400px]"
-              />
+      {/* Edge-to-edge map with fade edges */}
+      <ScrollReveal delay={200}>
+        <div className="relative mt-12">
+          <div className="relative">
+            {/* Skeleton placeholder */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-neutral-100 animate-pulse">
+              <svg className="h-8 w-8 text-muted-foreground/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+              </svg>
+              <span className="text-xs text-muted-foreground/60">Loading map…</span>
             </div>
-            {!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN && (
-              <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 text-sm text-muted-foreground">
-                Map requires NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
-              </div>
-            )}
-
+            <div
+              ref={mapContainerRef}
+              className="relative z-[1] h-[360px] w-full sm:h-[480px]"
+            />
           </div>
+          {!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN && (
+            <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 text-sm text-muted-foreground">
+              Map requires NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+            </div>
+          )}
+        </div>
+      </ScrollReveal>
 
-          {/* Country cards below map */}
-          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+      {/* Country cards below map */}
+      <div className="mx-auto mt-6 max-w-5xl px-6">
+        <ScrollReveal delay={300}>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {countries.map((c) => (
               <Link
                 key={c.country}
                 href={`/neighborhood/${c.country}`}
-                className="group flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border/60 bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md"
+                className={`group flex cursor-pointer flex-col overflow-hidden rounded-xl border bg-white shadow-sm transition-all duration-300 hover:shadow-md ${
+                  hoveredCountry === c.country
+                    ? 'border-primary/40 shadow-md -translate-y-0.5'
+                    : 'border-border/60 hover:border-primary/30'
+                }`}
                 onMouseEnter={() => handleCardHover(c.country)}
                 onMouseLeave={() => handleCardHover(null)}
+                onFocus={() => handleCardHover(c.country)}
+                onBlur={() => handleCardHover(null)}
               >
                 {/* Thumbnail */}
                 <div className="relative h-36 w-full overflow-hidden sm:h-40">
