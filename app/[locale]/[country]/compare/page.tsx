@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getAvailableVisas, getVisaData, getComparisonData } from '@/lib/visa-data';
-import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { getAlternates } from '@/lib/seo';
 import type { Country, Visa } from '@/lib/types/visa';
 import type { SEAComparisonData } from '@/lib/types/sea';
 import { ComparisonTool } from '@/components/visa';
@@ -54,7 +54,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `https://localnomad.club/${locale}/${country}/compare`,
-      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',

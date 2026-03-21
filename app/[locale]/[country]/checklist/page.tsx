@@ -3,7 +3,7 @@ import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { getAlternates } from '@/lib/seo';
 import { getChecklistData } from '@/lib/checklist-data';
 import { ArrivalChecklist } from '@/components/checklist';
 
@@ -48,7 +48,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `https://localnomad.club/${locale}/${country}/checklist`,
-      images: [DEFAULT_OG_IMAGE],
     },
   };
 }
