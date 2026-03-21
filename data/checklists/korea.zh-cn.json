@@ -1,0 +1,385 @@
+{
+  "country": "korea",
+  "title": "韩国入境清单——旅行者与数字游民版（2026）",
+  "lastUpdated": "2026-03-21",
+  "blogUrl": "/en/blog/tips/korea-arrival-checklist-2026",
+  "phases": [
+    {
+      "id": "before-you-fly",
+      "title": "出发前",
+      "timeframe": "出发前2至4周",
+      "description": "登机前做好准备。部分应用在没有韩国手机号的情况下功能会受限——趁还在家里有WiFi，提前把所有应用下载好。",
+      "items": [
+        {
+          "id": "visa-decision",
+          "label": "确定入境方式：B-2免签入境或F-1-D数字游民签证",
+          "description": "B-2免签覆盖106个以上国家，最长可停留90天。F-1-D（数字游民签证）最长可住2年，但需要证明年收入₩88M以上（约$64K）（人均GNI的2倍，韩国银行标准。申请前请确认最新金额）。请在出发前2至4周前往最近的韩国大使馆申请。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist"],
+          "tips": [
+            "符合条件国家的免签旅客可自动获得90天停留期——无需提前申请。",
+            "部分国籍可能需要K-ETA——出发前请在K-ETA官网核实。"
+          ],
+          "link": "/en/blog/comparisons/korea-f1d-workation-visa-do-you-need-it-2026",
+          "linkLabel": "韩国F-1-D签证：你真的需要吗？"
+        },
+        {
+          "id": "visa-decision-longterm",
+          "label": "申请长期签证（F-1-D、D-10或H-1）",
+          "description": "长期签证需要在出发前前往最近的韩国大使馆或领事馆申请。F-1-D需要年收入₩88M以上的证明（人均GNI的2倍，请向大使馆确认最新标准）。D-10需满足求职者资格要求。请在计划出发日期前2至4周申请。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["long-term"],
+          "tips": [
+            "F-1-D申请人：签证批准前请勿购买不可退款的机票。审理周期为2至4周。",
+            "D-10（求职）签证需要顶尖大学学历或至少1年工作经验。"
+          ],
+          "link": "/en/blog/guides/korea-f1d-workation-visa-2026",
+          "linkLabel": "韩国F-1-D工作假期：两年签证完全指南"
+        },
+        {
+          "id": "visa-decision-resident",
+          "label": "确认居留签证类别（E-7、D-8、F-2、F-5或F-6）",
+          "description": "已在韩国的居留签证持有者应核查外国人登录证（ARC）有效期，如有搬迁需更新地址。新入境者需准备齐全材料，前往最近的韩国大使馆申请。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["resident"],
+          "tips": [
+            "E-7（特定活动）签证需要雇主担保及就业劳动部的配额批准。",
+            "F-2（长期居留）申请人：申请前请确认积分制评分。",
+            "F-6（配偶）签证需要经过公证的结婚证明——请预留足够时间办理海牙认证。"
+          ]
+        },
+        {
+          "id": "k-eta-check",
+          "label": "确认K-ETA要求（免签旅客）",
+          "description": "部分国家的B-2免签旅客可能需要申请K-ETA。出发前请查看最新的适用国家列表。",
+          "category": "document",
+          "required": false,
+          "visaTier": ["tourist"],
+          "link": "https://www.k-eta.go.kr/",
+          "linkLabel": "K-ETA官方网站",
+          "warnings": [
+            "要求随时可能变化——每次出行前都要在K-ETA官网核实，不要只查一次就放心。"
+          ]
+        },
+        {
+          "id": "download-apps-tourist",
+          "label": "下载Naver Map和Papago",
+          "description": "登机前必装的两款应用：",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist"],
+          "tips": [
+            "Naver Map：韩国地铁和步行导航，比Google地图好用得多",
+            "Papago：Naver旗下翻译应用，韩英互译比Google翻译更准确",
+            "在家里有WiFi时下载好"
+          ]
+        },
+        {
+          "id": "download-apps",
+          "label": "下载KakaoTalk、Naver Map和Papago",
+          "description": "登机前必装的三款应用：",
+          "category": "app",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "KakaoTalk：韩国的主流通讯工具，不是WhatsApp也不是Telegram。房东、同事、所有人都会在这里联系你。",
+            "Naver Map：韩国地铁和步行导航，比Google地图好用得多",
+            "Papago：Naver旗下翻译应用，韩英互译比Google翻译更准确",
+            "在家有WiFi时下载好——到韩国后没有本地手机号，部分功能将无法使用"
+          ]
+        },
+        {
+          "id": "sim-plan",
+          "label": "提前购买韩国eSIM，或规划好在机场购买SIM卡",
+          "description": "选择方案：出发前通过Airalo或eSIMDB购买eSIM，或在仁川机场到达大厅购买SIM卡。长期及居留签证持有者在拿到外国人登录证（ARC）后会升级为韩国后付费套餐，但从落地起就需要数据流量。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "documents-pack",
+          "label": "整理好所有必要文件",
+          "description": "出发前请准备以下材料：",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "护照（有效期6个月以上）",
+            "签证批准函（如适用于F-1-D、D-10、E-7等非免签情况）",
+            "保险文件",
+            "住宿地址（韩文/한글版本）",
+            "证件照2张（3.5×4.5cm，白底——韩国标准，非美国尺寸）"
+          ],
+          "warnings": [
+            "韩国证件照规格为3.5×4.5cm。美国标准（2×2英寸）尺寸不同——请带韩国格式的证件照。"
+          ]
+        },
+        {
+          "id": "cash-preparation",
+          "label": "备好₩300,000至500,000（约$230至385）现金",
+          "description": "韩国技术上有80%以上的无现金支付，但那是针对韩国本地支付方式的。外国银行卡在小餐馆、自助点餐机、街边小吃摊和外卖应用上经常无法使用。现金是必备的备用手段。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "warnings": [
+            "Apple Pay仅支持现代卡和新韩卡——不能依赖它作为日常支付工具。",
+            "Samsung Pay需要韩国手机和韩国银行卡——在拿到ARC并完成银行开户之前无法使用。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-0-airport",
+      "title": "Day 0：机场",
+      "timeframe": "落地仁川时",
+      "description": "通关后，按以下顺序在到达大厅办理手续。不要跳过WOWPASS这一步。",
+      "items": [
+        {
+          "id": "tourist-sim",
+          "label": "在仁川机场购买SIM卡（或激活eSIM）",
+          "description": "到达大厅有KT和LG U+的柜台。30天流量SIM卡价格为₩33,000至55,000。或者现在激活提前购买的eSIM。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/korea-arrival-checklist-2026",
+          "linkLabel": "韩国入境清单 2026"
+        },
+        {
+          "id": "wowpass-card",
+          "label": "办理WOWPASS卡（₩5,000）",
+          "description": "WOWPASS集三种功能于一身：预付卡（凡是接受T-money或信用卡的地方均可使用）、交通卡以及外币兑换机。卡费₩5,000。可在WOWPASS自助机上用现金或外国银行卡充值。兑换汇率优于机场换汇柜台。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "这是你第一周的主力卡，绝大多数商店和所有交通工具都能用。",
+            "比机场换汇柜台划算很多。"
+          ],
+          "link": "/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026",
+          "linkLabel": "韩国支付卡对比：WOWPASS vs T-money vs Cashbee"
+        },
+        {
+          "id": "transport-to-seoul",
+          "label": "乘坐AREX或机场大巴前往首尔",
+          "description": "WOWPASS和T-money适用于所有交通方式：",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "AREX普通车：₩4,750，至首尔站约60分钟",
+            "AREX快速车：₩11,000，约43分钟（行李空间更宽裕）",
+            "机场大巴：₩15,000至18,000，点对点至主要区域约60至90分钟"
+          ],
+          "link": "/en/blog/tips/korea-arrival-checklist-2026",
+          "linkLabel": "韩国入境清单 2026"
+        }
+      ]
+    },
+    {
+      "id": "days-1-3-settle",
+      "title": "Day 1至3：安顿下来",
+      "timeframe": "到达后1至3天",
+      "description": "先熟悉环境。在开始处理各种手续之前，先走走你的街区。长期及居留签证持有者请尽快预约出入境·外国人厅的办理时间。",
+      "items": [
+        {
+          "id": "neighborhood-orientation",
+          "label": "步行了解街区，找到关键地点",
+          "description": "找到最近的地铁站（记住出口号——韩国地址以出口号为参照）、便利店（CU、GS25）、药店（약국）以及几家餐厅。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/korea",
+          "linkLabel": "韩国街区指南"
+        },
+        {
+          "id": "kakaotalk-setup",
+          "label": "用旅游SIM号码注册KakaoTalk",
+          "description": "KakaoTalk是你在韩国的主要通讯工具。现在就设置好——房东、同事以及所有人都会通过这里联系你，而不是短信或邮件。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "warnings": [
+            "KakaoTaxi和外卖应用（Baemin、Coupang Eats）需要韩国본인인증（与后付费套餐绑定的实名认证）。在拿到ARC并升级为后付费套餐之前无法使用。目前请在路边拦出租车。"
+          ]
+        },
+        {
+          "id": "payment-stack-setup",
+          "label": "搭建第一周的支付方案",
+          "description": "三层组合，覆盖所有场景：",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "WOWPASS：主力卡——绝大多数商店和所有交通工具都能用",
+            "现金₩50,000至100,000：用于小餐馆、传统市场和只接受韩国卡的地方",
+            "T-money：备用交通卡（可在任何便利店现金充值）",
+            "大型连锁店和百货公司通常接受外国卡；小型商户则往往不接受"
+          ]
+        },
+        {
+          "id": "wifi-test",
+          "label": "测试住所WiFi速度",
+          "description": "韩国的标准是1Gbps光纤。如果稳定低于100Mbps，问题出在设备或网络配置上，不是这个国家的问题。请联系房东排查。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "immigration-office-booking",
+          "label": "通过Hi Korea预约出入境·外国人厅",
+          "description": "请尽早在HiKorea.go.kr预约ARC办理——名额很快就会约满，尤其是首尔。长期签证持有者必须在入境90天内登记。请携带所有必要文件。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "link": "https://www.hikorea.go.kr/",
+          "linkLabel": "Hi Korea预约系统",
+          "tips": [
+            "首尔出入境·外国人厅（首尔站附近）对大多数街区来说位置最便利。",
+            "所需材料：护照、签证、证件照2张（3.5×4.5cm）、住址证明、申请费₩30,000"
+          ],
+          "warnings": [
+            "请尽早预约——首尔和世宗路等热门办公室通常提前数周约满。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-1-4-admin",
+      "title": "第1至4周：申请ARC",
+      "timeframe": "入境后7至14天内",
+      "description": "韩国的依赖链从这里开始：ARC解锁手机，手机解锁银行，银行解锁一切。这是长期及居留签证持有者最关键的流程。",
+      "items": [
+        {
+          "id": "arc-application",
+          "label": "前往出入境·外国人厅申请外国人登录证（ARC）",
+          "description": "在预约日期前往出入境·外国人厅（출입국사무소）办理申请。法定期限为入境90天内，但建议尽早预约——首尔名额紧张。请携带护照、签证、照片2张（3.5×4.5cm）、住址证明及₩30,000手续费。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "提交申请后立即激活手机ARC——银行开户时可以接受这个数字版本。",
+            "ARC→手机→银行的完整步骤请参阅专项指南。"
+          ],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "韩国ARC→手机→银行死循环：解决方案",
+          "warnings": [
+            "请尽早预约——首尔和世宗路等热门办公室通常提前数周约满。",
+            "没有ARC，既无法办理后付费手机套餐，也无法开设银行账户。"
+          ]
+        },
+        {
+          "id": "mobile-arc-activate",
+          "label": "当天激活手机ARC",
+          "description": "提交ARC申请后，在手机上激活手机ARC（디지털 외국인등록증）。银行接受这个数字版本——无需等待实体卡寄到。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "韩国ARC→手机→银行死循环：解决方案"
+        },
+        {
+          "id": "arc-received",
+          "label": "收到实体ARC卡（等待2至4周）",
+          "description": "提交申请后，实体ARC卡将在2至4周内以邮件方式寄达。手机ARC已可使用，银行也接受，但部分服务需要实体卡。实体卡收到后在此处标记完成。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "isGate": true,
+          "estimatedWait": "2-4 weeks",
+          "tips": [
+            "等待实体卡期间，可以使用手机ARC开设银行账户。",
+            "部分政府服务和合同续签需要实体ARC。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "after-arc-full-setup",
+      "title": "拿到ARC后：完整安置",
+      "timeframe": "收到ARC卡后",
+      "description": "有了ARC，就可以全面开启韩国居民生活：开设银行账户、办理合约SIM卡、加入国民健康保险、使用外卖应用。",
+      "items": [
+        {
+          "id": "bank-account",
+          "label": "开设韩国银行账户（韩亚银行、新韩银行或KB国民银行）",
+          "description": "携带手机ARC和预付费SIM卡，直接前往韩亚银行、新韩银行或KB国民银行柜台。工作人员接受手机ARC办理开户——无需等待实体卡。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "韩亚银行和新韩银行对外国人通常更友好。",
+            "请携带护照、手机ARC或实体ARC，以及预付费SIM卡。"
+          ],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "韩国ARC→手机→银行死循环：解决方案"
+        },
+        {
+          "id": "postpaid-phone-upgrade",
+          "label": "升级为后付费手机套餐（KT、SKT或LG U+）",
+          "description": "需要ARC和韩国银行账户。这一次升级，几乎能解锁所有需要본인인증（实名认证）的韩国应用和服务。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "Kakao Pay、Naver Pay、Samsung Pay",
+            "KakaoTaxi（终于可以用了）",
+            "Baemin和Coupang Eats外卖",
+            "网上银行完整功能",
+            "大多数需要본인인증（实名认证）的韩国应用"
+          ],
+          "warnings": [
+            "请在开设银行账户之后再升级——后付费套餐需要绑定韩国银行账户付款。"
+          ]
+        },
+        {
+          "id": "nhis-enrollment",
+          "label": "加入国民健康保险（NHIS）",
+          "description": "居留签证持有者（E-7、D-8、F-2、F-5、F-6）须在入境后一个月内加入NHIS。月保费按收入核定。NHIS覆盖60至80%的医疗费用。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["arc-received"],
+          "link": "https://www.nhis.or.kr/",
+          "linkLabel": "NHIS官方网站",
+          "tips": [
+            "可前往最近的NHIS分支机构或用ARC号码在线办理加入手续。",
+            "长期签证持有者（F-1-D、D-10、H-1）无强制加入要求——商业保险是替代选择。"
+          ],
+          "warnings": [
+            "超过加入期限可能被追溯征收自入境日起的保险费。"
+          ]
+        },
+        {
+          "id": "korean-payment-apps",
+          "label": "设置Kakao Pay、Naver Pay或Samsung Pay",
+          "description": "有了后付费套餐和韩国银行账户，就可以注册韩国移动支付应用了。Samsung Pay最为普及，但三者在全国范围内均被广泛接受。",
+          "category": "app",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "Samsung Pay需要三星设备。",
+            "Kakao Pay和Naver Pay适用于任何智能手机。"
+          ]
+        },
+        {
+          "id": "delivery-apps",
+          "label": "注册Baemin或Coupang Eats外卖应用",
+          "description": "两款应用均需要본인인증（与后付费套餐绑定的实名认证）。升级为后付费后即可使用。",
+          "category": "food",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "Baemin（배달의민족）是市场占有率第一的外卖应用。Coupang Eats正在快速增长，价格通常更实惠。"
+          ]
+        }
+      ]
+    }
+  ]
+}

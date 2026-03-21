@@ -1,0 +1,385 @@
+{
+  "country": "korea",
+  "title": "韓国入国チェックリスト — 旅行者・デジタルノマド向け（2026年版）",
+  "lastUpdated": "2026-03-21",
+  "blogUrl": "/en/blog/tips/korea-arrival-checklist-2026",
+  "phases": [
+    {
+      "id": "before-you-fly",
+      "title": "渡航前",
+      "timeframe": "出発の2〜4週間前",
+      "description": "搭乗前に準備を済ませましょう。一部アプリは韓国の電話番号がないと機能が制限されます。自宅のWiFiが使えるうちにすべてダウンロードしておいてください。",
+      "items": [
+        {
+          "id": "visa-decision",
+          "label": "入国方法を決める：B-2ビザなし入国 or F-1-Dデジタルノマドビザ",
+          "description": "B-2ビザなし入国は106か国以上が対象で、最長90日間滞在できます。F-1-Dは最長2年間滞在できますが、年収₩88M以上（約$64K）の証明が必要です（1人あたりGNIの2倍、韓国銀行基準。申請前に最新額をご確認ください）。出発の2〜4週間前に最寄りの韓国大使館で申請してください。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist"],
+          "tips": [
+            "対象国のビザなし渡航者は90日間が自動付与されます——申請不要です。",
+            "一部の国籍にはK-ETAが必要な場合があります——出発前に公式K-ETAサイトで確認してください。"
+          ],
+          "link": "/en/blog/comparisons/korea-f1d-workation-visa-do-you-need-it-2026",
+          "linkLabel": "韓国F-1-Dビザ：本当に必要？"
+        },
+        {
+          "id": "visa-decision-longterm",
+          "label": "長期ビザを申請する（F-1-D、D-10、またはH-1）",
+          "description": "長期ビザは出発前に最寄りの韓国大使館または領事館で申請が必要です。F-1-Dは年収₩88M以上の証明が必要です（1人あたりGNIの2倍。最新基準は大使館でご確認ください）。D-10は求職者の資格要件があります。出発予定日の2〜4週間前に申請してください。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["long-term"],
+          "tips": [
+            "F-1-D申請者：ビザが下りるまで払い戻し不可のフライトは予約しないこと。審査には2〜4週間かかります。",
+            "D-10（求職）ビザには、トップ大学の学位または1年以上の実務経験が必要です。"
+          ],
+          "link": "/en/blog/guides/korea-f1d-workation-visa-2026",
+          "linkLabel": "韓国F-1-Dワーケーション：2年間ビザガイド"
+        },
+        {
+          "id": "visa-decision-resident",
+          "label": "在留ビザのカテゴリを確認する（E-7、D-8、F-2、F-5、またはF-6）",
+          "description": "すでに韓国在住のビザ保有者は、外国人登録証の有効期限と転居先への住所変更を確認してください。新規入国者は必要書類を揃えて最寄りの韓国大使館で申請してください。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["resident"],
+          "tips": [
+            "E-7（特定活動）ビザは雇用主のスポンサーと雇用労働部の割り当て承認が必要です。",
+            "F-2（長期在留）申請者：申請前にポイント制度のスコアを確認してください。",
+            "F-6（配偶者）ビザには公証済みの婚姻証明書が必要です——アポスティーユの取得に余裕を持ってください。"
+          ]
+        },
+        {
+          "id": "k-eta-check",
+          "label": "K-ETA要件を確認する（ビザなし渡航者）",
+          "description": "B-2ビザなし渡航者の一部はK-ETAが必要な場合があります。出発前に現在の対象国リストを確認してください。",
+          "category": "document",
+          "required": false,
+          "visaTier": ["tourist"],
+          "link": "https://www.k-eta.go.kr/",
+          "linkLabel": "K-ETA公式サイト",
+          "warnings": [
+            "要件は変わることがあります——毎回の渡航前に公式K-ETAサイトで確認してください。一度調べただけで安心しないこと。"
+          ]
+        },
+        {
+          "id": "download-apps-tourist",
+          "label": "Naver MapとPapagoをダウンロードする",
+          "description": "搭乗前に入れておくべき2つの必須アプリ：",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist"],
+          "tips": [
+            "Naver Map：韓国の電車・徒歩ルート案内。Google Mapsより断然使いやすい",
+            "Papago：Naverの翻訳アプリ。韓国語↔英語ならGoogle翻訳より優秀",
+            "自宅のWiFiでダウンロードしておくこと"
+          ]
+        },
+        {
+          "id": "download-apps",
+          "label": "KakaoTalk、Naver Map、Papagoをダウンロードする",
+          "description": "搭乗前に入れておくべき3つの必須アプリ：",
+          "category": "app",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "KakaoTalk：韓国はWhatsAppでもTelegramでもなくこれ一択。大家、同僚、あらゆる人からの連絡はここに来ます。",
+            "Naver Map：韓国の電車・徒歩ルート案内。Google Mapsより断然使いやすい",
+            "Papago：Naverの翻訳アプリ。韓国語↔英語ならGoogle翻訳より優秀",
+            "自宅のWiFiでダウンロードしておくこと——到着後は韓国の電話番号がないと一部機能が使えません"
+          ]
+        },
+        {
+          "id": "sim-plan",
+          "label": "韓国eSIMを事前購入するか、空港SIM購入プランを立てる",
+          "description": "選択肢：出発前にAiraloまたはeSIMDBでeSIMを購入するか、仁川空港の到着ホールでSIMを購入する。長期・在留ビザ保有者は外国人登録証（ARC）取得後に韓国のポストペイドプランに乗り換えますが、到着直後からデータ通信は必要です。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "documents-pack",
+          "label": "必要書類をすべてまとめる",
+          "description": "出発前に以下を揃えてください：",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "パスポート（有効期限6か月以上）",
+            "ビザ承認レター（F-1-D、D-10、E-7など非ビザなし入国の場合）",
+            "保険証書",
+            "宿泊先の住所（韓国語・ハングル表記）",
+            "証明写真2枚（3.5×4.5cm、白背景——韓国規格。USサイズとは異なります）"
+          ],
+          "warnings": [
+            "韓国の証明写真サイズは3.5×4.5cmです。米国規格（2×2インチ）は別サイズです——韓国規格の写真を持参してください。"
+          ]
+        },
+        {
+          "id": "cash-preparation",
+          "label": "₩300,000〜500,000（約$230〜385）を現金で用意する",
+          "description": "韓国は技術的には80%以上がキャッシュレスですが、それは韓国の決済方法に限った話。外国カードは小さなレストラン、キオスク、屋台、デリバリーアプリでは使えないことが多いです。現金は必須のバックアップです。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "warnings": [
+            "Apple Payは現代カードと新韓カードのみ対応——日常の支払いには頼れません。",
+            "Samsung Payは韓国の携帯と韓国の銀行カードが必要です——ARC取得・銀行口座開設後まで使えません。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-0-airport",
+      "title": "Day 0：空港",
+      "timeframe": "仁川空港到着時",
+      "description": "入国審査を通過したら、到着ホールでこの順番に動いてください。WOWPASSのステップは飛ばさないこと。",
+      "items": [
+        {
+          "id": "tourist-sim",
+          "label": "仁川空港でSIMを購入する（またはeSIMを有効化する）",
+          "description": "到着ホールのKTまたはLG U+カウンターで。30日間データSIMは₩33,000〜55,000。または事前購入のeSIMをここで有効化してください。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/korea-arrival-checklist-2026",
+          "linkLabel": "韓国入国チェックリスト 2026"
+        },
+        {
+          "id": "wowpass-card",
+          "label": "WOWPASSカードを入手する（₩5,000）",
+          "description": "WOWPASSはプリペイドカード（T-moneyやクレジットカードが使える場所ならどこでも利用可）、交通系ICカード、外貨両替機の3役をこなします。カード代₩5,000。WOWPASSキオスクで現金または外国カードからチャージ可能。空港の両替所より為替レートが有利です。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "最初の1週間はこれがメインカードになります。ほとんどの店舗と全交通機関で使えます。",
+            "空港の両替カウンターよりずっとレートがいいです。"
+          ],
+          "link": "/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026",
+          "linkLabel": "韓国カード比較：WOWPASS vs T-money vs Cashbee"
+        },
+        {
+          "id": "transport-to-seoul",
+          "label": "AREXかリムジンバスでソウルへ向かう",
+          "description": "WOWPASSとT-moneyはすべての交通機関で使えます：",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "AREX各駅停車：₩4,750、ソウル駅まで約60分",
+            "AREXノンストップ：₩11,000、約43分（荷物スペースが広い）",
+            "リムジンバス：₩15,000〜18,000、主要エリアまでドアツードアで60〜90分"
+          ],
+          "link": "/en/blog/tips/korea-arrival-checklist-2026",
+          "linkLabel": "韓国入国チェックリスト 2026"
+        }
+      ]
+    },
+    {
+      "id": "days-1-3-settle",
+      "title": "Day 1〜3：落ち着く",
+      "timeframe": "到着後1〜3日",
+      "description": "まず街に慣れましょう。手続きに追われる前に、自分の街を歩いて把握してください。長期・在留ビザ保有者は、できるだけ早く出入国・外国人庁の予約を取ってください。",
+      "items": [
+        {
+          "id": "neighborhood-orientation",
+          "label": "近所を歩いて主要スポットを確認する",
+          "description": "最寄りの地下鉄駅（出口番号を覚える——韓国の住所は出口番号が基準になります）、コンビニ（CU、GS25）、薬局（약국）、レストランをいくつか探しておきましょう。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/korea",
+          "linkLabel": "韓国ネイバーフッドガイド"
+        },
+        {
+          "id": "kakaotalk-setup",
+          "label": "ツーリストSIMの番号でKakaoTalkを設定する",
+          "description": "KakaoTalkは韓国での主要コミュニケーションツールです。今すぐ設定しましょう——大家、同僚、その他すべての人からの連絡はSMSやメールではなくここに来ます。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "warnings": [
+            "KakaoTaxiやデリバリーアプリ（Baemin、Coupang Eats）は韓国の本人確認（ポストペイドプランと紐付け）が必要です。ARC取得・ポストペイドプランへの移行後まで使えません。当面は流しのタクシーを捕まえてください。"
+          ]
+        },
+        {
+          "id": "payment-stack-setup",
+          "label": "最初の1週間の支払い手段を揃える",
+          "description": "あらゆる場面をカバーする3段構え：",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "WOWPASS：メインカード——ほとんどの店舗と全交通機関で使える",
+            "現金₩50,000〜100,000：小さな飲食店、在来市場、韓国カードのみ対応の場所向け",
+            "T-money：予備の交通系ICカード（コンビニで現金チャージ可能）",
+            "大型チェーン店やデパートは外国カードが使えることが多い。小規模店舗は対応していないことが多い"
+          ]
+        },
+        {
+          "id": "wifi-test",
+          "label": "宿泊先のWiFi速度を確認する",
+          "description": "韓国の標準は1Gbpsの光回線です。安定して100Mbps以下しか出ない場合は、国の問題ではなく設定の問題です。ホストに確認を依頼してください。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "immigration-office-booking",
+          "label": "出入国・外国人庁の予約を入れる（Hi Korea）",
+          "description": "HiKorea.go.krでできるだけ早くARC申請の予約を取ってください——特にソウルはすぐ埋まります。長期ビザ保有者は入国から90日以内に登録が必要です。必要書類をすべて持参してください。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "link": "https://www.hikorea.go.kr/",
+          "linkLabel": "Hi Korea予約サイト",
+          "tips": [
+            "ソウル出入国・外国人庁（ソウル駅エリア）はほとんどの地区から便利です。",
+            "必要書類：パスポート、ビザ、証明写真2枚（3.5×4.5cm）、住居証明、申請手数料₩30,000"
+          ],
+          "warnings": [
+            "できるだけ早く予約を——ソウルや世宗路の人気オフィスは数週間先まで埋まっています。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-1-4-admin",
+      "title": "Week 1〜4：ARC申請",
+      "timeframe": "入国から7〜14日以内",
+      "description": "韓国のデペンデンシーチェーンはここから始まります：ARC取得→携帯電話→銀行口座→その他すべて。長期・在留ビザ保有者にとって最重要プロセスです。",
+      "items": [
+        {
+          "id": "arc-application",
+          "label": "出入国・外国人庁で外国人登録証（ARC）を申請する",
+          "description": "予約日に出入国・外国人庁（출입국사무소）で申請します。法定期限は入国から90日以内ですが、早めの予約を——ソウルはすぐ埋まります。パスポート、ビザ、写真2枚（3.5×4.5cm）、住居証明、手数料₩30,000を持参してください。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "申請直後にモバイルARCを有効化してください——銀行口座開設の際に受け付けてもらえます。",
+            "ARC→携帯→銀行の詳細な手順はガイドを参照してください。"
+          ],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "韓国のARC→携帯→銀行ループ：解決策",
+          "warnings": [
+            "できるだけ早く予約を取ってください——人気オフィスは数週間先まで埋まっています。",
+            "ARCがないとポストペイドプランの契約も銀行口座の開設もできません。"
+          ]
+        },
+        {
+          "id": "mobile-arc-activate",
+          "label": "当日中にモバイルARCを有効化する",
+          "description": "ARC申請を提出したら、スマートフォンでモバイルARC（디지털 외국인등록증）を有効化してください。銀行はこのデジタル版を受け付けます——物理カードの到着を待つ必要はありません。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "韓国のARC→携帯→銀行ループ：解決策"
+        },
+        {
+          "id": "arc-received",
+          "label": "物理ARCカードを受け取る（2〜4週間待ち）",
+          "description": "申請後、物理ARCカードは郵便で2〜4週間後に届きます。モバイルARCはすでに有効で銀行でも受け付けられますが、一部サービスには物理カードが必要です。物理カードが届いたらここを完了にしてください。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "isGate": true,
+          "estimatedWait": "2-4 weeks",
+          "tips": [
+            "物理カードの到着を待つ間も、モバイルARCで銀行口座を開設できます。",
+            "一部の行政サービスや契約更新には物理ARCが必要です。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "after-arc-full-setup",
+      "title": "ARC取得後：フルセットアップ",
+      "timeframe": "ARCカード受け取り後",
+      "description": "ARCが手に入ったら、韓国在住者としての生活を本格スタートできます：銀行口座、ポストペイドSIM、国民健康保険、デリバリーアプリ。",
+      "items": [
+        {
+          "id": "bank-account",
+          "label": "韓国の銀行口座を開設する（ハナ銀行、新韓銀行、またはKB国民銀行）",
+          "description": "モバイルARCとプリペイドSIMを持って、ハナ銀行・新韓銀行・KB国民銀行の窓口に行きましょう。スタッフはモバイルARCで口座開設を受け付けます——物理カードは不要です。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "ハナ銀行と新韓銀行は外国人対応が比較的手厚いです。",
+            "パスポート、モバイルARCまたは物理ARC、プリペイドSIMを持参してください。"
+          ],
+          "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
+          "linkLabel": "韓国のARC→携帯→銀行ループ：解決策"
+        },
+        {
+          "id": "postpaid-phone-upgrade",
+          "label": "ポストペイドプランに乗り換える（KT、SKT、またはLG U+）",
+          "description": "ARC＋韓国の銀行口座が必要です。この一度の乗り換えで、本人確認（본인인증）が必要なほぼすべての韓国アプリとサービスが使えるようになります。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "Kakao Pay、Naver Pay、Samsung Pay",
+            "KakaoTaxi（ついに使える！）",
+            "BaeminとCoupang Eatsのデリバリー",
+            "インターネットバンキングのフル機能",
+            "本人確認が必要な大多数の韓国アプリ"
+          ],
+          "warnings": [
+            "銀行口座を開設した後に乗り換えること——ポストペイドプランは韓国の銀行口座での支払い設定が必要です。"
+          ]
+        },
+        {
+          "id": "nhis-enrollment",
+          "label": "国民健康保険（NHIS）に加入する",
+          "description": "在留ビザ保有者（E-7、D-8、F-2、F-5、F-6）は、入国から1か月以内にNHISへの加入が義務付けられています。月額保険料は収入に応じて決まります。NHISは医療費の60〜80%をカバーします。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["arc-received"],
+          "link": "https://www.nhis.or.kr/",
+          "linkLabel": "NHIS公式サイト",
+          "tips": [
+            "最寄りのNHIS支部またはARC番号でオンライン加入が可能です。",
+            "長期ビザ保有者（F-1-D、D-10、H-1）は加入義務はありません——民間保険が代替手段になります。"
+          ],
+          "warnings": [
+            "加入期限を過ぎると、入国日まで遡って保険料を徴収される場合があります。"
+          ]
+        },
+        {
+          "id": "korean-payment-apps",
+          "label": "Kakao Pay、Naver Pay、またはSamsung Payを設定する",
+          "description": "ポストペイドプランと韓国の銀行口座があれば、韓国のモバイル決済アプリに登録できます。Samsung Payが主流ですが、3つともほぼ全国で利用できます。",
+          "category": "app",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "Samsung PayはSamsungデバイスが必要です。",
+            "Kakao PayとNaver Payはスマートフォンを問わず使えます。"
+          ]
+        },
+        {
+          "id": "delivery-apps",
+          "label": "BaeminまたはCoupang Eatsでフードデリバリーを設定する",
+          "description": "どちらも本人確認（ポストペイドプランと紐付け）が必要です。ポストペイドに乗り換えたので、これで使えるようになります。",
+          "category": "food",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "blockedBy": ["arc-received"],
+          "tips": [
+            "Baemin（배달의민족）がシェアNo.1のアプリです。Coupang Eatsは成長中で、価格が安いことが多いです。"
+          ]
+        }
+      ]
+    }
+  ]
+}

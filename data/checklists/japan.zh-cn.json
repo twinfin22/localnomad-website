@@ -1,0 +1,414 @@
+{
+  "country": "japan",
+  "title": "数字游民日本入境清单（2026年版）",
+  "lastUpdated": "2026-03-21",
+  "blogUrl": "/en/blog/tips/japan-arrival-checklist-2026",
+  "phases": [
+    {
+      "id": "pre-flight",
+      "title": "出发前准备",
+      "timeframe": "出发前1-2周",
+      "description": "大多数事项落地后无法补救。请在出发前务必完成。",
+      "items": [
+        {
+          "id": "visa-check",
+          "label": "确认签证类型",
+          "description": "74个国家和地区的公民可免签入境（多数为90天）。数字游民签证（最长6个月）要求年收入超过1,000万日元且雇主为日本境外机构。工作/居住签证需要在留资格认定证明书（COE）。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "在留资格认定证明书（COE）非必须，但可加快数字游民签证审理——取得需要1-3个月，宜尽早申请",
+            "大多数访客可免签入境；数字游民签证适合希望以完全合规方式停留6个月的人",
+            "工作签证申请人：必须在前往日本驻外使领馆申请前取得COE"
+          ],
+          "link": "/en/blog/comparisons/japan-digital-nomad-visa-vs-tourist-2026",
+          "linkLabel": "日本数字游民签证 vs 观光签证（2026年）"
+        },
+        {
+          "id": "esim",
+          "label": "登机前购买eSIM",
+          "description": "Ubigi、Airalo或Mobal均可使用。落地后激活即可，省去在成田机场排队购买实体SIM卡的麻烦。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "成田和羽田机场均有实体SIM卡柜台，但繁忙的到港高峰时段排队可能很长",
+            "先连接机场WiFi，再激活eSIM"
+          ]
+        },
+        {
+          "id": "apps",
+          "label": "下载LINE、PayPay、Navitime、Tabelog",
+          "description": "落地前必装的四款应用：",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "LINE：即时通讯——日本版WhatsApp，但这里真的是人人都在用",
+            "PayPay：餐厅、便利店、自动售货机扫码支付",
+            "Navitime：电车导航——换乘精度优于Google Maps",
+            "Tabelog：餐厅评价——当地人用的那种，不是专坑游客的"
+          ]
+        },
+        {
+          "id": "medication-letter",
+          "label": "为处方药准备医生证明信",
+          "description": "随身携带英文医生证明信，注明每种药物的名称（通用名）、剂量和用途。伪麻黄碱及部分ADHD药物在日本属管制药品。",
+          "category": "document",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "warnings": [
+            "包括伪麻黄碱和部分ADHD药物在内的常见药物在日本属管制品——打包行李前请查阅厚生劳动省的进口规定"
+          ],
+          "link": "https://www.mhlw.go.jp/english/policy/health-medical/pharmaceuticals/01.html",
+          "linkLabel": "厚生劳动省：药品进口规定"
+        },
+        {
+          "id": "document-folder",
+          "label": "整理证件资料夹",
+          "description": "护照（有效期6个月以上）、签证批准文件（如适用）、含日文地址的住宿确认函、旅行保险证明、2张证件照。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "打印日文版住宿地址——出租车司机和车站工作人员可能看不懂罗马字"
+          ]
+        },
+        {
+          "id": "accommodation",
+          "label": "只预订1-2周的住宿",
+          "description": "各区的实际氛围要亲身感受才知道。不要在没看过的情况下就签3个月的租约。",
+          "category": "housing",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "新宿太嘈杂；下北泽适合步行；高圆寺便宜且有独特氛围",
+            "确定长租之前，多走几个街区实地感受"
+          ],
+          "link": "/en/blog/guides/japan-housing-digital-nomads-2026",
+          "linkLabel": "数字游民在日本找房：破解两难困境"
+        },
+        {
+          "id": "bank-notify",
+          "label": "提前通知本国银行赴日行程",
+          "description": "防止到达当天在便利店ATM机取款时卡被冻结。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "warnings": [
+            "第一天在7-Eleven ATM卡被冻结，会让你整个入境流程全部卡住"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-0-airport",
+      "title": "第0天：机场",
+      "timeframe": "入境当天",
+      "description": "按顺序执行以下步骤。每一步都为下一步做好铺垫。",
+      "items": [
+        {
+          "id": "immigration",
+          "label": "通过入境审查",
+          "description": "准备好护照、回程/中转航班信息及住宿地址。免签入境将获得90天印章。数字游民签证持有者需出示签证及COE（如适用）。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "residence-card",
+          "label": "在入境审查处领取在留卡",
+          "description": "在7个主要机场（成田、羽田、关西、福冈、中部、新千岁、广岛），在留卡将在第0天于入境审查柜台直接发放。在区役所(区役所)进行住民登记时需要此卡。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "在成田/羽田/关西/福冈/中部/新千岁/广岛自动发放——无需额外排队",
+            "若从其他较小机场入境，在留卡将邮寄至已登记的住址"
+          ]
+        },
+        {
+          "id": "activate-esim",
+          "label": "激活eSIM（或购买实体SIM卡）",
+          "description": "先连接机场免费WiFi，再激活eSIM。离开机场前发一条LINE消息确认网络正常。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "如果出发前没有购买eSIM，到达大厅设有实体SIM卡柜台"
+          ]
+        },
+        {
+          "id": "suica",
+          "label": "获取Suica卡",
+          "description": "根据自身情况选择合适的类型：",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "Apple Wallet版Suica（iPhone 8及以上）：有效期10年，用Mastercard/Amex充值¥3,000——大多数访客的最佳选择",
+            "Welcome Suica实体卡：有效期28天，无需押金，到期余额不退还",
+            "Welcome Suica手机应用：有效期180天，英文界面，适合较长时间的观光停留",
+            "Mobile Suica应用（仅限居住者）：日文界面，购买通勤月票（定期券）时需要",
+            "Apple Wallet版Suica超过6个月未使用会进入休眠状态——可请车站工作人员重新激活"
+          ],
+          "link": "https://www.jreast.co.jp/en/multi/welcomesuica/purchase.html",
+          "linkLabel": "JR东日本：Welcome Suica"
+        },
+        {
+          "id": "cash",
+          "label": "取出¥30,000–50,000现金",
+          "description": "7-Eleven ATM支持大多数国际银行卡，并有英文界面。离开机场前取好现金。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "小型拉面馆、居酒屋、寺庙和路边摊往往只收现金",
+            "7-Eleven ATM到处都是，不用担心取不到钱，但出发时就有现金能省去不少麻烦"
+          ]
+        },
+        {
+          "id": "airport-transfer",
+          "label": "前往住宿地点",
+          "description": "从成田机场出发：",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/japan-arrival-checklist-2026",
+          "linkLabel": "游民日本入境清单2026",
+          "tips": [
+            "成田→NEX（成田特快）：¥3,250，约60分钟到东京/新宿/涩谷",
+            "成田→Skyliner：¥2,580，约41分钟到上野",
+            "成田→机场巴士：¥3,200，直达主要酒店",
+            "羽田→单轨电车：¥500，约15分钟 / 京急线：¥330，约20分钟",
+            "出租车：成田约¥19,000–27,000；羽田约¥6,000–11,000",
+            "深夜11点后到达？末班车已结束——预留出租车或机场酒店的预算"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-1-3-ward",
+      "title": "第1-3天：区役所手续",
+      "timeframe": "第1-3天（法律规定14天内必须完成）",
+      "description": "居住签证持有者必须在区役所(区役所)完成登记。这一步完成后，国民健康保险、ゆうちょ银行开户和契约SIM卡就全部打通了。",
+      "items": [
+        {
+          "id": "ward-registration",
+          "label": "在区役所办理住民登记（住民登记）",
+          "description": "携带在留卡和护照前往所在区的区役所(区役所)。住民登记是法律要求，必须在入境后14天内完成。登记后将获得住民票(住民票)，银行开户和保险办理均需要此文件。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "isGate": true,
+          "estimatedWait": "1-2小时",
+          "tips": [
+            "在留卡和护照两样都要带——缺一不可",
+            "部分区役所有英语工作人员；不确定的话可提前致电确认",
+            "会收到住民票(住民票)——多拿几份，银行开户和保险申请都需要用到"
+          ],
+          "warnings": [
+            "数字游民签证持有者不会获发在留卡，因此无法办理住民登记——请改用商业健康保险",
+            "短期观光停留者同样不符合住民登记条件"
+          ]
+        },
+        {
+          "id": "nhi",
+          "label": "加入国民健康保险",
+          "description": "可在区役所与住民登记同步办理。国民健康保险覆盖70%的医疗费用；保费按前一年收入计算（第一年通常较低）。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "保费根据前一年收入计算——海外生活第一年往往是最便宜的",
+            "可与住民登记同日办理——无需另行预约"
+          ],
+          "warnings": [
+            "数字游民签证持有者不符合国民健康保险资格——请购买私人旅行保险或医疗保险"
+          ]
+        },
+        {
+          "id": "garbage-guide",
+          "label": "在区役所领取英文版垃圾分类指南",
+          "description": "免费领取。一本实用小册子，能帮你在整个居住期间避免垃圾投放的困惑。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"]
+        }
+      ]
+    },
+    {
+      "id": "week-1-2",
+      "title": "第1-2周：银行与SIM卡",
+      "timeframe": "第3-14天",
+      "description": "完善银行账户和长期通信方案。居住者在住民登记后开设ゆうちょ银行账户；观光客和数字游民签证持有者继续使用国际银行卡和预付SIM卡。",
+      "items": [
+        {
+          "id": "wifi-test",
+          "label": "测试住宿处的WiFi速度",
+          "description": "视频通话至少需要25Mbps。收拾行李前先测速——要提前知道是否需要备用方案。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "yucho-bank",
+          "label": "开设ゆうちょ银行（日本邮政银行）账户",
+          "description": "对新居住者最友好的日本银行——无需等待6个月，对外国人较为开放。携带在留卡、护照和住民票前往任意邮局网点办理。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "无最低余额要求，全国7-Eleven ATM免费取款",
+            "在日本领取工资必备",
+            "在邮局网点约需30-60分钟完成开户"
+          ],
+          "warnings": [
+            "普通银行（SMBC、MUFG）通常要求6个月以上居住记录——先从ゆうちょ银行开始"
+          ]
+        },
+        {
+          "id": "contract-sim",
+          "label": "切换为契约SIM卡（Rakuten、IIJmio等）",
+          "description": "契约SIM卡需要住民登记。Rakuten Mobile最便宜（月租¥3,168无限流量）。流量需求较小的用户可选IIJmio。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "Rakuten Mobile：月租¥3,168无限流量，需要在留卡和银行账户",
+            "IIJmio：2GB套餐月租¥858起——适合以WiFi为主的用户",
+            "观光客和数字游民签证持有者：继续使用预付SIM卡或eSIM"
+          ]
+        },
+        {
+          "id": "paypay-setup",
+          "label": "设置PayPay",
+          "description": "绑定国际银行卡并在便利店测试支付。一旦成功，在餐厅、便利店和自动售货机到处都能用。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "先在便利店做一笔小额消费，确认银行卡绑定成功"
+          ]
+        },
+        {
+          "id": "local-walk",
+          "label": "步行找到最近的便利店、超市和地铁站",
+          "description": "徒步熟悉周边环境。知道这三个地方在哪里，日常大多数问题都能迎刃而解。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/japan",
+          "linkLabel": "日本街区指南"
+        },
+        {
+          "id": "garbage-schedule",
+          "label": "了解垃圾收集时间表",
+          "description": "查看楼道公告栏或直接问房东。日本对垃圾分类非常认真——投错垃圾桶或搞错日期会真的影响邻里关系。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "可燃垃圾、不可燃垃圾、资源回收物和大型废弃物各有不同的收集日和指定袋颜色"
+          ],
+          "link": "/en/blog/tips/japan-garbage-separation-guide-2026",
+          "linkLabel": "外国人垃圾分类指南"
+        },
+        {
+          "id": "disaster-apps",
+          "label": "下载Safety Tips和Yahoo!防灾速报",
+          "description": "Safety Tips是多语言官方灾害警报应用。Yahoo!防灾速报提供地震预警功能。两款应用在日本都是必备。",
+          "category": "safety",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/japan-earthquake-preparedness-guide-2026",
+          "linkLabel": "数字游民地震准备指南"
+        },
+        {
+          "id": "evacuation-point",
+          "label": "确认最近的避难场所（避難場所）",
+          "description": "区役所备有地图。在真正需要之前，提前确认住所附近的避难场所位置。",
+          "category": "safety",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "避难场所通常为公园、学校或公共设施"
+          ]
+        },
+        {
+          "id": "coworking",
+          "label": "用日票体验一次共享办公空间",
+          "description": "WeWork、Regus或本地工位。签月租套餐前，先确认WiFi速度和插座数量是否满足需求。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "月租共享办公约¥15,000-30,000——先体验再决定是否值得"
+          ]
+        },
+        {
+          "id": "community",
+          "label": "参加聚会、共享办公活动或语言交流",
+          "description": "东京的交流聚会非常活跃。大阪规模较小，但氛围更亲切。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "即使日语为零，语言交流活动也是很好的入门选择"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month-1-plus",
+      "title": "第1个月以后：长期定居准备",
+      "timeframe": "第4-24周",
+      "description": "适用于长期定居的居住者。个人编号卡和普通银行账户开设需要时间，但都不会影响日常生活。",
+      "items": [
+        {
+          "id": "my-number",
+          "label": "申请个人编号卡（マイナンバーカード）",
+          "description": "个人编号在住民登记时自动分配；实体卡需要6-10周。用于报税、行政服务和健康保险资格验证。不是紧急事项——方便的时候再办即可。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "estimatedWait": "6-10周",
+          "tips": [
+            "收到通知信后，可在myna.go.jp在线申请",
+            "卡片在最初几个月并非必需——很多服务仅凭号码即可使用",
+            "2026年起电子报税（e-Tax）需要此卡"
+          ],
+          "link": "https://www.kojinbango-card.go.jp/en/",
+          "linkLabel": "个人编号卡申请门户"
+        },
+        {
+          "id": "regular-bank",
+          "label": "开设普通银行账户（SMBC / MUFG）",
+          "description": "普通银行要求6个月以上有据可查的居住记录。非必须——ゆうちょ银行已能满足大多数日常需求。",
+          "category": "money",
+          "required": false,
+          "visaTier": ["resident"],
+          "estimatedWait": "居住6个月以上",
+          "tips": [
+            "SMBC和MUFG均提供英文网上银行界面",
+            "部分雇主的工资转账不支持ゆうちょ银行时需要"
+          ]
+        },
+        {
+          "id": "commute-test",
+          "label": "在早晚高峰时段实际体验一次通勤路线",
+          "description": "在真正有时间压力之前，先在高峰期跑一次通勤路线，做到心中有数。",
+          "category": "transport",
+          "required": false,
+          "visaTier": ["long-term", "resident"]
+        }
+      ]
+    }
+  ]
+}

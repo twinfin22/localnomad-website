@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   ChevronDown, ExternalLink, Lock, LockOpen, TriangleAlert, BookOpen, Globe,
   Smartphone, FileText, CreditCard, Train, ClipboardList, Wifi, Shield, Home, UtensilsCrossed,
@@ -41,6 +42,7 @@ export function ChecklistItemRow({
   isNewlyUnlocked,
   unlocksLabels,
 }: ChecklistItemRowProps) {
+  const t = useTranslations('Checklist');
   const [open, setOpen] = useState(false);
   const isBlocked = state === 'blocked';
   const isDone = state === 'done';
@@ -108,7 +110,7 @@ export function ChecklistItemRow({
 
               {!item.required && (
                 <span className="inline-block rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-                  optional
+                  {t('optional')}
                 </span>
               )}
 
@@ -116,13 +118,13 @@ export function ChecklistItemRow({
               {isGate && state === 'actionable' && (
                 <span className="inline-flex items-center gap-1 rounded bg-teal-100 px-1.5 py-0.5 text-[10px] font-medium text-teal-700">
                   <LockOpen className="h-3 w-3" />
-                  Unlocks more steps
+                  {t('unlocksMore')}
                 </span>
               )}
               {isGate && isDone && (
                 <span className="inline-flex items-center gap-1 rounded bg-green-100 px-1.5 py-0.5 text-[10px] font-medium text-green-700">
                   <LockOpen className="h-3 w-3" />
-                  Unlocked
+                  {t('unlocked')}
                 </span>
               )}
             </div>
@@ -130,21 +132,21 @@ export function ChecklistItemRow({
             {/* Gate actionable: prominent estimated wait */}
             {isGate && state === 'actionable' && estimatedWait && (
               <p className="mt-0.5 text-xs font-medium text-primary">
-                Estimated wait: {estimatedWait}
+                {t('estimatedWait', { wait: estimatedWait })}
               </p>
             )}
 
             {/* Gate actionable: what it unlocks */}
             {isGate && state === 'actionable' && unlocksLabels && unlocksLabels.length > 0 && (
               <p className="mt-0.5 text-xs text-muted-foreground">
-                Unlocks: {unlocksLabels.join(', ')}
+                {t('unlocks', { items: unlocksLabels.join(', ') })}
               </p>
             )}
 
             {/* Blocked: "Requires: {label}" */}
             {isBlocked && blockedByLabel && (
               <p className="mt-0.5 text-xs text-muted-foreground">
-                Requires: {blockedByLabel}
+                {t('requires', { label: blockedByLabel })}
                 {estimatedWait && (
                   <span className="ml-1">(~{estimatedWait})</span>
                 )}
@@ -181,7 +183,7 @@ export function ChecklistItemRow({
 
           {item.link && (() => {
             const isExternal = item.link!.startsWith('http');
-            const contextLabel = isExternal ? 'Official site' : item.link!.includes('/blog/') ? 'Read more' : item.link!.includes('/neighborhood/') ? 'Neighborhood guide' : item.link!.includes('/visa/') ? 'Visa details' : 'Read more';
+            const contextLabel = isExternal ? t('contextOfficial') : item.link!.includes('/blog/') ? t('contextReadMore') : item.link!.includes('/neighborhood/') ? t('contextNeighborhood') : item.link!.includes('/visa/') ? t('contextVisa') : t('contextReadMore');
             return (
               <div className="mt-3">
                 <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/70">{contextLabel}</p>
@@ -191,7 +193,7 @@ export function ChecklistItemRow({
                   {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   {isExternal ? <Globe className="h-3.5 w-3.5 shrink-0" /> : <BookOpen className="h-3.5 w-3.5 shrink-0" />}
-                  {item.linkLabel || 'Learn more'}
+                  {item.linkLabel || t('contextLearnMore')}
                   {isExternal && <ExternalLink className="h-3 w-3 shrink-0" />}
                 </a>
               </div>
@@ -232,7 +234,7 @@ export function ChecklistItemRow({
             <div className="mt-3">
               <span className="inline-flex items-center gap-2 rounded-full bg-muted/50 px-3 py-1.5 text-sm font-medium text-muted-foreground">
                 <BookOpen className="h-3.5 w-3.5 shrink-0" />
-                {item.linkLabel || 'Learn more'}
+                {item.linkLabel || t('contextLearnMore')}
               </span>
             </div>
           )}

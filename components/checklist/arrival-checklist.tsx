@@ -192,14 +192,14 @@ export function ArrivalChecklist({ data, country, defaultTier = 'tourist' }: Arr
           <button
             type="button"
             onClick={() => {
-              if (window.confirm('Reset all progress? This cannot be undone.')) {
+              if (window.confirm(t('resetConfirm'))) {
                 localStorage.removeItem(`localnomad:checklist:${country}:${tier}`);
                 window.location.reload();
               }
             }}
             className="inline-flex items-center gap-2 rounded-lg border border-destructive/30 px-4 py-2.5 text-sm font-medium text-destructive hover:bg-destructive/5 transition-colors"
           >
-            Reset checklist
+            {t('resetChecklist')}
           </button>
         </div>
 

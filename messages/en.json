@@ -472,6 +472,19 @@
     "tierTourist": "Tourist",
     "tierLongTerm": "Long-term",
     "tierResident": "Resident",
-    "tierItemCount": "{count} items"
+    "tierItemCount": "{count} items",
+    "optional": "optional",
+    "unlocksMore": "Unlocks more steps",
+    "unlocked": "Unlocked",
+    "estimatedWait": "Estimated wait: {wait}",
+    "unlocks": "Unlocks: {items}",
+    "requires": "Requires: {label}",
+    "resetConfirm": "Reset all progress? This cannot be undone.",
+    "resetChecklist": "Reset checklist",
+    "contextOfficial": "Official site",
+    "contextReadMore": "Read more",
+    "contextNeighborhood": "Neighborhood guide",
+    "contextVisa": "Visa details",
+    "contextLearnMore": "Learn more"
   }
 }

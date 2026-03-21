@@ -6,7 +6,8 @@
     "dev": "next dev --port 3000",
     "validate-visa": "node --experimental-strip-types scripts/validate-visa-data.ts",
     "validate:translations": "node --experimental-strip-types scripts/validate-translations.ts",
-    "build": "npm run validate-visa && npm run validate:translations && next build",
+    "validate:checklist-i18n": "node --experimental-strip-types scripts/validate-checklist-i18n.ts",
+    "build": "npm run validate-visa && npm run validate:translations && npm run validate:checklist-i18n && next build",
     "start": "next start",
     "lint": "eslint",
     "fix:translations": "node --experimental-strip-types scripts/fix-array-collapse.ts"

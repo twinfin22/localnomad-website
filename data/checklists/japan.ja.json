@@ -1,0 +1,414 @@
+{
+  "country": "japan",
+  "title": "デジタルノマドのための日本入国チェックリスト（2026年版）",
+  "lastUpdated": "2026-03-21",
+  "blogUrl": "/en/blog/tips/japan-arrival-checklist-2026",
+  "phases": [
+    {
+      "id": "pre-flight",
+      "title": "渡航前の準備",
+      "timeframe": "出発の1〜2週間前",
+      "description": "現地到着後では対処できないことがほとんど。出発前に必ず済ませておこう。",
+      "items": [
+        {
+          "id": "visa-check",
+          "label": "ビザの種類を確認する",
+          "description": "74カ国・地域の市民はビザなしで入国でき、多くの場合90日間滞在可能。デジタルノマドビザ（最長6ヶ月）は年収1,000万円以上かつ日本国外の雇用主が必要。就労・居住ビザには在留資格認定証明書（COE）が必要。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "在留資格認定証明書（COE）は任意だが、デジタルノマドビザの審査を早める効果がある——取得に1〜3ヶ月かかるため、早めに動こう",
+            "多くの訪問者はビザなしで入国できる。デジタルノマドビザは6ヶ月間の合法滞在を希望する人向け",
+            "就労ビザ申請者：日本の在外公館に申請する前にCOEの発行が必要"
+          ],
+          "link": "/en/blog/comparisons/japan-digital-nomad-visa-vs-tourist-2026",
+          "linkLabel": "デジタルノマドビザ vs 観光ビザ（2026年版）"
+        },
+        {
+          "id": "esim",
+          "label": "搭乗前にeSIMを取得しておく",
+          "description": "Ubigi、Airalo、Mobalいずれも使える。現地到着後に有効化すればOK。成田空港の物理SIMカウンターの行列を回避できる。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "成田・羽田にも物理SIMカウンターはあるが、到着ラッシュの夜は長蛇の列になることも",
+            "まず空港のWiFiに接続してからeSIMを有効化しよう"
+          ]
+        },
+        {
+          "id": "apps",
+          "label": "LINE、PayPay、Navitime、Tabelogをダウンロードする",
+          "description": "日本で必須の4アプリ——到着前に入れておこう：",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "LINE：メッセージアプリ——日本版WhatsApp、ただし本当に全員使ってる",
+            "PayPay：レストラン・コンビニ・自販機でQRコード決済",
+            "Navitime：電車ナビ——乗り換えはGoogleマップより精度が高い",
+            "Tabelog：グルメレビュー——観光客向けでなく、地元民が使うやつ"
+          ]
+        },
+        {
+          "id": "medication-letter",
+          "label": "処方薬の医師証明書を用意する",
+          "description": "薬の名称（一般名）・用量・目的を英語で記載した医師の証明書を携帯すること。シュードエフェドリンや一部のADHD治療薬など、日本では規制対象となる一般的な薬がある。",
+          "category": "document",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "warnings": [
+            "シュードエフェドリンや一部のADHD治療薬は日本では規制薬物——荷造りの前に厚生労働省の輸入ルールを確認すること"
+          ],
+          "link": "https://www.mhlw.go.jp/english/policy/health-medical/pharmaceuticals/01.html",
+          "linkLabel": "厚生労働省：医薬品の輸入ルール"
+        },
+        {
+          "id": "document-folder",
+          "label": "書類一式をまとめておく",
+          "description": "パスポート（有効期限6ヶ月以上）、ビザ許可証（該当者）、日本語住所入りの宿泊確認書、海外旅行保険の証明書、証明写真2枚。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "宿泊先の住所は日本語で印刷しておこう——タクシー運転手や駅スタッフはローマ字が読めないことがある"
+          ]
+        },
+        {
+          "id": "accommodation",
+          "label": "宿泊先は最初の1〜2週間分だけ予約する",
+          "description": "街の雰囲気は実際に来てみないとわからない。下見なしで3ヶ月契約に縛られないようにしよう。",
+          "category": "housing",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "新宿は賑やかすぎる。下北沢は歩きやすい。高円寺は安くてクセになる",
+            "長期賃貸を決める前に、いくつかの街を実際に歩いて比べてみよう"
+          ],
+          "link": "/en/blog/guides/japan-housing-digital-nomads-2026",
+          "linkLabel": "デジタルノマドのための日本住宅事情：ジレンマの解消法"
+        },
+        {
+          "id": "bank-notify",
+          "label": "日本渡航をホームバンクに連絡しておく",
+          "description": "到着当日、コンビニATMでカードが止まるのを防ぐために。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "warnings": [
+            "初日にセブン-イレブンのATMでカードが止まると、その後の手続きが全部止まる"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-0-airport",
+      "title": "0日目：空港",
+      "timeframe": "入国当日",
+      "description": "この順番通りに進めよう。各ステップが次のステップの準備になっている。",
+      "items": [
+        {
+          "id": "immigration",
+          "label": "入国審査を通過する",
+          "description": "パスポート、帰国便・乗継便の情報、宿泊先住所を手元に用意しておくこと。ビザなし入国は90日スタンプが押される。デジタルノマドビザ所持者はビザとCOE（該当者）を提示。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "residence-card",
+          "label": "入国審査で在留カードを受け取る",
+          "description": "主要7空港（成田・羽田・関空・福岡・中部・新千歳・広島）では、入国審査カウンターで0日目に在留カードが発行される。区役所/市役所への住民登録に必要。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "成田・羽田・関空・福岡・中部・新千歳・広島では自動発行——別途並ぶ必要なし",
+            "上記以外の空港から入国した場合、在留カードは登録住所に郵送される"
+          ]
+        },
+        {
+          "id": "activate-esim",
+          "label": "eSIMを有効化する（または物理SIMを購入する）",
+          "description": "まず空港の無料WiFiに接続してからeSIMを有効化しよう。空港を出る前にLINEでメッセージを1通送って動作確認すること。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "出発前にeSIMを用意しなかった場合は、到着ロビーに物理SIMカウンターがある"
+          ]
+        },
+        {
+          "id": "suica",
+          "label": "Suicaカードを入手する",
+          "description": "自分の状況に合ったタイプを選ぼう：",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "Apple WalletのSuica（iPhone 8以降）：有効期限10年、Mastercard/Amexで¥3,000チャージ——ほとんどの訪問者にベスト",
+            "ウェルカムSuica（物理カード）：有効期限28日、デポジット不要、有効期限後の残高は返金不可",
+            "ウェルカムSuicaアプリ：有効期限180日、英語インターフェース、比較的長い観光滞在向け",
+            "モバイルSuicaアプリ（居住者向け）：日本語のみ、定期券の購入に必要",
+            "Apple WalletのSuicaは6ヶ月以上使わないと休眠状態になる——駅スタッフに再有効化を依頼しよう"
+          ],
+          "link": "https://www.jreast.co.jp/en/multi/welcomesuica/purchase.html",
+          "linkLabel": "JR東日本：ウェルカムSuica"
+        },
+        {
+          "id": "cash",
+          "label": "現金を3〜5万円引き出す",
+          "description": "セブン-イレブンのATMはほとんどの海外カードに対応しており、英語表示も可能。空港を出る前に引き出しておこう。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "小さなラーメン屋、居酒屋、寺社仏閣、屋台は現金のみのことが多い",
+            "セブン-イレブンのATMはあちこちにあるので困らないが、最初から現金があると余計な手間が省ける"
+          ]
+        },
+        {
+          "id": "airport-transfer",
+          "label": "宿泊先へ移動する",
+          "description": "成田空港からのアクセス：",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/japan-arrival-checklist-2026",
+          "linkLabel": "ノマドのための日本入国チェックリスト2026",
+          "tips": [
+            "成田→NEX（成田エクスプレス）：¥3,250、東京・新宿・渋谷まで約60分",
+            "成田→スカイライナー：¥2,580、上野まで約41分",
+            "成田→リムジンバス：¥3,200、主要ホテルへ直行",
+            "羽田→モノレール：¥500、約15分 / 京急線：¥330、約20分",
+            "タクシー：成田から¥19,000〜27,000、羽田から¥6,000〜11,000",
+            "夜11時以降の到着？終電は終わっている——タクシーか空港ホテルの予算を確保しておこう"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-1-3-ward",
+      "title": "1〜3日目：区役所/市役所",
+      "timeframe": "1〜3日目（法律上14日以内に必須）",
+      "description": "居住ビザ所持者は区役所/市役所への登録が必要。この一手続きで国民健康保険、ゆうちょ銀行口座開設、契約SIMが全部使えるようになる。",
+      "items": [
+        {
+          "id": "ward-registration",
+          "label": "区役所/市役所で住民登録を行う",
+          "description": "在留カードとパスポートを持って管轄の区役所/市役所へ。住民登録は入国から14日以内に法律で義務付けられている。住民票が発行され、銀行口座開設や保険加入に必要となる。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "isGate": true,
+          "estimatedWait": "1〜2時間",
+          "tips": [
+            "在留カードとパスポートの両方が必要——どちらか忘れると手続きできない",
+            "英語対応スタッフがいる区役所もある。不安な場合は事前に電話確認を",
+            "住民票が発行される——数枚もらっておこう。銀行口座開設や保険申請に何度も必要になる"
+          ],
+          "warnings": [
+            "デジタルノマドビザ所持者は在留カードが発行されないため住民登録不可——民間の健康保険を代わりに利用すること",
+            "短期観光ビザでの滞在者も住民登録の対象外"
+          ]
+        },
+        {
+          "id": "nhi",
+          "label": "国民健康保険に加入する",
+          "description": "住民登録と同じ窓口で申請できる。国民健康保険は医療費の70%をカバー。保険料は前年の所得に基づいて計算される（初年度はたいてい低額）。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "保険料は前年の所得を基に算定——海外赴任初年度は最も安くなることが多い",
+            "住民登録と同日に申請できる——別途予約不要"
+          ],
+          "warnings": [
+            "デジタルノマドビザ所持者は国民健康保険の対象外——民間の旅行保険または医療保険に加入すること"
+          ]
+        },
+        {
+          "id": "garbage-guide",
+          "label": "区役所/市役所でゴミ分別ガイド（英語版）をもらう",
+          "description": "無料でもらえる。滞在中のゴミ捨てに関する混乱を大幅に減らしてくれる実用的な一冊。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"]
+        }
+      ]
+    },
+    {
+      "id": "week-1-2",
+      "title": "1〜2週目：銀行口座とSIM",
+      "timeframe": "3〜14日目",
+      "description": "銀行口座と長期の通信環境を整える。居住者はゆうちょ銀行の口座を住民登録後に開設する。観光客やデジタルノマドビザ所持者は海外カードとプリペイドSIMを使い続けよう。",
+      "items": [
+        {
+          "id": "wifi-test",
+          "label": "宿泊先のWiFi速度を確認する",
+          "description": "ビデオ通話には最低25Mbps必要。荷解きの前に確認しておこう——バックアッププランが必要かどうかを把握しておくこと。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "yucho-bank",
+          "label": "ゆうちょ銀行の口座を開設する",
+          "description": "新規居住者にとって最も開設しやすい日本の銀行——6ヶ月待機不要で外国人にも対応している。在留カード・パスポート・住民票を持って郵便局の窓口へ。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "最低残高なし、全国のセブン-イレブンATMで無料引き出し可能",
+            "日本での給与受け取りに必要",
+            "郵便局の窓口で約30〜60分で手続き完了"
+          ],
+          "warnings": [
+            "一般の銀行（SMBC、MUFG）は通常6ヶ月以上の在住実績が必要——まずゆうちょ銀行から始めよう"
+          ]
+        },
+        {
+          "id": "contract-sim",
+          "label": "契約SIMに切り替える（Rakuten、IIJmioなど）",
+          "description": "契約SIMには住民登録が必要。楽天モバイルが最安値（月額¥3,168で無制限）。データ使用量が少ない場合はIIJmioが向いている。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "tips": [
+            "楽天モバイル：月額¥3,168で無制限、在留カードと銀行口座が必要",
+            "IIJmio：2GBプランが月額¥858から——WiFiメインのユーザーに最適",
+            "観光客・デジタルノマドビザ所持者：プリペイドSIMまたはeSIMを継続利用しよう"
+          ]
+        },
+        {
+          "id": "paypay-setup",
+          "label": "PayPayをセットアップする",
+          "description": "海外カードを登録してコンビニでテスト購入してみよう。一度使えるようになれば、レストラン・コンビニ・自販機と至るところで活躍する。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "まずコンビニで少額の買い物をして、カードが正しく連携されているか確認しよう"
+          ]
+        },
+        {
+          "id": "local-walk",
+          "label": "近くのコンビニ・スーパー・駅まで歩いて確認する",
+          "description": "徒歩で周辺を把握しよう。この3カ所を知っているだけで、日常の大半の問題は解決できる。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/japan",
+          "linkLabel": "日本の街ガイド"
+        },
+        {
+          "id": "garbage-schedule",
+          "label": "ゴミ収集スケジュールを確認する",
+          "description": "建物の掲示板を確認するか、大家さんに聞こう。日本のゴミ分別は本気——曜日を間違えると近所付き合いに支障が出る。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "燃えるゴミ・燃えないゴミ・資源ゴミ・粗大ゴミはそれぞれ収集日と指定袋の色が異なる"
+          ],
+          "link": "/en/blog/tips/japan-garbage-separation-guide-2026",
+          "linkLabel": "外国人のためのゴミ分別ガイド"
+        },
+        {
+          "id": "disaster-apps",
+          "label": "「Safety Tips」と「Yahoo!防災速報」をダウンロードする",
+          "description": "Safety Tipsは多言語対応の公式災害情報アプリ。Yahoo!防災速報は地震の緊急速報も届く。日本では両方が必須。",
+          "category": "safety",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/japan-earthquake-preparedness-guide-2026",
+          "linkLabel": "デジタルノマドのための地震備えガイド"
+        },
+        {
+          "id": "evacuation-point",
+          "label": "最寄りの避難場所を確認する",
+          "description": "区役所/市役所に地図がある。いざという時のために、宿泊先周辺の避難場所（避難場所）を事前に把握しておこう。",
+          "category": "safety",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "避難場所は公園・学校・公共施設が多い"
+          ]
+        },
+        {
+          "id": "coworking",
+          "label": "コワーキングスペースをデイパスで試す",
+          "description": "WeWork、Regus、またはローカルのスペース。月額プランを契約する前に、WiFi速度とコンセントの数を確認しておこう。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["long-term", "resident"],
+          "tips": [
+            "月額コワーキングは¥15,000〜30,000——先に試してから契約しよう"
+          ]
+        },
+        {
+          "id": "community",
+          "label": "ミートアップ・コワーキングイベント・言語交換に参加する",
+          "description": "東京のミートアップコミュニティは活発。大阪は規模は小さいが、アットホームな雰囲気がある。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "言語交換は日本語がゼロでも参加しやすいエントリーポイント"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month-1-plus",
+      "title": "1ヶ月目以降：長期滞在の準備",
+      "timeframe": "4〜24週目",
+      "description": "長期定住を目指す居住者向け。マイナンバーカードと一般銀行口座の開設は時間がかかるが、日常生活のブロッカーにはならない。",
+      "items": [
+        {
+          "id": "my-number",
+          "label": "マイナンバーカードを申請する",
+          "description": "マイナンバー自体は住民登録時に自動付番される。物理カードの発行には6〜10週間かかる。確定申告・行政サービス・健康保険の資格確認に使用。急ぎではないので、都合の良い時に手続きしよう。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["ward-registration"],
+          "estimatedWait": "6〜10週間",
+          "tips": [
+            "通知書を受け取ったらmyna.go.jpからオンライン申請できる",
+            "カードは最初の数ヶ月は必須ではない——番号だけで使えるサービスが多い",
+            "2026年以降のe-Tax（電子確定申告）に必要"
+          ],
+          "link": "https://www.kojinbango-card.go.jp/en/",
+          "linkLabel": "マイナンバーカード申請ポータル"
+        },
+        {
+          "id": "regular-bank",
+          "label": "一般銀行口座を開設する（SMBC / MUFG）",
+          "description": "一般の銀行は6ヶ月以上の在住実績が必要。任意——日常的なニーズはゆうちょ銀行でほぼ対応できる。",
+          "category": "money",
+          "required": false,
+          "visaTier": ["resident"],
+          "estimatedWait": "在住6ヶ月以上",
+          "tips": [
+            "SMBCとMUFGは英語のオンラインバンキングに対応している",
+            "ゆうちょ銀行を受け付けない事業者への給与振込に必要な場合がある"
+          ]
+        },
+        {
+          "id": "commute-test",
+          "label": "ラッシュアワーに通勤ルートを一度試してみる",
+          "description": "本番の前に、混雑時間帯のルートを一度体験しておこう。",
+          "category": "transport",
+          "required": false,
+          "visaTier": ["long-term", "resident"]
+        }
+      ]
+    }
+  ]
+}

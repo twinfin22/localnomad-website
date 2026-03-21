@@ -1,0 +1,324 @@
+{
+  "country": "taiwan",
+  "title": "台湾到着チェックリスト：旅行者・デジタルノマド向け（2026年版）",
+  "lastUpdated": "2026-03-21",
+  "blogUrl": "/en/blog/tips/taiwan-arrival-checklist-2026",
+  "disclaimer": {
+    "en": "This guide is based on published requirements and the author's experience. Visa rules, fees, and procedures change. Verify current information with your nearest TECO (Taipei Economic and Cultural Office) and the Taiwan Tourism Bureau before making plans. This is not immigration or legal advice. LocalNomad is not a licensed immigration services organization (移民業務機構).",
+    "zh": "本指南依據已公布之規定及作者經驗撰寫。簽證規定、費用及程序可能隨時變更。請於出發前向最近之駐外館處（TECO）及交通部觀光署確認最新資訊。本內容不構成移民或法律諮詢建議。LocalNomad 並非經許可之移民業務機構。",
+    "ja": "本ガイドは公開されている規定および執筆者の経験に基づいています。ビザの規則・費用・手続きは変更される場合があります。渡航前に最寄りの台北経済文化代表処（TECO）および台湾観光局で最新情報をご確認ください。本内容は移民・法律に関するアドバイスではありません。LocalNomad は許可を受けた移民業務機構ではありません。"
+  },
+  "phases": [
+    {
+      "id": "before-you-board",
+      "title": "搭乗前に済ませること",
+      "timeframe": "出発1〜2週間前",
+      "description": "桃園空港に着いてから時差ボケとデータなしで対処するのは無理。今のうちに。",
+      "items": [
+        {
+          "id": "tw-visa",
+          "label": "ビザ・入国区分を確認する",
+          "description": "65カ国以上の市民は90日間のビザなし入国が可能。長期滞在ならデジタルノマドビザ（DNV）が最長1年対応だが、居留証は発行されず、書類上は観光扱い。就業金卡は台湾のタレントビザ（居留証込み）で、申請は3〜4ヶ月前から始めること。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "ビザなし入国：入国審査で確認を求められた場合に備え、帰りの航空券を用意しておくこと",
+            "就業金卡保有者：居留証はカード自体——承認日から有効",
+            "デジタルノマドビザ保有者：居留証は発行されない——銀行口座開設や契約SIMは利用不可"
+          ],
+          "link": "/en/blog/tips/taiwan-gold-card-vs-dn-visa-2026",
+          "linkLabel": "就業金卡 vs デジタルノマドビザ：どちらを選ぶ？"
+        },
+        {
+          "id": "tw-esim",
+          "label": "搭乗前にeSIMを購入する",
+          "description": "Klook、KKday、Airaloで台湾向けeSIMが購入できる。着陸後に有効化するだけで、桃園空港のSIMカウンター行列をスキップできる。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "到着後にローカルSIMが欲しい場合は、入国ロビーにChunghwa Telecomの物理SIMカウンターがある"
+          ]
+        },
+        {
+          "id": "tw-apps",
+          "label": "必須アプリをダウンロードする",
+          "description": "出発前にインストールしておくべき4つのアプリ。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "LINE：台湾の定番メッセンジャー——大家、同僚、ポイントプログラムすべてLINE経由",
+            "Google マップ：台北のMRT経路検索に最適",
+            "Uber：タクシーを拾うより安いことが多く、桃園空港からも利用できる",
+            "Google 翻訳：カメラモードで中国語のメニューや看板を読み取れる"
+          ]
+        },
+        {
+          "id": "tw-documents",
+          "label": "書類フォルダを用意する（デジタル＋印刷）",
+          "description": "パスポート（有効期限6ヶ月以上）、ビザ承認書または帰りの航空券、海外旅行保険の書類、宿泊先の予約確認書、証明写真2枚。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "デジタルコピーはオフラインでもアクセスできるクラウドストレージに保存しておく"
+          ]
+        },
+        {
+          "id": "tw-cash",
+          "label": "NT$10,000〜15,000（約4〜7万円）を用意する",
+          "description": "ほとんどの店舗やレストランで外国カードが使えるが、夜市、小さな地元の店、交通系キオスクは現金のみの場合がある。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "到着後に空港の両替所か、入国ロビーのATMで引き出すのが便利",
+            "夜市専用にNT$500〜1,000の小銭を別に持っておくと楽"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-0-airport",
+      "title": "到着日：桃園空港",
+      "timeframe": "到着日（Day 0）",
+      "description": "着陸した。この順番でこなしていこう。",
+      "items": [
+        {
+          "id": "tw-immigration",
+          "label": "入国審査を通過する",
+          "description": "パスポート、ビザ書類（またはビザなし入国の場合は帰りの航空券）、宿泊先の住所を準備しておく。ピーク時でも通常20〜30分程度。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-arc-received",
+          "label": "就業金卡 / 居留証が有効か確認する",
+          "description": "就業金卡＝居留証（4機能一体型）。海外で事前承認済みの場合、到着時点でARC有効——カードを持って入国する。就労許可保有者はNIA登録後に別途居留証が発行される。この手順を完了すると、銀行口座開設と契約SIM申し込みのステップが解除される。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "isGate": true,
+          "tips": [
+            "就業金卡保有者：居留証はカード自体——承認日から有効",
+            "就労許可保有者：NIA登録後に居留証発行、通常1〜2週間"
+          ]
+        },
+        {
+          "id": "tw-sim",
+          "label": "SIMカードを入手するか、eSIMを有効化する",
+          "description": "入国ロビーにChunghwa Telecomのカウンターあリ。30日間無制限4G SIMはNT$1,000〜1,600（約4,500〜7,200円）。旅行者・プリペイドSIMはパスポートのみで申し込み可能——居留証不要。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "空港を出る前にデータ通信を確保しておく——ナビとUberに必要",
+            "旅行者・プリペイドSIM：パスポートのみ。契約SIM：居留証が必要（居住者のみ、後のステップで解除）"
+          ]
+        },
+        {
+          "id": "tw-easycard",
+          "label": "悠遊カード（EasyCard）を購入する",
+          "description": "NT$500パッケージ：NT$100デポジット＋NT$400チャージ済み。無記名カードでID不要。MRT、バス、YouBike、コンビニ、自動販売機で使える。",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "空港MRT駅またはセブン‐イレブンで購入できる",
+            "チャージはどのコンビニのレジでも可能"
+          ]
+        },
+        {
+          "id": "tw-airport-mrt",
+          "label": "空港MRTで台北駅へ向かう",
+          "description": "NT$160、約45分。6時〜23時の間、15分ごとに運行。車内無料Wi-Fi完備。悠遊カードで乗れる。",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/taiwan-arrival-checklist-2026",
+          "linkLabel": "台湾到着チェックリスト（ノマド向け2026年版）",
+          "warnings": [
+            "23時以降着陸の場合？空港シャトルを事前予約するか、台北中心部までのタクシー代NT$1,200〜1,500を覚悟すること。UberもTaoyuanから利用可能。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-1-7-settle",
+      "title": "1〜7日目：生活基盤を整える",
+      "timeframe": "1〜7日目",
+      "description": "すべてを初日にやる必要はない。少しずつ進めよう。",
+      "items": [
+        {
+          "id": "tw-wifi-speed",
+          "label": "宿泊先のWiFi速度をテストする",
+          "description": "ビデオ通話には25Mbps以上を目安に。台北のほとんどの賃貸物件はこれを十分超えている。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-explore-neighborhood",
+          "label": "近所を歩いて探索する",
+          "description": "最寄りのMRT駅、コンビニ（セブン‐イレブンやファミリーマート）、薬局、朝食店（早餐店——安くて早くて至る所にある）を把握しておく。",
+          "category": "food",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/taiwan",
+          "linkLabel": "台湾エリアガイド"
+        },
+        {
+          "id": "tw-night-market",
+          "label": "夜市で夕食を食べる",
+          "description": "饒河、寧夏、士林が有名どころ。現金持参必須——夜市は現金のみ。NT$500で食事＋おやつが十分楽しめる。",
+          "category": "food",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "夜市は常に現金のみ——カードも悠遊カードも使えない"
+          ],
+          "link": "/en/blog/tips/taiwan-night-market-guide-2026",
+          "linkLabel": "台湾夜市：外国人向けガイド"
+        },
+        {
+          "id": "tw-line-setup",
+          "label": "LINEを設定し、宿泊先のホストを登録する",
+          "description": "LINEは台湾の定番メッセンジャー。大家、職場の同僚、地元の店舗すべてが使っている。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-mobile-pay",
+          "label": "Apple PayまたはGoogle Payに外国クレジットカードを登録する",
+          "description": "ほとんどのチェーン店、レストラン、コンビニで使える。外国のVisa・Mastercardはほぼどこでも使えるが、交通系と夜市は除く。",
+          "category": "money",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "国内銀行口座を持たない外国人はLINE Pay登録に制限がある——ただし外国カードでほとんどカバーできる"
+          ]
+        },
+        {
+          "id": "tw-plugs",
+          "label": "電源プラグの互換性を確認する",
+          "description": "台湾はA/Bタイプのプラグを使用しており、アメリカと同じ規格。ヨーロッパ、イギリス、オーストラリアから来る場合はアダプターが必要。",
+          "category": "safety",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "アダプターはどのコンビニや電器店でも購入できる"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-1-4-admin",
+      "title": "1〜4週目：行政手続き",
+      "timeframe": "30日以内",
+      "description": "居住者ビザ保有者のみ。入国から30日以内にNIA登録を完了させること。",
+      "items": [
+        {
+          "id": "tw-nia-registration",
+          "label": "移民署サービスセンター（移民署服務站）に登録する",
+          "description": "すべての居住者ビザ保有者（就業金卡、就労許可）に必要。居留証＋パスポート＋居住地住所を持参すること。入国から30日以内に完了必須——全民健保の適用開始日カウントが始まる。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "isGate": true,
+          "blockedBy": ["tw-arc-received"],
+          "estimatedWait": "30–60 min",
+          "tips": [
+            "就業金卡保有者：30日以内に台湾の住所を登録して全民健保のカウントを開始させること",
+            "居留証、パスポート、住所の証明書（賃貸契約書または宿泊証明書）を持参"
+          ]
+        },
+        {
+          "id": "tw-bank-account",
+          "label": "銀行口座を開設する",
+          "description": "Cathay UnitedとE.SUN Bankは外国人に対応しやすい。居留証＋パスポート＋地元の電話番号＋印鑑またはサインカードが必要。",
+          "category": "money",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["tw-arc-received"],
+          "tips": [
+            "E.SUN Bankの主要支店には英語対応スタッフがいる"
+          ],
+          "warnings": [
+            "銀行口座開設には居留証が必要。デジタルノマドビザおよびビザなし滞在者は対象外。"
+          ]
+        },
+        {
+          "id": "tw-contract-sim",
+          "label": "契約SIMにアップグレードする（任意）",
+          "description": "2年契約SIMはより安い料金と安定したローカル番号を提供。居留証＋パスポートが必要。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["tw-arc-received"],
+          "tips": [
+            "旅行者・プリペイドSIMでも大抵の滞在には十分——長期定住する場合のみ切り替える価値がある"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month-1-plus",
+      "title": "1ヶ月以降：長期滞在",
+      "timeframe": "1ヶ月以降",
+      "description": "居住者ビザ保有者：全民健保に加入し、長期住居を確保する。",
+      "items": [
+        {
+          "id": "tw-nhi",
+          "label": "全民健保（全民健康保険）に加入する",
+          "description": "初日から就業している就業金卡保有者はすぐに加入できる。無職の就業金卡保有者はNIA登録から6ヶ月待機が必要。待機期間中は民間の海外旅行保険を継続すること。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["tw-nia-registration"],
+          "estimatedWait": "Day 1 (employed) / 6 months (unemployed)",
+          "tips": [
+            "全民健保のカウントはNIA登録日から始まる——入国日ではない",
+            "6ヶ月ルール：30日以内の出国は最大1回まで許可——超えるとカウントがリセット",
+            "月額保険料：自己加入の就業金卡保有者はNT$749〜1,000程度"
+          ],
+          "warnings": [
+            "デジタルノマドビザおよびビザなし滞在者は全民健保の対象外。民間の海外旅行保険を維持すること。"
+          ]
+        },
+        {
+          "id": "tw-apartment-hunting",
+          "label": "591.com.twで長期住居を探す",
+          "description": "台湾最大の賃貸プラットフォーム。インターフェースは中国語のみ——Google翻訳のカメラモードで操作できる。",
+          "category": "housing",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "大家はLINEでのやり取りを好む場合が多い——先にアカウントを設定しておくこと"
+          ],
+          "link": "https://www.591.com.tw/",
+          "linkLabel": "591.com.tw 賃貸プラットフォーム"
+        },
+        {
+          "id": "tw-meetups",
+          "label": "ミートアップやコワーキングイベントに参加する",
+          "description": "Kafnu、Impact Hub、CLBCが台北でコミュニティイベントを定期開催している。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-pleco",
+          "label": "Pleco（中国語辞書アプリ）をダウンロードする",
+          "description": "日常的な語彙を積み上げるための最強中国語辞書アプリ。メニュー、看板、会話に役立つ。",
+          "category": "app",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        }
+      ]
+    }
+  ]
+}

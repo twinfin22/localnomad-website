@@ -1,0 +1,323 @@
+{
+  "country": "taiwan",
+  "title": "台湾到达清单：旅行者与数字游民指南（2026年版）",
+  "lastUpdated": "2026-03-21",
+  "blogUrl": "/en/blog/tips/taiwan-arrival-checklist-2026",
+  "disclaimer": {
+    "en": "This guide is based on published requirements and the author's experience. Visa rules, fees, and procedures change. Verify current information with your nearest TECO (Taipei Economic and Cultural Office) and the Taiwan Tourism Bureau before making plans. This is not immigration or legal advice. LocalNomad is not a licensed immigration services organization (移民業務機構).",
+    "zh": "本指南依據已公布之規定及作者經驗撰寫。簽證規定、費用及程序可能隨時變更。請於出發前向最近之駐外館處（TECO）及交通部觀光署確認最新資訊。本內容不構成移民或法律諮詢建議。LocalNomad 並非經許可之移民業務機構。"
+  },
+  "phases": [
+    {
+      "id": "before-you-board",
+      "title": "登机前要做的事",
+      "timeframe": "出发前1-2周",
+      "description": "这些事情在桃园机场顶着时差、没有网络时根本没法处理。现在就搞定。",
+      "items": [
+        {
+          "id": "tw-visa",
+          "label": "确认签证/入境类型",
+          "description": "65个以上国家的公民可享90天免签入境。计划长期停留？数字游民签证（DNV）最长覆盖1年，但不签发居留证——手续上与旅游签证类似。就业金卡是台湾的人才签证（含居留证），申请需提前3-4个月启动。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "免签入境：随身备好回程机票，以防移民官查验",
+            "就业金卡持有人：居留证即是卡本身——自批准之日起生效",
+            "数字游民签证持有人：不签发居留证——无法开设银行账户或申请合约SIM卡"
+          ],
+          "link": "/en/blog/tips/taiwan-gold-card-vs-dn-visa-2026",
+          "linkLabel": "就业金卡 vs 数字游民签证：哪个更适合你？"
+        },
+        {
+          "id": "tw-esim",
+          "label": "登机前购买eSIM",
+          "description": "Klook、KKday或Airalo均有台湾eSIM出售。落地后激活即可，直接跳过桃园机场SIM卡柜台的排队。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "如果偏好到达后购买实体SIM，入境大厅内有Chunghwa Telecom柜台"
+          ]
+        },
+        {
+          "id": "tw-apps",
+          "label": "下载必备App",
+          "description": "出发前需要安装的四个App。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "LINE：台湾的通用通讯工具——房东、同事、积分程序全在LINE上",
+            "Google地图：台北MRT路线规划最可靠",
+            "Uber：通常比路边打车便宜，桃园机场也可用",
+            "Google翻译：相机模式可实时识别中文菜单和路标"
+          ]
+        },
+        {
+          "id": "tw-documents",
+          "label": "准备好证件文件夹（电子版+打印版）",
+          "description": "护照（有效期6个月以上）、签证批准函或回程机票、医疗保险文件、住宿确认函、2张证件照。",
+          "category": "document",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "将电子副本存入可离线访问的云端存储"
+          ]
+        },
+        {
+          "id": "tw-cash",
+          "label": "兑换或提取NT$10,000-15,000（约310-470美元）",
+          "description": "大多数商店和餐厅支持外国信用卡，但夜市、小型本地商店和部分交通自助机仅收现金。",
+          "category": "money",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "可在抵达后于机场兑换，或在入境大厅的ATM取款",
+            "单独备好NT$500-1,000小额现金专用于夜市消费"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day-0-airport",
+      "title": "第0天：桃园机场",
+      "timeframe": "第0天",
+      "description": "刚落地，按这个顺序来。",
+      "items": [
+        {
+          "id": "tw-immigration",
+          "label": "通过入境审查",
+          "description": "准备好护照、签证文件（或免签入境的回程机票）以及住宿地址。即便在高峰期，通常也只需20-30分钟。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-arc-received",
+          "label": "确认就业金卡/居留证已生效",
+          "description": "就业金卡＝居留证（四合一）。在海外获得预批的，抵台当天居留证即生效——入境时随身携带。就业许可持有人在移民署登记后将另行获得居留证。完成此步骤后，银行开户和合约SIM申请步骤将自动解锁。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "isGate": true,
+          "tips": [
+            "就业金卡持有人：居留证即是卡本身——自批准之日起生效",
+            "就业许可持有人：移民署登记后签发居留证，通常需1-2周"
+          ]
+        },
+        {
+          "id": "tw-sim",
+          "label": "购买SIM卡或激活eSIM",
+          "description": "入境大厅设有Chunghwa Telecom柜台。30天无限流量4G SIM售价NT$1,000-1,600（约31-50美元）。旅游/预付SIM仅需护照——无需居留证。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "离开机场前确保有网络——导航和Uber都需要",
+            "旅游/预付SIM：仅需护照。合约SIM：需要居留证（仅居民，后续步骤解锁）"
+          ]
+        },
+        {
+          "id": "tw-easycard",
+          "label": "购买悠游卡（EasyCard）",
+          "description": "NT$500套餐：NT$100押金＋NT$400余额。匿名卡，无需身份证件。可用于MRT、公交、YouBike、便利店和自动贩卖机。",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "可在机场捷运站或任意7-Eleven购买",
+            "在任意便利店收银台均可充值"
+          ]
+        },
+        {
+          "id": "tw-airport-mrt",
+          "label": "乘机场捷运前往台北主站",
+          "description": "票价NT$160，约45分钟。早6点至晚11点每15分钟一班。车内提供免费WiFi。刷悠游卡乘车。",
+          "category": "transport",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/blog/tips/taiwan-arrival-checklist-2026",
+          "linkLabel": "台湾到达清单（数字游民2026版）",
+          "warnings": [
+            "晚上11点后抵达？请提前预订机场大巴，或做好打车到台北市区需NT$1,200-1,500的心理准备。桃园机场也可以叫Uber。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "days-1-7-settle",
+      "title": "第1-7天：安顿下来",
+      "timeframe": "第1-7天",
+      "description": "不用全部第一天完成，慢慢来。",
+      "items": [
+        {
+          "id": "tw-wifi-speed",
+          "label": "测试住所WiFi速度",
+          "description": "视频会议建议25Mbps以上。台北大多数租房都远超这个标准。",
+          "category": "connectivity",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-explore-neighborhood",
+          "label": "在附近走走",
+          "description": "找到最近的捷运站、便利店（7-Eleven或全家）、药房和早餐店（台湾随处可见的平价早餐铺，快速又实惠）。",
+          "category": "food",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "link": "/en/neighborhood/taiwan",
+          "linkLabel": "台湾街区指南"
+        },
+        {
+          "id": "tw-night-market",
+          "label": "去夜市吃晚饭",
+          "description": "饶河、宁夏和士林是最热门的几个。记得带现金——夜市只收现金。NT$500足够吃一顿正餐加小吃。",
+          "category": "food",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "夜市一律只收现金——刷卡和悠游卡都不行"
+          ],
+          "link": "/en/blog/tips/taiwan-night-market-guide-2026",
+          "linkLabel": "台湾夜市：外国人实用指南"
+        },
+        {
+          "id": "tw-line-setup",
+          "label": "设置LINE并添加住宿房东",
+          "description": "LINE是台湾的通用通讯工具。房东、同事和本地商家都在用。",
+          "category": "app",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-mobile-pay",
+          "label": "将外国信用卡绑定Apple Pay或Google Pay",
+          "description": "大多数连锁商店、餐厅和便利店均可使用。外国Visa/Mastercard几乎通用，除交通刷卡和夜市外。",
+          "category": "money",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "没有本地银行账户的外国人注册LINE Pay会受到限制——问题不大，外国卡基本可以覆盖所有场景"
+          ]
+        },
+        {
+          "id": "tw-plugs",
+          "label": "检查电源插头兼容性",
+          "description": "台湾使用A/B型插头，与美国规格相同。从欧洲、英国或澳大利亚过来需要转接头。",
+          "category": "safety",
+          "required": true,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "转接头在任意便利店或电子产品店均有售"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-1-4-admin",
+      "title": "第1-4周：行政手续",
+      "timeframe": "30天内",
+      "description": "仅限居留签证持有人。入境30天内完成移民署登记。",
+      "items": [
+        {
+          "id": "tw-nia-registration",
+          "label": "前往移民署服务站登记（移民署服務站）",
+          "description": "所有居留签证持有人（就业金卡、就业许可）均须办理。携带居留证＋护照＋住宿地址。必须在入境30天内完成——全民健保资格计算从此开始。",
+          "category": "admin",
+          "required": true,
+          "visaTier": ["resident"],
+          "isGate": true,
+          "blockedBy": ["tw-arc-received"],
+          "estimatedWait": "30–60 min",
+          "tips": [
+            "就业金卡持有人：30天内登记台湾住址，启动全民健保倒计时",
+            "携带居留证、护照及地址证明（租赁合同或住宿证明）"
+          ]
+        },
+        {
+          "id": "tw-bank-account",
+          "label": "开设银行账户",
+          "description": "Cathay United和E.SUN Bank对外国人较为友好。需要居留证＋护照＋本地电话号码＋印章或签名卡。",
+          "category": "money",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["tw-arc-received"],
+          "tips": [
+            "E.SUN Bank主要分行设有英语服务人员"
+          ],
+          "warnings": [
+            "开设银行账户需要居留证。数字游民签证及免签入境者不符合条件。"
+          ]
+        },
+        {
+          "id": "tw-contract-sim",
+          "label": "升级为合约SIM卡（可选）",
+          "description": "2年合约SIM提供更优惠的资费和稳定的本地号码。需要居留证＋护照。",
+          "category": "connectivity",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["tw-arc-received"],
+          "tips": [
+            "旅游/预付SIM对大多数短期停留已经够用——只有打算长期定居才值得升级"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month-1-plus",
+      "title": "第1个月起：长期定居",
+      "timeframe": "第1个月起",
+      "description": "居留签证持有人：加入全民健保并锁定长期住所。",
+      "items": [
+        {
+          "id": "tw-nhi",
+          "label": "加入全民健保（全民健康保险）",
+          "description": "从第一天就开始受雇的就业金卡持有人可立即加入。无业的就业金卡持有人需在移民署登记后等待6个月。等待期间请保持私人海外旅行保险有效。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["resident"],
+          "blockedBy": ["tw-nia-registration"],
+          "estimatedWait": "Day 1 (employed) / 6 months (unemployed)",
+          "tips": [
+            "全民健保计算从移民署登记日起算——而非入境日期",
+            "6个月规定：期间最多允许1次30天以内的出境，超出则重新计算",
+            "月保费：自行投保的就业金卡持有人约NT$749-1,000"
+          ],
+          "warnings": [
+            "数字游民签证及免签入境者不符合全民健保资格。请保持私人海外旅行保险有效。"
+          ]
+        },
+        {
+          "id": "tw-apartment-hunting",
+          "label": "在591.com.tw上寻找长期住所",
+          "description": "台湾最主要的租房平台。界面为中文——可用Google翻译相机模式辅助浏览。",
+          "category": "housing",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
+          "tips": [
+            "房东通常偏好用LINE沟通——提前注册好账号"
+          ],
+          "link": "https://www.591.com.tw/",
+          "linkLabel": "591.com.tw 租房平台"
+        },
+        {
+          "id": "tw-meetups",
+          "label": "参加聚会或联合办公活动",
+          "description": "Kafnu、Impact Hub和CLBC在台北定期举办社区活动。",
+          "category": "admin",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        },
+        {
+          "id": "tw-pleco",
+          "label": "下载Pleco（中文词典App）",
+          "description": "日常词汇积累的最佳中文词典App，看菜单、识路标、日常对话都用得上。",
+          "category": "app",
+          "required": false,
+          "visaTier": ["tourist", "long-term", "resident"]
+        }
+      ]
+    }
+  ]
+}

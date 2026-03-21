@@ -13,7 +13,7 @@
         {
           "id": "visa-decision",
           "label": "Choose your entry path: B-2 visa-free or F-1-D Digital Nomad Visa",
-          "description": "B-2 visa-free covers 106+ countries for up to 90 days. F-1-D gives up to 2 years but requires ₩88M+ (~$64K) annual income proof. Apply at your nearest Korean embassy 2–4 weeks before departure.",
+          "description": "B-2 visa-free covers 106+ countries for up to 90 days. F-1-D gives up to 2 years but requires ₩88M+ (~$64K) annual income proof (2× GNI per capita, Bank of Korea — check current figure before applying). Apply at your nearest Korean embassy 2–4 weeks before departure.",
           "category": "document",
           "required": true,
           "visaTier": ["tourist"],
@@ -27,7 +27,7 @@
         {
           "id": "visa-decision-longterm",
           "label": "Apply for your long-term visa (F-1-D, D-10, or H-1)",
-          "description": "Long-term visas require application at your nearest Korean embassy or consulate before departure. F-1-D requires ₩88M+ annual income proof. D-10 requires job seeker eligibility. Apply 2–4 weeks before planned departure.",
+          "description": "Long-term visas require application at your nearest Korean embassy or consulate before departure. F-1-D requires ₩88M+ annual income proof (2× GNI per capita — verify current threshold with your embassy). D-10 requires job seeker eligibility. Apply 2–4 weeks before planned departure.",
           "category": "document",
           "required": true,
           "visaTier": ["long-term"],
@@ -125,7 +125,7 @@
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
           "warnings": [
-            "Apple Pay launched March 2023 with Hyundai Card only — do not count on it working.",
+            "Apple Pay works with Hyundai Card and Shinhan Card only — do not count on it for everyday payments.",
             "Samsung Pay requires a Korean phone and Korean bank card — not available until after ARC + bank setup."
           ]
         }
@@ -149,8 +149,8 @@
         },
         {
           "id": "wowpass-card",
-          "label": "Get a WOWPASS card (₩6,000)",
-          "description": "WOWPASS works as a prepaid payment card (accepted anywhere T-money or credit cards work), a transit card, and a foreign currency exchange machine. Card costs ₩6,000. Load with cash or your foreign card at WOWPASS kiosks. Better exchange rates than airport currency counters.",
+          "label": "Get a WOWPASS card (₩5,000)",
+          "description": "WOWPASS works as a prepaid payment card (accepted anywhere T-money or credit cards work), a transit card, and a foreign currency exchange machine. Card costs ₩5,000. Load with cash or your foreign card at WOWPASS kiosks. Better exchange rates than airport currency counters.",
           "category": "money",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
@@ -230,7 +230,7 @@
         {
           "id": "immigration-office-booking",
           "label": "Book immigration office appointment (Hi Korea)",
-          "description": "Book your ARC appointment at HiKorea.go.kr immediately — slots fill fast, especially in Seoul. F-1-D visa holders must apply within 7 days of arrival. Bring all required documents.",
+          "description": "Book your ARC appointment at HiKorea.go.kr as early as possible — slots fill fast, especially in Seoul. All long-term visa holders must register within 90 days of arrival. Bring all required documents.",
           "category": "admin",
           "required": true,
           "visaTier": ["long-term", "resident"],
@@ -255,7 +255,7 @@
         {
           "id": "arc-application",
           "label": "Apply for ARC (Alien Registration Card) at immigration office",
-          "description": "Apply at the immigration office (출입국사무소) on your booked appointment date. For F-1-D visa holders, apply within 7 days of arrival. Bring passport, visa, 2 photos (3.5×4.5cm), accommodation proof, and ₩30,000 fee.",
+          "description": "Apply at the immigration office (출입국사무소) on your booked appointment date. Legal deadline is within 90 days of arrival, but book early — Seoul slots fill up fast. Bring passport, visa, 2 photos (3.5×4.5cm), accommodation proof, and ₩30,000 fee.",
           "category": "admin",
           "required": true,
           "visaTier": ["long-term", "resident"],
@@ -266,7 +266,7 @@
           "link": "/en/blog/tips/korea-arc-phone-bank-catch-22-guide-2026",
           "linkLabel": "Korea's ARC → Phone → Bank Loop: The Fix",
           "warnings": [
-            "F-1-D visa holders must apply within 7 days of arrival — do not delay.",
+            "Book your appointment as early as possible — popular offices like Seoul and Sejongno fill up weeks in advance.",
             "ARC is required before you can get a postpaid phone plan or open a bank account."
           ]
         },

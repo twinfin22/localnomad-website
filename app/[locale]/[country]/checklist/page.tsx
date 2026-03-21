@@ -59,7 +59,7 @@ export default async function ChecklistPage({ params, searchParams }: Props) {
   if (!VALID_COUNTRIES.includes(country as (typeof VALID_COUNTRIES)[number])) return notFound();
   setRequestLocale(locale);
 
-  const data = await getChecklistData(country);
+  const data = await getChecklistData(country, locale);
   if (!data) return notFound();
 
   const { tier: tierParam } = await searchParams;

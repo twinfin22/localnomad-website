@@ -472,6 +472,19 @@
     "tierTourist": "観光",
     "tierLongTerm": "長期滞在",
     "tierResident": "居住者",
-    "tierItemCount": "{count}項目"
+    "tierItemCount": "{count}項目",
+    "optional": "任意",
+    "unlocksMore": "次のステップを解除",
+    "unlocked": "解除済み",
+    "estimatedWait": "推定待ち時間: {wait}",
+    "unlocks": "解除: {items}",
+    "requires": "必要: {label}",
+    "resetConfirm": "すべての進捗をリセットしますか？この操作は元に戻せません。",
+    "resetChecklist": "チェックリストをリセット",
+    "contextOfficial": "公式サイト",
+    "contextReadMore": "詳しく読む",
+    "contextNeighborhood": "エリアガイド",
+    "contextVisa": "ビザ詳細",
+    "contextLearnMore": "詳しく見る"
   }
 }

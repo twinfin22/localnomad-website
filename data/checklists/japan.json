@@ -179,9 +179,9 @@
           "linkLabel": "Japan Arrival Checklist for Nomads 2026",
           "tips": [
             "Narita → NEX: ¥3,250, ~60 min to Tokyo/Shinjuku/Shibuya",
-            "Narita → Skyliner: ¥2,520, ~41 min to Ueno",
+            "Narita → Skyliner: ¥2,580, ~41 min to Ueno",
             "Narita → Limousine bus: ¥3,200, direct to major hotels",
-            "Haneda → Monorail: ¥500, ~15 min / Keikyu line: ¥300, ~20 min",
+            "Haneda → Monorail: ¥500, ~15 min / Keikyu line: ¥330, ~20 min",
             "Taxis: Narita ¥19,000–27,000; Haneda ¥6,000–11,000",
             "Arriving after 11pm? Last trains are gone — budget for taxi or airport hotel"
           ]
@@ -274,13 +274,13 @@
         {
           "id": "contract-sim",
           "label": "Switch to a contract SIM (Rakuten, IIJmio, or similar)",
-          "description": "Contract SIMs require resident registration. Rakuten Mobile is cheapest (¥3,278/mo unlimited). IIJmio for lower data needs.",
+          "description": "Contract SIMs require resident registration. Rakuten Mobile is cheapest (¥3,168/mo unlimited). IIJmio for lower data needs.",
           "category": "connectivity",
           "required": false,
           "visaTier": ["resident"],
           "blockedBy": ["ward-registration"],
           "tips": [
-            "Rakuten: ¥3,278/mo unlimited, requires Residence Card + bank account",
+            "Rakuten: ¥3,168/mo unlimited, requires Residence Card + bank account",
             "IIJmio: from ¥858/mo for 2GB — good for WiFi-primary users",
             "Tourists and DN visa holders: stick with prepaid SIM or eSIM"
           ]

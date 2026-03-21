@@ -121,7 +121,7 @@
         {
           "id": "tw-easycard",
           "label": "Buy an EasyCard (悠遊卡)",
-          "description": "NT$500 package: NT$100 non-refundable deposit + NT$400 loaded credit. Anonymous card — no ID required. Works on MRT, buses, YouBike, convenience stores, and vending machines.",
+          "description": "NT$500 package: NT$100 deposit + NT$400 loaded credit. Anonymous card — no ID required. Works on MRT, buses, YouBike, convenience stores, and vending machines.",
           "category": "transport",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
