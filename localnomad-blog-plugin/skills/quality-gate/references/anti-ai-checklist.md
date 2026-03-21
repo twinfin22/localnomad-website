@@ -113,8 +113,8 @@ Delete. Just write the closing thought.
 ### 8. Elegant Variation (Synonym Cycling)
 Same entity called 3+ different names → reuse the original term. Max 2 natural alternatives.
 
-### 9. Em Dash Overuse
-Max 3 per 500 words. Replace excess with commas, parentheses, colons, periods.
+### 9. Em Dash Ban
+Zero em dashes allowed. Replace ALL with commas, parentheses, colons, or periods.
 
 ### 10. Significance/Legacy/Impact Inflation
 "lasting impact," "broader significance," "cultural legacy" → state the specific measurable effect.
@@ -142,7 +142,7 @@ All 10 must pass:
 - [ ] ≥3 informal/conversational elements (contractions, fragments, asides, direct address, rhetorical questions)
 - [ ] ≥1 clear opinion or judgment expressed (not just neutral reporting)
 - [ ] No synonym cycling: each key entity uses max 2 natural alternatives
-- [ ] Em dash density: ≤3 per 500 words
+- [ ] Em dash count: 0 (total ban)
 - [ ] No "Despite... challenges" formulaic template
 
 ---
