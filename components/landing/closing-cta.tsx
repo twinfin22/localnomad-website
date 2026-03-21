@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ScrollReveal } from './scroll-reveal';
+import { getChecklistData } from '@/lib/checklist-data';
 
 const CHECKLIST_ITEMS_KEYS = {
   korea: ['closingKoreaItem1', 'closingKoreaItem2', 'closingKoreaItem3'] as const,
@@ -14,6 +15,8 @@ const COUNTRY_CONFIG: Record<string, { image: string; objectPosition: string }> 
   taiwan: { image: '/images/visa/taiwan-visa-bg.jpg', objectPosition: 'center 40%' },
 };
 
+const PREVIEW_COUNT = 3;
+
 export const ClosingCta = async () => {
   const t = await getTranslations('Landing');
 
@@ -22,6 +25,15 @@ export const ClosingCta = async () => {
     { key: 'japan', href: '/japan/checklist', name: t('countryJapan') },
     { key: 'taiwan', href: '/taiwan/checklist', name: t('countryTaiwan') },
   ];
+
+  // Load checklist data in parallel to get total item counts
+  const checklistCounts = await Promise.all(
+    countries.map(async (c) => {
+      const data = await getChecklistData(c.key);
+      if (!data) return 0;
+      return data.phases.reduce((sum, phase) => sum + phase.items.length, 0);
+    })
+  );
 
   return (
     <section className="bg-white px-4 py-16 sm:py-24">
@@ -37,10 +49,12 @@ export const ClosingCta = async () => {
           </div>
         </ScrollReveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {countries.map((country, i) => {
             const itemKeys = CHECKLIST_ITEMS_KEYS[country.key as keyof typeof CHECKLIST_ITEMS_KEYS];
             const config = COUNTRY_CONFIG[country.key];
+            const totalItems = checklistCounts[i];
+            const progressPercent = totalItems > 0 ? (PREVIEW_COUNT / totalItems) * 100 : 0;
 
             return (
               <ScrollReveal key={country.key} delay={i * 100}>
@@ -76,7 +90,7 @@ export const ClosingCta = async () => {
                       {itemKeys.map((key) => (
                         <li key={key} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <svg
-                            className="mt-0.5 h-4 w-4 shrink-0 text-primary/60"
+                            className="mt-0.5 h-4 w-4 shrink-0 text-primary"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={2}
@@ -90,19 +104,36 @@ export const ClosingCta = async () => {
                       ))}
                     </ul>
 
-                    {/* CTA */}
-                    <div className="mt-auto flex items-center gap-1.5 pt-4 text-sm font-medium text-primary transition-all duration-300 group-hover:translate-x-0.5">
-                      <span>{t('closingGetChecklist')}</span>
-                      <svg
-                        className="h-3.5 w-3.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
+                    {/* Progress teaser */}
+                    {totalItems > 0 && (
+                      <div className="mt-4 space-y-1.5">
+                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-primary/10">
+                          <div
+                            className="h-full rounded-full bg-primary/40 transition-all duration-500 group-hover:bg-primary/60"
+                            style={{ width: `${progressPercent}%` }}
+                          />
+                        </div>
+                        <p className="text-xs text-muted-foreground/70">
+                          {t('closingItemCount', { total: totalItems })}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* CTA pill */}
+                    <div className="mt-auto pt-4">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors duration-300 group-hover:bg-primary/20">
+                        <span>{t('closingGetChecklist')}</span>
+                        <svg
+                          className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2.5}
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </span>
                     </div>
                   </div>
                 </Link>

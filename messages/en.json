@@ -65,7 +65,9 @@
     "closingJapanItem3": "Set up a Japanese phone + Suica",
     "closingTaiwanItem1": "Apply for your ARC",
     "closingTaiwanItem2": "Open a Taiwanese bank account",
-    "closingTaiwanItem3": "Register for National Health Insurance"
+    "closingTaiwanItem3": "Register for National Health Insurance",
+    "closingItemCount": "3 of {total} steps",
+    "closingPeekHint": "Preview"
   },
   "Country": {
     "title": "{country} Visa Guide for Digital Nomads",

@@ -65,7 +65,9 @@
     "closingJapanItem3": "携帯番号+Suicaの設定",
     "closingTaiwanItem1": "居留証(ARC)の申請",
     "closingTaiwanItem2": "台湾の銀行口座を開設",
-    "closingTaiwanItem3": "国民健康保険に加入"
+    "closingTaiwanItem3": "国民健康保険に加入",
+    "closingItemCount": "{total}ステップ中3つ",
+    "closingPeekHint": "プレビュー"
   },
   "Country": {
     "title": "{country}ビザガイド — デジタルノマド向け",

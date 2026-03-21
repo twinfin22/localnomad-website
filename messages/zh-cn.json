@@ -65,7 +65,9 @@
     "closingJapanItem3": "办理手机号+Suica",
     "closingTaiwanItem1": "申请居留证(ARC)",
     "closingTaiwanItem2": "开设台湾银行账户",
-    "closingTaiwanItem3": "加入全民健保"
+    "closingTaiwanItem3": "加入全民健保",
+    "closingItemCount": "{total}步中的3步",
+    "closingPeekHint": "预览"
   },
   "Country": {
     "title": "{country}签证指南 — 数字游民必备",
