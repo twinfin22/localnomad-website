@@ -14,9 +14,9 @@ async function loadFont(filename: string): Promise<ArrayBuffer> {
 
 async function getHeroSrc(): Promise<string | null> {
   try {
-    const filePath = join(process.cwd(), 'public', 'images', 'hero-bg.webp');
+    const filePath = join(process.cwd(), 'public', 'images', 'hero-bg-og.jpg');
     const data = await readFile(filePath);
-    return `data:image/webp;base64,${data.toString('base64')}`;
+    return `data:image/jpeg;base64,${data.toString('base64')}`;
   } catch {
     return null;
   }
