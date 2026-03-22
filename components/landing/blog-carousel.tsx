@@ -40,7 +40,7 @@ export const BlogCarousel = async () => {
   if (posts.length === 0) return null;
 
   return (
-    <section className="relative overflow-hidden bg-neutral-50 px-6 py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-white px-6 py-16 sm:py-20">
       {/* Decorative background pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.02]"

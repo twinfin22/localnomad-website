@@ -84,8 +84,8 @@ export default async function LandingPage({ params }: Props) {
       <Hero />
       <CountrySelector />
       <NeighborhoodPreview countries={countries} />
-      <BlogCarousel />
       <ClosingCta />
+      <BlogCarousel />
     </main>
   );
 }

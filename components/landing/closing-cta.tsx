@@ -36,7 +36,7 @@ export const ClosingCta = async () => {
   );
 
   return (
-    <section className="bg-white px-4 py-16 sm:py-24">
+    <section className="bg-neutral-50 px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-4xl">
         <ScrollReveal>
           <div className="text-center">
