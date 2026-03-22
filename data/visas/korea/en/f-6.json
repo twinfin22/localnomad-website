@@ -120,9 +120,11 @@
     }
   ],
   "duration": {
-    "initial": "90 days (initial visa from embassy). Upon first extension in Korea: 1 year (standard), 2 years (with 조기적응프로그램 early adaptation program completion), or 3 years (if couple has a child born between them).",
+    "initial": "90 days; 1-3 years on extension",
+    "initialDetail": "Initial visa from embassy: 90 days. Upon first extension in Korea: 1 year (standard), 2 years (with 조기적응프로그램 early adaptation program completion), or 3 years (if couple has a child born between them).",
     "extension": "Renewable in 1-3 year increments as long as the marriage remains valid (F-6-1) or qualifying conditions persist",
-    "maxTotal": "No fixed maximum — renewable until transitioning to F-5 or other status",
+    "maxTotal": "No fixed maximum",
+    "maxTotalDetail": "Renewable until transitioning to F-5 or other status. F-6 holders may eventually apply for F-5 (Permanent Resident) after meeting the 2-year residency and language/income requirements.",
     "maxTotalDetail": "F-6 holders may eventually apply for F-5 (Permanent Resident) after meeting the 2-year residency and language/income requirements."
   },
   "fees": {
@@ -385,7 +387,8 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "4-12 weeks (typical); 3-4 months for designated-country nationals",
+    "governmentReview": "4-12 weeks",
+    "governmentReviewDetail": "Typical processing time. 3-4 months for designated-country nationals.",
     "totalEndToEnd": "2-5 months",
     "notes": "According to published guidelines and community experience, embassy processing time for F-6 applications ranges from 4-12 weeks depending on embassy and nationality. Cases involving nationals of the 7 designated countries (China, Vietnam, Philippines, Cambodia, Mongolia, Uzbekistan, Thailand) may take 3-4 months due to additional review steps. Complex cases (additional document requests, marriage sincerity investigations) can also extend timelines. Processing times vary significantly by embassy. After entering Korea, ARC registration adds another 2-3 weeks. Plan for the full 2-5 month timeline before your intended arrival in Korea."
   },

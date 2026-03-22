@@ -264,18 +264,6 @@ async function HubSections({
             ))}
           </div>
 
-          {/* Compare CTA inline */}
-          {visaCards.length > 1 && (
-            <div className="mt-8">
-              <Link
-                href={`/${country}/compare`}
-                className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-white px-4 py-2.5 text-sm font-medium text-primary transition-all hover:border-primary/40 hover:bg-primary/5 hover:shadow-sm"
-              >
-                <Scale className="h-4 w-4" />
-                {t('compareVisas')}
-              </Link>
-            </div>
-          )}
         </div>
       </section>
 
