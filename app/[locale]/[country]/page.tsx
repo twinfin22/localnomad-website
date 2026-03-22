@@ -2,11 +2,20 @@ import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Scale, ArrowRightLeft, ClipboardCheck } from 'lucide-react';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getAvailableVisas, getComparisonData } from '@/lib/visa-data';
-import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { getAlternates } from '@/lib/seo';
 import { SEAComparisonTable } from '@/components/visa/sea-comparison-table';
+import { CountryHero } from '@/components/country/country-hero';
+import { VisaCategoryGroup } from '@/components/country/visa-category-group';
+import { ToolCard } from '@/components/country/tool-card';
+import { NeighborhoodScroll } from '@/components/country/neighborhood-scroll';
+import { CountryBlogSection } from '@/components/country/country-blog-section';
+import { getVisaCardsForCountry, groupVisasByCategory } from '@/lib/country-page-data';
+import { getNeighborhoodData } from '@/lib/neighborhood-data';
+import { getChecklistData } from '@/lib/checklist-data';
 import type { Country } from '@/lib/types/visa';
 import type { SEAComparisonData } from '@/lib/types/sea';
 
@@ -19,15 +28,6 @@ const COUNTRY_DISPLAY: Record<string, string> = {
   taiwan: 'Taiwan',
   japan: 'Japan',
   'southeast-asia': 'Southeast Asia',
-};
-
-const CATEGORY_ICONS: Record<string, string> = {
-  'digital-nomad': '💻',
-  work: '💼',
-  investment: '🏢',
-  residence: '🏠',
-  'working-holiday': '✈️',
-  'gold-card': '🏆',
 };
 
 export function generateStaticParams() {
@@ -60,13 +60,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'website',
       url: `https://localnomad.club/${locale}/${country}`,
-      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/og-default.png'],
     },
   };
 }
@@ -184,72 +182,169 @@ export default async function CountryPage({ params }: Props) {
             </div>
           </>
         ) : (
-          /* Original layout for KR/JP/TW */
-          <div className="mx-auto max-w-3xl px-6 py-16">
-            <Link
-              href="/"
-              className="text-sm text-primary hover:underline"
-            >
-              &larr; {tc('backToHome')}
-            </Link>
-            <h1 className="mt-6 font-lora text-4xl font-bold text-primary">
-              {t('title', { country: displayName })}
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              {t('subtitle', { country: displayName })}
-            </p>
+          /* Hub layout for KR/JP/TW */
+          <HubSections
+            country={country}
+            displayName={displayName}
+            locale={locale}
+            t={t}
+            tc={tc}
+          />
+        )}
+      </main>
+    </>
+  );
+}
 
-            {visas.length > 0 ? (
-              <>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {t('visaCount', { count: visas.length })}
-                </p>
-                <div className="mt-8 space-y-3">
-                  {visas.map((visa) => (
-                    <Link
-                      key={visa.type}
-                      href={`/${country}/visa/${visa.type}`}
-                      className="flex items-center gap-4 rounded-lg border bg-white px-5 py-4 transition-colors hover:border-primary hover:bg-primary/5"
-                    >
-                      <span className="text-2xl" aria-hidden="true">
-                        {CATEGORY_ICONS[visa.category] ?? '📋'}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <span className="font-semibold text-primary">
-                          {visa.shortName}
-                        </span>
-                        <span className="ml-2 text-sm text-muted-foreground">
-                          {visa.tagline}
-                        </span>
-                      </div>
-                      <span className="text-muted-foreground" aria-hidden="true">
-                        →
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="mt-8 rounded-lg border bg-white p-8 text-center text-muted-foreground">
-                {t('comingSoon')}
-              </div>
-            )}
+// Async sub-component to handle data loading for KR/JP/TW hub layout
+async function HubSections({
+  country,
+  displayName,
+  locale,
+  t,
+  tc,
+}: {
+  country: string;
+  displayName: string;
+  locale: string;
+  t: Awaited<ReturnType<typeof getTranslations<'Country'>>>;
+  tc: Awaited<ReturnType<typeof getTranslations<'Common'>>>;
+}) {
+  const [visaCards, neighborhoodData, checklistData] = await Promise.all([
+    getVisaCardsForCountry(country as Country, locale),
+    getNeighborhoodData(country),
+    getChecklistData(country, locale),
+  ]);
 
-            {visas.length > 1 && (
+  const groupedVisas = groupVisasByCategory(visaCards);
+
+  const neighborhoodCount =
+    neighborhoodData?.cities.reduce(
+      (sum, city) => sum + city.neighborhoods.length,
+      0
+    ) ?? 0;
+  const hasChecklist = checklistData !== null;
+
+  const toolCount = [
+    visaCards.length > 1,
+    country === 'korea',
+    hasChecklist,
+  ].filter(Boolean).length;
+
+  return (
+    <>
+      {/* S1: Country Hero */}
+      <CountryHero
+        country={country}
+        displayName={displayName}
+        visaCount={visaCards.length}
+        neighborhoodCount={neighborhoodCount}
+        hasChecklist={hasChecklist}
+        locale={locale}
+      />
+
+      {/* S3: Visas by Category */}
+      <section className="bg-neutral-50 px-4 py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
+            {t('visasByCategory')}
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {t('visaCount', { count: visaCards.length })}
+          </p>
+          <div className="mt-8 space-y-8 sm:space-y-10">
+            {groupedVisas.map(({ group, visas }) => (
+              <VisaCategoryGroup
+                key={group.key}
+                label={group.label}
+                icon={group.icon}
+                visas={visas}
+                country={country}
+              />
+            ))}
+          </div>
+
+          {/* Compare CTA inline */}
+          {visaCards.length > 1 && (
+            <div className="mt-8">
               <Link
                 href={`/${country}/compare`}
-                className="mt-6 inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+                className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-white px-4 py-2.5 text-sm font-medium text-primary transition-all hover:border-primary/40 hover:bg-primary/5 hover:shadow-sm"
               >
+                <Scale className="h-4 w-4" />
                 {t('compareVisas')}
               </Link>
-            )}
+            </div>
+          )}
+        </div>
+      </section>
 
-            <p className="mt-10 text-xs text-muted-foreground">
-              {tc('disclaimer')}
-            </p>
+      {/* S4: Tools Triptych */}
+      <section className="bg-white px-4 py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
+            {t('planYourMove')}
+          </h2>
+          <div
+            className={`mt-6 grid grid-cols-1 gap-4 ${
+              toolCount === 2
+                ? 'max-w-2xl sm:grid-cols-2'
+                : 'sm:grid-cols-2 lg:grid-cols-3'
+            }`}
+          >
+            {country === 'korea' && (
+              <ToolCard
+                icon={ArrowRightLeft}
+                title={t('toolChangeTitle')}
+                description={t('toolChangeDesc')}
+                href={`/${country}/visa/change`}
+                ctaLabel={t('toolChange')}
+              />
+            )}
+            {visaCards.length > 1 && (
+              <ToolCard
+                icon={Scale}
+                title={t('toolCompareTitle')}
+                description={t('toolCompareDesc')}
+                href={`/${country}/compare`}
+                ctaLabel={t('toolCompare')}
+              />
+            )}
+            {hasChecklist && (
+              <ToolCard
+                icon={ClipboardCheck}
+                title={t('toolChecklistTitle')}
+                description={t('toolChecklistDesc', {
+                  count:
+                    checklistData?.phases.reduce(
+                      (s, p) => s + p.items.length,
+                      0
+                    ) ?? 0,
+                })}
+                href={`/${country}/checklist`}
+                ctaLabel={t('toolChecklist')}
+              />
+            )}
           </div>
-        )}
-    </main>
+        </div>
+      </section>
+
+      {/* S5: Neighborhood Scroll */}
+      {country !== 'southeast-asia' && (
+        <NeighborhoodScroll country={country} displayName={displayName} />
+      )}
+
+      {/* S6: Country Blog Section */}
+      {country !== 'southeast-asia' && (
+        <CountryBlogSection country={country} displayName={displayName} />
+      )}
+
+      {/* S7: Disclaimer */}
+      <section className="bg-neutral-50 px-4 py-8 sm:py-10">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs text-muted-foreground">{tc('disclaimer')}</p>
+        </div>
+      </section>
     </>
   );
 }

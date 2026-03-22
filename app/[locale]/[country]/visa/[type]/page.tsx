@@ -4,7 +4,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getVisaData, getAvailableVisas } from '@/lib/visa-data';
-import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { getAlternates } from '@/lib/seo';
 import type { Country } from '@/lib/types/visa';
 import {
   VisaHero,
@@ -62,13 +62,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       siteName: 'LocalNomad',
       url: `https://localnomad.club/${locale}/${country}/visa/${type}`,
-      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${visa.shortName} Visa — Requirements & Guide ${year} | LocalNomad`,
       description,
-      images: ['/og-default.png'],
     },
   };
 }

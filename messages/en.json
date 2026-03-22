@@ -74,7 +74,22 @@
     "subtitle": "Find the right visa for your stay in {country}. Compare requirements, documents, and timelines.",
     "comingSoon": "Visa information for this country is coming soon.",
     "visaCount": "{count} visa types available",
-    "compareVisas": "Compare visas side by side"
+    "compareVisas": "Compare visas side by side",
+    "visasByCategory": "Visas by Category",
+    "planYourMove": "Plan Your Move",
+    "toolCompareTitle": "Compare Visas",
+    "toolCompareDesc": "Side-by-side comparison of up to 4 visas. Pick what matters most.",
+    "toolCompare": "Compare",
+    "toolChangeTitle": "Visa Path Finder",
+    "toolChangeDesc": "Already have a visa? See what you can switch to next.",
+    "toolChange": "Find Paths",
+    "toolChecklistTitle": "Arrival Checklist",
+    "toolChecklistDesc": "{count} steps from airport to settled. Track your progress.",
+    "toolChecklist": "Start Checklist",
+    "heroExplore": "Explore Visas",
+    "heroStatVisas": "{count} visas",
+    "heroStatNeighborhoods": "{count} neighborhoods",
+    "heroStatChecklist": "Checklist ready"
   },
   "Comparison": {
     "title": "Compare Visas",

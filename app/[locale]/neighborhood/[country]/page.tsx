@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { getNeighborhoodData } from '@/lib/neighborhood-data';
-import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { getAlternates } from '@/lib/seo';
 import { NeighborhoodExplorer } from '@/components/neighborhood';
 import type { City, RentSource } from '@/lib/types/neighborhood';
 
@@ -48,13 +48,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'website',
       url: `https://localnomad.club/${locale}/neighborhood/${country}`,
-      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/og-default.png'],
     },
   };
 }

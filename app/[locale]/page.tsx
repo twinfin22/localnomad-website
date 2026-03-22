@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { getAlternates } from '@/lib/seo';
 import {
   Hero,
   CountrySelector,
@@ -39,13 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t('landingTitle'),
       description: t('landingDescription'),
       url: `https://localnomad.club/${locale}`,
-      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('landingTitle'),
       description: t('landingDescription'),
-      images: ['/og-default.png'],
     },
   };
 }
