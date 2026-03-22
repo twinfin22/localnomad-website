@@ -74,7 +74,22 @@
     "subtitle": "{country}滞在に合ったビザを見つけましょう。要件・必要書類・スケジュールを比較できます。",
     "comingSoon": "この国のビザ情報は近日公開予定です。",
     "visaCount": "{count}種類のビザがあります",
-    "compareVisas": "ビザを並べて比較"
+    "compareVisas": "ビザを並べて比較",
+    "visasByCategory": "カテゴリ別ビザ一覧",
+    "planYourMove": "移住の準備",
+    "toolCompareTitle": "ビザ比較",
+    "toolCompareDesc": "最大4つのビザを並べて比較。自分に合った条件を見つけましょう。",
+    "toolCompare": "比較する",
+    "toolChangeTitle": "ビザ変更ナビ",
+    "toolChangeDesc": "今のビザから次に切り替えられるビザを確認できます。",
+    "toolChange": "経路を探す",
+    "toolChecklistTitle": "到着チェックリスト",
+    "toolChecklistDesc": "空港から生活開始まで{count}ステップ。進捗を記録できます。",
+    "toolChecklist": "チェックリストを始める",
+    "heroExplore": "ビザを探す",
+    "heroStatVisas": "{count}種類",
+    "heroStatNeighborhoods": "{count}エリア",
+    "heroStatChecklist": "チェックリスト対応"
   },
   "Comparison": {
     "title": "ビザ比較",

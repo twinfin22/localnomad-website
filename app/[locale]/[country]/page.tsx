@@ -16,6 +16,7 @@ import { CountryBlogSection } from '@/components/country/country-blog-section';
 import { getVisaCardsForCountry, groupVisasByCategory } from '@/lib/country-page-data';
 import { getNeighborhoodData } from '@/lib/neighborhood-data';
 import { getChecklistData } from '@/lib/checklist-data';
+import { ScrollReveal } from '@/components/landing/scroll-reveal';
 import type { Country } from '@/lib/types/visa';
 import type { SEAComparisonData } from '@/lib/types/sea';
 
@@ -244,95 +245,105 @@ async function HubSections({
       />
 
       {/* S3: Visas by Category */}
-      <section className="bg-neutral-50 px-4 py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
-            {t('visasByCategory')}
-          </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {t('visaCount', { count: visaCards.length })}
-          </p>
-          <div className="mt-8 space-y-8 sm:space-y-10">
-            {groupedVisas.map(({ group, visas }) => (
-              <VisaCategoryGroup
-                key={group.key}
-                label={group.label}
-                icon={group.icon}
-                visas={visas}
-                country={country}
-              />
-            ))}
-          </div>
+      <ScrollReveal>
+        <section className="bg-neutral-50 px-4 py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
+              {t('visasByCategory')}
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {t('visaCount', { count: visaCards.length })}
+            </p>
+            <div className="mt-8 space-y-8 sm:space-y-10">
+              {groupedVisas.map(({ group, visas }) => (
+                <VisaCategoryGroup
+                  key={group.key}
+                  label={group.label}
+                  icon={group.icon}
+                  visas={visas}
+                  country={country}
+                />
+              ))}
+            </div>
 
-        </div>
-      </section>
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* S4: Tools Triptych */}
-      <section className="bg-white px-4 py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
-            {t('planYourMove')}
-          </h2>
-          <div
-            className={`mt-6 grid grid-cols-1 gap-4 ${
-              toolCount === 2
-                ? 'max-w-2xl sm:grid-cols-2'
-                : 'sm:grid-cols-2 lg:grid-cols-3'
-            }`}
-          >
-            {country === 'korea' && (
-              <ToolCard
-                icon={ArrowRightLeft}
-                title={t('toolChangeTitle')}
-                description={t('toolChangeDesc')}
-                href={`/${country}/visa/change`}
-                ctaLabel={t('toolChange')}
-              />
-            )}
-            {visaCards.length > 1 && (
-              <ToolCard
-                icon={Scale}
-                title={t('toolCompareTitle')}
-                description={t('toolCompareDesc')}
-                href={`/${country}/compare`}
-                ctaLabel={t('toolCompare')}
-              />
-            )}
-            {hasChecklist && (
-              <ToolCard
-                icon={ClipboardCheck}
-                title={t('toolChecklistTitle')}
-                description={t('toolChecklistDesc', {
-                  count:
-                    checklistData?.phases.reduce(
-                      (s, p) => s + p.items.length,
-                      0
-                    ) ?? 0,
-                })}
-                href={`/${country}/checklist`}
-                ctaLabel={t('toolChecklist')}
-              />
-            )}
+      <ScrollReveal delay={100}>
+        <section className="bg-white px-4 py-12 sm:py-16">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="font-lora text-2xl font-bold text-primary sm:text-3xl">
+              {t('planYourMove')}
+            </h2>
+            <div
+              className={`mt-6 grid grid-cols-1 gap-4 ${
+                toolCount === 2
+                  ? 'max-w-2xl sm:grid-cols-2'
+                  : 'sm:grid-cols-2 lg:grid-cols-3'
+              }`}
+            >
+              {country === 'korea' && (
+                <ToolCard
+                  icon={ArrowRightLeft}
+                  title={t('toolChangeTitle')}
+                  description={t('toolChangeDesc')}
+                  href={`/${country}/visa/change`}
+                  ctaLabel={t('toolChange')}
+                />
+              )}
+              {visaCards.length > 1 && (
+                <ToolCard
+                  icon={Scale}
+                  title={t('toolCompareTitle')}
+                  description={t('toolCompareDesc')}
+                  href={`/${country}/compare`}
+                  ctaLabel={t('toolCompare')}
+                />
+              )}
+              {hasChecklist && (
+                <ToolCard
+                  icon={ClipboardCheck}
+                  title={t('toolChecklistTitle')}
+                  description={t('toolChecklistDesc', {
+                    count:
+                      checklistData?.phases.reduce(
+                        (s, p) => s + p.items.length,
+                        0
+                      ) ?? 0,
+                  })}
+                  href={`/${country}/checklist`}
+                  ctaLabel={t('toolChecklist')}
+                />
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* S5: Neighborhood Scroll */}
       {country !== 'southeast-asia' && (
-        <NeighborhoodScroll country={country} displayName={displayName} />
+        <ScrollReveal delay={100}>
+          <NeighborhoodScroll country={country} displayName={displayName} />
+        </ScrollReveal>
       )}
 
       {/* S6: Country Blog Section */}
       {country !== 'southeast-asia' && (
-        <CountryBlogSection country={country} displayName={displayName} />
+        <ScrollReveal delay={100}>
+          <CountryBlogSection country={country} displayName={displayName} />
+        </ScrollReveal>
       )}
 
       {/* S7: Disclaimer */}
-      <section className="bg-neutral-50 px-4 py-8 sm:py-10">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-xs text-muted-foreground">{tc('disclaimer')}</p>
-        </div>
-      </section>
+      <ScrollReveal>
+        <section className="bg-neutral-50 px-4 py-8 sm:py-10">
+          <div className="mx-auto max-w-5xl">
+            <p className="text-xs text-muted-foreground">{tc('disclaimer')}</p>
+          </div>
+        </section>
+      </ScrollReveal>
     </>
   );
 }

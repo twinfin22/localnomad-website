@@ -74,7 +74,22 @@
     "subtitle": "找到适合你在{country}居留的签证。比较申请条件、所需材料和办理时间。",
     "comingSoon": "该国家的签证信息即将上线。",
     "visaCount": "共 {count} 种签证类型",
-    "compareVisas": "并排比较签证"
+    "compareVisas": "并排比较签证",
+    "visasByCategory": "按类别浏览签证",
+    "planYourMove": "规划你的迁居",
+    "toolCompareTitle": "签证对比",
+    "toolCompareDesc": "最多4种签证并排对比，找到最适合你的方案。",
+    "toolCompare": "开始对比",
+    "toolChangeTitle": "签证路径查询",
+    "toolChangeDesc": "已有签证？查看可以转换的下一步选项。",
+    "toolChange": "查找路径",
+    "toolChecklistTitle": "抵达清单",
+    "toolChecklistDesc": "从落地到安顿，共{count}个步骤，可追踪进度。",
+    "toolChecklist": "开始打卡",
+    "heroExplore": "探索签证",
+    "heroStatVisas": "{count}种签证",
+    "heroStatNeighborhoods": "{count}个社区",
+    "heroStatChecklist": "清单已就绪"
   },
   "Comparison": {
     "title": "签证比较",
