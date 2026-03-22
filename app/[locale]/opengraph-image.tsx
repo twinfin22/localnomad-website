@@ -19,18 +19,20 @@ export default async function Image() {
           height: '100%',
           display: 'flex',
           backgroundColor: '#0f1e32',
-          padding: 0,
-          margin: 0,
+          overflow: 'hidden',
+          position: 'relative',
         }}
       >
         <img
           src={src}
-          width={1200}
-          height={630}
+          width={1800}
+          height={945}
           style={{
-            width: '1200px',
-            height: '630px',
-            objectFit: 'cover',
+            position: 'absolute',
+            top: '-120px',
+            left: '-300px',
+            width: '1800px',
+            height: '945px',
           }}
         />
       </div>
