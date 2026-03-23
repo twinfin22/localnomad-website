@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "eslint",
     "fix:translations": "node --experimental-strip-types scripts/fix-array-collapse.ts",
-    "analyze": "ANALYZE=true next build",
+    "analyze": "next experimental-analyze",
     "prepare": "lefthook install"
   },
   "dependencies": {
@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@googleapis/searchconsole": "^6.0.1",
-    "@next/bundle-analyzer": "^16.2.1",
     "@tailwindcss/postcss": "^4",
     "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^20",
