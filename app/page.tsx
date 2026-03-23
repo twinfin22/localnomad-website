@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Soft Land in Asia | LocalNomad',
@@ -31,5 +30,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootPage() {
-  redirect('/en');
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `window.location.replace('/en');`,
+      }}
+    />
+  );
 }
