@@ -1,14 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback, useTransition } from 'react';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
-import { useUser } from '@/hooks/use-user';
 import { useSimpleChecklist } from '@/hooks/use-local-checklist';
-import { getActiveVisa, getChecklist, toggleChecklistItem } from '@/lib/actions/dashboard';
 import type { Document as VisaDocument } from '@/lib/types/visa';
 import { DocumentRow } from './document-row';
-import type { ChecklistItem } from '@/lib/types/dashboard';
 
 type DocSourceKey = 'docSourceSelf' | 'docSourceEmployer' | 'docSourceInstitution' | 'docSourceGovernment';
 
@@ -25,51 +21,10 @@ function categorizeSource(whereToGet?: string): DocSourceKey {
   return 'docSourceSelf';
 }
 
-const COUNTRY_SLUG_TO_CODE: Record<string, string> = {
-  korea: 'kr',
-  taiwan: 'tw',
-  japan: 'jp',
-  china: 'cn',
-};
-
 interface DocumentChecklistProps {
   documents: VisaDocument[];
   visaType: string;
   country: string;
-}
-
-// Local checklist logic extracted to hooks/use-local-checklist.ts
-
-function useSupabaseChecklist(
-  userVisaId: string,
-  initialChecklist: ChecklistItem[]
-) {
-  const [isPending, startTransition] = useTransition();
-  const [checked, setChecked] = useState<Record<string, boolean>>(() => {
-    const map: Record<string, boolean> = {};
-    initialChecklist.forEach((item) => {
-      map[item.document_id] = item.checked;
-    });
-    return map;
-  });
-
-  const toggle = useCallback(
-    (docId: string) => {
-      const newChecked = !checked[docId];
-      setChecked((prev) => ({ ...prev, [docId]: newChecked }));
-
-      startTransition(async () => {
-        try {
-          await toggleChecklistItem(userVisaId, docId, newChecked);
-        } catch {
-          setChecked((prev) => ({ ...prev, [docId]: !newChecked }));
-        }
-      });
-    },
-    [checked, userVisaId]
-  );
-
-  return { checked, toggle, isPending };
 }
 
 export function DocumentChecklist({
@@ -78,57 +33,9 @@ export function DocumentChecklist({
   country,
 }: DocumentChecklistProps) {
   const t = useTranslations('VisaDetail');
-  const tAuth = useTranslations('Auth');
-  const { user, loading: authLoading } = useUser();
-
-  const [userVisaId, setUserVisaId] = useState<string | undefined>();
-  const [serverChecklist, setServerChecklist] = useState<ChecklistItem[]>([]);
-  const [authResolved, setAuthResolved] = useState(false);
-
-  // Fetch active visa + checklist when user is authenticated
-  useEffect(() => {
-    if (authLoading) return;
-    if (!user) {
-      setAuthResolved(true);
-      return;
-    }
-
-    let cancelled = false;
-    (async () => {
-      const activeVisa = await getActiveVisa();
-      if (cancelled) return;
-
-      if (
-        activeVisa &&
-        activeVisa.country === COUNTRY_SLUG_TO_CODE[country] &&
-        activeVisa.goal_visa_type === visaType
-      ) {
-        const checklist = await getChecklist(activeVisa.id);
-        if (cancelled) return;
-        setUserVisaId(activeVisa.id);
-        setServerChecklist(checklist);
-      }
-      setAuthResolved(true);
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [user, authLoading, country, visaType]);
-
-  const useServer = authResolved && !!user && !!userVisaId;
 
   const storageKey = `localnomad:checklist:${country}:${visaType}`;
-  const localChecklist = useSimpleChecklist(storageKey);
-  const supabaseChecklist = useSupabaseChecklist(
-    userVisaId ?? '',
-    serverChecklist
-  );
-
-  const checked = useServer ? supabaseChecklist.checked : localChecklist.checked;
-  const toggleDocument = useServer
-    ? supabaseChecklist.toggle
-    : localChecklist.toggle;
+  const { checked, toggle: toggleDocument } = useSimpleChecklist(storageKey);
 
   const completedCount = documents.filter(
     (doc) => checked[doc.id]
@@ -225,20 +132,6 @@ export function DocumentChecklist({
         )}
       </section>
 
-      {/* Save progress CTA for anonymous users */}
-      {authResolved && !user && (
-        <div className="mt-6 rounded-lg border border-primary/30 bg-primary/8 p-4 text-center">
-          <p className="text-sm text-muted-foreground">
-            {tAuth('saveProgress')}{' '}
-            <a
-              href={`/${country === 'korea' ? 'en' : 'en'}/login`}
-              className="font-medium text-primary hover:underline"
-            >
-              {tAuth('logIn')}
-            </a>
-          </p>
-        </div>
-      )}
     </div>
   );
 }

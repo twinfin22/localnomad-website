@@ -7,7 +7,7 @@ import { routing } from '@/i18n/routing';
 import { getAllTransitionPairs, getTransitionDetail } from '@/lib/visa-transitions';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country } from '@/lib/types/visa';
-import { Breadcrumb } from '@/components/navigation/breadcrumb';
+import { Breadcrumb } from '@/components/nav/breadcrumb';
 import { ChangeDisclaimer } from '@/components/visa-change/ChangeDisclaimer';
 import { NationalityBanner } from '@/components/visa-change/NationalityBanner';
 import { MultiHopGuide } from '@/components/visa-change/MultiHopGuide';

@@ -11,7 +11,7 @@ import {
   VisaScrollLayout,
   VisaDisclaimer,
 } from '@/components/visa';
-import { Breadcrumb } from '@/components/navigation/breadcrumb';
+import { Breadcrumb } from '@/components/nav/breadcrumb';
 import { VisaChangePrompt } from '@/components/visa-change/VisaChangePrompt';
 
 export const revalidate = 3600;

@@ -8,7 +8,7 @@ import { routing } from '@/i18n/routing';
 import { getVisaData } from '@/lib/visa-data';
 import { getAlternates, DEFAULT_OG_IMAGE } from '@/lib/seo';
 import type { Country } from '@/lib/types/visa';
-import { Breadcrumb } from '@/components/navigation/breadcrumb';
+import { Breadcrumb } from '@/components/nav/breadcrumb';
 import { VisaCardSelector } from '@/components/visa-change/VisaCardSelector';
 import { TransitionResults } from '@/components/visa-change/TransitionResults';
 

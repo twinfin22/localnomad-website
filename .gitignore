@@ -33,7 +33,6 @@ yarn-error.log*
 # env files
 .env*
 !.env.example
-!.env.local.example
 
 # vercel
 .vercel
@@ -45,13 +44,18 @@ next-env.d.ts
 # agent / session artifacts
 .agent/
 .agents/
+.omc/
 SESSION-SUMMARY.md
 phase-1-4-claude-code-prompt.md
+localnomad-blog-plugin/
 
 # external repos
 subinium-agentic-workflow-config/
 .mcp.json
 memory/
 data/
-
 skills
+
+# runtime artifacts
+logs/
+venv/

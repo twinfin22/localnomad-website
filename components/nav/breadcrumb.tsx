@@ -1,6 +1,5 @@
 import { ChevronRight, House } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { cn } from '@/lib/utils';
 
 interface BreadcrumbItem {
   label: string;
