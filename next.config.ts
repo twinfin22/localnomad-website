@@ -18,10 +18,6 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
@@ -39,6 +35,7 @@ const nextConfig: NextConfig = {
               "font-src 'self'",
               "connect-src 'self' https://api.mapbox.com https://events.mapbox.com https://*.supabase.co https://discord.com",
               "frame-src 'self'",
+              "frame-ancestors 'self' https://*.notion.so https://*.notion.site",
               "worker-src 'self' blob:",
             ].join('; '),
           },
