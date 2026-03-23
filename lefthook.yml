@@ -1,0 +1,13 @@
+# https://github.com/evilmartians/lefthook
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{ts,tsx,js,mjs}"
+      run: npx eslint --fix {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    typecheck:
+      run: npx tsc --noEmit
