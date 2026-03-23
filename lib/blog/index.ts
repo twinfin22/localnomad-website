@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { cache } from 'react';
 import {
   frontmatterSchema,
   type Frontmatter,
@@ -49,18 +50,15 @@ export const getPost = (
   };
 };
 
-export const getAllPosts = (options?: {
-  category?: BlogCategory;
-  country?: BlogCountry;
-  limit?: number;
-}): BlogPost[] => {
-  const categories = options?.category
-    ? [options.category]
-    : fs
-        .readdirSync(CONTENT_DIR)
-        .filter((f) =>
-          fs.statSync(path.join(CONTENT_DIR, f)).isDirectory(),
-        );
+const countryOrder: Record<string, number> = {
+  japan: 0, korea: 1, taiwan: 2, china: 3, sea: 4, global: 5,
+};
+
+// Cached: deduplicates FS walk within the same RSC request
+const getCachedAllPosts = cache((): BlogPost[] => {
+  const categories = fs
+    .readdirSync(CONTENT_DIR)
+    .filter((f) => fs.statSync(path.join(CONTENT_DIR, f)).isDirectory());
 
   const posts: BlogPost[] = [];
 
@@ -74,15 +72,10 @@ export const getAllPosts = (options?: {
       const slug = file.replace(/\.mdx$/, '');
       const post = getPost(cat, slug);
       if (!post) continue;
-      if (options?.country && post.frontmatter.country !== options.country)
-        continue;
       posts.push(post);
     }
   }
 
-  const countryOrder: Record<string, number> = {
-    japan: 0, korea: 1, taiwan: 2, china: 3, sea: 4, global: 5,
-  };
   posts.sort((a, b) => {
     const dateDiff =
       new Date(b.frontmatter.date).getTime() -
@@ -92,8 +85,44 @@ export const getAllPosts = (options?: {
       (countryOrder[b.frontmatter.country] ?? 9);
   });
 
-  if (options?.limit) return posts.slice(0, options.limit);
   return posts;
+});
+
+export const getAllPosts = (options?: {
+  category?: BlogCategory;
+  country?: BlogCountry;
+  limit?: number;
+}): BlogPost[] => {
+  if (options?.category) {
+    // Category-specific: do a targeted walk (cheaper than full walk)
+    const catDir = path.join(CONTENT_DIR, options.category);
+    if (!fs.existsSync(catDir)) return [];
+
+    const files = fs.readdirSync(catDir).filter((f) => f.endsWith('.mdx'));
+    const posts: BlogPost[] = [];
+    for (const file of files) {
+      const slug = file.replace(/\.mdx$/, '');
+      const post = getPost(options.category, slug);
+      if (!post) continue;
+      if (options.country && post.frontmatter.country !== options.country) continue;
+      posts.push(post);
+    }
+
+    posts.sort((a, b) => {
+      const dateDiff = new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+      if (dateDiff !== 0) return dateDiff;
+      return (countryOrder[a.frontmatter.country] ?? 9) - (countryOrder[b.frontmatter.country] ?? 9);
+    });
+
+    if (options.limit) return posts.slice(0, options.limit);
+    return posts;
+  }
+
+  // No category filter: use cached full walk
+  let result = getCachedAllPosts();
+  if (options?.country) result = result.filter(p => p.frontmatter.country === options.country);
+  if (options?.limit) result = result.slice(0, options.limit);
+  return result;
 };
 
 export const getRelatedPosts = (
