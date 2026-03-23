@@ -27,11 +27,11 @@ export async function generateMetadata({
     openGraph: {
       siteName: 'LocalNomad',
       type: 'website',
-      images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+      images: [{ url: '/images/og-landing.jpg', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
-      images: ['/og-default.png'],
+      images: ['/images/og-landing.jpg'],
     },
     other: { 'theme-color': '#1B4965' },
   };
