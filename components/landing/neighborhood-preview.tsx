@@ -3,70 +3,54 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import { ScrollReveal } from './scroll-reveal';
+import { InfiniteScrollStrip } from '../country/infinite-scroll-strip';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const BRAND_COLOR = '#1B4965';
 
-const COUNTRY_FLAGS: Record<string, string> = {
-  korea: '🇰🇷',
-  japan: '🇯🇵',
-  taiwan: '🇹🇼',
-};
-
-const COUNTRY_IMAGES: Record<string, string> = {
-  korea: '/images/neighborhoods/korea-thumb.jpg',
-  japan: '/images/neighborhoods/japan-thumb.jpg',
-  taiwan: '/images/neighborhoods/taiwan-thumb.jpg',
-};
-
-// Capital city positions [lng, lat] for Mapbox
-const COUNTRY_MAP_COORDS: Record<string, [number, number]> = {
-  korea: [126.978, 37.5665],  // Seoul
-  japan: [139.6503, 35.6762], // Tokyo
-  taiwan: [121.5654, 25.033], // Taipei
-};
-
-interface CountryPreview {
+export interface NeighborhoodCardData {
+  name: string;
+  city: string;
   country: string;
-  displayName: string;
-  coordinates: [number, number]; // [lat, lng] — center of country
-  neighborhoodCount: number;
-  cityCount: number;
-  topCities: string[];
+  countryFlag: string;
+  rent: string;
+  tags: string[];
+  imageUrl: string;
+  coordinates: [number, number]; // [lat, lng]
 }
 
 interface NeighborhoodPreviewProps {
-  countries: CountryPreview[];
+  neighborhoods: NeighborhoodCardData[];
 }
 
-
-
-
-export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => {
+export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps) => {
   const t = useTranslations('Landing');
   const locale = useLocale();
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const boundsRef = useRef<mapboxgl.LngLatBounds | null>(null);
-  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const handleCardHover = useCallback((country: string | null) => {
-    setHoveredCountry(country);
+  const handleCardHover = useCallback((hood: NeighborhoodCardData | null) => {
     const map = mapRef.current;
     if (!map || !map.isStyleLoaded()) return;
 
-    // Fly to country or reset
-    if (country) {
-      const coords = COUNTRY_MAP_COORDS[country];
-      if (coords) {
-        map.flyTo({ center: coords, zoom: 5, duration: 600 });
-      }
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const duration = prefersReducedMotion ? 0 : 600;
+
+    if (hood) {
+      map.flyTo({
+        center: [hood.coordinates[1], hood.coordinates[0]],
+        zoom: 10,
+        duration,
+      });
     } else if (boundsRef.current) {
       map.fitBounds(boundsRef.current, {
         padding: { top: 80, bottom: 80, left: 60, right: 60 },
         maxZoom: 5,
-        duration: 600,
+        duration,
       });
     }
   }, []);
@@ -95,83 +79,77 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
       });
 
       map.on('load', () => {
-        // GeoJSON source with country markers
-        const features = countries.map((country) => ({
+        const features = neighborhoods.map((hood) => ({
           type: 'Feature' as const,
           geometry: {
             type: 'Point' as const,
-            coordinates: COUNTRY_MAP_COORDS[country.country] ?? [
-              country.coordinates[1],
-              country.coordinates[0],
-            ],
+            coordinates: [hood.coordinates[1], hood.coordinates[0]] as [number, number],
           },
           properties: {
-            name: country.displayName,
-            country: country.country,
+            name: hood.name,
+            country: hood.country,
+            city: hood.city,
           },
         }));
 
-        map.addSource('country-markers', {
+        map.addSource('neighborhood-markers', {
           type: 'geojson',
-          data: {
-            type: 'FeatureCollection',
-            features,
-          },
+          data: { type: 'FeatureCollection', features },
         });
 
         // Outer ring
         map.addLayer({
-          id: 'country-markers-pulse',
+          id: 'hood-markers-pulse',
           type: 'circle',
-          source: 'country-markers',
+          source: 'neighborhood-markers',
           paint: {
-            'circle-radius': 18,
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 3, 6, 8, 14],
             'circle-color': BRAND_COLOR,
-            'circle-opacity': 0.12,
-            'circle-stroke-width': 2,
+            'circle-opacity': 0.1,
+            'circle-stroke-width': 1.5,
             'circle-stroke-color': BRAND_COLOR,
-            'circle-stroke-opacity': 0.2,
+            'circle-stroke-opacity': 0.15,
           },
         });
 
         // Inner dot
         map.addLayer({
-          id: 'country-markers-dot',
+          id: 'hood-markers-dot',
           type: 'circle',
-          source: 'country-markers',
+          source: 'neighborhood-markers',
           paint: {
-            'circle-radius': 7,
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 3, 3, 8, 6],
             'circle-color': BRAND_COLOR,
-            'circle-opacity': 0.9,
-            'circle-stroke-width': 2.5,
+            'circle-opacity': 0.85,
+            'circle-stroke-width': 1.5,
             'circle-stroke-color': '#ffffff',
           },
         });
 
-        // Country name label
+        // Labels — visible only at higher zoom
         map.addLayer({
-          id: 'country-markers-label',
+          id: 'hood-markers-label',
           type: 'symbol',
-          source: 'country-markers',
+          source: 'neighborhood-markers',
           layout: {
             'text-field': ['get', 'name'],
-            'text-size': 14,
+            'text-size': ['interpolate', ['linear'], ['zoom'], 6, 0, 8, 12],
             'text-font': ['DIN Pro Bold', 'Arial Unicode MS Bold'],
-            'text-offset': [0, 2.2],
+            'text-offset': [0, 1.8],
             'text-anchor': 'top',
-            'text-allow-overlap': true,
-            'text-letter-spacing': 0.05,
-            'text-transform': 'uppercase',
+            'text-allow-overlap': false,
+            'text-letter-spacing': 0.03,
           },
           paint: {
             'text-color': BRAND_COLOR,
             'text-halo-color': '#ffffff',
-            'text-halo-width': 2,
+            'text-halo-width': 1.5,
+            'text-opacity': ['interpolate', ['linear'], ['zoom'], 6, 0, 8, 1],
           },
         });
 
         // Click + cursor handlers
-        const interactiveLayers = ['country-markers-dot', 'country-markers-pulse', 'country-markers-label'];
+        const interactiveLayers = ['hood-markers-dot', 'hood-markers-pulse'];
         interactiveLayers.forEach((layerId) => {
           map.on('click', layerId, (e) => {
             const feature = e.features?.[0];
@@ -199,7 +177,7 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
 
       mapRef.current = map;
     });
-  }, [countries, locale]);
+  }, [neighborhoods, locale]);
 
   useEffect(() => {
     const container = mapContainerRef.current;
@@ -241,12 +219,11 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
         </ScrollReveal>
       </div>
 
-      {/* Edge-to-edge map with fade edges */}
+      {/* Edge-to-edge map */}
       <ScrollReveal delay={200}>
         <div className="relative mt-12">
           <div className="relative">
-            {/* Skeleton placeholder */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-neutral-100 animate-pulse">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 animate-pulse bg-neutral-100">
               <svg className="h-8 w-8 text-muted-foreground/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
               </svg>
@@ -265,55 +242,65 @@ export const NeighborhoodPreview = ({ countries }: NeighborhoodPreviewProps) => 
         </div>
       </ScrollReveal>
 
-      {/* Country cards below map */}
+      {/* Neighborhood carousel */}
       <div className="mx-auto mt-6 max-w-5xl px-6">
         <ScrollReveal delay={300}>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            {countries.map((c) => (
+          <InfiniteScrollStrip scrollAmount={424}>
+            {neighborhoods.map((hood, i) => (
               <Link
-                key={c.country}
-                href={`/neighborhood/${c.country}`}
-                className={`group flex cursor-pointer flex-col overflow-hidden rounded-xl border bg-white shadow-sm transition-all duration-300 hover:shadow-md ${
-                  hoveredCountry === c.country
-                    ? 'border-primary/40 shadow-md -translate-y-0.5'
-                    : 'border-border/60 hover:border-primary/30'
+                key={`${hood.country}-${hood.name}`}
+                href={`/neighborhood/${hood.country}`}
+                className={`group flex w-[200px] flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border bg-white transition-all duration-200 sm:w-[220px] ${
+                  hoveredIndex === i
+                    ? 'border-primary/40 shadow-md'
+                    : 'border-border/60 shadow-sm hover:border-primary/30 hover:shadow-md'
                 }`}
-                onMouseEnter={() => handleCardHover(c.country)}
-                onMouseLeave={() => handleCardHover(null)}
-                onFocus={() => handleCardHover(c.country)}
-                onBlur={() => handleCardHover(null)}
+                onMouseEnter={() => {
+                  setHoveredIndex(i);
+                  handleCardHover(hood);
+                }}
+                onMouseLeave={() => {
+                  setHoveredIndex(null);
+                  handleCardHover(null);
+                }}
               >
                 {/* Thumbnail */}
-                <div className="relative h-36 w-full overflow-hidden sm:h-40">
-                  <img
-                    src={COUNTRY_IMAGES[c.country] ?? '/images/placeholder.jpg'}
-                    alt={c.displayName}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    width={600}
-                    height={400}
+                <div className="relative h-32 w-full overflow-hidden">
+                  <Image
+                    src={hood.imageUrl}
+                    alt={hood.name}
+                    fill
+                    sizes="220px"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 {/* Info */}
-                <div className="flex flex-col gap-0.5 p-4">
-                  <span className="text-base font-semibold">
-                    {COUNTRY_FLAGS[c.country] && (
-                      <span className="mr-1.5">{COUNTRY_FLAGS[c.country]}</span>
-                    )}
-                    {c.displayName}
-                  </span>
-                  <span className="text-sm text-primary font-lora font-bold">
-                    {c.neighborhoodCount} {t('neighborhoodCount')}
+                <div className="flex flex-col gap-0.5 p-3">
+                  <span className="truncate text-sm font-semibold text-foreground">
+                    {hood.name}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    {c.topCities.join(' · ')}
+                    {hood.countryFlag} {hood.city}
                   </span>
-                  <span className="mt-1.5 text-xs font-medium text-primary">
-                    {t('neighborhoodExplore')} →
+                  <span className="text-xs font-medium text-primary">
+                    {hood.rent}
                   </span>
+                  {hood.tags.length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {hood.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-border/80 px-1.5 py-0.5 text-[10px] text-muted-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </Link>
             ))}
-          </div>
+          </InfiniteScrollStrip>
         </ScrollReveal>
       </div>
     </section>
