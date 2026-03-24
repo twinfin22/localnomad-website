@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
@@ -30,7 +30,6 @@ export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps)
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const boundsRef = useRef<mapboxgl.LngLatBounds | null>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handleCardHover = useCallback((hood: NeighborhoodCardData | null) => {
     const map = mapRef.current;
@@ -231,25 +230,15 @@ export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps)
 
       {/* Neighborhood carousel */}
       <div className="mx-auto mt-6 max-w-5xl px-6">
-        <ScrollReveal delay={300}>
+        {/* No ScrollReveal — same pattern as map (commit 422a94c): timing conflict with scroll init */}
           <InfiniteScrollStrip scrollAmount={424}>
             {neighborhoods.map((hood, i) => (
               <Link
                 key={`${hood.country}-${hood.name}`}
                 href={`/neighborhood/${hood.country}`}
-                className={`group flex w-[200px] flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border bg-white transition-all duration-200 sm:w-[220px] ${
-                  hoveredIndex === i
-                    ? 'border-primary/40 shadow-md'
-                    : 'border-border/60 shadow-sm hover:border-primary/30 hover:shadow-md'
-                }`}
-                onMouseEnter={() => {
-                  setHoveredIndex(i);
-                  handleCardHover(hood);
-                }}
-                onMouseLeave={() => {
-                  setHoveredIndex(null);
-                  handleCardHover(null);
-                }}
+                className="group flex w-[200px] flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border/60 bg-white shadow-sm transition-shadow transition-colors duration-200 hover:border-primary/30 hover:shadow-md sm:w-[220px]"
+                onMouseEnter={() => handleCardHover(hood)}
+                onMouseLeave={() => handleCardHover(null)}
               >
                 {/* Thumbnail */}
                 <div className="relative h-32 w-full overflow-hidden">
@@ -288,7 +277,6 @@ export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps)
               </Link>
             ))}
           </InfiniteScrollStrip>
-        </ScrollReveal>
       </div>
     </section>
   );

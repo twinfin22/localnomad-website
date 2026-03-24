@@ -36,12 +36,16 @@ export function InfiniteScrollStrip({ children, scrollAmount = 460 }: InfiniteSc
       // Scrolled past the prepended clone → jump to real set
       isResetting.current = true;
       outer.scrollLeft = halfWidth;
-      isResetting.current = false;
-    } else if (outer.scrollLeft >= halfWidth) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { isResetting.current = false; });
+      });
+    } else if (outer.scrollLeft > halfWidth) {
       // Scrolled past the real set → jump back to clone
       isResetting.current = true;
       outer.scrollLeft = outer.scrollLeft - halfWidth;
-      isResetting.current = false;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { isResetting.current = false; });
+      });
     }
   }, []);
 
