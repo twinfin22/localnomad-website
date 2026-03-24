@@ -22,13 +22,7 @@ export const Hero = () => {
           sizes="100vw"
           className="z-0 object-cover object-[center_70%]"
         />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background: 'linear-gradient(135deg, rgba(27,73,101,0.45) 0%, rgba(20,55,78,0.50) 100%)',
-          }}
-        />
+        {/* Gradient overlay — uses ::after pseudo-element (not LCP candidate) via CSS class */}
 
         <div
           className="relative z-[2] mx-auto w-full max-w-3xl text-center"

@@ -6,7 +6,6 @@ import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { ScrollReveal } from './scroll-reveal';
 import { InfiniteScrollStrip } from '../country/infinite-scroll-strip';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 const BRAND_COLOR = '#1B4965';
 
@@ -60,6 +59,8 @@ export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps)
     const token = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
     if (!token) return;
 
+    // @ts-expect-error -- CSS dynamic import has no type declarations
+    import('mapbox-gl/dist/mapbox-gl.css').catch(() => {});
     import('mapbox-gl').then((mapboxgl) => {
       mapboxgl.default.accessToken = token;
 

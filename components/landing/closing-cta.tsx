@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ScrollReveal } from './scroll-reveal';
@@ -64,14 +65,13 @@ export const ClosingCta = async () => {
                 >
                   {/* Country image header */}
                   <div className="relative h-28 w-full overflow-hidden">
-                    <img
-                      src={config?.image}
+                    <Image
+                      src={config?.image ?? ''}
                       alt={country.name}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      sizes="(min-width: 640px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{ objectPosition: config?.objectPosition }}
-                      loading="lazy"
-                      width={400}
-                      height={160}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/5" />
                     <h3
