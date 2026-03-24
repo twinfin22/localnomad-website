@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ScrollReveal } from './scroll-reveal';
@@ -18,13 +19,12 @@ const DestinationCard = ({ href, name, hook, visaCount, imageSrc, delay }: Desti
       className="group relative flex h-[340px] cursor-pointer flex-col justify-end overflow-hidden rounded-2xl shadow-md transition-shadow duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 sm:h-[400px]"
     >
       {/* Background image */}
-      <img
+      <Image
         src={imageSrc}
         alt={name}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-        width={600}
-        height={800}
+        fill
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
       {/* Gradient overlay */}
