@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { useEffect, useRef, useCallback, useState } from 'react';
+import type mapboxgl from 'mapbox-gl';
 import { cn } from '@/lib/utils';
 import type { City } from '@/lib/types/neighborhood';
 
@@ -20,8 +19,10 @@ export default function NeighborhoodMap({
   onCitySelect,
 }: NeighborhoodMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<mapboxgl.Map | null>(null);
-  const markersRef = useRef<mapboxgl.Marker[]>([]);
+  const mapRef = useRef<InstanceType<typeof mapboxgl.Map> | null>(null);
+  const markersRef = useRef<InstanceType<typeof mapboxgl.Marker>[]>([]);
+  const mapboxModuleRef = useRef<typeof mapboxgl | null>(null);
+  const [mapReady, setMapReady] = useState(false);
 
   const clearMarkers = useCallback(() => {
     markersRef.current.forEach((m) => m.remove());
@@ -30,6 +31,9 @@ export default function NeighborhoodMap({
 
   const createCityMarker = useCallback(
     (city: City, isActive: boolean) => {
+      const mb = mapboxModuleRef.current;
+      if (!mb) return null;
+
       const count = city.neighborhoods.length;
 
       const el = document.createElement('div');
@@ -86,7 +90,7 @@ export default function NeighborhoodMap({
       });
 
       // Mapbox uses [lng, lat]
-      const marker = new mapboxgl.Marker({ element: el }).setLngLat([
+      const marker = new mb.Marker({ element: el }).setLngLat([
         city.coordinates[1],
         city.coordinates[0],
       ]);
@@ -97,6 +101,9 @@ export default function NeighborhoodMap({
   );
 
   const createNeighborhoodMarker = useCallback((name: string, coords: [number, number]) => {
+    const mb = mapboxModuleRef.current;
+    if (!mb) return null;
+
     const el = document.createElement('div');
     Object.assign(el.style, {
       width: '12px',
@@ -126,7 +133,7 @@ export default function NeighborhoodMap({
     el.appendChild(tooltip);
 
     // Mapbox uses [lng, lat]
-    const marker = new mapboxgl.Marker({ element: el }).setLngLat([
+    const marker = new mb.Marker({ element: el }).setLngLat([
       coords[1],
       coords[0],
     ]);
@@ -134,52 +141,81 @@ export default function NeighborhoodMap({
     return marker;
   }, []);
 
-  // Initialize the map
+  // Initialize the map lazily via requestIdleCallback
   useEffect(() => {
     if (!mapContainerRef.current) return;
 
     const token = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
-    if (!token) {
-      console.error('NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN is not set');
-      return;
-    }
+    if (!token) return;
 
-    mapboxgl.accessToken = token;
+    let cancelled = false;
 
-    const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: 'mapbox://styles/localrei/cmn0fjz7j00a101r0g1gl073v',
-      center: [
-        cities.reduce((sum, c) => sum + c.coordinates[1], 0) / cities.length,
-        cities.reduce((sum, c) => sum + c.coordinates[0], 0) / cities.length,
-      ],
-      zoom: 5,
-      scrollZoom: false,
-    });
+    const initMap = async () => {
+      const mb = (await import('mapbox-gl')).default;
+       
+      // @ts-expect-error -- CSS module, no TS types
+      await import('mapbox-gl/dist/mapbox-gl.css');
+      if (cancelled) return;
 
-    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+      mapboxModuleRef.current = mb;
+      mb.accessToken = token;
 
-    mapRef.current = map;
+      const map = new mb.Map({
+        container: mapContainerRef.current!,
+        style: 'mapbox://styles/localrei/cmn0fjz7j00a101r0g1gl073v',
+        center: [
+          cities.reduce((sum, c) => sum + c.coordinates[1], 0) / cities.length,
+          cities.reduce((sum, c) => sum + c.coordinates[0], 0) / cities.length,
+        ],
+        zoom: 5,
+        scrollZoom: false,
+      });
 
-    // Fit bounds to show all cities on load
-    const bounds = new mapboxgl.LngLatBounds();
-    cities.forEach((city) => {
-      bounds.extend([city.coordinates[1], city.coordinates[0]]);
-    });
-    map.fitBounds(bounds, { padding: 60, maxZoom: 8 });
+      map.addControl(new mb.NavigationControl(), 'top-right');
+      mapRef.current = map;
 
-    return () => {
-      clearMarkers();
-      map.remove();
-      mapRef.current = null;
+      const bounds = new mb.LngLatBounds();
+      cities.forEach((city) => {
+        bounds.extend([city.coordinates[1], city.coordinates[0]]);
+      });
+      map.fitBounds(bounds, { padding: 60, maxZoom: 8 });
+
+      if (!cancelled) {
+        setMapReady(true);
+      }
     };
+
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(() => initMap());
+      return () => {
+        cancelled = true;
+        cancelIdleCallback(id);
+        clearMarkers();
+        if (mapRef.current) {
+          mapRef.current.remove();
+          mapRef.current = null;
+        }
+      };
+    } else {
+      const id = setTimeout(() => initMap(), 200);
+      return () => {
+        cancelled = true;
+        clearTimeout(id);
+        clearMarkers();
+        if (mapRef.current) {
+          mapRef.current.remove();
+          mapRef.current = null;
+        }
+      };
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Update markers when selectedCity changes
+  // Update markers when selectedCity changes — no-op until map is ready
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    const mb = mapboxModuleRef.current;
+    if (!map || !mb) return;
 
     clearMarkers();
 
@@ -190,6 +226,7 @@ export default function NeighborhoodMap({
       cities.forEach((city) => {
         if (city.name === selectedCity) return;
         const marker = createCityMarker(city, false);
+        if (!marker) return;
         const el = marker.getElement();
         el.style.opacity = '0.4';
         marker.addTo(map);
@@ -200,12 +237,13 @@ export default function NeighborhoodMap({
       if (activeCity) {
         activeCity.neighborhoods.forEach((n) => {
           const marker = createNeighborhoodMarker(n.name, n.coordinates);
+          if (!marker) return;
           marker.addTo(map);
           markersRef.current.push(marker);
         });
 
         // Zoom to the selected city
-        const bounds = new mapboxgl.LngLatBounds();
+        const bounds = new mb.LngLatBounds();
         activeCity.neighborhoods.forEach((n) => {
           bounds.extend([n.coordinates[1], n.coordinates[0]]);
         });
@@ -216,18 +254,19 @@ export default function NeighborhoodMap({
       // Show cluster markers for all cities
       cities.forEach((city) => {
         const marker = createCityMarker(city, false);
+        if (!marker) return;
         marker.addTo(map);
         markersRef.current.push(marker);
       });
 
       // Zoom out to show all cities
-      const bounds = new mapboxgl.LngLatBounds();
+      const bounds = new mb.LngLatBounds();
       cities.forEach((city) => {
         bounds.extend([city.coordinates[1], city.coordinates[0]]);
       });
       map.fitBounds(bounds, { padding: 60, maxZoom: 8, duration: 800 });
     }
-  }, [selectedCity, cities, clearMarkers, createCityMarker, createNeighborhoodMarker]);
+  }, [mapReady, selectedCity, cities, clearMarkers, createCityMarker, createNeighborhoodMarker]);
 
   return (
     <div
@@ -237,9 +276,13 @@ export default function NeighborhoodMap({
       )}
     >
       <div ref={mapContainerRef} className="h-full w-full" />
-      {!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN && (
-        <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 text-sm text-muted-foreground">
-          Map requires NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+      {!mapReady && (
+        <div className="absolute inset-0 flex items-center justify-center bg-neutral-100">
+          <span className="text-sm text-muted-foreground">
+            {process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+              ? 'Loading map...'
+              : 'Map requires NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN'}
+          </span>
         </div>
       )}
     </div>

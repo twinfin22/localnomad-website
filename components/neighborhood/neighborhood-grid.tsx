@@ -72,13 +72,12 @@ export function NeighborhoodGrid({
 
       {/* Cards grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {filtered.map((neighborhood) => (
-          <div
+        {filtered.map((neighborhood, i) => (
+          <NeighborhoodCard
             key={neighborhood.name}
-            className="transition-opacity duration-200"
-          >
-            <NeighborhoodCard neighborhood={neighborhood} />
-          </div>
+            neighborhood={neighborhood}
+            priority={i < 2}
+          />
         ))}
       </div>
 

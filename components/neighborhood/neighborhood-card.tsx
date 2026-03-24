@@ -13,9 +13,10 @@ import type { Neighborhood } from '@/lib/types/neighborhood';
 
 interface NeighborhoodCardProps {
   neighborhood: Neighborhood;
+  priority?: boolean;
 }
 
-export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
+export function NeighborhoodCard({ neighborhood, priority }: NeighborhoodCardProps) {
   const t = useTranslations('Neighborhood');
   return (
     <div className="overflow-hidden rounded-lg border bg-white shadow-sm">
@@ -27,7 +28,9 @@ export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
             alt={neighborhood.name}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 400px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 30vw, 380px"
+            priority={priority}
+            loading={priority ? undefined : 'lazy'}
           />
         </div>
       )}

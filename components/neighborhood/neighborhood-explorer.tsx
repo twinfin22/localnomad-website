@@ -9,7 +9,14 @@ import type { City } from '@/lib/types/neighborhood';
 
 const NeighborhoodMap = dynamic(
   () => import('@/components/neighborhood/neighborhood-map'),
-  { ssr: false }
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[300px] lg:sticky lg:top-20 lg:h-[calc(100vh-6rem)] rounded-lg border bg-neutral-100 animate-pulse flex items-center justify-center">
+        <span className="text-sm text-muted-foreground">Loading map...</span>
+      </div>
+    ),
+  }
 );
 
 interface NeighborhoodExplorerProps {
