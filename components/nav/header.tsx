@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, startTransition } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, Link } from '@/i18n/navigation';
@@ -78,7 +78,10 @@ export const Header = () => {
   // Hydrate from localStorage after mount
   useEffect(() => {
     const stored = getStoredCountry();
-    if (stored) setManualCountry(stored);
+    if (stored) {
+      // Reading from external system (localStorage) — not a cascading render
+      startTransition(() => setManualCountry(stored));
+    }
   }, []);
   const selectedCountry: CountryKey = countryFromUrl ?? manualCountry;
 
@@ -86,7 +89,7 @@ export const Header = () => {
   useEffect(() => {
     if (!isLanding) return;
     // Check initial scroll position (e.g. back-navigation scroll restore)
-    setIsScrolled(window.scrollY > 50);
+    startTransition(() => setIsScrolled(window.scrollY > 50));
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -146,7 +149,6 @@ export const Header = () => {
               width={140}
               height={20}
               priority
-              unoptimized
               className={cn('transition-all duration-200', isTransparent && 'brightness-0 invert')}
             />
           </Link>

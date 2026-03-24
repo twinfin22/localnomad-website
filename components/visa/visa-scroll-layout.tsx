@@ -10,17 +10,46 @@ import {
   MessageCircle,
   ExternalLink,
 } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { useDocumentProgress } from '@/hooks/use-document-progress';
 import { MobileTocBar, DesktopTocSidebar } from './sticky-toc';
 import type { TocSection } from './sticky-toc';
 import { CollapsibleSection } from './sections/collapsible-section';
 import { QuickVerdict } from './sections/quick-verdict';
-import { RequirementsTab } from './sections/requirements-tab';
-import { DocumentsTab } from './sections/documents-tab';
-import { ProcessTab } from './sections/process-tab';
-import { FaqSection } from './sections/faq-section';
-import { SourcesRelated } from './sections/sources-related';
 import type { Visa } from '@/lib/types/visa';
+
+/* Below-fold sections: lazy-loaded to reduce initial JS parse/execute */
+const RequirementsTab = dynamic(
+  () => import('./sections/requirements-tab').then((m) => ({ default: m.RequirementsTab })),
+  { loading: () => <SectionSkeleton rows={4} /> }
+);
+const DocumentsTab = dynamic(
+  () => import('./sections/documents-tab').then((m) => ({ default: m.DocumentsTab })),
+  { loading: () => <SectionSkeleton rows={3} /> }
+);
+const ProcessTab = dynamic(
+  () => import('./sections/process-tab').then((m) => ({ default: m.ProcessTab })),
+  { loading: () => <SectionSkeleton rows={3} /> }
+);
+const FaqSection = dynamic(
+  () => import('./sections/faq-section').then((m) => ({ default: m.FaqSection })),
+  { loading: () => <SectionSkeleton rows={2} /> }
+);
+const SourcesRelated = dynamic(
+  () => import('./sections/sources-related').then((m) => ({ default: m.SourcesRelated })),
+  { loading: () => <SectionSkeleton rows={2} /> }
+);
+
+/* Skeleton placeholder to preserve layout during lazy load (CLS = 0) */
+function SectionSkeleton({ rows = 3 }: { rows?: number }) {
+  return (
+    <div className="animate-pulse space-y-3 p-4">
+      {Array.from({ length: rows }, (_, i) => (
+        <div key={i} className="h-4 rounded bg-gray-200" style={{ width: `${85 - i * 10}%` }} />
+      ))}
+    </div>
+  );
+}
 
 interface VisaScrollLayoutProps {
   visa: Visa;

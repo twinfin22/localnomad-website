@@ -159,7 +159,6 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
                 alt="LocalNomad"
                 width={120}
                 height={17}
-                unoptimized
                 className="brightness-0 invert opacity-80"
               />
               <button
