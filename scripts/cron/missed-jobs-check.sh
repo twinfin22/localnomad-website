@@ -38,6 +38,15 @@ if [ ! -f "$LOG_DIR/weekly-reflect-$LAST_SUNDAY.log" ]; then
   MISSED+=("weekly-reflect")
 fi
 
+# 주간 월요일 작업 (seo-pulse) 체크
+if [ "$(date +%u)" -gt 1 ]; then
+  LAST_MONDAY=$(date -v-monday +%Y-%m-%d)
+  SEO_SCRIPT="$HOME/localnomad/b2c-website/scripts/seo/seo-pulse.sh"
+  if [ ! -f "$LOG_DIR/seo-pulse-$LAST_MONDAY.log" ] && [ -f "$SEO_SCRIPT" ]; then
+    MISSED+=("seo-pulse")
+  fi
+fi
+
 # 격주 작업 (1일, 15일) 체크
 DAY_OF_MONTH=$(date +%d)
 LAST_BIWEEKLY=""
@@ -63,10 +72,14 @@ osascript -e "display notification \"놓친 작업: $MISSED_LIST — 보상 실�
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Compensating missed jobs from $LAST_SUNDAY: ${MISSED[*]}" >> "$LOG_DIR/missed-jobs.log"
 
-# 순서대로 보상 실행 (blog → report → reflect)
+# 순서대로 보상 실행
 for JOB in "${MISSED[@]}"; do
   echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Running compensated: $JOB" >> "$LOG_DIR/missed-jobs.log"
-  "$SCRIPT_DIR/$JOB.sh" &
+  if [ "$JOB" = "seo-pulse" ]; then
+    "$HOME/localnomad/b2c-website/scripts/seo/seo-pulse.sh" &
+  else
+    "$SCRIPT_DIR/$JOB.sh" &
+  fi
 done
 
 # 중복 방지 플래그
