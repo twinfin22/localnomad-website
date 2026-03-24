@@ -232,7 +232,7 @@ export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps)
       <div className="mx-auto mt-6 max-w-5xl px-6">
         {/* No ScrollReveal — same pattern as map (commit 422a94c): timing conflict with scroll init */}
           <InfiniteScrollStrip scrollAmount={424}>
-            {neighborhoods.map((hood, i) => (
+            {neighborhoods.map((hood) => (
               <Link
                 key={`${hood.country}-${hood.name}`}
                 href={`/neighborhood/${hood.country}`}
