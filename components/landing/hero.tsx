@@ -10,8 +10,8 @@ export const Hero = () => {
       <section
         className="hero-grain relative -mt-[70px] flex h-[calc(100dvh)] flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
         style={{
-          // Fallback: teal gradient shows if image fails — no blank screen
-          backgroundColor: 'var(--primary)',
+          // Light fallback while hero image loads — avoids dark flash on initial paint
+          backgroundColor: '#f5f5f5',
         }}
       >
         <Image
