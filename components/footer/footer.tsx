@@ -11,7 +11,7 @@ export async function Footer() {
         {/* Main row */}
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
           {/* Left — brand */}
-          <span className="font-lora text-lg font-bold text-white">
+          <span className="font-lora-brand text-lg italic text-white">
             LocalNomad
           </span>
 
