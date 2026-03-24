@@ -16,7 +16,7 @@ export const Hero = () => {
       >
         <Image
           src="/images/hero-bg.webp"
-          alt=""
+          alt="Soft Land in Asia"
           fill
           priority
           sizes="100vw"
