@@ -29,6 +29,7 @@ export function NeighborhoodCard({ neighborhood, priority }: NeighborhoodCardPro
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 30vw, 380px"
+            quality={60}
             priority={priority}
             loading={priority ? undefined : 'lazy'}
           />

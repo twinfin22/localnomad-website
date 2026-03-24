@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
@@ -154,13 +153,9 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
           <div className="flex flex-col h-full overflow-y-auto px-6 py-6">
             {/* Top bar: logo + close */}
             <div className="flex items-center justify-between">
-              <Image
-                src="/logo_new_all-blue.png"
-                alt="LocalNomad"
-                width={120}
-                height={17}
-                className="brightness-0 invert opacity-80"
-              />
+              <span className="font-lora text-lg font-bold italic tracking-tight text-white/80">
+                LocalNomad
+              </span>
               <button
                 ref={closeRef}
                 onClick={handleClose}

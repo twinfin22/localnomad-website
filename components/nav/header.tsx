@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback, startTransition } from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, Link } from '@/i18n/navigation';
 import { LocaleSwitcher } from '@/components/locale-switcher';
@@ -143,14 +142,14 @@ export const Header = () => {
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link href="/" className="transition-opacity hover:opacity-80">
-            <Image
-              src="/logo_new_all-blue.png"
-              alt="LocalNomad"
-              width={140}
-              height={20}
-              priority
-              className={cn('transition-all duration-200', isTransparent && 'brightness-0 invert')}
-            />
+            <span
+              className={cn(
+                'font-lora text-xl font-bold italic tracking-tight transition-colors duration-200',
+                isTransparent ? 'text-white' : 'text-primary'
+              )}
+            >
+              LocalNomad
+            </span>
           </Link>
 
           {/* Country dropdown */}
