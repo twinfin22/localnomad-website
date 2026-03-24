@@ -55,8 +55,16 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
 
+  const fontClasses = [
+    dmSans.variable,
+    dmSerifDisplay.variable,
+    lora.variable,
+    locale === 'ja' && notoSansJP.variable,
+    locale === 'zh-cn' && notoSansSC.variable,
+  ].filter(Boolean).join(' ');
+
   return (
-    <html lang={locale} suppressHydrationWarning className={`${dmSans.variable} ${dmSerifDisplay.variable} ${lora.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
+    <html lang={locale} suppressHydrationWarning className={fontClasses}>
       <body className="font-sans antialiased">
         {children}
       </body>
