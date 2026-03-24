@@ -91,6 +91,7 @@ export const LocaleSwitcher = () => {
         onClick={() => setOpen(!open)}
         onKeyDown={handleTriggerKeyDown}
         className="flex items-center gap-1 rounded-md px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
+        aria-label="Switch language"
         aria-expanded={open}
         aria-haspopup="true"
       >
