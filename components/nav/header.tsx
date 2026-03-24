@@ -144,7 +144,7 @@ export const Header = () => {
           <Link href="/" className="transition-opacity hover:opacity-80">
             <span
               className={cn(
-                'font-lora text-xl font-bold italic tracking-tight transition-colors duration-200',
+                'font-lora-brand text-xl italic tracking-tight transition-colors duration-200',
                 isTransparent ? 'text-white' : 'text-primary'
               )}
             >

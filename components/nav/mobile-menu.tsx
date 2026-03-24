@@ -153,7 +153,7 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
           <div className="flex flex-col h-full overflow-y-auto px-6 py-6">
             {/* Top bar: logo + close */}
             <div className="flex items-center justify-between">
-              <span className="font-lora text-lg font-bold italic tracking-tight text-white/80">
+              <span className="font-lora-brand text-lg italic tracking-tight text-white/80">
                 LocalNomad
               </span>
               <button
