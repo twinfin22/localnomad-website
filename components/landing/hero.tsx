@@ -19,7 +19,8 @@ export const Hero = () => {
           alt=""
           fill
           priority
-          className="object-cover object-[center_70%]"
+          sizes="100vw"
+          className="z-0 object-cover object-[center_70%]"
         />
         {/* Gradient overlay */}
         <div
@@ -35,7 +36,7 @@ export const Hero = () => {
             textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2)',
           }}
         >
-          <h1 className="font-lora text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl text-wrap-balance">
+          <h1 className="font-lora text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             {t('headline')}
           </h1>
           <p className="mt-5 text-lg text-white/90 sm:text-xl max-w-2xl mx-auto">
