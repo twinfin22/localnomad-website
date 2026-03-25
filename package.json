@@ -14,6 +14,12 @@
     "analyze": "next experimental-analyze",
     "prepare": "lefthook install"
   },
+  "browserslist": [
+    "chrome 90",
+    "firefox 91",
+    "safari 15",
+    "edge 90"
+  ],
   "dependencies": {
     "@next/third-parties": "^16.1.6",
     "@supabase/ssr": "^0.8.0",
