@@ -209,17 +209,9 @@
   animation: bounce-subtle 2s ease-in-out infinite;
 }
 
-/* Hero section base + gradient overlay as pseudo-element (not an LCP candidate) */
+/* Hero section base — gradient baked into hero-bg.webp, no overlay needed */
 .hero-grain {
   position: relative;
-}
-.hero-grain::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(27,73,101,0.45) 0%, rgba(20,55,78,0.50) 100%);
-  z-index: 1;
-  pointer-events: none;
 }
 
 /* Slow gradient drift animation */

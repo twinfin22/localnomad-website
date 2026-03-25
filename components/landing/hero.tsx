@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
@@ -7,23 +6,22 @@ export const Hero = () => {
 
   return (
     <>
+      {/* Preload hero image for LCP performance */}
+      <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" />
+
       <section
-        className="hero-grain relative -mt-[70px] flex h-[calc(100dvh)] flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
+        className="relative -mt-[70px] flex h-[calc(100dvh)] flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
         style={{
-          // Light fallback while hero image loads — avoids dark flash on initial paint
+          backgroundImage: [
+            'linear-gradient(135deg, rgba(27,73,101,0.45) 0%, rgba(20,55,78,0.50) 100%)',
+            "url('/images/hero-bg.webp')",
+          ].join(', '),
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 70%',
+          backgroundRepeat: 'no-repeat',
           backgroundColor: '#f5f5f5',
         }}
       >
-        <Image
-          src="/images/hero-bg.webp"
-          alt="Soft Land in Asia"
-          fill
-          priority
-          sizes="100vw"
-          className="z-0 object-cover object-[center_70%]"
-        />
-        {/* Gradient overlay — uses ::after pseudo-element (not LCP candidate) via CSS class */}
-
         <div
           className="relative z-[2] mx-auto w-full max-w-3xl text-center"
           style={{
