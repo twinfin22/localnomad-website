@@ -6,6 +6,10 @@
 - Brand Color: Deep Teal Navy `#1B4965`
 - Full specs: `docs/human/브랜드-가이드.md`
 
+## General Rules
+- **No execution without confirmation** — Never start executing implementation steps without explicit user confirmation. When presenting a plan, wait for approval before running any commands.
+- **Option selection requires explicit choice** — When presenting multiple options (A/B/C), wait for the user to explicitly state their choice. Do not interpret single letters like 'c' as confirmation.
+
 ## Critical Rules
 1. **Never modify `components/ui/`** — shadcn/ui managed
 2. **`"use client"` only when needed** — hooks/browser APIs/interactivity
@@ -41,6 +45,18 @@
 If SessionStart hook did not inject context, read these at session start:
 - `memory/context/project.md`
 - `memory/glossary.md`
+
+## Code Editing Rules
+- **Read before Edit** — Always `Read` a file before attempting to `Edit` it. Never edit a file based on assumptions about its contents.
+
+## Tech Stack
+- This project uses **Next.js 16 with Turbopack**. Do not install packages or use features incompatible with Turbopack (e.g., `@next/bundle-analyzer`). Always verify Turbopack compatibility before suggesting tooling.
+
+## Debugging & Performance
+- When diagnosing performance issues (Lighthouse, LCP, FCP), propose only **evidence-based fixes**. Do not speculate on multiple fixes without data. Use critic-agent pattern to validate hypotheses before implementing.
+
+## SEO & Social Sharing
+- When fixing OG image issues, check: 1) file size limits per platform (WhatsApp: 300KB, Telegram: varies), 2) redirect chains that strip meta tags, 3) X-Frame-Options/CSP headers. Test with actual platform previews.
 
 ## MCP Tool Restrictions
 - **Firecrawl** (`firecrawl_search`, `firecrawl_scrape`): Only use when running `fact-checker` skill or `/blog` pipeline. Do not use for general browsing or ad-hoc web searches.
