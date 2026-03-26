@@ -37,6 +37,12 @@
       "required": true
     },
     {
+      "id": "employer-sponsorship",
+      "label": "Employment contract with an accepting organization",
+      "description": "Must have an employment contract with a Japanese accepting organization (受入れ機関). SSW2 workers demonstrate higher expertise and do not require a support plan.",
+      "required": true
+    },
+    {
       "id": "employment-contract",
       "label": "Full-time employment contract with authority to supervise or manage worksites",
       "description": "A valid employment contract with a Japanese employer registered under the SSW program is required. The contract must specify supervisory or management responsibilities consistent with the SSW2 skill level.",

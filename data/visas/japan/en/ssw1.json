@@ -40,6 +40,12 @@
       "required": false
     },
     {
+      "id": "employer-sponsorship",
+      "label": "Employment contract with an accepting organization",
+      "description": "Must have an employment contract with a Japanese accepting organization (受入れ機関). The organization must meet standards for support plans.",
+      "required": true
+    },
+    {
       "id": "employment-contract",
       "label": "Full-time employment contract with a registered Japanese employer",
       "description": "A valid employment contract with a Japanese employer registered under the SSW program is required. The employer must meet labor standards and provide adequate working conditions, including salary comparable to Japanese workers in the same role.",

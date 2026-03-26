@@ -246,6 +246,7 @@
   },
   "workPermission": {
     "allowed": true,
+    "type": "restricted",
     "restrictions": [
       "ONLY for overseas employer/clients — absolutely NO Taiwan-based work",
       "Cannot work for any Taiwan-registered company or entity",
