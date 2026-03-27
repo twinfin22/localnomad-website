@@ -61,6 +61,7 @@ export const ClosingCta = async () => {
               <ScrollReveal key={country.key} delay={i * 100}>
                 <Link
                   href={country.href}
+                  prefetch={false}
                   className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-border/60 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
                 >
                   {/* Country image header */}

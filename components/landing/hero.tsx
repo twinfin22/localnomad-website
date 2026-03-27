@@ -6,21 +6,12 @@ export const Hero = () => {
 
   return (
     <>
-      {/* Preload hero image for LCP performance */}
-      <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" />
+      {/* Preload hero image for LCP — mobile gets smaller file */}
+      <link rel="preload" as="image" type="image/webp" href="/images/hero-bg-mobile.webp" media="(max-width: 768px)" />
+      <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" media="(min-width: 769px)" />
 
       <section
-        className="relative -mt-[70px] flex h-[calc(100dvh)] flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
-        style={{
-          backgroundImage: [
-            'linear-gradient(135deg, rgba(27,73,101,0.45) 0%, rgba(20,55,78,0.50) 100%)',
-            "url('/images/hero-bg.webp')",
-          ].join(', '),
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 70%',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#f5f5f5',
-        }}
+        className="hero-bg relative -mt-[70px] flex h-[calc(100dvh)] flex-col items-center justify-center overflow-hidden px-6 pt-[90px] pb-20"
       >
         <div
           className="relative z-[2] mx-auto w-full max-w-3xl text-center"
@@ -40,6 +31,7 @@ export const Hero = () => {
           <div className="mt-10" style={{ textShadow: 'none' }}>
             <Link
               href="/korea"
+              prefetch={false}
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-primary shadow-lg transition-all duration-200 hover:bg-white/90 hover:shadow-xl hover:-translate-y-0.5"
             >
               {t('exploreVisas')}

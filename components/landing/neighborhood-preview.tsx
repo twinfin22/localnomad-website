@@ -236,6 +236,7 @@ export const NeighborhoodPreview = ({ neighborhoods }: NeighborhoodPreviewProps)
               <Link
                 key={`${hood.country}-${hood.name}`}
                 href={`/neighborhood/${hood.country}`}
+                prefetch={false}
                 className="group flex w-[200px] flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border/60 bg-white shadow-sm transition-shadow transition-colors duration-200 hover:border-primary/30 hover:shadow-md sm:w-[220px]"
                 onMouseEnter={() => handleCardHover(hood)}
                 onMouseLeave={() => handleCardHover(null)}

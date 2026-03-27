@@ -210,7 +210,7 @@ interface RunResult {
 const results: RunResult[] = [];
 let hasMismatch = false;
 
-const countries = filterCountry
+const countries = typeof filterCountry === 'string'
   ? [filterCountry.toLowerCase()]
   : Object.keys(COUNTRY_MAP);
 

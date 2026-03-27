@@ -14,6 +14,7 @@ interface DestinationCardProps {
 const DestinationCard = ({ href, name, hook, visaCount, imageSrc }: DestinationCardProps) => (
     <Link
       href={href}
+      prefetch={false}
       className="group relative flex h-[340px] cursor-pointer flex-col justify-end overflow-hidden rounded-2xl shadow-md transition-shadow duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 sm:h-[400px]"
     >
       {/* Background image */}

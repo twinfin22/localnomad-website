@@ -62,6 +62,7 @@ export const BlogCarousel = async () => {
           </div>
           <Link
             href="/blog"
+            prefetch={false}
             className="group hidden items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 sm:inline-flex"
           >
             {t('blogViewAll')}
@@ -80,6 +81,7 @@ export const BlogCarousel = async () => {
             >
               <Link
                 href={`/blog/${post.category}/${post.slug}`}
+                prefetch={false}
                 className="flex h-full flex-col overflow-hidden rounded-xl border border-border/60 bg-white shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
               >
                 {/* Cover image or gradient strip fallback */}
@@ -148,6 +150,7 @@ export const BlogCarousel = async () => {
         <div className="mt-6 text-center sm:hidden">
           <Link
             href="/blog"
+            prefetch={false}
             className="group inline-flex items-center gap-1.5 text-sm font-medium text-primary"
           >
             {t('blogViewAll')}
