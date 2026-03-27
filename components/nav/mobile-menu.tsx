@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { COUNTRIES } from './country-dropdown';
+import { LogoSvg } from './logo-svg';
 import type { CountryKey } from './country-dropdown';
 
 interface MobileMenuProps {
@@ -153,9 +154,7 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
           <div className="flex flex-col h-full overflow-y-auto px-6 py-6">
             {/* Top bar: logo + close */}
             <div className="flex items-center justify-between">
-              <span className="font-lora-brand text-lg italic tracking-tight text-white/80">
-                LocalNomad
-              </span>
+              <LogoSvg className="h-[18px] text-white/80" />
               <button
                 ref={closeRef}
                 onClick={handleClose}
@@ -213,7 +212,7 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
                       className="rounded-xl bg-white/5 px-5 py-4 flex items-center justify-between opacity-40 cursor-not-allowed"
                     >
                       <div>
-                        <div className="font-lora-brand italic text-xl text-white/50">
+                        <div className="font-lora italic text-xl text-white/50">
                           {item.label}
                         </div>
                         <div className="text-xs text-white/25 mt-0.5">Coming soon</div>
@@ -230,7 +229,7 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
                     className="group rounded-xl px-5 py-4 flex items-center justify-between transition-all duration-200 bg-white/[0.07] hover:bg-white/[0.12] active:bg-white/[0.16]"
                   >
                     <div>
-                      <div className="font-lora-brand italic text-xl text-white/85">
+                      <div className="font-lora italic text-xl text-white/85">
                         {item.label}
                       </div>
                       <div className="text-xs mt-0.5 text-white/35">
@@ -278,7 +277,7 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
                   </svg>
                   Discord
                 </a>
-                <span className="text-[11px] text-white/20 font-lora-brand italic">Soft Land in Asia</span>
+                <span className="text-[11px] text-white/20 font-lora italic">Soft Land in Asia</span>
               </div>
             </div>
           </div>

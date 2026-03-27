@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Instagram, Newspaper } from 'lucide-react';
+import { LogoSvg } from '@/components/nav/logo-svg';
 
 export async function Footer() {
   const t = await getTranslations('Footer');
@@ -11,9 +12,7 @@ export async function Footer() {
         {/* Main row */}
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
           {/* Left — brand */}
-          <span className="font-lora-brand text-lg italic text-white">
-            LocalNomad
-          </span>
+          <LogoSvg className="h-[18px] text-white" />
 
           {/* Center — nav links */}
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm">

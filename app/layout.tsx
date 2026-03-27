@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
-import { DM_Sans, DM_Serif_Display, Lora, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
+import { Inter, DM_Serif_Display, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import './globals.css';
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-dm-sans',
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -13,14 +13,6 @@ const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin', 'latin-ext'],
   weight: ['400'],
   variable: '--font-dm-serif',
-  display: 'swap',
-});
-
-const lora = Lora({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['700'],
-  style: ['italic'],
-  variable: '--font-lora-brand',
   display: 'swap',
 });
 
@@ -56,9 +48,8 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   const fontClasses = [
-    dmSans.variable,
+    inter.variable,
     dmSerifDisplay.variable,
-    lora.variable,
     locale === 'ja' && notoSansJP.variable,
     locale === 'zh-cn' && notoSansSC.variable,
   ].filter(Boolean).join(' ');

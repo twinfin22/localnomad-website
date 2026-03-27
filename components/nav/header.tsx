@@ -6,6 +6,7 @@ import { usePathname, useRouter, Link } from '@/i18n/navigation';
 import { LocaleSwitcher } from '@/components/locale-switcher';
 import { cn } from '@/lib/utils';
 import { CountryDropdown, COUNTRIES } from './country-dropdown';
+import { LogoSvg } from './logo-svg';
 import { MobileMenu } from './mobile-menu';
 import type { CountryKey, CountryConfig } from './country-dropdown';
 
@@ -142,14 +143,12 @@ export const Header = () => {
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link href="/" className="transition-opacity hover:opacity-80">
-            <span
+            <LogoSvg
               className={cn(
-                'font-lora-brand text-xl italic tracking-tight transition-colors duration-200',
+                'h-5 transition-colors duration-200',
                 isTransparent ? 'text-white' : 'text-primary'
               )}
-            >
-              LocalNomad
-            </span>
+            />
           </Link>
 
           {/* Country dropdown */}

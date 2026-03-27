@@ -8,10 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans), var(--font-noto-sans-jp), var(--font-noto-sans-sc), system-ui, sans-serif;
+  --font-sans: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-sc), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-lora: var(--font-dm-serif), "Yu Mincho", "Hiragino Mincho ProN", "Songti SC", "Songti TC", serif;
-  --font-lora-brand: var(--font-lora-brand), "Lora", serif;
+  --font-lora-brand: var(--font-dm-serif), serif;
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
