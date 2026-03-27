@@ -40,6 +40,12 @@
       "required": false
     },
     {
+      "id": "employer-sponsorship",
+      "label": "与接收机构（雇主）签订劳动合同",
+      "description": "须与日本接收机构（受入れ機関）签订劳动合同。接收机构须满足支援计划标准。",
+      "required": true
+    },
+    {
       "id": "employment-contract",
       "label": "与登记在册的日本雇主签订全职劳动合同",
       "description": "须与已在特定技能项目中登记注册的日本雇主签订有效的全职劳动合同。雇主须遵守劳动标准，提供不低于同岗位日本员工薪资水平的待遇。",

@@ -37,6 +37,12 @@
       "required": true
     },
     {
+      "id": "employer-sponsorship",
+      "label": "与接收机构（雇主）签订劳动合同",
+      "description": "须与日本接收机构（受入れ機関）签订劳动合同。特定技能2号劳动者具备更高的专业技能，无需支援计划。",
+      "required": true
+    },
+    {
       "id": "employment-contract",
       "label": "与日本雇主签订具有监督或管理职责的全职劳动合同",
       "description": "须与在特定技能制度下注册的日本雇主签订有效劳动合同。合同须明确载明与特定技能2号技能水平相符的监督或管理职责。",
