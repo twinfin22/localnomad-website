@@ -6,7 +6,7 @@
   "category": "work",
   "description": "Everything about Japan's Specified Skilled Worker Category 2 (SSW2) visa: advanced proficient skills status with no time limit on stay, family inclusion, path toward permanent residency, and the Category 2 skills test. SSW2 represents the upper tier of Japan's Specified Skilled Worker program, designed for experienced workers who have demonstrated supervisory-level expertise in their designated sector. Unlike SSW1's strict 5-year cap, SSW2 holders may renew indefinitely, bring family members (spouse and children), and work toward long-term settlement in Japan. Applicants typically transition from SSW1 after 3 or more years of sector experience and must pass the more advanced Category 2 skills evaluation or hold a Grade 1 National Trade Skill Certificate. Published guidelines indicate that SSW2 holders may eventually pursue permanent residency through the standard 10-year route. Updated for 2026.",
   "tagline": "Advanced skilled worker status with indefinite renewal and family inclusion",
-  "keyRequirement": "Pass Category 2 skills test (or Grade 1 National Trade Certificate) + Japanese N3, typically after 3+ years on SSW1",
+  "keyRequirement": "Pass Category 2 skills test (or Grade 1 National Trade Certificate), typically after 3+ years on SSW1. No separate Japanese language exam required for most sectors.",
   "targetAudience": [
     "SSW1 holders with 3+ years of sector experience seeking long-term stability in Japan",
     "Experienced skilled workers with supervisory or management capabilities",
@@ -32,9 +32,9 @@
     },
     {
       "id": "japanese-language-n3",
-      "label": "Japanese language proficiency at N3 level or higher",
-      "description": "SSW2 applicants must demonstrate intermediate Japanese language ability at JLPT N3 level or higher. This is a step above the N4 requirement for SSW1 and reflects the supervisory responsibilities expected of SSW2 workers.",
-      "required": true
+      "label": "Japanese language: no separate exam required for most SSW2 sectors",
+      "description": "No separate Japanese language exam is required for most SSW2 sectors. SSW2 assessment is primarily through a practical skills exam. N3 or equivalent may be required only for specific sectors (fisheries, food service).",
+      "required": false
     },
     {
       "id": "employer-sponsorship",
@@ -62,7 +62,7 @@
     }
   ],
   "duration": {
-    "initial": "Up to 3 years (renewable in 1-year or 3-year increments)",
+    "initial": "6 months, 1 year, or 3 years",
     "extension": "Renewable indefinitely — no cumulative time limit",
     "maxTotal": "No maximum",
     "maxTotalDetail": "SSW2 can be renewed indefinitely, allowing long-term settlement in Japan."
@@ -77,22 +77,28 @@
   "sponsorRequired": true,
   "coeRequired": true,
   "designatedSectors": [
+    "Nursing Care (介護)",
+    "Building Cleaning (ビルクリーニング)",
+    "Material Processing / Industrial Machinery / Electrical & Electronics (素形材・産業機械・電気電子情報関連)",
     "Construction (建設)",
     "Shipbuilding and Ship Machinery (造船・舶用工業)",
     "Automobile Maintenance (自動車整備)",
-    "Aviation Industry (航空)",
+    "Aviation (航空)",
     "Accommodation (宿泊)",
     "Agriculture (農業)",
     "Fisheries (漁業)",
-    "Food Processing (食品製造業)",
-    "Food Service (飲食料品製造業)",
-    "Manufacturing (製造業)",
-    "Electricity and Gas (電気・ガス)"
+    "Food and Beverages Manufacturing (飲食料品製造業)",
+    "Food Service (外食業)",
+    "Forestry (林業)",
+    "Wood Industry (木材産業)",
+    "Railway (鉄道)",
+    "Automobile Transport (自動車運送業)"
   ],
+  "designatedSectorsNote": "As of the March 2024 Cabinet Decision, all 16 SSW sectors are eligible for SSW2.",
   "japaneseLanguage": {
-    "required": true,
-    "minimumLevel": "JLPT N3 (intermediate conversational)",
-    "notes": "N3 represents intermediate ability — understanding of Japanese used in everyday situations and ability to read and comprehend materials on familiar topics. This higher requirement reflects the supervisory and communication responsibilities expected of SSW2 workers. The Japan Foundation Test for Basic Japanese (JFT-Basic) may also be accepted — check published guidelines for your sector."
+    "required": false,
+    "minimumLevel": "N3 or equivalent for specific sectors only (fisheries, food service)",
+    "notes": "No separate Japanese language exam is required for most SSW2 sectors. SSW2 is assessed primarily through a practical Category 2 skills exam. N3 or equivalent may be required only for specific sectors such as fisheries and food service — verify the requirement for your sector with the ISA or the relevant SSW support organization."
   },
   "documents": [
     {
@@ -272,11 +278,11 @@
     },
     {
       "question": "Which sectors currently offer SSW2 testing?",
-      "answer": "SSW2 covers 11 designated sectors (fewer than SSW1's 16). Not all 11 sectors have active Category 2 testing programs yet — availability varies by sector and is expanding over time. According to published information, construction and shipbuilding were among the first sectors to offer SSW2. Check the ISA and SSW support websites for the current list of sectors with active Category 2 testing."
+      "answer": "As of the March 2024 Cabinet Decision, all 16 SSW sectors are eligible for SSW2. Not all sectors have active Category 2 testing programs yet — availability varies by sector and is expanding over time. According to published information, construction and shipbuilding were among the first sectors to offer SSW2. Check the ISA and SSW support websites for the current list of sectors with active Category 2 testing."
     },
     {
       "question": "What if my sector does not yet offer Category 2 testing?",
-      "answer": "If your sector does not currently offer the Category 2 Specified Skills Test, you may not be able to transition to SSW2 in that sector at this time. Note also that SSW2 only covers 11 sectors — workers in SSW1-only sectors (such as caregiving, railways, forestry, and timber) cannot transition to SSW2 in those sectors. Published guidelines indicate the government is actively working to expand SSW2 availability. Monitor the ISA website for updates."
+      "answer": "If your sector does not currently offer the Category 2 Specified Skills Test, you may not be able to transition to SSW2 in that sector at this time. Published guidelines indicate the government is actively working to expand SSW2 testing availability across all 16 sectors. Monitor the ISA website for updates."
     },
     {
       "question": "Do I need to take the Category 2 test if I have a Grade 1 National Trade Skill Certificate?",

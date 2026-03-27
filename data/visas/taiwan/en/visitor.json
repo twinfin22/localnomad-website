@@ -16,8 +16,8 @@
   "eligibility": [
     {
       "id": "visa-exempt-90",
-      "label": "90-day visa-free entry (approximately 46 countries and territories)",
-      "description": "Citizens of the US, UK, Canada, Australia, Japan, Korea, New Zealand, and most EU/Schengen countries receive 90-day visa-free entry. No application required — just arrive with a valid passport.",
+      "label": "90-day visa-free entry (approximately 55 countries and territories)",
+      "description": "Citizens of the US, UK, Canada, Australia, Japan, Korea, New Zealand, and most EU/Schengen countries receive 90-day visa-free entry. No application required — just arrive with a valid passport. Canadian and UK passport holders may extend their 90-day stay to 180 days under specific conditions — apply at NIA before the initial 90 days expire.",
       "required": false
     },
     {
@@ -236,7 +236,7 @@
     },
     {
       "question": "Can I extend my visa-exempt stay beyond 90 days?",
-      "answer": "No. Visa-exempt stays cannot be extended. You must depart Taiwan before your permitted stay expires. To stay longer, consider applying for a Digital Nomad Visa (DNV), Gold Card, or other appropriate visa while still within your visa-exempt period."
+      "answer": "For most nationalities, visa-exempt stays cannot be extended — you must depart Taiwan before your permitted stay expires. Exception: Canadian and UK passport holders may apply to extend their 90-day visa-exempt stay to 180 days under specific conditions. Apply at an NIA service center before your initial 90-day period expires. For all other nationalities wanting to stay longer, consider applying for a Digital Nomad Visa (DNV), Gold Card, or other appropriate visa while still within your visa-exempt period."
     },
     {
       "question": "Can I switch from visitor status to a Digital Nomad Visa (DNV) while in Taiwan?",

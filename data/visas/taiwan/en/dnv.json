@@ -256,7 +256,8 @@
     ],
     "notes": "This is the most critical legal restriction. Violation may result in visa revocation, fines, and deportation."
   },
-  "familyAllowed": false,
+  "familyAllowed": true,
+  "familyNotes": "Per FTA Art.14, DNV holders may be accompanied by family members. Family members enter on their own visa status (e.g., visa-exempt entry for eligible nationalities) — there is no separate DNV dependent visa.",
   "postArrivalSteps": [
     {
       "id": "arc-application",
@@ -328,7 +329,7 @@
     },
     {
       "question": "Can I bring my family on the Digital Nomad Visa?",
-      "answer": "No. The DNV does not allow dependents. Family members would need to obtain their own visa status independently."
+      "answer": "Yes. Per the Foreign Talent Act (Art.14), DNV holders may be accompanied by family members. However, there is no separate DNV dependent visa — family members enter Taiwan on their own visa status (e.g., visa-exempt entry for eligible nationalities, which typically allows 90 days). Plan accordingly if your family intends to stay longer than their own visa permits."
     },
     {
       "question": "What happens if I overstay while my extension application is processing?",

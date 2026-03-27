@@ -17,7 +17,7 @@
     {
       "id": "professional-field",
       "label": "Expertise in one of 12 designated professional fields",
-      "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Practitioners of Ancestor Rites",
+      "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Environmental Protection",
       "required": true,
       "tips": ["Architecture field uses AND logic — all conditions (licensed architect or 5+ years experience AND monthly salary ≥ NT$160,000) must be met simultaneously"]
     },
@@ -286,7 +286,7 @@
       "Environmental Protection"
     ],
     "openWorkPermit": true,
-    "taxBenefit": "50% income tax exemption on annual salary exceeding NT$3,000,000 for first 5 years (conditions apply: first-time employment in Taiwan, 183+ days/year residency, no Taiwan household registration in prior 5 years)"
+    "taxBenefit": "50% income tax exemption on annual salary exceeding NT$3,000,000 for first 5 years (conditions apply: first-time employment in Taiwan, 183+ days/year residency, no Taiwan household registration in prior 5 years, work must be in the Gold Card's approved professional field per FTA Art.22)"
   },
   "goldCardComparison": {
     "disclaimer": "This comparison shows published requirements only. It is not a recommendation or eligibility assessment. 本比較表僅列出公開要件，非推薦或資格評估。",
@@ -365,7 +365,7 @@
     },
     {
       "question": "What are the industry fields for Gold Card qualification?",
-      "answer": "The 12 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law, (12) Environmental Protection. Additionally, 'Practitioners of Ancestor Rites' (宗教專業人士) is recognized as a specialized qualification path. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
+      "answer": "The 12 designated professional fields are: (1) Science & Technology, (2) Digital, (3) Finance, (4) Education, (5) Architecture, (6) Culture and Arts, (7) Sports, (8) Biotechnology, (9) Economy, (10) National Defense, (11) Law, (12) Environmental Protection. Each field has its own set of sub-tracks with specific qualification criteria. The government periodically expands the list — check the official Gold Card portal for the latest fields."
     },
     {
       "question": "How does the salary track work (NT$160,000/month)?",
@@ -377,7 +377,7 @@
     },
     {
       "question": "How does the 50% tax exemption work?",
-      "answer": "Gold Card holders who meet all of the following conditions receive a 50% income tax exemption on annual salary exceeding NT$3,000,000 for their first 5 years: (1) first-time employment in Taiwan (no prior Taiwan employment history), (2) physically present in Taiwan for 183+ days per calendar year, and (3) no Taiwan household registration in the prior 5 years. The exemption applies only to the portion of salary above NT$3M — income below that threshold is taxed at normal rates."
+      "answer": "Gold Card holders who meet all of the following conditions receive a 50% income tax exemption on annual salary exceeding NT$3,000,000 for their first 5 years: (1) first-time employment in Taiwan (no prior Taiwan employment history), (2) physically present in Taiwan for 183+ days per calendar year, (3) no Taiwan household registration in the prior 5 years, and (4) must be engaged in work related to the professional field for which the Gold Card was issued (per FTA Art.22). The exemption applies only to the portion of salary above NT$3M — income below that threshold is taxed at normal rates."
     },
     {
       "question": "Can my family join me in Taiwan with the Gold Card?",

@@ -259,7 +259,8 @@
     ],
     "notes": "这是最重要的法律限制。违反可能导致签证撤销、罚款及强制出境。"
   },
-  "familyAllowed": false,
+  "familyAllowed": true,
+  "familyNotes": "根据外国专业人才延揽及雇用法第14条，DNV持有人可携带家属同行。家属以自身签证身份（如免签入境）进入台湾，DNV无专属随行签证。",
   "postArrivalSteps": [
     {
       "id": "arc-application",

@@ -234,7 +234,7 @@
   "faqs": [
     {
       "question": "How does the HSP points system work?",
-      "answer": "The points system evaluates applicants across multiple categories with different weights depending on the activity category. Key factors include: academic background (doctoral degree earns the most points), professional experience (years in the field), annual salary (higher salary = more points), age (younger applicants earn more points), and achievements (publications, patents, awards). Bonus points are available for Japanese language proficiency (JLPT N1/N2), graduation from specific universities, and government-designated research projects. The minimum threshold is 70 points."
+      "answer": "The points system evaluates applicants across multiple categories with different weights depending on the activity category. Key factors include: academic background (doctoral degree earns the most points), professional experience (years in the field), annual salary (higher salary = more points), age, and achievements (publications, patents, awards). Bonus points are available for Japanese language proficiency (JLPT N1/N2), graduation from specific universities, and government-designated research projects. The minimum threshold is 70 points. Important nuances: (1) Age-based points apply to categories (i)(b) and (i)(c) only — the Advanced Academic Research category (i)(a) does NOT award age-based points. (2) The ¥6,000,000 annual income tier (20 points) applies to all ages with no age restriction on this tier."
     },
     {
       "question": "What is the difference between 70+ points and 80+ points?",
@@ -440,6 +440,8 @@
       "Advanced Business Management (i)(c) — business operation/management in Japan"
     ],
     "incomeFloor": "¥3,000,000/year (categories (i)(b) and (i)(c) only)",
+    "incomeTierNote": "The ¥6,000,000 annual income tier (20 points) applies to all ages — there is no age restriction on this income tier.",
+    "agePointsNote": "Age-based points apply to categories (i)(b) Advanced Specialized/Technical and (i)(c) Advanced Business Management only. The (i)(a) Advanced Academic Research category does NOT award age-based points.",
     "calculatorUrl": "https://www.moj.go.jp/isa/publications/materials/newimmiact_3_evaluate_index.html"
   },
   "japaneseLanguage": {

@@ -75,22 +75,22 @@
   "sponsorRequired": true,
   "coeRequired": true,
   "designatedSectors": [
-    "Caregiving (介護)",
+    "Nursing Care (介護)",
+    "Building Cleaning (ビルクリーニング)",
+    "Material Processing / Industrial Machinery / Electrical & Electronics (素形材・産業機械・電気電子情報関連)",
     "Construction (建設)",
-    "Hospitality (宿泊)",
+    "Shipbuilding and Ship Machinery (造船・舶用工業)",
+    "Automobile Maintenance (自動車整備)",
+    "Automobile Transport (自動車運送業)",
+    "Aviation (航空)",
+    "Accommodation (宿泊)",
     "Agriculture (農業)",
     "Fisheries (漁業)",
-    "Food Processing (食品製造業)",
-    "Manufacturing (製造業)",
-    "Electricity and Gas (電気・ガス)",
-    "Semiconductor/Electronics Manufacturing (電子機器・部品製造)",
-    "Automobile Transportation (自動車整備)",
-    "Railways (鉄道)",
+    "Food and Beverages Manufacturing (飲食料品製造業)",
+    "Food Service (外食業)",
     "Forestry (林業)",
-    "Timber Industry (木材産業)",
-    "Food Service (飲食料品製造業)",
-    "Cleaning (ビルクリーニング)",
-    "Shipbuilding and Ship Machinery (造船・舶用工業)"
+    "Wood Industry (木材産業)",
+    "Railway (鉄道)"
   ],
   "japaneseLanguage": {
     "required": true,
@@ -274,7 +274,7 @@
   "faqs": [
     {
       "question": "What are the 16 designated sectors for SSW1?",
-      "answer": "As of 2026, the 16 designated sectors are: caregiving, construction, hospitality, agriculture, fisheries, food processing, manufacturing, electricity and gas, semiconductor/electronics manufacturing, automobile transportation, railways, forestry, timber industry, food service, cleaning, and shipbuilding and ship machinery. Four sectors (automobile transportation, railways, forestry, timber) were added in March 2024, bringing the total to 16. Published guidelines indicate the sector list is continuously reviewed for further expansion."
+      "answer": "As of the March 2024 Cabinet Decision, the 16 designated sectors are: Nursing Care (介護), Building Cleaning (ビルクリーニング), Material Processing/Industrial Machinery/Electrical & Electronics (素形材・産業機械・電気電子情報関連), Construction (建設), Shipbuilding and Ship Machinery (造船・舶用工業), Automobile Maintenance (自動車整備), Automobile Transport (自動車運送業), Aviation (航空), Accommodation (宿泊), Agriculture (農業), Fisheries (漁業), Food and Beverages Manufacturing (飲食料品製造業), Food Service (外食業), Forestry (林業), Wood Industry (木材産業), and Railway (鉄道). Published guidelines indicate the sector list is continuously reviewed for further expansion."
     },
     {
       "question": "Can I skip the skills test and language test?",

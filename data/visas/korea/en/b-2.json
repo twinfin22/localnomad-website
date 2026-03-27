@@ -49,7 +49,7 @@
   ],
   "duration": {
     "initial": "30-90 days",
-    "extension": "Up to 90 days total (extension possible at immigration office)",
+    "extension": "Extensions not permitted in principle (원칙적으로 불허) — only granted in truly exceptional circumstances such as medical emergency or natural disaster",
     "maxTotal": "30–90 days per entry",
     "maxTotalDetail": "90 days per entry for visa-free nationals. 30–90 days per visa grant depending on nationality."
   },
@@ -202,7 +202,7 @@
     },
     {
       "question": "Can I extend my B-2 stay beyond 90 days?",
-      "answer": "Extensions are possible in limited circumstances by applying at a local immigration office before your permitted stay expires. Extension is not guaranteed and is granted at the discretion of the immigration officer. Overstaying is a serious violation that can result in fines, deportation, and re-entry bans."
+      "answer": "Extensions are not permitted in principle (원칙적으로 불허). In practice, they are only granted in truly exceptional circumstances such as a medical emergency, natural disaster, or other force majeure events — not for general convenience. Apply at a local immigration office before your permitted stay expires if you face such circumstances. Overstaying is a serious violation that can result in fines, deportation, and re-entry bans."
     },
     {
       "question": "Can I switch from B-2 to F-1-D (Digital Nomad Visa) while in Korea?",

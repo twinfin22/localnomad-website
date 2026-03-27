@@ -15,9 +15,21 @@
   ],
   "eligibility": [
     {
+      "id": "age-minimum",
+      "label": "Must be at least 18 years old (만 18세 이상)",
+      "description": "Applicants must be 18 years of age or older at the time of application, per MOJ guidelines.",
+      "required": true
+    },
+    {
       "id": "remote-work",
       "label": "Working remotely for foreign employer",
       "description": "Employment must be with company outside Korea",
+      "required": true
+    },
+    {
+      "id": "same-industry-experience",
+      "label": "1+ year of experience in the same industry as current employment",
+      "description": "Applicants must have worked in the same industry (동일 업종) for at least 1 year. This is verified through employment contracts and documentation from the overseas employer.",
       "required": true
     },
     {

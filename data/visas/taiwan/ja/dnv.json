@@ -259,7 +259,8 @@
     ],
     "notes": "これが最も重要な法的制限です。違反するとビザ取り消し、罰金、強制出国になる可能性があります。"
   },
-  "familyAllowed": false,
+  "familyAllowed": true,
+  "familyNotes": "外国専業人材延攬及僱用法第14条により、DNV保有者は家族の同伴が可能です。家族は自身のビザ（ビザ免除入国など）で入国します。DNV専用の帯同ビザはありません。",
   "postArrivalSteps": [
     {
       "id": "arc-application",

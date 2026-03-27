@@ -17,7 +17,7 @@
     {
       "id": "age",
       "label": "Age 18-30 (general) or 18-35 (varies by country)",
-      "description": "Most countries require applicants to be between 18 and 30 years old. Canada and UK allow up to age 35. Some countries (Argentina, Denmark, Germany, Ireland, Portugal, etc.) allow up to age 34. Japan requires 18-25.",
+      "description": "Most countries require applicants to be between 18 and 30 years old. Canada and UK allow up to age 35. Some countries (Argentina, Denmark, Germany, Ireland, Portugal, etc.) allow up to age 34. Japan allows 18-30 (expanded from 18-25 per bilateral agreement revision).",
       "required": true
     },
     {
@@ -264,7 +264,7 @@
     },
     {
       "question": "What are the age limits for each country?",
-      "answer": "Age limits vary by bilateral agreement. Most countries require applicants to be 18-30. Canada, UK, and Luxembourg allow up to age 35. Argentina, Brazil, Denmark, Germany, Ireland, Latvia, Portugal, and Taiwan allow up to age 34. Japan has a lower limit of 18-25. Always verify with your specific embassy, as age limit policies can change."
+      "answer": "Age limits vary by bilateral agreement. Most countries require applicants to be 18-30. Canada, UK, and Luxembourg allow up to age 35. Argentina, Brazil, Denmark, Germany, Ireland, Latvia, Portugal, and Taiwan allow up to age 34. Japan allows 18-30 (expanded to age 30 per bilateral agreement revision). Always verify with your specific embassy, as age limit policies can change."
     },
     {
       "question": "What jobs am I allowed to do on the H-1 visa?",
