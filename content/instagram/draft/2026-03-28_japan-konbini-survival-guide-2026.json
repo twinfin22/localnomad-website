@@ -1,0 +1,61 @@
+{
+  "sourceBlog": {
+    "slug": "japan-konbini-survival-guide-2026",
+    "title": "Japan Konbini Survival Guide (2026)",
+    "category": "tips",
+    "country": "japan",
+    "tags": ["japan", "convenience-stores", "konbini", "digital-nomad", "tips", "2026"]
+  },
+  "carouselType": "PHOTO_STORY",
+  "introSlide": {
+    "heading": "Japan's konbini do more than you think",
+    "description": "55,000 stores. ATMs, printers, shipping, meals under ¥800."
+  },
+  "slides": [
+    {
+      "heading": "7-Eleven ATM: always pick JPY",
+      "description": "¥110 daytime fee. Choose your home currency and you lose on the exchange. Every time."
+    },
+    {
+      "heading": "Lawson coffee: ¥110. Starbucks: ¥400.",
+      "description": "Uchi Café saves you ¥7,500/month if you drink daily. Honestly tastes better."
+    },
+    {
+      "heading": "Print anything at 11PM",
+      "description": "Netprint app (7-Eleven) or PrintSmash (FamilyMart/Lawson). ¥10-20 per page. Visa docs at midnight? Done."
+    },
+    {
+      "heading": "Ship your suitcase ahead",
+      "description": "Takkyubin: ¥1,500-3,000. Drop at counter, arrives in 1-3 days. Travel with just a day pack."
+    },
+    {
+      "heading": "Onigiri + salad + drink = ¥750",
+      "description": "After 8PM, bento and sandwiches go 10-50% off. Find a store that discounts, remember it."
+    },
+    {
+      "heading": "Seasonal shelf is the real menu",
+      "description": "Winter: oden ¥100-250. Summer: kakigori. Spring: strawberry everything. It rotates. Pay attention."
+    }
+  ],
+  "endingSlide": {
+    "heading": "What's your konbini go-to?",
+    "description": "Comment below. Follow @localnomad.club"
+  },
+  "caption": "Japan's 55,000 convenience stores are not gas stations. They're infrastructure.\n\n7-Eleven ATMs accept foreign cards for ¥110 during the day. Always pick JPY on screen, never your home currency. Dynamic currency conversion costs you every time. Withdraw once a week, save ¥4,840/month in fees.\n\nLawson's Uchi Café runs ¥110-150. Starbucks is ¥400+. That's ¥7,500/month if you drink daily. The konbini version is good.\n\nNeed to print a visa document at 11PM? Every konbini has a multifunction printer. Netprint app, upload, print. ¥10-20 per page.\n\nTraveling between cities? Drop your suitcase at the counter. Takkyubin ships it in 1-3 days for ¥1,500-3,000. You move with just a day pack.\n\nAnd the food: onigiri + salad + drink for ¥750. After 8PM, discounts hit 10-50%. Seasonal shelf rotates constantly. Winter oden, spring strawberry, summer kakigori.\n\nWhat's your konbini go-to? Tell us below.",
+  "hashtags": [
+    "#digitalnomadjapan",
+    "#konbini",
+    "#japantips",
+    "#remoteworkasia",
+    "#localnomad"
+  ],
+  "legalFlags": [],
+  "images": {
+    "backend": "contentdrips",
+    "templateId": "",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-04-01T19:00:00+09:00",
+  "totalSlides": 8
+}
