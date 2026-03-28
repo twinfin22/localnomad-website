@@ -49,6 +49,13 @@ If SessionStart hook did not inject context, read these at session start:
 ## Code Editing Rules
 - **Read before Edit** — Always `Read` a file before attempting to `Edit` it. Never edit a file based on assumptions about its contents.
 
+## Git Commit in Sandbox
+Claude Code sandbox blocks nested process spawning (depth 3+), which prevents lefthook pre-commit hooks from executing. When committing files that match hook globs (`.mdx`, `.ts`, `.json`):
+1. Run the validation script manually first (e.g., `bash scripts/validate-blog-links.sh {files}`)
+2. Confirm PASS
+3. Commit with `LEFTHOOK=0 git commit -m "..."`
+Never skip validation — only skip the hook runner.
+
 ## Bulk Edit Verification Protocol
 After every agent-based bulk edit (≥3 files modified), run these checks before reporting success:
 1. `git diff --stat` — confirm expected files appear in diff

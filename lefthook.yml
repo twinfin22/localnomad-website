@@ -6,6 +6,9 @@ pre-commit:
       glob: "*.{ts,tsx,js,mjs}"
       run: npx eslint --fix {staged_files}
       stage_fixed: true
+    blog-links:
+      glob: "*.mdx"
+      run: bash scripts/validate-blog-links.sh {staged_files}
     blog-visa-sync:
       glob: "*.json"
       root: "data/visas/"
