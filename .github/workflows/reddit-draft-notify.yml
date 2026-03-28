@@ -1,0 +1,52 @@
+name: Send Reddit Draft to Telegram
+
+on:
+  push:
+    paths:
+      - 'drafts/reddit/*.md'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find new draft files
+        id: drafts
+        run: |
+          DRAFTS=$(git diff --name-only HEAD~1 HEAD -- 'drafts/reddit/*.md' | head -1)
+          echo "file=$DRAFTS" >> $GITHUB_OUTPUT
+
+      - name: Send to Telegram
+        if: steps.drafts.outputs.file != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          FILE="${{ steps.drafts.outputs.file }}"
+          CONTENT=$(cat "$FILE")
+
+          # Telegram max message length is 4096 chars
+          if [ ${#CONTENT} -gt 4000 ]; then
+            # Split: first 4000 chars, then rest
+            PART1="${CONTENT:0:4000}"
+            PART2="${CONTENT:4000}"
+
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHAT_ID}" \
+              -d parse_mode="Markdown" \
+              --data-urlencode "text=${PART1}" > /dev/null
+
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "text=${PART2}" > /dev/null
+          else
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHAT_ID}" \
+              -d parse_mode="Markdown" \
+              --data-urlencode "text=${CONTENT}" > /dev/null
+          fi
+
+          echo "Sent draft to Telegram: $FILE"
