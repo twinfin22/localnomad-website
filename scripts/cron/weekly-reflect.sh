@@ -4,6 +4,7 @@
 # Output: docs/human/[WEEKLY] 워크플로-리뷰-초안.md
 
 set -euo pipefail
+export PATH="$HOME/.local/bin:$PATH"
 
 LOG_DIR="$HOME/localnomad/b2c-website/logs/cron"
 mkdir -p "$LOG_DIR"

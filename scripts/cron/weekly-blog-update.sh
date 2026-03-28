@@ -4,6 +4,7 @@
 # Output: docs/human/[WEEKLY] 블로그-후보.md
 
 set -euo pipefail
+export PATH="$HOME/.local/bin:$PATH"
 
 LOG_DIR="$HOME/localnomad/b2c-website/logs/cron"
 mkdir -p "$LOG_DIR"
@@ -21,7 +22,7 @@ if [ ! -f "$SKILL_FILE" ]; then
 fi
 
 OUTPUT_FILE="$HOME/localnomad/b2c-website/docs/human/[WEEKLY] 블로그-후보.md"
-cat "$SKILL_FILE" | claude --dangerously-skip-permissions -p - > "$OUTPUT_FILE" 2>> "$LOG_FILE"
+cat "$SKILL_FILE" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > "$OUTPUT_FILE" 2>> "$LOG_FILE"
 EXIT_CODE=$?
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE" >> "$LOG_FILE"

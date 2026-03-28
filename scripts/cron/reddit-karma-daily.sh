@@ -4,6 +4,7 @@
 # Output: Telegram message with draft
 
 set -euo pipefail
+export PATH="$HOME/.local/bin:$PATH"
 
 PROJECT_DIR="$HOME/localnomad/b2c-website"
 LOG_DIR="$PROJECT_DIR/logs/cron"
