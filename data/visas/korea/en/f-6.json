@@ -70,7 +70,7 @@
     {
       "id": "income-requirement",
       "label": "Korean spouse meets annual income threshold",
-      "description": "According to published Ministry of Justice guidelines, the Korean spouse (inviter) must demonstrate income at or above the annual threshold set by the Minister of Justice, which is calculated based on household size. Thresholds are set annually by the Minister of Justice, considering the standard median income (기준 중위소득). The actual percentage varies. Approximate 2025 thresholds (MOJ Notice 2024-587): 2-person household ~₩23,600,000/year, 3-person household ~₩30,200,000/year, 4-person household ~₩36,600,000/year, 5-person household ~₩42,700,000/year. Thresholds are announced annually. Up to 5% of net assets held for 6+ months may be counted as supplemental income.",
+      "description": "According to published Ministry of Justice guidelines, the Korean spouse (inviter) must demonstrate income at or above the annual threshold set by the Minister of Justice, which is calculated based on household size. Thresholds are set annually by the Minister of Justice, considering the standard median income (기준 중위소득). The actual percentage varies. 2025 thresholds (MOJ Notice, 기준 중위소득 기반): 2-person household ₩25,195,752/year, 3-person household ₩32,154,216/year, 4-person household ₩38,968,428/year, 5-person household ₩45,340,314/year. Thresholds are announced annually. Up to 5% of net assets held for 6+ months may be counted as supplemental income.",
       "required": true,
       "subCategory": "f-6-1",
       "warnings": [
@@ -134,11 +134,11 @@
     "notes": "Fees vary by Korean embassy/consulate. Domestic extension applications are submitted at the local immigration office (출입국관리사무소). Check the current fee schedule at immigration.go.kr or HiKorea."
   },
   "incomeRequirement": {
-    "amount": "23,600,000",
+    "amount": "25,195,752",
     "currency": "KRW",
     "period": "annual",
     "householdBasis": true,
-    "notes": "Income requirement is set annually by the Minister of Justice based on household size, with thresholds set annually by the Minister of Justice, considering the standard median income (기준 중위소득). The actual percentage varies. Approximate 2025 thresholds (MOJ Notice 2024-587): 2-person household ~₩23,600,000/year, 3-person household ~₩30,200,000/year, 4-person household ~₩36,600,000/year, 5-person household ~₩42,700,000/year. For households larger than 5 persons, additional increments apply (approximate figures — verify with current MOJ notice). Up to 5% of net financial assets (deposits, insurance, securities, real estate) held continuously for 6+ months may be counted as supplemental income. Official thresholds are published in the annual Ministry of Justice notice (법무부 고시). Exemptions from the income requirement may apply in certain cases: (1) the couple has a child born between them, (2) the inviter and marriage immigrant lived together abroad for 1+ year with no domestic income, (3) other cases recognized by the MOJ."
+    "notes": "Income requirement is set annually by the Minister of Justice based on household size, with thresholds set annually by the Minister of Justice, considering the standard median income (기준 중위소득). The actual percentage varies. 2025 thresholds (MOJ Notice, 기준 중위소득 기반): 2-person household ₩25,195,752/year, 3-person household ₩32,154,216/year, 4-person household ₩38,968,428/year, 5-person household ₩45,340,314/year. For households larger than 5 persons, additional increments apply (approximate figures — verify with current MOJ notice). Up to 5% of net financial assets (deposits, insurance, securities, real estate) held continuously for 6+ months may be counted as supplemental income. Official thresholds are published in the annual Ministry of Justice notice (법무부 고시). Exemptions from the income requirement may apply in certain cases: (1) the couple has a child born between them, (2) the inviter and marriage immigrant lived together abroad for 1+ year with no domestic income, (3) other cases recognized by the MOJ."
   },
   "taxImplications": {
     "threshold": "183 days",
@@ -447,7 +447,7 @@
     },
     {
       "question": "How much income does my Korean spouse need to sponsor my F-6 visa?",
-      "answer": "According to published Ministry of Justice guidelines, the income requirement is set annually based on household size and the standard median income (기준 중위소득). For 2025 (MOJ Notice 2024-587), approximate thresholds are: 2-person household ~₩23,600,000/year, 3-person household ~₩30,200,000/year, 4-person household ~₩36,600,000/year, 5-person household ~₩42,700,000/year. These are pretax annual income figures. If the Korean spouse's income falls short, up to 5% of net financial assets (deposits, real estate, insurance, securities) held continuously for 6+ months may be counted as supplemental income. In some cases, a guarantor (a close family member residing with the sponsor) may substitute for or supplement income proof. Published guidelines indicate that exact thresholds should always be verified at the official Ministry of Justice notice (법무부 고시) for the current year."
+      "answer": "According to published Ministry of Justice guidelines, the income requirement is set annually based on household size and the standard median income (기준 중위소득). For 2025 (MOJ Notice 2024-587), approximate thresholds are: 2-person household ~₩25,195,752/year, 3-person household ₩32,154,216/year, 4-person household ₩38,968,428/year, 5-person household ₩45,340,314/year. These are pretax annual income figures. If the Korean spouse's income falls short, up to 5% of net financial assets (deposits, real estate, insurance, securities) held continuously for 6+ months may be counted as supplemental income. In some cases, a guarantor (a close family member residing with the sponsor) may substitute for or supplement income proof. Published guidelines indicate that exact thresholds should always be verified at the official Ministry of Justice notice (법무부 고시) for the current year."
     },
     {
       "question": "What is the Korean language requirement for the F-6 visa?",

@@ -4,7 +4,7 @@
   "shortName": "Business Manager",
   "nameLocal": "経営・管理",
   "category": "business",
-  "description": "Everything about Japan's Business Manager visa (経営・管理): the status of residence for foreign entrepreneurs, company directors, and business executives operating in Japan. This visa underwent a major overhaul effective October 16, 2025, significantly raising the requirements for new applicants. The minimum capital investment increased from ¥5,000,000 to ¥30,000,000, a certified business plan is now mandatory, Japanese language proficiency is required, and applicants must demonstrate at least 3 years of management experience. At least 1 full-time employee must be hired (note: foreign employees do not count toward this requirement under the new rules). Published guidelines indicate that transitional measures apply until October 16, 2028 for existing holders who obtained their visas before the overhaul. Duration ranges from 1 to 5 years and is renewable, with a path to permanent residence through the standard 10-year route. This visa is fundamentally different from a work visa — the holder must be actively managing or operating the business, not simply employed by it. Updated for 2026.",
+  "description": "Everything about Japan's Business Manager visa (経営・管理): the status of residence for foreign entrepreneurs, company directors, and business executives operating in Japan. This visa underwent a major overhaul effective October 16, 2025, significantly raising the requirements for new applicants. The minimum capital investment increased from ¥5,000,000 to ¥30,000,000, a certified business plan is now mandatory, Japanese language proficiency is required, and applicants must demonstrate at least 3 years of management experience or a qualifying graduate degree. At least 1 full-time employee must be hired — they must be a Japanese national, Special Permanent Resident, or a foreigner with a Table 2 residence status (Permanent Resident, Spouse of Japanese National, Spouse of Permanent Resident, or Long-term Resident); work visa holders do not count. Transitional measures apply until October 16, 2028 for existing holders who obtained their visas before the overhaul. Duration ranges from 1 to 5 years and is renewable, with a path to permanent residence through the standard 10-year route. This visa is fundamentally different from a work visa — the holder must be actively managing or operating the business, not simply employed by it. Updated for 2026.",
   "tagline": "Establish and manage a business in Japan under the new 2025 framework",
   "keyRequirement": "¥30,000,000+ capital investment, certified business plan, 3+ years management experience, Japanese language proficiency (Oct 2025 rules)",
   "targetAudience": [
@@ -18,50 +18,62 @@
     {
       "id": "capital-investment",
       "label": "Minimum capital investment of ¥30,000,000 (effective October 2025)",
-      "description": "The business must have invested capital of at least ¥30,000,000. This represents a 6x increase from the previous ¥5,000,000 threshold. The capital must be verifiable through business registration documents and bank records. Published guidelines indicate that the source of funds may be scrutinized to ensure legitimacy.",
+      "description": "The business must have invested capital of at least ¥30,000,000. For corporations, this means paid-in capital (資本金の額) or total contributions; capital reserves and retained surplus do not count. For sole proprietors, the total amount invested in the business (office, one year of employee salaries, equipment) must reach ¥30,000,000. The requirement applies even to managers who are not the owner, and where multiple companies are involved, at least one must independently meet the ¥30,000,000 threshold. The capital must be verifiable through business registration documents and bank records, and the source of funds is scrutinized to ensure legitimacy.",
       "required": true,
       "warnings": [
-        "The October 2025 overhaul raised the capital requirement 6x to ¥30,000,000 — applications under the old ¥5,000,000 threshold are no longer accepted for new applicants"
+        "The October 2025 overhaul raised the capital requirement 6x to ¥30,000,000 — applications under the old ¥5,000,000 threshold are no longer accepted for new applicants",
+        "Capital reserves and surplus (資本準備金・剰余金) do NOT count toward the ¥30,000,000 threshold — only paid-in capital or equivalent direct investment"
       ]
     },
     {
       "id": "full-time-employee",
-      "label": "Employ at least 1 full-time employee who is a Japanese national or permanent resident",
-      "description": "The business must hire at least one full-time employee who is either a Japanese national or a permanent resident of Japan. Under the new October 2025 rules, foreign employees on work visas do not count toward this requirement. The employee must be enrolled in social insurance (health insurance and pension).",
+      "label": "Employ at least 1 qualifying full-time employee",
+      "description": "The business must hire at least one full-time employee who is: a Japanese national (日本人), a Special Permanent Resident (特別永住者), or a foreigner holding a Table 2 residence status — specifically Permanent Resident (永住者), Spouse of Japanese National (日本人の配偶者等), Spouse of Permanent Resident (永住者の配偶者等), or Long-term Resident (定住者). Foreign nationals on Table 1 work visas (e.g., Engineer/Specialist in Humanities, Skilled Labor) do NOT count toward this requirement. Full-time is defined as: regular scheduled work, 5+ days per week, 217+ days per year, 30+ hours per week, and enrolled in employment insurance (雇用保険). Secondment (在籍出向), dispatch (派遣), and contract/outsourcing (請負) workers do not count — the employee must be directly employed.",
       "required": true,
       "warnings": [
-        "Foreign employees on work visas no longer count toward the minimum employee requirement — at least 1 Japanese national or permanent resident employee is required"
+        "Foreign employees on Table 1 work visas (Engineer/Specialist, Skilled Labor, etc.) do NOT count toward the minimum employee requirement",
+        "Secondment, dispatch, and contract workers do not count — the qualifying employee must be directly employed full-time",
+        "Full-time threshold: 5+ days/week, 217+ days/year, 30+ hours/week, enrolled in employment insurance"
       ]
     },
     {
       "id": "business-plan-certification",
-      "label": "Business plan certified by a professional expert",
-      "description": "A comprehensive business plan must be prepared and certified by a recognized professional expert (such as a certified public accountant, tax accountant, or SME management consultant). Published guidelines indicate this is a new requirement under the October 2025 overhaul — previously, a business plan was recommended but not formally required to be certified.",
-      "required": true
+      "label": "Business plan reviewed by a Japanese-licensed professional",
+      "description": "A comprehensive business plan must be evaluated by one of the following Japanese-licensed professionals: 中小企業診断士 (SME Management Consultant), 公認会計士 (Certified Public Accountant), or 税理士 (Tax Accountant). The reviewer must be externally engaged — a company officer or employee cannot serve as the reviewer. Foreign professional equivalents (e.g., a US CPA without Japanese license) do not qualify. This is a mandatory requirement under the October 2025 overhaul; previously a business plan was recommended but certification was not required.",
+      "required": true,
+      "warnings": [
+        "Foreign professional licenses (e.g., US CPA) do not qualify — the reviewer must hold a Japanese license",
+        "The reviewing professional cannot be a company officer or employee — must be external and independent"
+      ]
     },
     {
       "id": "management-experience",
-      "label": "At least 3 years of management experience or equivalent education",
-      "description": "Applicants must demonstrate a minimum of 3 years of experience in business management, operations, or equivalent executive-level responsibilities. Published guidelines indicate that an MBA or equivalent graduate business degree may partially substitute for experience, though the exact substitution criteria are evaluated case by case.",
+      "label": "3+ years of management experience OR a qualifying graduate degree",
+      "description": "Applicants must satisfy one of two conditions: (1) a doctoral, master's, or professional degree related to business management or operations (経営管理に関する博士・修士・専門職学位), or (2) 3 or more years of experience in business management or operations. Startup preparation activity (起業準備活動) counts toward the 3-year experience period. Passive investment or remote management from outside Japan does not qualify.",
       "required": true,
       "warnings": [
-        "Passive investment or remote management from outside Japan does not qualify — immigration verifies active, in-person business management"
+        "Passive investment or remote management from outside Japan does not qualify — immigration verifies active, in-person business management",
+        "A qualifying graduate degree (doctoral, master's, or professional degree in business management) fully satisfies this requirement in place of experience"
       ]
     },
     {
       "id": "japanese-language",
-      "label": "Japanese language proficiency at N2 level — applicant OR a full-time employee (mandatory under October 2025 rules)",
-      "description": "Published guidelines indicate that Japanese language proficiency at approximately JLPT N2 (B2 on the CEFR scale) is now mandatory under the October 2025 overhaul. Importantly, the requirement is an either/or: either the applicant themselves holds N2-equivalent proficiency, OR at least one full-time employee of the business does. Both the applicant and the employee do not need to satisfy this simultaneously. This was not required before October 2025.",
+      "label": "Japanese language proficiency at B2 equivalent — applicant OR a qualifying full-time employee (mandatory under October 2025 rules)",
+      "description": "The applicant or at least one full-time employee of the business must hold Japanese language proficiency at B2 equivalent (日本語教育の参照枠 B2相当以上). This can be demonstrated by any of the following: JLPT N2 or higher, BJT Business Japanese Test score of 400 or above, 20+ years of mid- or long-term residence in Japan, graduation from a Japanese university or higher education institution (including vocational schools 専門学校), or completion of Japanese compulsory education plus graduation from high school. For the language requirement only, Table 1 visa holders (work visa holders) may count as a qualifying 常勤職員 — unlike the employment requirement, where Table 1 holders are excluded. This requirement was not in place before October 2025.",
       "required": true,
       "warnings": [
-        "Japanese language proficiency (approximately JLPT N2) is now mandatory — either the applicant OR a full-time employee must hold N2-equivalent proficiency under the new rules"
+        "Japanese language proficiency (B2 equivalent / JLPT N2) is now mandatory — either the applicant OR a qualifying full-time employee must satisfy this",
+        "Note the distinction: for the LANGUAGE requirement, Table 1 visa holders (work visa employees) CAN count; for the EMPLOYMENT requirement, they cannot"
       ]
     },
     {
       "id": "physical-office",
-      "label": "Physical office space in Japan",
-      "description": "The business must have a physical office or business premises in Japan — not a virtual office or residential address. The office must be properly registered and verifiable. Published guidelines evaluate whether the business has a legitimate operational base.",
-      "required": true
+      "label": "Dedicated physical office space in Japan (home office not permitted)",
+      "description": "The business must have adequate dedicated office space that matches the scale of the business. Home offices are not permitted in principle (原則として認められません). Virtual offices are also not accepted. The office must be properly registered as the business address and verifiable through the lease agreement and company registration.",
+      "required": true,
+      "warnings": [
+        "Home office is not permitted in principle under the October 2025 rules — a dedicated commercial office is required"
+      ]
     }
   ],
   "duration": {
@@ -149,25 +161,26 @@
       "id": "employee-contracts",
       "name": "Employee Employment Contracts",
       "nameLocal": "従業員雇用契約書",
-      "description": "Employment contracts for at least 1 full-time employee who is a Japanese national or permanent resident. Must show job title, duties, salary, and enrollment in social insurance. Foreign employees on work visas do not count under the new rules.",
+      "description": "Employment contracts for at least 1 qualifying full-time employee: a Japanese national, Special Permanent Resident, or a foreigner with Table 2 residence status (Permanent Resident, Spouse of Japanese National, Spouse of Permanent Resident, or Long-term Resident). Must show job title, duties, salary, work schedule, and enrollment in employment insurance. Also include documentation confirming the employee's nationality or residence status. Foreign employees on Table 1 work visas do not count.",
       "required": true
     },
     {
       "id": "management-experience-proof",
-      "name": "Proof of Management Experience (3+ years)",
-      "nameLocal": "経営経験証明書",
-      "description": "Documentation proving at least 3 years of management experience: employment certificates showing executive or management titles, company registration showing directorship, or MBA degree certificate as partial substitute.",
+      "name": "Proof of Management Experience or Qualifying Degree",
+      "nameLocal": "経営経験証明書／学位証明書",
+      "description": "Either: (A) documentation proving 3+ years of business management experience — employment certificates showing executive or management titles, company registration showing directorship, or records of startup preparation activity (起業準備活動); OR (B) a doctoral, master's, or professional degree certificate related to business management or operations, plus official transcripts.",
       "tips": [
-        "Include references from business partners or board members who can verify your management role",
-        "If using an MBA as partial substitute, provide the degree certificate and transcripts"
+        "If using experience: include references from business partners or board members who can verify your management role",
+        "Startup preparation activity (起業準備活動) counts toward the 3-year experience period — document it with records of market research, business registration steps, meetings with advisors, etc.",
+        "If using a qualifying degree: provide the degree certificate, transcripts, and a translation if not in Japanese or English"
       ],
       "required": true
     },
     {
       "id": "japanese-language-proof",
-      "name": "Japanese Language Proficiency Certificate",
+      "name": "Japanese Language Proficiency Certificate (B2 equivalent)",
       "nameLocal": "日本語能力証明書",
-      "description": "JLPT N2 certificate or equivalent proof of Japanese language proficiency at approximately B2 CEFR level. Required from either the applicant or a full-time employee of the business — the October 2025 rules require N2-level proficiency in the organization, not necessarily from the applicant alone. This is a new mandatory requirement under the October 2025 rules.",
+      "description": "Proof of Japanese language proficiency at B2 equivalent (日本語教育の参照枠 B2相当以上), from either the applicant or a qualifying full-time employee. Accepted evidence: JLPT N2 or higher certificate, BJT Business Japanese Test result sheet showing 400+ score, certificate of 20+ years mid/long-term residence in Japan, graduation certificate from a Japanese university or vocational school (専門学校), or certificate of completion of Japanese compulsory education plus high school graduation. For language requirement purposes, Table 1 visa holders may count as qualifying employees.",
       "required": true
     },
     {
@@ -270,43 +283,47 @@
   "faqs": [
     {
       "question": "What changed with the October 2025 overhaul?",
-      "answer": "The October 16, 2025 changes significantly raised the bar for new Business Manager visa applicants. Key changes: (1) minimum capital increased from ¥5,000,000 to ¥30,000,000 — a 6x increase; (2) a certified business plan is now mandatory — it must be certified by a professional expert; (3) at least 3 years of management experience is now required; (4) Japanese language proficiency at approximately JLPT N2 / CEFR B2 is now mandatory — either the applicant OR a full-time employee must hold this level; (5) the full-time employee must be a Japanese national or permanent resident — foreign employees no longer count. These changes were designed to ensure that Business Manager visa holders operate genuine, viable businesses."
+      "answer": "The October 16, 2025 changes (effective date: 令和7年10月16日) significantly raised the bar for new Business Manager visa applicants. Key changes: (1) minimum capital increased from ¥5,000,000 to ¥30,000,000 — a 6x increase; (2) a business plan review by a Japanese-licensed 中小企業診断士, 公認会計士, or 税理士 is now mandatory; (3) at least 3 years of management experience OR a qualifying graduate degree in business management is required; (4) Japanese language proficiency at B2 equivalent (JLPT N2 / BJT 400+) is now mandatory — either the applicant OR a qualifying full-time employee must satisfy this; (5) the qualifying full-time employee must be a Japanese national, Special Permanent Resident, or Table 2 residence status holder — Table 1 work visa holders do not count; (6) home office is not permitted in principle. Applications filed before October 16, 2025 are assessed under the old rules. A 3-year grace period runs until October 16, 2028 for existing holders."
     },
     {
       "question": "Do the new rules affect existing Business Manager visa holders?",
-      "answer": "Published guidelines indicate that transitional measures apply until October 16, 2028. Existing holders who obtained their visas before the October 2025 overhaul may renew under more lenient conditions during this transition period. However, the exact scope of transitional measures — particularly regarding the ¥30,000,000 capital requirement at renewal — should be confirmed with the immigration bureau or a licensed immigration professional."
+      "answer": "A 3-year grace period applies until October 16, 2028 (令和10年10月16日). Existing holders who obtained their Business Manager visa before October 16, 2025 may renew during this transition period, and ISA will consider overall business status even if the new criteria are not yet fully met. Separately, holders of the startup visa (特定活動44号→経営・管理) who received their certification before October 15, 2025 may transition to Business Manager status under the old rules. During the transition period, confirm your specific situation with the immigration bureau or a licensed 行政書士."
     },
     {
       "question": "Can I transition from Engineer/Specialist visa to Business Manager?",
-      "answer": "Yes, but the timing is critical. Published guidelines indicate that you should file the startup notification and status change application while still employed — before your current employment ends. A gap of more than 3 months without valid status creates legal complications. You must meet all the new requirements: ¥30,000,000 capital, certified business plan, management experience, Japanese language proficiency, and at least 1 Japanese/permanent-resident full-time employee."
+      "answer": "Yes, but the timing is critical. File the startup notification and status change application while still employed — before your current employment ends. A gap of more than 3 months without valid status creates legal complications. You must meet all the new requirements: ¥30,000,000 capital, certified business plan, management experience or qualifying degree, Japanese language proficiency, and at least 1 qualifying full-time employee (Japanese national, Special Permanent Resident, or Table 2 residence status holder)."
     },
     {
-      "question": "What type of business plan certification is required?",
-      "answer": "The business plan must be certified by a recognized professional expert. Published guidelines accept certification from: certified public accountants (公認会計士), tax accountants (税理士), SME management consultants (中小企業診断士), or other qualified business professionals. The certifier reviews the plan for feasibility, financial soundness, and market viability. This is a new requirement — before October 2025, a business plan was recommended but did not require formal certification."
+      "question": "What type of business plan review is required?",
+      "answer": "The business plan must be reviewed by one of three Japanese-licensed professionals: a 中小企業診断士 (SME Management Consultant), a 公認会計士 (Certified Public Accountant), or a 税理士 (Tax Accountant). Two strict conditions apply: (1) the reviewer must hold a Japanese license — foreign equivalents such as a US CPA do not qualify; (2) the reviewer must be external and independent — a company officer or employee cannot serve as reviewer. This is a new mandatory requirement under the October 2025 overhaul; previously a business plan was recommended but formal review was not required."
     },
     {
       "question": "Is ¥30,000,000 the minimum for all business types?",
-      "answer": "Published guidelines set ¥30,000,000 as the minimum capital investment for the Business Manager visa under the new October 2025 rules. This applies regardless of business type or industry. There is no lower threshold for smaller businesses or specific sectors. The full amount must be verifiable as invested capital — it cannot be a loan that is repaid after visa issuance, and the source of funds must be transparent."
+      "answer": "Yes. ¥30,000,000 is the minimum capital investment for the Business Manager visa under the October 2025 rules, regardless of business type or industry. There is no lower threshold for smaller businesses or specific sectors. For corporations, only paid-in capital counts — capital reserves and surplus do not. For sole proprietors, the total invested in the business (office, one year of employee salaries, equipment) must reach ¥30,000,000. Where multiple companies are involved, at least one must independently meet the ¥30,000,000 threshold. The source of funds must be transparent and legitimate."
     },
     {
-      "question": "Why do foreign employees no longer count toward the employee requirement?",
-      "answer": "Under the October 2025 overhaul, the full-time employee requirement specifies that the employee must be a Japanese national or permanent resident of Japan. Published guidelines indicate this change ensures that Business Manager visa holders create genuine local employment. Foreign employees on work visas can still be hired, but they do not satisfy the minimum employee requirement."
+      "question": "Why do foreign work visa holders not count toward the employee requirement?",
+      "answer": "Under the October 2025 overhaul, the qualifying employee must be a Japanese national (日本人), Special Permanent Resident (特別永住者), or a foreigner with Table 2 residence status: Permanent Resident (永住者), Spouse of Japanese National (日本人の配偶者等), Spouse of Permanent Resident (永住者の配偶者等), or Long-term Resident (定住者). Foreign nationals on Table 1 work visas — such as Engineer/Specialist in Humanities, Skilled Labor, or other employment-based categories — do not count. The rationale is that the requirement targets stable, long-term residents of Japan rather than holders of employer-dependent visas. Foreign employees on work visas can still be hired, but they do not satisfy the minimum qualifying employee requirement."
     },
     {
       "question": "Can I operate the business remotely from outside Japan?",
-      "answer": "No. The Business Manager visa requires active, in-person management of the business in Japan. Published guidelines evaluate whether the visa holder is genuinely managing operations — passive ownership or remote management from abroad does not qualify. Extended absences from Japan can jeopardize visa renewal, as immigration may determine the holder is not actively engaged in business management."
+      "answer": "No. The Business Manager visa requires active, in-person management of the business in Japan. Passive ownership or remote management from abroad does not qualify. Additionally, being absent from Japan for more than 50% of your permitted stay period is treated as a negative factor at renewal — ISA may determine the holder is not actively engaged in business management and deny renewal."
     },
     {
       "question": "What level of Japanese language is required?",
-      "answer": "Published guidelines indicate that Japanese language proficiency at approximately JLPT N2 (B2 on the CEFR scale) is now mandatory under the October 2025 rules. Critically, the requirement is either/or: either the applicant holds N2-equivalent proficiency, OR at least one full-time employee of the business does. This means a non-Japanese-speaking entrepreneur can still qualify if they hire an N2-level Japanese or permanent-resident employee. This requirement was not in place before October 2025."
+      "answer": "The requirement is B2 equivalent on the Japanese Language Education Reference Framework (日本語教育の参照枠 B2相当以上). It can be satisfied by the applicant or by a qualifying full-time employee of the business. Accepted proof methods: JLPT N2 or higher, BJT Business Japanese Test score of 400+, 20+ years of mid/long-term residence in Japan, graduation from a Japanese university or vocational school, or completion of Japanese compulsory education plus high school graduation. Important distinction: for the language requirement only, Table 1 visa holders (work visa employees) may count as qualifying 常勤職員 — unlike the employment requirement where they are excluded. This requirement was not in place before October 2025."
     },
     {
       "question": "How does this visa lead to permanent residence?",
-      "answer": "Published guidelines indicate the standard route to permanent residence: 10 consecutive years of residence in Japan, with at least 5 years on a qualifying visa. Business Manager holders can also potentially qualify under HSP (Highly Skilled Professional) criteria in the Advanced Business Management category (i)(c) if they accumulate 70+ points, which accelerates the PR timeline to 1-3 years. From April 2027, PR applicants must hold the longest available visa period (typically 5 years). Tax and insurance payment history is also scrutinized."
+      "answer": "The standard route is 10 consecutive years of residence in Japan, with at least 5 years on a qualifying visa. Business Manager holders can also qualify under HSP (Highly Skilled Professional) criteria in the Advanced Business Management category (i)(c) if they accumulate 70+ points, which can accelerate the PR timeline to 1-3 years. Tax compliance and social insurance payment history are scrutinized at the PR application stage."
+    },
+    {
+      "question": "Can multiple foreign nationals co-manage the same business?",
+      "answer": "Yes, but each co-manager must independently satisfy the Business Manager visa requirements, including the ¥30,000,000 capital threshold and management experience or degree. Each co-manager must also have a clearly defined role and receive compensation commensurate with their position — ISA verifies that each person's management role is genuine and not duplicative. Tax and social insurance compliance is verified individually at each renewal."
     },
     {
       "question": "What happens at renewal if the business is not profitable?",
-      "answer": "Immigration officers evaluate the business's ongoing viability at each renewal. Published guidelines indicate that temporary losses are not automatically disqualifying — early-stage businesses often operate at a loss. However, the business must demonstrate: ongoing operations, employee retention, tax compliance, and a credible path to sustainability. Persistent losses without clear recovery plans, failure to maintain the required employee, or tax delinquency can result in renewal denial."
+      "answer": "Immigration officers evaluate the business's ongoing viability at each renewal. Temporary losses are not automatically disqualifying — early-stage businesses often operate at a loss. However, the business must demonstrate ongoing operations, employee retention, tax compliance, and a credible path to sustainability. Persistent losses without clear recovery plans, failure to maintain the qualifying employee, tax delinquency, or social insurance non-compliance can result in renewal denial. Absence from Japan for more than 50% of the permitted stay period is also a negative factor."
     }
   ],
   "tips": [
@@ -345,8 +362,8 @@
     {
       "id": "transitional-measures",
       "section": "requirements",
-      "tip": "If you already hold a Business Manager visa obtained before October 2025, published guidelines indicate transitional measures apply until October 2028. This may mean less stringent requirements at renewal during this period. However, confirm the specifics with your immigration lawyer — the transitional provisions are not identical for all situations.",
-      "verified": false,
+      "tip": "If you hold a Business Manager visa obtained before October 16, 2025, a 3-year grace period applies until October 16, 2028. During this period, ISA considers overall business status at renewal even if the new criteria are not yet fully met. Holders of the startup visa (特定活動44号) who received certification before October 15, 2025 can transition to Business Manager under the old rules. Confirm your specific situation with a licensed 行政書士 — the transitional provisions vary by case.",
+      "verified": true,
       "upvotes": 0
     },
     {
@@ -427,7 +444,7 @@
     }
   ],
   "pathsFrom": [],
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-03-28",
   "officialLinks": [
     {
       "label": "Immigration Services Agency (ISA)",
@@ -447,10 +464,17 @@
   "coeRequired": true,
   "japaneseLanguage": {
     "required": true,
-    "minimumLevel": "JLPT N2 (approximately B2 CEFR)",
-    "notes": "Japanese language proficiency became mandatory under the October 2025 overhaul. The expected level is approximately JLPT N2, meaning the ability to read business documents, participate in meetings, and handle correspondence in Japanese. This was not required before October 2025."
+    "minimumLevel": "B2 equivalent (日本語教育の参照枠 B2相当以上)",
+    "acceptedProof": [
+      "JLPT N2 or higher",
+      "BJT Business Japanese Test 400+",
+      "20+ years mid/long-term residence in Japan",
+      "Graduation from Japanese university or vocational school (専門学校)",
+      "Japanese compulsory education completion + high school graduation"
+    ],
+    "notes": "Japanese language proficiency at B2 equivalent became mandatory under the October 2025 overhaul. The requirement applies to either the applicant or a qualifying full-time employee. For language purposes only, Table 1 visa holders may count as qualifying employees — unlike the employment headcount requirement where they are excluded. This was not required before October 2025."
   },
   "sourceVerified": true,
-  "primarySourceUrl": "https://www.isa.go.jp/en/publications/materials/nyuukokukanri07_00248.html",
-  "lastFactChecked": "2026-03-20"
+  "primarySourceUrl": "https://www.moj.go.jp/isa/applications/resources/10_00237.html",
+  "lastFactChecked": "2026-03-28"
 }
