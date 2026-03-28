@@ -54,41 +54,45 @@ jobs:
             byQuery[r.query].positions.push(r.position);
             byQuery[r.query].count++;
           }
-          const sorted = Object.entries(byQuery)
-            .map(([q, d]) => ({
-              query: q, clicks: d.clicks, impressions: d.impressions,
-              avgPos: (d.positions.reduce((a,b) => a+b, 0) / d.positions.length).toFixed(1),
-            }))
-            .sort((a, b) => b.clicks - a.clicks)
-            .slice(0, 15);
-          const totalClicks = Object.values(byQuery).reduce((s, d) => s + d.clicks, 0);
-          const totalImpr = Object.values(byQuery).reduce((s, d) => s + d.impressions, 0);
+          const avgPos = (d) => (d.positions.reduce((a,b) => a+b, 0) / d.positions.length);
+          const all = Object.entries(byQuery).map(([q, d]) => ({
+            query: q, clicks: d.clicks, impressions: d.impressions,
+            pos: avgPos(d),
+          }));
+          const totalClicks = all.reduce((s, d) => s + d.clicks, 0);
+          const totalImpr = all.reduce((s, d) => s + d.impressions, 0);
           const avgCtr = totalImpr > 0 ? (totalClicks / totalImpr * 100).toFixed(1) : '0.0';
-          const striking = Object.entries(byQuery)
-            .filter(([, d]) => {
-              const avg = d.positions.reduce((a,b) => a+b, 0) / d.positions.length;
-              return avg >= 4 && avg <= 10 && d.impressions >= 5;
-            })
-            .map(([q, d]) => ({
-              query: q, impressions: d.impressions,
-              avgPos: (d.positions.reduce((a,b) => a+b, 0) / d.positions.length).toFixed(1)
-            }))
+          const striking = all
+            .filter(q => q.pos >= 4 && q.pos <= 10 && q.impressions >= 5)
             .sort((a, b) => b.impressions - a.impressions)
             .slice(0, 5);
+          const top5 = [...all].sort((a, b) => b.impressions - a.impressions).slice(0, 5);
+          const bestPos = [...all].filter(q => q.pos <= 3 && q.impressions > 0)
+            .sort((a, b) => a.pos - b.pos).slice(0, 3);
+          const trunc = (s, n) => s.length > n ? s.slice(0, n) + '...' : s;
+
           let msg = `📊 *SEO Weekly Pulse*\n`;
-          msg += `${meta.startDate} ~ ${meta.endDate} (${meta.days}d)\n\n`;
-          msg += `총 ${totalClicks} clicks | ${totalImpr} impressions | CTR ${avgCtr}%\n\n`;
-          msg += `*Top Queries*\n`;
-          for (const q of sorted) {
-            msg += `• ${q.query} — ${q.clicks}c / ${q.impressions}i / pos ${q.avgPos}\n`;
-          }
+          msg += `${meta.startDate} → ${meta.endDate.slice(5)} (${meta.days}d)\n\n`;
+          msg += `👁 ${totalImpr} impressions · 👆 ${totalClicks} clicks · CTR ${avgCtr}%\n`;
+          msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
           if (striking.length > 0) {
-            msg += `\n*Striking Distance (pos 4-10)*\n`;
-            for (const q of striking) {
-              msg += `⚡ ${q.query} — ${q.impressions}i / pos ${q.avgPos}\n`;
-            }
+            msg += `\n⚡ *Quick Wins (pos 4-10)*\n`;
+            striking.forEach((q, i) => {
+              msg += `${i+1}. ${trunc(q.query, 40)}\n   ${q.impressions} impr · pos ${q.pos.toFixed(1)}\n`;
+            });
           }
-          msg += `\n_${meta.rowCount} rows | ${new Date().toISOString().slice(0,10)}_`;
+          msg += `\n📋 *Top 5 Queries*\n`;
+          top5.forEach((q, i) => {
+            const label = q.pos <= 3 ? ' ← top 3!' : '';
+            msg += `${i+1}. ${trunc(q.query, 40)}  ${q.impressions} impr${label}\n`;
+          });
+          if (bestPos.length > 0) {
+            msg += `\n🏆 *Best Positions*\n`;
+            bestPos.forEach(q => {
+              msg += `pos ${q.pos.toFixed(1)} · ${trunc(q.query, 40)} (${q.impressions} impr)\n`;
+            });
+          }
+          msg += `\n_${meta.rowCount} rows · ${new Date().toISOString().slice(0,10)}_`;
           writeFileSync('/tmp/telegram-msg.txt', msg);
           SCRIPT
           node /tmp/format-seo.mjs
