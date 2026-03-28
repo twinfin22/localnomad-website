@@ -16,6 +16,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/vi/:path*',
+        destination: '/en/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

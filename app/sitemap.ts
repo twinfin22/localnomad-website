@@ -21,11 +21,7 @@ const CHECKLIST_COUNTRIES = ['korea', 'japan', 'taiwan'] as const;
 const LEGAL_PAGES = ['terms', 'privacy', 'refund'];
 const INFO_PAGES = ['about', 'contact'];
 
-const BCP47_MAP: Record<string, string> = {
-  en: 'en',
-  ja: 'ja',
-  'zh-cn': 'zh-Hans',
-};
+import { BCP47_MAP } from '@/lib/seo';
 
 // Fallback for pages without a known modification date.
 // Updated manually when major site-wide changes ship.
