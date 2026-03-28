@@ -4,7 +4,7 @@
   "nameLocal": "停留簽證",
   "shortName": "Visitor",
   "category": "tourist",
-  "description": "Everything about visiting Taiwan: visa-exempt entry for nationals from approximately 60+ countries and territories (across 90-day, 30-day, and 14-day categories), visitor visa applications, duration by nationality, required documents, and transition options. Updated for 2026.",
+  "description": "Everything about visiting Taiwan: visa-exempt entry for nationals from approximately 65+ countries and territories (across 90-day, 30-day, and 14-day categories), visitor visa applications, duration by nationality, required documents, and transition options. Updated for 2026.",
   "tagline": "Short-term stays for tourism, business, and exploration",
   "keyRequirement": "Valid passport from visa-exempt country (14-90 days) or visitor visa application",
   "targetAudience": [
@@ -17,13 +17,13 @@
     {
       "id": "visa-exempt-90",
       "label": "90-day visa-free entry (approximately 55 countries and territories)",
-      "description": "Citizens of the US, UK, Canada, Australia, Japan, Korea, New Zealand, and most EU/Schengen countries receive 90-day visa-free entry. No application required — just arrive with a valid passport. Canadian and UK passport holders may extend their 90-day stay to 180 days under specific conditions — apply at NIA before the initial 90 days expire.",
+      "description": "Citizens of the US, UK, Canada, Australia, Japan, Korea, New Zealand, Tuvalu, and most EU/Schengen countries receive 90-day visa-free entry. No application required — just arrive with a valid passport. Canadian and UK passport holders may extend their 90-day stay to 180 days under specific conditions — apply at NIA before the initial 90 days expire.",
       "required": false
     },
     {
       "id": "visa-exempt-30",
       "label": "30-day visa-free entry (select countries)",
-      "description": "Citizens of select countries including Malaysia, Singapore, and others receive 30-day visa-free entry. Check BOCA's official list for your nationality.",
+      "description": "Citizens of select countries receive 30-day visa-free entry, including: Belize, Dominican Republic, Honduras, Malaysia, Nauru, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, and Singapore. Check BOCA's official list for your nationality.",
       "required": false
     },
     {
@@ -333,7 +333,7 @@
     {
       "type": "gold-card",
       "name": "Taiwan Employment Gold Card",
-      "requirements": "Meet qualification criteria in one of 11 professional fields (salary ≥ NT$160,000/month, relevant experience, PhD, awards, etc.).",
+      "requirements": "Meet qualification criteria in one of 12 professional fields (salary ≥ NT$160,000/month, relevant experience, PhD, awards, etc.).",
       "timeline": "30-60 business days processing",
       "documents": [
         "Current passport",

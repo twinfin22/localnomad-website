@@ -17,7 +17,7 @@
     {
       "id": "professional-field",
       "label": "Expertise in one of 12 designated professional fields",
-      "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture & Arts, Sports, Biotechnology, Economy, National Defense, Law, Environmental Protection",
+      "description": "Science & Technology, Digital, Finance, Education, Architecture, Culture and Arts, Sports, Biotechnology, Economy, National Defense, Law, Environmental Protection",
       "required": true,
       "tips": ["Architecture field uses AND logic — all conditions (licensed architect or 5+ years experience AND monthly salary ≥ NT$160,000) must be met simultaneously"]
     },
@@ -67,7 +67,8 @@
       "domestic": "Applicants already in Taiwan (visa-exempt or visitor status): NT$3,700 (1-yr), NT$4,700 (2-yr), NT$5,700 (3-yr). Applies to all nationalities including US citizens.",
       "usOverseas": "US citizens applying from abroad via TECO/diplomatic mission: NT$7,790 (1-yr), NT$8,790 (2-yr), NT$9,790 (3-yr). Surcharge due to reciprocity agreements.",
       "nonUsOverseas": "All other nationalities applying from abroad: NT$3,700 (1-yr), NT$4,700 (2-yr), NT$5,700 (3-yr).",
-      "hkMacao": "Hong Kong/Macau residents: NT$3,100 flat rate (all durations)"
+      "hkMacao": "Hong Kong/Macau residents: NT$3,100 flat rate (new application, all durations); NT$800 for extension",
+      "arcHolder": "Existing ARC holders applying domestically: NT$1,500 (1-yr), NT$2,500 (2-yr), NT$3,500 (3-yr)"
     },
     "notes": "Payment via JCB/VISA/MasterCard only (no AMEX/UnionPay). All application fees are non-refundable regardless of outcome. Failure to provide supplementary documents within the deadline (30 days domestic, up to 6 months overseas) results in automatic rejection without refund."
   },
@@ -172,7 +173,7 @@
       "name": "Professional Certifications",
       "description": "Industry-recognized certifications (CFA, CFP, FRM, etc.) for relevant tracks",
       "tips": [
-        "For finance field: CFA, CFP, FRM, CIIA, CIA, PRM, or Actuary certifications"
+        "For finance field: CFA, CFP, FRM, CIIA, CIA, PRM, or actuarial certifications (FSA, FCAS, FIA, FIAA, or SEI-KAIIN)"
       ],
       "required": false
     }
@@ -222,7 +223,7 @@
       "step": 4,
       "title": "Multi-Agency Review",
       "description": "3-stage review process: (1) Relevant ministry reviews professional qualification (1-2 weeks), (2) MOFA passport inspection for overseas applicants (1 week), (3) NIA final background check and card processing (1-2 weeks).",
-      "duration": "30-60 business days",
+      "duration": "30-60+ business days",
       "tips": [
         "Document supplement deadline: 30 days domestic, up to 6 months overseas",
         "Failure to supplement = rejection without refund"
@@ -251,7 +252,7 @@
     }
   ],
   "processingTime": {
-    "governmentReview": "30-60 business days",
+    "governmentReview": "30-60+ business days",
     "totalEndToEnd": "2-4 months",
     "notes": "Assumes complete documentation. Document supplement: 30 days (domestic), up to 6 months (overseas). Failure to supplement within deadline = rejection without refund."
   },
@@ -294,11 +295,11 @@
       { "criterion": "Work in Taiwan", "dnv": "Not allowed — overseas clients only", "goldCard": "Open work permit — any employer" },
       { "criterion": "Duration", "dnv": "6 months, extendable to 2 years", "goldCard": "1-3 years, renewable" },
       { "criterion": "Health Insurance", "dnv": "Private insurance required (no NHI)", "goldCard": "NHI access from Day 1" },
-      { "criterion": "Family", "dnv": "No dependents", "goldCard": "Spouse, children, parents/grandparents" },
+      { "criterion": "Family", "dnv": "Family permitted (enter on own visa status)", "goldCard": "Spouse, children, parents/grandparents" },
       { "criterion": "Tax Benefit", "dnv": "None", "goldCard": "50% exemption on income >NT$3M (5 years)" },
       { "criterion": "Permanent Residency", "dnv": "No path", "goldCard": "APRC after 1-3 years" },
       { "criterion": "Income Requirement", "dnv": "USD $20K-40K/year", "goldCard": "NT$160K/month (salary track)" },
-      { "criterion": "Processing Time", "dnv": "5-15 working days", "goldCard": "30-60 business days" }
+      { "criterion": "Processing Time", "dnv": "5-15 working days", "goldCard": "30-60+ business days" }
     ]
   },
   "agencySteps": [

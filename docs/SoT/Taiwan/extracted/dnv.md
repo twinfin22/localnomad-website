@@ -60,8 +60,8 @@ Full list same as Taiwan visa-exempt entry list (see visitor.md).
 
 ## Key Policy Details
 - work_permission: restricted (overseas employer/clients ONLY — absolutely no Taiwan-based work)
-- family_allowed: false (no dependents allowed)
-- dependent_visa: N/A
+- family_allowed: true (family permitted — family members enter on their own visa status; ref: FTA Art.14)
+- dependent_visa: family members enter independently under their own visa status (not as dependents on DNV)
 - tax_benefits: |
     No special tax benefits.
     Tax exposure by residency days:

@@ -25,9 +25,21 @@
   ],
   "eligibility": [
     {
+      "id": "age-minimum",
+      "label": "年满18周岁",
+      "description": "根据法务部指南，申请人在申请时须年满18周岁。",
+      "required": true
+    },
+    {
       "id": "remote-work",
       "label": "为外国雇主远程工作",
       "description": "雇佣关系必须与韩国以外的公司建立",
+      "required": true
+    },
+    {
+      "id": "same-industry-experience",
+      "label": "在当前就业所属行业连续工作满1年",
+      "description": "申请人须在与当前就业相同的行业（동일 업종）工作至少1年。通过境外雇主的劳动合同及相关材料进行核验。",
       "required": true
     },
     {

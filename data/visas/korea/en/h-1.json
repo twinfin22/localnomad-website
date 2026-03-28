@@ -17,7 +17,7 @@
     {
       "id": "age",
       "label": "Age 18-30 (general) or 18-35 (varies by country)",
-      "description": "Most countries require applicants to be between 18 and 30 years old. Canada and UK allow up to age 35. Some countries (Argentina, Denmark, Germany, Ireland, Portugal, etc.) allow up to age 34. Japan allows 18-30 (expanded from 18-25 per bilateral agreement revision).",
+      "description": "Most countries require applicants to be between 18 and 30 years old. Canada and UK allow up to age 35. Some countries (Argentina, Denmark, Germany, Ireland, Portugal, etc.) allow up to age 34. Japan allows 18-30 (expanded to age 30 per bilateral agreement revision).",
       "required": true
     },
     {

@@ -132,14 +132,15 @@
     },
     {
       "id": "language-test-results",
-      "name": "Japanese Language Test Certificate (N3 or higher)",
+      "name": "Japanese Language Test Certificate (sector-specific)",
       "nameLocal": "日本語能力試験結果通知書",
-      "description": "JLPT N3 or higher score report demonstrating intermediate Japanese language proficiency.",
+      "description": "JLPT N3 or higher score report. Required only for specific sectors (fisheries and food service). Most SSW2 sectors do not require a separate language exam.",
       "tips": [
-        "N3 is a significant step up from N4 — allocate 3–6 months of dedicated study for the upgrade",
-        "JLPT is held in July and December each year"
+        "N3 is a significant step up from N4 — allocate 3–6 months of dedicated study if your sector requires it",
+        "JLPT is held in July and December each year",
+        "Verify whether your sector requires a language exam with the ISA or relevant SSW support organization"
       ],
-      "required": true
+      "required": false
     },
     {
       "id": "employment-contract",
@@ -193,10 +194,10 @@
       "id": "step-1",
       "step": 1,
       "title": "Build Experience and Prepare for Category 2 Test",
-      "description": "Accumulate 3 or more years of work experience in your designated sector on SSW1 status. During this time, study for the Category 2 Specified Skills Test and upgrade your Japanese language proficiency to N3 level.",
+      "description": "Accumulate 3 or more years of work experience in your designated sector on SSW1 status. During this time, study for the Category 2 Specified Skills Test. If your sector requires it (fisheries or food service), upgrade your Japanese language proficiency to N3 level.",
       "duration": "3+ years on SSW1 status",
       "tips": [
-        "Begin studying for N3 and the Category 2 test during your SSW1 period — do not wait until the 5-year limit approaches",
+        "Begin studying for the Category 2 test during your SSW1 period — do not wait until the 5-year limit approaches. If your sector requires N3 (fisheries or food service), start that preparation early as well.",
         "Seek supervisory responsibilities at work to build the management experience that SSW2 requires",
         "Check sector availability for Category 2 testing early — not all sectors have active SSW2 programs yet"
       ]
@@ -204,13 +205,14 @@
     {
       "id": "step-2",
       "step": 2,
-      "title": "Pass the Category 2 Skills Test and N3 Language Test",
-      "description": "Register for and pass the Category 2 Specified Skills Test in your sector. Separately, pass the JLPT N3 or equivalent language test. Alternatively, obtain a Grade 1 National Trade Skill Certificate.",
+      "title": "Pass the Category 2 Skills Test (and Language Test if Required)",
+      "description": "Register for and pass the Category 2 Specified Skills Test in your sector. A separate Japanese language test (JLPT N3) is only required for specific sectors — fisheries and food service. Most sectors do not require a language exam for SSW2. Alternatively, obtain a Grade 1 National Trade Skill Certificate.",
       "duration": "1–3 months (for test registration and results)",
       "tips": [
         "Category 2 tests evaluate supervisory-level competence — practical experience is as important as study",
         "If you already hold a Grade 1 National Trade Skill Certificate, you may not need the Category 2 test",
-        "The Category 2 test is significantly more difficult than Category 1 — adequate preparation is essential. Allocate more study time than you expect."
+        "The Category 2 test is significantly more difficult than Category 1 — adequate preparation is essential. Allocate more study time than you expect.",
+        "Check whether your sector requires a separate Japanese language exam — most SSW2 sectors do not"
       ]
     },
     {
@@ -266,7 +268,7 @@
   "faqs": [
     {
       "question": "How is SSW2 different from SSW1?",
-      "answer": "The key differences are: (1) SSW2 has no cumulative time limit, while SSW1 is capped at 5 years; (2) SSW2 allows family members (spouse and children) to accompany you, while SSW1 does not; (3) SSW2 requires higher skills (Category 2 test) and Japanese language (N3 vs N4); (4) SSW2 represents supervisory-level expertise, while SSW1 is for workers with 'considerable knowledge and experience.' SSW2 is a significant upgrade in terms of stability, rights, and long-term settlement potential."
+      "answer": "The key differences are: (1) SSW2 has no cumulative time limit, while SSW1 is capped at 5 years; (2) SSW2 allows family members (spouse and children) to accompany you, while SSW1 does not; (3) SSW2 requires higher skills (Category 2 test) — no separate Japanese language exam is required for most sectors, while SSW1 requires N4; (4) SSW2 represents supervisory-level expertise, while SSW1 is for workers with 'considerable knowledge and experience.' SSW2 is a significant upgrade in terms of stability, rights, and long-term settlement potential."
     },
     {
       "question": "Can I bring my family to Japan on SSW2?",
@@ -310,11 +312,11 @@
     }
   ],
   "tips": [
-    "Start preparing for the Category 2 test and JLPT N3 during your SSW1 period — waiting until year 4 or 5 leaves no margin for error",
+    "Start preparing for the Category 2 test during your SSW1 period — waiting until year 4 or 5 leaves no margin for error. If your sector requires JLPT N3 (fisheries or food service), begin that preparation early too.",
     "Seek supervisory responsibilities early in your SSW1 career — practical management experience strengthens both your test performance and your application",
     "Check whether your sector currently offers Category 2 testing before building your transition plan",
     "If you hold a Grade 1 National Trade Skill Certificate, verify its acceptance for SSW2 with the ISA — this can significantly shorten your pathway",
-    "Budget for the language upgrade from N4 to N3 — this typically requires 300–600 additional study hours",
+    "If your sector requires JLPT N3 (fisheries or food service), budget for the language upgrade from N4 — this typically requires 300–600 additional study hours",
     "Once on SSW2, file dependent visa applications for family members promptly — processing takes additional time",
     "Keep all employment records, tax certificates, and pension documentation organized — these serve as proof of continuous work history",
     "Monitor the ISA website for policy updates — the SSW program is actively evolving with new sectors and testing schedules"
@@ -324,7 +326,7 @@
     {
       "id": "early-n3-prep",
       "section": "requirements",
-      "tip": "Start studying for JLPT N3 as soon as you arrive on SSW1 — the jump from N4 to N3 is substantial. Many workers underestimate the time required and miss the July or December test dates, pushing their SSW2 transition back by 6 months or more.",
+      "tip": "If your sector requires JLPT N3 for SSW2 (fisheries or food service), start studying as soon as you arrive on SSW1 — the jump from N4 to N3 is substantial. Many workers underestimate the time required and miss the July or December test dates. For most other sectors, no separate language exam is required for SSW2.",
       "verified": false,
       "upvotes": 0
     },
@@ -405,11 +407,11 @@
     {
       "type": "ssw1",
       "name": "Specified Skilled Worker 1 (Considerable Knowledge/Experience)",
-      "requirements": "Accumulate 3+ years of work experience on SSW1 status in the designated sector. Pass the Category 2 Specified Skills Test or hold Grade 1 National Trade Skill Certificate. Demonstrate N3 Japanese language proficiency.",
+      "requirements": "Accumulate 3+ years of work experience on SSW1 status in the designated sector. Pass the Category 2 Specified Skills Test or hold Grade 1 National Trade Skill Certificate. A separate Japanese language exam (N3) is only required for fisheries and food service sectors.",
       "timeline": "SSW1 minimum 3 years, then 4–8 weeks for status change processing",
       "documents": [
         "Category 2 Skills Test pass certificate (or Grade 1 National Trade Skill Certificate)",
-        "JLPT N3 score report",
+        "JLPT N3 score report (required only for fisheries and food service sectors)",
         "Employment contract with supervisory duties",
         "Proof of 3+ years SSW1 work experience",
         "Current Residence Card"
