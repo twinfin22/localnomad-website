@@ -24,6 +24,7 @@ fi
 CONTENT=$(head -c 4000 "$CONTENT_FILE")
 curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
   -d "chat_id=${TG_CHAT}" \
+  -d "parse_mode=HTML" \
   --data-urlencode "text=${TITLE}
 
 ${CONTENT}" > /dev/null 2>&1
@@ -34,5 +35,6 @@ if [ "$TOTAL" -gt 4000 ]; then
   PART2=$(tail -c +4001 "$CONTENT_FILE" | head -c 4000)
   curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
     -d "chat_id=${TG_CHAT}" \
+    -d "parse_mode=HTML" \
     --data-urlencode "text=${PART2}" > /dev/null 2>&1
 fi
