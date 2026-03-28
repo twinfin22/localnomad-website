@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getAllPosts } from '@/lib/blog';
+import { getAllPosts, getAvailableLocalesForPost } from '@/lib/blog';
 import { BLOG_CATEGORIES } from '@/lib/blog/schema';
 import { getAllTransitionPairs } from '@/lib/visa-transitions';
 
@@ -34,6 +34,30 @@ function alternates(pathname: string) {
   }
   languages['x-default'] = `${BASE_URL}/en${pathname}`;
   return { languages };
+}
+
+function alternatesForLocales(pathname: string, locales: readonly string[]) {
+  const languages: Record<string, string> = {};
+  for (const loc of locales) {
+    const bcp47 = BCP47_MAP[loc];
+    if (bcp47) languages[bcp47] = `${BASE_URL}/${loc}${pathname}`;
+  }
+  languages['x-default'] = `${BASE_URL}/en${pathname}`;
+  return { languages };
+}
+
+function entryWithLocales(
+  pathname: string,
+  locales: readonly string[],
+  opts: { lastModified?: Date; changeFrequency?: MetadataRoute.Sitemap[number]['changeFrequency']; priority?: number },
+): MetadataRoute.Sitemap[number][] {
+  return locales.map((locale) => ({
+    url: `${BASE_URL}/${locale}${pathname}`,
+    lastModified: opts.lastModified ?? LAST_MODIFIED,
+    changeFrequency: opts.changeFrequency ?? 'monthly',
+    priority: opts.priority ?? 0.5,
+    alternates: alternatesForLocales(pathname, locales),
+  }));
 }
 
 function entry(
@@ -118,7 +142,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   for (const post of blogPosts) {
-    entries.push(...entry(`/blog/${post.category}/${post.slug}`, {
+    const availableLocales = getAvailableLocalesForPost(post.category, post.slug);
+    entries.push(...entryWithLocales(`/blog/${post.category}/${post.slug}`, availableLocales, {
       lastModified: new Date(post.frontmatter.updatedAt ?? post.frontmatter.date),
       changeFrequency: 'monthly',
       priority: 0.7,

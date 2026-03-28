@@ -54,7 +54,7 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   const t = await getTranslations('Blog');
-  const posts = getAllPosts({ category: category as BlogCategory });
+  const posts = getAllPosts({ category: category as BlogCategory, locale });
   const categoryLabel = t(`categories.${category as BlogCategory}`);
 
   return (

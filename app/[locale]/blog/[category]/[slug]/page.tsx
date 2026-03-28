@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm';
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getAlternates } from '@/lib/seo';
-import { getPost, getAllPostSlugs, getRelatedPosts } from '@/lib/blog';
+import { getPost, getAllPostSlugs, getRelatedPosts, getAvailableLocalesForPost } from '@/lib/blog';
 import { extractHeadings } from '@/lib/blog/utils';
 import { createMdxComponents } from '@/components/blog/mdx-components';
 import { BlogToc } from '@/components/blog/blog-toc';
@@ -26,13 +26,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, category, slug } = await params;
-  const post = getPost(category, slug);
+  const post = getPost(category, slug, locale);
 
   if (!post) return {};
 
   const [t, alternates] = await Promise.all([
     getTranslations({ locale: locale as (typeof routing.locales)[number], namespace: 'Blog' }),
-    Promise.resolve(getAlternates(locale, `/blog/${category}/${slug}`)),
+    Promise.resolve(getAlternates(locale, `/blog/${category}/${slug}`, getAvailableLocalesForPost(category, slug))),
   ]);
 
   return {
@@ -58,8 +58,10 @@ export default async function BlogPostPage({ params }: Props) {
   if (!hasLocale(routing.locales, locale)) return null;
   setRequestLocale(locale);
 
-  const post = getPost(category, slug);
+  const post = getPost(category, slug, locale);
   if (!post) notFound();
+
+  const t = await getTranslations({ locale: locale as (typeof routing.locales)[number], namespace: 'Blog' });
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -144,19 +146,18 @@ export default async function BlogPostPage({ params }: Props) {
             <span>{post.frontmatter.author}</span>
             <span className="text-gray-400">/</span>
             <time dateTime={post.frontmatter.date}>
-              {new Date(post.frontmatter.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })}
+              {new Date(post.frontmatter.date).toLocaleDateString(
+                locale === 'ja' ? 'ja-JP' : locale === 'zh-cn' ? 'zh-CN' : 'en-US',
+                { year: 'numeric', month: 'short', day: 'numeric' },
+              )}
             </time>
             {post.frontmatter.updatedAt && (
               <>
                 <span className="text-gray-400">/</span>
                 <span>
-                  Updated{' '}
+                  {t('updatedOn')}{' '}
                   {new Date(post.frontmatter.updatedAt).toLocaleDateString(
-                    'en-US',
+                    locale === 'ja' ? 'ja-JP' : locale === 'zh-cn' ? 'zh-CN' : 'en-US',
                     { year: 'numeric', month: 'short', day: 'numeric' },
                   )}
                 </span>
@@ -208,6 +209,8 @@ export default async function BlogPostPage({ params }: Props) {
             post.category,
             post.frontmatter.country,
             post.frontmatter.tags,
+            6,
+            locale,
           );
           if (related.length === 0) return null;
           return (

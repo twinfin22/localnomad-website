@@ -61,6 +61,7 @@ export default async function BlogPage({ params, searchParams }: Props) {
   const posts = getAllPosts({
     category: categoryFilter,
     country: countryFilter,
+    locale,
   });
 
   const t = await getTranslations('Blog');
@@ -71,7 +72,7 @@ export default async function BlogPage({ params, searchParams }: Props) {
         {t('title')}
       </h1>
       <p className="mt-2 text-muted-foreground">
-        Digital nomad guides, visa updates, and travel tips.
+        {t('subtitle')}
       </p>
 
       <div className="mt-8">

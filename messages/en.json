@@ -295,6 +295,7 @@
   },
   "Blog": {
     "title": "Blog",
+    "subtitle": "Digital nomad guides, visa updates, and travel tips.",
     "allPosts": "All Posts",
     "readMore": "Read more",
     "minuteRead": "min read",

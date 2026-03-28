@@ -33,8 +33,8 @@ export default async function Image({
 }: {
   params: Promise<{ locale: string; category: string; slug: string }>;
 }) {
-  const { category, slug } = await params;
-  const post = getPost(category, slug);
+  const { locale, category, slug } = await params;
+  const post = getPost(category, slug, locale);
 
   const title = post?.frontmatter.title ?? 'LocalNomad Blog';
   const coverSrc = await getCoverImageSrc(post?.frontmatter.coverImage);
