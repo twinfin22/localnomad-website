@@ -1,4 +1,4 @@
-const BCP47_MAP: Record<string, string> = {
+export const BCP47_MAP: Record<string, string> = {
   en: 'en',
   ja: 'ja',
   'zh-cn': 'zh-Hans',
