@@ -18,7 +18,7 @@ cd "$PROJECT_DIR"
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Starting reddit-karma-daily..." >> "$LOG_FILE"
 
 # Determine today's country (day-of-year mod 3)
-DOY=$(date +%j)
+DOY=$(date +%-j)
 MOD=$((DOY % 3))
 case $MOD in
   0) COUNTRY="Korea"
