@@ -50,8 +50,8 @@
     "ctaExplore": "探索签证指南",
     "ctaDiscord": "加入社区",
     "beforeLabel": "移民局网站不是为你设计的。",
-    "afterLabel": "This is.",
-    "countrySectionTitle": "Where do you want to go?",
+    "afterLabel": "这就是。",
+    "countrySectionTitle": "你想去哪里？",
     "countrySectionSubtitle": "每个国家的签证规则、时间线和注意事项各不相同。",
     "newCtaTitle": "选好国家，拿到你的清单。",
     "closingTitle": "落地不慌张",
@@ -295,6 +295,7 @@
   },
   "Blog": {
     "title": "博客",
+    "subtitle": "数字游民指南、签证更新和旅行建议。",
     "allPosts": "所有文章",
     "readMore": "阅读更多",
     "minuteRead": "分钟阅读",

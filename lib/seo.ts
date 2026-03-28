@@ -4,10 +4,11 @@ export const BCP47_MAP: Record<string, string> = {
   'zh-cn': 'zh-Hans',
 };
 
-export function getAlternates(locale: string, pathname: string = '') {
+export function getAlternates(locale: string, pathname: string = '', availableLocales?: string[]) {
   const base = 'https://localnomad.club';
   const languages: Record<string, string> = {};
   for (const [loc, bcp47] of Object.entries(BCP47_MAP)) {
+    if (availableLocales && !availableLocales.includes(loc)) continue;
     languages[bcp47] = `${base}/${loc}${pathname}`;
   }
   languages['x-default'] = `${base}/en${pathname}`;

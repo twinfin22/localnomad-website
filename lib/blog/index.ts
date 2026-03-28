@@ -10,6 +10,7 @@ import {
 } from './schema';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
+const LOCALE_FOLDER_NAMES = ['ja', 'zh-cn'];
 
 export interface BlogPost {
   slug: string;
@@ -27,9 +28,29 @@ const calculateReadingTime = (content: string): number => {
 export const getPost = (
   category: string,
   slug: string,
+  locale?: string,
 ): BlogPost | null => {
-  const filePath = path.join(CONTENT_DIR, category, `${slug}.mdx`);
+  // Try locale-specific path first
+  if (locale && locale !== 'en') {
+    const localePath = path.join(CONTENT_DIR, locale, category, `${slug}.mdx`);
+    if (fs.existsSync(localePath)) {
+      const raw = fs.readFileSync(localePath, 'utf-8');
+      const { data, content } = matter(raw);
+      const frontmatter = frontmatterSchema.parse(data);
+      if (frontmatter.draft && process.env.NODE_ENV === 'production') return null;
+      const readingTime = frontmatter.readingTime ?? calculateReadingTime(content);
+      return {
+        slug,
+        category: frontmatter.category,
+        frontmatter: { ...frontmatter, readingTime },
+        content,
+        readingTime,
+      };
+    }
+  }
 
+  // Fall back to EN path
+  const filePath = path.join(CONTENT_DIR, category, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return null;
 
   const raw = fs.readFileSync(filePath, 'utf-8');
@@ -55,22 +76,37 @@ const countryOrder: Record<string, number> = {
 };
 
 // Cached: deduplicates FS walk within the same RSC request
-const getCachedAllPosts = cache((): BlogPost[] => {
+// Cache key includes locale to ensure separate caches per locale
+const getCachedAllPosts = cache((locale: string = 'en'): BlogPost[] => {
+  let scanDir: string;
+  let filterFolders: string[];
+
+  if (locale !== 'en') {
+    scanDir = path.join(CONTENT_DIR, locale);
+    filterFolders = [];
+  } else {
+    scanDir = CONTENT_DIR;
+    filterFolders = LOCALE_FOLDER_NAMES;
+  }
+
+  if (!fs.existsSync(scanDir)) return [];
+
   const categories = fs
-    .readdirSync(CONTENT_DIR)
-    .filter((f) => fs.statSync(path.join(CONTENT_DIR, f)).isDirectory());
+    .readdirSync(scanDir)
+    .filter((f) => fs.statSync(path.join(scanDir, f)).isDirectory())
+    .filter((f) => !filterFolders.includes(f));
 
   const posts: BlogPost[] = [];
 
   for (const cat of categories) {
-    const catDir = path.join(CONTENT_DIR, cat);
+    const catDir = path.join(scanDir, cat);
     if (!fs.existsSync(catDir)) continue;
 
     const files = fs.readdirSync(catDir).filter((f) => f.endsWith('.mdx'));
 
     for (const file of files) {
       const slug = file.replace(/\.mdx$/, '');
-      const post = getPost(cat, slug);
+      const post = getPost(cat, slug, locale);
       if (!post) continue;
       posts.push(post);
     }
@@ -92,17 +128,23 @@ export const getAllPosts = (options?: {
   category?: BlogCategory;
   country?: BlogCountry;
   limit?: number;
+  locale?: string;
 }): BlogPost[] => {
+  const locale = options?.locale ?? 'en';
+
   if (options?.category) {
     // Category-specific: do a targeted walk (cheaper than full walk)
-    const catDir = path.join(CONTENT_DIR, options.category);
+    const catDir = locale !== 'en'
+      ? path.join(CONTENT_DIR, locale, options.category)
+      : path.join(CONTENT_DIR, options.category);
+
     if (!fs.existsSync(catDir)) return [];
 
     const files = fs.readdirSync(catDir).filter((f) => f.endsWith('.mdx'));
     const posts: BlogPost[] = [];
     for (const file of files) {
       const slug = file.replace(/\.mdx$/, '');
-      const post = getPost(options.category, slug);
+      const post = getPost(options.category, slug, locale);
       if (!post) continue;
       if (options.country && post.frontmatter.country !== options.country) continue;
       posts.push(post);
@@ -119,7 +161,7 @@ export const getAllPosts = (options?: {
   }
 
   // No category filter: use cached full walk
-  let result = getCachedAllPosts();
+  let result = getCachedAllPosts(locale);
   if (options?.country) result = result.filter(p => p.frontmatter.country === options.country);
   if (options?.limit) result = result.slice(0, options.limit);
   return result;
@@ -131,8 +173,9 @@ export const getRelatedPosts = (
   currentCountry: BlogCountry,
   currentTags: string[] = [],
   limit = 6,
+  locale = 'en',
 ): BlogPost[] => {
-  const all = getAllPosts();
+  const all = getAllPosts({ locale });
   const tagSet = new Set(currentTags);
 
   const scored = all
@@ -152,8 +195,47 @@ export const getRelatedPosts = (
 };
 
 export const getAllPostSlugs = (): {
+  locale: string;
   category: string;
   slug: string;
 }[] => {
-  return getAllPosts().map((p) => ({ category: p.category, slug: p.slug }));
+  // EN posts
+  const enPosts = getAllPosts().map((p) => ({
+    locale: 'en',
+    category: p.category,
+    slug: p.slug,
+  }));
+
+  // Locale-specific posts
+  const localePosts: { locale: string; category: string; slug: string }[] = [];
+  for (const localeDir of LOCALE_FOLDER_NAMES) {
+    const locDir = path.join(CONTENT_DIR, localeDir);
+    if (!fs.existsSync(locDir)) continue;
+
+    const cats = fs
+      .readdirSync(locDir)
+      .filter((f) => fs.statSync(path.join(locDir, f)).isDirectory());
+
+    for (const cat of cats) {
+      const catDir = path.join(locDir, cat);
+      const files = fs.readdirSync(catDir).filter((f) => f.endsWith('.mdx'));
+      for (const file of files) {
+        const slug = file.replace(/\.mdx$/, '');
+        localePosts.push({ locale: localeDir, category: cat, slug });
+      }
+    }
+  }
+
+  return [...enPosts, ...localePosts];
+};
+
+export const getAvailableLocalesForPost = (category: string, slug: string): string[] => {
+  const locales = ['en'];
+  for (const locale of LOCALE_FOLDER_NAMES) {
+    const filePath = path.join(CONTENT_DIR, locale, category, `${slug}.mdx`);
+    if (fs.existsSync(filePath)) {
+      locales.push(locale);
+    }
+  }
+  return locales;
 };
