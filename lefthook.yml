@@ -9,6 +9,10 @@ pre-commit:
     blog-links:
       glob: "*.mdx"
       run: bash scripts/validate-blog-links.sh {staged_files}
+    blog-visa-sync:
+      glob: "*.json"
+      root: "data/visas/"
+      run: bash scripts/validate-blog-visa-sync.sh {staged_files}
 
 pre-push:
   commands:
