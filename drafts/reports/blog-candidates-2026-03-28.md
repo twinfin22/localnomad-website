@@ -216,4 +216,38 @@
 
 ---
 
+## 8. Japan PR Fees Are Rising 30x: Apply Before the Cap Kicks In
+- **Category:** news
+- **Country:** japan
+- **Target keyword:** Japan permanent residency fee hike 2026
+- **Secondary keywords:** Japan PR application cost 2026, Japan visa fee increase 2026, Japan PR apply before fee change, Japan residence status change fee, Japan immigration fee reform
+- **Why now:** 2026년 3월 10일 각의결정으로 PR 신청 상한 ¥10,000 → ¥300,000 (30배) — 실제 적용 전 신청을 서두르는 독자에게 긴급성 강함
+- **Word count:** 1,200–1,500 (news + action guide)
+- **Outline:**
+  - H2: What Changed on March 10, 2026 (the fee cap revision)
+  - H2: The Numbers: ¥10,000 → Up to ¥300,000 for PR
+  - H2: Status Change & Extension Fees Also Rising (¥10,000 → ¥100,000)
+  - H2: This Is a Cap, Not the Final Fee — Here's What That Means
+  - H2: Timeline: When Will the New Fees Actually Apply?
+  - H2: Who's Affected Most (low-income migrants vs high-earners)
+  - H2: The Window: Apply Under the Current ¥10,000 Fee Before Cabinet Order
+  - H2: What the Revenue Is For (foreign resident programs, overtourism)
+  - H2: Your Action Checklist by Visa Status
+- **Internal links:**
+  - `/en/japan/visa/engineer-specialist`
+  - `/en/japan/visa/hsw`
+  - `/en/blog/guides/japan-ultimate-digital-nomad-guide`
+  - `/en/blog/tips/japan-arrival-checklist-2026`
+- **Sources:**
+  - https://www.japantimes.co.jp/news/2026/03/10/japan/politics/japan-visa-fees-immigration/
+  - https://en.sedaily.com/international/2026/03/22/japan-raises-permanent-residency-fee-30-fold-to-2000
+  - https://blog.gaijinpot.com/japan-visa-fees-are-rising-in-2026-a-guide-for-foreign-workers-and-employers/
+
+---
+
+> ⚡ **BONUS — 3-day window (expires March 31):** Taiwan–South Korea "China (Taiwan)" ARC Dispute
+> Korean nationals in Taiwan (~5,000 ARCs affected) had their country-of-origin designation changed by Taiwan's NIA on March 18 after South Korea's e-arrival card labeled Taiwan as "China (Taiwan)." South Korea has until **March 31** to revise wording or Taiwan considers broader adjustments. Too narrow for a standalone post but worth a short news brief or social post if March 31 resolution happens. Sources: [VisaVerge](https://www.visaverge.com/news/taiwan-forces-south-korea-change-in-immigration-system-after-seoul-labels-it-china/) | [Travel and Tour World](https://www.travelandtourworld.com/news/article/taiwan-protests-south-koreas-china-taiwan-label-on-arrival-forms-amid-diplomatic-tensions-heres-all-you-need-to-know/)
+
+---
+
 📋 자동 생성 2026-03-28 | Step 1 of 8
