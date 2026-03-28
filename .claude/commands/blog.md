@@ -1,1 +1,1 @@
-../../localnomad-blog-plugin/commands/blog.md
+/Users/leegen/.claude/plugins/localnomad-blog-plugin/commands/blog.md
