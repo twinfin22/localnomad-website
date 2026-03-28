@@ -53,19 +53,6 @@ if [ "$(date +%u)" -gt 1 ]; then
   fi
 fi
 
-# 격주 작업 (1일, 15일) 체크
-DAY_OF_MONTH=$(date +%d)
-LAST_BIWEEKLY=""
-if [ "$DAY_OF_MONTH" -gt 1 ] && [ "$DAY_OF_MONTH" -le 15 ]; then
-  LAST_BIWEEKLY=$(date -v1d +%Y-%m-%d)
-elif [ "$DAY_OF_MONTH" -gt 15 ]; then
-  LAST_BIWEEKLY=$(date -v15d +%Y-%m-%d)
-fi
-
-if [ -n "$LAST_BIWEEKLY" ] && [ ! -f "$LOG_DIR/signal-noise-review-$LAST_BIWEEKLY.log" ]; then
-  MISSED+=("signal-noise-review")
-fi
-
 # 놓친 게 없으면 종료
 if [ ${#MISSED[@]} -eq 0 ]; then
   exit 0

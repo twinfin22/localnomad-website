@@ -29,25 +29,21 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE" >> 
 if [ $EXIT_CODE -eq 0 ] && [ -f "$OUTPUT_FILE" ]; then
   osascript -e 'display notification "주간 워크플로 리뷰 초안이 준비되었습니다." with title "Weekly Reflect" sound name "Glass"' 2>/dev/null || true
 
-  TG_CONFIG="$HOME/.claude/.omc-config.json"
-  if [ -f "$TG_CONFIG" ]; then
-    TG_TOKEN=$(jq -r '.notifications.telegram.botToken // empty' "$TG_CONFIG")
-    TG_CHAT=$(jq -r '.notifications.telegram.chatId // empty' "$TG_CONFIG")
-    if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
-      CONTENT=$(head -c 4000 "$OUTPUT_FILE")
-      curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
-        -d "chat_id=${TG_CHAT}" \
-        --data-urlencode "text=🔍 Weekly Reflect
+  SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+  "$SCRIPT_DIR/send-telegram.sh" "🔍 Weekly Reflect" "$OUTPUT_FILE"
+fi
 
-${CONTENT}" > /dev/null 2>&1
-
-      TOTAL=$(wc -c < "$OUTPUT_FILE")
-      if [ "$TOTAL" -gt 4000 ]; then
-        PART2=$(tail -c +4001 "$OUTPUT_FILE" | head -c 4000)
-        curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
-          -d "chat_id=${TG_CHAT}" \
-          --data-urlencode "text=${PART2}" > /dev/null 2>&1
-      fi
+# On 1st and 15th, also run memory filter review (Lens 6)
+DAY_OF_MONTH=$(date +%d)
+if [ "$DAY_OF_MONTH" -eq 1 ] || [ "$DAY_OF_MONTH" -eq 15 ]; then
+  LENS6_SKILL="$HOME/Documents/Claude/Scheduled/signal-noise-review/SKILL.md"
+  if [ -f "$LENS6_SKILL" ]; then
+    LENS6_OUTPUT="$HOME/localnomad/b2c-website/docs/human/signal-noise-review-$(date +%Y-%m-%d).md"
+    cat "$LENS6_SKILL" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > "$LENS6_OUTPUT" 2>> "$LOG_FILE"
+    LENS6_EXIT=$?
+    if [ $LENS6_EXIT -eq 0 ] && [ -f "$LENS6_OUTPUT" ]; then
+      SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+      "$SCRIPT_DIR/send-telegram.sh" "🧹 Signal/Noise Review (Lens 6)" "$LENS6_OUTPUT"
     fi
   fi
 fi
