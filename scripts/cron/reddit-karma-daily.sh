@@ -98,7 +98,7 @@ You have pre-fetched Reddit data. Analyze and draft a reply.
 ## Instructions
 1. Pick the single best thread to reply to (highest value opportunity).
 2. Read the existing comments -- do NOT repeat what has already been said.
-3. Draft an informative reply using blog/visa data from this repo for specific facts and numbers.
+3. Draft an informative reply using blog/visa data from this repo for specific facts and numbers. CAP AT 200 WORDS MAX.
 4. Reply must be: purely informative, zero brand mentions, zero CTAs, zero URLs to our site.
 
 After drafting, send the result directly to Telegram:
@@ -116,7 +116,9 @@ Why: {1-line reason this thread is worth replying to}
 ---
 {draft reply text}
 ---
-Self-eval: Specificity X/5 | Voice X/5 | Relevance X/5 | Differentiation X/5 | Purity X/5
+Self-eval: Specificity X/5 | Voice X/5 | Relevance X/5 | Differentiation X/5 | Purity X/5 | Fact-based X/5
+Confidence: X% based on SoT/verified gov sources vs training data
+Word count: X/200
 
 Use curl to send: curl -s "https://api.telegram.org/bot${TOKEN}/sendMessage" -d "chat_id=${CHAT_ID}" --data-urlencode "text=${MSG}"
 
