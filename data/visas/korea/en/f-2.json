@@ -9,7 +9,7 @@
   "keyRequirement": "Score ≥80 points (out of 135) in age, education, income, Korean language",
   "targetAudience": [
     "Professionals on E-series work visas seeking long-term residence",
-    "High-income earners (≥₩40M annual salary) wanting immediate eligibility",
+    "High-income earners seeking expedited eligibility",
     "Korean university graduates employed within 5 years of degree",
     "Skilled workers planning a path to permanent residency (F-5)",
     "Professionals seeking unrestricted work authorization in Korea"
@@ -20,7 +20,7 @@
       "priority": "essential",
       "category": "visaStatus",
       "label": "Hold a qualifying visa (E-1~E-7, D-5~D-9) for 3+ consecutive years",
-      "description": "Must have legally resided in Korea on an eligible visa status for at least 3 consecutive years. This requirement is waived for applicants with annual income ≥₩40M or Korean university graduates.",
+      "description": "Must have legally resided in Korea on an eligible visa status for at least 3 consecutive years. Higher income may allow expedited processing (confirm with immigration office 1345). Korean university graduates may also qualify for expedited processing.",
       "required": true,
       "warnings": ["Points are strictly verified — immigration officers may request additional documentation for each claim"]
     },
@@ -38,8 +38,8 @@
       "id": "income-fast-track",
       "priority": "essential",
       "category": "income",
-      "label": "Annual salary ≥₩40M allows immediate application (no 3-year wait)",
-      "description": "According to published guidelines, applicants earning ₩40,000,000 or more per year can apply immediately regardless of length of stay in Korea.",
+      "label": "Higher income may allow expedited processing",
+      "description": "Some immigration offices reportedly allow expedited applications for higher-income earners. Confirm eligibility and income thresholds with your local immigration office (1345).",
       "required": false,
       "tips": ["Income is the highest-weighted category (60 points) — focus on salary growth and ensure all compensation appears on tax records"]
     },
@@ -349,7 +349,7 @@
     {
       "id": "income-lever",
       "section": "requirements",
-      "tip": "Income scores make up 60 out of 135 total points. If your annual salary exceeds ₩40M, published guidelines indicate you can apply immediately without the 3-year stay requirement. Focus on getting your salary as high as possible on paper.",
+      "tip": "Income scores make up 60 out of 135 total points. Higher income may allow expedited processing — confirm with your local immigration office (1345). Focus on getting your salary as high as possible on paper.",
       "verified": false,
       "upvotes": 0
     },
@@ -416,7 +416,7 @@
     {
       "type": "e-7",
       "name": "Professional Employment Visa",
-      "requirements": "Hold E-7 status for 3+ consecutive years, OR have annual salary ≥₩40M (apply immediately). Score ≥80 points on the F-2-7 points system.",
+      "requirements": "Hold E-7 status for 3+ consecutive years. Higher income may allow expedited processing (confirm with immigration office 1345). Score ≥80 points on the F-2-7 points system.",
       "timeline": "2–4 weeks processing after submission",
       "documents": [
         "Employment contract",

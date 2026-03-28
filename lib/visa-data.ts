@@ -24,6 +24,9 @@ async function loadVisaJson(
     const data = (
       await import(`@/data/visas/${country}/${locale}/${type}.json`)
     ).default as Record<string, unknown>;
+    if (data.draft === true) {
+      return null;
+    }
     return {
       ...data,
       country: COUNTRY_CODE_MAP[country],

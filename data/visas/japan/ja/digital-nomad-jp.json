@@ -424,6 +424,10 @@
     {
       "label": "外務省 — 査証情報",
       "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    },
+    {
+      "label": "出入国在留管理庁 デジタルノマド手続",
+      "url": "https://www.moj.go.jp/isa/applications/status/designatedactivities10_00001.html"
     }
   ],
   "sourceVerified": true,

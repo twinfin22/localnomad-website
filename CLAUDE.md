@@ -49,6 +49,16 @@ If SessionStart hook did not inject context, read these at session start:
 ## Code Editing Rules
 - **Read before Edit** — Always `Read` a file before attempting to `Edit` it. Never edit a file based on assumptions about its contents.
 
+## Bulk Edit Verification Protocol
+After every agent-based bulk edit (≥3 files modified), run these checks before reporting success:
+1. `git diff --stat` — confirm expected files appear in diff
+2. `grep` for OLD value — must return 0 matches
+3. `grep` for NEW value — must return expected match count
+4. For JSON files: `python3 -c "import json; json.load(open('file'))"` per file — parse check
+5. For array fields: spot-check array length matches expected count
+
+If any check fails, the edit did NOT succeed. Do not report success without passing all checks.
+
 ## Tech Stack
 - This project uses **Next.js 16 with Turbopack**. Do not install packages or use features incompatible with Turbopack (e.g., `@next/bundle-analyzer`). Always verify Turbopack compatibility before suggesting tooling.
 
