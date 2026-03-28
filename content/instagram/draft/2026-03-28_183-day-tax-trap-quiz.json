@@ -1,0 +1,69 @@
+{
+  "sourceBlog": {
+    "slug": "183-day-tax-trap-digital-nomads",
+    "title": "183-Day Tax Trap: Korea, Japan & Taiwan",
+    "category": "tips",
+    "country": "global",
+    "tags": ["183 day tax rule digital nomad", "korea tax residency", "japan tax digital nomad", "taiwan tax foreign professionals"]
+  },
+  "carouselType": "QUIZ",
+  "introSlide": {
+    "heading": "How well do you know Asia's tax rules?",
+    "description": "4 questions. Most digital nomads get at least 1 wrong."
+  },
+  "slides": [
+    {
+      "heading": "Q1: Stay 184 days in Korea and you owe tax on worldwide income",
+      "description": "True or False?"
+    },
+    {
+      "heading": "A1: TRUE",
+      "description": "183+ days = automatic tax resident. 6-45% on ALL income, including foreign clients. No opt-in."
+    },
+    {
+      "heading": "Q2: Japan's DN visa taxes you after 183 days",
+      "description": "True or False?"
+    },
+    {
+      "heading": "A2: FALSE",
+      "description": "Non-resident status is baked into the visa design. 6 months, 0% tax on foreign income."
+    },
+    {
+      "heading": "Q3: Taiwan's tax recalculation at day 184 is retroactive",
+      "description": "True or False?"
+    },
+    {
+      "heading": "A3: TRUE",
+      "description": "Stay 183 days at flat 18%. Stay 1 extra day: your ENTIRE year moves to 5-40% graduated rates."
+    },
+    {
+      "heading": "Q4: Taiwan Gold Card holders pay 0% tax",
+      "description": "True or False?"
+    },
+    {
+      "heading": "A4: FALSE",
+      "description": "50% exemption on salary ABOVE NT$3M only, first 5 years. You still pay on the rest."
+    }
+  ],
+  "endingSlide": {
+    "heading": "How many did you get right?",
+    "description": "4/4: you track your days. 2-3: reread before your next trip. 0-1: hire a tax pro this month. Not tax advice. Consult a qualified tax professional. Follow @localnomad.club"
+  },
+  "caption": "Most digital nomads don't track their days. That mistake can cost $25,000.\n\nKorea: cross 183 days and you're automatically a tax resident. 6-45% on worldwide income, including what you earn from foreign clients. No opt-in, no warning. The clock just runs.\n\nJapan: the DN visa keeps you non-resident by design. 6 months, 0% tax on foreign income. Completely different outcome for the same duration.\n\nTaiwan: the trap is retroactive. Plan a 180-day stay at the flat 18% rate. Stay 4 extra days. Your entire year's income moves to graduated 5-40% rates from day 1.\n\nGold Card doesn't mean 0% tax either. It's a 50% exemption on salary above NT$3M only.\n\nHow many did you get right? Drop your score below.",
+  "hashtags": [
+    "#digitalnomadtax",
+    "#183dayrule",
+    "#remoteworkasia",
+    "#taxplanning",
+    "#localnomad"
+  ],
+  "legalFlags": ["tax-general-info", "taiwan-dual-language"],
+  "images": {
+    "backend": "contentdrips",
+    "templateId": "",
+    "paths": [],
+    "imageStatus": "pending"
+  },
+  "suggestedPostTime": "2026-04-03T19:00:00+09:00",
+  "totalSlides": 10
+}
