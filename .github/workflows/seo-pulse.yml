@@ -71,28 +71,28 @@ jobs:
             .sort((a, b) => a.pos - b.pos).slice(0, 3);
           const trunc = (s, n) => s.length > n ? s.slice(0, n) + '...' : s;
 
-          let msg = `📊 *SEO Weekly Pulse*\n`;
+          let msg = `📊 <b>SEO Weekly Pulse</b>\n`;
           msg += `${meta.startDate} → ${meta.endDate.slice(5)} (${meta.days}d)\n\n`;
           msg += `👁 ${totalImpr} impressions · 👆 ${totalClicks} clicks · CTR ${avgCtr}%\n`;
           msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
           if (striking.length > 0) {
-            msg += `\n⚡ *Quick Wins (pos 4-10)*\n`;
+            msg += `\n⚡ <b>Quick Wins (rank 4-10)</b>\n`;
             striking.forEach((q, i) => {
               msg += `${i+1}. ${trunc(q.query, 40)}\n   ${q.impressions} impr · pos ${q.pos.toFixed(1)}\n`;
             });
           }
-          msg += `\n📋 *Top 5 Queries*\n`;
+          msg += `\n📋 <b>Top Queries</b>\n`;
           top5.forEach((q, i) => {
             const label = q.pos <= 3 ? ' ← top 3!' : '';
             msg += `${i+1}. ${trunc(q.query, 40)}  ${q.impressions} impr${label}\n`;
           });
           if (bestPos.length > 0) {
-            msg += `\n🏆 *Best Positions*\n`;
+            msg += `\n🏆 <b>Best Positions</b>\n`;
             bestPos.forEach(q => {
               msg += `pos ${q.pos.toFixed(1)} · ${trunc(q.query, 40)} (${q.impressions} impr)\n`;
             });
           }
-          msg += `\n_${meta.rowCount} rows · ${new Date().toISOString().slice(0,10)}_`;
+          msg += `\n<i>${meta.rowCount} rows · ${new Date().toISOString().slice(0,10)}</i>`;
           writeFileSync('/tmp/telegram-msg.txt', msg);
           SCRIPT
           node /tmp/format-seo.mjs
@@ -106,6 +106,7 @@ jobs:
           MSG=$(cat /tmp/telegram-msg.txt)
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "parse_mode=HTML" \
             --data-urlencode "text=${MSG}" > /dev/null
 
       - name: Send error notification
