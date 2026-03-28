@@ -23,7 +23,8 @@ if [ -f "$COMPENSATED_FLAG" ]; then
   exit 0
 fi
 
-# 놓친 작업 확인
+# 놓친 작업 확인 — 로컬 cron만 체크
+# (weekly-blog-update, weekly-gen-report = Claude scheduled, seo-pulse = GH Action)
 MISSED=()
 
 # 매일 작업: reddit-karma-daily
@@ -32,25 +33,9 @@ if [ ! -f "$LOG_DIR/reddit-karma-$TODAY.log" ]; then
   MISSED+=("reddit-karma-daily")
 fi
 
-if [ ! -f "$LOG_DIR/weekly-blog-update-$LAST_SUNDAY.log" ]; then
-  MISSED+=("weekly-blog-update")
-fi
-
-if [ ! -f "$LOG_DIR/weekly-gen-report-$LAST_SUNDAY.log" ]; then
-  MISSED+=("weekly-gen-report")
-fi
-
+# 주간 작업: weekly-reflect (로컬 cron, 일요일)
 if [ ! -f "$LOG_DIR/weekly-reflect-$LAST_SUNDAY.log" ]; then
   MISSED+=("weekly-reflect")
-fi
-
-# 주간 월요일 작업 (seo-pulse) 체크
-if [ "$(date +%u)" -gt 1 ]; then
-  LAST_MONDAY=$(date -v-monday +%Y-%m-%d)
-  SEO_SCRIPT="$HOME/localnomad/b2c-website/scripts/seo/seo-pulse.sh"
-  if [ ! -f "$LOG_DIR/seo-pulse-$LAST_MONDAY.log" ] && [ -f "$SEO_SCRIPT" ]; then
-    MISSED+=("seo-pulse")
-  fi
 fi
 
 # 놓친 게 없으면 종료
