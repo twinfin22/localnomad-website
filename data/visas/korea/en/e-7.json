@@ -55,7 +55,7 @@
     {
       "id": "salary-requirement",
       "label": "Meet minimum salary threshold for your E-7 sub-category",
-      "description": "As of February 2026: E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. These are pretax annual salary thresholds.",
+      "description": "As of February 2026: E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. These are pretax annual salary thresholds. Thresholds are updated annually by MOJ — verify current figures at visa.go.kr before applying.",
       "required": true
     },
     {
@@ -80,7 +80,7 @@
     "amount": "31,120,000",
     "currency": "KRW",
     "period": "annual",
-    "notes": "2026 minimum salary thresholds (effective Feb 1, 2026): E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. All amounts are pretax annual salary. The same wage standard applies to all companies regardless of size since April 2025."
+    "notes": "2026 minimum salary thresholds (effective Feb 1, 2026): E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. All amounts are pretax annual salary. The same wage standard applies to all companies regardless of size since April 2025. These thresholds are updated annually by MOJ — always verify the current year's figures at visa.go.kr."
   },
   "taxImplications": {
     "threshold": "183 days",
@@ -293,7 +293,7 @@
     },
     {
       "question": "What are the 2026 salary requirements for each E-7 sub-category?",
-      "answer": "As of February 1, 2026, the minimum pretax annual salary requirements are: E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. Since April 2025, the same wage requirement applies to all companies regardless of size. If the salary in your employment contract falls below these thresholds, the visa application may be denied."
+      "answer": "As of February 1, 2026, the minimum pretax annual salary requirements are: E-7-1 (Professional) ≥ ₩31,120,000/year, E-7-2 (Semi-professional) ≥ ₩25,890,000/year, E-7-3 (Skilled Labor) ≥ ₩25,890,000/year, E-7-4 (Point-based) ≥ ₩26,000,000/year. Since April 2025, the same wage requirement applies to all companies regardless of size. If the salary in your employment contract falls below these thresholds, the visa application may be denied. Note: these thresholds are updated annually by MOJ — verify the current year's figures at visa.go.kr before applying."
     },
     {
       "question": "Why is occupational code matching important?",

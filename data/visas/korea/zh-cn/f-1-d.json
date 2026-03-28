@@ -11,7 +11,10 @@
       "title": "办理外国人登陆证",
       "deadline": "入境后90天内",
       "description": "前往最近的出入境管理局办理ARC。开设银行账户、办理手机号等各类服务均需此证。",
-      "tips": ["在HiKorea (hikorea.go.kr) 预约", "携带护照、照片、住址证明及签证相关材料"]
+      "tips": [
+        "在HiKorea (hikorea.go.kr) 预约",
+        "携带护照、照片、住址证明及签证相关材料"
+      ]
     }
   ],
   "description": "韩国F-1-D远程工作签证完整指南：₩88M收入要求、保险、所需材料、申请流程及常见问题。2026年最新版。",
@@ -53,7 +56,9 @@
       "label": "覆盖韩国的健康保险",
       "description": "需持有最低保额₩100,000,000的私人健康保险。F-1-D持有者通常不具备以职场参保人身份加入韩国国民健康保险（국민건강보험）的资格。请在整个滞留期间维持私人保险。",
       "required": true,
-      "warnings": ["整个滞留期间必须维持有效的健康保险"]
+      "warnings": [
+        "整个滞留期间必须维持有效的健康保险"
+      ]
     },
     {
       "id": "no-korean-work",
@@ -61,7 +66,9 @@
       "label": "不为韩国公司工作",
       "description": "持此签证不得为韩国客户/公司工作",
       "required": true,
-      "warnings": ["为韩国公司工作属于签证违规"]
+      "warnings": [
+        "为韩国公司工作属于签证违规"
+      ]
     }
   ],
   "duration": {
@@ -323,7 +330,7 @@
     {
       "id": "safetywing-accepted",
       "section": "documents",
-      "tip": "SafetyWing Nomad Insurance在我办理F-1-D延期时被首尔出入境管理局接受了。每月费用约$45。",
+      "tip": "SafetyWing Nomad Insurance在我办理F-1-D延期时被首尔出入境管理局接受了。每月约₩60,000。",
       "source": "reddit",
       "verified": true,
       "upvotes": 32,

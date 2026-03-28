@@ -10,7 +10,7 @@
   "targetAudience": [
     "Senior professionals in tech, finance, education, biotech, and other qualifying fields",
     "Entrepreneurs and startup founders seeking open work permission",
-    "High-income professionals (monthly salary ≥ NT$160,000 / ~USD $5,000)",
+    "High-income professionals (monthly salary ≥ NT$160,000 / ~USD $5,000 approximate conversion, subject to exchange rate fluctuation)",
     "International talent seeking long-term Taiwan residency with tax benefits"
   ],
   "eligibility": [
@@ -76,7 +76,7 @@
     "amount": "160,000",
     "currency": "TWD",
     "period": "monthly",
-    "notes": "NT$160,000/month (~USD $5,000) is the salary-track threshold across most fields. Other qualification tracks (experience, PhD, awards) may not require income proof. Applicants may choose any 1 year within the past 3 years for tax return evidence."
+    "notes": "NT$160,000/month (~USD $5,000 approximate conversion, subject to exchange rate fluctuation) is the salary-track threshold across most fields. Other qualification tracks (experience, PhD, awards) may not require income proof. Applicants may choose any 1 year within the past 3 years for tax return evidence."
   },
   "documents": [
     {
@@ -370,7 +370,7 @@
     },
     {
       "question": "How does the salary track work (NT$160,000/month)?",
-      "answer": "The salary track is available across most professional fields. Applicants must demonstrate a monthly salary of at least NT$160,000 (~USD $5,000) using tax returns or employer salary certificates. You may choose any 1 year within the past 3 years for evidence — pick the year with the highest documented income. Acceptable documents include W-2 (US), P60 (UK), T4 (Canada), PAYG (Australia), or PIT-11 (Poland)."
+      "answer": "The salary track is available across most professional fields. Applicants must demonstrate a monthly salary of at least NT$160,000 (~USD $5,000 approximate conversion, subject to exchange rate fluctuation) using tax returns or employer salary certificates. You may choose any 1 year within the past 3 years for evidence — pick the year with the highest documented income. Acceptable documents include W-2 (US), P60 (UK), T4 (Canada), PAYG (Australia), or PIT-11 (Poland)."
     },
     {
       "question": "Can I switch professional fields after receiving the Gold Card?",

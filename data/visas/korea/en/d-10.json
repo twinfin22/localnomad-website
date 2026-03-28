@@ -54,7 +54,7 @@
     {
       "id": "financial-self-sufficiency",
       "label": "Proof of financial self-sufficiency (bank balance)",
-      "description": "According to published requirements, applicants must demonstrate sufficient funds to support themselves during the job search period. For D-10-1 initial applications from D-2 (student) visa holders, this requirement may be waived. For others and for extensions, a bank balance certificate is required. Published guidelines indicate the benchmark is ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household). For a 6-month stay, this translates to approximately ₩6,888,996 in available funds.",
+      "description": "According to published requirements, applicants must demonstrate sufficient funds to support themselves during the job search period. For D-10-1 initial applications from D-2 (student) visa holders, this requirement may be waived. For others and for extensions, a bank balance certificate is required. Published guidelines indicate the benchmark is ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household — subject to annual government update). For a 6-month stay, this translates to approximately ₩6,888,996 in available funds. Verify the current threshold with immigration (1345) or HiKorea before applying.",
       "required": true,
       "warnings": [
         "The ₩30,000,000 figure cited in some community forums may refer to older requirements or specific embassy interpretations — verify current thresholds with immigration (1345) or HiKorea",
@@ -163,7 +163,7 @@
       "id": "bank-statement",
       "name": "Bank Statement / Financial Proof",
       "nameLocal": "잔액증명서",
-      "description": "Official bank balance certificate showing sufficient funds for the intended stay. Published guidelines indicate ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household). For 6 months: approximately ₩6,888,996.",
+      "description": "Official bank balance certificate showing sufficient funds for the intended stay. Published guidelines indicate ₩1,148,166/month (2025 figure, based on Annual Housing Benefit Standard for 1-person household — subject to annual government update). For 6 months: approximately ₩6,888,996. Verify current threshold with immigration (1345) before applying.",
       "tips": [
         "Must be recent (typically within 3 months of application)",
         "Bank certificate issued in Korea is strongly preferred over foreign bank statements",
