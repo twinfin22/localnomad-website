@@ -1,9 +1,9 @@
-name: Send Reddit Draft to Telegram
+name: Send Draft to Telegram
 
 on:
   push:
     paths:
-      - 'drafts/reddit/*.md'
+      - 'drafts/**/*.md'
 
 jobs:
   notify:
@@ -16,7 +16,7 @@ jobs:
       - name: Find new draft files
         id: drafts
         run: |
-          DRAFTS=$(git diff --name-only HEAD~1 HEAD -- 'drafts/reddit/*.md' | head -1)
+          DRAFTS=$(git diff --name-only HEAD~1 HEAD -- 'drafts/**/*.md' | head -1)
           echo "file=$DRAFTS" >> $GITHUB_OUTPUT
 
       - name: Send to Telegram

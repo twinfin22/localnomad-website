@@ -70,4 +70,22 @@ echo "$PROMPT" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > 
 EXIT_CODE=$?
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE → $OUTPUT_FILE" >> "$LOG_FILE"
+
+# Send to Telegram
+if [ $EXIT_CODE -eq 0 ] && [ -f "$OUTPUT_FILE" ]; then
+  TG_CONFIG="$HOME/.claude/.omc-config.json"
+  if [ -f "$TG_CONFIG" ]; then
+    TG_TOKEN=$(jq -r '.notifications.telegram.botToken // empty' "$TG_CONFIG")
+    TG_CHAT=$(jq -r '.notifications.telegram.chatId // empty' "$TG_CONFIG")
+    if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+      CONTENT=$(head -c 4000 "$OUTPUT_FILE")
+      curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+        -d "chat_id=${TG_CHAT}" \
+        --data-urlencode "text=📊 *SEO Weekly Pulse*
+${CONTENT}" > /dev/null 2>&1
+      echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Sent to Telegram" >> "$LOG_FILE"
+    fi
+  fi
+fi
+
 exit $EXIT_CODE

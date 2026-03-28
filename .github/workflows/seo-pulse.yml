@@ -1,0 +1,130 @@
+name: SEO Weekly Pulse
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Monday 00:00 UTC = 09:00 KST
+  workflow_dispatch:       # Manual trigger
+
+jobs:
+  seo-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install GSC dependencies
+        run: npm install @googleapis/searchconsole google-auth-library
+
+      - name: Write GSC service account key
+        env:
+          GSC_SA_KEY_JSON: ${{ secrets.GSC_SA_KEY_JSON }}
+        run: |
+          echo "$GSC_SA_KEY_JSON" > /tmp/gsc-sa-key.json
+
+      - name: Pull GSC data
+        id: gsc
+        env:
+          GSC_SA_KEY_PATH: /tmp/gsc-sa-key.json
+          GSC_SITE_URL: https://localnomad.club/
+        run: |
+          GSC_DATA=$(node scripts/seo/pull-gsc.mjs 2>&1) || {
+            echo "pull-gsc failed"
+            echo "error=true" >> $GITHUB_OUTPUT
+            exit 0
+          }
+          echo "$GSC_DATA" > /tmp/gsc-data.json
+          ROW_COUNT=$(echo "$GSC_DATA" | jq '.meta.rowCount // 0')
+          echo "rows=$ROW_COUNT" >> $GITHUB_OUTPUT
+
+      - name: Format summary for Telegram
+        if: steps.gsc.outputs.error != 'true' && steps.gsc.outputs.rows != '0'
+        run: |
+          node -e "
+          const data = require('/tmp/gsc-data.json');
+          const meta = data.meta;
+
+          // Aggregate by query (sum across devices/pages)
+          const byQuery = {};
+          for (const r of data.rows) {
+            if (!byQuery[r.query]) byQuery[r.query] = { clicks: 0, impressions: 0, positions: [], count: 0 };
+            byQuery[r.query].clicks += r.clicks;
+            byQuery[r.query].impressions += r.impressions;
+            byQuery[r.query].positions.push(r.position);
+            byQuery[r.query].count++;
+          }
+
+          // Top 15 by clicks
+          const sorted = Object.entries(byQuery)
+            .map(([q, d]) => ({
+              query: q,
+              clicks: d.clicks,
+              impressions: d.impressions,
+              avgPos: (d.positions.reduce((a,b) => a+b, 0) / d.positions.length).toFixed(1),
+              ctr: d.impressions > 0 ? (d.clicks / d.impressions * 100).toFixed(1) : '0.0'
+            }))
+            .sort((a, b) => b.clicks - a.clicks)
+            .slice(0, 15);
+
+          const totalClicks = Object.values(byQuery).reduce((s, d) => s + d.clicks, 0);
+          const totalImpr = Object.values(byQuery).reduce((s, d) => s + d.impressions, 0);
+          const avgCtr = totalImpr > 0 ? (totalClicks / totalImpr * 100).toFixed(1) : '0.0';
+
+          // Striking distance (pos 4-10)
+          const striking = Object.entries(byQuery)
+            .filter(([, d]) => {
+              const avg = d.positions.reduce((a,b) => a+b, 0) / d.positions.length;
+              return avg >= 4 && avg <= 10 && d.impressions >= 5;
+            })
+            .map(([q, d]) => ({
+              query: q,
+              impressions: d.impressions,
+              avgPos: (d.positions.reduce((a,b) => a+b, 0) / d.positions.length).toFixed(1)
+            }))
+            .sort((a, b) => b.impressions - a.impressions)
+            .slice(0, 5);
+
+          let msg = '📊 *SEO Weekly Pulse*\n';
+          msg += '${meta.startDate} ~ ${meta.endDate} (${meta.days}d)\n\n';
+          msg += '총 ${totalClicks} clicks | ${totalImpr} impressions | CTR ${avgCtr}%\n\n';
+          msg += '*Top Queries*\n';
+          for (const q of sorted) {
+            msg += '• ${q.query} — ${q.clicks}c / ${q.impressions}i / pos ${q.avgPos}\n';
+          }
+          if (striking.length > 0) {
+            msg += '\n*Striking Distance (pos 4-10)*\n';
+            for (const q of striking) {
+              msg += '⚡ ${q.query} — ${q.impressions}i / pos ${q.avgPos}\n';
+            }
+          }
+          msg += '\n_${meta.rowCount} rows | ${new Date().toISOString().slice(0,10)}_';
+
+          require('fs').writeFileSync('/tmp/telegram-msg.txt', msg);
+          " 2>&1
+
+      - name: Send to Telegram
+        if: steps.gsc.outputs.error != 'true' && steps.gsc.outputs.rows != '0'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          MSG=$(cat /tmp/telegram-msg.txt)
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" > /dev/null
+
+      - name: Send error notification
+        if: steps.gsc.outputs.error == 'true' || steps.gsc.outputs.rows == '0'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=⚠️ SEO Pulse failed — GSC returned 0 rows or pull-gsc errored. Check GitHub Actions log." > /dev/null
+
+      - name: Cleanup
+        if: always()
+        run: rm -f /tmp/gsc-sa-key.json /tmp/gsc-data.json

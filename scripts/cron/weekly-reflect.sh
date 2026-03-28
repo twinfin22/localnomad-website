@@ -27,6 +27,21 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE" >> 
 
 if [ $EXIT_CODE -eq 0 ]; then
   osascript -e 'display notification "주간 워크플로 리뷰 초안이 준비되었습니다." with title "Weekly Reflect" sound name "Glass"' 2>/dev/null || true
+
+  # Send to Telegram
+  OUTPUT_FILE="$HOME/localnomad/b2c-website/docs/human/[WEEKLY] 워크플로-리뷰-초안.md"
+  TG_CONFIG="$HOME/.claude/.omc-config.json"
+  if [ -f "$TG_CONFIG" ] && [ -f "$OUTPUT_FILE" ]; then
+    TG_TOKEN=$(jq -r '.notifications.telegram.botToken // empty' "$TG_CONFIG")
+    TG_CHAT=$(jq -r '.notifications.telegram.chatId // empty' "$TG_CONFIG")
+    if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+      CONTENT=$(head -c 4000 "$OUTPUT_FILE")
+      curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+        -d "chat_id=${TG_CHAT}" \
+        --data-urlencode "text=🔍 *Weekly Reflect*
+${CONTENT}" > /dev/null 2>&1
+    fi
+  fi
 fi
 
 exit $EXIT_CODE

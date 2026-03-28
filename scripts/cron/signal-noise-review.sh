@@ -28,6 +28,19 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE" >> 
 # Approve-tier: macOS 알림으로 리뷰 필요 알림
 if [ $EXIT_CODE -eq 0 ]; then
   osascript -e 'display notification "Signal/Noise 리뷰가 생성되었습니다. 확인 후 적용해주세요." with title "Memory Review" sound name "Glass"' 2>/dev/null || true
+
+  # Send to Telegram
+  TG_CONFIG="$HOME/.claude/.omc-config.json"
+  if [ -f "$TG_CONFIG" ]; then
+    TG_TOKEN=$(jq -r '.notifications.telegram.botToken // empty' "$TG_CONFIG")
+    TG_CHAT=$(jq -r '.notifications.telegram.chatId // empty' "$TG_CONFIG")
+    if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+      curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+        -d "chat_id=${TG_CHAT}" \
+        --data-urlencode "text=🧹 *Signal/Noise Review 완료*
+Approve-tier: docs/human/ 에서 확인 후 적용해주세요." > /dev/null 2>&1
+    fi
+  fi
 fi
 
 exit $EXIT_CODE
