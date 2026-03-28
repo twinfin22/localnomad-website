@@ -8,6 +8,7 @@ set -euo pipefail
 export PATH="$HOME/.local/bin:$PATH"
 
 PROJECT_DIR="$HOME/localnomad/b2c-website"
+SCRIPT_DIR="$PROJECT_DIR/scripts/cron"
 LOG_DIR="$PROJECT_DIR/logs/cron"
 STAGING_DIR="/tmp/reddit-karma-staging"
 mkdir -p "$LOG_DIR" "$STAGING_DIR"
@@ -23,15 +24,15 @@ MOD=$((DOY % 3))
 case $MOD in
   0) COUNTRY="Korea"
      SUBS=("korea" "Living_in_Korea" "koreaexpat")
-     KEYWORDS="visa|tax|ARC|immigration|residency|F-2|F-6|E-7|D-8|neighborhood|housing|rent"
+     KEYWORDS='visa|tax|ARC|immigration|residency|F-2|F-6|E-7|D-8|neighborhood|housing|rent'
      ;;
   1) COUNTRY="Japan"
      SUBS=("japanlife" "movingtojapan" "JapanFinance")
-     KEYWORDS="visa|tax|residence card|immigration|digital nomad|business manager|HSW|SSW|neighborhood|housing|rent"
+     KEYWORDS='visa|tax|residence card|immigration|digital nomad|business manager|HSW|SSW|neighborhood|housing|rent'
      ;;
   2) COUNTRY="Taiwan"
      SUBS=("taiwan" "TaiwanExpats" "digitalnomad")
-     KEYWORDS="visa|tax|ARC|gold card|DNV|immigration|residency|neighborhood|housing|rent|Taiwan"
+     KEYWORDS='visa|tax|ARC|gold card|DNV|immigration|residency|neighborhood|housing|rent|Taiwan'
      ;;
 esac
 
@@ -42,63 +43,30 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Country: $COUNTRY | Subs: ${SUBS[*]}" >
 THREADS_FILE="$STAGING_DIR/threads-$(date +%Y-%m-%d).json"
 echo "[]" > "$THREADS_FILE"
 
+FILTER_PY="$SCRIPT_DIR/reddit-filter.py"
+
 for SUB in "${SUBS[@]}"; do
   echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Fetching r/$SUB..." >> "$LOG_FILE"
 
-  # Fetch new posts (last 24h most likely)
-  RAW=$(curl -s -H "User-Agent: LocalNomad/1.0 (cron job)" \
-    "https://old.reddit.com/r/${SUB}/new.json?limit=25&sort=new" 2>> "$LOG_FILE") || continue
+  # Pipe curl directly to python — avoids bash mangling JSON escapes
+  SUB_FILE="$STAGING_DIR/sub-${SUB}.json"
+  curl -s -H "User-Agent: LocalNomad/1.0 (cron job)" \
+    "https://old.reddit.com/r/${SUB}/new.json?limit=25&sort=new" \
+    -o "$SUB_FILE" 2>> "$LOG_FILE" || continue
 
-  # Check for valid response
-  if ! echo "$RAW" | python3 -c "import sys,json; json.load(sys.stdin)" 2>/dev/null; then
-    echo "[WARN] r/$SUB returned invalid JSON" >> "$LOG_FILE"
-    continue
-  fi
-
-  # Extract relevant threads: filter by keywords, extract title/url/selftext/score/num_comments
-  FILTERED=$(echo "$RAW" | python3 -c "
-import sys, json, re
-data = json.load(sys.stdin)
-children = data.get('data', {}).get('children', [])
-keywords = re.compile(r'$KEYWORDS', re.IGNORECASE)
-results = []
-for c in children:
-    d = c.get('data', {})
-    title = d.get('title', '')
-    selftext = d.get('selftext', '')
-    if keywords.search(title) or keywords.search(selftext):
-        results.append({
-            'subreddit': d.get('subreddit', ''),
-            'title': title,
-            'url': 'https://reddit.com' + d.get('permalink', ''),
-            'selftext': selftext[:1500],
-            'score': d.get('score', 0),
-            'num_comments': d.get('num_comments', 0),
-            'created_utc': d.get('created_utc', 0),
-        })
-json.dump(results, sys.stdout)
-" 2>> "$LOG_FILE") || continue
-
-  # Merge into threads file
-  python3 -c "
-import json, sys
-existing = json.load(open('$THREADS_FILE'))
-new = json.loads(sys.stdin.read())
-existing.extend(new)
-json.dump(existing, open('$THREADS_FILE', 'w'))
-" <<< "$FILTERED" 2>> "$LOG_FILE"
+  # Filter and merge
+  python3 "$FILTER_PY" filter "$KEYWORDS" < "$SUB_FILE" \
+    | python3 "$FILTER_PY" merge "$THREADS_FILE" 2>> "$LOG_FILE" || continue
 done
 
 # Count threads found
-THREAD_COUNT=$(python3 -c "import json; print(len(json.load(open('$THREADS_FILE'))))" 2>/dev/null || echo "0")
+THREAD_COUNT=$(python3 "$FILTER_PY" count "$THREADS_FILE" 2>/dev/null || echo "0")
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Stage 1 complete: $THREAD_COUNT relevant threads found" >> "$LOG_FILE"
 
 if [ "$THREAD_COUNT" -eq 0 ]; then
   echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] No relevant threads. Sending skip notification." >> "$LOG_FILE"
-  SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
   echo "No relevant Reddit threads found today for $COUNTRY. Subs checked: ${SUBS[*]}" > "$STAGING_DIR/skip-msg.txt"
-  "$SCRIPT_DIR/send-telegram.sh" "📭 Reddit Karma — $COUNTRY" "$STAGING_DIR/skip-msg.txt"
-  # Still push heartbeat
+  "$SCRIPT_DIR/send-telegram.sh" "Reddit Karma — $COUNTRY" "$STAGING_DIR/skip-msg.txt" PLAIN
   SKIP_CLAUDE=true
 else
   SKIP_CLAUDE=false
@@ -107,64 +75,41 @@ fi
 # ─── Stage 2: Claude analyzes threads + drafts reply ───
 
 if [ "$SKIP_CLAUDE" = false ]; then
-  # Fetch top comments for the best thread (highest score + comments)
-  BEST_URL=$(python3 -c "
-import json
-threads = json.load(open('$THREADS_FILE'))
-threads.sort(key=lambda t: t['score'] + t['num_comments'] * 2, reverse=True)
-print(threads[0]['url'] if threads else '')
-" 2>/dev/null)
+  # Get best thread URL
+  BEST_URL=$(python3 "$FILTER_PY" best "$THREADS_FILE" 2>/dev/null)
 
   if [ -n "$BEST_URL" ]; then
-    COMMENTS_JSON=$(curl -s -H "User-Agent: LocalNomad/1.0 (cron job)" \
-      "${BEST_URL}.json?limit=10&sort=best" 2>> "$LOG_FILE") || COMMENTS_JSON="[]"
+    curl -s -H "User-Agent: LocalNomad/1.0 (cron job)" \
+      "${BEST_URL}.json?limit=10&sort=best" \
+      -o "$STAGING_DIR/raw-comments.json" 2>> "$LOG_FILE" || true
 
-    # Extract top comments
-    python3 -c "
-import json, sys
-try:
-    data = json.load(sys.stdin)
-    comments = []
-    if isinstance(data, list) and len(data) > 1:
-        children = data[1].get('data', {}).get('children', [])
-        for c in children[:10]:
-            d = c.get('data', {})
-            if d.get('body'):
-                comments.append({'author': d.get('author',''), 'body': d['body'][:500], 'score': d.get('score',0)})
-    json.dump(comments, sys.stdout)
-except:
-    json.dump([], sys.stdout)
-" <<< "$COMMENTS_JSON" > "$STAGING_DIR/comments.json" 2>> "$LOG_FILE"
+    python3 "$FILTER_PY" comments < "$STAGING_DIR/raw-comments.json" \
+      > "$STAGING_DIR/comments.json" 2>> "$LOG_FILE" || echo "[]" > "$STAGING_DIR/comments.json"
   fi
 
-  # Build Claude prompt with pre-fetched data
   THREADS_CONTENT=$(cat "$THREADS_FILE")
   COMMENTS_CONTENT=$(cat "$STAGING_DIR/comments.json" 2>/dev/null || echo "[]")
 
-  PROMPT=$(cat <<HEREDOC
-You have pre-fetched Reddit data for $COUNTRY. Analyze and draft a reply.
-
-## Threads Found (JSON)
-$THREADS_CONTENT
-
-## Top Comments on Best Thread (JSON)
-$COMMENTS_CONTENT
+  # Write prompt to temp file to avoid quoting issues
+  PROMPT_FILE="$STAGING_DIR/prompt-$(date +%Y-%m-%d).md"
+  cat > "$PROMPT_FILE" <<'PROMPT_HEADER'
+You have pre-fetched Reddit data. Analyze and draft a reply.
 
 ## Instructions
 1. Pick the single best thread to reply to (highest value opportunity).
-2. Read the existing comments — do NOT repeat what's already been said.
+2. Read the existing comments -- do NOT repeat what has already been said.
 3. Draft an informative reply using blog/visa data from this repo for specific facts and numbers.
 4. Reply must be: purely informative, zero brand mentions, zero CTAs, zero URLs to our site.
 
 After drafting, send the result directly to Telegram:
-- Bot token: \$(jq -r '.notifications.telegram.botToken' ~/.claude/.omc-config.json)
-- Chat ID: \$(jq -r '.notifications.telegram.chatId' ~/.claude/.omc-config.json)
+- Bot token: $(jq -r '.notifications.telegram.botToken' ~/.claude/.omc-config.json)
+- Chat ID: $(jq -r '.notifications.telegram.chatId' ~/.claude/.omc-config.json)
 
 Format the Telegram message as:
-📝 Reddit Draft Ready
+Reddit Draft Ready
 
-📍 r/{subreddit} — {title}
-🔗 {url}
+r/{subreddit} -- {title}
+{url}
 
 Why: {1-line reason this thread is worth replying to}
 
@@ -173,11 +118,24 @@ Why: {1-line reason this thread is worth replying to}
 ---
 Self-eval: Specificity X/5 | Voice X/5 | Relevance X/5 | Differentiation X/5 | Purity X/5
 
-Use curl to send: curl -s "https://api.telegram.org/bot\${TOKEN}/sendMessage" -d "chat_id=\${CHAT_ID}" --data-urlencode "text=\${MSG}"
-HEREDOC
-  )
+Use curl to send: curl -s "https://api.telegram.org/bot${TOKEN}/sendMessage" -d "chat_id=${CHAT_ID}" --data-urlencode "text=${MSG}"
 
-  echo "$PROMPT" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - >> "$LOG_FILE" 2>&1
+If no good thread found, send: "No good Reddit opportunities today."
+PROMPT_HEADER
+
+  # Append data sections
+  {
+    echo ""
+    echo "## Country: $COUNTRY"
+    echo ""
+    echo "## Threads Found (JSON)"
+    echo "$THREADS_CONTENT"
+    echo ""
+    echo "## Top Comments on Best Thread (JSON)"
+    echo "$COMMENTS_CONTENT"
+  } >> "$PROMPT_FILE"
+
+  cat "$PROMPT_FILE" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - >> "$LOG_FILE" 2>&1
   EXIT_CODE=$?
   echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Stage 2 complete: exit code $EXIT_CODE" >> "$LOG_FILE"
 fi
