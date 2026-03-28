@@ -18,19 +18,20 @@ cd "$PROJECT_DIR"
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Starting reddit-karma-daily..." >> "$LOG_FILE"
 
-# Determine today's country (day-of-year mod 3)
+# Determine today's country (day-of-year mod 5)
+# Korea gets 3/5 days (60%), Japan 1/5, Taiwan 1/5
 DOY=$(date +%-j)
-MOD=$((DOY % 3))
+MOD=$((DOY % 5))
 case $MOD in
-  0) COUNTRY="Korea"
-     SUBS=("korea" "Living_in_Korea" "koreaexpat")
-     KEYWORDS='visa|tax|ARC|immigration|residency|F-2|F-6|E-7|D-8|neighborhood|housing|rent'
+  0|1|2) COUNTRY="Korea"
+     SUBS=("Living_in_Korea" "korea" "koreaexpat" "teachinginkorea" "KoreanExpats")
+     KEYWORDS='visa|tax|ARC|immigration|residency|F-2|F-6|E-7|D-8|neighborhood|housing|rent|foreigner|expat'
      ;;
-  1) COUNTRY="Japan"
+  3) COUNTRY="Japan"
      SUBS=("japanlife" "movingtojapan" "JapanFinance")
      KEYWORDS='visa|tax|residence card|immigration|digital nomad|business manager|HSW|SSW|neighborhood|housing|rent'
      ;;
-  2) COUNTRY="Taiwan"
+  4) COUNTRY="Taiwan"
      SUBS=("taiwan" "TaiwanExpats" "digitalnomad")
      KEYWORDS='visa|tax|ARC|gold card|DNV|immigration|residency|neighborhood|housing|rent|Taiwan'
      ;;
