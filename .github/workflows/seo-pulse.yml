@@ -42,11 +42,10 @@ jobs:
       - name: Format summary for Telegram
         if: steps.gsc.outputs.error != 'true' && steps.gsc.outputs.rows != '0'
         run: |
-          node -e "
-          const data = require('/tmp/gsc-data.json');
+          cat > /tmp/format-seo.mjs << 'SCRIPT'
+          import { readFileSync, writeFileSync } from 'fs';
+          const data = JSON.parse(readFileSync('/tmp/gsc-data.json', 'utf8'));
           const meta = data.meta;
-
-          // Aggregate by query (sum across devices/pages)
           const byQuery = {};
           for (const r of data.rows) {
             if (!byQuery[r.query]) byQuery[r.query] = { clicks: 0, impressions: 0, positions: [], count: 0 };
@@ -55,54 +54,44 @@ jobs:
             byQuery[r.query].positions.push(r.position);
             byQuery[r.query].count++;
           }
-
-          // Top 15 by clicks
           const sorted = Object.entries(byQuery)
             .map(([q, d]) => ({
-              query: q,
-              clicks: d.clicks,
-              impressions: d.impressions,
+              query: q, clicks: d.clicks, impressions: d.impressions,
               avgPos: (d.positions.reduce((a,b) => a+b, 0) / d.positions.length).toFixed(1),
-              ctr: d.impressions > 0 ? (d.clicks / d.impressions * 100).toFixed(1) : '0.0'
             }))
             .sort((a, b) => b.clicks - a.clicks)
             .slice(0, 15);
-
           const totalClicks = Object.values(byQuery).reduce((s, d) => s + d.clicks, 0);
           const totalImpr = Object.values(byQuery).reduce((s, d) => s + d.impressions, 0);
           const avgCtr = totalImpr > 0 ? (totalClicks / totalImpr * 100).toFixed(1) : '0.0';
-
-          // Striking distance (pos 4-10)
           const striking = Object.entries(byQuery)
             .filter(([, d]) => {
               const avg = d.positions.reduce((a,b) => a+b, 0) / d.positions.length;
               return avg >= 4 && avg <= 10 && d.impressions >= 5;
             })
             .map(([q, d]) => ({
-              query: q,
-              impressions: d.impressions,
+              query: q, impressions: d.impressions,
               avgPos: (d.positions.reduce((a,b) => a+b, 0) / d.positions.length).toFixed(1)
             }))
             .sort((a, b) => b.impressions - a.impressions)
             .slice(0, 5);
-
-          let msg = '📊 *SEO Weekly Pulse*\n';
-          msg += '${meta.startDate} ~ ${meta.endDate} (${meta.days}d)\n\n';
-          msg += '총 ${totalClicks} clicks | ${totalImpr} impressions | CTR ${avgCtr}%\n\n';
-          msg += '*Top Queries*\n';
+          let msg = `📊 *SEO Weekly Pulse*\n`;
+          msg += `${meta.startDate} ~ ${meta.endDate} (${meta.days}d)\n\n`;
+          msg += `총 ${totalClicks} clicks | ${totalImpr} impressions | CTR ${avgCtr}%\n\n`;
+          msg += `*Top Queries*\n`;
           for (const q of sorted) {
-            msg += '• ${q.query} — ${q.clicks}c / ${q.impressions}i / pos ${q.avgPos}\n';
+            msg += `• ${q.query} — ${q.clicks}c / ${q.impressions}i / pos ${q.avgPos}\n`;
           }
           if (striking.length > 0) {
-            msg += '\n*Striking Distance (pos 4-10)*\n';
+            msg += `\n*Striking Distance (pos 4-10)*\n`;
             for (const q of striking) {
-              msg += '⚡ ${q.query} — ${q.impressions}i / pos ${q.avgPos}\n';
+              msg += `⚡ ${q.query} — ${q.impressions}i / pos ${q.avgPos}\n`;
             }
           }
-          msg += '\n_${meta.rowCount} rows | ${new Date().toISOString().slice(0,10)}_';
-
-          require('fs').writeFileSync('/tmp/telegram-msg.txt', msg);
-          " 2>&1
+          msg += `\n_${meta.rowCount} rows | ${new Date().toISOString().slice(0,10)}_`;
+          writeFileSync('/tmp/telegram-msg.txt', msg);
+          SCRIPT
+          node /tmp/format-seo.mjs
 
       - name: Send to Telegram
         if: steps.gsc.outputs.error != 'true' && steps.gsc.outputs.rows != '0'
