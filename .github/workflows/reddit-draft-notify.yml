@@ -2,6 +2,9 @@ name: Send Draft to Telegram
 
 on:
   push:
+    branches:
+      - main
+      - 'drafts/auto'
     paths:
       - 'drafts/**/*.md'
 
