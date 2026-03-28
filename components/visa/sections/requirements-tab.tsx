@@ -96,7 +96,7 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
     return Array.from(grouped.keys());
   }, [grouped]);
 
-  const renderItem = (item: Requirement) => {
+  const renderItem = (item: Requirement, hideBadge = false) => {
     const isNegative = item.sentiment === 'negative';
     const isOptional = !item.required && !isNegative;
 
@@ -120,9 +120,11 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
     return (
       <li key={item.id} className={cn('border-l-[3px] py-2 pl-4', barColor)}>
         <div className="flex items-center gap-2">
-          <span className={cn('rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide', labelColor)}>
-            {labelText}
-          </span>
+          {!hideBadge && (
+            <span className={cn('rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide', labelColor)}>
+              {labelText}
+            </span>
+          )}
           <span className={cn('text-base font-medium', isNegative && 'text-red-600')}>
             {item.label}
           </span>
@@ -223,7 +225,7 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
               <div className="mt-3">
                 <div className="space-y-4">
                   {statusGroups.map((group, gi) => (
-                    <ul key={gi}>{group.map(renderItem)}</ul>
+                    <ul key={gi}>{group.map(item => renderItem(item))}</ul>
                   ))}
                 </div>
 
@@ -233,7 +235,7 @@ export function RequirementsTab({ visa, communityTips = [] }: RequirementsTabPro
                       <ChevronRight className="h-4 w-4 transition-transform [[open]>&]:rotate-90" />
                       {t('additionalRequirements', { count: foldableItems.length })}
                     </summary>
-                    <ul className="mt-3">{foldableItems.map(renderItem)}</ul>
+                    <ul className="mt-3">{foldableItems.map(item => renderItem(item, true))}</ul>
                   </details>
                 )}
 

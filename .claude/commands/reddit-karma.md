@@ -1,6 +1,6 @@
 ---
 name: reddit-karma
-description: Two-phase Reddit karma farming — scout high-potential threads, then draft authentic replies using LocalNomad blog knowledge. Subagent architecture with JSON contracts, progressive context loading, and self-eval gates.
+description: Scout Korea/Japan/Taiwan subreddits for visa, neighborhood, and tax threads — draft informative replies (never promotional) using LocalNomad blog knowledge.
 ---
 
 # /reddit-karma

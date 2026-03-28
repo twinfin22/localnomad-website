@@ -53,7 +53,7 @@ localnomad-blog-plugin/
 subinium-agentic-workflow-config/
 .mcp.json
 memory/
-data/
+data/SoT/
 skills
 
 # runtime artifacts
