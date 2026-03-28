@@ -1,0 +1,43 @@
+name: Reddit Karma Watchdog
+
+on:
+  schedule:
+    - cron: '30 4 * * *'  # 매일 1:30pm KST (4:30 UTC) — reddit-karma 30분 후 체크
+  workflow_dispatch:
+
+jobs:
+  check-heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: drafts/auto
+          fetch-depth: 1
+
+      - name: Check heartbeat
+        id: heartbeat
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          if [ -f drafts/heartbeat-reddit-karma.txt ]; then
+            LAST_BEAT=$(cat drafts/heartbeat-reddit-karma.txt | cut -dT -f1)
+            if [ "$LAST_BEAT" = "$TODAY" ]; then
+              echo "status=ok" >> $GITHUB_OUTPUT
+            else
+              echo "status=missed" >> $GITHUB_OUTPUT
+              echo "last=$LAST_BEAT" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "status=missed" >> $GITHUB_OUTPUT
+            echo "last=never" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Alert if missed
+        if: steps.heartbeat.outputs.status == 'missed'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          LAST="${{ steps.heartbeat.outputs.last }}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=⚠️ reddit-karma didn't run today. Mac might be off. Last run: ${LAST}" > /dev/null

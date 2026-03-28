@@ -26,6 +26,12 @@ fi
 # 놓친 작업 확인
 MISSED=()
 
+# 매일 작업: reddit-karma-daily
+TODAY=$(date +%Y-%m-%d)
+if [ ! -f "$LOG_DIR/reddit-karma-$TODAY.log" ]; then
+  MISSED+=("reddit-karma-daily")
+fi
+
 if [ ! -f "$LOG_DIR/weekly-blog-update-$LAST_SUNDAY.log" ]; then
   MISSED+=("weekly-blog-update")
 fi
