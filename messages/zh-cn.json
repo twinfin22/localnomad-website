@@ -314,7 +314,8 @@
       "tips": "小贴士",
       "comparisons": "对比",
       "news": "新闻",
-      "stories": "故事"
+      "stories": "故事",
+      "tax": "税务"
     },
     "countries": {
       "korea": "韩国",
@@ -348,6 +349,10 @@
       "stories": {
         "title": "游民故事 | LocalNomad 博客",
         "description": "在韩国、日本、台湾生活的数字游民与外籍人士的真实经历。经验教训与坦诚分享。"
+      },
+      "tax": {
+        "title": "外国人税务指南 | LocalNomad 博客",
+        "description": "韩国、日本、台湾外国人的税务义务、扣除与省钱技巧。年末结算、国民年金退款等。"
       }
     },
     "postTitleSuffix": "| LocalNomad 博客"

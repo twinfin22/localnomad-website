@@ -13,6 +13,7 @@ const CATEGORY_COLORS: Record<BlogCategory, string> = {
   comparisons: 'bg-purple-100 text-purple-800',
   news: 'bg-blue-100 text-blue-800',
   stories: 'bg-rose-100 text-rose-800',
+  tax: 'bg-teal-100 text-teal-800',
 };
 
 const CATEGORY_GRADIENT_COLORS: Record<BlogCategory, string> = {
@@ -22,6 +23,7 @@ const CATEGORY_GRADIENT_COLORS: Record<BlogCategory, string> = {
   comparisons: 'bg-gradient-to-r from-purple-500 to-purple-400',
   news: 'bg-gradient-to-r from-blue-500 to-blue-400',
   stories: 'bg-gradient-to-r from-rose-500 to-rose-400',
+  tax: 'bg-gradient-to-r from-teal-500 to-teal-400',
 };
 
 const COUNTRY_EMOJI: Record<string, string> = {
