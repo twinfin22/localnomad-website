@@ -12,7 +12,7 @@
     "lint": "eslint",
     "fix:translations": "node --experimental-strip-types scripts/fix-array-collapse.ts",
     "analyze": "next experimental-analyze",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install || true"
   },
   "browserslist": [
     "chrome 90",
@@ -21,6 +21,7 @@
     "edge 90"
   ],
   "dependencies": {
+    "@google-analytics/data": "^5.2.1",
     "@next/third-parties": "^16.1.6",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.97.0",
