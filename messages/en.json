@@ -314,7 +314,8 @@
       "tips": "Tips",
       "comparisons": "Comparisons",
       "news": "News",
-      "stories": "Stories"
+      "stories": "Stories",
+      "tax": "Tax"
     },
     "countries": {
       "korea": "Korea",
@@ -348,6 +349,10 @@
       "stories": {
         "title": "Nomad Stories | LocalNomad Blog",
         "description": "Real experiences from digital nomads and expats living in Korea, Japan, and Taiwan. Lessons learned and honest takes."
+      },
+      "tax": {
+        "title": "Tax Guides for Foreigners | LocalNomad Blog",
+        "description": "Tax obligations, deductions, and money tips for foreigners living in Korea, Japan, and Taiwan. Year-end settlement, NPS refunds, and more."
       }
     },
     "postTitleSuffix": "| LocalNomad Blog"

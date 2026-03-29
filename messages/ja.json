@@ -314,7 +314,8 @@
       "tips": "ヒント",
       "comparisons": "比較",
       "news": "ニュース",
-      "stories": "ストーリー"
+      "stories": "ストーリー",
+      "tax": "税金"
     },
     "countries": {
       "korea": "韓国",
@@ -348,6 +349,10 @@
       "stories": {
         "title": "ノマドのストーリー | LocalNomad ブログ",
         "description": "韓国・日本・台湾で生活するデジタルノマドや在留外国人のリアルな体験談。学びと率直な意見。"
+      },
+      "tax": {
+        "title": "外国人向け税金ガイド | LocalNomad ブログ",
+        "description": "韓国・日本・台湾で暮らす外国人の税金、控除、節税のヒント。年末調整、国民年金の還付など。"
       }
     },
     "postTitleSuffix": "| LocalNomad ブログ"
