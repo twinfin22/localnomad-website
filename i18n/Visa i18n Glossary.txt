@@ -366,3 +366,106 @@ Voluntary Departure	自願離境	自愿离境	自主出国
 Source: https://www.immigration.gov.tw/5475/141185/180110/180113/
 Note: [term differs] marks cases where ZH-CN adaptation goes beyond character conversion.
 Note: JA column is unofficial — Taiwan gov provides no Japanese translations.
+
+--- 법률 및 제도 (Laws & Institutions) ---
+Source: https://law.moj.gov.tw/Eng/LawClass/LawAll.aspx?PCode=A0030295
+
+English (기준 명칭)	繁體中文 (TW official)	简体中文 (zh-cn adaptation)	日本語 (unofficial)
+
+Act for the Recruitment and Employment of Foreign Professionals (FTA)	外國專業人才延攬及僱用法	外国专业人才延揽及雇用法	外国専門人材招致及び雇用法
+Employment Service Act	就業服務法	就业服务法	就業サービス法
+Labor Pension Act	勞工退休金條例	劳工退休金条例	労働者退職金条例
+National Health Insurance Act	全民健康保險法	全民健康保险法	全民健康保険法
+Income Tax Act	所得稅法	所得税法	所得税法
+Alternative Minimum Tax (AMT)	最低稅負制 (基本稅額條例)	最低税负制 (基本税额条例)	最低税負制度 (基本税額条例)
+
+--- 정부 기관 (추가) (Government Agencies — Supplementary) ---
+
+English (기준 명칭)	繁體中文 (TW official)	简体中文 (zh-cn adaptation)	日本語 (unofficial)
+
+National Development Council (NDC)	國家發展委員會	国家发展委员会	国家発展委員会
+Ministry of Labor (MOL)	勞動部	劳动部	労働部
+Workforce Development Agency (WDA)	勞動力發展署	劳动力发展署	労働力発展署
+Ministry of Digital Affairs (MODA)	數位發展部	数字发展部 [term differs: 數位→数字]	デジタル発展部
+Ministry of Finance (MOF)	財政部	财政部	財政部
+Ministry of Culture (MOC)	文化部	文化部	文化部
+Ministry of National Defense (MND)	國防部	国防部	国防部
+Financial Supervisory Commission (FSC)	金融監督管理委員會	金融监督管理委员会	金融監督管理委員会
+Bureau of Consular Affairs (BOCA)	外交部領事事務局	外交部领事事务局	外交部領事事務局
+Gold Card Office	就業金卡辦公室	就业金卡办公室	就業ゴールドカードオフィス
+Talent Taiwan Portal	攬才網	揽才网	タレント台湾ポータル
+
+Source: https://goldcard.nat.gov.tw/en/, https://ndc.gov.tw
+
+--- Gold Card 자격 분야 (Gold Card Qualification Fields — 12 Fields) ---
+Source: https://goldcard.nat.gov.tw/en/qualification/
+
+English (기준 명칭)	繁體中文 (TW official)	简体中文 (zh-cn adaptation)	日本語 (unofficial)
+
+Science & Technology	科技	科技	科学技術
+Digital	數位	数字 [term differs: 數位→数字]	デジタル
+Finance	金融	金融	金融
+Education	教育	教育	教育
+Architecture	建築設計	建筑设计	建築設計
+Culture and Arts	文化藝術	文化艺术	文化芸術
+Economy	經濟	经济	経済
+Law	法律	法律	法律
+Biotechnology	生技醫藥	生物科技医药 [term differs]	バイオテクノロジー・医薬
+Sports	體育	体育	スポーツ
+National Defense	國防	国防	国防
+Environmental Protection	環境保護	环境保护	環境保護
+
+Note: 數位 (TW) vs 数字 (CN) — Taiwan uses 數位 for "digital"; mainland China uses 数字. This affects Gold Card field name and MODA ministry name.
+Note: 生技醫藥 (TW) literally "biotech & pharma." CN adaptation uses 生物科技医药 for clarity.
+
+--- 세금 및 사회보장 (Tax & Social Security Terms) ---
+
+English (기준 명칭)	繁體中文 (TW official)	简体中文 (zh-cn adaptation)	日本語 (unofficial)
+
+Tax Resident	稅務居民	税务居民	税務上の居住者
+Worldwide Income	全球所得	全球所得	全世界所得
+50% Salary Tax Exemption (Gold Card)	薪資所得超過300萬半數免稅	薪资所得超过300万半数免税	給与所得300万超過分の50%免税
+New Taiwan Dollar (NT$)	新臺幣	新台币	ニュー台湾ドル (NT$)
+Tax Accountant (CPA)	會計師	会计师	公認会計士
+Licensed Attorney	律師	律师	弁護士 (律師)
+Labor Pension	勞工退休金	劳工退休金	労働者退職金
+NHI Premium	健保費	健保费	健康保険料
+Double Taxation Treaty	租稅協定	租税协定	租税条約
+
+Source: https://www.mof.gov.tw/, https://law.moj.gov.tw
+
+--- 교통 및 생활 용어 (Transport & Lifestyle Terms — for blog translation) ---
+
+English (기준 명칭)	繁體中文 (TW official)	简体中文 (zh-cn adaptation)	日本語 (unofficial)
+
+EasyCard	悠遊卡	悠游卡	悠遊カード (EasyCard)
+TPASS (Monthly Transit Pass)	TPASS通勤月票	TPASS通勤月票	TPASS定期券
+YouBike (Public Bike-Share)	YouBike 公共自行車	YouBike 公共自行车	YouBike 公共シェアサイクル
+MRT (Mass Rapid Transit)	捷運	捷运	MRT (都市鉄道)
+THSR (Taiwan High Speed Rail)	台灣高鐵	台湾高铁	台湾高速鉄道 (高鐵)
+Chunghwa Telecom	中華電信	中华电信	中華電信
+Convenience Store	便利商店	便利商店	コンビニ
+Night Market	夜市	夜市	夜市 (ナイトマーケット)
+Breakfast Shop	早餐店	早餐店	朝食店 (早餐店)
+LINE (Messaging App)	LINE	LINE	LINE
+Coworking Space	共享工作空間	共享工作空间	コワーキングスペース
+
+--- 야시장 음식 용어 (Night Market Food Terms — for blog translation) ---
+
+English (기준 명칭)	繁體中文 (TW official)	简体中文 (zh-cn adaptation)	日本語 (unofficial)
+
+Gua Bao (Steamed Bun)	割包	割包	グアバオ (角煮バーガー)
+Braised Pork Rice	滷肉飯	卤肉饭	ルーローハン (魯肉飯)
+Oyster Omelet	蚵仔煎	蚵仔煎	牡蠣オムレツ (蚵仔煎)
+Stinky Tofu	臭豆腐	臭豆腐	臭豆腐
+Bubble Tea	珍珠奶茶	珍珠奶茶	タピオカミルクティー (珍珠奶茶)
+Scallion Pancake	蔥抓餅	葱抓饼	ネギパンケーキ (蔥抓餅)
+Pepper Bun	胡椒餅	胡椒饼	胡椒餅 (フージャオビン)
+Sugarcane Juice	甘蔗汁	甘蔗汁	サトウキビジュース
+Winter Melon Tea	冬瓜茶	冬瓜茶	冬瓜茶 (トウガンチャ)
+Rice Burger	飯糰	饭团	おにぎらず風ライスバーガー
+Fried Dough Stick	油條	油条	揚げパン (油条)
+Soy Milk	豆漿	豆浆	豆乳
+
+Note: Food terms are culturally universal across CJK. ZH-CN conversion is character-only (no term differences).
+Note: JA food terms use katakana transliteration + Chinese characters in parentheses for recognizability.
