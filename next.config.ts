@@ -20,12 +20,34 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
+    const taxSlugs = [
+      'korea-double-tax-treaty-guide-2026',
+      'korea-freelancer-tax-filing-guide-2026',
+      'korea-5-year-rule-foreign-income-tax-2026',
+      'korea-crypto-tax-2027-digital-nomads',
+      '183-day-tax-trap-digital-nomads',
+      'digital-nomad-tax-southeast-asia-2026',
+      'leaving-korea-money-checklist-2026',
+    ];
+    const taxRedirects = taxSlugs.flatMap((slug) => [
+      {
+        source: `/:locale/blog/guides/${slug}`,
+        destination: `/:locale/blog/tax/${slug}`,
+        permanent: true,
+      },
+      {
+        source: `/:locale/blog/tips/${slug}`,
+        destination: `/:locale/blog/tax/${slug}`,
+        permanent: true,
+      },
+    ]);
     return [
       {
         source: '/vi/:path*',
         destination: '/en/:path*',
         permanent: true,
       },
+      ...taxRedirects,
     ];
   },
   async headers() {
