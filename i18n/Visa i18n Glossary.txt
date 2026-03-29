@@ -107,11 +107,99 @@ Work Hour Limit (25hrs/week)	근로시간 제한 (주 25시간)	工作时间限�
 Return Flight Ticket	왕복 항공권	往返机票	往復航空券
 Proof of Funds	잔고증명서	资金证明	残高証明書
 
+--- 세금 및 재정 용어 (Tax & Financial Terms) ---
+Note: Korea blog posts (5/14) are tax-heavy. Consistent translation critical.
+SoT: NTS 2025 Year-End Tax Settlement Manual (EN/ZH editions), 소득세법, elaw.klri.re.kr
+ZH-CN: Verified against NTS official Chinese manual — tagged [NTS official].
+JA: No Korean gov JA source exists. Uses standard NTA (国税庁) equivalent terminology
+    (概念対応, not direct translation). Appropriate because JA readers know NTA terms.
+TODO (Batch 2): Add Japan tax SoT from japaneselawtranslation.go.jp CSV (3,800 terms).
+TODO (Batch 3): Add Taiwan tax SoT from law.moj.gov.tw + goldcard.nat.gov.tw.
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	日本語 (Japanese)
+
+Tax Residency (Resident)	세법상 거주자	居民 [NTS official]	税法上の居住者
+Non-resident (tax)	비거주자	非居民 [NTS official]	非居住者
+183-day Rule	183일 규칙	183天规则	183日ルール
+5-year Rule (foreign income exemption)	5년 규칙 (국외소득 면제)	5年规则（境外收入免税）	5年ルール（国外所得免除）
+Worldwide Income Taxation	전세계 소득 과세	来源于全球的所得 [NTS official]	全世界所得課税
+Foreign-source Income	국외원천소득	韩国国外的所得 [NTS official]	国外源泉所得
+Domestic Source Income	국내원천소득	来源于韩国国内的所得 [NTS official]	国内源泉所得
+Comprehensive Income Tax	종합소득세	综合所得税	総合所得税
+Tax Return (finalized)	종합소득세 확정신고	综合所得课税标准的确定申报 [NTS official]	確定申告
+Year-End Tax Settlement	연말정산	年末精算 [NTS official]	年末調整
+Withholding Tax	원천징수	代扣代缴 [NTS official]	源泉徴収
+Withholding Agent	원천징수의무자	代扣代缴义务人 [NTS official]	源泉徴収義務者
+Flat Tax Rate (19%)	단일세율 (19%)	单一税率（19%）[NTS official]	単一税率（19%）
+Basic Tax Rate (6-45%)	기본세율 (6-45%)	基本税率（6%-45%）[NTS official]	基本税率（6-45%）
+Tax Base	과세표준	课税标准 [NTS official]	課税標準
+Income Tax Act	소득세법	所得税法 [NTS official]	所得税法
+Restriction of Special Taxation Act	조세특례제한법	租税特例限制法 [NTS official]	租税特別措置法
+Tax Treaty / Double Taxation Agreement	조세조약	税收协定 [NTS official]	租税条約
+Foreign Tax Credit	외국세액공제	外国缴纳税额扣除 [NTS official]	外国税額控除
+Saving Clause (US treaty)	세이빙 클로즈 (미국 조약)	保留条款（美国协定）	セービングクローズ（米国条約）
+Tax Representative	납세관리인	纳税管理人	納税管理人
+Certified Tax Agent	세무사	注册税务师	税理士
+National Tax Service (NTS)	국세청	国税厅 [NTS official]	国税庁
+Hometax	홈택스	Hometax（网上报税）	Hometax（オンライン申告）
+Simple Expense Ratio	단순경비율	简易费用率	簡易経費率
+Standard Expense Ratio	기준경비율	标准费用率	標準経費率
+National Pension Service (NPS)	국민연금	国民年金 [NTS official]	国民年金
+National Health Insurance (NHI)	국민건강보험	国民健康保险费 [NTS official]	国民健康保険
+Employment Insurance	고용보험	雇佣保险费 [NTS official]	雇用保険
+Pension Refund (lump-sum)	연금 일시금 환급	年金一次性退还	年金一時金還付
+Totalization Agreement	사회보장협정	社会保障协定	社会保障協定
+Wage & Salary Income	근로소득	勤劳所得 [NTS official]	給与所得
+Personal Deduction	인적공제	个人扣除 [NTS official]	人的控除
+Special Income Deduction	특별소득공제	特别所得扣除 [NTS official]	特別所得控除
+Income Tax Reduction for Foreign Engineers	외국인 기술자 소득세 감면	外国技术人员所得税减免 [NTS official]	外国人技術者所得税減免
+K-tech Pass (Excellent Foreign Professional)	해외 우수인재 (K-tech Pass)	海外优秀人才（K-tech Pass持有者）[NTS official]	海外優秀人材（K-tech Pass）
+Virtual Asset / Cryptocurrency	가상자산	虚拟资产	仮想資産
+Moving Average Cost Basis	이동평균법	移动平均法	移動平均法
+Crypto-Asset Reporting Framework (CARF)	가상자산 보고체계 (CARF)	加密资产报告框架 (CARF)	暗号資産報告フレームワーク (CARF)
+Common Reporting Standard (CRS)	공통보고기준 (CRS)	共同申报准则 (CRS)	共通報告基準 (CRS)
+FBAR (FinCEN 114)	FBAR (해외금융계좌 신고)	FBAR（海外金融账户申报）	FBAR（海外金融口座報告）
+FATCA (Form 8938)	FATCA (해외금융자산 신고)	FATCA（海外金融资产申报）	FATCA（海外金融資産報告）
+
+--- 주거 및 생활 용어 (Housing & Living Terms) ---
+Note: Used across arrival checklists, cost-of-living comparisons, and DN guides.
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	日本語 (Japanese)
+
+Monthly Rent	월세	月租	月家賃
+Lump-sum Deposit Rent	전세	全额押金租赁	チョンセ（一括保証金賃貸）
+Security Deposit	보증금	押金	保証金（敷金）
+Building Management Fee	관리비	物业管理费	管理費
+Officetel	오피스텔	公寓式办公室	オフィステル
+Real Estate Agent	공인중개사	房产中介	不動産仲介
+Identity Verification (Korean phone)	본인인증	实名认证	本人認証
+K-ETA (Korea Electronic Travel Authorization)	K-ETA (전자여행허가)	K-ETA（电子旅行许可）	K-ETA（電子渡航許可）
+Depopulation Zone	인구감소지역	人口减少地区	人口減少地域
+GNI (Gross National Income)	국민총소득 (GNI)	国民总收入 (GNI)	国民総所得 (GNI)
+Digital Nomad	디지털 노마드	数字游民	デジタルノマド
+Coworking Space	코워킹 스페이스	共享办公空间	コワーキングスペース
+Cost of Living	생활비	生活成本	生活費
+Remittance	해외송금	海外汇款	海外送金
+
+--- 일본 주거 용어 (Japan Housing Terms) ---
+Note: Used in Japan housing guide + Seoul vs Tokyo comparison.
+
+English (기준 명칭)	한국어 (참고용)	简体中文 (Simplified Chinese)	日本語 (Japanese)
+
+Key Money	권리금	礼金	礼金（れいきん）
+Common Service Fee	공익비	公共服务费	共益費（きょうえきひ）
+Lease Renewal Fee	갱신료	续租费	更新料（こうしんりょう）
+Guarantor Company	보증회사	担保公司	保証会社（ほしょうがいしゃ）
+Share House	셰어하우스	合租房	シェアハウス
+Weekly Mansion	위클리맨션	短租公寓	ウィークリーマンション
+
 Sources:
 - https://www.visa.go.kr (KO/EN/ZH/JA — visa types, procedures)
 - https://www.hikorea.go.kr (KO/EN/ZH/JA — application forms, status of stay)
 - https://elaw.klri.re.kr/eng_service/newWordSearch.do (KO/EN — legal terminology dictionary)
 - https://www.immigration.go.kr (KO/EN — Visa Navigator PDF, 37 visa types)
+- https://www.nts.go.kr (KO/EN — National Tax Service, tax terminology)
+- https://taxlaw.nts.go.kr (KO — 소득세법, 조세특례제한법)
 
 ================================================================================
 2. 일본 비자 대시보드 (Japan Visa Dashboard)

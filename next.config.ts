@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+  outputFileTracingExcludes: {
+    '*': ['./venv/**', './.venv/**'],
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
