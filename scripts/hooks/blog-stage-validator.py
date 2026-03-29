@@ -64,7 +64,7 @@ FRONTMATTER_REQUIRED = [
     "readingTime",
 ]
 
-VALID_CATEGORIES = {"guides", "updates", "tips", "comparisons", "news", "stories"}
+VALID_CATEGORIES = {"guides", "updates", "tips", "comparisons", "news", "stories", "tax"}
 VALID_COUNTRIES = {"korea", "japan", "china", "taiwan", "sea", "global"}
 VALID_OVERALL_RESULT = {"PASS", "FAIL"}
 
