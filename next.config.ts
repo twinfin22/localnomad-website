@@ -47,7 +47,7 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.mapbox.com https://events.mapbox.com https://*.supabase.co https://www.googletagmanager.com https://www.google-analytics.com",
               "style-src 'self' 'unsafe-inline' https://api.mapbox.com",
-              "img-src 'self' data: blob: https://images.unsplash.com https://api.mapbox.com https://*.mapbox.com",
+              "img-src 'self' data: blob: https://images.unsplash.com https://api.mapbox.com https://*.mapbox.com https://www.google-analytics.com https://*.google-analytics.com",
               "font-src 'self'",
               "connect-src 'self' https://api.mapbox.com https://events.mapbox.com https://*.supabase.co https://discord.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com",
               "frame-src 'self'",

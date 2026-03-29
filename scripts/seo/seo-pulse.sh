@@ -12,6 +12,7 @@ LOG_FILE="$LOG_DIR/seo-pulse-$(date +%Y-%m-%d).log"
 
 SKILL_FILE="$PROJECT_DIR/scripts/seo/SEO-PULSE-SKILL.md"
 PULL_SCRIPT="$PROJECT_DIR/scripts/seo/pull-gsc.mjs"
+PULL_GA4="$PROJECT_DIR/scripts/seo/pull-ga4.mjs"
 OUTPUT_FILE="$PROJECT_DIR/docs/human/[SEO] weekly-pulse.md"
 
 cd "$PROJECT_DIR"
@@ -34,30 +35,70 @@ GSC_DATA=$(node "$PULL_SCRIPT" 2>> "$LOG_FILE")
 PULL_EXIT=$?
 
 if [ $PULL_EXIT -ne 0 ]; then
-  echo "[ERROR] pull-gsc.mjs failed with exit code $PULL_EXIT" >> "$LOG_FILE"
-  exit $PULL_EXIT
+  echo "[WARN] pull-gsc.mjs failed with exit code $PULL_EXIT — continuing with GA4 only" >> "$LOG_FILE"
+  GSC_DATA=""
 fi
 
-# Validate non-empty data
-ROW_COUNT=$(echo "$GSC_DATA" | node -e "
-  let d=''; process.stdin.on('data',c=>d+=c);
-  process.stdin.on('end',()=>{try{console.log(JSON.parse(d).meta.rowCount)}catch{console.log(0)}});
-")
+if [ -n "$GSC_DATA" ]; then
+  ROW_COUNT=$(echo "$GSC_DATA" | node -e "
+    let d=''; process.stdin.on('data',c=>d+=c);
+    process.stdin.on('end',()=>{try{console.log(JSON.parse(d).meta.rowCount)}catch{console.log(0)}});
+  ")
+  echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Pulled $ROW_COUNT rows from GSC" >> "$LOG_FILE"
+fi
 
-if [ "$ROW_COUNT" -lt 1 ] 2>/dev/null; then
-  echo "[ERROR] GSC returned 0 rows — skipping analysis" >> "$LOG_FILE"
+# Pull GA4 data
+GA4_DATA=$(node "$PULL_GA4" 2>> "$LOG_FILE")
+GA4_EXIT=$?
+
+if [ $GA4_EXIT -ne 0 ]; then
+  echo "[WARN] pull-ga4.mjs failed with exit code $GA4_EXIT" >> "$LOG_FILE"
+  GA4_DATA=""
+fi
+
+if [ -n "$GA4_DATA" ]; then
+  GA4_USERS=$(echo "$GA4_DATA" | node -e "
+    let d=''; process.stdin.on('data',c=>d+=c);
+    process.stdin.on('end',()=>{try{console.log(JSON.parse(d).totals.users)}catch{console.log(0)}});
+  ")
+  echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] GA4: $GA4_USERS users in period" >> "$LOG_FILE"
+fi
+
+# Need at least one data source
+if [ -z "$GSC_DATA" ] && [ -z "$GA4_DATA" ]; then
+  echo "[ERROR] Both GSC and GA4 failed — skipping analysis" >> "$LOG_FILE"
   exit 1
 fi
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Pulled $ROW_COUNT rows from GSC" >> "$LOG_FILE"
-
-# Compose prompt: GSC data + SKILL template
-PROMPT=$(cat <<HEREDOC
+# Compose prompt: GSC + GA4 data + SKILL template
+GSC_SECTION=""
+if [ -n "$GSC_DATA" ]; then
+  GSC_SECTION=$(cat <<GSEOF
 ## Google Search Console Data (last 28 days)
 
 \`\`\`json
 $GSC_DATA
 \`\`\`
+GSEOF
+)
+fi
+
+GA4_SECTION=""
+if [ -n "$GA4_DATA" ]; then
+  GA4_SECTION=$(cat <<GAEOF
+## GA4 Analytics Data (last 28 days)
+
+\`\`\`json
+$GA4_DATA
+\`\`\`
+GAEOF
+)
+fi
+
+PROMPT=$(cat <<HEREDOC
+$GSC_SECTION
+
+$GA4_SECTION
 
 ---
 
