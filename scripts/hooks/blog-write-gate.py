@@ -42,10 +42,16 @@ def main() -> None:
         sys.exit(0)
 
     # Guard 2 (R2): Block .mdx writes to content/blog/ without pipeline state
-    if "/content/blog/" in file_path and file_path.endswith(".mdx"):
+    # Skip gate for translation subdirectories (ja/, zh-cn/) — source EN post already published
+    is_translation = ("/content/blog/ja/" in file_path or "/content/blog/zh-cn/" in file_path)
+    if "/content/blog/" in file_path and file_path.endswith(".mdx") and not is_translation:
         slug = Path(file_path).stem
         tmpdir = os.environ.get("TMPDIR", "/tmp")
         state_path = Path(tmpdir) / "blog-pipeline" / f"pipeline-state-{slug}.json"
+
+        # Fallback: check /tmp/claude (sandbox sets TMPDIR=/tmp/claude at runtime)
+        if not state_path.exists():
+            state_path = Path("/tmp/claude") / "blog-pipeline" / f"pipeline-state-{slug}.json"
 
         if not state_path.exists():
             deny(f"No active pipeline for slug '{slug}'. Run /blog first.")
