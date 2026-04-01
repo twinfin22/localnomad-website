@@ -53,6 +53,10 @@ def main() -> None:
     tmpdir = os.environ.get("TMPDIR", "/tmp")
     state_file = Path(tmpdir) / "blog-pipeline" / f"pipeline-state-{slug}.json"
 
+    # Fallback: check /tmp/claude (sandbox sets TMPDIR=/tmp/claude at runtime)
+    if not state_file.exists():
+        state_file = Path("/tmp/claude") / "blog-pipeline" / f"pipeline-state-{slug}.json"
+
     if not state_file.exists():
         deny(f"No active pipeline for slug '{slug}'. Cannot publish without pipeline.")
 
