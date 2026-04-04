@@ -1,5 +1,5 @@
 📋 <b>Blog Candidates — 2026-04-04</b>
-6 candidates · auto-generated
+7 candidates · auto-generated
 ──────────────────────────
 
 <b>1. Japan PR 2026: 5-Year Visa Now Mandatory</b>
@@ -47,6 +47,14 @@ What's Changing, Current vs New Fee Caps, PR vs Status Change Fees, When It Take
 🔑 Korea F-2 visa points system 2026
 취업·거주 비자 중 자력으로 PR로 가는 현실적 경로 — 점수 계산법 완전 정리
 What Is F-2-7, Points Breakdown, KIIP vs TOPIK Strategy, F-2 → F-5 Pathway
+
+──────────────────────────
+
+<b>7. Japan JESTA: What Visa-Free Travelers Must Know</b>
+🗾 Japan · 📂 news
+🔑 Japan JESTA electronic travel authorization 2026
+2026년 3월 내각 승인 — 70개국 이상 무비자 입국자도 2028년부터 사전 심사(¥3,000) 필수
+What Is JESTA, Which Countries Affected, Cost & Process, Timeline to Mandatory
 
 ──────────────────────────
 <i>Reply with item # to proceed to writing</i>
@@ -145,6 +153,24 @@ What Is F-2-7, Points Breakdown, KIIP vs TOPIK Strategy, F-2 → F-5 Pathway
 - Sources:
   - https://english.visajapan.jp/qa/news20251121.html
   - https://e-housing.jp/post/new-visa-rules-for-foreign-residents-in-japan-2026
+
+## 7. Japan JESTA: What Visa-Free Travelers Must Know
+- Category: news | Country: japan
+- Target keyword: Japan JESTA electronic travel authorization 2026
+- Secondary keywords: Japan JESTA 2028, Japan visa free pre-screening, JESTA how to apply, Japan entry requirement 2026
+- Word count: 1,000–1,400
+- Outline:
+  - What Is JESTA and Why Is Japan Launching It?
+  - Which Countries Are Affected (70+ visa-exempt nations)
+  - Cost (¥3,000) and How to Apply
+  - Timeline: Cabinet Approval Mar 2026 → Full Mandatory Rollout 2028
+  - What Happens If You Don't Have JESTA (airline check-in enforcement)
+  - How JESTA Compares to Korea's K-ETA and US ESTA
+- Internal links: /en/japan/visa/tourist, /en/blog/guides/digital-nomad-japan
+- Sources:
+  - https://www.travelandtourworld.com/news/article/japan-just-changed-travel-forever-new-electronic-visa-system-jesta-2026-makes-entry-safer-and-smarter/
+  - https://en.sedaily.com/international/2026/03/11/japan-to-launch-pre-screening-system-for-visa-free-travelers
+  - https://www.rsm.global/japan/shiodome/en/insights/category/immigration/japans-visa-policy-update-key-categories-emerging-trends-and-new-jesta-pre-screening-system
 
 ## 6. Korea F-2 Visa Points System: Complete 2026 Guide
 - Category: guides | Country: korea
