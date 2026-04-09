@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { getLocale } from 'next-intl/server';
 import { Inter, DM_Serif_Display, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import './globals.css';
@@ -32,11 +32,20 @@ const notoSansSC = Noto_Sans_SC({
   adjustFontFallback: false,
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://localnomad.club'),
   icons: {
     icon: '/favicon.png',
     apple: '/favicon.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
