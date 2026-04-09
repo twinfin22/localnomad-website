@@ -57,7 +57,30 @@ export default async function CategoryPage({ params }: Props) {
   const posts = getAllPosts({ category: category as BlogCategory, locale });
   const categoryLabel = t(`categories.${category as BlogCategory}`);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: categoryLabel,
+    description: t('allPostsIn', { category: categoryLabel }),
+    url: `https://localnomad.club/${locale}/blog/${category}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: posts.length,
+      itemListElement: posts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: post.frontmatter.title,
+        url: `https://localnomad.club/${locale}/blog/${post.category}/${post.slug}`,
+      })),
+    },
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <main id="main-content" className="mx-auto max-w-5xl px-6 py-12">
       <h1 className="font-lora text-3xl font-bold text-foreground sm:text-4xl">
         {categoryLabel}
@@ -78,5 +101,6 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       )}
     </main>
+    </>
   );
 }
