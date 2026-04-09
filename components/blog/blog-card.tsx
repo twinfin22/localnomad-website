@@ -28,7 +28,7 @@ export const BlogCard = async ({ post, priority }: { post: BlogPost; priority?: 
           <div className="relative aspect-[2/1] w-full overflow-hidden">
             <Image
               src={post.frontmatter.coverImage}
-              alt=""
+              alt={post.frontmatter.title}
               fill
               priority={priority}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
