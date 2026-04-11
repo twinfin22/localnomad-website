@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/blog';
 import { ArrowRight } from 'lucide-react';
 import type { BlogCategory } from '@/lib/blog/schema';
 import { BlogCarouselScrollButtons } from './blog-carousel-scroll';
-import Image from 'next/image';
+import { BlogCoverImage } from '@/components/blog/blog-cover-image';
 
 const CATEGORY_COLORS: Record<BlogCategory, string> = {
   guides: 'bg-primary text-white',
@@ -89,10 +89,9 @@ export const BlogCarousel = async () => {
                 {/* Cover image or gradient strip fallback */}
                 {post.frontmatter.coverImage ? (
                   <div className="relative aspect-[2/1] w-full overflow-hidden">
-                    <Image
+                    <BlogCoverImage
                       src={post.frontmatter.coverImage}
                       alt={post.frontmatter.title}
-                      fill
                       sizes="(max-width: 640px) 300px, 340px"
                       className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                     />

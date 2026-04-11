@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { BlogCoverImage } from '@/components/blog/blog-cover-image';
 import { Link } from '@/i18n/navigation';
 import { getAllPosts } from '@/lib/blog';
 import type { BlogCategory, BlogCountry } from '@/lib/blog/schema';
@@ -46,13 +47,13 @@ export function CountryBlogSection({
             >
               <div className="rounded-xl border bg-white overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 cursor-pointer h-full">
                 {/* Cover image */}
-                <div className="h-36 overflow-hidden bg-neutral-100 sm:h-40">
+                <div className="relative h-36 overflow-hidden bg-neutral-100 sm:h-40">
                   {post.frontmatter.coverImage ? (
-                    <img
+                    <BlogCoverImage
                       src={post.frontmatter.coverImage}
                       alt={post.frontmatter.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
+                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div className="h-full w-full bg-neutral-100" />
