@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback } from 'react';
-import Image from 'next/image';
+import { BlogCoverImage } from './blog-cover-image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -92,10 +92,9 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
               >
                 {post.coverImage ? (
                   <div className="relative aspect-[2/1] w-full overflow-hidden">
-                    <Image
+                    <BlogCoverImage
                       src={post.coverImage}
                       alt={post.title}
-                      fill
                       sizes="(max-width: 640px) 280px, 300px"
                       className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                     />

@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { getTranslations, getLocale } from 'next-intl/server';
+import { BlogCoverImage } from './blog-cover-image';
 import { Link } from '@/i18n/navigation';
 import type { BlogPost } from '@/lib/blog';
 import type { BlogCategory } from '@/lib/blog/schema';
@@ -26,10 +26,9 @@ export const BlogCard = async ({ post, priority }: { post: BlogPost; priority?: 
       <Link href={`/blog/${post.category}/${post.slug}`} className="block">
         {post.frontmatter.coverImage && (
           <div className="relative aspect-[2/1] w-full overflow-hidden">
-            <Image
+            <BlogCoverImage
               src={post.frontmatter.coverImage}
               alt={post.frontmatter.title}
-              fill
               priority={priority}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
