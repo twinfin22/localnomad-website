@@ -47,6 +47,9 @@ export const getPost = (
         readingTime,
       };
     }
+    // No locale-specific file — do NOT fall back to EN content.
+    // Serving EN content at a non-EN URL creates duplicate-content issues for Google.
+    return null;
   }
 
   // Fall back to EN path
