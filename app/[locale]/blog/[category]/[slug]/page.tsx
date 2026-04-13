@@ -15,6 +15,7 @@ import { BlogToc } from '@/components/blog/blog-toc';
 import { RelatedPosts } from '@/components/blog/related-posts';
 
 export const revalidate = 3600;
+export const dynamicParams = false;
 
 interface Props {
   params: Promise<{ locale: string; category: string; slug: string }>;
