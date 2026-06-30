@@ -1,9 +1,7 @@
 name: Reddit Karma Watchdog
 
 on:
-  schedule:
-    - cron: '30 4 * * *'  # 매일 1:30pm KST (4:30 UTC) — reddit-karma 30분 후 체크
-  workflow_dispatch:
+  workflow_dispatch:       # Manual trigger only; scheduled Telegram alerts disabled
 
 jobs:
   check-heartbeat:

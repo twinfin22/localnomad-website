@@ -1,9 +1,7 @@
 name: SEO Weekly Pulse
 
 on:
-  schedule:
-    - cron: '0 0 * * 1'  # Monday 00:00 UTC = 09:00 KST
-  workflow_dispatch:       # Manual trigger
+  workflow_dispatch:       # Manual trigger only; scheduled Telegram alerts disabled
 
 jobs:
   seo-pulse:

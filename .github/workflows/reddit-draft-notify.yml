@@ -1,12 +1,7 @@
 name: Send Draft to Telegram
 
 on:
-  push:
-    branches:
-      - main
-      - 'drafts/auto'
-    paths:
-      - 'drafts/**/*.md'
+  workflow_dispatch:       # Manual trigger only; push-based Telegram alerts disabled
 
 jobs:
   notify:
