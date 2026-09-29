@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { MapPin } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { NeighborhoodGrid } from '@/components/neighborhood/neighborhood-grid';
 import type { City } from '@/lib/types/neighborhood';
@@ -28,7 +29,9 @@ export function NeighborhoodExplorer({
   cities,
   allTags,
 }: NeighborhoodExplorerProps) {
+  const t = useTranslations('Neighborhood');
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [isMapOpen, setIsMapOpen] = useState(false);
 
   const totalCount = cities.reduce(
     (sum, c) => sum + c.neighborhoods.length,
@@ -78,18 +81,33 @@ export function NeighborhoodExplorer({
         ))}
       </div>
 
-      <div className="flex flex-col gap-6 lg:flex-row">
-        {/* Map sidebar */}
-        <div className="w-full lg:w-[40%]">
-          <NeighborhoodMap
-            cities={cities}
-            selectedCity={selectedCity}
-            onCitySelect={setSelectedCity}
-          />
-        </div>
+      <div className="flex items-center justify-between gap-4 border-y border-primary/10 py-3">
+        <p className="text-sm text-muted-foreground">
+          {t('browseListFirst')}
+        </p>
+        <button
+          type="button"
+          onClick={() => setIsMapOpen((open) => !open)}
+          className="shrink-0 rounded-full border border-primary/20 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/5"
+          aria-expanded={isMapOpen}
+        >
+          {isMapOpen ? t('hideMap') : t('showMap')}
+        </button>
+      </div>
 
-        {/* Card grid */}
-        <div className="w-full lg:w-[60%]">
+      <div className="flex flex-col gap-6 lg:flex-row">
+        {/* The Mapbox bundle is only requested after an explicit user action. */}
+        {isMapOpen && (
+          <div className="w-full lg:w-[40%]">
+            <NeighborhoodMap
+              cities={cities}
+              selectedCity={selectedCity}
+              onCitySelect={setSelectedCity}
+            />
+          </div>
+        )}
+
+        <div className={isMapOpen ? 'w-full lg:w-[60%]' : 'w-full'}>
           <NeighborhoodGrid
             neighborhoods={filteredNeighborhoods}
             allTags={allTags}

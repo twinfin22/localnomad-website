@@ -415,7 +415,10 @@
     "rentSourceSuffix": "Prices reflect studio to 1BR units and may vary by building age and proximity to transit.",
     "jsonLdName": "Neighborhoods for Digital Nomads in {country}",
     "jsonLdDescription": "Interactive neighborhood guide for digital nomads in {country}.",
-    "prosAndCons": "Pros & Cons"
+    "prosAndCons": "Pros & Cons",
+    "browseListFirst": "Browse the list first, then open the map when you need it.",
+    "showMap": "Show map",
+    "hideMap": "Hide map"
   },
   "Meta": {
     "landingTitle": "Soft Land in Asia | LocalNomad",

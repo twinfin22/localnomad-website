@@ -415,7 +415,10 @@
     "rentSourceSuffix": "价格反映开间至一居室单位，可能因楼龄和交通便利程度而有所不同。",
     "jsonLdName": "{country}数字游民社区列表",
     "jsonLdDescription": "{country}数字游民社区互动指南。",
-    "prosAndCons": "优缺点"
+    "prosAndCons": "优缺点",
+    "browseListFirst": "先浏览列表，需要时再打开地图。",
+    "showMap": "显示地图",
+    "hideMap": "关闭地图"
   },
   "Meta": {
     "landingTitle": "Soft Land in Asia | LocalNomad",

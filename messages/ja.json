@@ -415,7 +415,10 @@
     "rentSourceSuffix": "価格はワンルーム〜1LDKの目安であり、築年数や交通アクセスにより異なる場合があります。",
     "jsonLdName": "{country}のデジタルノマド向けエリア一覧",
     "jsonLdDescription": "{country}のデジタルノマド向けエリアガイド。",
-    "prosAndCons": "メリット・デメリット"
+    "prosAndCons": "メリット・デメリット",
+    "browseListFirst": "まず一覧を確認し、必要なときに地図を開きましょう。",
+    "showMap": "地図を表示",
+    "hideMap": "地図を閉じる"
   },
   "Meta": {
     "landingTitle": "Soft Land in Asia | LocalNomad",
