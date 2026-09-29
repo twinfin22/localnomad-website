@@ -43,6 +43,7 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
   const t = useTranslations('Nav');
   const locale = useLocale();
   const pathname = usePathname();
+  const isEnglishOnlyPage = pathname === '/plan';
   const [open, setOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -246,21 +247,37 @@ export const MobileMenu = ({ selectedCountry, onCountryChange, isTransparent = f
             <div className="mt-auto pt-6 pb-2 flex flex-col gap-4">
               {/* Language switcher */}
               <div className="flex items-center gap-2">
-                {routing.locales.map((loc) => (
-                  <Link
-                    key={loc}
-                    href={pathname}
-                    locale={loc}
-                    onClick={handleLinkClick}
-                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                      loc === locale
-                        ? 'bg-white/15 text-white'
-                        : 'text-white/40 hover:text-white/70 hover:bg-white/10'
-                    }`}
-                  >
-                    {localeFullLabels[loc]}
-                  </Link>
-                ))}
+                {routing.locales.map((loc) => {
+                  const isAvailable = !isEnglishOnlyPage || loc === 'en';
+                  if (!isAvailable) {
+                    return (
+                      <span
+                        key={loc}
+                        aria-disabled="true"
+                        title={t('translationUnavailable')}
+                        className="cursor-not-allowed rounded-full px-3 py-1 text-xs font-medium text-white/25"
+                      >
+                        {localeFullLabels[loc]}
+                      </span>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={loc}
+                      href={pathname}
+                      locale={loc}
+                      onClick={handleLinkClick}
+                      className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                        loc === locale
+                          ? 'bg-white/15 text-white'
+                          : 'text-white/40 hover:text-white/70 hover:bg-white/10'
+                      }`}
+                    >
+                      {localeFullLabels[loc]}
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* Discord + tagline */}

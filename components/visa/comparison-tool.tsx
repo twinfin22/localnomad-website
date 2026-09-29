@@ -92,7 +92,10 @@ export function ComparisonTool({ visas, summaries, country }: ComparisonToolProp
   const selectedVisas = selectedTypes
     .map((type) => visaMap.get(type))
     .filter((visa): visa is Visa => Boolean(visa));
-  const slotCount = Math.max(DEFAULT_SLOTS, Math.min(MAX_SLOTS, visibleSlots, selectedTypes.length + 1));
+  const slotCount = Math.max(
+    DEFAULT_SLOTS,
+    Math.min(MAX_SLOTS, Math.max(visibleSlots, selectedTypes.length)),
+  );
   const slots = Array.from({ length: slotCount }, (_, index) => selectedTypes[index] ?? '');
 
   const rows = [

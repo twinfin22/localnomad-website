@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { routing } from '@/i18n/routing';
@@ -20,7 +20,9 @@ const localeFullLabels: Record<string, string> = {
 
 export const LocaleSwitcher = () => {
   const locale = useLocale();
+  const t = useTranslations('Nav');
   const pathname = usePathname();
+  const isEnglishOnlyPage = pathname === '/plan';
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const menuItemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -135,26 +137,43 @@ export const LocaleSwitcher = () => {
           onKeyDown={handleMenuKeyDown}
           className="absolute right-0 top-full z-50 mt-1 min-w-[140px] rounded-md border bg-white py-1 shadow-md"
         >
-          {routing.locales.map((loc, index) => (
-            <Link
-              key={loc}
-              ref={(el) => {
-                menuItemRefs.current[index] = el;
-              }}
-              href={pathname}
-              locale={loc}
-              role="menuitem"
-              onClick={() => setOpen(false)}
-              className={cn(
-                'block px-3 py-1.5 text-sm transition-colors',
-                loc === locale
-                  ? 'bg-primary/5 font-medium text-primary'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-              )}
-            >
-              {localeFullLabels[loc]}
-            </Link>
-          ))}
+          {routing.locales.map((loc, index) => {
+            const isAvailable = !isEnglishOnlyPage || loc === 'en';
+            if (!isAvailable) {
+              return (
+                <span
+                  key={loc}
+                  role="menuitem"
+                  aria-disabled="true"
+                  title={t('translationUnavailable')}
+                  className="block cursor-not-allowed px-3 py-1.5 text-sm text-muted-foreground/50"
+                >
+                  {localeFullLabels[loc]} — {t('translationUnavailable')}
+                </span>
+              );
+            }
+
+            return (
+              <Link
+                key={loc}
+                ref={(el) => {
+                  menuItemRefs.current[index] = el;
+                }}
+                href={pathname}
+                locale={loc}
+                role="menuitem"
+                onClick={() => setOpen(false)}
+                className={cn(
+                  'block px-3 py-1.5 text-sm transition-colors',
+                  loc === locale
+                    ? 'bg-primary/5 font-medium text-primary'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                )}
+              >
+                {localeFullLabels[loc]}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>

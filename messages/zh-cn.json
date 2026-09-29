@@ -291,7 +291,8 @@
     "moreCountries": "切换国家",
     "checklist": "清单",
     "openMenu": "打开菜单",
-    "closeMenu": "关闭菜单"
+    "closeMenu": "关闭菜单",
+    "translationUnavailable": "暂无翻译"
   },
   "Blog": {
     "title": "博客",

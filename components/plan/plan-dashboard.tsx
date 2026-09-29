@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { startTransition, useCallback, useEffect, useMemo, useState } from 'react';
 import { CheckCircle2, ExternalLink, MapPin, Plane, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePlanStorage, getCountryPlan } from '@/hooks/use-plan-storage';
@@ -117,15 +117,33 @@ function SavedItems({
 }
 
 export function PlanDashboard({ countries }: { countries: PlanCountryData[] }) {
-  const { plan, status, setStage, toggleVisa, toggleNeighborhood, resetCountry } = usePlanStorage();
+  const { plan, status, setStage, toggleVisa, toggleNeighborhood, resetCountry, recover } = usePlanStorage();
   const [checklistProgress, setChecklistProgress] = useState<Record<PlanCountry, ChecklistProgress>>();
 
-  useEffect(() => {
-    setChecklistProgress(readChecklistProgress(countries));
+  const refreshChecklistProgress = useCallback(() => {
+    startTransition(() => setChecklistProgress(readChecklistProgress(countries)));
   }, [countries]);
 
+  useEffect(() => {
+    refreshChecklistProgress();
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key?.startsWith('localnomad:checklist:')) refreshChecklistProgress();
+    };
+    window.addEventListener('checklist-update', refreshChecklistProgress);
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      window.removeEventListener('checklist-update', refreshChecklistProgress);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, [refreshChecklistProgress]);
+
   const sections = useMemo(() => countries.map((country) => {
-    const saved = getCountryPlan(plan, country.id);
+    const stored = getCountryPlan(plan, country.id);
+    const visaIds = stored.visaIds.filter((id) => country.visas.some((visa) => visa.id === id));
+    const neighborhoodIds = stored.neighborhoodIds.filter((id) =>
+      country.neighborhoods.some((neighborhood) => neighborhood.id === id),
+    );
+    const saved = { ...stored, visaIds, neighborhoodIds };
     const progress = checklistProgress?.[country.id];
     const completedIds = progress?.completedIds ?? new Set<string>();
     const completedCount = country.checklist.filter((item) => completedIds.has(item.id)).length;
@@ -135,6 +153,7 @@ export function PlanDashboard({ countries }: { countries: PlanCountryData[] }) {
     return {
       country,
       saved,
+      hasStoredState: Boolean(stored.stage || stored.visaIds.length || stored.neighborhoodIds.length),
       progress,
       savedVisas: country.visas.filter((visa) => saved.visaIds.includes(visa.id)),
       savedNeighborhoods: country.neighborhoods.filter((neighborhood) => saved.neighborhoodIds.includes(neighborhood.id)),
@@ -143,8 +162,8 @@ export function PlanDashboard({ countries }: { countries: PlanCountryData[] }) {
       requiredCount,
       nextTask: getNextTask(
         saved.stage,
-        saved.visaIds.length,
-        saved.neighborhoodIds.length,
+        visaIds.length,
+        neighborhoodIds.length,
         country.checklist,
         completedIds,
       ),
@@ -161,17 +180,35 @@ export function PlanDashboard({ countries }: { countries: PlanCountryData[] }) {
         <p className="mt-4 text-lg text-muted-foreground">Save visa and neighborhood options in this browser, then pick up where you left off.</p>
       </div>
 
+      {status === 'corrupted' && (
+        <div role="status" className="mt-6 flex gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+          <div>
+            <p><strong>Your saved plan could not be read.</strong> Resetting it will remove only the broken plan record; checklist progress will stay.</p>
+            <button
+              type="button"
+              onClick={() => {
+                if (window.confirm('Reset the broken saved plan? Checklist progress will stay.')) recover();
+              }}
+              className="mt-3 rounded-md border border-amber-700/30 bg-white px-3 py-2 text-sm font-medium text-amber-950 hover:bg-amber-100"
+            >
+              Reset broken saved plan
+            </button>
+          </div>
+        </div>
+      )}
+
       {status === 'not-saving' && (
         <div role="status" className="mt-6 flex gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
           <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
-          <p><strong>Not saving in this browser.</strong> Your saved plan is unavailable or could not be read, so this page is showing an empty plan. You can still browse the tools.</p>
+          <p><strong>Not saving in this browser.</strong> Your saved plan is unavailable, so this page is showing an empty plan. You can still browse the tools.</p>
         </div>
       )}
 
       {status === 'loading' && <p className="mt-8 text-sm text-muted-foreground">Loading your plan…</p>}
 
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
-        {sections.map(({ country, saved, progress, savedVisas, savedNeighborhoods, completedCount, completedRequired, requiredCount, nextTask }) => (
+        {sections.map(({ country, saved, hasStoredState, progress, savedVisas, savedNeighborhoods, completedCount, completedRequired, requiredCount, nextTask }) => (
           <section key={country.id} className="rounded-xl border border-border bg-neutral-50 p-5 shadow-sm">
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -205,7 +242,14 @@ export function PlanDashboard({ countries }: { countries: PlanCountryData[] }) {
                 <p className="text-sm font-semibold">Checklist progress</p>
                 <span className="text-sm font-medium text-primary">{completedCount}/{country.checklist.length}</span>
               </div>
-              <div className="mt-2 h-2 overflow-hidden rounded-full bg-neutral-200">
+              <div
+                role="progressbar"
+                aria-label={`${country.name} checklist progress`}
+                aria-valuemin={0}
+                aria-valuemax={country.checklist.length}
+                aria-valuenow={completedCount}
+                className="mt-2 h-2 overflow-hidden rounded-full bg-neutral-200"
+              >
                 <div className="h-full rounded-full bg-primary transition-[width]" style={{ width: `${country.checklist.length ? (completedCount / country.checklist.length) * 100 : 0}%` }} />
               </div>
               {progress && !progress.available ? (
@@ -257,7 +301,7 @@ export function PlanDashboard({ countries }: { countries: PlanCountryData[] }) {
               <a href={`/en/neighborhood/${country.id}`} className="inline-flex items-center gap-1.5 rounded-md border bg-white px-3 py-2 text-sm font-medium text-primary hover:bg-primary/5">
                 <MapPin className="h-4 w-4" aria-hidden="true" /> Explore neighborhoods
               </a>
-              {(saved.stage || saved.visaIds.length > 0 || saved.neighborhoodIds.length > 0) && (
+              {hasStoredState && (
                 <Button
                   type="button"
                   variant="ghost"

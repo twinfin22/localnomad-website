@@ -104,6 +104,17 @@ export function writePlanState(state: PlanState): boolean {
   }
 }
 
+export function clearPlanState(): boolean {
+  if (typeof window === 'undefined') return false;
+
+  try {
+    window.localStorage.removeItem(PLAN_STORAGE_KEY);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function updateCountryPlan(
   state: PlanState,
   country: PlanCountry,

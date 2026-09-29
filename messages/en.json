@@ -291,7 +291,8 @@
     "moreCountries": "Switch country",
     "checklist": "Checklist",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "translationUnavailable": "Translation unavailable"
   },
   "Blog": {
     "title": "Blog",
