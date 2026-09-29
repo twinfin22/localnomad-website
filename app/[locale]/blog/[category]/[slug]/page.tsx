@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   const headings = extractHeadings(post.content);
-  const mdxComponents = createMdxComponents();
+  const mdxComponents = createMdxComponents(locale);
 
   return (
     <>

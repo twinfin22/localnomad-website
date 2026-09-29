@@ -85,9 +85,8 @@ export default async function LandingPage({ params }: Props) {
     })
   );
 
-  // Deterministic daily shuffle
-  const daySeed = Math.floor(Date.now() / 86400000);
-  const neighborhoods = seededShuffle(allNeighborhoods, daySeed);
+  // Keep the landing selection stable across SSR requests and client navigation.
+  const neighborhoods = seededShuffle(allNeighborhoods, 20260929);
 
   return (
     <main id="main-content" style={{ backgroundColor: 'var(--primary)' }}>

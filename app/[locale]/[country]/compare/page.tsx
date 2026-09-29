@@ -16,11 +16,11 @@ export const revalidate = 3600;
 
 const VALID_COUNTRIES = ['japan', 'korea', 'taiwan', 'southeast-asia'] as const;
 
-const COUNTRY_DISPLAY: Record<string, string> = {
-  korea: 'South Korea',
-  taiwan: 'Taiwan',
-  japan: 'Japan',
-  'southeast-asia': 'Southeast Asia',
+const COUNTRY_NAME_KEY: Record<string, 'countryKorea' | 'countryTaiwan' | 'countryJapan' | 'countrySoutheastAsia'> = {
+  korea: 'countryKorea',
+  taiwan: 'countryTaiwan',
+  japan: 'countryJapan',
+  'southeast-asia': 'countrySoutheastAsia',
 };
 
 export function generateStaticParams() {
@@ -34,8 +34,11 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const t = await getTranslations({ locale, namespace: 'Comparison' });
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const [t, tc] = await Promise.all([
+    getTranslations({ locale, namespace: 'Comparison' }),
+    getTranslations({ locale, namespace: 'Common' }),
+  ]);
+  const displayName = tc(COUNTRY_NAME_KEY[country] ?? 'countryKorea');
   const isSEA = country === 'southeast-asia';
 
   const title = isSEA
@@ -80,7 +83,7 @@ export default async function ComparePage({ params }: Props) {
     getTranslations('Common'),
   ]);
 
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const displayName = tc(COUNTRY_NAME_KEY[country] ?? 'countryKorea');
 
   // SEA: flat comparison table from JSON
   if (isSEA) {

@@ -5,16 +5,17 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getAlternates } from '@/lib/seo';
 import { getChecklistData } from '@/lib/checklist-data';
+import { localizeChecklistLinks } from '@/lib/checklist-links';
 import { ArrivalChecklist } from '@/components/checklist';
 
 export const revalidate = 3600;
 
 const VALID_COUNTRIES = ['japan', 'korea', 'taiwan'] as const;
 
-const COUNTRY_DISPLAY: Record<string, string> = {
-  korea: 'South Korea',
-  taiwan: 'Taiwan',
-  japan: 'Japan',
+const COUNTRY_NAME_KEY: Record<string, 'countryKorea' | 'countryTaiwan' | 'countryJapan'> = {
+  korea: 'countryKorea',
+  taiwan: 'countryTaiwan',
+  japan: 'countryJapan',
 };
 
 export function generateStaticParams() {
@@ -34,9 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(routing.locales, locale)) return {};
   if (!VALID_COUNTRIES.includes(country as (typeof VALID_COUNTRIES)[number])) return {};
 
-  const t = await getTranslations({ locale, namespace: 'Checklist' });
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
-  const title = `${displayName} Arrival Checklist — 72-Hour Survival Kit | LocalNomad`;
+  const [t, tc] = await Promise.all([
+    getTranslations({ locale, namespace: 'Checklist' }),
+    getTranslations({ locale, namespace: 'Common' }),
+  ]);
+  const displayName = tc(COUNTRY_NAME_KEY[country] ?? 'countryKorea');
+  const title = `${t('title', { country: displayName })} | LocalNomad`;
   const description = t('metaDescription', { country: displayName });
   const alternates = getAlternates(locale, `/${country}/checklist`);
 
@@ -58,16 +62,20 @@ export default async function ChecklistPage({ params, searchParams }: Props) {
   if (!VALID_COUNTRIES.includes(country as (typeof VALID_COUNTRIES)[number])) return notFound();
   setRequestLocale(locale);
 
-  const data = await getChecklistData(country, locale);
-  if (!data) return notFound();
+  const sourceData = await getChecklistData(country, locale);
+  if (!sourceData) return notFound();
+  const data = localizeChecklistLinks(sourceData, locale);
 
   const { tier: tierParam } = await searchParams;
   const defaultTier = VALID_TIERS.includes(tierParam as VisaTier)
     ? (tierParam as VisaTier)
     : 'tourist';
 
-  const t = await getTranslations({ locale, namespace: 'Checklist' });
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const [t, tc] = await Promise.all([
+    getTranslations({ locale, namespace: 'Checklist' }),
+    getTranslations({ locale, namespace: 'Common' }),
+  ]);
+  const displayName = tc(COUNTRY_NAME_KEY[country] ?? 'countryKorea');
 
   const COUNTRY_BG: Record<string, { src: string; position: string }> = {
     korea: { src: '/images/checklist/korea-checklist-bg.jpg', position: 'center 20%' },

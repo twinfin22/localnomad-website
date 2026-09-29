@@ -19,6 +19,7 @@ export interface ChecklistItem {
   tips?: string[];
   link?: string;
   linkLabel?: string;
+  linkLanguage?: 'en';
   warnings?: string[];
 }
 
@@ -35,5 +36,6 @@ export interface CountryChecklist {
   title: string;
   lastUpdated: string;
   blogUrl: string;
+  blogUrlLanguage?: 'en';
   phases: ChecklistPhase[];
 }

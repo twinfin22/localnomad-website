@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation';
 import { COUNTRY_HERO_CONFIG } from '@/lib/country-page-data';
+import { getTranslations } from 'next-intl/server';
 
 // Server component — no "use client"
 
@@ -12,13 +13,17 @@ interface CountryHeroProps {
   locale: string;
 }
 
-export function CountryHero({
+export async function CountryHero({
   country,
   displayName,
   visaCount,
   neighborhoodCount,
   hasChecklist,
 }: CountryHeroProps) {
+  const [t, tc] = await Promise.all([
+    getTranslations('Country'),
+    getTranslations('Common'),
+  ]);
   const config = COUNTRY_HERO_CONFIG[country] ?? {
     image: '/images/hero-bg.webp',
     position: 'center 20%',
@@ -52,8 +57,7 @@ export function CountryHero({
           {/* Breadcrumb */}
           <p className="mb-3 text-xs text-white/70">
             <Link href="/" className="hover:text-white/90 transition-colors">
-              {/* Home */}
-              Home
+              {tc('home')}
             </Link>
             {' › '}
             <span>{displayName}</span>
@@ -61,25 +65,25 @@ export function CountryHero({
 
           {/* H1 */}
           <h1 className="font-lora text-3xl font-bold leading-tight text-white text-wrap-balance md:text-4xl lg:text-5xl">
-            {displayName} Visa Guide
+            {t('title', { country: displayName })}
           </h1>
 
           {/* Stat pills */}
           <p className="mt-3 text-sm text-white/70" style={{ textShadow: 'none' }}>
             {visaCount > 0 && (
-              <span>{visaCount} visas</span>
+              <span>{t('heroStatVisas', { count: visaCount })}</span>
             )}
             {visaCount > 0 && neighborhoodCount > 0 && (
               <span className="mx-2">·</span>
             )}
             {neighborhoodCount > 0 && (
-              <span>{neighborhoodCount} neighborhoods</span>
+              <span>{t('heroStatNeighborhoods', { count: neighborhoodCount })}</span>
             )}
             {hasChecklist && (visaCount > 0 || neighborhoodCount > 0) && (
               <span className="mx-2">·</span>
             )}
             {hasChecklist && (
-              <span>Checklist ready</span>
+              <span>{t('heroStatChecklist')}</span>
             )}
           </p>
 
@@ -93,8 +97,7 @@ export function CountryHero({
                 href={`/${country}/compare`}
                 className="rounded-full border border-white/40 px-3 py-1.5 text-xs text-white transition-all hover:bg-white/10"
               >
-                {/* Compare */}
-                Compare
+                {t('toolCompare')}
               </Link>
             )}
             {hasChecklist && (
@@ -102,8 +105,7 @@ export function CountryHero({
                 href={`/${country}/checklist`}
                 className="rounded-full border border-white/40 px-3 py-1.5 text-xs text-white transition-all hover:bg-white/10"
               >
-                {/* Checklist */}
-                Checklist
+                {t('toolChecklist')}
               </Link>
             )}
             {country === 'korea' && (
@@ -111,8 +113,7 @@ export function CountryHero({
                 href={`/${country}/visa/change`}
                 className="rounded-full border border-white/40 px-3 py-1.5 text-xs text-white transition-all hover:bg-white/10"
               >
-                {/* Visa Path */}
-                Visa Path
+                {t('toolChange')}
               </Link>
             )}
           </div>

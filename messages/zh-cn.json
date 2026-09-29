@@ -226,7 +226,8 @@
     "disclaimer": "依据公开要求整理，不构成法律建议。",
     "countryKorea": "韩国",
     "countryJapan": "日本",
-    "countryTaiwan": "台湾"
+    "countryTaiwan": "台湾",
+    "countrySoutheastAsia": "东南亚"
   },
   "Auth": {
     "logIn": "登录",
@@ -532,6 +533,7 @@
     "contextReadMore": "阅读更多",
     "contextNeighborhood": "社区指南",
     "contextVisa": "签证详情",
-    "contextLearnMore": "了解更多"
+    "contextLearnMore": "了解更多",
+    "englishContent": "英文"
   }
 }

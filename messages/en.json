@@ -226,7 +226,8 @@
     "disclaimer": "Based on published requirements. Not legal advice.",
     "countryKorea": "South Korea",
     "countryJapan": "Japan",
-    "countryTaiwan": "Taiwan"
+    "countryTaiwan": "Taiwan",
+    "countrySoutheastAsia": "Southeast Asia"
   },
   "Auth": {
     "logIn": "Log in",
@@ -532,6 +533,7 @@
     "contextReadMore": "Read more",
     "contextNeighborhood": "Neighborhood guide",
     "contextVisa": "Visa details",
-    "contextLearnMore": "Learn more"
+    "contextLearnMore": "Learn more",
+    "englishContent": "English"
   }
 }

@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { createSlugTracker } from '@/lib/blog/utils';
+import { getAvailableLocalesForPost } from '@/lib/blog';
 import { DisclaimerPortal } from './disclaimer-portal';
 
 const BudgetTable = ({
@@ -520,7 +521,19 @@ const extractText = (children: React.ReactNode): string => {
   return '';
 };
 
-export const createMdxComponents = (): MDXComponents => {
+function localizeBlogHref(href: string | undefined, locale: string): string | undefined {
+  if (!href || locale === 'en' || !href.startsWith('/en/blog/')) return href;
+
+  const match = href.match(/^\/en\/blog\/([^/]+)\/([^/?#]+)(.*)$/);
+  if (!match) return href;
+
+  const [, category, slug, suffix] = match;
+  return getAvailableLocalesForPost(category, slug).includes(locale)
+    ? `/${locale}/blog/${category}/${slug}${suffix}`
+    : href;
+}
+
+export const createMdxComponents = (locale = 'en'): MDXComponents => {
   const uniqueSlug = createSlugTracker();
   return {
   h2: (props) => {
@@ -554,20 +567,19 @@ export const createMdxComponents = (): MDXComponents => {
       />
     );
   },
-  a: (props) => (
-    <a
-      {...props}
-      className="text-[#1B4965] underline hover:text-[#1B4965]/80"
-      target={
-        (props.href as string)?.startsWith('http') ? '_blank' : undefined
-      }
-      rel={
-        (props.href as string)?.startsWith('http')
-          ? 'noopener noreferrer'
-          : undefined
-      }
-    />
-  ),
+  a: (props) => {
+    const href = localizeBlogHref(props.href as string | undefined, locale);
+    const isExternal = href?.startsWith('http');
+    return (
+      <a
+        {...props}
+        href={href}
+        className="text-[#1B4965] underline hover:text-[#1B4965]/80"
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+      />
+    );
+  },
   BudgetTable,
   Callout,
   Disclaimer,

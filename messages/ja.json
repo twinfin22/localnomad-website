@@ -273,7 +273,8 @@
     "disclaimer": "公開されている要件に基づきます。法的アドバイスではありません。",
     "countryKorea": "韓国",
     "countryJapan": "日本",
-    "countryTaiwan": "台湾"
+    "countryTaiwan": "台湾",
+    "countrySoutheastAsia": "東南アジア"
   },
   "Nav": {
     "skipToContent": "コンテンツへスキップ",
@@ -532,6 +533,7 @@
     "contextReadMore": "詳しく読む",
     "contextNeighborhood": "エリアガイド",
     "contextVisa": "ビザ詳細",
-    "contextLearnMore": "詳しく見る"
+    "contextLearnMore": "詳しく見る",
+    "englishContent": "英語"
   }
 }

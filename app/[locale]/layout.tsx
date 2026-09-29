@@ -53,7 +53,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <NextIntlClientProvider>
+    <NextIntlClientProvider locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

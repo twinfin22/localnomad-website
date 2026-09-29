@@ -39,7 +39,8 @@ export function ChecklistPhase({
 
   // Sync open state when defaultOpen changes (e.g. tier switch or auto-expand)
   useEffect(() => {
-    setOpen(defaultOpen);
+    const timer = setTimeout(() => setOpen(defaultOpen), 0);
+    return () => clearTimeout(timer);
   }, [defaultOpen]);
 
   if (phase.items.length === 0) return null;

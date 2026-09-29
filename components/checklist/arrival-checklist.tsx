@@ -31,8 +31,10 @@ export function ArrivalChecklist({ data, country, defaultTier = 'tourist' }: Arr
     if (newlyUnlocked.length === 0) return;
 
     const count = newlyUnlocked.length;
-    setToastMsg(`${count} item${count > 1 ? 's' : ''} unlocked!`);
-    setToastExiting(false);
+    const showTimer = setTimeout(() => {
+      setToastMsg(`${count} item${count > 1 ? 's' : ''} unlocked!`);
+      setToastExiting(false);
+    }, 0);
     const exitTimer = setTimeout(() => setToastExiting(true), 2800);
     const toastTimer = setTimeout(() => { setToastMsg(null); setToastExiting(false); }, 3000);
 
@@ -46,6 +48,7 @@ export function ArrivalChecklist({ data, country, defaultTier = 'tourist' }: Arr
     const clearTimer = setTimeout(() => clearNewlyUnlocked(), 500);
 
     return () => {
+      clearTimeout(showTimer);
       clearTimeout(exitTimer);
       clearTimeout(toastTimer);
       clearTimeout(scrollTimer);
@@ -73,32 +76,37 @@ export function ArrivalChecklist({ data, country, defaultTier = 'tourist' }: Arr
 
   // Filter phases by tier and compute auto-open per phase
   const filteredPhases = useMemo(() => {
-    let prevPhaseDone = true;
-    return data.phases
-      .map((phase) => {
-        const tierItems = phase.items.filter((item) => item.visaTier.includes(tier));
-        if (tierItems.length === 0) return null;
+    return data.phases.reduce<Array<{
+      phase: CountryChecklist['phases'][number];
+      defaultOpen: boolean;
+      phaseState: 'done' | 'active' | 'blocked' | 'upcoming';
+    }>>((phases, phase) => {
+      const tierItems = phase.items.filter((item) => item.visaTier.includes(tier));
+      if (tierItems.length === 0) return phases;
 
-        const hasActionable = tierItems.some((i) => getItemState(i.id) === 'actionable');
-        const allDone = tierItems.every((i) => getItemState(i.id) === 'done');
-        const allBlocked = tierItems.every((i) => getItemState(i.id) === 'blocked');
+      const hasActionable = tierItems.some((item) => getItemState(item.id) === 'actionable');
+      const allDone = tierItems.every((item) => getItemState(item.id) === 'done');
+      const allBlocked = tierItems.every((item) => getItemState(item.id) === 'blocked');
+      const previousPhasesDone = phases.every(({ phase: previousPhase }) =>
+        previousPhase.items.every((item) => getItemState(item.id) === 'done'),
+      );
+      const phaseState: 'done' | 'active' | 'blocked' | 'upcoming' = allDone
+        ? 'done'
+        : hasActionable
+        ? 'active'
+        : allBlocked
+        ? 'blocked'
+        : 'upcoming';
 
-        const defaultOpen =
-          tier === 'tourist' ? true : prevPhaseDone && hasActionable;
-
-        if (!allDone) prevPhaseDone = false;
-
-        const phaseState: 'done' | 'active' | 'blocked' | 'upcoming' = allDone
-          ? 'done'
-          : hasActionable
-          ? 'active'
-          : allBlocked
-          ? 'blocked'
-          : 'upcoming';
-
-        return { phase: { ...phase, items: tierItems }, defaultOpen, phaseState };
-      })
-      .filter((p): p is NonNullable<typeof p> => p !== null);
+      return [
+        ...phases,
+        {
+          phase: { ...phase, items: tierItems },
+          defaultOpen: tier === 'tourist' || (previousPhasesDone && hasActionable),
+          phaseState,
+        },
+      ];
+    }, []);
   }, [data.phases, tier, getItemState]);
 
   // Overall progress: tier-filtered, all items in denominator (matches tier selector count)
@@ -180,6 +188,7 @@ export function ArrivalChecklist({ data, country, defaultTier = 'tourist' }: Arr
           >
             <BookOpen className="h-4 w-4" />
             {t('readFullGuide')}
+            {data.blogUrlLanguage === 'en' && ` (${t('englishContent')})`}
           </a>
           <button
             type="button"

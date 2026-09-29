@@ -9,7 +9,8 @@ export function DisclaimerPortal({ children }: { children: React.ReactNode }) {
   const [target, setTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    setTarget(document.getElementById(PORTAL_ID));
+    const timer = setTimeout(() => setTarget(document.getElementById(PORTAL_ID)), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!target) return null;

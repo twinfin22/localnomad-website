@@ -52,7 +52,10 @@ export function useLocalChecklist({
 
   // Re-read from storage when storageKey changes (tier/country switch)
   useEffect(() => {
-    setChecked(typeof window !== 'undefined' ? readChecklist(storageKey) : {});
+    const timer = setTimeout(() => {
+      setChecked(typeof window !== 'undefined' ? readChecklist(storageKey) : {});
+    }, 0);
+    return () => clearTimeout(timer);
   }, [storageKey]);
 
   // Cross-tab sync

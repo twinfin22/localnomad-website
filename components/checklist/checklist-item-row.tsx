@@ -194,6 +194,7 @@ export function ChecklistItemRow({
                 >
                   {isExternal ? <Globe className="h-3.5 w-3.5 shrink-0" /> : <BookOpen className="h-3.5 w-3.5 shrink-0" />}
                   {item.linkLabel || t('contextLearnMore')}
+                  {item.linkLanguage === 'en' && ` (${t('englishContent')})`}
                   {isExternal && <ExternalLink className="h-3 w-3 shrink-0" />}
                 </a>
               </div>

@@ -24,11 +24,11 @@ export const revalidate = 3600;
 
 const VALID_COUNTRIES = ['japan', 'korea', 'taiwan', 'southeast-asia'] as const;
 
-const COUNTRY_DISPLAY: Record<string, string> = {
-  korea: 'South Korea',
-  taiwan: 'Taiwan',
-  japan: 'Japan',
-  'southeast-asia': 'Southeast Asia',
+const COUNTRY_NAME_KEY: Record<string, 'countryKorea' | 'countryTaiwan' | 'countryJapan' | 'countrySoutheastAsia'> = {
+  korea: 'countryKorea',
+  taiwan: 'countryTaiwan',
+  japan: 'countryJapan',
+  'southeast-asia': 'countrySoutheastAsia',
 };
 
 export function generateStaticParams() {
@@ -42,11 +42,12 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, country } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const [t, tm] = await Promise.all([
+  const [t, tm, tc] = await Promise.all([
     getTranslations({ locale, namespace: 'Country' }),
     getTranslations({ locale, namespace: 'Meta' }),
+    getTranslations({ locale, namespace: 'Common' }),
   ]);
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const displayName = tc(COUNTRY_NAME_KEY[country] ?? 'countryKorea');
 
   const title = `${t('title', { country: displayName })} | LocalNomad`;
   const description = tm('countryDescription', { country: displayName });
@@ -90,7 +91,7 @@ export default async function CountryPage({ params }: Props) {
       ? ((await getComparisonData('sea-digital-nomad')) as SEAComparisonData)
       : null;
 
-  const displayName = COUNTRY_DISPLAY[country] ?? country;
+  const displayName = tc(COUNTRY_NAME_KEY[country] ?? 'countryKorea');
 
   const collectionJsonLd = {
     '@context': 'https://schema.org',
