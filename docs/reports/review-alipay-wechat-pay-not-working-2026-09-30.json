@@ -1,0 +1,13 @@
+{
+  "executionId": "run-20260930-publication",
+  "articleId": "en/tips/alipay-wechat-pay-not-working",
+  "contentSha256": "c6d3506d0cd17de18d55cf9093564811f13a13e0a26cbe713cd3f34bab78ed93",
+  "reviewedAt": "2026-09-30T15:00:00+09:00",
+  "reviews": [
+    { "review": "facts", "result": "PASS", "evidence": "docs/reports/alipay-wechat-pay-troubleshooting-sources-2026-09-30.md" },
+    { "review": "seo", "result": "PASS", "evidence": "frontmatter schema and published-link validation" },
+    { "review": "voice", "result": "PASS", "evidence": "symptom, cause, check order, and next action structure" },
+    { "review": "technical", "result": "PASS", "evidence": "frontmatter schema and scripts/validate-blog-links.sh" },
+    { "review": "legal", "result": "PASS", "evidence": "no workaround or transaction guarantee; official support and issuer escalation retained" }
+  ]
+}

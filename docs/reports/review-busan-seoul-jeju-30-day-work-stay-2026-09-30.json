@@ -1,0 +1,13 @@
+{
+  "executionId": "run-20260930-publication",
+  "articleId": "en/comparisons/busan-seoul-jeju-30-day-work-stay",
+  "contentSha256": "a78535cd4257e329d38a4d6685eaca249e594ec768c413e455569606f4e7ba4c",
+  "reviewedAt": "2026-09-30T15:00:00+09:00",
+  "reviews": [
+    { "review": "facts", "result": "PASS", "evidence": "docs/reports/2026-09-29-busan-seoul-jeju-work-stay-research.md" },
+    { "review": "seo", "result": "PASS", "evidence": "frontmatter schema and published-link validation" },
+    { "review": "voice", "result": "PASS", "evidence": "explicit observed-price scope and decision checklist" },
+    { "review": "technical", "result": "PASS", "evidence": "frontmatter schema and scripts/validate-blog-links.sh" },
+    { "review": "legal", "result": "PASS", "evidence": "does not advise an immigration or remote-work workaround" }
+  ]
+}
