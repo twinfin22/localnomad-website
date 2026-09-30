@@ -9,7 +9,7 @@ import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getAlternates } from '@/lib/seo';
 import { getPost, getAllPostSlugs, getRelatedPosts, getAvailableLocalesForPost } from '@/lib/blog';
-import { extractHeadings } from '@/lib/blog/utils';
+import { extractHeadings, formatBlogMonth } from '@/lib/blog/utils';
 import { createMdxComponents } from '@/components/blog/mdx-components';
 import { BlogToc } from '@/components/blog/blog-toc';
 import { RelatedPosts } from '@/components/blog/related-posts';
@@ -147,20 +147,14 @@ export default async function BlogPostPage({ params }: Props) {
             <span>{post.frontmatter.author}</span>
             <span className="text-gray-400">/</span>
             <time dateTime={post.frontmatter.date}>
-              {new Date(post.frontmatter.date).toLocaleDateString(
-                locale === 'ja' ? 'ja-JP' : locale === 'zh-cn' ? 'zh-CN' : 'en-US',
-                { year: 'numeric', month: 'short', day: 'numeric' },
-              )}
+              {formatBlogMonth(post.frontmatter.date, locale)}
             </time>
             {post.frontmatter.updatedAt && (
               <>
                 <span className="text-gray-400">/</span>
                 <span>
                   {t('updatedOn')}{' '}
-                  {new Date(post.frontmatter.updatedAt).toLocaleDateString(
-                    locale === 'ja' ? 'ja-JP' : locale === 'zh-cn' ? 'zh-CN' : 'en-US',
-                    { year: 'numeric', month: 'short', day: 'numeric' },
-                  )}
+                  {formatBlogMonth(post.frontmatter.updatedAt, locale)}
                 </span>
               </>
             )}

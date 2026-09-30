@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import type { BlogCategory } from '@/lib/blog/schema';
+import { formatBlogMonth } from '@/lib/blog/utils';
 
 const CATEGORY_COLORS: Record<BlogCategory, string> = {
   guides: 'bg-primary text-white',
@@ -121,11 +122,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => {
                   </p>
                   <div className="mt-3 flex items-center justify-between border-t border-border/40 pt-2.5 text-xs text-muted-foreground">
                     <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString(locale, {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
+                      {formatBlogMonth(post.date, locale)}
                     </time>
                     <span>{post.readingTime} {t('minuteRead')}</span>
                   </div>

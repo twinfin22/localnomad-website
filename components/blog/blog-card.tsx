@@ -3,6 +3,7 @@ import { BlogCoverImage } from './blog-cover-image';
 import { Link } from '@/i18n/navigation';
 import type { BlogPost } from '@/lib/blog';
 import type { BlogCategory } from '@/lib/blog/schema';
+import { formatBlogMonth } from '@/lib/blog/utils';
 
 const CATEGORY_COLORS: Record<BlogCategory, string> = {
   guides: 'bg-[#1B4965] text-white',
@@ -60,11 +61,7 @@ export const BlogCard = async ({ post, priority }: { post: BlogPost; priority?: 
         </p>
         <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
           <time dateTime={post.frontmatter.date}>
-            {new Date(post.frontmatter.date).toLocaleDateString(locale, {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })}
+            {formatBlogMonth(post.frontmatter.date, locale)}
           </time>
           <span>&middot;</span>
           <span>{post.readingTime} {t('minuteRead')}</span>

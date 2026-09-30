@@ -1,6 +1,7 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getAllPosts } from '@/lib/blog';
+import { formatBlogMonth } from '@/lib/blog/utils';
 import { ArrowRight } from 'lucide-react';
 import type { BlogCategory } from '@/lib/blog/schema';
 import { BlogCarouselScrollButtons } from './blog-carousel-scroll';
@@ -36,7 +37,10 @@ const COUNTRY_EMOJI: Record<string, string> = {
 };
 
 export const BlogCarousel = async () => {
-  const t = await getTranslations('Landing');
+  const [t, locale] = await Promise.all([
+    getTranslations('Landing'),
+    getLocale(),
+  ]);
   const posts = getAllPosts({ limit: 8 });
 
   if (posts.length === 0) return null;
@@ -127,14 +131,7 @@ export const BlogCarousel = async () => {
                 {/* Footer */}
                 <div className="mt-4 flex items-center justify-between border-t border-border/40 pt-3 text-xs text-muted-foreground">
                   <time dateTime={post.frontmatter.date}>
-                    {new Date(post.frontmatter.date).toLocaleDateString(
-                      'en-US',
-                      {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      }
-                    )}
+                    {formatBlogMonth(post.frontmatter.date, locale)}
                   </time>
                   <span className="flex items-center gap-1">
                     {post.readingTime} min read

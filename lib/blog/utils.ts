@@ -1,5 +1,13 @@
 import type { TocHeading } from '@/components/blog/blog-toc';
 
+/** Formats a blog's date as a localized year and month, without a day. */
+export const formatBlogMonth = (date: string, locale: string): string =>
+  new Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'short',
+    timeZone: 'UTC',
+  }).format(new Date(`${date}T00:00:00Z`));
+
 export const slugify = (text: string): string =>
   text
     .toLowerCase()
