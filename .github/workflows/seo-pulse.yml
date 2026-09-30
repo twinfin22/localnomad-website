@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install GSC dependencies
-        run: npm install @googleapis/searchconsole google-auth-library
+      - name: Install analytics dependencies
+        run: npm install @googleapis/searchconsole google-auth-library @google-analytics/data gray-matter
 
       - name: Write GSC service account key
         env:
@@ -30,7 +30,7 @@ jobs:
           GSC_SA_KEY_PATH: /tmp/gsc-sa-key.json
           GSC_SITE_URL: https://localnomad.club/
         run: |
-          GSC_DATA=$(node scripts/seo/pull-gsc.mjs 2>&1) || {
+          GSC_DATA=$(node scripts/seo/pull-gsc.mjs --days 28 --compare-prior 2>&1) || {
             echo "pull-gsc failed"
             echo "error=true" >> $GITHUB_OUTPUT
             exit 0
@@ -39,8 +39,24 @@ jobs:
           ROW_COUNT=$(echo "$GSC_DATA" | jq '.meta.rowCount // 0')
           echo "rows=$ROW_COUNT" >> $GITHUB_OUTPUT
 
+      - name: Pull GA4 data when configured
+        id: ga4
+        env:
+          GSC_SA_KEY_PATH: /tmp/gsc-sa-key.json
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: |
+          if [ -z "$GA4_PROPERTY_ID" ]; then
+            echo "status=unconfigured" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          node scripts/seo/pull-ga4.mjs --days 28 --compare-prior > /tmp/ga4-data.json || {
+            echo "status=failed" >> $GITHUB_OUTPUT
+            exit 0
+          }
+          echo "status=complete" >> $GITHUB_OUTPUT
+
       - name: Format summary for Telegram
-        if: steps.gsc.outputs.error != 'true' && steps.gsc.outputs.rows != '0'
+        if: steps.gsc.outputs.error != 'true'
         run: |
           cat > /tmp/format-seo.mjs << 'SCRIPT'
           import { readFileSync, writeFileSync } from 'fs';
@@ -92,13 +108,16 @@ jobs:
               msg += `pos ${q.pos.toFixed(1)} · ${trunc(q.query, 40)} (${q.impressions} impr)\n`;
             });
           }
+          const langs = data.blog?.languageTotals || [];
+          if (langs.length) msg += `\n🌐 ${langs.map(l => `${l.language}: ${l.clicks} clicks`).join(' · ')}`;
+          if (meta.rowCount === 0) msg += `\nℹ️ Query-detail rows are 0; this is a successful zero-data result, not an API failure.`;
           msg += `\n<i>${meta.rowCount} rows · ${new Date().toISOString().slice(0,10)}</i>`;
           writeFileSync('/tmp/telegram-msg.txt', msg);
           SCRIPT
           node /tmp/format-seo.mjs
 
       - name: Send to Telegram
-        if: steps.gsc.outputs.error != 'true' && steps.gsc.outputs.rows != '0'
+        if: steps.gsc.outputs.error != 'true'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -110,15 +129,15 @@ jobs:
             --data-urlencode "text=${MSG}" > /dev/null
 
       - name: Send error notification
-        if: steps.gsc.outputs.error == 'true' || steps.gsc.outputs.rows == '0'
+        if: steps.gsc.outputs.error == 'true'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=⚠️ SEO Pulse failed — GSC returned 0 rows or pull-gsc errored. Check GitHub Actions log." > /dev/null
+            --data-urlencode "text=⚠️ SEO Pulse failed — the GSC API pull errored. Check GitHub Actions log." > /dev/null
 
       - name: Cleanup
         if: always()
-        run: rm -f /tmp/gsc-sa-key.json /tmp/gsc-data.json
+        run: rm -f /tmp/gsc-sa-key.json /tmp/gsc-data.json /tmp/ga4-data.json

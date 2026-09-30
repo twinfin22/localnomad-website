@@ -1,7 +1,6 @@
 #!/bin/bash
-# SEO Pulse — 매주 월요일 09:00 KST
-# GSC 데이터 수집 → Claude 분석 → docs/human/[SEO] weekly-pulse.md
-# Cron: 0 0 * * 1 ~/localnomad/b2c-website/scripts/seo/seo-pulse.sh
+# SEO Pulse — GSC + GA4 data -> local weekly analysis. Keeps the previous report on failure.
+# Usage: scripts/seo/seo-pulse.sh [--days N] [--end-date YYYY-MM-DD] [--compare-prior] [--dry-run]
 
 set -euo pipefail
 
@@ -9,124 +8,91 @@ PROJECT_DIR="$HOME/localnomad/b2c-website"
 LOG_DIR="$PROJECT_DIR/logs/cron"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/seo-pulse-$(date +%Y-%m-%d).log"
-
 SKILL_FILE="$PROJECT_DIR/scripts/seo/SEO-PULSE-SKILL.md"
-PULL_SCRIPT="$PROJECT_DIR/scripts/seo/pull-gsc.mjs"
-PULL_GA4="$PROJECT_DIR/scripts/seo/pull-ga4.mjs"
+GSC_SCRIPT="$PROJECT_DIR/scripts/seo/pull-gsc.mjs"
+GA4_SCRIPT="$PROJECT_DIR/scripts/seo/pull-ga4.mjs"
 OUTPUT_FILE="$PROJECT_DIR/docs/human/[SEO] weekly-pulse.md"
+DRY_RUN=false
+ANALYTICS_ARGS=(--days 28 --compare-prior)
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run) DRY_RUN=true ;;
+    --days|--end-date) ANALYTICS_ARGS+=("$1" "$2"); shift ;;
+    --compare-prior) ;;
+    *) echo "Unknown argument: $1" >&2; exit 2 ;;
+  esac
+  shift
+done
 
 cd "$PROJECT_DIR"
+for file in "$SKILL_FILE" "$GSC_SCRIPT" "$GA4_SCRIPT"; do
+  if [[ ! -f "$file" ]]; then
+    echo "[ERROR] required file not found: $file" >> "$LOG_FILE"
+    exit 1
+  fi
+done
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Starting seo-pulse..." >> "$LOG_FILE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Starting seo-pulse (dry-run=$DRY_RUN)" >> "$LOG_FILE"
+GSC_STATUS="failed"
+GA4_STATUS="failed"
+if GSC_DATA=$(node "$GSC_SCRIPT" "${ANALYTICS_ARGS[@]}" 2>> "$LOG_FILE"); then GSC_STATUS="complete"; fi
+if GA4_DATA=$(node "$GA4_SCRIPT" "${ANALYTICS_ARGS[@]}" 2>> "$LOG_FILE"); then GA4_STATUS="complete"; fi
 
-# Validate dependencies
-if [ ! -f "$SKILL_FILE" ]; then
-  echo "[ERROR] SKILL.md not found at $SKILL_FILE" >> "$LOG_FILE"
+if [[ "$GSC_STATUS" == "failed" && "$GA4_STATUS" == "failed" ]]; then
+  echo "[ERROR] Both data pulls failed; leaving existing report unchanged" >> "$LOG_FILE"
   exit 1
 fi
 
-if [ ! -f "$PULL_SCRIPT" ]; then
-  echo "[ERROR] pull-gsc.mjs not found at $PULL_SCRIPT" >> "$LOG_FILE"
-  exit 1
-fi
+PROMPT=$(cat <<EOF
+## Collection status
+- GSC: $GSC_STATUS
+- GA4: $GA4_STATUS
 
-# Pull GSC data (30s AbortController timeout built into pull-gsc.mjs)
-GSC_DATA=$(node "$PULL_SCRIPT" 2>> "$LOG_FILE")
-PULL_EXIT=$?
-
-if [ $PULL_EXIT -ne 0 ]; then
-  echo "[WARN] pull-gsc.mjs failed with exit code $PULL_EXIT — continuing with GA4 only" >> "$LOG_FILE"
-  GSC_DATA=""
-fi
-
-if [ -n "$GSC_DATA" ]; then
-  ROW_COUNT=$(echo "$GSC_DATA" | node -e "
-    let d=''; process.stdin.on('data',c=>d+=c);
-    process.stdin.on('end',()=>{try{console.log(JSON.parse(d).meta.rowCount)}catch{console.log(0)}});
-  ")
-  echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Pulled $ROW_COUNT rows from GSC" >> "$LOG_FILE"
-fi
-
-# Pull GA4 data
-GA4_DATA=$(node "$PULL_GA4" 2>> "$LOG_FILE")
-GA4_EXIT=$?
-
-if [ $GA4_EXIT -ne 0 ]; then
-  echo "[WARN] pull-ga4.mjs failed with exit code $GA4_EXIT" >> "$LOG_FILE"
-  GA4_DATA=""
-fi
-
-if [ -n "$GA4_DATA" ]; then
-  GA4_USERS=$(echo "$GA4_DATA" | node -e "
-    let d=''; process.stdin.on('data',c=>d+=c);
-    process.stdin.on('end',()=>{try{console.log(JSON.parse(d).totals.users)}catch{console.log(0)}});
-  ")
-  echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] GA4: $GA4_USERS users in period" >> "$LOG_FILE"
-fi
-
-# Need at least one data source
-if [ -z "$GSC_DATA" ] && [ -z "$GA4_DATA" ]; then
-  echo "[ERROR] Both GSC and GA4 failed — skipping analysis" >> "$LOG_FILE"
-  exit 1
-fi
-
-# Compose prompt: GSC + GA4 data + SKILL template
-GSC_SECTION=""
-if [ -n "$GSC_DATA" ]; then
-  GSC_SECTION=$(cat <<GSEOF
-## Google Search Console Data (last 28 days)
-
+## GSC data
 \`\`\`json
-$GSC_DATA
+${GSC_DATA:-null}
 \`\`\`
-GSEOF
-)
-fi
 
-GA4_SECTION=""
-if [ -n "$GA4_DATA" ]; then
-  GA4_SECTION=$(cat <<GAEOF
-## GA4 Analytics Data (last 28 days)
-
+## GA4 data
 \`\`\`json
-$GA4_DATA
+${GA4_DATA:-null}
 \`\`\`
-GAEOF
-)
-fi
-
-PROMPT=$(cat <<HEREDOC
-$GSC_SECTION
-
-$GA4_SECTION
 
 ---
-
 $(cat "$SKILL_FILE")
-HEREDOC
+EOF
 )
 
-# Run Claude analysis
-echo "$PROMPT" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > "$OUTPUT_FILE" 2>> "$LOG_FILE"
-EXIT_CODE=$?
-
-echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE → $OUTPUT_FILE" >> "$LOG_FILE"
-
-# Send to Telegram
-if [ $EXIT_CODE -eq 0 ] && [ -f "$OUTPUT_FILE" ]; then
-  TG_CONFIG="$HOME/.claude/.omc-config.json"
-  if [ -f "$TG_CONFIG" ]; then
-    TG_TOKEN=$(jq -r '.notifications.telegram.botToken // empty' "$TG_CONFIG")
-    TG_CHAT=$(jq -r '.notifications.telegram.chatId // empty' "$TG_CONFIG")
-    if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
-      CONTENT=$(head -c 4000 "$OUTPUT_FILE")
-      curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
-        -d "chat_id=${TG_CHAT}" \
-        --data-urlencode "text=📊 *SEO Weekly Pulse*
-${CONTENT}" > /dev/null 2>&1
-      echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Sent to Telegram" >> "$LOG_FILE"
-    fi
-  fi
+TEMP_OUTPUT=$(mktemp "$PROJECT_DIR/docs/human/.weekly-pulse.XXXXXX")
+if ! printf '%s\n' "$PROMPT" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > "$TEMP_OUTPUT" 2>> "$LOG_FILE"; then
+  rm -f "$TEMP_OUTPUT"
+  echo "[ERROR] analysis failed; leaving existing report unchanged" >> "$LOG_FILE"
+  exit 1
+fi
+if [[ ! -s "$TEMP_OUTPUT" ]]; then
+  rm -f "$TEMP_OUTPUT"
+  echo "[ERROR] analysis returned an empty report; leaving existing report unchanged" >> "$LOG_FILE"
+  exit 1
 fi
 
-exit $EXIT_CODE
+if [[ "$DRY_RUN" == true ]]; then
+  rm -f "$TEMP_OUTPUT"
+  echo "[INFO] dry-run completed; no report write or notification" >> "$LOG_FILE"
+  exit 0
+fi
+
+mv "$TEMP_OUTPUT" "$OUTPUT_FILE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Report updated: $OUTPUT_FILE" >> "$LOG_FILE"
+
+# Existing Telegram recipient/config are preserved; dry-run is the no-send mode.
+TG_CONFIG="$HOME/.claude/.omc-config.json"
+if [[ -f "$TG_CONFIG" ]]; then
+  TG_TOKEN=$(jq -r '.notifications.telegram.botToken // empty' "$TG_CONFIG")
+  TG_CHAT=$(jq -r '.notifications.telegram.chatId // empty' "$TG_CONFIG")
+  if [[ -n "$TG_TOKEN" && -n "$TG_CHAT" ]]; then
+    CONTENT=$(head -c 4000 "$OUTPUT_FILE")
+    curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" -d "chat_id=${TG_CHAT}" --data-urlencode "text=📊 *SEO Weekly Pulse*
+${CONTENT}" > /dev/null 2>&1
+  fi
+fi

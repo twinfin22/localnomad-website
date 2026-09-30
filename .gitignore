@@ -44,6 +44,10 @@ next-env.d.ts
 # agent / session artifacts
 .agent/
 .agents/
+!.agents/
+!.agents/skills/
+!.agents/skills/localnomad-blog/
+!.agents/skills/localnomad-blog/**
 .omc/
 SESSION-SUMMARY.md
 phase-1-4-claude-code-prompt.md
@@ -55,6 +59,10 @@ subinium-agentic-workflow-config/
 memory/
 data/SoT/
 skills
+!.agents/
+!.agents/skills/
+!.agents/skills/localnomad-blog/
+!.agents/skills/localnomad-blog/**
 
 # runtime artifacts
 logs/

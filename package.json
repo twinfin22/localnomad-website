@@ -12,6 +12,7 @@
     "lint": "eslint",
     "fix:translations": "node --experimental-strip-types scripts/fix-array-collapse.ts",
     "analyze": "next experimental-analyze",
+    "test:analytics": "node scripts/seo/test-analytics.mjs",
     "prepare": "lefthook install || true"
   },
   "browserslist": [

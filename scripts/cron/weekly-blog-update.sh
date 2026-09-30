@@ -14,15 +14,25 @@ cd "$HOME/localnomad/b2c-website"
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Starting weekly-blog-update..." >> "$LOG_FILE"
 
-SKILL_FILE="$HOME/Documents/Claude/Scheduled/weekly-blog-update/SKILL.md"
+SKILL_FILE="$HOME/localnomad/b2c-website/.agents/skills/localnomad-blog/SKILL.md"
+CANDIDATE_REFERENCE="$HOME/localnomad/b2c-website/.agents/skills/localnomad-blog/references/weekly-candidates.md"
 
 if [ ! -f "$SKILL_FILE" ]; then
   echo "[ERROR] SKILL.md not found at $SKILL_FILE" >> "$LOG_FILE"
   exit 1
 fi
 
+if [ ! -f "$CANDIDATE_REFERENCE" ]; then
+  echo "[ERROR] weekly candidate reference not found at $CANDIDATE_REFERENCE" >> "$LOG_FILE"
+  exit 1
+fi
+
 OUTPUT_FILE="$HOME/localnomad/b2c-website/docs/human/[WEEKLY] 블로그-후보.md"
-cat "$SKILL_FILE" | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > "$OUTPUT_FILE" 2>> "$LOG_FILE"
+{
+  cat "$SKILL_FILE"
+  printf '\n\n'
+  cat "$CANDIDATE_REFERENCE"
+} | env -u CLAUDECODE claude --dangerously-skip-permissions -p - > "$OUTPUT_FILE" 2>> "$LOG_FILE"
 EXIT_CODE=$?
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S KST')] Finished with exit code $EXIT_CODE" >> "$LOG_FILE"
