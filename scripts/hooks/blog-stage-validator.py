@@ -12,6 +12,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from blog_state import state_directory
+
 SCHEMA_BASE = Path("~/.claude/plugins/localnomad-blog-plugin/contracts").expanduser()
 
 STAGE_SCHEMAS = {
@@ -155,7 +158,7 @@ def main() -> None:
         sys.exit(0)
 
     # Only process files inside a blog-pipeline/ directory
-    if "/blog-pipeline/" not in file_path:
+    if not Path(file_path).is_relative_to(Path(state_directory())):
         sys.exit(0)
 
     basename = Path(file_path).name

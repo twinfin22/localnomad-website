@@ -272,45 +272,15 @@ def split_messages(html: str, limit: int = 4000) -> list[str]:
     return chunks
 
 
-def send_telegram(title: str, token: str, chat_id: str, html: str):
-    """Send formatted HTML to Telegram, splitting if needed."""
-    import urllib.request
-    import urllib.parse
-
-    chunks = split_messages(html)
-    for i, chunk in enumerate(chunks):
-        if i == 0:
-            chunk = f'{title}\n\n{chunk}'
-
-        data = urllib.parse.urlencode({
-            'chat_id': chat_id,
-            'parse_mode': 'HTML',
-            'text': chunk,
-        }).encode()
-
-        req = urllib.request.Request(
-            f'https://api.telegram.org/bot{token}/sendMessage',
-            data=data,
-        )
-        try:
-            urllib.request.urlopen(req)
-        except Exception as e:
-            print(f'Chunk {i+1} failed: {e}', file=sys.stderr)
-
 
 if __name__ == '__main__':
-    text = sys.stdin.read()
-    html = format_telegram(text)
+    import argparse
 
-    if '--send' in sys.argv:
-        # --send "title" "token" "chat_id"
-        idx = sys.argv.index('--send')
-        title = sys.argv[idx + 1]
-        token = sys.argv[idx + 2]
-        chat_id = sys.argv[idx + 3]
-        send_telegram(title, token, chat_id, html)
-    elif '--split' in sys.argv:
-        chunks = split_messages(html)
-        print('\n---TG_SPLIT---\n'.join(chunks))
+    parser = argparse.ArgumentParser(description='Format Markdown locally as Telegram HTML.')
+    parser.add_argument('--split', action='store_true', help='Split formatted HTML into local chunks.')
+    args = parser.parse_args()
+    html = format_telegram(sys.stdin.read())
+    if args.split:
+        print('\n---TG_SPLIT---\n'.join(split_messages(html)))
     else:
         print(html)

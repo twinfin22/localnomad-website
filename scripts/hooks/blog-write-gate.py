@@ -7,9 +7,11 @@ Guard 2 (R2): Block .mdx writes to content/blog/ without active pipeline state.
 """
 
 import json
-import os
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from blog_state import read_state, blog_path, protected_state_path, publication_status, require_publication_approval, read_blog_document
 
 
 def deny(reason: str) -> None:
@@ -37,28 +39,25 @@ def main() -> None:
     basename = Path(file_path).name
 
     # Guard 1 (R6): Block direct writes to pipeline-state JSON files
-    if "pipeline-state" in basename and basename.endswith(".json"):
+    if protected_state_path(file_path):
         deny("Use blog-state.sh, not direct write to state file")
         sys.exit(0)
 
     # Guard 2 (R2): Block .mdx writes to content/blog/ without pipeline state
     # Skip gate for translation subdirectories (ja/, zh-cn/) — source EN post already published
-    is_translation = ("/content/blog/ja/" in file_path or "/content/blog/zh-cn/" in file_path)
-    if "/content/blog/" in file_path and file_path.endswith(".mdx") and not is_translation:
+    is_blog, is_translation = blog_path(file_path)
+    if is_blog and publication_status(data.get('tool_input', {}).get('content')):
+        already_published_translation = False
+        if is_translation:
+            try:
+                already_published_translation = publication_status(read_blog_document(file_path))
+            except FileNotFoundError:
+                pass
+        if not already_published_translation:
+            require_publication_approval(Path(file_path).stem)
+    if is_blog and not is_translation:
         slug = Path(file_path).stem
-        tmpdir = os.environ.get("TMPDIR", "/tmp")
-        state_path = Path(tmpdir) / "blog-pipeline" / f"pipeline-state-{slug}.json"
-
-        # Fallback: check /tmp/claude (sandbox sets TMPDIR=/tmp/claude at runtime)
-        if not state_path.exists():
-            state_path = Path("/tmp/claude") / "blog-pipeline" / f"pipeline-state-{slug}.json"
-
-        if not state_path.exists():
-            deny(f"No active pipeline for slug '{slug}'. Run /blog first.")
-            sys.exit(0)
-
-        with open(state_path) as f:
-            state = json.load(f)
+        state = read_state(slug)
 
         stage = state.get("stage", 0)
         if stage < 3:
@@ -76,5 +75,5 @@ def main() -> None:
 try:
     main()
 except Exception as e:
-    print(f"blog-write-gate error: {e}", file=sys.stderr)
+    deny("State validation failed; reinitialize through blog-state.sh after correcting storage permissions.")
     sys.exit(0)

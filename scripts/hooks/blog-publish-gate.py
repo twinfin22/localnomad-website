@@ -2,14 +2,15 @@
 """
 PreToolUse:Edit hook — blocks setting draft: false in blog .mdx files without CP2 approval.
 
-State file: $TMPDIR/blog-pipeline/pipeline-state-<slug>.json
+State file: $HOME/.local/state/localnomad/blog-pipeline/pipeline-state-<slug>.json
 Expected shape: { "cp2": true, ... }
 """
 
 from pathlib import Path
 import json
 import sys
-import os
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from blog_state import blog_path, protected_state_path, edit_publishes, require_publication_approval
 
 
 def deny(reason: str) -> None:
@@ -33,37 +34,16 @@ def main() -> None:
 
     tool_input = data.get("tool_input", {})
     file_path = tool_input.get("file_path", "")
-    old_string = tool_input.get("old_string", "")
-    new_string = tool_input.get("new_string", "")
+    if protected_state_path(file_path):
+        deny("Use blog-state.sh, not direct edit of state file")
 
     # Only intercept blog .mdx files
-    if "/content/blog/" not in file_path:
-        return
-    if not file_path.endswith(".mdx"):
-        return
-
-    # Only intercept draft: true -> draft: false transitions
-    if "draft: true" not in old_string:
-        return
-    if "draft: false" not in new_string:
+    is_blog, _ = blog_path(file_path)
+    if not is_blog:
         return
 
-    slug = Path(file_path).stem
-
-    tmpdir = os.environ.get("TMPDIR", "/tmp")
-    state_file = Path(tmpdir) / "blog-pipeline" / f"pipeline-state-{slug}.json"
-
-    # Fallback: check /tmp/claude (sandbox sets TMPDIR=/tmp/claude at runtime)
-    if not state_file.exists():
-        state_file = Path("/tmp/claude") / "blog-pipeline" / f"pipeline-state-{slug}.json"
-
-    if not state_file.exists():
-        deny(f"No active pipeline for slug '{slug}'. Cannot publish without pipeline.")
-
-    state = json.loads(state_file.read_text())
-
-    if state.get("cp2") is not True:
-        deny("CP2 not approved. Complete quality gate and get approval first.")
+    if edit_publishes(tool_input):
+        require_publication_approval(Path(file_path).stem)
 
     # CP2 approved — allow
     return
@@ -73,5 +53,4 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"blog-publish-gate error: {e}", file=sys.stderr)
-        sys.exit(0)
+        deny("State validation failed; publication requires a valid protected pipeline record.")
