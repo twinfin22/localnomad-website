@@ -64,6 +64,7 @@ export const frontmatterSchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/)
     .optional(),
+  showUpdatedDateOnly: z.boolean().optional(),
   author: z.string().default('LocalNomad Team'),
   tags: z.array(z.enum(BLOG_TAGS)).default([]),
   featured: z.boolean().default(false),
