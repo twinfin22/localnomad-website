@@ -40,6 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'Meta' });
   const alternates = getAlternates(locale);
 
+  const heroImage = '/images/hero-bg.webp';
+
   return {
     title: t('landingTitle'),
     description: t('landingDescription'),
@@ -48,11 +50,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t('landingTitle'),
       description: t('landingDescription'),
       url: `https://localnomad.club/${locale}`,
+      images: [{ url: heroImage, width: 1920, height: 1440 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('landingTitle'),
       description: t('landingDescription'),
+      images: [heroImage],
     },
   };
 }
