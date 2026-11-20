@@ -146,16 +146,18 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <span>{post.frontmatter.author}</span>
             <span className="text-gray-400">/</span>
-            <time dateTime={post.frontmatter.date}>
-              {formatBlogMonth(post.frontmatter.date, locale)}
-            </time>
+            {(!post.frontmatter.showUpdatedDateOnly || !post.frontmatter.updatedAt) && (
+              <time dateTime={post.frontmatter.date}>
+                {formatBlogMonth(post.frontmatter.date, locale)}
+              </time>
+            )}
             {post.frontmatter.updatedAt && (
               <>
-                <span className="text-gray-400">/</span>
-                <span>
-                  {t('updatedOn')}{' '}
+                {!post.frontmatter.showUpdatedDateOnly && <span className="text-gray-400">/</span>}
+                <time dateTime={post.frontmatter.updatedAt}>
+                  {post.frontmatter.showUpdatedDateOnly && locale === 'en' ? 'Updated' : t('updatedOn')}{' '}
                   {formatBlogMonth(post.frontmatter.updatedAt, locale)}
-                </span>
+                </time>
               </>
             )}
             <span className="text-gray-400">/</span>
