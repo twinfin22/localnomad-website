@@ -4,7 +4,7 @@
   "nameLocal": "관광비자 (B-2)",
   "shortName": "B-2",
   "category": "tourist",
-  "description": "Everything about Korea's B-2 Tourist Visa: visa-free entry for 106 countries, with 67 exempted from K-ETA requirements through 2026, application process for non-exempt nationalities, documents, and FAQ. Updated for 2026.",
+  "description": "Korea’s B-2 tourist entry guide: visa-free eligibility, K-ETA exemptions, arrival declarations, and visa application steps.",
   "tagline": "Short-term stays for tourism and business",
   "keyRequirement": "Valid passport from visa-exempt country (30–90 days, varies by nationality) or visa application for non-exempt countries",
   "targetAudience": [
@@ -16,10 +16,10 @@
   "eligibility": [
     {
       "id": "visa-exempt",
-      "label": "Visa-exempt entry available for 106 countries (67 K-ETA exempt through 2026)",
-      "description": "Citizens of visa-exempt countries may enter Korea for up to 90 days without a visa. As of 2026, nationals from 106 countries have visa-free access to Korea for tourism. Additionally, 67 countries are currently exempt from K-ETA (Korea Electronic Travel Authorization) requirements through December 31, 2026. Check the Korea Immigration Service website for the current list of visa-exempt countries and K-ETA requirements.",
+      "label": "Visa-free entry and temporary K-ETA exemption",
+      "description": "Visa-free entry rules and permitted stays depend on your passport. K-ETA is a separate requirement for visa-free travel. South Korea has extended the temporary K-ETA exemption for the countries and regions already covered through December 31, 2027 (Korea time).",
       "required": false,
-      "tips": ["Some nationalities receive less than 90 days visa-free — verify your specific allowance", "After December 31, 2026, K-ETA may be required for some nationalities — confirm K-ETA eligibility before travel"]
+      "tips": ["Some nationalities receive less than 90 days visa-free — verify your specific allowance", "Check your passport’s current K-ETA requirements on the official K-ETA website before departure."]
     },
     {
       "id": "visa-application",
@@ -119,10 +119,10 @@
       "id": "step-1",
       "step": 1,
       "title": "Check Visa-Free Status",
-      "description": "Verify whether your nationality is on Korea's visa-exempt list. Citizens of 106 countries can enter without a visa for up to 90 days. Additionally, verify if your country is exempted from K-ETA requirements (67 countries through December 31, 2026). Check the Korea Immigration Service or visa.go.kr website for current information.",
+      "description": "Check visa-free eligibility and the permitted stay for your passport at visa.go.kr. Separately, check the official K-ETA website to see whether you need authorization before visa-free travel.",
       "tips": [
         "Visa-exempt periods vary by country (some get 30 or 60 days, not 90)",
-        "K-ETA exemption status expires December 31, 2026 — after that date, K-ETA may be required",
+        "Being visa-exempt does not automatically make you K-ETA-exempt.",
         "The visa-exempt list is updated periodically — verify before travel"
       ]
     },
@@ -154,7 +154,7 @@
       "title": "Enter Korea",
       "description": "Upon arrival, present your passport (and visa if applicable) at immigration. Immigration officers may ask about the purpose and duration of your visit. Have your return ticket and accommodation proof accessible.",
       "tips": [
-        "Fill out the arrival card on the plane",
+        "If you must declare your arrival, submit the free e-Arrival Card within three days before arrival. Travelers entering visa-free with a valid K-ETA generally do not need one; temporarily K-ETA-exempt travelers without a valid K-ETA generally do.",
         "Have accommodation address written in Korean if possible",
         "Immigration officers may deny entry if they suspect you intend to work or overstay — be prepared to show return tickets and financial proof"
       ]
@@ -303,7 +303,7 @@
     }
   ],
   "pathsFrom": [],
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-11-24",
   "officialLinks": [
     {
       "label": "Korea Immigration Service",
@@ -320,9 +320,17 @@
     {
       "label": "K-ETA (Korea Electronic Travel Authorization)",
       "url": "https://www.k-eta.go.kr"
+    },
+    {
+      "label": "K-ETA exemption extension through December 2027 (official notice)",
+      "url": "https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=332883"
+    },
+    {
+      "label": "Official e-Arrival Card eligibility",
+      "url": "https://e-arrivalcard.go.kr/portal/guide/eacTargetGuide.do?locale=EN"
     }
   ],
   "sourceVerified": true,
   "primarySourceUrl": "https://www.visa.go.kr/openPage.do?MENU_ID=10301",
-  "lastFactChecked": "2026-03-20"
+  "lastFactChecked": "2026-11-24"
 }
