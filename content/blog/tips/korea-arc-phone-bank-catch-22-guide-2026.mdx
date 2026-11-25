@@ -1,10 +1,12 @@
 ---
 title: "Korea's ARC → Phone → Bank Loop: The Fix"
 coverImage: "/images/blog/korea-arc-phone-bank.jpg"
-description: "Open a Korea bank account as a foreigner in 2026: break the ARC → phone → bank circular dependency in 4 weeks with prepaid SIM and Mobile ARC."
+description: "Compare Korean tourist eSIMs for data, calls and SMS, then check which resident ID and phone line your bank accepts."
 category: tips
 country: korea
 date: "2026-03-13"
+updatedAt: "2026-11-25"
+showUpdatedDateOnly: true
 author: "LocalNomad Team"
 tags: ["banking", "checklist"]
 featured: false
@@ -14,125 +16,51 @@ draft: false
 import { TldrBox, Callout, Disclaimer, ResponsiveTable } from '@/components/blog';
 
 <TldrBox>
-Korea's banking setup is a circular dependency. You need a phone to open a bank account, a bank account to get a postpaid phone, and an ARC to get either. The loop is breakable in about 4 weeks: prepaid SIM on Day 1, Mobile ARC by Week 2, bank account by Week 3, postpaid phone by Week 4. Then everything else falls into place.
+A tourist eSIM can give you a Korean 010 number. That might solve calls or restaurant texts; it does not mean a bank can verify your identity. Pick a visitor plan for what you need on arrival, then confirm the resident line and ID requirements with your bank.
 </TldrBox>
 
-## The Loop Nobody Warns You About
-
-You land at Incheon. Visa in hand. Ready to set up your life.
-
-Then you try to open a bank account. "Do you have a Korean phone number?" Yes, a prepaid one. "Sorry, we need 본인인증 (carrier identity verification)." That only works with postpaid. To get postpaid, you need... a bank account.
-
-Welcome to Korea's most annoying circle.
-
-The good news: there's a specific order that cracks it open. Prepaid SIM first, Mobile ARC second, offline bank branch third. Miss the order and you'll bounce between counters for weeks. (I've seen it happen. It's not pretty.)
-
-## The Loop-Breaking Sequence
+## Three Different Things to Buy
 
 <ResponsiveTable
-  headers={["Phase", "When", "What You Do", "What You Need"]}
+  headers={["What you need", "What to check"]}
   rows={[
-    ["1. Prepaid SIM", "Day 1", "Buy at Incheon Airport: KT or LG U+", "Passport only"],
-    ["2. ARC Application", "Days 1–7", "Book immigration appointment, submit paperwork", "Passport + visa docs"],
-    ["3. Mobile ARC", "Days 7–14", "Activate digital ARC at immigration office", "Immigration app installed"],
-    ["4. Bank Account", "Days 14–21", "Walk into an offline branch with your prepaid SIM + Mobile ARC", "Passport, Mobile ARC, prepaid SIM, address proof"],
-    ["5. Postpaid Phone", "Days 21–28", "Upgrade at any carrier store", "Bank account + passport"],
-    ["6. Everything Else", "Day 28+", "PASS app, Kakao Pay, Baemin, Coupang, Naver Pay", "Postpaid phone + bank account"]
+    ["Maps and messaging", "An unlocked phone and a data plan. Apps you already use can work over data."],
+    ["Local calls and texts", "A Korean number, incoming calls and SMS, and outgoing voice or SMS if needed."],
+    ["Bank or government verification", "The provider's identity check, whether your number must be registered under your Residence Card and which plans qualify."]
   ]}
 />
 
-Four weeks, six steps. Let's walk through each one.
-
-## Step 1: Prepaid SIM (No ARC Needed)
-
-Head straight to the KT or LG U+ booth at Incheon arrivals. ₩25,000–50,000 gets you a 30–90 day plan with a real Korean +82 010 number, data, voice, and SMS.
-
-This is the part where people mess up: **eSIM is not a Korean phone number.** SK Telecom's eSIM and services like Airalo give you data only. No +82 number. Banks won't accept them. You need a physical SIM with voice.
+## Compare Visitor eSIM Plans
 
 <ResponsiveTable
-  headers={["Provider", "Korean Number?", "At Airport?", "Price (30 days)"]}
+  headers={["Plan", "Receiving calls and texts", "Making calls and sending texts"]}
   rows={[
-    ["KT", "Yes (+82 010)", "Yes", "₩25K–50K"],
-    ["LG U+", "Yes (+82 010)", "Yes", "₩25K–50K"],
-    ["SK Telecom eSIM", "No (data only)", "No", "₩15K–30K"],
-    ["CHINGUMOBILE", "Yes (+82 010)", "No (Myeongdong/Gangnam)", "₩30K–40K"]
+    ["KT Data eSIM", "010 number; incoming calls and SMS after the carrier's entry check", "Not included"],
+    ["KT Data / Call / SMS", "010 number; service after entry check", "Available; check voice credit and buy at an airport roaming counter"],
+    ["LG U+ Data Only", "Incoming calls and texts supported; check activation requirements", "Not included"],
+    ["LG U+ Data + Voice", "Incoming calls and texts supported", "Available; collect at the airport counter and check voice credit"],
+    ["Chingu Mobile Data Only eSIM", "Incoming calls and texts supported", "Not included"]
   ]}
 />
 
-KT or LG U+ at the airport. That's the move. Ten minutes, passport only.
+See [KT's plans](https://m.roaming.kt.com/eng/esim) and [LG U+'s plans](https://www.lguplus.com/korea-sim/eng/pc/product/esim?tab=data). See [Chingu Mobile's plan list](https://chingumobile.com/ko) for another visitor option. If choosing another carrier or reseller, verify the exact product rather than inferring what it supports from the carrier name. Data Only can still include incoming SMS. A Korean number is no guarantee that a given app will accept it.
 
-<Callout type="tip">
-Buy a 90-day plan (₩40K–50K) instead of 30-day. You'll still be waiting on bank setup when a 30-day plan expires, and renewing a prepaid SIM mid-process is annoying.
-</Callout>
+Check that your phone is unlocked and eSIM-compatible. Ask when the plan starts, when you must activate it, how you can extend it and whether the carrier will reissue the QR. Keep the profile installed while troubleshooting unless instructed otherwise by the carrier.
 
-## Step 2: ARC + Mobile ARC
+## If You Need Resident Phone Verification
 
-Your ARC (외국인등록증, Alien Registration Card) is the key that opens everything else. Book your immigration appointment early via [HiKorea](https://www.hikorea.go.kr/), as waits run 1–2 weeks in Seoul.
+Getting a text code to verify possession of a number is different from **본인인증**, where a service checks your identity against your line's registration. The carrier's passport and entry check for a visitor SIM does not make it a resident line.
 
-**What to bring:**
-- Passport
-- Completed application form (TM.1 for most visa types)
-- Accommodation proof (lease, Airbnb confirmation, or landlord letter)
-- Visa-specific documents (employment letter for E-7, proof of funds for D-8, etc.)
-- ₩10,000–30,000 for processing fees
+1. If your status requires it, make a foreign-resident registration appointment through [HiKorea](https://www.hikorea.go.kr/). Confirm Form 34 and the proof-of-address, photo and visa-specific documents with your immigration office. Do not book around a guaranteed issue date.
+2. When you have your Residence Card, ask the carrier about an eligible plan in your exact registered name. If you want to keep a visitor number, ask before buying a new line. A [Mobile Residence Card](https://www.moj.go.kr/bbs/immigration_eng/229/476646/download.do) is for registered foreign residents; do not assume it can be issued on the day of your first application.
+3. Ask the bank which identification, phone verification and account-purpose evidence it accepts through the channel you intend to use. Bring the physical card to a branch if acceptance of mobile ID has not been confirmed.
 
-**Mobile ARC (모바일외국인등록증)** launched in January 2025. Instead of waiting 3–4 weeks for the plastic card to arrive by mail, you can activate a digital version on the spot through the [Korea Immigration Service](https://www.immigration.go.kr) app. It's legally equivalent for banking purposes.
+[KakaoBank's onboarding guide](https://blog.kakaobank.com/posts/foreign-account-opening) requires an eligible postpaid line in the applicant's name when opening an account as a foreign resident. That is a KakaoBank requirement, not a blanket rule that no prepaid line ever supports any form of identity verification. A branch may use a different process; ask the branch in advance. Our [KakaoBank and Shinhan comparison](/en/blog/tips/korea-first-bank-account-kakaobank) explains the two app flows.
 
-Ask the officer directly: "모바일 ARC 받을 수 있나요?" If they say yes, activate it right there. Your physical card still arrives later, but you don't need to wait for it.
+## Visiting for One Month?
 
-<Callout type="warning">
-**Which visas get an ARC?** [F-1-D](/en/korea/visa/f-1-d) (Digital Nomad), [E-7](/en/korea/visa/e-7), [D-8](/en/korea/visa/d-8), [F-2](/en/korea/visa/f-2), [H-1](/en/korea/visa/h-1): all yes. [B-2](/en/korea/visa/b-2) (90-day tourist): no ARC, no bank account. If you're on B-2 and planning to work, consider converting to F-1-D first.
-</Callout>
-
-## Step 3: Open a Bank Account
-
-Now you have a prepaid SIM and a Mobile ARC. Go to a bank branch. In person. This matters because **offline staff verify your identity manually** (they don't run 본인인증, which only works for postpaid subscribers). The branch is your escape hatch.
-
-**Hana Bank's "Hana the EASY" program** is built for foreigners: 16-language support, Sunday branches in areas with large foreign populations (Ansan, Gimhae, Cheonan). If there's one near you, start there. For a full list of bank branches that support foreign account openings, the [Korea Immigration Service foreigner guide](https://www.immigration.go.kr/immigration_eng/1793/subview.do) lists recommended options.
-
-**Bring:**
-- Passport
-- Mobile ARC (or physical ARC if you already have it)
-- Prepaid SIM (they may call it to verify)
-- Address proof (lease or temporary accommodation)
-- Purpose statement
-
-When they ask "목적이 뭐예요?" (What's the purpose?), keep it simple: "급여 이체, 월세 이체, 생활비" (salary transfer, rent, living expenses). If you're freelancing, "프리랜서 일" works; bring an invoice or contract if you have one.
-
-Account opens in 20–30 minutes. Most digital nomad visa holders have no issues here.
-
-## Step 4: Postpaid Phone, Then Everything Works
-
-Take your new bank account to any SK Telecom, KT, or LG U+ store and upgrade to postpaid. Same-day activation, usually.
-
-Once postpaid is active, your phone number works for 본인인증. That single change opens the entire Korean digital ecosystem:
-
-- **PASS app**: government ID verification, signing contracts
-- **Internet banking**: full access to your Hana/Shinhan/KB app
-- **Kakao Pay, Naver Pay, Toss**: Korean mobile payments
-- **Baemin, Coupang Eats**: delivery apps (these need 본인인증, which needs a postpaid phone)
-- **Coupang**: online shopping
-
-Before you get postpaid, [WOWPASS or cash](/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026) is your best bet for daily spending. Foreign credit cards get rejected at small shops, delivery apps, and self-service kiosks more often than you'd expect. T-money (recharge with cash at any convenience store) handles transit.
-
-## FAQ
-
-- **What if the bank rejects me?**
-Try a different branch. Staff familiarity with foreign account openings varies wildly. Hana and Shinhan branches near universities or foreigner-heavy neighborhoods have the most experience. Bring every document you have.
-
-- **How long for the physical ARC card?**
-2–4 weeks by registered mail after your immigration appointment. But with Mobile ARC, you don't need to wait. Open your bank account with the digital version.
-
-- **I'm on B-2 (tourist). Any options?**
-No ARC means no standard Korean bank account. Your options: convert to [F-1-D](/en/korea/visa/f-1-d) if you plan to stay and work, use Wise or Revolut for daily spending, or check if HSBC/Citibank offers foreign-currency accounts. For payments, [WOWPASS](/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026) works at most stores without any Korean ID.
-
-- **Do I need a Korean bank account at all?**
-If you're staying longer than a month: yes. Rent payments, utility bills, phone plans, and most Korean apps assume you have one. Short-term tourists can get by with WOWPASS and cash.
-
----
-
-For the full picture on settling in Korea, check the [Korea arrival checklist](/en/blog/tips/korea-arrival-checklist-2026) and our [Korea visa comparison page](/en/korea/compare).
+You may be fine with a visitor eSIM, your own payment card and T-money or EZL for transit. If you need a local prepaid spending card, compare [WOWPASS and T-money](/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026).
 
 <Disclaimer type="korea">
-This guide describes published banking and immigration processes as of March 2026. It is informational only and not legal advice. Banking requirements, fees, and processing times vary by institution and location. Confirm current requirements directly with your bank and immigration office before visiting. LocalNomad is not a licensed financial advisor or immigration consultant (행정사/변호사). Based on published requirements. Not legal advice.
+Reviewed November 2026. Carrier and bank policies are product-specific. Confirm the current requirements before paying for a plan or visiting a branch.
 </Disclaimer>
