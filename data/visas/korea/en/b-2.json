@@ -1,12 +1,12 @@
 {
   "type": "b-2",
   "name": "Visa-Free Entry to Korea: K-ETA & Arrival Card",
-  "nameLocal": "관광비자 (B-2)",
+  "nameLocal": "관광·통과 (B-2)",
   "shortName": "B-2",
   "category": "tourist",
-  "description": "Korea’s B-2 tourist entry guide: visa-free eligibility, K-ETA exemptions, arrival declarations, and visa application steps.",
-  "tagline": "Short-term stays for tourism and business",
-  "keyRequirement": "Valid passport from visa-exempt country (30–90 days, varies by nationality) or visa application for non-exempt countries",
+  "description": "Check whether you can visit Korea without a visa, when you need K-ETA, and whether to file the e-Arrival Card. If you need a visa, find the right category through the Korea Visa Navigator.",
+  "tagline": "Visa-free tourism and transit",
+  "keyRequirement": "Check visa-free eligibility and your permitted stay by passport. K-ETA and the e-Arrival Card are separate checks.",
   "targetAudience": [
     "Digital nomads on short exploratory visits",
     "Tourists visiting Korea",
@@ -19,12 +19,15 @@
       "label": "Visa-free entry and temporary K-ETA exemption",
       "description": "Visa-free entry rules and permitted stays depend on your passport. K-ETA is a separate requirement for visa-free travel. South Korea has extended the temporary K-ETA exemption for the countries and regions already covered through December 31, 2027 (Korea time).",
       "required": false,
-      "tips": ["Some nationalities receive less than 90 days visa-free — verify your specific allowance", "Check your passport’s current K-ETA requirements on the official K-ETA website before departure."]
+      "tips": [
+        "Some nationalities receive less than 90 days visa-free — verify your specific allowance",
+        "Check your passport’s current K-ETA requirements on the official K-ETA website before departure."
+      ]
     },
     {
       "id": "visa-application",
-      "label": "Visa application required for non-exempt nationalities",
-      "description": "Citizens of countries not on the visa-exempt list must apply for a B-2 visa at a Korean embassy or consulate before travel.",
+      "label": "Check the right visa if your trip is not visa-free",
+      "description": "B-2 is a visa-free tourism or transit status, not a visa you apply for at an embassy. If your trip requires a visa, use the Korea Visa Navigator and confirm the application requirements with the Korean embassy or consulate serving your place of residence.",
       "required": false
     },
     {
@@ -44,138 +47,70 @@
       "id": "return-ticket",
       "label": "Proof of return or onward travel",
       "description": "Immigration officers may request proof of a return or onward flight when entering Korea.",
-      "required": true
+      "required": false
     }
   ],
   "duration": {
-    "initial": "30-90 days",
-    "extension": "Extensions not permitted in principle (원칙적으로 불허) — only granted in truly exceptional circumstances such as medical emergency or natural disaster",
-    "maxTotal": "30–90 days per entry",
-    "maxTotalDetail": "Up to 90 days per entry for visa-free nationals (varies by nationality; duration determined by Ministry of Justice). 30–90 days per visa grant depending on nationality."
+    "initial": "Varies by passport and entry basis",
+    "extension": "Extensions are generally not allowed. Ask immigration before your stay expires if exceptional circumstances apply.",
+    "maxTotal": "Varies by passport and entry basis",
+    "maxTotalDetail": "Varies by passport and entry basis"
   },
   "fees": {
-    "application": "₩50,000–120,000 (single entry)",
-    "applicationDetail": "Varies by nationality. Typically ₩50,000–120,000 for a single-entry visa.",
-    "extension": "₩60,000 for extension at immigration office",
-    "notes": "Visa-free entry has no application fee. Visa fees vary by nationality and number of entries (single, double, multiple). Check your nearest Korean embassy for exact fees."
+    "application": "No visa application fee for visa-free entry",
+    "applicationDetail": "K-ETA costs ₩10,000 if you apply. The official e-Arrival Card is free.",
+    "notes": "K-ETA costs ₩10,000 if you apply. The official e-Arrival Card is free."
   },
   "documents": [
     {
       "id": "passport",
-      "name": "Valid Passport",
-      "description": "Must be valid for the duration of your stay with at least 2 blank pages. Some airlines may require 6+ months validity — check with your carrier.",
-      "required": true,
-      "nameLocal": "여권"
-    },
-    {
-      "id": "application-form",
-      "name": "Visa Application Form",
-      "description": "Completed visa application form (only for non-exempt nationalities applying at embassy)",
-      "required": true,
-      "nameLocal": "사증발급신청서"
-    },
-    {
-      "id": "photo",
-      "name": "Passport Photo",
-      "description": "3.5cm x 4.5cm, recent (within 6 months), white background",
-      "required": true,
-      "nameLocal": "여권사진"
+      "name": "Valid passport",
+      "description": "Carry the passport you will use to enter Korea.",
+      "required": true
     },
     {
       "id": "return-ticket",
-      "name": "Return or Onward Flight Ticket",
-      "description": "Confirmed booking showing departure from Korea within the permitted stay period",
-      "required": true,
-      "nameLocal": "왕복항공권"
+      "name": "Return or onward booking",
+      "description": "Have it ready in case immigration asks.",
+      "required": false
     },
     {
       "id": "accommodation",
-      "name": "Proof of Accommodation",
-      "description": "Hotel booking confirmation, Airbnb reservation, or invitation letter from a host in Korea",
-      "required": true,
-      "nameLocal": "숙소 예약 확인서"
-    },
-    {
-      "id": "financial-proof",
-      "name": "Proof of Financial Means",
-      "description": "Bank statement or credit card statement showing sufficient funds for the duration of stay (no fixed minimum, but ₩2,000,000-4,000,000 recommended for a 90-day stay)",
-      "tips": [
-        "Recent bank statement (within 1 month)",
-        "Show enough funds to cover accommodation and daily expenses"
-      ],
-      "required": true,
-      "nameLocal": "재정증명서"
-    },
-    {
-      "id": "itinerary",
-      "name": "Travel Itinerary",
-      "description": "Brief description of travel plans in Korea (some embassies require this)",
-      "required": false,
-      "nameLocal": "여행일정서"
+      "name": "Accommodation address",
+      "description": "Keep the address of your stay handy for the arrival declaration or entry inspection.",
+      "required": false
     }
   ],
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
-      "title": "Check Visa-Free Status",
-      "description": "Check visa-free eligibility and the permitted stay for your passport at visa.go.kr. Separately, check the official K-ETA website to see whether you need authorization before visa-free travel.",
-      "tips": [
-        "Visa-exempt periods vary by country (some get 30 or 60 days, not 90)",
-        "Being visa-exempt does not automatically make you K-ETA-exempt.",
-        "The visa-exempt list is updated periodically — verify before travel"
-      ]
+      "title": "Check your visa-free eligibility",
+      "description": "Check visa-free eligibility and the permitted stay for your passport and travel purpose through the Korea Visa Navigator. If a visa is required, use the Navigator and confirm the requirements with your Korean mission."
     },
     {
       "id": "step-2",
       "step": 2,
-      "title": "Prepare Documents (If Visa Required)",
-      "description": "If your country is not visa-exempt, gather all required documents for the visa application at a Korean embassy or consulate.",
-      "duration": "1-2 weeks",
-      "tips": [
-        "Check your specific embassy's requirements — they may differ slightly",
-        "Some embassies require appointment booking in advance"
-      ]
+      "title": "Check whether you need K-ETA",
+      "description": "K-ETA is pre-travel authorization for eligible visa-free visitors, not a visa or a status of stay. Check the official K-ETA site for your passport."
     },
     {
       "id": "step-3",
       "step": 3,
-      "title": "Apply at Korean Embassy (If Visa Required)",
-      "description": "Submit your visa application at the Korean embassy or consulate in your country of residence. Some embassies accept applications by mail.",
-      "duration": "1 day",
-      "tips": [
-        "Apply at least 2-4 weeks before your travel date",
-        "Keep copies of all submitted documents"
-      ]
+      "title": "Check whether you need an arrival declaration",
+      "description": "If required, submit the free e-Arrival Card starting three days before arrival (Korea time). A valid K-ETA generally exempts you from the arrival declaration."
     },
     {
       "id": "step-4",
       "step": 4,
-      "title": "Enter Korea",
-      "description": "Upon arrival, present your passport (and visa if applicable) at immigration. Immigration officers may ask about the purpose and duration of your visit. Have your return ticket and accommodation proof accessible.",
-      "tips": [
-        "If you must declare your arrival, submit the free e-Arrival Card within three days before arrival. Travelers entering visa-free with a valid K-ETA generally do not need one; temporarily K-ETA-exempt travelers without a valid K-ETA generally do.",
-        "Have accommodation address written in Korean if possible",
-        "Immigration officers may deny entry if they suspect you intend to work or overstay — be prepared to show return tickets and financial proof"
-      ]
-    },
-    {
-      "id": "step-5",
-      "step": 5,
-      "title": "Register if Staying 90+ Days",
-      "description": "If you plan to stay for 90 days or receive an extension, you must register at the local immigration office within 90 days of arrival to obtain an Alien Registration Card (ARC).",
-      "duration": "2-4 weeks for ARC processing",
-      "tips": [
-        "ARC is required for opening a bank account, getting a phone plan, etc.",
-        "Book an appointment on HiKorea before visiting the immigration office"
-      ]
+      "title": "Go through entry inspection",
+      "description": "Present your passport on arrival and have your return or onward booking and accommodation details available if requested. Check the stay granted at entry."
     }
   ],
   "processingTime": {
-    "governmentReview": "Instant (visa-free); 1–2 weeks (visa)",
-    "governmentReviewDetail": "Visa-free entry is instant at port of entry. Visa applications take 1–2 weeks.",
-    "totalEndToEnd": "1-3 weeks",
-    "notes": "Processing times for visa applications vary by embassy, nationality, and season. During peak travel seasons, processing may take longer. Visa-free entry is processed at the airport or port upon arrival."
+    "governmentReview": "At immigration on arrival",
+    "totalEndToEnd": "Check pre-travel requirements",
+    "notes": "If K-ETA is required, the official guidance recommends applying at least 72 hours before boarding. If you need an e-Arrival Card, filing opens three days before arrival (Korea time)."
   },
   "workPermission": {
     "allowed": false,
@@ -196,6 +131,10 @@
     "applyBeforeDays": 0
   },
   "faqs": [
+    {
+      "question": "Is B-2 the same as K-ETA?",
+      "answer": "K-ETA is pre-travel authorization for eligible visa-free visitors, not a visa or a status of stay. Check the official K-ETA site for your passport. B-2 is a visa-free tourism or transit status, not a visa you apply for at an embassy. If your trip requires a visa, use the Korea Visa Navigator and confirm the application requirements with the Korean embassy or consulate serving your place of residence."
+    },
     {
       "question": "Can I work remotely on a B-2 tourist visa?",
       "answer": "The B-2 visa does not explicitly authorize remote work. While some digital nomads do work remotely during tourist visits, this is a legal gray area. Korea introduced the F-1-D Digital Nomad Visa specifically for remote workers. For stays where you intend to work remotely, the F-1-D provides clear legal authorization."
@@ -303,15 +242,15 @@
     }
   ],
   "pathsFrom": [],
-  "lastUpdated": "2026-11-24",
+  "lastUpdated": "2026-11-25",
   "officialLinks": [
     {
       "label": "Korea Immigration Service",
       "url": "https://www.immigration.go.kr/immigration_eng/index.do"
     },
     {
-      "label": "Visa Portal (visa.go.kr)",
-      "url": "https://www.visa.go.kr"
+      "label": "Korea Visa Navigator",
+      "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10101"
     },
     {
       "label": "HiKorea Portal",
@@ -323,14 +262,18 @@
     },
     {
       "label": "K-ETA exemption extension through December 2027 (official notice)",
-      "url": "https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=332883"
+      "url": "https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=332884"
     },
     {
       "label": "Official e-Arrival Card eligibility",
       "url": "https://e-arrivalcard.go.kr/portal/guide/eacTargetGuide.do?locale=EN"
+    },
+    {
+      "label": "Immigration Service: visa-free entry and K-ETA",
+      "url": "https://immigration.go.kr/immigration/3339/subview.do"
     }
   ],
   "sourceVerified": true,
   "primarySourceUrl": "https://www.visa.go.kr/openPage.do?MENU_ID=10301",
-  "lastFactChecked": "2026-11-24"
+  "lastFactChecked": "2026-11-25"
 }
