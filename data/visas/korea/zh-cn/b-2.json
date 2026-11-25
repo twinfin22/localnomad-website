@@ -1,12 +1,12 @@
 {
   "type": "b-2",
   "name": "韩国旅游过境签证 (B-2)",
-  "nameLocal": "관광비자 (B-2)",
+  "nameLocal": "관광·통과 (B-2)",
   "shortName": "B-2",
   "category": "tourist",
-  "description": "韩国B-2旅游入境指南：免签资格、K-ETA豁免、入境申报及签证申请流程。",
-  "tagline": "短期旅游和商务停留",
-  "keyRequirement": "持有免签国家有效护照（90天）或非免签国家需办理签证",
+  "description": "查询能否免签入境韩国、是否需要申请K-ETA，以及是否需要提交电子入境申报。需要签证时，请通过韩国签证导航查询适用类别。",
+  "tagline": "旅游和过境免签入境",
+  "keyRequirement": "根据护照确认免签资格和允许停留期限。K-ETA和电子入境申报须分别确认。",
   "targetAudience": [
     "短期探访的数字游民",
     "赴韩旅游人士",
@@ -26,8 +26,8 @@
     },
     {
       "id": "visa-application",
-      "label": "非免签国家须申请签证",
-      "description": "不在免签名单上的国家公民须在出行前前往韩国驻外使馆或领事馆申请B-2签证。",
+      "label": "如需签证，请先查适用类别",
+      "description": "B-2是旅游或过境的免签停留资格，并非赴使领馆申请的签证。如果行程需要签证，请通过韩国签证导航查询适用类别，并向负责您居住地的韩国使领馆确认申请要求。",
       "required": false
     },
     {
@@ -47,138 +47,70 @@
       "id": "return-ticket",
       "label": "须提供回程或中转机票证明",
       "description": "入境韩国时，边检官员可能要求提供回程或后续航班证明。",
-      "required": true
+      "required": false
     }
   ],
   "duration": {
-    "initial": "30-90天",
-    "extension": "最长合计90天（可在出入境·外国人厅申请延期）",
-    "maxTotal": "每次入境30–90天",
-    "maxTotalDetail": "免签国家公民每次入境最长90天；签证持有人根据国籍不同，每次签证授权停留30–90天不等。"
+    "initial": "因护照和入境条件而异",
+    "extension": "原则上不予延期。如遇特殊情况，请在停留期届满前向出入境部门确认。",
+    "maxTotal": "因护照和入境条件而异",
+    "maxTotalDetail": "因护照和入境条件而异"
   },
   "fees": {
-    "application": "₩50,000–120,000（单次入境）",
-    "applicationDetail": "费用因国籍而异，单次入境签证通常为₩50,000–120,000。",
-    "extension": "在出入境·外国人厅申请延期费用为₩60,000",
-    "notes": "免签入境无需缴纳申请费。签证费用因国籍及入境次数（单次、双次、多次）而异。请向最近的韩国使馆查询具体收费标准。"
+    "application": "免签入境无需缴纳签证申请费",
+    "applicationDetail": "申请K-ETA需缴纳10,000韩元；官方电子入境申报免费。",
+    "notes": "申请K-ETA需缴纳10,000韩元；官方电子入境申报免费。"
   },
   "documents": [
     {
       "id": "passport",
       "name": "有效护照",
-      "description": "护照须在停留期间内持续有效，并至少有2页空白页。部分航空公司可能要求护照有效期在6个月以上——请提前与航空公司确认。",
-      "required": true,
-      "nameLocal": "여권"
-    },
-    {
-      "id": "application-form",
-      "name": "签证申请表",
-      "description": "填写完整的签证申请表（仅适用于需前往使馆申请签证的非免签国家公民）",
-      "required": true,
-      "nameLocal": "사증발급신청서"
-    },
-    {
-      "id": "photo",
-      "name": "护照照片",
-      "description": "3.5cm × 4.5cm，近期拍摄（6个月内），白色背景",
-      "required": true,
-      "nameLocal": "여권사진"
+      "description": "准备入境韩国时使用的护照。",
+      "required": true
     },
     {
       "id": "return-ticket",
-      "name": "回程或中转机票",
-      "description": "须为确认订票，显示在允许停留期限内离境韩国",
-      "required": true,
-      "nameLocal": "왕복항공권"
+      "name": "返程或续程预订",
+      "description": "请备好预订信息，以便入境审查时按要求出示。",
+      "required": false
     },
     {
       "id": "accommodation",
-      "name": "住宿证明",
-      "description": "酒店预订确认单、Airbnb订单，或韩国接待方出具的邀请函",
-      "required": true,
-      "nameLocal": "숙소 예약 확인서"
-    },
-    {
-      "id": "financial-proof",
-      "name": "财力证明",
-      "description": "银行对账单或信用卡账单，证明有足够资金维持整个停留期间的开销（无固定最低要求，90天停留建议准备₩2,000,000–4,000,000）",
-      "tips": [
-        "提交近期银行对账单（1个月内）",
-        "金额须足以覆盖住宿及日常开销"
-      ],
-      "required": true,
-      "nameLocal": "재정증명서"
-    },
-    {
-      "id": "itinerary",
-      "name": "行程安排",
-      "description": "韩国行程简要说明（部分使馆要求提供）",
-      "required": false,
-      "nameLocal": "여행일정서"
+      "name": "住宿地址",
+      "description": "保存韩国住宿地址，以备入境申报或审查时使用。",
+      "required": false
     }
   ],
   "applicationSteps": [
     {
       "id": "step-1",
       "step": 1,
-      "title": "确认免签资格",
-      "description": "请在visa.go.kr查询您所持护照的免签资格及可停留期限，再到K-ETA官方网站单独查询免签出行是否需要电子旅行授权。",
-      "tips": [
-        "免签停留天数因国家而异（部分国家仅30天或60天，而非90天）",
-        "符合免签资格，不等于自动获得K-ETA豁免。",
-        "免签名单定期更新——出行前请核实"
-      ]
+      "title": "确认免签入境资格",
+      "description": "根据护照和旅行目的，在韩国签证导航中查询免签资格和允许停留期限。如需签证，请向辖区韩国使领馆确认要求。"
     },
     {
       "id": "step-2",
       "step": 2,
-      "title": "准备申请材料（须办理签证者适用）",
-      "description": "若您所在国家不在免签名单内，请准备齐全所需材料，以便前往韩国驻外使馆或领事馆申请签证。",
-      "duration": "1-2周",
-      "tips": [
-        "请核实所属使馆的具体要求——各馆可能略有差异",
-        "部分使馆须提前预约"
-      ]
+      "title": "确认是否需要K-ETA",
+      "description": "K-ETA是适用的免签旅客出发前办理的电子旅行授权，不是签证，也不是停留资格。请在官方网站按护照查询。"
     },
     {
       "id": "step-3",
       "step": 3,
-      "title": "前往韩国使馆提交申请（须办理签证者适用）",
-      "description": "前往您所在国的韩国使馆或领事馆提交签证申请。部分使馆接受邮寄申请。",
-      "duration": "1天",
-      "tips": [
-        "至少提前2-4周申请签证",
-        "保留所有已提交材料的副本"
-      ]
+      "title": "确认是否需要电子入境申报",
+      "description": "如须申报，可在抵达前3天起（韩国时间）免费提交电子入境申报。持有效K-ETA通常无需办理入境申报。"
     },
     {
       "id": "step-4",
       "step": 4,
-      "title": "入境韩国",
-      "description": "抵达后，在边检处出示护照（如有签证请一并出示）。边检官员可能询问访韩目的及停留时长，请随时出示回程机票及住宿证明。",
-      "tips": [
-        "如需申报，请在抵达韩国前3天内免费提交电子入境申报表（e-Arrival Card）。持有效K-ETA免签入境的旅客通常无需提交；享受K-ETA临时豁免但未持有效K-ETA的旅客通常仍需提交。",
-        "如有可能，将住宿地址用韩文写好备用",
-        "若边检官员怀疑您有工作或超期逗留意图，可能拒绝入境——请备好回程机票及资金证明"
-      ]
-    },
-    {
-      "id": "step-5",
-      "step": 5,
-      "title": "停留90天以上须办理登记",
-      "description": "若计划停留90天或申请延期，须在抵韩后90天内前往当地出入境·外国人厅办理登记，领取外国人登录证（ARC）。",
-      "duration": "ARC办理约需2-4周",
-      "tips": [
-        "ARC是开设银行账户、办理手机套餐等事项的必要证件",
-        "前往出入境·外国人厅前，请提前在HiKorea预约"
-      ]
+      "title": "接受入境审查",
+      "description": "抵达后出示护照，并备好返程或续程预订及住宿信息，以便按要求出示。请确认入境时获准的停留期限。"
     }
   ],
   "processingTime": {
-    "governmentReview": "即时（免签入境）；1-2周（签证申请）",
-    "governmentReviewDetail": "免签入境在口岸即时办理。签证申请需1-2周。",
-    "totalEndToEnd": "1-3周",
-    "notes": "签证申请处理时间因使馆、国籍及季节而异。旅游旺季期间，处理时间可能更长。免签入境在抵达机场或口岸时当场办理。"
+    "governmentReview": "抵达后接受入境审查",
+    "totalEndToEnd": "行前确认所需手续",
+    "notes": "如需K-ETA，官方建议至少在登机或登船前72小时申请。电子入境申报可从抵达前3天起提交（韩国时间）。"
   },
   "workPermission": {
     "allowed": false,
@@ -199,6 +131,10 @@
     "applyBeforeDays": 0
   },
   "faqs": [
+    {
+      "question": "B-2和K-ETA是同一回事吗？",
+      "answer": "K-ETA是适用的免签旅客出发前办理的电子旅行授权，不是签证，也不是停留资格。请在官方网站按护照查询。 B-2是旅游或过境的免签停留资格，并非赴使领馆申请的签证。如果行程需要签证，请通过韩国签证导航查询适用类别，并向负责您居住地的韩国使领馆确认申请要求。"
+    },
     {
       "question": "持B-2旅游签证可以远程办公吗？",
       "answer": "B-2签证并未明确授权远程办公。虽然有些数字游民在旅游期间会进行远程工作，但这属于法律灰色地带。韩国专门推出了F-1-D数字游民签证，供远程工作者合规使用。若您计划在停留期间进行远程办公，F-1-D签证可提供明确的法律授权。"
@@ -306,15 +242,15 @@
     }
   ],
   "pathsFrom": [],
-  "lastUpdated": "2026-11-24",
+  "lastUpdated": "2026-11-25",
   "officialLinks": [
     {
       "label": "韩国出入境·外国人厅",
       "url": "https://www.immigration.go.kr/immigration_eng/index.do"
     },
     {
-      "label": "签证申请门户（visa.go.kr）",
-      "url": "https://www.visa.go.kr"
+      "label": "韩国签证导航",
+      "url": "https://www.visa.go.kr/openPage.do?MENU_ID=10101"
     },
     {
       "label": "HiKorea门户",
@@ -326,14 +262,18 @@
     },
     {
       "label": "K-ETA临时豁免延长至2027年12月（官方公告）",
-      "url": "https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=332883"
+      "url": "https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=332884"
     },
     {
       "label": "电子入境申报对象（官方说明）",
       "url": "https://e-arrivalcard.go.kr/portal/guide/eacTargetGuide.do?locale=EN"
+    },
+    {
+      "label": "韩国出入境部门：免签入境和K-ETA",
+      "url": "https://immigration.go.kr/immigration/3339/subview.do"
     }
   ],
   "sourceVerified": true,
   "primarySourceUrl": "https://www.visa.go.kr/openPage.do?MENU_ID=10301",
-  "lastFactChecked": "2026-11-24"
+  "lastFactChecked": "2026-11-25"
 }
