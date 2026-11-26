@@ -156,6 +156,7 @@
           "description": "WOWPASS has separate spending and T-money balances. If your own card already works for shopping, you can skip WOWPASS and buy a transit card instead. Check the issuer for current pickup offers and funding methods.",
           "category": "money",
           "required": false,
+          "visaTier": ["tourist", "long-term", "resident"],
           "link": "/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026",
           "linkLabel": "Korea Cards: WOWPASS vs T-money vs Cashbee"
         },
