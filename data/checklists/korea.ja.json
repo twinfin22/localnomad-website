@@ -138,7 +138,7 @@
       "id": "day-0-airport",
       "title": "Day 0：空港",
       "timeframe": "仁川空港到着時",
-      "description": "入国審査を通過したら、到着ホールでこの順番に動いてください。WOWPASSのステップは飛ばさないこと。",
+      "description": "到着後は通信手段を確保し、移動方法を選びましょう。買い物用のカードは必要な場合だけ用意してください。",
       "items": [
         {
           "id": "tourist-sim",
@@ -152,29 +152,26 @@
         },
         {
           "id": "wowpass-card",
-          "label": "WOWPASSカードを入手する（₩5,000）",
-          "description": "WOWPASSはプリペイドカード（T-moneyやクレジットカードが使える場所ならどこでも利用可）、交通系ICカード、外貨両替機の3役をこなします。カード代₩5,000。WOWPASSキオスクで現金または外国カードからチャージ可能。空港の両替所より為替レートが有利です。",
+          "label": "必要に応じてWOWPASSを購入する（通常₩6,000）",
+          "description": "WOWPASSは買い物用とT-moneyの交通用で残高が別です。手持ちのカードで買い物ができる場合は、交通カードだけでも十分です。受取場所とチャージ方法は発行元で確認してください。",
           "category": "money",
-          "required": true,
+          "required": false,
           "visaTier": ["tourist", "long-term", "resident"],
-          "tips": [
-            "最初の1週間はこれがメインカードになります。ほとんどの店舗と全交通機関で使えます。",
-            "空港の両替カウンターよりずっとレートがいいです。"
-          ],
           "link": "/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026",
           "linkLabel": "韓国カード比較：WOWPASS vs T-money vs Cashbee"
         },
         {
           "id": "transport-to-seoul",
           "label": "AREXかリムジンバスでソウルへ向かう",
-          "description": "WOWPASSとT-moneyはすべての交通機関で使えます：",
+          "description": "AREX各駅停車ではT-moneyが使えます。直通列車は別途乗車券が必要です。空港バスの運賃と支払い方法は路線ごとに確認してください。",
           "category": "transport",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
-            "AREX各駅停車：₩4,750、ソウル駅まで約60分",
-            "AREXノンストップ：₩11,000、約43分（荷物スペースが広い）",
-            "リムジンバス：₩15,000〜18,000、主要エリアまでドアツードアで60〜90分"
+            "AREX各駅停車でソウル駅へ：交通カードでT1から₩4,750、T2から₩5,350",
+            "AREX直通列車：大人・非会員₩13,000。別途乗車券を購入",
+            "ウォンがなくても、T1・T2のAREX駅にあるT-money販売機で海外発行のクレジットカードを使い、交通残高₩10,000付きのカードを₩15,000で購入できます。",
+            "空港リムジン6015番：大人₩17,000、ソウル中心部方面"
           ],
           "link": "/en/blog/tips/korea-arrival-checklist-2026",
           "linkLabel": "韓国入国チェックリスト 2026"
@@ -211,14 +208,14 @@
         {
           "id": "payment-stack-setup",
           "label": "最初の1週間の支払い手段を揃える",
-          "description": "あらゆる場面をカバーする3段構え：",
+          "description": "交通費の支払い手段と、買い物用の予備を用意しましょう。",
           "category": "money",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
-            "WOWPASS：メインカード——ほとんどの店舗と全交通機関で使える",
+            "買い物では手持ちのカードを先に試しましょう。WOWPASSは任意で、買い物用と交通用の残高は別です。",
             "現金₩50,000〜100,000：小さな飲食店、在来市場、韓国カードのみ対応の場所向け",
-            "T-money：予備の交通系ICカード（コンビニで現金チャージ可能）",
+            "T-money：対応する地下鉄やバスに使用。一般的な物理カードのチャージ用にウォン現金があると安心です。",
             "大型チェーン店やデパートは外国カードが使えることが多い。小規模店舗は対応していないことが多い"
           ]
         },

@@ -138,7 +138,7 @@
       "id": "day-0-airport",
       "title": "Day 0：机场",
       "timeframe": "落地仁川时",
-      "description": "通关后，按以下顺序在到达大厅办理手续。不要跳过WOWPASS这一步。",
+      "description": "通关后先解决上网，再选择交通方式。购物用预付卡可按需购买。",
       "items": [
         {
           "id": "tourist-sim",
@@ -152,29 +152,26 @@
         },
         {
           "id": "wowpass-card",
-          "label": "办理WOWPASS卡（₩5,000）",
-          "description": "WOWPASS集三种功能于一身：预付卡（凡是接受T-money或信用卡的地方均可使用）、交通卡以及外币兑换机。卡费₩5,000。可在WOWPASS自助机上用现金或外国银行卡充值。兑换汇率优于机场换汇柜台。",
+          "label": "按需购买WOWPASS卡（标准价₩6,000）",
+          "description": "WOWPASS的购物余额与T-money交通余额独立。如果自己的卡能用于购物，只买交通卡即可。领取地点和充值方式以发行方说明为准。",
           "category": "money",
-          "required": true,
+          "required": false,
           "visaTier": ["tourist", "long-term", "resident"],
-          "tips": [
-            "这是你第一周的主力卡，绝大多数商店和所有交通工具都能用。",
-            "比机场换汇柜台划算很多。"
-          ],
           "link": "/en/blog/tips/korea-wowpass-vs-tmoney-vs-cashbee-2026",
           "linkLabel": "韩国支付卡对比：WOWPASS vs T-money vs Cashbee"
         },
         {
           "id": "transport-to-seoul",
           "label": "乘坐AREX或机场大巴前往首尔",
-          "description": "WOWPASS和T-money适用于所有交通方式：",
+          "description": "AREX普通列车可以刷T-money。直达列车需要单独购票。机场巴士的票价和支付方式请按线路查询。",
           "category": "transport",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
-            "AREX普通车：₩4,750，至首尔站约60分钟",
-            "AREX快速车：₩11,000，约43分钟（行李空间更宽裕）",
-            "机场大巴：₩15,000至18,000，点对点至主要区域约60至90分钟"
+            "AREX普通列车至首尔站：刷交通卡从T1出发₩4,750，从T2出发₩5,350",
+            "AREX直达列车：非会员成人₩13,000，需单独购票",
+            "还没换韩元？仁川机场T1和T2的AREX车站内，T-money售卡机接受境外信用卡购买₩15,000的套装，内含₩10,000交通余额。",
+            "机场巴士6015路：成人₩17,000，途经首尔市中心"
           ],
           "link": "/en/blog/tips/korea-arrival-checklist-2026",
           "linkLabel": "韩国入境清单 2026"
@@ -211,14 +208,14 @@
         {
           "id": "payment-stack-setup",
           "label": "搭建第一周的支付方案",
-          "description": "三层组合，覆盖所有场景：",
+          "description": "准备交通支付方式，并为购物留一个备选。",
           "category": "money",
           "required": true,
           "visaTier": ["tourist", "long-term", "resident"],
           "tips": [
-            "WOWPASS：主力卡——绝大多数商店和所有交通工具都能用",
+            "购物先试自己的卡。WOWPASS可按需购买，购物和交通余额独立。",
             "现金₩50,000至100,000：用于小餐馆、传统市场和只接受韩国卡的地方",
-            "T-money：备用交通卡（可在任何便利店现金充值）",
+            "T-money可用于支持该卡的地铁和巴士。普通实体卡充值建议准备韩元现金。",
             "大型连锁店和百货公司通常接受外国卡；小型商户则往往不接受"
           ]
         },
